@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From "Who Is This User?" to "What Does This Purchase Mean?": A Deployed Pipeline for Semantic User Profiling at Bank Scale</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>From "Who Is This User?" to "What Does This Purchase Mean?": A Deployed Pipeline for Semantic User Profiling at Bank Scale</h1>
+<p class="meta-line">arXiv（Ryota Mitsuhashi 等，cs.AI） · 2026-09-17 · 论文PDF</p>
+
+<p>银行级语义用户画像部署管线：按交易模式而非按用户推理，压缩 LLM 推理预算。</p>
+<blockquote><p>Per-user LLM inference on transaction histories binds the inference budget linearly to user count, which becomes prohibitive at applied scale. We re-cast attribute inference from per-user to per-transaction-pattern. The pipeline runs in three phases: Resolve abstracts item names with optional web grounding, Profile infers attributes for each frequent pattern, and Tag clusters free-text attributes into a queryable database. In Profile, a single LLM call per pattern emits predefined categorical labels, free-text attributes, and per-attribute prevalence estimates. Because inference runs over patterns rather than users, the budget grows with the pattern count rather than the user count. On the public Open e-commerce corpus, the database is statistically indistinguishable from an LLM that reads each user's raw history directly in AUC across the evaluated attributes, and the prevalence estimates carry discriminative signal between positive and negative users. The pipeline is deployed at a major Japanese bank profiling on the order of tens of millions of users, with close to a three-order-of-magnitude reduction in LLM inference targets versus a per-user pipeline. The code is publicly avai…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.19928v1">阅读原文 ↗</a></p>
+</body>
+</html>

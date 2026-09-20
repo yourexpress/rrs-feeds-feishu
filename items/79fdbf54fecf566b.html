@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DeepSeek-V4-Flash on AMD gfx90a: Correctness Recovery and Inference Performance Engineering</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DeepSeek-V4-Flash on AMD gfx90a: Correctness Recovery and Inference Performance Engineering</h1>
+<p class="meta-line">arXiv（Siming Huang，cs.DC） · 2026-09-14 · 论文PDF</p>
+
+<p>We present the enablement, correctness recovery, and performance engineering of DeepSeek-V4-Flash inference on AMD Instinct MI250 GPUs using the gfx90a/CDNA2 architecture.</p>
+<blockquote><p>We present the enablement, correctness recovery, and performance engineering of DeepSeek-V4-Flash inference on AMD Instinct MI250 GPUs using the gfx90a/CDNA2 architecture. The system integrates native safetensors loading, tensor and expert parallelism, FP4 routed mixture-of-experts computation, FP8 dense projections, sparse attention, HIP graph execution, and OpenAI-compatible serving within SGLang. An initially fast execution path was found to be numerically incorrect because of a routed-expert W2 layout mismatch. We identify the output permutation, repair the weight layout at load time, and establish fixed-token and hash-based correctness checks before further optimization. On the corrected path, decode performance is improved through packed FP4 weights, INT8 activation quantization, CDNA2 dot-product instructions, peer-read all-reduce, and topology-aware kernel geometry. Prefill is accelerated using CDNA2 MFMA kernels, improved packed-weight reuse, reduced sparse-attention overhead, larger chunks, and retuned expert sorting. On four MI250 GCDs, TP4/EP1 native autoregressive decode reaches approximately 74.5 tok/s, while a 4,604-token prompt reaches 2.061-2.062 s TTFT, or approxi…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.15627v1">阅读原文 ↗</a></p>
+</body>
+</html>

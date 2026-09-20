@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Latency-Aware Orchestration for Multi-Agent LLM Workflows on Heterogeneous GPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Latency-Aware Orchestration for Multi-Agent LLM Workflows on Heterogeneous GPUs</h1>
+<p class="meta-line">arXiv（Jinghao Wang 等，cs.DC） · 2026-09-03 · 论文PDF</p>
+
+<p>Concurrent multi-agent workflows expose future dependencies and serving-state requirements while running on heterogeneous GPU pools with time-varying load, model residency, and resource availability.</p>
+<blockquote><p>Concurrent multi-agent workflows expose future dependencies and serving-state requirements while running on heterogeneous GPU pools with time-varying load, model residency, and resource availability. The logical workflow defines the required computation, whereas its physical scheduling units, model-lifecycle actions, resource ordering, and placement must be selected according to the observed pool state. We present a prediction-guided runtime that uses workflow forecasts to construct and optimize a physical execution graph. Predictor estimates device-specific activation latency, peak memory, and model-loading cost, then propagates these predictions through workflow dependencies to forecast activation readiness and future model demand. Constructor builds semantics-preserving fusion and model-lifecycle alternatives, while Scheduler jointly optimizes their selection, placement, and execution order based on the live pool state. Across a workload spanning three workflow scenarios on a heterogeneous GPU pool, our system reduces end-to-end makespan and overall p95 completion latency under burst arrivals by up to 36.8% and 25.9%, respectively, over state-of-the-art workflow schedulers. It a…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.03335v1">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grounding Agent Memory in the Real World</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Grounding Agent Memory in the Real World</h1>
+<p class="meta-line">Microsoft · 2026-09-10 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：持久记忆正进入生产级 agent 平台，但只看已完成轨迹的事后策展 agent 会保留错误、过度泛化局部证据、留存过时知识。</p>
+<p><strong>方法</strong>：environment-probing curation：给既有异步策展 agent 一组最小权限、只读的"世界工具"，用于检查、限定与刷新候选记忆；不重训模型，任务 agent、检索器、记忆表示与生产写权限全部不变。</p>
+<p><strong>关键数字</strong>：在基于 GitHub Copilot SDK 的生产级 harness 中验证（详见原文）。</p>
+<p><strong>为什么值得看</strong>：agent 记忆可靠性的工程化落地——"用环境探针验证记忆"而不是"信轨迹"，思路可直接迁移。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.11060">arXiv:2609.11060</a>（Microsoft）</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.11060">阅读原文 ↗</a></p>
+</body>
+</html>

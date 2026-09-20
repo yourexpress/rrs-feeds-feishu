@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BigMoMo: Efficient Inference of Large-Scale MoE with Speculative Decoding on Mobile Devices</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>BigMoMo: Efficient Inference of Large-Scale MoE with Speculative Decoding on Mobile Devices</h1>
+<p class="meta-line">arXiv（Maoliang Li 等，cs.AR） · 2026-09-13 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：手机上跑 MoE 模型受 DRAM 容量与搬运成本限制——逐 token 路由让专家执行耦合于碎片化 flash 读取与多级 NPU 准备，权重传输没摊销几次就换下一个专家。</p>
+<p><strong>方法</strong>：BigMoMo：利用投机解码的"多 token 验证窗口"解耦专家搬运与单 token 执行——一次搬运服务多个候选 token，实现权重复用、连续 flash 读取与 load-compute 重叠。</p>
+<p><strong>关键数字</strong>：见原文实验部分。</p>
+<p><strong>为什么值得看</strong>：端侧 MoE 推理运行时的关键 trick：把投机解码的验证窗口当"权重预取窗口"用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.14643v1">arXiv:2609.14643</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.14643v1">阅读原文 ↗</a></p>
+</body>
+</html>

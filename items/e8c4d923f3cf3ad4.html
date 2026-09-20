@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SchedBlame: Who Ran While You Waited? Culprit-Attributed CPU Contention for Containers on Stock Kernels</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SchedBlame: Who Ran While You Waited? Culprit-Attributed CPU Contention for Containers on Stock Kernels</h1>
+<p class="meta-line">arXiv（Hao Li 等，cs.OS） · 2026-09-02 · 论文PDF</p>
+
+<p>Containers that share a machine compete for CPU. When one slows down, the operator needs to know which co-tenant is responsible, and no deployed signal can say.</p>
+<blockquote><p>Containers that share a machine compete for CPU. When one slows down, the operator needs to know which co-tenant is responsible, and no deployed signal can say. Pressure stall information, per-cgroup wait counters, and run-queue latency histograms are all victim-side: they report that a container waited, never who it waited for. Recovering the culprit means a kernel patch, full scheduler tracing, or statistical inference: unportable, too costly to leave on, or unreliable when victims coexist. SchedBlame is an eBPF tracer that attributes CPU contention to the cgroups that caused it, on stock kernels, continuously. It inverts the accounting: instead of measuring how long a victim waited, it measures the CPU time every other cgroup consumed while that victim was runnable but not running on the same CPU. The mechanism is a per-CPU bitmap of which measured cgroups are waiting, maintained from the kernel's own runnable counts at four scheduler hooks. Every run slice carries that bitmap, so one 16-byte record charges CPU time to a full row of a competitor x victim blame matrix; the kernel stores no per-pair state. Three properties follow. Slices are self-describing, so userspace holds no …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.02052v1">阅读原文 ↗</a></p>
+</body>
+</html>

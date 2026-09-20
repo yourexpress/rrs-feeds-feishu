@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Direct-Operable SIMD Bit-Slicing: A Framework for Memory-Efficient Predicate Evaluation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Direct-Operable SIMD Bit-Slicing: A Framework for Memory-Efficient Predicate Evaluation</h1>
+<p class="meta-line">arXiv（Arunkumar Mathiyazhagan，cs.PF） · 2026-08-26 · 论文PDF</p>
+
+<p>Traditional Java object models introduce significant memory overhead due to object headers and internal padding, often leading to performance bottlenecks in data-intensive distributed systems.</p>
+<blockquote><p>Traditional Java object models introduce significant memory overhead due to object headers and internal padding, often leading to performance bottlenecks in data-intensive distributed systems. This paper presents a novel framework that utilizes the Project Panama Vector API to perform predicate evaluation directly over bit-sliced, compressed data streams. By transposing standard row-oriented data into parallel bit-planes, we demonstrate a mechanism to evaluate complex filters using SIMD (Single Instruction, Multiple Data) instructions without requiring prior decompression. The framework supports integers, longs (timestamps), doubles (via IEEE 754 order-preserving transformation), and strings (via dictionary encoding). Our benchmarks indicate a reduction in memory footprint by up to 8x while maintaining or exceeding the throughput of uncompressed standard Java collections. End-to-end evaluation on TPCDS-modeled data at 50M rows demonstrates 2.4-10.8x speedup over scalar scans across five representative filter-heavy query patterns, with extended type benchmarks on TPCDS columns showing 1.5-43x speedups for timestamps, decimals, and dictionary-encoded strings.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2608.26368v1">阅读原文 ↗</a></p>
+</body>
+</html>

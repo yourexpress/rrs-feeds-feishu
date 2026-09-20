@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portability of Fortran's 'do concurrent' on GPUs II</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Portability of Fortran's 'do concurrent' on GPUs II</h1>
+<p class="meta-line">arXiv（Ronald M. Caplan 等，cs.PL） · 2026-08-20 · 论文PDF</p>
+
+<p>There continues to be growing interest in using standard language constructs for parallel and accelerated HPC computing, avoiding the need for (sometimes vendor-specific) external APIs.</p>
+<blockquote><p>There continues to be growing interest in using standard language constructs for parallel and accelerated HPC computing, avoiding the need for (sometimes vendor-specific) external APIs. For Fortran applications, language features such as 'do concurrent' loops open the door for compilers to implement multi-threaded, GPU-accelerated, and even distributed multi-node code with only the standard language. Here, we explore the current status of using 'do concurrent' for GPU-accelerated Fortran applications across three major GPU vendors (NVIDIA, AMD, and Intel). Using a production application, we test their current capabilities, showing where the standard language alone can be used, and where augmenting the code with a directive-based API (e.g., OpenMP) is still desirable or required. Multi-GPU tests are performed with GPU-aware MPI libraries. We find that the three GPU vendors can now GPU-accelerate pure Fortran (zero directives), but that manual data movement directives can help with performance and compatibility. The results show that there is rapid advancement towards making GPU-accelerated scientific HPC code performance portable using the Fortran standard language.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2608.20586v1">阅读原文 ↗</a></p>
+</body>
+</html>

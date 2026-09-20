@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accelerating Data Preprocessing for Efficient Vision Model Inference on Jetson Edge Device</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Accelerating Data Preprocessing for Efficient Vision Model Inference on Jetson Edge Device</h1>
+<p class="meta-line">arXiv（Tian Chen 等，cs.PF） · 2026-08-27 · 论文PDF</p>
+
+<p>Data preprocessing is a crucial part of deep learning workflows on edge devices.</p>
+<blockquote><p>Data preprocessing is a crucial part of deep learning workflows on edge devices. However, decoding data saved in JPEG format is very compute-intensive and occupies a major portion of the preprocessing pipeline. Therefore, increasing the decoding speed is vital for improving overall throughput, especially for inputs with large image sizes, which are often subject to preprocessing bottlenecks. On the other hand, edge devices are equipped with specialized hardware units to accelerate media processing and image decoding. For instance, the NVIDIA Jetson platform possesses a dedicated NVJPEG unit. These units can be used to enhance the performance of the preprocessing pipeline. This paper introduces the utilization of such specific hardware acceleration units for offloading decoding tasks. By combining this with a multi-instance approach, it allows for the parallelization of all compute resources including CPU, NVJPEG, GPU, and DLA in Jetson devices. In this work, we compare various potential pipeline designs. On ResNet18, ResNet50, and ResNet152, three models with different sizes, we evaluate the impact of batch sizes and image sizes, as well as the characteristics of GPU/DLA inference.…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2608.27655v1">阅读原文 ↗</a></p>
+</body>
+</html>

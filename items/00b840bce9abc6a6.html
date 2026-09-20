@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MAGMA: Mixture-Model Adaptive Gaussian Model Acceleration</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MAGMA: Mixture-Model Adaptive Gaussian Model Acceleration</h1>
+<p class="meta-line">arXiv（Peter Forcha 等，cs.AR） · 2026-08-18 · 论文PDF</p>
+
+<p>Conventional FPGA-based Gaussian Mixture Model (GMM) accelerators use offline-trained, fixed parameters, limiting their ability to adapt to evolving scene statistics in long-lived edge systems.</p>
+<blockquote><p>Conventional FPGA-based Gaussian Mixture Model (GMM) accelerators use offline-trained, fixed parameters, limiting their ability to adapt to evolving scene statistics in long-lived edge systems. We present MAGMA, a fully synthesizable fixed-point FPGA architecture that performs concurrent GMM inference and online Expectation-Maximization (EM) parameter adaptation from a streaming RGB pixel input. MAGMA combines a pipelined inference datapath with a background update engine using hardware-friendly transcendental approximations---a range-reduced Chebyshev exponential, a CLZ-based logarithm, and a shift-and-subtract divider---alongside guards against variance collapse and cluster death that stabilize online fixed-point EM. Implemented on an AMD Spartan-7 XC7S50 with $K=4$ clusters, MAGMA runs at 74.49~MHz using 7,779 LUTs, 91 DSPs, and no block RAM, consuming 274~mW. It achieves an $11.8\times$ inference speedup and an $81\times$ M-step speedup over software, while spatial subsampling reduces per-update pixel volume by $40\times$ with minimal impact on EM convergence. Under a synthetic non-stationary scene, MAGMA's online adaptation improves mean pixel accuracy over a static baseline (…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2608.18366v1">阅读原文 ↗</a></p>
+</body>
+</html>

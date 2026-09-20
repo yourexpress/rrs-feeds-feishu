@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EStream: Fast and Memory-Efficient MoE Prefill through Expert Virtualization on Mobile NPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>EStream: Fast and Memory-Efficient MoE Prefill through Expert Virtualization on Mobile NPUs</h1>
+<p class="meta-line">arXiv（Junming Zhang 等，cs.DC） · 2026-09-06 · 论文PDF</p>
+
+<p>Mobile vendors and application developers increasingly deploy LLMs on smartphones for diverse prefill-only services.</p>
+<blockquote><p>Mobile vendors and application developers increasingly deploy LLMs on smartphones for diverse prefill-only services. Yet current systems rely mainly on dense models whose regular computation maps efficiently to mobile NPUs, leaving more capable MoEs underused. MoE prefill does not fit mobile NPUs: NPU graphs are fixed at compile time, yet MoE picks experts at runtime; and one request touches most experts, more than a phone can hold in memory. We present EStream, which resolves both by separating what the NPU must fix from what MoE decides at runtime. A single compiled expert graph serves every expert, with each expert's routed tokens and weight address bound at call time, so dynamic MoE execution runs entirely on the NPU without padding or CPU/GPU fallback. Expert virtualization keeps the expert pool in UFS flash storage and pages it through a fixed-size NPU-addressable arena, group by group, with loading hidden behind computation, so memory is bounded by the arena rather than by the model. It further introduces a hardware-aware configuration algorithm that automatically configures the UFS--NPU pipeline and maximizes loading--computation overlap. Across 18 comparative settings cove…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.06551v1">阅读原文 ↗</a></p>
+</body>
+</html>

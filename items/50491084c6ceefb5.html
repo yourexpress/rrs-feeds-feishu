@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALIBI: Adversarial Legitimacy Injection in Binary Input against LLM Malware Analyzers</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ALIBI: Adversarial Legitimacy Injection in Binary Input against LLM Malware Analyzers</h1>
+<p class="meta-line">arXiv（Hyeongjun Choi 等，cs.CR） · 2026-09-17 · 论文PDF</p>
+
+<p>Large language models are being integrated into malware triage workflows as reasoning components that summarize static evidence and produce analyst-facing verdicts.</p>
+<blockquote><p>Large language models are being integrated into malware triage workflows as reasoning components that summarize static evidence and produce analyst-facing verdicts. This paper shows that the same reasoning capability introduces a new attack surface. We present ALIBI, a semantic cover story attack against frontier LLM-based malware analyzers. ALIBI adds a small, non-executed read-only section to a compiled binary, containing a coherent but false security product narrative, without altering imports or executable behavior. Instead of issuing direct instructions to the model, it reframes suspicious evidence as expected behavior of a benign endpoint security tool. On a frozen PE set of 50 malicious samples, the payload flips 30 of the 35 baseline-malicious samples to benign on Gemini 2.5 Pro, while GPT-5.5 Pro and Claude Opus 4.7 produce substantial severity downgrades with significant confidence reductions even when verdict labels are preserved. The attack transfers to ELF binaries, where Gemini flips 16 of 40. A verification-guided defense prompt roughly halves the benign verdicts, but 42.9 percent of malicious samples still reach benign. LLM malware analyzers therefore require proven…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.19722v1">阅读原文 ↗</a></p>
+</body>
+</html>

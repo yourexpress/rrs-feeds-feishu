@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GPU-Accelerated Hypergraph Partitioning and Placement to Map SNNs on Neuromorphic Hardware</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>GPU-Accelerated Hypergraph Partitioning and Placement to Map SNNs on Neuromorphic Hardware</h1>
+<p class="meta-line">arXiv（Marco Ronzani 等，cs.DC） · 2026-09-07 · 论文PDF</p>
+
+<p>SNNs running on neuromorphic hardware use spikes to achieve sparse and energy-efficient communication over a mesh of cores.</p>
+<blockquote><p>SNNs running on neuromorphic hardware use spikes to achieve sparse and energy-efficient communication over a mesh of cores. In turn, system performance heavily depends on the assignment of neurons to cores: the mapping. Since hardware features inter-core multicast and intra-core replication of spikes, we model SNNs as hypergraphs to exploit both opportunities for reducing communication traffic. Mapping thus comprises two NP-hard problems: hypergraph partitioning and placement on the lattice of cores. High-quality solutions to both are critical, yet increasingly difficult as networks scale to millions of neurons. Therefore, we propose a GPU-accelerated pipeline for SNN mapping: a multi-level partitioning scheme is devised around hardware constraints, while placement is initialized through recursive bisection, followed by refinement pulling together strongly connected cores through repeated swaps. Model-based experiments show upwards of 16% lower latency and 42% lower energy for spike movements over existing sequential tools, while our parallel mapper is on average 18-280x faster.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.07577v1">阅读原文 ↗</a></p>
+</body>
+</html>

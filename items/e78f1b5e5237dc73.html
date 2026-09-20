@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sharing a Fabric with Collective Communication: Two Storage Penalties in Deep Learning Training</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Sharing a Fabric with Collective Communication: Two Storage Penalties in Deep Learning Training</h1>
+<p class="meta-line">arXiv（Chen Wang 等，cs.DC） · 2026-09-06 · 论文PDF</p>
+
+<p>Distributed DL training on HPC systems often shares one network fabric between NCCL/RCCL collective communication and parallel-filesystem I/O.</p>
+<blockquote><p>Distributed DL training on HPC systems often shares one network fabric between NCCL/RCCL collective communication and parallel-filesystem I/O. Using a real GNN training workload on a Slingshot-11 system, we show that this sharing imposes two distinct costs. The primary cost is heavy-tailed DataLoader stalls: the typical DataLoader wait is just 15 ms at steady state, yet spikes to multiple seconds in 28% of Lustre iterations and 12% of VAST iterations. The secondary cost is traffic-class contention on collective communication: Lustre I/O stalls the all-reduce by up to 145$\times$ in an isolated benchmark. The two costs arise from different mechanisms. I/O stall latency affects any storage path that traverses the shared fabric, whereas all-reduce network contention occurs only when storage and collective communication share the same traffic class. Their common root cause is that storage I/O traverses the shared fabric. This work shows that node-local NVMe staging via DYAD (Our code is publicly available at https://github.com/flux-framework/dyad) eliminates both effects by keeping storage I/O off that path. Across a full training epoch, DYAD achieves a 7.4 times speedup over direct Lu…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.06506v1">阅读原文 ↗</a></p>
+</body>
+</html>

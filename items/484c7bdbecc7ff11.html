@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LLVM Translation Validation Automated with Large Language Models and Lean</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LLVM Translation Validation Automated with Large Language Models and Lean</h1>
+<p class="meta-line">arXiv（Chunhao Liao 等，cs.PL） · 2026-09-17 · 论文PDF</p>
+
+<p>LLVM is the cornerstone of modern compilers, but its subtle intermediate representation (IR) semantics make transformations error-prone and necessitate formal verification.</p>
+<blockquote><p>LLVM is the cornerstone of modern compilers, but its subtle intermediate representation (IR) semantics make transformations error-prone and necessitate formal verification. Alive2, a state-of-the-art translation validator based on satisfiability modulo theories, has achieved substantial success in automating the validation of LLVM transformations. However, it still faces scalability limitations, does not support symbolic bitwidths, and offers only bounded guarantees for loops. In contrast, interactive theorem provers such as Lean can address these cases but require substantial proof engineering. In this paper, we present Trivet, a framework combining large language models (LLMs) and Lean for automated translation validation of LLVM transformations. Trivet generates structured proof scaffolds based on source and target functions, automatically discharges obligations amenable to deterministic reasoning, and delegates transformationspecific obligations to LLMs. It produces refinement proofs or counterexample-based refutations, with every successful verdict checked by the Lean kernel. On 148 LLVM transformations, Trivet verifies or refutes 147, leaving one invalid case unresolved. Succ…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.19583v1">阅读原文 ↗</a></p>
+</body>
+</html>

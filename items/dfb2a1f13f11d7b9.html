@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Integrating a Python Dynamical core into ICON</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Integrating a Python Dynamical core into ICON</h1>
+<p class="meta-line">arXiv（Mauro Bianco 等，cs.DC） · 2026-08-21 · 论文PDF</p>
+
+<p>The transition of Earth-system models to exascale is often hindered by rigid, monolithic Fortran codebases and maintenance-heavy compiler directives.</p>
+<blockquote><p>The transition of Earth-system models to exascale is often hindered by rigid, monolithic Fortran codebases and maintenance-heavy compiler directives. While high-level DSLs offer a solution, they frequently fail due to cumbersome integration. We present the integration of a Python-based ICON dynamical core into the original Fortran simulation code. Leveraging the GT4Py DSL and the Data-Centric (DaCe) optimization framework, we demonstrate that high-level Python can be seamlessly integrated into legacy infrastructure without performance loss. Our results challenge the assumption that Python orchestration introduces prohibitive HPC overhead. In production-grade global simulations, our Python dynamical core achieves a 20--30\% performance improvement over the highly-optimized Fortran+OpenACC implementation, with a 10\% improvement on the total time for a coupled setup. Driven by advanced data-flow optimizations and automated kernel fusion, this approach replaces hardware-entangled directives by generating optimized device code from a single, portable Python source. This work proves that Python can provide a sustainable, efficient, and hardware-agnostic future for global climate modelin…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2608.21150v1">阅读原文 ↗</a></p>
+</body>
+</html>

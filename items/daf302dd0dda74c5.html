@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enforcement of In-Kernel Stateful Security Policies via eBPF</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Enforcement of In-Kernel Stateful Security Policies via eBPF</h1>
+<p class="meta-line">arXiv（Letterio Galletta，cs.CR） · 2026-09-12 · 论文PDF</p>
+
+<p>Many attacks against workloads running on multi-tenant systems are multi-step and history-dependent: sequences of innocuous operations whose malicious nature emerges only over an execution trace.</p>
+<blockquote><p>Many attacks against workloads running on multi-tenant systems are multi-step and history-dependent: sequences of innocuous operations whose malicious nature emerges only over an execution trace. Defending against them requires security policies that are stateful, are enforced within the kernel, and have a precise semantics. Currently deployed proposals fail on at least one count: kernel's built-in syscall filtering and classical MAC frameworks are stateless, while current eBPF-based tools express their policies through ad hoc YAML rules that cannot capture temporal relations among events, and whose semantics is defined only by the implementation. We present BPFence, an in-kernel runtime-verification framework that satisfies the properties above. BPFence provides a policy language with a formal semantics that can express temporal relations among events. It also provides a type system that statically distinguishes events the kernel can control from those it can only observe. Every well-typed policy is compiled into a finite-state monitor proved correct with respect to its semantics, and then into eBPF programs that run inside the kernel. We evaluate BPFence on seven case studies dra…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.13930v1">阅读原文 ↗</a></p>
+</body>
+</html>

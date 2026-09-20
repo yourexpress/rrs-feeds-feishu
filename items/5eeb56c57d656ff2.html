@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analytical Resource Management for Fine-grained MoE Computation-Communication Overlap</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Analytical Resource Management for Fine-grained MoE Computation-Communication Overlap</h1>
+<p class="meta-line">arXiv（Hongyu Liu 等，cs.DC） · 2026-09-07 · 论文PDF</p>
+
+<p>Fine-grained computation--communication overlap in distributed Mixture-of-Experts (MoE) inference allows communication to begin as partial compute results become ready.</p>
+<blockquote><p>Fine-grained computation--communication overlap in distributed Mixture-of-Experts (MoE) inference allows communication to begin as partial compute results become ready. However, cooperative thread arrays (CTAs) performing computation and communication contend for finite residency capacity on streaming multiprocessors (SMs). Because a resident CTA generally retains its allocated SM resources until completion, CTAs that cannot be co-resident must wait for resources, resulting in wave-like execution. A fixed resource partition cannot adapt to changes in input size, routed expert load, and kernel configuration, potentially causing a communication backlog or reducing expert compute parallelism. We present a wave-quantized analytical model and launch-time resource manager for dependency-coupled overlap pipelines. Using routed-tile counts, kernel occupancy, GPU residency constraints, and split-level readiness dependencies, it selects the communication-CTA count and resource partition before each launch without candidate execution, per-workload profiling, or kernel recompilation. We integrate the method into the public COMET A100 implementation in FLUX. We evaluate three MoE models on four…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.07536v1">阅读原文 ↗</a></p>
+</body>
+</html>

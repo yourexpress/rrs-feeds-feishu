@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dense Structural Compression of Transformers via Gauge-Correct Channel Removal</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Dense Structural Compression of Transformers via Gauge-Correct Channel Removal</h1>
+<p class="meta-line">arXiv（Jed A. Duersch 等，cs.LG） · 2026-09-07 · 论文PDF</p>
+
+<p>Inference energy per token drives the cost and carbon footprint of deployed transformers.</p>
+<blockquote><p>Inference energy per token drives the cost and carbon footprint of deployed transformers. It is dominated by dense matrix products that incur fused multiply-accumulate (FMA) operations and memory traffic. To reduce these computations while retaining dense tensors for high GPU throughput, we develop a methodology from first principles to adapt structural complexity during training to maximize inference utility per unit compute. Channel penalties drive entire tensor slices to zero to enable physical removal while preserving density and the network function. The natural approach, penalizing the norm of operator components acting through each channel, is provably destabilized by gauge freedom. We resolve this pathology with GaugeLasso: additive symmetric group-lasso penalties that recover a monotone function of product-norms when the network converges to gauge balance. Our equilibrium analysis enables per-channel calibration to correctly suppress slices that under-perform in inference utility per unit compute. Under adaptive pressure, the network reorganizes into depth-dependent structural profiles that can be far smaller than the architecture required to learn the task. On polynomial …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.07264v1">阅读原文 ↗</a></p>
+</body>
+</html>

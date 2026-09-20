@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stencil Computation at the Intersection of AI and HPC</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Stencil Computation at the Intersection of AI and HPC</h1>
+<p class="meta-line">arXiv（Timothee Ewart 等，cs.DC） · 2026-09-09 · 论文PDF</p>
+
+<p>Tensor compilers such as TinyTC and OpenAI Triton were originally developed for AI workloads, but the same tiling and memory abstractions can be applied to implement efficient high-order stencils for scientific and indus…</p>
+<blockquote><p>Tensor compilers such as TinyTC and OpenAI Triton were originally developed for AI workloads, but the same tiling and memory abstractions can be applied to implement efficient high-order stencils for scientific and industrial applications. We demonstrate this for an 8th-order, 25-point acoustic stencil with boundary conditions over an a demanding-sized grid, targeting GPGPUs, where we compare the hardware-specialized TinyTC implementation with a portable PyTorch/Triton implementation. The target platforms for evaluation include Intel B70, B580, GPU MAX 1550, NVIDIA A100/RTX6000 Blackwell/H100, and AMD MI325x. For instance, on Battlemage B580 TinyTC reaches 15.6 Gpts/s versus 13.5 Gpts/s for PT/Triton under random initialization, while zero-initialized runs reach up to 35.8 Gpts/s due to hardware memory compression. Using roofline and memory-hierarchy profiling, we show that -as expected- performance is predominantly bandwidth-limited and that compiler-managed L1/LSC caching can effectively replace programmer-managed shared-memory staging for this stencil class. Overall, the results position TinyTC as the performance-oriented path on Intel hardware and PyTorch/Triton as a strong por…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.10368v1">阅读原文 ↗</a></p>
+</body>
+</html>

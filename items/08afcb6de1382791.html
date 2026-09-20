@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>An Empirical Analysis of CodeQL False Positives and Query Refinements for Java Vulnerabilities</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>An Empirical Analysis of CodeQL False Positives and Query Refinements for Java Vulnerabilities</h1>
+<p class="meta-line">arXiv（Amirali Sajadi 等，cs.SE） · 2026-09-03 · 论文PDF</p>
+
+<p>Static application security testing (SAST) tools help developers find vulnerabilities before deployment, but false positives create substantial triage effort.</p>
+<blockquote><p>Static application security testing (SAST) tools help developers find vulnerabilities before deployment, but false positives create substantial triage effort. We study whether CodeQL false positives in Java security analysis form recurring, explainable patterns that can be reduced by refining the analysis. We run CodeQL's Java security query suite on 167 CVE instances from 110 projects, focusing on the ten queries with the highest false positive rates. We manually review 500 sampled false positive paths and locations and construct a source-level taxonomy. The five categories are Missed Path Constraint or Sanitization (36.6%), Benign Execution Context (29.4%), Missing Trust Boundary Modeling (27.6%), Imprecise Concurrency Modeling (5%), and Imprecise Sink Modeling (1.4%). Guided by these findings, we implement CodeQL refinements that detect and filter recurring false positive patterns at the query level. The refinements remove 81.8% of reviewed false positives. Across the full selected-query dataset, they remove 15.8% of reported paths and locations while retaining 7 of 8 true positives. This shows that many false positives can be reduced in the analysis, although fixed refinements …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.04535v2">阅读原文 ↗</a></p>
+</body>
+</html>

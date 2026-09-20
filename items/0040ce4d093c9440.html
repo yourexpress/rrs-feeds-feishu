@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lantern: Finding Committable Transactions via Back-Propagation on DAGs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Lantern: Finding Committable Transactions via Back-Propagation on DAGs</h1>
+<p class="meta-line">arXiv（Denglong Li 等，cs.DC） · 2026-09-03 · 论文PDF</p>
+
+<p>Existing concurrency control protocols either introduce nondeterminism, resulting in a serial execution-replay dependency between primary and replica nodes, or rely on impractical prior knowledge of transaction read-writ…</p>
+<blockquote><p>Existing concurrency control protocols either introduce nondeterminism, resulting in a serial execution-replay dependency between primary and replica nodes, or rely on impractical prior knowledge of transaction read-write sets. In this paper, we present Lantern, a deterministic concurrency control protocol tailored for high-performance transaction processing systems operating without prior knowledge. The key insight of Lantern is that all zero-out-degree transaction vertices in the local dependency graph can be safely committed in ascending order using an overwrite-permissive strategy. We further introduce a novel Back-Propagation mechanism that iteratively propagates dependency states from sink to source vertices to identify additional committable transactions. We also propose Conflict-Free Batch Selection (CFBS) for read-modify-write intensive scenarios. We integrate Lantern into the open-source blockchain platform ChainMaker. Extensive evaluations on YCSB and SmallBank benchmarks demonstrate that Lantern achieves up to a 4.2x throughput speedup over Aria and improves the throughput of ChainMaker's execution layer by at least 2.2x.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.03315v1">阅读原文 ↗</a></p>
+</body>
+</html>

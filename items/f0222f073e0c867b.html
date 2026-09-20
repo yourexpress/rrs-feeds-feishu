@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mKernel: Fast Multi-GPU, Multi-Node Fused Kernels</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>mKernel: Fast Multi-GPU, Multi-Node Fused Kernels</h1>
+<p class="meta-line">arXiv（Ziming Mao 等，cs.DC） · 2026-09-11 · 论文PDF</p>
+
+<p>Communication has become a bottleneck in distributed training and inference of large models.</p>
+<blockquote><p>Communication has become a bottleneck in distributed training and inference of large models. Overlapping communication with computation at the granularity of kernels, on separate streams, reduces only part of this communication cost. Fused kernels often have better performance by transmitting each output tile as soon as it is produced, but existing fused kernels are largely confined to a single NVLink domain. We present mKernel, a library of multi-GPU, multi-node fused kernels that overlap computation, intra-node NVLink communication, and inter-node RDMA at tile granularity. mKernel partitions the streaming multiprocessors (SMs) of a persistent kernel into compute and communication roles, and an on-GPU controller tunes the SM partition adaptively at run time, since the best SM partition varies with the kernel and the input shape. It structures data movement hierarchically so that data traversing the inter-node network is minimized. Finally, it drives the network from the GPU through a lightweight command queue and host proxy implemented directly on RDMA verbs, which allows the same kernels to run on any network backend (e.g. InfiniBand and on AWS EFA); we observe, surprisingly, tha…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.13585v1">阅读原文 ↗</a></p>
+</body>
+</html>

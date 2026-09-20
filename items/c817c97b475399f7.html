@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jetson-ORB-SLAM3: Accuracy-Preserving GPU Implementation for Edge Computing Devices</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Jetson-ORB-SLAM3: Accuracy-Preserving GPU Implementation for Edge Computing Devices</h1>
+<p class="meta-line">arXiv（Rajat Roy 等，cs.RO） · 2026-08-18 · 论文PDF</p>
+
+<p>Visual-inertial SLAM on low-power edge platforms is constrained by the cost of dense feature extraction and loop closure.</p>
+<blockquote><p>Visual-inertial SLAM on low-power edge platforms is constrained by the cost of dense feature extraction and loop closure. Prior GPU ports of ORB-SLAM trade accuracy for speed by approximating the ORB detector, altering the feature set and therefore the estimated trajectory. We present an accuracy-preserving GPU implementation of ORB-SLAM3 for the NVIDIA Jetson Orin Nano, whose GPU ORB front end reproduces the reference CPU detector algorithmically to 94.7% exact keypoint agreement and 99.9% descriptor bit agreement. This work also makes CNN-based loop closure edge-viable through native TensorRT. The visual front end (feature extraction) is offloaded to the GPU while the mapping and optimization back end is kept on the CPU, matching each computation to the hardware it suits. The accuracy is verified by comparing four configurations: the GPU pipeline and the unmodified CPU reference, each run on both the Jetson Orin Nano and a desktop. On EuRoC dataset, all four agree to within 0.10cm in mean absolute trajectory error (SE(3)), so neither the GPU port nor the change of hardware shifts the estimated trajectory. The GPU-versus-CPU comparison is reproducible on TUM-VI and KITTI datasets,…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2608.17874v1">阅读原文 ↗</a></p>
+</body>
+</html>

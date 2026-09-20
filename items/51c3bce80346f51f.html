@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FastPair: GPU-Optimized String Decoding</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>FastPair: GPU-Optimized String Decoding</h1>
+<p class="meta-line">arXiv（Joseph Isaacs 等，cs.DB） · 2026-09-14 · 论文PDF</p>
+
+<p>Modern data systems compress data at rest and decompress it only when needed to preserve interconnect bandwidth.</p>
+<blockquote><p>Modern data systems compress data at rest and decompress it only when needed to preserve interconnect bandwidth. This design is often inefficient on GPU-based compute platforms because many conventional compression techniques exhibit serial data dependencies that limit GPU parallelism, leaving resources idle. Recent NVIDIA GPUs address this decoding deficiency through the Decompression Engine (DE), an on-die, fixed-function decompression accelerator for general-purpose compression formats such as Deflate, LZ4, and Snappy. Recent work has proposed string codecs that replace frequent substrings with fixed-width codes from a small, trained dictionary, making each code's lookup independent. While these lookups can run in parallel, the resulting scattered reads and short output writes still do not align well with GPU hardware, which handles contiguous memory accesses more efficiently. We present FastPair, a GPU decoder that optimizes the existing dictionary decoding process by reorganizing lookups and assembling decoded substrings for contiguous output writes. On a B300, FastPair decodes ten real-world columns 2.4 to 4.2x faster than the DE, reaching up to 1.6 TB/s.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.15034v1">阅读原文 ↗</a></p>
+</body>
+</html>

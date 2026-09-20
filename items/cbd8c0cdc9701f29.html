@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ExaServe: Large-Scale LLM Serving on Exascale HPC Systems</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ExaServe: Large-Scale LLM Serving on Exascale HPC Systems</h1>
+<p class="meta-line">arXiv（Wenyi Wang 等，cs.DC） · 2026-09-09 · 论文PDF</p>
+
+<p>Cloud-native LLM serving frameworks have made deployment routine in data centers, yet deploying them on leadership-class supercomputers remains an engineering challenge requiring scheduler integration, MPI launch, accele…</p>
+<blockquote><p>Cloud-native LLM serving frameworks have made deployment routine in data centers, yet deploying them on leadership-class supercomputers remains an engineering challenge requiring scheduler integration, MPI launch, accelerator selection, node-local weight staging, and platform-specific patches. We present ExaServe, a pip-installable framework that transforms a declarative YAML specification into a reproducible large-scale LLM serving deployment. Using ExaServe, we deploy LLM serving on ALCF Aurora from 1 to 256 nodes (3072 vLLM replicas). Non-streaming inference scales nearly linearly to 256 nodes, reaching 27.1k requests/s (3.8M tokens/s). Token streaming scales differently: a centralized proxy plateaus at about 4.7k requests/s despite the model servers remaining within the service-level objective. We also identify an O(N^2) Ray Serve control-plane bottleneck that increases cluster bring-up to roughly 30 minutes at 256 nodes. ExaServe provides a practical, reproducible deployment path while exposing key barriers to future exascale LLM serving.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.10812v2">阅读原文 ↗</a></p>
+</body>
+</html>

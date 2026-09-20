@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support Local Variables</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Support Local Variables</h1>
+<p class="meta-line">arXiv（Maxwell Bernstein 等，cs.PL） · 2026-09-01 · 论文PDF</p>
+
+<p>Ruby is a dynamically typed and object-oriented programming language.</p>
+<blockquote><p>Ruby is a dynamically typed and object-oriented programming language. Its primary implementation, CRuby, contains a bytecode virtual machine and a mature lazy basic block versioning (LBBV) just-in-time (JIT) compiler called YJIT. In order to both implement more advanced optimizations than YJIT supports and also encourage more outside contributions, we present a new method-based JIT called ZJIT. Like YJIT, ZJIT compiles from bytecode to machine code. Unlike YJIT, ZJIT has multiple global and local optimization passes. ZJIT's high-level intermediate representation is in static single assignment (SSA) form. In order to optimize Ruby's local variables, ZJIT lifts local variables into SSA values. This is a departure from how other Ruby compilers handle locals: other JIT compilers either leave local variables as memory loads and stores or do advanced partial evaluation to recover SSA values from memory. While implementing locals, we (re-)discovered what features make local variables in Ruby especially challenging to compile correctly and efficiently. We demonstrate these features and illustrate how we solved these problems in ZJIT.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.01502v1">阅读原文 ↗</a></p>
+</body>
+</html>

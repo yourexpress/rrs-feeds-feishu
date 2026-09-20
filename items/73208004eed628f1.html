@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MeanField Surrogate Modeling for Scalable Runtime Scheduling of Concurrent Heterogeneous AI Inference on Shared GPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MeanField Surrogate Modeling for Scalable Runtime Scheduling of Concurrent Heterogeneous AI Inference on Shared GPUs</h1>
+<p class="meta-line">arXiv（Youssef Ennouri 等，cs.DC） · 2026-09-02 · 论文PDF</p>
+
+<p>Deploying heterogeneous AI models concurrently on a shared GPU introduces resource contention that complicates runtime scheduling.</p>
+<blockquote><p>Deploying heterogeneous AI models concurrently on a shared GPU introduces resource contention that complicates runtime scheduling. While surrogate models avoid costly online benchmarking, their profiling requirements typically grow combinatorially with the number of co-running models, limiting scalability. We propose a MeanField surrogate that predicts per-model performance from local configuration and aggregate GPU state rather than explicitly modeling all joint interactions. Experiments on concurrent LLM and vision workloads across $N \in \{2,3,4,5,6\}$ show high predictive accuracy ($R^2 \approx 0.96$) with an empirical sample budget that grows approximately linearly in $N$, in contrast to the combinatorial cost of fully joint profiling. Integrated into a genetic algorithm scheduler, the surrogate scales to an $N=5$ problem with 78,732 feasible joint configurations, remaining within 0.10% of the exhaustive search with zero SLA violations across eight dynamic workload scenarios, while complete online GA decisions take 26 ms median, about $5\times$ faster than exhaustive surrogate search.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.02109v1">阅读原文 ↗</a></p>
+</body>
+</html>

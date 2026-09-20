@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Syndrome Decoding for Silent Data Corruption in Quantized Integer GPU Arithmetic</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Syndrome Decoding for Silent Data Corruption in Quantized Integer GPU Arithmetic</h1>
+<p class="meta-line">arXiv（Pranav Napolean 等，cs.DC） · 2026-09-17 · 论文PDF</p>
+
+<p>Quantized neural network inference runs integer matrix multiplications on GPU tensor cores, and the INT32 accumulators inside those cores have neither parity nor ECC.</p>
+<blockquote><p>Quantized neural network inference runs integer matrix multiplications on GPU tensor cores, and the INT32 accumulators inside those cores have neither parity nor ECC. A transient fault in this datapath returns a valid but wrong integer and raises no interrupt. Checksum based Algorithm Based Fault Tolerance (ABFT) can detect such silent data corruptions (SDCs), but its verdict is binary. It cannot identify the corrupted element or its magnitude, and unweighted row and column checksums are blind by construction to errors that cancel on both axes. We present SProbe, a trailing verification kernel that reads the output of an unmodified vendor GEMM. A randomized Freivalds gate with three independent evaluation points in a 61 bit prime field misses a nonzero error with probability at most $2^{-141}$. When the gate fires, per row power sum syndromes over three primes are decoded with the Reed Solomon chain of Berlekamp Massey, Chien search, and Forney, recovering the column and exact magnitude of up to four colliding errors per row. SProbe then repairs the accumulator in place or recomputes the GEMM. On an NVIDIA H100, SProbe detects every injected fault across seven fault classes and fou…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.19743v1">阅读原文 ↗</a></p>
+</body>
+</html>

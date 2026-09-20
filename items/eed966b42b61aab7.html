@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Automated Instruction Encoding Synthesis for Modern GPU ISA Compression</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Automated Instruction Encoding Synthesis for Modern GPU ISA Compression</h1>
+<p class="meta-line">arXiv（Mingyuan Ma 等，cs.AR） · 2026-09-16 · 论文PDF</p>
+
+<p>Modern GPU kernels increasingly stress the instruction supply path, while fixed instruction containers can leave substantial footprint slack.</p>
+<blockquote><p>Modern GPU kernels increasingly stress the instruction supply path, while fixed instruction containers can leave substantial footprint slack. This paper presents an automated encoding-synthesis framework that treats instruction layout as a constrained slot-assignment problem over a validated instruction-form field specification. The formulation separates semantic field identity from physical bit positions and supports tied, pinned, and free placement constraints, making it applicable when recurring decoded fields are not frozen by a public format contract. We instantiate the framework for NVIDIA SASS: raw public encoding text is normalized into a machine-readable specification, a SASS disassembler is validated against nvdisasm on 3.78M instructions, released as an open benchmark, and CP-SAT synthesis is used for fixed-length and variable-length encodings. On 142 Blackwell kernel inputs, variable-length synthesis reduces instruction footprint by 33%, with comparable reductions after re-synthesis on Ampere and Hopper; fixed-length synthesis on the same specification reduces decoder area by 16% against a decoder generated from the NVIDIA-observed 128-bit layout by the same generator a…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.18662v1">阅读原文 ↗</a></p>
+</body>
+</html>

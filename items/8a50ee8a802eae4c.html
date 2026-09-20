@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edge0-35B Benchmarks: What 4-bit Quantization Really Costs You</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Edge0-35B Benchmarks: What 4-bit Quantization Really Costs You</h1>
+<p class="meta-line">MindStudio（博客） · 2026-09-13 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://i.mscdn.ai/o/iZl0kkZU2R9KXyy7/a/3V2ICO3oSq2QZPii/generated-images/2bb5c9b3-1814-4628-b147-2f7ccfcf1405.png?fm=auto&amp;w=1200&amp;h=630&amp;fit=crop" alt="" referrerpolicy="no-referrer">
+<p><strong>研究问题</strong>：35B 参数的 MoE 模型量化到 4-bit 跑在手机级内存里，精度到底损失多少、损失在哪？</p>
+<p><strong>方法</strong>：Edge0-35B-A3B（基于 Qwen3.5-MoE，256 专家、每 token 激活 4 个）+ LoRA 与预路由 adapter 跑在 edge0 推理管线；用 OpenCompass 在相同设置下对比 int4 管线与 fp16 原模型五个基准。靠 Recover-LoRA（冻结 int4 底座、以 fp16 模型为教师蒸馏 LoRA）把退化压到 3.9 分，远好于朴素 4-bit 量化；专家权重从 SSD 流式加载而非全量进内存。</p>
+<p><strong>关键数字</strong>：五基准均值 79.2 vs fp16 的 83.2（差 3.9）；AIME 2026 掉 6.1 分最多、GPQA-Diamond 仅掉 1.5——量化对长推理链的伤害远大于事实记忆；Mac mini M4 Pro 上 15 tok/s、峰值活跃内存 2.9 GiB。agentic 能力当前明确偏弱（预览版）。</p>
+<p><strong>为什么值得看</strong>：把"端侧大模型量化代价"讲透了的一篇——数字翔实、结论可迁移，Recover-LoRA 是实用的精度回补手段。</p>
+<p>原文：<a href="https://www.mindstudio.ai/blog/edge0-35b-quantization-quality-loss">Edge0-35B Benchmarks: What 4-bit Quantization Really Costs You</a></p>
+<p><a class="origin" href="https://www.mindstudio.ai/blog/edge0-35b-quantization-quality-loss">阅读原文 ↗</a></p>
+</body>
+</html>

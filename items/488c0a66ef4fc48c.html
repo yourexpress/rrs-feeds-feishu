@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rust's Type Checker Implementation Is Unsound: An Empirical Study on Soundness Bugs in rustc</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Rust's Type Checker Implementation Is Unsound: An Empirical Study on Soundness Bugs in rustc</h1>
+<p class="meta-line">arXiv（Yusung Sim 等，cs.SE） · 2026-08-28 · 论文PDF</p>
+
+<p>Rust is claimed to be a type-sound language capable of preventing various undesirable behaviors, including memory bugs.</p>
+<blockquote><p>Rust is claimed to be a type-sound language capable of preventing various undesirable behaviors, including memory bugs. However, rustc, the official Rust compiler, is not immune to defects; it contains soundness bugs, where the compiler accepts programs that should be rejected during type checking. In this work, we present an empirical study of 30 issues that report potential soundness bugs in rustc, collected from the GitHub issue tracker between January 1, 2022 and September 1, 2025. We analyze each issue in depth, focusing on its affected feature, symptom (how the feature is mishandled), consequence (the resulting undesirable behavior), triggering features, community consensus regarding whether it is a bug, and lifecycle, including introduction, discovery, and fix. Furthermore, we investigate existing artifacts, including implementations such as AddressSanitizer, Miri, Chalk, and a-mir-formality, alongside documentation such as the Rust Reference, the FLS, and Rust RFCs to assess their potential as oracles for testing the type soundness of rustc. Our key findings indicate that: (1) Certain soundness bugs, typically triggered by implied bounds or trait objects, compromise memory …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2608.28713v1">阅读原文 ↗</a></p>
+</body>
+</html>

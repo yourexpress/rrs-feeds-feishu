@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inoculation Midtraining with Learned Neologisms</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Inoculation Midtraining with Learned Neologisms</h1>
+<p class="meta-line">OpenAI · 2026-09-16 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：后训练会同时学进好与坏的性质——能否在更早的 midtraining 阶段就塑造哪些性质会泛化？</p>
+<p><strong>方法</strong>：Inoculation Midtraining：在 midtraining 教基模型"不安全行为属于 <quarantine_token> 新词指定的上下文"，之后在该上下文内用不安全数据做后训练；评测时把该新词从系统提示中排除（SFT 与 RL 两种后训练均测）。</p>
+<p><strong>关键数字</strong>：见原文实验部分。</p>
+<p><strong>为什么值得看</strong>：把安全性干预从后训练提前到 midtraining 的"接种"思路，训练阶段分层塑造性质的代表性工作。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.15886">arXiv:2609.15886</a>（OpenAI）</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.15886">阅读原文 ↗</a></p>
+</body>
+</html>

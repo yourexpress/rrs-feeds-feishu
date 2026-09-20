@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hydra: Phase-Aware Workload Characterization of LLM Inference across Edge SoC Generations, Backends, and Quantization Levels</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Hydra: Phase-Aware Workload Characterization of LLM Inference across Edge SoC Generations, Backends, and Quantization Levels</h1>
+<p class="meta-line">arXiv（Amir Taherin 等，cs.AR） · 2026-08-25 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：端侧 LLM 部署性能不只由模型大小和精度决定——推理后端、硬件平台、内存流量、功耗管理都影响延迟与效率，但缺少统一刻画框架。</p>
+<p><strong>方法</strong>：Hydra：用统一的 per-prompt 计时 schema 同时插桩 HuggingFace Transformers 与 llama.cpp，融合硬件遥测，对 prefill/decode 两阶段做多维刻画（性能、资源利用率、能效）。</p>
+<p><strong>关键数字</strong>：覆盖三代边缘 SoC（AGX Xavier → AGX Orin → AGX Thor）与 13 种以上后端/量化组合（详见原文）。</p>
+<p><strong>为什么值得看</strong>：给边缘 SoC 选型与后端选择提供同 schema 的横评框架，端侧工程师可直接复用其方法。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.25053v1">arXiv:2608.25053</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2608.25053v1">阅读原文 ↗</a></p>
+</body>
+</html>

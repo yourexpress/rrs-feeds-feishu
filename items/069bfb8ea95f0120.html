@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MeshReduce-U: Compiler-Guided Communication Reduction for Irregular Neural Reductions on Mesh NoCs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MeshReduce-U: Compiler-Guided Communication Reduction for Irregular Neural Reductions on Mesh NoCs</h1>
+<p class="meta-line">arXiv（Amirreza Khorasanian，cs.AR） · 2026-08-26 · 论文PDF</p>
+
+<p>Many irregular neural workloads induce skewed many-to-one reductions with repeated neighborhoods and nonlocal communication.</p>
+<blockquote><p>Many irregular neural workloads induce skewed many-to-one reductions with repeated neighborhoods and nonlocal communication. Conventional NoC mappers optimize placement and routes for a fixed communication graph, even though associative reductions expose legal opportunities to eliminate traffic before routing. We present MeshReduce-U, a compiler-guided communication-reduction and routing framework for mesh-NoC-based spatial accelerators. MeshReduce-U coalesces colocated sources, forms local aggregation islands, blocks channels with compatible fan-in structure, selects capacity-feasible sinks, and routes the remaining fixed-width carriers using fused usage-aware costs. A deterministic route-replay model reports schedule-derived communication latency, total link usage (TLU), and fused link usage (FusedTLU) separately. Across a 20-workload lowerable neural-network zoo, MeshReduce-U reduces mean latency, TLU, and FusedTLU by 40.3%, 56.0%, and 48.7%, respectively, relative to an ABC-style source-aggregation baseline, improving all three metrics on every workload. Across 40 synthetic irregular reductions, it reduces mean latency and TLU by 12.3% and 19.7%. A new 30-instance pass-by-pass …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2608.26220v1">阅读原文 ↗</a></p>
+</body>
+</html>

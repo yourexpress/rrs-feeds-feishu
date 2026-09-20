@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlexiSLM: A Spoken Language Model with Dynamic and Controllable Frame Rates</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>FlexiSLM: A Spoken Language Model with Dynamic and Controllable Frame Rates</h1>
+<p class="meta-line">ByteDance · 2026-09-16 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：语音语言模型（SLM）普遍用固定帧率（25 或 12.5 Hz），忽视语音信息密度的时变性，推理期无法做质量-速度权衡。</p>
+<p><strong>方法</strong>：FlexiSLM：首个动态、可控帧率的 SLM——用 FlexiCodec 动态语音 token 作输出表示，集成进多任务 speech-to-speech SLM，加输入侧帧压缩与直接帧率条件化，实现推理期精准帧率控制。</p>
+<p><strong>关键数字</strong>：动态帧率可随信息密度自适应（平均帧率可大幅低于固定帧率，详见原文）。</p>
+<p><strong>为什么值得看</strong>：语音方向的质速可控行表示——对语音前端/唤醒（KWS）与端侧语音模型的帧预算控制思路直接相关。</p>
+<p>原文：<a href="https://arxiv.org/abs/2606.31247">arXiv:2606.31247</a>（ByteDance）</p>
+<p><a class="origin" href="https://arxiv.org/abs/2606.31247">阅读原文 ↗</a></p>
+</body>
+</html>

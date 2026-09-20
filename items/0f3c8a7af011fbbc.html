@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ozaki 2.5: Engineering the Deconstruction Path of fp64-Emulated Dense Matrix Multiplication on FP8 Tensor Cores</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Ozaki 2.5: Engineering the Deconstruction Path of fp64-Emulated Dense Matrix Multiplication on FP8 Tensor Cores</h1>
+<p class="meta-line">arXiv（Satoshi Matsuoka，cs.MS） · 2026-09-08 · 论文PDF</p>
+
+<p>FP8 Ozaki II emulates FP64 matrix multiplication by tensor-core products over a CRT residue system; converting the operands into residue planes (the deconstruction term in the Tensor-Memory Equilibrium model of the compa…</p>
+<blockquote><p>FP8 Ozaki II emulates FP64 matrix multiplication by tensor-core products over a CRT residue system; converting the operands into residue planes (the deconstruction term in the Tensor-Memory Equilibrium model of the companion paper "FP8 is All You Need, Part 1") costs integer-pipe and memory resources before tensor instructions issue. This paper engineers that path; every result is a model projection pending measurement. First, a deconstruction-aware model: on the NVIDIA Rubin GPU the emulated rate reaches the arithmetic roof $P_{\rm FP8}/(3r+1)$ ($\approx 473$ TFLOPS at $r=12$) only within one thread-block cluster; larger outputs are re-split on the fly and held at a floor of $\approx 235$ TFLOPS (half the roof, a ratio of three design integers, not a fit), while real solvers' tall/skinny shapes stay near the crossover, $1.6$-$1.9\times$ over simple deconstruction today. Second, the method: convert-once residue workspaces, an exact two-limb constant-reduction GEMM on integer tensor pipes (or pure-SIMT dp4a), and conversion pipelined behind the MMAs, moving the crossover from $\approx 1211$ to $\approx 480$-$730$. Third, modulus co-design: all-byte and hybrid sets, two supply bounds…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.09095v1">阅读原文 ↗</a></p>
+</body>
+</html>

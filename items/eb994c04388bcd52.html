@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catching NaN at the MLIR Pass Boundary</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Catching NaN at the MLIR Pass Boundary</h1>
+<p class="meta-line">The Cloudlet 技术博客 · 2026-08-26 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://thecloudlet.github.io/favicon.svg" alt="" referrerpolicy="no-referrer">
+<p><strong>研究问题</strong>：MLIR 常量折叠会在编译期产生 NaN（如 0×Inf），运算数与结果类型检查照样通过，产出结构合法但数值无意义的 IR，直到运行期才表现为遥远的精度回归——如何最早拦截？</p>
+<p><strong>方法</strong>：写 NPU 运行时融合 pass 的作者遇到"精度掉点但报告不指明哪个 pass"的回归，反向追踪发现融合算子输出属性在运行时触碰前已含 quiet NaN（折叠 0×Inf 所致）。最短可靠工作流：定位首个产生坏值的 pass 修正其算术，再加操作级本地 verifier 把算子数值契约变成每轮 pass 后的检查。</p>
+<p><strong>关键数字</strong>：IEEE 754 定义 0×Inf=NaN；Inf−Inf、Inf/Inf、0/0、负数开方/对数、宽窄格式溢出同样会产生 NaN；一次坏折叠会沿计算图传播。</p>
+<p><strong>为什么值得看</strong>：编译器/量化部署链路里"精度莫名掉点"的排查范式——在 IR 边界最早拒绝坏值，而不是等运行期追查，端侧模型部署 debug 直接可套用。</p>
+<p>原文：<a href="https://thecloudlet.github.io/technical/compiler/catching-nan-at-the-mlir-pass-boundary/">Catching NaN at the MLIR Pass Boundary</a></p>
+<p><a class="origin" href="https://thecloudlet.github.io/technical/compiler/catching-nan-at-the-mlir-pass-boundary/">阅读原文 ↗</a></p>
+</body>
+</html>

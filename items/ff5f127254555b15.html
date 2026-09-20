@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Input Resolution Matters: Real-Time Object Detection Latency</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Input Resolution Matters: Real-Time Object Detection Latency</h1>
+<p class="meta-line">arXiv（Qingyang Zhang 等，cs.CV） · 2026-09-11 · 论文PDF</p>
+
+<p>We model total latency as the convolution of preprocessing, inference, and postprocessing distributions under a simplifying independence approximation, with selected stage parameters expressed as functions of source-imag…</p>
+<blockquote><p>We model total latency as the convolution of preprocessing, inference, and postprocessing distributions under a simplifying independence approximation, with selected stage parameters expressed as functions of source-image resolution. Under this assumption, the probability density of the total latency is the convolution of the stage-wise densities, and its cumulative distribution function (CDF) provides the distribution of end-to-end detection time. Each stage is modeled by a parametric distribution (e.g., Exponential, Erlang, Normal, Gamma), with parameters expressed as functions of the source-image resolution. Experiments with YOLOv11n on NVIDIA Jetson Orin NX using COCO2017 images across multiple resolutions assess the proposed models against fixed-parameter baselines using Kolmogorov Smirnov, Anderson Darling, and Cramér von Mises statistics. The results indicate that resolution-aware parameterization can improve distributional approximation in the measured setting, particularly for the more flexible Normal and Gamma models, while the quality of fit remains distribution dependent. Our contribution is a theoretically grounded and lightweight formulation for studying resolution-de…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.12920v1">阅读原文 ↗</a></p>
+</body>
+</html>

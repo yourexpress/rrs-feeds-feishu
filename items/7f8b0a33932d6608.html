@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hierarchical Adaptive Model Merging</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Hierarchical Adaptive Model Merging</h1>
+<p class="meta-line">Microsoft · 2026-09-16 · 论文PDF</p>
+
+<p>无需额外训练的模型合并：按层重要性反向比例加权，视觉模型上超越基线最高17.7%</p>
+<blockquote><p>A \emph{linear sketch} is a randomized linear mapping of a vector $v$ to a lower dimensional sketch vector, designed to preserve relevant information about $v$. We consider sketches of vectors $v \in Z^u$ (for $u \in N$), designed for exact recovery of $v$ from its sketch. Concretely, our \emph{Stuffed IBLT} is a linear sketch configured with a capacity $n \in N$ and a multiplicity limit $L \in N$ and will recover $v$ with high probability whenever $||v||_0 \leq n$ and $||v||_\infty \leq L$. The sketch can be maintained efficiently under unrestricted updates to $v$, i.e., $v$ is not subject to any constraints in between decoding requests. This makes the sketch useful for streaming algorithms and for solving the (multi)set reconciliation problem. For any positive constants $c$, $ε$, and for large enough $n$ and $u \geq n^{1+Ω(1)}$, the space usage of a Stuffed IBLT is within a factor $1+ε$ from the information-theoretic optimum while allowing updates in constant time, and decoding in time $O(n)$ with failure probability $n^{-c}$. This improves the space/time/error probability trade-off over all prior constructions with similar functionality, including the Invertible Bloom Lookup Tab…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.17487">阅读原文 ↗</a></p>
+</body>
+</html>

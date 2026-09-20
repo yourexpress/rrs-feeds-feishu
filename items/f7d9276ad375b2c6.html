@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Divide, Consult, and Conquer: Capability Laundering Through Aligned LLMs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Divide, Consult, and Conquer: Capability Laundering Through Aligned LLMs</h1>
+<p class="meta-line">Microsoft · 2026-09-16 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：LLM 安全评测是"一次一个交互"——若弱模型把有害任务拆成多个看似良性的子问题、分别咨询强对齐模型再本地组装呢？</p>
+<p><strong>方法</strong>：提出 capability laundering（能力洗白）攻击：弱未对齐 orchestrator 分解任务 → 对齐强模型逐个咨询 → 本地合并答案；评测 GPT-5.5、Claude Opus 4.8、Grok-4.3 作为顾问，四个本地 orchestrator，任务集 CyBench / BountyBench / 有害 CBRN 请求。</p>
+<p><strong>关键数字</strong>：CyBench 上 Gemma-4-31B 借助咨询恢复 8/14 个候选任务能力（详见原文）。</p>
+<p><strong>为什么值得看</strong>：与越狱不同——没有任何单个回复是有害的，现有单轮护栏完全拦不住；对 agent 时代的 API 安全设计是必读警示。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.15383">arXiv:2609.15383</a>（Microsoft）</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.15383">阅读原文 ↗</a></p>
+</body>
+</html>

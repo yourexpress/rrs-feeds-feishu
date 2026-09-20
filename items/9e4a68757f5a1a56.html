@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What actually runs: a measurement study of language model placement and decode speed on the Apple Neural Engine</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>What actually runs: a measurement study of language model placement and decode speed on the Apple Neural Engine</h1>
+<p class="meta-line">arXiv（Shahir M A，cs.LG） · 2026-08-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：什么决定一个语言模型能否跑上 Apple Neural Engine（ANE）、什么决定它在上面快不快？</p>
+<p><strong>方法</strong>：三组测量：① 扫描 64 形状矩阵的 LLM 原语，固定"算什么"、只变"怎么表达"，记录逐算子设备支持；② 跨规模与精度训练匹配模型，量化 checkpoint 与 fp16 结构字节一致，保证测的是真实训练产物；③ 推理期直读 ANE 内存控制器字节计数器，确认"实际跑了什么"而非"编译器以为在跑什么"。每条头条结论至少两个证据支撑。</p>
+<p><strong>关键数字</strong>：64 形状矩阵；每条结论 ≥2 个证据。</p>
+<p><strong>为什么值得看</strong>：端侧部署实测方法论的标杆——"用硬件计数器验证执行落点"的思路对所有 NPU 部署工作都适用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.22110v1">arXiv:2608.22110</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2608.22110v1">阅读原文 ↗</a></p>
+</body>
+</html>

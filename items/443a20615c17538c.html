@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quality-Constrained Routing over a Fixed Pool of Quantized Mixture-of-Experts Instances</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Quality-Constrained Routing over a Fixed Pool of Quantized Mixture-of-Experts Instances</h1>
+<p class="meta-line">arXiv（Zhenghong Huang 等，cs.LG） · 2026-09-11 · 论文PDF</p>
+
+<p>Quantized Mixture-of-Experts (MoE) services can hold several pre-materialized instances of one base model, but quantization damage varies sharply across requests and bitwidths.</p>
+<blockquote><p>Quantized Mixture-of-Experts (MoE) services can hold several pre-materialized instances of one base model, but quantization damage varies sharply across requests and bitwidths. Because instance materialization and replica counts consume memory and require slow reconfiguration, we treat them as upstream provisioning decisions and study routing within a fixed resident pool. Within this fixed-pool boundary, we route each request to maximize modeled throughput under a class-level expected quality-degradation budget and measured instance capacities. To predict this request-specific risk, we introduce FWP (Fragility-Weighted Perplexity), computed from prompt tokens on a reference-instance prefill and calibrated to candidate-instance degradation. Underlying FWP is an exact two-expert affinity--fragility decomposition and a conditional multi-layer top-$k$ expansion whose bias, interaction, route-change, separability, and higher-order terms remain explicit. Using these calibrated risks, a window-level linear program yields a signed reduced-reward score that is KKT-consistent with the LP optimum under optimal prices and primal-feasible tie allocation. On 88 extended Qwen prompts, complete W2…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.12550v1">阅读原文 ↗</a></p>
+</body>
+</html>

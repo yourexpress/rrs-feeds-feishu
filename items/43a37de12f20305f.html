@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Input Resolution Is Required for Bird Species Identification, and What Is Its Latency Cost on an Edge Device? A Study of 14 Input Resolutions and Six Architectures with On-Device Measurements</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>What Input Resolution Is Required for Bird Species Identification, and What Is Its Latency Cost on an Edge Device? A Study of 14 Input Resolutions and Six Architectures with On-Device Measurements</h1>
+<p class="meta-line">arXiv（Takeshi Nishikawa，cs.CV） · 2026-09-13 · 论文PDF</p>
+
+<p>Bird-strike mitigation at wind farms requires identifying distant birds that span only tens of pixels, so the classifier's input resolution N is a design variable, not a fixed specification.</p>
+<blockquote><p>Bird-strike mitigation at wind farms requires identifying distant birds that span only tens of pixels, so the classifier's input resolution N is a design variable, not a fixed specification. We study it with a factorial design over 14 side lengths N (16 to 224), six architectures, two training and evaluation regimes and 30 random seeds -- 2,520 checkpoints and 5,040 evaluations -- plus latency measured on an NVIDIA Jetson Orin Nano. Four results. (1) The selected N depends on the target: 0.90 is met on validation by ResNet50 at N=112 in an estimated 1.85 ms (0.8980 on test) and 0.95 by DINOv2-L at N=144 in 12.70 ms; changing the model buys more accuracy than raising N (+5.93 versus +2.33 points at N=112). (2) The benefit of lowering N depends on the assumed preprocessing path: N=224 -&gt; 80 saves 13.5% when each individual is decoded from its own file but 46.2% when the detector decodes the 4K frame once; the Pareto set grows from 20 to 23 configurations. (3) Accuracy must be measured on the deployed engine: half precision costs ViT-S/16 alone 4 to 7 points at N&gt;=96 while the CNNs stay within 0.1 points, and with selection held at validation the choice differs at 26 of 176 targets. A…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.14247v1">阅读原文 ↗</a></p>
+</body>
+</html>

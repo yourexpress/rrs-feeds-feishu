@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accurate Models of AMD Matrix Cores</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Accurate Models of AMD Matrix Cores</h1>
+<p class="meta-line">arXiv（Faizan A Khattak 等，cs.AR） · 2026-09-13 · 论文PDF</p>
+
+<p>Matrix multipliers available on recent GPUs do not conform with the IEEE 754 floating point standard.</p>
+<blockquote><p>Matrix multipliers available on recent GPUs do not conform with the IEEE 754 floating point standard. Features of matrix multipliers differ across vendors and architectures of the same vendor, such as accumulator width, rounding behaviour, normalisation points, intermediate underflow and overflow logic, the handling of subnormals, and the treatment of special inputs. As a result, reproducibility of small matrix multiplier results across devices is not possible and cannot be achieved by software control. Implementation details of matrix multipliers are not documented, making it difficult to interpret discrepancies in the computed results. We characterise the numerical behaviour of matrix multipliers across three AMD GPU architectures: CDNA 1, CDNA 2, and CDNA 3, using the MI100, MI210/250, and MI300A/300X GPUs, respectively. We design test vectors to target numerical features for all supported input formats and provide the derivation and the reasoning for why each vector allows to determine a particular numerical feature based on the outputs of the devices. MATLAB-based software models of the matrix multipliers are then developed for each architecture and validated for bit-level rep…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.14845v2">阅读原文 ↗</a></p>
+</body>
+</html>

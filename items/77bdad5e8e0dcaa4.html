@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compressing An 11B VLM To 2.7-bit Weights For Mobile CPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Compressing An 11B VLM To 2.7-bit Weights For Mobile CPUs</h1>
+<p class="meta-line">Semiconductor Engineering · 2026-09-15 · 官方公告 / 每日精选</p>
+<img class="hero" src="https://semiengineering.com/wp-content/uploads/2026/09/Arm_Compressing-VLM-for-mobile-CPUs-fig1.webp?fit=1279%2C894&amp;ssl=1" alt="" referrerpolicy="no-referrer">
+<p><strong>研究问题</strong>：视觉语言模型（VLM）动辄几十 GB 权重，怎么塞进手机有限的内存与带宽预算，同时保住精度、让 Arm CPU 能高效解码？</p>
+<p><strong>方法</strong>：Graphcore 与 Arm 合作的 Llama-Mobile，两个核心：① S3D8——每个字节存 3 个权重（平均 2.7 bit/参数：1 个 5-bit 共享质心索引 + 每权重 1 个符号位，查 32×3 的 INT8 质心表，每输出通道配 bfloat16 scale），是紧凑存储格式而非新算术格式，推理时 Arm Neon SIMD 解码；② 无需原始训练数据的量化感知训练；激活量化到 INT8。</p>
+<p><strong>关键数字</strong>：Llama 3.2 Vision 11B 权重从 21.3 GB 压到 3.7 GB（降幅超 80%）；VQA 平均分 66.1%，原 bfloat16 为 74.4%。</p>
+<p><strong>为什么值得看</strong>：端侧 VLM 极限压缩的代表性工作——2.7-bit 向量量化格式 + 免原数据的 QAT，对嵌入式权重编码方案设计有直接参考价值。</p>
+<p>原文：<a href="https://semiengineering.com/compressing-an-11b-vlm-to-2-7-bit-weights-for-mobile-cpus/">Compressing An 11B VLM To 2.7-bit Weights For Mobile CPUs</a></p>
+<p><a class="origin" href="https://semiengineering.com/compressing-an-11b-vlm-to-2-7-bit-weights-for-mobile-cpus/">阅读原文 ↗</a></p>
+</body>
+</html>

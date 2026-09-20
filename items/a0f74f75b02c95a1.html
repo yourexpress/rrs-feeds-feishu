@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IncSFS: Incremental Full-Sparse Flow-Sensitive Pointer Analysis for C/C++</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>IncSFS: Incremental Full-Sparse Flow-Sensitive Pointer Analysis for C/C++</h1>
+<p class="meta-line">arXiv（Kunlin Liu 等，cs.PL） · 2026-08-25 · 论文PDF</p>
+
+<p>Pointer analysis is a fundamental technique for compiler optimization and program analysis.</p>
+<blockquote><p>Pointer analysis is a fundamental technique for compiler optimization and program analysis. Flow-sensitive pointer analysis provides high precision but is difficult to scale to large projects. Tailored for rapid iteration scenarios where software evolves continuously, we introduce IncSFS, the first incremental full-sparse flow-sensitive pointer analysis algorithm for C/C++ programs. IncSFS first transforms the value-flow graph into a constraint graph and performs strongly connected component detection to ensure precision. It then propagates increases and decreases in points-to sets in an interleaved manner, supporting code deletion and insertion within a single analysis pass. IncSFS is guaranteed to terminate and compute the least fixed point when the points-to relation remains object-acyclic during analysis. Experiments on six large-scale real-world projects show that IncSFS is precise and efficient, achieving average speedups of 9.60x over full flow-sensitive pointer analysis and 5.84x over the traditional reset-recompute approach. It also improves efficiency by 15.8% over state-of-the-art incremental pointer analysis algorithms that propagate points-to-set changes.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2608.24391v1">阅读原文 ↗</a></p>
+</body>
+</html>

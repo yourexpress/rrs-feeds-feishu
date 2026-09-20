@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Water-network decisions share one hydraulic gradient, and it can now be computed exactly</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Water-network decisions share one hydraulic gradient, and it can now be computed exactly</h1>
+<p class="meta-line">arXiv（Tianwei Mu 等，cs.DC） · 2026-09-06 · 论文PDF</p>
+
+<p>Calibration, leak localisation and sensor placement on water distribution networks (WDNs) are decisions about continuous parameters, yet the hydraulic engine that defines the physics returns a solution and no derivatives…</p>
+<blockquote><p>Calibration, leak localisation and sensor placement on water distribution networks (WDNs) are decisions about continuous parameters, yet the hydraulic engine that defines the physics returns a solution and no derivatives, so practice falls back on derivative-free search or on surrogates whose error the answer inherits. We make the global gradient algorithm itself exactly differentiable: the forward pass reproduces the reference engine's discrete devices, status switching and low-flow linearisation included, and the backward pass solves the implicit adjoint by reusing the forward pass's terminal factorisation, so one extra sparse solve returns every parameter's gradient at once, batched over scenarios on one graphics processor. Across 52 public, synthetic and operational networks and 8,140 simulation frames, every network meets the acceptance criterion, the largest head deviation from EPANET 2.2 is 1.137e-13 ft and 25 agree exactly. One adjoint solve replaces the 906 simulations a finite-difference roughness Jacobian costs on the 905-pipe L-TOWN benchmark, and a leak-inversion training loop runs at 463-470 ms per optimiser step for 256 scenarios, 191 times the prior pipeline. Gradie…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.06323v1">阅读原文 ↗</a></p>
+</body>
+</html>

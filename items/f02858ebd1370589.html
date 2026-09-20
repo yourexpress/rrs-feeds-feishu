@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Often Does Your Program Fail?</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>How Often Does Your Program Fail?</h1>
+<p class="meta-line">arXiv（Arnab Ray 等，cs.PL） · 2026-09-17 · 论文PDF</p>
+
+<p>Software in production encounters inputs shaped by how it is used in practice.</p>
+<blockquote><p>Software in production encounters inputs shaped by how it is used in practice. We study distribution-aware reliability estimation: given a program, its operational input distribution, and a condition of interest, determine how often that condition holds and certify the result with a guaranteed error bound. Symbolic and statistical methods offer two ways to answer this question. Symbolic methods reason about entire regions of the input space and can certify rates exactly, but often struggle with complex arithmetic or loops. Statistical methods instead sample inputs and apply concentration bounds. They are broadly applicable, but can require many samples when failures are rare. We bring these approaches together in a framework that includes both as special cases. Each estimator has three components: a mass estimator, a per-leaf confidence bound, and a symbolic closure rule. We prove that any instantiation satisfying three invariants returns an interval containing the true rate with confidence 1-delta, regardless of when it stops. The certified error has two parts: a statistical term, reduced by sampling, and a structural term, reduced by symbolic closure. Pure sampling and pure symbo…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.20037v1">阅读原文 ↗</a></p>
+</body>
+</html>

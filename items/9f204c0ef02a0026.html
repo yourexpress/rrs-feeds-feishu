@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taming Bitwise Behavior in GPU Kernels with Tensor Core: Black-Box Reconstruction, Compiler Enforcement, and Static Verification</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Taming Bitwise Behavior in GPU Kernels with Tensor Core: Black-Box Reconstruction, Compiler Enforcement, and Static Verification</h1>
+<p class="meta-line">arXiv（Ziteng Yang 等，cs.DC） · 2026-09-10 · 论文PDF</p>
+
+<p>Determinism and numerical reproducibility are increasingly required of GPU kernels in machine learning systems, yet deterministic implementations of the same kernel can still differ bit for bit.</p>
+<blockquote><p>Determinism and numerical reproducibility are increasingly required of GPU kernels in machine learning systems, yet deterministic implementations of the same kernel can still differ bit for bit. Floating-point reduction order is the primary cause, alongside partial-sum precision, fused multiply-add operations, and rounding placement. These choices may be hand-coded, selected by a block-level language such as Triton, or hidden inside a closed-source library such as cuBLAS or rocBLAS. A tile shape chosen for performance therefore also determines the arithmetic, potentially breaking batch invariance. Preserving a fixed order can cost up to 20 percent, while an autotuner cannot identify which configurations are bitwise equivalent. We characterize the factors determining the bitwise behavior of reductions and general matrix multiplication (GEMM). First, we introduce a descriptor of GEMM reduction order, including the partitioning of K in split-K GEMM. Using it, we perform the first black-box reconstruction of a closed-source library's arithmetic for bit-level correctness. Our family of Triton GEMMs matches NVIDIA cuBLAS in all tested cases on Blackwell and Hopper. For realistic LLM shap…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.11356v1">阅读原文 ↗</a></p>
+</body>
+</html>

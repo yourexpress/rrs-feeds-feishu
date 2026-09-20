@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VPP: Virtual Pipeline Parallelism for Efficient Chunked Prefill in Long-Context LLM Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>VPP: Virtual Pipeline Parallelism for Efficient Chunked Prefill in Long-Context LLM Inference</h1>
+<p class="meta-line">arXiv（Yan Shi 等，cs.DC） · 2026-08-27 · 论文PDF</p>
+
+<p>Chunked prefill pipeline parallelism (CPP) is a key technique for LLM inference.</p>
+<blockquote><p>Chunked prefill pipeline parallelism (CPP) is a key technique for LLM inference. However, equal-size chunks exhibit imbalanced latency, as later chunks attend longer prefix KV caches and incur higher attention costs, leading to pipeline bubbles. Existing approaches mitigate this imbalance through dynamic chunk resizing (Dynamic CPP, DCPP), but our measurements show that this trades scheduling overhead for load balancing, which becomes unfavorable on long sequences. In this study, we propose Virtual Pipeline Parallelism (VPP), which keeps chunk sizes fixed and optimizes the pipeline layout through virtual stages. A V-shaped virtual-stage traversal overlaps each chunk's expensive middle stages with the lighter head and tail stages of its neighbors, while asynchronous communication and pipelined packing further reduce communication stalls and cross-request drain bubbles. We implement VPP in vLLM-Ascend and evaluate it on three MoE-based LLMs with sequences up to 1M tokens on 16 Ascend 910C NPUs. VPP improves throughput by up to 13.1% over DCPP on long sequences and 6.7% on mixed workloads, while preserving performance on short sequences. On a 512K-token DeepSeek-V3.1 prefill workload,…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2608.26523v1">阅读原文 ↗</a></p>
+</body>
+</html>

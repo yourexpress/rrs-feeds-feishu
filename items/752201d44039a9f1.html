@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SparseConflicts: Handling Conflicting Data Layouts in Sparse Tensor Contractions</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SparseConflicts: Handling Conflicting Data Layouts in Sparse Tensor Contractions</h1>
+<p class="meta-line">arXiv（Adhitha Dias 等，cs.PL） · 2026-09-06 · 论文PDF</p>
+
+<p>Optimizing sparse tensor computations is challenging due to the use of compressed storage formats, which leads to non-affine loop nests and a vast, complex schedule space.</p>
+<blockquote><p>Optimizing sparse tensor computations is challenging due to the use of compressed storage formats, which leads to non-affine loop nests and a vast, complex schedule space. The performance of a given schedule is sensitive to the sparsity pattern of the input tensors, making it difficult to find a single optimal solution. When input tensors in the same tensor contraction have conflicting data layouts in relation to the iteration order, it requires costly-both in time and memory-layout transformation, such as transposition. A promising but under-explored alternative is to generate a schedule that avoids explicit transposition, but this has not been systematically supported in existing compilers. This paper presents a new code generation strategy that generalizes the intermediate representation of the TACO sparse tensor compiler to generate a single loop nest, circumventing explicit transposition of tensors when the tensors have conflicting data layout iteration orders. We extend TACOś iteration graph to express a search-based strategy for locating elements in tensors with conflicting layouts, and we introduce new intermediate representation nodes to lower these schedules to efficient …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.06328v1">阅读原文 ↗</a></p>
+</body>
+</html>

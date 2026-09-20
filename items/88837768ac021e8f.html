@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scaling Fourier-Based Sparse Matrix Analysis on GPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Scaling Fourier-Based Sparse Matrix Analysis on GPUs</h1>
+<p class="meta-line">arXiv（Ruifeng Zhang 等，cs.PF） · 2026-09-17 · 论文PDF</p>
+
+<p>Sparse computations are important workloads in applications such as scientific computing, graph neural networks (GNNs), and machine learning.</p>
+<blockquote><p>Sparse computations are important workloads in applications such as scientific computing, graph neural networks (GNNs), and machine learning. While many sparse operations can benefit from modern GPUs, the sparsity pattern remains important to performance because it affects memory coalescing, block organization, and load balancing. Previous studies show that spectral signatures can help analyze the global structure of sparse matrices. The fast Fourier transform (FFT) is commonly used to extract spectral signatures, and efficient GPU FFT libraries are available. However, sparse matrices, especially adjacency matrices for large graphs, tend to be very large and sparse. Existing dense-matrix-based FFT implementations are difficult to scale up, making the spectral patterns of these matrices difficult to obtain. We therefore propose a three-fold research approach comprising a lossless Binary-Sparse FFT (BS-FFT) and two compression methods: Elastic BS-FFT, which reuses the BS-FFT pipeline on a sampled frequency grid, and density-map-based spatial compression. Experiments show that BS-FFT reduces GPU memory use by 2.9--11.6 times relative to dense cuFFT and completes all 15 GNN adjacency m…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.20483v1">阅读原文 ↗</a></p>
+</body>
+</html>
