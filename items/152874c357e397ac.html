@@ -21,9 +21,10 @@
 <body>
 <h1>FlashAttention-4 技术要点整理</h1>
 <p class="meta-line">CSDN（happyAnger6） · 2026-09-17 · 技术博客</p>
-
+<img class="hero" src="https://img-bss.csdnimg.cn/202112131616291007.png" alt="" referrerpolicy="no-referrer">
 <p>中文整理 FlashAttention-4：面向 Blackwell 架构的异步流水线与 softmax 优化要点。</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<blockquote><p>- 日期：2026-09-17</p><p>- 原文：https://arxiv.org/pdf/2603.05451</p><p>- 标题：FLASHATTENTION-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling</p><p>- 作者：Ted Zadouri, Markus Hoehnerbach, Jay Shah, Timmy Liu, Vijay Thakkar, Tri Dao（Princeton / Meta / Colfax / NVIDIA / Georgia Tech / Together AI）</p><p>- 代码：https://github.com/Dao-AILab/flash-attention/tree/main/flash_attn/cute</p><p>- 关联本仓：</p><p>R46_fa4_ubench.md</p><p>、R46_fa4_prefill.md</p><p>（Thor / FlashRT FA4 落地）</p><p>0. 一句话</p><p>FA4 针对 Blackwell（B200/GB200）的「非对称缩放」：Tensor Core 翻倍了，共享内存带宽与指数单元没跟上。用算法 + kernel 流水线协同设计压非 matmul 瓶颈；BF16 最高约 1613 TFLOPs/s（~71% 理论峰值），相对 cuDNN 9.13 最高</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
 <p><a class="origin" href="https://blog.csdn.net/happyAnger6/article/details/165748073">阅读原文 ↗</a></p>
 </body>
 </html>
