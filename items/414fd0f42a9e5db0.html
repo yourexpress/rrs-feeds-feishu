@@ -21,9 +21,10 @@
 <body>
 <h1>Can a local LLM beat -O3?</h1>
 <p class="meta-line">tijl.blog · 2026-09-13 · 技术博客</p>
-
+<img class="hero" src="https://tijl.blog/images/cppConPosterBanner.png" alt="" referrerpolicy="no-referrer">
 <p>实验性博客：本地 LLM 生成代码优化建议与编译器 -O3 的基准对比。</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<blockquote><p>During his keynote at ACCU on Sea in June, Andrei Alexandrescu made some predictions. One of those was the integration of LLMs and compilers. Compilers can generate optimization remarks for LLMs to process. And LLMs can propose optimizations that are difficult for a conventional compiler to discover. If you haven’t yet, I very much recommend you to watch Andrei’s talk. It’s a great talk, and it led me down a rabbit hole of experimenting: what could an LLM do today? Integrated into the compiler pipeline, locally on my hardware?</p><p>These experiments resulted in a poster, which I will present today at the registration reception of CppCon. The aim of the poster is to answer these questions:</p><p>- How much performance improvements can a small, local LLM achieve as part of the compilation process?</p><p>- How likely is the LLM to produce code that is functionally correct?</p><p>- Is the IR optimization stage the right place to introduce LLM-based optimizations, or is it better to optimize the C++ code before it goes to the compiler?</p><p>This blog post allows me to dive a bit deeper into my project, with links to the code.</p><p>ℹ️ This post was written before I tested with larger cloud models. They perform drastically better and make LLVM IR optimization a viable approach. Please also check my follow-up post with those results.</p><p>The benchmark programs</p><p>The testing library consists of five exported functions, each implemented in a separate C++ file. They each test for a different optimization situation:</p><p>- fibonacci: A basic recursive implementation, with an obvious algorithmic optimization opportunity.</p><p>- format_list: Array serialization in a for loop, with opportunities for optimizing the string concatenation.</p><p>- repeated_sort: Gives the model an opportunity to notice unnecessary repeated work.</p><p>- count_matches: Finding elements of one array in another array, with a possible optimization in picking another data-structure.</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
 <p><a class="origin" href="https://tijl.blog/posts/cppcon-local/">阅读原文 ↗</a></p>
 </body>
 </html>

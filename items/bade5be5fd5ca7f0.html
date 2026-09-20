@@ -22,9 +22,11 @@
 <h1>QuanText: Protecting Dataset-Level Secrets in Textual Data Sharing</h1>
 <p class="meta-line">Microsoft Research / CMU · 2026-09-16 · 论文PDF / 每日精选</p>
 
-<p>面向文本数据共享的数据集级秘密（整体属性）保护方法，补足属性推断攻击防御空白</p>
-<blockquote><p>Natural-language datasets support many downstream applications and research studies, but releasing text can reveal sensitive global properties of the underlying data source, such as the proportion of records associated with a particular gender, diagnosis, or political stance. Existing work has largely focused on property inference attacks that recover such global properties, while defenses for protecting these dataset-level secrets remain limited. Differential privacy, although effective for protecting individual records, provides only weak protection for aggregate properties. We propose Randomized Quantization for Text (QuanText), a training-free and large-language-model-agnostic data release mechanism that protects global secrets in textual datasets while preserving data utility. Given a dataset-level secret, such as the proportion of records with a particular diagnosis, and attributes whose utility should be preserved, such as topic and sentiment, QuanText perturbs both the secret distribution and the distributions of correlated attributes. It does so by constructing candidate release distributions over secret and non-secret attributes, randomly selecting a candidate sufficientl…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：发布文本数据集可能泄露"数据集级秘密"（如某诊断、性别或立场的记录占比），差分隐私对这类聚合属性保护很弱——如何在保住数据效用的同时防泄露？</p>
+<p><strong>方法</strong>：QuanText（Randomized Quantization for Text）：免训练、与具体 LLM 无关的数据发布机制。给定要保护的秘密属性与要保效用的属性，构造秘密/非秘密属性的候选发布分布，随机选一个与私有经验分布足够近的，再用原文中与属性相关的片段改写每条样本以匹配所选分布；理论框架基于 Statistic Maximal Leakage（SML）。</p>
+<p><strong>关键数字</strong>：摘要未给具体数值；在理想条件下证明满足 SML 保证，并在真实数据集上取得优于对比数据生成基线的经验隐私-效用权衡。</p>
+<p><strong>为什么值得看</strong>："数据集级隐私"是文本数据共享中少有人处理但实务很痛的点（医疗、舆情数据尤甚），免训练、可解释的机制落地门槛低。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.17995">QuanText: Protecting Dataset-Level Secrets in Textual Data Sharing</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.17995">阅读原文 ↗</a></p>
 </body>
 </html>

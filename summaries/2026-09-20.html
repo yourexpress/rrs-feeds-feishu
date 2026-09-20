@@ -19,17 +19,22 @@
 <body>
 <h1>每日精选 · 2026-09-20</h1>
 <h2>当日检索概况</h2>
-<p>AI 技术报告库：0 条（周末空窗，已核查各官方渠道无新发布）。高效计算库：16 条（入选 5）。合计 16 条、入选 5 条。</p>
+<ul>
+<li>AI 技术报告库：检索 0 条，入选 0 条（当日该库无新内容）。</li>
+<li>高效计算库：检索 21 条，入选 7 条，主题集中在端侧/边缘推理与国产算力生态。</li>
+</ul>
 <h2>重点推荐</h2>
 <ul>
-<li><strong>DGPP 更新：Lossless bf12——12-bit 无损权重编码</strong>（NVIDIA Developer Forums）：利用 BF16 指数位低熵做 12bit 无损重编码，DGX Spark 解码提速 6~12%，输出逐位一致。无损、白捡式的压缩路线。</li>
-<li><strong>Athena's Engine</strong>（NVIDIA Developer Forums）：单台 GB10（DGX Spark）上跑 256K 上下文 DeepSeek / Qwen3.8 Next 的开源推理引擎，decode 速率随上下文增长保持平坦，预填 1,126 tok/s。</li>
-<li><strong>华为昇腾 Agentic 计算五大变化</strong>（智东西，全联接大会 2026）：昇腾生态从"可用"走向"Agentic 计算"的架构叙事。</li>
-<li><strong>Praxis One ~106 TOPS 边缘计算平台</strong>（Pandaily）：面向人形机器人的单 SoC 方案：3nm、约 106 TOPS、端侧跑 Qwen3-7B 约 23 tok/s。</li>
-<li><strong>ASUS Ascent QN10</strong>：0.7L 迷你主机（Snapdragon X2 Elite，80 TOPS NPU）定位本地 AI 开发机。</li>
+<li><strong>DGPP 更新：Lossless bf12 — 12-bit 无损权重编码</strong>：利用 BF16 指数低熵做无损重编码，DGX Spark 解码提速 6~12% 且输出逐位一致，零精度损失的提速值得一看。<a href="https://forums.developer.nvidia.com/t/dgpp-a-gb10-optimized-c-cuda-inference-engine/383406/15">链接</a></li>
+<li><strong>Athena's Engine: DeepSeek and Qwen3.8 Next on 1 DGX Spark</strong>：单台 GB10 跑 256K 上下文前沿模型，prefill 1,126 tok/s、decode 32 tok/s 且随上下文增长保持平坦，个人级长上下文推理的新标杆。<a href="https://forums.developer.nvidia.com/t/athenas-engine-deepseek-and-qwen3-8-next-1-126-tokens-s-prefill-32-tokens-s-decode-256k-ctx-on-1dgx-spark/383781">链接</a></li>
+<li><strong>华为昇腾跨过生态拐点，提出 Agentic 计算五大变化</strong>：Ascend C 走向 SIMD+SIMT/Regbase、PTO 指令集开放 120+ 条、HiFloat4 4bit 浮点落地，国产算力软件生态的关键节点。<a href="https://www.163.com/dy/article/L7700JPH051180F7.html">链接</a></li>
+<li><strong>中国电信 Xing4.0-29B-A4B 开源</strong>：MoE 代码智能体模型 4-bit 量化后单卡 3090 可跑，昇腾 910C+MindSpore 全栈国产训练，图算融合使训练吞吐提升约 96%。<a href="http://m.toutiao.com/group/7687583689231909386/">链接</a></li>
+<li><strong>Huaruizhipu Praxis One（MediaTek Genio Pro 5100）</strong>：面向人形机器人的单 SoC 边缘平台，3nm、约 106 TOPS、端侧 Qwen3-7B 23 tok/s、-40~105°C 宽温，具身智能边缘算力的新选项。<a href="https://pandaily.com/huaruizhipu-praxis-one-mediatek-genio-pro-5100-edge">链接</a></li>
+<li><strong>Meta MobileLLM-R1</strong>：140M~950M 端侧推理小模型系列，GQA+块级权重共享，MATH500 约为 OLMo-1.24B 的 5×，GSM8K/AIME/LiveCodeBench 追平 Qwen3-0.6B。<a href="https://ai-damn.com/meta-ai-launches-mobilellm-r1-a-lightweight-edge-ai-model-1758064601640">链接</a></li>
+<li><strong>ASUS Ascent QN10（Snapdragon X2 Elite）</strong>：80 TOPS NPU 的 0.7L 迷你主机，支持 Qualcomm AI Hub 175+ 模型，本地 AI 开发盒子的新选择，起价 $1,350。<a href="https://www.aroged.com/2026/09/19/asus-announces-ascent-qn10-a-compact-mini-pc-based-on-qualcomm-snapdragon-x2-elite-starting-at-1350/">链接</a></li>
 </ul>
 <h2>主题速览</h2>
-<p>当日高效计算库以边缘侧硬件与开源推理工程为主（DGX Spark 生态两条 + 机器人/迷你主机硬件两条）；AI 库周末无新发布属正常空窗。</p>
+<p>当日高效计算库呈"端侧推理 + 国产算力"双主线：一边是 DGX Spark 级个人推理引擎、手机/迷你主机/机器人 SoC 等端侧载体密集出新（含 PrismML 把 Qwen3.8 27B 三值化压到 5.93GB、小米 Xring O3）；另一边是昇腾生态与中国电信全栈国产模型的体系化进展。此外 DeepSeek v4 Flash Vision 开源权重与 NVIDIA GTC 2026 发布的讨论也有热度。</p>
 <p class="meta">由 RSS 流水线自动生成 · 订阅每日精选 feed 可在阅读器内直接阅读</p>
 </body>
 </html>

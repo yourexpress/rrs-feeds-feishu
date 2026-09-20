@@ -21,9 +21,12 @@
 <body>
 <h1>Qwen3.8-Flash-Next: A New Architecture, Towards Ultimate Cost-Efficiency</h1>
 <p class="meta-line">阿里 Qwen · 2026-08-26 · 技术博客 / 每日精选</p>
-
-<p>125B MoE/6B 激活，GDN+QSA 新架构，51B N-gram embedding，附 Qwen4 预告与技术报告</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<img class="hero" src="https://img.alicdn.com/imgextra/i4/O1CN01OXv3EM1FN8t9W4P79_!!6000000000474-2-tps-80-80.png" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong>：Qwen 开源 Qwen3.8-Flash-Next 权重——多模态 MoE 模型，同时作为 Qwen4 架构的先导预览，主打极致成本效率。</p>
+<p><strong>要点</strong>：四方面系统升级：Attention 采用 GDN + QSA 混合架构（GDN 负责高效"记住"、QSA 以 micro-block 粒度稀疏检索负责精准"查找"）；Gated Residual 把残差流扩成 4 条分支、动态门控读写；N-gram Embedding 低成本扩容且可卸载到 Host Memory 异步预取；训练侧用 Muon 优化器并重新拟合 Scaling Law。</p>
+<p><strong>关键数字</strong>：主模型 125B 参数 + 51B N-gram Embedding，每 token 激活 6B；训练开销约为 Qwen3.7-Plus 的 1/9；原生 262K 上下文、YaRN 可扩至 1M；1M 上下文下 QSA kernel Prefill/Decode 最高加速 7.6×/4.9×；90% 缓存命中设定下 1M Prefill 吞吐达 Qwen3.7-Plus 的 8.6 倍；API 价每百万 tokens 输入 0.8 元、输出 2.7 元。</p>
+<p><strong>为什么值得看</strong>：Qwen4 架构提前剧透，GDN + 稀疏 Attention + 多路残差这套高效长上下文组合拳值得研究；长序列推理成本敏感的场景可直接试用开源权重。</p>
+<p>原文：<a href="https://qwen.ai/blog?id=qwen3.8-flash-next">Qwen3.8-Flash-Next: A New Architecture, Towards Ultimate Cost-Efficiency</a></p>
 <p><a class="origin" href="https://qwen.ai/blog?id=qwen3.8-flash-next">阅读原文 ↗</a></p>
 </body>
 </html>

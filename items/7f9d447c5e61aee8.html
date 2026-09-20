@@ -22,9 +22,11 @@
 <h1>Learning to Coach for Experiential Learning</h1>
 <p class="meta-line">Microsoft · 2026-09-16 · 论文PDF / 每日精选</p>
 
-<p>教练-执行者元学习框架：教练智能体通过结果奖励学习生成可复用文本指南，兼顾结果与指南质量</p>
-<blockquote><p>Language models can learn from experience, but raw solution trajectories are often too long and noisy to provide effective guidance. In this work, we propose Learning to Coach (L2C), a framework that trains a dedicated LLM-as-a-Coach to extract actionable experiential knowledge from an actor model's previous trajectory. The actor remains frozen, while the LLM-as-a-Coach is trained to maximize a reward given by the correctness of the actor's guided response. We study two such rewards: a same-instance reward, which improves subsequent responses on the original problem, and a cross-instance reward, which elicits knowledge that transfers to other instances. Across mathematical reasoning and interactive text-games, L2C consistently outperforms self-refinement and an untrained LLM-as-a-Coach. Running experiential learning for more iterations further improves accuracy and uses additional inference compute more effectively than enlarging the actor's decoding budget. The trained LLM-as-a-Coach also transfers to out-of-distribution tasks and adapts its guidance to the specific actor it coaches.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 能从经验中学习，但原始解题轨迹又长又噪，直接回放指导效果差——如何提炼出真正可用的经验知识？</p>
+<p><strong>方法</strong>：Learning to Coach（L2C）：actor 模型冻结，另训一个 LLM-as-a-Coach 专门从其历史轨迹中提炼可执行的经验指导；教练以"actor 在其指导下答对"为奖励训练，分 same-instance（改进原题后续回答）与 cross-instance（提炼可迁移到其他题的知识）两种奖励。</p>
+<p><strong>关键数字</strong>：摘要未给具体数值；报告称在数学推理与交互式文本游戏上稳定超过 self-refinement 与未训练教练基线，增加经验学习迭代比加大 actor 解码预算更划算，训练后的教练还能迁移到 OOD 任务并适配特定 actor。</p>
+<p><strong>为什么值得看</strong>：把"从经验学习"从粗暴回放轨迹升级为专门训练的教练模块，并给出推理时算力分配的新结论——同样预算投给教练迭代比堆解码更值。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.15851">Learning to Coach for Experiential Learning</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.15851">阅读原文 ↗</a></p>
 </body>
 </html>

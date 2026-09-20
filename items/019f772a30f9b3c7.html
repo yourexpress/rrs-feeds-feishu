@@ -22,9 +22,11 @@
 <h1>PULSE: Unlocking Practical Image Compression on Single-Thread CPU</h1>
 <p class="meta-line">Microsoft Research Asia / 中科大 · 2026-09-16 · 论文PDF / 每日精选</p>
 
-<p>5.2 kMAC/pixel 超低复杂度神经解码器，单 CPU 线程 126ms 解码 1080p，人-LLM 协同智能体演化架构</p>
-<blockquote><p>Despite recent progress in learned image compression, existing methods remain computationally expensive on resource-constrained hardware, particularly CPUs. We introduce PULSE, a practical codec that enables (1) low-latency decoding on diverse hardware platforms with an ultra-low-complexity 5.2 kMAC/pixel neural receiver, and (2) efficient bit-exact entropy coding with an integer linear CDF predictor and a meta prior. To recover compression performance under this tight budget, we introduce an agentic evolution process guided by heuristic probes that iteratively improves the architecture through human-LLM collaboration. PULSE decodes a 1080p image in 126 ms on a single CPU thread while achieving compression performance comparable to HM. After perceptual optimization, PULSE competes with larger perceptual codecs like MS-ILLM. Codes are at https://github.com/microsoft/GenCodec/tree/main/PULSE</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：学习型图像压缩效果好，但在 CPU 等资源受限硬件上算不动——如何做到单线程 CPU 上实用的神经编解码？</p>
+<p><strong>方法</strong>：PULSE 编解码器：解码端用 5.2 kMAC/pixel 超低复杂度神经接收器实现多平台低延迟；熵编码用整数线性 CDF 预测 + meta prior 做到位精确；为在极紧预算下找回压缩性能，引入"启发式探针引导的 agentic 演化"——人-LLM 协作迭代改进架构。</p>
+<p><strong>关键数字</strong>：单 CPU 线程 126ms 解码一张 1080p 图像；压缩性能对标 HM，感知优化后可与 MS-ILLM 等更大的感知编解码器竞争；代码已开源（microsoft/GenCodec 仓库 PULSE 目录）。</p>
+<p><strong>为什么值得看</strong>：用 LLM agent 参与架构搜索，把"极限低复杂度"与"压缩率"同时拿下——端侧图像压缩和 AI 辅助编解码器设计两条线都能借鉴。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.18602">PULSE: Unlocking Practical Image Compression on Single-Thread CPU</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.18602">阅读原文 ↗</a></p>
 </body>
 </html>
