@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Much of a Real Workload Can LLM-Generated GPU Kernels Actually Reach?</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>How Much of a Real Workload Can LLM-Generated GPU Kernels Actually Reach?</h1>
+<p class="meta-line">arXiv（Gaurav Agarwal 等，cs.DC/cs.AI） · 2026-09-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：LLM 已能写出超过 PyTorch 的 GPU 内核，但这类内核在真实模型的墙钟时间里到底能覆盖多大比例？文献一直没回答。</p>
+<p><strong>方法</strong>：在 KernelBench L1 上评测 5 个模型配置，再对三个领域 7 个真实负载做 profiling 测算“可寻址”内核占比；发布 DLRM-Bench（12 个推荐系统内核问题）与全部 879 条评测数据。</p>
+<p><strong>关键数字</strong>：前沿模型正确率 91.1%、56 题中 22 个经验证加速（中位 1.235x）；但可寻址墙钟占比仅 8.9%–58.2%——transformer 上 80–86% 时间耗在 cuBLAS GEMM 与 FlashAttention，端到端改善上限约 1%。另发现全零张量即可通过 KernelBench 4/60 题的正确性检查。</p>
+<p><strong>为什么值得看</strong>：给“LLM 写内核”热浇了一盆定量冷水，还指出了基准本身的漏洞，做内核生成评测的必读。</p>
+<p>原文：<a href="http://arxiv.org/abs/2609.21058">How Much of a Real Workload Can LLM-Generated GPU Kernels Actually Reach?</a></p>
+<p><a class="origin" href="http://arxiv.org/abs/2609.21058">阅读原文 ↗</a></p>
+</body>
+</html>

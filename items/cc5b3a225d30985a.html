@@ -22,9 +22,11 @@
 <h1>Understanding LLM Quantization through Activation-Guided Compensation and Orthogonal Residuals</h1>
 <p class="meta-line">arXiv（cs.LG） · 2026-09-18 · 论文PDF / 每日精选</p>
 
-<p>激活引导补偿+正交残差分离量化误差来源，解释并改进 LLM 量化精度损失</p>
-<blockquote><p>Post-training weight-activation quantization reduces the memory and inference costs of large language models, but aggressive W4A4 quantization remains difficult because activation outliers degrade effective quantization resolution. Although weight optimization, channel-wise scaling, and orthogonal rotation mitigate this problem, the error components they address and their relationship remain unclear. Using an exact decomposition of local weight-activation quantization error into an activation-guided weight compensation term and an orthogonal residual, we bound the residual using persistent channel-wise outlier and regular activation quantities. This decomposition clarifies which error components can be addressed by weight compensation and which require transformation design. We then use the residual bounds to derive practical guidelines for applying randomized Hadamard rotation, sign selection, and channel scaling. In particular, the analysis explains how random signs suppress constructive interference among persistent outlier channels, how sampling multiple sign patterns can improve transformation selection, and how second-moment balancing leads to an $L_2$ scaling rule while a fu…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：W4A4 训练后量化难在激活 outlier 吃掉有效量化分辨率；权重优化、通道缩放、正交旋转都能缓解，但它们各自消除的误差分量与相互关系一直不清楚。</p>
+<p><strong>方法</strong>：把局部权重-激活量化误差精确分解为“激活引导的权重补偿项 + 正交残差”，用持续通道 outlier 量与常规激活量给残差定界；据此推导随机 Hadamard 旋转、符号选择与通道缩放的实用准则（含二阶矩平衡导出 L2 缩放、进一步松弛回到 SmoothQuant 式 L∞ 缩放）。</p>
+<p><strong>关键数字</strong>：在 8 个 Llama 与 Mistral 模型上，免反向传播的配置取得与梯度训练 SpinQuant 竞争的性能。</p>
+<p><strong>为什么值得看</strong>：把 LLM 量化从“炼丹技巧集合”还原成可分解、可定界的误差结构，做量化的人可以按准则而非玄学选变换。</p>
+<p>原文：<a href="http://arxiv.org/abs/2609.21450">Understanding LLM Quantization through Activation-Guided Compensation and Orthogonal Residuals</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2609.21450">阅读原文 ↗</a></p>
 </body>
 </html>

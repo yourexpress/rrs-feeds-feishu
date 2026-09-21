@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DLB: Distributed Load Balancing at Scale for Generative AI Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DLB: Distributed Load Balancing at Scale for Generative AI Inference</h1>
+<p class="meta-line">arXiv（Santiago R. Balseiro 等，cs.DC） · 2026-09-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：GenAI 推理负载服务时间异构、处理阶段复杂，传统负载均衡只能靠昂贵的过度预留维持 SLO——如何在大规模异构设施上最小化端到端时延？</p>
+<p><strong>方法</strong>：DLB 采用分布式设计，用 P2P 探测实时感知全球分布的服务器容量，持续学习时延模型评估路由决策影响；论文给出路由算法稳定性与全局性能保证的理论分析及大规模仿真。</p>
+<p><strong>关键数字</strong>：已在 Google 部署 22 个月，支撑数千个模型、每秒数百万请求；生产迁移分析显示中位时延下降 17%、p95 尾时延下降 13%（统计显著）。</p>
+<p><strong>为什么值得看</strong>：罕见的“理论 + 大规模生产部署”双证负载均衡工作，自建推理服务的调度层可直接借鉴。</p>
+<p>原文：<a href="http://arxiv.org/abs/2609.21079">DLB: Distributed Load Balancing at Scale for Generative AI Inference</a></p>
+<p><a class="origin" href="http://arxiv.org/abs/2609.21079">阅读原文 ↗</a></p>
+</body>
+</html>

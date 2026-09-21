@@ -22,9 +22,11 @@
 <h1>When EOS Tokens Disagree: Understanding Length Inflation in On-Policy Distillation</h1>
 <p class="meta-line">arXiv（Yuxiao Yang 等，cs.LG） · 2026-09-17 · 论文PDF / 每日精选</p>
 
-<p>跨 Qwen3/Llama/Gemma 实证：终止 token 失配是在线策略蒸馏中长度膨胀的重要来源，并给出缓解方案。</p>
-<blockquote><p>We study length inflation in on-policy distillation (OPD), where student responses can become excessively long and even exhaust the generation budget. We identify \emph{termination-token mismatch} between base students and post-trained teachers as an important source of this behavior. Across Qwen3, Llama, and Gemma, the two models can place their stopping probability on different EOS tokens, even when their declared stopping sets are identical. This mismatch can suppress the student's preferred termination action without reliably transferring the teacher-preferred alternative. We show that aligning the decoding stopping set alone is insufficient, while treating functionally equivalent EOS tokens as a shared semantic stopping action substantially mitigates mismatch-induced length inflation across all three model families. To further understand how termination behavior evolves over training, we study OPD across different K2-Horizon training stages. This stage-wise analysis shows that termination preferences can shift substantially during training, while also revealing a distinct length inflation late in the OPD run that persists beyond termination alignment. Together, these results i…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：on-policy 蒸馏（OPD）中学生模型的回复会异常变长、甚至耗尽生成预算——长度膨胀从哪来？</p>
+<p><strong>方法</strong>：识别出 base 学生与后训练教师之间的“终止 token 不匹配”：即使声明的停止集相同，两者也可能把停止概率放在不同 EOS token 上。实验证明只对齐解码停止集不够，把功能等价的 EOS token 视为共享语义停止动作可显著缓解；并沿 K2-Horizon 训练阶段追踪终止偏好演化。</p>
+<p><strong>关键数字</strong>：在 Qwen3、Llama、Gemma 三个模型族上均验证该机制；还发现 OPD 后期存在一种超越终止对齐的独立长度膨胀。实现已开源。</p>
+<p><strong>为什么值得看</strong>：做蒸馏的工程细节深坑——EOS 不一致这种“小问题”被证明是长度动力学的重要来源，踩过坑的人会共鸣。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.20511v1">When EOS Tokens Disagree: Understanding Length Inflation in On-Policy Distillation</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20511v1">阅读原文 ↗</a></p>
 </body>
 </html>

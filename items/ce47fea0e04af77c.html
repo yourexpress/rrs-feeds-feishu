@@ -22,9 +22,11 @@
 <h1>Sketching the Error, Not the Product: Post Hoc Fault Recovery for Half Precision GPU Matrix Multiplication</h1>
 <p class="meta-line">arXiv（Pranav Napolean 等，cs.DC） · 2026-09-17 · 论文PDF / 每日精选</p>
 
-<p>Silent data corruption (SDC) from defective accelerators now interrupts large scale training, yet deployed mitigations act on whole nodes.</p>
-<blockquote><p>Silent data corruption (SDC) from defective accelerators now interrupts large scale training, yet deployed mitigations act on whole nodes. Algorithm based fault tolerance (ABFT) for a single GEMM has to be fused into the kernel or encode the operands, and it localizes at most one error per checksum. We present FP-Sketch, a verifier that runs after an unmodified tensor core GEMM whose half precision operands are accumulated and delivered at FP32. A sum sketch detects corruption on every call. Hashed first moment sketches, confirmed by independent recomputation, then localize several corrupted entries with no false positives by construction, and each fault yields a coordinate and a magnitude for fleet diagnosis. In floating point, sketch noise rather than bucket collisions limits localization. We measure that noise and find that its constant depends on the BLAS and the operand format and that the bucket count must grow as $n^{2.57}$ for a square product. Sizing the bucket count by measured noise rather than by a fitted power of $n$ raises recovery on eight transformer shapes from 0.402 to 1.000, and measuring the noise at run time adapts the bucket count to the kernel and the model. …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：缺陷加速器导致的静默数据损坏（SDC）正频繁打断大规模训练，而现有缓解作用于整机粒度；单 GEMM 的 ABFT 要么需融合进内核，要么每次校验最多定位一个错误。</p>
+<p><strong>方法</strong>：FP-Sketch 在未修改的张量核 GEMM（FP16 输入、FP32 累加）之后运行校验器：sum sketch 逐次检测，哈希一阶矩 sketch 加独立重算定位多个损坏项（构造上零误报），桶数按实测噪声而非拟合幂次设定。</p>
+<p><strong>关键数字</strong>：8 个 transformer 形状上恢复率从 0.402 提到 1.000；Llama-2-7B 守护 MLP 下投影可消除 2048 次 bit flip 造成困惑度损伤的 99.4%（BF16）/99.9%（FP16）；探测开销 0.78–3.06ms，对应 GEMM 0.35–12.47ms。</p>
+<p><strong>为什么值得看</strong>：训练集群 SDC 诊断从“换整机”细化到“定位到具体元素”，大规模训练稳定性工程值得跟进。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.19758v1">Sketching the Error, Not the Product: Post Hoc Fault Recovery for Half Precision GPU Matrix Multiplication</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19758v1">阅读原文 ↗</a></p>
 </body>
 </html>

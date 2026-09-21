@@ -22,9 +22,11 @@
 <h1>DGPP 更新：Lossless bf12 — 12-bit 无损权重编码</h1>
 <p class="meta-line">NVIDIA Developer Forums (stephen.douglas.hawkins) · 2026-09-19 · 技术博客 / 每日精选</p>
 <img class="hero" src="https://global.discourse-cdn.com/nvidia/original/3X/e/4/e41d27491ee72562cf68c340597ca95f587879bd.png" alt="" referrerpolicy="no-referrer">
-<p>利用 BF16 指数低熵的 12bit 无损重编码，DGX Spark 解码提速 6~12%，输出逐位一致</p>
-<blockquote><p>Hey guys, just pushed an update with a pretty exciting (at least I think so) optimization!</p><p>Lossless bf12</p><p>Decode on the Spark is a memory-bandwidth problem. Every generated token streams the active weights out of LPDDR5X, and dgpp’s decode kernels already read them at essentially the memory’s line rate (~250 GB/s). Without quantizing further, the only lever left is to move fewer bytes. In the checkpoints we serve, a large share of what a decode step reads is still native BF16. The linear-attention projections and LM head are over half the bytes of a GLM-5.3-Flash step. The attention projections are about two thirds of GLM-4.7’s. On Qwen3.8-Flash-Next-FP8, roughly 80% of what each Spark reads per token is BF16.</p><p>A BF16 value is 1 sign bit, 8 exponent bits and 7 mantissa bits. The sign and mantissa of a trained weight are effectively random and incompressible, but the exponent is not. It carries only ~2.6 bits of entropy, and within any one row of a matrix 99.98% of the weights fall inside a window of 15 consecutive exponents. bf12 exploits exactly that. Each weight is stored in 12 bits instead of 16: one byte holding the sign and mantissa verbatim, plus a 4-bit code giving the exponent as an offset from a per-row base. The sixteenth code is an escape. The rare weight outside its row’s window (2–7 in 10,000 on real checkpoints) keeps its full 16-bit value in a small per-row side table. The few dozen rows with heavy outliers are simply left as BF16. Rows of any width that is a multiple of eight pack at twelve bits with no padding.</p><p>…</p></blockquote>
-<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><strong>核心话题</strong>：GB10 优化推理引擎 dgpp 更新：提出 bf12——利用 BF16 指数低熵的 12-bit 无损权重重编码，给 DGX Spark 解码提速。</p>
+<p><strong>要点</strong>：BF16 的符号与尾数近乎随机不可压，但指数仅约 2.6 bit 熵、同一行 99.98% 权重落在 15 个连续指数窗口内；bf12 每权重存 12 bit（1 字节符号+尾数原文 + 4 bit 指数偏移码），越窗稀有权重（真实 checkpoint 上万分之 2–7）入行级侧表；内核在寄存器重建 BF16 原值按同序累加，输出逐位一致；纯 bf12 模式还可把 BF16 字节还给系统省内存。</p>
+<p><strong>关键数字</strong>：相关矩阵每步字节数 -25%；单流 decode：GLM-5.3-Flash +6–7%、GLM-4.7 +11–12%、满血 GLM-5.3 +5–6.5%、Qwen3.8-Flash-Next-FP8 双 Spark +9.0%；2 Spark GLM-5.3-Flash 恢复 160K 上下文。</p>
+<p><strong>为什么值得看</strong>：不量化、只重编码还能逐位一致——内存带宽瓶颈端侧推理的“免费午餐”级优化，思路可移植。</p>
+<p>原文：<a href="https://forums.developer.nvidia.com/t/dgpp-a-gb10-optimized-c-cuda-inference-engine/383406/15">DGPP 更新：Lossless bf12 — 12-bit 无损权重编码</a></p>
 <p><a class="origin" href="https://forums.developer.nvidia.com/t/dgpp-a-gb10-optimized-c-cuda-inference-engine/383406/15">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>HyperParallel-FSDP: Topology-Aware Fully Sharded Training with Layout-Driven Muon on Ascend SuperPods</h1>
 <p class="meta-line">arXiv（cs.DC） · 2026-09-18 · 论文PDF / 每日精选</p>
 
-<p>拓扑感知的完全分片训练框架，结合布局驱动的 Muon 优化器在昇腾超节点上扩展 LLM 训练</p>
-<blockquote><p>Declarative SPMD programming uses tensor sharding descriptions to drive distributed execution, separating parallelization from model code. However, the evaluated PyTorch DTensor stack dispatches every operator below autograd, incurring repeated dispatch and metadata costs, while lacking an inexpensive end-to-end validation path. Existing FSDP and distributed Muon implementations also mismatch two-tier supernode topologies: FSDP relies on explicit parameter packing and unpacking, and Muon's whole-matrix orthogonalization conflicts with parameter sharding. We observe that distributed tensors need only express sharding semantics at the tensor API boundary above autograd, allowing differentiation and kernels to operate on plain tensors. Based on this insight, we present HyperParallel-FSDP, featuring: (1) dual-mode DTensor execution, using one sharding plan for both a production mode with one-time layout resolution and no steady-state dispatch overhead, and a validation mode with end-to-end metadata propagation, fail-fast checks, and gradient-equivalence testing; (2) topology-aware FSDP, with zero-copy intra-supernode collectives, fused inter-supernode reduction, and a cross-layer backw…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：声明式 SPMD 编程把并行化与模型代码分离，但 PyTorch DTensor 栈逐算子 dispatch 开销大、缺端到端验证路径；现有 FSDP 与分布式 Muon 也与两级超节点拓扑不匹配。</p>
+<p><strong>方法</strong>：HyperParallel-FSDP：双模式 DTensor 执行（生产模式一次布局解析零稳态开销 + 验证模式梯度等价测试）、拓扑感知 FSDP（超节点内零拷贝集合通信、跨层反向流水）、布局驱动分布式 Muon（去重正交化 + 形状融合 Newton-Schulz）。</p>
+<p><strong>关键数字</strong>：Atlas 900 A3 SuperPoD 上从 16 die 扩到 384 卡（768 rank），505B 参数 MoE 维持 421k tokens/s、FSDP 通信仅占步时 2.9%；平均步时较 PyTorch FSDP2 降 29.7%、较 Megatron DDP 降 25.5%，1000 步 Pearson 相关 &gt;0.999997；代码开源。</p>
+<p><strong>为什么值得看</strong>：国产超节点上把 FSDP+Muon 做到 topology-aware 的完整方案，大规模训练框架设计与昇腾生态都值得细读。</p>
+<p>原文：<a href="http://arxiv.org/abs/2609.21594">HyperParallel-FSDP: Topology-Aware Fully Sharded Training with Layout-Driven Muon on Ascend SuperPods</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2609.21594">阅读原文 ↗</a></p>
 </body>
 </html>

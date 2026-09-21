@@ -22,9 +22,11 @@
 <h1>TierKV: Long-Context On-Device LLMs via Predictive Multi-Tier KV Caching</h1>
 <p class="meta-line">arXiv（cs.LG/eess.SY） · 2026-09-18 · 论文PDF / 每日精选</p>
 
-<p>预测式多级 KV 缓存把长上下文端侧 LLM 的 KV 状态按热度分层放入内存/闪存，降低端侧内存占用</p>
-<blockquote><p>Large language models (LLMs) are moving onto mobile devices for increasingly diverse workloads over text, images, video, and audio. These applications often require long contexts, making the Key-Value (KV) cache a dominant memory bottleneck because it grows linearly with sequence length and is accessed at every decoding step. Prior work reduces KV-cache footprint through low-rank compression, token eviction, or flash offloading, but the resulting reconstruction overhead, irreversible token loss, or I/O stalls can offset the benefit of saving memory. We present TierKV, a mobile LLM inference framework built on Predictive Multi-Tier Cache Optimization (PMCO). Before decoding starts, PMCO predicts future cache demand from prefill hidden states and jointly assigns tokens to exact, low-rank, and flash-offloaded tiers under the device memory and accuracy budgets. This formulation retains access to the full context, removes the circular dependency of reactive eviction, and admits a closed-form solver that selects tier boundaries and per-layer ranks at runtime. Across eight text, vision, and audio models on three mobile SoCs, TierKV improves prefill throughput by up to 17.6x over existing …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：移动端 LLM 走向长上下文，KV 缓存随序列线性增长且每步都要访问，成为主导内存瓶颈；低秩压缩、token 驱逐、闪存卸载各有重构开销、不可逆丢失或 I/O 停顿。</p>
+<p><strong>方法</strong>：TierKV 提出预测式多级缓存优化（PMCO）：解码开始前就从 prefill 隐状态预测未来缓存需求，在设备内存与精度预算下把 token 联合分配到精确、低秩、闪存卸载三层；保留全上下文访问、消除反应式驱逐的循环依赖，闭式求解器在运行时选择分层边界与逐层秩。</p>
+<p><strong>关键数字</strong>：8 个文本/视觉/音频模型、3 款移动 SoC 上：prefill 吞吐较现有移动端框架最高提升 17.6x，RAM 驻留 KV 缓存减少 12.5–34%，同内存预算下支持显著更长上下文，精度仅轻微下降。</p>
+<p><strong>为什么值得看</strong>：把 KV 分层从“边跑边驱逐”变成“开始前预测”，端侧长上下文推理的实用新范式。</p>
+<p>原文：<a href="http://arxiv.org/abs/2609.21172">TierKV: Long-Context On-Device LLMs via Predictive Multi-Tier KV Caching</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2609.21172">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>The Weight Is Over - Interactive Diffusion on Consumer GPUs</h1>
 <p class="meta-line">arXiv（cs.LG/cs.CV/cs.PF） · 2026-09-18 · 论文PDF / 每日精选</p>
 
-<p>让交互式扩散模型在消费级 GPU 上实时运行的系统方法（权重压缩与调度）</p>
-<blockquote><p>On-device inference is booming, but the momentum is almost all in language models. Diffusion pipelines are memory hungry, latency-sensitive, and require orchestrating an embedder, a transformer, a decoder, and often further postprocessing that is not as standardized as LLM inference loops are. We navigate the trade-off between performance, quality, and model footprint to reach as many client devices in the wild as possible. We make three contributions: an embedding translator that maps a small text encoder into a large encoder space to cut weight and latency; a reproducible sweep recipe for navigating the speed/quality/memory triangle in diffusion pipelines; and an interactive on-device image generation editor achieving sub-second TTFI on recent GPUs.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：端侧推理的热潮几乎全在语言模型——扩散管线内存大、延迟敏感、还要编排 embedder/transformer/decoder 等多组件，如何在性能、质量与体积的三角中覆盖尽量多的真实设备？</p>
+<p><strong>方法</strong>：三项贡献：embedding translator 把小文本编码器映射进大编码器空间以砍权重与延迟；一套可复现的 sweep 方法，系统导航扩散管线的速度/质量/内存三角；以及在近期消费级 GPU 上实现亚秒级首图时间（TTFI）的交互式端侧图像生成编辑器。</p>
+<p><strong>关键数字</strong>：摘要未给出具体压缩率或帧率数字，核心承诺是“近期 GPU 上亚秒 TTFI”。</p>
+<p><strong>为什么值得看</strong>：端侧 AI 的下一块拼图是生成式视觉——这篇把扩散模型的端侧工程问题系统拆解了一遍，做端侧多模态的可以按图索骥。</p>
+<p>原文：<a href="http://arxiv.org/abs/2609.21849">The Weight Is Over - Interactive Diffusion on Consumer GPUs</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2609.21849">阅读原文 ↗</a></p>
 </body>
 </html>

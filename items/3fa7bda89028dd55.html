@@ -22,9 +22,11 @@
 <h1>SpecQuant: Speculative Decoding with Multi-Parent Quantization for Adaptive LLM Inference</h1>
 <p class="meta-line">arXiv（cs.LG） · 2026-09-18 · 论文PDF / 每日精选</p>
 
-<p>多父级量化与投机解码自适应组合，按负载切换精度档位以降低 LLM 推理时延与能耗</p>
-<blockquote><p>Running large language models (LLMs) locally continues to be limited by restrictions of compute and memory on consumer hardware. The popular acceleration technologies, such as quantization, speculative decoding, and adaptive inferencing, offer substantial speed boosts but usually necessitate retraining, per architecture tuning, or draft models. SpecQuant is a trainingfree framework, that combines speculative decoding with multiparent quantization to perform adaptive, efficient inference of LLMs. SpecQuant derives multiple quantized variants (INT4, FP8, FP16) from a shared base model, and dynamically routes queries based on predicted complexity; lightweight variants are used for simple or factual tasks, and full-precision models are used for complex reasoning tasks or long-context inputs. The shared-weight design of SpecQuant ensures sufficient token acceptance for speculative decoding without compatibility issues using separate draft parent models. We evaluate SpecQuant on Qwen2.5 based models on the MMLU, AlpacaEval, and GSM8K datasets, or benchmarks, demonstrating 35-43% speedups without degrading accuracy greater than 2%, substantial within the LLM community. SpecQuant enables p…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：量化、投机解码、自适应推理各自都能加速端侧 LLM，但通常需要重训练、逐架构调参或独立草稿模型——能否免训练把它们合为一体？</p>
+<p><strong>方法</strong>：SpecQuant 从同一基座模型派生 INT4/FP8/FP16 多个量化变体，按预测复杂度动态路由：简单/事实类查询走轻量变体，复杂推理/长上下文走全精度；共享权重设计保证投机解码的 token 接受率，无需独立草稿父模型。</p>
+<p><strong>关键数字</strong>：Qwen2.5 系列模型上，MMLU、AlpacaEval、GSM8K 评测显示提速 35–43%，精度损失不超过 2%。</p>
+<p><strong>为什么值得看</strong>：免训练、一套权重三种精度档位的自适应推理框架，消费级硬件部署 LLM 的低成本组合方案。</p>
+<p>原文：<a href="http://arxiv.org/abs/2609.21704">SpecQuant: Speculative Decoding with Multi-Parent Quantization for Adaptive LLM Inference</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2609.21704">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Layerwise Decoupling for Stable Structured Sparsification of Fully Connected Layers</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Layerwise Decoupling for Stable Structured Sparsification of Fully Connected Layers</h1>
+<p class="meta-line">arXiv（Charles Kulick 等，cs.LG） · 2026-09-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：对预训练网络全连接层做结构化剪枝时，联合惩罚所有层容易失控：要么剪不动，要么灾难性过剪，正则强度可用区间很窄。</p>
+<p><strong>方法</strong>：提出逐层解耦方法：抽出浅层两子网、归一化内层权重，对外层权重矩阵施加结构化 group 惩罚，逐层顺序剪神经元；理论上证明对任意正齐次激活，解耦目标与特定联合惩罚在最优点等价，因而有干净的投影/近端求解形式。</p>
+<p><strong>关键数字</strong>：相比联合基线，解耦形式给出更宽的正则强度可用区间、更低的灾难性过剪率且精度相当；在受控分类、稀疏恢复、高维 PINN 压力测试与 OPT-1.3B 前馈层上验证。</p>
+<p><strong>为什么值得看</strong>：有理论保证且更稳健的结构化剪枝新 formulation，做模型压缩的可以换掉手里不稳的联合惩罚。</p>
+<p>原文：<a href="http://arxiv.org/abs/2609.21126">Layerwise Decoupling for Stable Structured Sparsification of Fully Connected Layers</a></p>
+<p><a class="origin" href="http://arxiv.org/abs/2609.21126">阅读原文 ↗</a></p>
+</body>
+</html>

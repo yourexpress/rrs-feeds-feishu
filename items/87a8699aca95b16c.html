@@ -22,9 +22,11 @@
 <h1>Xronos: Heterogeneity-Aware Tensor Parallelism for Collaborative LLM Fine-Tuning on Edge CPUs</h1>
 <p class="meta-line">arXiv（Wonmi Choi 等，cs.DC） · 2026-09-17 · 论文PDF / 每日精选</p>
 
-<p>面向边缘 CPU 协同微调的异构感知张量并行（发现流水线并行在 CPU 边缘端失效）</p>
-<blockquote><p>Collaborative fine-tuning on edge devices adapts large language models to domain-specific data while keeping each device's data local. State-of-the-art (SOTA) collaborative fine-tuning techniques are largely designed for GPU-based edge devices and rely on pipeline parallelism (PP). However, many edge platforms, including IoT gateways, smart-home hubs, and in-vehicle computers, are primarily CPU-based. This paper reports that PP is ineffective on CPU-based edge devices because the same CPU handles both model computation and communication, which causes severe CPU contention. Our analysis shows that this leads to 5.75$\times$ higher computation stall ratios than on GPU devices on average. Tensor parallelism (TP) can alleviate this contention by separating computation and communication, but existing TP techniques assume homogeneous devices. On heterogeneous CPU edge devices, we find that this assumption causes faster workers to remain idle for up to 34% while waiting for slower devices at synchronization points. To address the limitations, we propose Xronos, a collaborative fine-tuning framework for heterogeneous CPU edge devices. Xronos uses TP as its execution backbone and combines l…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：边缘设备协同微调 LLM 的 SOTA 方法多为 GPU 设计、依赖流水并行（PP），但大量边缘平台（IoT 网关、家居中枢、车载）是纯 CPU——PP 在这些设备上为何失灵、怎么办？</p>
+<p><strong>方法</strong>：分析表明 CPU 同时承担计算与通信导致严重争用；Xronos 改用张量并行（TP）为执行骨干，结合轻量 profiling 与异构感知的张量切分，缓解快慢设备间的 straggler 瓶颈。</p>
+<p><strong>关键数字</strong>：CPU 设备上 PP 的计算停滞比平均高 5.75x；同构假设的 TP 让快设备空等多达 34%。Xronos 将微调时间缩短 18%（对 TP）至 56%（对 PP），设备空闲时间比降约 5.9x，精度不降。</p>
+<p><strong>为什么值得看</strong>：把协同微调从 GPU 边缘拓展到更广阔的 CPU 边缘设备群，车联网/IoT 场景的联邦式适配有了新选项。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.19909v1">Xronos: Heterogeneity-Aware Tensor Parallelism for Collaborative LLM Fine-Tuning</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19909v1">阅读原文 ↗</a></p>
 </body>
 </html>

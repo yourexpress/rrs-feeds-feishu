@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adapting the Actor Model of Concurrency for High-Frequency Trading: Synchronous Message Delivery (fast_send) and a Tick-to-Book Latency Study</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Adapting the Actor Model of Concurrency for High-Frequency Trading: Synchronous Message Delivery (fast_send) and a Tick-to-Book Latency Study</h1>
+<p class="meta-line">arXiv（Vincent Maciejewski，q-fin.TR/cs.DC） · 2026-09-18 · 论文PDF</p>
+
+<p>Actor 并发模型用于高频交易的同步消息传递与 tick-to-book 时延研究</p>
+<blockquote><p>The actor model - state isolation, data-race freedom, deadlock resistance, and sequential single-message reasoning - has long been dismissed as unsuitable for high-frequency trading (HFT): actors seem to imply many threads, a mailbox per actor, and a heap-allocated message plus a context switch per interaction, overhead incompatible with a microsecond budget. This paper argues the dismissal is wrong for co-located actors, and supports it both analytically and with a deployed, measured implementation: kaspar-hft, an open-source C++20 framework. Four extensions adapt the model for HFT: fast_send, a synchronous delivery mechanism in which the sending thread runs the receiver's handler inline and returns the reply as a value; actor groups, which co-schedule actors on one thread behind a shared mailbox; per-actor selectable mailbox queues; and a memory pool. fast_send has receiver transparency: the handler cannot tell whether delivery was synchronous or asynchronous, or which thread runs it. A grouped synchronous chain runs on one thread, cutting scheduler context switches from O(N) to O(1), and a thread-local call-chain test catches cyclic invocation before any lock is taken. Microbenc…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="http://arxiv.org/abs/2609.21173">阅读原文 ↗</a></p>
+</body>
+</html>

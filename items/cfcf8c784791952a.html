@@ -22,9 +22,11 @@
 <h1>VERA: Reinforcement Learning for Dynamic Memory Scaling of HPC Workloads in Kubernetes</h1>
 <p class="meta-line">arXiv（Ade Pramono 等，cs.DC） · 2026-09-17 · 论文PDF / 每日精选</p>
 
-<p>Memory over-provisioning results in resource underutilization when HPC workloads run on Kubernetes.</p>
-<blockquote><p>Memory over-provisioning results in resource underutilization when HPC workloads run on Kubernetes. The default Vertical Pod Autoscaler (VPA) cannot anticipate phase-driven memory spikes for first-run HPC jobs. In this work, we present a reinforcement learning (RL) recommender VERA that formulates vertical memory scaling as a Markov Decision Process and trains an agent on 3353 real Prometheus traces. Evaluated on a live Google Kubernetes Engine cluster using LAMMPS, graph analytics, in-memory analytics, and MLPerf 3D-UNet, the RL agent reclaims 31.6% of the available memory headroom and incurs at most one OOM event while VPA reclaims -7.9% over the same runs, raising memory provisioning, and its recommendation would have been insufficient to avoid OOM in 30 runs. The results demonstrate that an observation-driven RL recommender could outperform retrospective heuristics for dynamic memory scaling.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：HPC 负载跑在 Kubernetes 上时内存过度预留导致资源浪费，而默认 VPA 无法预见首次运行作业的阶段性内存尖峰。</p>
+<p><strong>方法</strong>：VERA 把垂直内存扩缩建模为马尔可夫决策过程，用 3,353 条真实 Prometheus trace 训练 RL 推荐器；在 GKE 实集群上以 LAMMPS、图分析、内存分析与 MLPerf 3D-UNet 评测。</p>
+<p><strong>关键数字</strong>：RL agent 回收 31.6% 可用内存余量、至多发生一次 OOM；同组运行下 VPA 回收 -7.9%（反而调高预留），且有 30 次运行其推荐不足以避免 OOM。</p>
+<p><strong>为什么值得看</strong>：观测驱动的 RL 推荐器击败回溯式启发式，K8s 上跑 HPC/训练作业的资源运营可直接借鉴。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.19936v1">VERA: Reinforcement Learning for Dynamic Memory Scaling of HPC Workloads in Kubernetes</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19936v1">阅读原文 ↗</a></p>
 </body>
 </html>

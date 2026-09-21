@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>An Approximate Queueing Model of LLM Inference Serving for SLO-Driven Autoscaling</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>An Approximate Queueing Model of LLM Inference Serving for SLO-Driven Autoscaling</h1>
+<p class="meta-line">arXiv（Vishakha Ramani 等，cs.PF） · 2026-09-17 · 论文PDF</p>
+
+<p>用可解析的近似排队模型预测 LLM 服务 TTFT/ITL，支撑 SLO 驱动的自动扩缩与推理优化</p>
+<blockquote><p>Performance models of LLM servers support both latency evaluation and the design of controllers for autoscaling against service level objectives (SLOs) and for inference optimization. We model the multiplexed execution of prefill and decode operations with a tractable, approximate queueing model under Markovian assumptions. Three parameters characterize a model-accelerator pair, namely a baseline per-iteration overhead, a per-token compute cost, and a per-token key-value (KV) cache access cost. The model combines a mean-value analysis of per-iteration work with a state-dependent Markov chain for batch occupancy to predict mean time to first token (TTFT) and inter-token latency (ITL). We validate these predictions against measurements and show that the three parameters can be estimated from observed latencies. Over a grid of input and output lengths and arrival rates spanning light to moderate load, the relative error of the average ITL is about 5% for Llama-3.1-8B and 8% for Qwen2.5-14B running on an H100 GPU, and the corresponding TTFT errors are 14% and 16%. We then implement an autoscaling controller that uses the model to adjust inference-server replica counts as the workload c…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="http://arxiv.org/abs/2609.20957">阅读原文 ↗</a></p>
+</body>
+</html>

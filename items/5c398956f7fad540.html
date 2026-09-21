@@ -22,9 +22,11 @@
 <h1>Weave: Fine-Grained Dynamic SM Scheduling in an MoE Megakernel for Compute-Communication Overlap</h1>
 <p class="meta-line">arXiv（cs.DC） · 2026-09-18 · 论文PDF / 每日精选</p>
 
-<p>MoE 巨型内核内的细粒度动态 SM 调度，重叠专家计算与通信以提升 GPU 利用率</p>
-<blockquote><p>Mixture-of-Experts (MoE) inference under expert parallelism (EP) turns each MoE layer into a distributed computation with costly dispatch and combine communication. State-of-the-art systems reduce this cost through communication-computation overlap, splitting the GPU's SMs for communication and computation respectively. However, this approach still leaves GPU resources wasted along two dimensions. Spatially, the best SM split is determined by each layer's routing result and varies across layers and GPUs, so fixed policies mismatch the workload and waste either NVLink bandwidth or compute throughput. Temporally, complex MoE data dependencies introduce bubbles that leave SMs idle. We present Weave, to our knowledge the first MoE overlap system that performs fine-grained dynamic SM scheduling - deciding per layer and per GPU by routing results at runtime. Once routing completes, each layer's communication and computation volumes become known; Weave exploits this predictability through a lightweight cost model running inside the persistent megakernel: a spatial scheduler partitions SMs into communication workers and computation workers to match the communication/computation throughput …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：专家并行下 MoE 每层都是一次分布式计算，dispatch/combine 通信昂贵；现有方案靠固定 SM 划分做计算-通信重叠，但最优划分随层、随卡的路由结果变化，固定策略要么浪费 NVLink 带宽要么浪费算力，时间维度还有数据依赖气泡。</p>
+<p><strong>方法</strong>：Weave 是首个在持久 megakernel 内做细粒度动态 SM 调度的 MoE 重叠系统：路由完成后每层通信/计算量即确定，内置轻量成本模型据此把 SM 划分为通信/计算 worker 匹配吞吐比（空间调度），并协调两组 worker 最小化空转（时间调度）。</p>
+<p><strong>关键数字</strong>：4x H100 SXM、6 个主流 MoE 模型上：MoE 层几何平均加速 2.89x、端到端 1.33x（对 5 个 SOTA 基线）。</p>
+<p><strong>为什么值得看</strong>：把“按路由结果实时重排 SM”塞进单个 megakernel，MoE 推理系统工程的又一层天花板被顶开。</p>
+<p>原文：<a href="http://arxiv.org/abs/2609.21483">Weave: Fine-Grained Dynamic SM Scheduling in an MoE Megakernel for Compute-Communication Overlap</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2609.21483">阅读原文 ↗</a></p>
 </body>
 </html>

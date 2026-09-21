@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PrefixBench-H100: Characterizing Prefix Reuse and Time-to-First-Token in H100 LLM Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>PrefixBench-H100: Characterizing Prefix Reuse and Time-to-First-Token in H100 LLM Serving</h1>
+<p class="meta-line">arXiv（Omkar Shewale 等，cs.PF/cs.LG） · 2026-09-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：vLLM、TensorRT-LLM 都支持前缀 KV 复用，但何时真能显著降低 TTFT、何时会被调度、缓存粒度、并发或显存压力抵消？缺乏系统刻画。</p>
+<p><strong>方法</strong>：PrefixBench-H100 在单张 H100 上结合受控合成 trace 与聊天/检索风格负载，变化共享前缀长度、后缀多样性、到达模式、并发、输出长度与缓存配置，采集 TTFT、ITL、端到端时延、吞吐、命中率与显存数据。</p>
+<p><strong>关键数字</strong>：给出了前缀复用显著降低首 token 时延的工况区间与缓存压力侵蚀收益的区间；缓存有效性对并发与输出长度基本不敏感，跨运行时的残差差异主要来自缓存之上的调度层。</p>
+<p><strong>为什么值得看</strong>：不谈新算法，专画“前缀复用的实用边界”，部署长系统 prompt / RAG / agent 负载时可按图索骥。</p>
+<p>原文：<a href="http://arxiv.org/abs/2609.19657">PrefixBench-H100: Characterizing Prefix Reuse and Time-to-First-Token in H100 LLM Serving</a></p>
+<p><a class="origin" href="http://arxiv.org/abs/2609.19657">阅读原文 ↗</a></p>
+</body>
+</html>

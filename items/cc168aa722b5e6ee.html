@@ -22,9 +22,11 @@
 <h1>Programming AMD XDNA NPUs with Open-source Compiler Tools: A FlashAttention Case Study</h1>
 <p class="meta-line">arXiv（Zhefu Chen 等，cs.AR/cs.LG） · 2026-09-18 · 论文PDF / 每日精选</p>
 
-<p>用开源编译器工具链在 AMD XDNA 边缘 NPU 上编程并优化 FlashAttention 算子的案例研究</p>
-<blockquote><p>Spatial NPUs such as AMD XDNA place compute tiles beside small local memories and leave data movement between them to software. Mapping a multi-stage workload onto such a device is largely a question of where the intermediate tensors live. We report what we learned making those choices for FlashAttention with the open-source IRON and MLIR-AIR flows. We compare four reference designs on XDNA 1 and XDNA 2: one runs each operator separately, two stream between operators on chip, and one fuses all three attention stages into a single kernel. The fused kernel holds the $\boldsymbol{QK}^{\mathsf T}$ scores in compute-tile local memory and reduces partial results over the cascade interconnect, so the scores never return to shared MemTile memory. On XDNA 2, it reaches 3.62 TFLOP/s over complete end-to-end execution, twice the IRON design, with 5.3 to 7.2 times the energy efficiency of the integrated GPU on the same chip at 2K tokens and above. It covers twelve LLM configurations, from BERT to DeepSeek, up to 128K tokens. Roofline analysis at each memory level explains this result and shows when to stop. XDNA 1 has lower ridge points, so streaming on chip already reaches the compute-bound r…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：AMD XDNA 这类空间型 NPU 把计算瓦片贴着小本地内存、数据搬运全交给软件——多阶段算子如何摆放中间张量，决定了性能上限。</p>
+<p><strong>方法</strong>：用开源 IRON 与 MLIR-AIR 流程为 FlashAttention 做映射案例研究，在 XDNA 1/2 上比较四种参考设计（逐算子、两种片上流水、全融合单内核）；融合版把 QK^T 分数留在计算瓦片本地内存、经级联互连归约。Roofline 逐内存级分析给出“融合到越过脊点就停”的判据。</p>
+<p><strong>关键数字</strong>：XDNA 2 上融合内核端到端达 3.62 TFLOP/s，是 IRON 设计的 2 倍；2K token 以上能效为同芯片集成 GPU 的 5.3–7.2 倍；覆盖 BERT 到 DeepSeek 共 12 个 LLM 配置、最长 128K token；参考设计开源。</p>
+<p><strong>为什么值得看</strong>：少见的“先算 roofline 再写代码”NPU 映射方法论，做边缘 NPU 算子部署可直接套用其判据。</p>
+<p>原文：<a href="http://arxiv.org/abs/2609.21264">Programming AMD XDNA NPUs with Open-source Compiler Tools: A FlashAttention Case Study</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2609.21264">阅读原文 ↗</a></p>
 </body>
 </html>

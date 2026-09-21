@@ -22,9 +22,11 @@
 <h1>Video DeltaNet: A Video-Native Hybrid Attention for Livestream Video Generation</h1>
 <p class="meta-line">arXiv（Haocheng Xi 等，cs.LG） · 2026-09-17 · 论文PDF / 每日精选</p>
 
-<p>视频原生混合注意力（局部 Softmax + 双向线性 Delta 记忆），显著降低视频扩散模型长序列注意力开销。</p>
-<blockquote><p>Video diffusion models repeatedly process long spatiotemporal token sequences during denoising, making attention a major computational bottleneck. Linear attention offers an appealing alternative and has been widely adopted in recent large language models, but directly applying it to video models often fails to preserve the fine-grained interactions required for high-quality generation. We present Video DeltaNet (VDN), which combines local Softmax attention with bidirectional linear memory for long-range video context. Its linear branch introduces Video Delta Attention (VDA), which updates memory once per frame by jointly incorporating its spatial tokens. Separate output projections and learnable gates calibrate the two branches, while a staged teacher-alignment recipe progressively introduces the new pathway into pretrained models. We instantiate VDN on MiniMax H3, applying the hybrid to video-to-video interactions while retaining Softmax for interactions involving text or audio. With eight-step distillation and an optimized SGLang serving stack, VDN-H3 completes DiT denoising for a 14.3-second, 768p video in 6.70 seconds on eight NVIDIA B200 GPUs, corresponding to a 14.5x speedup…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：视频扩散模型在去噪中反复处理超长时空 token 序列，注意力是主要算力瓶颈；直接套用 LLM 的线性注意力又保不住高质量生成所需的细粒度交互。</p>
+<p><strong>方法</strong>：Video DeltaNet 把局部 Softmax 注意力与双向线性记忆结合：线性分支提出 Video Delta Attention，按帧联合其空间 token 更新记忆；两分支各有独立输出投影与可学习门控，用分阶段 teacher-alignment 渐进注入预训练模型（实例化于 MiniMax H3，文本/音频交互仍用 Softmax）。</p>
+<p><strong>关键数字</strong>：8 步蒸馏 + 优化 SGLang 推理栈下，VDN-H3 在 8 张 B200 上用 6.70 秒完成 14.3 秒 768p 视频的 DiT 去噪，相对同卡数 50 步稠密 H3 基线加速 14.5x。</p>
+<p><strong>为什么值得看</strong>：线性化注意力真正落地到直播级视频生成，长视频生成的成本结构可能被改写。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.20744v1">Video DeltaNet: A Video-Native Hybrid Attention for Livestream Video Generation</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20744v1">阅读原文 ↗</a></p>
 </body>
 </html>

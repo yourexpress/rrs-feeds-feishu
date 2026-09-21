@@ -5,7 +5,7 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>每天一条，汇总当日两个检索源（AI 技术报告 + 高效计算文献）的重点内容。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 21 Sep 2026 11:05:38 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 23:02:18 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/daily-summary.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>每日精选 · 2026-09-21</title>
@@ -16,39 +16,39 @@
       <description>&lt;h2&gt;当日检索概况&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;AI 技术报告库：检索 0 条，入选 0 条（当日该库无新内容）。&lt;/li&gt;
-&lt;li&gt;高效计算库：检索 28 条，入选 11 条，主题集中在 LLM 推理优化（量化/KV 缓存/投机解码）与端侧/国产算力硬件。&lt;/li&gt;
+&lt;li&gt;高效计算库：检索 58 条，入选 16 条，主题集中在 LLM 推理系统优化（量化/KV 缓存/投机解码/MoE 调度）、大规模训练框架与端侧/国产算力硬件。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;重点推荐&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;DeepSeek-V4.1-Flash：把 KV Cache 压缩推到极限&lt;/strong&gt;：552B 骨干 MoE、百万 token 上下文，CED 架构 prefill 只激活 8B 参数，全局 KV cache 每 token 仅 890 字节（约为上代 1/4），持久 KV 足迹约 1/8。&lt;a href="https://arxiv.org/abs/2609.19969v1"&gt;链接&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;SSD-LLaMA：单台消费级 PC 跑万亿参数 MoE&lt;/strong&gt;：SSD/RAM/VRAM 三级存储 + CPU-GPU 混合执行，RTX 5090 + 32GB RAM 达到 1 token/s 以上，端侧满血模型的新路线。&lt;a href="https://arxiv.org/abs/2609.18110v1"&gt;链接&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;MediaTek 天玑旗舰迁移 2nm&lt;/strong&gt;：双 NPU 架构，NPU1090 支持端侧 30B 模型，LLM prefill +51%、每瓦 token +55%、多核功耗 -61%，移动端 AI 算力的关键节点。&lt;a href="https://www.eetasia.com/mediatek-moves-dimensity-flagship-to-2nm-with-new-ai-architecture/"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HyperParallel-FSDP：昇腾超节点上的拓扑感知训练框架&lt;/strong&gt;：双模式 DTensor + 拓扑感知 FSDP + 布局驱动分布式 Muon，384 卡跑 505B MoE 维持 421k tokens/s，步时较 FSDP2 降 29.7%。&lt;a href="http://arxiv.org/abs/2609.21594"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Weave：MoE Megakernel 内细粒度动态 SM 调度&lt;/strong&gt;：按路由结果实时划分通信/计算 SM，4x H100 上 MoE 层几何平均加速 2.89x、端到端 1.33x。&lt;a href="http://arxiv.org/abs/2609.21483"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TierKV：预测式多级 KV 缓存&lt;/strong&gt;：解码前预测缓存需求并分层放置，3 款移动 SoC 上 prefill 吞吐最高 +17.6x、RAM 驻留 KV 减少 12.5–34%。&lt;a href="http://arxiv.org/abs/2609.21172"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AMD XDNA NPU 上跑 FlashAttention 的开源编译器案例&lt;/strong&gt;：全融合内核 3.62 TFLOP/s、能效为同芯片 iGPU 的 5.3–7.2 倍，"roofline 判据先行"的 NPU 映射方法论。&lt;a href="http://arxiv.org/abs/2609.21264"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SpecQuant：免训练的多父级量化 + 投机解码&lt;/strong&gt;：一套权重 INT4/FP8/FP16 三档自适应路由，Qwen2.5 上提速 35–43%、精度损失 ≤2%。&lt;a href="http://arxiv.org/abs/2609.21704"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MediaTek 天玑旗舰迁移 2nm&lt;/strong&gt;：双 NPU 架构，NPU1090 支持端侧 30B 模型，LLM prefill +51%、每瓦 token +55%、多核功耗 -61%。&lt;a href="https://www.eetasia.com/mediatek-moves-dimensity-flagship-to-2nm-with-new-ai-architecture/"&gt;链接&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;国产算力基础设施加快"升维"&lt;/strong&gt;：华为全联接大会发布昇腾960 超节点（NPO 光引擎/灵衢互联，4096 卡、最大 51.2 万卡集群）与鲲鹏超节点、PB 级 KV 缓存集群。&lt;a href="http://jjckb.xinhuanet.com/20260921/2e54cd0ae963425e9d6ac04ccbf5e420/c.html"&gt;链接&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Weave：MoE Megakernel 内细粒度动态 SM 调度&lt;/strong&gt;：在单个巨型内核里重叠专家计算与通信，提升 GPU 利用率，MoE 推理系统的前沿工程。&lt;a href="http://arxiv.org/abs/2609.21483"&gt;链接&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;On-Demand Attention：语言模型知道自己何时需要回忆&lt;/strong&gt;：轻量 recall head 按需调用全局注意力，预训练权重不动，vLLM 中 GPU 侧条件执行落地。&lt;a href="https://arxiv.org/abs/2609.20734v1"&gt;链接&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;16 台 DGX Spark 组集群跑满血 Kimi K3&lt;/strong&gt;：社区用 vLLM + 预构建镜像的实战帖，附 10 项优化修改，个人级集群推理的参考样本。&lt;a href="https://forums.developer.nvidia.com/t/full-kimi-k3-running-on-16x-gb10-cluster/379174/146"&gt;链接&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;llama.cpp b11053–b11065 连发&lt;/strong&gt;：Metal FWHT F16 输入与 dsv4_hc_pre 支持 Kimi-K3、Hexagon 新算子、Mamba 时间步投影修复，端侧推理引擎节奏密集。&lt;a href="https://radar.tuikar.cn/project/ggml-org--llama-cpp"&gt;链接&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;主题速览&lt;/h2&gt;
-&lt;p&gt;当日高效计算库呈"推理系统优化 + 算力硬件"双主线：论文侧密集出现 KV 缓存分层（TierKV）、投机解码（SpecQuant、RheoSampling）、量化补偿与 MoE 调度等推理降本技术；硬件侧联发科 2nm、昇腾960 超节点、海光端侧 CPU 与离线桌面 AI 超算等端侧/国产算力新闻齐发，另有 AMD XDNA NPU 上跑 FlashAttention 的开源编译器案例研究与 Swiftlet（Swift+Metal 跑 80B MoE）等社区工程。&lt;/p&gt;</description>
+&lt;p&gt;当日高效计算库呈"推理/训练系统优化 + 算力硬件"双主线：论文侧密集出现 KV 缓存分层（TierKV）、投机解码（SpecQuant、RheoSampling）、量化误差分解、MoE 调度（Weave）与大规模训练框架（HyperParallel-FSDP）；硬件与社区侧联发科 2nm、昇腾960 超节点、海光端侧 CPU、16x GB10 集群与 llama.cpp 密集发版等端侧/国产算力动态齐发，另有 AMD XDNA NPU 编译器案例与消费级 GPU 交互式扩散等工程实践。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2>当日检索概况</h2>
 <ul>
 <li>AI 技术报告库：检索 0 条，入选 0 条（当日该库无新内容）。</li>
-<li>高效计算库：检索 28 条，入选 11 条，主题集中在 LLM 推理优化（量化/KV 缓存/投机解码）与端侧/国产算力硬件。</li>
+<li>高效计算库：检索 58 条，入选 16 条，主题集中在 LLM 推理系统优化（量化/KV 缓存/投机解码/MoE 调度）、大规模训练框架与端侧/国产算力硬件。</li>
 </ul>
 <h2>重点推荐</h2>
 <ul>
-<li><strong>DeepSeek-V4.1-Flash：把 KV Cache 压缩推到极限</strong>：552B 骨干 MoE、百万 token 上下文，CED 架构 prefill 只激活 8B 参数，全局 KV cache 每 token 仅 890 字节（约为上代 1/4），持久 KV 足迹约 1/8。<a href="https://arxiv.org/abs/2609.19969v1">链接</a></li>
-<li><strong>SSD-LLaMA：单台消费级 PC 跑万亿参数 MoE</strong>：SSD/RAM/VRAM 三级存储 + CPU-GPU 混合执行，RTX 5090 + 32GB RAM 达到 1 token/s 以上，端侧满血模型的新路线。<a href="https://arxiv.org/abs/2609.18110v1">链接</a></li>
-<li><strong>MediaTek 天玑旗舰迁移 2nm</strong>：双 NPU 架构，NPU1090 支持端侧 30B 模型，LLM prefill +51%、每瓦 token +55%、多核功耗 -61%，移动端 AI 算力的关键节点。<a href="https://www.eetasia.com/mediatek-moves-dimensity-flagship-to-2nm-with-new-ai-architecture/">链接</a></li>
+<li><strong>HyperParallel-FSDP：昇腾超节点上的拓扑感知训练框架</strong>：双模式 DTensor + 拓扑感知 FSDP + 布局驱动分布式 Muon，384 卡跑 505B MoE 维持 421k tokens/s，步时较 FSDP2 降 29.7%。<a href="http://arxiv.org/abs/2609.21594">链接</a></li>
+<li><strong>Weave：MoE Megakernel 内细粒度动态 SM 调度</strong>：按路由结果实时划分通信/计算 SM，4x H100 上 MoE 层几何平均加速 2.89x、端到端 1.33x。<a href="http://arxiv.org/abs/2609.21483">链接</a></li>
+<li><strong>TierKV：预测式多级 KV 缓存</strong>：解码前预测缓存需求并分层放置，3 款移动 SoC 上 prefill 吞吐最高 +17.6x、RAM 驻留 KV 减少 12.5–34%。<a href="http://arxiv.org/abs/2609.21172">链接</a></li>
+<li><strong>AMD XDNA NPU 上跑 FlashAttention 的开源编译器案例</strong>：全融合内核 3.62 TFLOP/s、能效为同芯片 iGPU 的 5.3–7.2 倍，"roofline 判据先行"的 NPU 映射方法论。<a href="http://arxiv.org/abs/2609.21264">链接</a></li>
+<li><strong>SpecQuant：免训练的多父级量化 + 投机解码</strong>：一套权重 INT4/FP8/FP16 三档自适应路由，Qwen2.5 上提速 35–43%、精度损失 ≤2%。<a href="http://arxiv.org/abs/2609.21704">链接</a></li>
+<li><strong>MediaTek 天玑旗舰迁移 2nm</strong>：双 NPU 架构，NPU1090 支持端侧 30B 模型，LLM prefill +51%、每瓦 token +55%、多核功耗 -61%。<a href="https://www.eetasia.com/mediatek-moves-dimensity-flagship-to-2nm-with-new-ai-architecture/">链接</a></li>
 <li><strong>国产算力基础设施加快"升维"</strong>：华为全联接大会发布昇腾960 超节点（NPO 光引擎/灵衢互联，4096 卡、最大 51.2 万卡集群）与鲲鹏超节点、PB 级 KV 缓存集群。<a href="http://jjckb.xinhuanet.com/20260921/2e54cd0ae963425e9d6ac04ccbf5e420/c.html">链接</a></li>
-<li><strong>Weave：MoE Megakernel 内细粒度动态 SM 调度</strong>：在单个巨型内核里重叠专家计算与通信，提升 GPU 利用率，MoE 推理系统的前沿工程。<a href="http://arxiv.org/abs/2609.21483">链接</a></li>
-<li><strong>On-Demand Attention：语言模型知道自己何时需要回忆</strong>：轻量 recall head 按需调用全局注意力，预训练权重不动，vLLM 中 GPU 侧条件执行落地。<a href="https://arxiv.org/abs/2609.20734v1">链接</a></li>
 <li><strong>16 台 DGX Spark 组集群跑满血 Kimi K3</strong>：社区用 vLLM + 预构建镜像的实战帖，附 10 项优化修改，个人级集群推理的参考样本。<a href="https://forums.developer.nvidia.com/t/full-kimi-k3-running-on-16x-gb10-cluster/379174/146">链接</a></li>
-<li><strong>llama.cpp b11053–b11065 连发</strong>：Metal FWHT F16 输入与 dsv4_hc_pre 支持 Kimi-K3、Hexagon 新算子、Mamba 时间步投影修复，端侧推理引擎节奏密集。<a href="https://radar.tuikar.cn/project/ggml-org--llama-cpp">链接</a></li>
 </ul>
 <h2>主题速览</h2>
-<p>当日高效计算库呈"推理系统优化 + 算力硬件"双主线：论文侧密集出现 KV 缓存分层（TierKV）、投机解码（SpecQuant、RheoSampling）、量化补偿与 MoE 调度等推理降本技术；硬件侧联发科 2nm、昇腾960 超节点、海光端侧 CPU 与离线桌面 AI 超算等端侧/国产算力新闻齐发，另有 AMD XDNA NPU 上跑 FlashAttention 的开源编译器案例研究与 Swiftlet（Swift+Metal 跑 80B MoE）等社区工程。</p>]]></content:encoded>
+<p>当日高效计算库呈"推理/训练系统优化 + 算力硬件"双主线：论文侧密集出现 KV 缓存分层（TierKV）、投机解码（SpecQuant、RheoSampling）、量化误差分解、MoE 调度（Weave）与大规模训练框架（HyperParallel-FSDP）；硬件与社区侧联发科 2nm、昇腾960 超节点、海光端侧 CPU、16x GB10 集群与 llama.cpp 密集发版等端侧/国产算力动态齐发，另有 AMD XDNA NPU 编译器案例与消费级 GPU 交互式扩散等工程实践。</p>]]></content:encoded>
     </item>
     <item>
       <title>每日精选 · 2026-09-20</title>

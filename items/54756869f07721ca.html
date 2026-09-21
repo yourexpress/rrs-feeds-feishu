@@ -22,9 +22,11 @@
 <h1>The Output-Space Hypothesis: Enumerative Equivalence Checking for Tensor Programs</h1>
 <p class="meta-line">arXiv（Paul Biberstein 等，cs.PL） · 2026-09-17 · 论文PDF / 每日精选</p>
 
-<p>为张量程序优化建立枚举式等价性检查，超越随机输入差分测试</p>
-<blockquote><p>Tensor programs, as used in deep learning models, are a prime target for optimization, as small performance improvements can have a large impact across training or inference workloads. However, such optimizations are complicated and can produce subtle bugs. Traditionally, correctness is assumed when differential testing against a reference on random inputs fails to reveal bugs. However, the inputs to these programs are massive tensors, and finding bugs can require generating extremely low likelihood inputs with precise relationships among their values. We propose a novel way to find bugs more consistently by flipping the quantifiers. Rather than generating a single input and checking all output tensor locations for equivalence, what if you could check a single output tensor location's equivalence for all inputs? We implement this idea in a system, \dirigo, by using a novel symbolic execution strategy. We demonstrate that \dirigo can find bugs effectively in a public dataset of 6,988 AI-written CUDA kernels that are all marked correct by differential testing. Of these, \dirigo finds 600 kernels that are actually buggy, and finds 97.3\% of those bugs within two minutes.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：张量程序优化容易产生微妙 bug，而随机输入差分测试很难触发需要特定数值关系的低概率输入——如何更一致地找出这类 bug？</p>
+<p><strong>方法</strong>：翻转量词：不再生成一个输入检查所有输出位置，而是对单个输出位置检查所有输入的等价性。系统 Dirigo 用新型符号执行策略实现了这种枚举式等价性检查。</p>
+<p><strong>关键数字</strong>：在 6,988 个 AI 编写、且全部被差分测试判为正确的 CUDA 内核公开数据集上，Dirigo 发现其中 600 个实际有 bug，97.3% 的 bug 在两分钟内找到。</p>
+<p><strong>为什么值得看</strong>：AI 生成内核爆炸的时代，“测试通过 ≠ 正确”有了量化证据与可用工具，内核验证方法论的重要补充。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.19611v1">The Output-Space Hypothesis: Enumerative Equivalence Checking for Tensor Programs</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19611v1">阅读原文 ↗</a></p>
 </body>
 </html>

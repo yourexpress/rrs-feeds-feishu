@@ -22,9 +22,11 @@
 <h1>To Copy or Not to Copy: Controlling Speculative Decoding via Intrinsic Model Signals</h1>
 <p class="meta-line">arXiv（Roy Eisenstadt 等，cs.CL） · 2026-09-17 · 论文PDF / 每日精选</p>
 
-<p>Speculative Decoding (SD) has significantly accelerated Large Language Model (LLM) inference, yet existing approaches face a fundamental tradeoff between two drafting strategies: neural drafting and context-based copying.</p>
-<blockquote><p>Speculative Decoding (SD) has significantly accelerated Large Language Model (LLM) inference, yet existing approaches face a fundamental tradeoff between two drafting strategies: neural drafting and context-based copying. Neural drafts (e.g., EAGLE3) provide robust performance across diverse text settings, while copy-based methods achieve higher speedups in copy-intensive regimes by generating candidates faster and exploiting long repetition spans for near-perfect speculation. We analyze existing copy-based methods and find that they are prone to accidental repetitions where surface-level n-gram overlap does not reflect a structural intent to copy, leading to false-positive triggers that ultimately degrade throughput. We introduce SwitchSD, an adaptive framework that treats copying as a latent control signal of the LLM. By training lightweight probes on the target model's internal representations, SwitchSD identifies genuine copy-intent with high precision (AUC &gt; 0.99). This allows the system to dynamically switch between neural drafting (e.g., EAGLE) and context-based copying. Our results across Llama and Qwen families demonstrate throughput gains of up to 15% over state-of-the-ar…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：投机解码存在两条草稿路线的权衡：神经草稿（如 EAGLE3）各场景稳健，复制式方法在长重复片段上近乎完美加速——但表面 n-gram 重叠常是“意外重复”，误触发反而拖慢吞吐。</p>
+<p><strong>方法</strong>：SwitchSD 把“复制”视为 LLM 的潜在控制信号：在目标模型内部表示上训练轻量探针识别真实复制意图，据此在神经草稿（EAGLE）与上下文复制之间动态切换。</p>
+<p><strong>关键数字</strong>：复制意图识别 AUC &gt; 0.99；Llama 与 Qwen 家族上吞吐较 EAGLE3 等 SOTA 基线最高提升 15%。</p>
+<p><strong>为什么值得看</strong>：把复制从噪声启发式变成模型可感知的解码机制，投机解码工程化的务实一步。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.20186v1">To Copy or Not to Copy: Controlling Speculative Decoding via Intrinsic Model Signals</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20186v1">阅读原文 ↗</a></p>
 </body>
 </html>
