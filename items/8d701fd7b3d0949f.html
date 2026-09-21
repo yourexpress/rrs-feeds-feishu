@@ -22,9 +22,11 @@
 <h1>MiX: Micro-Inverted-Scaling for End-to-End Low-Bit Vision-Language Model Acceleration</h1>
 <p class="meta-line">arXiv（Yuan Liao 等，cs.AR） · 2026-09-17 · 论文PDF / 每日精选</p>
 
-<p>解决低比特 VLM 端到端量化中多模态 token 动态范围鸿沟导致的 microscaling 崩塌</p>
-<blockquote><p>The deployment of Vision-Language Models (VLMs) on edge devices is severely bottlenecked by memory bandwidth, necessitating aggressive sub-8-bit quantization. Since edge accelerators are strictly constrained by area and power, they require end-to-end quantized models. However, the extreme dynamic range gap between multi-modal tokens causes standard block formats to suffer "microscaling collapse," where a single massive outlier hijacks the shared exponent, underflowing surrounding elements and destroying attention maps. To break this bottleneck, we propose Micro-Inverted-Scaling (MiX), a novel format that mathematically inverts the microscaling paradigm: rather than grouping multiple mantissas under one shared exponent, MiX groups private, per-element exponents under a single shared mantissa. To handle asymmetric VLM outlier topologies, we introduce an adaptive dual-format (MiX-MX) inference framework. By algebraically factoring out the shared MiX mantissa, this framework maps to a custom accelerator, replacing multipliers with efficient shifters. Evaluated end-to-end on multiple VLMs, our 4.5-bit MiX formulation exhibits equivalent or superior accuracy on multi-modal benchmarks com…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：视觉语言模型（VLM）的低比特部署中，多模态 token 的异常值让标准块格式发生"microscaling 崩塌"——单个巨型异常值劫持共享指数，下溢压垮周围元素、摧毁注意力图。</p>
+<p><strong>方法</strong>：提出 Micro-Inverted-Scaling（MiX）：数学上倒置 microscale 范式——不再是多个尾数共享一个指数，而是每个元素私有指数共享单一尾数；针对 VLM 不对称异常拓扑引入自适应双格式（MiX-MX）推理框架；把共享尾数代数析出后映射到定制加速器，用移位器替代乘法器。</p>
+<p><strong>关键数字</strong>：4.5-bit MiX 在多模态基准上精度与 NVFP4 相当或更优；加速器面积效率比 NVFP4 基线提升 25%；相比最先进加速器 Focus 提速 2.3–4.5×、能耗降低 1.4–2.9×。</p>
+<p><strong>为什么值得看</strong>：把"倒置数值格式的组织方式"一路推到数据通路物理实现的完整闭环——低比特量化算法与加速器协同设计的少见样本。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.19683v1">MiX: Micro-Inverted-Scaling for End-to-End Low-Bit Vision-Language Model Acceleration</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19683v1">阅读原文 ↗</a></p>
 </body>
 </html>

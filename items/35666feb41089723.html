@@ -22,9 +22,11 @@
 <h1>PixelFlow: Token-Level Workload Management for Efficient Distributed DiT Serving</h1>
 <p class="meta-line">arXiv（Zhexiang Zhang 等，cs.DC） · 2026-09-17 · 论文PDF / 每日精选</p>
 
-<p>Online image generation with Diffusion Transformers (DiTs) must meet latency service-level objectives (SLOs) while using GPU resources efficiently.</p>
-<blockquote><p>Online image generation with Diffusion Transformers (DiTs) must meet latency service-level objectives (SLOs) while using GPU resources efficiently. Existing systems improve GPU utilization by batching multiple requests for joint execution. However, request-level batching offers limited control over batch size: batches may be too small to saturate GPU compute, while larger ones may violate latency SLOs. Globally coordinated scheduling introduces further delays by requiring independently progressing GPUs to synchronize before admitting new work. We present PixelFlow, a distributed DiT serving system that addresses these limitations through token-level workload management. Its key idea is to use image tokens (the units a DiT processes to generate an image) to divide and batch request workloads at a finer granularity. This allows each GPU to take on a portion of additional work under latency constraints. By distributing these portions across GPUs, PixelFlow accommodates more concurrent requests, improving GPU utilization while reducing queueing delays. To realize this flexibility, PixelFlow provides a runtime that splits requests into variable-sized partitions and batches them efficien…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：在线 DiT 图像生成既要满足延迟 SLO 又要高效利用 GPU：请求级批处理对批大小控制有限——太小喂不饱算力、太大违反 SLO；全局协调调度又要求各 GPU 同步接纳新请求、引入额外延迟。</p>
+<p><strong>方法</strong>：PixelFlow 用 token 级负载管理：以 DiT 生成图像的处理单位（图像 token）为粒度拆分与批处理请求负载，让每块 GPU 在延迟约束下承接一部分额外工作；运行时把请求切成变长分区并高效成批；优化 token 放置以限制跨 GPU 交换并均衡负载；利用去噪步之间的相似性把剩余传输与计算重叠；SLO 感知调度器把 GPU 分组共享算力，仅当需要合并资源接纳新请求时才跨组同步。</p>
+<p><strong>关键数字</strong>：在 H100 上以 Stable Diffusion 3 与 FLUX.1-dev 评测，SLO 达标率最高提升 43%，goodput 达到最先进 DiT 服务系统的 2.8 倍。</p>
+<p><strong>为什么值得看</strong>：把 LLM 服务里的细粒度调度思路移植到扩散模型服务，"token 级"这个抽象层选得漂亮——分布式生成服务方向的系统设计范本。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.20723v1">PixelFlow: Token-Level Workload Management for Efficient Distributed DiT Serving</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20723v1">阅读原文 ↗</a></p>
 </body>
 </html>

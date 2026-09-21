@@ -22,9 +22,11 @@
 <h1>SongCraft: Unified Song Generation and Editing</h1>
 <p class="meta-line">Meta · 2026-09-16 · 论文PDF / 每日精选</p>
 
-<p>统一框架同时支持歌词谱曲、歌声生成、曲目改编与音频续写，多任务达到SOTA</p>
-<blockquote><p>Song generation and editing have mostly been treated as separate tasks. Existing editing methods often require noise injection and regeneration or curated paired training data. We propose a unified approach for song generation and editing based on reconstructive pretraining, in which a model is trained to reconstruct audio from varying numbers of interpretable conditions. With conditions such as text and lyrics, the model learns to generate diverse songs. With dense conditions specifying fine-grained music attributes, the model learns to reconstruct the target and enables editing by modifying any single attribute while keeping others fixed. This leads to SongCraft, a latent flow matching based model trained for both generation and fine-grained editing. To improve song generation quality, we further introduce word-level phoneme alignment that improves pronunciation learning and accelerates convergence, beat conditioning that improves general musicality, and representation alignment on VAE latent space that produces semantically meaningful latents for improved generation quality. Experiments show that SongCraft achieves the lowest word error rate among evaluated song generation basel…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：歌曲生成与歌曲编辑历来被当作两个独立任务处理，现有编辑方法往往需要噪声注入再生成，或依赖精心构造的成对训练数据——能否用一个模型统一"谱曲生成 + 细粒度编辑"？</p>
+<p><strong>方法</strong>：Meta 提出 SongCraft：基于重建式预训练，让模型学习从可变数量的可解释条件重建音频——给文本/歌词就学多样化生成，给细粒度音乐属性就学重建目标，进而通过单独修改某一属性实现编辑。模型为 latent flow matching 架构，并引入词级音素对齐（改善发音学习并加速收敛）、节拍条件、VAE 潜空间表征对齐三项技术。</p>
+<p><strong>关键数字</strong>：在评测的歌曲生成基线中取得最低词错误率（WER），同时保持有竞争力的音质；单模型支持歌词、人声旋律、节拍、歌手身份四类编辑。</p>
+<p><strong>为什么值得看</strong>：把"生成"与"编辑"统一到同一重建式预训练框架里的思路，对音频之外的生成式建模（视频、语音合成）也有迁移价值。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.16315">SongCraft: Unified Song Generation and Editing</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.16315">阅读原文 ↗</a></p>
 </body>
 </html>

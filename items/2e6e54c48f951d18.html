@@ -22,9 +22,11 @@
 <h1>QCPruner: Query-Conditioned Population Coverage for Visual Token Pruning</h1>
 <p class="meta-line">arXiv（Shengli He 等，cs.CV） · 2026-09-17 · 论文PDF / 每日精选</p>
 
-<p>The high visual-token load in multimodal large language models (MLLMs) motivates training-free pruning to reduce later-layer computation, but under a fixed budget, pruning must preserve query-relevant evidence while avoiding redundancy.</p>
-<blockquote><p>The high visual-token load in multimodal large language models (MLLMs) motivates training-free pruning to reduce later-layer computation, but under a fixed budget, pruning must preserve query-relevant evidence while avoiding redundancy. Existing methods rank tokens, diversify selected subsets, or optimize coverage without using a shared per-visual query utility to weight both visual targets and candidate representatives. We introduce QCPruner, which makes both roles query-conditioned through bilateral utility weighting. Using keyword-matched query anchors, QCPruner fuses two cross-modal cues into utility and applies it to both visual targets and candidate representatives within visual-affinity-based coverage. The resulting nonnegative facility-location objective is monotone and submodular, retains the standard (1-1/e) greedy guarantee, and requires no model training or parameter updates. Across LLaVA-1.5, LLaVA-NeXT, LLaVA-Video, and Qwen2.5-VL, QCPruner achieves the highest average relative performance among evaluated complete-system pruning methods at every reported token budget. At 32 of 576 tokens on LLaVA-1.5-7B, it retains 96.1% of unpruned performance, versus 93.9% for the s…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：多模态大模型的视觉 token 负载高昂，免训练剪枝要在固定预算下同时保住查询相关证据、避开冗余——现有方法排序、多样化或做覆盖优化，但没有用统一的"每查询效用"同时加权视觉目标与候选代表。</p>
+<p><strong>方法</strong>：QCPruner 引入双边效用加权，让两种角色都查询条件化：用关键词匹配的查询锚点把两个跨模态线索融合成效用，作用于基于视觉亲和度的覆盖中的视觉目标与候选代表；所得非负 facility location 目标单调且子模，保留标准 (1-1/e) 贪心近似保证，零训练、零参数更新。</p>
+<p><strong>关键数字</strong>：LLaVA-1.5-7B 上 32/576 token 预算保留 96.1% 未剪枝性能（最强基线 93.9%）；Qwen2.5-VL-7B 上 256/1296 保留 96.7%（基线 92.5%）；在 LLaVA-1.5、LLaVA-NeXT、LLaVA-Video、Qwen2.5-VL 上各预算点平均相对性能最高。</p>
+<p><strong>为什么值得看</strong>：把免训练视觉 token 剪枝严格框成带近似保证的子模覆盖问题——省 token 的同时还有理论兜底，MLLM 部署侧的实用技术。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.19990v1">QCPruner: Query-Conditioned Population Coverage for Visual Token Pruning</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19990v1">阅读原文 ↗</a></p>
 </body>
 </html>

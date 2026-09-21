@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hybrid GPU-CPU Retrieval for Personalized Search at Ultra-Large Scale</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Hybrid GPU-CPU Retrieval for Personalized Search at Ultra-Large Scale</h1>
+<p class="meta-line">arXiv（cs.IR/cs.DC/cs.LG/cs.PF） · 2026-09-18 · 论文PDF</p>
+
+<p>超大规模个性化搜索的 GPU-CPU 混合检索系统设计与性能分析</p>
+<blockquote><p>Embedding-based retrieval on user-generated content at the trillion-document scale exposes a sharp conflict between two production demands: deep, expressive personalization for queries with rich user intent, and broad coverage of a massive inventory under fixed latency and resource budgets. We characterize this as the personalization-scale paradox: hosting the full serving inventory in GPU memory is too resource intensive, while CPU compute cannot execute the same interaction-heavy model on the latency-critical path. We present a hybrid GPU-CPU co-serving system that resolves the paradox through orchestration rather than a new model class. A high-depth GPU pathway fuses retrieval and interaction pre-ranking over a curated online pool on the order of a billion documents, while a high-breadth CPU pathway searches an independently selected online inventory roughly twenty times larger with lightweight personalized scoring. Either or both pathways can run per request; candidates are deduplicated before shared downstream ranking. The system is deployed in production. A full-system A/B test against the legacy CPU-only configuration improves model-scored relevance and substantive engagemen…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="http://arxiv.org/abs/2609.21281">阅读原文 ↗</a></p>
+</body>
+</html>

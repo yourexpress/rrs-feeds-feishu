@@ -22,9 +22,11 @@
 <h1>P-GADMM: Parallel Group-Based ADMM for Asynchronous Optimization in Heterogeneous Edge Networks</h1>
 <p class="meta-line">arXiv（Gaiguo Wei 等，cs.DC） · 2026-09-17 · 论文PDF / 每日精选</p>
 
-<p>The Alternating Direction Method of Multipliers (ADMM) is widely used for distributed optimization, but its synchronous implementation can suffer from efficiency loss in heterogeneous edge networks, where fast clients or groups need to wait for slower ones before global updates can be completed.</p>
-<blockquote><p>The Alternating Direction Method of Multipliers (ADMM) is widely used for distributed optimization, but its synchronous implementation can suffer from efficiency loss in heterogeneous edge networks, where fast clients or groups need to wait for slower ones before global updates can be completed. Existing group-based ADMM methods reduce communication overhead through grouping, but their grouping rules usually focus on data similarity or network topology and do not explicitly account for computation heterogeneity. To address this issue, this paper proposes Parallel Group-Based ADMM (P-GADMM) for distributed optimization in heterogeneous edge networks. P-GADMM forms computation-aware edge groups according to client computational capabilities and local data sizes, which reduces training-speed variation within each group. It further combines edge-level aggregation with bounded asynchronous coordination at the cloud, allowing active groups to participate in global updates without waiting for slower groups while controlling stale group information through a delay threshold. For strongly convex group objectives, we establish convergence guarantees for an idealized form of P-GADMM under bou…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：ADMM 广泛用于分布式优化，但同步实现在异构边缘网络中效率受损——快客户端/组要等慢的才能完成全局更新；现有分组规则聚焦数据相似性或网络拓扑，不考虑计算异构性。</p>
+<p><strong>方法</strong>：P-GADMM 按客户端算力与本地数据量组成"计算感知"的边缘组，降低组内训练速度方差；边缘级聚合 + 云端有界异步协调并用，活跃组无需等待慢组即可参与全局更新，同时通过延迟阈值控制陈旧的组信息。对强凸组目标建立了理想化形式在组级陈旧度有界下的收敛保证。</p>
+<p><strong>关键数字</strong>：论文未给具体倍数，结论是与代表性基线相比降低墙上时钟训练时间、最终精度相当；收敛性表现为时间平均收敛到陈旧度诱导的渐近误差邻域。</p>
+<p><strong>为什么值得看</strong>：把"分组"从通信优化手段升级为计算异构感知的调度手段，且带收敛保证——边缘分布式训练方向少见的"系统直觉 + 理论"双轮驱动。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.20006v1">P-GADMM: Parallel Group-Based ADMM for Asynchronous Optimization in Heterogeneous Edge Networks</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20006v1">阅读原文 ↗</a></p>
 </body>
 </html>

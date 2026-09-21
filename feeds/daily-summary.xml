@@ -5,8 +5,51 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>每天一条，汇总当日两个检索源（AI 技术报告 + 高效计算文献）的重点内容。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 20 Sep 2026 23:30:11 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 11:02:52 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/daily-summary.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日精选 · 2026-09-21</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-09-21.html</link>
+      <guid isPermaLink="false">urn:daily-summary:2026-09-21</guid>
+      <pubDate>Mon, 21 Sep 2026 23:05:00 +0800</pubDate>
+    <category>每日精选</category>
+      <description>&lt;h2&gt;当日检索概况&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;AI 技术报告库：检索 0 条，入选 0 条（当日该库无新内容）。&lt;/li&gt;
+&lt;li&gt;高效计算库：检索 28 条，入选 11 条，主题集中在 LLM 推理优化（量化/KV 缓存/投机解码）与端侧/国产算力硬件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;重点推荐&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;DeepSeek-V4.1-Flash：把 KV Cache 压缩推到极限&lt;/strong&gt;：552B 骨干 MoE、百万 token 上下文，CED 架构 prefill 只激活 8B 参数，全局 KV cache 每 token 仅 890 字节（约为上代 1/4），持久 KV 足迹约 1/8。&lt;a href="https://arxiv.org/abs/2609.19969v1"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SSD-LLaMA：单台消费级 PC 跑万亿参数 MoE&lt;/strong&gt;：SSD/RAM/VRAM 三级存储 + CPU-GPU 混合执行，RTX 5090 + 32GB RAM 达到 1 token/s 以上，端侧满血模型的新路线。&lt;a href="https://arxiv.org/abs/2609.18110v1"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MediaTek 天玑旗舰迁移 2nm&lt;/strong&gt;：双 NPU 架构，NPU1090 支持端侧 30B 模型，LLM prefill +51%、每瓦 token +55%、多核功耗 -61%，移动端 AI 算力的关键节点。&lt;a href="https://www.eetasia.com/mediatek-moves-dimensity-flagship-to-2nm-with-new-ai-architecture/"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;国产算力基础设施加快"升维"&lt;/strong&gt;：华为全联接大会发布昇腾960 超节点（NPO 光引擎/灵衢互联，4096 卡、最大 51.2 万卡集群）与鲲鹏超节点、PB 级 KV 缓存集群。&lt;a href="http://jjckb.xinhuanet.com/20260921/2e54cd0ae963425e9d6ac04ccbf5e420/c.html"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Weave：MoE Megakernel 内细粒度动态 SM 调度&lt;/strong&gt;：在单个巨型内核里重叠专家计算与通信，提升 GPU 利用率，MoE 推理系统的前沿工程。&lt;a href="http://arxiv.org/abs/2609.21483"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;On-Demand Attention：语言模型知道自己何时需要回忆&lt;/strong&gt;：轻量 recall head 按需调用全局注意力，预训练权重不动，vLLM 中 GPU 侧条件执行落地。&lt;a href="https://arxiv.org/abs/2609.20734v1"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;16 台 DGX Spark 组集群跑满血 Kimi K3&lt;/strong&gt;：社区用 vLLM + 预构建镜像的实战帖，附 10 项优化修改，个人级集群推理的参考样本。&lt;a href="https://forums.developer.nvidia.com/t/full-kimi-k3-running-on-16x-gb10-cluster/379174/146"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;llama.cpp b11053–b11065 连发&lt;/strong&gt;：Metal FWHT F16 输入与 dsv4_hc_pre 支持 Kimi-K3、Hexagon 新算子、Mamba 时间步投影修复，端侧推理引擎节奏密集。&lt;a href="https://radar.tuikar.cn/project/ggml-org--llama-cpp"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;主题速览&lt;/h2&gt;
+&lt;p&gt;当日高效计算库呈"推理系统优化 + 算力硬件"双主线：论文侧密集出现 KV 缓存分层（TierKV）、投机解码（SpecQuant、RheoSampling）、量化补偿与 MoE 调度等推理降本技术；硬件侧联发科 2nm、昇腾960 超节点、海光端侧 CPU 与离线桌面 AI 超算等端侧/国产算力新闻齐发，另有 AMD XDNA NPU 上跑 FlashAttention 的开源编译器案例研究与 Swiftlet（Swift+Metal 跑 80B MoE）等社区工程。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2>当日检索概况</h2>
+<ul>
+<li>AI 技术报告库：检索 0 条，入选 0 条（当日该库无新内容）。</li>
+<li>高效计算库：检索 28 条，入选 11 条，主题集中在 LLM 推理优化（量化/KV 缓存/投机解码）与端侧/国产算力硬件。</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>DeepSeek-V4.1-Flash：把 KV Cache 压缩推到极限</strong>：552B 骨干 MoE、百万 token 上下文，CED 架构 prefill 只激活 8B 参数，全局 KV cache 每 token 仅 890 字节（约为上代 1/4），持久 KV 足迹约 1/8。<a href="https://arxiv.org/abs/2609.19969v1">链接</a></li>
+<li><strong>SSD-LLaMA：单台消费级 PC 跑万亿参数 MoE</strong>：SSD/RAM/VRAM 三级存储 + CPU-GPU 混合执行，RTX 5090 + 32GB RAM 达到 1 token/s 以上，端侧满血模型的新路线。<a href="https://arxiv.org/abs/2609.18110v1">链接</a></li>
+<li><strong>MediaTek 天玑旗舰迁移 2nm</strong>：双 NPU 架构，NPU1090 支持端侧 30B 模型，LLM prefill +51%、每瓦 token +55%、多核功耗 -61%，移动端 AI 算力的关键节点。<a href="https://www.eetasia.com/mediatek-moves-dimensity-flagship-to-2nm-with-new-ai-architecture/">链接</a></li>
+<li><strong>国产算力基础设施加快"升维"</strong>：华为全联接大会发布昇腾960 超节点（NPO 光引擎/灵衢互联，4096 卡、最大 51.2 万卡集群）与鲲鹏超节点、PB 级 KV 缓存集群。<a href="http://jjckb.xinhuanet.com/20260921/2e54cd0ae963425e9d6ac04ccbf5e420/c.html">链接</a></li>
+<li><strong>Weave：MoE Megakernel 内细粒度动态 SM 调度</strong>：在单个巨型内核里重叠专家计算与通信，提升 GPU 利用率，MoE 推理系统的前沿工程。<a href="http://arxiv.org/abs/2609.21483">链接</a></li>
+<li><strong>On-Demand Attention：语言模型知道自己何时需要回忆</strong>：轻量 recall head 按需调用全局注意力，预训练权重不动，vLLM 中 GPU 侧条件执行落地。<a href="https://arxiv.org/abs/2609.20734v1">链接</a></li>
+<li><strong>16 台 DGX Spark 组集群跑满血 Kimi K3</strong>：社区用 vLLM + 预构建镜像的实战帖，附 10 项优化修改，个人级集群推理的参考样本。<a href="https://forums.developer.nvidia.com/t/full-kimi-k3-running-on-16x-gb10-cluster/379174/146">链接</a></li>
+<li><strong>llama.cpp b11053–b11065 连发</strong>：Metal FWHT F16 输入与 dsv4_hc_pre 支持 Kimi-K3、Hexagon 新算子、Mamba 时间步投影修复，端侧推理引擎节奏密集。<a href="https://radar.tuikar.cn/project/ggml-org--llama-cpp">链接</a></li>
+</ul>
+<h2>主题速览</h2>
+<p>当日高效计算库呈"推理系统优化 + 算力硬件"双主线：论文侧密集出现 KV 缓存分层（TierKV）、投机解码（SpecQuant、RheoSampling）、量化补偿与 MoE 调度等推理降本技术；硬件侧联发科 2nm、昇腾960 超节点、海光端侧 CPU 与离线桌面 AI 超算等端侧/国产算力新闻齐发，另有 AMD XDNA NPU 上跑 FlashAttention 的开源编译器案例研究与 Swiftlet（Swift+Metal 跑 80B MoE）等社区工程。</p>]]></content:encoded>
+    </item>
     <item>
       <title>每日精选 · 2026-09-20</title>
       <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-09-20.html</link>
@@ -284,6 +327,64 @@
 <p>当日无入选条目，不做重点推荐。未入选条目：Satya Nadella 公开表态支持 pacing 计划。</p>
 <h2>主题速览</h2>
 <p>当日增量极少，仅一条行业动态（微软 CEO 公开支持 AI pacing 计划），且未达精选入选标准，属于典型的低信息量空窗日。</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>每日精选 · 2026-09-12</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-09-12.html</link>
+      <guid isPermaLink="false">urn:daily-summary:2026-09-12</guid>
+      <pubDate>Sat, 12 Sep 2026 23:05:00 +0800</pubDate>
+    <category>每日精选</category>
+      <description>&lt;h2&gt;当日检索概况&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;AI 技术报告库：检索 1 条，入选 1 条。&lt;/li&gt;
+&lt;li&gt;高效计算库：检索 0 条，入选 0 条（当日该库无新内容）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;重点推荐&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;We Must Pace the Frontier&lt;/strong&gt;：Anthropic CEO Dario Amodei 的署名长文，系统论述为什么需要"放慢前沿 AI"：递归自我改进逼近、超级智能治理窗口收窄，并给出负责任放缓（responsible scaling）的具体路径与监管建议——理解头部实验室安全立场的原典文本。&lt;a href="https://darioamodei.com/post/we-must-pace-the-frontier"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;主题速览&lt;/h2&gt;
+&lt;p&gt;当日仅 AI 技术报告库有更新，且为单一重磅来源：Anthropic 掌门人直接向公众论证"有必要给前沿 AI 降速"，与其后发布的研发速度测量方法论一脉相承，是治理与安全方向的关键信号源。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2>当日检索概况</h2>
+<ul>
+<li>AI 技术报告库：检索 1 条，入选 1 条。</li>
+<li>高效计算库：检索 0 条，入选 0 条（当日该库无新内容）。</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>We Must Pace the Frontier</strong>：Anthropic CEO Dario Amodei 的署名长文，系统论述为什么需要"放慢前沿 AI"：递归自我改进逼近、超级智能治理窗口收窄，并给出负责任放缓（responsible scaling）的具体路径与监管建议——理解头部实验室安全立场的原典文本。<a href="https://darioamodei.com/post/we-must-pace-the-frontier">链接</a></li>
+</ul>
+<h2>主题速览</h2>
+<p>当日仅 AI 技术报告库有更新，且为单一重磅来源：Anthropic 掌门人直接向公众论证"有必要给前沿 AI 降速"，与其后发布的研发速度测量方法论一脉相承，是治理与安全方向的关键信号源。</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>每日精选 · 2026-09-11</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-09-11.html</link>
+      <guid isPermaLink="false">urn:daily-summary:2026-09-11</guid>
+      <pubDate>Fri, 11 Sep 2026 23:05:00 +0800</pubDate>
+    <category>每日精选</category>
+      <description>&lt;h2&gt;当日检索概况&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;AI 技术报告库：检索 2 条，入选 1 条。&lt;/li&gt;
+&lt;li&gt;高效计算库：检索 0 条，入选 0 条（当日该库无新内容）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;重点推荐&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Breaking the Token Ceiling: Distilling Smaller, Stronger Byte Models&lt;/strong&gt;：面向字节级模型的蒸馏工作——在字节粒度突破"上下文长度换模型规模"的取舍，蒸馏出更小更强的 byte-level 模型，对端侧/低资源文本管线有直接参考价值。&lt;a href="https://arxiv.org/abs/2609.12303"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;主题速览&lt;/h2&gt;
+&lt;p&gt;当日两库整体更新量小：AI 技术报告库以字节级模型蒸馏为唯一入选重点，另一条为 OpenAI 发布说明（Business 模型检查、Codex 策略审计日志、Groups Admin API 等产品例行更新，未入选）；高效计算库无新内容。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2>当日检索概况</h2>
+<ul>
+<li>AI 技术报告库：检索 2 条，入选 1 条。</li>
+<li>高效计算库：检索 0 条，入选 0 条（当日该库无新内容）。</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>Breaking the Token Ceiling: Distilling Smaller, Stronger Byte Models</strong>：面向字节级模型的蒸馏工作——在字节粒度突破"上下文长度换模型规模"的取舍，蒸馏出更小更强的 byte-level 模型，对端侧/低资源文本管线有直接参考价值。<a href="https://arxiv.org/abs/2609.12303">链接</a></li>
+</ul>
+<h2>主题速览</h2>
+<p>当日两库整体更新量小：AI 技术报告库以字节级模型蒸馏为唯一入选重点，另一条为 OpenAI 发布说明（Business 模型检查、Codex 策略审计日志、Groups Admin API 等产品例行更新，未入选）；高效计算库无新内容。</p>]]></content:encoded>
     </item>
   </channel>
 </rss>

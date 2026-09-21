@@ -22,9 +22,11 @@
 <h1>On-Demand Attention: Language Models Know When to Recall</h1>
 <p class="meta-line">arXiv（Haibo Feng 等，cs.CL） · 2026-09-17 · 论文PDF / 每日精选</p>
 
-<p>Reasoning and agentic workloads increasingly demand efficient long-context inference.</p>
-<blockquote><p>Reasoning and agentic workloads increasingly demand efficient long-context inference. Yet full-attention decoding reads the growing history at every step, regardless of its benefit to the next prediction. We show that a pretrained model's decoding states already contain information predictive of this benefit, before the global read. Building on this finding, we introduce On-Demand Attention (ODA), a local-first decoding method that uses a lightweight recall head to selectively invoke global attention as its predicted benefit changes during generation. ODA trains only the recall head, leaving pretrained weights unchanged and the complete historical KV cache available for future recall. We further implement GPU-side conditional execution in vLLM, translating reduced global reads into practical decoding speedups over full attention at long context lengths. Experiments across Qwen and Gemma models, including hybrid-attention backbones, show that selective recall recovers most of the performance lost under local attention while substantially reducing global reads. These findings support long-context inference in which pretrained models guide their own access to the information they reta…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：推理与智能体负载要求高效长上下文推理，但全注意力解码每一步都要读取整个不断增长的历史，不管这次全局读取对下一个预测是否真有收益。</p>
+<p><strong>方法</strong>：作者发现预训练模型的解码状态在全局读取发生之前，就含有可预测其收益的信息；据此提出 On-Demand Attention（ODA）——局部优先的解码方法，用轻量 recall head 在生成过程中按预测收益选择性地调用全局注意力。只训练 recall head，预训练权重不动，完整历史 KV cache 始终保留供回溯；并在 vLLM 中实现 GPU 侧条件执行，把减少的全局读取转化为实际解码加速。</p>
+<p><strong>关键数字</strong>：论文以定性结论为主：在 Qwen 与 Gemma（含混合注意力骨干）上，选择性召回能恢复局部注意力下损失的大部分性能，同时大幅减少全局读取。</p>
+<p><strong>为什么值得看</strong>："模型自己知道什么时候需要回忆"是长上下文推理的一个新视角；recall head 只训一小块、不动主干、vLLM 可落地，工程可行性拉满。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.20734v1">On-Demand Attention: Language Models Know When to Recall</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20734v1">阅读原文 ↗</a></p>
 </body>
 </html>

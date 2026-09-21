@@ -22,9 +22,11 @@
 <h1>SSD-LLaMA: SSD-Native Inference for Trillion-Parameter MoE at 1+ Token/s on a Consumer PC</h1>
 <p class="meta-line">arXiv（Fangzhou Liang 等，cs.DC） · 2026-09-16 · 论文PDF / 每日精选</p>
 
-<p>以 SSD 作为模型内存，在单台消费级 PC 上跑通万亿参数 MoE 推理（≥1 token/s）</p>
-<blockquote><p>Frontier open-weight language models increasingly use Mixture-of-Experts (MoE) architectures to expand model capacity while activating only a small subset of experts per token. Local inference must nevertheless keep the complete expert pool available, which remains far beyond consumer-grade RAM and VRAM capacity even after quantization. SSDs provide practical capacity at this scale, but turning that capacity into executable model memory requires efficient expert delivery, coordinated management of SSD, RAM, and VRAM, and CPU--GPU hybrid execution under bounded bandwidth. We present \textit{SSD-LLaMA}, an SSD-native local MoE inference system that addresses these challenges with an SSD I/O pipeline optimized for expert delivery, a native three-tier storage hierarchy that delivers and retains experts dynamically, and balanced CPU--GPU hybrid execution. \textit{SSD-LLaMA} executes every selected expert without pruning or substitution. Across three frontier MoE model families, \textit{SSD-LLaMA} improves prefill token rate by 1.52$\times$--4.19$\times$ and decode token rate by 2.10$\times$--15.58$\times$ over the evaluated baselines. We also achieve higher than 1 token/s for running tr…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：前沿开源 MoE 模型虽每 token 只激活少量专家，本地推理仍须随时备好完整专家池，量化后也远超消费级 RAM/VRAM；SSD 容量够用，但如何把它变成可执行的"模型内存"？</p>
+<p><strong>方法</strong>：SSD-LLaMA 端到端方案：面向专家交付优化的 SSD I/O 管线；SSD/RAM/VRAM 三级存储层次，动态投递并驻留专家；CPU-GPU 混合均衡执行。被选中的专家全部执行，不剪枝、不替换。</p>
+<p><strong>关键数字</strong>：三个前沿 MoE 模型家族上 prefill 吞吐提升 1.52×–4.19×、decode 提升 2.10×–15.58×；单张 RTX 5090 + 不超过 32GB RAM，跑万亿参数模型达到 1 token/s 以上。</p>
+<p><strong>为什么值得看</strong>：把"端侧跑满血大模型"从量化问题推进到存储层次问题，三级内存调度与 CPU-GPU 混合执行的工程细节对做端侧推理系统的人是直接参考。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.18110v1">SSD-LLaMA: SSD-Native Inference for Trillion-Parameter MoE at 1+ Token/s on a Consumer PC</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.18110v1">阅读原文 ↗</a></p>
 </body>
 </html>

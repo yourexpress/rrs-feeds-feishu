@@ -22,9 +22,11 @@
 <h1>PhGS: Post-Hoc Pruning and Refinement of Single-View Feed-Forward 3D Gaussian Reconstructions</h1>
 <p class="meta-line">arXiv（Rinto Yagawa 等，cs.CV） · 2026-09-17 · 论文PDF / 每日精选</p>
 
-<p>Recent single-view feed-forward 3D Gaussian Splatting (3DGS) generation predicts a fixed number of Gaussians per camera ray, introducing severe spatial redundancy.</p>
-<blockquote><p>Recent single-view feed-forward 3D Gaussian Splatting (3DGS) generation predicts a fixed number of Gaussians per camera ray, introducing severe spatial redundancy. Most existing compaction strategies target multi-view setups to exploit cross-view consistency and are incompatible with single-image models. Instead of retraining the base feed-forward network to directly output compact representations, our insight is to keep the base models frozen and apply post-hoc pruning and recurrent refinement to the generated Gaussians. Consequently, we propose a backbone-agnostic compaction pipeline for single-view feed-forward 3DGS that couples an importance-score-based pruning mechanism with a trainable, lightweight recurrent refinement module, which iteratively updates the surviving primitives to restore image quality. Our results demonstrate seamless integration with existing baselines while preserving novel-view rendering fidelity and achieving high memory reduction. Furthermore, our method supports flexible inference-time keep ratios for application needs.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：单视角前馈 3D 高斯泼溅（3DGS）生成对每条相机射线固定预测一定数量的高斯，空间冗余严重；而现有压缩策略面向多视角、利用跨视角一致性，与单图模型不兼容。</p>
+<p><strong>方法</strong>：PhGS 的思路是不重训基模型、冻结骨干，对已生成的高斯做事后剪枝 + 可训练的轻量循环精炼模块：基于重要性分数的剪枝机制先砍掉冗余基元，循环精炼模块再迭代更新幸存基元以恢复图像质量。管线与骨干无关，可无缝接入现有基模型。</p>
+<p><strong>关键数字</strong>：论文未给具体压缩倍数，结论为保持新视角渲染保真度的同时实现高内存缩减，并支持推理期灵活调整保留率。</p>
+<p><strong>为什么值得看</strong>：单视角 3DGS 要上端侧，"冻结骨干 + 事后压缩"是比重训紧凑表示便宜得多的路径，保留率可调对分档部署尤其友好。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.20623v1">PhGS: Post-Hoc Pruning and Refinement of Single-View Feed-Forward 3D Gaussian Reconstructions</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20623v1">阅读原文 ↗</a></p>
 </body>
 </html>

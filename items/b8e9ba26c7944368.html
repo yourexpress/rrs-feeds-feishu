@@ -22,9 +22,11 @@
 <h1>High-frequency Multispeculative Multiply-Accumulation Unit for Fused Posit Arithmetic</h1>
 <p class="meta-line">arXiv（Mario Alonso 等，cs.AR） · 2026-09-17 · 论文PDF / 每日精选</p>
 
-<p>Posit arithmetic offers a compelling alternative to the IEEE 754 floating-point standard, providing enhanced accuracy.</p>
-<blockquote><p>Posit arithmetic offers a compelling alternative to the IEEE 754 floating-point standard, providing enhanced accuracy. Its fused multiply-accumulate operations avoid intermediate rounding, ensuring exact numerical reproducibility through the quire, a wide fixed-point accumulator spanning the format's full dynamic range to prevent precision loss and overflow during long accumulations. However, integrating such large accumulators incurs significant area and power overheads. This paper presents an optimized, high-frequency Multispeculative PositMAC architecture for 32- and 64-bits Posit. First, the pipeline is restructured to balance the different stages. Second, high-speed multiplication topologies are evaluated, showing that a Booth-4 scheme with Kogge-Stone adders meets a stringent 0.5ns target (2Ghz). Finally, the wide monolithic quire accumulator is replaced with a Multispeculative Adder, diminishing area up to 19.8\% while reducing energy consumption by more than 50\% when compared to the baseline. Compared to other state-of-the-art designs, our proposal achieves the highest operating frequency and reduces cycle time by up to 79.0\% with respect to 64-bit quire-enabled alternati…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：Posit 算术的融合乘加靠 quire（覆盖全动态范围的宽定点累加器）保证长累加的精确可复现性，但宽单体累加器带来显著面积与功耗开销——能否高频又省资源？</p>
+<p><strong>方法</strong>：面向 32/64 位 Posit 的 Multispeculative PositMAC：重排流水线平衡各级延迟；评估高速乘法拓扑，选定 Booth-4 + Kogge-Stone 加法器满足 0.5ns（2GHz）时序目标；用多推测加法器（Multispeculative Adder）替换宽单体 quire 累加器。</p>
+<p><strong>关键数字</strong>：面积最多降 19.8%、能耗降逾 50%；相对其他 64 位带 quire 的方案周期时间最多缩短 79.0%，同时面积更小、每周期能耗更低，取得同类最高工作频率。</p>
+<p><strong>为什么值得看</strong>：在"数值精度格式（Posit/quire）"与"硬件数据通路设计"之间打通的完整方案，多推测加法器替换宽累加器的思路对其它宽位运算也有借鉴意义。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.19859v1">High-frequency Multispeculative Multiply-Accumulation Unit for Fused Posit Arithmetic</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19859v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression</h1>
 <p class="meta-line">arXiv（DeepSeek-AI 等，cs.CL） · 2026-09-17 · 论文PDF / 每日精选</p>
 
-<p>The widespread adoption of long-horizon agents has made model workloads increasingly input-heavy.</p>
-<blockquote><p>The widespread adoption of long-horizon agents has made model workloads increasingly input-heavy. Although prior work has substantially reduced the cost of long-context computation, prefill remains computationally expensive, and large KV caches continue to strain HBM and SSD capacity and data-transfer bandwidth. Together, these compute, storage, and bandwidth demands constitute the primary bottleneck to further lowering deployment costs. To address this challenge, we introduce DeepSeek-V4.1-Flash, a multimodal Mixture-of-Experts (MoE) model with 552B backbone parameters and support for contexts of up to one million tokens. With its Causal Encoder-Decoder (CED) architecture, the model activates 16B parameters per token during decode but only 8B parameters during prefill, substantially improving cost efficiency for agentic workloads. To push the limits of KV cache compression, DeepSeek-V4.1-Flash combines cross-layer KV cache reuse in Compressed Sparse Attention 2 (CSA2) with FP4 KV caching. These designs reduce its global KV cache footprint (always in HBM) to 890 bytes per token, roughly 1/4 of the corresponding footprint of DeepSeek-V4-Flash. Further, through a dedicated deployment…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：长程智能体普及后模型负载越来越"输入密集"：prefill 计算昂贵，庞大 KV cache 挤压 HBM 与 SSD 容量及传输带宽——如何进一步压低部署成本？</p>
+<p><strong>方法</strong>：DeepSeek-V4.1-Flash：552B 骨干参数的多模态 MoE，支持 100 万 token 上下文；因果编码器-解码器（CED）架构让 decode 每 token 激活 16B、prefill 仅 8B 参数；CSA2（Compressed Sparse Attention 2）跨层 KV 复用叠加 FP4 KV 缓存；部署侧 SWA Bounded Replay 优化持久 KV 足迹；45T token 多模态语料预训练并做全面后训练。</p>
+<p><strong>关键数字</strong>：全局 KV cache（常驻 HBM）降至每 token 890 字节，约为 DeepSeek-V4-Flash 的 1/4；持久 KV 足迹（SSD/主机内存）约为 1/8；性能仍显著优于基线。权重已在 HuggingFace 开放。</p>
+<p><strong>为什么值得看</strong>：把 KV cache 压缩推到字节级预算的完整工程叙事——架构、注意力机制、部署优化三层协同，是长上下文推理成本优化的标杆样本。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.19969v1">DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19969v1">阅读原文 ↗</a></p>
 </body>
 </html>

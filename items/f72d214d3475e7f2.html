@@ -22,9 +22,11 @@
 <h1>Splyce: SIMD Vectorization of Sparse Coiteration</h1>
 <p class="meta-line">arXiv（Kabilan Mahathevan 等，cs.PL） · 2026-09-16 · 论文PDF / 每日精选</p>
 
-<p>MLIR 中稀疏-稀疏 coiteration 循环的自动 SIMD 向量化框架</p>
-<blockquote><p>Sparse tensor contractions are bottlenecked by sparse-sparse coiteration loops that resist standard loop vectorization. We present Splyce, an auto-vectorization framework in MLIR that overcomes this through a dual-path execution model. By decoupling coordinate intersection from pointer management via selective predication, Splyce inherently eliminates data-dependent branches as a side effect, allowing modern superscalar engines to maximize instruction-level parallelism and hide memory latency. Beyond simple branch elimination, our transformation exposes independent computation that can be executed concurrently, increasing functional-unit utilization that would otherwise be constrained by sequential dependencies. Evaluation across foundational sparse tensor kernels demonstrates performance ranging from 1.96X to 2.86X on synthetic inputs, with consistent speedups sustained across a vast majority of irregular real-world datasets from the SuiteSparse collection. Ultimately, Splyce demonstrates that by converting unpredictable control-flow into a predictable data stream, compiler-driven speculation can effectively reconcile the memory efficiency of compressed storage with the execution-…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：稀疏张量收缩的性能瓶颈在稀疏-稀疏 coiteration 循环——数据依赖的分支让标准循环向量化完全失效，压缩存储的内存效率与现代超标量处理器的吞吐难以兼得。</p>
+<p><strong>方法</strong>：Splyce 是 MLIR 中的自动向量化框架，核心是双路执行模型：通过选择性谓词把坐标交集与指针管理解耦，顺带消除数据依赖分支，让超标量引擎最大化指令级并行、隐藏访存延迟；同时暴露出可并发执行的独立计算，提升功能单元利用率。</p>
+<p><strong>关键数字</strong>：基础稀疏张量核上，合成输入取得 1.96×–2.86× 加速；SuiteSparse 海量不规则真实数据集的大多数场景下保持一致加速。</p>
+<p><strong>为什么值得看</strong>：证明"把不可预测控制流转成可预测数据流"可以让编译器驱动的推测同时吃到压缩存储的内存红利和现代 CPU 的执行吞吐——稀疏计算与编译器方向的交叉佳作。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.19410v1">Splyce: SIMD Vectorization of Sparse Coiteration</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19410v1">阅读原文 ↗</a></p>
 </body>
 </html>
