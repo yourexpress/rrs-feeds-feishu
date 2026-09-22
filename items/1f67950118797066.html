@@ -22,9 +22,11 @@
 <h1>DSLHyPE-a DSL kernel language for the Exascale Hyperbolic PDE Engine ExaHyPE</h1>
 <p class="meta-line">arXiv（Timothy J. R. Stokes 等，cs.MS） · 2026-08-18 · 论文PDF</p>
 
-<p>We introduce a bilingual domain-specific language (DSL) for modelling compute kernels within a generic solver for hyperbolic partial differential equations (PDEs).</p>
-<blockquote><p>We introduce a bilingual domain-specific language (DSL) for modelling compute kernels within a generic solver for hyperbolic partial differential equations (PDEs). Users express PDE terms, i.e.~the underlying physics, in a familiar native language such as C or C++, while the numerical scheme is specified in a Python-embedded DSL, DSLHyPE. DSLHyPE's compiler lowers the Python description to MLIR and introduces a translation pass that integrates it with native code likewise mapped to MLIR. Our approach keeps the numerical representation and the physics implementation separate for as long as possible, while delegating optimization to the compiler through existing MLIR optimization passes. This separation of concerns benefits researchers developing numerical schemes on top of existing PDE implementations or with applications involving nonlinear systems whose PDE terms must solve PDEs themselves. We demonstrate the feasibility of the approach using a gravitational-wave solver and a matter-evolution solver on x86 processors and H200 GPUs.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：超算 PDE 求解器中，物理项（C/C++）与数值格式如何解耦，让研究者只改数值方法、不动物理实现？</p>
+<p><strong>方法</strong>：双语 DSL——物理项用原生 C/C++ 表达，数值格式用 Python 嵌入式 DSLHyPE 描述；编译器把 Python 描述降到 MLIR，并经翻译 pass 与同样映射到 MLIR 的原生代码集成，优化交给既有 MLIR pass；数值表示与物理实现尽可能久地保持分离。</p>
+<p><strong>关键数字</strong>：在引力波求解器与物质演化求解器上演示可行，覆盖 x86 CPU 与 H200 GPU（摘要未给性能数字）。</p>
+<p><strong>为什么值得看</strong>：ExaHyPE 这类百亿亿次级引擎的开发体验改造，科学计算 DSL 与 MLIR 结合的参考案例。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.19273v1">DSLHyPE-a DSL kernel language for the Exascale Hyperbolic PDE Engine ExaHyPE</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.19273v1">阅读原文 ↗</a></p>
 </body>
 </html>

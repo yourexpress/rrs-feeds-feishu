@@ -22,9 +22,11 @@
 <h1>HyperCut: Fast Inter-Layer Scheduling via Directed Hypergraph and Early Filtering</h1>
 <p class="meta-line">arXiv（Ziang Wei 等，cs.AR） · 2026-08-19 · 论文PDF</p>
 
-<p>As deep neural networks (DNNs) continue to scale, inter-layer scheduling, which orchestrates the spatial allocation of compute resources and the temporal execution order across layers, has become a decisive factor in sus…</p>
-<blockquote><p>As deep neural networks (DNNs) continue to scale, inter-layer scheduling, which orchestrates the spatial allocation of compute resources and the temporal execution order across layers, has become a decisive factor in sustaining high utilization and energy efficiency on tiled accelerators. However, existing inter-layer schedulers defer cost feedback until a complete fine-grained intra-layer scheduling has been resolved. The resulting decoupled flow repeatedly explores sub-optimal or even infeasible inter-layer schedules, and the absence of early pruning during the inter-layer phase remains a critical bottleneck for design-space exploration (DSE) in DNN compilers. Our key observation is that the cost of an intra-layer scheduling can be tightly upper-bounded once the inter-layer cut fixes the sub-mesh shape, which lets us cost every inter-layer candidate without solving the intra-layer problem. Hence, we propose a hierarchical partitioning-and-mapping framework, HyperCut, that enables early filtering of inter-layer schedules based on hypergraph partitioning. Based on the directed hypergraph (DHG) abstraction of DNN, we introduce a unified representation, State, that jointly encodes th…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：层间调度器要等完整层内调度解出才有成本反馈，反复探索次优甚至不可行的层间方案——能否提前剪枝？</p>
+<p><strong>方法</strong>：关键观察——层间切分固定子 mesh 形状后，层内调度成本可被紧致上界估计，无需真的解层内问题；以有向超图抽象 DNN，State 统一编码超图划分、tile mesh 分配与张量批切分，把划分与映射耦合成单一优化对象。</p>
+<p><strong>关键数字</strong>：N 层 DNN 的理论设计空间为 O(N)，SOTA 开源调度器 SET 为 O(9.899^N)；10 个用例上几何平均 2.0× 性能提升、探索时间减少 80.47%。</p>
+<p><strong>为什么值得看</strong>：把层间 DSE 从指数压到线性的漂亮结果，DNN 编译器调度方向值得跟进。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.19296v1">HyperCut: Fast Inter-Layer Scheduling via Directed Hypergraph and Early Filtering</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.19296v1">阅读原文 ↗</a></p>
 </body>
 </html>

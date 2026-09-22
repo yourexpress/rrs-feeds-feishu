@@ -22,9 +22,11 @@
 <h1>Bounded-State Restoration: Decoupling Local Restore Capacity from External LLM State</h1>
 <p class="meta-line">arXiv（Zixuan Li，cs.DC） · 2026-08-18 · 论文PDF</p>
 
-<p>Hierarchical KV-cache systems can retain long-context LLM execution state beyond GPU memory, but retention capacity does not determine the local memory required to make that state executable again.</p>
-<blockquote><p>Hierarchical KV-cache systems can retain long-context LLM execution state beyond GPU memory, but retention capacity does not determine the local memory required to make that state executable again. We isolate this second resource as the restoration working set (RWS): the peak local staging state whose lifetimes overlap during restoration. In the pinned upstream LMCache whole-plan path, measured full-reuse points for 1.956, 7.823, and 15.646 GiB/rank states first succeed at 2, 8, and 16 GiB L1 rungs, with successful L1 peaks of 1.956, 7.824, and 15.648 GiB/rank. We introduce Bounded-State Restoration (BSR), which separates complete discovery from local residency. BSR probes the complete reusable prefix without materializing the whole hit in L1, then installs confirmed state through a reusable window of at most $W$ chunks. Under bounded auxiliary state, peak restoration capacity is $O(W)$ while total transfer and installation work remains $Θ(|S|)$. Because reusable state spans heterogeneous allocator groups and tensor-parallel ranks, BSR uses a request-level commit rule: partial installation is never exposed as a valid reusable prefix; failures invalidate the advertised prefix and fa…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：分层 KV-cache 能存下超长上下文状态，但"恢复"时需要多少本地内存？保留容量不等于恢复工作集（RWS）。</p>
+<p><strong>方法</strong>：提出 Bounded-State Restoration——探测完整可复用前缀但不全量物化到 L1，再以最多 W 个 chunk 的可复用窗口安装已确认状态；请求级提交规则保证部分安装不暴露为有效前缀，失败回退到更低有效层或确定性重算。</p>
+<p><strong>关键数字</strong>：DeepSeek-V4-Flash TP=2 双 DGX Spark 上，外部状态从 1.956 增到 31.277 GiB/rank 时 L1 RWS 恒定 500.75 MiB/rank（W=32），最大外部/在线暂存比 63.959×；配套 SSD 优化把 512K 恢复 TTFT 从 43.1s 降到 17.6s。</p>
+<p><strong>为什么值得看</strong>：把长上下文恢复的内存峰值压成常数级，KV-cache 分层系统设计的实用一块。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.17826v1">Bounded-State Restoration: Decoupling Local Restore Capacity from External LLM State</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.17826v1">阅读原文 ↗</a></p>
 </body>
 </html>

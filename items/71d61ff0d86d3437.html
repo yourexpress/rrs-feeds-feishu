@@ -22,9 +22,11 @@
 <h1>Compiling WebAssembly Concolic Execution with Staging, Continuations, and Snapshots (Extended Version)</h1>
 <p class="meta-line">arXiv（Dinghong Zhong 等，cs.PL） · 2026-08-18 · 论文PDF</p>
 
-<p>Concolic execution is a variant of symbolic execution that runs a program simultaneously with concrete and symbolic inputs.</p>
-<blockquote><p>Concolic execution is a variant of symbolic execution that runs a program simultaneously with concrete and symbolic inputs. It records the symbolic constraints encountered along a concrete execution path, then solves those constraints to generate inputs that explore new paths. Existing concolic engines generally follow one of two implementation strategies: Interpreter-based systems are comparatively simple to build but incur substantial interpretation overhead, while instrumentation-based systems avoid this overhead but typically re-execute the program from the beginning for each new input. In this paper, we develop a new approach that achieves the best of both worlds. Starting from the concrete semantics of the target language, we first develop a definitional concolic interpreter and stage it to compile away interpretation overhead while retaining the simplicity of an interpretation-based implementation. By expressing the staged interpreter in continuation-passing style, we can capture execution snapshots at branch points and resume from them when exploring alternative paths, avoiding repeated execution from the program entry. Because snapshot-reuse can itself incur overhead, we f…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：Concolic 执行引擎要么解释执行开销大，要么插桩编译后每个新输入都从头重跑——能否两者兼得？</p>
+<p><strong>方法</strong>：从目标语言具体语义写出定义性 concolic 解释器，用 staging 编译掉解释开销；以 CPS 表达 staged interpreter，在分支点捕获执行快照、探索新路径时从快照恢复而非从头跑；配启发式只在预期有收益时复用快照。落地为 WebAssembly 的 GenWasym。</p>
+<p><strong>关键数字</strong>：184 个基准上，仅 staging 平均比解释型 WASP 快 29.4×；加启发式快照复用后达 44.9×。</p>
+<p><strong>为什么值得看</strong>：用 staging + CPS 的 PL 技术干净解决符号执行的老问题，思路可移植到其他语言工具链。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.18327v2">Compiling WebAssembly Concolic Execution with Staging, Continuations, and Snapshots</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.18327v2">阅读原文 ↗</a></p>
 </body>
 </html>

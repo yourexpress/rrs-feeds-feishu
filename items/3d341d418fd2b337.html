@@ -22,9 +22,11 @@
 <h1>NeuroAbs: A Neuro-Symbolic RTL Abstraction Framework for Property Checking Acceleration</h1>
 <p class="meta-line">arXiv（Zhiyuan Yan 等，cs.AR） · 2026-08-18 · 论文PDF</p>
 
-<p>Formal verification is a crucial technique for ensuring the functional correctness of hardware designs.</p>
-<blockquote><p>Formal verification is a crucial technique for ensuring the functional correctness of hardware designs. In the context of property checking, a key challenge is how to efficiently prove a user-specified property in the face of increasingly complex RTL designs. To address this challenge, abstraction techniques are often employed to reduce system complexity and accelerate the verification process. However, prior RTL abstraction methods either require significant manual effort or rely on rule-based techniques that lack flexibility. This paper introduces NeuroAbs, a neuro-symbolic framework for RTL abstraction. NeuroAbs first uses LLM-assisted RTL analysis to identify signals suitable for abstraction. It then combines LLM-based abstraction with an AST-based symbolic RTL representation to better align the generated abstraction with the intended transformation. The soundness of each abstraction is checked using satisfiability modulo theories (SMT) solving. If the abstraction is too coarse for a successful proof, NeuroAbs applies counterexample-guided abstraction refinement (CEGAR) to iteratively refine the model. Experimental results show that NeuroAbs significantly improves the efficienc…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：RTL 属性检查中抽象技术能降低复杂度，但既有方法要么费人工、要么规则僵硬——LLM 能否自动生成可靠抽象？</p>
+<p><strong>方法</strong>：NeuroAbs 神经符号框架：LLM 辅助分析 RTL 找出适合抽象的信号，LLM 生成的抽象与 AST 级符号 RTL 表示对齐以贴合预期变换；SMT 求解检验每个抽象的 soundness；抽象太粗证明失败时用 CEGAR 迭代精化。</p>
+<p><strong>关键数字</strong>：实验显示在一系列验证任务上显著提升硬件属性检查效率（摘要未给具体数字）。</p>
+<p><strong>为什么值得看</strong>：LLM + 形式方法结合的具体落点，AI-for-verification 与 EDA 方向的清醒案例。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.17304v1">NeuroAbs: A Neuro-Symbolic RTL Abstraction Framework for Property Checking Acceleration</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.17304v1">阅读原文 ↗</a></p>
 </body>
 </html>

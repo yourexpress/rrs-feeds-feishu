@@ -22,9 +22,11 @@
 <h1>Low-Power, Neuromorphic, Acoustic Anomaly Detection for Persistent Machine Monitoring</h1>
 <p class="meta-line">arXiv（Steven C. Nesbit 等，cs.NE） · 2026-08-18 · 论文PDF</p>
 
-<p>Persistent acoustic monitoring can detect machine faults without physical contact, but always-on inference is constrained by power, latency, and deployment complexity.</p>
-<blockquote><p>Persistent acoustic monitoring can detect machine faults without physical contact, but always-on inference is constrained by power, latency, and deployment complexity. We demonstrate autoencoder-based acoustic anomaly detection on an Intel Loihi 2 neuromorphic processor under clean and noisy conditions. Log-mel features are computed off chip; normalization, autoencoder inference, L1 reconstruction scoring, and thresholding run on chip. In a clean, microphone-position-invariant ToyADMOS ToyCar benchmark, the on-chip model achieves 0.9959 AUC and 0.9785 standardized pAUC at maximum false-positive rate 0.1. In the DCASE 2026 Task 2 ToyCar noisy benchmark, the model achieves source AUC 0.7990, target AUC 0.6466, and pAUC 0.6426, exceeding reported baseline metrics. Power profiling on a 16-chip Loihi 2 VPX system shows real-time throughput with 0.0406$\unicode{x2013}$0.0426 mJ dynamic energy per sample, two orders of magnitude lower than both a CPU and GPU. These results support neuromorphic acoustic anomaly detection as a practical candidate for low-power, persistent machine monitoring.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：常驻式声学机器故障监测要求常开推理，受功耗、延迟与部署复杂度约束——神经形态芯片能否胜任？</p>
+<p><strong>方法</strong>：在 Intel Loihi 2 上跑自编码器异常检测：log-mel 特征片外计算，归一化、自编码器推理、L1 重构评分与阈值判定全部在片上完成。</p>
+<p><strong>关键数字</strong>：ToyADMOS ToyCar 干净基准 AUC 0.9959、标准化 pAUC 0.9785（最大误报率 0.1）；DCASE 2026 Task 2 噪声基准 source AUC 0.7990、target AUC 0.6466、pAUC 0.6426，超过基线；16 芯片 VPX 系统实时吞吐，每样本动态能耗 0.0406–0.0426 mJ，比 CPU 和 GPU 低两个数量级。</p>
+<p><strong>为什么值得看</strong>：神经形态低功耗常驻感知的完整落地数据，工业监测与端侧音频场景可参考。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.18341v1">Low-Power, Neuromorphic, Acoustic Anomaly Detection for Persistent Machine Monitoring</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.18341v1">阅读原文 ↗</a></p>
 </body>
 </html>

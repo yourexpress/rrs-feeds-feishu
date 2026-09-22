@@ -22,9 +22,11 @@
 <h1>Pre-Compiled Pipeline Shards for Distributed LLM Inference on Intel AI PC Fleets</h1>
 <p class="meta-line">arXiv（Tate Berenbaum 等，cs.DC） · 2026-08-19 · 论文PDF</p>
 
-<p>Modern Intel AI PCs ship capable integrated GPUs and NPUs with 16+ GB of unified memory, and they spend considerable time idle.</p>
-<blockquote><p>Modern Intel AI PCs ship capable integrated GPUs and NPUs with 16+ GB of unified memory, and they spend considerable time idle. That is not enough memory to fit a large model such as a 70B-parameter LLM. We show that a handful of AIPCs, working together over an ordinary network, can serve models beyond the capability of any single one. We use pipeline parallelism: a model is split by layer into per-stage shards, each pre-compiled into an OpenVINO graph, so that every machine runs one shard and passes activations to the next. Three techniques make this fast enough to be useful. First, we recover the speed of the unsplit model: a naive per-stage export runs well below monolithic inference because it misses an OpenVINO GPU optimization, and injecting a beam_idx Gather into each shard triggers that optimization (the IndirectKVCache fusion) and brings the shards to parity. Second, we leverage speculative decoding on stateful OpenVINO models. Third, the pipeline serves several users at once by interleaving their requests across the stages, each request carrying its own cache (micro-batching). Together, a two-node Llama 3.1 8B INT4 pipeline serves two concurrent users at 1.79x the single-…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：单台 Intel AI PC 装不下 70B 模型，但一群闲置 AI PC 通过普通网络能否协同服务超大模型？</p>
+<p><strong>方法</strong>：流水线并行按层切分，每段预编译成 OpenVINO 图，逐机传递激活；三招提速——注入 beam_idx Gather 触发 IndirectKVCache 融合以恢复未切分模型的速度；在 stateful OpenVINO 模型上做投机解码；micro-batching 交错多用户请求。</p>
+<p><strong>关键数字</strong>：双节点 Llama 3.1 8B INT4 流水线服务两个并发用户，达单机未切分模型单用户吞吐的 1.79×；四节点 Lunar Lake 机群以交互速度服务 70B 单用户，输出与无投机解码逐 token 一致；代码与复现脚本开源。</p>
+<p><strong>为什么值得看</strong>：把闲置办公 PC 变成分布式 LLM 推理机群的完整方案，成本敏感团队值得试。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.19147v1">Pre-Compiled Pipeline Shards for Distributed LLM Inference on Intel AI PC Fleets</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.19147v1">阅读原文 ↗</a></p>
 </body>
 </html>

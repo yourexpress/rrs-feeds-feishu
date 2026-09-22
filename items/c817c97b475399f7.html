@@ -22,9 +22,11 @@
 <h1>Jetson-ORB-SLAM3: Accuracy-Preserving GPU Implementation for Edge Computing Devices</h1>
 <p class="meta-line">arXiv（Rajat Roy 等，cs.RO） · 2026-08-18 · 论文PDF</p>
 
-<p>Visual-inertial SLAM on low-power edge platforms is constrained by the cost of dense feature extraction and loop closure.</p>
-<blockquote><p>Visual-inertial SLAM on low-power edge platforms is constrained by the cost of dense feature extraction and loop closure. Prior GPU ports of ORB-SLAM trade accuracy for speed by approximating the ORB detector, altering the feature set and therefore the estimated trajectory. We present an accuracy-preserving GPU implementation of ORB-SLAM3 for the NVIDIA Jetson Orin Nano, whose GPU ORB front end reproduces the reference CPU detector algorithmically to 94.7% exact keypoint agreement and 99.9% descriptor bit agreement. This work also makes CNN-based loop closure edge-viable through native TensorRT. The visual front end (feature extraction) is offloaded to the GPU while the mapping and optimization back end is kept on the CPU, matching each computation to the hardware it suits. The accuracy is verified by comparing four configurations: the GPU pipeline and the unmodified CPU reference, each run on both the Jetson Orin Nano and a desktop. On EuRoC dataset, all four agree to within 0.10cm in mean absolute trajectory error (SE(3)), so neither the GPU port nor the change of hardware shifts the estimated trajectory. The GPU-versus-CPU comparison is reproducible on TUM-VI and KITTI datasets,…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：以往 ORB-SLAM 的 GPU 移植用近似换速度、改了特征就改了轨迹——能否在 Jetson 上既加速又保精度？</p>
+<p><strong>方法</strong>：GPU ORB 前端在算法层面复现参考 CPU 检测器；CNN 回环检测用原生 TensorRT 落地边缘端；视觉前端卸载 GPU，建图与优化后端留 CPU，各算各适合的硬件。</p>
+<p><strong>关键数字</strong>：关键点 94.7% 完全一致、描述子 99.9% 位一致；EuRoC 上四种配置平均绝对轨迹误差相差 0.10cm 以内；CosPlace ResNet-50 原生 FP16 引擎单次查询 2.2ms（180× 加速）；7W 设备上单目-惯导模式 32FPS；TUM-VI 六个房间序列五个亚厘米，KITTI 十一个序列九个相对平移误差 &lt;1%。</p>
+<p><strong>为什么值得看</strong>：边缘 SLAM"加速不掉点"的可复现范式，机器人与 AR 端侧部署直接可用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.17874v1">Jetson-ORB-SLAM3: Accuracy-Preserving GPU Implementation for Edge Computing Devices</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.17874v1">阅读原文 ↗</a></p>
 </body>
 </html>

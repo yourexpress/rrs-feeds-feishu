@@ -22,9 +22,11 @@
 <h1>MAGMA: Mixture-Model Adaptive Gaussian Model Acceleration</h1>
 <p class="meta-line">arXiv（Peter Forcha 等，cs.AR） · 2026-08-18 · 论文PDF</p>
 
-<p>Conventional FPGA-based Gaussian Mixture Model (GMM) accelerators use offline-trained, fixed parameters, limiting their ability to adapt to evolving scene statistics in long-lived edge systems.</p>
-<blockquote><p>Conventional FPGA-based Gaussian Mixture Model (GMM) accelerators use offline-trained, fixed parameters, limiting their ability to adapt to evolving scene statistics in long-lived edge systems. We present MAGMA, a fully synthesizable fixed-point FPGA architecture that performs concurrent GMM inference and online Expectation-Maximization (EM) parameter adaptation from a streaming RGB pixel input. MAGMA combines a pipelined inference datapath with a background update engine using hardware-friendly transcendental approximations---a range-reduced Chebyshev exponential, a CLZ-based logarithm, and a shift-and-subtract divider---alongside guards against variance collapse and cluster death that stabilize online fixed-point EM. Implemented on an AMD Spartan-7 XC7S50 with $K=4$ clusters, MAGMA runs at 74.49~MHz using 7,779 LUTs, 91 DSPs, and no block RAM, consuming 274~mW. It achieves an $11.8\times$ inference speedup and an $81\times$ M-step speedup over software, while spatial subsampling reduces per-update pixel volume by $40\times$ with minimal impact on EM convergence. Under a synthetic non-stationary scene, MAGMA's online adaptation improves mean pixel accuracy over a static baseline (…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：FPGA 上的 GMM 加速器参数离线固定，无法适应长寿命边缘系统里场景统计的漂移——能否片上在线学习？</p>
+<p><strong>方法</strong>：全可综合定点架构 MAGMA，流水线推理数据通路与后台在线 EM 更新引擎并行；用硬件友好的超越函数近似（区间缩减 Chebyshev 指数、CLZ 对数、移位相减除法），并配方差坍缩与簇死亡防护稳定定点在线 EM。</p>
+<p><strong>关键数字</strong>：Spartan-7 XC7S50 上 K=4，74.49MHz，7779 LUT / 91 DSP / 零 BRAM，功耗 274mW；推理 11.8×、M 步 81× 加速于软件；空间子采样把每轮更新像素量降 40× 且 EM 收敛几乎不受影响；非平稳场景在线适应 81.5% vs 静态基线 79.7% 平均像素精度。</p>
+<p><strong>为什么值得看</strong>：消费级边缘 FPGA 上跑通完整在线 GMM 学习，自适应场景建模类应用的实用参考。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.18366v1">MAGMA: Mixture-Model Adaptive Gaussian Model Acceleration</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.18366v1">阅读原文 ↗</a></p>
 </body>
 </html>
