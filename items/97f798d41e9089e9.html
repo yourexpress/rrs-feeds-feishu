@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Co-occurrence Patterns of LoRA Adapters in Production Diffusion Model Inference Services</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Co-occurrence Patterns of LoRA Adapters in Production Diffusion Model Inference Services</h1>
+<p class="meta-line">arXiv · 2026-09-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：LoRA 是云端个性化服务关键技术，但生产负载下 adapter 共现/竞争/演化规律从未被系统量化——对调度与显存管理意味着什么？</p>
+<p><strong>方法</strong>：基于阿里 GenTD26 用图论构建 adapter 共现网络；提出 top-k 共现预加载策略。</p>
+<p><strong>关键数字</strong>：首个 adapter 带来 66.1% 时延开销；90.6% 多 adapter 请求共享同一底座；k=3 预加载覆盖 81.0% 测试集共现对。</p>
+<p><strong>为什么值得看</strong>：缓存预加载/调度/GPU 显存管理终于有生产数据定量依据。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.23321">LoRA Co-occurrence</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.23321">阅读原文 ↗</a></p>
+</body>
+</html>

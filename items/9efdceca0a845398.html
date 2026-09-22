@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Roadmap to Mastering LLM Inference Optimization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>The Roadmap to Mastering LLM Inference Optimization</h1>
+<p class="meta-line">DeviceKick · 2026-09-22 · 技术博客</p>
+<img class="hero" src="https://devicekick.com/wp-content/uploads/2026/09/the-roadmap-to-mastering-llm-inference-optimization-1024x576.webp" alt="" referrerpolicy="no-referrer">
+<p>LLM 推理优化综述（PagedAttention/连续批处理/推测解码/P-D 分离），无新结果</p>
+<blockquote><p>The Roadmap to Mastering LLM Inference Optimization</p><p>The deployment of large language models (LLMs) has shifted from a novelty to a critical infrastructure requirement for modern enterprises, yet the bridge between a functional model and a production-ready application remains fraught with performance bottlenecks. While achieving acceptable output quality is often considered a solved problem, the engineering challenges of latency, cost-efficiency, and system reliability persist. As request volumes grow, standard implementations often fail, leading to ballooning operational costs and degradation in user experience. Inference optimization has consequently emerged as a high-stakes discipline, focusing on maximizing the utility of existing hardware—typically GPUs—without the necessity of expensive model retraining.</p><p>The Anatomy of the Inference Bottleneck</p><p>To understand the current state of LLM performance, one must look at the two-phase nature of the inference process: the prefill phase and the decode phase. The prefill phase, also known as the prompt processing stage, involves computing the key and value tensors for the entire input sequence simultaneously. Because this phase is highly parallelizable, it is compute-bound, meaning the limiting factor is the raw mathematical throughput of the GPU.</p><p>Conversely, the decode phase is autoregressive, meaning each generated token is dependent on the tokens that preceded it. This requirement makes parallel processing within a single sequence impossible, shifting the bottleneck from raw compute to memory bandwidth. The GPU spends a disproportionate amount of time moving data from high-bandwidth memory (HBM) to its processing cores, making memory access speed the primary constraint on throughput.</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://devicekick.com/the-roadmap-to-mastering-llm-inference-optimization/">阅读原文 ↗</a></p>
+</body>
+</html>

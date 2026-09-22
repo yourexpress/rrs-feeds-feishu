@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TEMPO: A Tag-Based Framework for Efficient Memory Ordering</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>TEMPO: A Tag-Based Framework for Efficient Memory Ordering</h1>
+<p class="meta-line">arXiv · 2026-09-19 · 论文PDF</p>
+
+<p>标签式高效内存排序框架（体系结构方向）</p>
+<blockquote><p>Weak-memory processors rely on ordering instruc- tions for correctness, yet conventional implementations often en- force them more conservatively than the memory model requires. This over-enforcement manifests as drain-induced retirement stalls at ordering instructions and conservative squash/replay of speculative loads, suppressing legal executions and reducing throughput. We present TEMPO, a tag-based framework for precise microarchitectural implementation of ordering instructions. TEMPO assigns lightweight ordering tags to instructions and decomposes enforcement across retirement-time predicates and completion-time store ordering, allowing the core to enforce required ordering without conservative retirement serialization. TEMPO eliminates unnecessary retirement serialization at ordering instructions and speculative-load squash/replay. In our evaluation, TEMPO reduces geometric-mean normalized exe- cution cycles by 7.9% on native four-thread workloads and improves geometric-mean IPC by 15.9% on an instrumented SPEC2017 dynamic binary translation (DBT) proxy for cross- ISA execution (e.g., x86-on-Arm), while adding only 262 bytes per core.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.22743">阅读原文 ↗</a></p>
+</body>
+</html>

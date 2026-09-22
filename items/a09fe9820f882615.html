@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ValueDiff: Value-Geometric KV Cache Eviction for Sink-Suppressed LLMs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ValueDiff: Value-Geometric KV Cache Eviction for Sink-Suppressed LLMs</h1>
+<p class="meta-line">arXiv · 2026-09-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：QK 归一化、门控注意力等新架构让持久注意力 sink 变弱，而现有 KV 驱逐几乎都依赖 sink——对这类"弱 sink"模型该用什么信号？</p>
+<p><strong>方法</strong>：ValueDiff：按 token value 向量到 cache 均值的 L2 偏差排序驱逐；同一分数可由"最大熵假设下最小扰动"推出。</p>
+<p><strong>关键数字</strong>：RULER 2k 预算下七弱 sink 模型保留 dense 的 88~99%；LongBench 4k 平均 92%（最强先前 83%）。</p>
+<p><strong>为什么值得看</strong>：KV 驱逐从"看 key 几何"切到"看 value 几何"。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.23314">ValueDiff</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.23314">阅读原文 ↗</a></p>
+</body>
+</html>

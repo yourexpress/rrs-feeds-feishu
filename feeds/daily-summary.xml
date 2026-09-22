@@ -5,8 +5,51 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>每天一条，汇总当日两个检索源（AI 技术报告 + 高效计算文献）的重点内容。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 21 Sep 2026 23:29:18 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 11:00:08 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/daily-summary.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日精选 · 2026-09-22</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-09-22.html</link>
+      <guid isPermaLink="false">urn:daily-summary:2026-09-22</guid>
+      <pubDate>Tue, 22 Sep 2026 23:05:00 +0800</pubDate>
+    <category>每日精选</category>
+      <description>&lt;h2&gt;当日检索概况&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;AI 技术报告库：检索 8 条，入选 5 条（其余当日条目落入"其它"未单列推荐）。&lt;/li&gt;
+&lt;li&gt;高效计算库：检索 30 条，入选 10 条，主题集中在 LLM 推理系统（KV 缓存/投机解码/能耗路由）、agentic 训练基础设施与端侧/国产算力硬件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;重点推荐&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;NVIDIA NemotronLabs VoiceChat&lt;/strong&gt;：开源全双工语音到语音模型，流式编码器 + decoder-only LM 并行输出智能体文本与函数调用，FDB 1.5/3.0、VoiceBench 55.1 上居开源权重首位。&lt;a href="https://arxiv.org/abs/2609.21967"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Qwen 团队 RecreationWorld + RecreationBench&lt;/strong&gt;：混合 CUA 研究框架，五平台环境 + 参考实现作 oracle 给执行级奖励；GPT-6 Astra 总分 58.1% 但程序化全过率仅 2.8%。&lt;a href="https://arxiv.org/abs/2609.22000"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DeepSeek Elastic Compute (DSec)&lt;/strong&gt;：面向 agentic 训练的生产级沙箱基础设施——约 160 节点单元、日服务约 300 万沙箱、38 万并发、5000+ sandbox/秒，训推解耦设计。&lt;a href="https://arxiv.org/abs/2609.22978"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;From Inference Engine to Inference Control Plane&lt;/strong&gt;：综述 LLM 推理从引擎优化走向分布式控制面（vLLM + llm-d 互补），提出 Inference Execution Planner 与 SLO-goodput 评测框架。&lt;a href="https://arxiv.org/abs/2609.23130"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ValueDiff：Value-Geometric KV Cache Eviction&lt;/strong&gt;：按 value 向量到 cache 均值的 L2 偏差排序驱逐，弱 sink 模型 RULER 2k 保留 dense 88~99%、LongBench 4k 平均 92%。&lt;a href="https://arxiv.org/abs/2609.23314"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;WaveFront Decoding：训练-free 自投机解码&lt;/strong&gt;：利用循环 LM 的权重共享与中间输出，把起草与验证合并到同批循环调用，Huginn-3.5B 叠加跨循环 KV 共享后提速 4.81x。&lt;a href="https://arxiv.org/abs/2609.23033"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MediaTek 天玑 9600 Pro 2nm&lt;/strong&gt;：双 NPU 架构支持端侧 300 亿参数模型，NPU 1090 LLM prefill +51%、每瓦 token +55%、多核功耗 -61%。&lt;a href="https://www.eetasia.com/mediatek-moves-dimensity-flagship-to-2nm-with-new-ai-architecture/"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;国产算力基础设施加快"升维"&lt;/strong&gt;：华为发布业界首个 NPO 超节点昇腾 960（Hi-ONE 7.2T、4096 卡、1PB HBM），芜湖首推全球首个 3D 数据中心（机电预制化率超 90%）。&lt;a href="http://jjckb.xinhuanet.com/20260921/2e54cd0ae963425e9d6ac04ccbf5e420/c.html"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;主题速览&lt;/h2&gt;
+&lt;p&gt;当日两库呈现"AI 模型/范式 + 系统级推理/训练基础设施 + 国产与端侧算力"三主线：AI 库以全双工语音、混合 CUA、AI for Science（RetroChimera）与对齐研究为主；高效计算库则在推理控制面、agentic 训练沙箱、KV 缓存新指标、FP8 RL 稳定性、循环 LM 并行解码与量化误差分析等系统层面密集产出，硬件侧 2nm 手机 SoC、Imagination E 系列 GPU-IP、NVIDIA DGX Spark 社区集群与华为全联接大会国产超节点集中发布。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2>当日检索概况</h2>
+<ul>
+<li>AI 技术报告库：检索 8 条，入选 5 条（其余当日条目落入"其它"未单列推荐）。</li>
+<li>高效计算库：检索 30 条，入选 10 条，主题集中在 LLM 推理系统（KV 缓存/投机解码/能耗路由）、agentic 训练基础设施与端侧/国产算力硬件。</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>NVIDIA NemotronLabs VoiceChat</strong>：开源全双工语音到语音模型，流式编码器 + decoder-only LM 并行输出智能体文本与函数调用，FDB 1.5/3.0、VoiceBench 55.1 上居开源权重首位。<a href="https://arxiv.org/abs/2609.21967">链接</a></li>
+<li><strong>Qwen 团队 RecreationWorld + RecreationBench</strong>：混合 CUA 研究框架，五平台环境 + 参考实现作 oracle 给执行级奖励；GPT-6 Astra 总分 58.1% 但程序化全过率仅 2.8%。<a href="https://arxiv.org/abs/2609.22000">链接</a></li>
+<li><strong>DeepSeek Elastic Compute (DSec)</strong>：面向 agentic 训练的生产级沙箱基础设施——约 160 节点单元、日服务约 300 万沙箱、38 万并发、5000+ sandbox/秒，训推解耦设计。<a href="https://arxiv.org/abs/2609.22978">链接</a></li>
+<li><strong>From Inference Engine to Inference Control Plane</strong>：综述 LLM 推理从引擎优化走向分布式控制面（vLLM + llm-d 互补），提出 Inference Execution Planner 与 SLO-goodput 评测框架。<a href="https://arxiv.org/abs/2609.23130">链接</a></li>
+<li><strong>ValueDiff：Value-Geometric KV Cache Eviction</strong>：按 value 向量到 cache 均值的 L2 偏差排序驱逐，弱 sink 模型 RULER 2k 保留 dense 88~99%、LongBench 4k 平均 92%。<a href="https://arxiv.org/abs/2609.23314">链接</a></li>
+<li><strong>WaveFront Decoding：训练-free 自投机解码</strong>：利用循环 LM 的权重共享与中间输出，把起草与验证合并到同批循环调用，Huginn-3.5B 叠加跨循环 KV 共享后提速 4.81x。<a href="https://arxiv.org/abs/2609.23033">链接</a></li>
+<li><strong>MediaTek 天玑 9600 Pro 2nm</strong>：双 NPU 架构支持端侧 300 亿参数模型，NPU 1090 LLM prefill +51%、每瓦 token +55%、多核功耗 -61%。<a href="https://www.eetasia.com/mediatek-moves-dimensity-flagship-to-2nm-with-new-ai-architecture/">链接</a></li>
+<li><strong>国产算力基础设施加快"升维"</strong>：华为发布业界首个 NPO 超节点昇腾 960（Hi-ONE 7.2T、4096 卡、1PB HBM），芜湖首推全球首个 3D 数据中心（机电预制化率超 90%）。<a href="http://jjckb.xinhuanet.com/20260921/2e54cd0ae963425e9d6ac04ccbf5e420/c.html">链接</a></li>
+</ul>
+<h2>主题速览</h2>
+<p>当日两库呈现"AI 模型/范式 + 系统级推理/训练基础设施 + 国产与端侧算力"三主线：AI 库以全双工语音、混合 CUA、AI for Science（RetroChimera）与对齐研究为主；高效计算库则在推理控制面、agentic 训练沙箱、KV 缓存新指标、FP8 RL 稳定性、循环 LM 并行解码与量化误差分析等系统层面密集产出，硬件侧 2nm 手机 SoC、Imagination E 系列 GPU-IP、NVIDIA DGX Spark 社区集群与华为全联接大会国产超节点集中发布。</p>]]></content:encoded>
+    </item>
     <item>
       <title>每日精选 · 2026-09-21</title>
       <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-09-21.html</link>

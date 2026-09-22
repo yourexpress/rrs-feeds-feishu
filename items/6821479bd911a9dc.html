@@ -22,9 +22,11 @@
 <h1>The Effect of Low-Bit Quantization on Memorization and Factual Recall in Language Models: A Multi-Model Study</h1>
 <p class="meta-line">figshare（Purnima Pathak, Akshay Upadhyay） · 2026-09-19 · 技术博客 / 每日精选</p>
 
-<p>六模型（≤3B）受控实证：INT4 量化不影响闭卷事实回忆，记忆化程度由模型规模而非量化精度主导。</p>
-<blockquote><p>The Effect of Low-Bit Quantization on Memorization and Factual Recall in Language Models: A Multi-Model Study</p><p>Motivation. Low-bit quantization (INT8/INT4) is a deployment necessity; it is how language models run on phones, laptops, and edge hardware. Its effect on task accuracy is well characterized. Its effect on model behavior, specifically what a model has memorized and how reliably it recalls facts, is not. This distinction matters for copyright, privacy, and test-set contamination auditing, where the question is not "is the model still accurate?" but "does compression change what the model retains and reveals?" This work treats that question as an empirical, measurable one.</p><p>Experimental design. We adopt a controlled, pre-registered-style design in which precision is the independent variable and model behavior is the dependent variable. Precision is varied across FP16/bf16, INT8, and INT4 on the same underlying weights, holding prompts, decoding (greedy, temperature 0), and seed fixed, so any measured difference is attributable to precision rather than sampling or prompt variance. The study runs on two independent backends, Apple MLX (Apple Silicon) and Hugging Face Transformers with bitsandbytes (NVIDIA CUDA), so that a finding which appears on both is a real effect of quantization, not a result produced by one library alone.</p><p>Measurement instruments.</p><p>1. Factuality: closed-book QA on PopQA (N = 100), stratified by subject popularity (Wikipedia pageviews), alias-aware exact-match scoring; precision effects tested with a paired McNemar test and bootstrap confidence intervals.</p><p>…</p></blockquote>
-<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><strong>核心话题</strong>：INT8/INT4 量化对精度影响已被研究清楚，但它是否改变模型"记住了什么、能否如实回忆事实"？</p>
+<p><strong>要点</strong>：FP16/bf16/INT8/INT4 同一组权重；在 MLX 与 Transformers+bitsandbytes 两独立后端复跑；测 PopQA 闭卷问答。</p>
+<p><strong>关键数字</strong>：六模型，INT4 与 FP16 事实召回统计上不可区分（p=1.0/1.0/0.38）；记忆由模型规模主导。</p>
+<p><strong>为什么值得看</strong>：端侧量化模型"更守口如瓶"的常见假设被否定。</p>
+<p>原文：<a href="https://figshare.com/articles/software/Quantization_Memorization_Factuality/33858859">Low-Bit Quantization</a></p>
 <p><a class="origin" href="https://figshare.com/articles/software/Quantization_Memorization_Factuality/33858859">阅读原文 ↗</a></p>
 </body>
 </html>

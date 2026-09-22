@@ -22,9 +22,11 @@
 <h1>Gemini Omni 1.1 Flash lets you build with more control</h1>
 <p class="meta-line">Google DeepMind · 2026-08-18 · 技术博客</p>
 <img class="hero" src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Omni_1-1_Flash_hero.width-1300.png" alt="" referrerpolicy="no-referrer">
-<p>Gemini Omni 1.1 Flash 开放构建，提供更多控制能力</p>
-<blockquote><p>Gemini Omni 1.1 Flash lets you build with more control</p><p>Today, we’re introducing Gemini Omni 1.1 Flash, a new suite of creative controls and generative video capabilities to support developers. Gemini Omni brought real-world reasoning to generative creation, and today’s updates make Omni 1.1 production-ready for professional use via the Gemini API in Google AI Studio.</p><p>Whether you’re building generative video workflows, creative tools, or media editing software, these updates make generative video more controllable, faster to iterate on, and polished for real-world deployment. Here’s a look at what’s new:</p><p>Extend scenes for longer storytelling</p><p>Scene extension allows you to take an existing video and continue generating footage seamlessly from where it left off.</p><p>With Omni 1.1, the model can now analyze up to 10 seconds of prior context — a leap from previous models that only referenced the final second. The result is improved visual consistency and narrative adherence, letting you build longer stories or branch into new creative directions. You can extend videos in 10-second increments up to a total cumulative length of 40 seconds.</p><p>Here’s how you can extend your scene with the Gemini API:</p><p>from google import genai</p><p>client = genai.Client()</p><p>interaction = client.interactions.create(</p><p>model="gemini-omni-1.1-flash",</p><p>previous_interaction_id=previous_video_interaction.id,</p><p>input=[</p><p>{"type": "text", "text": "Continue the scene."}</p><p>],</p><p>response_format={</p><p>"resolution": "360p",</p><p>},</p><p>)</p><p>Specify first and last frames</p><p>Achieve smooth transitions and camera movements by specifying the starting and ending frames of a shot. Omni 1.1 generates continuous video between two keyframes, making it ideal for complex camera orbits, zoom transitions, or seamless looping clips.</p><p>…</p></blockquote>
-<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><strong>核心话题</strong>：Google 推出 Gemini Omni 1.1 Flash——生成式视频创意控制套件更新，Gemini API 在 AI Studio 达生产可用级。</p>
+<p><strong>要点</strong>：场景续写（最长 10 秒前文；累计最长 40 秒）；指定首尾帧生成连续镜头；360p 草稿模式提速省成本；输出可放大至 1080p 或 4K。</p>
+<p><strong>关键数字</strong>：前文上下文 10 秒（此前 1 秒）；累计长度上限 40 秒；360p 草稿生成快至多 60%、成本约 720p 的三分之一。</p>
+<p><strong>为什么值得看</strong>：把"可控性"而非"更长时长"作为视频模型迭代主轴。</p>
+<p>原文：<a href="https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/">Gemini Omni 1.1 Flash</a></p>
 <p><a class="origin" href="https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WaveFront Decoding: Parallelized Self-Speculative Decoding for Looped Language Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>WaveFront Decoding: Parallelized Self-Speculative Decoding for Looped Language Models</h1>
+<p class="meta-line">arXiv · 2026-09-19 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：循环语言模型用串行 T 次循环调用换深度，解码延迟高——能否免训练地并行化？</p>
+<p><strong>方法</strong>：Wavefront Decoding，训练-free 自投机解码。中间循环输出作草稿，权重共享让不同位置/深度 token 状态合并进一次批量调用。</p>
+<p><strong>关键数字</strong>：Spec-Bench 上 Ouro-2.6B 提速 2.42x、Huginn-3.5B 提速 3.54x；叠加跨循环 KV 共享后 Huginn-3.5B 达 4.81x。</p>
+<p><strong>为什么值得看</strong>："深度即草稿长度"思路可迁移到多深度推理架构。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.23033">WaveFront Decoding</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.23033">阅读原文 ↗</a></p>
+</body>
+</html>

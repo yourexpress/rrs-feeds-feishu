@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why 2-Bit LLM Quantization Fails at the Hardware Boundary</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Why 2-Bit LLM Quantization Fails at the Hardware Boundary</h1>
+<p class="meta-line">HackerNoon（Vivek Kumar, Google） · 2026-09-21 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://hackernoon.imgix.net/images/YiCkJUkgLUN1aEhDaGadtcN34aB3-sp83euv.png" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong>：4-bit 到 2-bit 权重量化看似再压一半，为什么模型在服务器仿真没事、上了边缘加速器就崩？</p>
+<p><strong>要点</strong>：W2 下每缩放组只剩 4 个权重码（4-bit 为 16 个），局部误差变结构性。QuIP/QuIP# 把问题归为"非相干性"，AQLM 走学习加性码本。</p>
+<p><strong>关键数字</strong>：W2 每组 4 码 vs W4 16 码；本文为观点型文章，未附实验数据表。</p>
+<p><strong>为什么值得看</strong>：把"W2 失败"拆成"表示、训练、编译、运行时是一数值系统"的工程命题。</p>
+<p>原文：<a href="https://hackernoon.com/why-2-bit-llm-quantization-fails-at-the-hardware-boundary">Why 2-Bit Quantization Fails</a></p>
+<p><a class="origin" href="https://hackernoon.com/why-2-bit-llm-quantization-fails-at-the-hardware-boundary">阅读原文 ↗</a></p>
+</body>
+</html>
