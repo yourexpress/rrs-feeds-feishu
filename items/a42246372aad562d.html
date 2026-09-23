@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CLOOPD: Closing the Learner Loop in On-Policy Distillation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CLOOPD: Closing the Learner Loop in On-Policy Distillation</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-22 · 论文PDF</p>
+
+<p>CLOOPD：闭环在线蒸馏中的 learner 循环，让一次采集的轨迹被多次 actor 更新利用以摊薄教师评分成本。</p>
+<blockquote><p>On-policy distillation (OPD) pays twice for each fresh batch: the student generates trajectories and a stronger teacher scores them. Existing methods improve which trajectories are scored and how the teacher signal is constructed, but usually consume it with one actor update. We introduce CLOOPD, a closed-loop framework separating teacher-signal acquisition from student-side realization. CLOOPD selects an adaptive $α$ waypoint inside a KL envelope, freezes the scored batch and its advantages, re-forwards the student after each actor pass, measures realization, and allocates actor work under a separate token budget. The framework includes deterministic two- and three-pass policies, token-priced CLOOPD-TPMR, and a budget-matched control. Across six 300-step runs on an 8-H20 node, every CLOOPD policy improves the one-pass TOP-D anchor at comparable teacher-token scale: macro accuracy rises from 15.41 to 17.78 with CLOOPD-Fixed2 and 19.36 with CLOOPD-Fixed3. At step 100, CLOOPD-Fixed3 reaches 15.35, nearly matching TOP-D at step 300 while using 67.2% fewer teacher-scored tokens and 28.0% fewer GPU-hours. Earlier 8-A100 ablations show adaptive $α$ eliminates observed trust-envelope viol…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.24141">阅读原文 ↗</a></p>
+</body>
+</html>

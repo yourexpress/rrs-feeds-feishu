@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KV-COBRA: KV Cache Compression via Co-Optimized Bit-Rank Allocation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>KV-COBRA: KV Cache Compression via Co-Optimized Bit-Rank Allocation</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：极限码率下 KV cache 压缩的瓶颈不在压缩方案本身，而在预算如何分配到各注意力头？</p>
+<p><strong>方法</strong>：KV-COBRA 把 per-head 秩截断与标量量化协同优化形式化为资源分配：头内平衡截断损失与量化损失，跨头再分配预算最小化总失真；融合 Hadamard 旋转均衡通道方差，按注意力 KL 重要性重排 SVD 基使求解 query-aware。</p>
+<p><strong>关键数字</strong>：0.5-4 bit/维度范围内，困惑度、zero-shot 与长上下文基准上低码率段精度损失为所评方法中最小，且无 per-token 开销。</p>
+<p><strong>为什么值得看</strong>：只用标准低秩投影加标量量化就压过统一分配，即插即用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.24298">KV-COBRA: KV Cache Compression via Co-Optimized Bit-Rank Allocation</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.24298">阅读原文 ↗</a></p>
+</body>
+</html>

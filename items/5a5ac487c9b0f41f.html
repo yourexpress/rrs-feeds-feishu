@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Merge++: Universal Merge Refinement Through Data-Free Checkpoint Inversion</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Merge++: Universal Merge Refinement Through Data-Free Checkpoint Inversion</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-22 · 论文PDF</p>
+
+<p>提出 Merge++：通过无数据 checkpoint 反演让模型合并在权重空间运算之外利用专家模型行为信号，改进合并质量。</p>
+<blockquote><p>Model merging consolidates fine-tuned experts into one multi-task model without retraining. All existing data-free methods approach this problem entirely in weight space. Restricted to arithmetic on parameters, these methods never observe how each expert behaves, a signal that only emerges through forward evaluation. Accessing this behavioral signal requires inputs to evaluate on, which the data-free setting prohibits. We propose Merge++, a post-hoc method that addresses this by inverting the expert checkpoints to synthesize task-representative images, then distilling expert knowledge into the merged model using those images. Merge++ requires no additional data beyond the checkpoints themselves. It applies universally across merging algorithms and operates as a complementary refinement stage independent of the underlying weight-space method. The method consistently improves merging algorithms ranging from simple task arithmetic to state-of-the-art spectral methods, with average gains of +2 to +8 points and up to +25.9 on individual configurations.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.22886">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NPU Accelerator: Quantized Real-Time Vehicle Detection on PYNQ-Z1 Using FINN</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>NPU Accelerator: Quantized Real-Time Vehicle Detection on PYNQ-Z1 Using FINN</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-09-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：能否在资源受限的 PYNQ-Z1（Zynq XC7Z020）上同时满足吞吐、能效、延迟与精度四项硬指标的实时车辆检测？</p>
+<p><strong>方法</strong>：软硬件协同：QAT + 轻量 YOLO 衍生检测器 + Brevitas/QONNX 导出 + FINN 数据流编译 + Vivado 实现与板级实测；设计空间覆盖 LP-YOLO/Slim、4-bit 与混合低位量化、两种分辨率与 100-200MHz PL 时钟。</p>
+<p><strong>关键数字</strong>：最终 LP-YOLO Slim（256×256、w2a4、142.86MHz）batch 100 达 35.66 FPS @ 2.91W（12.25 FPS/W），PL 延迟 45.11ms，mAP@0.5 0.594——唯一四项指标全达标的配置。</p>
+<p><strong>为什么值得看</strong>：小 Zynq 上从 QAT 到板级验证的完整闭环，取舍过程诚实可复现。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.24757">NPU Accelerator: Quantized Real-Time Vehicle Detection on PYNQ-Z1 Using FINN</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.24757">阅读原文 ↗</a></p>
+</body>
+</html>

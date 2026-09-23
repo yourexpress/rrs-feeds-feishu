@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bilinear Optimization Divergence: Diagnosing Factor-Constrained LoRA Continual Learning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Bilinear Optimization Divergence: Diagnosing Factor-Constrained LoRA Continual Learning</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-22 · 论文PDF</p>
+
+<p>提出双线性优化发散（BOD）分析框架，诊断因子约束 LoRA 持续学习中正交性保护对象的歧义问题。</p>
+<blockquote><p>Orthogonality in a LoRA factor does not by itself specify what the composed update protects: the answer depends on the task-start state, the parameterization, and the realized optimizer displacement. We formalize this question through Bilinear Optimization Divergence (BOD), an anchor-relative diagnostic of effective-update response on selected historical features. The finite-step analysis distinguishes two cases. In a shared adapter, protecting the routing displacement leaves a learned-anchor residual through the changing companion factor. In a fresh zero-output block, a feasible routing state can protect the composed update while both current factors remain trainable. These conditions yield Semi-Frozen Orthogonal Routing (SFOR) for shared adapters and current-block hard protection for cumulative O-LoRA; Weight Residual Projection (WRP) enforces the required displacement after the optimizer step. Controlled two-task traces verify the predicted residual paths, reducing normalized historical response from 19.12% to 0.005% in the shared family and from 7.72% to 0.002% in the cumulative family. Four-task experiments on Qwen3-8B characterize the resulting trade-offs: SFOR improves backw…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.23594">阅读原文 ↗</a></p>
+</body>
+</html>

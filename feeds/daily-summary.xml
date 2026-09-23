@@ -5,8 +5,51 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>每天一条，汇总当日两个检索源（AI 技术报告 + 高效计算文献）的重点内容。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 22 Sep 2026 23:24:03 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 10:55:19 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/daily-summary.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日精选 · 2026-09-23</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-09-23.html</link>
+      <guid isPermaLink="false">urn:daily-summary:2026-09-23</guid>
+      <pubDate>Wed, 23 Sep 2026 23:05:00 +0800</pubDate>
+    <category>每日精选</category>
+      <description>&lt;h2&gt;当日检索概况&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;AI 技术报告库：检索 7 条，入选 5 条（其余当日条目落入"其它"未单列推荐）。&lt;/li&gt;
+&lt;li&gt;高效计算库：检索 78 条，入选 17 条，主题集中在推理系统（KV 缓存/投机解码/长上下文存储）、量化可靠性、GPU 调度与训练加速、FPGA/存内计算端侧硬件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;重点推荐&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;OpenAI GPT-6 Sol / Luna&lt;/strong&gt;：GPT-6 家族下探成本档，API 价格较 GPT-5.6 促销价降 50%；AutomationBench 上 Sol 以 Opus 5 单任务 9% 的成本超过 max 档 Opus 5，事实性错误率约为前代一半。&lt;a href="https://openai.com/index/introducing-gpt-6-sol-and-luna/"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Anthropic Claude Opus 5.5&lt;/strong&gt;：Claude 5.5 家族首款旗舰，典型负载成本较 Opus 5 降 40%、缓存读取降 60%，自动化行为审计为迄今最强，配套生安/网安验证计划。&lt;a href="https://www.anthropic.com/claude-opus-5-5"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;阿里全栈 AI 路线图（云栖大会）&lt;/strong&gt;：Qwen4 已开训、后续规划 5-10 万亿参数；Qwen3.8-Max 经 RSI 全自动完成 33 轮自主迭代；自研 AI 芯片 + agentic cloud + 手机 Agent 平台，2032 年数据中心容量目标 20GW。&lt;a href="https://www.alibabacloud.com/blog/alibaba-unveils-roadmap-on-full-stack-ai-strategy-from-chips-cloud-infrastructure-models-to-agents_603589"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Measuring the Checker&lt;/strong&gt;：突变分析度量 GPU-kernel 基准判定器——官方 checker 漏检 16.9% 见证故障、精度类漏检 78.6%；排行榜与 RL 奖励所依赖的正确性判定原来这么脆。&lt;a href="https://arxiv.org/abs/2609.22220"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SPLASH&lt;/strong&gt;：KV cache 架到 HBM+高带宽 Flash（HBF）层级，稀疏注意力与整页读取/千级并行平面协同设计，100ms 每 token 目标下 decode 吞吐提升 3.5-11.4x。&lt;a href="https://arxiv.org/abs/2609.23816"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;H-Spec&lt;/strong&gt;：无 drafter 侧 KV cache 的并行投机解码，平均接受长度较最强基线 +5.0-13.3%，并发服务下吞吐更高、KV 占用更低。&lt;a href="https://arxiv.org/abs/2609.24197"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Undetected Damage of Quantization on Retrieval&lt;/strong&gt;：分类准确率不变的量化模型仍改变 14-46% 的 top-1 检索结果，用前两名分数差给出免标签的信任判定与修复方案。&lt;a href="https://arxiv.org/abs/2609.24322"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NSP&lt;/strong&gt;：嵌套序列并行——同一迭代内长序列用大 SP 组、短序列小组共享 GPU，变长长文本训练吞吐较 Static SP 最高 +1.48x。&lt;a href="https://arxiv.org/abs/2609.22755"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;主题速览&lt;/h2&gt;
+&lt;p&gt;当日两库主线：AI 库被头部厂商发布占满——GPT-6 Sol/Luna、Claude Opus 5.5、阿里云栖全栈路线图，"旗舰能力下探+大幅降价"成为共同动作，第三方安全评估配套发声；高效计算库则围绕推理与训练系统密集产出——KV cache 压缩与新存储层级（KV-COBRA、SPLASH、CacheRoute）、投机解码（H-Spec、SPECTRA）、量化可靠性（BOS-Sink 拓扑、检索损伤）、变长训练与 GPU 不对称调度（NSP、Die Scaling），端侧侧有 PYNQ-Z1 检测器、Bernstein 神经符号编译与 14.6KB 时空专家等小而完整的落地样本。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2>当日检索概况</h2>
+<ul>
+<li>AI 技术报告库：检索 7 条，入选 5 条（其余当日条目落入"其它"未单列推荐）。</li>
+<li>高效计算库：检索 78 条，入选 17 条，主题集中在推理系统（KV 缓存/投机解码/长上下文存储）、量化可靠性、GPU 调度与训练加速、FPGA/存内计算端侧硬件。</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>OpenAI GPT-6 Sol / Luna</strong>：GPT-6 家族下探成本档，API 价格较 GPT-5.6 促销价降 50%；AutomationBench 上 Sol 以 Opus 5 单任务 9% 的成本超过 max 档 Opus 5，事实性错误率约为前代一半。<a href="https://openai.com/index/introducing-gpt-6-sol-and-luna/">链接</a></li>
+<li><strong>Anthropic Claude Opus 5.5</strong>：Claude 5.5 家族首款旗舰，典型负载成本较 Opus 5 降 40%、缓存读取降 60%，自动化行为审计为迄今最强，配套生安/网安验证计划。<a href="https://www.anthropic.com/claude-opus-5-5">链接</a></li>
+<li><strong>阿里全栈 AI 路线图（云栖大会）</strong>：Qwen4 已开训、后续规划 5-10 万亿参数；Qwen3.8-Max 经 RSI 全自动完成 33 轮自主迭代；自研 AI 芯片 + agentic cloud + 手机 Agent 平台，2032 年数据中心容量目标 20GW。<a href="https://www.alibabacloud.com/blog/alibaba-unveils-roadmap-on-full-stack-ai-strategy-from-chips-cloud-infrastructure-models-to-agents_603589">链接</a></li>
+<li><strong>Measuring the Checker</strong>：突变分析度量 GPU-kernel 基准判定器——官方 checker 漏检 16.9% 见证故障、精度类漏检 78.6%；排行榜与 RL 奖励所依赖的正确性判定原来这么脆。<a href="https://arxiv.org/abs/2609.22220">链接</a></li>
+<li><strong>SPLASH</strong>：KV cache 架到 HBM+高带宽 Flash（HBF）层级，稀疏注意力与整页读取/千级并行平面协同设计，100ms 每 token 目标下 decode 吞吐提升 3.5-11.4x。<a href="https://arxiv.org/abs/2609.23816">链接</a></li>
+<li><strong>H-Spec</strong>：无 drafter 侧 KV cache 的并行投机解码，平均接受长度较最强基线 +5.0-13.3%，并发服务下吞吐更高、KV 占用更低。<a href="https://arxiv.org/abs/2609.24197">链接</a></li>
+<li><strong>The Undetected Damage of Quantization on Retrieval</strong>：分类准确率不变的量化模型仍改变 14-46% 的 top-1 检索结果，用前两名分数差给出免标签的信任判定与修复方案。<a href="https://arxiv.org/abs/2609.24322">链接</a></li>
+<li><strong>NSP</strong>：嵌套序列并行——同一迭代内长序列用大 SP 组、短序列小组共享 GPU，变长长文本训练吞吐较 Static SP 最高 +1.48x。<a href="https://arxiv.org/abs/2609.22755">链接</a></li>
+</ul>
+<h2>主题速览</h2>
+<p>当日两库主线：AI 库被头部厂商发布占满——GPT-6 Sol/Luna、Claude Opus 5.5、阿里云栖全栈路线图，"旗舰能力下探+大幅降价"成为共同动作，第三方安全评估配套发声；高效计算库则围绕推理与训练系统密集产出——KV cache 压缩与新存储层级（KV-COBRA、SPLASH、CacheRoute）、投机解码（H-Spec、SPECTRA）、量化可靠性（BOS-Sink 拓扑、检索损伤）、变长训练与 GPU 不对称调度（NSP、Die Scaling），端侧侧有 PYNQ-Z1 检测器、Bernstein 神经符号编译与 14.6KB 时空专家等小而完整的落地样本。</p>]]></content:encoded>
+    </item>
     <item>
       <title>每日精选 · 2026-09-22</title>
       <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-09-22.html</link>

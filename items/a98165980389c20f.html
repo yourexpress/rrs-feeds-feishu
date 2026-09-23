@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RPyForth: Exposing a Call-Shared Data Stack to a Meta-Tracing JIT Compiler</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>RPyForth: Exposing a Call-Shared Data Stack to a Meta-Tracing JIT Compiler</h1>
+<p class="meta-line">arXiv (cs.PL) · 2026-09-22 · 论文PDF</p>
+
+<p>RPyForth：把 Forth 的调用共享数据栈显式暴露给元追踪 JIT 编译器，实现可 JIT 化的 Forth 实现。</p>
+<blockquote><p>Forth is a concatenative language whose words share one data stack across calls, with a depth and call effects that need not be known before execution. That leaves a meta-tracing JIT compiler with no stack location it can name: a cell is reached through the stack pointer, so its accesses stay in the compiled code, and declaring every cell of the stack array instead ties what the compiler carries to the capacity the array reserves rather than to the depth a program uses. We answer with a fixed-width window over the top of the stack, a shared spill holding every deeper cell, and a decoding function that joins the two, on top of which call-entry normalization and adaptive entry are policies. Decoding shows that all of them preserve the logical stack and that a trace exit rebuilds data-stack state bounded by the window's width, not by the stack's depth. RPyForth realizes this in an RPython interpreter covering Forth's Core word set, with two scalar fields and eight frame positions and no static stack-effect analysis, and RPyFactor realizes the same window for a subset of Factor. Exposing the window to the compiler, rather than merely caching cells in it, is what pays. With the layout a…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.23759">阅读原文 ↗</a></p>
+</body>
+</html>

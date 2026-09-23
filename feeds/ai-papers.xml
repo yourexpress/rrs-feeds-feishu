@@ -5,7 +5,7 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>AI 机构与企业（DeepMind/OpenAI/Anthropic/Microsoft/Meta/xAI/Mistral/Qwen/Seed 等）最新论文与 PDF 技术报告（arXiv 等），正文含中文省流版。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 22 Sep 2026 23:23:54 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 10:55:09 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/ai-papers.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DAPO: An Open-Source LLM Reinforcement Learning System（旧闻重推）</title>
@@ -15,6 +15,24 @@
     <category>论文PDF</category>
       <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：字节 Seed 等　&lt;strong&gt;发布&lt;/strong&gt;：2026-09-21　&lt;strong&gt;分类&lt;/strong&gt;：论文PDF&lt;/p&gt;&lt;p style="font-size:1.05em"&gt;开源 LLM 强化学习算法 DAPO 论文（2025 年 3 月），本窗口内被两档 AI 新闻播客重新推送，非新发布&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;Inference scaling empowers LLMs with unprecedented reasoning ability, with reinforcement learning as the core technique to elicit complex reasoning. However, key technical details of state-of-the-art reasoning LLMs are concealed (such as in OpenAI o1 blog and DeepSeek R1 technical report), thus the community still struggles to reproduce their RL training results. We propose the $\textbf{D}$ecoupled Clip and $\textbf{D}$ynamic s$\textbf{A}$mpling $\textbf{P}$olicy $\textbf{O}$ptimization ($\textbf{DAPO}$) algorithm, and fully open-source a state-of-the-art large-scale RL system that achieves 50 points on AIME 2024 using Qwen2.5-32B base model. Unlike previous works that withhold training details, we introduce four key techniques of our algorithm that make large-scale LLM RL a success. In addition, we open-source our training code, which is built on the verl framework, along with a carefully curated and processed dataset. These components of our open-source system enhance reproducibility and support future research in large-scale LLM RL.&lt;/p&gt;&lt;/blockquote&gt;&lt;p style="color:#6b7280;font-size:0.9em"&gt;以上为 arXiv 摘要节选，中文省流版整理中。&lt;/p&gt;&lt;p style="margin-top:14px"&gt;&lt;a href="https://arxiv.org/abs/2503.14476"&gt;阅读原文 ↗&lt;/a&gt;&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p><strong>发表方</strong>：字节 Seed 等　<strong>发布</strong>：2026-09-21　<strong>分类</strong>：论文PDF</p><p style="font-size:1.05em">开源 LLM 强化学习算法 DAPO 论文（2025 年 3 月），本窗口内被两档 AI 新闻播客重新推送，非新发布</p><blockquote><p>Inference scaling empowers LLMs with unprecedented reasoning ability, with reinforcement learning as the core technique to elicit complex reasoning. However, key technical details of state-of-the-art reasoning LLMs are concealed (such as in OpenAI o1 blog and DeepSeek R1 technical report), thus the community still struggles to reproduce their RL training results. We propose the $\textbf{D}$ecoupled Clip and $\textbf{D}$ynamic s$\textbf{A}$mpling $\textbf{P}$olicy $\textbf{O}$ptimization ($\textbf{DAPO}$) algorithm, and fully open-source a state-of-the-art large-scale RL system that achieves 50 points on AIME 2024 using Qwen2.5-32B base model. Unlike previous works that withhold training details, we introduce four key techniques of our algorithm that make large-scale LLM RL a success. In addition, we open-source our training code, which is built on the verl framework, along with a carefully curated and processed dataset. These components of our open-source system enhance reproducibility and support future research in large-scale LLM RL.</p></blockquote><p style="color:#6b7280;font-size:0.9em">以上为 arXiv 摘要节选，中文省流版整理中。</p><p style="margin-top:14px"><a href="https://arxiv.org/abs/2503.14476">阅读原文 ↗</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Complex KDA: Understanding and Enhancing the Expressivity of Kimi Delta Attention</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/9b3ea0e1c5ff8267.html</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2609.24797</guid>
+      <pubDate>Mon, 21 Sep 2026 12:00:00 +0800</pubDate>
+    <category>论文PDF</category>
+    <category>每日精选</category>
+      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：Microsoft Research、Freiburg、LAION 等（arXiv:2609.24797）　&lt;strong&gt;发布&lt;/strong&gt;：2026-09-21　&lt;strong&gt;分类&lt;/strong&gt;：论文PDF / 每日精选&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究问题&lt;/strong&gt;：delta-rule 线性 RNN 的更新是低秩修正，表达力受限；能否不抬高秩与开销就让 Kimi Delta Attention（KDA）达到 2D 旋转级状态追踪能力？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;方法&lt;/strong&gt;：把 KDA 门限扩展到 [-1,1]、delta 系数 β 扩到 [0,2]，用单次 delta 变换加通道门提供的第二次反射合成 2D 旋转，得到 Complex KDA（CKDA）；转移矩阵保持对角加秩一、非扩张。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;关键数字&lt;/strong&gt;：证明任意正交对角加秩一矩阵恰为 CKDA 转移矩阵；单层可追踪 SO(3) 有限子群同构的任意群；多项状态追踪任务比同类线性 RNN 少用一层；语言建模超过 Transformer 与其他线性 RNN。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;为什么值得看&lt;/strong&gt;：给线性注意力表达力一个干净的理论刻画，实证与开源（代码+模型）齐全。&lt;/p&gt;
+&lt;p&gt;原文：&lt;a href="https://arxiv.org/abs/2609.24797"&gt;Complex KDA: Understanding and Enhancing the Expressivity of Kimi Delta Attention&lt;/a&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p><strong>发表方</strong>：Microsoft Research、Freiburg、LAION 等（arXiv:2609.24797）　<strong>发布</strong>：2026-09-21　<strong>分类</strong>：论文PDF / 每日精选</p><p><strong>研究问题</strong>：delta-rule 线性 RNN 的更新是低秩修正，表达力受限；能否不抬高秩与开销就让 Kimi Delta Attention（KDA）达到 2D 旋转级状态追踪能力？</p>
+<p><strong>方法</strong>：把 KDA 门限扩展到 [-1,1]、delta 系数 β 扩到 [0,2]，用单次 delta 变换加通道门提供的第二次反射合成 2D 旋转，得到 Complex KDA（CKDA）；转移矩阵保持对角加秩一、非扩张。</p>
+<p><strong>关键数字</strong>：证明任意正交对角加秩一矩阵恰为 CKDA 转移矩阵；单层可追踪 SO(3) 有限子群同构的任意群；多项状态追踪任务比同类线性 RNN 少用一层；语言建模超过 Transformer 与其他线性 RNN。</p>
+<p><strong>为什么值得看</strong>：给线性注意力表达力一个干净的理论刻画，实证与开源（代码+模型）齐全。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.24797">Complex KDA: Understanding and Enhancing the Expressivity of Kimi Delta Attention</a></p>]]></content:encoded>
     </item>
     <item>
       <title>Red-Teaming Auto Mode: Improving Blocking Classifiers Against Malign Coding Agents</title>

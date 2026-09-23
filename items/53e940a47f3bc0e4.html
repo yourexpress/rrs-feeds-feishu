@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conduit: An Experience Data Plane for Distributed Reinforcement Learning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Conduit: An Experience Data Plane for Distributed Reinforcement Learning</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-09-22 · 论文PDF</p>
+
+<p>Conduit：分布式强化学习的经验数据平面，把经验缓冲从回放队列升级为低时延大容量存储底座。</p>
+<blockquote><p>Distributed reinforcement learning (RL) scales training by parallelizing actors and learners around an Experience Buffer. As RL workloads grow, however, the buffer becomes more than a replay queue: it is the storage substrate of a large-capacity, latency-critical experience path that every iteration traverses to move, transform, sample, and batch experiences before learner updates can begin. Existing RL systems embed this path inside framework control flow or expose it as a request-driven buffer service, leaving experience placement fixed and experience-path work difficult to schedule independently as a runtime-level optimization target. We present Conduit, a framework-agnostic runtime that exposes RL experience management as an explicit systems optimization problem. At its core is the Experience Data Plane (EDP), a runtime abstraction that separates RL experience-handling semantics from framework-specific execution logic by exposing experience ingestion, experience placement, and experience delivery as explicit control points. Built on EDP, Conduit introduces capacity-constrained, bandwidth-aware placement, which distributes experience state across CPU/GPU memory tiers and nodes u…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.24456">阅读原文 ↗</a></p>
+</body>
+</html>

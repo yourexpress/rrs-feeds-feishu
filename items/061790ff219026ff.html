@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Q-DEQ: Discrete Solving and Quantization for Deep Equilibrium Models in Time Series Forecasting under Edge Deployment Coding Constraints</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Q-DEQ: Discrete Solving and Quantization for Deep Equilibrium Models in Time Series Forecasting under Edge Deployment Coding Constraints</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-22 · 论文PDF</p>
+
+<p>Q-DEQ：深度均衡模型的离散求解与量化，面向边缘部署低比特编码约束下的时序预测。</p>
+<blockquote><p>Edge deployment motivates forecasting models with compact parameter storage and low-bit representations. Deep equilibrium models (DEQs) obtain implicit depth by repeatedly applying a shared layer, reducing the parameter cost of explicit layer stacking. Their usual Anderson solver, however, searches for update coefficients in the continuous real domain. We propose Q-DEQ, which formulates local updates in DEQ forward solving as discrete optimization problems. Candidate directions are constructed from the current state and iteration history, and a local quadratic residual model is used to evaluate their combinations. Binary encoding of the direction coefficients yields a quadratic unconstrained binary optimization (QUBO) problem that can be solved by simulated annealing (SA) or a coherent Ising machine (CIM). After fixed-point solving, a re-forward pass applies W8A8 fake quantization to the shared layer's weights and activations. We evaluate Q-DEQ with an iTransformer backbone on five multivariate time series forecasting datasets. Relative MSE differences from the explicit multi-layer baseline range from $-1.16\%$ to $+2.90\%$, with lower MSE on two datasets. DEQ parameter sharing red…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.24042">阅读原文 ↗</a></p>
+</body>
+</html>

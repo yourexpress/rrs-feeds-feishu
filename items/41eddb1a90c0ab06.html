@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who Pays for the KV Cache? Attributing Shared AI Inference Spend Across Kubernetes and LLM Provider Bills</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Who Pays for the KV Cache? Attributing Shared AI Inference Spend Across Kubernetes and LLM Provider Bills</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-09-22 · 论文PDF</p>
+
+<p>unalloc：打通 Kubernetes 计费、网关日志与 API 供应商账单的开源工具，精确归因共享 AI 推理的 KV cache 成本。</p>
+<blockquote><p>Organizations pay for AI through disconnected ledgers: Kubernetes allocations for self-hosted inference, gateway logs, and per-token bills from API providers. We present unalloc, an open-source tool that joins OpenCost, LiteLLM, OpenAI and Anthropic cost data into one exact ledger and reports the share of spend with no owner, and use it to study where attribution breaks at the seams between these systems. Five case studies run inference for real or simulate it: a vLLM-style serving simulator with paged KV memory and prefix caching; a PyTorch transformer serving a multi-tenant trace with a real KV cache; tensor- and pipeline-parallel inference on torch.distributed; the unmodified CLI against mock provider APIs; and four downstream use cases. At the seams, in a constructed multi-pod deployment scenario -- one month of synthetic OpenCost allocations, not observed billing data -- owner labels set only on LeaderWorkerSet leader pods leave 66% of that deployment's GPU bill unowned, and the natural fallback key assigns 61% of it to a Helm chart name while the headline unallocated share falls to 4%; enabling every source double counts all gateway spend; and reading one page of a billing AP…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.24991">阅读原文 ↗</a></p>
+</body>
+</html>

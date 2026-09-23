@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anatomy of a Closed-Loop Collapse: A Causal Case Study of a Compressed VLA Policy</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Anatomy of a Closed-Loop Collapse: A Causal Case Study of a Compressed VLA Policy</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-22 · 论文PDF</p>
+
+<p>对一个 Octo-Base 八层蒸馏压缩机器操作策略做闭环失效的因果解剖：离线评测通过但闭环执行崩溃的压缩风险案例。</p>
+<blockquote><p>Compressed manipulation policies can pass offline evaluation while failing in closed-loop execution; this dissociation is established in prior work and is not our claim. We contribute a causal anatomy of one naturally occurring case. An 8-layer distillation of Octo-Base retains 86% of parameters, passes every offline check we applied (0.996 and 1.000 teacher-ratios on the family's own validation metrics), and collapses in closed loop: 0/72 vs. the teacher's 40/72 on a simulated WidowX pick-and-place task. The collapse is structured, not diffuse: early task stages degrade gradually (the student moves the object at 90% of the teacher's rate and grasps at 55%), while transport-to-target fails categorically, at 0% in every training variant. Paired action-trace forensics isolate the signature: a negative, late-heavy $z$ residual, roughly 10x its post-repair magnitude, and persistent across the base distillation and both continuation branches. Four standard therapies fail under matched controls: continued training and in-domain offline data leave success at zero, even though the latter measurably improves marginal action statistics; command-level compensation recovers nothing at any offs…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.23048">阅读原文 ↗</a></p>
+</body>
+</html>

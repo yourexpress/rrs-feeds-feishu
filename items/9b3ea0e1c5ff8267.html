@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Complex KDA: Understanding and Enhancing the Expressivity of Kimi Delta Attention</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Complex KDA: Understanding and Enhancing the Expressivity of Kimi Delta Attention</h1>
+<p class="meta-line">Microsoft Research、Freiburg、LAION 等（arXiv:2609.24797） · 2026-09-21 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：delta-rule 线性 RNN 的更新是低秩修正，表达力受限；能否不抬高秩与开销就让 Kimi Delta Attention（KDA）达到 2D 旋转级状态追踪能力？</p>
+<p><strong>方法</strong>：把 KDA 门限扩展到 [-1,1]、delta 系数 β 扩到 [0,2]，用单次 delta 变换加通道门提供的第二次反射合成 2D 旋转，得到 Complex KDA（CKDA）；转移矩阵保持对角加秩一、非扩张。</p>
+<p><strong>关键数字</strong>：证明任意正交对角加秩一矩阵恰为 CKDA 转移矩阵；单层可追踪 SO(3) 有限子群同构的任意群；多项状态追踪任务比同类线性 RNN 少用一层；语言建模超过 Transformer 与其他线性 RNN。</p>
+<p><strong>为什么值得看</strong>：给线性注意力表达力一个干净的理论刻画，实证与开源（代码+模型）齐全。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.24797">Complex KDA: Understanding and Enhancing the Expressivity of Kimi Delta Attention</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.24797">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Byzantine Causal Reliable Broadcast (BCRB) with Constant-Size Message Metadata</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Byzantine Causal Reliable Broadcast (BCRB) with Constant-Size Message Metadata</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-09-22 · 论文PDF</p>
+
+<p>提出常数大小消息元数据的拜占庭因果可靠广播（BCRB）协议。</p>
+<blockquote><p>Asynchronous Byzantine Reliable Broadcast (BRB) is a fundamental primitive that guarantees agreement and validity in distributed systems subject to Byzantine faults, but it lacks ordering guarantees. In this paper, we address Byzantine Causal Reliable Broadcast (BCRB), which builds on BRB to enforce causal message ordering. We present a novel BCRB protocol that decouples causal ordering from the BRB layer, achieving constant-size $\mathcal{O}(1)$ message metadata overhead and $\mathcal{O}(n^2)$ communication word complexity as against $\mathcal{O}(n^3)$ communication word complexity of existing protocols; here $n$ is the number of processes. We present two variants of our protocol: a cryptographic version using a threshold encryption scheme and sequence gating, and its non-cryptographic version. In the cryptographic version, senders broadcast ciphertexts immediately, and decryption shares are piggybacked on out-of-band ACKs, preventing early decryption and front-running. In both versions, causal safety is achieved probabilistically. We evaluate the probability of causal safety violations using a random variable path analysis under independent exponential link delay distributions. W…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.24018">阅读原文 ↗</a></p>
+</body>
+</html>

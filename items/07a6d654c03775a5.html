@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Measuring the Checker: Mutation Analysis for GPU-Kernel Benchmark Oracles</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Measuring the Checker: Mutation Analysis for GPU-Kernel Benchmark Oracles</h1>
+<p class="meta-line">arXiv (cs.PL) · 2026-09-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：LLM 生成 GPU kernel 的基准判定器靠少量随机输入加宽松浮点容差，其裁决正喂给排行榜与 RL 奖励——这些判定器到底有多弱？</p>
+<p><strong>方法</strong>：引入突变分析作判定器充分性度量：向 188 个 KernelBench 问题的已验证 CUDA 实现注入 10,303 个可编译故障（7,384 个带独立击杀见证），按检出率给测试协议打分。</p>
+<p><strong>关键数字</strong>：官方 checker 漏检 16.9% 见证故障（算术类 8.7%、精度类 78.6%）；优化后两输入即达 98.0% 检出（留出 94.8%）；某已发表 fuzzing 方案误杀正确 kernel 107 次。</p>
+<p><strong>为什么值得看</strong>：第一次给"基准判定器是否可信"提供可计算度量，KernelBench-M 数据集已开放。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.22220">Measuring the Checker: Mutation Analysis for GPU-Kernel Benchmark Oracles</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.22220">阅读原文 ↗</a></p>
+</body>
+</html>

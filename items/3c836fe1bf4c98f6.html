@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When Does Learning Beat Heuristics? A Case Study in Kubernetes Scheduler Score Plugins</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>When Does Learning Beat Heuristics? A Case Study in Kubernetes Scheduler Score Plugins</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-09-22 · 论文PDF</p>
+
+<p>用生产集群真实放置决策训练的学习型打分函数能否追平或超越手工调参的 Kubernetes 调度启发式，并分析其局限。</p>
+<blockquote><p>Kubernetes scheduler plugins that score candidate nodes are, in production, hand-tuned heuristics. We ask whether a learned scoring function - trained on real placement decisions from a production cluster trace - can match or exceed these heuristics, and if not, why. We implement an external, HTTP-backed scoring plugin for a widely used scheduler simulator and evaluate two learned models (a Random Forest over engineered features, and a graph neural network encoder over per-job task-dependency graphs) trained on a large-scale production cluster trace. Under standard regression fit (R^2), both models improve modestly but monotonically across four feature-engineering iterations, reaching R^2 of about 0.042. However, on the metric that actually matters for scheduling - Top-1 ranking accuracy, whether the model scores the machine the production scheduler actually chose highest - both learned models are outperformed by a trivial single-feature heuristic (rank by free CPU: 74-84% vs. 65-66% for either model). We show this gap is best explained by objective mismatch: both models were trained with pointwise regression (MSE) rather than a ranking-specific objective, echoing a long-standing d…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.22142">阅读原文 ↗</a></p>
+</body>
+</html>

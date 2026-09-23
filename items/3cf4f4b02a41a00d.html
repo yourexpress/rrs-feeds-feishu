@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LoRA-generating hypernetworks for efficient on-device LLM generative personalization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LoRA-generating hypernetworks for efficient on-device LLM generative personalization</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：端侧 LLM 算力受限但使用模式高度个人化，如何在设备上可行地做生成式个性化？</p>
+<p><strong>方法</strong>：训练超网络把用户上下文 token 映射为适配该用户的 LoRA；部署后每用户完全在端侧合成个性化 LoRA——像 ICL 只需前向传播，又像 PEFT 改权重、不拉长输入；架构部分复用目标 LLM 权重，附加存储极小。</p>
+<p><strong>关键数字</strong>：摘要未给具体数值；在多个代表性个性化数据集上对比 ICL 与 PEFT 基线，专注较少被研究的长文本生成任务。</p>
+<p><strong>为什么值得看</strong>：端侧个性化在 ICL 与 PEFT 之外的第三条路，存储与延迟账算得清楚。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.24979">LoRA-generating hypernetworks for efficient on-device LLM generative personalization</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.24979">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -22,9 +22,11 @@
 <h1>Dual-Cache Latent Space Communication between Heterogeneous Language Models</h1>
 <p class="meta-line">arXiv（Jiyao Liu 等，cs.AI） · 2026-08-20 · 论文PDF</p>
 
-<p>Multi-agent LLM systems split work across models, so answering often requires knowledge that sits in another agent's context: a Sharer has encoded information that a Receiver needs to complete its task.</p>
-<blockquote><p>Multi-agent LLM systems split work across models, so answering often requires knowledge that sits in another agent's context: a Sharer has encoded information that a Receiver needs to complete its task. They usually communicate by exchanging text, which puts autoregressive decoding on the critical path and reduces the exchange to a discrete message written without sight of the receiver's state. Recent latent protocols instead translate the sharer's key-value (KV) cache into the receiver's: C2C supports heterogeneous models but requires both to read the same input, while LCF-X removes this shared-context requirement through position-free sharer-cache pooling. Three restrictions remain: LCF-X compresses the sharer alone, supplies the same layer-local summary to every receiver position with no joint cross-layer memory to retrieve from, and assumes matched layer count and KV geometry. We introduce XKV, which lifts all three: learned-query attention pools both caches; self-attention over receiver-aligned layer tokens, with a learned layer map reconciling different depths, mixes the pooled summaries into a compact joint memory; and a shared position decoder lets every raw receiver cache …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：多 agent LLM 系统靠文本通信把自回归解码放上关键路径；现有 KV 翻译协议（C2C、LCF-X）或要求共享上下文，或仅压缩 sharer 单侧、无跨层联合记忆、且假设层数与 KV 几何匹配。</p>
+<p><strong>方法</strong>：XKV 三重解除限制：学习查询注意力池化双 cache；接收方对齐的层 token 自注意力加学习层映射调和不同深度；共享位置解码器让每个接收方 cache 位置按原生 KV 几何检索 per-head 门控残差。双模型冻结，仅训练翻译器。</p>
+<p><strong>关键数字</strong>：45 个数据集-模型对上宏观分最高；ROPES 较 LCF-X +4.6 EM/+4.2 F1；训练参数少 76%、翻译快 10.3x（5.8 vs 59.9ms），端到端较文本通信快 6.8x。</p>
+<p><strong>为什么值得看</strong>：异构模型潜在空间通信目前最完整的解法，多 agent 降延迟的硬选项。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.20617v1">Dual-Cache Latent Space Communication between Heterogeneous Language Models</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.20617v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Bern2Edge: A Neurosymbolic Compiler for Edge Deployment via Bernstein Polynomial Networks</h1>
 <p class="meta-line">arXiv（Malak Gamal El-Din 等，cs.LG） · 2026-08-20 · 论文PDF</p>
 
-<p>Deploying high-accuracy neural networks on resource-constrained edge devices remains challenging, as existing approaches treat training, compression, and hardware synthesis as separate stages, leaving a gap between softw…</p>
-<blockquote><p>Deploying high-accuracy neural networks on resource-constrained edge devices remains challenging, as existing approaches treat training, compression, and hardware synthesis as separate stages, leaving a gap between software-trained models and efficient end-to-end deployment with limited support for interpretability. We propose Bern2Edge, an end-to-end framework that uses knowledge distillation to convert a pretrained teacher feed-forward network into hardware-efficient representations via Bernstein polynomial activations. This representation enables two deployment paths: (i) a high-fidelity LUT-based realization that preserves model fidelity under compression, and (ii) a symbolic rule-based representation derived from Bernstein activation geometry, enabling interpretable inference with explicit input-space constraints. The resulting BNNs achieve up to 2.12 percentage-point (pp) accuracy improvement over ReLU under identical compression constraints. At the system level, Bern2Edge achieves up to 99.8% latency reduction and 95.2% BRAM reduction relative to a W8A8 quantized teacher on an AMD Xilinx KV260 FPGA, while maintaining accuracy within 0.5 pp, and further deploys on a low-power…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：边缘部署把训练、压缩、硬件综合割裂对待，软件模型与高效端到端部署之间缺桥，可解释性支持也有限。</p>
+<p><strong>方法</strong>：Bern2Edge 端到端框架：知识蒸馏把教师前馈网络转为 Bernstein 多项式激活表示，给出两条部署路径——保真 LUT 实现，以及由激活几何导出的符号规则表示（可解释推理、显式输入空间约束）。</p>
+<p><strong>关键数字</strong>：同等压缩约束下精度较 ReLU 最高 +2.12pp；KV260 FPGA 上较 W8A8 量化教师延迟 -99.8%、BRAM -95.2%，精度差 0.5pp 内；规则路径 DSP 用量 -89.0%、代价 1.5pp；另部署到 Spartan-7 XC7S15。</p>
+<p><strong>为什么值得看</strong>：一份模型同时给出硬件实现与可解释规则，边缘 AI 工程化的完整样本。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.20497v1">Bern2Edge: A Neurosymbolic Compiler for Edge Deployment via Bernstein Polynomial Networks</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.20497v1">阅读原文 ↗</a></p>
 </body>
 </html>

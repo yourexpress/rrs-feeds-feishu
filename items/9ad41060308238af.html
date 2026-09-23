@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Undetected Damage of Quantization on Retrieval and How to Fix It</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>The Undetected Damage of Quantization on Retrieval and How to Fix It</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：量化模型分类准确率没变，检索结果还可靠吗？</p>
+<p><strong>方法</strong>：实证显示量化改变 14-46% 的 top-1 检索结果；把失效归因于前两名分数差（gap），证明 gap 超过最大舍入误差两倍时 top-1 才保证幸存；gap 无需标签可测——部署前预测哪些模型会被破坏，部署时逐输入判断量化结果可信度。</p>
+<p><strong>关键数字</strong>：top-1 检索结果改变 14-46%；检索中给对 gap 影响最大的层加位宽，以一半成本收回额外一个 bit 收益的 3/4；分类中把少数低 gap 输入路由回全精度即低成本恢复大部分损失。</p>
+<p><strong>为什么值得看</strong>：聚合指标掩盖的量化损伤首次被量化刻画，修复按任务分型。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.24322">The Undetected Damage of Quantization on Retrieval and How to Fix It</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.24322">阅读原文 ↗</a></p>
+</body>
+</html>

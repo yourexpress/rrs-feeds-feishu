@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bridging the Vendor Gap: Enabling AMD GPU Support for Awkward Array via ROCm/HIP for the HL-LHC Era</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Bridging the Vendor Gap: Enabling AMD GPU Support for Awkward Array via ROCm/HIP for the HL-LHC Era</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-09-22 · 论文PDF</p>
+
+<p>为 Awkward Array 启用 AMD GPU（ROCm/HIP）支持，面向 HL-LHC 时代的多厂商 GPU 分析吞吐。</p>
+<blockquote><p>The High-Luminosity LHC (HL-LHC) will demand order-of-magnitude gains in analysis throughput, and increasingly those gains must come from GPUs that are not made by a single vendor. Leadership-class systems such as El Capitan, Frontier and LUMI are built on AMD accelerators, yet the Scikit-HEP analysis stack---and Awkward Array in particular---has grown up CUDA-first. We report on $rawkward$, a Rust-backed kernel engine that adds a ROCm/HIP backend for Awkward Array's nested, jagged, variable-length data structures. Our central finding is that a naive source-level port of CUDA kernels to HIP loses $5$--$10\times$ in performance on irregular kernels, because AMD's $64$-lane wavefronts, higher register pressure and more expensive divergence behave fundamentally differently from NVIDIA's $32$-thread warps. We show that a small, reusable set of optimization patterns---loop flattening, $128$-bit vectorized loads, splitting fused kernels, and profile-guided launch configuration---recovers CUDA-class performance without changing the public API. A Rust macro-and-match dispatch layer keeps a single, backend-agnostic call site while emitting vendor-specific kernel strategies, and the type sys…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.24628">阅读原文 ↗</a></p>
+</body>
+</html>

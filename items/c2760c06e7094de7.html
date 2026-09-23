@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toward GPU-Resident Climate Models: A Feasibility Study on Lossy Compression for the Spherical Harmonic Transform's Communication Bottleneck</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Toward GPU-Resident Climate Models: A Feasibility Study on Lossy Compression for the Spherical Harmonic Transform's Communication Bottleneck</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-09-22 · 论文PDF</p>
+
+<p>面向 GPU 常驻气候模式：对球谐变换通信瓶颈做有损压缩的可行性研究。</p>
+<blockquote><p>Operational pseudospectral atmospheric models such as the ECMWF Integrated Forecasting System (IFS) run today almost exclusively on CPUs; GPU ports are under active development but not yet used in production. These models rely on the Spherical Harmonic Transform (SHT). Each time-step requires forward and inverse SHTs, and both passes depend on global pencil transposition that redistribute multi-dimensional arrays across compute nodes. At large node counts these global collectives dominate wall-clock time. We investigate GPU-resident lossy compression, using representative fields from the DYAMOND high-resolution operational dataset as input, and combining measured GPU compression throughput with SimGrid network simulation, we show that ZFP at 16 bits per value (rate-16), about the same storage budget as float16, matches the communication-time reduction of float16 truncation while delivering approximately $\mathbf{1600\times}$ lower mean relative error. ZFP at 8 bits per value (rate-8) achieves approximately $\mathbf{1.93\times}$ the speedup of float16 while retaining $\mathbf{4\times}$ lower mean relative error.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.24294">阅读原文 ↗</a></p>
+</body>
+</html>

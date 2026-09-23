@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AWE: Adaptive Weight Encoding for Exact Integer Matrix Products with Fewer GEMMs on FP4 Tensor Cores</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>AWE: Adaptive Weight Encoding for Exact Integer Matrix Products with Fewer GEMMs on FP4 Tensor Cores</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-09-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：Ozaki 方案用 FP4 Tensor Core 仿真高精度浮点矩阵乘，一次精确整数矩阵乘最少需要多少个 FP4 GEMM？</p>
+<p><strong>方法</strong>：自适应权重编码 AWE——limb 权重自由选取，存储平面为 limb 线性组合，精确乘积由 FP4 GEMM 加权重构；按输入范围搜索乘积数最少的编码，模 m 形式覆盖 Ozaki II 剩余数系。</p>
+<p><strong>关键数字</strong>：INT8×INT8 从 9 降到 6 个 GEMM，INT4×INT8 用 4 个；FP64 尾数从 75 降到 59 个；有/无剩余数的编码分界约在输入位宽 15；编码已公开。</p>
+<p><strong>为什么值得看</strong>：在 B200/B300 最快的 Tensor Core 上把精确矩阵乘成本显著压低，直接利好高精度数值仿真。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.24519">AWE: Adaptive Weight Encoding for Exact Integer Matrix Products with Fewer GEMMs on FP4 Tensor Cores</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.24519">阅读原文 ↗</a></p>
+</body>
+</html>

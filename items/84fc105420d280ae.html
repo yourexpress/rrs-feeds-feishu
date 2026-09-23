@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPLASH: Co-Designing Sparse Attention with High-Bandwidth Flash for Efficient Long-Context Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SPLASH: Co-Designing Sparse Attention with High-Bandwidth Flash for Efficient Long-Context Inference</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-09-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：长上下文服务中 KV cache 是内存主消费者：HBM 有带宽没容量，高带宽 Flash（HBF）有 TB 级容量与近 HBM 读带宽——KV cache 能否架在 HBM+HBF 层级上？</p>
+<p><strong>方法</strong>：算法-架构协同设计 SPLASH：跨 HBM/HBF 虚拟化 KV cache 为单一逻辑内存；稀疏注意力按 HBF 整页读取与千级并行 flash 平面的物理特性协同设计，限制 decode 期 KV 读取量。</p>
+<p><strong>关键数字</strong>：100ms 每 token 延迟目标下单 GPU decode 吞吐较基线提升 3.5x-11.4x；长上下文套件精度保持在 dense attention 的 4% 以内。</p>
+<p><strong>为什么值得看</strong>：新型存储介质首次被认真纳入 KV cache 层级，长上下文服务成本结构的潜在拐点。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.23816">SPLASH: Co-Designing Sparse Attention with High-Bandwidth Flash for Efficient Long-Context Inference</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.23816">阅读原文 ↗</a></p>
+</body>
+</html>
