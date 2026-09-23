@@ -22,9 +22,11 @@
 <h1>Granthi: Higher-Order Quantum Programming via Unitary Wiring</h1>
 <p class="meta-line">arXiv（Samson Abramsky 等，quant-ph） · 2026-08-20 · 论文PDF</p>
 
-<p>Many mainstream quantum programming languages confine higher-order structure to a classical host while restricting the quantum layer to first-order operations on qubits.</p>
-<blockquote><p>Many mainstream quantum programming languages confine higher-order structure to a classical host while restricting the quantum layer to first-order operations on qubits. This paper presents Granthi, a purely unitary higher-order quantum programming language built on three design commitments: quantum programs are first-class values that may be passed, returned, and coherently composed; additive structure is tag-preserving routing rather than observational branching, so control may remain in superposition; and programmer-facing finite label types with staged reversible-operation bindings provide domain-level control spaces without exposing tag management. These bindings are eliminated by elaboration before Source typing. Granthi deterministically normalizes each Source program to a canonical wiring form. Every well-typed Source program, including a term of function type, has a unitary boundary interpretation. Under backend correctness (BC), the reference compiler produces a unitary circuit realizing that interpretation. Granthi's currently supported executable fragment is implemented end-to-end: an OCaml DSL elaborates surface programs through a higher-order Core IR to executable qua…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：主流量子编程语言把高阶结构限制在经典宿主层，量子层只允许一阶 qubit 操作，量子程序无法作为一等值组合。</p>
+<p><strong>方法</strong>：Granthi 是纯酉高阶量子语言，三条设计承诺：量子程序是一等值，可传递、返回、相干组合；加法结构是保 tag 路由而非观测分支，控制流可处于叠加态；程序员可见的有限标签类型配分阶段可逆操作绑定，elaboration 阶段消除。每个 Source 程序确定性归约为规范 wiring 形式，均存在酉边界解释。</p>
+<p><strong>关键数字</strong>：已端到端实现可执行片段：OCaml DSL → 高阶 Core IR → pytket 量子电路；直接支持纯酉 quantum switch，闭实例编译为静态电路。</p>
+<p><strong>为什么值得看</strong>：量子语言高阶化 + 完整形式化保证的少见工作。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.20443v3">Granthi: Higher-Order Quantum Programming via Unitary Wiring</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.20443v3">阅读原文 ↗</a></p>
 </body>
 </html>

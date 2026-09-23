@@ -22,9 +22,11 @@
 <h1>Quantization-Aware Healing: A Practical Recipe for Recovering Compressed, 4-Bit LLMs</h1>
 <p class="meta-line">arXiv（Bakbergen Ryskulov 等，cs.CL） · 2026-08-21 · 论文PDF</p>
 
-<p>Serving large language models cheaply increasingly means shipping models that are both structurally compressed to a fraction of their parameters and quantized to 4 bits.</p>
-<blockquote><p>Serving large language models cheaply increasingly means shipping models that are both structurally compressed to a fraction of their parameters and quantized to 4 bits. Together these steps degrade reasoning, mathematics, coding, and long-context behavior enough to require a recovery, or healing, stage before deployment. The default recipe, quantization-aware training (QAT), re-fits the compressed, quantized model to hard labels; in our pipeline it converged slowly and collapsed past its peak. We adopted Quantization-Aware Healing (QAH) instead. Because a structurally compressed model is never independently trained at full precision, its bfloat16 checkpoint is a distillation-recovered approximation of the original; QAH distills the 4-bit student directly from the original, uncompressed model. On a GPT-OSS 120B to 60B to MXFP4 pipeline, the QAH student matches or beats its bfloat16 source on 7 of 9 benchmarks at roughly 4 times less weight memory and half the teacher's parameter count, and is released open-weight as Hypernova-60B. Against a matched QAT baseline it reaches a comparable peak about 7 times faster and stays stable under continued training, without hand-tuned early stop…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：结构压缩 + 4-bit 量化后的 LLM 在推理、数学、代码与长上下文上退化明显，部署前需要恢复（healing）阶段；默认的 QAT 配方收敛慢且越过峰值后崩溃。</p>
+<p><strong>方法</strong>：QAH（Quantization-Aware Healing）：结构压缩模型的 bf16 checkpoint 本就只是蒸馏恢复的近似，因此让 4-bit 学生直接从原始未压缩模型蒸馏，而非拟合硬标签。</p>
+<p><strong>关键数字</strong>：GPT-OSS 120B→60B→MXFP4 流水线：QAH 学生在 9 项 benchmark 中 7 项追平或超过其 bf16 源，权重内存约省 4 倍、参数量减半，开源发布为 Hypernova-60B；对比 QAT 基线约 7 倍快达到可比峰值，且持续训练稳定、无需手调早停。</p>
+<p><strong>为什么值得看</strong>：无需数周超参搜索即可落地的压缩恢复配方，附分布式训练后端质量差异等部署教训。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.20953v1">Quantization-Aware Healing: A Practical Recipe for Recovering Compressed, 4-Bit LLMs</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.20953v1">阅读原文 ↗</a></p>
 </body>
 </html>

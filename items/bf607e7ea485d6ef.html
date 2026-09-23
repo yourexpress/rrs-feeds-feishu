@@ -22,9 +22,11 @@
 <h1>SPICE: Speculative Prefetching with Low-Rank Expert Surrogates and Heterogeneous Orchestration for MoE Inference Acceleration</h1>
 <p class="meta-line">arXiv（Yongxiang Lyu 等，cs.AR） · 2026-08-21 · 论文PDF</p>
 
-<p>Mixture-of-Experts (MoE) models are increasingly used in LLMs because sparse activation decouples model capacity from compute cost.</p>
-<blockquote><p>Mixture-of-Experts (MoE) models are increasingly used in LLMs because sparse activation decouples model capacity from compute cost. However, the large expert parameter footprint often exceeds GPU memory capacity, making inference latency dominated by the host-to-device PCIe transfers for expert loading. To address these challenges, this paper presents SPICE, a speculative prefetching framework for MoE offloading that combines lightweight expert prediction with confidence-aware CPU-GPU orchestration. On one hand, SPICE builds a lightweight draft model aligned with the target MoE architecture, using a confidence-aware adaptive lookahead algorithm to prefetch high-confidence experts. On the other hand, when speculative predictions miss, SPICE switches to a cost-aware CPU-GPU heterogeneous orchestration: low-confidence misses are approximated by the resident shared expert with low rank expert (LoRE) surrogates, while exact residual work is offloaded to the CPU and executed asynchronously in parallel with ongoing GPU computation. Evaluated on DeepSeek-V2-Lite and Qwen2-57B-A14B across diverse GPU platforms, SPICE achieves up to 3.12 speedup in Time Per Output Token (TPOT) with minimal q…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：MoE 模型专家参数足迹常超 GPU 显存，offloading 推理延迟被 host-to-device 的 PCIe 专家加载主导。</p>
+<p><strong>方法</strong>：SPICE 投机预取框架：构建与目标 MoE 对齐的轻量 draft 模型，用置信度自适应 lookahead 预取高置信专家；预测未命中时切换为成本感知的 CPU-GPU 异构编排——低置信 miss 用驻留共享专家 + 低秩专家代理（LoRE）近似，精确残差卸载 CPU 与 GPU 计算异步并行。</p>
+<p><strong>关键数字</strong>：DeepSeek-V2-Lite 与 Qwen2-57B-A14B 在多种 GPU 平台上 TPOT 最高加速 3.12×，质量损失很小。</p>
+<p><strong>为什么值得看</strong>：指出有效的 MoE offloading 不止要「预测未来专家」，还要决定哪些 miss 值得近似、哪些必须精确恢复、残差在哪执行。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.21240v2">SPICE: Speculative Prefetching with Low-Rank Expert Surrogates and Heterogeneous Orchestration</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.21240v2">阅读原文 ↗</a></p>
 </body>
 </html>

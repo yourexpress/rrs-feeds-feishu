@@ -22,9 +22,11 @@
 <h1>Integrating a Python Dynamical core into ICON</h1>
 <p class="meta-line">arXiv（Mauro Bianco 等，cs.DC） · 2026-08-21 · 论文PDF</p>
 
-<p>The transition of Earth-system models to exascale is often hindered by rigid, monolithic Fortran codebases and maintenance-heavy compiler directives.</p>
-<blockquote><p>The transition of Earth-system models to exascale is often hindered by rigid, monolithic Fortran codebases and maintenance-heavy compiler directives. While high-level DSLs offer a solution, they frequently fail due to cumbersome integration. We present the integration of a Python-based ICON dynamical core into the original Fortran simulation code. Leveraging the GT4Py DSL and the Data-Centric (DaCe) optimization framework, we demonstrate that high-level Python can be seamlessly integrated into legacy infrastructure without performance loss. Our results challenge the assumption that Python orchestration introduces prohibitive HPC overhead. In production-grade global simulations, our Python dynamical core achieves a 20--30\% performance improvement over the highly-optimized Fortran+OpenACC implementation, with a 10\% improvement on the total time for a coupled setup. Driven by advanced data-flow optimizations and automated kernel fusion, this approach replaces hardware-entangled directives by generating optimized device code from a single, portable Python source. This work proves that Python can provide a sustainable, efficient, and hardware-agnostic future for global climate modelin…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：地球系统模型向 exascale 迁移受制于单体 Fortran 代码库与维护繁重的编译器指令；高级 DSL 常因集成繁琐失败，Python 编排是否真有不可接受的 HPC 开销？</p>
+<p><strong>方法</strong>：用 GT4Py DSL 与 DaCe 数据中心优化框架，把 Python 版 ICON 动力核心无缝集成进原 Fortran 模拟代码；数据流优化与自动 kernel 融合从单一可移植 Python 源生成优化设备代码。</p>
+<p><strong>关键数字</strong>：生产级全球模拟中，Python 动力核心比高度优化的 Fortran+OpenACC 实现快 20–30%；耦合设置下总时间改善 10%。</p>
+<p><strong>为什么值得看</strong>：实测反驳「Python 必然拖累 HPC」的成见，全球气候建模现代化的可信路线。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.21150v1">Integrating a Python Dynamical core into ICON</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.21150v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Spiking Neural Networks for Energy-Efficient Object Detection in Forward-Looking Sonar Imagery</h1>
 <p class="meta-line">arXiv（Gwenevere Frank 等，cs.CV） · 2026-08-22 · 论文PDF</p>
 
-<p>Autonomous underwater vehicles (AUVs) are increasingly important tools in industries ranging from research, to energy, to defense.</p>
-<blockquote><p>Autonomous underwater vehicles (AUVs) are increasingly important tools in industries ranging from research, to energy, to defense. AUVs are power-constrained platforms operating in remote environments with fixed battery capacities, where propulsion competes with compute and sensors for power over lengthy mission durations. AUVs frequently operate in dark or turbid waters where optical sensing is of limited value, and rely on sonar as their primary sensing modality. Convolutional neural networks (CNNs) are the state-of-the-art solution for object detection in forward-looking sonar imagery, but are energy expensive (e.g. YOLOv8m: 322 mJ/inference). Spiking neural networks (SNNs) rely on binary spike activations and thus sparse accumulate-only operations, allowing them to be remarkably energy efficient, particularly when paired with dedicated neuromorphic hardware. The sparse, high-contrast structure of forward-looking sonar (FLS) returns is structurally matched to spike coding in a way that optical imagery is not. No prior work has assessed the suitability of SNNs for object detection in FLS imagery. SpikeYOLO, a fully spiking network trained with surrogate gradients, was benchmarked…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：AUV 功耗受限、前视声呐（FLS）是浑浊水域的主传感器，SOTA 检测靠 CNN 但能耗高（YOLOv8m 322 mJ/次推理）；SNN 是否适合 FLS 目标检测此前无人评估。</p>
+<p><strong>方法</strong>：全脉冲 SpikeYOLO（代理梯度训练）在三个 FLS 检测数据集上对比 SOTA CNN 基线；FLS 回波稀疏高对比的结构与脉冲编码天然匹配。</p>
+<p><strong>关键数字</strong>：T=2 时理论算力能耗比 YOLOv8m 低 3.3×（97 vs 322 mJ），精度有竞争力（0.529 vs 0.575 mAP@0.5:0.95）；稀疏 Marine-Debris-FLS 上 mAP@0.5 追平 YOLOv8m、能耗低 4.4×；乘性斑点噪声 σ=0.4 时性能仅退化 3.0%（YOLOv8m 8.9%），σ=0.6 时反超。</p>
+<p><strong>为什么值得看</strong>：任务结构与 SNN 特性匹配的清晰实证，水下低功耗感知的可行路径。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.22072v1">Spiking Neural Networks for Energy-Efficient Object Detection in Forward-Looking Sonar Imagery</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.22072v1">阅读原文 ↗</a></p>
 </body>
 </html>

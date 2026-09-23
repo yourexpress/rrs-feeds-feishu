@@ -22,9 +22,11 @@
 <h1>Beyond Sparse Weights: When Is Attention Compressible?</h1>
 <p class="meta-line">arXiv（Chiwun Yang 等，cs.LG） · 2026-08-21 · 论文PDF</p>
 
-<p>KV-cache compression is often justified by attention maps with a few large weights.</p>
-<blockquote><p>KV-cache compression is often justified by attention maps with a few large weights. This is incomplete: large weights may not contain most of the mass, omitted values can cancel, and preserving the attention output may not preserve the task. We separate these questions. Global score gaps -- not threshold counts -- determine how many tokens are needed to retain a target mass. For a realized row, the weighted sum of omitted values is the exact missing statistic. A controlled retrieval--aggregation model explains when truncation helps and when it hurts. These results motivate CertKV, a training-free compressor that reserves one tail-summary slot per head and allocates the rest by value dispersion. Under matched budgets, CertKV is top-two in seven of nine LongBench-v2 settings, remains in the leading compressed tier on 128K RULER, and realizes a ten-fold cache budget in a packed Llama prototype. Compressibility depends on the mass, values, future queries, and task -- not on a sparse-looking map alone.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：「注意力图稀疏所以 KV cache 可压缩」的论证并不完整：大权值未必含大部分质量、被省略的 value 可能相互抵消、保住注意力输出未必保住任务表现。</p>
+<p><strong>方法</strong>：把问题拆开：全局分数差距（而非阈值计数）决定保留目标质量所需 token 数；对已实现行，被省略 value 的加权和恰为缺失统计量；受控检索-聚合模型解释截断何时有益何时有害。据此提出免训练压缩器 CertKV：每头保留一个尾部摘要槽，其余预算按 value 离散度分配。</p>
+<p><strong>关键数字</strong>：等预算下 CertKV 在 LongBench-v2 九项设置中七项进入前二；128K RULER 上居压缩方法领先梯队；打包的 Llama 原型上实现 10 倍 cache 预算。</p>
+<p><strong>为什么值得看</strong>：给 KV 压缩一个可分析的理论框架，而非继续堆经验启发。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.21541v1">Beyond Sparse Weights: When Is Attention Compressible?</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.21541v1">阅读原文 ↗</a></p>
 </body>
 </html>

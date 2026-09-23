@@ -22,9 +22,11 @@
 <h1>TreeWY: Speculative Verification for Gated DeltaNet Hybrids</h1>
 <p class="meta-line">arXiv（Sneha Murthy Ghantasala，cs.AI） · 2026-08-21 · 论文PDF</p>
 
-<p>Modern open models are hybrids: most layers are linear-attention (Gated DeltaNet, GDN) layers carrying a small fixed-size recurrent state instead of a growing key-value (KV) cache.</p>
-<blockquote><p>Modern open models are hybrids: most layers are linear-attention (Gated DeltaNet, GDN) layers carrying a small fixed-size recurrent state instead of a growing key-value (KV) cache. This makes ordinary decoding memory-efficient, but hurts speculative decoding. To verify a batch of draft tokens and then roll back the rejected ones, today's systems snapshot the full recurrent state at every draft position for GDN layers, and those snapshots cannot be shared across branches of a draft tree, so a wide, high-acceptance tree becomes memory-infeasible. We remove the snapshots. Using a tree-structured WY transform of the gated delta rule, we compute every draft node's output with a single triangular solve and reconstruct only the one accepted state on commit, storing a small pseudo-value matrix instead of per-node states; the derivation depends only on the gated delta rule, not on any other architectural detail. In serving benchmarks on two scales of one hybrid model family (Qwen3.5 35B and 397B) this cuts speculative recurrent-state memory and KV-cache pressure at identical acceptance length, turning the freed HBM into higher throughput and much lower time-to-first-token (TTFT) wherever me…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：GDN（Gated DeltaNet）混合模型用小尺寸循环状态替代增长的 KV cache，普通解码省内存，但投机解码需在每个 draft 位置快照全量循环状态、且快照无法跨 draft 树分支共享，宽高接受率的树在内存上不可行。</p>
+<p><strong>方法</strong>：TreeWY：门控 delta 规则的树结构 WY 变换——单次三角求解算出所有 draft 节点输出，提交时只重建被接受的那一个状态，改存小伪值矩阵；推导只依赖 gated delta rule 本身，不涉其它架构细节。</p>
+<p><strong>关键数字</strong>：Qwen3.5 35B 与 397B 服务 benchmark：相同接受长度下削减投机状态内存与 KV 压力，转化为更高吞吐与显著更低 TTFT（内存受限处）；同样内存可负担更宽的 draft 树。</p>
+<p><strong>为什么值得看</strong>：干净移除混合架构投机解码的核心内存障碍。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.20961v1">TreeWY: Speculative Verification for Gated DeltaNet Hybrids</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.20961v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>From Retrieved Context to Runtime Control: Adaptive Compression for Edge-based RAG</h1>
 <p class="meta-line">arXiv（Zlatan Feric 等，cs.AI） · 2026-08-20 · 论文PDF</p>
 
-<p>Retrieval-augmented generation (RAG) improves language-model responses by grounding generation in external passages, which comes with overhead: retrieved context lengthens the prompt, increasing prefill work, KV-cache fo…</p>
-<blockquote><p>Retrieval-augmented generation (RAG) improves language-model responses by grounding generation in external passages, which comes with overhead: retrieved context lengthens the prompt, increasing prefill work, KV-cache footprint, memory traffic, latency, and energy. Context compression offers a natural remedy by pruning retrieved text before generation. However, state-of-the-art context-compression methods are typically used with a fixed compression budget, or with the rate selected offline and then applied at inference time. This static view ignores both workload variation and the live state of the edge device. On an edge SoC, compression is not free: the compressor itself runs on the same SoC and consumes latency and energy that can offset any generation savings. This paper proposes a vision for telemetry-informed adaptive compression in edge RAG, grounded in experimental evidence. We characterize the compression tradeoff on the NVIDIA Jetson AGX Thor using Llama and Qwen generators, Natural Questions and HotpotQA datasets, and LLMLingua-2 compression. Our measurements show that generation dominates the RAG budget for larger models, reaching roughly 90% of per-query latency and 91…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：RAG 检索上下文拉长 prompt，推高 prefill 计算、KV cache 与时延能耗；现有上下文压缩多用固定压缩率，忽略负载变化与边缘设备实时状态——压缩器跑在同一块 SoC 上，本身开销可能抵消生成节省。</p>
+<p><strong>方法</strong>：提出遥测驱动的自适应压缩愿景，并用实验支撑：在 NVIDIA Jetson AGX Thor 上以 Llama/Qwen 生成器、Natural Questions/HotpotQA 数据集与 LLMLingua-2 压缩器刻画压缩权衡。</p>
+<p><strong>关键数字</strong>：7B–8B 生成器上生成阶段占每查询时延约 90%、GPU 能耗 91%；中等压缩率可降 GPU 能耗至多 53.2%、SoC 能耗 48.2%，质量损失可忽略；过轻压缩错失节能机会，过激压缩损害质量。</p>
+<p><strong>为什么值得看</strong>：边缘 RAG 的实测能耗画像 + 运行时压缩策略的明确研究方向。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.19535v1">From Retrieved Context to Runtime Control: Adaptive Compression for Edge-based RAG</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.19535v1">阅读原文 ↗</a></p>
 </body>
 </html>

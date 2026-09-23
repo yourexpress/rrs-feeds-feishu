@@ -22,9 +22,11 @@
 <h1>Event-triggered Implicit Perturbation for Zeroth-Order Fine-Tuning of Spiking Transformers</h1>
 <p class="meta-line">arXiv（Tengteng Lei 等，cs.AR） · 2026-08-21 · 论文PDF</p>
 
-<p>Zeroth-order (ZO) optimization estimates gradients using only forward-pass evaluations, making it suitable for fine-tuning non-differentiable, event-driven spiking neural networks (SNNs).</p>
-<blockquote><p>Zeroth-order (ZO) optimization estimates gradients using only forward-pass evaluations, making it suitable for fine-tuning non-differentiable, event-driven spiking neural networks (SNNs). However, its deployment on in-memory computing (IMC) accelerators is constrained by the repeated read-modify-write (RMW) operations arising from explicit weight perturbation and the prohibitive hardware footprint of random number generators (RNGs) for statistically independent per-weight perturbations. To address these challenges, we propose an implicit-perturbation ZO (IPZO) architecture in which perturbation sums computed by an event-triggered perturbation generation unit (PGU) are combined with the weighted sums produced by the IMC array, eliminating perturbation-induced RMW operations while preserving weight-stationary execution of IMC. By exploiting spike sparsity, the PGU generates and accumulates perturbation contributions only for spike-activated weight rows, reducing the required row dimension of the RNG array. An address-driven XOR recombination scheme (PGU-XOR) is further introduced to mitigate the spatial correlations caused by direct RNG reuse (PGU-Reuse). The results show that (1) PG…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：零阶（ZO）优化只需前向评估即可微调不可微的脉冲神经网络，但显式权重扰动带来反复读-改-写，且独立 RNG 的硬件开销令其难以落到存内计算（IMC）加速器上。</p>
+<p><strong>方法</strong>：IPZO 隐式扰动架构：事件触发扰动生成单元（PGU）把扰动和与 IMC 阵列的乘加结果合并，消除扰动引起的 RMW、保持权重驻留；利用脉冲稀疏只对激活行生成扰动，缩小 RNG 阵列；地址驱动 XOR 重组（PGU-XOR）缓解直接复用 RNG 的空间相关。</p>
+<p><strong>关键数字</strong>：PGU-XOR 精度媲美软件 RNG（Spikingformer/CIFAR-10 76.41% vs 76.53%；SpikeGPT/WikiText-2 PPL 54.20 vs 53.23）；TSMC 16nm 下等精度总扰动能耗仅 PGU-Reuse 的 0.51×；对显式扰动降至 0.46–0.83×（B=64、T=4）。</p>
+<p><strong>为什么值得看</strong>：让 ZO 微调 SNN 在 IMC 硬件上真正可行的系统方案。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.21223v1">Event-triggered Implicit Perturbation for Zeroth-Order Fine-Tuning of Spiking Transformers</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.21223v1">阅读原文 ↗</a></p>
 </body>
 </html>

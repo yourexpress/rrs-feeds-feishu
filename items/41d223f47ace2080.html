@@ -22,9 +22,11 @@
 <h1>Assessing Triple Modular Redundancy for Wide-Link, Low-Latency NoC Routers: Reliability and Physical Design Challenges</h1>
 <p class="meta-line">arXiv（Chen Wu 等，cs.AR） · 2026-08-21 · 论文PDF</p>
 
-<p>Protecting the Network-on-Chip (NoC) of physical-AI tile-based accelerators deployed in harsh environments against single-event effects (SEEs) is paramount for preventing NoC failures that can lead to deadlocks and silen…</p>
-<blockquote><p>Protecting the Network-on-Chip (NoC) of physical-AI tile-based accelerators deployed in harsh environments against single-event effects (SEEs) is paramount for preventing NoC failures that can lead to deadlocks and silent data corruption (SDC). Prior work on reliable NoCs has largely focused on narrow links (e.g., 32-bit), deeply pipelined routers, and single-event upsets (SEUs). However, the state of the art has evolved toward low-latency NoC routers with ultra-wide links, implemented on advanced technology nodes and operating at frequencies above 1 GHz. We evaluate the cost and reliability trade-offs of implementing Triple Modular Redundancy (TMR) at three granularities (coarse, state-only, and full) for a 2-cycle-latency NoC router with 512-bit wide links. We carry out RTL-to-GDSII physical design in TSMC 7nm technology, as well as both RTL- and netlist-level SEU and SET fault injection campaigns. We evaluate the three TMR approaches in terms of reliability, cost, and physical design strategies, further extending the assessment from a standalone router to a full AI acceleration tile. Our results show that state-only and coarse-grained TMR do not provide sufficient protection aga…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：恶劣环境中物理 AI 加速器的 NoC 需抗单粒子效应（SEE），而以往可靠性研究针对窄链路、深流水路由器；现代 1GHz+、512-bit 宽链低延迟路由器上三模冗余（TMR）的代价与效果未知。</p>
+<p><strong>方法</strong>：对 2 周期延迟、512-bit 链路 NoC 路由器评估粗粒度、仅状态、全 TMR 三种粒度；TSMC 7nm RTL-to-GDSII 物理设计，RTL 与 netlist 级 SEU/SET 故障注入，并从独立路由器扩展到完整 AI 加速 tile。</p>
+<p><strong>关键数字</strong>：仅状态与粗粒度 TMR 保护不足；全 TMR 在每组逾百万次注入故障中消除所有观测失败；独立路由器面积开销 7.04×，但集成进完整 tile 后仅 16.8% 面积、15.2% 功耗（GEMM 负载），关键路径不受影响。</p>
+<p><strong>为什么值得看</strong>：证明先进节点下全 TMR 在系统层面是实用可部署的 NoC 保护方案。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.21288v1">Assessing Triple Modular Redundancy for Wide-Link, Low-Latency NoC Routers</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.21288v1">阅读原文 ↗</a></p>
 </body>
 </html>

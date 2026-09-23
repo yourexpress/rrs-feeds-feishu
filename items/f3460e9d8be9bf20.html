@@ -22,9 +22,11 @@
 <h1>NOVA: Technology-Architecture Co-Design of Near-Memory Processing for Attention-SSM-MoE Hybrid LLM Inference</h1>
 <p class="meta-line">arXiv（In-Jun Jung 等，cs.AR） · 2026-08-23 · 论文PDF</p>
 
-<p>The rapid evolution of hybrid large language models (LLMs), which interleave grouped-query-attention (GQA), state-space model (SSM), and Mixture-of-Experts (MoE) layers, introduces two fundamental challenges for near-mem…</p>
-<blockquote><p>The rapid evolution of hybrid large language models (LLMs), which interleave grouped-query-attention (GQA), state-space model (SSM), and Mixture-of-Experts (MoE) layers, introduces two fundamental challenges for near-memory processing (NMP) architectures. First, the Technology Wall: the conventional 6F^2 DRAM cell is approaching its physical scaling limits at 10nm-class nodes, making it difficult to meet the memory capacity demands of MoE models with hundreds of experts. Second, the Architecture Wall: existing NMP designs target narrow arithmetic intensity (Op/B) ranges and cannot efficiently support the heterogeneous compute characteristics of hybrid LLMs, spanning memory-bound SSM layers, compute-intensive GQA layers, and large Op/B variations across experts. We propose NOVA, a technology-architecture co-designed NMP system that overcomes both walls. On the technology side, NOVA combines a 4F^2 vertical channel transistor (VCT) DRAM cell with a peri-over-cell (POC) structure to achieve approximately 2x memory density at iso-area over conventional 6F^2-based DRAM, enabling continued scaling into sub-10nm nodes. On the architecture side, NOVA repurposes the POC peripheral-die (peri…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：GQA+SSM+MoE 混合 LLM 给近存计算（NMP）带来两堵墙：6F² DRAM 单元在 10nm 级逼近物理缩放极限、难容数百专家（技术墙）；现有 NMP 只覆盖窄算强（Op/B）区间，无法兼顾访存受限的 SSM、算力密集的 GQA 与专家间巨大 Op/B 差异（架构墙）。</p>
+<p><strong>方法</strong>：NOVA 技术-架构协同设计：4F² 垂直沟道晶体管（VCT）DRAM 单元 + peri-over-cell 结构实现约 2× 存储密度；peri-die 承载处理单元构成 2 层 NMP——Tier-1 处理低-中 Op/B，Tier-2 处理中-高 Op/B，跨层并行执行。</p>
+<p><strong>关键数字</strong>：Nemotron3-Nano/Super、Falcon-H1R、Qwen3 上平均 4.5× 吞吐、端到端延迟降 69.8%、能效 5×（对 GPU 基线），面积开销仅 3.9% 且容量无损。</p>
+<p><strong>为什么值得看</strong>：混合 LLM 时代 NMP 从器件到架构的完整协同设计样本。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.22613v1">NOVA: Technology-Architecture Co-Design of Near-Memory Processing for Attention-SSM-MoE Hybrid LLM Inference</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.22613v1">阅读原文 ↗</a></p>
 </body>
 </html>

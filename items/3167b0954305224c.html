@@ -22,9 +22,11 @@
 <h1>FleetSieve: Decision-Critical Profiling for SLO-Aware LLM Fleet Configuration</h1>
 <p class="meta-line">arXiv（Huang Cheng 等，cs.LG） · 2026-08-20 · 论文PDF</p>
 
-<p>Choosing tensor-parallel (TP) degrees and replica counts for an LLM serving fleet is difficult because performance is not monotonic in TP and the feasible choice can change with load.</p>
-<blockquote><p>Choosing tensor-parallel (TP) degrees and replica counts for an LLM serving fleet is difficult because performance is not monotonic in TP and the feasible choice can change with load. Exhaustive profiling resolves this uncertainty, but measures many configurations that do not affect the final resource allocation. We present FleetSieve, which selects measurements according to their expected effect on a resource-coupled, SLO-aware fleet decision. FleetSieve models capacity and tail latency jointly, compares conservative and optimistic allocations, and stops when their remaining decision gap is below a specified tolerance. On a fixed H100 measurement grid for a 31B-parameter open-weight model, FleetSieve reaches the oracle aggregate decision using 22,200 GPU-seconds, 6.9% less than uniform random profiling in the fixed comparison. Across 200 random reveal orders, its mean saving over random profiling is 5.4% (95% bootstrap CI: 3.5-7.2%). The fixed-comparison saving is 21.5% for Chat, while FleetSieve does not use the fewest GPU-seconds for Code. Joint capacity and tail modeling also avoids selecting a configuration whose 46.4-second completion p99 violates a 30-second SLO. In a 16-GPU…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 服务集群选 TP 度与副本数时性能非单调、随负载变化，穷举 profiling 又测了大量不影响最终决策的配置，成本高。</p>
+<p><strong>方法</strong>：FleetSieve 按「对 SLO 感知、资源耦合的车队决策之预期影响」挑选测量点，联合建模容量与尾延迟，比较保守与乐观分配，决策差距低于容差即停止测量。</p>
+<p><strong>关键数字</strong>：31B 模型 H100 网格上以 22,200 GPU 秒达到 oracle 决策，比固定对比的均匀随机 profiling 少 6.9%；200 次随机顺序平均省 5.4%（95% CI 3.5–7.2%）；Chat 场景省 21.5%；并避免选中 p99 46.4 秒、违反 30 秒 SLO 的配置。</p>
+<p><strong>为什么值得看</strong>：把 profiling 成本显式纳入容量规划闭环，LLM 集群配置决策的实用方法。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.19659v1">FleetSieve: Decision-Critical Profiling for SLO-Aware LLM Fleet Configuration</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.19659v1">阅读原文 ↗</a></p>
 </body>
 </html>

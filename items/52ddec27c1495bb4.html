@@ -22,9 +22,11 @@
 <h1>Portability of Fortran's 'do concurrent' on GPUs II</h1>
 <p class="meta-line">arXiv（Ronald M. Caplan 等，cs.PL） · 2026-08-20 · 论文PDF</p>
 
-<p>There continues to be growing interest in using standard language constructs for parallel and accelerated HPC computing, avoiding the need for (sometimes vendor-specific) external APIs.</p>
-<blockquote><p>There continues to be growing interest in using standard language constructs for parallel and accelerated HPC computing, avoiding the need for (sometimes vendor-specific) external APIs. For Fortran applications, language features such as 'do concurrent' loops open the door for compilers to implement multi-threaded, GPU-accelerated, and even distributed multi-node code with only the standard language. Here, we explore the current status of using 'do concurrent' for GPU-accelerated Fortran applications across three major GPU vendors (NVIDIA, AMD, and Intel). Using a production application, we test their current capabilities, showing where the standard language alone can be used, and where augmenting the code with a directive-based API (e.g., OpenMP) is still desirable or required. Multi-GPU tests are performed with GPU-aware MPI libraries. We find that the three GPU vendors can now GPU-accelerate pure Fortran (zero directives), but that manual data movement directives can help with performance and compatibility. The results show that there is rapid advancement towards making GPU-accelerated scientific HPC code performance portable using the Fortran standard language.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：只用 Fortran 标准语言特性（'do concurrent'），不依赖厂商专有 API，能否在 GPU 上实现性能可移植的 HPC 代码？</p>
+<p><strong>方法</strong>：用一个生产级应用在 NVIDIA、AMD、Intel 三家 GPU 厂商上实测 'do concurrent' 现状，多 GPU 测试基于 GPU-aware MPI；考察纯标准语言可行之处，以及仍需 OpenMP 等指令增强的边界。</p>
+<p><strong>关键数字</strong>：三家厂商现均可对零指令的纯 Fortran 实现 GPU 加速；手动数据移动指令对性能与兼容性仍有帮助。</p>
+<p><strong>为什么值得看</strong>：Fortran 标准语言跨厂商 GPU 可移植性的最新实测，HPC 代码现代化的现实参照。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.20586v1">Portability of Fortran's 'do concurrent' on GPUs II</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.20586v1">阅读原文 ↗</a></p>
 </body>
 </html>

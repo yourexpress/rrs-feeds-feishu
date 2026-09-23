@@ -22,9 +22,11 @@
 <h1>PRISM: Predictive Runtime In-place Scaling and Model Selection for Edge Microservices</h1>
 <p class="meta-line">arXiv（Uwe Gropengießer 等，cs.DC） · 2026-08-22 · 论文PDF</p>
 
-<p>Latency-sensitive edge AI services must balance strict deadlines, output quality, and limited compute and energy budgets.</p>
-<blockquote><p>Latency-sensitive edge AI services must balance strict deadlines, output quality, and limited compute and energy budgets. However, static CPU provisioning wastes resources because inference cost varies substantially across inputs, model variants, and runtime conditions. We present PRISM, a prediction-guided runtime framework that jointly selects model variants and CPU allocations for containerized edge microservices. Using container-level energy monitoring and lightweight regression models, PRISM adapts each pipeline stage in place and minimizes predicted CPU-package energy under deadline, resource, and offline model-level Quality of Result (QoR) constraints. We evaluate PRISM on more than 52,000 requests in an Automatic License Plate Recognition (ALPR) pipeline with detection and recognition stages. For detection, PRISM reduces energy consumption by 36 % compared to the strongest static configuration while preserving a comparable success rate and using less than half of the average CPU allocation. For recognition, it reaches near-static-best performance with lower average CPU allocation. These results show that predictive in-place adaptation is a practical mechanism for making tim…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：时延敏感的边缘 AI 服务要在严格 deadline、输出质量与受限算力/能耗间权衡，而静态 CPU 配置浪费资源——推理成本随输入、模型变体与运行时状态显著变化。</p>
+<p><strong>方法</strong>：PRISM：预测引导的运行时框架，联合选择模型变体与 CPU 配额；基于容器级能耗监控与轻量回归模型，在 deadline、资源与离线 QoR 约束下原地调整各流水线阶段，最小化预测的 CPU 封装能耗。</p>
+<p><strong>关键数字</strong>：ALPR（车牌识别）流水线逾 52,000 请求：检测阶段比最强静态配置省 36% 能耗、平均 CPU 配额不到一半且成功率相当；识别阶段接近静态最优性能且 CPU 配额更低。</p>
+<p><strong>为什么值得看</strong>：预测式原地伸缩在真实边缘微服务流水线上的实战验证。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.21910v1">PRISM: Predictive Runtime In-place Scaling and Model Selection for Edge Microservices</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.21910v1">阅读原文 ↗</a></p>
 </body>
 </html>
