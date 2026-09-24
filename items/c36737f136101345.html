@@ -22,9 +22,11 @@
 <h1>Pipeline-Native Transformers: Co-Designing Model Architecture and CPU Inference for Bandwidth-Efficient Autoregressive Decode</h1>
 <p class="meta-line">arXiv（Tom Poperszky，cs.AR） · 2026-08-24 · 论文PDF</p>
 
-<p>Single-token autoregressive decode on CPUs is bound by memory bandwidth, not arithmetic: a modern CPU sustains roughly 1 TFLOP/s of compute but only about 50 GB/s from main memory, and each generated token must stream ev…</p>
-<blockquote><p>Single-token autoregressive decode on CPUs is bound by memory bandwidth, not arithmetic: a modern CPU sustains roughly 1 TFLOP/s of compute but only about 50 GB/s from main memory, and each generated token must stream every active weight once. This report argues that the most effective response is to co-design the model architecture and the inference runtime together. It presents cflow, a CPU-first streaming engine, alongside a family of pipeline-native transformer architectures whose inter-layer dependency graphs are constructed to permit a vertical, stage-major execution schedule. cflow stores weights as L2-sized tiles in compute-consumption order, reads only the top-k experts of each mixture-of-experts layer, fuses projections, and executes a delay-aware schedule from per-model dependency parameters. Across five architectures trained on TinyStories, one (arch2_4_combined) achieves a 2.00x reduction in critical-path weight bandwidth (9.00 to 4.50 MB/token) within 0.24 perplexity of the best candidate, and the tile layout incurs 7.29x fewer L1-data read misses than a row-major baseline. On a 30.9-billion-parameter pipeline-native MoE, cflow decodes at 5.94 tokens/s (tok/s) on a 32…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：CPU 上单 token 自回归解码被内存带宽卡死（约 1 TFLOP/s 算力对约 50 GB/s 带宽），架构与推理运行时能否协同设计来省带宽？</p>
+<p><strong>方法</strong>：提出 CPU 优先的流式引擎 cflow 与一族"流水线原生"Transformer 架构：层间依赖图按纵向 stage-major 调度构造，权重按计算消费顺序存为 L2 大小 tile，MoE 层只读 top-k 专家，投影融合，支持磁盘常驻专家的异步 I/O 重叠。</p>
+<p><strong>关键数字</strong>：TinyStories 上五个架构之一关键路径权重带宽降 2.00 倍（9.00→4.50 MB/token），困惑度仅差 0.24；tile 布局 L1 读缺失少 7.29 倍；30.9B 参数 MoE 在 32 核 Ice Lake 上解码 5.94 token/s，优于 llama.cpp 的 4.75 与 vLLM CPU 的 1.65；磁盘专家重叠再净赚最多 1.68 倍。</p>
+<p><strong>为什么值得看</strong>：罕见地坦承八条设计主张中一条被实测证伪、一条不确定；CPU 推理与模型架构协同设计的高质量工程报告。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.23841v1">Pipeline-Native Transformers: Co-Designing Model Architecture and CPU Inference for Bandwidth-Efficient Autoregressive Decode</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.23841v1">阅读原文 ↗</a></p>
 </body>
 </html>

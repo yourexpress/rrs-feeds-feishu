@@ -22,9 +22,11 @@
 <h1>Sigmoid Attention as a Better Substrate for Learned KV Cache Eviction</h1>
 <p class="meta-line">arXiv（ Isaac 等，cs.LG） · 2026-08-24 · 论文PDF</p>
 
-<p>Learned KV-cache eviction often faces a soft-to-hard mismatch: during training, differentiable gates typically attenuate token contributions, whereas inference saves memory only when KV entries are physically removed.</p>
-<blockquote><p>Learned KV-cache eviction often faces a soft-to-hard mismatch: during training, differentiable gates typically attenuate token contributions, whereas inference saves memory only when KV entries are physically removed. We ask whether the attention substrate affects this soft-to-hard transition. Using GPT-2-scale Transformers trained on OpenWebText, we run a controlled $2\times2\times2$ comparison over attention type, learned gating, and positional encoding. Although sigmoid attention is worse as a dense language model, learned hard eviction changes the useful operating points: sigmoid-gated models delete KV entries with negligible PPL change relative to their own no-eviction references. Under a matched live-cache protocol on the same dense backbones, learned sigmoid gates obtain lower PPL than our H$_2$O and KeyDiff implementations, whereas softmax gates do not uniformly beat these post-hoc methods. The results suggest that attention normalization can substantially affect whether a training-time soft gate transfers cleanly to hard KV deletion.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：可学习的 KV cache 驱逐存在"软-硬错配"——训练时可微门控只是衰减 token 贡献，推理时却要物理删除；注意力基底（softmax 还是 sigmoid）会不会影响这个转换？</p>
+<p><strong>方法</strong>：GPT-2 规模 Transformer 在 OpenWebText 上做受控 2×2×2 对比（注意力类型×可学习门控×位置编码），并在同一稠密骨干上以匹配的 live-cache 协议对比 H2O 与 KeyDiff 等事后驱逐方法。</p>
+<p><strong>关键数字</strong>：sigmoid 门控模型删除 KV 后相对自身无驱逐基线困惑度几乎不变；学习到的 sigmoid 门在匹配协议下 PPL 低于本文的 H2O/KeyDiff 实现，而 softmax 门不能稳定胜出（摘要未给具体数值）。</p>
+<p><strong>为什么值得看</strong>：指出注意力归一化方式会实质影响训练期软门控能否干净地转为推理期硬删除，为"可学习驱逐"路线提供了一个新的设计维度。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.23296v1">Sigmoid Attention as a Better Substrate for Learned KV Cache Eviction</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.23296v1">阅读原文 ↗</a></p>
 </body>
 </html>

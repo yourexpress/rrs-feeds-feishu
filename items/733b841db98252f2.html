@@ -22,9 +22,11 @@
 <h1>Understanding the Energy Scaling of Large Language Model Inference Across Context Lengths and Attention Architectures</h1>
 <p class="meta-line">arXiv（Molka Chkir 等，cs.LG） · 2026-08-25 · 论文PDF</p>
 
-<p>The growing adoption of large language models (LLMs) has raised increasing concerns about the energy consumption and environmental impact of inference.</p>
-<blockquote><p>The growing adoption of large language models (LLMs) has raised increasing concerns about the energy consumption and environmental impact of inference. This paper presents a systematic empirical study of decode-phase energy consumption across representative open-source LLMs employing Multi-Head Attention (MHA), Grouped Query Attention (GQA), and Grouped Query Attention with Sliding Window Attention (SWA) to characterize how attention architecture influences decode-phase energy consumption under varying inference workloads. We evaluate four models across different context lengths, batch sizes, and generation workloads while measuring GPU energy using NVIDIA hardware counters. We examine the effects of context length, attention mechanism, Key-Value (KV) cache growth, and batching on decode-phase energy consumption. Results show that attention mechanism is the primary factor governing how decode energy scales with context length. MHA models exhibit substantially steeper energy growth than GQA models, whereas GQA with SWA maintains nearly constant energy consumption. We further show that model size primarily determines absolute energy consumption, while batching reduces both energy per…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 推理能耗随上下文长度如何增长？注意力架构（MHA/GQA/GQA+SWA）在其中扮演什么角色？</p>
+<p><strong>方法</strong>：对采用三种注意力机制的四个开源模型做系统性实测：跨上下文长度、batch 大小与生成负载，用 NVIDIA 硬件计数器测解码阶段 GPU 能耗，分析 KV cache 增长与批处理的影响。</p>
+<p><strong>关键数字</strong>：注意力机制是决定能耗随上下文伸缩的首要因素——MHA 增长显著更陡，GQA 较缓，GQA+SWA 几乎恒定；模型规模决定绝对能耗；批处理可把每 token 能耗与请求延迟最多降低 87%。</p>
+<p><strong>为什么值得看</strong>：把"选哪种注意力架构更省电"从直觉变成实测结论，GQA+SWA 的近平坦能耗曲线对长上下文推理选型是直接的工程依据。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.25096v1">Understanding the Energy Scaling of Large Language Model Inference Across Context Lengths and Attention Architectures</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.25096v1">阅读原文 ↗</a></p>
 </body>
 </html>

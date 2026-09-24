@@ -22,9 +22,11 @@
 <h1>The Shadow Price of Intelligence: Quality Degradation in LLM Inference as a Supply Chain Problem</h1>
 <p class="meta-line">arXiv（Elioth Sanabria，math.OC） · 2026-08-25 · 论文PDF</p>
 
-<p>Large language model providers are compute constrained, and their universal response to congestion is to degrade service: route queries to smaller models, cut reasoning effort, truncate context.</p>
-<blockquote><p>Large language model providers are compute constrained, and their universal response to congestion is to degrade service: route queries to smaller models, cut reasoning effort, truncate context. The industry's accounting says this saves money. We show the accounting is wrong, because it prices a query when the customer buys an answer. A degraded answer fails with some probability, and a failed answer either returns as a retry, inflating arrivals when the system is most loaded, or departs as churn, destroying lifetime value on a ledger no cost dashboard displays. We model inference allocation with three classical primitives: a newsvendor whose stockout cost is churned lifetime value, a geometric retry multiplier in which the recycled product is dissatisfaction, and a two-regime transient queue whose arrival rate is made endogenous by retries. Statically, there is a nonempty, measurable regime in which a cheaper model saves energy per satisfied answer while consuming strictly more capacity per satisfied answer, so the discount inverts exactly when capacity binds. Dynamically, a reactive throttle fired during a surge can cross an ignition threshold beyond which it manufactures more tr…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 服务商算力紧张时普遍降级服务（换小模型、砍推理深度、截断上下文）来省钱，但用户买的是"答案"而非"查询"——降级的答案会失败，失败后重试放大高峰流量、流失摧毁用户终身价值。</p>
+<p><strong>方法</strong>：用三个经典原语建模推理资源分配：以流失终身价值为缺货成本的报童模型、以不满为回收品的几何重试乘子、重试使到达率内生的双状态瞬态排队；并把多客户节流下推导为运输问题，给出可毫秒级计算的闭式轨迹。</p>
+<p><strong>关键数字</strong>：摘要为理论论证未给实测数字；核心结论是存在可测的非空区域，其中便宜模型"每满意答案更耗能却占更多容量"，折扣在容量紧张时反转；反应式节流越过"点燃阈值"后制造的流量比削减的更多。</p>
+<p><strong>为什么值得看</strong>：把 LLM 推理降级从成本问题重构为供应链/排队问题，"智力的影子价格"这个视角对推理服务的容量规划与定价极具启发。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.23986v2">The Shadow Price of Intelligence: Quality Degradation in LLM Inference as a Supply Chain Problem</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.23986v2">阅读原文 ↗</a></p>
 </body>
 </html>

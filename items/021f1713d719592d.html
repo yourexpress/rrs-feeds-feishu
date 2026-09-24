@@ -22,9 +22,11 @@
 <h1>Next-generation O-RAN Edge: Energy-aware Joint Placement and Migration of Cloud-Native Functions</h1>
 <p class="meta-line">arXiv（Nguyen Phuc Tran 等，cs.IT） · 2026-08-25 · 论文PDF</p>
 
-<p>The transition toward Open Radio Access Networks (O-RANs) is reshaping how cellular infrastructure is deployed, managed, and optimized.</p>
-<blockquote><p>The transition toward Open Radio Access Networks (O-RANs) is reshaping how cellular infrastructure is deployed, managed, and optimized. This paper investigates the energy-aware joint placement and migration of cloud-native functions (CNFs) in an O-RAN edge cloud. We consider both a Single-CU-UP association model and a slice-aware Multi-CU-UP relaxation, in which distinct slice-flow groups of the same distributed unit (DU) may be assigned to different Centralized Unit User Plane (CU-UP) processing targets under one Centralized Unit Control Plane (CU-CP). For brevity, these scenarios are referred to as Single-CU and Multi-CU, respectively; Multi-CU never denotes multiple CU-CP associations. We formulate the problem as a Mixed-Integer Linear Program (MILP) that minimizes server, transmission, wake-up, and migration energy while satisfying server-resource capacities and one-way delay requirements over the F1 user-plane interface (F1-U) between each DU and its selected CU-UP in a fat-tree edge data center. To improve computational scalability, we also develop a deterministic k-means-based heuristic that approximates the MILP decisions without requiring repeated exact optimization. Over …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：O-RAN 边缘云中，云原生功能（CNF）的放置与迁移如何兼顾能耗、资源容量与 F1-U 接口的时延约束？</p>
+<p><strong>方法</strong>：建模单 CU-UP 关联与切片感知的多 CU-UP 松弛两种场景，把服务器、传输、唤醒与迁移能耗的联合优化表述为混合整数线性规划（MILP），在 fat-tree 边缘数据中心拓扑上求解；另提出基于 k-means 的确定性启发式逼近 MILP 决策以避免重复精确优化。</p>
+<p><strong>关键数字</strong>：24 小时负载评估下，Multi-CU 松弛比 Single-CU 基线省能耗 5.7%；启发式结果与 MILP 的差距约 9.7%。</p>
+<p><strong>为什么值得看</strong>：切片级 CNF 放置是个实际且新的松弛维度，MILP 与启发式的差距量化清楚，做 O-RAN 资源编排的可直接复用建模方式。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.24841v1">Next-generation O-RAN Edge: Energy-aware Joint Placement and Migration of Cloud-Native Functions</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.24841v1">阅读原文 ↗</a></p>
 </body>
 </html>

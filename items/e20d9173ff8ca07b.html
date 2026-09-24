@@ -22,9 +22,11 @@
 <h1>Trust the Mass: Forced Weights in KV-Cache Eviction</h1>
 <p class="meta-line">arXiv（Jack Shi 等，cs.LG） · 2026-08-25 · 论文PDF</p>
 
-<p>Every deployed sparse-attention or KV-cache-eviction rule keeps a subset of the keys, discards the rest, and renormalizes the attention weights over the kept set.</p>
-<blockquote><p>Every deployed sparse-attention or KV-cache-eviction rule keeps a subset of the keys, discards the rest, and renormalizes the attention weights over the kept set. Enumerating the exact best subset under that constraint on $168{,}192$ attention rows from five models shows that keeping the largest weights is already near-optimal, since the best subset closes only a median $2$ to $5\%$ of the remaining gap to full attention. If selection closes this little, published margins between eviction methods must come from elsewhere, so we measure the bytes each method holds. In the shared evaluation pipeline, the strongest query-agnostic methods hold the full cache because their per-head selections are stored as masks, and only ragged per-head storage frees that memory. Enforcing a nominal budget on one fixed selection costs $14$ to $62$ benchmark points. We trace an $87.6$-point retrieval margin to rankings computed while the question is visible. ContourKV, a training-free allocator built from the dropped-mass statistic, wins $93$ of $160$ paired comparisons against that state of the art and loses $22$ at the byte count of the budget-enforcing baselines, and it ties the strongest of them.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：稀疏注意力/KV 驱逐都是"留子集、丢其余、再归一化"，那已发表方法之间的差距究竟来自选得好，还是来自别处？</p>
+<p><strong>方法</strong>：在 5 个模型的 168192 行注意力上枚举精确最优子集，发现"保留最大权重"已近最优；转而度量各方法实际持有的字节数，揭露掩码式按头存储吃掉全部缓存等问题；并提出免训练的 ContourKV（基于丢弃质量统计分配）。</p>
+<p><strong>关键数字</strong>：最优子集相对全注意力只剩中位 2%~5% 的差距可补；对固定选择强制名义预算要付出 14~62 个基准点；一个 87.6 点的检索优势被追溯到"排序时问题可见"；ContourKV 在 160 组配对比较中赢 93 组、输 22 组，并与最强基线打平。</p>
+<p><strong>为什么值得看</strong>：对 KV 驱逐文献的一次严格审计——不少"优势"来自存储口径与信息泄漏，读任何驱逐方法新论文前都该先读这篇。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.25230v2">Trust the Mass: Forced Weights in KV-Cache Eviction</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.25230v2">阅读原文 ↗</a></p>
 </body>
 </html>

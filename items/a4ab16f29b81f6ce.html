@@ -22,9 +22,11 @@
 <h1>Rust for Secure Backend Development: A Critical Review and Extended Vulnerability Comparison with Node.js and Django</h1>
 <p class="meta-line">arXiv（Md Zarzees Uddin Shah Chowdhury 等，cs.PL） · 2026-08-23 · 论文PDF</p>
 
-<p>The Rust programming language is widely credited with eliminating entire classes of memory-safety and concurrency vulnerabilities, but the security implications of adopting it in practice extend well beyond memory safety…</p>
-<blockquote><p>The Rust programming language is widely credited with eliminating entire classes of memory-safety and concurrency vulnerabilities, but the security implications of adopting it in practice extend well beyond memory safety. This paper presents a critical review of prior work on Rust's security posture in industrial settings, and extends that analysis in a direction the original study did not cover: backend web development. We first assess the strengths and limitations of the existing vulnerability classification of Rust against C, C++, and Java under the SANS Top 25, OWASP Top 10, and the 19 Deadly Sins of Software Security frameworks, identifying gaps including limited empirical validation, a small interview sample, and the absence of a secure development lifecycle discussion. We then contribute an original comparison of Rust against Node.js and Django using the same three-level classification (Rare and Difficult, Safeguarded, Unprotected), supported by side-by-side code experiments for out-of-bounds writes (CWE-787), use-after-free (CWE-416), and race conditions (CWE-362). Our results indicate that Rust's compile-time guarantees dominate at the systems layer, while managed backend …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：Rust 以消除内存安全与并发漏洞著称，但它在后端 Web 开发场景中的安全水位到底比 Node.js、Django 强多少？</p>
+<p><strong>方法</strong>：先按 SANS Top 25、OWASP Top 10、19 Deadly Sins 三套框架批判性复评 Rust 对 C/C++/Java 的漏洞分级研究，指出其缺乏实证、访谈样本小等缺口；再用同一套三级分类（极难发生/有防护/无防护）对 Rust 与 Node.js、Django 做并排代码实验，覆盖越界写（CWE-787）、释放后使用（CWE-416）、竞态（CWE-362）。</p>
+<p><strong>关键数字</strong>：摘要未给量化指标；结论基于三类 CWE 的代码级对比实验与三套安全框架的分级。</p>
+<p><strong>为什么值得看</strong>：结论冷静——Rust 的编译期保证主导系统层，但应用层上托管框架内建防御更强；Rust 用于 Web 需要配套安全措施，不能只靠语言本身。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.22624v1">Rust for Secure Backend Development: A Critical Review and Extended Vulnerability Comparison with Node.js and Django</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.22624v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>NoC-Out: A Formally-verified Network-on-Chip Library for Rule-based Hardware Designs</h1>
 <p class="meta-line">arXiv（Max Kurze 等，cs.PL） · 2026-08-25 · 论文PDF</p>
 
-<p>The Network-on-Chip (NoC) is the communication backbone of any multiprocessor chip.</p>
-<blockquote><p>The Network-on-Chip (NoC) is the communication backbone of any multiprocessor chip. A failure of the NoC has severe consequences for the whole system. Yet, no approach exists that provides formally-verified NoCs with strong guarantees but without tedious verification effort. Any library that generates formally-verified NoCs needs to be parametric in the structure of the NoC. This requires a hardware description language (HDL) that allows for parametric and concurrent yet efficient hardware designs as well as the necessary program logic to reason about them in a modular fashion. So far, HDLs fall short in both aspects. In this paper, we implement NoC-Out, the first library/generator for formally-verified k-dimensional NoC designs. In order to build NoC-Out, we extended Kôika, a rule-based HDL in the Rocq theorem prover, with support for concurrent yet efficient NoC designs and a program logic for modular, automated reasoning. Given a configuration, NoC-Out produces a k-dimensional torus NoC in Kôika, which can then be compiled to Verilog. Each produced NoC is equipped with a proof that it refines our formal NoC specification; no additional verification effort is required. Our specif…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：片上网络（NoC）是多处理器芯片的通信骨干，故障后果严重，但现有方法无法在"强形式化保证"与"免繁琐验证"之间兼得。</p>
+<p><strong>方法</strong>：NoC-Out 是首个形式化验证的 k 维 NoC 库/生成器：扩展 Rocq 定理证明器中的规则式 HDL Kôika，支持并发且高效的 NoC 设计与模块化自动推理；给定配置即生成 k 维环面 NoC 并编译到 Verilog，每个产物自带精化形式化规范的证明。</p>
+<p><strong>关键数字</strong>：摘要未给量化性能指标；核心保证是所有生成的 NoC 都证明满足强活性（liveness）规范，且无需额外验证工作。</p>
+<p><strong>为什么值得看</strong>：把"验证"从设计后的负担变成生成器的副产品，评估还表明这种验证方法对规则式 HDL 综合出高效 NoC 竟是必需的——硬件形式化方法的实质性进展。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.24478v1">NoC-Out: A Formally-verified Network-on-Chip Library for Rule-based Hardware Designs</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.24478v1">阅读原文 ↗</a></p>
 </body>
 </html>

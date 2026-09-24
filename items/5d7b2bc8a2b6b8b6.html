@@ -22,9 +22,11 @@
 <h1>VIPER: Architecture-Aware Performance Modeling for Processing-in-Memory Design-Space Exploration</h1>
 <p class="meta-line">arXiv（Haoran Geng 等，cs.AR） · 2026-08-24 · 论文PDF</p>
 
-<p>Processing-in-Memory (PIM) promises to reduce data movement overhead by executing computation in or near memory, but its realized application speedup remains highly design-dependent.</p>
-<blockquote><p>Processing-in-Memory (PIM) promises to reduce data movement overhead by executing computation in or near memory, but its realized application speedup remains highly design-dependent. Non-offloadable host execution, host-PIM transfers, limited PIM capacity, and device programming latency can limit end-to-end speedup, making fast early-stage design-space exploration (DSE) essential. However, existing PIM evaluation methods remain limited: circuit- and device-level tools cannot capture these end-to-end PIM performance factors, while cycle-accurate simulation is too slow for iterative DSE. To address this gap, we present VIPER, a unified, lightweight, and architecture-aware performance evaluation framework for PIM DSE. VIPER profiles host execution once and combines the measured host behavior with a PIM-aware analytical engine that sweeps PIM-side parameters across candidate designs. It supports both Processing Near Memory (PNM) and Processing Using Memory (PUM) under task-offloading and data-triggered execution by capturing host-PIM transfer, array access, in-memory computation, device programming latency, and capacity-induced partitioning, providing rapid architecture-aware performan…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：存内计算（PIM）的端到端加速比高度依赖设计——主机侧不可卸载执行、传输、容量与编程延迟都可能吃掉收益；电路级工具看不到这些因素，周期精确仿真又太慢，早期设计空间探索缺工具。</p>
+<p><strong>方法</strong>：VIPER 对主机执行只做一次画像，把实测主机行为与 PIM 感知解析引擎结合，扫描候选设计参数；同时支持近存（PNM）与存内（PUM）、任务卸载与数据触发两种执行模式。</p>
+<p><strong>关键数字</strong>：在商用 UPMEM 系统上验证，DPU 扫描的平均加速比误差 12%（至 256-DPU 峰值前为 6%），且能先验预测卸载决策与盈亏平衡区；对 400 多个 gem5 周期精确配置误差低于 10%，评估时间从数小时缩到一分钟内。</p>
+<p><strong>为什么值得看</strong>：用解析模型达到接近周期精确仿真的保真度，UPMEM、ReRAM/FeFET crossbar 等案例说明架构感知 DSE 能揭示器件级评估漏掉的权衡。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.23404v1">VIPER: Architecture-Aware Performance Modeling for Processing-in-Memory Design-Space Exploration</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.23404v1">阅读原文 ↗</a></p>
 </body>
 </html>

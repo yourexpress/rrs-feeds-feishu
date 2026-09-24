@@ -22,9 +22,11 @@
 <h1>Compression Trinity: Exploring Sparsity, Quantization, and Low-Rank Approximations for LLM Compression</h1>
 <p class="meta-line">arXiv（Mohammad Mozaffari，cs.AI） · 2026-08-25 · 论文PDF</p>
 
-<p>Prohibitive computational and environmental costs impede the scalable deployment of Large Language Models (LLMs).</p>
-<blockquote><p>Prohibitive computational and environmental costs impede the scalable deployment of Large Language Models (LLMs). Traditional compression techniques (sparsity, quantization, low-rank approximations) are typically applied in isolation, and each hits an accuracy-efficiency wall. This thesis proposes the "Compression Trinity," a unified framework that applies the three pillars jointly: sparsity to reduce computation, quantization to minimize memory bandwidth, and low-rank approximations to recover accuracy. To accelerate pretraining, we apply the Trinity to the optimizer and model architecture. MKOR approximates curvature via block-diagonal sparsity and low-rank inversion, maintaining numerical stability for quantized states; it reduces curvature update complexity from $O(d^3)$ to $O(d^2)$ and accelerates convergence by up to 1.85x over KFAC. SLoPe accelerates training by up to 1.25x via a double-pruned backward pass for N:M sparsity, using low-rank "lazy" adapters in the final 1% of training to recover accuracy. For post-training compression, OPTIMA stabilizes static masks in a zero-training regime by formulating weight reconstruction as globally optimal column-wise quadratic program…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：稀疏、量化、低秩近似三类 LLM 压缩手段通常各自为用、都撞上精度-效率墙，联合起来能否互相补位？</p>
+<p><strong>方法</strong>："Compression Trinity"框架把三者贯穿训练与推理：MKOR 用块对角稀疏+低秩求逆近似曲率；SLoPe 双剪枝反向传播+末期低秩"惰性"适配器；OPTIMA 把权重重建表述为逐列二次规划；PATCH 学习动态混合稀疏率；SLiM 一次性联合三者。</p>
+<p><strong>关键数字</strong>：MKOR 曲率更新复杂度 O(d³) 降到 O(d²)、收敛比 KFAC 快 1.85 倍；SLoPe 训练加速 1.25 倍（低秩适配仅用于最后 1% 训练）；OPTIMA 零样本精度提升最多 3.97%；PATCH 最多加速 1.38 倍；SLiM 比 SOTA 高 5.66%，等参数量下比未压缩稠密模型还高 0.6%。</p>
+<p><strong>为什么值得看</strong>：一篇论文打通"预训练加速-训练后压缩-一次性联合压缩"全链路，数字扎实，做模型压缩的人值得通读。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.24070v1">Compression Trinity: Exploring Sparsity, Quantization, and Low-Rank Approximations for LLM Compression</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.24070v1">阅读原文 ↗</a></p>
 </body>
 </html>

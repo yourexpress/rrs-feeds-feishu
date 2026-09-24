@@ -22,9 +22,11 @@
 <h1>DataKernelBench: Can LLMs Optimize Database Queries on GPUs?</h1>
 <p class="meta-line">arXiv（Gokul Karthik Kumar 等，cs.CL） · 2026-08-25 · 论文PDF</p>
 
-<p>GPUs increasingly accelerate database systems, but query-specific peak performance still often relies on hand-written kernels.</p>
-<blockquote><p>GPUs increasingly accelerate database systems, but query-specific peak performance still often relies on hand-written kernels. Existing LLM kernel benchmarks focus on machine learning operators, leaving irregular, heterogeneous, data-movement-heavy database-style operators untested. We introduce DataKernelBench, which translates SQL into validated PyTorch TorchPlan programs and evaluates LLMs that optimize either the core tensor-bounded snippet or the full query in CUDA or Triton through execution-guided repair. Across ten proprietary and open-weight models on TPC-H SF10 with an H100 GPU, the strongest full-query CUDA configuration achieves $2.11\times$ speedup over the TorchPlan baseline at full pass rate. We find that higher-performing implementations commonly use kernel fusion and execution-strategy changes, stronger models benefit most from full-query specialization, and workload context matters more than hardware context. To handle data larger than GPU memory, we extend TorchPlan with Dask-cuDF for on-demand partition loading on TPC-H SF100 with four H100 GPUs, achieving $2.54\times$ speedup. Project page: https://kerneldf.github.io/datakernelbench</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：GPU 加速数据库渐成趋势，但峰值性能仍靠手写 kernel；现有 LLM kernel 基准只测机器学习算子，数据库类不规则、数据搬运密集型算子是空白。</p>
+<p><strong>方法</strong>：DataKernelBench 把 SQL 翻译成经校验的 PyTorch TorchPlan 程序，让 LLM 通过执行引导修复去优化核心张量片段或整条查询的 CUDA/Triton 实现；并用 Dask-cuDF 按需分区加载扩展到超显存数据。</p>
+<p><strong>关键数字</strong>：TPC-H SF10、H100 上 10 个模型中最强的全查询 CUDA 配置相对 TorchPlan 基线加速 2.11 倍且全通过；SF100、4 张 H100 上加速 2.54 倍；高性能实现普遍用 kernel 融合与执行策略变更。</p>
+<p><strong>为什么值得看</strong>：结论有指导价值——强模型从全查询特化中获益最大，工作负载上下文比硬件上下文更影响优化效果。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.25061v2">DataKernelBench: Can LLMs Optimize Database Queries on GPUs?</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.25061v2">阅读原文 ↗</a></p>
 </body>
 </html>

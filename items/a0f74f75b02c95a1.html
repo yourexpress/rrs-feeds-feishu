@@ -22,9 +22,11 @@
 <h1>IncSFS: Incremental Full-Sparse Flow-Sensitive Pointer Analysis for C/C++</h1>
 <p class="meta-line">arXiv（Kunlin Liu 等，cs.PL） · 2026-08-25 · 论文PDF</p>
 
-<p>Pointer analysis is a fundamental technique for compiler optimization and program analysis.</p>
-<blockquote><p>Pointer analysis is a fundamental technique for compiler optimization and program analysis. Flow-sensitive pointer analysis provides high precision but is difficult to scale to large projects. Tailored for rapid iteration scenarios where software evolves continuously, we introduce IncSFS, the first incremental full-sparse flow-sensitive pointer analysis algorithm for C/C++ programs. IncSFS first transforms the value-flow graph into a constraint graph and performs strongly connected component detection to ensure precision. It then propagates increases and decreases in points-to sets in an interleaved manner, supporting code deletion and insertion within a single analysis pass. IncSFS is guaranteed to terminate and compute the least fixed point when the points-to relation remains object-acyclic during analysis. Experiments on six large-scale real-world projects show that IncSFS is precise and efficient, achieving average speedups of 9.60x over full flow-sensitive pointer analysis and 5.84x over the traditional reset-recompute approach. It also improves efficiency by 15.8% over state-of-the-art incremental pointer analysis algorithms that propagate points-to-set changes.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：流敏感指针分析精度高但难以扩展到大项目，而软件持续迭代的场景需要"改一点代码就能快速更新结果"的增量分析。</p>
+<p><strong>方法</strong>：IncSFS 是首个面向 C/C++ 的增量全稀疏流敏感指针分析：把值流图转为约束图并做强连通分量检测保证精度，再以交替方式传播指向集的增与减，单次分析内同时支持代码删除与插入；在指向关系保持对象无环时保证终止并收敛到最小不动点。</p>
+<p><strong>关键数字</strong>：六个大型真实项目上，比全量流敏感分析平均快 9.60 倍，比重置重算快 5.84 倍，比现有最优增量指针分析再提效 15.8%。</p>
+<p><strong>为什么值得看</strong>：让高精度流敏感分析真正进入"边改边分析"的日常开发循环，IDE 与持续集成里的程序分析工具可重点关注。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.24391v1">IncSFS: Incremental Full-Sparse Flow-Sensitive Pointer Analysis for C/C++</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.24391v1">阅读原文 ↗</a></p>
 </body>
 </html>

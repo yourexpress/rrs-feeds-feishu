@@ -22,9 +22,11 @@
 <h1>ProxyFormer: A Dual-Stream Proxy Architecture for Ultra-Long Context and High-Resolution Generation</h1>
 <p class="meta-line">arXiv（Zhongpan Tang，cs.LG） · 2026-08-24 · 论文PDF</p>
 
-<p>The quadratic growth of attention computation and key-value (KV) cache with respect to sequence length is a central bottleneck for ultra-long-context language models and high-resolution generative models.</p>
-<blockquote><p>The quadratic growth of attention computation and key-value (KV) cache with respect to sequence length is a central bottleneck for ultra-long-context language models and high-resolution generative models. We propose ProxyFormer, a general dual-stream architecture built upon proxy tokens. In each layer, fine-grained local features are compressed bottom-up into a small set of proxy states; expensive global interactions are performed only in the compressed proxy space; the globally contextualized proxies are then decompressed and injected top-down back into the local stream. Because the local stream persists across layers, fine-grained information that is not captured by one compression step remains accessible for later refinement, alleviating the irreversible information loss of conventional one-shot compression. We further introduce factorized multi-level compression/decompression, layer-wise dynamic compression ratios, asymmetric dual embeddings, and a proxy-only KV-cache inference scheme. On a 16GB GPU with batch size 1, a standard decoder-only model can train sequences of only about 20K tokens, whereas ProxyFormer with a compression ratio of 64 extends the trainable sequence leng…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：注意力计算与 KV cache 随序列长度二次增长，是超长上下文语言模型与高分辨率生成模型的核心瓶颈。</p>
+<p><strong>方法</strong>：ProxyFormer 基于代理 token 的双流架构：每层把局部细粒度特征自底向上压缩到少量代理状态，昂贵的全局交互只在代理空间进行，再自顶向下解压回局部流；局部流跨层保留，缓解一次性压缩的不可逆信息丢失；配多级分解压缩、逐层动态压缩率与仅代理 KV cache 推理。</p>
+<p><strong>关键数字</strong>：16GB 显存 batch=1 下标准 decoder 只能训约 2 万 token，ProxyFormer 压缩比 64 时可训约 70 万；64K 窗口训练的模型在 1,048,576 token 多针检索上保持 92%~95% 准确率；8K 窗口外推到 256K 准确率超 94%。</p>
+<p><strong>为什么值得看</strong>：用很小的代理空间承载全局交互还能保住检索精度，超长上下文与高清生成两条线都给了可行性证据。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.23463v1">ProxyFormer: A Dual-Stream Proxy Architecture for Ultra-Long Context and High-Resolution Generation</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.23463v1">阅读原文 ↗</a></p>
 </body>
 </html>

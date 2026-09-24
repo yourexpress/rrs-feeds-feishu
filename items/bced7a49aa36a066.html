@@ -22,9 +22,11 @@
 <h1>PuzzleKV: Page-Wise Low-Rank Decomposition for KV Cache Compression</h1>
 <p class="meta-line">arXiv（Zizhong Wang 等，cs.LG） · 2026-08-24 · 论文PDF</p>
 
-<p>Long-context inference in large language models (LLMs) is increasingly limited by the memory required for the key-value (KV) cache.</p>
-<blockquote><p>Long-context inference in large language models (LLMs) is increasingly limited by the memory required for the key-value (KV) cache. KV cache compression addresses this problem by reducing the storage cost of previous tokens. Among existing approaches, low-rank compression is particularly attractive because it represents every token in reduced dimensions. Previous low-rank methods typically derive fixed projection spaces from model weights, construct fixed spaces from calibration activations, or construct a shared basis over a broad cache region. Such representations may not capture detailed but important information. We partition each per-head KV cache into fixed-length logical pages and observe substantial low-rank structure within individual pages. Based on this observation, we propose PuzzleKV, a training- and calibration-free method that treats each completed page as an independent compression unit. PuzzleKV decomposes pages within each layer and KV head, computes attention directly over dense and factorized pages, and incrementally compresses newly eligible pages during autoregressive decoding. Experiments across models, context lengths, and benchmarks demonstrate the effectiv…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：低秩压缩是 KV cache 压缩的诱人路线，但现有方法用固定投影空间或大区域共享基，抓不住局部细节信息。</p>
+<p><strong>方法</strong>：PuzzleKV 观察到每个 head 的 KV cache 在固定长度逻辑页内存在显著低秩结构，于是把每个完成的页当作独立压缩单元：逐层逐 head 分解页，注意力直接在稠密页与分解页上计算，自回归解码时增量压缩新页；全程免训练、免校准。</p>
+<p><strong>关键数字</strong>：约 60% 原始 KV 存储下保持 Full KV 性能的 96% 以上，RULER 上显著优于 Global SVD、LongBench 上有竞争力；叠加量化后仅用 18.7% 原始存储仍保持 93% 以上性能。</p>
+<p><strong>为什么值得看</strong>："页内低秩"这个观察简单又实用，免训练免校准、按页增量压缩的工程形态对长上下文部署很友好。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.23843v1">PuzzleKV: Page-Wise Low-Rank Decomposition for KV Cache Compression</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.23843v1">阅读原文 ↗</a></p>
 </body>
 </html>

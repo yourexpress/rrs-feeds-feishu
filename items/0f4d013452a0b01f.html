@@ -22,9 +22,11 @@
 <h1>APT: Accelerating Diffusion Transformers via Attention Probability-Guided Pruning and Quantization</h1>
 <p class="meta-line">arXiv（Sungyeob Yoo 等，cs.AR） · 2026-08-26 · 论文PDF</p>
 
-<p>Recent advances in generative AI have significantly increased the demand for high-resolution image and video generation, positioning diffusion models as a core technology.</p>
-<blockquote><p>Recent advances in generative AI have significantly increased the demand for high-resolution image and video generation, positioning diffusion models as a core technology. Among them, Diffusion Transformers (DiTs) have emerged as the state-of-the-art (SOTA) models due to their scalability and output quality. However, self-attention in DiTs incurs significant computational overhead, leading to excessively long latency as the complexity grows with the fourth power of the output resolution. While prior works have attempted to mitigate this cost using sparsity and quantization techniques, they fall short of effectively reducing the computational cost in high-resolution DiTs. In this paper, we present APT, a software-hardware co-designed accelerator for high-resolution DiTs. APT leverages attention probabilities as a unified importance metric to jointly optimize computation through fine-grained pruning and adaptive precision scaling. At the algorithm level, we propose Attention Probability-guided Adaptive Dual Thresholding (APDT), which dynamically performs element selection and precision assignment using dual thresholds. To ensure compatibility with memory-efficient FlashAttention, we …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：DiT 的自注意力开销随输出分辨率四次方增长，高分辨率生成延迟过高，现有稀疏与量化手段降本不足。</p>
+<p><strong>方法</strong>：APT 以注意力概率为统一重要性度量联合做细粒度剪枝与自适应精度缩放：算法层提出双阈值的 APDT 做元素选择与精度分配，配时间步感知的 TAFA 与 FlashAttention 兼容；架构层协同设计支持不规则稀疏与双精度执行的加速器（动态掩码管理、地址转换、双精度计算单元、tile 数据流）。</p>
+<p><strong>关键数字</strong>：在 PixArt-α、Stable Diffusion 3、FLUX 上，相对 NVIDIA A100 最高 8.16 倍加速、14.98 倍能效；相对 SOTA 扩散加速器 EXION 最高 3.01 倍加速、2.04 倍能效。</p>
+<p><strong>为什么值得看</strong>：软硬协同设计覆盖算法到数据流全栈，一个度量统一剪枝与量化两条降本路线，高分辨率生成加速的标杆性工作。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.25380v1">APT: Accelerating Diffusion Transformers via Attention Probability-Guided Pruning and Quantization</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.25380v1">阅读原文 ↗</a></p>
 </body>
 </html>

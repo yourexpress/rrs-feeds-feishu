@@ -22,9 +22,11 @@
 <h1>An Energy-Proportional Multimodal and Context-Aware Vision IoT Node</h1>
 <p class="meta-line">arXiv（Julian Moosmann 等，eess.IV） · 2026-08-24 · 论文PDF</p>
 
-<p>While recent advancements in TinyML have significantly reduced the computational complexity of on-device vision pipelines, image acquisition remains a dominant contributor to system-level energy consumption and memory fo…</p>
-<blockquote><p>While recent advancements in TinyML have significantly reduced the computational complexity of on-device vision pipelines, image acquisition remains a dominant contributor to system-level energy consumption and memory footprint. In vision-enabled IoT platforms, the image sensor consumes energy comparable to the inference engine, thereby offsetting algorithmic efficiency gains. Consequently, current designs face a fundamental trade-off: continuous and always-on sensing incurs prohibitive energy consumption, whereas aggressive duty cycling increases latency and risks missing transient events. This work presents an energy-proportional, context-aware vision IoT node that addresses this challenge through a heterogeneous multimodal dual-camera architecture. Detection and recognition are decoupled by combining an event-based imager operating asynchronously in an energy-efficient always-on wake-on-motion mode together with an RGB imager. Deployed on a low-power microcontroller, a novel TinyissimoYOLOv12 is introduced for efficient and accurate object detection. By activating the high-power image acquisition and processing stages only upon sparse visual triggers, the proposed architecture i…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：视觉 IoT 节点里图像传感器的能耗已可与推理引擎相当，"常开感知耗电、强占空比漏事件"的矛盾怎么解？</p>
+<p><strong>方法</strong>：异构双摄像头架构——事件相机异步常开做 wake-on-motion 检测，触发后才启动 RGB 相机与识别通路；检测与识别解耦，并在低功耗 MCU 上部署新提出的 TinyissimoYOLOv12 做 80 类目标检测。</p>
+<p><strong>关键数字</strong>：待机感知仅 222μWh；一次完整"感知-上报"（RGB 采集+检测+LoRa 回传）28.7mJ；模型 100 万参数、mAP 最高 32.3%；按 1% 日活跃率，1.85Wh 电池可续航三个月。</p>
+<p><strong>为什么值得看</strong>：能量随事件成比例消耗的"放下就忘"式视觉监测节点，能耗账目完整、指标落到电池寿命，对野外低功耗部署很有参考价值。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.23192v1">An Energy-Proportional Multimodal and Context-Aware Vision IoT Node</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.23192v1">阅读原文 ↗</a></p>
 </body>
 </html>

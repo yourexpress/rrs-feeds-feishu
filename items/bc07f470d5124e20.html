@@ -22,9 +22,11 @@
 <h1>GreenBench: Benchmarking Energy Efficiency and Carbon Footprint of Open-Source LLM Inference on Apple Silicon</h1>
 <p class="meta-line">arXiv（Rajeswari Kannan 等，cs.CL） · 2026-08-24 · 论文PDF</p>
 
-<p>The rapid proliferation of Large Language Models (LLMs) has raised concerns about their environmental impact during inference.</p>
-<blockquote><p>The rapid proliferation of Large Language Models (LLMs) has raised concerns about their environmental impact during inference. While Green AI research has focused on datacenter GPUs and embedded platforms, the energy profile of LLM inference on Apple Silicon, with its unified memory architecture, remains unstudied. This paper presents GreenBench, a benchmarking framework that evaluates the energy efficiency, throughput, and carbon footprint of five open-source LLMs (3-9B parameters) across three NLP tasks on an Apple M4 Pro with 48 GB unified memory. Using macOS powermetrics for direct power measurement and Ollama's nanosecond-precision timing, we find that the M4 Pro draws only 0.47 W of CPU+GPU package power during sustained inference, with total system power of 8-12 W, achieving 30-40x better energy efficiency per token than datacenter GPUs in single-user deployment. Smaller models (3-3.8B) deliver 2.6-4.2x higher throughput and up to 62% less energy per token than larger models (7-9B). Pareto analysis identifies Qwen 2.5 (7B) as the optimal accuracy-efficiency trade-off at 57% MMLU and 59 tokens/s, while Llama 3.2 (3B) suits latency-critical applications at 175 tokens/s. We pro…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 推理的环境影响研究集中在数据中心 GPU 与嵌入式平台，Apple Silicon 统一内存架构下的能耗画像一直空白。</p>
+<p><strong>方法</strong>：GreenBench 在 Apple M4 Pro（48GB 统一内存）上用 macOS powermetrics 直接测功耗、Ollama 纳秒级计时，评测 5 个开源 LLM（3~9B）在三个 NLP 任务上的能效、吞吐与碳足迹，并给出印度与美国电网的 CO2 估算。</p>
+<p><strong>关键数字</strong>：持续推理时 CPU+GPU 封装功耗仅 0.47W、整机 8~12W；单用户部署下每 token 能效比数据中心 GPU 好 30~40 倍；3~3.8B 小模型吞吐高 2.6~4.2 倍、每 token 能耗最多低 62%；Qwen 2.5 7B 为精度-能效最优（57% MMLU、59 token/s），Llama 3.2 3B 适合低延迟（175 token/s）。</p>
+<p><strong>为什么值得看</strong>：给"本地小模型更环保"提供了实测依据，Apple Silicon 上跑开源 LLM 的选型与碳核算可直接引用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.28667v1">GreenBench: Benchmarking Energy Efficiency and Carbon Footprint of Open-Source LLM Inference on Apple Silicon</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.28667v1">阅读原文 ↗</a></p>
 </body>
 </html>

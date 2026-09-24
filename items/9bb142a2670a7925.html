@@ -22,9 +22,11 @@
 <h1>Precision-Aware Variable Bit Processing Elements for Hardware-Efficient Systolic Array Designs</h1>
 <p class="meta-line">arXiv（Dantu Nandini Devi 等，cs.AR） · 2026-08-23 · 论文PDF</p>
 
-<p>Systolic arrays (SAs) have emerged as prominent hardware accelerators for matrix operations in deep learning, while floating point number formats enable precision control across computational domains.</p>
-<blockquote><p>Systolic arrays (SAs) have emerged as prominent hardware accelerators for matrix operations in deep learning, while floating point number formats enable precision control across computational domains. This research investigates approximate computing techniques for floating point (FP) multipliers in Weight Stationary Systolic Arrays, focusing on IEEE 754 (FP32), TensorFloat-32 (TF32), and Brain Floating point (BF16) formats. By integrating partial product matrix (PPM) column truncation with positive and negative compressors in the FP multiplier architecture, we optimize the trade-off between computational efficiency and accuracy. NSGA-II optimization algorithm was employed to explore the vast design space for evolving FP multiplier designs, towards achieving substantial hardware improvements while maintaining acceptable output quality. Substantial hardware benefits were observed in the FP multiplier designs across various applications, while preserving output quality. The FP approximated Processing Elements designed in the SA was found to offer comparable CNN accuracy for models trained on MNIST, F-MNIST, and CIFAR-10 dataset. The FP approximated SA designs that fall in the top 10 C…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：脉动阵列（SA）是深度学习矩阵运算的主流加速器，但浮点乘法器开销大——能否用近似计算在保持 CNN 精度的前提下大幅压缩硬件？</p>
+<p><strong>方法</strong>：面向权重静止 SA，对 IEEE 754 FP32、TF32、BF16 三种格式的浮点乘法器做部分积矩阵列截断，配合正/负压缩器，并用 NSGA-II 在设计空间中搜索精度-硬件权衡的最优解。</p>
+<p><strong>关键数字</strong>：CIFAR-10 上 CNN 性能前 10 的近似 SA 设计，面积节省 66%~92%、功耗降低 60%~93%、延迟改善 21%~54%；MNIST、F-MNIST 上精度与精确实现相当；TF32/BF16 设计同样收益显著。</p>
+<p><strong>为什么值得看</strong>：把"近似计算"系统化地落到浮点脉动阵列乘法器上，配合进化算法自动搜设计空间，对容错类边缘加速器设计是实用方法论参考。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.22378v1">Precision-Aware Variable Bit Processing Elements for Hardware-Efficient Systolic Array Designs</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.22378v1">阅读原文 ↗</a></p>
 </body>
 </html>
