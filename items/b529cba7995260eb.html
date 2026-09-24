@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Component Type, Not Reconstruction Error, Predicts Attention Quantization Sensitivity</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Component Type, Not Reconstruction Error, Predicts Attention Quantization Sensitivity</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：PTQ 方法普遍以重建误差、二阶代理目标等误差信号指导量化，但"逐个注意力量化投影的误差信号能否预测下游功能影响"从未被直接刻画。</p>
+<p><strong>方法</strong>：对 9 个开源权重模型（1.3B–8B，OPT/GPT-J/LLaMA-1/2/3/Mistral/Qwen2.5）逐个量化注意力投影，RTN 与 GPTQ（3/4 bit，7 个模型），共 3808 次测量，记录重建误差、困惑度变化与激活加权量化误差。</p>
+<p><strong>关键数字</strong>：36 个 RTN 案例中 27 个里重建误差解释的困惑度敏感度方差不足 10%（中位 R²=0.044）；层身份在 7/9 模型中是最强预测因子、组件类型在其余 2 个中最强；V 投影是最常见的主导组件，在 7/9 模型中占正向 ΔPPL 的 38–51%；RTN 与 GPTQ 间主导组件 5/7 案例保持一致。</p>
+<p><strong>为什么值得看</strong>：直接质疑"重建误差做敏感度代理"这一 PTQ 常规操作，并指出 V 投影值得在混合精度方案中专门对待。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.26173">Component Type, Not Reconstruction Error, Predicts Attention Quantization Sensitivity</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.26173">阅读原文 ↗</a></p>
+</body>
+</html>

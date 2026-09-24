@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fast Recovery for LLM Serving via Decoupled Device Memory Lifetime in Dynamo</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Fast Recovery for LLM Serving via Decoupled Device Memory Lifetime in Dynamo</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-09-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：LLM 推理副本连跑数周，单个 worker 故障就会打断整个副本；即便权重与编译产物已缓存，引擎重新初始化仍需数分钟——生产环境只能靠超配容量掩盖这个窗口。</p>
+<p><strong>方法</strong>：NVIDIA Dynamo 快速恢复：核心观察是 18 周集群故障分析显示多数故障"保留设备"——引擎进程挂了但 GPU 及驻留分配完好。快照捕获一次初始化引擎、之后恢复而非重建；GPU Memory Service（GMS）把设备内存所有权与引擎进程解耦，替换引擎可共享并重挂存活分配而无需拷贝，权重只读共享给替换与 Shadow Engine，恢复退化为一次"提升"。</p>
+<p><strong>关键数字</strong>：vLLM 与 SGLang 上 4 个模型恢复均在 7 秒内，比热重启快 13–29×；每 GPU 固定 4–8 GiB 显存开销（与模型大小无关）；回放生产 trace 估计可挽回 79% 因恢复损失的 GPU 时。</p>
+<p><strong>为什么值得看</strong>：把 serving 可用性工程化的代表作，"保住已初始化的引擎状态"这个视角对任何长时推理服务都适用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.25451">Fast Recovery for LLM Serving via Decoupled Device Memory Lifetime in Dynamo</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.25451">阅读原文 ↗</a></p>
+</body>
+</html>

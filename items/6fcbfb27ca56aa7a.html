@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CacheDyG: Decoupling Temporal Propagation for Efficient Dynamic Graph Learning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CacheDyG: Decoupling Temporal Propagation for Efficient Dynamic Graph Learning</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-23 · 论文PDF</p>
+
+<p>CacheDyG：动态图学习的时间传播解耦+缓存机制，提升动态 GNN 训练推理效率。</p>
+<blockquote><p>Dynamic graphs are widely used to model time-evolving relational systems in real-world applications. Dynamic graph neural networks provide an effective framework for capturing both structural dependencies and temporal dynamics in such data. However, they typically intertwine temporal graph propagation with every optimization epoch and often maintain large trainable representations for each node-time pair. This design repeatedly recomputes largely unchanged historical structures, leading to substantial training and parameter overhead. To address this critical issue, we propose CacheDyG, a Cache-refine framework for efficient Dynamic Graph learning. Specifically, it decouples temporal propagation from routine parameter updates by constructing a time-ordered temporal dependency cache that stores graph-aware node-time representations in non-trainable buffers. During standard training epochs, CacheDyG reads from the cache and updates only a lightweight cache refiner, an adaptive residual gate, and the link predictor. Selective cache refresh further keeps cached representations aligned with the supervised objective while avoiding epoch-wise sparse propagation. Experiments on five dynamic…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.25814">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You Only Need 2/3 of the Chosen Experts: An Empirical Study of Dynamic Expert Pruning in Fine-Grained MoE LLMs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>You Only Need 2/3 of the Chosen Experts: An Empirical Study of Dynamic Expert Pruning in Fine-Grained MoE LLMs</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：细粒度 MoE 已是开源 LLM 主流设计（数百专家、每 token 选更多），动态专家剪枝能降推理成本——但每 token 专家选择的冗余度到底有多大？现有方法能否利用？什么决定模型对剪枝的敏感度？</p>
+<p><strong>方法</strong>：对 12 个细粒度 MoE 检查点（9 个架构族）× 11 个基准（知识问答、数学、代码生成、通用推理）做系统实证，回答三个开放问题。</p>
+<p><strong>关键数字</strong>：均匀保留约 2/3 的已选专家即平均保住 98.8% 未剪枝性能，只需改一个整数，两个 serving 后端实测加速 1.2–1.7×；此简单基线下最佳已发表规则在同等专家预算下差距不到 1%——其价值在激进剪枝时才显现（最多多恢复 3.0%，集中于生成型任务）；更大与 thinking 模型更扛剪枝，多模态模型更脆弱。</p>
+<p><strong>为什么值得看</strong>："每 token 少跑 1/3 专家几乎无损"这一极简操作可直接抄进生产，也标定了动态分配何时才配得上它的复杂度。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.25809">You Only Need 2/3 of the Chosen Experts: An Empirical Study of Dynamic Expert Pruning in Fine-Grained MoE LLMs</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.25809">阅读原文 ↗</a></p>
+</body>
+</html>

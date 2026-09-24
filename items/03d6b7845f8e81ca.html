@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Train Where the Quantized Model Goes: On-Policy Distillation for Low-Bit Reasoning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Train Where the Quantized Model Goes: On-Policy Distillation for Low-Bit Reasoning</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：量化感知蒸馏（QAD）能恢复 sub-3-bit 量化损失的短问答性能，但数学与代码推理仍严重受损——长生成常退化成重复循环，耗尽解码预算也解不完。根因是量化放大的暴露偏差：QAD 在固定语料前缀上训练，而量化偏差沿模型自身自回归轨迹复利累积。</p>
+<p><strong>方法</strong>：on-policy 蒸馏（OPD）阶段：从 QAD checkpoint 出发，学生通过部署时的量化前向路径生成，冻结的全精度教师在其自身前缀上给反馈，密集 token 级指导与任务验证器奖励结合——把教师监督放到"量化模型实际走到的地方"。</p>
+<p><strong>关键数字</strong>：4 个模型、2.79 与 1.88 有效比特下：MATH-500 的 BF16 性能保持率从 35% 提到 70%，HumanEval 从 66% 提到 91%，且短问答性能不丢；同预算对比下推理增益显著超继续 teacher-forced QAD。</p>
+<p><strong>为什么值得看</strong>：sub-3-bit 推理从"能答题"到"能推理"的关键一步，训练范式跟着部署精度走的思路很干净。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.26708">Train Where the Quantized Model Goes: On-Policy Distillation for Low-Bit Reasoning</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.26708">阅读原文 ↗</a></p>
+</body>
+</html>

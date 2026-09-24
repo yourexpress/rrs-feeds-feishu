@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZeroGate: Trust-Preserving Fast Paths for Governed AI Agent Runtimes</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ZeroGate: Trust-Preserving Fast Paths for Governed AI Agent Runtimes</h1>
+<p class="meta-line">arXiv (cs.AI) · 2026-09-23 · 论文PDF</p>
+
+<p>ZeroGate：治理型 AI Agent 运行时的信任保留快路径，精确动作审批与本地准入分离以缩短派发边界。</p>
+<blockquote><p>Moving authorization earlier can shorten an agent's dispatch boundary without removing authorization work. It can also admit an action whose payload, authority, or relevant state has changed. ZeroGate separates exact-action approval from durable local admission: an issuer signs a short-lived ActionPass, and a trusted runtime adapter reconstructs the final action before a local gate checks its binding and consumes its nonce. A SQLite transaction couples nonce consumption, applicable quota updates, and an admission receipt. We state a conditional decision-preservation proposition: successful local admission implies that a specified synchronous policy would authorize the same action at the admission point, provided approval is sound, all policy dependencies are represented and current, observations are faithful, and consumption is atomic. The implementation alone establishes neither current-world freshness nor exactly-once remote effects. Evaluation separates authored semantic fixtures, controlled concurrency and crash experiments, and an Azure Blob study comparing synchronous and prepared execution through the same issuer and gate. Both modes mint an exact-action pass; lifecycle late…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.25443">阅读原文 ↗</a></p>
+</body>
+</html>

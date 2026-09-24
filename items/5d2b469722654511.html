@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dynamic Slack-Aware Clocking for Near-Threshold Tensor Processing Units (TPUs)</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Dynamic Slack-Aware Clocking for Near-Threshold Tensor Processing Units (TPUs)</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-09-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：张量处理器（TPU）在近阈值区（NTC）运行可大幅降能耗，但对工艺偏差与数据活动高度敏感；传统固定全局时钟按最坏情况留时序裕量，而大多数运算远早于时钟沿完成，裕量大量浪费。</p>
+<p><strong>方法</strong>：DSAC 主动式框架：用轻量的 Hamming 距离、最高有效位（MSB）与混合预测器估计单个 MAC 运算的时延敏感度，分成三个时序档位；在固定全局参考时钟下用 dummy-hold 周期局部执行档位约束，无需全局时钟重调或变频；闭环反馈控制器监控时序违例、运行时更新档位阈值。</p>
+<p><strong>关键数字</strong>：量化 DNN 基准上 MSB 预测器平均精度损失仅 1%（激进性能点）；能效最高提升 1.55×（2.15× 频率缩放下）；面积开销低至 13%。</p>
+<p><strong>为什么值得看</strong>：低电压边缘张量处理器的细粒度时序自适应方案，对功耗受限端侧加速器设计有直接参考价值。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.26644">Dynamic Slack-Aware Clocking for Near-Threshold Tensor Processing Units (TPUs)</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.26644">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -5,8 +5,51 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>每天一条，汇总当日两个检索源（AI 技术报告 + 高效计算文献）的重点内容。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 23 Sep 2026 23:29:18 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 10:53:34 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/daily-summary.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日精选 · 2026-09-24</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-09-24.html</link>
+      <guid isPermaLink="false">urn:daily-summary:2026-09-24</guid>
+      <pubDate>Thu, 24 Sep 2026 23:05:00 +0800</pubDate>
+    <category>每日精选</category>
+      <description>&lt;h2&gt;当日检索概况&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;AI 技术报告库：检索 11 条，入选 5 条（其余当日条目落入"其它"未单列推荐）。&lt;/li&gt;
+&lt;li&gt;高效计算库：检索 60 条，入选 20 条，主题集中在推理系统（KV 缓存/故障恢复/显存分层）、量化与确定性、结构化剪枝与 MoE 稀疏化、边缘 NPU 与近阈值硬件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;重点推荐&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Claude 自主发现类 CRISPR 新酶系统&lt;/strong&gt;：Anthropic 自建生命科学实验室后首批成果——Claude 在 jumbo phage 逆转录酶上注意到此前无人报告的"非编码 DNA 重复阵列 + 附属蛋白"组合，CRISPR 先驱张锋撰文背书，AI 代理自主科学发现的标志性事件。&lt;a href="https://www.anthropic.com/news/claude-discovers-novel-enzyme-system"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gemini 3.8 Flash / Flash-Lite TTS&lt;/strong&gt;：自然语言从零设计音色、逐行表演控制、原生双说话人剧本，2000+ 生产级音色库；TTS 竞争焦点转向"可导演、可确权"。&lt;a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Private AI Compute 云端持久加密记忆&lt;/strong&gt;：密钥仅存用户设备、secure enclave 隔离内存内临时解密，把"无状态隐私计算"升级为跨设备持久记忆层，附防篡改软件公示与第三方审计。&lt;a href="https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;细粒度 MoE 只需 2/3 专家&lt;/strong&gt;：12 检查点 × 11 基准的系统实证——均匀保留约 2/3 已选专家保住 98.8% 性能、实测 1.2–1.7× 加速，一行整数改动即可落生产。&lt;a href="https://arxiv.org/abs/2609.25809"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dynamo 快速故障恢复&lt;/strong&gt;：引擎快照 + GPU Memory Service 解耦显存所有权，副本恢复 &amp;lt;7 秒、比热重启快 13–29×、固定仅占 4–8 GiB 显存，回放生产 trace 可挽回 79% 恢复损失 GPU 时。&lt;a href="https://arxiv.org/abs/2609.25451"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HBM/高带宽 Flash 冷热分层&lt;/strong&gt;：agentic KV"热集常读、冷池恢复才读"的访问模式 + 封装内 HBF 容量优势，每 GPU 并发会话 24×、恢复延迟仅 ~0.1ms、每节点省 7.6kW 读功率。&lt;a href="https://arxiv.org/abs/2609.25782"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;跨 GPU 架构推理确定性&lt;/strong&gt;：固定形状归约顺序的 fused-upcast GEMM 使线性层在 Ampere/Ada/Hopper 逐位一致，端到端还比现有方案快 1.17–3.1×。&lt;a href="https://arxiv.org/abs/2609.25624"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;微软机器人推理卸载实测&lt;/strong&gt;：首个机器人负载系统研究，挑战"必须板载 GPU"假设——卸载到边缘/云提升任务成功率与续航，Physical AI Toolchain 新增 K8s 分布式卸载推理。&lt;a href="https://www.microsoft.com/en-us/research/blog/offloaded-inference-for-real-world-physical-ai-robotics/"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;主题速览&lt;/h2&gt;
+&lt;p&gt;当日 AI 库被语音与"AI 自主发现"占满——Gemini 3.8 TTS 与 Qwen-Audio-3.1（误响应率 73%→13%）前后脚发布，Claude 的酶系统发现则把"代理做科研"推到台前，隐私侧 DeepMind 补上云端持久记忆层。高效计算库围绕推理系统纵深展开：KV 缓存（CompKV、PatchKV、HBF 冷热分层）、故障恢复（Dynamo）、prefill/decode 量化解耦与 MoE 专家稀疏化各成一线；"确定性与复现"罕见地出现两篇独立实证（跨 GPU 非确定性、跨精度发散），边缘侧则有 STM32N6 NPU 线段检测与近阈值 TPU 时钟自适应两篇硬核工程。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2>当日检索概况</h2>
+<ul>
+<li>AI 技术报告库：检索 11 条，入选 5 条（其余当日条目落入"其它"未单列推荐）。</li>
+<li>高效计算库：检索 60 条，入选 20 条，主题集中在推理系统（KV 缓存/故障恢复/显存分层）、量化与确定性、结构化剪枝与 MoE 稀疏化、边缘 NPU 与近阈值硬件。</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>Claude 自主发现类 CRISPR 新酶系统</strong>：Anthropic 自建生命科学实验室后首批成果——Claude 在 jumbo phage 逆转录酶上注意到此前无人报告的"非编码 DNA 重复阵列 + 附属蛋白"组合，CRISPR 先驱张锋撰文背书，AI 代理自主科学发现的标志性事件。<a href="https://www.anthropic.com/news/claude-discovers-novel-enzyme-system">链接</a></li>
+<li><strong>Gemini 3.8 Flash / Flash-Lite TTS</strong>：自然语言从零设计音色、逐行表演控制、原生双说话人剧本，2000+ 生产级音色库；TTS 竞争焦点转向"可导演、可确权"。<a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/">链接</a></li>
+<li><strong>Private AI Compute 云端持久加密记忆</strong>：密钥仅存用户设备、secure enclave 隔离内存内临时解密，把"无状态隐私计算"升级为跨设备持久记忆层，附防篡改软件公示与第三方审计。<a href="https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/">链接</a></li>
+<li><strong>细粒度 MoE 只需 2/3 专家</strong>：12 检查点 × 11 基准的系统实证——均匀保留约 2/3 已选专家保住 98.8% 性能、实测 1.2–1.7× 加速，一行整数改动即可落生产。<a href="https://arxiv.org/abs/2609.25809">链接</a></li>
+<li><strong>Dynamo 快速故障恢复</strong>：引擎快照 + GPU Memory Service 解耦显存所有权，副本恢复 &lt;7 秒、比热重启快 13–29×、固定仅占 4–8 GiB 显存，回放生产 trace 可挽回 79% 恢复损失 GPU 时。<a href="https://arxiv.org/abs/2609.25451">链接</a></li>
+<li><strong>HBM/高带宽 Flash 冷热分层</strong>：agentic KV"热集常读、冷池恢复才读"的访问模式 + 封装内 HBF 容量优势，每 GPU 并发会话 24×、恢复延迟仅 ~0.1ms、每节点省 7.6kW 读功率。<a href="https://arxiv.org/abs/2609.25782">链接</a></li>
+<li><strong>跨 GPU 架构推理确定性</strong>：固定形状归约顺序的 fused-upcast GEMM 使线性层在 Ampere/Ada/Hopper 逐位一致，端到端还比现有方案快 1.17–3.1×。<a href="https://arxiv.org/abs/2609.25624">链接</a></li>
+<li><strong>微软机器人推理卸载实测</strong>：首个机器人负载系统研究，挑战"必须板载 GPU"假设——卸载到边缘/云提升任务成功率与续航，Physical AI Toolchain 新增 K8s 分布式卸载推理。<a href="https://www.microsoft.com/en-us/research/blog/offloaded-inference-for-real-world-physical-ai-robotics/">链接</a></li>
+</ul>
+<h2>主题速览</h2>
+<p>当日 AI 库被语音与"AI 自主发现"占满——Gemini 3.8 TTS 与 Qwen-Audio-3.1（误响应率 73%→13%）前后脚发布，Claude 的酶系统发现则把"代理做科研"推到台前，隐私侧 DeepMind 补上云端持久记忆层。高效计算库围绕推理系统纵深展开：KV 缓存（CompKV、PatchKV、HBF 冷热分层）、故障恢复（Dynamo）、prefill/decode 量化解耦与 MoE 专家稀疏化各成一线；"确定性与复现"罕见地出现两篇独立实证（跨 GPU 非确定性、跨精度发散），边缘侧则有 STM32N6 NPU 线段检测与近阈值 TPU 时钟自适应两篇硬核工程。</p>]]></content:encoded>
+    </item>
     <item>
       <title>每日精选 · 2026-09-23</title>
       <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-09-23.html</link>

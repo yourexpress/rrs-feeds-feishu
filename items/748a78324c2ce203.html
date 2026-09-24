@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fast Matrix Multiplication in fp8: Certified Coefficient Optimization and Measured Error</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Fast Matrix Multiplication in fp8: Certified Coefficient Optimization and Measured Error</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：Strassen 型快速矩阵乘在相同精确乘积与乘法次数下有多种实现（换基改变系数几何），fp8 误差却大不相同——该跑哪一个？经典稳定性只控最坏情形 ℓ₁ 增长，此前的优化器只能称"概率最优"。</p>
+<p><strong>方法</strong>：给每个实现附着系数泛函 Φ（系数几何的标量摘要），在换基轨道上最小化——这是 Hadamard 流形上的 Kempf–Ness 问题，可以用精确矩映射零点认证全局 Φ 最优；再用显式块缩放 e4m3 误差模型把 Φ 与实测 fp8 误差联系起来。</p>
+<p><strong>关键数字</strong>：全局最优 Φ_min=200/9，de Groote 分类把最优性扩展到所有精确实秩 7 的 2×2 分解；任何该类实现的 Φ 预测 RMS 常数至少为立方算法的 5/3 倍；两个约 70B 模型的 deep_gemm 内核上，该实现消除经典 Strassen 相对干净模型 NLL 超额的 10–55%。</p>
+<p><strong>为什么值得看</strong>：把"算法实现选择"从调参变成数学认证的设计问题，为低精度快速矩阵乘提供了独立于其它优化轴的新维度。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.26077">Fast Matrix Multiplication in fp8: Certified Coefficient Optimization and Measured Error</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.26077">阅读原文 ↗</a></p>
+</body>
+</html>

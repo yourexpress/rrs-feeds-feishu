@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Disaggregated Quantization: Specializing LLM Prefill and Decode</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Disaggregated Quantization: Specializing LLM Prefill and Decode</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：prefill 奖励低精度算术（加速 prompt 处理），decode 奖励紧凑权重（减少生成期内存流量）——一个量化配置能否对两个阶段分别专门化？</p>
+<p><strong>方法</strong>：解耦式量化（DQ）：按阶段专门化计算格式、权重与存储放置。decode 去掉激活量化提升 decode 密集任务精度而不增推理成本；单独训练计算原生的 prefill 权重。为在单设备容纳额外 checkpoint，ODP 从 SSD 流式加载 prefill 权重、按 prompt 长度摊销加载时间。</p>
+<p><strong>关键数字</strong>：Qwen3.8-27B 上训练 NVFP4 prefiller 使 1-bit decode 的 MMLU-Pro 提升 32.5 分、MMMU-Pro 提升 35.3 分；llama.cpp 8K prompt 下 TTFT 加速 1.78×；在 vLLM 中评估解耦 serving 精度，并用最大 2.8T 参数模型的后训练量化验证共享权重格式的解耦。</p>
+<p><strong>为什么值得看</strong>：把"prefill/decode 分离"从调度层面推进到量化格式层面，是低显存设备跑大模型的新轴。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.26333">Disaggregated Quantization: Specializing LLM Prefill and Decode</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.26333">阅读原文 ↗</a></p>
+</body>
+</html>

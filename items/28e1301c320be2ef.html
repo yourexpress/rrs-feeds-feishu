@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond Scalar Sensitivity: Activation-Aware Mixed-Precision LLM Quantization with Cross-Layer Refinement</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Beyond Scalar Sensitivity: Activation-Aware Mixed-Precision LLM Quantization with Cross-Layer Refinement</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：混合精度权重量化通常被表述为多选背包问题（MCKP），但现有求解器依赖标量敏感度代理——把每个权重矩阵的 Hessian 塌缩成单个数、且逐模块独立处理。论文证明这有结构性缺陷。</p>
+<p><strong>方法</strong>：CASA 两阶段方案。阶段一用 Kronecker 分解 Hessian 推导的激活感知指标替代标量代理，把 MCKP 化为连续松弛有闭式解的形式；阶段二做跨层感知的局部搜索，用端到端模型 loss 评估比特宽度更新。</p>
+<p><strong>关键数字</strong>：最优标量代理相对完整激活感知二次型的乘性失真界可达 √(κ(A)κ(B))，典型 LLM 模块间在 10¹ 到 10¹³ 之间量级；超低比特（&lt;3 bit/权重）下 CASA 困惑度优于最新标量代理基线，零样本准确率增益与各模型平均条件数正相关。</p>
+<p><strong>为什么值得看</strong>：给"标量敏感度排序不可靠"补上了理论与实证双重证据，混合精度量化选型前值得先看这篇。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.25916">Beyond Scalar Sensitivity: Activation-Aware Mixed-Precision LLM Quantization with Cross-Layer Refinement</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.25916">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Don't let your Memory defy you: Fragmentation-Aware Serverless Allocation with Elastic Memory Locality</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Don't let your Memory defy you: Fragmentation-Aware Serverless Allocation with Elastic Memory Locality</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-09-23 · 论文PDF</p>
+
+<p>内存碎片感知的 serverless 弹性内存分配：缓解 CPU-内存解耦产生的外部碎片与残余容量浪费。</p>
+<blockquote><p>Serverless platforms commonly rely on bundled, memory-centric configurations, where CPU capacity follows the specified memory size. Resource decoupling reduces this waste, but can create external fragmentation by producing diverse CPU-memory shapes that leave residual capacity stranded across nodes. Memory disaggregation and tiering can turn these resource holes into usable capacity by enabling elastic memory locality, where instances use different mixes of local and remote memory. In this paper, we present Memoryless, a fragmentation-aware resource manager that exposes memory locality as a serverless control-plane primitive. Memoryless jointly selects and places function variants that differ in their compute allocation and memory-locality ratio. This allows the scheduler to match instance shapes to fragmented node capacity while preserving SLOs. We implement Memoryless on top of Knative and evaluate it with trace-driven workloads. Compared to state-of-the-art serverless placement frameworks, Memoryless reduces node usage by up to 40% in steady state and 46% at peak, while keeping SLO violations within 3%. It also reduces CPU stranding by 44%, showing that elastic memory locality c…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.26476">阅读原文 ↗</a></p>
+</body>
+</html>

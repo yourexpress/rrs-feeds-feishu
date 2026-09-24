@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hot-Cold Tiering of HBM and High Bandwidth Flash for Agentic LLM Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Hot-Cold Tiering of HBM and High Bandwidth Flash for Agentic LLM Serving</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-09-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：agentic LLM serving 会话多轮、行动间空闲但必须保留完整上下文；GPU 显存不足导致非活跃 KV 被逐出，恢复会话要么重算要么走慢速互连传输。</p>
+<p><strong>方法</strong>：利用高带宽 Flash（HBF，封装内 3D-NAND，容量比 HBM 高数量级、读带宽相当但读能耗高、写寿命有限）：分析发现 agentic KV 有清晰冷热模式——小热集每步解码都读、大冷池只在会话恢复时读。于是热集放 HBM、冷池放 HBF，在 GPU 内存层内构建冷热 KV 分层。</p>
+<p><strong>关键数字</strong>：Qwen3-Coder-30B-A3B 的 agentic 负载上，token 间隔 14 ms、会话恢复延迟在 prefill 之上仅约 0.1 ms、每 GPU 并发会话 24×；每 8-GPU 节点读功率省 7.6 kW。</p>
+<p><strong>为什么值得看</strong>：HBM 容量墙下的分层思路明确——HBF 是 HBM 的冷层补充而非替代，对 agentic serving 基础设施有直接落地意义。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.25782">Hot-Cold Tiering of HBM and High Bandwidth Flash for Agentic LLM Serving</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.25782">阅读原文 ↗</a></p>
+</body>
+</html>

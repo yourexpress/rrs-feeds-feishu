@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DHSched: Stateless Control for Stateful Real-Time Avatar Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DHSched: Stateless Control for Stateful Real-Time Avatar Serving</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-09-23 · 论文PDF</p>
+
+<p>实时数字人 serving 的无状态控制面 DHSched：会话重分配不破坏 GPU 有状态执行，支撑弹性扩缩。</p>
+<blockquote><p>Real-time avatar services run long-lived, GPU-backed sessions that transform a continuous text stream into speech, facial motion, rendered video, and RTC media. Elastic operation repeatedly reassigns these sessions across Workers. A reassignment updates shared placement state while the previous GPU runtime and RTC connection remain alive, opening a gap between control-plane assignment and execution authority. A stateful controller serializes ownership by retaining per-session authority, placing that state on the controller's scaling and failover path. We present DHSched, a control plane that manages long-lived stateful sessions through stateless peer Dispatch replicas. DHSched externalizes session ownership as a generation identified by (WorkerID, epoch). Dispatch conditionally commits each generation. Infer-Controller claims and revalidates the same generation before releasing state-advancing input. A stale runtime loses execution authority even if it remains alive. DHSched ranks candidates from periodically refreshed load views while keeping capacity admission authoritative. Recovery advances the same generation path via source-epoch guards and source-independent reconstruction. …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.26363">阅读原文 ↗</a></p>
+</body>
+</html>

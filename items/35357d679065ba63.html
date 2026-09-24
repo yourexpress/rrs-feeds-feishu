@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GeoPair: Geometry-Preserving Cross-Layer Factorization for Training-Free Transformer Compression</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>GeoPair: Geometry-Preserving Cross-Layer Factorization for Training-Free Transformer Compression</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：Transformer 存在跨层冗余，但训练后压缩流水线要么孤立地逐层优化、要么用启发式分组，无视各层激活几何的层特异性。</p>
+<p><strong>方法</strong>：GeoPair，有原则的免训练框架：顺序优化跨层权重配对与共享字典分解——不是强行让相邻层共享基，也不是启发式合并激活统计，而是识别结构兼容的投影、学一个能更好保持各层校准几何的共享表示；结合结构化稀疏得到高效权重分解。</p>
+<p><strong>关键数字</strong>：在多架构、多规模、多模态上取得 state-of-the-art，一致优于独立结构化权重分解与启发式分组的成对权重分解基线。</p>
+<p><strong>为什么值得看</strong>：用收敛的优化驱动流水线替代启发式工程策略，为可扩展的免训练 Transformer 压缩给了理论化落点。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.25963">GeoPair: Geometry-Preserving Cross-Layer Factorization for Training-Free Transformer Compression</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.25963">阅读原文 ↗</a></p>
+</body>
+</html>

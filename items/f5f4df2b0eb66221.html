@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accelerating the Mitigation of LLM Inference Nondeterminism Across GPU Architectures</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Accelerating the Mitigation of LLM Inference Nondeterminism Across GPU Architectures</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-09-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：同一模型、同一 prompt、同一软件栈，贪心解码在不同 GPU 上却输出不一致——根因是浮点非结合性与硬件相关的内核选择（不同并行归约顺序 + 未指定的 Tensor Core 算术），舍入差异足以翻转输出 token。</p>
+<p><strong>方法</strong>：一组固定配置的 fused-upcast GEMM 内核：从显存载入 16 位权重、在寄存器升位为 FP32、按纯函数于问题形状的归约顺序做 IEEE-754 累加，使跨架构可复现性归约为正确的 IEEE-754 算术，而非让舍入差异保持在翻转阈值以下。</p>
+<p><strong>关键数字</strong>：线性层输出在 NVIDIA Ampere、Ada、Hopper 上逐位一致；端到端比此前最优方案快 1.17–3.1×；权重显存流量减半。</p>
+<p><strong>为什么值得看</strong>：跨架构确定性推理从"调参碰运气"变成有理论保证的工程方案，对推理评测复现与部署合规都有直接价值。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.25624">Accelerating the Mitigation of LLM Inference Nondeterminism Across GPU Architectures</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.25624">阅读原文 ↗</a></p>
+</body>
+</html>

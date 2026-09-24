@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NPLSD: Accelerating Line-Segment Detection on NPU Microcontrollers</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>NPLSD: Accelerating Line-Segment Detection on NPU Microcontrollers</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-09-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：线段检测是机器人/导航/工业检测的基础，但 transformer 检测器依赖 attention、网格采样与归一化——都是 STM32N6 Neural-ART 这类卷积导向 NPU 不支持的算子，MCU 上部署不可行。</p>
+<p><strong>方法</strong>：逐算子刻画架构失配（解码器自注意力单独就会产生 39 MB 分数张量、超片上内存）后，按一套方法论构建两个 NPU 兼容检测器：NPLSD-H 保留 LINEA 的 HGNetv2 卷积主干，transformer 头换成全卷积特征金字塔 + F-Clip 密集头；NPLSD-M 把 M-LSD-tiny 主干适配到支持算子集。</p>
+<p><strong>关键数字</strong>：ShanghaiTech Wireframe 训练下，2.63M 参数的 NPLSD-H sAP¹⁰=37.9（int8 35.9）；0.62M 的 NPLSD-M 达 41.9（int8 41.1）；ImageNet 预训练初始化单独贡献 4.6 个点。</p>
+<p><strong>为什么值得看</strong>：极致边缘 NPU 的算子约束逐条拆解 + 重建方案，是"硬件不支持就改架构"的部署工程范本。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.25022">NPLSD: Accelerating Line-Segment Detection on NPU Microcontrollers</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.25022">阅读原文 ↗</a></p>
+</body>
+</html>

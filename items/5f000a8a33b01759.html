@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decoupling Logical Masks from GPU Execution for Dynamic Block-Sparse Attention</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Decoupling Logical Masks from GPU Execution for Dynamic Block-Sparse Attention</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-09-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：视频扩散 Transformer（vDiT）推理昂贵，块稀疏注意力只算逻辑掩码选中的块，但逻辑块几何与 GPU 执行选择耦合，难以适应多变掩码与不同 GPU；运行时内核特化的准备开销又可能吞掉执行节省。</p>
+<p><strong>方法</strong>：Tessera 专用运行时，把逻辑掩码与 GPU 执行解耦：物理映射层将逻辑注意力块保留/合并/细分为适配掩码形状与 GPU 架构的物理 tile；任务组织层在 GPU 任务内分组调度以复用数据、暴露并行、让数据搬运与计算重叠；profile 引导的 regime 选择通过离线 profiling 查表低开销选执行计划。</p>
+<p><strong>关键数字</strong>：专用 CUDA 内核支持四代 NVIDIA GPU；在 2315 个真实注意力掩码与工业级视频扩散模型上，BSA 请求加速最高 6.79×。</p>
+<p><strong>为什么值得看</strong>：视频生成推理加速的系统级答卷，"逻辑-物理解耦"的思路对其它动态稀疏负载同样适用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.25869">Decoupling Logical Masks from GPU Execution for Dynamic Block-Sparse Attention</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.25869">阅读原文 ↗</a></p>
+</body>
+</html>

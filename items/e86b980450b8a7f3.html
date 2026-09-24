@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Greedy Decoding Is Not Precision-Invariant: Cross-Precision Output Divergence in LLM Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Greedy Decoding Is Not Precision-Invariant: Cross-Precision Output Divergence in LLM Inference</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：LLM 贪心解码被默认当作确定性的——但同一模型、同一 prompt、同一硬件，BF16 与 FP16 输出却不一致。</p>
+<p><strong>方法</strong>：对 6 个模型（1.1B–7B、四个家族；发散特性另在 12B 上刻画）×3 个基准做跨精度实证，建立经验误差传播分析：22 层累积的 body 误差并不能区分翻转/不翻转步，结果主要取决于 LM head 处 top-2 logit 间距相对两候选间方向扰动的比例；由此给出 5 个可检验预测并全部被实验证实。</p>
+<p><strong>关键数字</strong>：49–100% 的 prompt 发散，单个 token 翻经常级联成轨迹级发散；低开销干预"选择性 FP32 LM head 重算"（仅当间距低于阈值触发）在 A10G 上提升 22–36 个百分点完全一致率（L4/A100 上 12–21 pp），batch≤4 时延迟开销 &lt;4%；batch≥8 或端到端 FP8 下收益消失。</p>
+<p><strong>为什么值得看</strong>：量化部署的"复现性"比直觉脆弱得多，这篇文章把何时能救、何时救不了划得很清楚。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.26621">Greedy Decoding Is Not Precision-Invariant: Cross-Precision Output Divergence in LLM Inference</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.26621">阅读原文 ↗</a></p>
+</body>
+</html>

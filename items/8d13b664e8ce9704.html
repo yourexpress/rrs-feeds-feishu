@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magnitude Profile Pruning: Calibration-Free Structured Attention Head Removal for Transformer Compression</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Magnitude Profile Pruning: Calibration-Free Structured Attention Head Removal for Transformer Compression</h1>
+<p class="meta-line">arXiv (cs.CL) · 2026-09-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：结构化剪注意力头是硬件友好的 Transformer 压缩手段，但现有头重要性度量需要校准数据、梯度计算或 Hessian 估计——开销大且依赖数据。</p>
+<p><strong>方法</strong>：幅值剖面（MP）打分：对权重行范数做统计离群检测，落在总体主体内的头被剪、呈现离群范数（承载不成比例表征容量）的头被保留；MP-G 变体处理 GQA，把共享 KV 组分数分摊到关联的 query 头。</p>
+<p><strong>关键数字</strong>：五个模型、WikiText-2 困惑度、12.5–50% 头稀疏度下：OPT-6.7B 全稀疏度最优（12.5%: 18.46；25%: 27.87；50%: 152.0），RoBERTa-large 在 12.5%/25% 上 7.27/10.28，胜过 Wanda-Head、SparseGPT-Head 等依赖校准的基线；零前向/校准/梯度开销；50% 稀疏最多省 16% 参数与 50% 注意力 FLOP。</p>
+<p><strong>为什么值得看</strong>：纯权重统计就能打平甚至超过数据依赖方法——零成本的结构化剪枝基线，值得先跑它再决定要不要上复杂方法。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.26177">Magnitude Profile Pruning: Calibration-Free Structured Attention Head Removal for Transformer Compression</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.26177">阅读原文 ↗</a></p>
+</body>
+</html>

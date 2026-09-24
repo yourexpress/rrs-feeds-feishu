@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CompKV: Compensation-Aware KV Selection for Long-Context LLM Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CompKV: Compensation-Aware KV Selection for Long-Context LLM Inference</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：稀疏注意力通常先按注意力质量选 token、再对未选 token 做粗粒度补偿，这种解耦设计忽略了二者交互——选择应优先挑"漏掉会留下最大补偿误差"的 token。</p>
+<p><strong>方法</strong>：CompKV，首个补偿感知的稀疏注意力框架：把 token 分块，理论证明块级均值补偿的残差由块注意力质量与块内 logit 方差共同决定；用紧凑块级统计量近似该残差得到可部署的选择准则，并配异步高效实现。</p>
+<p><strong>关键数字</strong>：RULER 与 LongBench-Pro 上在评测的稀疏基线中表现最佳；相对全注意力最高 6.85× 的自注意力加速。</p>
+<p><strong>为什么值得看</strong>：KV 缓存内存带宽是长上下文推理瓶颈，这篇把"选择"与"补偿"联合优化，思路对长上下文 serving 系统设计有直接启发。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.26300">CompKV: Compensation-Aware KV Selection for Long-Context LLM Inference</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.26300">阅读原文 ↗</a></p>
+</body>
+</html>

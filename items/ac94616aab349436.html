@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PatchKV: Efficient KV Cache Recovery for Dynamically Edited LLM Contexts</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>PatchKV: Efficient KV Cache Recovery for Dynamically Edited LLM Contexts</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-09-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：长时运行的 LLM agent 工作流经常修改上下文的中间片段但保留长后缀；改动后的因果历史与旋转位置使后缀的离线 KV 状态无法精确复用——全量重算浪费 prefill 工作，无差别复用又传播陈旧状态。</p>
+<p><strong>方法</strong>：PatchKV，profile 引导的后缀保留式修订恢复系统：把相邻上下文版本分解为精确前缀、更新段与对齐后缀；用离线的长度条件漂移模型预测编辑局部脏区，辅以从存储注意力中选出的稀疏非局部块，块取整为固定修复集；其余后缀块用冻结的逐块精度标签从 CPU 内存恢复，走反量化 + RoPE 校正 + KV 页放置的融合路径。</p>
+<p><strong>关键数字</strong>：三个模型 × 三个长上下文问答负载上，恢复 TTFT 平均加速 2.51–3.85×（相对全后缀重算）、1.26–2.06×（相对 CacheBlend）；9 个设置中 6 个 F1 持平或更高，其余差距在 1.36 分内。</p>
+<p><strong>为什么值得看</strong>：agent 反复改写历史是常态而非例外，这篇把"增量修 KV"做成了可部署系统。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.26219">PatchKV: Efficient KV Cache Recovery for Dynamically Edited LLM Contexts</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.26219">阅读原文 ↗</a></p>
+</body>
+</html>
