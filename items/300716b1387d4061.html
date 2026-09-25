@@ -22,9 +22,11 @@
 <h1>A Hybrid State-Space Approach for Census-Tract Population Estimation</h1>
 <p class="meta-line">arXiv（Jackson R. Ye 等，cs.CV） · 2026-08-30 · 论文PDF</p>
 
-<p>Sequence models---the architecture family behind large language models and, increasingly, state-of-the-art image recognition---have redefined how machines learn from high-dimensional data.</p>
-<blockquote><p>Sequence models---the architecture family behind large language models and, increasingly, state-of-the-art image recognition---have redefined how machines learn from high-dimensional data. Yet population estimation from satellite imagery, a task that underpins infrastructure planning, public health, and disaster response, has scarcely benefited: leading systems still bind population to a uniform raster, disaggregating census counts onto grid cells through weighting surfaces built from ancillary data (e.g., in WorldPop and LandScan), which can introduce systematic spatial bias, and predicting population per grid cell with convolutional neural networks. In this approach, the administrative-unit structure in which the census was actually collected is discarded. We close this gap with MambaPop, which renders each administrative unit as a single polygon-masked satellite image and treats tract-level population estimation as a sequence-modeling problem over its image patches, pairing each tract image directly with its population label and eliminating the disaggregation step entirely. Built on the hybrid state-space--attention MambaVision backbone, MambaPop is, to our knowledge, the first …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：卫星影像人口估计主流做法是先把普查数拆到均匀栅格再用 CNN 逐格预测，行政单元的原生结构被丢弃、易引入系统空间偏差——能否直接按行政单元学人口？</p>
+<p><strong>方法</strong>：MambaPop：把每个人口普查小区渲染为单张多边形掩膜卫星图，将图块序列化后用混合状态空间-注意力的 MambaVision 主干直接回归该小区人口，彻底取消栅格化分解步骤。</p>
+<p><strong>关键数字</strong>：覆盖 2020 年普查美国本土约 84,000 个普查小区；MAE 1,141 人/小区，与最强卷积基线 YOLOv11（1,122）基本持平；系首个将 Mamba 混合架构用于人口估计的工作。</p>
+<p><strong>为什么值得看</strong>：为「行政单元级人口估计」换了建模范式，序列建模路线的精度已与卷积 SOTA 打平。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.30094v1">A Hybrid State-Space Approach for Census-Tract Population Estimation</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.30094v1">阅读原文 ↗</a></p>
 </body>
 </html>

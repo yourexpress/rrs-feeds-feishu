@@ -22,9 +22,11 @@
 <h1>Rust's Type Checker Implementation Is Unsound: An Empirical Study on Soundness Bugs in rustc</h1>
 <p class="meta-line">arXiv（Yusung Sim 等，cs.SE） · 2026-08-28 · 论文PDF</p>
 
-<p>Rust is claimed to be a type-sound language capable of preventing various undesirable behaviors, including memory bugs.</p>
-<blockquote><p>Rust is claimed to be a type-sound language capable of preventing various undesirable behaviors, including memory bugs. However, rustc, the official Rust compiler, is not immune to defects; it contains soundness bugs, where the compiler accepts programs that should be rejected during type checking. In this work, we present an empirical study of 30 issues that report potential soundness bugs in rustc, collected from the GitHub issue tracker between January 1, 2022 and September 1, 2025. We analyze each issue in depth, focusing on its affected feature, symptom (how the feature is mishandled), consequence (the resulting undesirable behavior), triggering features, community consensus regarding whether it is a bug, and lifecycle, including introduction, discovery, and fix. Furthermore, we investigate existing artifacts, including implementations such as AddressSanitizer, Miri, Chalk, and a-mir-formality, alongside documentation such as the Rust Reference, the FLS, and Rust RFCs to assess their potential as oracles for testing the type soundness of rustc. Our key findings indicate that: (1) Certain soundness bugs, typically triggered by implied bounds or trait objects, compromise memory …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：Rust 号称类型安全，但官方编译器 rustc 确实存在「本应拒绝却被接受」的健全性 bug——它们长什么样、如何被发现、现有工具能抓住多少？</p>
+<p><strong>方法</strong>：实证研究 2022-01 至 2025-09 期间 GitHub issue 中 30 个疑似健全性 bug，逐案分析受影响特性、症状、后果、触发条件与生命周期；并评估 AddressSanitizer、Miri、Chalk、a-mir-formality 及官方文档作为测试谕示的潜力。</p>
+<p><strong>关键数字</strong>：30 个案例；implied bounds 与 trait object 触发的 bug 可危及内存安全；多数 bug 自特性引入起潜伏很久才被发现；Chalk 与 a-mir-formality 尚不成熟；现有文档常无法精确描述语义。</p>
+<p><strong>为什么值得看</strong>：对「Rust 保证内存安全」给出冷静的边界画像，对语言工具链与形式化验证从业者都很有参考价值。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.28713v1">Rust's Type Checker Implementation Is Unsound</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.28713v1">阅读原文 ↗</a></p>
 </body>
 </html>

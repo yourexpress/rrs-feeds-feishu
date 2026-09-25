@@ -22,9 +22,11 @@
 <h1>A Method for Layer Bit-Width Allocation in LLM Quantization via Performance Maximization Under a Quality-Degradation Constraint</h1>
 <p class="meta-line">arXiv（Artem Safronov，cs.LG） · 2026-08-28 · 论文PDF</p>
 
-<p>This paper proposes a layer bit allocation method for Gemma-3-1B, formulating the problem as performance maximization (latency decrease) given a degradation budget constraint (allowable level of generation quality loss).</p>
-<blockquote><p>This paper proposes a layer bit allocation method for Gemma-3-1B, formulating the problem as performance maximization (latency decrease) given a degradation budget constraint (allowable level of generation quality loss). This approach is different from time- and resource-consuming uniform layer quantization methods that are used in the literature (like GPTQ or AWQ) or allocation methods without proven performance-accelerating effect (like MixLLM or TorchAO). The layer sensitivity profile resulting from our prior work SA-PTQ is applied using the activation pass-through mode inside TensorRT-LLM. For each layer precision is determined individually in blocks, according to a grouping introduced in the prior step (5+5, 10+10, all26), differentiating the contribution of FFN, Attention, and lm_head to the overall speedup. The clock speed was measured for 13 W8A8 variants on an RTX 5090. We find that for FFN and lm_head the time cost of quantization/dequantization is compensated for by the use of integer arithmetic, while for short context lengths, the opposite holds true for Attention: an additional step of quantization slows execution down. We propose a manual implementation of SmoothQuan…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 逐层量化位宽如何分配，才能在给定质量损失预算下最大化推理加速——而非用 GPTQ/AWQ 这类统一量化或没有加速证明的混合方案？</p>
+<p><strong>方法</strong>：基于前作 SA-PTQ 的层敏感度画像，在 TensorRT-LLM 激活透传模式下按 FFN / Attention / lm_head 分组逐层定精度；在 RTX 5090 上实测 13 种 W8A8 变体时钟耗时，并手工实现了 lm_head 的 SmoothQuant。</p>
+<p><strong>关键数字</strong>：Gemma-3-1B 上最优方案 FFN 5+5 + lm_head：延迟降 11.0%、Top-1 一致率 98.90%、困惑度仅 +0.85%；接受更大损失时 FFN all26 + lm_head 加速可达 19.1%；短上下文下 Attention 量化反而变慢。</p>
+<p><strong>为什么值得看</strong>：把「逐层位宽」变成有实测背书的性能优化问题，并揭示 Attention 与 FFN 的量化收益方向相反这一反直觉结论。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.28003v1">A Method for Layer Bit-Width Allocation in LLM Quantization</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.28003v1">阅读原文 ↗</a></p>
 </body>
 </html>

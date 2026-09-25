@@ -22,9 +22,11 @@
 <h1>FFSlim: An Efficient and Lightweight Format for Multi-modal Data Storage and Retrieval</h1>
 <p class="meta-line">arXiv（Long Yang 等，cs.PF） · 2026-08-28 · 论文PDF</p>
 
-<p>With the rapid expansion of large-scale media-text corpora, multi-modal datasets increasingly require efficient storage and retrieval.</p>
-<blockquote><p>With the rapid expansion of large-scale media-text corpora, multi-modal datasets increasingly require efficient storage and retrieval. Existing formats such as Files, TDP, and FFRecord work adequately for uni-modal data but expose fundamental limitations in multi-modal settings, including storage redundancy, massive small-file overheads, cache-unfriendly layouts, and heavy index structures. These issues jointly inflate storage and memory usage and make I/O the dominant bottleneck in real training workloads. We present FFSlim, a lightweight format for storing and retrieving multi-modal data. FFSlim improves storage efficiency and loading throughput through three components: a unified file format that removes media duplication and avoids small-file proliferation; an adaptive retrieval mechanism that enables low-overhead pair-level access and accelerates repeated media loading; and a redundancy detection and aggregation module that converts existing datasets into the FFSlim layout. The experimental results demonstrate that FFSlim achieves 2.07x and 8.26x higher data loading and write throughput on average than the strongest baseline, with minimal storage and index overhead. Consequent…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：大规模图文多模态数据集沿用单模态存储格式（Files/TDP/FFRecord）时，媒体冗余、海量小文件、缓存不友好布局和沉重索引让 I/O 成为训练主瓶颈。</p>
+<p><strong>方法</strong>：FFSlim 轻量格式三件套：统一文件格式消除媒体重复与小文件爆炸；自适应检索机制支持低开销成对访问、加速重复媒体加载；冗余检测聚合模块把存量数据集转成 FFSlim 布局。</p>
+<p><strong>关键数字</strong>：平均数据加载吞吐较最强基线高 2.07×、写入吞吐高 8.26×；端到端训练时间在 7 个多模态模型上缩短 5.36%–14.18%，存储与索引开销极小。</p>
+<p><strong>为什么值得看</strong>：不动模型、只换存储格式就拿到两位数训练加速，是基础设施侧性价比极高的优化。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.27865v1">FFSlim: An Efficient and Lightweight Format for Multi-modal Data Storage and Retrieval</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.27865v1">阅读原文 ↗</a></p>
 </body>
 </html>

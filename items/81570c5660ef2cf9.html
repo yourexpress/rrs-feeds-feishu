@@ -22,9 +22,11 @@
 <h1>AI Hardware Accelerators for Large Language Models: Architectures and the Memory Wall</h1>
 <p class="meta-line">arXiv（Siddharth Patel 等，cs.AR） · 2026-08-28 · 论文PDF</p>
 
-<p>Large language models (LLMs) place unprecedented and still-growing demands on the hardware that trains and serves them.</p>
-<blockquote><p>Large language models (LLMs) place unprecedented and still-growing demands on the hardware that trains and serves them. This review surveys the full landscape of AI hardware accelerators for LLMs, including general-purpose GPUs, custom ASICs such as TPUs, Trainium, Groq, and Cerebras, reconfigurable FPGAs, processing-in-memory and near-memory architectures, and emerging neuromorphic and photonic approaches across cloud and edge deployment. Using the transformer's computational structure and roofline analysis as a common framework, we show that the decisive constraint on LLM acceleration is not arithmetic but memory: the autoregressive decode phase is bandwidth-bound, the key-value cache can rival the model weights in size, and data movement dominates energy. Comparing platforms on compute, memory, energy, programmability, and scalability, we find that no single architecture is optimal across workloads: GPUs remain the flexible default and the workhorse of training; domain-specific ASICs win at scale for stable, high-volume workloads; processing-in-memory is the most promising near-term response to the memory wall, entering systems as a heterogeneous complement; and neuromorphic and…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 加速器的真正瓶颈是什么？GPU、TPU/Trainium/Groq/Cerebras 等 ASIC、FPGA、存内/近存计算、类脑与光计算各适合什么位置？</p>
+<p><strong>方法</strong>：综述：以 Transformer 计算结构和 roofline 分析为统一框架，按算力、内存、能效、可编程性、可扩展性五个维度横向比较各平台在云与边缘的表现。</p>
+<p><strong>关键数字</strong>：核心论断而非数字——自回归解码是带宽受限、KV cache 可媲美模型权重体量、数据搬运主导能耗；没有哪种架构在所有负载下最优。</p>
+<p><strong>为什么值得看</strong>：「对 LLM 而言，内存系统已经成为计算机」——一篇把硬件全景和内存墙逻辑讲透的选型参考。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.28048v1">AI Hardware Accelerators for Large Language Models: Architectures and the Memory Wall</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.28048v1">阅读原文 ↗</a></p>
 </body>
 </html>

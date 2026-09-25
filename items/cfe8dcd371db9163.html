@@ -22,9 +22,11 @@
 <h1>Spectral Analysis for Sparse Matrix Computation: Insights and Potential</h1>
 <p class="meta-line">arXiv（Ruifeng Zhang 等，cs.PF） · 2026-08-29 · 论文PDF</p>
 
-<p>Sparse computations are fundamental to scientific computing, graph analytics, and machine learning, yet their performance is highly sensitive to the diverse sparsity and patterns.</p>
-<blockquote><p>Sparse computations are fundamental to scientific computing, graph analytics, and machine learning, yet their performance is highly sensitive to the diverse sparsity and patterns. This is because cache reuse, memory coalescing, and load balancing depend critically on the sparsity patterns. This work gives the first known exploration of the connections between sparse matrix computation and spectral analysis by treating sparse matrices as two-dimensional signals and analyzing their frequency-domain representations through Fast Fourier Transform. We show that spectral signatures uncover global structural characteristics that are not sufficiently captured by conventional spatial statistics and provide complementary information for understanding sparse computation performance. Experiments on incorporating spectral features into machine-learning-based SpMV format selection demonstrate the usefulness of such spectral analysis over a state-of-the-art spatial-only model. By uncovering the principled connections between spectral characteristics and sparse matrix computations, this work introduces a novel analytical perspective into sparse computation, and provides a new approach to enhancing…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：稀疏矩阵计算性能高度依赖稀疏模式，而传统空间统计（nnz、行均值等）对全局结构刻画不足——频域视角能否补上这块短板？</p>
+<p><strong>方法</strong>：首次把稀疏矩阵当二维信号，用 FFT 分析其频域表示，提取谱特征刻画全局结构；将谱特征加入基于机器学习的 SpMV 格式选择模型，与仅用空间特征的 SOTA 对比。</p>
+<p><strong>关键数字</strong>：在剪枝 LLM 解码场景，加入谱特征改进 kernel 选择，带来 1.035–1.245× 的 kernel 加速。</p>
+<p><strong>为什么值得看</strong>：给稀疏计算优化开了一条「谱分析」的新分析维度，方法轻量且即插即用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.29362v1">Spectral Analysis for Sparse Matrix Computation: Insights and Potential</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.29362v1">阅读原文 ↗</a></p>
 </body>
 </html>

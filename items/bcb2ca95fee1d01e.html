@@ -22,9 +22,11 @@
 <h1>FISGuard: Defending Against Membership Inference via Fixed Input Subspaces</h1>
 <p class="meta-line">arXiv（Haocheng Jiang 等，cs.CR） · 2026-08-28 · 论文PDF</p>
 
-<p>As large language models are increasingly adopted in federated learning, protecting user privacy while performing parameter-efficient fine-tuning on distributed private data has become an important challenge.</p>
-<blockquote><p>As large language models are increasingly adopted in federated learning, protecting user privacy while performing parameter-efficient fine-tuning on distributed private data has become an important challenge. Although clients only share gradients instead of directly uploading raw data, the shared gradients may still leak membership information about training samples. ProjRes (S&amp;P, 2026) further increases this risk: with less information and without accessing model outputs, an attacker can effectively distinguish members from non-members solely based on the projection residual between a candidate representation and the subspace induced by server-observable gradients. Existing defenses against membership inference mostly rely on gradient perturbation or regularization, which can not only degrade model utility but also fail to effectively defend against the membership inference attack introduced by ProjRes, which exploits the geometric structure of gradients. To address this issue, we propose FISGuard, a lightweight defense. Its key idea is to construct and fix a low-dimensional representation subspace using independent public data, thereby restricting the space through which private …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：联邦学习里客户端只共享梯度，但 ProjRes 攻击仅凭「候选表示与服务器可见梯度子空间的投影残差」就能区分训练成员——传统梯度扰动类防御对它失效，怎么办？</p>
+<p><strong>方法</strong>：FISGuard：用独立公开数据预先构造并固定一个低维表示子空间，限制私有表示经梯度暴露的空间，从而压缩成员与非成员的投影残差差异，同时保留下游任务所需主信息。</p>
+<p><strong>关键数字</strong>：在 3 个 NLP 数据集、2 个 LLM、Adapter 与 LoRA 两种微调策略下与 5 种代表性防御对比：多数场景把 ProjRes 攻击 AUC 压到接近随机猜测的 0.5，下游性能接近无防御模型，计算开销有限。</p>
+<p><strong>为什么值得看</strong>：针对几何结构类成员推断攻击的轻量对因防御，隐私-效用折中漂亮。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.27836v1">FISGuard: Defending Against Membership Inference via Fixed Input Subspaces</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.27836v1">阅读原文 ↗</a></p>
 </body>
 </html>

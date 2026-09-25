@@ -22,9 +22,11 @@
 <h1>Algorithmic Simplification for Million-Vertex Diffusion History Reconstruction</h1>
 <p class="meta-line">arXiv（Gökhan Göktürk，cs.SI） · 2026-08-28 · 论文PDF</p>
 
-<p>Diffusion history reconstruction infers latent node states between sparse observations of SI or SIR processes.</p>
-<blockquote><p>Diffusion history reconstruction infers latent node states between sparse observations of SI or SIR processes. HERMES combines parameter fitting, a learned graph-neural proposal, and feasibility-aware Markov chain Monte Carlo. We remove these stages one at a time and evaluate each version on all 12 canonical datasets. The final method uses deterministic mean-field forward-backward inference, threshold decoding, and fixed rates. This fixed-rate variant, Battus-Z, achieves mean macro-F1 of 0.8726 and NRMSE of 0.1010, compared with published HERMES aggregates of 0.8692 and 0.1483. The benchmark pins the final observed frame before scoring, so we also exclude all observed frames. Under this metric, Battus-Z obtains macro-F1 0.8431 and NRMSE 0.1181. Thus, the learned proposal, MCMC, and fitting stages can be removed while retaining the published aggregate quality on the evaluated HERMES benchmark and scoring protocol. A CUDA implementation processes generated histories with up to 4.84M vertices on LiveJournal and 117M edges on Orkut. On the same CUDA backend, Battus-Z reduces the geometric-mean algorithm interval relative to fitted Battus by 5.1x for SI and 20.3x for SIR. Its event-weig…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：扩散历史重建（由稀疏观测推断 SI/SIR 过程的隐状态）一定要靠 HERMES 那套参数拟合 + 图神经提议 + MCMC 的重管线吗？</p>
+<p><strong>方法</strong>：逐步消融后得到极简版 Battus-Z：确定性平均场前向-后向推断 + 阈值解码 + 固定速率，CUDA 实现支撑百万顶点级图。</p>
+<p><strong>关键数字</strong>：12 个标准数据集上 macro-F1 0.8726、NRMSE 0.1010（HERMES 为 0.8692 / 0.1483）；排除被钉住的观测帧后仍有 0.8431 / 0.1181；LiveJournal 4.84M 顶点、Orkut 117M 边；算法耗时较拟合版降 5.1×（SI）/ 20.3×（SIR）；因果违例率 7.50% / 8.77%。</p>
+<p><strong>为什么值得看</strong>：证明学习组件可以整块拆掉而不掉点——对「大模型/学习模块是否必要」类问题是个有力的简洁性案例。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.28955v1">Algorithmic Simplification for Million-Vertex Diffusion History Reconstruction</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.28955v1">阅读原文 ↗</a></p>
 </body>
 </html>

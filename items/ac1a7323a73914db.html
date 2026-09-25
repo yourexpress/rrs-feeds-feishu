@@ -22,9 +22,11 @@
 <h1>Neuromorphic architectures as numerical solvers for computational neuroscience</h1>
 <p class="meta-line">arXiv（Jakob Jordan 等，cs.AR） · 2026-08-28 · 论文PDF</p>
 
-<p>Neuromorphic computing is closely associated with spiking neuronal networks.</p>
-<blockquote><p>Neuromorphic computing is closely associated with spiking neuronal networks. However, an alternative class of so-called "rate-based" models arising from computational neuroscience and machine learning forgoes spiking interactions and instead relies on continuous coupling between neurons. Existing neuromorphic implementations designed around spike-based interactions are not well-suited for emulating such models. Here view the distributed simulation of these models as message-passing algorithms on parallel hardware. Leveraging prior art in numerical algorithms and distributed simulation, we outline steps that enable the design of efficient digital neuromorphic accelerators for non-spiking neuronal models. In particular, we show that multi-bit packets, rather than spikes, are the most efficient communication strategy in packet-switched networks and that compared to basic numerical integration methods, higher-order differential equation solvers decrease both computation and communication costs while achieving lower numerical error, but that these benefits are ultimately limited by arithmetic precision. Using our proposed design principles, we convert an existing neuromorphic architectu…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：类脑硬件几乎都为脉冲神经网络设计，而计算神经科学中大量「率模型」靠连续耦合而非脉冲交互——这类模型能否高效跑在类脑架构上？</p>
+<p><strong>方法</strong>：把率模型的分布式仿真视为并行硬件上的消息传递算法：论证多比特数据包（而非脉冲）是分组交换网络中最优通信策略，高阶微分方程求解器能同时降低计算与通信成本，并把一个现有类脑架构改造成面向连续耦合模型的「无脉冲」分布式数值求解器。</p>
+<p><strong>关键数字</strong>：论文以理论分析与架构改造论证为主——高阶求解器收益最终受算术精度限制；实测显示能耗与延迟均有下降（摘要未给出具体倍率）。</p>
+<p><strong>为什么值得看</strong>：为类脑计算开辟「数值求解器」这条少有人走的路，设计原则有理论支撑且落地验证。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.28387v1">Neuromorphic architectures as numerical solvers for computational neuroscience</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.28387v1">阅读原文 ↗</a></p>
 </body>
 </html>

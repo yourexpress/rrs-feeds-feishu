@@ -22,9 +22,11 @@
 <h1>VPP: Virtual Pipeline Parallelism for Efficient Chunked Prefill in Long-Context LLM Inference</h1>
 <p class="meta-line">arXiv（Yan Shi 等，cs.DC） · 2026-08-27 · 论文PDF</p>
 
-<p>Chunked prefill pipeline parallelism (CPP) is a key technique for LLM inference.</p>
-<blockquote><p>Chunked prefill pipeline parallelism (CPP) is a key technique for LLM inference. However, equal-size chunks exhibit imbalanced latency, as later chunks attend longer prefix KV caches and incur higher attention costs, leading to pipeline bubbles. Existing approaches mitigate this imbalance through dynamic chunk resizing (Dynamic CPP, DCPP), but our measurements show that this trades scheduling overhead for load balancing, which becomes unfavorable on long sequences. In this study, we propose Virtual Pipeline Parallelism (VPP), which keeps chunk sizes fixed and optimizes the pipeline layout through virtual stages. A V-shaped virtual-stage traversal overlaps each chunk's expensive middle stages with the lighter head and tail stages of its neighbors, while asynchronous communication and pipelined packing further reduce communication stalls and cross-request drain bubbles. We implement VPP in vLLM-Ascend and evaluate it on three MoE-based LLMs with sequences up to 1M tokens on 16 Ascend 910C NPUs. VPP improves throughput by up to 13.1% over DCPP on long sequences and 6.7% on mixed workloads, while preserving performance on short sequences. On a 512K-token DeepSeek-V3.1 prefill workload,…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：长上下文 LLM 推理的分块预填充流水线（CPP）中，等长 chunk 因注意力前缀变长而延迟不均，产生流水线气泡；动态调 chunk（DCPP）又引入过大调度开销。</p>
+<p><strong>方法</strong>：虚拟流水线并行（VPP）：保持 chunk 定长，用 V 形虚拟 stage 遍历让每个 chunk 的重中段与邻居的轻头尾段重叠，配合异步通信与流水线打包减少通信停顿和跨请求排空气泡。</p>
+<p><strong>关键数字</strong>：16 张昇腾 910C、三个 MoE 模型、最长 1M token：长序列吞吐较 DCPP 最高 +13.1%，混合负载 +6.7%；512K token DeepSeek-V3.1 预填充的气泡率从 6.4% 降到 0.1%（降 98.0%）。</p>
+<p><strong>为什么值得看</strong>：不改 chunk 大小、纯靠调度布局就把长序列 prefill 气泡几乎清零，工程上干净利落。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.26523v1">VPP: Virtual Pipeline Parallelism for Efficient Chunked Prefill</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.26523v1">阅读原文 ↗</a></p>
 </body>
 </html>

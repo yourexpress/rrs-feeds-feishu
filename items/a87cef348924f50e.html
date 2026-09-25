@@ -22,9 +22,11 @@
 <h1>TOPIQ: Statistical Error Propagation for Quantity-of-Interest Prediction under Lossy Compression</h1>
 <p class="meta-line">arXiv（Youyuan Liu 等，cs.PF） · 2026-08-27 · 论文PDF</p>
 
-<p>Lossy compression is essential for managing massive scientific data, but per-element error bounds do not translate into bounds on downstream quantities of interest (QoIs) such as regional averages, neural network predict…</p>
-<blockquote><p>Lossy compression is essential for managing massive scientific data, but per-element error bounds do not translate into bounds on downstream quantities of interest (QoIs) such as regional averages, neural network predictions, or multi-field derived quantities. We present TOPIQ, a statistical error-propagation framework that predicts QoI-level bias and uncertainty from compact compression metadata (less than 0.1% of original data). TOPIQ decomposes QoIs into primitive operators with closed-form propagation rules accounting for spatial error correlation and data-error coupling; new QoIs are supported by composition at runtime with no per-QoI derivation or retraining. Across 552 evaluations spanning 4 datasets, 3 compressors, 4 QoI families, and 8 error bounds, 93.1% of configurations achieve well-calibrated predictions. Pre-computed metadata enables post-hoc uncertainty quantification for arbitrary query regions at 56x-402x speedup over direct computation. A case study demonstrates integration into an AI-driven analysis pipeline with end-to-end confidence intervals for dynamically composed queries.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：科学数据有损压缩只给逐元素误差界，无法回答下游关注量（QoI，如区域平均、神经网络预测、多物理场派生量）的偏差与不确定性有多大。</p>
+<p><strong>方法</strong>：TOPIQ 统计误差传播框架：把 QoI 分解为基本算子，配以考虑空间误差相关和数据-误差耦合的闭式传播规则；新 QoI 可在运行时组合，无需逐个推导或重训。</p>
+<p><strong>关键数字</strong>：压缩元数据不到原数据 0.1%；552 组评估（4 数据集 × 3 压缩器 × 4 类 QoI × 8 档误差界）中 93.1% 配置校准良好；事后不确定性量化比直接计算快 56×–402×。</p>
+<p><strong>为什么值得看</strong>：让有损压缩数据支撑可信的下游分析，AI 驱动科学分析管线可直接获得端到端置信区间。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.26912v1">TOPIQ: Statistical Error Propagation for Quantity-of-Interest Prediction under Lossy Compression</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.26912v1">阅读原文 ↗</a></p>
 </body>
 </html>

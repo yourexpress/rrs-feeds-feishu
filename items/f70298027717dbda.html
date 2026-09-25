@@ -22,9 +22,11 @@
 <h1>Characterization of Request and Token Energy Costs for LLM Inference Workloads on GPU Platforms</h1>
 <p class="meta-line">arXiv（Prabhu Vellaisamy 等，cs.PF） · 2026-08-28 · 论文PDF</p>
 
-<p>Large language model (LLM) inference serving is priced by tokens, but GPU energy is consumed over inference windows.</p>
-<blockquote><p>Large language model (LLM) inference serving is priced by tokens, but GPU energy is consumed over inference windows. This accounting mismatch makes token-normalized metrics incomplete, since average output-token energy can decrease even when total request energy increases. We characterize this behavior with a decomposed energy model: a fixed one-time prefill with a fixed generation setup cost, while each output-token generation step adds marginal step energy. We evaluate this LLM inference energy model on NVIDIA H100 and H200 GPUs across dense and mixture-of-experts (MoE) models, reporting both request energy and token energy as functions of model type (M), phase (P), batch size (B), context length (C), and output length (N). For Llama-3.2-1B on H200 at batch-16 and context-4K, increasing output length from 10 to 512 tokens reduces token energy from 7.46 to 0.72 J/token while total batched inference-window energy increases from 1.19 to 5.93 kJ. Batching also reduces token energy, but the gain is context-bounded: at 10 output tokens, the batch-16 to batch-1 gain falls from 6.31x at context-512 to 1.17x at context-4K. MoE models amplify this effect: sparse routing and fragmented expe…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 推理按 token 计费，但 GPU 能耗按推理窗口发生——只看「每 token 能耗」会得到什么误导性结论？</p>
+<p><strong>方法</strong>：提出分解式能耗模型：一次性 prefill 与生成启动成本 + 每输出 token 的边际步能耗；在 H100/H200 上对 dense 与 MoE 模型，按模型、阶段、batch、上下文、输出长度五维扫描请求级与 token 级能耗。</p>
+<p><strong>关键数字</strong>：Llama-3.2-1B 在 H200、batch-16、上下文 4K：输出从 10 增至 512 token 时，token 能耗从 7.46 降到 0.72 J/token，但总窗口能耗从 1.19 升到 5.93 kJ；10 token 输出下 batch-16 vs batch-1 的收益从上下文 512 时的 6.31× 缩到 4K 时的 1.17×。</p>
+<p><strong>为什么值得看</strong>：定量证明「降低单 token 能耗」与「降低请求总能耗」可能背道而驰，MoE 还会放大这一效应——能效优化必须双指标并看。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.28044v1">Characterization of Request and Token Energy Costs for LLM Inference Workloads</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.28044v1">阅读原文 ↗</a></p>
 </body>
 </html>

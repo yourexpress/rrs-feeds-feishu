@@ -22,9 +22,11 @@
 <h1>Performance Evaluation of RED-ONION: A High-Speed Disk-to-Disk Transfer System</h1>
 <p class="meta-line">arXiv（Keichi Takahashi 等，cs.DC） · 2026-08-29 · 论文PDF</p>
 
-<p>Modern experimental instruments produce data faster than general-purpose file transfer interfaces can move it, so delivery to the computing infrastructure has become a bottleneck in the research process.</p>
-<blockquote><p>Modern experimental instruments produce data faster than general-purpose file transfer interfaces can move it, so delivery to the computing infrastructure has become a bottleneck in the research process. At many universities and research institutes, moreover, the instruments that generate research data and the high-performance computing systems that analyze it are separated both geographically and organizationally, because each demands its own expertise and installation environment. Connecting the two seamlessly is a pressing challenge for data-driven science. This article presents RED-ONION, a high-speed disk-to-disk transfer system that connects research facilities, on campus and beyond, to a computing center. The system combines data transfer nodes, a dedicated high-bandwidth network, an all-flash parallel file system, and multi-threaded transfer software that parallelizes network transmission and storage access. The design targets the wire rate both along the entire path, from the read on the sender storage to the write on the receiver storage, and for a single file between one pair of nodes rather than only in aggregate over many files or nodes. We describe the end-to-end opti…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：科研仪器产生数据的速度超过通用文件传输工具的搬运能力，且仪器与超算中心地理、组织分离——数据交付成为科研流程瓶颈。</p>
+<p><strong>方法</strong>：RED-ONION 高速盘到盘传输系统：数据传输节点 + 专用高带宽网络 + 全闪并行文件系统 + 并行化网络传输与存储访问的多线程软件，端到端优化传输软件、操作系统与存储，目标是单文件、单节点对也跑满线速。</p>
+<p><strong>关键数字</strong>：亚特兰大—东京 100 Gbps 跨太平洋链路、150ms RTT 原型上，单个 1TB 文件实测达 90 Gbps，约 95 秒传完。</p>
+<p><strong>为什么值得看</strong>：把 TB 级数据搬运变成日常操作，让计算中心对远程仪器「如本地一般」，是数据密集型科学的实用基础设施样板。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.29053v1">Performance Evaluation of RED-ONION: A High-Speed Disk-to-Disk Transfer System</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.29053v1">阅读原文 ↗</a></p>
 </body>
 </html>

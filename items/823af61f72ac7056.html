@@ -22,9 +22,11 @@
 <h1>SemKV: Semantic Mixed-Precision KV Cache Quantization Guided by the Quality Cliff for Long-Context LLM Inference</h1>
 <p class="meta-line">arXiv（Daeha Lee 等，cs.LG） · 2026-08-28 · 论文PDF</p>
 
-<p>The key-value (KV) cache is the dominant memory bottleneck of long-context large language model (LLM) inference, growing linearly with context length.</p>
-<blockquote><p>The key-value (KV) cache is the dominant memory bottleneck of long-context large language model (LLM) inference, growing linearly with context length. We show that uniform KV quantization on a fractional-bit grid does not degrade gracefully: under a prespecified multi-seed statistical protocol, Llama-3.1-8B-Instruct with an affine quantizer is statistically indistinguishable from FP16 KV down to 2.322 code bits/value and collapses at 2.0 bits - a quality cliff in (2.0, 2.322] that reappears in generation-time quantization and multi-turn dialogue and transfers to Mistral-7B. The cliff reframes importance-aware mixed precision: above it, eight model-internal importance indicators are statistically interchangeable, so the benefit of mixing is grid interpolation, reaching average precisions uniform quantization cannot realize. SemKV preserves every token, ranks tokens by a model-internal score, and assigns two adjacent above-cliff precisions, achieving a measured 6.0x storage reduction with no statistically detectable quality difference from full KV (n=900, three seeds), and outperforming FP16 token pruning granted a 1.5x larger memory budget. Replacing the affine base with a distortio…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：长上下文 LLM 的 KV cache 随长度线性膨胀，但均匀量化并非平滑劣化——「质量悬崖」在哪里？混合精度量化应该怎么利用它？</p>
+<p><strong>方法</strong>：先在多种子统计协议下测定悬崖位置；SemKV 保留全部 token、按模型内部重要性打分排序，只分配悬崖之上的相邻两档精度，实现均匀量化无法达到的中间平均位宽。</p>
+<p><strong>关键数字</strong>：Llama-3.1-8B 上 KV 降至 2.322 bit/值与 FP16 统计不可区分，2.0 bit 处崩塌（悬崖区间 (2.0, 2.322]，可迁移到 Mistral-7B 与多轮对话）；6.0× 存储缩减下与全量 KV 无统计可检差异（n=900、三种子），并优于多给 1.5× 显存预算的 FP16 token 剪枝；换 TurboQuant-MSE 后无损工作点升至 7.9×。</p>
+<p><strong>为什么值得看</strong>：把 KV 量化从「拍脑袋选位宽」变成「测悬崖 + 悬崖上插值」的可复现配方。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.28911v1">SemKV: Semantic Mixed-Precision KV Cache Quantization Guided by the Quality Cliff</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.28911v1">阅读原文 ↗</a></p>
 </body>
 </html>

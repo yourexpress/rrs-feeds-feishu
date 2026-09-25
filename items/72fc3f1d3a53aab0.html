@@ -22,9 +22,11 @@
 <h1>Bridging Agent Semantics with Spot Capacity: An Elastic and Recoverable Service Model</h1>
 <p class="meta-line">arXiv（Minchen Yu，cs.DC） · 2026-08-30 · 论文PDF</p>
 
-<p>LLM agents increasingly drive long-running cloud inference workloads in which model calls differ in urgency, redundancy, completion semantics, and replay cost.</p>
-<blockquote><p>LLM agents increasingly drive long-running cloud inference workloads in which model calls differ in urgency, redundancy, completion semantics, and replay cost. Model-as-a-Service (MaaS) platforms expose several service models for trading cost against latency, availability, and capacity commitment. These models operate primarily at request, job, or endpoint scopes and provide limited support for combining transient platform supply with the evolving semantics of an agent task. We present SemSpot, a semantics-aware service model that allows agent applications to leverage the spot capacity of LLM inference platforms. At the request level, SemSpot lets a provider publish short-lived offers over successful price, completion probability, and failure-notification deadline; the agent runtime selects among these offers using the current task state and completion rule. An audit of 1,535 cases from six agent benchmarks identifies four recurring workflow structures and shows how this service model may produce different cost, service-time, and fallback behavior. With specialized MaaS support, token-level SemSpot further preserves provider inference state and runtime-verified semantic segments in…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM agent 驱动的长时云推理负载中，各次模型调用的紧迫性、冗余度、完成语义与重放成本都不同——现有 MaaS 服务模型（按需/预留/竞价）能否承载 agent 任务语义？</p>
+<p><strong>方法</strong>：SemSpot 语义感知服务模型：平台发布带价格、完成概率、失败通知时限的短时效要约，agent 运行时按当前任务状态与完成规则选要约；token 级 SemSpot 进一步在长请求内保留平台推理状态与经运行时验证的语义段。</p>
+<p><strong>关键数字</strong>：对 6 个 agent 基准的 1,535 个案例审计，归纳出 4 类反复出现的工作流结构，并展示该模型带来的不同成本、服务时长与回退行为。</p>
+<p><strong>为什么值得看</strong>：把「竞价容量」与「agent 语义」接起来的服务模型设计，为 MaaS 经济学和 agent 基础设施都划出了跨层研究议程。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.29581v1">Bridging Agent Semantics with Spot Capacity: An Elastic and Recoverable Service Model</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.29581v1">阅读原文 ↗</a></p>
 </body>
 </html>

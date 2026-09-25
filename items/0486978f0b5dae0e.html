@@ -22,9 +22,11 @@
 <h1>A rigor-matched audit of periodic-step layer skipping for efficient llm inference: conflayers versus swift, with a supplemental analysis of trained routing alternatives</h1>
 <p class="meta-line">arXiv（Prateek Kumar Sikdar，cs.CL） · 2026-08-28 · 论文PDF</p>
 
-<p>Layer-skipping methods for efficient LLM inference decide, at some granularity, which transformer layers to execute for a given input.</p>
-<blockquote><p>Layer-skipping methods for efficient LLM inference decide, at some granularity, which transformer layers to execute for a given input. We present a rigor-matched, three-seed audit of two periodic-step, search-based methods that make this decision online at inference time and re-evaluate it every few generation steps: a confidence-gated early-exit baseline (ConfLayers) and genuine self-speculative decoding (SWIFT, Xia et al. 2024), together with vanilla autoregressive decoding, across Qwen2.5-0.5B and Qwen2.5-1.5B (Yang et al. 2024) on GSM8K (Cobbe et al. 2021) and CNN/DailyMail (Nallapati et al. 2016; See et al. 2017). SWIFT is strongest on accuracy in three of four cells, while ConfLayers is dominated everywhere, with particularly large deficits on GSM8K at 1.5B. Separating online-search overhead from pure inference cost, we find that SWIFT's true inference speed is faster than ConfLayers's in all four cells (5-21%), reversing the naive wall-clock ranking in three; ConfLayers's search overhead is small and stable (1-2% of cost), whereas SWIFT's is larger and more variable across seeds (up to 28.7%). We additionally examine two trained routing methods, LayerRoute (Sikdar, 2026), a …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：层跳过（layer skipping）高效推理方法五花八门，但比较口径不一——在线搜索的开销算不算进「加速」里？谁是真的快？</p>
+<p><strong>方法</strong>：对两种周期性在线决策方法（ConfLayers 早退、SWIFT 自投机解码）做三种子、严格对齐审计，剥离在线搜索开销与纯推理成本；附带分析 LayerRoute、LayerDrop 两种训练式路由。</p>
+<p><strong>关键数字</strong>：Qwen2.5-0.5B/1.5B 在 GSM8K 与 CNN/DailyMail 上：SWIFT 纯推理快 5–21%，推翻四个格子中三个的朴素墙钟排名；SWIFT 搜索开销最高达 28.7%，ConfLayers 仅 1–2%；训练式路由仅 1.08–1.33× 加速且精度明显更低，LayerRoute 在 1.5B GSM8K 上 EM 均值崩到 0.003。</p>
+<p><strong>为什么值得看</strong>：给「高效推理加速比」立了可复用的严格审计模板，揭示很多加速数字被搜索开销掩盖。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.28846v2">A rigor-matched audit of periodic-step layer skipping</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.28846v2">阅读原文 ↗</a></p>
 </body>
 </html>
