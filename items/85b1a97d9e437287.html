@@ -22,9 +22,11 @@
 <h1>PRO-RAN: Processor-Level Characterization of Open RAN Centralized and Distributed Units</h1>
 <p class="meta-line">arXiv（Moojan Kamalzadeh 等，cs.NI） · 2026-08-27 · 论文PDF</p>
 
-<p>Open Radio Access Network (O-RAN) disaggregates RAN protocol functions and enables Centralized Unit (CU) and Distributed Unit (DU) software to execute on general-purpose computing platforms.</p>
-<blockquote><p>Open Radio Access Network (O-RAN) disaggregates RAN protocol functions and enables Centralized Unit (CU) and Distributed Unit (DU) software to execute on general-purpose computing platforms. Different CU and DU protocol responsibilities produce different processor workloads and execution paths. Conventional performance metrics, including CPU utilization and throughput, quantify aggregate resource usage without identifying function-level execution costs or processor microarchitectural bottlenecks. Processor-level characterization, on the other hand, provides insights into resource provisioning, function placement, software optimization, and hardware acceleration. The paper describes a controlled characterization framework that evaluates independently deployed CU and DU functions under matched hardware and traffic conditions. The experimental platform integrates the Linux Foundation OCUDU implementation with an emulated User Equipment, a ZeroMQ-based radio interface, and an Open5GS core. Automated validation confirms registration and bidirectional packet delivery before process-scoped Intel VTune Hotspots and Top-Down Microarchitecture Analysis. Under traffic load, accumulated proces…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：O-RAN 把 RAN 功能拆到通用计算平台，CPU 利用率等聚合指标看不出函数级执行成本与微架构瓶颈。</p>
+<p><strong>方法</strong>：受控刻画框架：匹配硬件与流量下独立部署 CU/DU；平台集成 Linux 基金会 OCUDU 实现、模拟 UE、ZeroMQ 射频接口与 Open5GS 核心；自动验证注册与双向包交付后，做进程级 Intel VTune Hotspots 与 Top-Down 微架构分析。</p>
+<p><strong>关键数字</strong>：相等 300s 剖析区间内，流量负载下进程累计 CPU 时间 CU 从 17.3s 升至 37.4s、DU 从 462.0s 升至 628.4s；测量揭示 CU/DU 截然不同的执行特征。</p>
+<p><strong>为什么值得看</strong>：为 O-RAN 资源供给、功能放置与硬件加速提供函数级实证依据。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.26498v1">PRO-RAN</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.26498v1">阅读原文 ↗</a></p>
 </body>
 </html>

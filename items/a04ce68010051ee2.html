@@ -22,9 +22,11 @@
 <h1>BOOSTEDSOSA: Accelerated Inferencing for Low Variance Stochastic Online Scheduling</h1>
 <p class="meta-line">arXiv（Adam H. Ross 等，cs.AR） · 2026-08-26 · 论文PDF</p>
 
-<p>Heterogeneous scheduling in stochastic, online envi- ronments, such as high-performance computing (HPC) systems, presents a significant challenge.</p>
-<blockquote><p>Heterogeneous scheduling in stochastic, online envi- ronments, such as high-performance computing (HPC) systems, presents a significant challenge. Stochastic Online Scheduling Accelerators (SOSAs) offer a promising solution, but their effectiveness is compromised by a reliance on runtime estimates provided by users. These estimates introduce substantial vari- ance into the scheduling process (mean MAE in hundreds of Core-Days), thereby weakening the competitiveness of Stochastic Online Scheduling algorithms as their competitive-ratio bound increases with runtime variability. To address this limitation, we introduce BOOSTEDSOSA, a dual-FPGA ML-assisted Scheduling architecture that integrates a Machine Learning predictor for expected processing times, with a novel temporal-aware training policy. The predictor estimates job runtimes using only scheduler parameters available at submission time, enabling its use in existing HPC systems. Using historical real-world HPC job data (from the Argonne Leadership Comput- ing Facility, MIT Supercloud and UIUC Blue Waters workload datasets), we show that the predictor reduces MAE by up to 63.85% compared to user runtime estimates, and the additiv…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：HPC 随机在线调度依赖用户给的运行时估计，方差大（平均 MAE 达数百 Core-Days），拖累调度竞争比——能否用 ML 预测替代？</p>
+<p><strong>方法</strong>：BOOSTEDSOSA 双 FPGA ML 辅助调度架构：仅用提交时可得的调度器参数预测作业运行时，配时间感知的增量训练策略，可直接接入现有 HPC 系统。</p>
+<p><strong>关键数字</strong>：基于 ALCF、MIT Supercloud、Blue Waters 真实负载：预测 MAE 较用户估计最多降 63.85%，增量训练较静态模型再降 71.88%；端到端平均 17× 加速于 AVX 优化软件基线，吞吐达 1,711 作业/秒。</p>
+<p><strong>为什么值得看</strong>：FPGA 加速调度器 + 运行时预测的组合拳，HPC 智能调度落地的实用参考。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.25346v1">BOOSTEDSOSA</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.25346v1">阅读原文 ↗</a></p>
 </body>
 </html>

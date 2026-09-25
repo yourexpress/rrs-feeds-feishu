@@ -22,9 +22,11 @@
 <h1>Accelerating Data Preprocessing for Efficient Vision Model Inference on Jetson Edge Device</h1>
 <p class="meta-line">arXiv（Tian Chen 等，cs.PF） · 2026-08-27 · 论文PDF</p>
 
-<p>Data preprocessing is a crucial part of deep learning workflows on edge devices.</p>
-<blockquote><p>Data preprocessing is a crucial part of deep learning workflows on edge devices. However, decoding data saved in JPEG format is very compute-intensive and occupies a major portion of the preprocessing pipeline. Therefore, increasing the decoding speed is vital for improving overall throughput, especially for inputs with large image sizes, which are often subject to preprocessing bottlenecks. On the other hand, edge devices are equipped with specialized hardware units to accelerate media processing and image decoding. For instance, the NVIDIA Jetson platform possesses a dedicated NVJPEG unit. These units can be used to enhance the performance of the preprocessing pipeline. This paper introduces the utilization of such specific hardware acceleration units for offloading decoding tasks. By combining this with a multi-instance approach, it allows for the parallelization of all compute resources including CPU, NVJPEG, GPU, and DLA in Jetson devices. In this work, we compare various potential pipeline designs. On ResNet18, ResNet50, and ResNet152, three models with different sizes, we evaluate the impact of batch sizes and image sizes, as well as the characteristics of GPU/DLA inference.…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：边缘设备上 JPEG 解码占预处理管线大头，成为大图输入的吞吐瓶颈——专用硬件单元能否破局？</p>
+<p><strong>方法</strong>：在 NVIDIA Jetson 上用 NVJPEG 专用解码单元卸载解码，结合多实例设计把 CPU、NVJPEG、GPU、DLA 全部并行化；比较多种管线设计，在 ResNet18/50/152 上扫 batch 与图像尺寸，并对多实例设计做微调实验。</p>
+<p><strong>关键数字</strong>：引入专用解码单元的多实例设计，在大图尺寸下较最优无卸载方案最高提速 30.02%。</p>
+<p><strong>为什么值得看</strong>：边缘视觉推理"预处理税"的实测拆解，附调优指南，Jetson 部署可直接参考。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.27655v1">Accelerating Data Preprocessing on Jetson</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.27655v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Direct-Operable SIMD Bit-Slicing: A Framework for Memory-Efficient Predicate Evaluation</h1>
 <p class="meta-line">arXiv（Arunkumar Mathiyazhagan，cs.PF） · 2026-08-26 · 论文PDF</p>
 
-<p>Traditional Java object models introduce significant memory overhead due to object headers and internal padding, often leading to performance bottlenecks in data-intensive distributed systems.</p>
-<blockquote><p>Traditional Java object models introduce significant memory overhead due to object headers and internal padding, often leading to performance bottlenecks in data-intensive distributed systems. This paper presents a novel framework that utilizes the Project Panama Vector API to perform predicate evaluation directly over bit-sliced, compressed data streams. By transposing standard row-oriented data into parallel bit-planes, we demonstrate a mechanism to evaluate complex filters using SIMD (Single Instruction, Multiple Data) instructions without requiring prior decompression. The framework supports integers, longs (timestamps), doubles (via IEEE 754 order-preserving transformation), and strings (via dictionary encoding). Our benchmarks indicate a reduction in memory footprint by up to 8x while maintaining or exceeding the throughput of uncompressed standard Java collections. End-to-end evaluation on TPCDS-modeled data at 50M rows demonstrates 2.4-10.8x speedup over scalar scans across five representative filter-heavy query patterns, with extended type benchmarks on TPCDS columns showing 1.5-43x speedups for timestamps, decimals, and dictionary-encoded strings.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：Java 对象头与内填带来显著内存开销，数据密集系统里谓词求值能否直接在压缩数据上进行？</p>
+<p><strong>方法</strong>：基于 Project Panama Vector API 的位切片框架：行式数据转置为并行位平面，用 SIMD 指令在压缩流上直接求值复杂过滤、无需解压；支持整数、long 时间戳、double（IEEE 754 保序变换）与字典编码字符串。</p>
+<p><strong>关键数字</strong>：内存占用最多降 8×；TPCDS 模型数据 5,000 万行上五种重过滤查询较标量扫描提速 2.4–10.8×；时间戳、小数、字典字符串扩展基准提速 1.5–43×。</p>
+<p><strong>为什么值得看</strong>：从"解压再算"到"边存边算"的 Java 落地样本，内存受限分析型负载可直接参考。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.26368v1">Direct-Operable SIMD Bit-Slicing</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.26368v1">阅读原文 ↗</a></p>
 </body>
 </html>

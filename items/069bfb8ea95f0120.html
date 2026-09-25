@@ -22,9 +22,11 @@
 <h1>MeshReduce-U: Compiler-Guided Communication Reduction for Irregular Neural Reductions on Mesh NoCs</h1>
 <p class="meta-line">arXiv（Amirreza Khorasanian，cs.AR） · 2026-08-26 · 论文PDF</p>
 
-<p>Many irregular neural workloads induce skewed many-to-one reductions with repeated neighborhoods and nonlocal communication.</p>
-<blockquote><p>Many irregular neural workloads induce skewed many-to-one reductions with repeated neighborhoods and nonlocal communication. Conventional NoC mappers optimize placement and routes for a fixed communication graph, even though associative reductions expose legal opportunities to eliminate traffic before routing. We present MeshReduce-U, a compiler-guided communication-reduction and routing framework for mesh-NoC-based spatial accelerators. MeshReduce-U coalesces colocated sources, forms local aggregation islands, blocks channels with compatible fan-in structure, selects capacity-feasible sinks, and routes the remaining fixed-width carriers using fused usage-aware costs. A deterministic route-replay model reports schedule-derived communication latency, total link usage (TLU), and fused link usage (FusedTLU) separately. Across a 20-workload lowerable neural-network zoo, MeshReduce-U reduces mean latency, TLU, and FusedTLU by 40.3%, 56.0%, and 48.7%, respectively, relative to an ABC-style source-aggregation baseline, improving all three metrics on every workload. Across 40 synthetic irregular reductions, it reduces mean latency and TLU by 12.3% and 19.7%. A new 30-instance pass-by-pass …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：不规则神经负载的多对一归约通信倾斜且非局部，传统 NoC 映射只优化固定通信图的布局布线，忽略了路由前消除流量的合法机会。</p>
+<p><strong>方法</strong>：MeshReduce-U 编译器引导的通信削减+路由框架：合并同位源、构建局部聚合岛、按相容扇入结构阻塞通道、选容量可行汇点，再以融合的使用感知成本为剩余载波布线。</p>
+<p><strong>关键数字</strong>：20 个可约神经网络负载上平均时延、总链路使用、融合链路使用分别降 40.3%、56.0%、48.7%，且每个负载三项全优；40 个合成不规则归约平均时延降 12.3%；结构改写使全局载波数降 60.9%、回放时延降 63.0%。</p>
+<p><strong>为什么值得看</strong>：先改流量图再路由，比在原始图上"搜得更狠"更有效——编译器视角的 NoC 优化。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.26220v1">MeshReduce-U</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.26220v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Beyond Edge Cuts: Activity-Weighted Multicast Hypergraph Mapping for Spiking Neural Networks on Mesh NoCs</h1>
 <p class="meta-line">arXiv（Amirreza Khorasanian，cs.AR） · 2026-08-26 · 论文PDF</p>
 
-<p>Mapping spiking neural networks (SNNs) onto neuromorphic many-core platforms is often formulated with graph partitioning and pairwise placement costs.</p>
-<blockquote><p>Mapping spiking neural networks (SNNs) onto neuromorphic many-core platforms is often formulated with graph partitioning and pairwise placement costs. That abstraction is convenient, but it does not match the physical communication event: one spike from a source neuron is delivered to a set of postsynaptic destinations, and routes to several destinations can share mesh links. We present M-HySMap, a route-aware, activity-weighted multicast hypergraph mapping framework. Each source neuron induces a directed hyperedge to its postsynaptic fanout, weighted by profiled activity. The mapper starts from strong activity-aware graph/QAP seeds and then optimizes distinct destination-core fanout, the union of deterministic mesh routes, and link congestion. The central algorithmic observation is locality: moving one neuron can change only its own source-rooted hyperedge and the hyperedges of its predecessors. This permits exact incremental gain evaluation while caching every unaffected route contribution. We expose this combinatorial structure in detail, derive a conservative placement lower bound, and describe a portfolio of partition and placement neighborhoods that preserves the best incumbe…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：把 SNN 映射到神经形态多核时，图划分+成对放置代价的抽象不匹配"一次脉冲多点投递、路由可共享链路"的物理通信事件。</p>
+<p><strong>方法</strong>：M-HySMap 路由感知、活动加权组播超图映射：每个源神经元引出指向突触后扇出的有向超边并按活动加权；利用"移动一个神经元只影响自身及前驱超边"的局部性做精确增量增益评估并缓存未受影响路由。</p>
+<p><strong>关键数字</strong>：115 个作业证据集（4×4 至 6×6 mesh NoC + 7×7 压力用例）：组播跳数较 Activity+QAP 降 10.6–19.6%、较 Edge+QAP 降 19.7–41.1%；增量更新加速细化 4.7–12.7× 且与全量重算数值一致。</p>
+<p><strong>为什么值得看</strong>：把 SNN 映射从"边切"推进到"组播超边"的正确抽象，增量结构分析可复用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.26223v1">Beyond Edge Cuts: M-HySMap</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.26223v1">阅读原文 ↗</a></p>
 </body>
 </html>

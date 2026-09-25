@@ -22,9 +22,11 @@
 <h1>DAMP: Decay-Aware Mixed-Precision Recurrent-State Quantization</h1>
 <p class="meta-line">arXiv（Tao Zhang 等，cs.LG） · 2026-08-27 · 论文PDF</p>
 
-<p>Softmax attention stores key and value vectors for every preceding token, causing inference memory to grow with sequence length.</p>
-<blockquote><p>Softmax attention stores key and value vectors for every preceding token, causing inference memory to grow with sequence length. Recent language models incorporating Gated DeltaNet (GDN) or Kimi Delta Attention (KDA) reduce this cost by replacing the KV cache in most layers with fixed-size recurrent states. However, these recurrent states are commonly stored in FP32 and consume substantial GPU memory; their updates are memory-bandwidth bound and contribute significantly to decoding latency. To our knowledge, we are the first to study post-training quantization of recurrent states in GDN and KDA based language models. We find that uniform quantization provides a poor accuracy--storage trade-off: INT8 and FP8 already degrade accuracy on complex reasoning tasks, while INT4 and NVFP4 reduce it to near zero. We further find that most quantization-error energy is concentrated in a small subset of channels and that the relative decay strength of state channels remains stable across prompts and tasks. Motivated by these findings, DAMP uses both quantization-error energy and decay-based persistence to identify high-risk channels during offline calibration. It stores these channels at higher…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：GDN/KDA 类线性注意力模型用定长循环状态替代 KV cache，但 FP32 状态占显存且更新受带宽限制——循环状态能否训练后量化？</p>
+<p><strong>方法</strong>：首次研究 GDN/KDA 循环状态的 PTQ：发现量化误差能量集中在少数通道、各通道相对衰减强度跨提示与任务稳定；DAMP 据此在离线校准中识别高风险通道存高精度、其余存 INT8。</p>
+<p><strong>关键数字</strong>：均匀量化下 INT8/FP8 已损复杂推理精度、INT4/NVFP4 近归零；Qwen3.6-35B 与 Kimi-Linear-48B 上以 9.9 bit/状态值保持接近 FP32 平均精度；状态存储降 69.1%，更新核最高加速 2.01×，全模型 TPOT 最多降 10.9%。</p>
+<p><strong>为什么值得看</strong>：线性注意力落地的关键一环，通道级混合精度思路可直接迁移。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.27513v1">DAMP</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.27513v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>psRL: Efficient Training for Agentic AI via Training-Time Prefix Sharing</h1>
 <p class="meta-line">arXiv（Mianjie Yu 等，cs.DC） · 2026-08-26 · 论文PDF</p>
 
-<p>In modern agentic AI training, the system bottleneck is shifting from rollout to update.</p>
-<blockquote><p>In modern agentic AI training, the system bottleneck is shifting from rollout to update. Emerging sampling strategies such as tree-structured and step-wise RL greatly increase training sample volume while incurring relatively low marginal rollout cost, causing the update phase to dominate the end-to-end execution time. Crucially, this shift exposes a new optimization opportunity, as production traces reveal substantial prefix redundancy across training samples. In this paper, we propose psRL (prefix sharing for RL), a new training system for agentic AI designed to exploit prefix redundancy among training samples. Leveraging the global visibility and data immutability inherent to the update phase, psRL achieves efficient workload scheduling and memory management for distributed training. Specifically, psRL introduces two novel prefix-sharing mechanisms that enable flexible, fine-grained workload distribution across GPU workers, simultaneously optimizing prefix reuse and achieving load balancing. Moreover, psRL implements a new underlying KV cache manager that facilitates adaptable block-size allocation and dynamic KV caching, maximizing memory utilization while maintaining a high pr…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：树状、步进式 RL 采样让智能体训练瓶颈从 rollout 转向 update，而生产轨迹显示训练样本间存在大量前缀冗余——能否利用？</p>
+<p><strong>方法</strong>：psRL 利用 update 阶段的全局可见性与数据不可变性：两种前缀共享机制实现细粒度负载分配（兼顾前缀复用与负载均衡）；底层 KV cache 管理器支持可变块分配与动态缓存，最大化显存利用率与前缀命中率。</p>
+<p><strong>关键数字</strong>：生产轨迹评估，吞吐较现有系统最高 5.2×；代码将开源。</p>
+<p><strong>为什么值得看</strong>：抓住"update 主导 + 前缀冗余"的新瓶颈，agentic RL 训练系统工程的对症优化。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.25683v1">psRL</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.25683v1">阅读原文 ↗</a></p>
 </body>
 </html>

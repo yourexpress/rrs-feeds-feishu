@@ -22,9 +22,11 @@
 <h1>Performance Foundations of Parallel &amp; Distributed Reasoning Language Models</h1>
 <p class="meta-line">arXiv（Maciej Besta 等，cs.LG） · 2026-08-27 · 论文PDF</p>
 
-<p>Reinforcement Learning with Verifiable Rewards (RLVR) and other RL-style post-training paradigms have been used for aligning large language models (LLMs) with reasoning standards.</p>
-<blockquote><p>Reinforcement Learning with Verifiable Rewards (RLVR) and other RL-style post-training paradigms have been used for aligning large language models (LLMs) with reasoning standards. The resulting recent Reasoning Language Models (RLMs) such as DeepSeek-R1, o3, and Kimi k1.5 show that such RL-style post-training ("RL-for-LLMs") can substantially improve chain-of-thought reasoning, long-horizon planning, and self-correction. However, the computational footprint of these systems is massive: state-of-the-art RLM training requires millions of GPU-hours and tightly coupled multi-model pipelines that stress modern hardware far beyond classical supervised LLM training. This makes RLM training as much a parallel and distributed systems problem as an algorithmic one. In this work, to facilitate developing RLMs that are simultaneously high-performance, scalable, and cost-effective, we first systematize the RL-for-LLM paradigm and provide a compute-centric analysis of prominent post-training algorithmic frameworks: Proximal Policy Optimization (PPO), Group Relative Policy Optimization (GRPO), as well as their variants. Second, we develop a taxonomy of intra- and inter-model parallelism strategie…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：RLVR 等后训练造出的推理语言模型（RLM）训练动辄数百万 GPU 时，已是并行分布式系统问题而不仅是算法问题。</p>
+<p><strong>方法</strong>：系统化 RL-for-LLM 范式；以计算为中心剖析 PPO、GRPO 及其变体；建立模型内/模型间并行策略分类法（数据/张量/流水线/序列/上下文/专家并行，加解耦放置、阶段融合、混合并行、异步执行等新形态），并用 work-depth 模型使分类法严格可迁移。</p>
+<p><strong>关键数字</strong>：综述框架性论文，无单一核心实验数字；分析现有 RLM 框架并提炼实践准则与开放研究方向。</p>
+<p><strong>为什么值得看</strong>：RL 训练系统方向少见的体系化梳理，搭建可扩展 RLM 训练栈的路线图。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.27046v1">Performance Foundations of Parallel &amp; Distributed RLMs</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.27046v1">阅读原文 ↗</a></p>
 </body>
 </html>

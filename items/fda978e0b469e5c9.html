@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Are Stated Reasoning Steps Causally Load-Bearing? Activation Patching Says Less Often Than Text Editing</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Are Stated Reasoning Steps Causally Load-Bearing? Activation Patching Says Less Often Than Text Editing</h1>
+<p class="meta-line">UT Austin · 2026-09-24 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：CoT 监控假设模型写下的推理步骤就是产生答案的计算，这种"忠实性"到底有多大因果效力？</p>
+<p><strong>方法</strong>：在合成 2–6 跳多跳查询任务上做激活补丁：把模型陈述中间步骤的 token 残差流替换为反事实运行的激活，看答案是否按预期切换到反事实实体。</p>
+<p><strong>关键数字</strong>：Qwen3-4B 最敏感中层 76.9%±2.8% 步骤因果承载（随机位置零假设 11.3%，约为可达成上限的 96%）；传统文本编辑行为测试得 88.2%，高估 11.4 个百分点（简单条目最多 20 个点）；Qwen3-1.7B 整体仅 54.8%，从 2 跳 68% 跌至 6 跳 30%。</p>
+<p><strong>为什么值得看</strong>：带已知反事实目标的因果级 CoT 忠实性度量，提醒行为度量在"看起来最流畅"的简单题上高估最严重。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.27038">Are Stated Reasoning Steps Causally Load-Bearing?</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.27038">阅读原文 ↗</a></p>
+</body>
+</html>

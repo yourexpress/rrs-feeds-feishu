@@ -22,9 +22,11 @@
 <h1>FoldPipe: Bounded Remote Streaming of Native Molecular Shards with Asynchronous Prefetch</h1>
 <p class="meta-line">arXiv（Dhiren Mukesh Khatri，cs.PF） · 2026-08-27 · 论文PDF</p>
 
-<p>Training molecular machine-learning models on ephemeral or memory-constrained accelerator instances can require repeatedly retrieving preprocessed molecular graphs from remote storage.</p>
-<blockquote><p>Training molecular machine-learning models on ephemeral or memory-constrained accelerator instances can require repeatedly retrieving preprocessed molecular graphs from remote storage. FoldPipe is a lightweight Python orchestration layer for already-sharded PyTorch and PyTorch Geometric data. It retrieves one shard ahead in a background thread while the consumer trains on the current shard, keeping the number of live shard payloads bounded with respect to total dataset size. Asynchronous prefetch and bounded buffering are established systems techniques rather than novel scheduling algorithms. FoldPipe's contribution is a small integration targeted at native .pt molecular shards together with a source-pinned empirical characterization of its operating regime. We evaluate a SchNet energy-and-force workload on MD17 aspirin using 20 paired, order-alternating benchmark passes on a Tesla T4. Each pass processes five pinned shards containing 25,000 structures. FoldPipe records 16.33 s mean I/O-compute overlap, compared with zero by construction for the sequential bounded baseline. Mean pass time is 76.78 s for FoldPipe and 83.37 s for the baseline. However, the geometric mean paired speed…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：在临时或内存受限的加速卡上训练分子 ML 模型，需反复从远端存储取预处理分子图——I/O 能否与计算重叠？</p>
+<p><strong>方法</strong>：FoldPipe：面向已分片 PyTorch/PyG 数据的轻量编排层，后台线程预取下一分片、有界缓冲；作者明言异步预取是成熟系统技术，贡献在于对原生 .pt 分子分片的集成与运行区间刻画。</p>
+<p><strong>关键数字</strong>：Tesla T4、MD17 阿司匹林 SchNet 负载、20 趟配对交替基准（每趟 5 分片×25,000 结构）：平均 I/O-计算重叠 16.33s（基线为 0），平均趟时 76.78s vs 83.37s；几何平均配对加速 1.059×，95% bootstrap 区间 0.878–1.288×——机制验证成立，墙钟优势在公网波动下不确定。</p>
+<p><strong>为什么值得看</strong>：罕见把"结果不确定"如实写清的系统论文，重叠机制的诚实基线。</p>
+<p>原文：<a href="https://arxiv.org/abs/2608.27029v1">FoldPipe</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.27029v1">阅读原文 ↗</a></p>
 </body>
 </html>
