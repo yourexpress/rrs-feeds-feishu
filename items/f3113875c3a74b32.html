@@ -22,9 +22,11 @@
 <h1>CHIPSMORE: Compute-in-Interconnect and -Memory Chiplets for Multi-Mode Multi-Request LLM Inference Acceleration</h1>
 <p class="meta-line">arXiv（Yue Jiet Chong 等，cs.AR） · 2026-08-31 · 论文PDF</p>
 
-<p>Large language model (LLM) inference exhibits substantial variability across adaptation modes, context lengths, and request concurrency, creating challenges for maintaining high utilization, memory efficiency, and scalab…</p>
-<blockquote><p>Large language model (LLM) inference exhibits substantial variability across adaptation modes, context lengths, and request concurrency, creating challenges for maintaining high utilization, memory efficiency, and scalable performance on compute-in-memory (CIM) accelerators. This paper presents CHIPSMORE, a multi-mode and multi-request LLM inference accelerator that integrates compute-in-interconnect and CIM to support both base-mode and low-rank adaptation (LoRA) inference under diverse workloads. CHIPSMORE employs heterogeneous processing elements consisting of resistive RAM analog compute-in-memory (RRAM-ACIM) and static RAM digital compute-in-memory (SRAM-DCIM) interconnected through a programmable Inter-PE computational network (IPCN). A composable hierarchical key-value (KV) memory scheme dynamically allocates router scratchpad, SRAM-DCIM, and embedded DRAM (eDRAM) resources according to workload requirements, enabling scalable support for long-context and batched inference. Furthermore, a non-replicated multi-request execution pipeline exploits request-level parallelism without duplicating pretrained weights, while a state-aware resource reconfiguration mechanism selectively…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 推理在不同适配模式（base / LoRA）、上下文长度与并发请求间差异巨大，存内计算（CIM）加速器很难同时保持高利用率、内存效率与可扩展性。</p>
+<p><strong>方法</strong> CHIPSMORE 把「互连内计算」与 CIM 结合：RRAM 模拟 CIM 与 SRAM 数字 CIM 构成异构 PE，经可编程 PE 间计算网络互连；分层可组合 KV 存储（router scratchpad / SRAM-DCIM / eDRAM）按负载动态分配；非复制式多请求流水线复用预训练权重；状态感知重配机制对闲置资源电源门控。</p>
+<p><strong>关键数字</strong> 周期精确软硬协同仿真显示：Mistral-7B 推理上相比 Nvidia H100 吞吐最高 2.38 倍、能效最高 27 倍，且多请求服务无需复制权重。</p>
+<p><strong>为什么值得看</strong> 面向真实 LLM 服务负载（多模式 + 多请求 + 长上下文）的完整 CIM 芯片架构设计，对推理芯片与近存计算方向都有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2608.30509v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.30509v1">阅读原文 ↗</a></p>
 </body>
 </html>

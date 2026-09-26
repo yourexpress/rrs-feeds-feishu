@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MaD-RL：面向分布匹配的强化学习框架，缓解 GRPO 模式坍缩</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MaD-RL：面向分布匹配的强化学习框架，缓解 GRPO 模式坍缩</h1>
+<p class="meta-line">Meta AI · 2026-09-24 · 官方公告</p>
+<img class="hero" src="https://img.shlwsj.asia/pro/2026-09-25/img/1790301745012cx30655aj8h73cc549h69ac45jxbj9a4.png" alt="" referrerpolicy="no-referrer">
+<p>训练目标从单答案奖励最大化扩展为输出类别分布匹配预设目标分布（官方原文未能定位：arXiv 未检索到、ai.meta.com 本轮无法访问，链接为第三方报道，无法存档原文故不入选）。</p>
+<blockquote><p>Meta AI published a paper on September 24th, MaD-RL, focusing on a less obvious but very practical issue in large model reinforcement learning: training usually only rewards high scores for a single output, which may cause the model to gradually concentrate its probabilities on one solution or expression. For math problems, converging to an answer with a high success rate might be beneficial; however, in tasks involving synthetic data, strategy exploration, and those that require satisfying population distribution constraints, overly singular outputs can result in the loss of viable options.</p><p>The research team proposed the Distribution Matching framework, which does not merely aim to maximize the average reward, but rather to make the distribution of a certain potential category attribute in the model's output approach a pre-set target. The so-called “target distribution” can refer to the proportions of different problem-solving strategies, code structures, or other discernible categories. The paper demonstrates the effectiveness of this method through mathematical reasoning and programming experiments; however, these are still research findings and do not imply that all general models have automatically solved the issue of pattern collapse, nor does it mean that a single set of proportions can be used to control all open-ended texts.</p><p>GRPO may push the probability towards a single mode, and adjusting the temperature does not always solve the problem.</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://www.coinmeta.com/en/news/1246999">阅读原文 ↗</a></p>
+</body>
+</html>

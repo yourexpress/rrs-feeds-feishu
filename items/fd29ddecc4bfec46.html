@@ -22,9 +22,11 @@
 <h1>Strong Drafts Need Compact Memories: Long-Context Speculative Decoding with Compressed KV Cache</h1>
 <p class="meta-line">arXiv（Tong Yuan 等，cs.LG） · 2026-08-31 · 论文PDF</p>
 
-<p>Long-context LLM applications such as document summarization and multi-turn agents require generation from prefixes spanning tens of thousands of tokens, making decoding latency a major bottleneck.</p>
-<blockquote><p>Long-context LLM applications such as document summarization and multi-turn agents require generation from prefixes spanning tens of thousands of tokens, making decoding latency a major bottleneck. Speculative decoding (SD) reduces latency without changing model outputs, but its speedup depends on both accepted draft tokens and draft-step latency: Lightweight drafts are fast but lack the capacity to capture long-range dependencies, whereas strong independent drafts recover acceptance but incur growing KV-access cost at long prefixes. We introduce memory-augmented drafting for long-context SD, equipping a strong independent draft with compressed draft-side KV memory: A lightweight adaptor constructs and incrementally updates this memory to retain distant information and exact recent context. The target verifier retains its full KV cache and applies the standard accept/reject rule, preserving SD's lossless guarantee. Experiments on Llama~3.1-8B and 70B targets at prefix lengths up to 32K show that our method reduces draft-side memory by over 70%. It achieves speedups of up to 2.08x and 3.33x , respectively, over autoregressive decoding.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 长上下文（数万 token 前缀）下投机解码的两难：轻量 draft 快但抓不住长程依赖导致接受率低，强独立 draft 接受率高却在长前缀下 KV 访问成本上升——如何兼得？</p>
+<p><strong>方法</strong> 为强独立 draft 配压缩的 draft 侧 KV 记忆：轻量 adaptor 构建并增量更新这份记忆，同时保留远端信息与精确的近期上下文；target 验证器保留完整 KV cache、用标准接受/拒绝规则，保持投机解码的无损保证。</p>
+<p><strong>关键数字</strong> Llama 3.1-8B/70B、前缀最长 32K：draft 侧内存降超 70%；相对自回归解码加速最高 2.08 倍（8B）与 3.33 倍（70B）。</p>
+<p><strong>为什么值得看</strong> 把「draft 强但 memory 要轻」拆成独立的压缩记忆模块，思路干净且无损，长上下文 serving 加速的实用组件。</p>
+<p><a href="https://arxiv.org/abs/2608.30252v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.30252v1">阅读原文 ↗</a></p>
 </body>
 </html>

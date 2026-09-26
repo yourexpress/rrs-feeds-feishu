@@ -22,9 +22,11 @@
 <h1>A Universal Context-Reuse Layer for Cross-Model KV Sharing</h1>
 <p class="meta-line">arXiv（Yi Li 等，cs.LG） · 2026-08-31 · 论文PDF</p>
 
-<p>Modern large language model (LLM) serving systems increasingly operate over repeated or shared context, yet each model typically performs its own prefill computation even when another model has already processed the same…</p>
-<blockquote><p>Modern large language model (LLM) serving systems increasingly operate over repeated or shared context, yet each model typically performs its own prefill computation even when another model has already processed the same input. Existing KV-cache reuse mechanisms substantially reduce redundant computation within a single model, but generally assume that the producer and consumer of a cache are identical. We study \emph{cross-model KV sharing}, which translates the KV state produced by a source model into a representation that can be consumed by a different target model, including models that differ in scale, architecture, attention configuration, tokenizer, and model family. We evaluate the approach in both within-family and cross-family settings. For Qwen2.5-7B $\rightarrow$ Qwen2.5-1.5B, translated KV states improve LongBench2 accuracy from 27.59\% to 34.48\%, a gain of 6.89 percentage points over the native 1.5B baseline, while reducing handoff cost relative to native target prefill. For the cross-family Qwen2.5-1.5B $\rightarrow$ Gemma-2-2B setting, KV handoff reduces target-side prefill cost by up to 67.05\% at 4K context length while maintaining decoding perplexity close to na…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 多个 LLM 处理同一上下文时各自重复 prefill；现有 KV 缓存复用假设生产者和消费者是同一模型，能否让 KV 状态跨模型（不同规模、架构、tokenizer、模型族）直接迁移复用？</p>
+<p><strong>方法</strong> 提出跨模型 KV 共享：把源模型产生的 KV 状态翻译成目标模型可消费的表示，在族内（Qwen2.5-7B→1.5B）与跨族（Qwen2.5→Gemma-2、Llama3.1-70B→Qwen2.5-7B）三种设定下评估精度与 prefill 成本。</p>
+<p><strong>关键数字</strong> 族内翻译使 1.5B 模型 LongBench2 准确率从 27.59% 提升到 34.48%（+6.89pp）；跨族 4K 上下文下目标侧 prefill 成本最高降 67.05%；Llama3.1-70B→Qwen2.5-7B 延迟从 899ms 降至 138ms，精度 44.0% vs 原生 45.7%。</p>
+<p><strong>为什么值得看</strong> 首次给出「KV 状态是可迁移计算表示」的实证，把 context mobility 立成系统抽象——对多模型/多智能体推理架构的省算力设计有直接启发。</p>
+<p><a href="https://arxiv.org/abs/2608.30963v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.30963v1">阅读原文 ↗</a></p>
 </body>
 </html>

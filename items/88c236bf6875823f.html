@@ -22,9 +22,11 @@
 <h1>Beacon: LLM Multi-Agent Driven Hardware Design Space Exploration for Heterogeneous Multi-Chiplet Deep Learning Accelerators</h1>
 <p class="meta-line">arXiv（Boyu Li 等，cs.AR） · 2026-08-31 · 论文PDF</p>
 
-<p>Heterogeneous multi-chiplet accelerators allow chiplets to be configured independently to better match different operator characteristics and improve inference efficiency.</p>
-<blockquote><p>Heterogeneous multi-chiplet accelerators allow chiplets to be configured independently to better match different operator characteristics and improve inference efficiency. However, heterogeneity makes simulator evaluation expensive, limiting the number of iterations affordable for hardware design space exploration (HW-DSE). Mainstream data-driven methods rely mainly on final metrics and a few predefined states, and require many search iterations to implicitly learn the relationships between input parameters and optimization objectives, making them less effective in this setting. In practice, evaluators also generate detailed reports on execution timelines, resource utilization, memory accesses, and communication behavior. Large language models (LLMs) can combine domain knowledge with these reports to explicitly identify bottleneck locations, degradation causes, and parameter adjustment directions, thereby improving each design decision under limited iteration budgets. Based on this observation, we propose Beacon, a report-driven LLM multi-agent framework for heterogeneous multi-chiplet HW-DSE. Beacon employs hierarchical agents for bottleneck localization, root-cause diagnosis, and…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 异构多 chiplet 加速器可逐 chiplet 独立配置以匹配算子特性，但异构性让仿真评估昂贵，硬件设计空间探索（HW-DSE）在有限迭代预算内难以收敛。</p>
+<p><strong>方法</strong> 提出 Beacon：报告驱动的 LLM 多智能体 DSE 框架。分层智能体分别负责瓶颈定位、根因诊断与硬件候选生成，让 LLM 直接「读」仿真器输出的执行时间线、资源利用率、访存与通信报告，再配合分析工具箱与 RAG 记忆形成闭环搜索。</p>
+<p><strong>关键数字</strong> 在相同有限迭代预算下，相比随机搜索、贝叶斯优化和强化学习，Beacon 将延迟-能耗-成本复合目标降低 25.1%~93.5%。</p>
+<p><strong>为什么值得看</strong> 把 LLM 的「读报告、找瓶颈」能力系统化进硬件 DSE，用显式推理替代数据驱动方法的隐式拟合——是 LLM-for-hardware 方向少见的完整多智能体落地范式。</p>
+<p><a href="https://arxiv.org/abs/2608.30932v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.30932v1">阅读原文 ↗</a></p>
 </body>
 </html>

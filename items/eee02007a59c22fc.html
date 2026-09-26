@@ -22,9 +22,11 @@
 <h1>Don't Let the Model Write the YAML: Deterministic, Minimal-Diff GitOps Remediation from LLM-Proposed Field Changes</h1>
 <p class="meta-line">arXiv（Pruthvi Davineni，cs.SE） · 2026-08-31 · 论文PDF</p>
 
-<p>LLM agents increasingly diagnose incidents and propose remediations.</p>
-<blockquote><p>LLM agents increasingly diagnose incidents and propose remediations. In a GitOps workflow, applying a fix means editing a version-controlled config file, and the obvious implementation, having the model author the edited file or a diff, is what practitioners reach for first. Evaluating that choice on real Kubernetes manifests, we find no text-generation strategy is safe for unattended automation. Unified diffs are unsafe: under strict patching almost none apply, but that is an artifact, since a tolerant tool (GNU patch) applies 96%, yet silently misapplies about 1 in 7 (14-20%) with no error signal. Full-file rewrite is capability-dependent: a small model corrupts the file, while a frontier model is usually correct but non-deterministic (it silently drops a field or edits a neighbor on some runs) and must regenerate the whole file, costing O(file size) per edit. We present an alternative that separates the semantic decision (which resource, field, and value) from the syntactic act of editing the file. The agent emits only a structured field-change intent; a deterministic pipeline indexes manifests by (kind, name), locates the target scalar's exact character span via the YAML parser…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 智能体诊断事故后要改 GitOps 里的版本化配置文件，直觉做法是让模型直接产出 diff 或整文件重写——这在无人值守自动化下安全吗？</p>
+<p><strong>方法</strong> 在真实 Kubernetes manifests 上评测后给出替代方案：语义决策（改哪个资源/字段/值）与语法编辑分离。Agent 只输出结构化字段变更意图；确定性管线按 (kind, name) 索引、借 YAML parser 的节点位置标记定位标量精确字符区间，只替换该区间——文件不重新序列化，diff 天然最小、格式注释保留、结果与模型无关且确定，生成成本 O(1)。已实现于 KubeAstra（Apache-2.0）并发布基准。</p>
+<p><strong>关键数字</strong> unified diff 用 GNU patch 容错应用可达 96%，但其中约 1/7（14%~20%）被静默错打且无错误信号；整文件重写前沿模型仍有非确定性地丢字段/改邻近字段的问题。</p>
+<p><strong>为什么值得看</strong> 「LLM 出意图、确定性代码动手」的 fail-closed 契约是 Agent 落地运维的通用范式，评测结论对任何让模型改配置的系统都是警示。</p>
+<p><a href="https://arxiv.org/abs/2609.00227v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.00227v1">阅读原文 ↗</a></p>
 </body>
 </html>

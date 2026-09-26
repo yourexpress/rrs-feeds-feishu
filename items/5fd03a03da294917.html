@@ -22,9 +22,11 @@
 <h1>Event-Driven Language Models with Sparse Neural Activity for Neuromorphic Hardware</h1>
 <p class="meta-line">arXiv（Simon Richter 等，cs.NE） · 2026-08-31 · 论文PDF</p>
 
-<p>Inference with transformer-based large language models (LLMs) is often limited by the memory-bound KV cache and quadratic attention cost.</p>
-<blockquote><p>Inference with transformer-based large language models (LLMs) is often limited by the memory-bound KV cache and quadratic attention cost. State-space models (SSMs) mitigate this through linear attention and fixed-size recurrent states, but their large dense linear projections remain computationally expensive even after quantization. We introduce a method that induces sparse neural activity in heavily quantized linear-attention models with minimal performance loss. Activations below a per-projection trainable threshold ($\pm Δ$) are nullified while preserving crucial outliers, achieving comparable performance to dense models with up to 4$\times$ fewer effective arithmetic operations. Targeting a multi-core, multi-chip neuromorphic platform, where event-driven execution converts unstructured sparsity into throughput at both the compute and communication levels, a capability GPU architectures fundamentally lack, we project up to 37$\times$ higher throughput and 16$\times$ lower power versus edge GPU inference of a comparable transformer-based model, and up to 5.4$\times$ improvements over the non-sparsified baseline. These results position sparse, quantized linear-attention models as …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 线性注意力 SSM 缓解了 KV 缓存与二次注意力成本，但大 dense 线性投影即使量化后仍然昂贵；能否靠稀疏激活进一步降算力，并落到事件驱动的类脑硬件上？</p>
+<p><strong>方法</strong> 在重量化的线性注意力模型中引入逐投影可训练阈值（±Δ），阈值以下激活置零、保留关键 outlier，诱导稀疏神经活动；事件驱动执行把非结构化稀疏转成计算与通信两层的实际吞吐——这是 GPU 架构做不到的。面向多核多片类脑平台评估。</p>
+<p><strong>关键数字</strong> 有效算术运算最多省 4 倍、性能与 dense 模型相当；相对边缘 GPU 推理，预计吞吐最高 37 倍、功耗低 16 倍；相对未稀疏化基线最高提升 5.4 倍。</p>
+<p><strong>为什么值得看</strong> 把「稀疏 + 量化 + 线性注意力」三者对齐到类脑事件驱动硬件的叙事完整自洽，是 LLM 超低功耗部署方向值得跟踪的路线。</p>
+<p><a href="https://arxiv.org/abs/2608.30439v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.30439v1">阅读原文 ↗</a></p>
 </body>
 </html>

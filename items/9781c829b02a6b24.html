@@ -22,9 +22,11 @@
 <h1>The Irreversibility Budget: Fleet-Level Risk Accounting and Admission Control for Agent Operating Systems</h1>
 <p class="meta-line">arXiv（Bardia Mohammadi 等，cs.AI） · 2026-08-31 · 论文PDF</p>
 
-<p>Fleets of LLM agents now externalize effects that cannot be fully undone: they move money, deploy code, delete data, and disclose information.</p>
-<blockquote><p>Fleets of LLM agents now externalize effects that cannot be fully undone: they move money, deploy code, delete data, and disclose information. Current controls check one effect at a time, so a fleet of individually authorized agents can overdraw its principal's risk under a shared trigger while every local gate stays correct. We propose the irreversibility budget, a cumulative account of residual value-at-risk that a trusted runtime maintains for each principal across agents, workflows, and tenants. Treating irreversibility as a first-class resource, the runtime charges each effect its residual loss below the agent and denies the marginal effect once the aggregate would overdraw the budget. Getting the price right is hard, because effects are heterogeneous, adversarially declared, and correlated. We perform a controlled study in which per-effect gates admit fleet-level overdraws of up to 48 times the tenant's risk limit while the budget holds every correctly charged run within that limit. Conservative, dependency-aware pricing remains the central open problem for a deployable design.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 智能体舰队在转移资金、部署代码、删除数据、披露信息——这些效应无法完全撤销。现有控制逐条检查效应，每个局部闸门都正确，整支舰队却可能在共享触发下集体透支委托人的风险额度。</p>
+<p><strong>方法</strong> 提出「不可逆预算」：可信运行时为每个委托人跨智能体/工作流/租户维护一份残余风险值（value-at-risk）累计账户；把不可逆性当一等资源，每个效应按其残余损失计费，累计将透支时拒绝边际效应。难点在定价——效应异构、可被对抗性申报、且彼此相关。</p>
+<p><strong>关键数字</strong> 受控实验：逐效应闸门下舰队级透支最高达租户风险限额的 48 倍，而预算机制让所有计费正确的运行都守在限额内。保守且依赖感知的定价仍是开放问题。</p>
+<p><strong>为什么值得看</strong> Agent OS 治理从「单点审批」走向「舰队级风险核算」的框架性工作，直指多智能体系统最易被忽视的系统性风险。</p>
+<p><a href="https://arxiv.org/abs/2609.00275v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.00275v1">阅读原文 ↗</a></p>
 </body>
 </html>

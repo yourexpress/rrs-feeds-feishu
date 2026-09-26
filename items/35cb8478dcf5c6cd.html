@@ -22,9 +22,11 @@
 <h1>DRLM: Deep Reinforcement Learning-Based LLM Query Orchestration in Edge Environments</h1>
 <p class="meta-line">arXiv（Reza Farahani 等，cs.DC） · 2026-08-31 · 论文PDF</p>
 
-<p>Large language model (LLM) services increasingly process heterogeneous queries with diverse latency, accuracy, and resource requirements.</p>
-<blockquote><p>Large language model (LLM) services increasingly process heterogeneous queries with diverse latency, accuracy, and resource requirements. While edge deployment reduces response time, the heterogeneity of devices and the diversity of model families, parameter scales, and quantization levels make efficient LLM query orchestration challenging. This paper introduces DRLM, a Deep Reinforcement Learning-based LLM query orchestration framework in edge environments. DRLM integrates two lightweight predictors: (i) a class-conditioned quality estimator that maps queries to semantic categories and infers model performance, and (ii) a feature-driven latency predictor that estimates inference time across model-device configurations. These predictions, combined with system state, feed a factorized Proximal Policy Optimization (PPO) agent that performs state-aware orchestration decisions. To enable data-driven orchestration, we construct a large-scale benchmarking dataset with 223 835 measurements spanning 1258 queries, 6 query classes, 8 model families (32 deployed instances), 5 quantization levels, and heterogeneous edge devices. Evaluation on a 64-node edge cluster and comparison with three ba…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 边缘部署 LLM 服务面对延迟/精度/资源需求各异的异构查询，设备、模型族、参数量与量化级别五花八门，查询编排（query orchestration）很难做。</p>
+<p><strong>方法</strong> DRLM 用深度强化学习做编排：先用两个轻量预测器——按语义类别估计各模型质量的分类条件质量估计器、跨模型-设备配置估推理时延的预测器——再把预测与系统状态喂给因子化 PPO 智能体做状态感知决策。配套构建了大规模基准数据集。</p>
+<p><strong>关键数字</strong> 数据集含 223,835 条测量（1,258 查询、6 类、8 个模型族 32 实例、5 档量化）；64 节点边缘集群上推理延迟最高降 51%、排队延迟最高降 67%、精度损失至多 8%；负载升高时延迟改善达 61.4%。</p>
+<p><strong>为什么值得看</strong> 边缘 LLM serving 少见的「数据集 + RL 编排」完整工作，预测器与策略解耦的设计对异构推理调度有工程参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.00442v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.00442v1">阅读原文 ↗</a></p>
 </body>
 </html>

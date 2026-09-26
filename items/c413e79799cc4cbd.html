@@ -22,9 +22,11 @@
 <h1>CateKV: On Sequential Consistency for Long-Context LLM Inference Acceleration</h1>
 <p class="meta-line">arXiv（Haoyun Jiang 等，cs.LG） · 2026-08-31 · 论文PDF</p>
 
-<p>Large language models (LLMs) have demonstrated strong capabilities in handling long-context tasks, but processing such long contexts remains challenging due to the substantial memory requirements and inference latency.</p>
-<blockquote><p>Large language models (LLMs) have demonstrated strong capabilities in handling long-context tasks, but processing such long contexts remains challenging due to the substantial memory requirements and inference latency. In this work, we discover that certain attention heads exhibit sequential consistency in their attention patterns, which can be persistently identified using a coefficient-of-variation-based algorithm. Inspired by this observation, we propose CateKV, a hybrid KV cache method that retains only critical token information for consistent heads, thereby reducing KV cache size and computational overhead, while preserving the majority of KV pairs in adaptive heads to ensure high accuracy. We show the unique characteristics of our algorithm and its extension with existing acceleration methods. Comprehensive evaluations on long-context benchmarks show that, while maintaining accuracy comparable to full attention, CateKV reduces memory usage by up to $2.72\times$ and accelerates decoding by $2.18\times$ in single-sample inputs, and boosts throughput by $3.96\times$ in batch scenarios.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 长上下文 LLM 推理的 KV 缓存占内存、拖延迟；不同 attention head 的注意力模式并不相同，能否按 head 特性区别压缩？</p>
+<p><strong>方法</strong> 发现部分 head 的注意力模式具有「序列一致性」，可用基于变异系数的算法稳定识别；据此提出混合式 KV 缓存 CateKV：一致性 head 只保留关键 token 信息以压缩缓存与计算，自适应 head 保留多数 KV 对以保精度，且可与现有加速方法叠加。</p>
+<p><strong>关键数字</strong> 长上下文基准上精度与全注意力相当：单样本输入内存最高省 2.72 倍、解码加速 2.18 倍；批处理场景吞吐提升 3.96 倍。</p>
+<p><strong>为什么值得看</strong> 把「head 级注意力模式差异」变成一个可持久识别的结构属性并落成混合缓存策略——思路简洁、与现有方法正交，长上下文 serving 可直接取用。</p>
+<p><a href="https://arxiv.org/abs/2608.30295v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.30295v1">阅读原文 ↗</a></p>
 </body>
 </html>

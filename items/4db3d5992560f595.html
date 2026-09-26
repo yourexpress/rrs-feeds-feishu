@@ -22,9 +22,11 @@
 <h1>VARA: A Voltage-Aware ReRAM-Based Accelerator for Energy-Efficient Computing</h1>
 <p class="meta-line">arXiv（Peng Dang 等，cs.AR） · 2026-08-31 · 论文PDF</p>
 
-<p>ReRAM-based in-memory computing (IMC) architectures are widely regarded as a promising approach to alleviating the computational bottleneck of conventional architectures.</p>
-<blockquote><p>ReRAM-based in-memory computing (IMC) architectures are widely regarded as a promising approach to alleviating the computational bottleneck of conventional architectures. Since ReRAM crossbars perform matrix-vector multiplication (MVM) in the analog domain, their computational energy consumption is highly dependent on weight and activation distributions. However, most existing ReRAM accelerators focus primarily on weight optimization while paying limited attention to the impact of activations on computational energy consumption, leaving the energy-saving potential of activation sparsity largely underexploited. In this paper, we propose a voltage-aware ReRAM-based accelerator (VARA), along with its accompanying design methodology. Specifically, we first introduce a voltage-aware training (VAT) algorithm that incorporates a preset threshold into the activation function to steer the activation distribution toward zero values, thereby enhancing activation sparsity. Building upon this, we further propose a co-zero activation reordering (CAR) scheme for crossbar-level computation skipping. CAR clusters activation dimensions based on their co-zero correlations and consistently reorders bo…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> ReRAM 存内计算在模拟域做矩阵向量乘，能耗强依赖权重与激活分布；现有加速器多优化权重、忽视激活对能耗的影响，激活稀疏性的节能潜力没被吃透。</p>
+<p><strong>方法</strong> VARA 双管齐下：电压感知训练（VAT）在激活函数内置预设阈值，把激活分布往零值引导以增强稀疏性；共零激活重排（CAR）按共零相关性聚类激活维度、同步重排激活矩阵与对应权重，把散落的零激活聚成连续零区，最大化 crossbar 级计算跳过收益。</p>
+<p><strong>关键数字</strong> 仅边际精度损失下：平均系统总能耗降 60.12%，平均系统能效提升 2.68 倍，优于现有稀疏激活优化的 SOTA 加速器。</p>
+<p><strong>为什么值得看</strong> 「训练引导稀疏 + 数据重排聚合稀疏」的组合拳打得很完整，对做 ReRAM/存算一体能耗优化的人是一套可复用方法论。</p>
+<p><a href="https://arxiv.org/abs/2609.00421v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.00421v1">阅读原文 ↗</a></p>
 </body>
 </html>

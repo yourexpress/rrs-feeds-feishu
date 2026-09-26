@@ -22,9 +22,11 @@
 <h1>AInfer-PD: Communication-Safe In-Place Prefill-Decode Multiplexing for Distributed MoE Rollouts</h1>
 <p class="meta-line">arXiv（Guowei Wang 等，cs.DC） · 2026-09-01 · 论文PDF</p>
 
-<p>Rollout inference often dominates the wall-clock time of large-scale reinforcement learning (RL).</p>
-<blockquote><p>Rollout inference often dominates the wall-clock time of large-scale reinforcement learning (RL). In agentic RL, each trajectory alternates between model generation and environment interaction over multiple turns. Asynchronous trajectories consequently introduce new prefill (P) work while other trajectories remain in decode (D), making P/D coexistence a persistent property of the rollout rather than a one-time prompt-ingestion event. On shared accelerators, persistent P/D coexistence can make prefill interfere with latency-sensitive decode and prolong rollout completion. P/D disaggregation avoids this co-location but requires separate device pools and KV-cache transfers. In-place multiplexing retains shared devices and KV state, but existing designs lack the communication isolation needed for large MoE deployments that combine attention TP/DP with distributed expert execution. In practical implementations, P and D can issue intersecting collectives in inconsistent cross-rank orders; DeepEP's P and D paths also share mutable protocol state. We present AInfer-PD, which extends in-place P/D multiplexing to distributed MoE rollouts. AInfer-PD coordinates P/D collective order across ran…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 智能体 RL 的 rollout 中轨迹异步交替生成与环境交互，prefill（P）与 decode（D）长期共存；P 会干扰时延敏感的 D。P/D 分离要多池设备与 KV 传输，原地复用方案又缺大规模 MoE（attention TP/DP + 分布式专家）所需的通信隔离——P、D 会发出交叉不一致的集合通信，DeepEP 两条路径还共享可变协议状态。</p>
+<p><strong>方法</strong> AInfer-PD 把原地 P/D 复用扩展到分布式 MoE rollout：跨 rank 协调 P/D 集合通信顺序，为两条 DeepEP 路径配独立通信状态，使交叉的 ADP/ATP 与 DeepEP 路径可安全并发；保留共享权重与 KV 存储。</p>
+<p><strong>关键数字</strong> 单节点 prefill 密集负载下 rollout 完成时间比同引擎关复用降 7.1%~22.5%、比 SGLang 降 24.8%~32.9%；双节点分别降 18.0%~35.3% 与 18.3%~31.8%；细粒度边界再降 8.6%~19.8%。</p>
+<p><strong>为什么值得看</strong> RL 训练基础设施的关键一环——把 P/D 原地复用做到分布式 MoE 安全可用，直接缩短 rollout 墙钟时间。</p>
+<p><a href="https://arxiv.org/abs/2609.00993v2">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.00993v2">阅读原文 ↗</a></p>
 </body>
 </html>

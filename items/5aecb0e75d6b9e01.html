@@ -22,9 +22,11 @@
 <h1>DynaNDE: Dynamic Near-Data Expert Scheduling for Batched MoE Inference</h1>
 <p class="meta-line">arXiv（Xiaoyang Lu 等，cs.AR） · 2026-08-31 · 论文PDF</p>
 
-<p>Mixture-of-Experts (MoE) models enable efficient scaling of large language model (LLM) inference but suffer from substantial data-movement overhead when deployed on neural processing unit (NPU)-based systems.</p>
-<blockquote><p>Mixture-of-Experts (MoE) models enable efficient scaling of large language model (LLM) inference but suffer from substantial data-movement overhead when deployed on neural processing unit (NPU)-based systems. Near-Data Processing (NDP) provides a promising way to mitigate this bottleneck via cooperative NPU-NDP execution. However, existing NPU-NDP MoE systems do not fully account for hardware heterogeneity, dynamic expert-level concurrency, and temporal expert reuse during batched inference. This paper presents DynaNDE, a dynamic near-data expert scheduling framework that exploits NPU-NDP collaboration to accelerate batched MoE inference. DynaNDE introduces an analytical performance model that captures hardware heterogeneity, data-movement costs, and communication-computation overlap in cooperative NPU-NDP execution. Guided by this model, DynaNDE determines per-layer expert scheduling across the NPU and NDP while accounting for expert-level concurrency. DynaNDE also incorporates a reuse-aware runtime that avoids redundant parameter movement when experts reside in NPU memory. Experimental results show that DynaNDE achieves substantial throughput improvements over the state-of-the-ar…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> MoE 模型在 NPU 系统上推理受数据搬移开销拖累；近数据计算（NDP）可缓解，但现有 NPU-NDP MoE 系统没充分考虑硬件异构、动态专家级并发与批推理中的专家时间复用。</p>
+<p><strong>方法</strong> DynaNDE 动态近数据专家调度框架：建立刻画硬件异构、数据搬移成本与通信-计算重叠的解析性能模型，据此在 NPU 与 NDP 间做逐层专家调度并计入专家级并发；配 reuse-aware 运行时，专家已在 NPU 内存时避免重复搬参数。</p>
+<p><strong>关键数字</strong> 相比最先进的 NPU-NDP MoE serving 框架，prefill 阶段平均加速 2.6 倍、decoding 阶段平均加速 2.2 倍。</p>
+<p><strong>为什么值得看</strong> NPU + 近存计算协同跑 MoE 是端侧/边侧大模型推理的关键路线，DynaNDE 的解析模型 + 复用感知调度组合是该方向可参考的系统设计。</p>
+<p><a href="https://arxiv.org/abs/2609.00407v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.00407v1">阅读原文 ↗</a></p>
 </body>
 </html>

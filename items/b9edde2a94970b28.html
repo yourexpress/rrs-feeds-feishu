@@ -22,9 +22,11 @@
 <h1>Reasoning-Aware Compression: Identifying and Protecting Vulnerable Reasoning Circuits for Energy-Efficient LLM Deployment</h1>
 <p class="meta-line">arXiv（Leonard Twagirayezu 等，cs.AI） · 2026-08-31 · 论文PDF</p>
 
-<p>Large Reasoning Models (LRMs) impose substantial energy costs during deployment, yet current compression methods apply uniform quantization across all components, risking damage to critical reasoning circuits.</p>
-<blockquote><p>Large Reasoning Models (LRMs) impose substantial energy costs during deployment, yet current compression methods apply uniform quantization across all components, risking damage to critical reasoning circuits. We present a reasoning-aware compression framework that benchmarks quantization conditions across five reasoning benchmarks, GSM8K, FOLIO, MATH-500, ProofWriter, and MuSiQue, with hardware-level GPU energy measurement; profiles per-module INT4 vulnerability across all 196-224 (layer, projection) pairs via a perturbation sweep on a held-out calibration split, then selectively restores the most sensitive circuits to FP16. Three findings emerge. First, INT4 quantization can increase energy by extending reasoning chains; a 25% power reduction becomes a net energy increase on GSM8K. Second, vulnerability is task-dependent: attention projections are more critical for mathematical reasoning, and sensitivity patterns differ by architecture in logical inference. Third, selective compression achieves Pareto-optimal points inaccessible to uniform methods: R1-Qwen-7B Top-10% on ProofWriter gains +12 pp over FP16 at -9.7% energy, validated on held-out data across five reasoning benchmarks…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 大推理模型（LRM）部署能耗高，而现有压缩对所有组件统一量化，可能误伤关键推理电路——量化对推理能耗的影响究竟如何、该保护谁？</p>
+<p><strong>方法</strong> 推理感知压缩框架：在 GSM8K、FOLIO、MATH-500、ProofWriter、MuSiQue 五个推理基准上做 GPU 硬件级能耗测量；对全部 196~224 个（层, 投影）对做扰动扫描刻画 INT4 脆弱性，再把最敏感电路选择性恢复 FP16。</p>
+<p><strong>关键数字</strong> 三个发现：① INT4 可能拉长推理链反而增能——25% 的功耗降低在 GSM8K 上变成净能耗上升；② 脆弱性任务相关——数学推理更依赖 attention 投影，逻辑推理的敏感模式随架构不同；③ 选择性压缩达到统一方法不可及的 Pareto 点：R1-Qwen-7B Top-10% 在 ProofWriter 比 FP16 高 12pp 且能耗 -9.7%。</p>
+<p><strong>为什么值得看</strong> 「量化省电」的直觉被硬件实测证伪，任务依赖的脆弱性图谱 + 选择性保护方案对推理模型低成本部署非常实用。</p>
+<p><a href="https://arxiv.org/abs/2609.05512v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.05512v1">阅读原文 ↗</a></p>
 </body>
 </html>

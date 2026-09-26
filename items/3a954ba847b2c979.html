@@ -22,9 +22,11 @@
 <h1>DASC: Decay-Aware State Compression for Hybrid Linear-Attention Serving</h1>
 <p class="meta-line">arXiv（Yanqi Yu 等，cs.LG） · 2026-08-31 · 论文PDF</p>
 
-<p>Hybrid linear-attention architectures have recently scaled to large open-weight models, offering quality competitive with full attention while substantially reducing key/value (KV) cache growth.</p>
-<blockquote><p>Hybrid linear-attention architectures have recently scaled to large open-weight models, offering quality competitive with full attention while substantially reducing key/value (KV) cache growth. However, their in-place recurrent-state updates complicate cache management: prefix reuse requires state checkpoints alongside full-attention KV, while storing state checkpoints in full increases memory pressure, leading to more evictions and repeated prefill. By analyzing the decay structure of Gated DeltaNet (GDN) and Kimi Delta Attention (KDA), we find that different heads and channels retain prefix information over markedly different timescales, which we term \emph{retention horizons}. This variation suggests substantial compression potential in persistent state checkpoints. Building on this observation, we introduce \emph{Decay-Aware State Compression} (DASC), which derives retention horizons from model weights, selects long-horizon state units, and packs them into a ragged state checkpoint layout. To integrate efficiently with tensor-parallel inference engines, DASC furtherly balances compressed state checkpoints across TP ranks. On reuse, DASC either zero-fills omitted units or refre…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 混合线性注意力架构（GDN / KDA 等）显著抑制 KV 增长，但原地 recurrent state 更新让前缀复用必须存 state checkpoint，完整存储又带来内存压力与重复 prefill——checkpoint 能否压缩？</p>
+<p><strong>方法</strong> 分析 Gated DeltaNet 与 Kimi Delta Attention 的衰减结构，发现不同 head/通道保留前缀信息的时间尺度差异显著（retention horizons）；DASC 据此从模型权重推导保留期、选出长保留期 state unit 打成 ragged checkpoint，并在 TP rank 间均衡；复用时对省略单元零填充或有界后缀重放。</p>
+<p><strong>关键数字</strong> Kimi-Linear 上保守配置接近全缓存精度，KDA 状态 checkpoint 压缩 2.63 倍；固定内存预算下平均 TTFT 降 42.6%、输入吞吐升 68.4%；Qwen(GDN) 呈现同样趋势。</p>
+<p><strong>为什么值得看</strong> 线性/混合注意力 serving 正热，DASC 是首个系统化处理其 state checkpoint 压缩的方案，且直接面向 TP 推理引擎落地。</p>
+<p><a href="https://arxiv.org/abs/2608.30386v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.30386v1">阅读原文 ↗</a></p>
 </body>
 </html>

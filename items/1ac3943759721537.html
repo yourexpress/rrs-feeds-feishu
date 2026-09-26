@@ -22,9 +22,11 @@
 <h1>Ceiling-Clipped Acceptance Histograms Indicate Stranded Speed-up in Block-Diffusion Speculative Decoding</h1>
 <p class="meta-line">arXiv（Ephrem Wu，cs.CL） · 2026-08-31 · 论文PDF</p>
 
-<p>Speculative decoding speeds up generation with an efficient draft model (drafter) that proposes tokens for a target model to verify in one pass, preserving the target's output distribution.</p>
-<blockquote><p>Speculative decoding speeds up generation with an efficient draft model (drafter) that proposes tokens for a target model to verify in one pass, preserving the target's output distribution. High-acceptance block-diffusion drafters such as DFlash and DFlare fill an entire block in one parallel pass. In many cycles, the target accepts the whole block, so the drafter exhausts its trained block horizon before verification fails. We call this unrealized acceptance stranded speed-up. A mean committed length, per prompt or per cycle, hides it, whereas the acceptance histogram exposes it as a spike in the ceiling bin, the fraction of cycles that accept the entire block. We recommend the histogram as a preflight check before spending training compute. Naively widening the block at inference does not recover the speed-up, because once the block outgrows its training size, the drafter's bidirectional attention shifts its distribution even at early positions and erodes front-of-block verification. Instead, we post-train the drafter on a longer block with a short curriculum that emphasizes the newly exposed positions, a method we call DBloom. Expanding the pretrained DFlash and DFlare drafters …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 块扩散式投机解码（DFlash/DFlare 等高接受率 drafter）一次并行填满整块，很多 cycle 里 target 接受整块——drafter 在验证失败前就用完了训练好的块长，这部分「搁浅加速比」如何识别并收回？</p>
+<p><strong>方法</strong> 指出平均 committed length 会掩盖该现象，应以接受直方图的「ceiling bin 尖峰」作为训练前的 preflight 检查；推理时直接加宽块无效（超出训练块长后双向注意力分布偏移），故提出 DBloom：在更长块上对 drafter 做短课程后训练，重点强化新暴露位置。</p>
+<p><strong>关键数字</strong> DFlash/DFlare 从块 16 扩到 24（Qwen3-8B/4B target），高 ceiling 基准上每 prompt committed length 中位 +0.8 token（最高 +1.1），先继续训练再扩展可达 +1.37；Gemma-4-12B-IT 全部 7 个基准中位 +0.41；tree 预算 ≤64 节点时在全部基准上优于 JetSpec。</p>
+<p><strong>为什么值得看</strong> 给出诊断投机解码「天花板」的直方图方法 + 一条可复用的扩块训练配方，还做了跨模型族与树状方法的对比，工程上很实在。</p>
+<p><a href="https://arxiv.org/abs/2608.30427v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.30427v1">阅读原文 ↗</a></p>
 </body>
 </html>

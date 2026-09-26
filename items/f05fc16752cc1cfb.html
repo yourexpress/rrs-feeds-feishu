@@ -22,9 +22,11 @@
 <h1>HBQ: Hierarchical Scaling Block Quantization with Hardware-Efficiency-Aware Design for Accurate LLM Inference</h1>
 <p class="meta-line">arXiv（Chun-Ting Chen 等，cs.LG） · 2026-08-31 · 论文PDF</p>
 
-<p>Block Quantization (BQ) is a promising approach for efficient deployment of large language models (LLMs), enabling low-precision computation with controlled accuracy degradation.</p>
-<blockquote><p>Block Quantization (BQ) is a promising approach for efficient deployment of large language models (LLMs), enabling low-precision computation with controlled accuracy degradation. Compared to scalar weight-only quantization (WoQ), BQ quantizes both weight and activation, offering higher hardware efficiency and end-to-end inference on a unified datapath, but its design space, spanning bit-width, block size, scaling, and numeric formats, remains underexplored. We provide hardware/benchmark results through design space exploration (DSE). We find that increasing block size improves hardware efficiency by amortizing dequantization and accumulation costs, but degrades accuracy. This trade-off limits conventional BQ methods. Motivated by this insight, we propose Hierarchical Block Quantization (HBQ). Unlike prior methods [1], [2], which use small blocks and conventional Power-of-Two (PoT) or integer-based scaling, HBQ uses large blocks to maximize efficiency and introduces low-overhead significand (SIG) scaling for second-level quantization. By allocating quantization levels effectively and accounting for distinct activation and weight distributions, SIG scaling compensates for large-block…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 块量化（BQ）同时量化权重与激活、硬件效率高于纯权重量化，但位宽/块大小/缩放/数值格式的设计空间未被充分探索：大块摊薄反量化成本却伤精度，这一矛盾如何解？</p>
+<p><strong>方法</strong> DSE 后提出分层块量化 HBQ：用大 block 拉满硬件效率，再引入低开销 significand（SIG）缩放做第二级量化，按激活与权重的不同分布分配量化层级，比传统 PoT/INT 缩放更好补偿大块误差。28nm ASIC 加速器实现，覆盖权重、激活与 KV cache，并加 partial-sum BQ 降 EMA 能耗。</p>
+<p><strong>关键数字</strong> HBQ-A 以 W4A5 达到 W4A16 级精度且面积小于 NVFP4；HBQ-E 硬件成本再降 17%；相比 SOTA WoQ 面积/能效高 2.3/4.6 倍，相比此前 BQ 方法系统能耗降 1.6~3.3 倍、加速 1.5~3.0 倍且精度最好。</p>
+<p><strong>为什么值得看</strong> 从 DSE 洞察到 ASIC 实现的完整量化工作，SIG 分层缩放的思路可直接迁移到其他低精度推理设计。</p>
+<p><a href="https://arxiv.org/abs/2609.00450v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.00450v1">阅读原文 ↗</a></p>
 </body>
 </html>

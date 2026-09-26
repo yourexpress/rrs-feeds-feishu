@@ -22,9 +22,11 @@
 <h1>Towards Stream Learning on Embedded Systems: Benchmarking the Memory Consumption of Stream Learning Methods</h1>
 <p class="meta-line">arXiv（Sebastian Buschjäger 等，cs.LG） · 2026-08-31 · 论文PDF</p>
 
-<p>Stream learning is commonly evaluated through predictive performance and adaptation to concept drift.</p>
-<blockquote><p>Stream learning is commonly evaluated through predictive performance and adaptation to concept drift. However, sustained operation of a stream learner also requires predictable and bounded resource usage even on long streams. This requirement becomes even more critical when learning moves from servers to near-sensor embedded systems where memory and processing are scarce resources. In state-of-the-art stream learning, however, we perceive a strong focus on concept drift adaptation, whereas resource usage is often an evaluation byproduct. To close this gap, we benchmark seven representative stream classifiers on 13 real and synthetic streams under model-size budgets from 128\,KiB to approximately 8\,MiB. Our benchmark comprises a total of 6,463 experiments. We measure failure-aware accuracy, peak model size, time to budget exhaustion, and prediction-plus-update latency. The results reveal two distinct resource failure modes. Adaptive ensembles can exceed small budgets almost immediately because of their initial footprint, even when their size remains stable thereafter. Incremental trees can fit initially but grow throughout a long stream, with HoeffdingTrees (HT) and Extremely Fast …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 流学习评估普遍只盯预测性能与概念漂移适应，但嵌入式/近传感器场景要求长期运行下资源消耗可预测、有界——现有方法在内存预算下表现如何？</p>
+<p><strong>方法</strong> 对 7 个代表性流分类器、13 条真实/合成数据流、128KiB~8MiB 模型大小预算做基准：共 6,463 组实验，测量失败感知准确率、峰值模型大小、预算耗尽时间与预测+更新延迟。</p>
+<p><strong>关键数字</strong> 两类资源失效模式：自适应集成初始占容就超限；增量树初始能装但随流持续增长，HoeffdingTree 与 EFDT 大小中位增长 7.37 与 5.87 倍。最小预算下只有显式紧凑方法可行，预算放大后集成才有竞争力。</p>
+<p><strong>为什么值得看</strong> 用大规模实证把「有界资源」推上流学习的一等设计目标，并给出暴露/遵守资源预算的 API 提案——嵌入式 ML 从业者必读。</p>
+<p><a href="https://arxiv.org/abs/2608.30923v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2608.30923v1">阅读原文 ↗</a></p>
 </body>
 </html>
