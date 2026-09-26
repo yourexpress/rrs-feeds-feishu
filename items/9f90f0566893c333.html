@@ -22,9 +22,11 @@
 <h1>Performance Characterization of SPEC CPU 2026 on AMD EPYC 9755 Processor</h1>
 <p class="meta-line">arXiv（Kunal Kashyap 等，cs.AR） · 2026-09-01 · 论文PDF</p>
 
-<p>SPEC CPU 2026 is the first major update to the industry-standard CPU benchmark suite since 2017.</p>
-<blockquote><p>SPEC CPU 2026 is the first major update to the industry-standard CPU benchmark suite since 2017. This paper presents the first microarchitecture based performance characterization of the new suite, conducted on AMD EPYC "Zen 5", also the first SPEC CPU characterization study on this microarchitecture. Using a multi-lens methodology spanning pipeline efficiency, control flow behavior, cache hierarchy pressure, and instruction mix, we analyze both SPECrate and SPECspeed suites. We introduce scale analysis, comparing single-copy to full-system behavior to expose system-level bottlenecks invisible to conventional characterization. Our analysis reveals substantial behavioral diversity across the suite, and the multi-lens analysis identifies three distinct behavioral clusters: frontend control-flow-dominated workloads that stress branch predictor throughput rather than accuracy, high-efficiency compute workloads that suffer SMT contention at scale, and memory bandwidth-bound workloads with poor L3 filtering even at single-copy. Scale-dependent effects, including SMT dispatch contention causing throughput reduction and L3 capacity interference, emerge only at full system utilization. This…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> SPEC CPU 2026 是 2017 年以来行业标准 CPU 基准套件的首次大更新，但尚缺微架构层面的性能画像；AMD EPYC "Zen 5" 上也无 SPEC 分析先例。</p>
+<p><strong>方法</strong> 在 EPYC 9755 上对新套件做首个微架构级表征：多透镜方法覆盖流水线效率、控制流行为、缓存层级压力与指令构成，同时分析 SPECrate 与 SPECspeed；引入规模分析对比单副本与满系统行为，暴露常规表征看不见的系统级瓶颈。</p>
+<p><strong>关键数字</strong> 识别出三类行为簇：前端控制流主导型（考验分支预测器吞吐而非准确率）、高效计算型（满规模下受 SMT 争用）、内存带宽受限型（单副本即 L3 过滤差）；SMT 分发争用与 L3 容量干扰等效应仅在满系统利用率下出现。</p>
+<p><strong>为什么值得看</strong> 面向下一代数据中心处理器的实证地基，架构研究与选型决策都可直接引用。</p>
+<p><a href="https://arxiv.org/abs/2609.01527v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.01527v1">阅读原文 ↗</a></p>
 </body>
 </html>

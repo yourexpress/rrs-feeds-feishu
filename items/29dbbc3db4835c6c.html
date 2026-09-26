@@ -22,9 +22,11 @@
 <h1>Prediction-Robust Service Deployment with Capacity-Aware Edge Admission</h1>
 <p class="meta-line">arXiv（Hailiang Zhao 等，cs.DC） · 2026-09-01 · 论文PDF</p>
 
-<p>Edge platforms instantiate executable services close to users to reduce request-serving cost, but each instance incurs a one-time deployment cost and remains useful only for a finite time-to-live (TTL).</p>
-<blockquote><p>Edge platforms instantiate executable services close to users to reduce request-serving cost, but each instance incurs a one-time deployment cost and remains useful only for a finite time-to-live (TTL). The resulting online decision is both prediction-sensitive and capacity-coupled: an optimistic forecast can waste deployment cost, whereas a delayed decision misses the burst it is intended to serve. We study this problem under a common TTL cost model and propose CAPSUM, a capacity-aware admission policy with an elastic specialization, CAPSUM-E. In the local elastic setting, every node-service trace is exactly a variable-price Bahncard instance. This reduction lets CAPSUM-E inherit PFSUM's tight prediction-error-dependent ratio, including $2/(1+β)$ consistency and $1/β$ robustness for $β&gt;0$. A redirect-aware variant preserves the same local deployment schedule. For finite-capacity nodes, CAPSUM combines size-scaled break-even tests, a utilization-dependent shadow price, and evidence-density eviction; we prove capacity feasibility, scale invariance, and exact agreement with CAPSUM-E under an elastic configuration. We implement an exact local offline dynamic program and compare agains…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 边缘平台就近实例化服务可降低请求成本，但实例有一次性部署成本且 TTL 有限；在线决策对预测敏感且受容量耦合——乐观预测浪费部署费，迟疑又错过突发流量。</p>
+<p><strong>方法</strong> 提出容量感知准入策略 CAPSUM 及其弹性特化 CAPSUM-E：局部弹性情形被精确归约为变价 Bahncard 问题，继承 PFSUM 的紧竞争比；有限容量时结合规模缩放盈亏测试、利用率影子价格与证据密度驱逐，并证明容量可行与尺度不变性。</p>
+<p><strong>关键数字</strong> 一致性 2/(1+β)、鲁棒性 1/β；合成场景归一化成本较最佳来源改写基线降 33.7%–42.9%，公开 Globus Compute 轨迹上降 45.5%；规模实验达 1024 节点、10000 服务。</p>
+<p><strong>为什么值得看</strong> 理论保证与实测兼得的服务部署准入方案，边缘资源调度可直接参考。</p>
+<p><a href="https://arxiv.org/abs/2609.00877v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.00877v1">阅读原文 ↗</a></p>
 </body>
 </html>

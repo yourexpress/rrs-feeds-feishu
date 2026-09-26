@@ -22,9 +22,11 @@
 <h1>GadIR: A Spatial-Topology Preserving Compiler for Quantum Many-Body Systems Simulation</h1>
 <p class="meta-line">arXiv（Xiangyu Ren 等，quant-ph） · 2026-09-01 · 论文PDF</p>
 
-<p>Simulating quantum many-body systems has been one of the most important applications of quantum computation.</p>
-<blockquote><p>Simulating quantum many-body systems has been one of the most important applications of quantum computation. For simulation, the Hamiltonian of a physical system is compiled into quantum programs with native instructions for quantum hardware. In previous works, the Hamiltonian is represented as Pauli strings, then compiled and optimized based on the quantum circuit model. Such representation paradigm neglects the spatial topology of original physical models, which is vital information to reducing the overhead of compiling many-body systems Hamiltonians. To address such neglect, we introduce a spatial-topology preserving compiler for quantum many-body simulation. Using Pauli gadgets as the representations of the Hamiltonian, we introduce our intermediate representation -- GadIR, to preserve the spatial-topology information of original physical models. Our compiler frontend performs the group reduction algorithm based on Pauli gadget model, which is a hardware-independent optimization. Our compiler backend performs trotterization and scheduling on Pauli gadgets, then synthesizes the Pauli gadgets into hardware-native quantum programs. We evaluate our compiler on all the canonical qua…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 量子多体系统模拟需将哈密顿量编译为硬件原生指令；传统 Pauli 字符串表示丢失了原始物理模型的空间拓扑信息，而这一信息对降低编译开销至关重要。</p>
+<p><strong>方法</strong> 提出保空间拓扑的编译器：以 Pauli gadget 表示哈密顿量并设计中间表示 GadIR 保留空间拓扑；前端做硬件无关的 group reduction 优化，后端执行 trotterization 与调度后将 gadget 合成为硬件原生程序。</p>
+<p><strong>关键数字</strong> 在所有标准量子多体模型与四种主流量子架构上评测，摘要称编译开销显著降低，但未给出具体量化数字。</p>
+<p><strong>为什么值得看</strong> 把物理模型的空间结构引入编译 IR，为量子模拟编译打开了新的优化空间，适合关注量子编译的读者。</p>
+<p><a href="https://arxiv.org/abs/2609.01771v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.01771v1">阅读原文 ↗</a></p>
 </body>
 </html>

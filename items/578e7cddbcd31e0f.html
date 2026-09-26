@@ -22,9 +22,11 @@
 <h1>Just Talk Once: Communication-Efficient Split Federated LLM Fine-Tuning on Edge Devices</h1>
 <p class="meta-line">arXiv（Jiaxiang Geng 等，cs.DC） · 2026-09-01 · 论文PDF</p>
 
-<p>Large language model (LLM) fine-tuning is increasingly shifting toward data generated on edge devices, where memory, computation, bandwidth, and connectivity constraints make conventional federated learning difficult to …</p>
-<blockquote><p>Large language model (LLM) fine-tuning is increasingly shifting toward data generated on edge devices, where memory, computation, bandwidth, and connectivity constraints make conventional federated learning difficult to sustain. Split federated fine-tuning (SFT) improves client-side efficiency by offloading most model parameters and computation to the server but requires step-by-step bidirectional communication loop across the split interface and forces continuous client involvement throughout training. In this paper, we present L-shaped SFT, a split fine-tuning framework that removes this bidirectional bottleneck. Our key insight is that weight tying in modern LLMs enables server-side hidden activations to be directly supervised using target embeddings, allowing the training loss to be computed on the server without returning server outputs to the client. To further eliminate the need for continuous client participation, based on L-shaped SFT, we introduce one-shot SFT, in which clients upload activations once and then go offline while the server continues optimization over cached representations. We implement our design in a real system testbed with heterogeneous edge clients, in…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 微调日益转向端侧数据，但分裂联邦微调（SFT）需在分裂界面逐步双向通信，且客户端须全程在线，边缘场景难以承受。</p>
+<p><strong>方法</strong> 提出 L 形 SFT：利用现代 LLM 的权重绑定特性，用目标嵌入直接监督服务端隐层激活，使损失在服务端计算、无需回传输出；进一步提出 one-shot SFT——客户端只上传一次激活即可离线，服务端基于缓存表示继续优化。</p>
+<p><strong>关键数字</strong> 在含商用手机与 NVIDIA 开发板的异构真实测试床上实现；摘要称通信开销与客户端在线时长较现有 SFT 基线显著降低，未给出具体倍数。</p>
+<p><strong>为什么值得看</strong> "只传一次"把联邦微调客户端成本压到极限，对隐私敏感的端侧微调落地很有吸引力。</p>
+<p><a href="https://arxiv.org/abs/2609.01457v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.01457v1">阅读原文 ↗</a></p>
 </body>
 </html>

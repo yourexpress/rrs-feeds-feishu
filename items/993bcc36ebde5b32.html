@@ -22,9 +22,11 @@
 <h1>Hardware Acceleration of Block-Diffusion LLM for Edge Devices</h1>
 <p class="meta-line">arXiv（Wei-Hsing Huang 等，cs.AR） · 2026-09-01 · 论文PDF</p>
 
-<p>Single-stream (batch-one) edge inference cannot amortize weight traffic across requests.</p>
-<blockquote><p>Single-stream (batch-one) edge inference cannot amortize weight traffic across requests. Full-attention diffusion LLMs recompute the entire sequence at every step; native block diffusion makes completed blocks immutable and exactly cacheable, yet refinement still streams prefix KV and FFN weights. We co-design WIFiV-LPDDR, a wide-I/O LPDDR system for precision-tagged reads, BRQ-KV for a canonical low-rank-plus-INT8-residual prefix with query-dependent per-entry precision, and DAT-FFN for drift-mapped canonical replacement, adjacent-stage-corrected low-bit delta, or cached-state carry while keeping live activations unquantized. Both map to an input-stationary mixed-precision systolic array. For the evaluated 1.5B/7B models on modeled Jetson-class platforms, the full stack provides arithmetic-mean energy-reduction factors of 3.79x/3.96x and arithmetic-mean latency speedups of 2.88x/4.44x at the reported DAT-FFN settings; every corresponding compressed model-benchmark score drops by less than one absolute percentage point from its baseline.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 单流边缘推理无法摊销权重读取开销；块扩散 LLM 已完成块不可变、可精确缓存，但细化阶段仍需流式读取前缀 KV 与 FFN 权重，能耗与延迟仍高。</p>
+<p><strong>方法</strong> 软硬件协同三件套：WIFiV-LPDDR 宽 I/O 存储系统支持精度标记读取；BRQ-KV 对前缀做低秩+INT8 残差规范表示并按查询决定逐条精度；DAT-FFN 做漂移映射低比特增量/缓存态复用；全部映射到输入静止混合精度脉动阵列。</p>
+<p><strong>关键数字</strong> 1.5B/7B 模型在 Jetson 级平台上：能耗平均降 3.79×/3.96×，延迟平均提速 2.88×/4.44×；压缩模型基准分数下降均不足 1 个百分点。</p>
+<p><strong>为什么值得看</strong> 把块扩散 LLM 的可缓存性转化为存储与阵列层面的系统设计，是边缘扩散推理的完整栈式方案。</p>
+<p><a href="https://arxiv.org/abs/2609.01084v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.01084v1">阅读原文 ↗</a></p>
 </body>
 </html>

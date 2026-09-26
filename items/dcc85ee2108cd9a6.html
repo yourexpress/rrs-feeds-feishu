@@ -22,9 +22,11 @@
 <h1>The Price of Remembering: A Calibrated Energy Law for Computation</h1>
 <p class="meta-line">arXiv（Mohamed Amine Bergach，cs.PF） · 2026-09-01 · 论文PDF</p>
 
-<p>Where does a computer's energy go? Mostly into keeping, not into computing.</p>
-<blockquote><p>Where does a computer's energy go? Mostly into keeping, not into computing. A bit held in fast storage draws power for every second it stays there, and it costs energy again each time it moves between storage levels. We call the first cost \emph{rent} and the second \emph{fare}, and we state one law: the energy of a computation is at least its operations, plus rent on every live bit for as long as it lives, plus fare on every bit moved. The model under the law prices control as well as data. There is no free clock, and any unpriced register would make the theorems false. One lemma does most of the work: every use of a value is paid for by rent, by fare, or by computing the value again. Three things follow. Exact attention brings every past token back for every new one, so its energy grows with the square of the context length, while a recurrent model with a fixed state grows linearly. The square is a theorem for machines that never re-read past tokens. Under a stated serving hypothesis it is the fare on every past token, which passes the model's own arithmetic near ten thousand tokens, the point where long-context serving becomes bandwidth-bound today. Known bounds on memory over t…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 计算机的能耗大头不在"算"而在"存"：比特驻留快速存储每秒都在耗电，跨层级搬移再耗一次——作者称之为租金与车费，要给计算立一条能耗定律。</p>
+<p><strong>方法</strong> 提出标定能耗定律：计算能耗 ≥ 运算量 + 每个存活比特的租金 + 每个搬移比特的车费；核心引理是每次取值必由租金、车费或重算之一支付，据此推导各类模型的能耗下界。</p>
+<p><strong>关键数字</strong> 精确注意力能耗随上下文平方增长，固定状态循环模型为线性；约一万 token 处车费超过算术能耗，恰是长上下文转为带宽受限的区间；易失存储上排序 n 项租金下界 n²/log n 比特步。</p>
+<p><strong>为什么值得看</strong> 把"内存墙"变成可推定理的能耗账本，长上下文与存算设计都能找到量化依据。</p>
+<p><a href="https://arxiv.org/abs/2609.00744v2">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.00744v2">阅读原文 ↗</a></p>
 </body>
 </html>

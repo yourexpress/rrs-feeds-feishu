@@ -22,9 +22,11 @@
 <h1>Support Local Variables</h1>
 <p class="meta-line">arXiv（Maxwell Bernstein 等，cs.PL） · 2026-09-01 · 论文PDF</p>
 
-<p>Ruby is a dynamically typed and object-oriented programming language.</p>
-<blockquote><p>Ruby is a dynamically typed and object-oriented programming language. Its primary implementation, CRuby, contains a bytecode virtual machine and a mature lazy basic block versioning (LBBV) just-in-time (JIT) compiler called YJIT. In order to both implement more advanced optimizations than YJIT supports and also encourage more outside contributions, we present a new method-based JIT called ZJIT. Like YJIT, ZJIT compiles from bytecode to machine code. Unlike YJIT, ZJIT has multiple global and local optimization passes. ZJIT's high-level intermediate representation is in static single assignment (SSA) form. In order to optimize Ruby's local variables, ZJIT lifts local variables into SSA values. This is a departure from how other Ruby compilers handle locals: other JIT compilers either leave local variables as memory loads and stores or do advanced partial evaluation to recover SSA values from memory. While implementing locals, we (re-)discovered what features make local variables in Ruby especially challenging to compile correctly and efficiently. We demonstrate these features and illustrate how we solved these problems in ZJIT.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Ruby 的成熟 JIT YJIT 基于惰性基本块版本化，难以支持更高级优化；新 ZJIT 要在方法级 JIT 中正确处理 Ruby 局部变量这一出了名难编译的特性。</p>
+<p><strong>方法</strong> ZJIT 从字节码编译到机器码，含多个全局与局部优化 pass，高层 IR 采用 SSA 形式；关键设计是把局部变量提升为 SSA 值——不同于其他 Ruby JIT 将其保留为内存 load/store 或靠部分求值恢复 SSA。</p>
+<p><strong>关键数字</strong> 摘要侧重设计与正确性论证，未给出性能数字；重点在（重新）发现并解决 Ruby 局部变量难以正确高效编译的具体语言特性。</p>
+<p><strong>为什么值得看</strong> 动态语言 JIT 如何把"内存里的局部变量"变成 SSA 的一手工程记录，对编译器与语言运行时开发者很有料。</p>
+<p><a href="https://arxiv.org/abs/2609.01502v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.01502v1">阅读原文 ↗</a></p>
 </body>
 </html>

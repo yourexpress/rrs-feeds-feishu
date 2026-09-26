@@ -22,9 +22,11 @@
 <h1>Atlas: Algorithm-Hardware Co-Design for On-Device City-Scale 3D Gaussian Splatting in VR</h1>
 <p class="meta-line">arXiv（He Zhu 等，cs.AR） · 2026-09-02 · 论文PDF</p>
 
-<p>3D Gaussian splatting (3DGS) has drawn significant attention in the architectural community recently.</p>
-<blockquote><p>3D Gaussian splatting (3DGS) has drawn significant attention in the architectural community recently. However, enabling city scale 3DGS on mobile VR devices remains challenging, as the memory requirement of large scale scenes far exceeds the memory capacity of today's mobile GPUs. This paper presents Atlas, an on device city scale 3DGS rendering framework that enables scalable rendering without runtime Internet access. The key insight is that although the full 3DGS model is massive, each frame only requires a small subset of Gaussians under the current pose and level of detail requirement. Based on this insight, Atlas introduces a hierarchical memory offloading mechanism that dynamically loads only necessary Gaussian data into device memory. To further improve performance, Atlas proposes temporal aware LoD search and stereo rasterization to avoid redundant computation in VR. We further show that our technique can be integrated with existing 3DGS accelerators with negligible hardware overhead. Overall, Atlas achieves 18.5x speedup over the GPU baseline and 3.9x speedup over the state of the art 3DGS accelerators, with 92.4% energy savings.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 城市级 3D Gaussian Splatting 在移动 VR 设备上难以运行：大规模场景的内存需求远超当今移动 GPU 容量，且不能依赖运行时联网。</p>
+<p><strong>方法</strong> Atlas 端侧城市级 3DGS 渲染框架：关键洞察是每帧只需当前位姿与 LoD 下的小部分高斯，据此引入分层内存卸载动态加载所需数据；以时间感知 LoD 搜索与立体光栅化消除 VR 冗余计算；并可近乎零开销集成进现有 3DGS 加速器。</p>
+<p><strong>关键数字</strong> 较 GPU 基线提速 18.5×，较最新 3DGS 加速器提速 3.9×，节能 92.4%。</p>
+<p><strong>为什么值得看</strong> 算法-硬件协同把城市级 3DGS 搬上移动 VR，对端侧神经渲染与加速器设计都有直接启发。</p>
+<p><a href="https://arxiv.org/abs/2609.02352v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.02352v1">阅读原文 ↗</a></p>
 </body>
 </html>

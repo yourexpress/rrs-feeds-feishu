@@ -22,9 +22,11 @@
 <h1>DART: Aiming for Tail-Delay Control in Reconfigurable Networks</h1>
 <p class="meta-line">arXiv（Hossein Mohammadalizadeh 等，cs.PF） · 2026-09-01 · 论文PDF</p>
 
-<p>Many systems serve different job classes by switching among configurations.</p>
-<blockquote><p>Many systems serve different job classes by switching among configurations. Often, reconfiguration takes a stochastic amount of time that depends on direction and can differ in distribution between configurations. Reaching a target configuration may require crossing intermediate ones. Under a high-percentile delay objective, rarely served or pass-through configurations accumulate the long-waiting jobs that dominate the sojourn-time tail. Controlling that tail couples three decisions: which target to choose, which path to take, and whether and how many jobs to serve at the configurations crossed on the way. We introduce DART, an opportunistic commitment policy that commits to a target configuration to avoid myopic detours while serving a traversed configuration only when its weighted delay or backlog justifies the pause. We show how these decisions shape the weighted sojourn-time tail. Across six stress topologies, each isolating a different tail-control challenge, DART achieves the lowest P99 sojourn time in every case, up to 23% below the strongest baseline. The advantage holds under heterogeneous, heavy-tailed, and asymmetric reconfiguration times.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 可重构系统在配置间切换服务不同作业类，重构耗时随机且方向相关；高百分位时延目标下，少被服务或途经的配置会积累主导尾时延的长等待作业。</p>
+<p><strong>方法</strong> 提出机会主义承诺策略 DART：承诺一个目标配置以避免短视绕行，仅当途经配置的加权时延或积压值得停留时才服务；将目标选择、路径选择与沿途服务三个决策耦合进加权逗留时间尾部控制。</p>
+<p><strong>关键数字</strong> 在六种各隔离一类尾时延挑战的压测拓扑上，DART 全部取得最低 P99 逗留时间，最多比最强基线低 23%；在异构、重尾、非对称重构时间下优势保持。</p>
+<p><strong>为什么值得看</strong> 针对"尾时延"而非均值做重构调度，问题刻画与策略设计都对低时延系统有借鉴意义。</p>
+<p><a href="https://arxiv.org/abs/2609.01071v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.01071v1">阅读原文 ↗</a></p>
 </body>
 </html>

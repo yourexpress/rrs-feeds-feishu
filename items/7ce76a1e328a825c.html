@@ -22,9 +22,11 @@
 <h1>LLM Inference on IMC-NoC Architecture with Balanced Dataflow and Fine-Grained Parallelism</h1>
 <p class="meta-line">arXiv（Yimin Wang 等，cs.AR） · 2026-09-01 · 论文PDF</p>
 
-<p>LLM inference has become an essential service, yet it imposes unprecedented demands on memory bandwidth, computational density, and communication efficiency.</p>
-<blockquote><p>LLM inference has become an essential service, yet it imposes unprecedented demands on memory bandwidth, computational density, and communication efficiency. While IMC is a promising solution to the memory wall issue, the heterogeneous data dynamicity of LLM requires complementary resources to handle intermediate data generated during run-time. Furthermore, the massive number of parameters in LLM necessitates scale-up architectures where on-chip data movement is often the primary performance bottleneck. This article presents a hardware-software co-design framework that unifies distributed compute, memory, and communication into a seamless processing-communication fabric. On the hardware side, we propose a scalable architecture, named LEAP, that integrates IMC PE, NMC PE, and INC. This allows each hardware layer to execute specialized tasks: IMC for static weights, NMC for dynamic data, and INC for partial result reduction. On the software side, we introduce a partitioning, mapping, and scheduling framework optimized for key metrics in LLM serving, including throughput and latency. To address the distinct computational intensities of the prefill and decode phases, we present a prefi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 推理对存储带宽、计算密度与通信效率提出空前要求；IMC 可破存储墙，但中间数据动态性与超大参数量要求算-存-通一体的新型架构。</p>
+<p><strong>方法</strong> 提出可扩展架构 LEAP：集成 IMC PE（静态权重）、NMC PE（动态数据）与 INC（部分和归约），配套面向吞吐与延迟的划分-映射-调度框架；针对 prefill/decode 计算强度差异做相位解耦，动态重构 PE 组织。</p>
+<p><strong>关键数字</strong> 相对商用 GPU 平台：吞吐提升 ≥1.52×，能效提升 24.91×。</p>
+<p><strong>为什么值得看</strong> 把算、存、网统一成处理-通信一体的 fabric，并按推理相位重构资源，是 IMC 走向 LLM 服务规模化的代表性设计。</p>
+<p><a href="https://arxiv.org/abs/2609.00857v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.00857v1">阅读原文 ↗</a></p>
 </body>
 </html>

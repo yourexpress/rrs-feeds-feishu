@@ -22,9 +22,11 @@
 <h1>mzCache: On-Device LLM Memory Management under Multitasking</h1>
 <p class="meta-line">arXiv（Hongseung Yu 等，cs.OS） · 2026-09-01 · 论文PDF</p>
 
-<p>On-device mobile Large Language Model (LLM) inference is gaining significant attention.</p>
-<blockquote><p>On-device mobile Large Language Model (LLM) inference is gaining significant attention. However, mobile devices operate in highly dynamic multitasking environments where users frequently switch between applications. This creates memory pressure, forcing LLM memory (model weights and KV cache) to be evicted by the operating system. When a new inference request arrives, the inference system must restore the evicted memory through slow storage reads or recompute the entire KV cache, severely degrading responsiveness. To address this, we present mzCache, an on-device LLM inference system with specialized memory management for multitasking environments. Under unpredictable memory pressure, mzCache elastically evicts LLM memory and leverages the unified memory of mobile SoCs to enable zero-wait inference on the GPU with concurrent CPU-side restoration. mzCache realizes this through restoration-oriented memory management: LLM memory is partitioned into fine-grained shared buffers to enable partial eviction and restoration with concurrent cross-processor access, while hybrid swap and backward-out eviction policies ensure low-latency restoration from any eviction state. Implemented on llama…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 端侧 LLM 推理处在多任务环境：应用频繁切换造成内存压力，模型权重与 KV cache 被系统驱逐，新请求只能靠慢速存储读回或全量重算 KV，响应性严重受损。</p>
+<p><strong>方法</strong> mzCache 面向多任务的端侧 LLM 内存管理：弹性驱逐 LLM 内存，利用移动 SoC 统一内存实现 GPU 零等待推理与 CPU 侧并发恢复；内存切分为细粒度共享缓冲以支持部分驱逐/恢复，混合 swap 与 backward-out 驱逐策略保证任意驱逐态下低延迟恢复。</p>
+<p><strong>关键数字</strong> 基于 llama.cpp 实现并部署为 Android 应用；相比存储支撑的部分卸载，首 token 时间降低 2.1–5.5×，并在真实多任务场景验证有效。</p>
+<p><strong>为什么值得看</strong> 把 OS 级内存压力纳入端侧推理系统设计，是手机跑 LLM 走向实用的关键一环。</p>
+<p><a href="https://arxiv.org/abs/2609.01338v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.01338v1">阅读原文 ↗</a></p>
 </body>
 </html>

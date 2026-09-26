@@ -22,9 +22,11 @@
 <h1>SMELT: Scaling Laws for Compute-Matched MoE Looped Transformers</h1>
 <p class="meta-line">arXiv（Shaowen Wang 等，cs.LG） · 2026-09-01 · 论文PDF</p>
 
-<p>Looped Transformers increase effective depth by iterating a shared block of layers, but most evaluations compare at fixed model size, conflating architectural advantage with extra FLOPs.</p>
-<blockquote><p>Looped Transformers increase effective depth by iterating a shared block of layers, but most evaluations compare at fixed model size, conflating architectural advantage with extra FLOPs. We study looping on Mixture-of-Experts Transformers while closely matching per-token FLOPs, total non-embedding parameters, and KV cache. Through a series of ablations, we arrive at a recipe we call SMELT (Sparse MoE Transformer, middle layers Loop Twice), which loops the middle half of layers twice while matching the unlooped Baseline on all three budgets. We scale SMELT across four sizes up to 54B non-embedding parameters and fit a separate Chinchilla-style scaling law for each architecture. SMELT's loss drops faster with compute, saving 6.8--18.0\% of training FLOPs on the compute-optimal frontier. The advantage transfers to downstream benchmarks beyond what validation loss predicts, is largest on Code, and grows with sample length and the number of in-context examples. Mechanistic analysis shows that the second visit reduces the attention sink and redirects mass toward content-relevant tokens, an inductive bias that may underlie the observed performance gains. These results show that looping ca…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Looped Transformer 通过迭代共享层块增加有效深度，但多数评测在固定模型规模下比较，把架构优势与额外 FLOPs 混为一谈。</p>
+<p><strong>方法</strong> 在 MoE Transformer 上研究循环机制，严格匹配每 token FLOPs、非嵌入参数与 KV cache 三项预算；消融得到配方 SMELT（中间一半层循环两次），并在四个规模上拟合各自 Chinchilla 式缩放律。</p>
+<p><strong>关键数字</strong> 最大规模 54B 非嵌入参数；SMELT 在计算最优前沿上节省 6.8%–18.0% 训练 FLOPs；下游收益超出验证损失预测，代码任务最大，且随样本长度与上下文示例数增长。</p>
+<p><strong>为什么值得看</strong> 公平预算下证明"深度复用"有真收益，并给出可直接照用的架构配方与机理解释。</p>
+<p><a href="https://arxiv.org/abs/2609.01343v3">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.01343v3">阅读原文 ↗</a></p>
 </body>
 </html>
