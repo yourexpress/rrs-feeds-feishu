@@ -22,9 +22,11 @@
 <h1>MeanField Surrogate Modeling for Scalable Runtime Scheduling of Concurrent Heterogeneous AI Inference on Shared GPUs</h1>
 <p class="meta-line">arXiv（Youssef Ennouri 等，cs.DC） · 2026-09-02 · 论文PDF</p>
 
-<p>Deploying heterogeneous AI models concurrently on a shared GPU introduces resource contention that complicates runtime scheduling.</p>
-<blockquote><p>Deploying heterogeneous AI models concurrently on a shared GPU introduces resource contention that complicates runtime scheduling. While surrogate models avoid costly online benchmarking, their profiling requirements typically grow combinatorially with the number of co-running models, limiting scalability. We propose a MeanField surrogate that predicts per-model performance from local configuration and aggregate GPU state rather than explicitly modeling all joint interactions. Experiments on concurrent LLM and vision workloads across $N \in \{2,3,4,5,6\}$ show high predictive accuracy ($R^2 \approx 0.96$) with an empirical sample budget that grows approximately linearly in $N$, in contrast to the combinatorial cost of fully joint profiling. Integrated into a genetic algorithm scheduler, the surrogate scales to an $N=5$ problem with 78,732 feasible joint configurations, remaining within 0.10% of the exhaustive search with zero SLA violations across eight dynamic workload scenarios, while complete online GA decisions take 26 ms median, about $5\times$ faster than exhaustive surrogate search.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 共享 GPU 上并发部署多个异构 AI 模型时资源竞争复杂，联合建模的 profiling 开销随模型数组合爆炸，调度难以扩展。</p>
+<p><strong>方法</strong> 提出 MeanField 代理模型：用局部配置 + 聚合 GPU 状态预测单模型性能，而不显式建模所有联合交互；样本预算随 N 近似线性增长。代理嵌入遗传算法调度器做在线决策。</p>
+<p><strong>关键数字</strong> LLM 与视觉负载混部（N=2–6）预测精度 R²≈0.96；N=5、78,732 个可行配置下与穷举搜索差距 0.10% 以内，8 个动态负载场景零 SLA 违约；在线 GA 决策中位 26 ms，比穷举代理搜索快约 5×。</p>
+<p><strong>为什么值得看</strong> 多模型混部调度的可扩展方案，对 GPU 资源池化、serving 平台设计有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.02109v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.02109v1">阅读原文 ↗</a></p>
 </body>
 </html>

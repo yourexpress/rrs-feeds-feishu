@@ -22,9 +22,11 @@
 <h1>Enhancing the Power of Polyhedral-Based Optimizations with Coordinate-Based Hill Climbing</h1>
 <p class="meta-line">arXiv（Gaurav Verma 等，cs.PL） · 2026-09-02 · 论文PDF</p>
 
-<p>This paper describes our experience extending the polyhedral compiler Pluto with a lightweight, coordinate-wise hill-climbing tuner that adjusts numeric transformation parameters, such as tile sizes and thread-block dime…</p>
-<blockquote><p>This paper describes our experience extending the polyhedral compiler Pluto with a lightweight, coordinate-wise hill-climbing tuner that adjusts numeric transformation parameters, such as tile sizes and thread-block dimensions, after Pluto selects the kernel's loop structure. To ensure fast convergence and escape local minima, hill climbing is augmented with two techniques: expanded neighborhood exploration and a shortest-hop refinement phase. On x86 and ARM CPUs, tuned kernels outperform Pluto's default configuration (1.06-1.28x geometric mean speedup across 11 benchmarks) and static optimizers (Clang -O3, Polly, IOOpt), reaching performance competitive with the AutoTVM autotuner at substantially lower search cost. Applying the same technique to GPU thread-block allocation on an NVIDIA A100 yields 5.5-8.5% improvement over default configurations. These results position post-optimization parameter tuning as a practical middle ground between fixed-cost-model polyhedral compilation and full autotuning.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 多面体编译器的固定代价模型与全量自动调优之间，是否存在低开销又有效的中间路线。</p>
+<p><strong>方法</strong> 在 Pluto 选定循环结构之后，用轻量坐标式爬山调优数值变换参数（tile 大小、线程块维度），配合扩展邻域探索与最短跳细化两招加速收敛、跳出局部最优。</p>
+<p><strong>关键数字</strong> x86 与 ARM CPU 上 11 个 benchmark 几何平均提速 1.06–1.28×，优于 Clang -O3/Polly/IOOpt，达到 AutoTVM 水平且搜索成本低得多；A100 GPU 线程块分配提升 5.5–8.5%。</p>
+<p><strong>为什么值得看</strong> 「编译器定结构 + 轻量调参」的实用折中，对做编译优化和 kernel 调优的人是低成本可复现的思路。</p>
+<p><a href="https://arxiv.org/abs/2609.03114v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.03114v1">阅读原文 ↗</a></p>
 </body>
 </html>

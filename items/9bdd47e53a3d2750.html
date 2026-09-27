@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6GB VRAM 笔记本 GPU 训练 1.11B 模型的系统工程实验</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>6GB VRAM 笔记本 GPU 训练 1.11B 模型的系统工程实验</h1>
+<p class="meta-line">Undercode News · 2026-09-27 · 官方公告</p>
+<img class="hero" src="https://i0.wp.com/undercodenews.com/wp-content/uploads/RLmyr8Ypk_response-1.jpeg" alt="" referrerpolicy="no-referrer">
+<p>组合块坐标优化、CPU 权重卸载、三值权重、梯度检查点与分块损失，在 RTX 4050 6GB 上以 4.51GB 峰值显存跑 1.11B 预训练（1579 tok/s）</p>
+<blockquote><p>Listen to this Post</p><p>A 6 GB Laptop GPU Just Pre-Trained a 1.11B LLM — But There’s a 375-Day Catch</p><p>A 6 GB Laptop GPU Just Pre-Trained a 1.11B LLM — But There’s a 375-Day Catch</p><p>A Different Kind of AI Milestone</p><p>For years, the conventional wisdom around large language model pretraining has been straightforward: if you want to train a billion-parameter model, you need serious hardware.</p><p>A high-end workstation GPU might be considered the minimum. An A100-class accelerator is often the hardware people associate with serious LLM training. A laptop GPU with just 6 GB of VRAM, by contrast, sounds completely unsuitable for the job.</p><p>A new experimental project challenges that assumption—not by discovering a magical new training algorithm, but by aggressively combining several existing memory-saving techniques.</p><p>According to the measurements reported in the project, an NVIDIA RTX 4050 laptop GPU with only 6 GB of VRAM was able to run a 1.11-billion-parameter language model, reaching a peak measured VRAM usage of approximately 4.51 GB during the reported run. The system reached roughly 1,579 tokens per second at a 4,096-token context length.</p><p>But there is an enormous catch.</p><p>Training the model to approximately 30 tokens per parameter would require around 33–36 billion training tokens, translating to roughly 375 days at the measured throughput.</p><p>In other words, the experiment demonstrates something important about memory, but it does not eliminate the fundamental compute cost of pretraining.</p><p>The Real Achievement: Making 1.11B Parameters Fit</p><p>The reported experiment uses an RTX 4050 laptop GPU with 6 GB of VRAM.</p><p>The headline measurements are:</p><p>Metric Reported result</p><p>Model size 1.11B parameters</p><p>GPU RTX 4050 Laptop, 6 GB</p><p>Peak VRAM 4.51 GB</p><p>Context length 4,096 tokens</p><p>Throughput 1,579 tokens/sec</p><p>Estimated pretraining duration ~375 days</p><p>Target training data ~36B tokens</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://undercodenews.com/below-is-a-polished-publication-ready-version-that-keeps-the-original-measurements-and-explicitly-separates-measured-results-extrapolations-and-claims-that-still-need-independent-reproduction-vid/">阅读原文 ↗</a></p>
+</body>
+</html>

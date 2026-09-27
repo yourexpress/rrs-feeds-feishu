@@ -22,9 +22,11 @@
 <h1>Type-Directed, Secure-by-Construction Enclave Partitioning for LLVM</h1>
 <p class="meta-line">arXiv（Wesley B. Nuzzo 等，cs.CR） · 2026-09-02 · 论文PDF</p>
 
-<p>Trusted Execution Environments (TEEs) provide hardware-supported isolation through enclaves that protect code and data independently of software abstractions.</p>
-<blockquote><p>Trusted Execution Environments (TEEs) provide hardware-supported isolation through enclaves that protect code and data independently of software abstractions. However, TEEs alone cannot enforce information-flow security. This problem is further aggravated in LLVM-like low-level languages that allow unrestricted pointer manipulation and unstructured control flow. Moreover, using TEEs effectively typically requires manually partitioning applications into enclave and non-enclave components, a process that is labor-intensive, error-prone, and lacks fine-grained control. We address these challenges with a three-step approach. First, we formalize SIR, an enclave-oblivious calculus based on LLVM IR, equipped with a novel permissive type system that enforces security against low-level attackers. To obtain meaningful guarantees, SIR combines information-flow control with security-aware coarse-grained memory safety. Second, we extend SIR to SIREN, an enclave-aware calculus that enforces noninterference against stronger attackers capable of observing arbitrary non-enclave memory. Third, we develop a type-driven, type-preserving compilation from SIR to SIREN that automatically produces secure …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> TEE 提供硬件隔离但无法保证信息流安全，且应用手动划分 enclave/非 enclave 组件费时、易错、粒度粗；LLVM 级语言的任意指针操作让问题更糟。</p>
+<p><strong>方法</strong> 三步走：形式化 SIR（基于 LLVM IR 的 enclave 无感知演算，许可式类型系统强制信息流控制 + 粗粒度内存安全）→ 扩展为 enclave 感知的 SIREN（对可观察任意非 enclave 内存的攻击者保证 noninterference）→ 类型保持编译自动完成划分。实现为 SPLITR。</p>
+<p><strong>关键数字</strong> 扩展到 OpenSSL（425,953 条 LLVM IR 指令）；以 transitions 为目标优化时从 393 降到 187；长运行应用可摊薄固定 enclave 开销、接近原生性能。</p>
+<p><strong>为什么值得看</strong> 类型驱动、secure-by-construction 的自动 enclave 划分，SGX 应用开发与安全研究都值得读。</p>
+<p><a href="https://arxiv.org/abs/2609.02048v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.02048v1">阅读原文 ↗</a></p>
 </body>
 </html>

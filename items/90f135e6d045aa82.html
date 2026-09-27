@@ -22,9 +22,11 @@
 <h1>Almost Free State Prediction Separation</h1>
 <p class="meta-line">arXiv（John Langford 等，cs.LG） · 2026-09-03 · 论文PDF</p>
 
-<p>State--prediction separation (SPS) relieves a language model's hidden state of two competing burdens---summarizing the context and predicting the next token---by splitting the forward pass into a state stream and a predi…</p>
-<blockquote><p>State--prediction separation (SPS) relieves a language model's hidden state of two competing burdens---summarizing the context and predicting the next token---by splitting the forward pass into a state stream and a prediction stream. The separation works, but it is expensive: the prediction stream is a second pass over the whole backbone, costing $\sim$1.9$\times$ the pretraining FLOPs, and even more in terms of wall-clock time when using a flexible attention mask. This paper makes state--prediction separation almost free. We take the separation to its limit with a free pause token: a prediction stream that writes no keys or values at all and so rides the sequence's existing positions. It improves next-token prediction of a standard Transformer by 2-3 centinats in practice on a 1B parameter model, and because it adds no position it costs nothing at inference---no added context length, no KV cache, no decode steps, and essentially no latency, with the growth in inference flops typically irrelevant as it is not the active bottleneck on throughput. The cost is therefore entirely in training where we use four mechanisms to drive it down: a two-pass split that keeps FlashAttention kerne…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> State-prediction separation（SPS）把 hidden state 的「总结上下文」与「预测下一 token」解耦有效，但 prediction stream 相当于对 backbone 再过一遍，预训练 FLOPs 约 1.9×，太贵。</p>
+<p><strong>方法</strong> 把分离推到极限——免费 pause token：prediction stream 不写任何 KV、不占新位置，推理零额外成本；训练侧用两 pass 拆分保持 FlashAttention 可用、w=0 预测窗、共享 gated FFN（每位置只算一次 FFN）、把分离阶段移到训练尾部，四招压低开销。</p>
+<p><strong>关键数字</strong> 1B 参数模型上下一 token 预测提升 2–3 centinats；训练 wall-clock 开销降至 1.33× 同时恢复约 94% 的 SPS 收益，质量/算力权衡下最低可达 1.09×。</p>
+<p><strong>为什么值得看</strong> isoflop、isoparameter、isotoken 意义下对标准 Transformer 的纯改进，预训练架构改造的务实路线。</p>
+<p><a href="https://arxiv.org/abs/2609.03807v4">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.03807v4">阅读原文 ↗</a></p>
 </body>
 </html>

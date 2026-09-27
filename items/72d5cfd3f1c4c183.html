@@ -22,9 +22,11 @@
 <h1>Hardware-Accelerated Instance Segmentation for Resource-Constrained Space Robotics with Criticality Analysis</h1>
 <p class="meta-line">arXiv（Siddhant Shete 等，cs.RO） · 2026-09-02 · 论文PDF</p>
 
-<p>Autonomous lunar missions require real-time per- ception under three coupled constraints: extreme low-light conditions, limited onboard compute, and radiation-induced hardware faults that can silently corrupt inference.</p>
-<blockquote><p>Autonomous lunar missions require real-time per- ception under three coupled constraints: extreme low-light conditions, limited onboard compute, and radiation-induced hardware faults that can silently corrupt inference. We present a deployment-oriented instance segmentation framework for resource-constrained lunar robotics that jointly addresses quan- tization calibration and system-level fault exposure under strict compute constraints. First, we introduce Activation Variance Informative Sampling (AVIS), a label-free calibration strategy that deterministically selects calibration samples based on activation variance statistics. Second, we deploy a YOLO-based segmentation model on a Deep Learning Processor Unit (DPU) with architectural modifications that reduce CPU fallback paths and enable statically compiled execution with bounded latency in low-lighting conditions. We further introduce a software-level criticality analysis to estimate fault exposure and guide mitigation under radiation-constrained operation. On a lunar micro-rover platform, AVIS with bias correction recovers 69.8% of quantization-induced accuracy loss while achieving 309 ms inference latency and 5.7 W power consu…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 自主月球任务面临三重耦合约束：极端低光、星载算力有限、辐射诱发硬件故障可静默破坏推理结果，如何在此条件下做实时实例分割。</p>
+<p><strong>方法</strong> 三管齐下：① AVIS 无标签校准策略，按激活方差统计确定性地选校准样本；② YOLO 分割模型部署到 DPU，架构改造减少 CPU 回退、静态编译获得有界延迟；③ 软件级 criticality 分析估计故障暴露并指导缓解。</p>
+<p><strong>关键数字</strong> 月球微车平台上 AVIS 加 bias correction 恢复 69.8% 量化精度损失，推理延迟 309 ms、功耗 5.7 W；定向缓解使全局 criticality 降低 31.7%。</p>
+<p><strong>为什么值得看</strong> 面向空间部署约束的可靠 AI 感知系统蓝图，校准、部署、故障分析一体化的方法可迁移到其他高可靠场景。</p>
+<p><a href="https://arxiv.org/abs/2609.02219v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.02219v1">阅读原文 ↗</a></p>
 </body>
 </html>

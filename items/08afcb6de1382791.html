@@ -22,9 +22,11 @@
 <h1>An Empirical Analysis of CodeQL False Positives and Query Refinements for Java Vulnerabilities</h1>
 <p class="meta-line">arXiv（Amirali Sajadi 等，cs.SE） · 2026-09-03 · 论文PDF</p>
 
-<p>Static application security testing (SAST) tools help developers find vulnerabilities before deployment, but false positives create substantial triage effort.</p>
-<blockquote><p>Static application security testing (SAST) tools help developers find vulnerabilities before deployment, but false positives create substantial triage effort. We study whether CodeQL false positives in Java security analysis form recurring, explainable patterns that can be reduced by refining the analysis. We run CodeQL's Java security query suite on 167 CVE instances from 110 projects, focusing on the ten queries with the highest false positive rates. We manually review 500 sampled false positive paths and locations and construct a source-level taxonomy. The five categories are Missed Path Constraint or Sanitization (36.6%), Benign Execution Context (29.4%), Missing Trust Boundary Modeling (27.6%), Imprecise Concurrency Modeling (5%), and Imprecise Sink Modeling (1.4%). Guided by these findings, we implement CodeQL refinements that detect and filter recurring false positive patterns at the query level. The refinements remove 81.8% of reviewed false positives. Across the full selected-query dataset, they remove 15.8% of reported paths and locations while retaining 7 of 8 true positives. This shows that many false positives can be reduced in the analysis, although fixed refinements …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> SAST 工具（CodeQL）的误报造成大量 triage 成本：Java 安全分析的误报是否存在可解释、可在查询层消除的重复模式？</p>
+<p><strong>方法</strong> 在 110 个项目的 167 个 CVE 实例上跑 CodeQL Java 安全查询套件，人工审 500 条误报路径构建源码级 taxonomy，据此实现查询级过滤改进；并评估 agentic 编码工具把改进模式迁移到新项目的能力。</p>
+<p><strong>关键数字</strong> 五类误报：路径约束/净化遗漏 36.6%、良性执行上下文 29.4%、信任边界建模缺失 27.6% 等；改进消除 81.8% 已审误报，全量数据集移除 15.8% 报告且保住 7/8 真阳性；有模板时两个 agent 工具成功率 56%/62%（无模板仅 28%）。</p>
+<p><strong>为什么值得看</strong> 「误报分类 → 查询改进 → agent 自动迁移」的完整工作流，安全工程团队可直接套用。</p>
+<p><a href="https://arxiv.org/abs/2609.04535v2">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.04535v2">阅读原文 ↗</a></p>
 </body>
 </html>

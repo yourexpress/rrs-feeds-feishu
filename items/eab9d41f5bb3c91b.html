@@ -22,9 +22,11 @@
 <h1>BASP: Communication-Efficient Batch-Aware Sequence Parallelism for LLM Training</h1>
 <p class="meta-line">arXiv（Bigyan Ghimire 等，cs.DC） · 2026-09-02 · 论文PDF</p>
 
-<p>Long-context reasoning for large language models (LLMs) is becoming increasingly important, but training over long sequences remains challenging due to massive memory and communication requirements.</p>
-<blockquote><p>Long-context reasoning for large language models (LLMs) is becoming increasingly important, but training over long sequences remains challenging due to massive memory and communication requirements. Sequence parallelism has emerged as an essential technique for addressing bottlenecks in long sequence LLM training. However, we observe that existing sequence parallelism methods are batch-agnostic and apply uniform sequence partitioning across all batch sizes, resulting in inefficient communication. In this paper, we introduce Batch- Aware Sequence Parallelism (BASP), a sequence parallelism approach that leverages batch structure to reduce communication overhead. BASP exploits batch structure by partitioning GPUs into disjoint sequence-parallel groups according to the micro- batch size. This design reduces the all-to-all communication group size, thereby localizing communication and improving training efficiency. Experimental results on an NVIDIA A100 cluster show that BASP improves end-to-end training time by up to 1.17 - 1.31x in Llama and Qwen models compared to standard sequence parallel baselines, while preserving identical model accuracy and memory usage.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 长序列 LLM 训练中，现有序列并行方法对 batch 不敏感——所有 batch size 用统一的序列划分，造成通信低效。</p>
+<p><strong>方法</strong> 提出 Batch-Aware Sequence Parallelism（BASP）：按 micro-batch 大小把 GPU 划分成不相交的序列并行组，缩小 all-to-all 通信组规模，使通信局部化，同时不改变精度与显存占用。</p>
+<p><strong>关键数字</strong> NVIDIA A100 集群上，Llama 与 Qwen 模型端到端训练时间较标准序列并行基线提速 1.17–1.31×。</p>
+<p><strong>为什么值得看</strong> 只改划分策略就能拿到两位数提速，工程侵入性低，做长上下文训练的人可直接借鉴。</p>
+<p><a href="https://arxiv.org/abs/2609.03151v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.03151v1">阅读原文 ↗</a></p>
 </body>
 </html>

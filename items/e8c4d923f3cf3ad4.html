@@ -22,9 +22,11 @@
 <h1>SchedBlame: Who Ran While You Waited? Culprit-Attributed CPU Contention for Containers on Stock Kernels</h1>
 <p class="meta-line">arXiv（Hao Li 等，cs.OS） · 2026-09-02 · 论文PDF</p>
 
-<p>Containers that share a machine compete for CPU. When one slows down, the operator needs to know which co-tenant is responsible, and no deployed signal can say.</p>
-<blockquote><p>Containers that share a machine compete for CPU. When one slows down, the operator needs to know which co-tenant is responsible, and no deployed signal can say. Pressure stall information, per-cgroup wait counters, and run-queue latency histograms are all victim-side: they report that a container waited, never who it waited for. Recovering the culprit means a kernel patch, full scheduler tracing, or statistical inference: unportable, too costly to leave on, or unreliable when victims coexist. SchedBlame is an eBPF tracer that attributes CPU contention to the cgroups that caused it, on stock kernels, continuously. It inverts the accounting: instead of measuring how long a victim waited, it measures the CPU time every other cgroup consumed while that victim was runnable but not running on the same CPU. The mechanism is a per-CPU bitmap of which measured cgroups are waiting, maintained from the kernel's own runnable counts at four scheduler hooks. Every run slice carries that bitmap, so one 16-byte record charges CPU time to a full row of a competitor x victim blame matrix; the kernel stores no per-pair state. Three properties follow. Slices are self-describing, so userspace holds no …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 容器共享机器抢 CPU 时，现有信号（pressure stall、cgroup 等待计数、runqueue 延迟直方图）都是受害者视角——只知自己等了，不知谁在抢；找元凶以往要内核补丁或全量调度追踪。</p>
+<p><strong>方法</strong> SchedBlame 是 eBPF tracer，反向记账：测量受害容器 runnable 但未运行时其他 cgroup 消耗的 CPU。用 per-CPU bitmap 加 4 个调度钩子维护等待状态，每个 16 字节记录直接把 CPU 时间计入「竞争者×受害者」blame 矩阵，内核不存 per-pair 状态。</p>
+<p><strong>关键数字</strong> 生产环境未修改的 4.18/5.10 内核、96 核主机跟踪 84 个容器，开销约 1% Redis 吞吐与单核 6%。</p>
+<p><strong>为什么值得看</strong> 免内核补丁、可常开的 CPU 争抢归因工具，容器平台与混部运维直接可用。</p>
+<p><a href="https://arxiv.org/abs/2609.02052v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.02052v1">阅读原文 ↗</a></p>
 </body>
 </html>

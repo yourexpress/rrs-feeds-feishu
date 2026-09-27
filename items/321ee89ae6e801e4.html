@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LFM2.5-VL-DSpark: Accelerating vision-language models on edge and beyond</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LFM2.5-VL-DSpark: Accelerating vision-language models on edge and beyond</h1>
+<p class="meta-line">Liquid AI · 2026-09-24 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://aypchzzf9pftwuto.public.blob.vercel-storage.com/DSpark-Vision-Hero-4-oZshFjGHCdXh8hn2nvHqopWfY94S8W.gif" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong> Liquid AI 为端侧视觉语言模型 LFM2.5-VL-3B 发布 DSpark 推测解码草稿模型，面向边缘设备加速。</p>
+<p><strong>要点</strong> 沿用文本版 DSpark 配方：attention-only 轻量草稿模型用主模型各层 hidden states 预测后续 k 个 token——对 drafter 而言文本与图像 patch 都是张量，视觉语言模型可直接复用同一套推理算法。最终选定 4 层、block size 9，SFT 混合数据训练 10 epochs。已上 Hugging Face，day-one 支持 llama.cpp、SGLang、MLX-VLM。</p>
+<p><strong>关键数字</strong> 草稿模型约 280M 参数，仅使部署参数量增加 8.9%；GPU 解码吞吐最高 2.66×、边缘设备最高 3.13×，端到端吞吐分别最高 2.27× 与 2.62×。</p>
+<p><strong>为什么值得看</strong> 端侧 VLM 推测解码的完整工程落地，M5 Max / M3 Ultra 实测数据齐全。</p>
+<p><a href="https://www.liquid.ai/blog/lfm2-5-vl-dspark">阅读原文</a></p>
+<p><a class="origin" href="https://www.liquid.ai/blog/lfm2-5-vl-dspark">阅读原文 ↗</a></p>
+</body>
+</html>

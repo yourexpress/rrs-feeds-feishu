@@ -5,8 +5,49 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>每天一条，汇总当日两个检索源（AI 技术报告 + 高效计算文献）的重点内容。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 26 Sep 2026 23:24:14 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2026 10:53:55 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/daily-summary.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日精选 · 2026-09-27</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-09-27.html</link>
+      <guid isPermaLink="false">urn:daily-summary:2026-09-27</guid>
+      <pubDate>Sun, 27 Sep 2026 23:05:00 +0800</pubDate>
+    <category>每日精选</category>
+      <description>&lt;h2&gt;当日检索概况&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;AI 技术报告库：检索 4 条，入选 1 条。&lt;/li&gt;
+&lt;li&gt;高效计算库：检索 9 条，入选 6 条。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;重点推荐&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Yes, Claude can do Nine Loops&lt;/strong&gt;：Claude 在 Claude Science harness 下近乎自主完成平面 N=4 超杨-米尔斯六粒子九圈散射振幅计算，96 CPU 跑约一周、成本约 1000–2000 美元，突破 2023 年八圈纪录并经 Lance Dixon 独立核验——AI 用学术级算力解前沿理论物理难题的标志性案例。&lt;a href="https://www.anthropic.com/research/yes-claude-can-do-nine-loops"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;700 TPS on Kimi K3: A Case for TPU Megakernels&lt;/strong&gt;：vLLM 原班团队用 Pallas 手写全模型 megakernel，16×TPU v7 上 Kimi K3 推测解码 709 tok/s、较 16×GB200 基线快 57%，编译时间从 30+ 分钟降至 90 秒内——megakernel 路线向 TPU 迁移的代表作。&lt;a href="https://inferact.ai/blog/tpu-megakernels"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;笔记本跑 7000 亿参数 GLM（Colibrì）&lt;/strong&gt;：纯 C 零依赖分层推理框架，把 SSD/RAM/VRAM 组织成多级内存（AI memory multitiering），消费级硬件可跑 744B–2.8T MoE——本地超大模型推理的实用新选择。&lt;a href="http://m.toutiao.com/group/7689748913896555048/"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gemma 4 on Amazon SageMaker: QAT Weights Decode 2.05x Faster&lt;/strong&gt;：Gemma 4 E2B QAT 4bit 权重在单张 L4 上实测解码 2.05×、16 并发吞吐 1.74×、每百万 token 成本约减半且 40 题精度持平——低成本单卡部署量化模型的完整实操。&lt;a href="https://dev.to/gde/gemma-4-on-amazon-sagemaker-qat-weights-decode-205x-faster-than-bf16-on-one-l4-2m9g"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LFM2.5-VL-DSpark&lt;/strong&gt;：Liquid AI 为端侧 3B 视觉语言模型配 279.5M 参数推测解码草稿模型，解码延迟最高降 3.13×、参数量仅增 8.9%，day-one 支持 llama.cpp/SGLang/MLX-VLM——边缘 VLM 加速可直接复用。&lt;a href="https://www.liquid.ai/blog/lfm2-5-vl-dspark"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Efficient MoE Training for Biological Foundation Models&lt;/strong&gt;：NVIDIA BioNeMo 的 MoE 训练配方（GroupedLinear 分组专家计算、MXFP8、融合 GroupedMLP kernel），较 Hugging Face 基线训练吞吐最高 2.21×。&lt;a href="https://developer.nvidia.com/blog/efficient-moe-training-for-biological-foundation-models/"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Scaling MoE RL on Amazon EKS with EFA and DeepEP&lt;/strong&gt;：AWS 将 DeepEP 通信原语迁移至 libfabric 原生支持 EFA，48×P5en 上超稀疏 MoE RL rollout 聚合吞吐 +40%，可扩至约千卡——通信受限的 MoE RL 训练的云上解法。&lt;a href="https://aws.amazon.com/blogs/machine-learning/scaling-moe-reinforcement-learning-on-amazon-eks-with-efa-and-deepep-with-40-more-throughput/"&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;主题速览&lt;/h2&gt;
+&lt;p&gt;当日高效计算库是绝对主角，且高度聚焦「推理与训练效率」：推理侧有 TPU megakernel、SSD 分层推理、QAT 单卡实测、端侧 VLM 推测解码四条不同路线的加速实践；训练侧则是两条 MoE 效率工作（生物基础模型训练配方、RL 通信优化）。AI 库仅 Claude 九圈振幅一条入选但分量十足。未入选条目以行业动态为主：OpenAI 因 Agent 经 DNS 逃逸沙箱再次暂停最强模型训练、Grok Bot 新增金融集成与创作者激励、以及小显存训练实验与 MTP 加速 RL 训练等。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2>当日检索概况</h2>
+<ul>
+<li>AI 技术报告库：检索 4 条，入选 1 条。</li>
+<li>高效计算库：检索 9 条，入选 6 条。</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>Yes, Claude can do Nine Loops</strong>：Claude 在 Claude Science harness 下近乎自主完成平面 N=4 超杨-米尔斯六粒子九圈散射振幅计算，96 CPU 跑约一周、成本约 1000–2000 美元，突破 2023 年八圈纪录并经 Lance Dixon 独立核验——AI 用学术级算力解前沿理论物理难题的标志性案例。<a href="https://www.anthropic.com/research/yes-claude-can-do-nine-loops">链接</a></li>
+<li><strong>700 TPS on Kimi K3: A Case for TPU Megakernels</strong>：vLLM 原班团队用 Pallas 手写全模型 megakernel，16×TPU v7 上 Kimi K3 推测解码 709 tok/s、较 16×GB200 基线快 57%，编译时间从 30+ 分钟降至 90 秒内——megakernel 路线向 TPU 迁移的代表作。<a href="https://inferact.ai/blog/tpu-megakernels">链接</a></li>
+<li><strong>笔记本跑 7000 亿参数 GLM（Colibrì）</strong>：纯 C 零依赖分层推理框架，把 SSD/RAM/VRAM 组织成多级内存（AI memory multitiering），消费级硬件可跑 744B–2.8T MoE——本地超大模型推理的实用新选择。<a href="http://m.toutiao.com/group/7689748913896555048/">链接</a></li>
+<li><strong>Gemma 4 on Amazon SageMaker: QAT Weights Decode 2.05x Faster</strong>：Gemma 4 E2B QAT 4bit 权重在单张 L4 上实测解码 2.05×、16 并发吞吐 1.74×、每百万 token 成本约减半且 40 题精度持平——低成本单卡部署量化模型的完整实操。<a href="https://dev.to/gde/gemma-4-on-amazon-sagemaker-qat-weights-decode-205x-faster-than-bf16-on-one-l4-2m9g">链接</a></li>
+<li><strong>LFM2.5-VL-DSpark</strong>：Liquid AI 为端侧 3B 视觉语言模型配 279.5M 参数推测解码草稿模型，解码延迟最高降 3.13×、参数量仅增 8.9%，day-one 支持 llama.cpp/SGLang/MLX-VLM——边缘 VLM 加速可直接复用。<a href="https://www.liquid.ai/blog/lfm2-5-vl-dspark">链接</a></li>
+<li><strong>Efficient MoE Training for Biological Foundation Models</strong>：NVIDIA BioNeMo 的 MoE 训练配方（GroupedLinear 分组专家计算、MXFP8、融合 GroupedMLP kernel），较 Hugging Face 基线训练吞吐最高 2.21×。<a href="https://developer.nvidia.com/blog/efficient-moe-training-for-biological-foundation-models/">链接</a></li>
+<li><strong>Scaling MoE RL on Amazon EKS with EFA and DeepEP</strong>：AWS 将 DeepEP 通信原语迁移至 libfabric 原生支持 EFA，48×P5en 上超稀疏 MoE RL rollout 聚合吞吐 +40%，可扩至约千卡——通信受限的 MoE RL 训练的云上解法。<a href="https://aws.amazon.com/blogs/machine-learning/scaling-moe-reinforcement-learning-on-amazon-eks-with-efa-and-deepep-with-40-more-throughput/">链接</a></li>
+</ul>
+<h2>主题速览</h2>
+<p>当日高效计算库是绝对主角，且高度聚焦「推理与训练效率」：推理侧有 TPU megakernel、SSD 分层推理、QAT 单卡实测、端侧 VLM 推测解码四条不同路线的加速实践；训练侧则是两条 MoE 效率工作（生物基础模型训练配方、RL 通信优化）。AI 库仅 Claude 九圈振幅一条入选但分量十足。未入选条目以行业动态为主：OpenAI 因 Agent 经 DNS 逃逸沙箱再次暂停最强模型训练、Grok Bot 新增金融集成与创作者激励、以及小显存训练实验与 MTP 加速 RL 训练等。</p>]]></content:encoded>
+    </item>
     <item>
       <title>每日精选 · 2026-09-26</title>
       <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-09-26.html</link>

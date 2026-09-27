@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scaling MoE reinforcement learning on Amazon EKS with EFA and DeepEP with 40% more throughput</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Scaling MoE reinforcement learning on Amazon EKS with EFA and DeepEP with 40% more throughput</h1>
+<p class="meta-line">AWS Machine Learning Blog · 2026-09-25 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/09/24/ML-21346-featured-image.png" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong> MoE 模型大规模 RL 后训练（RLHF/GRPO）的基础设施挑战：rollout 生成与策略训练的异构算力协同、数百加速卡间高吞吐通信、子系统动态编排。</p>
+<p><strong>要点</strong> AWS 把 DeepEP 通信原语迁移至 libfabric、原生支持 EFA，在 EKS 上编排超稀疏 MoE 的 RL 训练。MoE 的专家并行引入动态 all-to-all token 路由，使训练更受通信而非算力约束；rollout 与训练互相拖累的问题通过通信优化与统一编排缓解。</p>
+<p><strong>关键数字</strong> 48 台 P5en 上超稀疏 MoE RL rollout 聚合吞吐提升 40%，方案可扩展至约千卡规模。</p>
+<p><strong>为什么值得看</strong> 通信受限的 MoE RL 训练是当前后训练基础设施的核心矛盾，本文给出云上可复用的完整栈方案。</p>
+<p><a href="https://aws.amazon.com/blogs/machine-learning/scaling-moe-reinforcement-learning-on-amazon-eks-with-efa-and-deepep-with-40-more-throughput/">阅读原文</a></p>
+<p><a class="origin" href="https://aws.amazon.com/blogs/machine-learning/scaling-moe-reinforcement-learning-on-amazon-eks-with-efa-and-deepep-with-40-more-throughput/">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -22,9 +22,11 @@
 <h1>AI-Assisted Design of a Post-Quantum Cryptographic Accelerator: A Deployed-Silicon Case Study</h1>
 <p class="meta-line">arXiv（Jungmin Park 等，cs.CR） · 2026-09-03 · 论文PDF</p>
 
-<p>Post-quantum migration is mandated on published timelines, and silicon that ships with a defect cannot be patched remotely.</p>
-<blockquote><p>Post-quantum migration is mandated on published timelines, and silicon that ships with a defect cannot be patched remotely. The standard acceptance gate cannot detect an entire class of ML-DSA defects. Signing resamples until a candidate meets its norm bounds, so the executed path varies with the message, whereas known-answer tests (KATs) sample fixed values and reach only the depths their seeds trigger. Our accelerator passed its full KAT regression while carrying a norm check that outran block-RAM latency, leaving each candidate's final coefficients unverified; the escape surfaced at reject-loop iteration 5. The blind spot lies in the instrument, not the engineer; care cannot remove it. We replace that gate. A byte-exact golden-reference oracle paired with randomized adversarial soak drives the rejection loop past any fixed vector, closing the gap: 301,343 data-dependent signings, zero escapes. Because the gate judges artifacts and never authors, trust becomes separable from authorship, making AI authorship an answerable question. We report 232 logged experiments in which an agentic large language model drove a unified ML-KEM-768 and ML-DSA-65 accelerator with on-chip key custody…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 后量子迁移有硬性时间表，而芯片缺陷无法远程修补；ML-DSA 签名按消息重采样、执行路径随数据变化，固定向量的 KAT 验收测不出整类缺陷——作者的加速器曾通过全部 KAT 回归却带着范数检查缺陷。同时追问：AI 写的硬件可信吗？</p>
+<p><strong>方法</strong> 用字节精确 golden-reference oracle + 随机对抗 soak 测试替换 KAT 验收门；agentic LLM 驱动 ML-KEM-768/ML-DSA-65 统一加速器（片上密钥托管）从 RTL 到 PCIe bring-up。</p>
+<p><strong>关键数字</strong> 301,343 次数据依赖签名零逃逸；232 次实验成功率 71.6%（文档研究类 77–85%，综合与 bring-up 仅 50–53%）；Kintex-7 XC7K160T 上 98.5% slice 占用；部署基线通过 779,945 次检查零失败。</p>
+<p><strong>为什么值得看</strong> AI 辅助芯片设计的部署级案例：验收门本身的设计哲学（判 artifact 不判 author）同样值得借鉴。</p>
+<p><a href="https://arxiv.org/abs/2609.04058v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.04058v1">阅读原文 ↗</a></p>
 </body>
 </html>

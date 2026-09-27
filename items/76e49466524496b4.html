@@ -22,9 +22,11 @@
 <h1>Language Models Can Control Their Own Attention</h1>
 <p class="meta-line">arXiv（Namgyu Ho 等，cs.CL） · 2026-09-02 · 论文PDF</p>
 
-<p>Language models spend most of their attention on a small fraction of context, yet they read the entire KV cache to find the few tokens that matter.</p>
-<blockquote><p>Language models spend most of their attention on a small fraction of context, yet they read the entire KV cache to find the few tokens that matter. If the user asks about a previous detail in a 1M-token conversation, global attention layers must scan the full context to generate each token of the reply. A prominent approach mitigates this cost by pre-selecting relevant tokens via lightweight proxy scores, but this extrinsic scoring still incurs O(N) per step. We take an intrinsic approach motivated by the simple question: wouldn't the model already know which parts of the context are relevant? To this end, we introduce Declarative Attention (DA), a protocol that elicits the model to declare where it needs to attend within its chain-of-thought, partitioning generation into three modes: &lt;global&gt; (full context), &lt;focus&gt; (a specific region), and &lt;local&gt; (recent output only). The inference engine parses these declarations like tool calls and skips most of the KV cache read. Under zero-shot evaluation across 15 long-context tasks, DA on off-the-shelf models (Gemma-4-31B, Qwen-3.6-27B) significantly reduces total attended tokens during decoding (52.0%, 31.1%) with modest accuracy drops (1…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 长上下文场景下，模型实际只关注少量 token，但全局注意力每层每步都要读取整个 KV cache，代价高昂。</p>
+<p><strong>方法</strong> 提出 Declarative Attention（DA）：让模型在 chain-of-thought 中声明注意力范围，把生成分成 global（全上下文）、focus（指定区域）、local（仅近期输出）三种模式；推理引擎像解析工具调用一样解析声明，跳过大部分 KV cache 读取。内在式稀疏，无需外部 proxy 打分。</p>
+<p><strong>关键数字</strong> 15 个长上下文任务 zero-shot：Gemma-4-31B 与 Qwen-3.6-27B 解码期注意力 token 分别减少 52.0% 与 31.1%，精度仅降 1.27pp 与 2.75pp，且模型越大降幅越小。</p>
+<p><strong>为什么值得看</strong> 免训练即用的稀疏注意力新轴，为长上下文推理加速提供了与训练式方法互补的方向。</p>
+<p><a href="https://arxiv.org/abs/2609.02737v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.02737v1">阅读原文 ↗</a></p>
 </body>
 </html>

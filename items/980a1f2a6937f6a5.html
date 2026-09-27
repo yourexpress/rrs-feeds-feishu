@@ -22,9 +22,11 @@
 <h1>Atlas: Optimizing Deployment of Compound AI Workflows on Heterogeneous Clusters</h1>
 <p class="meta-line">arXiv（Milos Gravara 等，cs.DC） · 2026-09-03 · 论文PDF</p>
 
-<p>Compound AI workflows are increasingly used to serve complex AI tasks by coordinating multiple AI models and software components.</p>
-<blockquote><p>Compound AI workflows are increasingly used to serve complex AI tasks by coordinating multiple AI models and software components. This approach enables deployment flexibility, as each workflow stage can expose different model variants and resource requirements, but it also expands the deployment choices. A deployment must choose an execution plan that selects AI models for each compound AI workflow stage and places them on a heterogeneous cluster in order to satisfy SLOs. Deployment optimizers therefore need estimates to compare many candidate plans and identify feasible ones. System metrics can often be profiled per stage and composed according to workflow topology, but accuracy cannot, as errors and information loss at upstream stages affect the accuracy of downstream stages. Existing approaches either profile complete configurations end to end, which scales poorly, or use product-based accuracy surrogates that treat stages as independent and can misrank candidate plans. We introduce Atlas, a framework for optimizing compound AI deployments under SLO constraints. Atlas uses MAP, a Markovian Accuracy Predictor, to estimate configuration accuracy from local conditional accuracy tra…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 复合 AI 工作流（多模型多组件协作）在异构集群上部署时，系统指标可按阶段 profiling 组合，但精度不行——上游误差会传播影响下游，端到端 profiling 又扩展性差。</p>
+<p><strong>方法</strong> Atlas 框架用 MAP（马尔可夫精度预测器）：把中间输出离散成 accuracy bucket，组合相邻阶段的条件精度转移 profile，无需穷举端到端 profiling 即估计整体精度；执行计划选择表述为混合整数线性规划，在 SLO 约束下最大化预测精度。</p>
+<p><strong>关键数字</strong> 4 个复合工作流上 MAP 的 Spearman 相关最高 0.947，profiling 成本最高降低 2.6×；选出的执行计划与 oracle 精度差 0.03 以内，异构放置使部署成本最高降 42%。</p>
+<p><strong>为什么值得看</strong> 复合 AI 系统部署优化从「拍脑袋」走向可建模，agent/多模型服务架构师的实用工具。</p>
+<p><a href="https://arxiv.org/abs/2609.04513v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.04513v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Compute-in-Memory Attention: A Time-Domain Analog Softmax Circuit with RC-Tunable Temperature</h1>
 <p class="meta-line">arXiv（Ankur Singh 等，cs.AR） · 2026-09-02 · 论文PDF</p>
 
-<p>Softmax is a key operation in Transformer attention, but its exponentiation and normalization add significant overhead in compute-in-memory (CIM) accelerators, especially when analog attention scores must first be conver…</p>
-<blockquote><p>Softmax is a key operation in Transformer attention, but its exponentiation and normalization add significant overhead in compute-in-memory (CIM) accelerators, especially when analog attention scores must first be converted to the digital domain. This work presents a tunable-temperature analog softmax circuit in GlobalFoundries 22-nm fully depleted silicon-on-insulator (FDSOI) technology that operates directly on CIM-generated score voltages without intermediate analog-to-digital conversion. Each input score is converted into a time-domain event using a shared falling ramp. The corresponding comparator transition samples an RC-decaying reference to generate an exponential weight, which is then processed by an in-circuit normalization stage. In contrast to analog softmax circuits that rely on transistor weak-inversion behavior for exponentiation, the proposed architecture controls the softmax response through the ramp slope and RC time constant, enabling programmable effective temperature. The 128-element architecture is evaluated using transistor-level and post-layout extracted simulations, including multi-level input vectors, capacitance variation and mismatch, process and tempera…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 存内计算（CIM）加速器中，softmax 的指数与归一化运算开销大，模拟注意力分数还需先模数转换，成为瓶颈。</p>
+<p><strong>方法</strong> 在 GlobalFoundries 22nm FDSOI 工艺上实现时域模拟 softmax：共享下降斜坡把输入分数转成时间事件，比较器跳变采样 RC 衰减参考电压生成指数权重，电路内完成归一化；斜坡斜率与 RC 时间常数实现可编程有效温度，无需弱反型晶体管、无需中间 ADC。</p>
+<p><strong>关键数字</strong> 128 元素实现占 9453.42 μm²（单元 70.2 μm²）；评估延迟 242.97 ns、总功耗 13.44 mW（25.5 pJ/元素）；RMSE 24.46 mV；MemTorch 硬件感知 Transformer 验证损失在理想 softmax 基线 2.5% 以内。</p>
+<p><strong>为什么值得看</strong> 模拟域直接完成 attention softmax 的完整电路方案，模拟 CIM 方向值得跟进。</p>
+<p><a href="https://arxiv.org/abs/2609.04266v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.04266v1">阅读原文 ↗</a></p>
 </body>
 </html>
