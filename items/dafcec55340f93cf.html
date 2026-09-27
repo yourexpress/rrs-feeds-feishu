@@ -22,9 +22,15 @@
 <h1>Corten - Foundational Verification of Rust Programs</h1>
 <p class="meta-line">arXiv（František Farka 等，cs.PL） · 2026-09-03 · 论文PDF</p>
 
-<p>We present Corten, a foundational verification framework for Rust programs in the Rocq theorem prover, built on the Iris separation logic framework.</p>
-<blockquote><p>We present Corten, a foundational verification framework for Rust programs in the Rocq theorem prover, built on the Iris separation logic framework. Corten provides the first semantics of surface-level Rust mechanized in a proof assistant with an attached program logic, directly grounded in the Rust Reference: it deeply embeds the Typed High-level Intermediate Representation (THIR) into Rocq and formalises Rust's dynamic semantics as a weakest-precondition predicate transformer calculus. By operating at THIR rather than on internal compiler representations, Corten proof goals display the THIR AST, which pretty-prints to surface Rust, keeping verification close to the source code and facilitating maintainability as code evolves. Atop this semantics, Corten develops a program logic and a syntax-directed proof automation layer; the program logic includes defunctionalized continuation stacks that keep proof goals first-order and compact. Soundness is established incrementally, construct by construct, against an interaction-trees denotation. A synthetic test suite demonstrates a two-to-four times reduction in proof size compared to raw semantic proofs. We further showcase Corten on a bu…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>
+如何在定理证明器中对 Rust 源代码级语义做基础验证，让证明目标贴近源码、随代码演进可维护？</p>
+<p><strong>方法</strong>
+提出 Corten：在 Rocq 中基于 Iris 分离逻辑，将 Rust 的 THIR（类型化高层中间表示）深度嵌入，把动态语义形式化为最弱前置条件的谓词变换演算；在其上构建程序逻辑与语法制导的证明自动化层，用去函数化续延栈保持证明目标一阶紧凑；可靠性对交互树指称语义逐构造增量建立。</p>
+<p><strong>关键数字</strong>
+合成测试套件显示，相比裸语义证明，证明规模缩小 2~4 倍；buddy 分配器案例验证了分配与释放函数的内存安全性。</p>
+<p><strong>为什么值得看</strong>
+首个在证明助理中机械化表层 Rust 语义并附带程序逻辑的工作，为跨越软硬件边界的端到端验证奠定统一 Rocq 语义基础。</p>
+<p><a href="https://arxiv.org/abs/2609.04372v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.04372v1">阅读原文 ↗</a></p>
 </body>
 </html>

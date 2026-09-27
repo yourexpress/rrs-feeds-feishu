@@ -22,9 +22,15 @@
 <h1>MaxKernel: Agentic Kernel Generation for TPUs</h1>
 <p class="meta-line">arXiv（Shangkun Wang 等，cs.AI） · 2026-09-03 · 论文PDF</p>
 
-<p>Designing and authoring high-performance custom kernels for accelerators is a complex task that requires deep hardware-level expertise.</p>
-<blockquote><p>Designing and authoring high-performance custom kernels for accelerators is a complex task that requires deep hardware-level expertise. Large Language Models (LLM) can be leveraged together with real-time compiler feedback to build agentic systems for kernel generation. In this work, we present MaxKernel, a multi-agent system that implements three distinct paradigms for TPU kernel development: (1) a Human-in-the-Loop (HITL) agent for collaborative, step-by-step design; (2) an Autonomous (Auto) agent that executes a fully automated, metric/trace-driven optimization loop; and (3) a Graph-Based Autonomous Search that scales the Auto agent for global exploration of the design space. All three paradigms leverage a shared pool of specialized sub-agents to handle planning, implementation, self-debugging, testing, and hardware profiling. We evaluate MaxKernel on JaxBench, a comprehensive suite of 50 diverse kernel tasks for TPUs, alongside complex, real-world workloads from state-of-the-art open-source models. We demonstrate that MaxKernel consistently generates highly optimized implementations, matching expert hand-tuned baselines and delivering significant performance across the benchmar…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>
+为加速器编写高性能自定义 kernel 需要深厚的硬件 expertise——能否用 LLM 多智能体系统结合实时编译器反馈，自动化 TPU kernel 开发？</p>
+<p><strong>方法</strong>
+MaxKernel 实现三种范式：Human-in-the-Loop 协作式逐步设计、全自动的指标/trace 驱动优化循环（Auto agent）、以及把 Auto 扩展为全局设计空间探索的图式自主搜索。三者共享一组专职子智能体负责规划、实现、自调试、测试与硬件性能分析。</p>
+<p><strong>关键数字</strong>
+在 JaxBench（50 个多样化 TPU kernel 任务）及 SOTA 开源模型的真实负载上，MaxKernel 持续生成高度优化的实现，达到专家手工调优基线水平；智能体已开源。</p>
+<p><strong>为什么值得看</strong>
+把 kernel 生成从单轮提示升级为"范式化多智能体 + 编译器闭环"，并给出公开基准与开源实现，是 agentic 硬件代码生成方向可复用的参照。</p>
+<p><a href="https://arxiv.org/abs/2609.04523v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.04523v1">阅读原文 ↗</a></p>
 </body>
 </html>

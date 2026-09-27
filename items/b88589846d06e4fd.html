@@ -22,9 +22,15 @@
 <h1>Unlocking Lossless Speedups in LLMs via Discrete Diffusion</h1>
 <p class="meta-line">arXiv（Subham Sekhar Sahoo 等，cs.LG） · 2026-09-03 · 论文PDF</p>
 
-<p>Large Language Models (LLMs) owe much of their success to next-token prediction (NTP), but their autoregressive (AR) structure requires slow, sequential token generation.</p>
-<blockquote><p>Large Language Models (LLMs) owe much of their success to next-token prediction (NTP), but their autoregressive (AR) structure requires slow, sequential token generation. To overcome this bottleneck, we introduce diffusion-augmented LLMs, a new class of models that defines an AR model distribution while using diffusion to draw multiple tokens in parallel from that distribution. We decouple the parameters of these models into two sets: AR weights, trained using the standard NTP objective, and lightweight diffusion weights, trained to generate multiple tokens simultaneously. The diffusion weights are learned through a simple Diffusion Distillation phase that adds negligible overhead to existing LLM training pipelines. We also introduce $Ψ$-Spec, a family of samplers that enables lossless acceleration and inference-time scaling at a fixed context length. Unlike speculative decoding, our method requires no separate draft model. Unlike diffusion LLMs (d-LLMs), it accelerates generation without sacrificing the quality of the underlying AR model. The resulting models, called Uno, can be trained from scratch or built by augmenting existing open-weight AR LLMs. Uno achieves higher throughpu…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>
+自回归（AR）LLM 逐 token 串行生成是吞吐瓶颈——能否在保持 AR 模型分布与质量的前提下，用扩散并行采样多个 token 实现无损加速？</p>
+<p><strong>方法</strong>
+扩散增强 LLM：参数解耦为按标准 NTP 目标训练的 AR 权重，与轻量扩散权重；后者经简单的 Diffusion Distillation 阶段学得，几乎不给现有训练管线增加开销。配套 Ψ-Spec 采样器家族，在固定上下文长度下实现无损加速与推理时扩展——无需独立草稿模型，也不像 d-LLM 那样牺牲底座质量。产物模型 Uno 可从头训练或增强现有开源 AR LLM。</p>
+<p><strong>关键数字</strong>
+所有评测 batch size 下吞吐都高于领先投机解码方法，对基座最高提速 3 倍（含设备支持的最大 batch）；8B Uno 在智能体工具使用、编程与长上下文推理全部基准上超过 26B DiffusionGemma 与专有 Mercury 2。</p>
+<p><strong>为什么值得看</strong>
+把扩散与投机解码两条加速路线各取所长，且代码与权重开放。</p>
+<p><a href="https://arxiv.org/abs/2609.04010v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.04010v1">阅读原文 ↗</a></p>
 </body>
 </html>

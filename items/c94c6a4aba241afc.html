@@ -22,9 +22,15 @@
 <h1>Large Language Models with At Most One Spike per Neuron</h1>
 <p class="meta-line">arXiv（Zhuoya Zhao 等，cs.NE） · 2026-09-04 · 论文PDF</p>
 
-<p>Leveraging their inherent sparse event-driven computation, spiking neural networks (SNNs) offer a promising path toward energy-efficient large language models (LLMs).</p>
-<blockquote><p>Leveraging their inherent sparse event-driven computation, spiking neural networks (SNNs) offer a promising path toward energy-efficient large language models (LLMs). Time-to-first-spike (TTFS) coding generates at most one spike per neuron within a time window, yielding extremely low firing rates. However, conventional TTFS SNNs are restricted to specific structures, making it challenging to encode certain blocks in LLM -- such as layer normalization and matrix multiplication --using TTFS. To overcome this limitation, we introduce a reference-based strategy specifically to encode the four core LLM components: embedding layers, layer normalization, attention-related operations and dropout. We construct a fully TTFS-based SNN architecture and train it end-to-end. Experiments on modern LLMs like BERT and GPT-2 demonstrate that our approach achieves performance comparable to ANN counterparts on natural language understanding and common-sense reasoning, while a clear gap remains on language modeling perplexity. To the best of our knowledge, this is the first work to scale a spiking LLM to 1.5 billion parameters using TTFS coding. We also report an estimate of spike-related energy; this …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>
+脉冲神经网络（SNN）的稀疏事件驱动计算有望实现高能效 LLM；time-to-first-spike（TTFS）编码每个神经元在时间窗内至多一次脉冲、发放率极低，但常规 TTFS SNN 受结构限制，难以编码 LLM 中的 layer normalization 与矩阵乘等模块。</p>
+<p><strong>方法</strong>
+提出基于参考（reference-based）的编码策略，专门编码 LLM 四大核心组件：embedding 层、layer normalization、注意力相关操作与 dropout；据此构建全 TTFS 的 SNN 架构并端到端训练。</p>
+<p><strong>关键数字</strong>
+在 BERT 与 GPT-2 等现代 LLM 上，自然语言理解与常识推理任务达到与 ANN 对应模型相当的性能，语言建模困惑度仍有明显差距；据作者所知这是首个用 TTFS 编码扩展到 15 亿参数的脉冲 LLM；能耗为既定成本模型下的脉冲计数代理估计，而非神经形态硬件实测。</p>
+<p><strong>为什么值得看</strong>
+把"每神经元至多一次脉冲"推上十亿参数量级，是 SNN 通向实用 LLM 的一块里程碑。</p>
+<p><a href="https://arxiv.org/abs/2609.05151v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.05151v1">阅读原文 ↗</a></p>
 </body>
 </html>

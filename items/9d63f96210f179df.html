@@ -22,9 +22,15 @@
 <h1>RASER: Resilient Agent Scheduling and Execution Runtime for HPC Clusters</h1>
 <p class="meta-line">arXiv（Sima Attar-Khorasani 等，cs.PF） · 2026-09-03 · 论文PDF</p>
 
-<p>The emergence of modern agents powered by large language models has created a demand for executing long-horizon, autonomous workflows in various domains that require significant computational resources.</p>
-<blockquote><p>The emergence of modern agents powered by large language models has created a demand for executing long-horizon, autonomous workflows in various domains that require significant computational resources. While High Performance Computing clusters provide the ideal infrastructure for these computation-intensive workloads, traditional HPC job schedulers such as Slurm are not designed for dynamic, agentic workflows characterized by unpredictable task durations, external API calls, and fault tolerance requirements of modern agents. This work presents RASER, a user-space framework that enables seamless execution of agentic workflows on production HPC clusters by extending Slurm's internal primitives. RASER introduces agentic job arrays with work stealing via shared filesystem queues, user-space checkpointing through application-level state serialization combined with Slurm requeue, and Apptainer container-based isolation without requiring any image modifications. Evaluations demonstrate that RASER reduces makespan by nearly 39% compared to static partitioning while achieving near-full CPU utilization. RASER provides resilience against preemption and failures while maintaining minimal chec…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>
+LLM 驱动的长时程自主智能体需要大量算力，HPC 集群是理想底座，但 Slurm 等传统调度器并非为动态 agentic 工作流设计——任务时长不可预测、要调外部 API、还要求容错。</p>
+<p><strong>方法</strong>
+RASER 是用户态框架，扩展 Slurm 内部原语：agentic job array 配合共享文件系统队列实现工作窃取；应用级状态序列化 + Slurm requeue 做用户态 checkpointing；Apptainer 容器隔离且无需改镜像。不需要内核权限或外部数据库。</p>
+<p><strong>关键数字</strong>
+较静态划分 makespan 降低近 39%，CPU 利用率接近满载；checkpoint/restore 开销极小，可抗抢占与故障。</p>
+<p><strong>为什么值得看</strong>
+不改基础设施、不要特权，就把 agentic 工作流搬进生产 HPC——对拥有集群存量、想跑 AI agent 负载的团队是低门槛方案。</p>
+<p><a href="https://arxiv.org/abs/2609.03598v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.03598v1">阅读原文 ↗</a></p>
 </body>
 </html>

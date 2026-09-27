@@ -22,9 +22,15 @@
 <h1>Confidence-Gated Admission for Hardware Prefetching: When the Gate Matters More Than the Predictor</h1>
 <p class="meta-line">arXiv（Youssef Majdane 等，cs.AR） · 2026-09-03 · 论文PDF</p>
 
-<p>Learned cache prefetchers are typically evaluated against classical predictors that always issue requests, confounding the prediction model with the admission policy.</p>
-<blockquote><p>Learned cache prefetchers are typically evaluated against classical predictors that always issue requests, confounding the prediction model with the admission policy. We disentangle these variables with matched controls: the same admission gate is applied to both a 257-parameter online MLP and a classical stride predictor. The neural advantage vanishes; the MLP is indistinguishable from gated stride on random traffic and slower on most regular streams. The gate itself is architecturally useful independent of the predictor: on twenty SPEC CPU2017 programs in native ChampSim, it removes 35% of prefetches and improves accuracy from 11% to 15%, but DRAM reads change by only 0.07% demonstrating that proxy metrics do not predict endpoint behavior. We prove gate-closed execution reproduces the no-prefetch baseline exactly. The gate matters more than the predictor, and better proxies do not imply better endpoints.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>
+学习式缓存预取器总是与"无脑发请求"的经典预测器对比，预测模型与准入策略被混为一谈——神经预取的优势究竟来自模型还是来自门控？</p>
+<p><strong>方法</strong>
+用匹配控制变量拆开两者：给 257 参数在线 MLP 与经典 stride 预测器装上同一个置信度准入门。在原生 ChampSim 中跑 20 个 SPEC CPU2017 程序评估门本身的作用，并证明关门执行与无预取基线完全等价。</p>
+<p><strong>关键数字</strong>
+加门后 MLP 与 stride 无差别；门本身去掉 35% 预取请求、准确率从 11% 升到 15%，但 DRAM 读仅变化 0.07%。</p>
+<p><strong>为什么值得看</strong>
+给"预取器评测"祛魅：优势多半来自门而非模型，且代理指标好不代表端点行为好——做硬件预取或 ML for Systems 的人都该警惕这一混淆。</p>
+<p><a href="https://arxiv.org/abs/2609.04040v2">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.04040v2">阅读原文 ↗</a></p>
 </body>
 </html>

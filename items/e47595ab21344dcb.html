@@ -22,9 +22,15 @@
 <h1>FlowTT: Exploiting Computation Flow Reuse in Irregular Tensor-Train Embedding</h1>
 <p class="meta-line">arXiv（Jongmin Seok 等，cs.DC） · 2026-09-03 · 论文PDF</p>
 
-<p>Tensor-Train (TT) decomposition effectively compresses large embedding tables in recommendation models, but TT-based embedding lookup remains inefficient because partially shared computation flows across input indices ar…</p>
-<blockquote><p>Tensor-Train (TT) decomposition effectively compresses large embedding tables in recommendation models, but TT-based embedding lookup remains inefficient because partially shared computation flows across input indices are not fully reused and intermediate results are repeatedly materialized off-chip between sequential TT-core contractions. We present FlowTT, a flow-aware GPU execution framework that reformulates TT gather as a set of prefix-shared irregular computation flows. FlowTT combines flow-aligned prefix-based index grouping, a fused TT-embedding execution path with on-chip intermediate retention, and persistent-thread scheduling with chunk-based work stealing and L2 checkpointing to preserve reuse under skewed workloads. By co-designing task formation, data buffering, and scheduling with the structure of TT gather, FlowTT reduces redundant TT-core operations, global-memory traffic, and load imbalance. On Meta's synthetic recommendation benchmarks (Meta-240, Meta-480, and Meta-788), FlowTT consistently achieves the lowest latency compared to existing methods. At batch size 32,768, it reduces latency by up to 42.2% in inference and 49.2% in training relative to EcoRec, while …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>
+Tensor-Train 分解能压缩推荐模型的大 embedding 表，但 TT 查表效率低：跨输入索引的部分共享计算流没被复用，中间结果还在片外反复物化。</p>
+<p><strong>方法</strong>
+FlowTT 把 TT gather 重构为一组前缀共享的不规则计算流：流对齐的前缀索引分组、片内驻留中间结果的融合 TT-embedding 执行路径、持久线程调度配合 chunk 级工作窃取与 L2 checkpointing，在倾斜负载下保住复用。</p>
+<p><strong>关键数字</strong>
+在 Meta 合成推荐基准（Meta-240/480/788）上延迟一致最低；batch 32,768 时相对 EcoRec 推理延迟降最高 42.2%、训练降 49.2%，且推理峰值显存最低。</p>
+<p><strong>为什么值得看</strong>
+把"前缀共享计算"这一结构性复用暴露出来，是 TT embedding 高效执行的关键；对推荐系统 GPU 推理优化有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.03459v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.03459v1">阅读原文 ↗</a></p>
 </body>
 </html>

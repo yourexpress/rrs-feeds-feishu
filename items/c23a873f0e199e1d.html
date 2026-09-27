@@ -22,9 +22,15 @@
 <h1>Privacy Failure in Split-LLM Training, The Returned Gradient Nullifies the Decoys</h1>
 <p class="meta-line">arXiv（Georgios Politis 等，cs.CR） · 2026-09-03 · 论文PDF</p>
 
-<p>We present a systems-security case study of a two-node split-LLM training system whose privacy evaluation passed while leaving an observable channel untested.</p>
-<blockquote><p>We present a systems-security case study of a two-node split-LLM training system whose privacy evaluation passed while leaving an observable channel untested. The Trusted Local Node (TLN) sends protected activations to the Untrusted Cloud Node (UCN), the UCN returns its output, and TLN, holding the private loss, returns the output gradient. The frame the UCN receives mixes real rows with decoys, and the loss ignores the decoys. Their gradients are exactly zero, so the pattern of zeros reveals which rows were real. We measure it with a protocol fixed in advance: a leak injected at known strength to prove the instrument can see one, a shuffled-label control to prove it does not report absent leaks, and a threshold set before the runs. Across nine seeds, the zeros identified the real rows on every frame, 4,096 of 4,096 per run. An attack on the frame contents recovered about one extra token per hundred over a constant-guess baseline (+0.65 to +1.50 percentage points); the shuffled controls recovered nothing. A second set of runs repeated this on a configuration that keeps model quality within budget, so the finding is not confined to a setting nobody would deploy. On both datasets, ev…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>
+双节点 split-LLM 训练系统：本地可信节点发往云的激活帧混入诱饵行、损失忽略诱饵——诱饵梯度恰好为零，零的模式直接暴露了哪些行是真实数据。隐私评估通过了前向通道，却没测这条回传梯度通道。</p>
+<p><strong>方法</strong>
+用预先固定的协议测量：已知强度注入泄漏验证仪器可见、打乱标签对照验证不误报、运行前定阈值。再评估对帧内容的攻击，并测试梯度裁剪加噪的修复代价。</p>
+<p><strong>关键数字</strong>
+9 个种子下，零模式每帧都完整识别真实行，每轮 4,096/4,096；帧内容攻击比常数猜测基线每百词多恢复约 1 个 token（+0.65~1.50 个百分点），对照组一无所获；逐行裁剪加噪以约 0.01 nats 的留出交叉熵代价关闭泄漏。</p>
+<p><strong>为什么值得看</strong>
+教科书级的"评估盲区"案例：通道没测不等于安全，且修复极便宜——做分布式训练隐私的都该自查回传梯度。</p>
+<p><a href="https://arxiv.org/abs/2609.04382v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.04382v1">阅读原文 ↗</a></p>
 </body>
 </html>

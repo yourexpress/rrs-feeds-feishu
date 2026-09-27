@@ -22,9 +22,15 @@
 <h1>FlexPosit: Tunable Fractional Precision for LLM Inference Accelerators</h1>
 <p class="meta-line">arXiv（Yimin Gao 等，cs.AR） · 2026-09-04 · 论文PDF</p>
 
-<p>Large language models (LLMs) offer remarkable capabilities but impose prohibitive compute and energy costs.</p>
-<blockquote><p>Large language models (LLMs) offer remarkable capabilities but impose prohibitive compute and energy costs. Quantization governs the trade-offs between accuracy and hardware efficiency across granularity and bit-width. Finer granularity (e.g., group-wise) provides high accuracy but incurs scaling and control overhead, while coarser granularity (e.g., channel-wise) has lower overhead but loses accuracy at low precision. Meanwhile, mixed-precision quantization exposes rich accuracy-efficiency trade-offs algorithmically, but existing LLM accelerators remain limited to discrete precision modes, leaving the fractional design space between them unexplored. FlexPosit bridges these gaps through co-design of Posit-based quantization and a precision-tunable bit-serial architecture. Algorithmically, FlexPosit employs distribution-aware quantization with hardware-aligned, sensitivity-guided mixed-precision allocation, leveraging the Posit format's tapered precision to achieve group-wise-like accuracy with channel-wise-like regularity. Architecturally, FlexPosit is a unified bit-serial systolic array with lightweight per-column decoders, unified Processing Elements (PEs), and a global precision…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>
+LLM 量化在粒度与位宽上权衡精度与硬件效率：细粒度（group-wise）精度高但缩放与控制开销大，粗粒度（channel-wise）开销低但低精度下掉精度；混合精度暴露了丰富的算法权衡，而现有加速器只支持离散精度档，分数精度空间未被探索。</p>
+<p><strong>方法</strong>
+FlexPosit 做算法-架构协同：算法上用分布感知的 Posit 量化与敏感度引导的混合精度分配，借 Posit 渐缩精度获得"group-wise 级精度、channel-wise 级规整"；架构上用统一 bit-serial 脉动阵列 + 轻量逐列解码器与全局精度控制器，在保持规整脉动数据流的同时支持可调分数精度。</p>
+<p><strong>关键数字</strong>
+多种 LLM 上以低于 5 bit 的分数位宽权重接近 FP16 精度；较 BitMoD（group-wise）吞吐高 1.8 倍、能耗低 1.2 倍；较 OliVe（channel-wise）吞吐高 1.5 倍、能耗低 2.0 倍。</p>
+<p><strong>为什么值得看</strong>
+把"分数精度"从算法设想变成数据流规整的硬件现实，刷新精度可调 LLM 加速的 Pareto 前沿。</p>
+<p><a href="https://arxiv.org/abs/2609.04724v2">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.04724v2">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,15 @@
 <h1>Lantern: Finding Committable Transactions via Back-Propagation on DAGs</h1>
 <p class="meta-line">arXiv（Denglong Li 等，cs.DC） · 2026-09-03 · 论文PDF</p>
 
-<p>Existing concurrency control protocols either introduce nondeterminism, resulting in a serial execution-replay dependency between primary and replica nodes, or rely on impractical prior knowledge of transaction read-writ…</p>
-<blockquote><p>Existing concurrency control protocols either introduce nondeterminism, resulting in a serial execution-replay dependency between primary and replica nodes, or rely on impractical prior knowledge of transaction read-write sets. In this paper, we present Lantern, a deterministic concurrency control protocol tailored for high-performance transaction processing systems operating without prior knowledge. The key insight of Lantern is that all zero-out-degree transaction vertices in the local dependency graph can be safely committed in ascending order using an overwrite-permissive strategy. We further introduce a novel Back-Propagation mechanism that iteratively propagates dependency states from sink to source vertices to identify additional committable transactions. We also propose Conflict-Free Batch Selection (CFBS) for read-modify-write intensive scenarios. We integrate Lantern into the open-source blockchain platform ChainMaker. Extensive evaluations on YCSB and SmallBank benchmarks demonstrate that Lantern achieves up to a 4.2x throughput speedup over Aria and improves the throughput of ChainMaker's execution layer by at least 2.2x.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>
+现有并发控制要么引入非确定性、造成主备节点间串行的执行-回放依赖，要么依赖不现实的事务读写集先验知识。如何在无先验下做到确定性高吞吐？</p>
+<p><strong>方法</strong>
+Lantern 的核心观察：局部依赖图中所有零出度事务顶点可用允许覆写策略按升序安全提交；再用 Back-Propagation 机制从汇点到源点迭代传播依赖状态、识别更多可提交事务；并为读-改-写密集场景设计无冲突批选择（CFBS）。已集成进开源区块链平台 ChainMaker。</p>
+<p><strong>关键数字</strong>
+YCSB 与 SmallBank 基准上吞吐较 Aria 最高提速 4.2 倍；使 ChainMaker 执行层吞吐至少提升 2.2 倍。</p>
+<p><strong>为什么值得看</strong>
+把确定性并发控制从"需要先验"拉回"免先验可用"，并在真实区块链系统中落地，对高性能事务处理与链上执行引擎都有借鉴。</p>
+<p><a href="https://arxiv.org/abs/2609.03315v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.03315v1">阅读原文 ↗</a></p>
 </body>
 </html>

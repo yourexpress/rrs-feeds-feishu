@@ -22,9 +22,15 @@
 <h1>APEX-RBD: Mixed-Precision Exploration Framework for Hardware-Efficient Robot Dynamics Accelerator Design</h1>
 <p class="meta-line">arXiv（Xingyu Liu 等，cs.AR） · 2026-09-04 · 论文PDF</p>
 
-<p>Rigid Body Dynamics (RBD) forms the computational core of real-time robotic control, but its immense computational complexity creates a performance bottleneck that necessitates dedicated hardware accelerators.</p>
-<blockquote><p>Rigid Body Dynamics (RBD) forms the computational core of real-time robotic control, but its immense computational complexity creates a performance bottleneck that necessitates dedicated hardware accelerators. However, the substantial hardware resource and power costs of these accelerators make their deployment on resource-constrained edge platforms highly challenging. While quantization offers a promising path to optimize RBD hardware for edge computing, existing uniform-precision approaches remain inefficient by ignoring the diverse quantization sensitivities of different variables. Although mixed-precision offers a superior alternative, its exploration is intractable due to a vast search space and the prohibitive cost of closed-loop simulation for motion accuracy evaluation. To address these challenges, we introduce APEX-RBD, an automated framework that makes mixed-precision exploration computationally tractable while effectively identifying hardware-efficient configurations. Specifically, it performs physics-driven search space pruning via variable grouping and sensitivity analysis, and employs a data-efficient, prior-informed surrogate model to enable rapid trajectory error pr…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>
+刚体动力学（RBD）是实时机器人控制的计算核心，其复杂度催生专用加速器，但资源与功耗开销使边缘部署困难；统一精度量化忽略变量间的量化敏感度差异，而混合精度探索因搜索空间巨大、闭环仿真评估昂贵而不可行。</p>
+<p><strong>方法</strong>
+APEX-RBD 让混合精度探索在计算上可行：物理驱动的搜索空间剪枝（变量分组 + 敏感度分析），数据高效的先验知情代理模型快速预测轨迹误差，引导混合优化器在用户给定的精度与性能约束下找面积、功耗高效的设计。</p>
+<p><strong>关键数字</strong>
+在多种机器人平台上，较统一精度基线实现最高 1.9 倍面积缩减与 1.8 倍功耗节省。</p>
+<p><strong>为什么值得看</strong>
+把"运动精度评估"这一混合精度探索的最大瓶颈用代理模型化掉，是机器人加速器 DSE 的实用范式，方法可迁移到其他物理仿真硬件场景。</p>
+<p><a href="https://arxiv.org/abs/2609.05161v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.05161v1">阅读原文 ↗</a></p>
 </body>
 </html>

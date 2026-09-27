@@ -22,9 +22,15 @@
 <h1>How to Speculate about Uncertainty in Agentic Coding? A Draft-Model Gate Method</h1>
 <p class="meta-line">arXiv（Konstantin Grotov 等，cs.LG） · 2026-09-04 · 论文PDF</p>
 
-<p>LLM agents deployed for software engineering fail expensively: they act confidently wrong, and bad actions are recognized only after costly execution and retry.</p>
-<blockquote><p>LLM agents deployed for software engineering fail expensively: they act confidently wrong, and bad actions are recognized only after costly execution and retry. We present Speculative Uncertainty (SU), a method that recovers a predictive failure signal for a black-box agent from its output tokens alone, with no access to logits, weights, activations, or repeated sampling. Inverting speculative decoding, a small open-weight draft model scores the agent's already-generated trajectory in a single forward pass. From these speculative cross-likelihoods we extract phase-aware features by separating the reasoning and action spans, and calibrate them against a verifiable objective. SU produces a failure-likelihood score that any downstream policy, such as routing, human intervention, or extra test-time compute, can consume directly. To show the signal is actionable, we instantiate one such policy, a pre-execution veto gate, on software engineering agents Qwen3-Coder-480B and closed-source Claude 3.5 Sonnet, cutting execution error rate by 6-8 percentage points and token cost by 14-19% in deployment, transferring to out-of-distribution benchmarks without retraining, and generalizing across …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>
+软件工程 LLM 智能体"自信地犯错"代价高昂——坏动作要执行并重试后才被发现。能否仅从黑盒智能体的输出 token（无 logits、权重、激活或重复采样）恢复可预测失败的信号？</p>
+<p><strong>方法</strong>
+Speculative Uncertainty（SU）反转投机解码：用一个小的开源草稿模型单次前向给智能体已生成的轨迹打分，从投机交叉似然中提取区分推理段与动作段的相位感知特征，再对可验证目标校准，产出失败似然分数供下游策略（路由、人工介入、追加测试时算力）消费。实例化为执行前否决门验证可用性。</p>
+<p><strong>关键数字</strong>
+在 Qwen3-Coder-480B 与闭源 Claude 3.5 Sonnet 上，执行错误率降 6~8 个百分点、token 成本降 14%~19%；免重训迁移到分布外基准，且跨智能体模型泛化。</p>
+<p><strong>为什么值得看</strong>
+把草稿模型从"加速器"变成"不确定性探针"，给 agentic coding 提供了便宜且可行动的风险门。</p>
+<p><a href="https://arxiv.org/abs/2609.05274v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.05274v1">阅读原文 ↗</a></p>
 </body>
 </html>

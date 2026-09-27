@@ -22,9 +22,15 @@
 <h1>JLIR: A Julia-Native MLIR-Inspired Intermediate Representation with Automatic JACC Kernel Extraction</h1>
 <p class="meta-line">arXiv（Narasinga Rao Miniskar 等，cs.PL） · 2026-09-04 · 论文PDF</p>
 
-<p>The Multi-Level Intermediate Representation (MLIR) has made reusable compiler infrastructure practical for domain-specific computation.</p>
-<blockquote><p>The Multi-Level Intermediate Representation (MLIR) has made reusable compiler infrastructure practical for domain-specific computation. However, MLIR's strong compile-time type requirements and low-level (C++) extension model can be a poor match for high-level, dynamically specialized languages such as Julia. MLIR has several drawbacks for dynamic programming languages in terms of the type system and level of abstraction. It is thus extremely challenging for non-compiler or scientific computing users to introduce new programming abstractions and express algorithm implementations in a form that remains both natural and optimizable. As a result, library interfaces for linear algebra, mesh processing, partial differential equations, and related domains often sit outside the compiler optimization path. We present JLIR (Julia-native Level Intermediate Representation), a Julia-native intermediate representation framework that brings the main benefits of MLIR-style multi-level, dialect-oriented compilation into the Julia ecosystem while remaining usable as ordinary Julia code. JLIR represents Julia programs before low-level lowering, supports extensible operations and transformation passe…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>
+MLIR 让可复用编译器基础设施变得实用，但其强编译期类型要求与 C++ 低层扩展模型和 Julia 这类高层动态特化语言并不匹配——线性代数、网格处理、PDE 等库接口因此游离在编译器优化路径之外。</p>
+<p><strong>方法</strong>
+JLIR：Julia 原生的多层级、dialect 导向中间表示框架，把 MLIR 式编译的好处带进 Julia 生态，同时保持普通 Julia 代码的可用性；在低层 lowering 之前表示程序，通过 Julia 语言机制支持可扩展操作与变换 pass，部分类型化程序在获知具体类型前仍可变换；内置算术、控制流、函数、结构化循环与内存 dialect，并支持不改核心系统添加领域操作。</p>
+<p><strong>关键数字</strong>
+以自动 JACC（Julia for Accelerators）kernel 生成作为能力演示。</p>
+<p><strong>为什么值得看</strong>
+让科学计算用户不必成为编译器专家就能把算法写成"既自然又可优化"的形式，是 Julia 生态对接加速器编译栈的一块拼图。</p>
+<p><a href="https://arxiv.org/abs/2609.04585v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.04585v1">阅读原文 ↗</a></p>
 </body>
 </html>

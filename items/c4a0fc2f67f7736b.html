@@ -22,9 +22,15 @@
 <h1>Para-Pipe: Exploiting Hierarchical Operator Parallelism of ML Computational Graphs on SoCs</h1>
 <p class="meta-line">arXiv（Yujie Zhang 等，cs.DC） · 2026-09-03 · 论文PDF</p>
 
-<p>As edge-based deep learning applications become more complex, optimizing performance on heterogeneous System-on-Chips (SoCs) presents unique challenges.</p>
-<blockquote><p>As edge-based deep learning applications become more complex, optimizing performance on heterogeneous System-on-Chips (SoCs) presents unique challenges. Traditional pipelining techniques distributing the computation across different on-chip processing units, while effective for throughput, do not address the latency demands posed by modern neural networks with complex interdependencies and extensive operator parallelism. There is a potential in leveraging operator parallelism to enable concurrent execution across multiple processing units, thereby reducing inference latency. However, prioritizing pipelining or parallel execution often necessitates a compromise, where optimizing one performance metric adversely impacts the other. This paper introduces Para-Pipe, a hierarchical mapping framework that integrates intra- and inter-stage operator parallelism within a pipelined architecture. Para-Pipe navigates the trade-off between throughput and latency by selectively fine-tuning parallelism levels within and across pipeline stages. This strategy can significantly reduce inter-processor communication overhead, significantly improving energy efficiency. Our evaluation demonstrates that P…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>
+边缘 SoC 上跑复杂神经网络：传统流水线分片只优化吞吐，无法照顾现代网络的算子间依赖与算子内并行带来的时延需求；优先流水线还是并行执行往往顾此失彼。</p>
+<p><strong>方法</strong>
+Para-Pipe 是分层映射框架，把 stage 内与 stage 间的算子并行整合进流水线架构，通过选择性调节各级并行度在吞吐与时延之间导航，同时压低处理器间通信开销以改善能效。</p>
+<p><strong>关键数字</strong>
+在 Amlogic SoC（ARM big.LITTLE CPU + GPU）与黑芝麻 SoC（深度学习加速器 + 双 DSP）上生成多个 Pareto 最优配置；Amlogic 上吞吐优先配置较纯流水线策略平均能效提升 11.0%，较非流水线并行执行提升 23.3%。</p>
+<p><strong>为什么值得看</strong>
+在两种真实异构 SoC 上给出"并行×流水线"联合映射的 Pareto 解集，是边缘部署编译/调度方向的实用工具。</p>
+<p><a href="https://arxiv.org/abs/2609.04168v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.04168v1">阅读原文 ↗</a></p>
 </body>
 </html>

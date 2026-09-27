@@ -22,9 +22,15 @@
 <h1>Iapetus: Content-Aware Hierarchical Scheduling for Collaborative ViT Inference in LEO Satellite Networks</h1>
 <p class="meta-line">arXiv（Yan Chen 等，cs.DC） · 2026-09-03 · 论文PDF</p>
 
-<p>Collaborative inference pools distributed resources to run compute-intensive Vision Transformers (ViTs) in satellite edge computing.</p>
-<blockquote><p>Collaborative inference pools distributed resources to run compute-intensive Vision Transformers (ViTs) in satellite edge computing. Model partitioning enables such collaboration by assigning consecutive layer groups to different nodes, but the large volume of intermediate activation data incurs substantial transfer overhead that can erase its benefit. Token compression reduces downstream computation and activation transfer, but its quality impact depends on input content, model depth, and earlier pruning decisions, while layer offloading must adapt to time-varying contact and battery conditions. We present \sys, a content-aware hierarchical scheduler that screens constellation-wide options to retain a bounded candidate set, then refines each candidate into a complete token compression and layer offloading trajectory using quality prediction and joint planning. A unified objective balances per-task latency, energy, and quality loss against accumulated workload and battery pressures. We implement \sys on an NVIDIA Jetson AGX Orin hardware-in-the-loop testbed and use its validated execution model for constellation-scale trace replay across multiple ViT workloads and constellation set…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>
+低轨卫星边缘计算中协作运行 ViT 推理：模型切分带来协作，但中间激活传输开销可能抵消收益；token 压缩的质量影响又随内容、层深与既有剪枝决策而变，层卸载还要适应时变的星链窗口与电量。</p>
+<p><strong>方法</strong>
+Iapetus 是内容感知的分层调度器：先在全星座范围内筛出有界候选集，再用质量预测与联合规划把每个候选细化为完整的 token 压缩 + 层卸载轨迹；统一目标权衡单任务时延、能耗、质量损失与累积负载、电池压力。在 Jetson AGX Orin 硬件在环平台上实现并做星座级 trace 回放。</p>
+<p><strong>关键数字</strong>
+5 任务/秒下完成 91.6% 的释放任务，比最强基线 MARATD3 高 26.1 个百分点；平均时延降 53.0%、电池消耗降 70.8%，且满足质量目标。</p>
+<p><strong>为什么值得看</strong>
+把内容感知压缩与层卸载放进同一规划框架，是卫星边缘 ViT 推理少见的端到端系统工作。</p>
+<p><a href="https://arxiv.org/abs/2609.03318v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.03318v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,15 @@
 <h1>LevelSyn: Physical-Aware Logic Synthesis via Level-Asynchronous Graph Neural Networks</h1>
 <p class="meta-line">arXiv（Jingyi Zhou 等，cs.AR） · 2026-09-03 · 论文PDF</p>
 
-<p>As integrated circuit technology scales into the nanometer regime, the traditional disconnect between logic synthesis and physical design has led to significant PPA (Power, Performance, and Area) degradation and prolonge…</p>
-<blockquote><p>As integrated circuit technology scales into the nanometer regime, the traditional disconnect between logic synthesis and physical design has led to significant PPA (Power, Performance, and Area) degradation and prolonged design closure cycles. Traditional logic synthesis relies on non-physical Wire Load Models (WLMs), while recent spectral-based placement predictors often neglect the inherent hierarchical logic depth and signal flow of netlists, which leads to low-fidelity spatial estimations. To bridge this gap, we propose LevelSyn, a novel physical-aware logic synthesis framework that integrates hierarchical representation learning with a wirelength-driven optimization engine. At its core, LevelSyn leverages a level-asynchronous Graph Neural Network (GNN) to predict high-fidelity gate coordinates by capturing the structural and directional semantics of And-Inverter Graphs (AIGs). To handle industrial-scale designs, a level-aligned subgraph partitioning strategy is introduced to eliminate memory bottlenecks while preserving local logical dependencies. These spatial insights are seamlessly integrated into a newly developed physical-informed synthesis engine within the Berkeley ABC…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>
+逻辑综合与物理设计脱节导致 PPA 劣化与设计收敛周期拉长：传统综合依赖非物理的线负载模型，而近年谱方法布局预测器又忽略网表的层级逻辑深度与信号流，空间估计保真度低。</p>
+<p><strong>方法</strong>
+LevelSyn 用层级异步 GNN 捕捉 AIG（与-反相器图）的结构与方向语义，预测高保真门坐标；层级对齐的子图切分消除工业规模设计的显存瓶颈；空间洞察接入在 Berkeley ABC 中新开发的物理感知综合引擎，做线长驱动优化。</p>
+<p><strong>关键数字</strong>
+EPFL 基准上平均功耗降 6.89%、时序延迟改善 27.48%；布局布线后 DRC 违规减少 99.59%。</p>
+<p><strong>为什么值得看</strong>
+把 GNN 布局预测真正嵌进综合引擎而非停留在外挂估计，DRC 改善幅度尤其亮眼，是 EDA+ML 方向可复现的一步。</p>
+<p><a href="https://arxiv.org/abs/2609.03594v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.03594v1">阅读原文 ↗</a></p>
 </body>
 </html>

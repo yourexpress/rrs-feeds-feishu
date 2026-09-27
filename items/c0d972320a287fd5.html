@@ -22,9 +22,15 @@
 <h1>Latency-Aware Orchestration for Multi-Agent LLM Workflows on Heterogeneous GPUs</h1>
 <p class="meta-line">arXiv（Jinghao Wang 等，cs.DC） · 2026-09-03 · 论文PDF</p>
 
-<p>Concurrent multi-agent workflows expose future dependencies and serving-state requirements while running on heterogeneous GPU pools with time-varying load, model residency, and resource availability.</p>
-<blockquote><p>Concurrent multi-agent workflows expose future dependencies and serving-state requirements while running on heterogeneous GPU pools with time-varying load, model residency, and resource availability. The logical workflow defines the required computation, whereas its physical scheduling units, model-lifecycle actions, resource ordering, and placement must be selected according to the observed pool state. We present a prediction-guided runtime that uses workflow forecasts to construct and optimize a physical execution graph. Predictor estimates device-specific activation latency, peak memory, and model-loading cost, then propagates these predictions through workflow dependencies to forecast activation readiness and future model demand. Constructor builds semantics-preserving fusion and model-lifecycle alternatives, while Scheduler jointly optimizes their selection, placement, and execution order based on the live pool state. Across a workload spanning three workflow scenarios on a heterogeneous GPU pool, our system reduces end-to-end makespan and overall p95 completion latency under burst arrivals by up to 36.8% and 25.9%, respectively, over state-of-the-art workflow schedulers. It a…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>
+并发多智能体 LLM 工作流在异构 GPU 池上运行，负载、模型驻留与资源可用性随时变化——逻辑工作流定义了算什么，但物理执行图（调度单元、模型生命周期、放置）该怎么随池状态选？</p>
+<p><strong>方法</strong>
+预测制导的运行时：预测器估计设备相关的激活时延、峰值显存与模型加载成本，并沿工作流依赖传播以预测激活就绪与未来模型需求；构造器生成语义保持的融合与模型生命周期备选；调度器基于实时池状态联合优化选择、放置与执行顺序。</p>
+<p><strong>关键数字</strong>
+三类工作流场景下，端到端 makespan 与突发到达下的 p95 完成时延较 SOTA 工作流调度器分别最高降 36.8% 与 25.9%；每完成会话最多节省 24.63 GPU·秒。</p>
+<p><strong>为什么值得看</strong>
+把"预测 + 物理执行图构建"引入多智能体 serving 调度，是 LLM workflow 系统方向一个扎实的运行时设计。</p>
+<p><a href="https://arxiv.org/abs/2609.03335v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.03335v1">阅读原文 ↗</a></p>
 </body>
 </html>

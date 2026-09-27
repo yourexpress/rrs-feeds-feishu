@@ -22,9 +22,15 @@
 <h1>GreenPipe: Power Modeling for Containerized DNN Inference on Kubernetes Edge Nodes</h1>
 <p class="meta-line">arXiv（Mengxue Wang 等，cs.DC） · 2026-09-04 · 论文PDF</p>
 
-<p>Distributed DNN inference is increasingly deployed in containerized edge-cloud environments, where workloads run on-device or are exposed to remote clients over the network.</p>
-<blockquote><p>Distributed DNN inference is increasingly deployed in containerized edge-cloud environments, where workloads run on-device or are exposed to remote clients over the network. Accurate online power estimation on resource-constrained ARM nodes without hardware power counters such as RAPL remains a challenge, and CPU-only models fail to capture multi-resource behavior. We present GreenPipe, an automated profiling-training-validation pipeline that builds multi-resource regression models from external power meter measurements and attributes power to containers proportionally. GreenPipe is evaluated on a Raspberry Pi 4 edge node in a K3s edge-cloud testbed, covering DNN inference with three vision models, multiple precisions, thread counts, and both local and serving scenarios. System-level MAPE is 6.3-9.4%, improving over CPU-stress and utilization-only baselines by 26.9% MAPE on average. We jointly report inference latency and energy per inference, exposing performance-energy trade-offs across workload configurations.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>
+容器化边缘-云环境中分布式 DNN 推理日益普及，但在没有 RAPL 等硬件功耗计数器的 ARM 边缘节点上，如何做准确的在线功耗估计？仅 CPU 的模型又无法刻画多资源行为。</p>
+<p><strong>方法</strong>
+GreenPipe 是自动化的"profiling-训练-验证"流水线：用外接功率计测量构建多资源回归模型，并按比例把功耗归因到各容器。在 Raspberry Pi 4 + K3s 边缘-云测试床上评估，覆盖三种视觉模型、多种精度与线程数、本地与服务化两类场景。</p>
+<p><strong>关键数字</strong>
+系统级 MAPE 为 6.3%~9.4%，较 CPU-stress 与仅利用率基线平均改善 26.9% MAPE；同时联合报告推理时延与单次推理能耗，揭示不同配置下的性能-能耗权衡。</p>
+<p><strong>为什么值得看</strong>
+为无硬件计数器的边缘节点提供了可复现的容器级功耗归因方案，是边缘绿色推理落地的刚需工具。</p>
+<p><a href="https://arxiv.org/abs/2609.04952v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.04952v1">阅读原文 ↗</a></p>
 </body>
 </html>
