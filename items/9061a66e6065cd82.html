@@ -22,8 +22,11 @@
 <h1>IronViT: Toward Efficient Generalist Visual Representation Learning</h1>
 <p class="meta-line">arXiv · Jiaxi Huang 等 · 2026-09-24 · 论文PDF / 每日精选</p>
 
-<p>面向高效通用视觉表征的 ViT 训练方案，兼顾多任务泛化与计算开销，相关边缘视觉模型设计</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> 通用视觉编码器需同时捕获语义、空间、语言对齐与动作相关线索，而能力最强的 backbone 依赖 softmax attention，高分辨率下代价过高；直接把多个专家教师蒸进高效架构又会互相干扰。</p>
+<p><strong>方法</strong> IronViT 遵循"先整合能力、再约束计算"：先把互补专家蒸进一个 softmax attention"能力桥"，再渐进迁移到 softmax+线性混合 attention 编码器；配套数据管线提升蒸馏语料的信息密度与领域覆盖。</p>
+<p><strong>关键数字</strong> 摘要未给出具体指标数字；softmax 桥在多模态理解与机器人学习上取得所评 backbone 中最强聚合表现，混合编码器效率优势随分辨率提升而扩大。</p>
+<p><strong>为什么值得看</strong> "先蒸能力、再换架构"的两阶段思路可直接迁移到其他高效 backbone 设计，覆盖识别、检索、稠密预测、多模态与机器人五类任务。</p>
+<p><a href="https://arxiv.org/abs/2609.29252">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.29252">阅读原文 ↗</a></p>
 </body>
 </html>

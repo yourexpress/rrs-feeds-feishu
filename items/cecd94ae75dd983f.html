@@ -22,9 +22,11 @@
 <h1>BLINK: Batch Normalization-based Integrity Checkpoints for In-Situ Detection and Mitigation of Diverse Weight Corruptions in DNN Accelerators</h1>
 <p class="meta-line">arXiv（Marzia Khan 等，cs.AR） · 2026-09-06 · 论文PDF</p>
 
-<p>In safety-critical deployments, AI hardware must remain reliable against a broad spectrum of threats such as aging, soft errors, hard faults, and adversarial attacks (e.g.</p>
-<blockquote><p>In safety-critical deployments, AI hardware must remain reliable against a broad spectrum of threats such as aging, soft errors, hard faults, and adversarial attacks (e.g. progressive bit flip attack (PBFA)). All of these corrupt stored weights while the chip keeps producing confident but inaccurate predictions. Detecting and mitigating such weight perturbations is crucial for safety-critical platforms. To that end, we propose BLINK, an on-chip batch normalization (BN)-based on-the-fly detection and mitigation approach, which is based on continual sensing of the shift in the activation statistics, and targets a wide variety of weight corruptions (random and localized faults as well as adversarial bit flips). BLINK operates in two phases: (1) off-line pre-characterization of the relationship of the activation shifts with inference accuracy drop, and (2) on-chip runtime detection and mitigation of weight corruptions. Upon detection, the flagged layer is re-centered to bring it closer to its stored clean reference within the same forward pass. BLINK is fully autonomous, eliminating the need for host communication, operation halts, or access to fine-tuning data. If the residual shift a…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 安全关键场景下，DNN 加速器面临老化、软错误、硬故障与对抗位翻转（PBFA）等权重损坏威胁，芯片仍输出自信但错误的预测，需要片内检测与缓解。</p>
+<p><strong>方法</strong> BLINK：基于 BN 层持续感知激活统计漂移——离线预标定激活漂移与精度下降的关系，在线检测后同一次前向内对受损层重定心；全自动、无需主机通信与微调数据，残余漂移超用户设限则由 watcher 中止推理。</p>
+<p><strong>关键数字</strong> ResNet-20/50、MobileNetV2（CIFAR-10/100）上各类故障检测精度 &gt;99%；0.5% 随机位翻转下精度从 10% 恢复到 85.88%；局部故障恢复至 84%；PBFA 下从随机猜测恢复到 80%~83%；延迟开销 &lt;2%、计算开销 0.53%。</p>
+<p><strong>为什么值得看</strong> 片上自治的"检测+缓解+熔断"闭环，成本几乎可忽略，安全关键 AI 硬件的实用防线设计。</p>
+<p><a href="https://arxiv.org/abs/2609.06781v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.06781v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Poseidon: DAG-Guided Parallelism Search for LLM Pre-Training on Heterogeneous Clusters</h1>
 <p class="meta-line">arXiv（Xiaosong Chen 等，cs.DC） · 2026-09-05 · 论文PDF</p>
 
-<p>With the rapid advancement of accelerator technologies, pre-training large language models (LLMs) on heterogeneous accelerator clusters has become increasingly crucial for maximizing hardware utilization.</p>
-<blockquote><p>With the rapid advancement of accelerator technologies, pre-training large language models (LLMs) on heterogeneous accelerator clusters has become increasingly crucial for maximizing hardware utilization. Existing systems, however, suffer from inaccurate training time modeling, which undermines the parallelization optimizations built upon it. Moreover, for current approaches, the vast configuration search space makes exhaustive exploration infeasible, forcing a trade-off between search time and training efficiency. To overcome these limitations, we introduce Poseidon, an efficient and scalable LLM training framework designed with heterogeneity awareness. Its core is an explicit training time model based on a directed acyclic graph. Building on this graph, Poseidon employs two efficient, theoretically grounded strategies: stage-level pruning via early stopping with partial estimation, and layer-to-stage mapping exploiting a ridge-like distribution pattern. These strategies reduce the search space without sacrificing optimal training efficiency. Experiments on heterogeneous clusters show that Poseidon improves training throughput by up to $2.76\times$ over state-of-the-art systems.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 异构加速卡集群上预训练 LLM 日益普遍，但现有系统训练时间建模不准、并行配置搜索空间过大，只能在搜索时间与训练效率间妥协。</p>
+<p><strong>方法</strong> Poseidon：以显式 DAG 训练时间模型为核心，配套两种有理论依据的剪枝策略——stage 级早停部分估计剪枝，以及利用"脊状分布"规律的层到 stage 映射，在不牺牲最优效率的前提下压缩搜索空间。</p>
+<p><strong>关键数字</strong> 异构集群实验上训练吞吐较 SOTA 系统最高提升 2.76×。</p>
+<p><strong>为什么值得看</strong> 混合卡集群是国内训练的现实约束，DAG 显式建模+可证明剪枝的组合比黑盒搜索更可解释、更易迁移。</p>
+<p><a href="https://arxiv.org/abs/2609.06086v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.06086v1">阅读原文 ↗</a></p>
 </body>
 </html>

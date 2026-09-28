@@ -22,8 +22,11 @@
 <h1>Temporal Taxation Compounds Under Post-Training Compression of Whisper Models</h1>
 <p class="meta-line">arXiv · Srishti Ginjala 等 · 2026-09-23 · 论文PDF / 每日精选</p>
 
-<p>系统研究训练后压缩（量化/剪枝）下 Whisper 语音模型词级时序误差的逐层复合累积效应，对端侧语音模型压缩评估有实证价值</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> ASR 模型通常在全精度下做人群公平性审计，但上线部署的是量化、剪枝、蒸馏后的压缩模型——训练后权重压缩是否会重新分配不同人群的误差负担？</p>
+<p><strong>方法</strong> 在 Fair-Speech、Common Voice 25、AfriSpeech-200 三个数据集上，对 Whisper 家族分别施加 Wanda 剪枝、INT4 HQQ 量化与蒸馏，并将 Choi &amp; Choi (2025) 的"时间税"概念量化为每分钟语音所需的纠错时间。</p>
+<p><strong>关键数字</strong> 50% 剪枝 Whisper-large-v3 使最差/最优人群 WER 差距翻倍以上（30→64 秒/分钟，+111%），束搜索后仍 +86%；INT4 量化在西非口音上使灾难性转写循环放大 5~7 倍；蒸馏在 27 个设置中的 21 个缩小了人群差距。</p>
+<p><strong>为什么值得看</strong> 证明全精度单点公平性审计无法捕捉压缩部署后的真实负担，做端侧 ASR 部署与公平性评估的人都该看。</p>
+<p><a href="https://arxiv.org/abs/2609.28739">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.28739">阅读原文 ↗</a></p>
 </body>
 </html>

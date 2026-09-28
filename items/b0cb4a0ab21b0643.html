@@ -22,9 +22,11 @@
 <h1>GPU-Accelerated Gate-Level Time-Based Power Analysis via Event-Density-Aware Partitioning and Kernel Fusion</h1>
 <p class="meta-line">arXiv（Weihao Wang 等，cs.AR） · 2026-09-05 · 论文PDF</p>
 
-<p>Power analysis is crucial in modern chip design flow. Particularly, time-based power analysis can provide fine-grained power consumption information to facilitate the diagnosis of power issues and guide power optimizatio…</p>
-<blockquote><p>Power analysis is crucial in modern chip design flow. Particularly, time-based power analysis can provide fine-grained power consumption information to facilitate the diagnosis of power issues and guide power optimization accordingly. However, it may take tens of hours to conduct time-based power analysis on modern large-scale circuits, which greatly slows down the power optimization flow. In this paper, we present the first GPU-accelerated gate-level time-based power analysis framework. We propose a novel data structure to enable efficient state-dependent power retrieval. To accommodate the imbalanced event distribution across gates, we propose an event-density-aware partitioning strategy that allocates GPU threads based on gate event density. Finally, we fuse the power computation into a single kernel invocation to reduce redundant work in separate kernels. Experimental results show that our proposed framework achieves high accuracy while delivering up to 37.63x end-to-end speedup compared to multi-threaded Synopsys PrimeTime PX.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 基于时间的门级功耗分析能提供细粒度功耗信息指导优化，但现代大规模电路上要跑几十个小时，拖慢整个功耗优化流程。</p>
+<p><strong>方法</strong> 首个 GPU 加速的门级时间功耗分析框架：新数据结构支持高效状态依赖功耗检索；事件密度感知划分按门事件密度分配 GPU 线程以应对负载不均；将功耗计算融合进单次 kernel 调用消除冗余。</p>
+<p><strong>关键数字</strong> 保持高精度的同时，相对多线程 Synopsys PrimeTime PX 端到端最高加速 37.63×。</p>
+<p><strong>为什么值得看</strong> EDA 关键环节的 GPU 化实案，数据结构+负载均衡+kernel 融合三板斧对其他不规则 EDA 负载加速有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.05960v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.05960v1">阅读原文 ↗</a></p>
 </body>
 </html>

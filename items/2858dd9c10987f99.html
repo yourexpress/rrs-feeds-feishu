@@ -22,9 +22,11 @@
 <h1>Linear Algebra Foundations of Efficient Attention: A Phase Reversal in Rank Collapse Under SVD Compression</h1>
 <p class="meta-line">arXiv（Anjaneya Teja Sarma Kalvakolanu，cs.LG） · 2026-09-06 · 论文PDF</p>
 
-<p>Linear algebra provides the framework of concepts (matrix rank, singular value decomposition (SVD), and eigendecomposition) that modern artificial intelligence employs to encode, compress, and propagate information throu…</p>
-<blockquote><p>Linear algebra provides the framework of concepts (matrix rank, singular value decomposition (SVD), and eigendecomposition) that modern artificial intelligence employs to encode, compress, and propagate information through neural networks. This paper unifies fourteen separate peer-reviewed works analyzing the usage of these techniques in the context of transformer-based foundation model research, focusing on three areas of the topic: derivations and properties of self-attention matrices' output rank, compression methods that purposefully utilize this phenomenon, and the low-rank key-value (KV) cache projection and its semiseparable-matrix duality to linear attention and state-space structured models. We were motivated to conduct this work after observing an open problem in this literature: the interplay of the mentioned compression methods with natural rank collapse of the network. With this paper, we report an original finding that using SVD compression of attention projections actually has the opposite effect on the rank collapse of the network: while it strongly suppresses it at initialization, it accelerates on pretrained models (for GPT-2 124M, GPT-2 Medium 355M, and Pythia-16…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 注意力矩阵秩坍缩与 SVD 压缩的相互作用是开放问题：对 attention 投影做 SVD 压缩究竟抑制还是加剧网络的秩坍缩？</p>
+<p><strong>方法</strong> 统一 14 篇同行评议工作（自注意力输出秩、利用该现象的压缩方法、低秩 KV 投影与线性注意力/状态空间模型的对偶），并报告原创发现；用受控因果分解区分"子空间选择"与"算子范数缩减"两种效应。</p>
+<p><strong>关键数字</strong> SVD 压缩在初始化时强抑制秩坍缩，在预训练模型（GPT-2 124M、GPT-2 Medium 355M、Pythia-160M）上反而加速之，且在全部压缩率下对象混叠伪影风险极小、四种秩估计方法结论一致；子空间选择解释初始化时约 76%、预训练权重上 83% 的效应。</p>
+<p><strong>为什么值得看</strong> 解释了校准感知压缩为何优于朴素 SVD 截断，为低秩压缩的"度"提供了可量化的理论标尺。</p>
+<p><a href="https://arxiv.org/abs/2609.06341v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.06341v1">阅读原文 ↗</a></p>
 </body>
 </html>

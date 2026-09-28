@@ -22,8 +22,11 @@
 <h1>MILO: Efficient Many-shot In-Context Learning with Block-wise Low-rank Compression</h1>
 <p class="meta-line">arXiv · Youpeng Zhao 等 · 2026-09-24 · 论文PDF / 每日精选</p>
 
-<p>面向 many-shot 上下文学习的块级低秩 KV 压缩方法，在保持精度的同时大幅降低长上下文显存与带宽开销</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> Many-shot ICL 用数千示例让 LLM 适应复杂任务，但瓶颈转移到线性增长的 KV cache 显存，在线服务与端侧部署都吃不消。</p>
+<p><strong>方法</strong> MILO 利用 many-shot 上下文的低秩冗余，按块（每块含多个示例）做低秩压缩，并按信息熵动态分配各块秩预算——关键块保真、冗余块狠压。</p>
+<p><strong>关键数字</strong> Qwen2.5 上 KV cache 显存最多降 50%、吞吐提升 1.8×，分类与推理基准性能损失可忽略，显著优于既有基线。</p>
+<p><strong>为什么值得看</strong> 块粒度+熵自适应秩分配是 KV 压缩里少见的"贴合 many-shot 结构"的设计，对长上下文服务降本直接有用。</p>
+<p><a href="https://arxiv.org/abs/2609.29913">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.29913">阅读原文 ↗</a></p>
 </body>
 </html>

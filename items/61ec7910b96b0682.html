@@ -22,9 +22,11 @@
 <h1>Reason Through the Latent! Making Latent Visual Reasoning Necessary</h1>
 <p class="meta-line">arXiv（Suhyeong Park 等，cs.AI） · 2026-09-06 · 论文PDF</p>
 
-<p>Latent visual reasoning aims to perform multimodal reasoning through hidden-state computation rather than explicit textual chains of thought.</p>
-<blockquote><p>Latent visual reasoning aims to perform multimodal reasoning through hidden-state computation rather than explicit textual chains of thought. However, visual information being present in a latent state does not imply that the model actually relies on that state when producing its answer, especially when alternative image-conditioned paths remain available. We introduce Causal Visual Recurrent Reasoning (CVRR), which preserves pretrained visual competence while making recurrent computation the required image-conditioned path to prediction. CVRR initializes recurrence from the question hidden state after the pretrained vision-language model has incorporated the image, then repeatedly updates this state while re-reading the same fixed visual evidence. Before decoding, visual states and the original multimodal KV cache are removed so that only the final recurrent state carries image-conditioned information to the answer. Across the $V^*$, MMVP, BLINK, and MME-RealWorld-Lite benchmarks, CVRR retains strong performance under this strict interface, while compatible latent reasoners fail to recover comparable visual competence even when retrained under the same constraint. Causal intervent…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 潜在视觉推理想用隐状态计算替代显式文字 CoT，但隐状态里"有"视觉信息不代表模型作答时真的"用"它——只要还有别的图像条件路径可用。</p>
+<p><strong>方法</strong> CVRR：预训练 VLM 融合图像后从问题隐状态初始化循环，反复更新并重读同一固定视觉证据；解码前移除视觉状态与原多模态 KV cache，只有最终循环状态携带图像条件信息，使循环计算成为预测的必要路径。</p>
+<p><strong>关键数字</strong> 在 V*、MMVP、BLINK、MME-RealWorld-Lite 上，严格接口下保持强性能；兼容的潜在推理器在相同约束下重训也恢复不了相当的视觉能力；因果干预显示预测对循环内容敏感、持续视觉证据因果地修正循环轨迹。</p>
+<p><strong>为什么值得看</strong> 把"潜在信息性"与"真正被用于预测的潜在计算"区分开，是潜在推理方向少有的因果级验证。</p>
+<p><a href="https://arxiv.org/abs/2609.06746v3">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.06746v3">阅读原文 ↗</a></p>
 </body>
 </html>

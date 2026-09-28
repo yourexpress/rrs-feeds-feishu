@@ -22,9 +22,11 @@
 <h1>RGB Input Pipelines: Throughput, GPU Memory, and Transformation Coverage</h1>
 <p class="meta-line">arXiv（Vladimir Iglovikov，cs.PF） · 2026-09-06 · 论文PDF</p>
 
-<p>An image-augmentation pipeline must deliver a complete batch before a model can use it.</p>
-<blockquote><p>An image-augmentation pipeline must deliver a complete batch before a model can use it. We compare seven input paths from five libraries, starting with RGB JPEG files and ending with a synchronized CUDA float16 batch. We manually matched transformation recipes and parameters across libraries to make the workloads as comparable as possible. The experiment uses 57 selected recipes, a batch size of 256, and one NVIDIA L4 machine. Throughput and peak process GPU memory are recorded together in 759 measurements. On the 11 recipes shared by all paths, DALI and AlbumentationsX have median throughputs of 5,029 and 4,679 images/s, with median peak GPU memory of 2,086 and 1,852 MiB. Broader pairwise comparisons favor AlbumentationsX on 26/26 TorchVision recipes, 50/51 Kornia recipes, and 25/26 Pillow recipes. DALI is faster than AlbumentationsX on all 22 shared recipes, with a median throughput ratio of 1.18x. A separate census reports coverage of the 118 entries in a selected AlbumentationsX RGB catalog. The study measures input preparation at fixed settings; it does not measure model training, numerical equivalence, or the best attainable configuration of each library. Benchmark code: http…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 图像增强流水线必须先交付完整 batch 模型才能用——不同库的数据输入路径在吞吐、GPU 显存与变换覆盖上到底差多少？</p>
+<p><strong>方法</strong> 从 RGB JPEG 到同步 CUDA float16 batch，统一对齐 5 个库 7 条输入路径的变换配方与参数；57 个配方、batch 256、单张 NVIDIA L4 上记录 759 组吞吐与峰值显存测量。</p>
+<p><strong>关键数字</strong> 11 个全路径共有配方上 DALI 与 AlbumentationsX 中位吞吐 5029 与 4679 张/秒、峰值显存 2086 与 1852 MiB；AlbumentationsX 在 26/26 TorchVision、50/51 Kornia、25/26 Pillow 配方上领先；DALI 在 22 个共有配方上全面更快、中位吞吐比 1.18×。</p>
+<p><strong>为什么值得看</strong> 少见的严格受控数据管线基准，训练吞吐卡在数据侧的 team 可照此选型；benchmark 代码开源。</p>
+<p><a href="https://arxiv.org/abs/2609.06635v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.06635v1">阅读原文 ↗</a></p>
 </body>
 </html>

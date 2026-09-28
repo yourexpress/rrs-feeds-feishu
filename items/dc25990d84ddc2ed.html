@@ -22,9 +22,11 @@
 <h1>EStream: Fast and Memory-Efficient MoE Prefill through Expert Virtualization on Mobile NPUs</h1>
 <p class="meta-line">arXiv（Junming Zhang 等，cs.DC） · 2026-09-06 · 论文PDF</p>
 
-<p>Mobile vendors and application developers increasingly deploy LLMs on smartphones for diverse prefill-only services.</p>
-<blockquote><p>Mobile vendors and application developers increasingly deploy LLMs on smartphones for diverse prefill-only services. Yet current systems rely mainly on dense models whose regular computation maps efficiently to mobile NPUs, leaving more capable MoEs underused. MoE prefill does not fit mobile NPUs: NPU graphs are fixed at compile time, yet MoE picks experts at runtime; and one request touches most experts, more than a phone can hold in memory. We present EStream, which resolves both by separating what the NPU must fix from what MoE decides at runtime. A single compiled expert graph serves every expert, with each expert's routed tokens and weight address bound at call time, so dynamic MoE execution runs entirely on the NPU without padding or CPU/GPU fallback. Expert virtualization keeps the expert pool in UFS flash storage and pages it through a fixed-size NPU-addressable arena, group by group, with loading hidden behind computation, so memory is bounded by the arena rather than by the model. It further introduces a hardware-aware configuration algorithm that automatically configures the UFS--NPU pipeline and maximizes loading--computation overlap. Across 18 comparative settings cove…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 手机上 prefill-only 类 LLM 服务增多，但 NPU 图编译期固定、MoE 运行时选专家，且一次请求触及的专家远超手机内存，MoE 在移动 NPU 上几乎不可用。</p>
+<p><strong>方法</strong> EStream 把"编译期必须固定的"与"运行时决定的"分离：单一编译专家图服务所有专家、调用时绑定路由 token 与权重地址；专家虚拟化把专家池放 UFS 闪存，经固定大小 NPU 可寻址 arena 按组分页，加载藏在计算后；硬件感知配置算法自动调优 UFS-NPU 流水。</p>
+<p><strong>关键数字</strong> 骁龙商用机上 18 组设置（3 个 7B~16B MoE、256~4096 token）：纯 prefill TTFT 加速 2.25~27.57×，峰值物理内存降 1.19~12.29×，可扩展至 46.7B 参数 MoE。</p>
+<p><strong>为什么值得看</strong> 端侧 MoE 落地的关键系统工作，"专家虚拟化+arena 分页"思路对手机/眼镜端大模型部署很有启发。</p>
+<p><a href="https://arxiv.org/abs/2609.06551v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.06551v1">阅读原文 ↗</a></p>
 </body>
 </html>

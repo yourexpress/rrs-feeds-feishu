@@ -22,9 +22,11 @@
 <h1>Quantum-Enhanced Learning Framework for Intelligent and AI-Native 6G Wireless Networks</h1>
 <p class="meta-line">arXiv（Muhammad Bilal Akram Dastagir 等，quant-ph） · 2026-09-06 · 论文PDF</p>
 
-<p>The recent convergence of 6G wireless systems and Tiny Machine Learning (TinyML) has driven the need for on-device intelligence in edge networks, where ultra-low latency, stringent energy budgets, and tight compute const…</p>
-<blockquote><p>The recent convergence of 6G wireless systems and Tiny Machine Learning (TinyML) has driven the need for on-device intelligence in edge networks, where ultra-low latency, stringent energy budgets, and tight compute constraints demand novel architectures. Lightweight deep models efficiently extract local patterns but fail to capture global dependencies, while attention mechanisms do so at the expense of energy and computational cost. To bridge this gap, we introduce Quantumer, a hybrid TinyML--quantum framework that integrates multi-scale dilated convolutions and scaled dot-product attention within a lightweight transformer architecture, employing a two-stage transfer learning pipeline from Quantum Pre-Training (Quantumer-Q) to Classical Fine-Tuning (Quantumer-C). We also present QuantiblentLayer, a four-qubit variational circuit that maps compact traffic representations into measurement-based Hilbert-space features using trainable rotations and cyclic entangling operations. The circuit is used only during offline pre-training as a nonlinear embedding teacher and is removed before Quantumer-C deployment, leaving a fully classical inference model without runtime quantum execution. By…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 6G 边缘网络需要端侧智能，但轻量模型抓不住全局依赖，attention 又超出能量与算力预算；量子辅助表征学习能否只在训练期帮忙、推理期零量子开销？</p>
+<p><strong>方法</strong> Quantumer：多尺度空洞卷积+缩放点积 attention 的轻量 transformer，两阶段迁移学习——量子预训练（Quantumer-Q）到经典微调（Quantumer-C）；四比特变分电路 QuantiblentLayer 仅在离线预训练作非线性嵌入教师，部署前移除，推理纯经典。</p>
+<p><strong>关键数字</strong> Quantumer-Q 仅 105.86K 参数、0.4038 MB 内存、0.5525 MB 模型、5.5646 MFLOPs；INT8 树莓派 4 部署延迟 16.8413 ms、占用 0.6493 MB；在 Edge-IIoTset、TON IoT、WUSTL-IIoT-2021 入侵检测数据集上具竞争力。</p>
+<p><strong>为什么值得看</strong> "量子只教不跑"的迁移范式对边缘 TinyML 实际可用，参数与延迟数字都很硬。</p>
+<p><a href="https://arxiv.org/abs/2609.06814v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.06814v1">阅读原文 ↗</a></p>
 </body>
 </html>

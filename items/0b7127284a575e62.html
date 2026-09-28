@@ -22,8 +22,11 @@
 <h1>Accelerating Video Diffusion via Training-Free Trajectory Routing</h1>
 <p class="meta-line">arXiv · Mustafa Munir 等 · 2026-09-24 · 论文PDF / 每日精选</p>
 
-<p>免训练的轨迹路由加速视频扩散推理，无需重训即可显著降低视频生成采样开销</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> 视频扩散即使做了步数蒸馏，每个去噪步仍需完整大模型前向，推理成本高；能否在无需重训的前提下按步混合大小模型？</p>
+<p><strong>方法</strong> TRACK：先用大模型跑出参考轨迹，逐步比较小模型与大模型预测的相对分歧度，在校准集上聚合成"分歧度地图"；质量敏感步用大模型、低分歧步路由到小模型，推理时逐步只跑被选模型，不改架构与调度器。</p>
+<p><strong>关键数字</strong> 在 Wan 2.1、Cosmos 3、TurboDiffusion、FastVideo 上分别取得 1.95×、2.04×~2.73×、2.69×、2.17× 加速，聚合质量相当且多样性保持较好。</p>
+<p><strong>为什么值得看</strong> 把"训练-free 的异构模型按步切换"确立为视频扩散加速的实用范式，校准一次即可复用，落地门槛低。</p>
+<p><a href="https://arxiv.org/abs/2609.30096">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.30096">阅读原文 ↗</a></p>
 </body>
 </html>

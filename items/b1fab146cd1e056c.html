@@ -22,8 +22,11 @@
 <h1>Dense Coverage, Sparse Refinement: Byte-Constrained Cooperative Perception</h1>
 <p class="meta-line">arXiv · Melih Yazgan 等 · 2026-09-24 · 论文PDF / 每日精选</p>
 
-<p>字节预算受限的车联网协同感知通信压缩方法，在硬性带宽约束下平衡覆盖密度与精度</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> V2X 协同感知靠共享 BEV 中间特征提升感知，但严格带宽下稠密特征传输难以部署：均匀压缩浪费码率于背景，稀疏化又易丢上下文。</p>
+<p><strong>方法</strong> "覆盖-精炼"设计：每个 agent 先发全图高压缩粗层保证覆盖，剩余预算按 Task-Aware Benefit Selector 排序选择高分辨率 patch 精炼；接收端重建与标准融合模块兼容的稠密 BEV 张量，带宽变化零重训适配。</p>
+<p><strong>关键数字</strong> DAIR-V2X 上 1.87 KB/agent 达 0.60 AP@0.7，对比均匀 SimVQ 压缩 4.61 KB 仅 0.52；受控诊断证明增益来自覆盖-精炼分配而非量化本身。</p>
+<p><strong>为什么值得看</strong> KB 级预算下精度-码率折中显著优于基线，对车路协同与带宽受限多机感知有直接借鉴意义。WACV 2027 一轮接收。</p>
+<p><a href="https://arxiv.org/abs/2609.29456">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.29456">阅读原文 ↗</a></p>
 </body>
 </html>

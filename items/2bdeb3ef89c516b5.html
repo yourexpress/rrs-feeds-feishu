@@ -22,8 +22,11 @@
 <h1>Spectral Amplitude Purification in Distribution Matching for Diffusion Distillation</h1>
 <p class="meta-line">arXiv · Zhenyu Zhou 等 · 2026-09-24 · 论文PDF / 每日精选</p>
 
-<p>分布匹配蒸馏（DMD）中引入谱幅度提纯，提升少步扩散蒸馏质量，相关高效生成模型压缩部署</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> 分布匹配蒸馏（DMD）能让扩散模型几步出图，但优化被低频粗信号主导，细节纹理恢复慢。</p>
+<p><strong>方法</strong> 作者发现 DMD 方向误差的频谱幅度集中在低频，压制了中高频弱信号；SAP-DMD 作为即插即用模块，自适应调制 DMD 方向场的幅度谱，压低主导低频尾部，促进细结构恢复。</p>
+<p><strong>关键数字</strong> 在 PixArt-α、SD3、SD3.5 上，2 步与 4 步采样下均加速训练收敛并提升生成质量；摘要未给出具体指标数值。</p>
+<p><strong>为什么值得看</strong> 从频谱视角解释并修复 DMD 的收敛偏置，即插即用，做扩散蒸馏/少步生成的人可以直接叠加。</p>
+<p><a href="https://arxiv.org/abs/2609.29116">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.29116">阅读原文 ↗</a></p>
 </body>
 </html>

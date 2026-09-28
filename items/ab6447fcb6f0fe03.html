@@ -22,8 +22,11 @@
 <h1>Activation-Flexible ANN-to-SNN Conversion with Finite-State Markov Neurons</h1>
 <p class="meta-line">arXiv · Ruiyu Jia 等 · 2026-09-24 · 论文PDF / 每日精选</p>
 
-<p>用有限状态马尔可夫神经元实现激活灵活的 ANN→SNN 转换，推进超低功耗事件相机/端侧 SNN 部署</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> 现有 ANN-to-SNN 转换依赖源激活函数与脉冲神经元动力学的特定对应关系，换一个激活函数方法就失效。</p>
+<p><strong>方法</strong> 提出有限状态连续时间马尔可夫链（CTMC）神经元框架，证明其稳态脉冲通量可任意精度逼近紧区间上一切连续非负单调激活，并给出显式误差界；两/三状态 CTMC 即可拟合 ReLU、sigmoid、softplus、截断 ReLU。</p>
+<p><strong>关键数字</strong> 在相同 ANN-SNN 精度差标准下，适度截断使 VGG-11/MNIST 的 SynOps 降低 27%（但 VGG-11/CIFAR-10 上趋势反转）；残余误差主要来自有限窗口采样与末层失配。</p>
+<p><strong>为什么值得看</strong> 为"激活无关"的 ANN-to-SNN 转换建立了理论基础，摆脱逐激活定制神经元的现状，SNN 转换方向值得跟踪。</p>
+<p><a href="https://arxiv.org/abs/2609.30102">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.30102">阅读原文 ↗</a></p>
 </body>
 </html>

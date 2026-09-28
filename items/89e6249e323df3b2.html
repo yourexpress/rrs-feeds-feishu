@@ -22,8 +22,11 @@
 <h1>Baseline Shape Decides the Verdict: A Controlled Re-Examination of Ternary Language Models at 60K Parameters</h1>
 <p class="meta-line">arXiv · Gautam Veldanda 等 · 2026-09-24 · 论文PDF / 每日精选</p>
 
-<p>在 60K 参数规模下受控复检三值（1.58-bit）语言模型，发现基线设置决定优劣结论，对极端低比特压缩实验设计有方法论启示</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> 此前有工作称 60K 参数下路由三值块比参数对齐的全精度 transformer 好 22%，归因于归纳偏置——该结论在受控条件下是否成立？</p>
+<p><strong>方法</strong> 单笔记本 98 组字节级实验、每格 3 种子、固定配方复跑，系统性改变基线深度/宽度形状与字节预算，并检验先全精度后三值的 90/10 训练日程。</p>
+<p><strong>关键数字</strong> 16M 字节预算下，仅改形状 transformer 验证损失跨度达 22.6%，最优形状即追平路由模型；130M 字节下路由模型赢 22.2%~24.0%，但普通门控对角 SSM 再赢 9.1%；三值惩罚随架构 +5.3% vs +19.5%/+28.1%；90/10 日程需约 10 倍学习率，常规微调学习率反而差 15.3%。</p>
+<p><strong>为什么值得看</strong> 小模型架构对比极易被基线形状与学习率污染，这篇是"如何不被误导"的方法论示范。</p>
+<p><a href="https://arxiv.org/abs/2609.29397">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.29397">阅读原文 ↗</a></p>
 </body>
 </html>

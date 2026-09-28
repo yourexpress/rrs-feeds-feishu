@@ -22,8 +22,11 @@
 <h1>Towards Practical Compression of 3D Gaussian Splatting</h1>
 <p class="meta-line">arXiv · Pengpeng Yu 等 · 2026-09-24 · 论文PDF / 每日精选</p>
 
-<p>面向实际部署的 3D 高斯泼溅压缩新方法，兼顾渲染质量与存储/带宽，直接相关端侧 3D 内容部署</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> 3DGS 存储量大，现有压缩方法依赖不规则三维表示上的空间上下文建模，训练编码复杂，且浮点上下文推理跨平台数值不一致会导致熵解码失败。</p>
+<p><strong>方法</strong> COSA-GS：不做空间聚合，用锚点坐标导出的几何上下文经锚点级因果分解建模紧凑锚点隐变量，再融合成属性编码上下文——整个上下文模型仅由线性变换与激活构成；率失真优化+自适应剪枝训练，并用量化感知训练与整数推理实现跨平台比特一致解码。</p>
+<p><strong>关键数字</strong> 摘要称取得 SOTA 压缩性能且跨平台解码快速一致，未给出具体压缩率数字；代码已开源。</p>
+<p><strong>为什么值得看</strong> 把"能真正部署"（跨平台比特一致）作为一等目标做 3DGS 压缩，工程价值高于单纯追率失真曲线。</p>
+<p><a href="https://arxiv.org/abs/2609.30245">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.30245">阅读原文 ↗</a></p>
 </body>
 </html>

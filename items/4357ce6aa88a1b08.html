@@ -22,8 +22,11 @@
 <h1>QINA: Quantum-Inspired Nonlinear Adapters for Pretrained Vision Models</h1>
 <p class="meta-line">arXiv · Mostafa Mehdipour Ghazi 等 · 2026-09-01 · 论文PDF</p>
 
-<p>量子启发的非线性适配器，用于预训练视觉模型的参数高效微调</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> 冻结骨干、数据有限时如何适配大型预训练视觉模型？主流 adapter 多为通用 MLP 或低秩线性更新，对特征变换的谱与几何结构缺乏控制。</p>
+<p><strong>方法</strong> QINA：可学习的三角函数特征提升+有界非线性聚合的紧凑模块，诱导结构化振荡基函数并带显式范数依赖 Lipschitz 界，不扩感受野、几乎不增参数即可重塑预训练表示的谱；纯经典深度学习框架实现，无需量子硬件。</p>
+<p><strong>关键数字</strong> 摘要未给出具体精度数字；在自然与医学影像、分类与分割、多种 adapter 位置与训练预算下，一致优于恒等基线、固定 Fourier 特征映射与参数对齐 adapter 基线。</p>
+<p><strong>为什么值得看</strong> BMVC 2026，论证冻结-regime 的性能瓶颈在表示侧，谱感知参数化是比通用非线性 adapter 更好的归纳偏置。</p>
+<p><a href="https://arxiv.org/abs/2609.29592">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.29592">阅读原文 ↗</a></p>
 </body>
 </html>
