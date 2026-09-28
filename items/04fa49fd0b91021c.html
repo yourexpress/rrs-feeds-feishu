@@ -22,9 +22,11 @@
 <h1>Same Request, Different Answer: Quantization Amplifies Cache-Induced Divergence in LLM Serving</h1>
 <p class="meta-line">arXiv（Aditi Patodiya，cs.SE） · 2026-09-04 · 论文PDF</p>
 
-<p>Prefix caching, in which a serving engine reuses the key and value tensors of a shared prompt prefix across requests, is enabled by default in the major open-source stacks and treated as a transparent optimization.</p>
-<blockquote><p>Prefix caching, in which a serving engine reuses the key and value tensors of a shared prompt prefix across requests, is enabled by default in the major open-source stacks and treated as a transparent optimization. We measure what it costs in reproducibility, and find that the cost rises sharply with weight quantization. Holding the model, decoding parameters, seed, and request order fixed, and issuing every request serially at batch size one, we ran an eighty-episode multi-turn agentic tool-use workload with caching enabled and disabled across two engines and four weight formats. Enabling the cache changed the agent's trajectory on 36.2 percent of episodes at 16-bit precision and on 75.0 percent at four-bit, a gradient that survives re-measurement under a controlled cache configuration. With caching disabled, repeated execution was bit-identical in every configuration, 0 of 800 episodes, which bounds other sources of nondeterminism at 0.5 percent. Repeated cache-enabled runs did diverge, and three experiments locate the cause: a single server-level prompt-cache setting moves run-to-run divergence by 37.5 percentage points, execution order acts only while that setting is active, an…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：prefix caching 被主流开源服务栈默认开启并视为透明优化，但它对推理可复现性的代价从未被系统量化。</p>
+<p><strong>方法</strong>：固定模型、解码参数、种子与请求顺序，串行单请求下在两个引擎、四种权重格式上运行 80 episode 的多轮 agentic 工具调用工作负载，对比开关缓存的轨迹差异，并用三组受控实验定位原因。</p>
+<p><strong>关键数字</strong>：开启缓存使轨迹偏移率在 16-bit 下达 36.2%、4-bit 下达 75.0%；关闭缓存时 800 个 episode 逐位一致；单个服务端缓存设置可使逐次分歧移动 37.5 个百分点。</p>
+<p><strong>为什么值得看</strong>：结论是"缓存给定状态下是确定的，但该状态不出现在请求里且默认从不重置"——缓存服务在实践中不可复现；附带可复用的 harness 与分析管线。</p>
+<p><a href="https://arxiv.org/abs/2609.04748v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.04748v1">阅读原文 ↗</a></p>
 </body>
 </html>

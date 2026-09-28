@@ -22,9 +22,11 @@
 <h1>Sustainable Edge Vision via Empirically Calibrated DVFS: Eliminating Thermal Throttling on Passively Cooled Hardware</h1>
 <p class="meta-line">arXiv（Aayush Marasini 等，cs.AR） · 2026-09-04 · 论文PDF</p>
 
-<p>Passive cooling eliminates the energy overhead and mechanical failure modes of fans, making it attractive for edge deployment, yet sustained Deep Neural Network (DNN) inference on passively cooled edge Systems-on-Chip (S…</p>
-<blockquote><p>Passive cooling eliminates the energy overhead and mechanical failure modes of fans, making it attractive for edge deployment, yet sustained Deep Neural Network (DNN) inference on passively cooled edge Systems-on-Chip (SoCs) is bottlenecked by thermal throttling. To address this, we propose an empirically calibrated, state-aware Dynamic Voltage and Frequency Scaling (DVFS) scheduler. Unlike heuristic-driven controllers, our methodology utilizes time-domain guards and absolute temperature bounds, with derivative triggers acting as safeguards against sharp thermal spikes. Evaluated on a passively cooled Raspberry Pi 5 running YOLOv8n, our scheduler eliminates all observed thermal throttling events during sustained 30-minute workloads. It outperforms a temperature-only reactive baseline by achieving a 6.8% higher frame rate (Cohen's d = 8.73) while consuming 1.9% less energy per frame. Furthermore, our optimized passive scheduling surpasses an actively cooled reference system in energy efficiency (Joules/frame), though active cooling remains superior for raw throughput. Through isolated ablations, we show that the dwell guard is necessary for run-to-run reproducibility. Finally, explo…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：无风扇被动散热的边缘 SoC 做持续 DNN 推理时受热降频限制，启发式控制器难以稳定规避。</p>
+<p><strong>方法</strong>：提出经验校准的状态感知 DVFS 调度器，结合时域 guard、绝对温度上限与导数触发器抑制热尖峰，在被动散热的 Raspberry Pi 5 上跑 YOLOv8n 持续负载验证。</p>
+<p><strong>关键数字</strong>：30 分钟持续负载下消除全部热降频事件；帧率比纯温度反应式基线高 6.8%（Cohen's d = 8.73）且每帧能耗低 1.9%；被动方案的每焦耳帧数优于主动散热参考系统；环境温度 ≥27°C 时非线性漏电使 DVFS 控制失效。</p>
+<p><strong>为什么值得看</strong>：给出明确的工作包络边界与消融结论（dwell guard 是复现性的必要条件），证明包络内正确调度可替代机械散热。</p>
+<p><a href="https://arxiv.org/abs/2609.04705v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.04705v1">阅读原文 ↗</a></p>
 </body>
 </html>

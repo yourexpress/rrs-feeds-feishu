@@ -22,9 +22,11 @@
 <h1>Compressed Recurrent Feedback in Tsetlin Machines: A Reproducible Boolean-FSM Study</h1>
 <p class="meta-line">arXiv（Ankit Kumar 等，cs.LG） · 2026-09-05 · 论文PDF</p>
 
-<p>Sequential inference on small devices requires a model to retain useful history without repeatedly processing a long input record.</p>
-<blockquote><p>Sequential inference on small devices requires a model to retain useful history without repeatedly processing a long input record. A Recurrent Tsetlin Machine (RTM) provides this memory by returning Boolean clause outputs from one time step as inputs to the next. Direct feedback, however, grows with the clause bank and can make the recurrent input unnecessarily wide. This paper investigates a fixed-width alternative. We combine clause activations by exclusive-OR (XOR) folding, retain the folded bits at two time scales, and threshold them back to a binary state. The resulting design reduces 480 clause activations to 96 recurrent bits. We evaluate the method on a reproducible Boolean finite-state-machine benchmark with explicit transition rules, data splits, and random seeds. Across 144 runs, the compressed model obtains $61.47 \pm 6.74\%$ and $62.94 \pm 9.92\%$ accuracy on the two task families. Raw clause feedback changes these means by less than one percentage point, while increasing the recurrent width tenfold and measured host execution time by $4.38\times$ and $3.71\times$. Gated neural models remain more accurate, and a no-feedback control retaining only short input history ac…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：小设备上的序列推理需要保留历史信息，但 Recurrent Tsetlin Machine 直接把子句输出反馈为输入，接口宽度随子句库增长而膨胀。</p>
+<p><strong>方法</strong>：用 XOR 折叠合并子句激活、在两个时间尺度上保留折叠位、再阈值化回二值状态，构造定宽递归接口；在带显式转移规则、数据划分与随机种子的可复现布尔 FSM 基准上评估。</p>
+<p><strong>关键数字</strong>：将 480 个子句激活压缩到 96 个递归位；144 次运行中两个任务族准确率 61.47±6.74% 与 62.94±9.92%，与原始反馈差距不足 1 个百分点，但接口宽度缩为 1/10、宿主执行时间省 4.38×/3.71×。</p>
+<p><strong>为什么值得看</strong>：无反馈对照竟达到相当或略好的准确率——论文借此强调序列模型基准必须包含无反馈控制组，方法论意义大于方法本身。</p>
+<p><a href="https://arxiv.org/abs/2609.06133v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.06133v1">阅读原文 ↗</a></p>
 </body>
 </html>

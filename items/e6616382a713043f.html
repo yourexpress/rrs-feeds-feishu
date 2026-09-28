@@ -22,9 +22,11 @@
 <h1>Cadence: Error-Bounded Lossy Compression of Demand Time Series with a Time-Series Foundation Model</h1>
 <p class="meta-line">arXiv（Roberto Tacconelli，cs.IT） · 2026-09-05 · 论文PDF</p>
 
-<p>We present Cadence, an error-bounded lossy compressor for numeric time series pairing a 330M-parameter time-series foundation model (Google TimesFM-3) with an adaptive arithmetic coder, guaranteeing $|\hat{x}_t-x_t|\leτ$…</p>
-<blockquote><p>We present Cadence, an error-bounded lossy compressor for numeric time series pairing a 330M-parameter time-series foundation model (Google TimesFM-3) with an adaptive arithmetic coder, guaranteeing $|\hat{x}_t-x_t|\leτ$ on every sample. One negative result constrains the design space: for lossless coding a foundation model is worth nothing, because bits saved are logarithmic in predictor accuracy, $Δb=\log_2(\mathrm{MAE_{old}}/\mathrm{MAE_{new}})$. So the $1.51\times$ advantage TimesFM-3 holds over a 32-tap linear predictor buys 0.60 bits of 20.28, a median gain of +0.03%. Error-bounded coding escapes this at one point: once a forecast lands inside the band the residual index is zero and the sample nearly free. Cadence contributes: (1) an adaptive range coder with context-modelled binarization, beating xz/zstd on real indices by 9.7% (15/15) and reversing a finding from a general-purpose back end; (2) a determinism result -- predictions are not bit-identical across batch sizes, and no PyTorch configuration repairs this, forcing group size and execution device into the container format; and (3) domain localization on corpora postdating any plausible training cutoff. On 49 EIA-930 b…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：时序基础模型对无损压缩几乎无增益（位数收益对预测精度仅对数关系），那它能否在误差有界的有损压缩中发挥价值？</p>
+<p><strong>方法</strong>：Cadence 将 330M 参数的 TimesFM-3 与自适应算术编码器配对，保证每个采样点误差不超过 τ；并系统性报告负面结果——包括跨 batch size 预测不逐位一致、PyTorch 无法修复的确定性问题。</p>
+<p><strong>关键数字</strong>：比 xz/zstd 在真实指标上好 9.7%（15/15）；在 49 条 EIA-930 电力需求序列上比最佳经典预测器好 13.3%，50 条 MTA 客流序列上好 28.3%；297 组序列-容差对全部获胜，中位增益 21.4%；与降采样同尺寸下最坏误差紧 28–56 倍。</p>
+<p><strong>为什么值得看</strong>：罕见的"假设证伪式"论文——主动报告 3 个负面结果与 8 条撤回声明，结论可信度远高于只报喜的基准论文。</p>
+<p><a href="https://arxiv.org/abs/2609.06008v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.06008v1">阅读原文 ↗</a></p>
 </body>
 </html>

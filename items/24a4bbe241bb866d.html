@@ -22,9 +22,11 @@
 <h1>FedSubMuon: Communication-Efficient Federated LLM Fine-Tuning via Structured Subspace Muon</h1>
 <p class="meta-line">arXiv（Shaolong Chen 等，cs.LG） · 2026-09-05 · 论文PDF</p>
 
-<p>Federated fine-tuning adapts large language models (LLMs) to decentralized client data, but its scalability in cross-device training is often limited by the high communication cost.</p>
-<blockquote><p>Federated fine-tuning adapts large language models (LLMs) to decentralized client data, but its scalability in cross-device training is often limited by the high communication cost. Muon is an optimizer that improves optimization performance by orthogonalizing momentum for matrix-valued parameters. Existing federated Muon methods demonstrate the benefit of matrix-aware optimization in federated learning, but still require transmitting full layer-size updates and optimizer state. A natural way to reduce communication is to directly apply Muon to LoRA factors, but this changes the optimized object and weakens Muon's matrix-aware update geometry. We propose FedSubMuon, a communication-efficient federated Muon fine-tuning method that optimizes compact coefficient matrices within shared structured subspaces. This design keeps Muon on a single matrix-valued trainable object, while reducing the client upload to compact coefficient matrices. We further introduce FedSubMuon-GT, an accuracy-oriented extension that uses projected gradients to adapt tracked subspace bases toward task-relevant gradient directions. Experiments on instruction tuning and mathematical reasoning show that FedSubMuon…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：跨设备联邦 LLM 微调受通信开销制约；Muon 优化器需传输全层大小的更新与优化器状态，而直接对 LoRA 因子用 Muon 又会破坏其矩阵感知的更新几何。</p>
+<p><strong>方法</strong>：FedSubMuon 让客户端在共享结构化子空间内优化紧凑系数矩阵，保持 Muon 作用于单一矩阵值可训练对象，上传内容仅为系数矩阵；GT 扩展用投影梯度把跟踪的子空间基向任务相关梯度方向自适应调整。</p>
+<p><strong>关键数字</strong>：FedSubMuon-GT 在 5 个数据集-模型对中 4 个取得最佳精度；Dolly-15K 上最接近的通信基线在 Llama-1B 与 Qwen-4B 上分别需要 5.5× 和 1.4× 的总通信量。</p>
+<p><strong>为什么值得看</strong>：在保住 Muon 几何性质的前提下把联邦微调通信压到子空间系数量级，对端侧联邦 LLM 适配很实用。</p>
+<p><a href="https://arxiv.org/abs/2609.06073v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.06073v1">阅读原文 ↗</a></p>
 </body>
 </html>

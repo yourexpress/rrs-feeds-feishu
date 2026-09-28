@@ -22,9 +22,11 @@
 <h1>RAGMark: A Comprehensive Framework for Benchmarking Retrieval-Augmented Generation Systems</h1>
 <p class="meta-line">arXiv（Zlatan Feric 等，cs.PF） · 2026-09-04 · 论文PDF</p>
 
-<p>We present RAGMark, a modular benchmarking framework for advanced Retrieval-Augmented Generation (RAG) systems targeting small-scale multi-GPU environments.</p>
-<blockquote><p>We present RAGMark, a modular benchmarking framework for advanced Retrieval-Augmented Generation (RAG) systems targeting small-scale multi-GPU environments. RAGMark evaluates diverse RAG components, including retrievers, vector databases, prompt-processing methods, and generator models, while collecting detailed per-stage metrics such as latency, GPU utilization, memory consumption, power usage, time to first token (TTFT), throughput, and answer quality. The framework is highly extensible, separating RAG stages, timing, and resource monitoring into modular components, and is designed to efficiently sweep large configuration spaces while minimizing repeated model and database initialization overhead. Using RAGMark, we characterize five RAG workloads on open-domain QA datasets across varying retrieval depths, model scales, reranking, compression methods, and vector database configurations. We show that while autoregressive generation dominates latency in naive pipelines, context-reduction techniques shift bottlenecks across compute, memory bandwidth, and preprocessing stages. Reranking and compression produce compounding benefits: reranking reduces compression workload itself, while …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：RAG 系统组件多、配置空间大，缺少面向小规模多 GPU 环境、能逐阶段量化的模块化基准工具。</p>
+<p><strong>方法</strong>：提出 RAGMark，将检索器、向量数据库、prompt 处理与生成器解耦为可替换模块，采集延迟、GPU 利用率、显存、功耗、TTFT、吞吐与答案质量，支持低开销地扫描大配置空间，并在开放域 QA 上刻画 5 个 RAG 工作负载。</p>
+<p><strong>关键数字</strong>：朴素管线中自回归生成主导延迟；reranking 与压缩组合产生复合收益，最多降低 66% 能耗；上游微小的上下文缩减会级联影响下游延迟、访存与能耗。</p>
+<p><strong>为什么值得看</strong>：揭示优化手段会让瓶颈在计算、带宽与预处理之间迁移，对 RAG 系统的部署调优有直接指导意义，代码已开源。</p>
+<p><a href="https://arxiv.org/abs/2609.05760v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.05760v1">阅读原文 ↗</a></p>
 </body>
 </html>

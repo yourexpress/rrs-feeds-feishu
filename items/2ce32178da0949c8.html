@@ -22,9 +22,11 @@
 <h1>AutoUVM: Automated Prefetching Framework for LLMs under UVM Oversubscription</h1>
 <p class="meta-line">arXiv（Mao Lin 等，cs.OS） · 2026-09-05 · 论文PDF</p>
 
-<p>Large language models (LLMs) increasingly exceed the memory capacity of commodity GPUs, making memory oversubscription common in practical deployments.</p>
-<blockquote><p>Large language models (LLMs) increasingly exceed the memory capacity of commodity GPUs, making memory oversubscription common in practical deployments. NVIDIA Unified Virtual Memory (UVM) provides transparent access to host memory, but its page-fault-driven migrations introduce severe performance overhead. While UVM exposes primitives (e.g., prefetching and placement hints) to mitigate these costs, they require low-level CUDA modifications, limiting their applicability for most LLM users. Meanwhile, existing UVM optimizations operate at coarse managed-object granularity and fail to capture deep learning frameworks' internal tensor-level memory behavior, leading to excessive data movement and CPU-GPU interconnect bottlenecks. We propose AutoUVM, an automated, framework-aware UVM prefetching system for efficient LLM execution under memory oversubscription. AutoUVM bridges the semantic gap between deep learning frameworks and UVM by exposing tensor-level access information and enabling policy-driven prefetching at fine granularity. Implemented as a transparent extension, AutoUVM requires no changes to model code and dynamically adapts to runtime memory pressure. We instantiate AutoUVM…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 超出单卡显存时，UVM 缺页驱动的数据迁移开销巨大；现有 UVM 优化停留在托管对象粗粒度，无法感知深度学习框架内部的张量级访存行为。</p>
+<p><strong>方法</strong>：AutoUVM 以透明扩展形式弥合框架与 UVM 的语义鸿沟，暴露张量级访问信息、支持细粒度策略化预取，无需修改模型代码并可随运行时显存压力动态调整；内置 roofline 启发的策略识别关键传输。</p>
+<p><strong>关键数字</strong>：在 10 个 LLM 上平均取得 3.1× 加速（相对 UVM 基线），比最佳已有 UVM 预取器快 1.9×，相对对象级预取器最高 4.7×，同时显著减少缺页次数。</p>
+<p><strong>为什么值得看</strong>：把 UVM 优化从"改 CUDA 底层"变成"框架感知的策略插件"，对显存受限的实际 LLM 部署直接可用。</p>
+<p><a href="https://arxiv.org/abs/2609.06172v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.06172v1">阅读原文 ↗</a></p>
 </body>
 </html>

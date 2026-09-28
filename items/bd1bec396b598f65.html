@@ -22,9 +22,11 @@
 <h1>FANS: Federated Adaptive Network Search Learning for Heterogeneous Devices</h1>
 <p class="meta-line">arXiv（Jiaxin Zhang 等，cs.LG） · 2026-09-05 · 论文PDF</p>
 
-<p>Heterogeneous Federated Learning (HFL) aims to train models across devices with diverse resource budgets while preserving data privacy.</p>
-<blockquote><p>Heterogeneous Federated Learning (HFL) aims to train models across devices with diverse resource budgets while preserving data privacy. Existing HFL methods typically bind training to a small predefined menu of model configurations, which limits architectural coverage. To address this bottleneck, we introduce Federated Adaptive Network Search (FANS), a hypernetwork-based framework that learns a shared architecture space rather than a fixed set of client models. To optimize this shared space efficiently, we propose the Federated Parallel Scaling (FPS) algorithm, which jointly trains multiple sampled subnetworks in parallel with self-distillation so that larger sampled subnetworks can supervise smaller ones during local updates. We evaluate FANS on CIFAR-10, CIFAR-100, and MNLI using ResNet-18, DenseNet-121, and BERT-base, respectively. Across all benchmarks, FANS expands the feasible subnetwork pool by orders of magnitude (e.g., 4,680 candidates for ResNet-18 vs. 4 in existing methods) and improves the average accuracy-efficiency trade-off relative to representative HFL baselines. Device heterogeneity is emulated through resource tiers, and evaluation covers accuracy, parameter coun…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：异构联邦学习要把模型适配到资源各异的设备，但现有方法把训练绑死在少量预定义模型配置上，架构覆盖严重受限。</p>
+<p><strong>方法</strong>：FANS 用超网络学习一个共享架构空间而非固定客户端模型集合；配套的 Federated Parallel Scaling 算法并行训练多个采样子网，并以自蒸馏让大子网在本地更新中指导小子网。</p>
+<p><strong>关键数字</strong>：ResNet-18 的可行子网池扩至 4,680 个候选（现有方法仅 4 个）；在 CIFAR-10、CIFAR-100、MNLI 上（ResNet-18、DenseNet-121、BERT-base）精度-效率折中均优于代表性 HFL 基线。</p>
+<p><strong>为什么值得看</strong>：把联邦架构适配从"菜单点菜"变成"连续空间搜索"，对端侧异构部署的模型定制是思路级改进。</p>
+<p><a href="https://arxiv.org/abs/2609.06106v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.06106v1">阅读原文 ↗</a></p>
 </body>
 </html>

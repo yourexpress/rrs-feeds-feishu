@@ -22,9 +22,11 @@
 <h1>Proton Irradiation Characterization of an Open-Source ML Accelerator on a Zynq UltraScale+ MPSoC</h1>
 <p class="meta-line">arXiv（Saad Memon 等，cs.AR） · 2026-09-04 · 论文PDF</p>
 
-<p>As spaceborne computing systems increasingly rely on neural network (NN) accelerators, the opacity of commercial, black-box architectures severely restricts the development of verifiable radiation mitigation strategies.</p>
-<blockquote><p>As spaceborne computing systems increasingly rely on neural network (NN) accelerators, the opacity of commercial, black-box architectures severely restricts the development of verifiable radiation mitigation strategies. Open-source, register-transfer level (RTL)-accessible accelerators resolve this limitation by enabling user-defined instrumentation, yet few have empirical radiation-response baselines. This work establishes a foundational system-level proton-irradiation baseline for an unmitigated open-source Tensil NN accelerator deployed on a Zynq UltraScale+ SoC executing ResNet-20 inference. Under 20 to 58 MeV proton irradiation, we delivered $4.29 \times 10^{10}$ p/cm$^{2}$ within monitored operational windows. Seven workload interruptions required two restarts of the notebook process, four reboots or board resets, and one power-cycle sequence. Two output-corruption events returned incorrect CIFAR-10 classes without loss of service. In the longer event, the accelerator returned a class absent from the ten-image CIFAR-10 pool for 39 consecutive inputs at normal cadence. The process remained alive, while the kernel log, limited memory test, and sampled power showed no anomaly. O…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：星载计算越来越依赖神经网络加速器，但商用黑盒架构不透明，抗辐射加固策略难以验证；开源 RTL 加速器虽可插桩，却一直缺少实测辐射响应基线。</p>
+<p><strong>方法</strong>：在 Zynq UltraScale+ SoC 上部署未做加固的开源 Tensil NN 加速器执行 ResNet-20 推理，置于 20–58 MeV 质子束下，记录服务中断与输出损坏事件，建立系统级辐照基线。</p>
+<p><strong>关键数字</strong>：累计注量 4.29×10^10 p/cm²；发生 7 次负载中断（2 次进程重启、4 次复位、1 次断电）和 2 次静默输出错误，其中一次连续 39 个输入返回 CIFAR-10 池之外的类别；9 次事件全部出现在 4 cm 宽束照射下。</p>
+<p><strong>为什么值得看</strong>：罕见的 COTS FPGA-SoC 空间推理实测数据，说明 Linux 管理的加速器必须配端到端内容校验和能触达损坏状态的恢复机制。</p>
+<p><a href="https://arxiv.org/abs/2609.05249v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.05249v1">阅读原文 ↗</a></p>
 </body>
 </html>
