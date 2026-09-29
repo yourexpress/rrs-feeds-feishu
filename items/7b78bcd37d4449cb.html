@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verification of Compiler-to-Accelerator Mappings for Machine Learning Accelerators</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Verification of Compiler-to-Accelerator Mappings for Machine Learning Accelerators</h1>
+<p class="meta-line">arXiv (cs.PL) · 2026-09-25 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：ML 编译器框架把应用代码的部分片段映射到专用硬件加速器的操作上，但多数框架不会把这些映射验证到硬件层面，可能引入功能不匹配。</p>
+<p><strong>方法</strong>：BOLT 是首个针对 ML 加速器粗粒度 intrinsics 的编译器-加速器映射形式化验证框架：不需要编译器提供额外信息，即可依据形式化硬件语义验证应用代码与映射后 intrinsic 代码的功能等价，覆盖复杂循环嵌套与硬件张量数据布局。验证采用"先对齐软件循环与硬件、再关联对应数据布局"的模式，并提供 sync-skeleton 与 layout-sketch 两个模板引导用户完成对齐与布局关系描述。</p>
+<p><strong>关键数字</strong>：原型已在两个近期开源 ML 加速器上成功验证多个复杂映射（摘要未给量化开销数据）。</p>
+<p><strong>为什么值得看</strong>：为定制加速器软件栈补上正确性证明这一环，让"编译器映射即硬件行为"成为可检查的性质而非假设。</p>
+<p><a href="https://arxiv.org/abs/2609.30651">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.30651">阅读原文 ↗</a></p>
+</body>
+</html>

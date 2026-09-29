@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DynBranch: Speculative Subgraph Reuse for Dynamic Agentic LLM Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DynBranch: Speculative Subgraph Reuse for Dynamic Agentic LLM Serving</h1>
+<p class="meta-line">arXiv (cs.DC/cs.AI/cs.LG) · 2026-09-25 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：Agentic LLM 工作流在运行时才决定执行分支，下游计算即使可预测也必须等分支解析，形成"分支解析屏障"；缓存无法隐藏它，因为标识可复用结果的 key 在解析前未知。</p>
+<p><strong>方法</strong>：DynBranch 让未解析的分支在解析前就可寻址：以稳定坐标标识候选子图，使其在分支解析期间投机执行，完成结果可跨后续请求复用；两级控制器仅当期望收益超过负载代价时才准入该投机工作。系统位于 model-API 边界，无需改动 agent harness 或模型执行引擎。</p>
+<p><strong>关键数字</strong>：4 个 agentic 负载、Qwen3-32B、4×H200：平均时延较各负载最强基线降至多 32%，较无复用基线降 46–66%；在其他骨干模型及 Qwen3-8B/RTX 4090 消费级部署上收益依然成立。</p>
+<p><strong>为什么值得看</strong>：把投机执行从 token 级扩展到子图级，直击 agent 服务特有的串行化瓶颈，且工程上即插即用。</p>
+<p><a href="https://arxiv.org/abs/2609.31047">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.31047">阅读原文 ↗</a></p>
+</body>
+</html>

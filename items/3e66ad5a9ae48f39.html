@@ -22,9 +22,11 @@
 <h1>Accuracy is Not Enough: A Divergence-Based Approach to Evaluate Fidelity Loss in Quantized LLMs</h1>
 <p class="meta-line">arXiv（Shahzeb Qamar 等，cs.LG） · 2026-09-07 · 论文PDF</p>
 
-<p>Deployment of Large Language Models (LLMs) on memory-constrained edge devices relies heavily on aggressive post-training quantization.</p>
-<blockquote><p>Deployment of Large Language Models (LLMs) on memory-constrained edge devices relies heavily on aggressive post-training quantization. However, evaluating these models is largely based on zero-shot task accuracy, which depends solely on argmax predictions and is insensitive to changes in the underlying predictive distribution. Consequently, accuracy can exhibit unstable, non-monotonic behavior under progressive quantization, masking substantial fidelity loss relative to the BFloat16 (BF16) uncompressed base model and providing misleading deployment signals. We introduce a distribution-sensitive evaluation framework quantifying information loss in quantized LLMs as the divergence between full-vocabulary predictive distributions at the token decision boundary. We compute statistical distances, including Jensen-Shannon Divergence and Total Variation Distance, between outputs of full-precision and quantized models, enabling a fine-grained analysis of distributional shift. Using this framework, we quantify probability mass displacement and distributional drift relative to the BF16 reference, capturing predictive distribution changes not reflected in top-1 accuracy. We conduct a 120-run …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：边缘部署依赖激进的后训练量化，但主流评估只看零样本任务准确率——它只取决于 argmax 预测，对底层预测分布的变化不敏感；随量化加深，准确率会不稳定、非单调，掩盖相对 BF16 基座的保真度损失，给出误导性的部署信号。</p>
+<p><strong>方法</strong>：提出分布敏感的评估框架：在 token 决策边界计算全词表预测分布的 Jensen-Shannon 散度与全变差距离（相对全精度 BF16 参考），量化概率质量迁移与分布漂移，捕捉 top-1 准确率看不到的变化。</p>
+<p><strong>关键数字</strong>：120 组实验矩阵：5 个基础架构 × 4 个推理基准，量化从 BF16 一路到 Q2_K；散度指标总体随量化加深而上升；在相近内存占用下，混合精度 Q4_K 的散度普遍低于均匀量化的 Q4_0。</p>
+<p><strong>为什么值得看</strong>：为边缘量化选型提供准确率之外的保真度信号——做端侧 LLM 部署时，这套分布散度诊断值得加进评估清单。</p>
+<p><a href="https://arxiv.org/abs/2609.07664v2">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.07664v2">阅读原文 ↗</a></p>
 </body>
 </html>

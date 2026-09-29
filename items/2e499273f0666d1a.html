@@ -22,9 +22,11 @@
 <h1>Water-network decisions share one hydraulic gradient, and it can now be computed exactly</h1>
 <p class="meta-line">arXiv（Tianwei Mu 等，cs.DC） · 2026-09-06 · 论文PDF</p>
 
-<p>Calibration, leak localisation and sensor placement on water distribution networks (WDNs) are decisions about continuous parameters, yet the hydraulic engine that defines the physics returns a solution and no derivatives…</p>
-<blockquote><p>Calibration, leak localisation and sensor placement on water distribution networks (WDNs) are decisions about continuous parameters, yet the hydraulic engine that defines the physics returns a solution and no derivatives, so practice falls back on derivative-free search or on surrogates whose error the answer inherits. We make the global gradient algorithm itself exactly differentiable: the forward pass reproduces the reference engine's discrete devices, status switching and low-flow linearisation included, and the backward pass solves the implicit adjoint by reusing the forward pass's terminal factorisation, so one extra sparse solve returns every parameter's gradient at once, batched over scenarios on one graphics processor. Across 52 public, synthetic and operational networks and 8,140 simulation frames, every network meets the acceptance criterion, the largest head deviation from EPANET 2.2 is 1.137e-13 ft and 25 agree exactly. One adjoint solve replaces the 906 simulations a finite-difference roughness Jacobian costs on the 905-pipe L-TOWN benchmark, and a leak-inversion training loop runs at 463-470 ms per optimiser step for 256 scenarios, 191 times the prior pipeline. Gradie…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：供水管网的校准、漏损定位与传感器布置都是关于连续参数的决策，但定义物理的水力引擎只返回解、不返回导数，实践只能退回无导数搜索或误差会传导到答案的代理模型。</p>
+<p><strong>方法</strong>：让全局梯度算法本身精确可微：前向过程完整复刻参考引擎的离散器件、状态切换与低流线性化；反向过程用隐式伴随复用前向的终端分解，一次额外稀疏求解即得所有参数的梯度，并在单张 GPU 上按场景批处理。</p>
+<p><strong>关键数字</strong>：52 个公开/合成/在役网络、8,140 个仿真帧全部满足验收标准，与 EPANET 2.2 的最大水头偏差 1.137e-13 ft（25 个完全一致）；一次伴随求解替代 L-TOWN（905 管）上 906 次有限差分仿真；256 场景漏损反演每优化步 463–470 ms，为原流水线的 191 倍；梯度校准中位 595 次模型调用收敛，五个调优元启发式中最强者需 8,060 次才能追平、两个在 20,000 次内都追不上。</p>
+<p><strong>为什么值得看</strong>：把经典水力仿真引擎整体可微化，让梯度方法在管网决策上直接碾压无导数搜索，且已可跑在自来水公司实际运营的模型上。</p>
+<p><a href="https://arxiv.org/abs/2609.06323v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.06323v1">阅读原文 ↗</a></p>
 </body>
 </html>

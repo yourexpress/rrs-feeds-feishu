@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The KV Cache Is the New Memory Wall</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>The KV Cache Is the New Memory Wall</h1>
+<p class="meta-line">arXiv (cs.DC/cs.LG/cs.PF) · 2026-09-25 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：长上下文自回归推理受内存带宽而非算力约束，且随序列变长，瓶颈资源从模型权重转向 KV cache；压缩、淘汰、分页、共享、分层等各类方法的报告结果口径不一，无法横向比较。</p>
+<p><strong>方法</strong>：SoK 论文：推导算术强度随上下文长度衰减的闭式表达，按 H100/B200/MI300X 硬件拓扑参数化，给出 KV 流量超过权重流量的交叉长度；把文献分为量化、token 淘汰、KV 分页、前缀缓存、异构分层五域，在统一协议、128k 上下文下每域评一个代表方法，严格区分推导结论与转述结论。</p>
+<p><strong>关键数字</strong>：Llama-3-70B BF16：权重 140 GB 已超单卡 80 GB HBM，单条 128k 序列再增 42 GB KV cache。核心发现是三区间结构：低于交叉点时权重流量主导、KV 压缩几乎无加速；4 bit 以下质量退化加速，淘汰类方法在位置敏感任务上退化呈不连续。</p>
+<p><strong>为什么值得看</strong>：为 KV cache 优化这一拥挤领域提供了统一的分析坐标系与按硬件/上下文/质量预算选型的设计规则。</p>
+<p><a href="https://arxiv.org/abs/2609.30854">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.30854">阅读原文 ↗</a></p>
+</body>
+</html>

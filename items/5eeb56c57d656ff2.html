@@ -22,9 +22,11 @@
 <h1>Analytical Resource Management for Fine-grained MoE Computation-Communication Overlap</h1>
 <p class="meta-line">arXiv（Hongyu Liu 等，cs.DC） · 2026-09-07 · 论文PDF</p>
 
-<p>Fine-grained computation--communication overlap in distributed Mixture-of-Experts (MoE) inference allows communication to begin as partial compute results become ready.</p>
-<blockquote><p>Fine-grained computation--communication overlap in distributed Mixture-of-Experts (MoE) inference allows communication to begin as partial compute results become ready. However, cooperative thread arrays (CTAs) performing computation and communication contend for finite residency capacity on streaming multiprocessors (SMs). Because a resident CTA generally retains its allocated SM resources until completion, CTAs that cannot be co-resident must wait for resources, resulting in wave-like execution. A fixed resource partition cannot adapt to changes in input size, routed expert load, and kernel configuration, potentially causing a communication backlog or reducing expert compute parallelism. We present a wave-quantized analytical model and launch-time resource manager for dependency-coupled overlap pipelines. Using routed-tile counts, kernel occupancy, GPU residency constraints, and split-level readiness dependencies, it selects the communication-CTA count and resource partition before each launch without candidate execution, per-workload profiling, or kernel recompilation. We integrate the method into the public COMET A100 implementation in FLUX. We evaluate three MoE models on four…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：分布式 MoE 推理的细粒度计算-通信重叠中，计算与通信 CTA 争用 SM 上有限的驻留容量，无法共驻的 CTA 只能排队，形成波次式执行；固定资源划分无法适应输入规模、专家路由负载与 kernel 配置的变化，可能造成通信积压或削弱专家计算并行度。</p>
+<p><strong>方法</strong>：提出波次量化的解析模型与启动期资源管理器：利用路由 tile 数、kernel occupancy、GPU 驻留约束与 split 级就绪依赖，在每次 kernel 启动前直接选定通信 CTA 数量与资源划分——不需要候选执行、逐负载画像或 kernel 重编译。已集成进 FLUX 中公开的 COMET A100 实现。</p>
+<p><strong>关键数字</strong>：15 个真实 p90 负载上，解析选择器相对实测 oracle 的平均 regret 仅 3.22%，求解开销均值 0.157 µs；较 COMET 的几何均值加速：GEMM2+GatherRS 算子 2.528×、完整 post-router MoE 层 1.771×、整模型 prefill 1.185×（最大 4.218×/2.584×/1.439×）；TP=2/EP=2、序列长 ≥4096 的所有可行点上均优于 COMET、Megatron core-TE 与 FastMoE TP+NCCL。</p>
+<p><strong>为什么值得看</strong>：用亚微秒级解析求解替代试跑调参来做 MoE 重叠资源管理，轻量、通用且效果显著。</p>
+<p><a href="https://arxiv.org/abs/2609.07536v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.07536v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EAServe: Encode-Aware Disaggregated Serving for Multimodal Large Language Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>EAServe: Encode-Aware Disaggregated Serving for Multimodal Large Language Models</h1>
+<p class="meta-line">arXiv (cs.DC/cs.LG/cs.PF) · 2026-09-25 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：多模态 LLM 服务在 Prefill/Decode 之外多出 Encode 阶段，构成 EPD 三段流水；每个请求都先经过 Encode，但逐请求执行使 Encode GPU 即使在高负载下也严重闲置，反过来饿死下游 Prefill/Decode。</p>
+<p><strong>方法</strong>：EAServe 把 Encode 重新定位为整条流水线的控制点，统一管理三个耦合维度：何时放行到下游、Prefill 在哪执行、GPU 如何共享。运行时层做负载自适应微批、向共驻 Prefill worker 的限速部分卸载、动态 SM 划分；配置层 Hybrid Auto Selection 用分阶段容量画像剪除失衡分配，再以 TPE 贝叶斯优化精炼。</p>
+<p><strong>关键数字</strong>：在图像、视频、音频三类 MLLM 架构上，相同 SLO 下 goodput 较 NVIDIA Dynamo 至多 4.3×、较 vLLM 至多 1.7×，且更快收敛到近优配置。</p>
+<p><strong>为什么值得看</strong>：PD 分离之后，针对多模态 EPD 流水结构性资源失衡的首个系统化 serving 方案。</p>
+<p><a href="https://arxiv.org/abs/2609.31551">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.31551">阅读原文 ↗</a></p>
+</body>
+</html>

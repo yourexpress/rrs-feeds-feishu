@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unifying In-Memory Data Analytics through Sparse Compilation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Unifying In-Memory Data Analytics through Sparse Compilation</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-09-24 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：现代数据分析负载日益异构、算力密集，如何用一个系统在多核硬件上为多样化分析应用同时取得高性能。</p>
+<p><strong>方法</strong>：提出编译型内存分析引擎 Reffine：引入基于关系代数与稀疏迭代理论的统一中间表示（IR），为数据与计算提供统一抽象，从而支持负载无关的端到端优化（算子融合、自动并行化）；稀疏编译后端再把该 IR 翻译成硬件高效的命令式代码，无需领域专用实现。</p>
+<p><strong>关键数字</strong>：TPC-H 上比 DuckDB 快至多 24.9×、比编译型数据库 Umbra 快至多 3.2×；流分析与图分析负载上分别比 Polars、NetworkX 平均快 18.3× 和 47.9×。代码已开源。</p>
+<p><strong>为什么值得看</strong>：一套 IR 同时统一关系、流、图等多类分析负载并超越专用系统，是编译方法在数据分析领域的一次系统性验证。</p>
+<p><a href="https://arxiv.org/abs/2609.30497">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.30497">阅读原文 ↗</a></p>
+</body>
+</html>

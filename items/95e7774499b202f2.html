@@ -22,9 +22,11 @@
 <h1>Staged Hybrid Quantum-Classical Programming</h1>
 <p class="meta-line">arXiv（Chuta Sano 等，cs.PL） · 2026-09-06 · 论文PDF</p>
 
-<p>Hybrid quantum-classical computing systems consist of a classical control system that sends quantum circuits and receives measurement results from a quantum co-processor.</p>
-<blockquote><p>Hybrid quantum-classical computing systems consist of a classical control system that sends quantum circuits and receives measurement results from a quantum co-processor. Such systems allow us to model algorithms that require the classical control system to generate quantum circuits on the fly, potentially based on prior measurement results. This is challenging, as the classical control system must generate quantum circuits that manipulate live quantum states. In this setting, the classical control system is generating further quantum circuits while the quantum co-processor is internally maintaining the state of the live qubits; this is not ideal, since this not only is costly but also introduces additional sources of noise to the live qubits. Thus, we want to minimize the latency between receiving measurement results and sending the next quantum circuit to be executed by pre-computing quantum circuits. We introduce HyQ (pronounced haiku), a multi-modal language based on adjoint logic that pre-generates quantum circuits before executing a hybrid quantum-classical program. We achieve this by separating our semantics into two distinct stages: 1) compile-time generation of quantum cir…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：混合量子-经典系统中，经典控制器要基于测量结果即时生成下一段量子电路；生成期间量子协处理器空转并维持活量子比特状态，既昂贵又引入额外噪声，因此需要最小化"收到测量结果到下发电路"的延迟。</p>
+<p><strong>方法</strong>：HyQ（谐音 haiku）是基于伴随逻辑的分阶段语言：把语义拆成两个阶段——编译期急切完成全部量子电路生成与经典运行时代码生成，运行期只执行仪器化量子协处理器的经典代码。阶段分离从形式上保证所有电路生成逻辑先于运行期逻辑，从而把协处理器运行时空转压到最小。论文给出类型系统、编译期的电路规范化语义与运行期语义，并证明两个阶段的类型保持与进展性。</p>
+<p><strong>关键数字</strong>：理论工作，摘要未给性能数字；核心结果是 type preservation 与 progress 两个元定理。</p>
+<p><strong>为什么值得看</strong>：用分阶段编程把"量子电路动态生成"这个系统难题转化为可证明性质的编译问题，为量子-经典混合编程语言设计提供了形式化样板。</p>
+<p><a href="https://arxiv.org/abs/2609.06743v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.06743v1">阅读原文 ↗</a></p>
 </body>
 </html>

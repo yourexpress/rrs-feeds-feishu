@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KCensus: Synthesizing Latency-Optimal Consensus Fast Paths (Extended Version)</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>KCensus: Synthesizing Latency-Optimal Consensus Fast Paths (Extended Version)</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-09-25 · 论文PDF</p>
+
+<p>把 geo 复制共识快路径视为知识扩散机制并据此合成给定网络拓扑/时延目标下的最优快路径，跨 AWS 区域 KV 存储性能领先既有协议。</p>
+<blockquote><p>Strongly consistent geo-replication often relies on fast paths to reduce latency in the common case of no failures or contention. Existing fast-path schemes, however, are ad hoc and restrictive: each corresponds to a point in a broad design space shaped by network topology, workload, and latency objective, so no single scheme works best across settings. This paper looks at fast-path schemes from a new perspective, as mechanisms that spread knowledge about proposals. With this view, we identify a fundamental condition on the spread of knowledge for a fast-path scheme to work. We then introduce KCensus, a framework that turns this condition into an optimization problem, synthesizing new fast-path schemes that are optimal for a given setting. We use KCensus to build a geo-replicated key-value store and evaluate it across AWS regions. Our system outperforms competing protocols, with up to 16% lower average latency.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.31302">阅读原文 ↗</a></p>
+</body>
+</html>

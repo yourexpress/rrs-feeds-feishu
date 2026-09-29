@@ -22,9 +22,11 @@
 <h1>SparseConflicts: Handling Conflicting Data Layouts in Sparse Tensor Contractions</h1>
 <p class="meta-line">arXiv（Adhitha Dias 等，cs.PL） · 2026-09-06 · 论文PDF</p>
 
-<p>Optimizing sparse tensor computations is challenging due to the use of compressed storage formats, which leads to non-affine loop nests and a vast, complex schedule space.</p>
-<blockquote><p>Optimizing sparse tensor computations is challenging due to the use of compressed storage formats, which leads to non-affine loop nests and a vast, complex schedule space. The performance of a given schedule is sensitive to the sparsity pattern of the input tensors, making it difficult to find a single optimal solution. When input tensors in the same tensor contraction have conflicting data layouts in relation to the iteration order, it requires costly-both in time and memory-layout transformation, such as transposition. A promising but under-explored alternative is to generate a schedule that avoids explicit transposition, but this has not been systematically supported in existing compilers. This paper presents a new code generation strategy that generalizes the intermediate representation of the TACO sparse tensor compiler to generate a single loop nest, circumventing explicit transposition of tensors when the tensors have conflicting data layout iteration orders. We extend TACOś iteration graph to express a search-based strategy for locating elements in tensors with conflicting layouts, and we introduce new intermediate representation nodes to lower these schedules to efficient …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：稀疏张量收缩中，当同一收缩的输入张量相对迭代顺序存在冲突的数据布局时，需要在时间与内存上都昂贵的布局变换（如转置）；生成免转置的调度是有前景但缺乏系统支持的替代路径。</p>
+<p><strong>方法</strong>：提出新的代码生成策略，推广 TACO 稀疏张量编译器的中间表示：扩展其迭代图以表达"在布局冲突的张量中搜索定位元素"的策略，并引入新的 IR 节点把这类调度 lowering 成高效代码，从而系统性地生成单循环嵌套、不再物化转置临时张量。论文同时给出该策略何时值得采用的指导。</p>
+<p><strong>关键数字</strong>：在真实与合成数据集的稀疏张量收缩上，对布局错位的计算，融合方案较"显式生成转置临时张量"的传统路径在部分稀疏模式下最高提速 2×。</p>
+<p><strong>为什么值得看</strong>：把"免转置"从手工技巧变成编译器系统能力，为稀疏张量编译的调度空间补上重要一块。</p>
+<p><a href="https://arxiv.org/abs/2609.06328v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.06328v1">阅读原文 ↗</a></p>
 </body>
 </html>

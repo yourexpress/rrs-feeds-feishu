@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PipeDRAM: A Data-Transposition-Free In-DRAM Architecture with Hardware/Software Pipelining</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>PipeDRAM: A Data-Transposition-Free In-DRAM Architecture with Hardware/Software Pipelining</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-09-25 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：PUD（Processing-using-DRAM）架构要求操作数按纵向布局堆叠在 DRAM 列上，而现代系统原生采用保持缓存行抽象的横向布局；这一根本错配迫使现有 PUD 系统频繁做横纵数据转置，带来显著性能、能耗与集成开销。</p>
+<p><strong>方法</strong>：PipeDRAM 的核心思路有二：一是在每次内存请求内确定性地重排比特，使横向布局的数据在 DRAM 阵列内天然处于 PUD 友好的摆放；二是采用流水线执行模型，重叠比特相关与比特无关的阵列内操作，挖掘跨阵列的比特级并行。全程无需运行时布局变换。</p>
+<p><strong>关键数字</strong>：较三个 SOTA PUD 系统性能分别高 11.8×、11.8×、80.4×，能耗分别低 25.4×、3.0×、38.0×；面积开销仅 DRAM 芯片 1.86%、CPU die 0.05%；已开源。</p>
+<p><strong>为什么值得看</strong>：消除了 PUD 走向实用最大的绊脚石之一——数据转置，且代价极低。</p>
+<p><a href="https://arxiv.org/abs/2609.30998">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.30998">阅读原文 ↗</a></p>
+</body>
+</html>
