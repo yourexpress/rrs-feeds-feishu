@@ -22,9 +22,11 @@
 <h1>Matryoshka Hash Representations for Model-Aware Compact Semantic Retrieval</h1>
 <p class="meta-line">arXiv（Peichun Hua 等，cs.IR） · 2026-09-07 · 论文PDF</p>
 
-<p>Retrieval-augmented generation (RAG) depends on dense retrieval: each document is stored as a learned vector, and a query is answered by finding its nearest neighbors in that vector space.</p>
-<blockquote><p>Retrieval-augmented generation (RAG) depends on dense retrieval: each document is stored as a learned vector, and a query is answered by finding its nearest neighbors in that vector space. Keeping one full-precision vector per document is the dominant index cost at corpus scale, so retrieval systems replace each vector with a short code of a few bytes---a step called quantization. Standard quantizers such as product quantization (PQ) pick the code that reconstructs the original vector most closely. A single code is even more useful if it serves several byte budgets at once: when its short prefixes are each directly searchable, a deployment can set its efficiency--quality operating point without re-encoding the corpus. But training all prefixes under one objective makes the early bits a compromise across budgets---short codes improve while the full-width code degrades. Quantization to low-bit representation, such as binary codes, further sharpens the conflict. We introduce Matryoshka Hash Representations (MHR), a two-stage procedure that separates full-width training from prefix organization. MHR first learns a longer binary code, then freezes the model and trains additional zero-in…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> RAG 稠密检索中，向量量化希望一份编码同时服务多种字节预算（短前缀可直接搜索），但单目标训练让短前缀与全宽编码互相妥协，低比特下冲突更尖锐。</p>
+<p><strong>方法</strong> Matryoshka Hash Representations（MHR）两阶段：先训练更长的二进制码，再冻结模型、用零初始化的残差码适配器训练可直接搜索的前缀，把全宽训练与前缀组织解耦；文档按 1 bit/维存储，查询保留连续 logits；搜索用 FAISS FastScan 实现。</p>
+<p><strong>关键数字</strong> MS MARCO 训练、BEIR 七个数据集零样本迁移：32 字节预算下 NDCG@10 达 .5561、Recall@100 达 .6535，超过同预算最强基线，且预算越低优势越明显；同一编码还能增强全精度重排短名单与 LEANN 图索引剪枝。</p>
+<p><strong>为什么值得看</strong> "全宽与前缀解耦"思路干净、工程收益明确，做向量索引压缩的人值得直接跟进。</p>
+<p><a href="https://arxiv.org/abs/2609.07276v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.07276v1">阅读原文 ↗</a></p>
 </body>
 </html>

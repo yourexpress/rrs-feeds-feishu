@@ -22,9 +22,11 @@
 <h1>TASTE: Throughput-Aware Batch Size Tuning for On-Device Edge Learning</h1>
 <p class="meta-line">arXiv（Avik Bhatnagar 等，cs.LG） · 2026-09-07 · 论文PDF</p>
 
-<p>The rise of privacy-preserving artificial intelligence (AI) has shifted the focus of model adaptation and personalization towards on-device learning, where deep learning models are finetuned directly on edge hardware usi…</p>
-<blockquote><p>The rise of privacy-preserving artificial intelligence (AI) has shifted the focus of model adaptation and personalization towards on-device learning, where deep learning models are finetuned directly on edge hardware using local user data. However, this shift requires optimization of deep learning training on resource-constrained hardware to maximize throughput while maintaining predictive accuracy. This paper introduces a novel technique for on-device model training that incorporates an efficient Bayesian optimization-based batch size tuning approach to maximize hardware throughput. To evaluate the impact of this hyperparameter on the learning dynamics, we investigated two distinct paradigms: standard supervised learning (SL) and online continual learning (CL). Experimental results across various edge devices demonstrate a throughput ceiling, beyond which increasing the batch size yields no additional throughput gains. The proposed tuning approach identifies the optimal batch size, which, when combined with gradient accumulation and linear learning rate scaling, achieves up to a 2X increase in training throughput on platforms such as Raspberry Pi 4 compared to maximum batch sizes,…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 隐私保护 AI 推动模型在端侧设备上直接微调，但资源受限硬件上如何最大化训练吞吐同时保住精度，batch size 是关键且调优成本高。</p>
+<p><strong>方法</strong> TASTE：基于贝叶斯优化的 batch size 调优，直接以硬件吞吐最大化为目标；在标准监督学习与在线持续学习两种范式下验证；配合梯度累积与线性学习率缩放使用。</p>
+<p><strong>关键数字</strong> 实验发现明确的吞吐天花板——超过后增大 batch size 不再提速；最优 batch size 相比最大 batch size 在树莓派 4 等平台上吞吐最高提升 2 倍且精度无损；持续学习下还维持稳定性-可塑性平衡，缓解灾难性遗忘。</p>
+<p><strong>为什么值得看</strong> "更大 batch 不等于更快"的端侧实测结论 + 自动化调优方法，端侧训练工程可直接套用。</p>
+<p><a href="https://arxiv.org/abs/2609.07444v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.07444v1">阅读原文 ↗</a></p>
 </body>
 </html>

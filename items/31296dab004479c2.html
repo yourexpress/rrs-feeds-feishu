@@ -22,9 +22,11 @@
 <h1>Interactive Debugger for Performance Portable Python HPC Kernels</h1>
 <p class="meta-line">arXiv（Ivan Grigorik 等，cs.DC） · 2026-09-07 · 论文PDF</p>
 
-<p>We propose PKDB, the first interactive debugger for GPU and multithreaded low-level kernels written in Python.</p>
-<blockquote><p>We propose PKDB, the first interactive debugger for GPU and multithreaded low-level kernels written in Python. Python is widely used in high performance computing (HPC), with frameworks such as PyKokkos translating Python-embedded domain-specific languages to native code that runs across OpenMP-threaded CPUs and various GPUs. Yet interactive debugging support for such code is absent: developers resort to print statements, framework-specific assertions, or CPU-only execution, the last of which requires altering the program or its data and can mask device-specific bugs. PKDB enables standard interactive debugging like breakpoints, stepping, and variable inspection while preserving actual on-device execution without source modification. Beyond these fundamentals, PKDB introduces two advanced capabilities that exploit the dynamic nature of Python and PyKokkos: (i) Live code evaluation, which lets developers execute arbitrary Python expressions or entire kernels in the middle of a paused kernel without restarting the process; (ii) Kernel call site substitution, which allows an actively running kernel to be updated and reloaded on the fly, so only the kernel is recompiled and re-executed…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> PyKokkos 等框架把 Python 嵌入式 DSL 编译到多线程 CPU 与各类 GPU，但这类代码没有交互式调试器——开发者只能靠 print、框架断言或退回 CPU 执行（后者还可能掩盖设备特有 bug）。</p>
+<p><strong>方法</strong> PKDB：首个面向 GPU/多线程 Python kernel 的交互式调试器，支持断点、单步、变量检查，不改源码、保持真实设备上执行；两个利用 Python 动态性的高阶能力：暂停中执行任意 Python 表达式或整个 kernel（live evaluation）、运行中热替换并重载 kernel（仅重编译该 kernel）。</p>
+<p><strong>关键数字</strong> 在 Intel/AMD/NVIDIA CPU 与 NVIDIA/AMD GPU 上实测开销有限，达到日常可用水平。</p>
+<p><strong>为什么值得看</strong> 补齐 Python HPC 生态长期缺失的调试基础设施，性能可移植 kernel 的开发体验会因此明显改善。</p>
+<p><a href="https://arxiv.org/abs/2609.07912v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.07912v1">阅读原文 ↗</a></p>
 </body>
 </html>

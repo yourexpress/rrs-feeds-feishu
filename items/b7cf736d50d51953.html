@@ -22,9 +22,11 @@
 <h1>Unified AI Gateway: A Framework for Joint Model Routing and KV Cache Management</h1>
 <p class="meta-line">arXiv（Jiaxun Lu 等，cs.DC） · 2026-09-07 · 论文PDF</p>
 
-<p>Large language model (LLM) inference increasingly spans models that differ in size, capability, price, and provider.</p>
-<blockquote><p>Large language model (LLM) inference increasingly spans models that differ in size, capability, price, and provider. This shift creates two costs for developers. One is the integration cost of choosing among and switching between many models. The other is the inference cost of rebuilding a KV cache when it is unavailable or incompatible with the selected model. We define and analyze the Unified AI Gateway as a system setting for an edge-deployed AI traffic hub. It coordinates model routing, KV cache management, and compute placement across end devices, edge resources, and cloud model services. At request time, the gateway jointly selects a target model, an execution site, and a KV cache action under task-quality, latency, cost, and resource constraints. In parallel, background cache-management actions optimize KV cache placement, replication, retrieval, and lifecycle decisions for subsequent requests. We synthesize existing evidence on KV cache reuse, compression, cross-model mapping, distributed storage, and transfer, and discuss the remaining challenges of integrating these capabilities into one system. Across eight typical workload profiles, our workload-level analytical simulat…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 推理日益跨多个规模、能力、价格、供应商各异的模型，开发者要付两笔成本：模型选择与切换的集成成本，以及 KV cache 不可用/不兼容时的重建成本。</p>
+<p><strong>方法</strong> 定义并分析统一 AI 网关：边缘部署的 AI 流量枢纽，协调模型路由、KV cache 管理与算力放置；请求时在质量、延迟、成本、资源约束下联合选择目标模型、执行位置与 KV cache 动作；后台持续优化缓存的放置、复制、检索与生命周期；综合 KV cache 复用、压缩、跨模型映射等现有证据讨论集成挑战。</p>
+<p><strong>关键数字</strong> 8 种典型负载的分析级仿真：TTFT 加速 1.25–13.28×，输入成本收益 1.20–6.16×。</p>
+<p><strong>为什么值得看</strong> 把 KV cache 当一等公民纳入路由决策的系统视角，仿真收益可观，做 LLM 网关/推理调度的人值得读。</p>
+<p><a href="https://arxiv.org/abs/2609.06940v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.06940v1">阅读原文 ↗</a></p>
 </body>
 </html>

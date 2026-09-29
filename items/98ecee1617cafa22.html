@@ -22,9 +22,11 @@
 <h1>Dense Structural Compression of Transformers via Gauge-Correct Channel Removal</h1>
 <p class="meta-line">arXiv（Jed A. Duersch 等，cs.LG） · 2026-09-07 · 论文PDF</p>
 
-<p>Inference energy per token drives the cost and carbon footprint of deployed transformers.</p>
-<blockquote><p>Inference energy per token drives the cost and carbon footprint of deployed transformers. It is dominated by dense matrix products that incur fused multiply-accumulate (FMA) operations and memory traffic. To reduce these computations while retaining dense tensors for high GPU throughput, we develop a methodology from first principles to adapt structural complexity during training to maximize inference utility per unit compute. Channel penalties drive entire tensor slices to zero to enable physical removal while preserving density and the network function. The natural approach, penalizing the norm of operator components acting through each channel, is provably destabilized by gauge freedom. We resolve this pathology with GaugeLasso: additive symmetric group-lasso penalties that recover a monotone function of product-norms when the network converges to gauge balance. Our equilibrium analysis enables per-channel calibration to correctly suppress slices that under-perform in inference utility per unit compute. Under adaptive pressure, the network reorganizes into depth-dependent structural profiles that can be far smaller than the architecture required to learn the task. On polynomial …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 要在训练阶段就压缩 Transformer 结构、同时保持稠密张量以保住 GPU 吞吐；但朴素的通道范数惩罚会被网络的规范自由度（gauge freedom）破坏稳定性。</p>
+<p><strong>方法</strong> GaugeLasso：加性对称 group-lasso 惩罚，当网络收敛到 gauge balance 时恢复通道乘积范数的单调函数；配合逐通道校准，压制"单位算力推理效用"低的张量切片，让网络在持续压力下自组织成更小的结构。</p>
+<p><strong>关键数字</strong> F31 多项式长除任务上算力压缩 148–255 倍且精度无损；字符级语言建模同等 FMA 下超过手工设计基线；相同效用排序的事后剪枝无法达到这些结构，说明持续压力是关键。</p>
+<p><strong>为什么值得看</strong> 从第一性原理推导训练期结构压缩，"压缩出来的架构还能加速训练"等现象对高效模型设计有启发。</p>
+<p><a href="https://arxiv.org/abs/2609.07264v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.07264v1">阅读原文 ↗</a></p>
 </body>
 </html>

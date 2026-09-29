@@ -22,9 +22,11 @@
 <h1>CANAL: Channel-Aware Noise Allocation for Differentially Private Feature Distillation in Medical Image Segmentation</h1>
 <p class="meta-line">arXiv（Armaghan Butt 等，cs.CV） · 2026-09-07 · 论文PDF</p>
 
-<p>Medical image segmentation needs diverse training data, but hospitals hold complementary scans they cannot share for privacy and regulatory reasons.</p>
-<blockquote><p>Medical image segmentation needs diverse training data, but hospitals hold complementary scans they cannot share for privacy and regulatory reasons. Knowledge distillation can bridge this gap by exporting learned feature representations instead of images, but those representations still encode patient-specific anatomy and remain vulnerable to membership-inference and feature-inversion attacks. Adding calibrated Gaussian noise restores a differential-privacy guarantee, yet three issues have been overlooked. First, prior DP feature-distillation pipelines re-sample noise at every student iteration, so each patient image is released many times and the privacy cost composes over those releases, growing by orders of magnitude. We present a sample-once-per-image release, realized by a single precomputation pass, under which each patient contributes one release. Second, uniform noise is wasteful because channels differ in task importance. Using task-gradient energy as the importance measure, we derive CANAL, a closed-form water-filling allocation that gives important channels proportionally less noise, and prove it strictly minimizes importance-weighted distortion at a fixed budget. Third,…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 医院间无法共享患者影像，特征蒸馏可导出表征代替图像，但表征仍泄露患者解剖信息；直接加高斯噪声又有三个被忽视的问题：逐迭代重采样噪声使隐私成本放大、均匀加噪浪费预算、分配参数本身依赖数据也在泄露。</p>
+<p><strong>方法</strong> CANAL：每幅患者图像只释放一次（单次预计算完成）；以任务梯度能量衡量通道重要性，推导闭式注水（water-filling）噪声分配，重要通道加更少噪声，并证明其在固定预算下最小化重要性加权失真；DP-honest 预算拆分把裁剪上限与重要性分数也计入隐私账。</p>
+<p><strong>关键数字</strong> 在皮肤镜、结肠镜、超声三个医学分割基准上，相同隐私预算下比均匀噪声保留更多任务相关信号。</p>
+<p><strong>为什么值得看</strong> "报告的 ε 才是真 ε"——把数据依赖的分配参数也计入隐私账的做法很严谨；通道重要性注水分配是闭式解，可直接复用。</p>
+<p><a href="https://arxiv.org/abs/2609.13271v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.13271v1">阅读原文 ↗</a></p>
 </body>
 </html>

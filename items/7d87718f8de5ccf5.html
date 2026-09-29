@@ -22,9 +22,11 @@
 <h1>Online Draft Co-Training for Speculative Decoding in Large-Scale, Long-Context RL Post-Training</h1>
 <p class="meta-line">arXiv（Zili Wang 等，cs.LG） · 2026-09-07 · 论文PDF</p>
 
-<p>Speculative decoding accelerates rollout generation, which dominates the cost of reinforcement learning (RL) post-training.</p>
-<blockquote><p>Speculative decoding accelerates rollout generation, which dominates the cost of reinforcement learning (RL) post-training. Online co-training can further increase the draft's accuracy, yielding greater speedups. However, scaling this approach to co-training on large models with long contexts poses two obstacles: (1) branch attention is unsupported by standard causal context-parallel (CP) implementations, and (2) target features span across pipeline-parallel (PP) stages. We address both with an end-to-end system for large-scale online draft co-training. For CP, we extend packed, load-balanced zigzag ring attention by merging rank-local branch attention with causal main-sequence attention. For PP, TapChannel transports intermediate target features across stages via a separate path, leaving the pipeline schedule unaffected. Experiments demonstrate that co-trained drafts closely track the policy baseline while delivering substantial rollout and end-to-end speedups across model scales up to 122B. Our CP design achieves strong scaling at 256K tokens with significant memory savings over prior work, and our PP transport incurs modest overhead. Code can be found at https://github.com/NVIDI…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> RL 后训练的成本被 rollout 生成主导，投机解码可加速，在线协同训练 draft 还能提速；但扩展到大模型长上下文有两个障碍：分支注意力不被标准因果上下文并行（CP）支持，目标特征又跨流水线并行（PP）阶段。</p>
+<p><strong>方法</strong> 端到端在线 draft 协同训练系统：CP 上扩展打包、负载均衡的 zigzag ring attention，把 rank 本地分支注意力与因果主序注意力合并；PP 上用 TapChannel 独立通路跨阶段传输中间目标特征，不影响流水线调度。</p>
+<p><strong>关键数字</strong> 模型规模至 122B 均有显著 rollout 与端到端加速；CP 设计在 256K token 上强扩展且显存明显节省；PP 传输开销温和。</p>
+<p><strong>为什么值得看</strong> 把投机解码协同训练工程化到 122B 参数 / 256K 上下文的系统论文，RL infra 团队可直接参考。</p>
+<p><a href="https://arxiv.org/abs/2609.07108v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.07108v1">阅读原文 ↗</a></p>
 </body>
 </html>

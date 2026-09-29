@@ -22,9 +22,11 @@
 <h1>MetaKV: Adaptive KV Cache Compression for Constrained LLM Inference</h1>
 <p class="meta-line">arXiv（Michael Wang 等，cs.LG） · 2026-09-07 · 论文PDF</p>
 
-<p>Key--value (KV) cache compression is an effective way to reduce the memory overhead of large language model (LLM) inference, particularly for long-context workloads.</p>
-<blockquote><p>Key--value (KV) cache compression is an effective way to reduce the memory overhead of large language model (LLM) inference, particularly for long-context workloads. However, existing compression methods make different trade-offs among accuracy, inference latency, and peak KV cache memory utilization, making a single fixed configuration unsuitable across different prompts and resource constraints. We introduce MetaKV, an adaptive framework that selects a KV cache compression configuration for each input prompt based on user-specified latency and peak memory budgets. MetaKV uses lightweight prediction models to estimate the end-to-end latency, peak memory, and probability of a correct response for each candidate configuration, and selects the configuration that best satisfies the latency-memory constraints while preserving accuracy. We evaluate MetaKV across ten configurations from three representative KV cache compression methods, KVQuant, H$_2$O, and RocketKV, together with an uncompressed FP16 configuration, on four datasets covering mathematics, science, commonsense reasoning, and reading comprehension. Across a wide range of latency and peak memory constraints, MetaKV consisten…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> KV cache 压缩能降 LLM 推理显存开销，但各方法在精度、延迟、峰值显存上的权衡不同，单一固定配置无法适配所有 prompt 与资源约束。</p>
+<p><strong>方法</strong> MetaKV：按用户指定的延迟与峰值显存预算，为每个输入 prompt 选择压缩配置；用轻量预测模型估计每个候选配置的端到端延迟、峰值显存与答对概率，选出满足双约束且保精度的配置。</p>
+<p><strong>关键数字</strong> 在 KVQuant、H2O、RocketKV 共 10 种配置加 FP16 基线、覆盖数学/科学/常识/阅读理解 4 个数据集上评估：约束成功率（CSR，答对且满足双约束的比例）平均提升约 0.07，最高 0.135。</p>
+<p><strong>为什么值得看</strong> 把 KV 压缩从"选一种方法"变成"按 prompt 选配置"，思路务实且代码开源，推理服务侧可直接借鉴。</p>
+<p><a href="https://arxiv.org/abs/2609.07966v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.07966v1">阅读原文 ↗</a></p>
 </body>
 </html>

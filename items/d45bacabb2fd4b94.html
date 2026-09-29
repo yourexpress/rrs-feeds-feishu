@@ -22,9 +22,11 @@
 <h1>Trust-But-Verify: Poisoning-Resilient Locally Private Graph Learning Protocols</h1>
 <p class="meta-line">arXiv（Longzhu He 等，cs.LG） · 2026-09-07 · 论文PDF</p>
 
-<p>Built upon local differential privacy (LDP), locally private graph learning protocols have emerged as an important paradigm for decentralized graph learning, balancing privacy protection and learning utility.</p>
-<blockquote><p>Built upon local differential privacy (LDP), locally private graph learning protocols have emerged as an important paradigm for decentralized graph learning, balancing privacy protection and learning utility. Under such protocols, each user locally perturbs their node features and adjacency information before transmission, ensuring formal privacy guarantees without original data leaving the device. However, the inherently open participation nature renders these protocols critically vulnerable to data poisoning attacks, where adversaries inject carefully crafted malicious nodes to corrupt neighborhood aggregation and degrade downstream utility. Despite the severity of this threat, effective defenses in this setting remain largely unexplored. In this paper, we propose VERITAS, a poisoning-resilient locally private graph learning protocol built on a trust-but-verify paradigm. By introducing a verification list encoding graded peer trust levels, VERITAS jointly privatizes node features and graph structure on the user side, while exploiting bilateral attestation asymmetry on the server side to identify and prune malicious nodes. Concretely, VERITAS comprises four synergistic stages: (1)…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 基于本地差分隐私（LDP）的图学习协议让用户本地扰动数据再上传，但开放参与特性使其极易被投毒——攻击者注入恶意节点污染邻居聚合，而该场景下的有效防御基本空白。</p>
+<p><strong>方法</strong> VERITAS（trust-but-verify 范式）：验证列表编码分级的对端信任等级；用户侧联合私有化节点特征与图结构；服务器侧利用双向证明的不对称性识别并剪除恶意节点；四阶段协同——本地数据扰动、证明驱动剪枝、双去噪效用恢复、鲁棒私有图学习。</p>
+<p><strong>关键数字</strong> 4 个真实基准数据集、跨多种 LDP 机制与 GNN 架构：有效防御投毒攻击，并在严格隐私保证下显著提升下游图学习效用。</p>
+<p><strong>为什么值得看</strong> LDP 图学习 + 投毒防御的第一批系统方案，"信任但要验证"的设计对去中心化学习安全有借鉴意义。</p>
+<p><a href="https://arxiv.org/abs/2609.07063v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.07063v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Mind the Approximation: Fisher-Weighted SVD Compression for ViTs</h1>
 <p class="meta-line">arXiv（Moritz Thoma 等，cs.CV） · 2026-09-07 · 论文PDF</p>
 
-<p>Model compression is key to mitigate deployment challenges of ever growing machine learning models.</p>
-<blockquote><p>Model compression is key to mitigate deployment challenges of ever growing machine learning models. In this area of research, singular value decomposition (SVD)-based compression offers a compelling trade-off between computational efficiency and model accuracy. Fisher-weighted SVD in particular provides principled, loss-aware compression. However, we find that improving the fidelity of Fisher approximation used in the compression is poorly predictive of post-compression accuracy for Vision Transformers (ViTs). Motivated by this observation, we propose FACTS, a structured Fisher Approximation tailored to Compressing ViTs with Fisher-weighted SVD, which enforces token-local aggregation while preserving within-token activation-gradient dependence. Additionally, we introduce a fast Constrained Rank Search (CoRS), that optimizes layer-wise rank allocation while adhering to a fixed floating point operation (FLOP) constraint. Extensive experiments across ViTs and hybrid architectures demonstrate that FACTS consistently improves accuracy-efficiency trade-offs without requiring finetuning. Notably, it outperforms the strongest SVD baseline by up to +5.8 percentage points (p.p.) Top-1 on Swi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Fisher 加权 SVD 是有理论依据的压缩方法，但作者发现：提升 Fisher 近似的保真度，对 ViT 压缩后的精度预测力很差——改进方向需要重新思考。</p>
+<p><strong>方法</strong> FACTS：面向 ViT 压缩的结构化 Fisher 近似，强制 token 局部聚合并保留 token 内激活-梯度依赖；配套 CoRS 快速约束秩搜索，在固定 FLOP 预算下优化逐层秩分配；全程无需微调。</p>
+<p><strong>关键数字</strong> 在 ViT 与混合架构上，Swin-B 的 Top-1 精度比最强 SVD 基线高最多 +5.8 个百分点，秩搜索还能带来进一步提升。</p>
+<p><strong>为什么值得看</strong> "近似更准 ≠ 压缩更好"这一负结果本身就值得读；免微调拿到 +5.8 p.p. 的改进，性价比很高。</p>
+<p><a href="https://arxiv.org/abs/2609.07155v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.07155v1">阅读原文 ↗</a></p>
 </body>
 </html>

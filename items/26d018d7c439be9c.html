@@ -22,9 +22,11 @@
 <h1>NOVA-CIM: Noise- and Correlation-Tolerant Stochastic Interfaces for Analog Compute-in-Memory</h1>
 <p class="meta-line">arXiv（Jiachen Ren 等，cs.AR） · 2026-09-07 · 论文PDF</p>
 
-<p>Analog compute-in-memory (CIM) enables energy-efficient model acceleration, but its reliance on ADC-based readout, which directly quantizes noisy column currents, makes inference accuracy highly sensitive to analog read …</p>
-<blockquote><p>Analog compute-in-memory (CIM) enables energy-efficient model acceleration, but its reliance on ADC-based readout, which directly quantizes noisy column currents, makes inference accuracy highly sensitive to analog read noise, active-row scaling, and ADC precision. In this paper, we present NOVA-CIM, a noise- and correlation-tolerant stochastic interface for analog CIM by replacing multi-bit ADC readout with random-reference 1-bit sensing and reconstructing results through lightweight counting. By converting column currents into comparison probabilities, this probability-domain readout averages zero-mean dynamic read noise over stochastic samples while reducing dependence on high-resolution ADCs. We provide a unified robustness analysis showing that dynamic read noise is suppressed through temporal averaging and that spatial input-bitstream correlation increases instantaneous current variance rather than introducing first-order MAC bias. MAC-level experiments and end-to-end evaluation on ViT-Base validate the analysis: under read noise, Top-1 accuracy remains 84.48% near the 84.51% bfloat16 (BF16) baseline; under stochastic number generator (SNG) reuse, MAC bias stays near zero whi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 模拟存内计算（CIM）依赖 ADC 直接量化带噪列电流，推理精度对读噪声、有效行缩放与 ADC 精度高度敏感。</p>
+<p><strong>方法</strong> NOVA-CIM：用随机参考 1-bit 感知替代多位 ADC 读出，轻量计数重建结果；把列电流转成比较概率，在概率域对随机样本平均掉零均值动态读噪声；给出统一鲁棒性分析——时域平均抑噪，空间比特流相关性只增大瞬时电流方差而不引入一阶 MAC 偏置。</p>
+<p><strong>关键数字</strong> ViT-Base 端到端评估：读噪声下 Top-1 精度 84.48%，几乎贴平 BF16 基线的 84.51%；SNG 复用下 MAC 偏置近零，RMSE 与随机互相关如预测增长。</p>
+<p><strong>为什么值得看</strong> 1-bit 随机读出取代高精度 ADC 的概率域路线，理论分析与芯片级实测闭环，CIM 抗噪方向的代表性工作。</p>
+<p><a href="https://arxiv.org/abs/2609.07059v2">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.07059v2">阅读原文 ↗</a></p>
 </body>
 </html>

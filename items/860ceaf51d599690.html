@@ -22,9 +22,11 @@
 <h1>GPU-Accelerated Hypergraph Partitioning and Placement to Map SNNs on Neuromorphic Hardware</h1>
 <p class="meta-line">arXiv（Marco Ronzani 等，cs.DC） · 2026-09-07 · 论文PDF</p>
 
-<p>SNNs running on neuromorphic hardware use spikes to achieve sparse and energy-efficient communication over a mesh of cores.</p>
-<blockquote><p>SNNs running on neuromorphic hardware use spikes to achieve sparse and energy-efficient communication over a mesh of cores. In turn, system performance heavily depends on the assignment of neurons to cores: the mapping. Since hardware features inter-core multicast and intra-core replication of spikes, we model SNNs as hypergraphs to exploit both opportunities for reducing communication traffic. Mapping thus comprises two NP-hard problems: hypergraph partitioning and placement on the lattice of cores. High-quality solutions to both are critical, yet increasingly difficult as networks scale to millions of neurons. Therefore, we propose a GPU-accelerated pipeline for SNN mapping: a multi-level partitioning scheme is devised around hardware constraints, while placement is initialized through recursive bisection, followed by refinement pulling together strongly connected cores through repeated swaps. Model-based experiments show upwards of 16% lower latency and 42% lower energy for spike movements over existing sequential tools, while our parallel mapper is on average 18-280x faster.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> SNN 在类脑硬件上的性能高度依赖神经元到核的映射；划分与放置都是 NP-hard 问题，网络规模到百万神经元时传统串行工具力不从心。</p>
+<p><strong>方法</strong> GPU 加速映射流水线：把 SNN 建模为超图以利用核间组播与核内脉冲复制降低通信；围绕硬件约束设计多层超图划分；放置用递归二分初始化，再通过强连核之间的反复交换做精炼。</p>
+<p><strong>关键数字</strong> 基于模型的实验：脉冲搬运延迟降低 16% 以上、能耗降低 42%（对比现有串行工具）；并行 mapper 平均快 18–280 倍。</p>
+<p><strong>为什么值得看</strong> 把 EDA 领域的划分/放置思想系统搬到 neuromorphic 映射，收益实测可观，对类脑部署工具链有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.07577v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.07577v1">阅读原文 ↗</a></p>
 </body>
 </html>

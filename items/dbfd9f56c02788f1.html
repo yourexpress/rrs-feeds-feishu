@@ -22,9 +22,11 @@
 <h1>VoT: Vision-of-Thought for Unified Multimodal Representation Alignment</h1>
 <p class="meta-line">arXiv（Jingxiang Sun 等，cs.CV） · 2026-09-07 · 论文PDF</p>
 
-<p>Current text-to-image systems typically employ a "text encoder plus diffusion decoder" paradigm, in which text semantics directly modulate continuous latent noise.</p>
-<blockquote><p>Current text-to-image systems typically employ a "text encoder plus diffusion decoder" paradigm, in which text semantics directly modulate continuous latent noise. Despite their success, these methods lack an explicit, interpretable intermediate representation that effectively bridges high-level linguistic semantics and low-level visual signals. In this paper, we propose Vision-of-Thought (VoT), a framework that introduces a discrete visual-thinking layer between vision-language models (VLMs) and diffusion transformers (DiTs). Instead of treating VLMs merely as text encoders, we use them as multimodal planners that generate discrete VoT tokens representing high-level visual plans, such as objects and layouts, before rendering pixels. We train a specialized VoT tokenizer in the VLM semantic space with a closed-loop objective that combines VLM alignment, feature reconstruction, and vector-quantization losses. These objectives make the tokens semantically readable by the VLM while preserving the visual information needed for generation. Experimental results demonstrate that VoT improves semantic alignment and provides a structured interface for interpretable and controllable generatio…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> "文本编码器 + 扩散解码器"范式让文本语义直接调制连续潜噪声，缺乏显式、可解释的中间表征来桥接高层语言语义与低层视觉信号。</p>
+<p><strong>方法</strong> Vision-of-Thought（VoT）：在 VLM 与扩散 Transformer 之间插入离散视觉思维层——VLM 不再只是文本编码器，而是多模态规划器，先产出表示物体、布局等高层视觉计划的离散 VoT token 再渲染像素；专门的 VoT tokenizer 在 VLM 语义空间中以闭环目标训练（VLM 对齐 + 特征重建 + 向量量化损失）。</p>
+<p><strong>关键数字</strong> 实验表明 VoT 改善语义对齐，并为可解释、可控生成提供结构化接口（摘要未列具体指标）。</p>
+<p><strong>为什么值得看</strong> 把"先规划、再渲染"的思维链思路离散化搬进文生图，统一多模态表征对齐的新切入点。</p>
+<p><a href="https://arxiv.org/abs/2609.07815v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.07815v1">阅读原文 ↗</a></p>
 </body>
 </html>
