@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HyDra: Demystifying and Taming Dynamic Context Parallelism at Production Scale</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>HyDra: Demystifying and Taming Dynamic Context Parallelism at Production Scale</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-09-28 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：长上下文训练序列长度跨数量级，Megatron-Core 的 DCP 按内存定并行度——token 数相近的 microbatch 计算量却天差地别，负载严重倾斜。</p>
+<p><strong>方法</strong>：HyDra 是负载驱动的 DCP 系统：调度器把每个 rank 拉向统一负载目标（均衡使该目标可闭式求解），用惰性堆放置序列；CP 引擎在浅层外环内嵌 Ulysses 组，让更大的 CP 度同时降低计算与通信。</p>
+<p><strong>关键数字</strong>：生产环境 11K+ GPU、256K 上下文下，Mcore DCP 的 rank 间 microbatch 时长差最高 5 倍，造成 46% 流水线气泡与 13% 数据并行气泡；HyDra 在 512 卡上比 Mcore DCP 快 1.18 倍（32K）/2.48 倍（256K）；2048 卡生产任务中流水线气泡 36%→14%，调度耗时省 2.3 倍，吞吐平均提升 1.25 倍（对静态 CP 平均 1.59 倍）。</p>
+<p><strong>为什么值得看</strong>：万卡级生产实测驱动的系统设计，长上下文训练负载均衡的标杆工作。</p>
+<p><a href="https://arxiv.org/abs/2609.34318">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.34318">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -22,9 +22,11 @@
 <h1>Accountable and uncertainty-aware evaluation of sensor-based AI under distribution shift: devices, subjects, and nearly three years underground</h1>
 <p class="meta-line">arXiv（Benny Platte 等，cs.LG） · 2026-09-08 · 论文PDF</p>
 
-<p>Sensor-based AI systems are rarely operated under the conditions under which they were trained: devices, personnel and recording epochs change, and each change degrades performance in ways a random train-test split canno…</p>
-<blockquote><p>Sensor-based AI systems are rarely operated under the conditions under which they were trained: devices, personnel and recording epochs change, and each change degrades performance in ways a random train-test split cannot reveal. We propose a staged, accountable evaluation protocol that treats the evaluation of a deployed model as a measurement with declared reference levels and a quantified uncertainty. Four cumulative generalisation stages hold out devices, subjects and time. Each stage is judged on quantiles of repeated trainings against chance references with the correct class count, an out-of-present-scope rate exposes silent misdirection towards classes that are no longer present in deployment relative to training, and an explicit decision rule ties roll-out decisions not to means but to 5% quantiles. We demonstrate the protocol on infrastructure-free geomagnetic localisation with smartphone-based recurrent classifiers in two real underground mines, including a replication of the scheme's training stages at the second site. Unchanged models are re-evaluated on data recorded 34 months after the training campaign, on a device generation unknown at training time and with a held-…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：传感器 AI 系统很少在训练条件下运行——设备、人员、采集时期都会变，随机划分训练/测试集根本测不出这些退化。</p>
+<p><strong>方法</strong>：提出分阶段、可问责的评估协议，把部署模型的评估当作一次「测量」：声明参考水平、量化不确定度；四个累积泛化阶段依次留出设备、受试者与时间；用重复训练的分位数（而非均值）对照随机水平，并设 5% 分位数的显式决策规则与「超范围」误判率。</p>
+<p><strong>关键数字</strong>：在两个真实地下矿山的地磁定位上验证：训练 34 个月后、在训练时未知的设备代次与留出的测量员上，模型的当前条件精度 5% 分位数为 0.39（299 次重复训练），是随机水平的 16.5 倍；42 个可达位置类别间波动 ±0.08；某双峰配置均值测试轻松通过，其 5% 分位数却比随机水平低一个数量级。</p>
+<p><strong>为什么值得看</strong>：「均值会骗人」的硬核示范，部署型传感 AI 的评估方法论，值得每个做落地方案的人对照自查。</p>
+<p><a href="https://arxiv.org/abs/2609.09257v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.09257v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>DiffLUT-Net: Differentiable Training of FPGA LUT Networks with Learnable Connectivity</h1>
 <p class="meta-line">arXiv（Jiaqi Ye 等，cs.LG） · 2026-09-08 · 论文PDF</p>
 
-<p>Field-programmable gate arrays (FPGAs) enable efficient neural-network inference, but most deployment flows either accelerate multiply-accumulate operations or convert pretrained quantized models into lookup tables (LUTs…</p>
-<blockquote><p>Field-programmable gate arrays (FPGAs) enable efficient neural-network inference, but most deployment flows either accelerate multiply-accumulate operations or convert pretrained quantized models into lookup tables (LUTs). We present DiffLUT-Net, an FPGA-native network connected by six-input LUTs that are trained from scratch. We jointly learn the 64 truth-table entries of a LUT and the source to each of its six input ports using a differentiable LUT function relaxation and hardware source selection. After training, the truth tables and connections are discretized, unused logic can be pruned, and the network is exported directly as synthesizable Verilog. Across five benchmarks, DiffLUT-Net achieves favorable accuracy-resource trade-offs. These results demonstrate the effectiveness of jointly learning LUT functions and sparse connectivity for compact FPGA-native inference. The code is available at https://github.com/TUDa-HWAI/DiffLUT-Network.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：FPGA 神经网络部署多走加速 MAC 或把预训练量化模型翻成查找表（LUT）两条路——能否直接从零训练一个由 LUT 连接的 FPGA 原生网络？</p>
+<p><strong>方法</strong>：DiffLUT-Net 联合学习每个六输入 LUT 的 64 条真值表项与六个输入端口各自的信号来源：用可微分的 LUT 函数松弛与硬件来源选择做训练，训完把真值表与连接离散化、剪除无用逻辑，直接导出可综合 Verilog。</p>
+<p><strong>关键数字</strong>：在五个基准上取得更有利的精度-资源权衡（摘要未列具体数值）。</p>
+<p><strong>为什么值得看</strong>：把「LUT 函数 + 稀疏连接」同时纳入梯度学习，绕开预训练-量化-映射的传统流水线，FPGA 原生推理的一条差异化路线；代码已开源。</p>
+<p><a href="https://arxiv.org/abs/2609.09254v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.09254v1">阅读原文 ↗</a></p>
 </body>
 </html>

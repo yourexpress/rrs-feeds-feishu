@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tetra: Serving Leech-Lattice Quantized LLMs at 2.7 Bits per Parameter</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Tetra: Serving Leech-Lattice Quantized LLMs at 2.7 Bits per Parameter</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-28 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：Leech 格量化 2 bit 下质量好，但码本含超 10^14 个点无法查表；此前 kernel 加载时展开码字，2 bit 的码实际要从显存读 4.804 bit/权重。</p>
+<p><strong>方法</strong>：Tetra 在同一格上构造新码本：24 权重块占 48 bit，主要索引 Golay 码的 64 状态 trellis 与一张共享 16KiB 表；kernel 在矩阵向量乘内以六次表载加两次小查表解码，仅读 2.148 bit/权重；整模按行重训一个 scale，损失最大的矩阵存 4-bit 整数、配 4-bit embedding 表平衡。</p>
+<p><strong>关键数字</strong>：Qwen3-4B/8B/14B 全模型 2.73/2.70/2.73 bit/参数，MMLU 63.37/69.58/75.66，仅比 5.3–6.0 bit 的 4-bit AWQ 低 4.76/4.21/2.46 分；L40S 上生成 113.8/95.0/57.2 token/s；4B 比 llama.cpp IQ2_XXS（2.48 bit）高 23.6 分。</p>
+<p><strong>为什么值得看</strong>：2.7 bit 档位兼顾精度与真实服务吞吐，且实验预注册、数字全部实测于单卡 L40S，可信度高。</p>
+<p><a href="https://arxiv.org/abs/2609.35465">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.35465">阅读原文 ↗</a></p>
+</body>
+</html>

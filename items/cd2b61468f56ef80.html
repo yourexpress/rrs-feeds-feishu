@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cache-Aware Conv3D Lowering Across Embedded World-Model Decoders</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Cache-Aware Conv3D Lowering Across Embedded World-Model Decoders</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-25 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：生成式世界模型要在边缘设备上做视觉 rollout，瓶颈不只在模型本身，还在运行时如何表达卷积操作。</p>
+<p><strong>方法</strong>：提出 cache-aware lowering，把支持的因果 Conv3D 改写为批量空间 Conv2D，完全保留预训练权重、时间缓存语义、卷积参数与输出布局，不改动模型。</p>
+<p><strong>关键数字</strong>：在 64GB Jetson AGX Orin 上跑完整 Cosmos3-Edge 图生视频流水线，VAE 解码加速约 7 倍，整段生成延迟降超 2 倍；全专用 TensorRT 仅再快 1.36 倍，但 AOT 特化成本高得多。</p>
+<p><strong>为什么值得看</strong>：一条轻量级运行时优化路线，不改模型即可收回大部分解码加速，并迁移到 Cosmos3-Nano 与 LingBot-World 的 Wan2.1 VAE，端侧世界模型部署可直接参考。</p>
+<p><a href="https://arxiv.org/abs/2609.31938">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.31938">阅读原文 ↗</a></p>
+</body>
+</html>

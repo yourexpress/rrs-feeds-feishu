@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GroupMask: Layer-Adaptive Group-wise Sparsity for Semi-Structured LLM Pruning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>GroupMask: Layer-Adaptive Group-wise Sparsity for Semi-Structured LLM Pruning</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-27 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：半结构化剪枝的 N:M 模式给每层固定稀疏率，层自适应分配在 N:M 下 reportedly 收益有限——那么换成组级稀疏后，自适应分配是否普遍有价值？</p>
+<p><strong>方法</strong>：GroupMask 把权重矩阵按整组保留/剪除，用轻量超网络生成各层组选择器，以 Gumbel-Sigmoid 松弛加直通估计器，在冻结预训练权重下通过稀疏预算正则与自蒸馏学习分配。</p>
+<p><strong>关键数字</strong>：LLaMA-2-7B 50% 稀疏、同为 1×256 组大小下，层自适应分配把 WikiText-2 困惑度从 10.02 降到 8.30，平均 zero-shot 准确率从 0.455 升到 0.496；在五个 LLaMA/Qwen 模型上多项指标领先基线。</p>
+<p><strong>为什么值得看</strong>：回答了「自适应稀疏分配对半结构化剪枝是否有用」这个悬而未决的问题——有用，但要在组粒度上做；代码已开源。</p>
+<p><a href="https://arxiv.org/abs/2609.33977">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.33977">阅读原文 ↗</a></p>
+</body>
+</html>

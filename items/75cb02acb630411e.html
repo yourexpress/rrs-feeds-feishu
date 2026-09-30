@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prefill e Decode Desagregados no vLLM: Como Eliminar Jitter em Clusters de IA</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Prefill e Decode Desagregados no vLLM: Como Eliminar Jitter em Clusters de IA</h1>
+<p class="meta-line">DEV Community (ricardofriba) · 2026-09-29 · 技术博客</p>
+<img class="hero" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fpromptx.blog%2F_astro%2Fimg0.Cp8JOsom.jpg" alt="" referrerpolicy="no-referrer">
+<p>葡语社区长文：vLLM V1 + Ray Serve 上 Prefill/Decode 物理解耦（RDMA 零拷贝 KV 迁移）消除长上下文 token 间延迟抖动，附 p99 实测对比（社区综述，数据未独立核验）</p>
+<blockquote><p>Nos últimos anos, à medida que os modelos de linguagem contemporâneos — como DeepSeek 4.1, GPT-6 Astra e Claude Mythos 5.1 — se tornaram a espinha dorsal de esteiras de software corporativo e agentes autônomos, um dilema crônico de infraestrutura atormentou os times de engenharia de inteligência artificial: o Jitter de Latência por Competição de Recursos (Inter-Token Latency Spikes).</p><p>Em servidores de inferência tradicionais com arquitetura co-alocada (onde uma mesma GPU ou pod gerencia tanto a leitura do prompt inicial quanto a geração autoregressiva dos tokens seguintes), a chegada súbita de uma requisição com contexto longo (por exemplo, 64k a 128k tokens de um arquivo de código ou contrato jurídico) provoca uma paralisação instantânea em dezenas de outros usuários conectados. Como a fase de Prefill é massivamente paralela e limitada por capacidade computacional (Compute-Bound), os núcleos tensores são sequestrados para processar o prompt massivo, forçando as gerações contínuas de Decode (que dependem estritamente da largura de banda da memória HBM, sendo Memory-Bound) a aguardar na fila. O resultado são picos de latência entre tokens que saltam de 15 milissegundos para mais de 600 milissegundos, arruinando a experiência de copilotos e assistentes de voz em tempo real.</p><p>Em setembro de 2026, a consolidação do vLLM V1 em conjunto com o framework distribuído Ray Serve estabeleceu o padrão definitivo para resolver esse conflito: a arquitetura Disaggregated Prefill and Decode (Disagg P/D). Ao desacoplar fisicamente os servidores em nós dedicados de processamento de entrada (P-Nodes) e nós especializados em geração autoregressiva de alta densidade de KV Cache (D-Nodes), interligados por barramentos de altíssima velocidade via RDMA sobre InfiniBand e RoCE, a indústria finalmente atingiu previsibilidade estrita de SLA com ganhos de throughput global de até 3,5 vezes.</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://dev.to/ricardofriba/prefill-e-decode-desagregados-no-vllm-como-eliminar-jitter-em-clusters-de-ia-4n07">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -22,9 +22,11 @@
 <h1>AccelMPC: High-Rate, Low-Power FPGA-Accelerated Model Predictive Control for Tiny Drones</h1>
 <p class="meta-line">arXiv（Andrea Grillo 等，cs.RO） · 2026-09-08 · 论文PDF</p>
 
-<p>Unlocking the potential of tiny aerial robots requires order of magnitude improvements in the performance of embedded edge control.</p>
-<blockquote><p>Unlocking the potential of tiny aerial robots requires order of magnitude improvements in the performance of embedded edge control. In particular, although recent cached model predictive control (MPC) solvers can handle the fast system dynamics and complex constraints required for agile drone flight, their computational demands remain prohibitive for resource-constrained robots, forcing prior implementations to operate at reduced control rates. AccelMPC overcomes this challenge through an end-to-end co-design approach that jointly optimizes the solver algorithm, numerical representation, hardware mapping, and physical integration. AccelMPC pairs a co-designed FPGA-accelerated alternating direction method of multipliers (ADMM)-based MPC solver with a custom 6g PCB, providing high-bandwidth communication for deployment on a 35g Crazyflie. Hardware experiments demonstrate 1 kHz onboard constrained MPC with dynamic obstacles, up to 15.6x faster solve times and 195.4x improvement in energy-delay product over state-of-the-art embedded microcontroller-based solvers, all while scaling to optimization problems with over 20,000 optimization variables and a comparable number of constraints. W…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：微型无人机要敏捷飞行需跑带约束的模型预测控制（MPC），但现有缓存 MPC 求解器对资源受限平台算力要求过高，此前实现只能降低控制频率。</p>
+<p><strong>方法</strong>：AccelMPC 端到端协同设计求解算法、数值表示、硬件映射与物理集成：FPGA 加速的 ADMM 求解器配自研 6g PCB 高带宽通信，部署在 35g Crazyflie 上。</p>
+<p><strong>关键数字</strong>：硬件实验实现 1kHz 机载带约束 MPC（含动态障碍），求解时间比最先进嵌入式单片机方案快至 15.6 倍，能量-延迟积改善 195.4 倍；可扩展到超 20,000 个优化变量与相当数量约束；PCB 设计、固件与 FPGA 代码全部开源。</p>
+<p><strong>为什么值得看</strong>：算法-数值-硬件-结构四层协同设计的教科书案例，把微型飞行器机载 MPC 推到 1kHz 量级。</p>
+<p><a href="https://arxiv.org/abs/2609.09380v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.09380v1">阅读原文 ↗</a></p>
 </body>
 </html>

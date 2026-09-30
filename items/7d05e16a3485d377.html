@@ -22,9 +22,11 @@
 <h1>CoVeR: Coverage-Based Token Pruning for Multi-View 3D Reasoning in VLMs</h1>
 <p class="meta-line">arXiv（Nhat-Tan Bui 等，cs.CV） · 2026-09-08 · 论文PDF</p>
 
-<p>Representing a 3D scene as multi-view images allows 2D VLMs to reason in 3D by reusing priors from pre-training, sidestepping the scarcity of annotated 3D data.</p>
-<blockquote><p>Representing a 3D scene as multi-view images allows 2D VLMs to reason in 3D by reusing priors from pre-training, sidestepping the scarcity of annotated 3D data. However, it produces thousands of redundant visual tokens whose cost grows with every view. Existing visual token pruners fall into two families, each limited in the 3D multi-view setting. Learned importance methods rank tokens by attention or encoder features; because redundancy here is fundamentally spatial, they keep near-duplicate tokens from a few prominent regions and leave most of the scene unrepresented. Voxelization methods improve spatial coverage but cannot enforce an exact token budget and saturate as multi-view observations overlap in 3D, capping retention well below the target. We show that spatial coverage is associated with 3D reasoning performance and introduce CoVeR, a deterministic, training-free selector that uses only token coordinates, with no learned signals. CoVeR selects tokens that collectively cover every region of the scene, and solves the limitations of both families: it enforces an exact per-scene budget, breaks the voxelization saturation plateau, and avoids the near-duplicate selections of le…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：用多视角图像让 2D VLM 做 3D 推理，会产生随视角数增长的数千冗余视觉 token；学习式重要性剪枝在多视角场景会保留少量显著区域的近重复 token，体素化方法又无法精确控预算且会饱和。</p>
+<p><strong>方法</strong>：CoVeR 是确定性、免训练的选择器，只用 token 坐标、不用任何学习信号，选出能共同覆盖场景每个区域的 token 集合——严格满足逐场景预算、打破体素化饱和平台、避免近重复选择。</p>
+<p><strong>关键数字</strong>：仅用约 8% 视觉 token 即保留全 token 性能的 93.5%，在全部三个 3D 推理基准上超过此前 SOTA、平均高 3.9 个百分点；即插即用泛化到四个 VLM。</p>
+<p><strong>为什么值得看</strong>：证明了「空间覆盖率」与 3D 推理性能的关联，并给出简单无学的最优解——多视角 VLM 推理降本的即战力模块。</p>
+<p><a href="https://arxiv.org/abs/2609.08345v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.08345v1">阅读原文 ↗</a></p>
 </body>
 </html>

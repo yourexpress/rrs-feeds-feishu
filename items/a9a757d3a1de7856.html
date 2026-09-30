@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product-Aware Deterministic Rounding for Quantized Matrix Multiplication</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Product-Aware Deterministic Rounding for Quantized Matrix Multiplication</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-11 · 论文PDF</p>
+
+<p>面向量化矩阵乘法的结果感知确定性舍入</p>
+<blockquote><p>Scalar rounding decisions interact through matrix multiplication. We study deterministic product-aware rounding after scales, clipping bounds, and grids are fixed, with each active scalar choosing between adjacent levels. For dynamic activation rounding, null-space reduction preserves the relaxed product while leaving at most $r$ fractional decisions, where $r$ is the rank of the active gap-weighted weight block. Conditional-expectation completion gives a deterministic polynomial-time algorithm with squared product error at most $ \mathrm{OPT}_{\mathrm{dyn}}+rν_{\max}^2/4$, where $\mathrm{OPT}_{\mathrm{dyn}}$ is the best admissible error and $ν_{\max}$ is the largest row norm of that block. For reusable static weights, the exact expected product-loss metric is the uncentered input second moment with fixed output bias; free bias recalibration yields the centered covariance. Exact optimization is NP-hard even at rank one. In balanced blocks with $K=1024$ and $r=16$, conditional- expectation completion attains a dither-normalized median error of $0.010$, compared with $0.899$ for round-to-nearest. Clipping-aware initialization reduces median normalized error by a factor of $43.4$ at t…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.31641">阅读原文 ↗</a></p>
+</body>
+</html>

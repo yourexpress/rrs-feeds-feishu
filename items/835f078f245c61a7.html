@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Depth Laws for the Precision Floor of Trained Neural Networks: Amplification, Residual Scaling, and a Quantization-Aware Training Paradox</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Depth Laws for the Precision Floor of Trained Neural Networks: Amplification, Residual Scaling, and a Quantization-Aware Training Paradox</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-25 · 论文PDF</p>
+
+<p>训练网络精度下限的深度定律：放大效应、残差缩放与量化感知训练悖论</p>
+<blockquote><p>How many bits does a network need before its accuracy collapses, and how does this grow with depth? We study the precision floor, the perturbation level or bit-width at which accuracy falls halfway to chance, in MLPs, CNNs, Vision Transformers and nine pretrained language models, under post-training quantization (PTQ) and quantization- or noise-aware training (QAT). (i) A first-order theory sets the floor through one full-precision quantity, the predictive amplification $G$: $η_c=Λ/G$, and $G^2$ grows linearly in depth at a rate proportional to the squared residual branch scale. (ii) The predicted equality $α_{PTQ}=ρ$ of depth exponents holds within 95% intervals in twelve of thirteen trained architectures and in GPT-2 from 12 to 48 layers, with $Λ=1.45\pm14\%$ across trained architectures. (iii) Residual branches scaled by $1/\sqrt{D}$ and pre-normalisation remove the depth penalty, and each quantizer turns noise into bits at a rate fixed by its step rule, giving $b_c=(α/γ)\log_2 D+C$. (iv) A QAT paradox: noise-aware training roughly doubles the tolerable noise of shallow networks, but the gain decays with depth, so the depth law steepens ($α_{QAT}/α_{PTQ}=1.45$-$1.47$ on two data…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.32060">阅读原文 ↗</a></p>
+</body>
+</html>

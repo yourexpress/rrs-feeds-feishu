@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bandwidth, Not FLOPS: FFT Kernels, Matrix Units and SAR Imaging on Apple M6</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Bandwidth, Not FLOPS: FFT Kernels, Matrix Units and SAR Imaging on Apple M6</h1>
+<p class="meta-line">arXiv (cs.PF) · 2026-09-26 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：GPU FFT 的经典规则「在片上做最大块」在 Apple M6 这种算力/带宽比悬殊（读 1 字节的时间可做 29 次运算）的芯片上还成立吗？</p>
+<p><strong>方法</strong>：自写 FFT kernel，与 MPSGraph、vDSP、MLX 对比，分析数据搬运与算术的相对成本，并分别测试 GPU/CPU 矩阵单元的收益。</p>
+<p><strong>关键数字</strong>：变换超出 GPU 32KiB 本地内存后 MPSGraph 与 MLX 掉速过半；寄存器驻留方案比 MPSGraph 快 2.2 倍（半精度存储 4.4 倍）；CPU 矩阵单元 kernel 比 vDSP 快至 5.3 倍；4096×4096 SAR 成像 GPU 8.1ms（半精度 6.0ms），比 CPU 参考快 14–19 倍；缓存内基准会高估真实吞吐达 3.7 倍。</p>
+<p><strong>为什么值得看</strong>：用实测说明 FFT 是带宽而非 FLOPS 问题，「片上大 block」规则仍预言塌点，但矩阵单元未必有用——端侧信号处理选型的扎实参考。</p>
+<p><a href="https://arxiv.org/abs/2609.32237">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.32237">阅读原文 ↗</a></p>
+</body>
+</html>

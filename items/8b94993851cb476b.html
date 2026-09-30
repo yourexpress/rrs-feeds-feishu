@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EntroPack: Fast and Accurate Entropy-Coded Weight Compression at Arbitrary Bitrates</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>EntroPack: Fast and Accurate Entropy-Coded Weight Compression at Arbitrary Bitrates</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-28 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：定宽权重量化格式只给粗粒度存储档位；熵编码支持任意码率，但压出的大小取决于量化分布与编码开销，需要准确的码率选择与高效重建。</p>
+<p><strong>方法</strong>：EntroPack 结合行归一化 E8 格量化与格点坐标的条件概率模型，用采样存储估计免全流编码地选量化精度；最终坐标按独立可解码分块熵编码，GPU 上融合符号解码与数值重建；存储码率与数值精度解耦，支持 BF16/FP16/FP8/INT8 容器，无需校准与微调。</p>
+<p><strong>关键数字</strong>：压缩图像生成器 Z-Image-Turbo 线性层时，目标 4 bit/参数下相对 L2 权重误差比 NF4 低约 24% 且存储更少；适合扩散去噪、Transformer prefill 等计算密集负载。</p>
+<p><strong>为什么值得看</strong>：把「任意码率权重压缩」做成实用工具，对存储敏感部署是定宽格式之外的细粒度选择；代码已开源。</p>
+<p><a href="https://arxiv.org/abs/2609.34185">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.34185">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HiLoRe: What to Store, Compress, or Recompute for Efficient GRPO Training</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>HiLoRe: What to Store, Compress, or Recompute for Efficient GRPO Training</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-27 · 论文PDF</p>
+
+<p>HiLoRe：GRPO 训练中该存、该压还是该重算的分层策略</p>
+<blockquote><p>Group-relative policy optimization (GRPO) makes learner-side activations a major memory-computation bottleneck: gradient checkpointing reduces activation memory through recomputation, but fixed schedules can leave roughly 18 GB unused on a 48-GB GPU despite substantial recomputation overhead. Existing activation-management methods set state fidelity from execution cost, tensor properties, or generic compression sensitivity, without explicitly incorporating GRPO's analytic update structure into state-fidelity allocation. We formalize this dependence as policy-update exposure, linking the current GRPO loss coefficients to state-level approximation sensitivity. These coefficients are available before backward without an additional backward pass. We introduce HiLoRe, which allocates graph-attributed recovery units among high-precision storage, low-precision compression, and deterministic recomputation using measured recovery utility and update-conditioned approximation risk. It combines high-precision storage and deterministic recomputation with low-precision recovery under a calibrated risk budget. Across five model-task settings with 2K responses and memory &lt; 1.10 times GC's per-GPU …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.33570">阅读原文 ↗</a></p>
+</body>
+</html>

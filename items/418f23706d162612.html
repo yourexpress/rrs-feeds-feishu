@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resource-Efficient Speculative Decoding for Long-Context LLM Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Resource-Efficient Speculative Decoding for Long-Context LLM Serving</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-09-27 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：投机解码靠 Draft 并行验证省 Target 调用，但长上下文下 KV Cache 撑爆显存；现有 offload 方案要先回传完整 KV 历史，既慢又浪费验证轮内跨 query 的 KV 共享。</p>
+<p><strong>方法</strong>：SpecStream 不等完整 KV 恢复即开始验证，利用 KV 传输期间的算力空泡在同卡上并发 drafting；只 offload Target 已提交的历史，候选回滚留在 GPU 本地；每个流式 KV 分块服务轮内全部 query，配在线 softmax 与 Target 优先调度。</p>
+<p><strong>关键数字</strong>：相对 offload 基线平均吞吐加速 1.41 倍（Qwen3）/1.32 倍（InternLM2.5）；相比 Target/Draft 分卡的并行投机解码，单卡输出吞吐平均高 55.4%；任务质量接近 SGLang 投机解码。</p>
+<p><strong>为什么值得看</strong>：把「KV offload 的等待时间」变成「Draft 的干活时间」，显存受限下支撑更多并发请求，长上下文 serving 的实用系统工作。</p>
+<p><a href="https://arxiv.org/abs/2609.33184">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.33184">阅读原文 ↗</a></p>
+</body>
+</html>

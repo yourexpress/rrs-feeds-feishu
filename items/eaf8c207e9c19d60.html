@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KernelZero: Co-Evolving Proposer and Coder for Continuously Improved GPU Kernel Generation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>KernelZero: Co-Evolving Proposer and Coder for Continuously Improved GPU Kernel Generation</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-27 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：LLM 自动生成 GPU kernel 面临两难——缺与模型当前能力对齐的高质量训练数据，且正确性与性能难以兼得。</p>
+<p><strong>方法</strong>：KernelZero 让 Proposer（生成 Torch 模块）与 Coder（翻译成 CUDA/Triton kernel）共同进化：按 Coder 当前弱点持续产出能力对齐的训练模块，并用 CA-GRPO 在正确性足够可靠后才优化性能，形成自动课程。</p>
+<p><strong>关键数字</strong>：KernelZero-7B 在 CUDA 上超过 Claude-4.5-Sonnet、Triton 上超过 DeepSeek-V4-Pro；KernelBench Level 1/2 的 CUDA pass@1 为 75.8%/69.6%，pass@10 达 100%/97%，Triton pass@1 为 77.2%/72.5%。</p>
+<p><strong>为什么值得看</strong>：7B 模型靠自进化数据闭环击败前沿商用模型的 kernel 生成能力，是「小模型+好训练范式」路线的有力例证。</p>
+<p><a href="https://arxiv.org/abs/2609.33074">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.33074">阅读原文 ↗</a></p>
+</body>
+</html>

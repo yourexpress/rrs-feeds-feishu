@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ESP32-S3 Edge AI in Practice: Deep Optimization of TensorFlow Lite Micro Inference Performance</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ESP32-S3 Edge AI in Practice: Deep Optimization of TensorFlow Lite Micro Inference Performance</h1>
+<p class="meta-line">DEV Community (ZedIoT) · 2026-09-29 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fr86kn88z06waz3avnc9c.png" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong>：在 ESP32-S3 上把 TensorFlow Lite Micro 模型「跑起来」容易，跑到实时可用是另一回事——关键就三件事：全 INT8 量化、ESP-NN 硬件加速、SRAM/PSRAM 内存布局。</p>
+<p><strong>要点</strong>：ESP32-S3 的双核 Xtensa LX7 带 AI 向量指令，SIMD 单周期可完成多个 8/16-bit MAC；512KB 片上 SRAM 加可选 PSRAM 支撑 MobileNet 级模型；esp-nn 已深度集成进 TFLM，标准 API 自动选优化 kernel。文章逐一讲透 Interpreter、Op Resolver、Tensor Arena 的角色与模型转换、xxd 转 C 数组链接固件的流程。</p>
+<p><strong>关键数字</strong>：SIMD 对卷积/全连接层带来 5–10 倍推理加速；FP32 转 INT8 模型体积缩小 75%、推理快 4–10 倍。</p>
+<p><strong>为什么值得看</strong>：面向实战的 TinyML 调优指南，附基准数字与「悄悄吃掉性能」的坑位清单，做 ESP32 端侧推理可直接照做。</p>
+<p><a href="https://dev.to/zediot/esp32-s3-edge-ai-in-practice-deep-optimization-of-tensorflow-lite-micro-inference-performance-4b0g">阅读原文</a></p>
+<p><a class="origin" href="https://dev.to/zediot/esp32-s3-edge-ai-in-practice-deep-optimization-of-tensorflow-lite-micro-inference-performance-4b0g">阅读原文 ↗</a></p>
+</body>
+</html>

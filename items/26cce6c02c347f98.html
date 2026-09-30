@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>边缘AI推理在工业现场的落地：模型量化与端侧部署实战</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>边缘AI推理在工业现场的落地：模型量化与端侧部署实战</h1>
+<p class="meta-line">博客园 (虎王科技) · 2026-09-29 · 技术博客</p>
+<img class="hero" src="https://assets.cnblogs.com/images/wechat-share.jpg" alt="" referrerpolicy="no-referrer">
+<p>中文实战记录：CNN 工业质检模型经 QAT INT8 量化（2.3MB→0.6MB、18→42fps）并由 TFLite Micro 部署到 ESP32-S3（单帧约 180ms）</p>
+<blockquote><p>边缘AI推理在工业现场的落地：模型量化与端侧部署实战</p><p>边缘AI推理在工业现场的落地：模型量化与端侧部署实战</p><p>2026年，边缘AI推理成本降至每百万Token 0.07美元，工业现场对AI的需求从"能不能跑"转向"值不值得跑"。边缘AI不再是概念，它已经走进工厂质检线、设备预测性维护和能耗优化等真实场景。本文从模型训练到端侧部署，记录一次完整的边缘AI工业落地实战。</p><p>一、工业场景为什么需要边缘AI</p><p>把AI推理放到边缘而不是云端，有四个现实原因。</p><p>实时性 。工厂质检线用边缘AI方案，每个工位的嵌入式设备在300毫秒内完成缺陷检测，比云端方案快15倍。云端方案的延迟来自网络往返，边缘方案直接在设备旁处理，毫秒级出结果。</p><p>带宽优化 。一条产线每天产生上百GB图像数据，全传云端不现实。边缘设备只上传检测结果和关键帧，带宽消耗降低95%以上。</p><p>隐私保护 。工业数据涉及工艺机密，设备运行参数和生产配方不宜上云。边缘计算保证敏感数据不出厂。</p><p>断网可用 。工业现场网络不稳定，云端方案断网就瘫痪。边缘AI设备自带计算能力，断网也能执行检测和告警。</p><p>二、技术方案选型</p><p>2.1 硬件平台对比</p><p>选型关键看推理任务的复杂度和实时性要求。ESP32-S3做关键词唤醒（TinySpeech模型）够用；工业质检图像识别需要Jetson Nano起步；如果一条产线要同时跑3-4个模型，RK3588更合适。</p><p>2.2 软件框架</p><p>三、模型量化实战</p><p>边缘设备算力和内存有限，云端训练的浮点模型直接跑太慢。量化是把32位浮点权重压缩到8位整数（INT8），模型体积缩小4倍，推理速度提升2-3倍，精度损失通常在1-2%以内。</p><p>3.1 训练原始模型</p><p>import torch</p><p>import torch.nn as nn</p><p># 简化的工业缺陷检测CNN</p><p>class DefectDetector(nn.Module):</p><p>def __init__(self, num_classes=3):</p><p>super().__init__()</p><p>self.features = nn.Sequential(</p><p>nn.Conv2d(3, 32, 3, padding=1),</p><p>nn.BatchNorm2d(32),</p><p>nn.ReLU(),</p><p>nn.MaxPool2d(2),</p><p>nn.Conv2d(32, 64, 3, padding=1),</p><p>nn.BatchNorm2d(64),</p><p>nn.ReLU(),</p><p>nn.MaxPool2d(2),</p><p>nn.Conv2d(64, 128, 3, padding=1),</p><p>nn.BatchNorm2d(128),</p><p>nn.ReLU(),</p><p>nn.AdaptiveAvgPool2d(1)</p><p>)</p><p>self.classifier = nn.Linear(128, num_classes)</p><p>def forward(self, x):</p><p>x = self.features(x)</p><p>x = x.view(x.size(0), -1)</p><p>return self.classifier(x)</p><p># 训练过程（简化）</p><p>model = DefectDetector(num_classes=3)</p><p>criterion = nn.CrossEntropyLoss()</p><p>optimizer = torch.optim.Adam(model.parameters(), lr=0.001)</p><p>for epoch in range(50):</p><p>for images, labels in train_loader:</p><p>outputs = model(images)</p><p>loss = criterion(outputs, labels)</p><p>optimizer.zero_grad()</p><p>loss.backward()</p><p>optimizer.step()</p><p>print(f"Epoch {epoch+1}, Loss: {loss.item():.4f}")</p><p>torch.save(model.state_dict(), 'defect_detector_fp32.pth')</p><p>三个类别分别是"正常"、“划痕”、“裂纹”。训练完的FP32模型约2.3MB。</p><p>3.2 量化感知训练</p><p>import torch.quantization as quant</p><p># 量化感知训练（QAT）</p><p>model_fp32 = DefectDetector(num_classes=3)</p><p>model_fp32.load_state_dict(torch.load('defect_detector_fp32.pth'))</p><p># 融合BN层到Conv层</p><p>model_fp32_fused = torch.quantization.fuse_modules(</p><p>model_fp32,</p><p>[['features.0', 'features.1', 'features.2'],</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://www.cnblogs.com/hcloud/p/23154709">阅读原文 ↗</a></p>
+</body>
+</html>

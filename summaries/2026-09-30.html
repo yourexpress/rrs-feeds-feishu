@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日精选 · 2026-09-30</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.5em; border-bottom: 1px solid #e5e7eb; padding-bottom: 12px; }
+  h2 { font-size: 1.2em; margin-top: 1.8em; }
+  a { color: #0969da; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .meta { color: #6b7280; font-size: 0.85em; margin-top: 32px; }
+</style>
+</head>
+<body>
+<h1>每日精选 · 2026-09-30</h1>
+<h2>当日检索概况</h2>
+<ul>
+<li>AI 技术报告检索库：9 条</li>
+<li>高效计算文献检索库：95 条</li>
+<li>合计入选 22 条</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>GLM-5.3 and the spread of advanced cyber capabilities</strong> — Anthropic 红队实测：智谱 GLM-5.3 端到端漏洞利用能力已达 Claude Mythos Preview 级别（ExploitBench 410 次尝试成功 50 次），但护栏可被简单技术以 64%–100% 成功率绕过，前沿网络能力向开放权重扩散的标志性事件。</li>
+<li><strong>HyDra: Demystifying and Taming Dynamic Context Parallelism at Production Scale</strong> — 万卡级 256K 上下文生产实测：Mcore DCP 负载倾斜造成 46% 流水线气泡，HyDra 负载驱动调度把气泡压到 14%、吞吐平均提升 1.25×（<a href="https://arxiv.org/abs/2609.34318">arXiv</a>）。</li>
+<li><strong>MpFA: Hardware-Efficient Train-Free QK4V8 FlashAttention Kernels on Blackwell GPUs</strong> — 全 FP4 注意力为何不快？瓶颈在 softmax 路径的非 matmul 开销；QK4V8 混精 + 秩一补偿在 B200 上端到端吞吐比 BF16 FA4 高 2.81×（<a href="https://arxiv.org/abs/2609.33135">arXiv</a>）。</li>
+<li><strong>Bandwidth, Not FLOPS: FFT Kernels, Matrix Units and SAR Imaging on Apple M6</strong> — 用实测说明 FFT 是带宽问题：寄存器驻留 kernel 比 MPSGraph 快 2.2×，4096×4096 SAR 成像 GPU 8.1ms、比 CPU 快 14–19×，矩阵单元并非万能（<a href="https://arxiv.org/abs/2609.32237">arXiv</a>）。</li>
+<li><strong>Tetra: Serving Leech-Lattice Quantized LLMs at 2.7 Bits per Parameter</strong> — Leech 格量化落地服务：Qwen3-14B 全模型 2.73 bit/参数，MMLU 仅比 4-bit AWQ 低 2.46 分，L40S 实测 57.2 token/s，实验预注册（<a href="https://arxiv.org/abs/2609.35465">arXiv</a>）。</li>
+<li><strong>KernelZero: Co-Evolving Proposer and Coder for Continuously Improved GPU Kernel Generation</strong> — 7B 模型靠 Proposer-Coder 自进化课程，CUDA kernel 生成超过 Claude-4.5-Sonnet，KernelBench L1 pass@1 75.8%（<a href="https://arxiv.org/abs/2609.33074">arXiv</a>）。</li>
+<li><strong>MEGATRON: a 28nm Analog PCM CiM/Digital System-on-Chip for Edge GenAI</strong> — 模拟 PCM 存算 + RISC-V 数字 NPU 异构流片，PCiM 能效 57.5 TOPS/W、存储密度 1.52 Mparam/mm²，端侧 GenAI 硬件路线参考（<a href="https://arxiv.org/abs/2609.35254">arXiv</a>）。</li>
+<li><strong>Empowering Hybrid Attention Models on NPUs</strong> — 首个让 Qwen3.5/Kimi 类混合注意力 LLM 高效跑在边缘 NPU 的系统：三层数据流重组，LA kernel 最高加速 35.95×、端到端延迟快 2.03×，代码开源（<a href="https://arxiv.org/abs/2609.32114">arXiv</a>）。</li>
+</ul>
+<h2>主题速览</h2>
+<p>AI 库今日是 OpenAI 专场：DevDay 2026 汇总、GPT-6.1 Sol 发布与 Astra 系统卡附录集中出现，外加 Anthropic 对 GLM-5.3 网络能力的重磅评估和 Microsoft 的生物研究系统 Quine。EC 库 95 条大丰收，主线是 LLM serving 与训练系统——投机解码、KV cache 管理、agentic serving 调度、MoE 并行负载均衡密集涌现；量化压缩（2.7–4 bit 多管齐下）、kernel 自动生成、存内计算与边缘硬件（NPU、FPGA、PCM CiM）也各占一角。</p>
+<p class="meta">由 RSS 流水线自动生成 · 订阅每日精选 feed 可在阅读器内直接阅读</p>
+</body>
+</html>

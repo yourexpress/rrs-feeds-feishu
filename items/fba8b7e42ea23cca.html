@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QuantForge: Discovering Residual Decompositions for MXFP4 Post-Training Quantization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>QuantForge: Discovering Residual Decompositions for MXFP4 Post-Training Quantization</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-28 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：MXFP4 W4A4 后训练量化要保住精度，需协调坐标变换、块编码误差与残差传播等多个设计选择，而有效的算法分解在搜索前并不已知；LLM 驱动的程序进化能探索，但单看分数不知道下一步改什么。</p>
+<p><strong>方法</strong>：QuantForge 记录相互竞争的解释、选取能区分它们的控制变量、并校验后继代码落实了结论——把受控证据转化为程序修订，同时保留原解释被否但仍有用的程序。</p>
+<p><strong>关键数字</strong>：演化发现固定 MXFP4 量化器 HiRes，七任务上取得最低七模型 Robust Fit（0.09300）与 32B 最低量化 Fit-7；同预算 240 次评估调用下，QuantForge 八次运行中六次达到留出迁移目标，文本记忆/反思记忆各三次，纯分数进化仅一次。</p>
+<p><strong>为什么值得看</strong>：给「LLM 自动发现量化算法」装上了归因与验证机制，HiRes 本身也是可用的 MXFP4 PTQ 方案。</p>
+<p><a href="https://arxiv.org/abs/2609.34680">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.34680">阅读原文 ↗</a></p>
+</body>
+</html>

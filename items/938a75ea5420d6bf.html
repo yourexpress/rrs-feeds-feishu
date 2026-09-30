@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Efficient Extraction for Effectful E-Graphs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Efficient Extraction for Effectful E-Graphs</h1>
+<p class="meta-line">arXiv (cs.PL) · 2026-09-25 · 论文PDF</p>
+
+<p>面向含效应 e-graph 的高效提取（OOPSLA 2026）</p>
+<blockquote><p>Egraphs have enabled recent advances in program optimization, synthesis, and verification, yet remain difficult to apply to effectful programs whose memory and I/O operations must respect execution order. Existing effect-aware extraction algorithms rely on integer linear programming (ILP) and dominate total runtime. We introduce Statewalk DP, a new extraction algorithm that enforces effect ordering efficiently without external solvers. We prove that finding any effect-safe extraction is NP-complete, but show that Statewalk DP is tractable in statewalk width, a parameter that measures the complexity of dataflow interactions among effects. In practice, statewalk width generally remains small, enabling Statewalk DP to achieve order-of-magnitude speedups over ILP extraction while producing programs comparable to LLVM across our benchmarks. We implement the algorithm in eggcc, a prototype egraph-based compiler for imperative Bril programs and demonstrate that effect-aware extraction is no longer a bottleneck.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.31887">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ThreadShift: Transparent Thread-Level Offloading on Transient Cloud Resources Using MPKs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ThreadShift: Transparent Thread-Level Offloading on Transient Cloud Resources Using MPKs</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-09-26 · 论文PDF</p>
+
+<p>ThreadShift：基于 MPK 保护键在瞬时云资源上做线程级透明卸载，免重启跨机器迁移线程</p>
+<blockquote><p>Transient cloud resources offer significant cost savings, but their unpredictability makes them hard to use for applications that cannot be safely restarted after reclamation. Existing approaches require application changes or rely on coarse-grained checkpointing, whose cost limits its benefits. We present ThreadShift, a system that transparently offloads compute-intensive threads of unmodified Linux applications to cheap transient resources while preserving correctness under reclamation. By operating at thread granularity, ThreadShift enables fast, fine-grained checkpointing and offloads only the threads that benefit from transient execution. The main challenge is to checkpoint individual threads despite cross-thread dependencies. ThreadShift does so by efficiently tracking memory dependencies, identifying per-thread memory writes, and maintaining coherence across machines. Three novel uses of Memory Protection Keys (MPKs) make these mechanisms efficient, enabling fast incremental checkpoints without pausing the entire application. We implement ThreadShift on x86-64 Linux and evaluate it on workloads including machine-learning inference, cryptographic tasks, and in-memory data pro…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.32153">阅读原文 ↗</a></p>
+</body>
+</html>

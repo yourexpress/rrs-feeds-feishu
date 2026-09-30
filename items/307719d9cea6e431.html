@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MpFA: Hardware-Efficient Train-Free QK4V8 FlashAttention Kernels on Blackwell GPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MpFA: Hardware-Efficient Train-Free QK4V8 FlashAttention Kernels on Blackwell GPUs</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-09-27 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：Blackwell GPU 的 FP4 Tensor Core 吞吐很高，但全 FP4 注意力常因 softmax 后在线量化、数据搬运等非 matmul 开销，无法转化为端到端收益。</p>
+<p><strong>方法</strong>：MpFA 免训练，采用 QK 用 NVFP4、PV 用 FP8 的混精设计（QK4PV8），避开 FP4 PV 的转换与缩放开销；用一次额外 Tensor Core MMA 实现秩一平滑补偿恢复精度，并配细粒度异步流水、tensor-memory 复用与自适应并行切分。</p>
+<p><strong>关键数字</strong>：B200、16K–128K 上下文上，端到端输出吞吐比 BF16 FA4 高 2.81 倍（Llama-3.1-8B 与 Qwen3-14B）；秩一补偿以约 2.0% kernel 开销恢复 62.5% 的精度损失。</p>
+<p><strong>为什么值得看</strong>：硬件特征驱动的混精选择示范——不是位宽越低越好，瓶颈在 softmax 路径，长上下文推理优化必读。</p>
+<p><a href="https://arxiv.org/abs/2609.33135">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.33135">阅读原文 ↗</a></p>
+</body>
+</html>

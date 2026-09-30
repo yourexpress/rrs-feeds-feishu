@@ -22,9 +22,11 @@
 <h1>Bridging Network Psychometrics and Artificial Intelligence: An Ising-Potts Model with LLM-Derived Weights</h1>
 <p class="meta-line">arXiv（Matthias von Davier，stat.AP） · 2026-09-08 · 论文PDF</p>
 
-<p>The Potts model extends the Ising model to multinomial data.</p>
-<blockquote><p>The Potts model extends the Ising model to multinomial data. We introduce a Rater Ising-Potts model that uses agreement indicators between pairs of ratings and category labels, with weights derived from LLM embeddings. The model does not presuppose ordered category thresholds or equidistant scoring; instead, it focuses on pairwise agreement among ratings and assigns category-specific positive weights, making it suited for multi-category scoring reliability. We evaluate the model on three constructed-response datasets spanning a corpus of K=14,466 short answers on a three-level rubric and two AERA essay prompts of roughly 1,200-1,400 responses on four-point rubrics. We compare three strategies for sharpening the similarity signal: top-K pruning, min-max normalization with a power transformation, and ColBERT late-interaction similarities. Top-K pruning, which replaces the dense similarity graph with a sparse local network of strongest semantic neighbors, consistently yields the highest accuracy and Cohen's kappa, and the selected neighborhoods are always a small fraction of the corpus. Power tuning consistently ranks second, while ColBERT is competitive on longer essay prompts and ad…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：多类别评分的信度审计需要不预设有序阈值、不等距计分的模型——能否用 LLM 嵌入导出的相似度，给网络心理测量学一个可解释的新工具？</p>
+<p><strong>方法</strong>：提出 Rater Ising-Potts 模型：以评分对之间的一致性指示符与类别标签建 Potts 模型，权重来自 LLM 嵌入；比较 top-K 剪枝、min-max 归一化加幂变换、ColBERT 迟交互三种相似度锐化策略。</p>
+<p><strong>关键数字</strong>：在三个构造性回答数据集上评估：14,466 条短答案（三级量规）与两个 AERA 作文题（各约 1,200–1,400 份、四点量规）；top-K 剪枝一致取得最高准确率与 Cohen's kappa，且所选邻域只占总语料很小比例；多数误分类发生在相邻分数档之间。</p>
+<p><strong>为什么值得看</strong>：LLM 相似度 + 稀疏局部图 + 简洁 Potts 公式，为教育测评信度审计提供可解释框架，误分集中于相邻档也印证了量规序结构被保留。</p>
+<p><a href="https://arxiv.org/abs/2609.08797v2">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.08797v2">阅读原文 ↗</a></p>
 </body>
 </html>

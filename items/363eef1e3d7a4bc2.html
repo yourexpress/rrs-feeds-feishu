@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TerMeZO: Ternary Sparse Zeroth-Order Optimization for Fine-tuning BitNet Models at the Edge</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>TerMeZO: Ternary Sparse Zeroth-Order Optimization for Fine-tuning BitNet Models at the Edge</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-09-27 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：MeZO 只用前向估计梯度，让微调内存贴近推理；但 BitNet 类三值权重模型微调要更新全精度潜在权重，MeZO 的内存优势不再成立，而现有稀疏零阶方法要么无视三值结构、要么反而依赖一阶梯度。</p>
+<p><strong>方法</strong>：TerMeZO 利用三值量化器本身的几何性质，零额外数据与内存成本地识别微调中更可能翻转取值的潜在权重，只稀疏更新这一子集；并给出收敛分析，说明有效维度优化后收敛可快于全参 MeZO。</p>
+<p><strong>关键数字</strong>：在 1B–3B 参数的 BitNet 模型上，跨分类、指令遵循与数学推理任务，TerMeZO 在显著降低微调内存的同时，性能持平或超过全参数 MeZO。</p>
+<p><strong>为什么值得看</strong>：让边缘设备上微调 BitNet 类极致低比特模型变得可行——零阶优化与三值结构的一次干净结合。</p>
+<p><a href="https://arxiv.org/abs/2609.33548">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.33548">阅读原文 ↗</a></p>
+</body>
+</html>
