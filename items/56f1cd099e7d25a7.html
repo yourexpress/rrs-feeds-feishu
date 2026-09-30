@@ -22,9 +22,11 @@
 <h1>PENDA: An Efficient Processing Element via Norm-of-Difference for Deep Learning Accelerators</h1>
 <p class="meta-line">arXiv（Kai-Chieh Hsu 等，cs.AR） · 2026-09-08 · 论文PDF</p>
 
-<p>Inner product computation dominates the computational cost of deep learning models; thus, accelerating this primitive is key to improving hardware efficiency.</p>
-<blockquote><p>Inner product computation dominates the computational cost of deep learning models; thus, accelerating this primitive is key to improving hardware efficiency. However, most existing techniques rely on approximations, which can degrade model accuracy. To preserve exactness while optimizing hardware, this paper presents PENDA (processing element via norm-of-difference architecture), which leverages the law of cosines to recast multiplications as squared-difference operations. Replacing multiply-accumulate units with the proposed norm-of-difference units yields 11~36%, 5~48%, and 11~19% reductions in area, energy, and clock period, respectively, for the PE array of a deep learning accelerator.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 内积计算主导深度学习模型的计算成本，但多数加速技术依赖近似、会损害模型精度；能否在保持精确的前提下优化硬件？</p>
+<p><strong>方法</strong> 提出 PENDA（基于 norm-of-difference 的处理单元架构）：利用余弦定律把乘法改写为平方差运算，用 norm-of-difference 单元替代乘加（MAC）单元，实现无近似的精确计算优化。</p>
+<p><strong>关键数字</strong> 深度学习加速器 PE 阵列上，面积减少 11–36%、能耗减少 5–48%、时钟周期缩短 11–19%。</p>
+<p><strong>为什么值得看</strong> 「换代数恒等式换硬件收益」的干净案例——不碰精度就把面积/能耗/时序三项同时压下去，做 AI 加速器算术单元设计的值得参考。</p>
+<p><a href="https://arxiv.org/abs/2609.08424v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.08424v1">阅读原文 ↗</a></p>
 </body>
 </html>

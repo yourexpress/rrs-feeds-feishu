@@ -22,9 +22,11 @@
 <h1>Python in the front, party in the Backline: compiling quantum workloads across CPUs, GPUs, and FPGAs</h1>
 <p class="meta-line">arXiv（Joseph K. L. Lee 等，quant-ph） · 2026-09-08 · 论文PDF</p>
 
-<p>Moving from quantum research and development to production-grade, fault-tolerant quantum workload execution remains one of the most significant challenges facing quantum platform builders.</p>
-<blockquote><p>Moving from quantum research and development to production-grade, fault-tolerant quantum workload execution remains one of the most significant challenges facing quantum platform builders. While Python frameworks have enabled an easy entry point for quantum algorithm design, the low-latency requirements for real-time quantum error correction (QEC) demand performance that traditional interpreted environments cannot provide. FPGAs and ASICs play a central role at these layers, but their specialized programming models make development rigid and time-consuming. CPUs, GPUs, and other accelerators introduce a different challenge: as infrastructure becomes increasingly heterogeneous, programming across different devices and their associated abstractions becomes more complex. Allowing researchers to write workloads in high-level languages that map to low-latency execution across diverse distributed target platforms will enable the development of key infrastructure for utility-scale quantum systems. For this, we introduce $\textit{Backline}$, a heterogeneous compilation and runtime framework built within PennyLane and Catalyst. Backline allows us to design and build quantum-classical worklo…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 实时量子纠错要求微秒级延迟，Python 解释环境无法满足；FPGA/ASIC 编程模型专用、开发僵化；CPU/GPU/FPGA 混杂的异构基础设施编程复杂——量子平台需要「高层语言写负载、低延迟跑在多样硬件上」的编译栈。</p>
+<p><strong>方法</strong> 在 PennyLane 与 Catalyst 之上构建 Backline：异构编译与运行时框架，从 Python 接口经 MLIR 编译量子-经典混合负载到 CPU/GPU/FPGA，支持本地与分布式远程目标，厂商无关。</p>
+<p><strong>关键数字</strong> 以 AMD VPK120 FPGA 为控制器，RoCE v2 上测得中位稳态往返延迟 2.305μs（到 Ryzen Threadripper PRO CPU）、4.5μs（到 Instinct MI210 GPU），实现微秒级同步协同处理。</p>
+<p><strong>为什么值得看</strong> 把量子纠错的实时控制回路真正编译到异构硬件且延迟做到微秒级，做容错量子基础设施的值得深入。</p>
+<p><a href="https://arxiv.org/abs/2609.09270v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.09270v1">阅读原文 ↗</a></p>
 </body>
 </html>

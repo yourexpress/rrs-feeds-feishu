@@ -22,9 +22,11 @@
 <h1>Grouped Value Attention: Efficient KV Caching via On-Demand Key Reconstruction</h1>
 <p class="meta-line">arXiv（Vishesh Tripathi 等，cs.AR） · 2026-09-08 · 论文PDF</p>
 
-<p>The KV cache is a primary bottleneck for Transformer decoding: its memory footprint and cache-read traffic grow with sequence length.</p>
-<blockquote><p>The KV cache is a primary bottleneck for Transformer decoding: its memory footprint and cache-read traffic grow with sequence length. Grouped-query attention (GQA) reduces this cost by sharing key-value heads, but still stores both a key and a value at every step. We introduce Grouped Value Attention (GVA), which stores grouped values and reconstructs content keys with a learned linear map. At inference, the map can be absorbed into the query, eliminating the need to materialize content keys in the intended decode path. A small shared decoupled RoPE channel retains positional information through a separately cached positional key. For the configurations studied, this representation reduces persistent cache scalars by approximately 45-47% relative to matched GQA. At the 350M-parameter scale with 30B FineWeb-Edu tokens, the 16-dimensional positional variant reaches 44.18 average accuracy across five tasks, compared with 44.36 for GQA and 43.88 for MLA. These results demonstrate near-GQA benchmark accuracy with a more compact cache representation. To translate this compact representation into faster autoregressive inference, we have developed custom decoding kernels and are currently …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> KV cache 是 Transformer 解码的主要瓶颈：内存占用与读取流量随序列长度增长；GQA 通过共享 KV 头压缩成本，但每步仍要同时存 key 和 value。</p>
+<p><strong>方法</strong> 提出 Grouped Value Attention（GVA）：只存分组 value，content key 用一个可学习线性映射按需重建，推理时该映射可吸收进 query、无需物化 key；另设一个小型共享 decoupled RoPE 通道缓存位置 key。</p>
+<p><strong>关键数字</strong> 所研究配置下持久化 cache 标量较对齐 GQA 减少约 45–47%；350M 参数 + 30B FineWeb-Edu tokens 训练中，16 维位置变体五任务平均 44.18，GQA 44.36、MLA 43.88——接近 GQA 精度。自定义解码内核已开发，端到端推理性能评估中并计划开源。</p>
+<p><strong>为什么值得看</strong> 在 GQA/MLA 之外给出第三条 KV 压缩路线（存 V 重建 K），做长上下文推理优化与模型架构设计都值得跟进。</p>
+<p><a href="https://arxiv.org/abs/2609.13285v2">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.13285v2">阅读原文 ↗</a></p>
 </body>
 </html>

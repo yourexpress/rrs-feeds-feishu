@@ -22,9 +22,11 @@
 <h1>Mapping Dynamic, Hierarchical Quantum Circuits</h1>
 <p class="meta-line">arXiv（Marouane Benbetka 等，cs.PL） · 2026-09-08 · 论文PDF</p>
 
-<p>Qubit mapping is a critical pass in quantum compilation. Despite various advances, dynamic circuits, those exhibiting data dependent control-flow, often resulting from qubit measurements, are not yet supported by the vas…</p>
-<blockquote><p>Qubit mapping is a critical pass in quantum compilation. Despite various advances, dynamic circuits, those exhibiting data dependent control-flow, often resulting from qubit measurements, are not yet supported by the vast majority of available qubit mappers. The crucial limitation to overcome is the dependence on flat, one-dimensional representations of circuits. Further, qubit mappers currently lack compiler abstractions that capture the hierarchical nature of circuits, hindering the qubit mapping process. In this paper, 1 we introduce a new qubit mapping method and analyses to tackle hierarchical dynamic circuits. Our novelty resides in four key aspects: modeling (statically) sub-circuits in disjoint control-flow paths, introducing a novel Qubit Reconciliation pass to maintain consistency between sub-circuit and control-flow boundaries, a loop-entry remapping pass, and a refined cost function enhanced for SWAP count, circuit depth, circuit latency and error. We demonstrate the efficiency of our approach on a wide range of dynamic circuits on two monolithic Quantum Processing Units of 127 and 156 qubits, and on chiplet hexagon-based QPUs. On monolithic QPUs, our qubit mapper impro…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 量子编译中 qubit mapping 是关键 pass，但绝大多数 mapper 不支持含测量导致的数据依赖控制流的「动态电路」，也缺乏刻画电路层级结构的抽象。</p>
+<p><strong>方法</strong> 提出面向层级动态电路的 mapping 方法：静态建模不相交控制流路径中的子电路；新增 Qubit Reconciliation pass 维护子电路与控制流边界一致性；loop-entry 重映射 pass；面向 SWAP 数、深度、延迟与错误率精化的成本函数。</p>
+<p><strong>关键数字</strong> 127 与 156 比特单片 QPU 上 SWAP 数最多改善 52%、深度 18%、延迟 18.6%、错误 40%；六边形 chiplet QPU 上 SWAP 36%、深度 8.7%、延迟与错误各 15%。</p>
+<p><strong>为什么值得看</strong> 动态/层级电路映射的系统性解法，做量子编译器与容错量子计算工具链的人值得跟进。</p>
+<p><a href="https://arxiv.org/abs/2609.08075v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.08075v1">阅读原文 ↗</a></p>
 </body>
 </html>

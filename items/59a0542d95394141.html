@@ -22,9 +22,11 @@
 <h1>Non-Coherent Over-the-Air Federated Learning: Protocol, Convergence, and Device Scheduling</h1>
 <p class="meta-line">arXiv（Haifeng Wen 等，cs.IT） · 2026-09-08 · 论文PDF</p>
 
-<p>To mitigate the scalability bottleneck in the radio access network (RAN) in federated edge learning (FEEL), over-the-air federated learning (AirFL) exploits waveform superposition over multiple-access channels (MACs) for…</p>
-<blockquote><p>To mitigate the scalability bottleneck in the radio access network (RAN) in federated edge learning (FEEL), over-the-air federated learning (AirFL) exploits waveform superposition over multiple-access channels (MACs) for analog model aggregation. However, coherent AirFL typically relies on stringent PHY-layer conditions such as accurate channel state information (CSI), tight time/frequency synchronization, and frequent transceiver calibration for signal alignment. However, these requirements, if not impossible to be met, incur substantial communication and computation overhead. In this paper, we propose a non-coherent AirFL (NCAirFL) protocol over a broadband single-antenna MAC, leveraging binary dithering, unbiased non-coherent detection, and long-term error feedback to waive the need for instantaneous CSI. For NCAirFL with general smooth non-convex objectives and a constant learning rate, we establish a convergence bound achieving the convergence rate in the same order of $\mathcal{O}(1/\sqrt{T})$ as communication-ideal FedAvg, where $T$ is the total number of communication rounds. To further improve communication efficiency under data and wireless resource heterogeneity, we also…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 空中计算联邦学习（AirFL）利用多接入信道波形叠加做模拟聚合以缓解 RAN 扩展瓶颈，但相干 AirFL 依赖精确 CSI、严格同步与频繁校准，通信与计算开销大甚至不可行。</p>
+<p><strong>方法</strong> 提出宽带单天线 MAC 上的非相干 AirFL（NCAirFL）协议：二进制抖动 + 无偏非相干检测 + 长期误差反馈，免除瞬时 CSI 需求；进一步导出设备调度条件下单轮目标下降的下界，构造代理目标做联合设备选择与功率控制。</p>
+<p><strong>关键数字</strong> 理论上对一般光滑非凸目标达到 O(1/√T) 收敛率，与通信理想的 FedAvg 同阶；MNIST/CIFAR-10 实验接近 FedAvg 性能，所提调度策略显著加速收敛。</p>
+<p><strong>为什么值得看</strong> 把 AirFL 从「理想相干」拉回「可落地非相干」，收敛性证明与调度设计齐全，做边缘联邦学习与通信计算融合的值得读。</p>
+<p><a href="https://arxiv.org/abs/2609.08312v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.08312v1">阅读原文 ↗</a></p>
 </body>
 </html>

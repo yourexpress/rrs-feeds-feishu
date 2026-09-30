@@ -22,9 +22,11 @@
 <h1>KBBQ: A Predictive Noise Law and the Limits of Spectrum Flattening in FP4 Quantization</h1>
 <p class="meta-line">arXiv（Lexington Whalen 等，cs.LG） · 2026-09-08 · 论文PDF</p>
 
-<p>We develop a second-order theory of quantization noise in matrix multiplication in which the quantization format is characterized by the variance it assigns to each element.</p>
-<blockquote><p>We develop a second-order theory of quantization noise in matrix multiplication in which the quantization format is characterized by the variance it assigns to each element. The constant variance profile of integer quantization recovers existing integer-noise theory, while the multiplicative profile of floating-point rounding reduces the data dependence to a scalar, the participation factor $κ$, yielding a closed-form signal-to-noise-ratio law. The resulting functional also admits a closed-form upper bound $κ^{*}$ that no function-preserving linear transform can exceed and that is attained by a recent state-of-the-art method. Building on this analysis, we introduce KBBQ (\textbf{K}appa-\textbf{B}raked \textbf{B}lockwise \textbf{Q}uantization), which parameterizes the extent to which a transform approaches this ceiling. At W4A4, across four base models and two FP4 formats, KBBQ outperforms the prior state of the art without additional deployment-time computation.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> FP4 量化中「谱展平」类变换为什么有效、极限在哪？缺乏一个能预测量化噪声的理论框架，现有方法多是经验性的。</p>
+<p><strong>方法</strong> 建立矩阵乘量化噪声的二阶理论：用格式给每个元素分配的方差刻画量化；浮点舍入的乘性方差剖面把数据依赖归结为标量参与因子 κ，给出闭式 SNR 律，并证明存在任何保函数线性变换都无法超越的上界 κ*。据此提出 KBBQ，参数化变换逼近该上限的程度。</p>
+<p><strong>关键数字</strong> 在 W4A4、四个基座模型、两种 FP4 格式上，KBBQ 超越此前 SOTA，且不增加部署时计算。</p>
+<p><strong>为什么值得看</strong> 给 FP4 量化装上了「可预测噪声律 + 理论天花板」，理论与实践结合漂亮，做低比特量化的值得一读。</p>
+<p><a href="https://arxiv.org/abs/2609.08135v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.08135v1">阅读原文 ↗</a></p>
 </body>
 </html>

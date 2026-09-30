@@ -22,9 +22,11 @@
 <h1>From Fixed Keys to Readable Schemas: Small Language Models for Vehicle Agent Function Calls</h1>
 <p class="meta-line">arXiv（Hamed Jafarzadeh Asl 等，cs.LG） · 2026-09-08 · 论文PDF</p>
 
-<p>In-vehicle assistants must translate natural-language requests into accurate vehicle function calls under strict memory and latency constraints, making small language models (SLMs) attractive for on-device deployment.</p>
-<blockquote><p>In-vehicle assistants must translate natural-language requests into accurate vehicle function calls under strict memory and latency constraints, making small language models (SLMs) attractive for on-device deployment. For such models, a key design choice is how the available function surface is presented. Two approaches are to represent each function with a dedicated Functional Token (FT) or provide function schemas directly in the prompt. FTs enable compact inference but are restricted to functions learned during training, whereas Schema-in-Prompt (SIP) can generalize to unseen functions at the cost of longer prompts and higher inference overhead. We introduce a benchmark of 9,822 single-turn examples spanning 79 vehicle functions derived from Android Automotive, including held-out functions and requests requiring refusal. We compare both approaches under matched fine-tuning across four SLMs from 270M to 1.7B parameters. On functions seen during training, scaling provides limited benefit: the 270M model can match the 1.7B model, while the strongest overall performance occurs at 0.6B. On held-out functions, FT achieves zero accuracy by construction, whereas SIP generalizes and impr…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 车载语音助手要把自然语言转成准确的车辆函数调用，端侧小语言模型（SLM）面临关键设计选择：函数表面用专用 Functional Token（FT）表示，还是把函数 schema 直接写进 prompt（SIP）？</p>
+<p><strong>方法</strong> 构建 9,822 条单轮样本、覆盖 79 个 Android Automotive 函数（含 held-out 函数与需拒答请求）的 benchmark，在 270M–1.7B 四个 SLM 上等条件微调对比两种表示。</p>
+<p><strong>关键数字</strong> 训练内函数上 270M 可匹敌 1.7B、0.6B 整体最强；held-out 函数上 FT 准确率为零而 SIP 可泛化且随规模提升；越界请求上 SIP 拒答更可靠，但代价是更高显存与延迟。</p>
+<p><strong>为什么值得看</strong> 结论直接：决定端侧函数调用能力的是函数表面表示而非模型规模——对做车载/端侧 agent 的人是很实用的设计依据。</p>
+<p><a href="https://arxiv.org/abs/2609.09476v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.09476v1">阅读原文 ↗</a></p>
 </body>
 </html>

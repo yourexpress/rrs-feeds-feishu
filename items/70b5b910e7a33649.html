@@ -22,9 +22,11 @@
 <h1>Analytic Gradients and Nonadiabatic Couplings for Device-Resident DMRG-QD-NEVPT2 Through Conical Intersections on a Consumer GPU</h1>
 <p class="meta-line">arXiv（Rubén Darío Guerrero，physics.chem-ph） · 2026-09-09 · 论文PDF</p>
 
-<p>Nonadiabatic dynamics through a conical intersection requires both static and dynamic correlation and, at every geometry, an excited-state gradient and interstate nonadiabatic coupling (NACME).</p>
-<blockquote><p>Nonadiabatic dynamics through a conical intersection requires both static and dynamic correlation and, at every geometry, an excited-state gradient and interstate nonadiabatic coupling (NACME). Analytic multireference derivatives at this level have been confined to datacenter-scale hardware. We report device-resident \mbox{DMRG-QD-NEVPT2} with analytic gradients and NACMEs within the $8$\,GB of a consumer GPU: a density-matrix-renormalization-group (DMRG) active-space reference supplies the static correlation, and quasi-degenerate SC-NEVPT2 dresses it through a multi-state effective Hamiltonian that remains valid \emph{through} a conical intersection, where single-state perturbation theory develops a vanishing denominator and fails. Every gradient and NACME is one reverse-mode transpose of a single contraction graph: the DMRG sweep enters as a gauge-free differentiable node, and all two-electron work is AO-direct through Cholesky factors. The DMRG reference is exact within the active space ($\sim\!10^{-15}$\,Ha). The corrected adiabats close smoothly to a real $S_0/S_1$ conical intersection with a non-vanishing, $1/ΔE$-divergent NACME---where linear-response TDDFT returns zero iden…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 穿越锥形交叉的非绝热动力学需要静态+动态关联、以及每个几何结构下的激发态梯度与态间非绝热耦合（NACME）；此级别的解析多参考导数此前只能在数据中心级硬件上算。</p>
+<p><strong>方法</strong> 在 8GB 消费级 GPU 上实现 device-resident DMRG-QD-NEVPT2 解析梯度与 NACME：DMRG 活性空间参考供静态关联，准简并 SC-NEVPT2 通过多态有效哈密顿量在锥形交叉处仍有效（单态微扰在此失效）；所有梯度与 NACME 都是单次收缩图的反向模式转置，DMRG sweep 作为无规范可微节点，两电子工作全走 Cholesky 因子 AO-direct。</p>
+<p><strong>关键数字</strong> DMRG 参考在活性空间内精确至 ~1e-15 Ha；修正后的绝热面光滑闭合到真实 S0/S1 锥形交叉并给出 1/ΔE 发散的非零 NACME——线性响应 TDDFT 在此处恒为零。</p>
+<p><strong>为什么值得看</strong> 把高端量子化学导数计算搬进消费级 GPU，多态+穿越锥形交叉+解析梯度耦合的组合是首创，计算化学与 GPU 高性能计算交叉方向值得读。</p>
+<p><a href="https://arxiv.org/abs/2609.09990v2">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.09990v2">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>AMEND: Audited Margins Enable Nonblocking Drops in GPU-PIM LLM Decoding</h1>
 <p class="meta-line">arXiv（Zuxiong Tan 等，cs.AR） · 2026-09-09 · 论文PDF</p>
 
-<p>Autoregressive large language model (LLM) decoding re-reads a growing key-value (KV) cache at every step, so long-context attention is bound by graphics processing unit (GPU) memory bandwidth.</p>
-<blockquote><p>Autoregressive large language model (LLM) decoding re-reads a growing key-value (KV) cache at every step, so long-context attention is bound by graphics processing unit (GPU) memory bandwidth. Block-sparse attention skips low-contribution KV blocks, but a selector that decides after the current query-key (QK) product, such as max-relative block thresholding (BLASST), still reads every K block, and a processing-in-memory (PIM) filter that decides from the current query places a serial PIM stage on the critical path. We present AMEND, a GPU-PIM attention design that removes both dependencies. AMEND predicts each block's BLASST verdict from margins audited at earlier steps, so the GPU fetches only predicted survivors while near-bank PIM units in high-bandwidth memory (HBM) concurrently score the omitted complement. A stack-level controller merges both observations, updates the predictor, and eagerly generates the next step's mask, so every predicted drop is re-observed without blocking the current token. Operating points are selected offline by constrained Bayesian optimization under a false-drop budget. Across LongBench and RULER runs, AMEND preserves near-baseline task quality; in s…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 自回归解码每步重读不断增长的 KV cache，长上下文注意力受 GPU 显存带宽限制；块稀疏注意力中，在 QK 之后才决策的选择器（如 BLASST）仍要读所有 K 块，而基于当前 query 的 PIM 过滤又把串行 PIM 阶段压上关键路径。</p>
+<p><strong>方法</strong> AMEND 用更早步骤审计的 margin 预测每块的 BLASST 判定：GPU 只取预测存活块，HBM 近 bank PIM 单元并行给被略过的补集打分；栈级控制器合并两侧观测、更新预测器并提前生成下一步掩码，使每次预测丢弃都被复核且不阻塞当前 token；工作点由误丢预算下的约束贝叶斯优化离线选定。</p>
+<p><strong>关键数字</strong> LongBench/RULER 上保持近基线质量；batch 8 模拟下 8K–64K 上下文端到端解码加速 1.40–3.63×、动态解码能耗降 28–66%。</p>
+<p><strong>为什么值得看</strong> GPU-PIM 协同做稀疏注意力的干净设计，「预测-复核不阻塞」的思路对长上下文推理系统很有借鉴价值。</p>
+<p><a href="https://arxiv.org/abs/2609.09823v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.09823v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>HoneyRoute: Honeypot-Model Routing for Adversarial LLM Serving</h1>
 <p class="meta-line">arXiv（Han Jin，cs.CR） · 2026-09-08 · 论文PDF</p>
 
-<p>We introduce HoneyRoute, an inference-serving layer that detects whether an incoming request is malicious and, if so, routes it to a dedicated honeypot model, shielding production while the adversary's interaction is con…</p>
-<blockquote><p>We introduce HoneyRoute, an inference-serving layer that detects whether an incoming request is malicious and, if so, routes it to a dedicated honeypot model, shielding production while the adversary's interaction is continuously harvested for intelligence. Existing defenses embed traps inside model memory or rebuild deception at the protocol layer, leaving the serving tier unprotected and feeding nothing back into detection. HoneyRoute couples (i) a streaming router (a frozen 0.8B-embedding backbone with per-domain MLP heads), (ii) a dual-implementation honeypot (a rule/prompt-engineered code honeypot or a dedicated same-family replica), and (iii) an analysis loop that converts trapped interactions into attacker fingerprints for router retraining. On a production trace plus a seven-domain attack corpus, the router reaches F1=.911 at 38 ms median added latency, matching 96% of a two-tier guard-LLM cascade's F1 at 1/385 of its latency with 0% evasion under 13 adversarial transformations; diverting the malicious share cuts production-model token consumption under concurrent flooding with real GCG-suffix payloads by 97.8%; the trained replica agrees with the production model on 92.9% …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 推理服务层面对恶意请求缺乏防护：现有防御把陷阱埋进模型权重或在协议层重建欺骗，服务层本身无保护，也无法把对抗交互回收为检测情报。</p>
+<p><strong>方法</strong> HoneyRoute 在服务层加路由：冻结 0.8B embedding 骨干 + 每域 MLP 头做流式恶意检测，恶意请求路由到蜜罐模型（规则/提示工程版或同族训练副本），分析回路把捕获交互转为攻击者指纹反哺路由器重训。</p>
+<p><strong>关键数字</strong> 检测 F1=.911、中位附加延迟 38ms——达到两层 guard-LLM 级联 96% 的 F1 而延迟仅其 1/385；13 种对抗变换下 0% 逃逸；真实 GCG-suffix 洪泛下生产模型 token 消耗降 97.8%；replica 对良性请求一致率 92.9%；回路纠偏头把合法安全研究误路由降 9 倍、F1 升至 .933。</p>
+<p><strong>为什么值得看</strong> 把「蜜罐」思想系统性搬进 LLM serving，攻防情报闭环设计完整，做 LLM 安全与推理服务的必读。</p>
+<p><a href="https://arxiv.org/abs/2609.08306v3">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.08306v3">阅读原文 ↗</a></p>
 </body>
 </html>

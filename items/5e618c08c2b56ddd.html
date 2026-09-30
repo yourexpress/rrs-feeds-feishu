@@ -22,9 +22,11 @@
 <h1>FPGA Acceleration of Fully Homomorphic Encryption with Adaptive Key Switching</h1>
 <p class="meta-line">arXiv（Zhihan Xu 等，cs.CR） · 2026-09-08 · 论文PDF</p>
 
-<p>Fully Homomorphic Encryption (FHE) enables privacy-preserving cloud services but incurs substantial computation overhead, making hardware acceleration essential.</p>
-<blockquote><p>Fully Homomorphic Encryption (FHE) enables privacy-preserving cloud services but incurs substantial computation overhead, making hardware acceleration essential. Among FHE operations, key-switching is a major performance bottleneck. Recent cryptographic advances introduce a novel key-switching method (i.e., KLSS) that reduces certain operational complexity but demands higher computational precision than the traditional Hybrid Key Switching (HKS) method. This trade-off leads to distinct computation and memory requirements, making the relative latency of KLSS and HKS highly dependent on hardware parallelism, FHE security parameters, and available on-chip memory capacity, particularly on FPGA platforms, where memory resources and parallelism must be carefully balanced. In this work, we first propose a memory-efficient KLSS datapath that eliminates off-chip ciphertext transfers. We then develop a performance model to analyze and compare the overheads of both KLSS and HKS. Our analysis reveals that an adaptive solution supporting both methods can achieve lower overall latency than a static method during FHE computation. Guided by the performance model, we design an adaptive FPGA-based F…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 全同态加密（FHE）可实现隐私保护云服务，但计算开销巨大；其中 key-switching 是主要瓶颈。新型 KLSS 方法降低了部分复杂度却要求更高计算精度，与传统 HKS 孰优孰劣高度依赖硬件并行度、安全参数与片上内存。</p>
+<p><strong>方法</strong> 先提出消除片外密文传输的内存高效 KLSS 数据通路，再建立性能模型量化对比 KLSS 与 HKS 开销，据此设计可在计算中动态选择两种方法的自适应 FPGA 加速器，并在 Alveo U280 上实现。</p>
+<p><strong>关键数字</strong> 自适应方案在多个 FHE benchmark 上取得 bootstrapping 延迟 1.84–3.31× 加速（摘要后半截断，其余指标未取到）。</p>
+<p><strong>为什么值得看</strong> 密码学算法演进（KLSS）与硬件架构协同自适应设计的典型案例，做 FHE 加速或 FPGA 密码工程的可以直接参考其建模思路。</p>
+<p><a href="https://arxiv.org/abs/2609.09423v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.09423v1">阅读原文 ↗</a></p>
 </body>
 </html>

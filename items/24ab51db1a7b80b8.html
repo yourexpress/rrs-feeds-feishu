@@ -22,9 +22,11 @@
 <h1>Sample-Guided Exact Top-K Selection for Long-Context Sparse Attention</h1>
 <p class="meta-line">arXiv（Siran Liu 等，cs.DC） · 2026-09-08 · 论文PDF</p>
 
-<p>Sparse attention bounds downstream attention work by retaining a fixed-size subset of indexed tokens, but its standalone exact Top-$K$ stage must still process materialized score rows whose length grows with context.</p>
-<blockquote><p>Sparse attention bounds downstream attention work by retaining a fixed-size subset of indexed tokens, but its standalone exact Top-$K$ stage must still process materialized score rows whose length grows with context. Production radix selectors discover their first actionable boundary only after a complete-row pass, forcing another row-scale traversal before exact refinement. We observe that locating a compact upper tail requires substantially less resolution than identifying the exact rank boundary, and that fixed-stride partial views of the current row remain calibrated to the corresponding complete-row rank across ragged lengths. We present HPC-Ops Top-K, a sample-guided exact selector for ragged sparse-attention score rows. A fixed-stride view proposes a row-local coarse boundary; the mandatory complete-row pass certifies its sufficiency, forms the admitted candidate set, and initializes exact FP32 refinement over the unresolved frontier. A nested secondary boundary and exact recovery handle underfilled proposals before any output is committed, so sampling controls common-path work but never correctness. The GPU implementation fuses complete-row certification and candidate forma…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 稀疏注意力要保留固定大小 token 子集，但独立 exact Top-K 阶段必须处理随上下文增长的物化分数行；生产级 radix 选择器要完整扫一遍行才找到首个可用边界，还得再遍历一次做精确精化。</p>
+<p><strong>方法</strong> HPC-Ops Top-K：定步长部分视图提出行内粗边界，必需的完整行 pass 认证其充分性并形成候选集，再对未定边界做 FP32 精确精化；嵌套二级边界处理欠填充提案——采样只控制常见路径工作量、绝不影响正确性；GPU 实现融合认证与候选形成。</p>
+<p><strong>关键数字</strong> 在 Hy4-Preview 的 indexer 分数上，20 个算子配置较最快外部精确基线加速 1.29–1.75×（几何平均 1.55×）；两条框架稀疏注意力 trace 上加速 1.36×/1.48×。已开源在腾讯 HPC-Ops 库。</p>
+<p><strong>为什么值得看</strong> 长上下文稀疏注意力关键算子的工程优化，思路（采样定界 + 认证精化）可迁移到其他选择类算子。</p>
+<p><a href="https://arxiv.org/abs/2609.08450v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.08450v1">阅读原文 ↗</a></p>
 </body>
 </html>

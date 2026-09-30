@@ -22,9 +22,11 @@
 <h1>It's Not RoPE that Creates Sinks: The Role of Self-Concentration and Value-Non-Mixing in Attention</h1>
 <p class="meta-line">arXiv（Raito Kiya 等，cs.CL） · 2026-09-08 · 论文PDF</p>
 
-<p>Large Language Models (LLMs) often exhibit "Attention Sink" (AS) and the accompanying "Massive Activations" (MAs) at the initial position of a sequence.</p>
-<blockquote><p>Large Language Models (LLMs) often exhibit "Attention Sink" (AS) and the accompanying "Massive Activations" (MAs) at the initial position of a sequence. These phenomena frequently co-occur, and MAs can pose challenges for low-bit quantization. In this study, we analyze the factors underlying AS and MAs that emerge at the initial position regardless of the token occupying it. Our experiments suggest that self-concentration of attention, resulting from the causal mask, and the subsequent Value-non-mixing in attention outputs contribute to AS and MAs. These findings provide new empirical evidence on the internal dynamics of LLMs, offering insights that may inform future quantization strategies and advance our understanding of the internal mechanisms of attention layers.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 常在序列首位出现 Attention Sink（AS）与 Massive Activations（MA），与位置上的 token 无关；MA 会给低比特量化带来困难。此前多归因于 RoPE，本文追问真正成因。</p>
+<p><strong>方法</strong> 通过系统性实验分析 AS 与 MA 的来源，结论是：因果掩码导致的注意力自集中（self-concentration）与随后注意力输出中的 Value 不混合（value-non-mixing）共同造就了首位的 AS 与 MA——不是 RoPE。</p>
+<p><strong>关键数字</strong> 这是一篇机制分析论文，摘要未给出量化指标，结论以实验证据形式呈现。</p>
+<p><strong>为什么值得看</strong> 推翻「RoPE 造 sink」的流行归因，对设计低比特量化策略和理解注意力层内部动态都有直接启示，做模型压缩的值得关注。</p>
+<p><a href="https://arxiv.org/abs/2609.09085v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.09085v1">阅读原文 ↗</a></p>
 </body>
 </html>

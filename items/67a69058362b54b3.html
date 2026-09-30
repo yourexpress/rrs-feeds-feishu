@@ -22,9 +22,11 @@
 <h1>Tools-CC-Bench: a Benchmark Suite for Collective Communication with Compression in HPC and AI Workloads</h1>
 <p class="meta-line">arXiv（Haozhe Fan 等，cs.DC） · 2026-09-08 · 论文PDF</p>
 
-<p>Distributed HPC and LLM workloads increasingly require efficient communication for scalability, yet growing data movement has become a major performance bottleneck.</p>
-<blockquote><p>Distributed HPC and LLM workloads increasingly require efficient communication for scalability, yet growing data movement has become a major performance bottleneck. Communication compression can reduce this overhead and complement execution-level optimizations, but its benefits remain difficult to assess because existing benchmarks lack support for diverse backends, realistic datasets, application-specific accuracy metrics, and overlap-induced resource contention. We present CC-Bench, a lightweight, extensible, and application-oriented benchmark suite for evaluating communication compression under realistic execution conditions. CC-Bench uses declarative application-environment modeling to decouple profiling logic from communication libraries, datasets, and fidelity metrics, enabling portable cross-library evaluation. It further combines function-level interception and hardware counter monitoring to characterize per-phase latency, hardware utilization, numerical fidelity, and computation interference. With representative datasets from HPC and LLM workloads, CC-Bench evaluates three compression-enabled communication libraries on CPU and GPU clusters, revealing accuracy-performance t…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 分布式 HPC 与 LLM 负载的通信开销日益成为瓶颈，通信压缩虽有潜力，但现有 benchmark 缺多后端支持、真实数据集、应用级精度指标与重叠资源争用刻画，收益难以评估。</p>
+<p><strong>方法</strong> CC-Bench：轻量可扩展、面向应用的通信压缩 benchmark——声明式应用-环境建模把 profiling 逻辑与通信库、数据集、保真度指标解耦，实现跨库可移植评估；函数级拦截 + 硬件计数器监测刻画每阶段延迟、硬件利用率、数值保真度与计算干扰。</p>
+<p><strong>关键数字</strong> 用 HPC 与 LLM 代表性数据集，在 CPU 与 GPU 集群上评估了三个支持压缩的通信库，揭示精度-性能权衡与瓶颈（摘要未给出具体数字结论）。</p>
+<p><strong>为什么值得看</strong> 给「通信压缩到底值不值」提供了可信的测量工具，做分布式训练系统与 HPC 通信优化的可以拿来即用。</p>
+<p><a href="https://arxiv.org/abs/2609.08739v2">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.08739v2">阅读原文 ↗</a></p>
 </body>
 </html>

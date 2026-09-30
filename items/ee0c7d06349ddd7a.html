@@ -22,9 +22,11 @@
 <h1>Osprey: Target-agnostic Pre-training Makes Stronger Drafters in Speculative Decoding</h1>
 <p class="meta-line">arXiv（Fengxiang Bie 等，cs.CL） · 2026-09-08 · 论文PDF</p>
 
-<p>Speculative decoding is critical for accelerating LLM inference.</p>
-<blockquote><p>Speculative decoding is critical for accelerating LLM inference. However, the speedup is fragile: drafters are typically trained against a narrow distribution for a single target model, and their acceptance rate collapses under workload shifts. This is a striking inversion of modern LLM development, where target models are valued precisely for the broad generalization they acquire through large-scale pretraining. We argue that the natural remedy, pretraining, has been hard to apply to drafters because existing recipes are target-specific: the drafter consumes the target's hidden states and is distilled on the target's logits, so pretraining must be repeated for each target. We introduce Osprey, which instead bootstraps drafters from off-the-shelf pretrained small language models, treating broad pretraining as a reusable, target-agnostic asset and reducing per-target work to a lightweight adaptation step. Realizing this requires overcoming two challenges: small LMs are far deeper than a latency-bound drafter can afford, and their pretrained computation must remain intact while the drafter learns to ingest target hidden states and emit tokens in the target's vocabulary. Osprey addres…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 投机解码的 drafter 通常针对单一目标模型的窄分布训练，负载一变接受率就崩——与目标模型靠大规模预训练获得广泛化的现代范式形成倒挂。</p>
+<p><strong>方法</strong> Osprey 从现成预训练小模型引导 drafter：剪枝成浅骨干；用 target-agnostic 的 next-token 预训练恢复语言能力；再对每个目标做轻量适配——词表对齐、零初始化 QKV 扩展、从目标输出分布蒸馏。</p>
+<p><strong>关键数字</strong> 同一预训练骨干跨目标迁移，平均接受长度提升 16.1%（Qwen3-8B）、21.2%（Llama-3.3-70B-Instruct）、22.7%（229B 的 MiniMax-M2.5，同时 tokens/s 高 17.5%）；域外与多语言数据上增益最大。代码已开源。</p>
+<p><strong>为什么值得看</strong> 把「预训练一次、处处适配」引入投机解码 drafter 构建，工程价值直接，做推理加速的值得试用。</p>
+<p><a href="https://arxiv.org/abs/2609.09338v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.09338v1">阅读原文 ↗</a></p>
 </body>
 </html>

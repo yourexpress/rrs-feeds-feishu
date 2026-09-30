@@ -22,9 +22,11 @@
 <h1>SE-GoS: Self-Evolving Graph-of-Skills for Skill Library at Scale</h1>
 <p class="meta-line">arXiv（Dawei Fu 等，cs.AI） · 2026-09-08 · 论文PDF</p>
 
-<p>Modern LLM agents increasingly rely on reusable skills, yet as skill libraries scale to thousands of entries, effective retrieval becomes a bottleneck.</p>
-<blockquote><p>Modern LLM agents increasingly rely on reusable skills, yet as skill libraries scale to thousands of entries, effective retrieval becomes a bottleneck. Graph-of-Skills (GoS) addresses this challenge by exploiting dependency-aware graph structure for scalable skill retrieval, while SkillDAG further demonstrates that skill graphs can accumulate execution-backed structure online. However, these approaches leave open whether historical execution traces can be systematically distilled into a better retrieval graph that generalizes to unseen tasks. We present Self-Evolving Graph-of-Skills (SE-GoS), a training-free framework that evolves an existing GoS graph from execution traces while preserving the original retrieval pipeline. SE-GoS performs three complementary updates: topology evolution that discovers and prunes skill relationships from execution evidence, edge-weight evolution that reinforces retrieval-relevant relationships based on historical effectiveness, and description evolution that optimizes retrieval-facing skill descriptions using execution feedback. Across three LLMs on SkillsBench, SE-GoS consistently improves task reward while reducing input tokens relative to full ski…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM agent 的技能库扩到数千条后检索成为瓶颈；现有 Graph-of-Skills 等方案留下一个问题：历史执行痕迹能否系统蒸馏成更好的、可泛化到未见任务的检索图？</p>
+<p><strong>方法</strong> SE-GoS 是一个免训练框架，在保留原检索流水线的前提下从执行痕迹演化技能图：拓扑演化（从执行证据发现/剪枝技能关系）、边权演化（按历史有效性强化检索相关关系）、描述演化（用执行反馈优化面向检索的技能描述）。</p>
+<p><strong>关键数字</strong> SkillsBench 上三个 LLM 一致提升：代表性设置下一轮演化 reward 从 52.4% 升到 59.4%、输入 token 较全量加载减约 1/3；演化后的图迁移到不相交 held-out 划分上比静态 GoS 基线高 5.4 分。</p>
+<p><strong>为什么值得看</strong> 不训练、不改检索算法、不动技能内容，纯靠执行经验演化检索基础设施——skill library 规模化的一条实用路线。</p>
+<p><a href="https://arxiv.org/abs/2609.08228v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.08228v1">阅读原文 ↗</a></p>
 </body>
 </html>

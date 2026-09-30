@@ -22,9 +22,11 @@
 <h1>Ozaki 2.5: Engineering the Deconstruction Path of fp64-Emulated Dense Matrix Multiplication on FP8 Tensor Cores</h1>
 <p class="meta-line">arXiv（Satoshi Matsuoka，cs.MS） · 2026-09-08 · 论文PDF</p>
 
-<p>FP8 Ozaki II emulates FP64 matrix multiplication by tensor-core products over a CRT residue system; converting the operands into residue planes (the deconstruction term in the Tensor-Memory Equilibrium model of the compa…</p>
-<blockquote><p>FP8 Ozaki II emulates FP64 matrix multiplication by tensor-core products over a CRT residue system; converting the operands into residue planes (the deconstruction term in the Tensor-Memory Equilibrium model of the companion paper "FP8 is All You Need, Part 1") costs integer-pipe and memory resources before tensor instructions issue. This paper engineers that path; every result is a model projection pending measurement. First, a deconstruction-aware model: on the NVIDIA Rubin GPU the emulated rate reaches the arithmetic roof $P_{\rm FP8}/(3r+1)$ ($\approx 473$ TFLOPS at $r=12$) only within one thread-block cluster; larger outputs are re-split on the fly and held at a floor of $\approx 235$ TFLOPS (half the roof, a ratio of three design integers, not a fit), while real solvers' tall/skinny shapes stay near the crossover, $1.6$-$1.9\times$ over simple deconstruction today. Second, the method: convert-once residue workspaces, an exact two-limb constant-reduction GEMM on integer tensor pipes (or pure-SIMT dp4a), and conversion pipelined behind the MMAs, moving the crossover from $\approx 1211$ to $\approx 480$-$730$. Third, modulus co-design: all-byte and hybrid sets, two supply bounds…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> FP8 Ozaki II 用 CRT 剩余系上的 tensor-core 乘积模拟 FP64 GEMM，但操作数转剩余平面的「分解路径」要先吃整数管线与内存资源，成为隐藏瓶颈。</p>
+<p><strong>方法</strong> 工程化该路径：建立分解感知性能模型；convert-once 剩余工作区、整数张量管线上的精确双 limb 常数归约 GEMM、转换与 MMA 流水重叠；模数协同设计（全字节/混合模数集、进位修正的 E4M3 尾模数拆分）；并提出在异步拷贝路径上加流侧剩余转换固定功能单元（Option C）作为硬件解。所有结果是模型推演，待实测。</p>
+<p><strong>关键数字</strong> Rubin GPU 上模拟速率 roof 达 P_FP8/(3r+1)（r=12 时约 473 TFLOPS），大输出被压到约 235 TFLOPS 的 floor；crossover 从约 1211 降到约 480–730；tall/skinny 形状当前有 1.6–1.9×；Option C 可把 floor 提到 473 TFLOPS roof，HPL 级 FP64 约翻倍。</p>
+<p><strong>为什么值得看</strong> 用性能模型把 FP8 模拟 FP64 的工程瓶颈算到个位数精度，还顺带给 Rubin 开了硬件药方——做高精度模拟与 GPU 架构的都值得看。</p>
+<p><a href="https://arxiv.org/abs/2609.09095v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.09095v1">阅读原文 ↗</a></p>
 </body>
 </html>

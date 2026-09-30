@@ -22,9 +22,11 @@
 <h1>Marigold V2: Revisiting Diffusion Transformers for Monocular Depth Estimation</h1>
 <p class="meta-line">arXiv（Igor Pavlovic 等，cs.CV） · 2026-09-08 · 论文PDF</p>
 
-<p>Monocular depth estimation is a ubiquitous yet highly ill-posed computer vision task, with downstream applications in scene reconstruction, computational photography, and robotics, among others.</p>
-<blockquote><p>Monocular depth estimation is a ubiquitous yet highly ill-posed computer vision task, with downstream applications in scene reconstruction, computational photography, and robotics, among others. Despite the field's maturity, recent models still struggle to generalize to out-of-distribution inputs and to produce sharp and detailed depth maps. In this paper, we revisit Marigold, a set of techniques for repurposing modern image generation and editing models, powered by the diffusion transformer (DiT) architecture, into state-of-the-art monocular depth estimators. Our recipes target single-step inference from pretrained multi-step flow-matching models, with quantization where needed, preserving model capacity while remaining cheap to run. We analyze the artifacts of naive training and identify two effective remedies: aligning the model's internal representations with semantic features extracted from ground-truth, and adopting a 2-stage fine-tuning protocol built around a novel Sinkhorn-based loss. The results are crisper, cleaner depth maps that generalize well out-of-distribution, with 16-26% improvement in AbsRel over the previous best on KITTI and ETH3D. Qualitatively, our model res…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 单目深度估计高度病态，现有模型对分布外输入泛化差、深度图不够锐利细致。</p>
+<p><strong>方法</strong> Marigold V2 复用 DiT 架构的图像生成/编辑模型改造为深度估计器：从预训练多步 flow-matching 模型蒸馏出单步推理并按需量化；针对朴素训练的伪影给出两味药——让模型内部表示对齐真值语义特征、以及围绕新 Sinkhorn 损失构建的两阶段微调。</p>
+<p><strong>关键数字</strong> KITTI 与 ETH3D 上 AbsRel 较此前最佳提升 16–26%；在表面法线估计与本征图像分解等稠密回归任务上同样 SOTA。</p>
+<p><strong>为什么值得看</strong> 生成模型改造成判别式稠密预测的 recipe 再升级，单步推理成本低，Demo 已上线 HF Spaces，视觉方向值得上手试。</p>
+<p><a href="https://arxiv.org/abs/2609.08084v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.08084v1">阅读原文 ↗</a></p>
 </body>
 </html>
