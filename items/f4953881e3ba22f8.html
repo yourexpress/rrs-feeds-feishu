@@ -22,9 +22,11 @@
 <h1>HBFSim: Fast and Faithful Simulation of High-Bandwidth Flash Under Real GPU Execution</h1>
 <p class="meta-line">arXiv（Yanpeng Hu 等，cs.AR） · 2026-09-09 · 论文PDF</p>
 
-<p>Serving a large language model (LLM) is limited by memory capacity.</p>
-<blockquote><p>Serving a large language model (LLM) is limited by memory capacity. High-Bandwidth Flash (HBF) stacks NAND flash inside the accelerator package, one tier below high-bandwidth memory (HBM); the specification was published on August 3, 2026, and the first inference devices are expected to sample in early 2027. Decisions about capacity and data placement cannot wait for silicon. No existing method settles those decisions: a storage simulator replaying a recorded access sequence never executes the workload, a GPU simulator does not run the real compute kernels, and a cycle-accurate simulator cannot finish one LLM inference run. We present HBFSim, the first evaluation platform that applies HBF timing, capacity, and thermal effects to a real inference workload while that workload executes on a real GPU. HBFSim rewrites PTX, the intermediate code NVIDIA's compiler emits, and gates kernel launches; issue is separated from consumption, so real hardware supplies the computation that hides an access. Timing comes from measurements of a real device rather than a parameter sheet, and junction temperature sets both the rate HBF sustains and the retention deadline that forces refresh writes. HBFS…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 高带宽闪存 HBF 规格 2026 年 8 月才发布、2027 年初出样片，容量与数据摆放决策等不了硅。</p>
+<p><strong>方法</strong> HBFSim 在真实 GPU 执行真实推理负载时施加 HBF 时序/容量/热效应：重写 PTX 门控 kernel 发射，发射与消费分离；时序来自器件实测，结温决定持续速率与刷新死线。</p>
+<p><strong>关键数字</strong> 六个校准断点与实测器件完全一致；未修改 vLLM 0.15.1 跑 Qwen3-30B-A3B 输出与基线一致；快速路径 2 秒 vs 参考路径 44 秒，快 20.8 倍。</p>
+<p><strong>为什么值得看</strong> HBF 样片前即可用真实负载量化设计决策，存算架构与推理系统设计的稀缺工具。</p>
+<p><a href="https://arxiv.org/abs/2609.09800v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.09800v1">阅读原文 ↗</a></p>
 </body>
 </html>

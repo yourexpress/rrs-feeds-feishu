@@ -22,9 +22,11 @@
 <h1>One Loop, Two Gains: Can Active Learning win the Lottery for Free?</h1>
 <p class="meta-line">arXiv（Benedikt Tscheschner 等，cs.LG） · 2026-09-09 · 论文PDF</p>
 
-<p>The lottery ticket hypothesis posits the existence of winning tickets: sparse subnetworks that, when trained in isolation from their original initialization, match the accuracy of the full dense network.</p>
-<blockquote><p>The lottery ticket hypothesis posits the existence of winning tickets: sparse subnetworks that, when trained in isolation from their original initialization, match the accuracy of the full dense network. The predominant method for discovering such tickets, iterative magnitude pruning, alternates pruning with full retraining from scratch until convergence over many cycles. Similarly, deep active learning also retrains a model from scratch after each acquisition round as new labels become available. Despite this shared reliance on iterative retraining with a substantial computational overhead, the two paradigms have been studied separately. We observe that the iterative training loop inherent to pool-based active learning already provides the exact computational structure that iterative magnitude pruning exploits, and propose Improve &amp; Prune (I&amp;P), a method that integrates magnitude pruning into each active learning retraining cycle at practically no additional cost. This raises a key empirical question: can iterative magnitude pruning produce winning tickets under the non-stationary data regime of active learning? We investigate this question across multiple acquisition functions, a…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 迭代幅度剪枝（IMP）与深度主动学习都需反复从头重训，两者共享同一昂贵循环却一直被分开研究。</p>
+<p><strong>方法</strong> Improve &amp; Prune（I&amp;P）把幅度剪枝嵌进每轮主动学习重训，几乎零额外成本同步产出稀疏子网，并实证非平稳数据流下 IMP 能否仍找到中奖彩票。</p>
+<p><strong>关键数字</strong> 跨多种获取函数、架构与图像分类数据集（含主动微调），每轮均可得到稀疏度高达 95% 仍与稠密精度持平的可部署模型。</p>
+<p><strong>为什么值得看</strong> 一份算力两份收获，直接缓解主动学习在大模型、大无标注池上的重训与打分两大瓶颈。</p>
+<p><a href="https://arxiv.org/abs/2609.10311v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.10311v1">阅读原文 ↗</a></p>
 </body>
 </html>

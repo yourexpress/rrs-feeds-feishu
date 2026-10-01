@@ -22,9 +22,11 @@
 <h1>OMP-MoE: Efficient Expert Pruning for Mixture-of-Experts LLMs via Orthogonal Matching Pursuit</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-09 · 论文PDF</p>
 
-<p>OMP-MoE：基于正交匹配追踪的 MoE 大模型专家剪枝</p>
-<blockquote><p>Mixture-of-Experts (MoE) models enable efficient scaling of large language models but face critical deployment challenges due to massive memory requirements. Existing pruning methods either incur prohibitive search costs or neglect the dynamic interdependencies between experts. To address these challenges, we present OMP-MoE, a novel training-free compression framework for reducing expert redundancy in MoE-based LLMs. Based on observations of expert contribution patterns, we reformulate the pruning problem as a sparse signal reconstruction task solved through Orthogonal Matching Pursuit. Specifically, our method first treats individual expert contributions as dictionary atoms and selects experts that greedily minimize reconstruction error with linear computational complexity. Then, we optimize cross-layer expert allocation through a water-filling strategy that accounts for both reconstruction quality and routing stability. Finally, we introduce OMP-MoE†, an adaptive inference mechanism that dynamically adjusts expert activation based on energy prediction. Comprehensive experiments on Qwen, DeepSeek-V2, GPT-OSS, and Mixtral MoE demonstrate consistent improvements over existing metho…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> MoE 大模型显存需求巨大，现有专家剪枝要么搜索成本高，要么忽视专家间动态依赖。</p>
+<p><strong>方法</strong> OMP-MoE 免训练：把剪枝重构为稀疏信号重建，以专家贡献为字典原子用正交匹配追踪贪心选专家；注水策略跨层分配配额；OMP-MoE† 按能量预测动态调整推理激活数。</p>
+<p><strong>关键数字</strong> Qwen、DeepSeek-V2、GPT-OSS、Mixtral 上 25–50% 剪枝率均优于现有方法；Qwen3-30B-A3B 压缩 50% 保留 93.3% 性能，搜索快 33 倍、推理提速 1.55 倍。</p>
+<p><strong>为什么值得看</strong> 经典稀疏重建工具落地 MoE 剪枝，免训练且带自适应推理版本，可直接试用。</p>
+<p><a href="https://arxiv.org/abs/2609.31631">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.31631">阅读原文 ↗</a></p>
 </body>
 </html>

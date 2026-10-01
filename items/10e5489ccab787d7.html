@@ -22,9 +22,11 @@
 <h1>On-Policy Distillation for Vision-Language Model Adaptation, an Effective Paradigm on Low-Quality Multimodal Data</h1>
 <p class="meta-line">arXiv（Hongyuan Zhang 等，cs.CL） · 2026-09-09 · 论文PDF</p>
 
-<p>Knowledge distillation offers an efficient route to transfer a task-adapted vision-language teacher to a compact student.</p>
-<blockquote><p>Knowledge distillation offers an efficient route to transfer a task-adapted vision-language teacher to a compact student. The training target in current vision-language distillation methods is typically constructed from the teacher prediction and applied uniformly to all training samples, making it unreliable under class and domain shifts. In this paper, we argue that distillation target construction should be treated as a dynamic training decision rather than a fixed recipe. To this end, we propose OnPoKD, an on-policy distillation framework for vision-language model adaptation. To the best of our knowledge, OnPoKD is the first framework that applies on-policy distillation to vision-language model adaptation by learning target construction as a policy decision. OnPoKD learns a lightweight controller that constructs sample-wise adaptive targets using reliability and disagreement cues from the teacher model, student model, and zero-shot prior. Instead of relying on a fixed teacher prediction, the controller dynamically balances teacher supervision, zero-shot prior guidance, and hard-label anchoring through bounded policy actions, allowing the distillation target to adapt to varying …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 视觉—语言蒸馏用教师预测统一构造目标，遇类别/域偏移与低质量多模态数据时不可靠。</p>
+<p><strong>方法</strong> OnPoKD 首次把 on-policy 蒸馏引入 VLM 适配：轻量控制器依据教师/学生/zero-shot 先验的可靠性与分歧，逐样本动态平衡三方监督信号，以验证反馈更新；仅训练期使用，不改推理架构与成本。</p>
+<p><strong>关键数字</strong> 摘要无单一数字；Base-to-novel 泛化与跨数据集迁移基准上稳定优于强蒸馏基线。</p>
+<p><strong>为什么值得看</strong> "蒸馏目标构造是可学习的策略决策"视角新颖，数据质量参差的真实适配场景尤其实用。</p>
+<p><a href="https://arxiv.org/abs/2609.10321v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.10321v1">阅读原文 ↗</a></p>
 </body>
 </html>

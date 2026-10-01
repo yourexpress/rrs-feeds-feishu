@@ -22,9 +22,11 @@
 <h1>How Fragile Is Safety Alignment at Frontier Scale? A Single-Direction Attack on a 320B MoE</h1>
 <p class="meta-line">arXiv（Yi Shi 等，cs.CR） · 2026-09-09 · 论文PDF</p>
 
-<p>Directional ablation removes an aligned language model's ability to refuse by projecting a single "refusal direction" out of the weights that write the residual stream.</p>
-<blockquote><p>Directional ablation removes an aligned language model's ability to refuse by projecting a single "refusal direction" out of the weights that write the residual stream. It needs no gradient-based training and no optimization, only a few hundred contrastive prompts, which makes it the canonical white-box attack on open-weight alignment. However, it has been established only on dense models up to roughly 70B parameters. We study whether it survives the shift to frontier mixture-of-experts (MoE) models whose residual streams are no longer a single tensor and whose weights ship quantized. We apply it to GLM-5.3-Flash (320B parameters, 288 routed experts, a four-wide hyper-connection residual, block-FP8). The attack survives the architecture, but what it reaches is no longer where a reader of the original recipe would look for it. Editing the attention, dense and routed-expert writers on their own removes 0.039, 0.016 and 0.148 of refusal respectively; editing all three together removes 0.776. As a result, 74% of the effect exists only under the joint intervention. The part the conventional recipe reaches by module-name matching accounts for 0.066 of that 0.776, which is why it fails si…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 方向消融无需训练即可投影掉"拒绝方向"解除对齐，但只在约 70B 稠密模型验证过，前沿 MoE 上未知。</p>
+<p><strong>方法</strong> 在 GLM-5.3-Flash（320B、288 路由专家、block-FP8）上分别及联合编辑注意力、稠密与路由专家写入端，随机方向对照。</p>
+<p><strong>关键数字</strong> 三类写入端单独编辑仅移除 0.039/0.016/0.148 的拒绝，联合编辑达 0.776（74% 效果仅联合干预才有）；七个有害基准拒绝率降 41–89 个点，未见能力变化。</p>
+<p><strong>为什么值得看</strong> 揭示 MoE 上"拒绝方向"分散、按模块名匹配的经典配方只触达 0.066 而静默失效，安全与红队的重要警示。</p>
+<p><a href="https://arxiv.org/abs/2609.09793v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.09793v1">阅读原文 ↗</a></p>
 </body>
 </html>

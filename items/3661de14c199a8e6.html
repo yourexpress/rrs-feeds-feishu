@@ -22,9 +22,11 @@
 <h1>Fine-Tuning a KV Cache Concatenation-Aware Model or Recomputing KV Caches? Why Not Both?</h1>
 <p class="meta-line">arXiv（Fumihiko Tachibana 等，cs.LG） · 2026-09-09 · 论文PDF</p>
 
-<p>In Retrieval-Augmented Generation (RAG) systems, a large number of retrieved chunks are concatenated to form the input context so that users can receive high-quality responses based on external knowledge.</p>
-<blockquote><p>In Retrieval-Augmented Generation (RAG) systems, a large number of retrieved chunks are concatenated to form the input context so that users can receive high-quality responses based on external knowledge. As a result, the input context length increases substantially, leading to a larger prefill workload and, in turn, a longer time to first token (TTFT). While previous works that reuse precomputed key-value (KV) caches effectively reduce TTFT for long-context inputs, it remains unclear whether response quality is preserved when the input context becomes very long. In this paper, we propose a combined approach that (i) fine-tunes the model while taking KV cache concatenation into account and (ii) selectively recomputes a subset of the KV caches. By applying both techniques, we demonstrate improved accuracy for long-context inputs. Experiments on the RULER benchmark show that, for a 124k-token input, our method improves the RULER score by 9.7 point over the baseline that recomputes KV caches only. Moreover, TTFT is reduced by 80% compared with full attention.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> RAG 拼接大量检索块使 prefill 与 TTFT 暴涨；复用预计算 KV cache 省 TTFT，但超长上下文下质量能否保住不明确。</p>
+<p><strong>方法</strong> 双管齐下：微调时显式感知 KV cache 拼接，同时选择性重算部分 KV cache，两者互补提升长上下文精度。</p>
+<p><strong>关键数字</strong> RULER 基准 124k token 输入比"只重算"基线高 9.7 分；TTFT 相比全注意力降低 80%。</p>
+<p><strong>为什么值得看</strong> 指出拼接感知微调与选择性重算非二选一，给长上下文 RAG 的 KV 复用提供低成本提点路径。</p>
+<p><a href="https://arxiv.org/abs/2609.09768v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.09768v1">阅读原文 ↗</a></p>
 </body>
 </html>

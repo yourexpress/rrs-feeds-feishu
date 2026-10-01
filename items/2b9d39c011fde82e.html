@@ -22,9 +22,11 @@
 <h1>NCP-ArchPreview Technical Report: Moving towards Latent Space Language Models through Next Concept Prediction</h1>
 <p class="meta-line">arXiv（The Intern-NCP Team 等，cs.CL） · 2026-09-09 · 论文PDF</p>
 
-<p>We introduce NCP-ArchPreview, a latent-space language model that pushes autoregressive pretraining beyond standard next-token prediction (NTP).</p>
-<blockquote><p>We introduce NCP-ArchPreview, a latent-space language model that pushes autoregressive pretraining beyond standard next-token prediction (NTP). Alongside NTP, the model learns through Next Concept Prediction (NCP) to predict discrete concepts that span multiple tokens, introducing an explicit and more challenging concept-level objective while preserving standard token-level autoregressive generation. NCP-ArchPreview builds a latent space by constructing a product-quantized concept vocabulary directly from its hidden states, and subsequently learns to predict future concepts via a dedicated Concept Module. These predicted concepts are then fed back to the token level to guide subsequent generation, with NTP and NCP trained jointly end-to-end. We scale this architecture to 8.9B parameters and train it on 5.73T tokens from the Dolma-3 dataset, marking the largest demonstration of a latent-space language model to date. Remarkably, by consuming only 51.3% of the total training tokens, NCP-ArchPreview achieves the final pretraining loss of OLMo-3-7B. Following full pretraining, it outperforms OLMo-3-7B by 2.45 points on the downstream macro-average, including a notable 5.99-point gain on…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 自回归预训练只做 next-token 预测，缺乏跨多 token 的概念级建模。</p>
+<p><strong>方法</strong> NCP-ArchPreview 增加 Next Concept Prediction：从隐状态构建乘积量化概念词表，Concept Module 预测未来概念并反馈指导 token 生成，双目标联训；8.9B 参数、5.73T token。</p>
+<p><strong>关键数字</strong> 仅耗 51.3% 训练 token 即达 OLMo-3-7B 最终 loss；下游宏平均 +2.45 分、GSM8K +5.99 分；仅更新 17M 参数 VQ 模块即可领域适配。</p>
+<p><strong>为什么值得看</strong> 最大规模潜空间语言模型实证，预训练与推理加速均值得看。</p>
+<p><a href="https://arxiv.org/abs/2609.10715v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.10715v1">阅读原文 ↗</a></p>
 </body>
 </html>

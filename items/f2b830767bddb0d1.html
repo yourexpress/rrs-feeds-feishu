@@ -22,9 +22,11 @@
 <h1>When Does Low-Bit Quantization Preserve the Decisions of Vector Search?</h1>
 <p class="meta-line">arXiv（Wenxuan Xiao 等，cs.DB） · 2026-09-09 · 论文PDF</p>
 
-<p>Low-bit quantization can achieve high recall on some vector representations and fail sharply on others, while average distortion and global rank correlation do not explain the difference.</p>
-<blockquote><p>Low-bit quantization can achieve high recall on some vector representations and fail sharply on others, while average distortion and global rank correlation do not explain the difference. We study quantized vector search at the level of the comparisons consumed by ranking and graph-pruning algorithms. Our first result is a distribution-free decomposition: the probability that a comparison flips is bounded by the probability mass of exact margins near zero plus the tail probability of the calibrated residual. We then account for dependence between residuals that share a query or graph node, and derive covariance-aware second-moment identities and tail bounds under a joint MGF proxy. For a frozen candidate permutation, we prove a deterministic coupling theorem for Vamana neighbour selection: the approximate replay returns the exact neighbour list exactly when all candidate-level pruning actions agree on the frozen exact states. We connect these results to representation geometry through an exact Gaussian oracle, establish a strict correlation gain from a deterministic magnitude bit in an aligned bilinear model, and give a rare-contamination construction showing why marginal Gaussian …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 低比特量化在某些向量表示上召回高、在另一些上急崩，平均失真与秩相关都解释不了——量化何时保住检索"决策"？</p>
+<p><strong>方法</strong> 在排序/图剪枝实际消费的"比较"层面建理论：比较翻转概率的分布无关分解、共享 query 残差的协方差感知尾界、Vamana 邻居选择的耦合定理，及留出块失败风险证书。</p>
+<p><strong>关键数字</strong> 理论型论文；跨多类嵌入实验显示标准化精确间隔对留出集翻转率的预测显著优于全局秩相关；适用于坐标二值码、RaBitQ、Lucene BBQ、乘积量化。</p>
+<p><strong>为什么值得看</strong> 给"embedding 能否放心低比特量化"可检验判据，ANN 检索与向量库方向值得细读。</p>
+<p><a href="https://arxiv.org/abs/2609.09854v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.09854v1">阅读原文 ↗</a></p>
 </body>
 </html>

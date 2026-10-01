@@ -22,9 +22,11 @@
 <h1>Stencil Computation at the Intersection of AI and HPC</h1>
 <p class="meta-line">arXiv（Timothee Ewart 等，cs.DC） · 2026-09-09 · 论文PDF</p>
 
-<p>Tensor compilers such as TinyTC and OpenAI Triton were originally developed for AI workloads, but the same tiling and memory abstractions can be applied to implement efficient high-order stencils for scientific and indus…</p>
-<blockquote><p>Tensor compilers such as TinyTC and OpenAI Triton were originally developed for AI workloads, but the same tiling and memory abstractions can be applied to implement efficient high-order stencils for scientific and industrial applications. We demonstrate this for an 8th-order, 25-point acoustic stencil with boundary conditions over an a demanding-sized grid, targeting GPGPUs, where we compare the hardware-specialized TinyTC implementation with a portable PyTorch/Triton implementation. The target platforms for evaluation include Intel B70, B580, GPU MAX 1550, NVIDIA A100/RTX6000 Blackwell/H100, and AMD MI325x. For instance, on Battlemage B580 TinyTC reaches 15.6 Gpts/s versus 13.5 Gpts/s for PT/Triton under random initialization, while zero-initialized runs reach up to 35.8 Gpts/s due to hardware memory compression. Using roofline and memory-hierarchy profiling, we show that -as expected- performance is predominantly bandwidth-limited and that compiler-managed L1/LSC caching can effectively replace programmer-managed shared-memory staging for this stencil class. Overall, the results position TinyTC as the performance-oriented path on Intel hardware and PyTorch/Triton as a strong por…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 为 AI 负载设计的张量编译器能否承接 HPC 高阶 stencil，需多厂商 GPU 实证。</p>
+<p><strong>方法</strong> 以 8 阶 25 点声学 stencil 为例，对比特化 TinyTC 与可移植 PyTorch/Triton；平台覆盖 Intel/NVIDIA/AMD 六款 GPU。</p>
+<p><strong>关键数字</strong> B580 上 TinyTC 15.6 vs PT/Triton 13.5 Gpts/s；零初始化借硬件内存压缩最高 35.8 Gpts/s。</p>
+<p><strong>为什么值得看</strong> stencil 编译器选型实证：Intel 用 TinyTC 冲性能、Triton 保可移植；L1/LSC 缓存可替代手工 shared-memory staging。</p>
+<p><a href="https://arxiv.org/abs/2609.10368v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.10368v1">阅读原文 ↗</a></p>
 </body>
 </html>

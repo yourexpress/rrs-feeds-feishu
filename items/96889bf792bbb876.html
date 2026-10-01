@@ -22,9 +22,11 @@
 <h1>Fixed State, Long Reach: What a Constant-Size Cache Buys Block Diffusion at Scale</h1>
 <p class="meta-line">arXiv（Vaibhav Singh 等，cs.LG） · 2026-09-09 · 论文PDF</p>
 
-<p>Diffusion language models decode tokens in parallel, but their bidirectional denoiser rules out the naive key--value (KV) cache behind fast autoregressive inference.</p>
-<blockquote><p>Diffusion language models decode tokens in parallel, but their bidirectional denoiser rules out the naive key--value (KV) cache behind fast autoregressive inference. Block diffusion restores caching by decoding block-by-block, and the block caches deployed on it so far are tied to attention: O(L)in memory and, if used as training-free retrofits, only an approximation of the model's computation. Both constraints can be overcome: sequence mixers that summarize finalized blocks into a reusable state support block caching, and the corresponding block-causal training objective makes the cache exact. We study this recipe at scale, pretraining three 3B block-diffusion denoisers (attention, mamba, and hybrid) on 300B tokens under one single-frontier objective and decoding all three through a single cached interface. Only the state-space cache is O(1) in sequence length: its memory and per-step latency stay constant at any context length, while an attention cache remains O(L). At 256k tokens (where attention has grown to 82GB and 29 ms/step), the Mamba cache delivers 4.3x lower latency, 11x less memory, and 2.6x higher single-stream throughput; and because that footprint is constant it scal…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 块扩散恢复了语言模型缓存，但现有块缓存绑在注意力上、显存 O(L)，免训练改造只是近似。</p>
+<p><strong>方法</strong> 统一 block-causal 目标预训练三个 3B 块扩散去噪器（注意力/Mamba/混合，各 300B token），同一缓存接口解码；状态空间混合器把已定型块汇总为 O(1) 缓存。</p>
+<p><strong>关键数字</strong> 256k token 时注意力缓存 82GB、29ms/步；Mamba 缓存延迟低 4.3 倍、显存少 11 倍、单流吞吐高 2.6 倍；Mamba/混合外推检索至训练长度 8–16 倍，注意力 2 倍即崩。</p>
+<p><strong>为什么值得看</strong> 同预算对比三种主干的块扩散缓存特性，长上下文扩散推理重要结论。</p>
+<p><a href="https://arxiv.org/abs/2609.11998v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.11998v1">阅读原文 ↗</a></p>
 </body>
 </html>

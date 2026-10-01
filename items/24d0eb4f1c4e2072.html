@@ -22,9 +22,11 @@
 <h1>Forward-Free LLM Depth Pruning via Weight Redundancy</h1>
 <p class="meta-line">arXiv（Vincent-Daniel Yun 等，cs.LG） · 2026-09-09 · 论文PDF</p>
 
-<p>Depth pruning reduces large language model (LLM) inference cost by removing complete Transformer blocks.</p>
-<blockquote><p>Depth pruning reduces large language model (LLM) inference cost by removing complete Transformer blocks. Activation-based methods collect hidden states through forward passes on calibration data, while existing forward-free methods score each Transformer block separately without measuring similarity between blocks. We propose Weight-Redundancy Pruning (WRP), a forward-free depth-pruning method that estimates inter-layer redundancy from checkpoint weights to select blocks without calibration data or model forward passes. WRP compares attention output and MLP down-projection weights across layers and combines their pairwise similarities with relative projection-scale information. The resulting all-pairs similarity matrix guides layer grouping and block selection. Across multiple pruning settings, model families, and downstream tasks, WRP consistently outperforms existing forward-free magnitude pruning and approaches the performance of activation-based methods.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 深度剪枝整块移除 Transformer 层降推理成本；激活法要跑校准前向，已有 forward-free 方法又不衡量层间相似性。</p>
+<p><strong>方法</strong> WRP 纯从 checkpoint 权重估计层间冗余：比较各层注意力输出投影与 MLP 下投影权重的跨层相似度并结合相对投影尺度，构成全对相似度矩阵指导层分组与块选择，零数据零前向。</p>
+<p><strong>关键数字</strong> 摘要无单一数字；多种剪枝设置、模型家族与任务上稳定超过现有 forward-free 幅度剪枝，接近激活法表现。</p>
+<p><strong>为什么值得看</strong> 无校准条件下逼近激活法的剪枝质量，追求极简剪枝流程的团队很实用。</p>
+<p><a href="https://arxiv.org/abs/2609.09883v2">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.09883v2">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>UnsafeChecker: Finding Soundness Bugs in Rust Safe Abstractions</h1>
 <p class="meta-line">arXiv（Xizhe Yin 等，cs.PL） · 2026-09-09 · 论文PDF</p>
 
-<p>Rust guarantees memory safety without garbage collection through a strict ownership and borrowing system.</p>
-<blockquote><p>Rust guarantees memory safety without garbage collection through a strict ownership and borrowing system. However, for low-level systems programming, many widely used libraries rely on the unsafe keyword. These libraries encapsulate raw-pointer operations behind safe APIs to form safe abstractions. A single mistake in this internal unsafe code can break its safety contract, rendering the abstraction unsound and allowing safe clients to trigger undefined behavior. Detecting these potential soundness violations is challenging. Existing static analysis tools for C/C++ ignore Rust-specific safety contracts, while current Rust tools lack the deep semantic modeling required to track the contexts that raw pointers erase. To address this gap, we present UnsafeChecker, a compiler-integrated static analysis framework for detecting potential soundness violations in Rust safe abstractions. UnsafeChecker analyzes Rust MIR using a flow-sensitive abstract interpretation that maintains a shared state with three components: ownership, object validity, and layout. Each warning rule consumes the subset of facts needed for the corresponding Rust safety obligation. UnsafeChecker reports both instructio…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Rust 库常在 safe API 后封装 unsafe 裸指针操作，一处失误即破坏安全契约；现有工具不懂 Rust 契约或缺深度语义建模。</p>
+<p><strong>方法</strong> UnsafeChecker 静态分析：MIR 上流敏感抽象解释，维护所有权/有效性/布局三元状态，报指令级 UB 与逸出 safe API 的契约违例。</p>
+<p><strong>关键数字</strong> RustSec 基准检出 32 个 CVE、覆盖 36/53 个 bug（召回 67.9%、精度 51.6%）；crates.io 新发现 83 个 crate 的 114 个未知 bug，45 确认、27 已修复。</p>
+<p><strong>为什么值得看</strong> 有实战战果的 Rust 安全抽象检测器，底层库与供应链安全实用。</p>
+<p><a href="https://arxiv.org/abs/2609.09641v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.09641v1">阅读原文 ↗</a></p>
 </body>
 </html>

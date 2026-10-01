@@ -22,9 +22,11 @@
 <h1>REACH: Controller-Managed Long-Span ECC for HBM AI Inference</h1>
 <p class="meta-line">arXiv（Rui Xie 等，cs.AR） · 2026-09-09 · 论文PDF</p>
 
-<p>High-Bandwidth Memory (HBM) cost motivates stronger controller protection that can support a wider range of device error rates.</p>
-<blockquote><p>High-Bandwidth Memory (HBM) cost motivates stronger controller protection that can support a wider range of device error rates. Long-span error-correcting codes provide stronger protection at a comparable code rate, but a direct implementation couples small accesses to span-wide state and requires costly decoding at HBM bandwidth. Read-dominated LLM decode offers a favorable setting: sequential reads support span aggregation, while sparse writes limit parity-update traffic. This paper presents REACH, a controller microarchitecture that uses established inner codes to correct common errors and identify unresolved chunks, reserving a long outer code for known-erasure repair. Differential parity bounds write traffic, and a co-designed endpoint preserves 32\,B transactions without an extra data burst. Ramulator2 sustains 1.88\,TB/s of application traffic at the highest error stress, while separate full-interface sizing supports a 2.69\,TB/s application target using ASAP7-synthesized kernels. At this analytical target, REACH's nominal composition uses 55.8\% less controller area and 57.7\% less modeled power than the evaluated mean-work direct-long design, showing the benefit of reservi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> HBM 成本高企需更强控制器纠错；长跨距 ECC 保护强但直接实现会把小访问耦合到跨距级状态，解码代价高。</p>
+<p><strong>方法</strong> REACH 利用 LLM decode 读多写少的特点：内码纠正常见错误并标出未决块，长外码只用于已知擦除修复；差分校验限写流量，协同端点保持 32B 事务无额外突发。</p>
+<p><strong>关键数字</strong> Ramulator2 最高错误压力下维持 1.88TB/s 应用流量；全接口评估支持 2.69TB/s 目标；比直接长码设计省 55.8% 控制器面积、57.7% 建模功耗。</p>
+<p><strong>为什么值得看</strong> "长跨距纠错只留异常请求"的控制器微架构，HBM/存控设计兼顾成本与可靠性的实用方案。</p>
+<p><a href="https://arxiv.org/abs/2609.10861v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.10861v1">阅读原文 ↗</a></p>
 </body>
 </html>

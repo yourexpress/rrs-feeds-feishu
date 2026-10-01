@@ -22,9 +22,11 @@
 <h1>Forgetting Only What Matters: Layer-Selective Unlearning toward Robust LLMs</h1>
 <p class="meta-line">arXiv（Ravi Ranjan 等，cs.LG） · 2026-09-09 · 论文PDF</p>
 
-<p>Large Language Models (LLMs) can memorize and reproduce sensitive, copyrighted, or otherwise undesirable training content, creating privacy, safety, and regulatory concerns.</p>
-<blockquote><p>Large Language Models (LLMs) can memorize and reproduce sensitive, copyrighted, or otherwise undesirable training content, creating privacy, safety, and regulatory concerns. Machine unlearning offers a practical alternative to full retraining, but many existing methods apply broad or fixed parameter updates that can degrade utility and remain brittle under deployment changes such as post-training quantization, where forgotten knowledge may partially re-emerge. We propose Forgetting Only What Matters via Unlearning Layers (FOM-UL), a layer-level unlearning framework that selects transformer layers using a forget-to-retain significance score. This score identifies layers with high influence on the forget set and low sensitivity to the retain set, allowing FOM-UL to concentrate updates where they are most effective while leaving most of the model unchanged. This targeted update strategy improves the forgetting-utility trade-off and provides an empirical path toward quantization-resilient unlearning by reducing the chance that small, diffuse updates are erased by low-bit rounding. Across TOFU, KnowUnDo, and MUSE-style evaluations, FOM-UL reduces residual memorization compared with stro…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 机器遗忘免重训删除 LLM 敏感记忆，但现有方法更新范围大易损效用，量化部署后被遗忘内容可能"复活"。</p>
+<p><strong>方法</strong> FOM-UL 用 forget-to-retain 显著性分数选出对遗忘集影响大、对保留集不敏感的层集中更新；定向更新降低被低比特量化抹除的风险。</p>
+<p><strong>关键数字</strong> TOFU、KnowUnDo、MUSE 风格评测上残余记忆低于 GA、NPO、KLD 等强基线，保留集效用接近原模型；8-bit/4-bit 量化下记忆抑制与效用保持更强，对抗提示恢复率更低。</p>
+<p><strong>为什么值得看</strong> 把遗忘做成量化鲁棒的部署级能力，合规删除/版权下架场景直接可参考。</p>
+<p><a href="https://arxiv.org/abs/2609.10439v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.10439v1">阅读原文 ↗</a></p>
 </body>
 </html>
