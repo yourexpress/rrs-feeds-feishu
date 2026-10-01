@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FP64 Is All You Want, INT8 Is All You Need, FP4/6/8 Is All You Have</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>FP64 Is All You Want, INT8 Is All You Need, FP4/6/8 Is All You Have</h1>
+<p class="meta-line">arXiv / Pratyai Mazumder 等 · 2026-09-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> Ozaki scheme II 用 INT8 矩阵乘经两两互素模数的余数模拟 FP64 乘积，FP8/FP4 变体相继出现；但针对给定格式、累加器与内维，如何选模数与实现方式使低精度 GEMM 次数最少，此前没有系统答案。</p>
+<p><strong>方法</strong> 把这类方案统一成一个组合优化问题：为每个模数枚举用低精度 GEMM 计算模积的有限方式，搜索 GEMM 总数最少的模数与方式组合，并对全族推导 GEMM 数下界。</p>
+<p><strong>关键数字</strong> 得到首个 FP6 方案、GEMM 数少于任何既往方案的 FP8 方案、以及被下界证明在所述模数范围内 GEMM 最少的 FP4 方案；在三款 Blackwell GPU 上 INT8/FP8/FP4 方案均快于原生 FP64，B300 上最高 83×。</p>
+<p><strong>为什么值得看</strong> 把"低精度模拟高精度"从手工构造变成可求解、可证界的组合问题，理论与实测都硬，GPU 数值计算方向必读。</p>
+<p><a href="https://arxiv.org/abs/2609.37693">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.37693">阅读原文 ↗</a></p>
+</body>
+</html>

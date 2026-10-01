@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RLX: A Unified Multi-Backend Tensor Compiler and Distributed Runtime in Rust</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>RLX: A Unified Multi-Backend Tensor Compiler and Distributed Runtime in Rust</h1>
+<p class="meta-line">arXiv / Eugene Hauptmann 等 · 2026-09-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 生产级 ML 栈常把图编译与 kernel 执行拆在不同层次与语言里，后端行为、部署保证与性能回退难以端到端推理。</p>
+<p><strong>方法</strong> RLX 用单一 Rust 代码库统一编译器与运行时：一套原语级三级 IR，加透明派发契约——每个算子解析到原生、公共 IR 或重写降级，无法合法化即编译失败；支持 safetensors/GGUF/ONNX/rten 输入、F16/BF16/F64/C64 与 INT4/INT8 量化（AMP/PTQ/QAT），TCP/RDMA 上做张量/流水并行；还扩展到稀疏/稠密线代与 3D 高斯泼溅算子。</p>
+<p><strong>关键数字</strong> 同一 IR 覆盖 14 种运行时设备（cpu/metal/mlx/cuda/rocm/tpu/hexagon/webgpu 等）与 2 条特种代码生成路径（Cortex-M INT8、FPGA）；与 PyTorch、JAX、TensorRT 等 14 个栈同方法对比，all-MiniLM-L6-v2 各 batch 均最快（batch 32 时 16.6 ms vs PyTorch-MPS 26.7 ms）。</p>
+<p><strong>为什么值得看</strong> Rust 一体化编译器+运行时+分布式运行时，覆盖面罕见地广，适合关注推理栈工程化的人。</p>
+<p><a href="https://arxiv.org/abs/2609.37916">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.37916">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -22,9 +22,11 @@
 <h1>Composable CXL Memory as a Kubernetes-Native Shared Memory for LLM Serving</h1>
 <p class="meta-line">arXiv（Hongjian Fan 等，cs.DC） · 2026-09-09 · 论文PDF</p>
 
-<p>We present a Kubernetes Dynamic Resource Allocation (DRA) driver that makes composable CXL memory a schedulable cluster resource, and evaluate the resulting shared-memory tier for cross-node KV-cache reuse in LLM serving…</p>
-<blockquote><p>We present a Kubernetes Dynamic Resource Allocation (DRA) driver that makes composable CXL memory a schedulable cluster resource, and evaluate the resulting shared-memory tier for cross-node KV-cache reuse in LLM serving. The driver composes CXL regions on demand, materializes them as DAX devices on each participating host, and injects them into pods under a single Container Device Interface (CDI) name so that pods on different nodes access the same physical region. A shared-memory connector for vLLM/llm-d uses that region as a KV-cache tier with a slot directory embedded inside the shared medium, which eliminates the need for an external metadata service. On a two-node cluster with a 512\,GiB CXL appliance and Qwen2.5-7B-Instruct, cross-node prefix reuse reduces TTFT by 5.5$\times$--36.6$\times$ at an external hit rate of 95.4--99.5\,\%, while node-local tiers (GPU prefix caching, CPU-DRAM offload) fall back to full recompute. The sharing gap, defined as the latency ratio between cross-node and same-node reuse, is 1--4\%, indicating that cross-node reuse incurs little additional latency relative to same-node reuse on our testbed. Both replicas run full engines; the study demonstra…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM serving 的 KV 缓存跨节点复用缺乏共享内存层：GPU 前缀缓存与 CPU-DRAM offload 都仅限本节点，跨节点只能全量重算。</p>
+<p><strong>方法</strong> 作者实现一个 Kubernetes DRA 驱动，把可组合 CXL 内存变成可调度集群资源：按需组合 CXL 区域、在各参与主机物化为 DAX 设备、以单一 CDI 名注入 pod，使不同节点的 pod 访问同一物理区域；配套 vLLM/llm-d 共享内存 connector 以该区域为 KV 缓存层，槽位目录内嵌于共享介质、无需外部元数据服务。</p>
+<p><strong>关键数字</strong> 双节点集群+512 GiB CXL 设备+Qwen2.5-7B-Instruct：外部命中率 95.4–99.5% 时跨节点前缀复用使 TTFT 降低 5.5–36.6×，而本地方案只能全量重算；跨节点与同节点复用的时延差（sharing gap）仅 1–4%。</p>
+<p><strong>为什么值得看</strong> CXL 共享内存进入 K8s 调度与 vLLM 生态的可行性验证，是内存解耦路线的重要一环（作者明确定位为可行性研究而非性能评测）。</p>
+<p><a href="https://arxiv.org/abs/2609.10790v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.10790v1">阅读原文 ↗</a></p>
 </body>
 </html>

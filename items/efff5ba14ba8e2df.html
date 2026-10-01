@@ -22,9 +22,11 @@
 <h1>Deep Neural Networks for Learning Intent from sEMG Signals to Support Hardware Devices for Post-Stroke Neurorehabilitation</h1>
 <p class="meta-line">arXiv（Zakariyya Brewster 等，cs.LG） · 2026-09-09 · 论文PDF</p>
 
-<p>Finger-specific motor intent is a clinically meaningful control signal for post-stroke neurorehabilitation, where residual muscle activity may remain measurable despite weak or incomplete movement.</p>
-<blockquote><p>Finger-specific motor intent is a clinically meaningful control signal for post-stroke neurorehabilitation, where residual muscle activity may remain measurable despite weak or incomplete movement. We study five-finger multilabel intent decoding from impaired-arm high-density surface electromyography (sEMG) in PhysioMio, a bilateral longitudinal dataset collected from stroke patients. A common processing protocol aligns movement labels, applies 20--450 Hz Butterworth filtering and Symlet-4 wavelet denoising, segments overlapping 200 ms windows, and extracts twelve time- and frequency-domain descriptors per channel. Direct LSTM, CNN, and GNN baselines reveal complementary behavior: the LSTM attains the highest subset accuracy (0.545), whereas the GNN attains the highest macro F1 (0.706) and macro AUPRC (0.776). Architecture search then identifies CNN-Large as the strongest single-split CNN, with 0.593 subset accuracy and 0.714 macro F1, while CNN-Micro provides a compact architecture for embedded inference. To match a four-sensor hardware design, we retrain CNN-Micro using channels associated with ECRB, ECRL, FDS, and FDP and exclude the ground electrode from model input. Across fiv…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 卒中后神经康复中，即便运动微弱或不完整，残余肌肉活动仍可能可测，五指级运动意图是有临床意义的控制信号；需要从患臂高密度表面肌电（sEMG）做五指多标签意图解码并支撑硬件设备。</p>
+<p><strong>方法</strong> 基于卒中患者双侧纵向数据集 PhysioMio：统一流程含 20–450Hz 巴特沃斯滤波、Symlet-4 小波去噪、200ms 重叠窗、每通道 12 个时频域特征；先对比 LSTM/CNN/GNN 基线再做架构搜索，最后按四传感器硬件设计（ECRB/ECRL/FDS/FDP，去掉接地电极）用跨通道知识蒸馏重练紧凑的 CNN-Micro。</p>
+<p><strong>关键数字</strong> LSTM 子集准确率最高 0.545，GNN macro F1 0.706、macro AUPRC 0.776；CNN-Large 达 0.593/0.714；蒸馏后四通道学生模型子集准确率 0.5219±0.0114、手指准确率 0.7612±0.0038、macro F1 0.6095±0.0058；入选模型 12.3 万参数、已导出 ONNX。</p>
+<p><strong>为什么值得看</strong> 从临床数据到可部署小模型的完整可复现路径，四通道蒸馏方案对康复硬件落地直接可用。</p>
+<p><a href="https://arxiv.org/abs/2609.09971v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.09971v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cobalt: Leveraging Expert Co-activation for Efficient Distributed MoE Training</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Cobalt: Leveraging Expert Co-activation for Efficient Distributed MoE Training</h1>
+<p class="meta-line">arXiv / Junkang Zhou 等 · 2026-09-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 大规模 MoE 训练依赖专家并行（EP），但跨节点 all-to-all 令牌传输受节点间带宽限制，专家负载倾斜又导致各 GPU 计算不均；以往基于单专家负载统计的方法忽视了专家之间可以共享通信。</p>
+<p><strong>方法</strong> 作者经验观察到许多专家频繁被同一令牌共激活，据此提出 Cobalt：两阶段专家布局规划器周期性把高频共激活专家放到同节点以降低跨节点通信，并逐步做节点内负载再平衡；通信感知的令牌分配再把令牌路由到更少的远端节点。</p>
+<p><strong>关键数字</strong> 32 张 B200 上较现有 MoE 训练框架最高加速 1.53–2.41×（平均 1.28–1.89×），跨节点令牌流量减少 75.74%–99.26%。</p>
+<p><strong>为什么值得看</strong> "专家共激活"是个简单却被忽视的先验，布局+路由两头吃通信收益，对大模型分布式训练系统直接有用。</p>
+<p><a href="https://arxiv.org/abs/2609.36959">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.36959">阅读原文 ↗</a></p>
+</body>
+</html>

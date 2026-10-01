@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QuantMLA: Function-Aligned Dual-Path Quantization for Low-Bit MLA KV Caching</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>QuantMLA: Function-Aligned Dual-Path Quantization for Low-Bit MLA KV Caching</h1>
+<p class="meta-line">arXiv / Zunhai Su 等 · 2026-09-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> MLA 用紧凑缓存实现强表达力，但缓存仍随上下文与 batch 线性增长；其内容路径与解耦 RoPE 路径的量化误差特性不同，RoPE 路径误差会被显著放大，此前缺乏系统建模。</p>
+<p><strong>方法</strong> QuantMLA 建立 MLA 双路径量化误差模型，导出可离线融合进模型参数、不引入在线开销的路径专属变换空间：内容路径按注意力输出重建目标学习变换，RoPE 路径按位置 QK 重建并给出输出失真理论界；配套原生低-bit MLA attention kernel，把解包与反量化直接融进注意力计算。</p>
+<p><strong>关键数字</strong> 四个 MLA 模型族上首次实现内容+RoPE 缓存联合 INT4 且精度损失很小；内容缓存进一步压到 INT2（RoPE key 保持 INT4）仍具竞争力；128K 上下文下物理缓存布局压缩 3.59×，缓存压力服务负载整作业输出吞吐达 BF16 的 5.168×。</p>
+<p><strong>为什么值得看</strong> DeepSeek 系 MLA 低-bit KV 缓存的首个系统化方案，误差建模—变换学习—kernel 实现三层闭环。</p>
+<p><a href="https://arxiv.org/abs/2609.36760">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.36760">阅读原文 ↗</a></p>
+</body>
+</html>

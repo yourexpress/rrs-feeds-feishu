@@ -22,9 +22,11 @@
 <h1>Deep Learning-Based Detection of Electrical Faults and Power Quality Disturbances in Aerospace Power Systems</h1>
 <p class="meta-line">arXiv（Ian C. Guzmán 等，eess.SP） · 2026-09-09 · 论文PDF</p>
 
-<p>More Electric Aircraft require fast and reliable monitoring of high-frequency electrical networks, yet most power quality disturbance and fault diagnosis methods are developed for conventional 50 or 60 Hz grids.</p>
-<blockquote><p>More Electric Aircraft require fast and reliable monitoring of high-frequency electrical networks, yet most power quality disturbance and fault diagnosis methods are developed for conventional 50 or 60 Hz grids. This work presents a hardware-aware deep learning framework for multiclass detection of electrical faults and power quality disturbances in a 400 Hz aerospace power system. A high-fidelity simulation model inspired by the Boeing 787 electrical architecture generates voltage and current waveforms for 21 normal, disturbance, switching, open-circuit, and short-circuit conditions. Two datasets, each containing 73,500 samples, are formed from one-dimensional time-series signals and short-time Fourier transform time-frequency representations. Signal-processing augmentation, domain randomization, and class-specific generative adversarial networks increase waveform diversity, and the time-series dataset is released through IEEE DataPort. We compare 1D and 2D convolutional neural networks, long short-term memory networks, CNN-LSTM hybrids, ResNet, MobileNet, and VGG models under common training conditions. A compact ResNet provides the best accuracy-complexity tradeoff, achieving 96…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 多电飞机需要快速可靠地监测 400Hz 高频电网，而现有电能质量扰动与故障诊断方法多面向 50/60Hz 常规电网开发。</p>
+<p><strong>方法</strong> 面向 400Hz 航空电源系统的硬件感知深度学习框架：以波音 787 电气架构为灵感的高保真仿真模型生成 21 类工况（正常/扰动/开关/开路/短路）的电压电流波形，构造一维时序与 STFT 时频两个数据集；用信号处理增广、域随机化与按类 GAN 扩充波形多样性；系统对比 1D/2D CNN、LSTM、CNN-LSTM、ResNet、MobileNet、VGG。</p>
+<p><strong>关键数字</strong> 每个数据集 73,500 条样本；紧凑 ResNet 精度-复杂度折中最优：175,685 参数、软件测试准确率 96.94%；8-bit 量化部署到 Xilinx Zynq ZCU102 后准确率 95.87%、实测神经网络加速器单条时延 6.90ms；时序数据集已在 IEEE DataPort 开放。</p>
+<p><strong>为什么值得看</strong> 航空电气健康监测的端侧 AI 全链路示范（仿真数据—模型选型—量化上板），工程完整度高。</p>
+<p><a href="https://arxiv.org/abs/2609.10479v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.10479v1">阅读原文 ↗</a></p>
 </body>
 </html>

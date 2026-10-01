@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vSkipper: Translating Dynamic Layer Skipping into LLM Serving Gains</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>vSkipper: Translating Dynamic Layer Skipping into LLM Serving Gains</h1>
+<p class="meta-line">arXiv / Wei Da 等 · 2026-09-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 动态跳层让每个 token 只执行部分层，但现有 skipper 依赖专用生成循环、无法接入现代 serving 引擎，跳层省下的计算换不成时延收益——FlexiDepth 平均跳过 Llama-3-8B 32 层中的 8 层，用标准生成循环解码反而比基座模型慢 14.6–21.0%。</p>
+<p><strong>方法</strong> vSkipper 作为虚拟化层让动态跳层可插拔进 serving 引擎，同时保留连续批处理、定形 batch、分页 KV 缓存与捕获的 decode 图：在每个被路由层按 skipper 决策给 token 分组，仅当预测有利可图时才走路由执行；基于 SGLang 实现，用官方 FlexiDepth checkpoint 在与上游 SGLang 完全相同的条件下评估。</p>
+<p><strong>关键数字</strong> 上游负载曲线拐点处平均端到端时延 GSM8K 降 36.8%、BBH 降 13.6%；饱和时请求吞吐提升 11.3%/7.4%；无统计可分辨的额外质量损失；代码以 SGLang fork 开源。</p>
+<p><strong>为什么值得看</strong> 首次把逐 token 内部跳层在现代 serving 引擎里变成真实吞吐收益，虚拟化层做法通用性好。</p>
+<p><a href="https://arxiv.org/abs/2609.37062">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.37062">阅读原文 ↗</a></p>
+</body>
+</html>

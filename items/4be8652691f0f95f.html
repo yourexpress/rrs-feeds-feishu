@@ -22,9 +22,11 @@
 <h1>CEDD-optimizer: Enabling Cost-Efficient Dataset Distillation on Geographically Distributed Edge Systems</h1>
 <p class="meta-line">arXiv（Dai Liu 等，cs.DC） · 2026-09-09 · 论文PDF</p>
 
-<p>Centralized learning is a fundamental paradigm in modern AI, in which data are collected from distributed edge devices and aggregated at a central host for model training.</p>
-<blockquote><p>Centralized learning is a fundamental paradigm in modern AI, in which data are collected from distributed edge devices and aggregated at a central host for model training. However, this pipeline is often bottlenecked by the substantial communication overhead of data collection. Dataset Distillation (DD), with its high compression ratio, is therefore attractive for centralized learning on distributed data. Yet, the cost efficiency of DD in non-uniform edge environments remains largely unexplored. Geographically distributed edge devices face different energy and data-transfer prices, while key DD hyperparameters, such as the target compression ratio and number of distillation steps, substantially affect energy use, transfer overhead, and downstream test accuracy. These hyperparameters must therefore be tuned both locally and globally. We propose the Cost-Efficient Dataset Distillation optimizer (CEDD-optimizer), a hyperparameter-tuning framework for cost-efficient distributed DD. It minimizes total cost under a training-quality constraint by optimizing hyperparameter settings across edge devices while accounting for environmental non-uniformity. The framework comprises two modules: C…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 集中式学习要从分布式边缘设备汇聚数据，通信开销是瓶颈；数据集蒸馏（DD）压缩比高因而合适，但地理分布的边缘设备电价与传输价各不相同，压缩比、蒸馏步数等关键超参又显著影响能耗、传输成本与下游精度，DD 在非均匀边缘环境的成本效率此前少有人研究。</p>
+<p><strong>方法</strong> CEDD-optimizer 在训练质量约束下最小化总成本，含两模块：CEDD-calibrator 离线标定能能耗模型参数、在线三步调参估计训练质量模型；CEDD-solver 基于两个模型求解成本最小化，在考虑环境非均匀性的同时逐设备优化超参。</p>
+<p><strong>关键数字</strong> 在多个图像数据集上，同等质量约束下较基线 DD 方法最高取得 20.8 倍的改进（摘要口径）。</p>
+<p><strong>为什么值得看</strong> 把 DD 超参调节升级为跨设备的"成本最优控制"，地理分布式边缘场景的成本建模思路有借鉴价值。</p>
+<p><a href="https://arxiv.org/abs/2609.10151v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.10151v1">阅读原文 ↗</a></p>
 </body>
 </html>

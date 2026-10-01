@@ -22,9 +22,11 @@
 <h1>DR-LabStack: Design and Implementation of a Clinician-Facing Web System for Diabetic Retinopathy Prediction</h1>
 <p class="meta-line">arXiv（Yingfan Xu 等，cs.LG） · 2026-09-09 · 论文PDF</p>
 
-<p>Pretrained diabetic retinopathy (DR) prediction models differ in their input fields, serialization formats, preprocessing requirements, and output semantics.</p>
-<blockquote><p>Pretrained diabetic retinopathy (DR) prediction models differ in their input fields, serialization formats, preprocessing requirements, and output semantics. Making these models accessible through a common clinical interface therefore requires explicit coordination between the user interface and the inference service. We designed and implemented DR-LabStack, a React-Flask web system integrating four externally developed pretrained models: RuleFit, Pruned RuleFit, Elaborative XGBoost, and Two-level Ensemble. A shared form retrieves ordered model features, renders model-specific numerical and categorical controls, and constructs a positional input vector. Backend adapters load heterogeneous artifacts and apply the ensemble's accompanying scaler, while a common JSON response supports binary classification display alongside method and source information. Functional evaluation on September 8, 2026 used copied application files and real model artifacts in a documented isolated environment. All four models loaded and exposed their 14-, 6-, 8-, and 25-field contracts. Sixty-two Flask test-client requests characterized service behavior; 12 limited-vector checks confirmed invocation-path and…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 糖尿病视网膜病变（DR）预训练预测模型各有不同的输入字段、序列化格式、预处理要求与输出语义，要通过统一临床界面提供服务，需要用户界面与推理服务之间的显式协调。</p>
+<p><strong>方法</strong> 设计并实现 React-Flask 系统 DR-LabStack，集成四个外部开发的预训练模型（RuleFit、Pruned RuleFit、Elaborative XGBoost、Two-level Ensemble）：共享表单按序拉取模型特征并渲染模型专属的数值/类别控件、构造位置化输入向量；后端适配器加载异构工件并应用集成模型配套的 scaler；统一 JSON 响应支持二分类结果与方法、来源信息展示。</p>
+<p><strong>关键数字</strong> 四模型分别暴露 14、6、8、25 字段的输入契约；2026 年 9 月 8 日的功能评估含 62 个 Flask 测试客户端请求、12 项限量向量调用路径与阈值一致性检查、24 个 mock 传输的浏览器组件场景。</p>
+<p><strong>为什么值得看</strong> 医疗 AI 模型落地"最后一公里"的集成工程样本；作者也明确说明临床有效性与医生可用性需另行评估。</p>
+<p><a href="https://arxiv.org/abs/2609.10796v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.10796v1">阅读原文 ↗</a></p>
 </body>
 </html>

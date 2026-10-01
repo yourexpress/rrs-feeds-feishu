@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zephyr: An Efficient Audio Denoising System Using Spiking Neural Networks Enabled With A Sparsity-Aware Flexible FPGA PE Array</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Zephyr: An Efficient Audio Denoising System Using Spiking Neural Networks Enabled With A Sparsity-Aware Flexible FPGA PE Array</h1>
+<p class="meta-line">arXiv / Cheng-En Chang 等 · 2026-09-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 手机、无线耳机、助听器等边缘设备上的音频降噪神经网络面临功耗墙；脉冲神经网络（SNN）靠高激活稀疏与低复杂度有潜力，但 SOTA SNN 需要支持混合运算的硬件才能完成完整推理。</p>
+<p><strong>方法</strong> 作者把 SOTA 音频降噪网络 Spiking-FullSubNet 改造成硬件友好版（QAT 量化感知训练+激活函数简化），并提出一种稀疏感知灵活 PE 阵列的数字电路，可承载 Spiking-FullSubNet 的异构计算负载，在 PYNQ-Z1 FPGA 上完成验证。</p>
+<p><strong>关键数字</strong> 按 45nm 工艺定制数字硬件估算，每 32ms 音频帧功耗降至 52.9 nJ，约 28× 的功耗改善；FPGA 100MHz 下实时率（RTF）0.727。</p>
+<p><strong>为什么值得看</strong> 脉冲网络音频降噪从模型改造、电路设计到 FPGA 打样的完整链路，端侧超低功耗音频方向值得参考。</p>
+<p><a href="https://arxiv.org/abs/2609.37711">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.37711">阅读原文 ↗</a></p>
+</body>
+</html>

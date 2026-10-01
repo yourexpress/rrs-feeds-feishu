@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compress to Remember: Learning Compact Memory via On-Policy Distillation for Long Video Generation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Compress to Remember: Learning Compact Memory via On-Policy Distillation for Long Video Generation</h1>
+<p class="meta-line">arXiv / Xiaoyu Wu 等 · 2026-09-30 · 论文PDF</p>
+
+<p>在策略蒸馏学习紧凑记忆用于长视频生成（跨类）</p>
+<blockquote><p>Standard video generators do not natively compact historical context into reusable memory tokens. As generation continues, the growing history makes it increasingly difficult to retain information from earlier frames due to long-context degradation. Key-frame-based approaches address this challenge by retaining selected past frames, but can discard information needed for future generation. Rather than relying on frame selection alone, we study whether a frozen video generator can supply the supervision needed to learn a compact representation of the history. We propose Prediction-Aligned Context Compaction (PACC), which uses a learned compressor to aggregate information across past frames into compact memory tokens. We train the compressor through on-policy distillation, using the same frozen generator both as a student when conditioned on compressed memory and as a teacher when conditioned on the full history. The student generates continuations, while the teacher provides targets for the same noisy inputs at each denoising step. Only the compressor is updated to align the student's predictions with these targets. We evaluate PACC on MBench, which jointly measures memory-event cov…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.36364">阅读原文 ↗</a></p>
+</body>
+</html>

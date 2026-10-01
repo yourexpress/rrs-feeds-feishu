@@ -22,9 +22,11 @@
 <h1>Differential Stochastic Simulated Annealing Processor for Fully Connected 2048-Spin Optimization</h1>
 <p class="meta-line">arXiv（Naoya Onizawa 等，cs.AR） · 2026-09-09 · 论文PDF</p>
 
-<p>A 2,048-spin fully connected annealing processor based on differential stochastic simulated annealing (DSSA) is presented as an architectural design in TSMC 28 nm CMOS with a 3 mm x 4 mm post-layout area.</p>
-<blockquote><p>A 2,048-spin fully connected annealing processor based on differential stochastic simulated annealing (DSSA) is presented as an architectural design in TSMC 28 nm CMOS with a 3 mm x 4 mm post-layout area. The processor closes timing at 500 MHz, integrates a 16 Mb SRAM weight memory, and amortizes stochastic noise across 16 spins with area-efficient random number generators. DSSA keeps a serialized datapath for density but recomputes interactions only for spins that flip, shrinking the effective workload to the active frontier during each annealing run. Spin-select scheduling, priority-based weight reads, and a temperature controller that skips idle steps accelerate sparse updates without sacrificing full connectivity. Post-layout simulation results show 2.7 ms time-to-solution (TTS) and 0.86 mJ energy-to- solution on 2,000-spin problems at 316 mW (0.15 mW/spin), achieving 1.5x lower power and 3.5x lower TTS energy than projected prior fully connected annealers. These results demonstrate the potential of the proposed DSSA architecture for large-scale combinatorial optimization hardware under post-layout evaluation.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 大规模组合优化需要硬件退火加速，但全连接自旋退火器在面积、功耗与求解时间上难以兼顾。</p>
+<p><strong>方法</strong> 提出差分随机模拟退火（DSSA）处理器：保留串行数据通路以保密度，但只对翻转的自旋重算交互，把每轮退火的有效负载压缩到活跃前沿；配合自旋选择调度、基于优先级的权重读取与跳过空闲步的温度控制器加速稀疏更新；面积高效的随机数发生器在 16 个自旋间摊销随机噪声。</p>
+<p><strong>关键数字</strong> TSMC 28nm CMOS、2,048 自旋全连接：后布局面积 3×4mm、500MHz 时序收敛、集成 16Mb SRAM；2,000 自旋问题上求解时间 2.7ms、能耗 0.86mJ、功耗 316mW（0.15mW/自旋），较此前全连接退火器的预测值功耗低 1.5×、TTS 能量低 3.5×。</p>
+<p><strong>为什么值得看</strong> "只算翻转自旋"的差分更新大幅压缩退火硬件有效负载，后布局级评估数据完整，组合优化硬件方向值得关注。</p>
+<p><a href="https://arxiv.org/abs/2609.09559v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.09559v1">阅读原文 ↗</a></p>
 </body>
 </html>

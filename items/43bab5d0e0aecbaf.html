@@ -22,9 +22,11 @@
 <h1>CertiFlash: A Formal Verification Framework for Flash Translation Layers in Computational Solid State Drives</h1>
 <p class="meta-line">arXiv（Harshita Gupta 等，cs.AR） · 2026-09-09 · 论文PDF</p>
 
-<p>Data-intensive applications move large amounts of data from storage to the compute unit, incurring significant data movement overhead.</p>
-<blockquote><p>Data-intensive applications move large amounts of data from storage to the compute unit, incurring significant data movement overhead. Storage-centric computing reduces this overhead by moving computation near or inside solid-state drives (SSDs). Enabling it requires modifying SSD policies, e.g., address translation and garbage collection, which are part of the Flash Translation Layer (FTL), the SSD's firmware. Modifying the FTL is error-prone. Because FTL logic has direct access to security-critical device components, even a functionally correct FTL can leak data between tenants, drop integrity tags, or assign a flash block to the wrong tenant. We show that a faulty FTL can corrupt the device state at five surfaces inside the SSD, and demonstrate them on a DaisyPlus OpenSSD. Prior work verifies individual FTL designs, but has two limitations. (1) It establishes only functional correctness, so a modified FTL can violate isolation, integrity, and ownership and still pass verification. (2) It is tied to a single FTL design, so every modification requires redoing every proof. We propose CertiFlash, a formal verification framework for FTLs, mechanized in the Rocq proof assistant, that …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 存算一体 SSD 需要修改 FTL（地址翻译、垃圾回收等固件逻辑），但 FTL 直接接触安全关键组件——功能正确的 FTL 也可能跨租户泄露数据、丢完整性标签、把闪存块分给错误租户；已有验证只证功能正确性且绑定单一设计，每改一次都要重做全部证明。</p>
+<p><strong>方法</strong> CertiFlash 在 Rocq 证明助理中把 FTL 建模为确定性状态机，围绕映射、隔离、完整性、所有权、分配的单一全局不变量：对通用 FTL 模型一次性证明所有操作保持该不变量、且模型精化理想块设备；新设计只需就自身操作卸掉五条假设，无需重做证明。作者在 DaisyPlus OpenSSD 上演示了 SSD 内部五个可被故障 FTL 破坏的表面。</p>
+<p><strong>关键数字</strong> 框架本体 16,489 行；四个案例研究中设计者只需新增 27–3,231 行；框架已开源。</p>
+<p><strong>为什么值得看</strong> "一次证明、多处复用"的安全性质验证框架，计算存储/存算一体方向的基础设施级工作。</p>
+<p><a href="https://arxiv.org/abs/2609.10347v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.10347v1">阅读原文 ↗</a></p>
 </body>
 </html>

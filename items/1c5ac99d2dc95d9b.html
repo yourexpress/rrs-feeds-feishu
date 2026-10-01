@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TORQUE: Optimizing What (not) to Quantize Before and After Rotation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>TORQUE: Optimizing What (not) to Quantize Before and After Rotation</h1>
+<p class="meta-line">arXiv / Ran Ben Basat 等 · 2026-09-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 均匀随机旋转让归一化坐标近似高斯、从而可用离线优化的码本量化，但旋转前后该保留哪些坐标在高精度、保留多少，以往方法没有联合优化。</p>
+<p><strong>方法</strong> TORQUE 在总期望比特预算固定下联合优化"量化什么、不量化什么"：旋转前高精度保留大坐标、避免其值被旋转扩散到众多坐标；旋转后保留少量大模坐标，使其余值可用针对截断高斯离线优化的码本更准量化；推导量化误差上界并证明对每个 k，top-k 预保留最优，把坐标子集搜索降为对 k 的一维优化，配合离线码本与并行参数选择实现快速优化。</p>
+<p><strong>关键数字</strong> 摘要未列具体加速/压缩数字；在高斯模型数值评估与最近邻检索、KV 缓存压缩、激活压缩三个实验上展示了更优的重建精度-存储成本折中。</p>
+<p><strong>为什么值得看</strong> 给旋转类量化补上"选择性保留"的理论基础与快速优化器，可直接叠加到现有旋转量化流水线。</p>
+<p><a href="https://arxiv.org/abs/2609.36032">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.36032">阅读原文 ↗</a></p>
+</body>
+</html>

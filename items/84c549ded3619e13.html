@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trident: Unifying Guarded Dispatch and Host Execution for PyTorch Triton Workloads</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Trident: Unifying Guarded Dispatch and Host Execution for PyTorch Triton Workloads</h1>
+<p class="meta-line">arXiv / Jinjie Liu 等 · 2026-09-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> PyTorch 里用户手写 Triton kernel 性能高，但设备执行短时端到端时延常被主机侧编排主导；即便 torch.compile 生成原生 host wrapper，每次调用仍要经过运行时管理的特化查找、guard 求值与准备才能到达 wrapper。</p>
+<p><strong>方法</strong> Trident 提出特化缓存模块（SCM）：把多个特化的 guard 选择、参数与执行环境准备、主机执行编译进单个可执行模块——调用只进入 SCM 一次，特化命中就全程留在编译代码里，只有出现新特化时才回到 Python；基于 Torch-MLIR 把 guard 与主机编排降为原生代码，同时保留对已优化 ATen 实现的调用。</p>
+<p><strong>关键数字</strong> 两个 LLM 上模型级端到端时延较 eager 执行最高加速 1.47×，较 torch.compile 最高加速 1.68×。</p>
+<p><strong>为什么值得看</strong> 精准切中"cache-hit 路径仍要回 Python"的隐性开销，对 Triton 重度用户是即插即用的收益。</p>
+<p><a href="https://arxiv.org/abs/2609.37241">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.37241">阅读原文 ↗</a></p>
+</body>
+</html>

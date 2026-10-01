@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ThinQuant: Scalable Rotation Learning for Weight and Activation Quantization of LLMs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ThinQuant: Scalable Rotation Learning for Weight and Activation Quantization of LLMs</h1>
+<p class="meta-line">arXiv / Mehdi Makni 等 · 2026-09-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 学习型旋转能平滑激活离群值、支撑 LLM 低-bit 权重与激活量化，但 SpinQuant 类梯度法与 DartQuant 类免梯度法都难以扩展到最大模型。</p>
+<p><strong>方法</strong> ThinQuant 两点提效：① 利用激活凸包的几何结构做数据选择，把所需校准点减少几个数量级仍匹配 SOTA 旋转法的低-bit 表现；② 所选激活只张成 r&lt;d 维子空间，使 d×d 旋转优化精确等价于 Stiefel 流形上的 d×r "瘦"矩阵优化，用高效 ADMM 每步做薄矩阵更新。</p>
+<p><strong>关键数字</strong> Llama-3-70B W4A4KV4 设置下整轮旋转校准 12 分钟内完成，WikiText-2 困惑度 5.63，明显优于 DartQuant 的 7.55。</p>
+<p><strong>为什么值得看</strong> 用凸包几何把校准数据压到极致还不掉点，让 70B 级 W4A4KV4 旋转校准从"跑不起"变"十几分钟"，实用性很强。</p>
+<p><a href="https://arxiv.org/abs/2609.36120">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.36120">阅读原文 ↗</a></p>
+</body>
+</html>

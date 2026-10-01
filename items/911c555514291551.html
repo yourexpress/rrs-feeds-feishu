@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mira: Memory-Efficient MoE Inference Using Adaptive Caching and Predictive Expert Staging</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Mira: Memory-Efficient MoE Inference Using Adaptive Caching and Predictive Expert Staging</h1>
+<p class="meta-line">arXiv / Sanjali Yadav 等 · 2026-09-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> MoE 很适合部署到资源受限的单 GPU 系统，但专家参数占内存大头、token 级路由动态且倾斜；现有 offload/缓存方案要等 router 输出才搬专家，属被动响应，缓存利用率低且传输难以与计算重叠。</p>
+<p><strong>方法</strong> Mira 做算法-系统协同设计：轻量逐层预测器提前两层预测专家用量以主动预取；HOT+STAGE 两级 GPU 缓存按 token 级路由遥测保留高频专家、暂存预测专家；定制专家参数压缩格式减少元数据并提升打包效率；完整运行时统一调度预测器、缓存策略与量化传输以最大化通信-计算重叠。</p>
+<p><strong>关键数字</strong> 内存受限 GPU 上平均吞吐较 SOTA 基线提升 5.71×，TTFT 加速 11.71×，beam search 推理平均加速 3.84×，精度损失很小。</p>
+<p><strong>为什么值得看</strong> "提前两层预测专家"把单卡 MoE 推理从被动换入变为主动 staging，预测器+缓存+压缩一套打通，工程完整度高。</p>
+<p><a href="https://arxiv.org/abs/2609.38090">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.38090">阅读原文 ↗</a></p>
+</body>
+</html>

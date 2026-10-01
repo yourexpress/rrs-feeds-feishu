@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPLASH: Switching Parallel Layouts of Attention with Seamless Handoff for LLM Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SPLASH: Switching Parallel Layouts of Attention with Seamless Handoff for LLM Serving</h1>
+<p class="meta-line">arXiv / Chuan Liu 等 · 2026-09-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 没有一种注意力并行布局适合所有负载：低并发宜张量并行、多独立请求宜数据并行注意力、长 prompt 宜上下文并行；推理、agentic、RL rollout 负载下最优布局会在请求运行中改变，而现有引擎启动即定死，换布局等于排空请求重启 worker。</p>
+<p><strong>方法</strong> SPLASH 利用"少 KV head 的现代注意力把 KV 缓存位置与权重分片解耦"这一观察：布局间大部分状态已在目标位置，其余在推理后台搬迁、于 batch 边界交接，实现运行中切换；并提出新布局 DOP——权重按 TP 分片、每请求缓存保持单一属主。</p>
+<p><strong>关键数字</strong> 布局切换开销中位数低于所在 step 的 0.51%；DOP 既不复制权重也不复制缓存，KV 容量比数据并行注意力多 27–60%，为 KV 受限时的调度提供新选择。</p>
+<p><strong>为什么值得看</strong> 首个在请求运行中热切换注意力并行布局的 serving 系统，"布局即调度资源"很可能成为下一代服务引擎标配。</p>
+<p><a href="https://arxiv.org/abs/2609.37626">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.37626">阅读原文 ↗</a></p>
+</body>
+</html>

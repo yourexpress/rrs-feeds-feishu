@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interpolated Policy Distillation: A Controllable Continuum Between Off-Policy and On-Policy Distillation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Interpolated Policy Distillation: A Controllable Continuum Between Off-Policy and On-Policy Distillation</h1>
+<p class="meta-line">arXiv / Youxu Shi 等 · 2026-09-30 · 论文PDF</p>
+
+<p>离策略与在策略蒸馏之间的可控插值连续谱</p>
+<blockquote><p>Off-policy and on-policy distillation have traditionally been formulated as separate paradigms, each favoring a different property of distillation trajectories. Teacher-generated (off-policy) traces are typically high-quality but lie far from the student's distribution, whereas student-generated (on-policy) rollouts are more learnable but often contain erroneous reasoning. We view these paradigms as the endpoints of a policy continuum and posit that a more effective rollout policy may lie in between. We introduce \textbf{Interpolated Policy Distillation (IPD)}, which defines the next-token distribution at every decoding step as an explicit linear interpolation between the student and teacher distributions. The interpolation operates at the distribution level, token by token, and its coefficient provides direct control over the balance between trajectory quality and student learnability. Naively sampling from this policy would require sequentially querying the teacher at every token and is thus expensive. To make IPD practical, we accelerate it with a new speculative-decoding rule while exactly preserving the interpolated next-token distribution.At the trajectory level, the resultin…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.37170">阅读原文 ↗</a></p>
+</body>
+</html>

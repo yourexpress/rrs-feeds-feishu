@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DScale: Scaling Block-Diffusion Speculative Decoding with Adaptive Verification</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DScale: Scaling Block-Diffusion Speculative Decoding with Adaptive Verification</h1>
+<p class="meta-line">arXiv / Rongjian Chen 等 · 2026-09-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 高并发下的块扩散投机解码受验证填充、候选被拒、可变前缀与定长计算图不兼容三重拖累，而统一截断又会牺牲本可接受的 token。</p>
+<p><strong>方法</strong> DScale 保留 drafter 架构、权重与完整草稿长度：用一个 11.2 万参数的独立预测器（无需置信度校准与硬件速度曲线）；路径感知 tile 减少填充；动态验证长度（DVL）把打分前缀打包进一半的原生验证容量；定址工作区在复用捕获图的同时传递变化的边界。</p>
+<p><strong>关键数字</strong> A100-40GB、Qwen3-8B/4B、四数据集、并发 8–32：几何平均吞吐较 DFlash 提升 43.9%/48.8%，较 DSpark 提升 22.2%/37.7%，较 Domino 提升 24.4%/32.0%；GSM8K 完整解码步时间降 30.8–52.5%。</p>
+<p><strong>为什么值得看</strong> 用小预测器+打包调度正面解决"验证形状"这一工程痛点，三个机制逐个消融均涨点，落地性强。</p>
+<p><a href="https://arxiv.org/abs/2609.37532">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.37532">阅读原文 ↗</a></p>
+</body>
+</html>

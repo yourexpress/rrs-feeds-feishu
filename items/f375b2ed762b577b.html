@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WUSH-KV: KV Cache Quantization with Data-Adaptive Transforms</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>WUSH-KV: KV Cache Quantization with Data-Adaptive Transforms</h1>
+<p class="meta-line">arXiv / Jiale Chen 等 · 2026-09-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> KV 缓存的显存与带宽开销随上下文长度与 batch 增长，是长上下文高效推理的主要瓶颈，需要低-bit 量化又不掉点。</p>
+<p><strong>方法</strong> WUSH-KV 用校准数据、基于矩阵乘两个因子的二阶统计构造数据自适应变换：key 与 value 各自独立构造，value 变换折叠进模型权重、key 变换在 RoPE 之后施加；可与截断量化器配对，并证明对 QuEST INT 量化器在温和假设下 WUSH 变换近似最优；已按 OSCAR 式百分位截断仿射量化集成进 SGLang。</p>
+<p><strong>关键数字</strong> 配 QuEST INT 时逐层重建误差与端到端困惑度均为所测变换中最低；2-bit 下在所评估的全部模型与下游任务上与 OSCAR 变换相当或更优。</p>
+<p><strong>为什么值得看</strong> 有二阶统计依据、可折叠进权重、已落地 SGLang 的 KV 量化变换，理论-实现-集成链路完整。</p>
+<p><a href="https://arxiv.org/abs/2609.38121">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.38121">阅读原文 ↗</a></p>
+</body>
+</html>

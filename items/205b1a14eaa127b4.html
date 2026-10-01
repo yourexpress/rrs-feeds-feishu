@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Efficient Agentic LLM Serving over SSD-based Sparse KV Storage</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Efficient Agentic LLM Serving over SSD-based Sparse KV Storage</h1>
+<p class="meta-line">arXiv / Wenhao He 等 · 2026-09-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> Agentic 会话在推理与工具调用间交替、历史不断累积；稀疏注意力只读部分历史 KV，但 KV 选择依赖推理中间值，迫使 SSD 读落在推理关键路径上，碎片化访问与读写干扰进一步拖慢。</p>
+<p><strong>方法</strong> Janus 聚焦 append prefill：让模型自身的 KV 选择模块跑在更早的中间值上，无需额外训练即可预测 KV 需求，预测读与模型计算重叠，未命中部分在 attention 执行前补取以保住输出正确性；同时合并相邻读、把散落 KV 页在 CPU 侧打包成顺序写、读活跃时限制后台写。</p>
+<p><strong>关键数字</strong> 三个模型、三条 agentic trace 上，TTFT 较现有方案最高提升 1.57–3.69×（平均 1.22–1.85×），且保持 decode 效率。</p>
+<p><strong>为什么值得看</strong> "用更早的中间值预测 KV 需求"把 SSD 读移出关键路径，是稀疏注意力+SSD 存储路线关键的系统拼图。</p>
+<p><a href="https://arxiv.org/abs/2609.36938">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.36938">阅读原文 ↗</a></p>
+</body>
+</html>
