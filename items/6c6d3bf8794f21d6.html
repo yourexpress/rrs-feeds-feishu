@@ -22,9 +22,11 @@
 <h1>GPU-CFR: 80x Faster Counterfactual Regret Minimization by Compiling the Game to Static Dataflow and CUDA Graph Replay</h1>
 <p class="meta-line">arXiv（Boning Li 等，cs.DC） · 2026-09-10 · 论文PDF</p>
 
-<p>Counterfactual regret minimization (CFR) is one of the few large numerical workloads that still runs faster on CPUs than on GPUs.</p>
-<blockquote><p>Counterfactual regret minimization (CFR) is one of the few large numerical workloads that still runs faster on CPUs than on GPUs. Each iteration sweeps a game tree with up to billions of states in millions of small, interdependent gather and scatter steps issued through a generic tree interface. On a GPU every kernel finishes in microseconds, so kernel launches and framework dispatch dominate the run time, and prior GPU implementations have lost to optimized CPU code. We observe that for a fixed game, everything about a CFR iteration except the numerical values is known before the first iteration runs. We propose GPU-CFR, a compiler and runtime built on this observation. It compiles any game once into static dataflow: flat edge and information-set arrays, precomputed indices, and depth-level batched passes fix the entire operation sequence, and only solver state changes between iterations. Static chance folding, depth-level execution blocks, and a dual-lane reach buffer cut the number of framework operations by up to 18.1x. Because shapes, indices, and buffer addresses never change, CUDA Graph Replay records the iteration once and replays it with a single graph launch. On one A100,…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> CFR 是少数 CPU 仍快于 GPU 的大数值负载：每轮扫数十亿状态博弈树、数百万次小 gather/scatter，GPU 上 kernel 微秒级完成，启动与调度开销主导。</p>
+<p><strong>方法</strong> 洞察：固定博弈下 CFR 迭代除数值外一切在首轮前已知。GPU-CFR 把博弈一次性编译为静态数据流（扁平数组、预计算索引、按深度批处理），静态 chance folding 等削减框架操作，CUDA Graph Replay 一次录制、单次图启动重放。</p>
+<p><strong>关键数字</strong> 单 A100、8 个博弈：比此前最快 GPU CFR 快 29.8~80.4 倍，比 LiteEFG（CPU）在四大博弈上快 14~258 倍；编译表示本身在 8 线程 CPU 上已比 GPU 基线快 2.2~51.1 倍且逐位复现参考迭代。</p>
+<p><strong>为什么值得看</strong> "编译整个迭代+Graph 重放"对一切结构固定的迭代算法都是可迁移范式。</p>
+<p><a href="https://arxiv.org/abs/2609.11923v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.11923v1">阅读原文 ↗</a></p>
 </body>
 </html>

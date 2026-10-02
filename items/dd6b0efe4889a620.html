@@ -22,9 +22,11 @@
 <h1>Phase-Decoupled, Model-Calibrated Power Control for Disaggregated LLM Serving</h1>
 <p class="meta-line">arXiv（Jae Gon Kim 等，cs.LG） · 2026-09-10 · 论文PDF</p>
 
-<p>Datacenter GPU power is the binding constraint on LLM serving capacity, and production serving has shifted to prefill/decode (PD) disaggregation.</p>
-<blockquote><p>Datacenter GPU power is the binding constraint on LLM serving capacity, and production serving has shifted to prefill/decode (PD) disaggregation. Deploying NVIDIA's Max-Q inference profile on a disaggregated B200 system, we found its realized gain modest (+8.6% tokens/J), model-dependent, and carrying a mean end-to-end latency cost (+5.2%) that throughput-only evaluation does not surface; the profile also applies one setting to prefill and decode GPUs that operate in opposite hardware regimes. We hypothesize that the optimal power setting is a property of the deployed (model, quantization, engine, hardware) combination rather than of the GPU class, that each lane warrants its own profile, and that converting SLO headroom into energy safely requires latency-gated calibration under a runtime SLO guard rather than a fixed recipe. We present a phase-decoupled, model-calibrated controller: the prefill lane runs under an SM-clock window whose floor is a latency guarantee by construction, and the decode lane under a power cap placed by automatic calibration just above a measured throughput/latency cliff. Because a disaggregated decode lane draws flat, memory-bound power, the cap binds con…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 数据中心 GPU 功耗是 LLM 服务容量的硬约束；PD（prefill/decode）拆解部署下，NVIDIA Max-Q 一刀切功耗配置实测收益有限（+8.6% tokens/J）且带 +5.2% 平均端到端延迟代价——prefill 与 decode 处于相反硬件工况，应各有配置。</p>
+<p><strong>方法</strong> 阶段解耦、按模型校准的功耗控制器：prefill 车道跑在 SM 时钟窗口内（窗口下限即延迟保证），decode 车道由自动校准在实测吞吐/延迟悬崖上方放功耗帽；运行时 SLO 守护把余量安全换成能耗。</p>
+<p><strong>关键数字</strong> 8×B200 服务 Qwen3-Coder-480B（FP8）agentic 负载：均衡模式 tokens/J +20.4%、平均 e2e +3.5%，双轴 Pareto 优于 Max-Q；Qwen3-235B-A22B（NVFP4）所有模式每次重复满足 ITL-p99 SLO（两个厂商配置都失败）；三天持续运行省一个车道对 32.3% 电费。dense 模型收益约少 5 倍，结论自限于 MoE serving。</p>
+<p><strong>为什么值得看</strong> 罕见的生产级功耗工程论文，结论诚实，PD 拆解部署者可直接参考。</p>
+<p><a href="https://arxiv.org/abs/2609.11133v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.11133v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>BEACON: A Versatile Accelerator for Computational Pathology Applications</h1>
 <p class="meta-line">arXiv（Sumanth Gudaparthi 等，cs.AR） · 2026-09-10 · 论文PDF</p>
 
-<p>While accelerators for AI have seen great commercial success, it is challenging to replicate that success for other specialized domains due to a number of factors.</p>
-<blockquote><p>While accelerators for AI have seen great commercial success, it is challenging to replicate that success for other specialized domains due to a number of factors. We make the case that barriers for new accelerators can be lowered by starting with a baseline AI accelerator, and adding minimal logic to support new operators demanded by new specialized domains. This leads to a versatile chip that can be manufactured at high volume and deployed for a range of popular applications. We refer to this as the AI+X approach. This paper explores its potential for the emerging domain of Computational Pathology, which involves analysis of large whole-slide tissue images with a multi-stage pipeline. The pipeline requires support for a number of different kernels and operators - early stages perform segmentation and feature extraction, followed by graph creation with k nearest neighbor (kNN) algorithms, and finally inference with an iterative graph convolutional network (GCN) that alternates between Aggregation and Combination. We show that these stages execute inefficiently on a range of baseline CPU, GPU, AI, and GCN accelerators. That inefficiency is addressed with a combination of software r…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> AI 加速器的商业成功难以复制到其他专业领域。计算病理学（全切片组织图像多阶段流水线：分割/特征提取→kNN 建图→迭代 GCN 推理）在 CPU、GPU、AI、GCN 加速器上执行效率都低。</p>
+<p><strong>方法</strong> "AI+X"路线：以 baseline 脉动 AI 加速器为底，加最小逻辑支持新领域算子——通过 PE 间灵活数据通路与寄存器访问机制，支持特征聚合、负载均衡执行、欧氏距离、分箱与计数聚合，配合软件重构映射各阶段 kernel。</p>
+<p><strong>关键数字</strong> 附加逻辑使 baseline AI chiplet 面积仅增至 1.1 倍，但 BEACON 在计算病理负载上吞吐比 baseline CPU/GPU 平台高一个数量级以上（避开内存墙+高并行）。</p>
+<p><strong>为什么值得看</strong> "少改多卖"的加速器商业化思路：高产量通用芯片+小改适配新域，对苦于专用加速器 NRE 成本的人是一条务实路径。</p>
+<p><a href="https://arxiv.org/abs/2609.11044v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.11044v1">阅读原文 ↗</a></p>
 </body>
 </html>

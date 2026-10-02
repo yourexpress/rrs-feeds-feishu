@@ -22,9 +22,11 @@
 <h1>A Unified Per-Token Gating Family for On-Policy Distillation: FKL/RKL Mixing with Multi-Channel and Bias Coefficients</h1>
 <p class="meta-line">arXiv（Suwan Wu 等，cs.AI） · 2026-09-10 · 论文PDF</p>
 
-<p>Per-token gating of forward/reverse KL losses has become a standard technique for on-policy knowledge distillation (OPD), but existing methods such as EOPD (Jin et al., 2026) and ToDi (Jung et al., 2025) each fix a singl…</p>
-<blockquote><p>Per-token gating of forward/reverse KL losses has become a standard technique for on-policy knowledge distillation (OPD), but existing methods such as EOPD (Jin et al., 2026) and ToDi (Jung et al., 2025) each fix a single gating signal and a single gating direction, and the two have never been compared directly. We introduce a four-coefficient parameterization lambda_t = sigma(a * h_t + b * u(x) + c + d * gap_t) in which direction-aligned proxies of EOPD and ToDi appear as one-dimensional (1D) restrictions, and which adds multi-channel composition and an explicit bias as further degrees of freedom. On TweetEval (Barbieri et al., 2020) emotion and hate, with a Qwen3-32B teacher and a Qwen3-4B student, configurations in the full family reach higher accuracy than the matched-magnitude single-channel (entropy-only / gap-only) 1D restrictions in 33 of 36 comparable cells, and a 26-cell mean-match isolation experiment places dynamic gating ahead of effective-KL-matched static baselines in 19 of 26 cells. Because cells share training data, models, and parameter substructure, we report both counts as exploratory aggregate directional evidence rather than as independent hypothesis tests. Ta…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> On-policy 知识蒸馏（OPD）中逐 token 门控前向/反向 KL 损失已成标配，但 EOPD、ToDi 等现有方法各自固定单一门控信号与门控方向，且两者从未被直接比较。</p>
+<p><strong>方法</strong> 提出四系数参数化 λ_t = σ(a·h_t + b·u(x) + c + d·gap_t)：EOPD 与 ToDi 的方向对齐代理都是其一维特例，另加多通道组合与显式偏置两个自由度，构成统一比较坐标系。</p>
+<p><strong>关键数字</strong> TweetEval emotion/hate 上 Qwen3-32B→Qwen3-4B：完整族配置在 36 个可比单元中 33 个优于匹配量级的单通道一维特例；26 单元隔离实验中动态门控 19/26 优于等效 KL 匹配的静态基线；9 个头条对比的三种子复现方向一致但 n=3 不显著。</p>
+<p><strong>为什么值得看</strong> 作者坦率把结果定位为探索性方向证据而非显著性结论，这个参数化的真正价值是给逐 token 门控设计提供了公共坐标系，做蒸馏训练的人可以少踩坑。</p>
+<p><a href="https://arxiv.org/abs/2609.11768v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.11768v1">阅读原文 ↗</a></p>
 </body>
 </html>

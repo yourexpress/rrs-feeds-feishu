@@ -22,9 +22,11 @@
 <h1>Entwine: Coordinating Tiled Computation and Fine-Grained Communication across GPUs</h1>
 <p class="meta-line">arXiv（Kai Ma 等，cs.DC） · 2026-09-10 · 论文PDF</p>
 
-<p>Modern high-performance GPU computations partition tensors into tiles to exploit data reuse and parallelism.</p>
-<blockquote><p>Modern high-performance GPU computations partition tensors into tiles to exploit data reuse and parallelism. Individual tile computations complete earlier than the full tensor computation, creating opportunities to overlap computation and communication. However, a mismatch between computation and communication progress can limit these opportunities. Communication stalls when no data is ready, and may lag when data arrives in bursts. Communication can also slow computation by consuming shared resources, offsetting the benefits of overlap. We present Entwine, which coordinates tile computation order, fine-grained communication, and SM resource allocation to minimize overall completion time. Entwine reorders tile computation to produce data for communication at a more regular pace. Entwine couples this schedule with fine-grained SM-based communication to process tile results with low latency and low overhead. Since the communication kernel also consumes SM resources, Entwine coordinates their allocation to balance communication progress against computation slowdown. Across representative tensor-parallel LLM workloads, Entwine achieves a geomean speedup of 1.232x (up to 1.433x) over cu…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> GPU tile 化计算中单个 tile 早于整张量完成，本可与通信重叠，但计算与通信进度不匹配（无数据时空转、数据突发、通信 kernel 抢 SM 资源拖慢计算）限制了收益。</p>
+<p><strong>方法</strong> Entwine 联合协调三者：重排 tile 计算顺序让通信数据以更均匀节奏产出；耦合细粒度 SM-based 通信 kernel 低延迟低开销处理 tile 结果；并协调 SM 资源分配，平衡通信进度与计算减速。</p>
+<p><strong>关键数字</strong> 代表性张量并行 LLM 负载：对 cuBLAS+NCCL 几何平均加速 1.232 倍（最高 1.433 倍）；较 SOTA overlap 基线几何平均再优 3.1~9.8%。承诺发表后开源。</p>
+<p><strong>为什么值得看</strong> 把计算-通信重叠调度做到 tile 粒度且显式建模 SM 资源竞争，工程含金量高，对张量并行训练/推理优化直接可用。</p>
+<p><a href="https://arxiv.org/abs/2609.11562v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.11562v1">阅读原文 ↗</a></p>
 </body>
 </html>

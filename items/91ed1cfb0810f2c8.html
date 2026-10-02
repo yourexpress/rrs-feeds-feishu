@@ -22,9 +22,11 @@
 <h1>Efficient Vision-Language-Action Management and Serving for Robot Factories</h1>
 <p class="meta-line">arXiv（Dionysios Adamopoulos 等，cs.DC） · 2026-09-10 · 论文PDF</p>
 
-<p>Vision-Language-Action (VLA) models show high robotic manipulation capabilities via a two-stage design: a Vision-Language Model (VLM) stage followed by an Action Diffusion Transformer (ADiT) stage.</p>
-<blockquote><p>Vision-Language-Action (VLA) models show high robotic manipulation capabilities via a two-stage design: a Vision-Language Model (VLM) stage followed by an Action Diffusion Transformer (ADiT) stage. Since robots must meet strict Service-Level Objectives (SLOs) for safety, VLA inference is inherently latency-critical. Meeting these SLOs requires high-end GPUs, yet weight, cost, and power constraints preclude integrating such GPUs on-robot. Prior works offload VLA inference to edge servers that serve many robots on VLA models. However, current VLA systems lack support for multi-request, multi-model execution on a multi-GPU server under SLOs, while existing serving systems for multi-stage models are optimized for throughput and stage disaggregation across separate GPUs, which are ill-suited for the millisecond-scale stages of VLA models. We design Robion, the first VLA serving and management system for multi-robot, multi-model requests on multi-GPU edge servers that meets SLOs. Our serving engine disaggregates the VLM and ADiT stages within a GPU via two streams, dynamically restricting the SMs on VLM stream so ADiT always finds SMs to run alongside it, and co-locates multiple models b…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> VLA 模型（VLM+ADiT 两阶段）推理延迟敏感、须满足安全 SLO，机器人本体装不了高端 GPU，需边缘服务器为多机器人多模型请求服务——现有 serving 系统为吞吐与跨 GPU 阶段拆解优化，不适配 VLA 毫秒级阶段。</p>
+<p><strong>方法</strong> Robion 首个面向机器人工厂的 VLA serving 与管理系统：GPU 内双流拆解 VLM/ADiT，动态限制 VLM 流占用 SM 使 ADiT 总有 SM 可跑；多模型共享流并按剩余 SLO 时间排优先级；管理引擎做多 GPU 模型放置+智能流量控制，最大化 per-model batching 且约束各 GPU 负载以达标 SLO。</p>
+<p><strong>关键数字</strong> 单模型在 98% SLO 达成下平均可服务机器人负载为 vLLM-Omni 的 6.7 倍、Monolithic 的 1.5 倍；4-GPU 服务器 8 模型大规模实验可服务至多 64 台机器人（98% SLO）。</p>
+<p><strong>为什么值得看</strong> 多机器人场景第一个 VLA serving 系统，GPU 内毫秒级双流拆解思路新颖实用。</p>
+<p><a href="https://arxiv.org/abs/2609.12075v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.12075v1">阅读原文 ↗</a></p>
 </body>
 </html>

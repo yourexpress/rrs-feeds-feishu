@@ -22,9 +22,11 @@
 <h1>LILA: Calibration-Free Structured Pruning of Large Language Models via Latent Spectral Geometry</h1>
 <p class="meta-line">arXiv（Sankar Behera 等，cs.LG） · 2026-09-10 · 论文PDF</p>
 
-<p>Structured pruning of large language models (LLMs) offers hardware-efficient compression, yet existing methods require calibration data, gradient computation, or large auxiliary policy networks at pruning time.</p>
-<blockquote><p>Structured pruning of large language models (LLMs) offers hardware-efficient compression, yet existing methods require calibration data, gradient computation, or large auxiliary policy networks at pruning time. LILA (\emph{Latent-Informed Layer Analysis}) scores neuron importance via the Kolmogorov--Smirnov (KS) distance between empirical singular value distributions of the full and neuron-ablated feed-forward network (FFN) weight matrix, providing a closed-form spectral rule requiring no training, calibration data, or auxiliary network. Without any fine-tuning, LILA surpasses PruneNet (45M-parameter RL policy) by 1.57~pp in zero-shot accuracy on LLaMA-2-7B at 25\% sparsity, and outperforms WikiText-2-calibrated SliceGPT by up to 6.0~pp across all sparsity levels, while preserving the original architecture. After one epoch of LoRA recovery fine-tuning, LILA achieves highly competitive performance, matching the heavily calibrated SliceGPT baseline to within a 0.48~pp margin across LLaMA-2-7B and Phi-2, despite using zero calibration data. A Neural Tangent Kernel analysis confirms a 22$\times$ reduction in functional distortion versus random pruning, providing theoretical grounding f…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 结构化剪枝硬件友好，但现有方法在剪枝时需要校准数据、梯度计算或大型辅助策略网络。</p>
+<p><strong>方法</strong> LILA 用完整与神经元消融 FFN 权重矩阵的经验奇异值分布之间的 Kolmogorov-Smirnov 距离给神经元重要性打分——闭式谱规则，无需训练、校准数据或辅助网络，保留原架构。</p>
+<p><strong>关键数字</strong> 无微调下 LLaMA-2-7B 25% 稀疏度零样本精度超 PruneNet（45M 参数 RL 策略）1.57pp、超 WikiText-2 校准的 SliceGPT 最高 6.0pp；一轮 LoRA 恢复微调后与重度校准的 SliceGPT 差距仅 0.48pp（LLaMA-2-7B 与 Phi-2）；NTK 分析显示功能失真较随机剪枝降 22 倍；KS 分数动态分配稀疏预算在中等压缩下达 SOTA 生成保持。</p>
+<p><strong>为什么值得看</strong> 零校准、闭式、有理论支撑，是剪枝工具箱里"先跑一发"的默认候选。</p>
+<p><a href="https://arxiv.org/abs/2609.11163v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.11163v1">阅读原文 ↗</a></p>
 </body>
 </html>

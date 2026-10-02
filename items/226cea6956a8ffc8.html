@@ -22,9 +22,11 @@
 <h1>Bio-inspired Learning and Decision-Making with Probabilistic In-Memory Computing Hardware: Part 2</h1>
 <p class="meta-line">arXiv（Thomas Dalgaty 等，cs.AR） · 2026-09-10 · 论文PDF</p>
 
-<p>This report extends our previous work (Part 1), which introduced an energy-based model for learning and decision-making under uncertainty.</p>
-<blockquote><p>This report extends our previous work (Part 1), which introduced an energy-based model for learning and decision-making under uncertainty. The model leverages stochastic Langevin dynamics to continuously evolve approximate probability distributions over neuron states and model weights. However, as noted in Part 1 and confirmed through GPU-based implementations, large-scale probabilistic energy-based models of this nature face significant scalability challenges due to excessive execution latency. This latency stems from a fundamental mismatch: massively parallel models with low arithmetic intensity (such as energy-based models) are being executed on processor architectures like GPUs that rely on high-bandwidth memory (HBM) interfaces. The HBM imposes brutally sequential execution constraints on inherently parallelizable models, creating the false impression that such models are unscalable. In reality, it is the GPU architecture itself, with its dependence on HBM interfaces, that is not a scalable processor architecture for this class of AI model. In this report, we demonstrate using a detailed transaction-level model (TLM) of a probabilistic analogue in-memory computing (AIMC) proce…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Part 1 的能量模型用随机 Langevin 动力学连续演化神经元状态与权重的近似概率分布，但 GPU 实现暴露了严重可扩展性问题——执行延迟过高。</p>
+<p><strong>方法</strong> 指出根因是架构失配：大规模并行、低算存比的能量模型跑在依赖 HBM 接口的 GPU 上，HBM 对本质可并行的模型强加串行约束，造成"模型不可扩展"的假象。用概率模拟存内计算（AIMC）处理器的事务级模型（TLM）验证替代路径。</p>
+<p><strong>关键数字</strong> TLM 显示：同一能量模型在 AIMC 上执行比数据中心级硬件快 1000 倍以上，关键在于消除 HBM 接口、计算直接在片上存储内完成。</p>
+<p><strong>为什么值得看</strong> "不是模型不可扩展，是 GPU 架构不适配这类 AI"——这个论点对低算存比负载的硬件选型很有启发，也是模拟存内计算的强力论证。</p>
+<p><a href="https://arxiv.org/abs/2609.11288v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.11288v1">阅读原文 ↗</a></p>
 </body>
 </html>

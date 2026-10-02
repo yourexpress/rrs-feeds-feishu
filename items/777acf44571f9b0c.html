@@ -22,9 +22,11 @@
 <h1>HERALD: High-Fidelity Exemplar Retrieval with Adaptive Landmark Distillation for Heterophily-Aware Graph Condensation</h1>
 <p class="meta-line">arXiv（Sujan Chakraborty 等，cs.LG） · 2026-09-10 · 论文PDF</p>
 
-<p>Graph condensation aims to produce a small surrogate graph that preserves the downstream node-classification performance of a much larger original graph.</p>
-<blockquote><p>Graph condensation aims to produce a small surrogate graph that preserves the downstream node-classification performance of a much larger original graph. Existing methods rely on Weisfeiler-Lehman neighbourhood aggregation or gradient-based distribution matching, both of which assume that adjacent nodes share the same label, an assumption that breaks down under heterophily. We propose HERALD (High-fidelity Exemplar Retrieval with Adaptive Landmark Distillation), a gradient-free graph condensation framework that adapts the node scoring and feature selection in the condensation pipeline to the graph's measured heterophily. HERALD selects features via a joint Fisher-discriminability and activation-density criterion that down-weights aggregated representations on heterophilic graphs, and scores nodes by a weighted combination of prototype representativeness, decision-boundary proximity, and Local Intrinsic Dimensionality (LID), where the weights are driven by a smooth sigmoid function of the heterophily ratio. Nodes are then assembled into a condensed subgraph through score-ordered BFS expansion, Personalised PageRank pruning, and class rebalancing, all at an identical storage budget t…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 图蒸馏旨在生成保持大原图节点分类性能的小代理图，但现有方法依赖 WL 邻域聚合或梯度分布匹配，都假设相邻节点同标签——异配图（heterophily）下该假设失效。</p>
+<p><strong>方法</strong> HERALD 无梯度框架，按图实测异配度自适应调整：Fisher 判别度+激活密度联合准则选特征（异配图上降权聚合表征）；原型代表性、决策边界邻近度与局部内在维度（LID）加权打分（权重为异配比的平滑 sigmoid）；再按分数序 BFS 扩展、个性化 PageRank 剪枝与类别重平衡组装子图。</p>
+<p><strong>关键数字</strong> 8 个基准（同配+异配）、4 种 GNN 架构：异配图上追平或超越 SOTA 蒸馏器，同配图上保持竞争力；存储预算与 BONSAI 完全相同，可直接对比。</p>
+<p><strong>为什么值得看</strong> 图蒸馏中少见的"先测量图性质再适配流程"思路，无梯度、成本低，异配图场景实用。</p>
+<p><a href="https://arxiv.org/abs/2609.11123v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.11123v1">阅读原文 ↗</a></p>
 </body>
 </html>

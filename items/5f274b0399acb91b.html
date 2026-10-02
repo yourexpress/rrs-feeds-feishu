@@ -22,9 +22,11 @@
 <h1>PHAT: PHotonic Accelerator for TFHE</h1>
 <p class="meta-line">arXiv（Guowei Yang 等，cs.CR） · 2026-09-10 · 论文PDF</p>
 
-<p>Fully Homomorphic Encryption (FHE) enables secure computation on encrypted data, making it a promising solution for privacy-preserving applications in the cloud.</p>
-<blockquote><p>Fully Homomorphic Encryption (FHE) enables secure computation on encrypted data, making it a promising solution for privacy-preserving applications in the cloud. Among various FHE schemes, FHE over the Torus (TFHE) stands out due to its support for arbitrary operations. However, its high computation and communication overhead, particularly in the Fast Fourier Transform (FFT) operations required during bootstrapping, limits its practicality for real-world applications. Conventional electronic accelerators struggle to achieve sufficient throughput due to the limitations of technology scaling and the memory-wall problem. To address these challenges, we propose PHAT, a PHotonic Accelerator for TFHE leveraging Optically-addressed Phase-Change Memory (OPCM). OPCM-based processing-in-memory systems offer high computation and communication throughput, making them well-suited for accelerating FFT operations in TFHE. However, directly mapping FFT to OPCM presents challenges such as high-precision analog computation and the high latency and energy cost of programming OPCM cells. To overcome these challenges, we introduce a novel electro-photonic accelerator architecture optimized for TFHE, fe…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> TFHE（环面上的全同态加密）支持任意运算，但 bootstrapping 中 FFT 的计算与通信开销大；传统电子加速器受工艺 scaling 与内存墙限制吞吐不足。</p>
+<p><strong>方法</strong> PHAT 用光寻址相变存储器（OPCM）的存内处理加速 FFT：电-光混合架构含 OPCM FFT 单元、针对 OPCM 特性的 twiddle-stationary 数据流，以及最大化 FFT 单元利用率的调度机制，解决高精度模拟计算与 OPCM 单元编程延迟/能耗两大挑战。</p>
+<p><strong>关键数字</strong> 4 个真实 TFHE 负载上较 SOTA ASIC 加速器加速 2.14~5.10 倍。</p>
+<p><strong>为什么值得看</strong> 光子存内计算落到同态加密这一明确高价值负载，是应用驱动的加速器研究样本，隐私计算硬件方向值得关注。</p>
+<p><a href="https://arxiv.org/abs/2609.11613v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.11613v1">阅读原文 ↗</a></p>
 </body>
 </html>

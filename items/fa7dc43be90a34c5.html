@@ -22,9 +22,11 @@
 <h1>Chopthin-Consensus Power Sampling: A Diversity-Preserving Approach to LLM Decoding</h1>
 <p class="meta-line">arXiv（Minoo Ahmadi 等，cs.CL） · 2026-09-10 · 论文PDF</p>
 
-<p>Inference-time power sampling via Sequential Monte Carlo (SMC) can substantially improve large language model (LLM) reasoning without requiring post-training.</p>
-<blockquote><p>Inference-time power sampling via Sequential Monte Carlo (SMC) can substantially improve large language model (LLM) reasoning without requiring post-training. However, many existing SMC approaches rely on equal-weight resampling, which can aggressively prune low-weight trajectories, discarding potentially correct reasoning paths and degrading the genealogical diversity of the search space. To address this, we introduce Chopthin-Consensus Power Sampling (CCPS). Our method applies the Chopthin resampler to LLM decoding: rather than equalizing weights and forcing unnecessary particle duplication, it enforces an upper bound on the ratio between the largest and smallest weights and carries the unequal weights forward. This targeted intervention preserves a richer set of distinct reasoning paths, keeps the weighted SMC approximation unchanged in conditional expectation, and guarantees a lower bound on the post-resampling effective sample size (ESS). To fully exploit this enriched population, we employ a semantic-majority selection mechanism that merges token-identical final trajectories, clusters semantically equivalent answers, and returns the answer supported by the largest number of d…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 基于 SMC 的推理时 power sampling 可免后训练提升 LLM 推理，但等权重重采样会激进剪枝低权重轨迹，丢掉潜在正确推理路径、损害搜索空间的谱系多样性。</p>
+<p><strong>方法</strong> Chopthin-Consensus Power Sampling（CCPS）：把 Chopthin 重采样器引入 LLM 解码——不强制等权，只约束最大/最小权重比并携带不等权重前进，保持加权 SMC 近似在条件期望下不变、保证重采样后 ESS 下界；再配合语义多数选择：合并同 token 轨迹、聚类语义等价答案，返回最多独立轨迹支持的答案。</p>
+<p><strong>关键数字</strong> 3 个开源模型×5 个推理基准：Chopthin 在 15 个设置中 13 个提升 oracle 覆盖率；CCPS 在 14/15 设置追平或超过 Power-SMC 基线，绝对提升最高 10.6 个百分点。</p>
+<p><strong>为什么值得看</strong> "保多样性的重采样+感知多样性的选择"互补机制简洁有效，训练免费，代码开源。</p>
+<p><a href="https://arxiv.org/abs/2609.12243v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.12243v1">阅读原文 ↗</a></p>
 </body>
 </html>

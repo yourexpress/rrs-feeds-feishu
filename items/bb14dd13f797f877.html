@@ -22,9 +22,11 @@
 <h1>Can AI Remediate Backend Failures Safely? GuardedAct with Blast-Radius-Aware Sandboxing</h1>
 <p class="meta-line">arXiv（Wanrong Cai 等，cs.DC） · 2026-09-10 · 论文PDF</p>
 
-<p>Large Language Models (LLMs) have shown promising capabilities in generating remediation actions for microservice failures.</p>
-<blockquote><p>Large Language Models (LLMs) have shown promising capabilities in generating remediation actions for microservice failures. However, directly executing AI-generated repair actions in production risks cascading collateral damage. We propose GuardedAct, a sandbox-first remediation framework that interposes a blast-radius-aware verification layer between the LLM action generator and the production environment. GuardedAct operates in four phases: (1) ingesting a diagnosis report together with the live system topology and recent telemetry, (2) prompting an LLM to produce a ranked list of candidate remediation actions, (3) simulating each action in a lightweight digital-twin sandbox that estimates the blast radius and assigns a risk label, and (4) enforcing a rollback-confidence gate that auto-executes only low-risk actions while escalating high-risk ones for human review. We evaluate GuardedAct on five fault scenarios injected into the DeathStarBench social-network application. Experimental results show that GuardedAct achieves an overall recovery rate of 87.4% while reducing collateral damage by 79.7% relative to direct LLM execution (from 25.6% to 5.2%), at the cost of a modest sandbo…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 已能为微服务故障生成修复动作，但直接在生产环境执行 AI 生成的修复有级联附带损害风险。</p>
+<p><strong>方法</strong> GuardedAct 沙箱优先框架，四阶段：① 读入诊断报告+实时拓扑+近期遥测；② LLM 产出排序候选修复动作；③ 轻量数字孪生沙箱逐动作仿真、估计爆炸半径并打风险标签；④ 回滚置信门控——低风险动作自动执行，高风险升级人工复核。</p>
+<p><strong>关键数字</strong> DeathStarBench 社交网络应用注入 5 类故障：总恢复率 87.4%；附带损害较直接执行 LLM 动作降低 79.7%（25.6%→5.2%）；代价是沙箱使平均恢复时间约增加 8 秒；消融确认各组件对安全-速度权衡均有贡献。</p>
+<p><strong>为什么值得看</strong> AIOps 落地最缺的就是"敢不敢自动执行"的安全机制，这个四阶段框架与量化权衡可直接借鉴。</p>
+<p><a href="https://arxiv.org/abs/2609.11264v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.11264v1">阅读原文 ↗</a></p>
 </body>
 </html>

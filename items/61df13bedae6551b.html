@@ -22,9 +22,11 @@
 <h1>BRIDGE-EEG: Bridging Self-Supervised Pretraining and Efficient Deployment for Cross-Dataset EEG Classification</h1>
 <p class="meta-line">arXiv（Meghna Roy Chowdhury 等，cs.HC） · 2026-09-10 · 论文PDF</p>
 
-<p>The growing use of electroencephalography (EEG) motivates automated analysis that is accurate, transferable, and deployable on constrained hardware.</p>
-<blockquote><p>The growing use of electroencephalography (EEG) motivates automated analysis that is accurate, transferable, and deployable on constrained hardware. Recent EEG foundation models learn general representations from large-scale pretraining, but their size and computational cost limit edge and wearable deployment. We introduce BRIDGE-EEG, an efficient multi-task EEG classification pipeline that preserves the benefits of pretraining while reducing model size. A unified preprocessing scheme maps heterogeneous recordings with different channel counts, montages, and sampling rates to a device-agnostic 62-channel time--frequency representation. We pretrain an SE-ResNet18 teacher (11.84 M parameters) with SimCLR on unlabeled EEG from five heterogeneous datasets, then compress it into SE-ResNet8 (1.56 M) and SE-ResNet4 (0.48 M) students using task-agnostic and task-specific distillation. We evaluate six benchmarks spanning abnormality detection, motor imagery, and emotion recognition. For abnormality detection and emotion recognition, the students achieve accuracy comparable to or better than several recent EEG foundation models with 10--1,000$\times$ more parameters. Motor imagery shows a re…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> EEG 基础模型经大规模预训练获得通用表征，但体积与算力开销限制了边缘与可穿戴部署。</p>
+<p><strong>方法</strong> BRIDGE-EEG 管线：统一预处理把不同通道数/蒙太奇/采样率的异构记录映射为设备无关的 62 通道时频表征；SimCLR 在五个无标注数据集上预训练 SE-ResNet18 教师（11.84M 参数），再用任务无关/任务相关蒸馏压缩到 SE-ResNet8（1.56M）与 SE-ResNet4（0.48M）。</p>
+<p><strong>关键数字</strong> 六个基准（异常检测/运动想象/情绪识别）：异常检测与情绪识别上学生模型与参数量大 10~1000 倍的近期 EEG 基础模型相当或更好，运动想象仍有表征差距；Jetson Orin Nano 上单次推理能耗最低 15.64 mJ vs 46.67 mJ（3.0 倍降低）。</p>
+<p><strong>为什么值得看</strong> "预训练收益+边缘部署"两头兼顾的可复现管线，压缩模型为 MCU 级可穿戴部署铺路。</p>
+<p><a href="https://arxiv.org/abs/2609.12218v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.12218v1">阅读原文 ↗</a></p>
 </body>
 </html>

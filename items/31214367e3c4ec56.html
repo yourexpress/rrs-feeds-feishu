@@ -22,9 +22,11 @@
 <h1>EMMI: Edge Multi-Modal Intelligence for Communication-Efficient MLLM Inference via Fused Representation Compression</h1>
 <p class="meta-line">arXiv（Motahare Mounesan 等，cs.LG） · 2026-09-10 · 论文PDF</p>
 
-<p>Recent advances in multimodal large language mod- els (MLLMs) have opened new opportunities for edge intelligence by enabling reasoning across heterogeneous sensor modalities, such as vision, text, and telemetry data.</p>
-<blockquote><p>Recent advances in multimodal large language mod- els (MLLMs) have opened new opportunities for edge intelligence by enabling reasoning across heterogeneous sensor modalities, such as vision, text, and telemetry data. However, deploying these capabilities on resource-constrained edge platforms remains challenging due to the substantial computational, memory, and communication demands of modern MLLMs. Rather than transmitting raw sensor observations or partitioning neural networks at intermediate layers, Edge Multi-Modal Intelligence (EMMI) communicates a compact representation between edge devices and server resources, enabling communication-efficient edge MLLM inference. To achieve this, EMMI performs modality-specific encoding, cross-modal representation fusion, and learned compression at the edge, transmitting only a compact latent representation to server-side resources for high-capacity MLLM reasoning. This representation-centric design reduces communication overhead, preserves local data privacy, and provides a fixed-size interface between heterogeneous edge devices and server-side MLLMs. Evaluation on a representative multimodal benchmark demonstrates that EMMI can reduce th…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> MLLM 为边缘智能带来跨视觉/文本/遥测的推理能力，但其算力、内存与通信开销使资源受限边缘平台难以部署。</p>
+<p><strong>方法</strong> EMMI 既不传原始传感器观测、也不在中间层切分网络：边缘侧做模态特定编码、跨模态表征融合与可学习压缩，只把紧凑潜表征传给服务器端高容量 MLLM 推理——通信高效、保留本地数据隐私、为异构边缘设备提供定长接口。</p>
+<p><strong>关键数字</strong> 代表性多模态基准上通信负载降低 32 倍且下游精度相当；带宽受限边缘条件下端到端推理延迟估计最高降低 3.4 倍。</p>
+<p><strong>为什么值得看</strong> "以表征为中心"的边-云 MLLM 分工范式，对端侧多模态部署（AR 眼镜、机器人、IoT）是很直接的架构参考。</p>
+<p><a href="https://arxiv.org/abs/2609.11058v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.11058v1">阅读原文 ↗</a></p>
 </body>
 </html>
