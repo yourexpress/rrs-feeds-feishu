@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Making Analog Training Scale: Co-Designing Mapping, Optimizer, and Converters</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Making Analog Training Scale: Co-Designing Mapping, Optimizer, and Converters</h1>
+<p class="meta-line">arXiv / Zhaoxian Wu 等 · 2026-09-29 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 模拟存内计算（AIMC）可在权重原地执行矩阵运算，但有限动态范围、ADC 精度受限、噪声不对称更新等非理想性使其难以规模化训练现代深度模型——如何突破？</p>
+<p><strong>方法</strong> 提出系统-算法协同设计：前反向矩阵乘在模拟域执行、权重梯度在数字域计算的混合精度范式；协同优化权重映射保证良态物理/逻辑权重分布，预条件优化器耦合阈值触发开环脉冲稳定轨迹，并对齐转换器动态范围抑制量化误差。</p>
+<p><strong>关键数字</strong> 经电化学 RAM 实测校准的架构仿真显示，框架可扩展训练至 1.23 亿参数的 Transformer，验证损失随参数量的标度指数为 N^-0.231，接近数字训练的 N^-0.238。</p>
+<p><strong>为什么值得看</strong> 首次给出模拟训练在 Transformer 上接近数字标度律的证据，映射-优化器-转换器三层协同设计对存算一体硬件研究有方法论价值。</p>
+<p><a href="https://arxiv.org/abs/2609.36584">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.36584">阅读原文 ↗</a></p>
+</body>
+</html>

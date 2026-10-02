@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Efficient Expert-Parallel Communication on PCIe-Connected Consumer GPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Efficient Expert-Parallel Communication on PCIe-Connected Consumer GPUs</h1>
+<p class="meta-line">arXiv / Jaehwan Lee 等 · 2026-09-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 专家并行让消费级 GPU 也能跑大 MoE 模型，但 PCIe 系统里 GPU 间通信必须绕道 CPU 内存，NCCL 的中转路径带来冗余传输、还与专家计算抢资源——如何在无 GPU 直访的机器上做好 EP 通信？</p>
+<p><strong>方法</strong> ThunderEP：去掉传统 ring 算法的中转跳数，改经 DMA 引擎搬运数据以避免占用计算资源，并通过减少 CPU 内存中完成标志的轮询开销降低同步延迟；已集成进 vLLM。</p>
+<p><strong>关键数字</strong> 在 RTX 4090/5090 两套 PCIe 系统、三个主流 MoE 模型上，dispatch 与 combine 相对 NCCL 平均加速 2.00× 与 1.53×，端到端相对 SOTA MoE 推理框架最高加速 1.66×。</p>
+<p><strong>为什么值得看</strong> 面向被主流 EP 通信库忽视的消费级多卡场景，本地跑 MoE 的 DIY/小团队直接受益，设计思路对 PCIe 拓扑系统软件也有普适启发。</p>
+<p><a href="https://arxiv.org/abs/2609.40093">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.40093">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ResidualKV: Residual-Based KV Cache Compression for Efficient Long-Context Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ResidualKV: Residual-Based KV Cache Compression for Efficient Long-Context Inference</h1>
+<p class="meta-line">arXiv / Jitai Hao 等 · 2026-09-30 · 论文PDF</p>
+
+<p>【修订版】Efficient long-context inference faces two coupled bottlenecks: KV-cache memory grows lin…</p>
+<blockquote><p>Efficient long-context inference faces two coupled bottlenecks: KV-cache memory grows linearly with context length, while attention computation grows quadratically. Existing approaches typically address one at the expense of irreversible token eviction, full-cache retention, or full-history reconstruction, limiting their effectiveness for multi-turn interaction and long-form reasoning. Motivated by two empirical properties, Long-Range Inter-Token Similarity and Smooth Residual Distribution, we propose ResidualKV, which factorizes the KV cache into a sparse set of globally retrieved references and compact, quantized residual codes for the remaining tokens. This representation preserves token-specific information without permanent eviction and, when combined with sparse attention, reconstructs only the selected states on demand. Dynamic-stride scheduling further reduces reference growth from linear to approximately logarithmic at ultra-long contexts. Across Llama, Qwen, LLaVA-OV, and Qwen3-VL backbones, ResidualKV maintains near-full-cache performance using only 13%-16% KV storage and 30% attention computation on LongBench, and 8%-10% storage and 10% computation in matched-budget mul…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2602.08005">阅读原文 ↗</a></p>
+</body>
+</html>

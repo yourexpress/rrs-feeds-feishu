@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Devil Is in the Reconstruction Loss Scale: Rethinking Optimization in LLM Quantization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>The Devil Is in the Reconstruction Loss Scale: Rethinking Optimization in LLM Quantization</h1>
+<p class="meta-line">arXiv / Chao Li 等 · 2026-10-01 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 学习型 PTQ 普遍以 MSE 重建损失逐段优化量化参数，但 MSE 诱导的优化行为几乎无人研究——从第一个量化阶段到最后一个，优化过程究竟如何演变？</p>
+<p><strong>方法</strong> 跨多种代表性 PTQ 方法、模型家族、规模、架构与量化设置做系统实证，发现"优化失衡"：各阶段重建损失幅度差异巨大，MSE 把过大的重建损失尺度（reconstruction loss scale）转化为极不均的梯度幅度与参数更新。理论上证明样本/通道/token/元素各级 RMSE 变体通过隐式梯度归一化实现"优化强度与损失尺度解耦"的原则。</p>
+<p><strong>关键数字</strong> 作为 MSE 的即插即用替代，RMSE 变体带来显著性能提升（摘要未给出具体数值）。</p>
+<p><strong>为什么值得看</strong> 把一个被当作默认选项的损失函数拆开审视，结论简单可落地——换 RMSE 就能涨点，做 LLM 量化的几乎零成本尝试。</p>
+<p><a href="http://arxiv.org/abs/2610.00983v1">阅读原文</a></p>
+<p><a class="origin" href="http://arxiv.org/abs/2610.00983v1">阅读原文 ↗</a></p>
+</body>
+</html>

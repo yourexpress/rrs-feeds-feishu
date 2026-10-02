@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spike-driven Vision-Language-Action Model</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Spike-driven Vision-Language-Action Model</h1>
+<p class="meta-line">arXiv / Shuai Wang 等 · 2026-09-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> VLA 模型是具身智能主流范式，但大 Transformer 的延迟与能耗阻碍其在资源受限平台部署；能否用脉冲神经网络（SNN）的稀疏事件驱动计算做端到端 VLA？</p>
+<p><strong>方法</strong> 首个可端到端直接训练的脉冲驱动 VLA 框架：脉冲视觉与指令编码器输出稀疏脉冲表示；Multi-Winner Spike Fusion 以双向 top-k 赢家通吃脉冲路由抑制背景干扰；Spike Action Chunking Transformer 用脉冲交叉注意力在融合记忆与机器人状态上直接生成连续动作块。</p>
+<p><strong>关键数字</strong> 在 LIBERO 与 Meta-World 上以更少的参数与更低的估算推理能耗取得与传统 VLA 相当的性能（摘要未给出具体数值）。</p>
+<p><strong>为什么值得看</strong> 神经形态计算进入 VLA 的开山框架，若后续能效数据坐实，对边缘端机器人部署路径有方向性意义。</p>
+<p><a href="https://arxiv.org/abs/2609.39514">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.39514">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building BOAR: How I Fit an Offline AI Research Engine Into a Phone</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Building BOAR: How I Fit an Offline AI Research Engine Into a Phone</h1>
+<p class="meta-line">STEMGeeks · 2026-10-02 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://images.hive.blog/1200x630/https://files.peakd.com/file/peakd-hive/vaipraonde/23vhwj7KorchyLjpc6tQeRnYBUoFPGqUa2Jbg4EyW2CaQbYx2EgcQB5CyeHtk1fL8SGsG.jpeg" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong> 作者接下悬赏：打造一款完全离线的 Android AI 研究应用 BOAR——零网络信号下回答复杂研究问题，且受 12GB 内存、50GB 存储硬约束。文章记录全程踩坑。</p>
+<p><strong>要点</strong> 手机无法同时保活多个模型，BOAR 改为"按深度路由"：有把握的查询直接用来源句作答不过 LLM，普通问题走当前模型+紧凑来源集，只有装了更大模型且放得下时才"go deeper"。早期检索把查询当死板短语匹配，重建为 SQLite FTS5 关键词 + 向量语义混合引擎并加入智能上下文打包后才解决多概念科学查询。</p>
+<p><strong>关键数字</strong> 手机端每次切换模型代价 4.5–8.9 秒——"哪个模型已在内存"和"哪个模型更聪明"同等重要。</p>
+<p><strong>为什么值得看</strong> 离线端侧 RAG 的真实工程笔记：热模型管理、混合检索、热节流，比架构图更值钱的实战细节。</p>
+<p><a href="https://stemgeeks.net/@vaipraonde/building-boar-or-how-i-fit-an-offline-ai-research-engine-into-a-phone">阅读原文</a></p>
+<p><a class="origin" href="https://stemgeeks.net/@vaipraonde/building-boar-or-how-i-fit-an-offline-ai-research-engine-into-a-phone">阅读原文 ↗</a></p>
+</body>
+</html>

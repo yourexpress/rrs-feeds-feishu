@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LatencyLab: A DPDK-Based P4 Pipeline Latency Measurement Framework for FPGA SmartNICs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LatencyLab: A DPDK-Based P4 Pipeline Latency Measurement Framework for FPGA SmartNICs</h1>
+<p class="meta-line">arXiv / Pavani Kuppili 等 · 2026-09-30 · 论文PDF</p>
+
+<p>P4-programmable FPGA SmartNICs place packet processing directly on the wire, but open FPG…</p>
+<blockquote><p>P4-programmable FPGA SmartNICs place packet processing directly on the wire, but open FPGA P4 toolflows do not expose timestamping at the pipeline boundary, so the latency a P4 program adds on the target FPGA is rarely measured. This paper presents LatencyLab, a DPDK-based measurement framework for FPGA P4 pipeline latency that needs neither PHC/PTP support on the datapath nor clock synchronization. The FPGA's two ports share a network segment, so the switch multicasts a copy of each probe packet to both: one copy passes through the VitisNetP4 pipeline, the other through a matched bypass path. A kernel-bypass DPDK receiver busy-polls both ports and timestamps every packet with the CPU timestamp counter (TSC) as it is retrieved from the NIC's receive circular buffer. The arrival-time difference of the two copies isolates the pipeline latency after calibration against a null bitstream carrying the same traffic; transmit time cancel in the subtraction. We evaluate four VitisNetP4 programs on an AMD Alveo U280, probing each with a 20,000-packet trace measured ten times per session over five independent sessions, all TSC-timestamped and reflected for hardware timestamping. The measured …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.39978">阅读原文 ↗</a></p>
+</body>
+</html>

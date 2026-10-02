@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$S^3$: Spectral Null-Space Swap Makes Reasoning Models Efficient</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>$S^3$: Spectral Null-Space Swap Makes Reasoning Models Efficient</h1>
+<p class="meta-line">arXiv / Hongbo Ma 等 · 2026-09-29 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> CoT 训练让推理模型变强，但 token 开销巨大；能否在免训练的前提下，仅靠模型组合就同时降成本、保精度？</p>
+<p><strong>方法</strong> 作者发现推理能力核心位于 Thinking 模型权重在 Non-thinking 模型主奇异方向投影零空间中的分量，据此提出 Spectral Null-Space Swap（S³）：Non-thinking 模型保留自身主子空间内部分，Thinking 检查点取其零空间部分，免训练组合两份权重。</p>
+<p><strong>关键数字</strong> 在 2B–30B 稠密与 MoE 架构、28 个评测环境上，平均减少推理 token 开销 27.4%，同时整体精度提升 1.0 个百分点；HMMT25 上精度 +8.3% 且 token 加速 33.0%。</p>
+<p><strong>为什么值得看</strong> 首个把"零空间"用于推理模型效率优化的工作，免训练、刷新模型组合的 Pareto 前沿，并用注意力熵给出机制解释，实操成本极低。</p>
+<p><a href="https://arxiv.org/abs/2609.37976">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.37976">阅读原文 ↗</a></p>
+</body>
+</html>

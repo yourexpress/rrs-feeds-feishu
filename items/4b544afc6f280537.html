@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recovering Off-Policy Supervision for Speculative Decoding</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Recovering Off-Policy Supervision for Speculative Decoding</h1>
+<p class="meta-line">arXiv / Jungseob Lee 等 · 2026-09-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> block drafter 常在外部模型生成的语料上训练，单个 off-policy token 会使该 block 后续所有位置失去有效监督，现有做法只能丢弃发散位置，监督损失严重。</p>
+<p><strong>方法</strong> 提出基于 rollout 的训练框架，两个互补组件：Anchor-Label Relabelling（ALR）用贪心目标 rollout 的分布替换语料标签，恢复所有预测位置的监督；In-Rollout Anchors（IRA）把草稿 block 直接放进 rollout 中，让 drafter 接触目标模型生成的上下文，且复用预算好的 rollout 特征、不增加目标模型开销。</p>
+<p><strong>关键数字</strong> 在固定视觉-语言与文本语料上，贪心接受长度相对 DFlash 最高提升 36.5%；单轮训练即超过最优 erase 调度，三轮后追平在目标模型重生成回复上训练的效果。</p>
+<p><strong>为什么值得看</strong> 不改原文就能吃满固定语料的监督信号，计算高效且代码开源，对训练投机解码 drafter 的人是实用升级。</p>
+<p><a href="https://arxiv.org/abs/2609.38795">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.38795">阅读原文 ↗</a></p>
+</body>
+</html>

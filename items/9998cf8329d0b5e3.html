@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agentic Coding in the Wild: Characterizing GitHub Copilot at Production Scale</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Agentic Coding in the Wild: Characterizing GitHub Copilot at Production Scale</h1>
+<p class="meta-line">Microsoft · 2026-10-01 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> Copilot、Claude Code、Codex 这类 agentic coding 把多步 LLM 推理与工具执行交织在一起，负载特征与聊天机器人有何本质不同？</p>
+<p><strong>方法</strong> 基于 2026 年 6 月 GitHub Copilot 生产环境采样 trace 做首个生产级负载刻画，并据此设计轻量空闲时间预测器支撑资源编排。</p>
+<p><strong>关键数字</strong> 数据规模 3.2M 用户、13M 会话、7.61 亿次 LLM 调用、95T token；turn 内 KV cache 命中率平均 90%，跨 turn 降至 55%，模型切换或上下文压缩后剧烈失效；空闲预测器覆盖总空闲时间的 86–90%。</p>
+<p><strong>为什么值得看</strong> 用真实生产数据挑战现有 LLM-serving 系统的假设（如 cache 复用与调度粒度），是构建 agent-native 基础设施的一手实证基础。</p>
+<p><a href="https://arxiv.org/abs/2608.00101">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2608.00101">阅读原文 ↗</a></p>
+</body>
+</html>

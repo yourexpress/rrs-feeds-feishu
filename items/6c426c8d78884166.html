@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UBTree: Parallel Tree Drafting via Unigram and Bigram Models for Speculative Decoding</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>UBTree: Parallel Tree Drafting via Unigram and Bigram Models for Speculative Decoding</h1>
+<p class="meta-line">arXiv / Chumeng Liang 等 · 2026-09-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 并行 drafter 在生产级模型上效果很好，但目标分布熵升高时因草稿多样性不足而性能退化——如何在不牺牲并行性的前提下提升草稿覆盖？</p>
+<p><strong>方法</strong> UBTree 用 Unigram 提议器独立为每个位置生成候选 token，再用轻量 Bigram 选择器预测相邻候选对的转移分数、组装成草稿树；选择器以高温数据上的重归一化 KL 目标训练，监督超出贪心路径，鼓励 plausible 备选分支，提高树验证接受更多 token 的机会。</p>
+<p><strong>关键数字</strong> 在 Qwen3-4B/8B、七个标准基准上相对自回归解码平均加速 5.84–6.94×，28 组对比全部优于 DARTree；生产规模评测也优于 DSpark 等前沿基线。</p>
+<p><strong>为什么值得看</strong> "一元提议+二元选择"的分解把树草稿的监督信号做足，高熵场景增益明显，投机解码方向的强基线更新。</p>
+<p><a href="https://arxiv.org/abs/2609.39972">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.39972">阅读原文 ↗</a></p>
+</body>
+</html>

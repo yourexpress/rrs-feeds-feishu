@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taming Speculative Search for Test-Time Scaling in LLM Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Taming Speculative Search for Test-Time Scaling in LLM Serving</h1>
+<p class="meta-line">arXiv / Jinwoo Jeong (Korea University) 等 · 2026-09-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 测试时扩展用更多推理算力换精度，投机执行可加速推理路径探索，但给 serving 系统带来两大新挑战：候选路径搜索空间爆炸，以及频繁细粒度的候选验证任务。</p>
+<p><strong>方法</strong> SpecScale 服务系统用三招平衡延迟与算力开销：早停剪除低质量候选路径、对冗余候选路径去重计算、延迟细粒度验证任务。</p>
+<p><strong>关键数字</strong> 在 MATH、Olympiad 等高难推理基准上显著优于非投机与近期投机方案，吞吐与延迟均有实质提升且保持答案质量（摘要未给出具体数值）。</p>
+<p><strong>为什么值得看</strong> 把 test-time scaling 的"搜索"正式纳入 LLM serving 系统设计，三招都偏工程、可迁移，做推理服务的人值得跟进其实现细节。</p>
+<p><a href="https://arxiv.org/abs/2609.39334">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.39334">阅读原文 ↗</a></p>
+</body>
+</html>

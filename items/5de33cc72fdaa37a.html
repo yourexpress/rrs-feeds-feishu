@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HAPMoE: Heterogeneity-Aware Automatic Parallelism Planning for Mixture-of-Experts Models Training</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>HAPMoE: Heterogeneity-Aware Automatic Parallelism Planning for Mixture-of-Experts Models Training</h1>
+<p class="meta-line">arXiv / Mengyuan Fan 等 · 2026-09-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> MoE 已成主流架构、集群异构也成常态，但现有自动并行方法只能应对其一；两者叠加时如何高效搜出可落地的训练并行策略？</p>
+<p><strong>方法</strong> HAPMoE 构建轻量 MoE 感知代价模型，在六维并行空间中高效搜索，直接产出可在 Megatron-LM 部署的并行方案；剪枝增强的动态规划加速搜索，并支持非均匀流水切分。</p>
+<p><strong>关键数字</strong> 异构集群上端到端训练吞吐相对基线最高提升 3.2×；非均匀流水切分额外带来最高 78% 收益；整个搜索在 1 分钟内完成。</p>
+<p><strong>为什么值得看</strong> 把"MoE×异构集群"这一真实痛点同时建模且搜索成本极低，产出直接对接 Megatron-LM，对大规模训练工程落地价值很高。</p>
+<p><a href="https://arxiv.org/abs/2609.39350">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.39350">阅读原文 ↗</a></p>
+</body>
+</html>

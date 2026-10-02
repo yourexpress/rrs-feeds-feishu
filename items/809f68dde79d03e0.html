@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joint Branch-Space Transform Coding for Diffusion Activation Quantization with Classifier-Free Guidance</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Joint Branch-Space Transform Coding for Diffusion Activation Quantization with Classifier-Free Guidance</h1>
+<p class="meta-line">arXiv / Mingrun Jiang 等 · 2026-10-01 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 扩散模型量化开始利用 CFG 结构，但条件/无条件两分支的激活量化仍各自独立进行，跨分支相关性未被利用——固定比特预算下，分支编码基的选择对保真度有多大影响？</p>
+<p><strong>方法</strong> 提出分支空间变换编码：用离线推导的 2×2 正交矩阵旋转配对的 CFG 分支，几乎不改模型参数与量化流水线；进一步推导 Guidance-Correlation Branch Transform（GCBT），联合 CFG 引导方向与跨分支二阶矩，在等比特量化噪声代理下有逐层闭式解，无需梯度优化或角度搜索。</p>
+<p><strong>关键数字</strong> 叠加在现有扩散 PTQ 方法之上，多数对比取得统计显著的保真度提升，且无统计显著退化（摘要未给出具体数值）。</p>
+<p><strong>为什么值得看</strong> 用一个轻量正交旋转撬动 CFG 双分支结构先验，"即插即用、闭式可解"的 PTQ 增强件，做扩散模型压缩的可直接叠加。</p>
+<p><a href="http://arxiv.org/abs/2610.00930v1">阅读原文</a></p>
+<p><a class="origin" href="http://arxiv.org/abs/2610.00930v1">阅读原文 ↗</a></p>
+</body>
+</html>

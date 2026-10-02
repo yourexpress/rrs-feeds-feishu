@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relative Kinetic Utility: Calibrating Cross-Layer Credit for Global Structured LLM Pruning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Relative Kinetic Utility: Calibrating Cross-Layer Credit for Global Structured LLM Pruning</h1>
+<p class="meta-line">arXiv / Tianhao Qian 等 · 2026-09-29 · 论文PDF</p>
+
+<p>【修订版】Global structured pruning requires channels from different layers to compete under a shar…</p>
+<blockquote><p>Global structured pruning requires channels from different layers to compete under a shared sparsity budget, raising two coupled challenges: identifying which channels should be retained and making their scores comparable across layers. Raw channel scores can contain block-common scale that leaves within-block ordering unchanged but distorts model-wide competition. Our experiment indicates that similar layer-wise allocations can retain substantially different FFN channels, so layer allocation alone does not determine channel identity. Motivated by this separation, we introduce Global Relative Kinetic Utility (Global RKU), a label-free criterion that separates channel importance estimation from cross-layer comparison. Global RKU measures channel participation using a final-hidden-state activation-gradient signal, then applies block-relative normalization to mitigate block-common scale while preserving within-block ordering, requires only unlabeled calibration inputs, and produces a static pruning topology in a single calibration stage. Under questions-only calibration on Qwen-2.5-7B, RKU-GISP Mean3 margins are -0.98, +3.79, and +8.61 points at 30%, 40%, and 50% sparsity, respectivel…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2605.09008">阅读原文 ↗</a></p>
+</body>
+</html>

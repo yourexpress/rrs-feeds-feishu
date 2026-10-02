@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LLM Serving Optimization with Variable Prefill and Decode Lengths</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LLM Serving Optimization with Variable Prefill and Decode Lengths</h1>
+<p class="meta-line">arXiv / Meixuan Wang 等 · 2026-09-29 · 论文PDF</p>
+
+<p>【修订版】We study offline scheduling for large language model (LLM) serving under a fixed KV-cache…</p>
+<blockquote><p>We study offline scheduling for large language model (LLM) serving under a fixed KV-cache memory budget, where requests have heterogeneous prompt (prefill) and response (decode) lengths. Given a backlog of requests available at time zero, the scheduler forms mixed prefill/decode batches over time to minimize total end-to-end latency. We show that heterogeneity in prompt lengths fundamentally changes the problem: minimizing total latency is NP-hard, and standard policies that prioritize short outputs or small total sequence sizes can have unbounded approximation ratios. We propose Sorted-F, which repeatedly selects feasible batches using an F-metric that balances batch cardinality against downstream decode cost. With exact batch selection, Sorted-F achieves a constant-factor approximation guarantee in the unit-time, uninterrupted-decoding model with known output lengths; the guarantee also holds under a static peak-memory batch constraint. We develop an exact pseudopolynomial dynamic program for this static subproblem, scalable local-search and greedy heuristics, LP-guided variants, and a receding-horizon online extension. Experiments on public conversational and long-document summa…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2508.06133">阅读原文 ↗</a></p>
+</body>
+</html>

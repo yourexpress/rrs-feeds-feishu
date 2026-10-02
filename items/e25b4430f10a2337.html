@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Characterizing High Bandwidth Flash for LLM Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Characterizing High Bandwidth Flash for LLM Serving</h1>
+<p class="meta-line">arXiv / Zack Yu 等 · 2026-09-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LLM 服务中权重与 KV cache 不断膨胀，agentic 负载还要反复复用长上下文状态；高带宽闪存（HBF）能扩容量，但访问代价与写寿命受限——何时值得引入？</p>
+<p><strong>方法</strong> 作者构建 HBM-HBF-host 三级存储系统并提出缓冲式 cache 感知调度，用 trace 驱动仿真系统评估 HBF 增强对服务性能、能耗与写寿命的影响。</p>
+<p><strong>关键数字</strong> 在所测负载上，最快的 HBF 增强系统相对纯 HBM 系统完成时间降低 36.1%–87.0%；建模节能最高 55.8%（部分轻负载反而增耗）；缓冲式调度将估算 HBF 写寿命从 4.77 年延长到 14.82 年。</p>
+<p><strong>为什么值得看</strong> 少见的"HBF 用于 LLM serving"系统性量化研究，明确指出容量、调度与写寿命必须协同设计，对推理系统与新型存储选型都有参考。</p>
+<p><a href="https://arxiv.org/abs/2609.39131">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.39131">阅读原文 ↗</a></p>
+</body>
+</html>

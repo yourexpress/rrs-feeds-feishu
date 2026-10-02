@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TypeSafe's Jev Costs 400x Less Than an LLM. These 25 Lines of Python Do the Same Job for Free.</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>TypeSafe's Jev Costs 400x Less Than an LLM. These 25 Lines of Python Do the Same Job for Free.</h1>
+<p class="meta-line">DEV Community (jamilxt) · 2026-10-01 · 技术博客</p>
+<img class="hero" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F72h2kve7xvrfy3xm2sb2.png" alt="" referrerpolicy="no-referrer">
+<p>评述用 0.6B 本地模型 + llama.cpp 约束解码复现决策模型 Jev，对比本地推理与托管 API 的成本/校准权衡</p>
+<blockquote><p>Your agent loop has a dirty secret: most of what it does all day is make tiny decisions. Is this input spam? Is this tool call dangerous? Should this ticket go to billing or support? And for every one of those coin-flip decisions, your harness fires up a full frontier LLM, generates a paragraph of reasoning, and charges you for the privilege.</p><p>A startup called TypeSafe AI built a whole product around that observation. Their model, Jev, skips text generation entirely and returns typed decisions with probabilities attached. The company reports up to 200x faster inference and 400x lower cost than comparable LLMs on classification tasks. The launch hit the front page of Hacker News, LangChain shipped an integration within days, and the usual hype cycle spun up.</p><p>Then a group called NobodyWho published a blog post with a title designed to start fights: "Jev in 25 lines of Python." It rebuilds the core trick with a 0.6-billion-parameter Qwen model running locally through llama.cpp. That post also went viral, sitting near the top of Hacker News with over 450 points, and the comment section turned into a genuine argument about what Jev actually is.</p><p>I have not called the Jev API myself. Everything below comes from TypeSafe's announcements, the LangChain writeup, the parody post, and two independent critiques that stress-tested the calibration claims. But the comparison between the two approaches is the most useful 30 minutes you can spend if you build anything with agents, because it exposes a decision you will have to make sooner or later: pay for fast decisions, or build your own.</p><p>What Jev actually is</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://dev.to/jamilxt/typesafes-jev-costs-400x-less-than-an-llm-these-25-lines-of-python-do-the-same-job-for-free-3ddd">阅读原文 ↗</a></p>
+</body>
+</html>

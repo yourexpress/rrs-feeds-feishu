@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scaling Laws for Looped Mixture of Experts</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Scaling Laws for Looped Mixture of Experts</h1>
+<p class="meta-line">Meta AI · 2026-09-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 循环 transformer（固定参数增深度）与 MoE（固定激活算力扩容量）是两条互补的高效扩展路线，但既有标度律只单独建模其一，无法指导两者联合设计。</p>
+<p><strong>方法</strong> 提出首个联合建模循环与稀疏性、模型规模和数据量的 Loop Scaling Laws，核心是一个有界、以稀疏为条件的循环映射，刻画循环带来的有效参数增益及稀疏性如何放大它；该定律把稠密与 MoE 标度律收为特例。</p>
+<p><strong>关键数字</strong> 下游评测显示稀疏性带来约 3× 激活参数效率、循环在推理任务上带来约 2× 总参数效率；在万亿 token 规模、等训练算力下，按定律设计的 looped MoE 可匹配约 2× 更大的非循环 MoE 推理表现，并支持测试时经循环扩展。</p>
+<p><strong>为什么值得看</strong> 为"循环×稀疏"架构选型提供可计算的约束求解工具，直通万亿 token 级验证，做高效模型架构的必读。</p>
+<p><a href="https://arxiv.org/abs/2609.40316">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.40316">阅读原文 ↗</a></p>
+</body>
+</html>

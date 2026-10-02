@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Structure-augmented LLMs for High-Level Synthesis Pragma Optimization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Structure-augmented LLMs for High-Level Synthesis Pragma Optimization</h1>
+<p class="meta-line">arXiv / Haocheng Xu 等 · 2026-09-29 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> HLS 设计中 pragma 插入决定综合质量，需要理解循环嵌套、数据依赖与内存布局；现有代码 LLM 缺乏显式程序结构感知，给出的 pragma 建议效果有限。</p>
+<p><strong>方法</strong> PRISM 在冻结的预训练代码 LLM 上注入编译器级结构推理：将 AST、CFG、DFG 三种层次化程序表示注入特定 transformer 层，代码 token 走独立流，注入点的交叉注意力门可在结构信号无用时回退到预训练表示。</p>
+<p><strong>关键数字</strong> HLS-Eval 零样本评测中可综合 kernel 数为 Llama3-8B 的 3.5 倍（26.9% vs 7.7%）；成功 kernel 上设计速度比 GPT-5-mini 快 2.31×（几何平均）；agentic 流程下套件平均归一化提升 26.4%。</p>
+<p><strong>为什么值得看</strong> "冻结主干+结构表示旁路注入"的改造范式简洁有效，为 EDA 之外需要程序结构感知的代码任务提供了可复用思路。</p>
+<p><a href="https://arxiv.org/abs/2609.38601">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2609.38601">阅读原文 ↗</a></p>
+</body>
+</html>
