@@ -22,9 +22,11 @@
 <h1>Why Does Post-Training Quantization Work?</h1>
 <p class="meta-line">arXiv（Yuxiang Chen 等，cs.LG） · 2026-09-10 · 论文PDF</p>
 
-<p>Post-training quantization compresses large language models (LLMs) by storing their weights at reduced precision, and each quantized weight introduces an error into the hidden states.</p>
-<blockquote><p>Post-training quantization compresses large language models (LLMs) by storing their weights at reduced precision, and each quantized weight introduces an error into the hidden states. Naively, these errors should accumulate with depth and corrupt next-token prediction; randomly initialized models accumulate these discrepancies rapidly, whereas quantized pretrained models accumulate much less hidden-state error and largely maintain downstream task performance, even though they were never trained with quantization noise. This raises the question we address: why does post-training quantization work? Comparing full-precision and quantized forward passes, we identify two mechanisms that characterize pretrained quantization robustness. First, the error a layer newly introduces tends to oppose the error it inherits from the layer's input. The two cancel partially such that the discrepancy between full-precision and quantized passes grows slowly. This counteracting residual interaction develops during pretraining. Our quantitative analysis identifies it as a major factor slowing hidden-error growth. Second, LM-head geometry preferentially preserves the scores and probabilities of high-rank…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：预训练 LLM 从未见过量化噪声，为什么训练后量化（PTQ）穿过几十层仍只带来很小的输出变化？</p>
+<p><strong>方法</strong>：对比全精度与量化前向，识别出两个机制。其一，每层新引入的误差倾向于与它从输入继承的误差方向相反，部分抵消使隐状态误差增长缓慢，这种"对抗性残差交互"是在预训练中自然形成的；其二，LM head 的几何结构优先保住高排名 token 的分数与概率，即模型最有把握的预测最先被保护。作者在多个模型与量化设置上验证了这两个机制。</p>
+<p><strong>关键数字</strong>：摘要为机制性分析，未列具体数值；明确指出随机初始化模型误差随深度快速累积，而量化预训练模型隐状态误差增长慢得多。</p>
+<p><strong>为什么值得看</strong>：PTQ 工程上已成标配，但"为什么有效"一直缺解释，这篇给出可验证的机制答案，对设计下一代量化方法有指导意义。</p>
+<p><a href="https://arxiv.org/abs/2609.11716v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.11716v1">阅读原文 ↗</a></p>
 </body>
 </html>

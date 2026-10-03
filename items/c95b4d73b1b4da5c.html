@@ -22,9 +22,11 @@
 <h1>NovaFabric: Tamper-Evident, Replayable Evidence for Autonomous AI Agent Runs</h1>
 <p class="meta-line">arXiv（Mohsen Seyedkazemi Ardebili，cs.CR） · 2026-09-11 · 论文PDF</p>
 
-<p>When an autonomous AI agent does something consequential, what can be proven about what it did?</p>
-<blockquote><p>When an autonomous AI agent does something consequential, what can be proven about what it did? Agent-observability platforms capture traces, but a trace is mutable: alterable undetected, with no recipe for re-executing it, silent on whether captured secrets were removed. Regulation (EU AI Act, ISO 42001, NIST AI RMF) presumes records an independent party can check. We present NovaFabric, producing audit-grade execution evidence: provider-neutral, tamper-evident, replayable, shareable. It records an agent run, without modifying agent logic, into a portable Run Capsule (fifteen-entity schema), sealed with a holistic DSSE signature, RFC 3161 timestamp, Merkle log and redaction attestation. Sealed runs are re-executable under a four-mode replay protocol and exportable as an Evidence Bundle for third-party verification with stock tooling (specified, not evaluated). The contribution is integration, not new cryptography: OpenTelemetry, DSSE/in-toto and W3C PROV. We evaluate eight research questions at measured scope. Mocked replay serves every model response from the capsule (no live model call, 10/10) but is offline w.r.t. models, not the network; only 2/10 tool-using workloads complete…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：自主 AI agent 做出有后果的行为时，第三方能证明什么？现有可观测平台的 trace 可变、无法重放、也无法证明敏感信息已擦除，难满足 EU AI Act、ISO 42001、NIST AI RMF 的审计要求。</p>
+<p><strong>方法</strong>：NovaFabric 不改 agent 逻辑，把一次运行记录为可移植 Run Capsule（15 实体 schema），以 DSSE 整体签名、RFC 3161 时间戳、Merkle 日志与擦除证明封存；支持四模式重放协议，并可导出证据包供第三方用通用工具核验。贡献在集成（OpenTelemetry、DSSE/in-toto、W3C PROV），而非新密码学。</p>
+<p><strong>关键数字</strong>：mock 重放 10/10 不依赖在线模型；但工具型负载仅 2/10 完成（缺工具响应替换）；三类篡改全部被拒；声明流完整性 0.652（95% CI ±0.064）；修复后的规则包擦除 14/14 类凭据并保住 9/9 诱饵；diff 定位 140/140 处变更；blast-radius 查询 1000 万边 p99 45.5 ms、1 亿边 167.9 ms；314 机十区域压测 REST 摄取无损但受序列化限制在 61.6 req/s。</p>
+<p><strong>为什么值得看</strong>：agent 审计从"看日志"升级到"可验证证据"，评测也罕见地坦承短板，可信 agent 基础设施方向值得跟进。</p>
+<p><a href="https://arxiv.org/abs/2609.12582v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.12582v1">阅读原文 ↗</a></p>
 </body>
 </html>

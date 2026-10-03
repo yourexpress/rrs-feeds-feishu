@@ -22,9 +22,11 @@
 <h1>Dual-guided Hierarchical Edge Localization for Large-scale Optimal Transport Across Dimensions</h1>
 <p class="meta-line">arXiv（Wenzhou Xia 等，cs.LG） · 2026-09-11 · 论文PDF</p>
 
-<p>Optimal transport (OT) compares distributions and aligns datasets in machine learning, yet unregularized discrete OT requires a linear program with quadratically many transport variables.</p>
-<blockquote><p>Optimal transport (OT) compares distributions and aligns datasets in machine learning, yet unregularized discrete OT requires a linear program with quadratically many transport variables. We propose HELLO, a hierarchical solver that casts large-scale discrete OT as edge localization and uses dual potentials to guide both coarse-to-fine initialization and within-level refinement. Initialization propagates coarse dual potentials across a recursive subsampling hierarchy to assign candidate edges. Refinement then iteratively inserts the largest dual violators in each row and column until the relative KKT residual meets a prescribed tolerance, while budgeted pruning ensures linear memory complexity. For exact-arithmetic refinement, we prove finite termination at a global optimum under a symbolic lexicographic rule. At the million-point scale, HELLO attains lower transport objectives with order-of-magnitude runtime improvements over strong baselines across feature dimensions from single digits to thousands. It further scales to 1.28 million samples per marginal in 8192 dimensions on a single H100, using 41.6 GiB peak GPU memory while satisfying a full relative KKT residual below $10^{-6}…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：未正则化的离散最优传输要求解带二次量级运输变量的线性规划，百万点、千维以上规模如何精确求解。</p>
+<p><strong>方法</strong>：HELLO 把大规模离散 OT 转化为边定位问题，用对偶势同时指导由粗到细的初始化与层内精化：初始化在递归子采样层级上传播粗层对偶势来圈定候选边；精化阶段每轮插入行列中违反程度最大的对偶违例，直至相对 KKT 残差达标，预算化剪枝保证线性内存；精确算术精化配合符号字典序规则可证有限步终止于全局最优。</p>
+<p><strong>关键数字</strong>：百万点规模下目标值更低、运行时间比强基线快一个数量级（维度从个位到数千）；单张 H100 上扩展到每边际 128 万样本、8192 维，峰值显存 41.6 GiB，相对 KKT 残差 &lt;10⁻⁶。</p>
+<p><strong>为什么值得看</strong>：OT 是许多对齐与匹配任务的底座，能精确解到百万点千维级，等于把一批此前只能靠近似的问题拉回精确轨道。</p>
+<p><a href="https://arxiv.org/abs/2609.13010v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.13010v1">阅读原文 ↗</a></p>
 </body>
 </html>

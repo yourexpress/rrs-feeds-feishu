@@ -22,9 +22,11 @@
 <h1>Judging by the Cover: Cleaning LLM Truthfulness Benchmarks to Avoid Surface-Level Feature Leakage</h1>
 <p class="meta-line">arXiv（Foad Namjoo 等，cs.CL） · 2026-09-11 · 论文PDF</p>
 
-<p>Binary-choice truth benchmarks ask models to choose between a correct and an incorrect answer, but if the two answers differ systematically in surface-level features, models can exceed chance without performing the inten…</p>
-<blockquote><p>Binary-choice truth benchmarks ask models to choose between a correct and an incorrect answer, but if the two answers differ systematically in surface-level features, models can exceed chance without performing the intended reasoning. We show that this failure mode is detectable and can be exploited by downstream classifiers. In TruthfulQA, a simple six-feature logistic classifier achieves substantial accuracy in separating correct from incorrect answers. We further show that similar surface-level artifacts are present in additional benchmarks. To counteract this, we developed a general mechanism to clean them by removing the most leakage-reinforcing pairs. We release a version of TruthfulQA with surface-feature leakage reduced close to chance and provide a mechanism, Audit-Prune, so that the datasets can be cleaned before release.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：二选一真实性基准（如 TruthfulQA）中，若正确与错误答案在表层特征上系统性不同，模型不做目标推理也能超过随机水平——这种泄漏有多严重、如何清理。</p>
+<p><strong>方法</strong>：证明该失效模式可检测、且会被下游分类器利用：在 TruthfulQA 上仅用六个特征的 logistic 分类器就能高准确率区分对错答案，类似表层伪迹在其他基准中也存在。作者给出通用清理机制，移除最强化泄漏的样本对，并发布把表层特征泄漏降到接近随机水平的 TruthfulQA 版本及供发布前清洗的 Audit-Prune 机制。</p>
+<p><strong>关键数字</strong>：六特征 logistic 分类器在 TruthfulQA 上达到"可观"的分离准确率（摘要未给具体数值）；清理后泄漏降至接近随机水平。</p>
+<p><strong>为什么值得看</strong>：提醒我们许多基准分数里藏着"看封面猜内容"的水分，Audit-Prune 提供了一条可复用的去污染流水线，做评测的人必读。</p>
+<p><a href="https://arxiv.org/abs/2609.13003v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.13003v1">阅读原文 ↗</a></p>
 </body>
 </html>

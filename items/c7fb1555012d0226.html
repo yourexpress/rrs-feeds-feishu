@@ -22,9 +22,11 @@
 <h1>BOOST: Concurrent Access to Host Memory and HBM to Accelerate LLM Inference</h1>
 <p class="meta-line">arXiv（Anish Saxena 等，cs.DC） · 2026-09-11 · 论文PDF</p>
 
-<p>GPU memory bandwidth and capacity limit throughput in large language model (LLM) inference.</p>
-<blockquote><p>GPU memory bandwidth and capacity limit throughput in large language model (LLM) inference. The GPU memory system consists of a primary tier of high-bandwidth memory (HBM) and a secondary tier of host memory connected via CPU-to-GPU interconnect. Current serving systems treat the tiers hierarchically: they serve exclusively from HBM when data fits, and otherwise prefetch data from host memory to HBM before use. In both cases, the host memory bandwidth is never well utilized. Prefetching expands capacity by utilizing host memory, but consumes HBM bandwidth for writes, reducing the bandwidth available for demand loads. We observe that fully utilizing both host and HBM bandwidth requires each wave of GPU threadblocks to access both tiers concurrently and in proportion to their bandwidth ratio. Existing bandwidth-proportional placement strategies fail to provide concurrency because they are not aware of GPU waves, and the large 2MB GPU page size. This paper presents BOOST, the first runtime system that provides concurrent and proportional access to both GPU memory tiers, extracting the combined bandwidth of host memory and HBM for LLM inference without kernel changes. The key insight i…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：GPU 内存分 HBM 与主机内存两级，但现有 serving 系统要么只用 HBM、要么先预取到 HBM——主机内存带宽始终被浪费，如何同时榨干两级带宽。</p>
+<p><strong>方法</strong>：BOOST 是首个让每波 GPU threadblock 按带宽比例并发访问两级内存的运行时系统，不改 kernel。核心洞察是利用 kernel 访问模式做 wave 感知的数据管理：静态权重用取模式页面放置消除访问比例方差，动态 KV 对则让空闲页池感知 wave。</p>
+<p><strong>关键数字</strong>：集成进 vLLM 在 Grace Hopper 上评测：同 batch 下 TPOT 较纯 HBM 改善 4.3%（预取方案反而劣化 6%）；高吞吐场景吞吐平均提升 31%，比预取方案高 15%。</p>
+<p><strong>为什么值得看</strong>：Grace Hopper/Blackwell 这类统一互联架构下，"两级并发取数"是明显趋势，BOOST 给出免改 kernel 的系统级答案，vLLM 用户可直接受益。</p>
+<p><a href="https://arxiv.org/abs/2609.13592v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.13592v1">阅读原文 ↗</a></p>
 </body>
 </html>

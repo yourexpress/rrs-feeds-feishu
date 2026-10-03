@@ -22,9 +22,11 @@
 <h1>Kraken: LLM-based Speech-to-Speech Translation via Low-bitrate VQ and Dual-path Source Conditioning</h1>
 <p class="meta-line">arXiv（Hayato Futami 等，cs.CL） · 2026-09-11 · 论文PDF</p>
 
-<p>Speech-to-speech translation (S2ST) has advanced significantly with speech LLMs, offering the potential for joint optimization and preserving non-linguistic information.</p>
-<blockquote><p>Speech-to-speech translation (S2ST) has advanced significantly with speech LLMs, offering the potential for joint optimization and preserving non-linguistic information. However, these models struggle with predicting high-bitrate speech tokens in LLMs, and face the challenge of relying on S2ST training data with ideally aligned speaker identity and prosody. We propose using low-bitrate tokens based on single-layer vector quantization, trained to reconstruct self-supervised learning (SSL) features. We also employ a separate token-to-waveform decoder named Autowave-X, which is also conditioned on the source speech to improve non-linguistic transfer, thereby relaxing the training data constraints. With the integration of these techniques, we propose an S2ST model named Kraken, which augments a pre-trained LLM with speech feature inputs and the low-bitrate token outputs, followed by Autowave-X vocoder. We built the model upon Qwen3-8B and trained it using 150k hours of multilingual and multitask speech data. We demonstrated that our model exhibited better translation quality than SeamlessM4T-Large v2 and Qwen2.5-Omni, along with improved speaker and prosody transfer capabilities.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：语音到语音翻译（S2ST）中，speech LLM 难以预测高码率语音 token，且训练数据要求说话人身份与韵律理想对齐，两个瓶颈如何同时缓解。</p>
+<p><strong>方法</strong>：Kraken 用基于单层向量量化、以重建自监督（SSL）特征为目标的低码率 token 作为输出；另设独立的 token 到波形解码器 Autowave-X，同时以源语音为条件增强非语言信息（说话人、韵律）迁移，从而放松训练数据的对齐约束。整体在预训练 LLM 上加语音特征输入与低码率 token 输出，再接 Autowave-X 声码器。</p>
+<p><strong>关键数字</strong>：基于 Qwen3-8B 构建，用 15 万小时多语多任务语音数据训练；翻译质量优于 SeamlessM4T-Large v2 与 Qwen2.5-Omni，说话人与韵律迁移能力也更好（摘要未列具体分数）。</p>
+<p><strong>为什么值得看</strong>："低码率 token + 源语音条件化解码"的拆解思路干净有效，对做语音翻译与跨语言语音生成的团队有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.13045v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.13045v1">阅读原文 ↗</a></p>
 </body>
 </html>

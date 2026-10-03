@@ -22,9 +22,11 @@
 <h1>Attention Quantization for Tabular Foundation Models</h1>
 <p class="meta-line">arXiv（Jonas M. Kübler 等，cs.LG） · 2026-09-11 · 论文PDF</p>
 
-<p>With the recent rise and adoption of tabular foundation models, optimizing their inference performance becomes an emerging field for efficiency research.</p>
-<blockquote><p>With the recent rise and adoption of tabular foundation models, optimizing their inference performance becomes an emerging field for efficiency research. While the models are architecturally similar to transformer-based large language models (LLMs), the size and serving patterns differ significantly. We show that the focus should be on the attention calculation and less on weight or KV cache quantization, which are more popular in LLMs. We develop a quantization strategy for queries, keys, and values to FP8 and use explicit FP8 matrix multiplication instructions to speed up the attention calculation. We find that it is crucial to align the quantization error in the test rows with the quantization error in the training rows, as otherwise the accuracy drops drastically. Our Triton kernel achieves a speedup up to 1.7x over regular 16-bit kernels, and we show that on TabPFN-v3 and TabICLv2 there is no relevant accuracy loss across TabArena and BeyondArena.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：表格基础模型（tabular foundation models）推理优化与 LLM 有何不同——权重与 KV cache 量化那一套是否适用。</p>
+<p><strong>方法</strong>：作者指出表格模型的架构虽类似 Transformer，但规模与服务模式差异大，优化重心应放在 attention 计算上：对 query/key/value 做 FP8 量化并用显式 FP8 矩阵乘指令加速。关键发现是必须让测试行的量化误差与训练行的量化误差对齐，否则精度大幅下降；并给出 Triton kernel 实现。</p>
+<p><strong>关键数字</strong>：Triton kernel 较常规 16-bit kernel 最高提速 1.7×；在 TabPFN-v3 与 TabICLv2 上，跨 TabArena 与 BeyondArena 评测无可见精度损失。</p>
+<p><strong>为什么值得看</strong>：表格基础模型正快速落地，这篇给出与 LLM 经验相反的结论（先量化 attention 而非权重），对做表格推理部署的人是直接可用的工程指导。</p>
+<p><a href="https://arxiv.org/abs/2609.13031v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.13031v1">阅读原文 ↗</a></p>
 </body>
 </html>

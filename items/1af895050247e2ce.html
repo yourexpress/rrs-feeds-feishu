@@ -22,9 +22,11 @@
 <h1>Dynamic HBM Repartitioning for Multi-Turn MoE Serving</h1>
 <p class="meta-line">arXiv（Jinpyo Kim 等，cs.DC） · 2026-09-11 · 论文PDF</p>
 
-<p>Long-running multi-turn requests accumulate reusable key-value (KV) state.</p>
-<blockquote><p>Long-running multi-turn requests accumulate reusable key-value (KV) state. Once this state exceeds a fixed GPU KV-cache allocation, serving systems evict reusable prefixes, repeat prefill work, and may preempt requests. This pressure is particularly acute for Mixture-of-Experts (MoE) models: their expert weights occupy most GPU high-bandwidth memory (HBM), even though each token activates only a sparse subset of experts. A static boundary between weights and the KV cache prevents serving systems from using expert memory to preserve reusable state as conversations grow. We present VAMP, an MoE serving framework that changes this HBM boundary at runtime. When a KV allocation cannot be satisfied, VAMP compares the estimated future work of three alternatives: staging expert weights from host memory, evicting cached prefixes that may require re-prefill, or preempting and rescheduling requests. It then converts a bounded expert-weight region into KV-cache capacity when that action has the lowest estimated penalty. CUDA Virtual Memory Management page remapping performs this conversion without copying resident KV data. We implement VAMP in the vLLM serving engine and evaluate Qwen3-Next-80…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：多轮长会话累积大量可复用 KV 状态，固定 KV-cache 配额一旦打满就被迫驱逐前缀、重复 prefill 甚至抢占请求；MoE 模型专家权重占满 HBM 但每 token 只激活稀疏子集，权重与 KV 的静态边界造成浪费。</p>
+<p><strong>方法</strong>：VAMP 在运行时动态调整 HBM 中权重与 KV 的边界：KV 分配失败时，比较"从主机内存暂存专家权重、驱逐需重 prefill 的前缀、抢占重调度"三种方案的未来代价估计，选代价最低者，并用 CUDA 虚拟内存页重映射在不拷贝驻留 KV 的前提下完成区域转换。</p>
+<p><strong>关键数字</strong>：vLLM 上跑 Qwen3-Next-80B、回放 2,103 轮 SWE-bench agent 工作负载：最大 15% 专家卸载比例下 TTFT p90 从 26.1 s 降到 1.10 s（23.6 倍），吞吐提升 20.7%，代价是 TPOT 增加 31.1%。</p>
+<p><strong>为什么值得看</strong>：agent 长会话负载下 TTFT 的改善幅度惊人，MoE serving 的内存管理因此多了一个新的可调维度。</p>
+<p><a href="https://arxiv.org/abs/2609.13537v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.13537v1">阅读原文 ↗</a></p>
 </body>
 </html>

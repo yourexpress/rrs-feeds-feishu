@@ -22,9 +22,11 @@
 <h1>Arborist: Algorithm-Hardware Co-Design for Fast and Efficient Motion Planning</h1>
 <p class="meta-line">arXiv（Yaotian Liu 等，cs.AR） · 2026-09-11 · 论文PDF</p>
 
-<p>Real-time motion planning must execute under strict latency and energy constraints on resource-limited platforms.</p>
-<blockquote><p>Real-time motion planning must execute under strict latency and energy constraints on resource-limited platforms. This paper presents Arborist, an algorithm-hardware co-design framework that accelerates Fast Marching Tree (FMT*) motion planning through synergistic algorithmic and architectural innovations. At the algorithm level, Arborist introduces safe multi-tree expansion with global competition management and cross-tree optimality checking to expose inter-tree parallelism while preserving path quality. At the architecture level, our proposed ArboristAccel integrates an Arborist Toolbox that provides hardware support for inter-tree parallelism; a KD-tree Subsystem for high-throughput near-neighbor search; a Parallel-Query Retrieval module that balances multi-bank memory accesses to alleviate system-level memory bandwidth bottlenecks; and a Look-ahead Planning Engine that exploits intra-tree parallelism while preserving path quality by in-order commit. Synthesized in 16 nm and operating at 500 MHz, ArboristAccel sustains more than 1000x speedup over CPU across all workloads, peaking at 2800x on 2D-Maze, and delivers geomean improvements of 8.8x speedup, 4.6x area efficiency, and …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：实时运动规划要在资源受限平台上同时满足严苛延迟与能耗约束，FMT* 算法如何靠算法-硬件协同设计提速。</p>
+<p><strong>方法</strong>：算法层提出带全局竞争管理与跨树最优性检查的安全多树扩展，在保住路径质量的前提下暴露树间并行；架构层的 ArboristAccel 集成 Arborist Toolbox（树间并行硬件支持）、KD-tree 子系统（高吞吐近邻搜索）、并行查询检索模块（多 bank 均衡缓解访存瓶颈）与前瞻规划引擎（利用树内并行、按序提交保质量）。</p>
+<p><strong>关键数字</strong>：16 nm 工艺、500 MHz 下，对 CPU 全面超 1000 倍加速、2D-Maze 峰值 2800 倍；相对 FMT<em> ASIC 基线几何平均提升：速度 8.8×、面积效率 4.6×、功耗效率 3.1×；相对 SOTA RRT</em> 加速器 MOPED 为 8.6×/1.0×/1.8×，路径代价相当。据称是首个 FMT* 专用硬件加速器。</p>
+<p><strong>为什么值得看</strong>：算法-架构双轮驱动的教科书式案例，数字亮眼，机器人与加速器方向都值得细读。</p>
+<p><a href="https://arxiv.org/abs/2609.13420v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.13420v1">阅读原文 ↗</a></p>
 </body>
 </html>

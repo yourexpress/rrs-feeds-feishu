@@ -22,9 +22,11 @@
 <h1>Argus: Orchestrating Cross-Layer GPU Performance Measurements around Semantic Regions</h1>
 <p class="meta-line">arXiv（Jianzhu Yao 等，cs.DC） · 2026-09-11 · 论文PDF</p>
 
-<p>GPU developers and automated optimizers need performance evidence for semantic code regions--such as neural-network operator implementations and pipeline stages--but this evidence is fragmented across profiling tools.</p>
-<blockquote><p>GPU developers and automated optimizers need performance evidence for semantic code regions--such as neural-network operator implementations and pipeline stages--but this evidence is fragmented across profiling tools. Answering a region-level question can require manually constructing probes and program variants, isolating interfering measurements, and mapping evidence to regions and execution contexts. We present Argus, a region-centric measurement planner and runtime that automates this workflow. Clients identify regions with boundary markers and select signals and execution scopes. Argus preserves region identity across compilation, execution, and measurement variants, constructs interference-aware multi-run plans, and orchestrates transformations and profiling across backends. It joins compiler-, hardware-, and system-level evidence using region identity and dynamic execution context, producing reports that record measurement origins and attribution ambiguity. We evaluate Argus across agentic kernel optimization, persistent megakernel optimization, and cross-level PGO. Across 44 persistent-GEMM and attention configurations, Argus improves 39/44 cases and raises AlphaEvolve's ge…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：GPU 性能证据散落在各种 profiling 工具里，针对"某个语义代码区域"（如算子实现、流水线阶段）的测量往往要手工搭探针、隔离干扰、做归因。</p>
+<p><strong>方法</strong>：Argus 是以区域为中心的测量规划器与运行时：客户端用边界标记圈定区域并选择信号与执行范围，Argus 在编译、执行与各类测量变体间保持区域身份，构造干扰感知的多轮运行计划，并把编译器级、硬件级、系统级证据按区域身份与动态执行上下文汇总成报告。</p>
+<p><strong>关键数字</strong>：在 44 个持久化 GEMM 与 attention 配置中改善 39 个，把 AlphaEvolve 的几何平均加速从 5.4% 抬到 8.9%；持久化 TinyLlama-1.1B decode megakernel 经优化 agent 调到 1.65 ms/token（不用 Argus 为 4.92），比 PyTorch+CUDA Graphs 快 2.1×；跨层 PGO 在 5 个多 GPU 设置上平均提升吞吐 7%。</p>
+<p><strong>为什么值得看</strong>：AI 驱动的 kernel 自动优化需要可靠的"测量基础设施"，Argus 正好补上这块拼图。</p>
+<p><a href="https://arxiv.org/abs/2609.12299v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.12299v1">阅读原文 ↗</a></p>
 </body>
 </html>

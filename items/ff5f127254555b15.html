@@ -22,9 +22,11 @@
 <h1>Input Resolution Matters: Real-Time Object Detection Latency</h1>
 <p class="meta-line">arXiv（Qingyang Zhang 等，cs.CV） · 2026-09-11 · 论文PDF</p>
 
-<p>We model total latency as the convolution of preprocessing, inference, and postprocessing distributions under a simplifying independence approximation, with selected stage parameters expressed as functions of source-imag…</p>
-<blockquote><p>We model total latency as the convolution of preprocessing, inference, and postprocessing distributions under a simplifying independence approximation, with selected stage parameters expressed as functions of source-image resolution. Under this assumption, the probability density of the total latency is the convolution of the stage-wise densities, and its cumulative distribution function (CDF) provides the distribution of end-to-end detection time. Each stage is modeled by a parametric distribution (e.g., Exponential, Erlang, Normal, Gamma), with parameters expressed as functions of the source-image resolution. Experiments with YOLOv11n on NVIDIA Jetson Orin NX using COCO2017 images across multiple resolutions assess the proposed models against fixed-parameter baselines using Kolmogorov Smirnov, Anderson Darling, and Cramér von Mises statistics. The results indicate that resolution-aware parameterization can improve distributional approximation in the measured setting, particularly for the more flexible Normal and Gamma models, while the quality of fit remains distribution dependent. Our contribution is a theoretically grounded and lightweight formulation for studying resolution-de…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：实时目标检测的端到端延迟如何随输入图像分辨率变化——需要可解释、轻量的分布模型而非单点均值。</p>
+<p><strong>方法</strong>：把总延迟建模为预处理、推理、后处理三个阶段分布的卷积（独立性近似下），每阶段用参数分布（Exponential、Erlang、Normal、Gamma）描述，并把部分参数显式写成源图像分辨率的函数；总延迟的 CDF 即端到端检测时间的分布。</p>
+<p><strong>关键数字</strong>：用 YOLOv11n 在 NVIDIA Jetson Orin NX 上、COCO2017 多分辨率图像做实验，以 Kolmogorov–Smirnov、Anderson–Darling、Cramér–von Mises 统计量对照固定参数基线；分辨率感知参数化在测量设定下改善了分布拟合，尤以更灵活的 Normal 与 Gamma 模型为甚，但拟合质量仍依赖具体分布选择。</p>
+<p><strong>为什么值得看</strong>：给"换分辨率会慢多少、尾延迟如何变化"提供了一个有理论根基又够轻量的分析框架，边缘视觉部署的容量规划可直接套用。</p>
+<p><a href="https://arxiv.org/abs/2609.12920v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.12920v1">阅读原文 ↗</a></p>
 </body>
 </html>

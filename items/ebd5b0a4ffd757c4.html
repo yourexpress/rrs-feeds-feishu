@@ -22,9 +22,11 @@
 <h1>AquaCubeAI-Powered Monitoring Turbidity on-board Φsat-2</h1>
 <p class="meta-line">arXiv（Pietro Di Stasio 等，cs.CV） · 2026-09-11 · 论文PDF</p>
 
-<p>Timely monitoring of coastal water quality is critical for environmental protection, yet conventional satellite workflows rely on downlink and ground processing, introducing latency that can limit responsiveness to rapid…</p>
-<blockquote><p>Timely monitoring of coastal water quality is critical for environmental protection, yet conventional satellite workflows rely on downlink and ground processing, introducing latency that can limit responsiveness to rapidly evolving turbidity events. To address this limitation, we propose AquaCubeAI, a lightweight machine-learning approach for onboard estimation of coastal water turbidity from Φsat-2 multispectral imagery. By shifting inference from the ground segment to the satellite, AquaCubeAI aims to enable lower-latency, more responsive, and more operationally useful turbidity monitoring under the strict compute and bandwidth constraints of spaceborne platforms. The model is trained on simulated Φsat-2 acquisitions spatially aligned with Copernicus Marine Service (CMEMS) High-Resolution Ocean Color (HR-OC) turbidity products over selected localized coastal sites spanning four European marine macro-regions. To provide a realistic evaluation of generalization in the presence of spatial correlation, we adopt a spatial block splitting protocol that mitigates data leakage between training and evaluation subsets. The main contributions of this work are: (i) a scalable dataset generat…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：海岸水质浊度监测依赖卫星下传+地面处理，延迟高，难以及时响应快速变化的浊度事件。</p>
+<p><strong>方法</strong>：AquaCubeAI 把推理从地面搬上 Φsat-2 卫星：用与 CMEMS 高分辨率海洋水色浊度产品空间对齐的模拟 Φsat-2 多光谱影像，训练一个面向嵌入式约束的紧凑 MLP 浊度回归器；采用空间块划分协议避免地理相关性导致的数据泄漏；并通过参数共享把模型改写为稠密空间预测形式，输出浊度图与简单的阈值异常掩码供星上决策。</p>
+<p><strong>关键数字</strong>：训练数据覆盖欧洲四大海洋大区的若干近岸站点；在 Intel Myriad VPU 上完成嵌入式部署验证，确认低功耗硬件上低延迟推理可行（摘要未给具体精度数值）。</p>
+<p><strong>为什么值得看</strong>：星上 AI 处理是遥感降延迟、省带宽的确定趋势，这篇给出从数据管线到 VPU 部署的完整闭环样例。</p>
+<p><a href="https://arxiv.org/abs/2609.12744v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.12744v1">阅读原文 ↗</a></p>
 </body>
 </html>

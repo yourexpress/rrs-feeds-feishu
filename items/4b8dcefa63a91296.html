@@ -22,9 +22,11 @@
 <h1>One Spectrum, Two Resources: Data-Memory Scaling in Autoregressive Prediction</h1>
 <p class="meta-line">arXiv（Chiwun Yang 等，cs.LG） · 2026-09-11 · 论文PDF</p>
 
-<p>How much learned memory is needed to benefit from more data?</p>
-<blockquote><p>How much learned memory is needed to benefit from more data? We show that the two resources are governed by one predictive-energy spectrum in a positive-entropy autoregressive retrieval source. Each coordinate contributes its query probability times the squared radius of its unknown logit. Writing $μ$ for the resulting energy spectrum, we prove the minimax law $\mathfrak R^*_{\rm value}(n,B)\asymp_R Φ_μ(n^{-1})+Φ_μ(τ_B), Φ_μ(t)=\int\min\{x,t\}\,μ(\mathrm dx),$ for $n$ prediction blocks and a learned state with at most $2^B$ values. Data set the resolution $1/n$; memory sets the level $τ_B$ reached by optimal bit allocation. The complete curve also recovers the positive spectrum. Energy-dimension pairing is essential: two causal sources with identical block-energy and block-dimension marginals have different data and memory exponents. A masked query-key attention head learns the route and values, realizing the law with explicit routing, format, and arithmetic errors. Further results give exponent-adaptive allocation, finite-precision realization, and compute-precision laws under two-sided arithmetic assumptions. Experiments recover the data-memory collapse and coupling exponents, ex…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：自回归预测中，数据与记忆两种资源如何共同决定性能——需要多少"学得的记忆"才配得上更多数据？</p>
+<p><strong>方法</strong>：在正熵自回归检索源上证明两者由同一条"预测能谱"支配：每个坐标贡献其查询概率乘未知 logit 的半径平方。给出 minimax 律——数据决定分辨率 1/n，记忆决定最优比特分配所达的水平 τ_B；完整风险曲线还可反推出该能谱。"能量-维度配对"是本质：块能量与块维度边际完全相同的两个因果源，数据与记忆指数也不同。并用带掩码的 query-key attention 头显式实现该律。</p>
+<p><strong>关键数字</strong>：理论结果含指数自适应分配、有限精度实现与计算-精度律；实验在六个预训练模型尺度上复现数据-记忆坍缩与耦合指数，并考察纯权重量化的影响（摘要未列具体数值）。</p>
+<p><strong>为什么值得看</strong>：把 scaling law 中"数据"与"记忆"统一到一个谱框架，还直接连通权重量化，是理解模型容量分配的一条新理论线索。</p>
+<p><a href="https://arxiv.org/abs/2609.13500v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.13500v1">阅读原文 ↗</a></p>
 </body>
 </html>

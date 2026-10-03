@@ -22,9 +22,11 @@
 <h1>4D Parallelism Unlocks Exascale Bayesian Neural Networks for High-Fidelity Atmospheric Modeling</h1>
 <p class="meta-line">arXiv（Deifilia Kieckhefen 等，physics.ao-ph） · 2026-09-11 · 论文PDF</p>
 
-<p>We present BEAST, the first-ever Bayesian Swin Transformer for atmospheric forecasting on 0.25$^\circ$ global resolution able to accurately quantify both aleatoric and epistemic uncertainty.</p>
-<blockquote><p>We present BEAST, the first-ever Bayesian Swin Transformer for atmospheric forecasting on 0.25$^\circ$ global resolution able to accurately quantify both aleatoric and epistemic uncertainty. To overcome the associated computational bottlenecks, we devise an orthogonal 4D-parallelization scheme that introduces a unique domain-tensor-parallelism strategy and a novel uncertainty parallel method, enabling us to fully leverage GPU capacity and efficiently scale model training. For a 2.4-billion-parameter model, we achieve a peak performance of 3.96 EFLOP/s on 20,480 NVIDIA GH200 GPUs on the JUPITER supercomputer. We train BEAST as a 700-million-parameter model with 96 random weight samples on 384 nodes on 40 years of data for nearly one million gradient updates. This model achieves predictive skill scores competitive with state-of-the-art probabilistic atmospheric AI models and numerical models, and can predict extreme events with exceptional skill, while generating large ensembles 3 to 4 times faster than the current-best AI model. Our contribution unlocks the potential of high-fidelity uncertainty quantification in atmospheric AI models, heralding a new era for AI-based models in clim…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：大气预报 AI 要同时量化偶然与认知不确定性，贝叶斯化带来巨大计算开销，如何在 0.25° 全球分辨率上训得动、用得起。</p>
+<p><strong>方法</strong>：BEAST 是首个面向 0.25° 全球预报的贝叶斯 Swin Transformer；设计正交的 4D 并行方案，含独创的 domain-tensor 并行与不确定性并行，把 GPU 容量吃满。</p>
+<p><strong>关键数字</strong>：2.4B 参数模型在 JUPITER 超算 20,480 张 GH200 上达 3.96 EFLOP/s 峰值；实际训练为 700M 参数、96 个随机权重样本、384 节点、40 年数据、近百万次梯度更新；预测技巧媲美 SOTA 概率大气 AI 模型与数值模式，大系综生成速度比当前最优 AI 模型快 3–4 倍。</p>
+<p><strong>为什么值得看</strong>：把不确定性量化推进到公里级全球预报的实用区间，4D 并行设计本身对超大模型训练也有借鉴价值。</p>
+<p><a href="https://arxiv.org/abs/2609.12815v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.12815v1">阅读原文 ↗</a></p>
 </body>
 </html>

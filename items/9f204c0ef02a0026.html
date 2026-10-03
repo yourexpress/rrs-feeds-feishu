@@ -22,9 +22,11 @@
 <h1>Taming Bitwise Behavior in GPU Kernels with Tensor Core: Black-Box Reconstruction, Compiler Enforcement, and Static Verification</h1>
 <p class="meta-line">arXiv（Ziteng Yang 等，cs.DC） · 2026-09-10 · 论文PDF</p>
 
-<p>Determinism and numerical reproducibility are increasingly required of GPU kernels in machine learning systems, yet deterministic implementations of the same kernel can still differ bit for bit.</p>
-<blockquote><p>Determinism and numerical reproducibility are increasingly required of GPU kernels in machine learning systems, yet deterministic implementations of the same kernel can still differ bit for bit. Floating-point reduction order is the primary cause, alongside partial-sum precision, fused multiply-add operations, and rounding placement. These choices may be hand-coded, selected by a block-level language such as Triton, or hidden inside a closed-source library such as cuBLAS or rocBLAS. A tile shape chosen for performance therefore also determines the arithmetic, potentially breaking batch invariance. Preserving a fixed order can cost up to 20 percent, while an autotuner cannot identify which configurations are bitwise equivalent. We characterize the factors determining the bitwise behavior of reductions and general matrix multiplication (GEMM). First, we introduce a descriptor of GEMM reduction order, including the partitioning of K in split-K GEMM. Using it, we perform the first black-box reconstruction of a closed-source library's arithmetic for bit-level correctness. Our family of Triton GEMMs matches NVIDIA cuBLAS in all tested cases on Blackwell and Hopper. For realistic LLM shap…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：同样"确定性"的 GPU kernel 为何仍做不到逐位一致？如何让规约与 GEMM 的位级行为可重建、可强制、可验证。</p>
+<p><strong>方法</strong>：提出描述 GEMM 规约顺序（含 split-K 划分）的描述符，首次对闭源库（cuBLAS/rocBLAS 类）的算术做黑盒重建；在 Triton lowering 中强制平衡树规约并配合数据布局优化；再构建跨 NVIDIA PTX 与 AMD GCN 的位级等价静态检查器，接入 Triton autotuner 把搜索限制在单个位等价类内。</p>
+<p><strong>关键数字</strong>：自研 Triton GEMM 在 Blackwell 与 Hopper 的全部测试用例上与 cuBLAS 逐位一致，真实 LLM 形状下达到或超过 torch.compile；布局优化使 GB300/H100 上 27 个 kernel 中 19 个与自由顺序性能差距进入 10% 以内（固定顺序原本最多损失 20%）。</p>
+<p><strong>为什么值得看</strong>：批不变性、位级复现正在成为推理系统的硬需求，这篇给出从重建、编译强制到静态验证的完整链路。</p>
+<p><a href="https://arxiv.org/abs/2609.11356v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.11356v1">阅读原文 ↗</a></p>
 </body>
 </html>

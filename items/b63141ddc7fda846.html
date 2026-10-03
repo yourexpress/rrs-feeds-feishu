@@ -22,9 +22,11 @@
 <h1>ESTS at WMT26: Routing-Informed Expert Pruning for Model Compression</h1>
 <p class="meta-line">arXiv（Liu O. Martin 等，cs.CL） · 2026-09-11 · 论文PDF</p>
 
-<p>We describe six submissions under the team name ESTS to the unconstrained WMT26 Model Compression Shared Task for English--Simplified Chinese and English--Egyptian Arabic.</p>
-<blockquote><p>We describe six submissions under the team name ESTS to the unconstrained WMT26 Model Compression Shared Task for English--Simplified Chinese and English--Egyptian Arabic. We submit three compression operating points per translation direction, all derived from GPT-OSS-20B. We use task-specific routing mass to rank experts and cross-lingual routing divergence to allocate retained capacity across layers, then physically remove low-importance experts. The resulting specialists are recovery-tuned on GPT-5.1-generated synthetic translation data and further compressed by applying MXFP4 quantization to the retained expert projection weights. We additionally implement a robust inference system for the instruction-conditioned WMT26 setting, including category inference, output validation, retries, segmented fallback, and source-owned JSON reconstruction. Across our six submissions, parameter counts range from 4.186B to 7.770B and packed artifact sizes from 4.55 to 6.33~GiB. Internal xCOMET-XL evaluation using GPT-5.1 pseudo-references provides an internal comparison across the submitted compression operating points.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：WMT26 模型压缩共享任务（英语↔简体中文、英语↔埃及阿拉伯语）中，如何把 20B 级 MoE 翻译模型压到小体量又保住质量。</p>
+<p><strong>方法</strong>：ESTS 团队基于 GPT-OSS-20B 派生每个方向三个压缩工作点：用任务相关的路由质量给专家排序、用跨语言路由差异在各层分配保留容量，物理删除低重要性专家；在 GPT-5.1 生成的合成翻译数据上恢复性微调，再对保留专家的投影权重做 MXFP4 量化。另实现面向指令条件评测的鲁棒推理系统（类别推断、输出校验、重试、分段回退、源端 JSON 重建）。</p>
+<p><strong>关键数字</strong>：六个提交参数 4.186B–7.770B，打包体积 4.55–6.33 GiB；内部用 GPT-5.1 伪参考做 xCOMET-XL 评估横向比较各工作点。</p>
+<p><strong>为什么值得看</strong>：MoE 剪枝 + MXFP4 + 合成数据恢复微调的组合拳，是把大 MoE 压到可部署体量的完整配方，对翻译及一般 MoE 压缩都有参考。</p>
+<p><a href="https://arxiv.org/abs/2609.12310v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.12310v1">阅读原文 ↗</a></p>
 </body>
 </html>

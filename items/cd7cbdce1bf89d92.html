@@ -22,9 +22,11 @@
 <h1>HoliBench: A Cross-Platform Benchmarking and Deployment Toolkit for Foundation Models in CPS-IoT Applications</h1>
 <p class="meta-line">arXiv（Inesh Chakrabarti 等，cs.DC） · 2026-09-11 · 论文PDF</p>
 
-<p>Foundation models, including large language models, vision-language models, and time-series foundation models, are increasingly deployed on embedded and edge platforms for CPS and IoT applications, where energy, latency,…</p>
-<blockquote><p>Foundation models, including large language models, vision-language models, and time-series foundation models, are increasingly deployed on embedded and edge platforms for CPS and IoT applications, where energy, latency, and memory are as critical as task accuracy. Existing benchmarking tools evaluate model capability in isolation, reporting accuracy assuming sufficient compute, while hardware profiling tools remain platform-specific and mutually incompatible. As a result, users lack a unified workflow for making deployment decisions across heterogeneous devices. We present HoliBench, a modular benchmarking and deployment toolkit that jointly characterizes accuracy, latency, and energy across platforms from single-board computers to GPU servers. Its platform abstraction layer calibrates cross-device measurement, and the toolkit supports multiple model modalities, inference engines, concurrencies, and existing evaluation harnesses. An interactive interface exposes constraint-aware configuration selection over a design space that is profiled once and reused across studies. Using HoliBench, we characterize 20 models across 7 device types, 3 quantization levels, 8 inference backends, a…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：CPS/IoT 场景把基础模型（LLM、VLM、时序基础模型）部署到嵌入式与边缘平台时，精度、延迟、能耗、内存同等重要，但现有基准工具只测精度，硬件 profiling 工具又各自为政。</p>
+<p><strong>方法</strong>：HoliBench 是模块化跨平台基准与部署工具包：平台抽象层校准跨设备测量，支持多种模型模态、推理引擎、并发档位与现有评测 harness；交互界面支持在一次 profiling 建好的设计空间上做约束感知的配置选择。</p>
+<p><strong>关键数字</strong>：用其刻画 20 个模型 × 7 类设备 × 3 档量化 × 8 个推理后端 × 30+ 任务。发现的规律：量化只在有低精度硬件支持的平台上降延迟；精度收益相对能耗递减；自回归负载平均功率与输出长度近似无关。单模型 profile 在串行共驻执行下可组合——多模型 CPS 部署中联合预测流水线延迟与功率误差分别仅 1.2% 与 2.5%。</p>
+<p><strong>为什么值得看</strong>：开源的"部署感知"评测基础设施，跨设备横向对比与流水线级预测能力对选型决策非常实用。</p>
+<p><a href="https://arxiv.org/abs/2609.12412v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.12412v1">阅读原文 ↗</a></p>
 </body>
 </html>
