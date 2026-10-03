@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GridSMR: Causal Compression for Sharded Blockchains</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>GridSMR: Causal Compression for Sharded Blockchains</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-10-02 · 论文PDF</p>
+
+<p>分片区块链中让依赖跨片操作单块内推进的因果压缩执行架构</p>
+<blockquote><p>We present GridSMR, a sharded blockchain that scales execution horizontally while allowing dependent cross-shard operations to progress within a single block. Existing sharded systems typically place coordination between dependent cross-shard steps, making latency grow with causal depth. GridSMR localizes atomicity to individual accounts and executes cross-account work asynchronously. Using an execute-before-agree architecture, dependent operations execute across shards as they become available, while consensus later validates and commits the resulting schedule. This enables Causal Compression: cross-shard latency need not grow with the causal depth of a computation. GridSMR scales single-validator execution to 1.07M requests/s and four-validator execution to 193K committed requests/s, while reducing 16-hop causal-chain latency by 8.2x versus deferred execution.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.01443">阅读原文 ↗</a></p>
+</body>
+</html>

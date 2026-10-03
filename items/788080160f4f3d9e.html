@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redundancy Meets Synergy: Dependency-aware Expert Selection for MoE via Submodular Optimization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Redundancy Meets Synergy: Dependency-aware Expert Selection for MoE via Submodular Optimization</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-02 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> MoE 模型靠稀疏激活扩展容量，但部署受限于巨大内存需求。抽取紧凑专家子集是出路，但现有 Top-k 类启发式孤立评估单个专家，忽略了 gating 网络引入的专家间依赖。</p>
+<p><strong>方法</strong> DS-MoE 把专家选择重新定义为差分子模（difference-of-submodular）优化：从损失退化的二阶 Taylor 展开出发，揭示专家组合中的功能二重性——冗余（表示重叠）与协同（误差互补抵消）；将选择目标构造为 DS 函数以解耦冗余削减与协同最大化，并设计带单调性保证的 majorization-minimization 算法高效求解。</p>
+<p><strong>关键数字</strong> 摘要未给具体数值，称大量实验中 DS-MoE 有效保留了不可或缺的专家组合，性能优于 SOTA 基线。</p>
+<p><strong>为什么值得看</strong> 给"专家选择"这个工程问题提供了有理论根基的形式化框架，冗余与协同的解耦视角值得借鉴。</p>
+<p><a href="https://arxiv.org/abs/2610.00558">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.00558">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One Basis to Animate Them All: Gaussian Blendshape Distillation for Real-Time Avatars</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>One Basis to Animate Them All: Gaussian Blendshape Distillation for Real-Time Avatars</h1>
+<p class="meta-line">arXiv (cs.CV) · 2026-10-02 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 3D Gaussian avatar 渲染快，但实时动画依赖逐帧的昂贵神经推理，成为瓶颈。能否绕开重型神经解码？</p>
+<p><strong>方法</strong> 论文发现预训练 avatar 模型的动画可被一组身份无关 blendshape 的线性组合紧密逼近，据此提出 GALA 蒸馏：用浅层系数预测器加线性混合替代逐帧神经解码；基采用渲染感知度量和内存预算下的块局部 PCA 构建，浅层 MLP 预测 blendshape 系数，无需重训原模型。</p>
+<p><strong>关键数字</strong> 在三个不同的 avatar 模型（面部表情与带衣物动态的全身动画）上验证：蒸馏可泛化到未见身份，CPU 动画成本降低最高达三个数量级，渲染质量基本保留，移动端可达 60 fps。</p>
+<p><strong>为什么值得看</strong> "学到的 avatar 表示存在共享线性结构"这一发现本身有价值，且方法即插即用，直接利好移动端实时数字人。</p>
+<p><a href="https://arxiv.org/abs/2610.02207">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.02207">阅读原文 ↗</a></p>
+</body>
+</html>

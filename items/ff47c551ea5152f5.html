@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ShatterQuant: Breaking Uniform Precision with Block-Wise Mixed-Precision on a Systolic Transformer Hardware Accelerator</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ShatterQuant: Breaking Uniform Precision with Block-Wise Mixed-Precision on a Systolic Transformer Hardware Accelerator</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-10-02 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 传统加速器不支持张量内异构精度，量化基本只能按整张量分配位宽。能否实现张量内块级混合精度并获得硬件收益？</p>
+<p><strong>方法</strong> ShatterQuant 软硬件协同：给权重投影的每个块独立分配位宽，精度粒度与 PE 配置耦合（精度决定有效块高）；硬件感知的训练后方法按块级标准差与权重敏感度分配精度；配套 Transformer 加速器支持 1/2/4/8-bit 权重、精度相关 PE 配置、块重缩放及 softmax 与分段线性非线性。</p>
+<p><strong>关键数字</strong> TSMC 16nm、1 GHz 实现：1.5 TOPS，面积效率 760 GOPS/mm²，能效 2.8 TOPS/W；DeiT/ImageNet-1K 上精度与 SOTA 混合精度方法差距在 3.3% 以内，而有效位宽低 2 bit；PixelDiT 生成质量相当。</p>
+<p><strong>为什么值得看</strong> 证明了细粒度张量内混合精度可通过软硬件协同真正落地，对量化加速器设计有直接参考。</p>
+<p><a href="https://arxiv.org/abs/2610.00207">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.00207">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -22,9 +22,11 @@
 <h1>Rethinking Sparse Formats for RISC-V: A Hierarchical Approach to High-Performance SpMV</h1>
 <p class="meta-line">arXiv（Anna Pirova 等，cs.DC） · 2026-09-10 · 论文PDF</p>
 
-<p>The sparse matrix-vector multiplication (SpMV) algorithm is a fundamental computational kernel of linear algebra and serves as a building block for numerous applications, primarily iterative solvers for systems of linear…</p>
-<blockquote><p>The sparse matrix-vector multiplication (SpMV) algorithm is a fundamental computational kernel of linear algebra and serves as a building block for numerous applications, primarily iterative solvers for systems of linear equations used in scientific and engineering simulations. This paper compares vectorized implementations of the SpMV algorithm across eight established sparse matrix storage formats and proposes a novel modification of the CSR format, Hierarchical CSR (HCSR), which enhances SpMV performance on RISC-V processors. Our SpMV implementations utilize RVV 1.0 intrinsics and are publicly available as an open-source C++ library named RVVLASparse. Computational experiments conducted on SpacemiT K1 and K3 RISC-V boards demonstrate that selecting an appropriate matrix storage format accelerates SpMV computations by an average of 1.6x, while the proposed HCSR format achieves the shortest execution time among all considered formats across a broad class of sparse matrices.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> SpMV 是迭代求解器等大量科学计算的基础算子。在 RISC-V 向量平台上，稀疏矩阵存储格式如何影响 SpMV 性能，能否设计更优格式？</p>
+<p><strong>方法</strong> 对比八种经典稀疏存储格式的向量化 SpMV 实现，并提出 CSR 的改进格式 Hierarchical CSR（HCSR）；实现基于 RVV 1.0 intrinsics，以开源 C++ 库 RVVLASparse 发布。</p>
+<p><strong>关键数字</strong> 在 SpacemiT K1 与 K3 RISC-V 开发板上实验：选择合适的存储格式平均可加速 SpMV 1.6 倍；HCSR 在广泛的稀疏矩阵类别上取得所有格式中最短执行时间。</p>
+<p><strong>为什么值得看</strong> RISC-V 向量生态的性能研究还不多，格式-架构匹配的结论与开源库对 RVV 高性能计算都有直接用价值。</p>
+<p><a href="https://arxiv.org/abs/2609.11352v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.11352v1">阅读原文 ↗</a></p>
 </body>
 </html>

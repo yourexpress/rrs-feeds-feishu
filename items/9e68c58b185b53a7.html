@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pushing CPU Speech Synthesis to the Wall: Extreme Inference Tuning under Serverless Architecture and Billing</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Pushing CPU Speech Synthesis to the Wall: Extreme Inference Tuning under Serverless Architecture and Billing</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-10-02 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 按实例计费的 serverless 平台对 CPU 与内存按热实例存活时间收费，空闲推理状态直接就是成本。如何为这种计费模式优化 CPU 上的神经 TTS 服务？</p>
+<p><strong>方法</strong> 以 CPU-秒与 GB-秒（而非单纯吞吐或延迟）为优化目标：① request-sized 并发推理，限制每请求的 CPU 并行度以避免争抢；② 可回收实例生命周期，空闲后释放推理状态与页缓存内存，但保留服务进程与编译缓存。</p>
+<p><strong>关键数字</strong> 在 Kokoro-82M 上：每 CPU-秒产出 2.71 音频秒（ONNX Runtime 默认仅 0.89）；每音频小时成本从 PyTorch 的 $0.0631 降到 $0.0153（4.1 倍）；空闲计费内存从 8.7 GB 降到 1.33 GB；恢复后首音频 2.2 秒（PyTorch 冷启动 7.7 秒）。</p>
+<p><strong>为什么值得看</strong> 把"计费模型"当作一等优化目标的系统设计，对任何 serverless 推理服务都有方法论借鉴。</p>
+<p><a href="https://arxiv.org/abs/2610.00063">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.00063">阅读原文 ↗</a></p>
+</body>
+</html>

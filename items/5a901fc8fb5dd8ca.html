@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MoE-CORE: Coordinated Expert Offloading and Residency for Memory-Constrained MoE Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MoE-CORE: Coordinated Expert Offloading and Residency for Memory-Constrained MoE Inference</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-10-02 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> MoE 模型稀疏激活降低了计算量，但专家权重总量常超出设备内存。offloading 让小内存设备也能跑 MoE，却把主机到设备的传输暴露到推理关键路径上，如何协调专家驻留与调度？</p>
+<p><strong>方法</strong> MoE-CORE：prefill 阶段用交替缓冲暂存完整专家层；decode 阶段组合非均匀逐层缓存容量、领域先验初始化、路由历史感知替换与跨层预取。主配置精确执行路由选中的专家，另提供基于分数的低分未命中替换路径。</p>
+<p><strong>关键数字</strong> DeepSeek-V4-Flash-W4A8 上 TPOT 38.0–44.8 ms，对照的 vLLM Prefetch 配置为 1268.9–1269.1 ms；GLM-5.2-W4A8C8 上为 206.6–220.5 ms 对 5941.5–5941.8 ms；84 GB NPU 内存上限下，DeepSeek GSM8K 最佳配置用专家替换 + 深度 2 MTP 达 21.5 ms TPOT。</p>
+<p><strong>为什么值得看</strong> 在严格设备内存约束下把 MoE 推理 TPOT 压低一个数量级以上，对边缘/小内存部署 MoE 很有工程参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.01950">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.01950">阅读原文 ↗</a></p>
+</body>
+</html>

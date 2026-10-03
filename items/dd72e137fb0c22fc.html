@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FedFit: Federated Fine-Tuning of LLMs via Vector-Bank Parameterization and Quantization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>FedFit: Federated Fine-Tuning of LLMs via Vector-Bank Parameterization and Quantization</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-02 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 联邦学习可保护隐私地微调 LLM，但通信开销是关键瓶颈；且联邦场景下应用 LoRA 面临"聚合困境"：精确的 Sum-of-Products（SoP）与通信高效的 Product-of-Sums（PoS）难以兼得。</p>
+<p><strong>方法</strong> FedFit 三管齐下：① 不相交共享向量库参数化，用两个紧凑的全局向量库重建高维 adapter 矩阵；② 交替优化调度，在可精确聚合的单库解耦更新与带 Residual Spectral Aggregation 校正的联合更新之间循环；③ 分块量化加客户端误差反馈进一步压缩传输。并给出理论收敛保证。</p>
+<p><strong>关键数字</strong> 在 Qwen2.5 系列模型上，FedFit 的困惑度与标准联邦 LoRA 相当，而压缩率最高提升 100 倍。</p>
+<p><strong>为什么值得看</strong> 向量库参数化 + 交替聚合调度的组合，为联邦微调通信压缩提供了一个既有理论保证又实用的新方案。</p>
+<p><a href="https://arxiv.org/abs/2610.01537">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.01537">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZTA-Q: an Open-source RISC-V Platform for Accurate Quantized CNN Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ZTA-Q: an Open-source RISC-V Platform for Accurate Quantized CNN Inference</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-10-02 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 低精度推理在边缘 AI 中被广泛采用，但现有开源加速器平台对遵循 TensorFlow Lite 整数推理方案的 CNN 缺乏端到端支持。</p>
+<p><strong>方法</strong> ZTA-Q 是基于 RISC-V 的开源平台，支持准确部署 TFLite INT8 模型：扩展算子支持之外，还提供可配置的后处理数据通路，用于研究电路级近似（降低乘法器精度、共享移位缩放、简化舍入）对模型精度的影响。</p>
+<p><strong>关键数字</strong> 在 Digilent Arty A7-100T FPGA 上实现，运行频率 83.3 MHz；代表性 CNN 上，LUT/寄存器/DSP 开销分别为 26.3%/12.6%/150%，top-1 与 top-5 精度下降均控制在 0.25 个百分点以内。</p>
+<p><strong>为什么值得看</strong> 开源且面向标准 TFLite 整数流程的 RISC-V 量化推理平台，还附带研究近似电路影响的实验通路，适合边缘 CNN 部署与近似计算研究。</p>
+<p><a href="https://arxiv.org/abs/2610.01867">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.01867">阅读原文 ↗</a></p>
+</body>
+</html>

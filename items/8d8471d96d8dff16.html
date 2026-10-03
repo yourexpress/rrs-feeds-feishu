@@ -22,9 +22,11 @@
 <h1>SIMT-Aware Lockstep Verification and Functional-Coverage Closure Methodology for an Open-Source RISC-V GPGPU: A UVM 1.2 Environment</h1>
 <p class="meta-line">arXiv（Samuel Moussa 等，cs.AR） · 2026-09-10 · 论文PDF</p>
 
-<p>Open-source RISC-V GPGPUs such as Vortex ship with directed-kernel regressions but no reference-model checking, functional-coverage model, or sign-off discipline.</p>
-<blockquote><p>Open-source RISC-V GPGPUs such as Vortex ship with directed-kernel regressions but no reference-model checking, functional-coverage model, or sign-off discipline. This paper presents a UVM 1.2 environment and methodology that closes that gap. The environment wraps a bus-master SIMT DUT with role-inverted agents, integrates Vortex's functional simulator (SimX) as a per-configuration golden model over DPI-C, and renders verdicts via two injection-qualified checkers: a bidirectional end-state scoreboard and a per-instruction, per-lane lockstep comparator under five SIMT alignment rules. A two-pass load-value feed makes racy fenceless multi-core programs instruction-granularity verifiable (residual zero over 5,432 retirements), with the interrupt-timing boundary stated. A three-layer coverage model adds, to our knowledge, the first published SIMT functional-coverage layer for RTL GPU verification (divergence depth, bank conflicts, coalescing classes), closing its own layers at 98.1% covergroup-bin / 94.7% total (ISA layer separately: 83.1% bins / 89.3% weighted) under machine-generated, RTL-cited exclusions and a blocking waiver-integrity gate; an unstimulated D-extension elaboration a…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 开源 RISC-V GPGPU（如 Vortex）只有定向 kernel 回归，缺少参考模型检查、功能覆盖率模型与 sign-off 规范。如何补上这套验证方法学？</p>
+<p><strong>方法</strong> 构建 UVM 1.2 环境：角色反转 agent 封装总线主控 SIMT DUT；经 DPI-C 集成 Vortex 功能模拟器 SimX 作为逐配置黄金模型；两级检查器（端到端记分板 + 五条 SIMT 对齐规则下的逐指令逐 lane lockstep 比较器）；两遍 load-value 喂入使无栅栏多核竞态程序也可逐指令验证；三层覆盖模型包含据称首个已发表的 SIMT 功能覆盖层（分歧深度、bank conflict、合并访存类别）。</p>
+<p><strong>关键数字</strong> SIMT 覆盖层收敛至 98.1% covergroup-bin / 94.7% 总覆盖（ISA 层 83.1% bins / 89.3% 加权）；5,432 次 retirement 残差为零；发现多个真实缺陷：JALR LSB ISA 偏差、不可伸缩的 watchdog 常量（已上游修复）、reset-relay X 窗口、AXI 错误路径缺失及参考模型 fetch bug。</p>
+<p><strong>为什么值得看</strong> 为开源 GPGPU 建立了可量化的验证 sign-off 方法学，并与模糊测试（FuzzGPU）互补——一个找 bug，一个量化收敛。</p>
+<p><a href="https://arxiv.org/abs/2609.13311v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.13311v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ePACT: Energy-Performance-Aware Commitment Tracking for LLM Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ePACT: Energy-Performance-Aware Commitment Tracking for LLM Serving</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-10-02 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 降低 LLM 服务能耗本身并不保证降低部署成本：当电力采购要求运营商履行预设的逐小时用电承诺时，超用与少用都会带来（可能不对称的）偏差费用。如何在满足请求级服务要求的前提下最小化偏差成本？</p>
+<p><strong>方法</strong> ePACT 是两级控制器：全局规划器根据实测能耗与剩余小时承诺更新区间能量目标；本地决策器预测候选配置（服务容量与 GPU 频率）的能耗与完成时间，检查超期风险，按不对称目标偏差成本择优，并有服务优先的回退；粗到细的动作搜索与服务异步运行。</p>
+<p><strong>关键数字</strong> H20 与 H200 GPU 池的 24 小时 trace 模拟中，相对 vLLM 分别降低不对称偏差成本 73.8% 与 75.7%，同时保持接近 vLLM 的 SLO 达成率；平均绝对逐小时偏差分别为 2.16% 与 2.31%。</p>
+<p><strong>为什么值得看</strong> 把电力市场的承诺机制引入 LLM serving 调度目标，是"成本感知推理"里少见且务实的角度。</p>
+<p><a href="https://arxiv.org/abs/2610.01784">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.01784">阅读原文 ↗</a></p>
+</body>
+</html>

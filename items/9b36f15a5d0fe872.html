@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Q-MINO: A Minimal-Norm Method for Quantization-Aware Training</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Q-MINO: A Minimal-Norm Method for Quantization-Aware Training</h1>
+<p class="meta-line">arXiv (math.OC) · 2026-10-02 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 量化感知训练（QAT）广泛使用的 Straight-Through Estimator（STE）是启发式方法，其代理梯度与真实量化目标存在明显失配，在超低比特场景导致更新噪声大、参数振荡。</p>
+<p><strong>方法</strong> 提出 Q-MINO（Quantization-Aware Minimal-Norm Optimizer）：一种时序 bundle 方法，结合梯度共识、状态漂移正则与对齐约束，从近期优化状态构造稳定的最小范数更新方向；用 warm-start 的 Frank–Wolfe 过程求解受约束子问题，并带可行回退初始化。理论上通过随机 Lyapunov KL 框架证明渐近邻域收敛。</p>
+<p><strong>关键数字</strong> 摘要未给出具体实验数值，仅说明在多种量化位宽下做了数值实验。</p>
+<p><strong>为什么值得看</strong> 把 QAT 优化从启发式 STE 升级为有收敛理论支撑的最小范数 bundle 方法，对做超低比特量化训练的人值得关注。</p>
+<p><a href="https://arxiv.org/abs/2610.00738">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.00738">阅读原文 ↗</a></p>
+</body>
+</html>

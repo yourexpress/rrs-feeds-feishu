@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EdgeDAE: Acceleration of Diffusion Action Experts for Real-Time Physical AI with Tiny VLAs on Edge FPGA-GPU Systems</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>EdgeDAE: Acceleration of Diffusion Action Experts for Real-Time Physical AI with Tiny VLAs on Edge FPGA-GPU Systems</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-10-02 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> VLA 模型中的 Diffusion Action Expert（DAE）迭代去噪需在多步间反复从 DRAM 加载参数，在边缘 GPU 上呈 memory-bound，算力大量闲置。如何在边缘平台上实现实时 Physical AI 推理？</p>
+<p><strong>方法</strong> EdgeDAE 是 FPGA-GPU 异构系统：感知侧的视觉 Transformer 放 GPU，DAE 推理放 FPGA，并将全部参数驻留片上 BRAM/URAM 消除访存瓶颈；配套量化策略、定点运算与硬件高效随机数生成的协同设计。</p>
+<p><strong>关键数字</strong> 相比边缘 GPU 基线，端到端延迟对 Octo-Small 降低 52.5%、对 Octo-Base 降低 38.7%，吞吐最高提升 2.10 倍；相比 RTX 4090 能效高约 17 倍。</p>
+<p><strong>为什么值得看</strong> "按计算特性拆分负载、让参数全驻留片上"的思路对边缘侧跑扩散类小模型有普遍参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.00311">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.00311">阅读原文 ↗</a></p>
+</body>
+</html>

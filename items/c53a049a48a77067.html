@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QK-Wanda: Coupling Queries and Keys for Unstructured Pruning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>QK-Wanda: Coupling Queries and Keys for Unstructured Pruning</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-02 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> Wanda 剪枝在每个线性投影内独立打分，但 query 与 key 通过点积相互作用，独立打分忽略了这种耦合。如何为 QK 投影设计耦合的剪枝准则？</p>
+<p><strong>方法</strong> QK-Wanda 在无掩码 pre-RoPE 重建目标下，按权重的个体删除成本为 query/key 打分，用对方投影的信息增强 Wanda 分数，并让两个投影共享剪枝预算；闭式分数无需梯度或权重更新。</p>
+<p><strong>关键数字</strong> 在 15 个模型（TinyLlama/Llama 2/Llama 3/Qwen2.5，0.5B–72B）上评测：50% 稀疏时 QK 重建误差平均降 60%，80% 稀疏降 45%；Llama 2 70B 80% 稀疏下 WikiText-2/C4 困惑度分别降 20.3%/13.5%，平均 zero-shot 准确率升 5.94 个百分点；但 Llama-3.1-70B 尽管重建误差更低，困惑度却明显变差。完整剪枝耗时仅比 Wanda 多 1.3%（A100）/3.1%（H200）。</p>
+<p><strong>为什么值得看</strong> 既展示了耦合剪枝准则的潜力，也诚实暴露了局部重建误差作为模型质量代理的局限。</p>
+<p><a href="https://arxiv.org/abs/2610.01554">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.01554">阅读原文 ↗</a></p>
+</body>
+</html>
