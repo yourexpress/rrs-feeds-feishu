@@ -22,9 +22,11 @@
 <h1>NeuroFlex: Lossless Element-Level ANN-SNN Co-Execution for Efficient Sparse Inference</h1>
 <p class="meta-line">arXiv（Varun Manjunath 等，cs.AR） · 2026-09-12 · 论文PDF</p>
 
-<p>Sparse DNN accelerators specialize in ANN or SNN execution, leaving energy or latency on the table when workload characteristics vary within a layer.</p>
-<blockquote><p>Sparse DNN accelerators specialize in ANN or SNN execution, leaving energy or latency on the table when workload characteristics vary within a layer. Hybrid accelerator designs that switch modes at layer or tile granularity suffer from low PE utilization since one core type idles whenever the other is active. NeuroFlex is the first accelerator to assign every output element independently to ANN or SNN execution mode with zero accuracy loss. We extend integer-exact ANN-SNN equivalence from layers to individual output elements, thereby enabling mode switching with no conversion error. An offline cost-guided scheduler scores each element by its marginal energy-delay trade-off and packs work across PEs, achieving 97-99% PE utilization compared to 40-45% for layer-wise hybrids. NeuroFlex reduces EDP by 57-67% over a strong ANN-only baseline and delivers up to 2.5x speedup over a dual-sparse SNN-only baseline. Our cost-guided scheduler improves throughput by 16-19% over random element assignment across vision, language, and transformer workloads.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 稀疏 DNN 加速器各专精 ANN 或 SNN，层内负载特性变化时留下能效与延迟浪费；层/tile 级混合设计切换模式时一类核心空转，PE 利用率低。</p>
+<p><strong>方法</strong> NeuroFlex 首个把每个输出元素独立分配给 ANN 或 SNN 执行模式且零精度损失——把整数精确的 ANN-SNN 等价关系从层扩展到元素级；离线成本引导调度器按边际能量-延迟权衡给每个元素打分并跨 PE 打包。</p>
+<p><strong>关键数字</strong> PE 利用率 97–99%（层级混合为 40–45%）；EDP 较 ANN-only 强基线降 57–67%；较双稀疏 SNN-only 基线最高 2.5x 加速；调度器较随机元素分配吞吐提升 16–19%，覆盖视觉、语言与 transformer 负载。</p>
+<p><strong>为什么值得看</strong> 元素级无损模式切换是全新的混合粒度，利用率数字直接碾压层级方案。</p>
+<p><a href="https://arxiv.org/abs/2609.14092v2">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.14092v2">阅读原文 ↗</a></p>
 </body>
 </html>

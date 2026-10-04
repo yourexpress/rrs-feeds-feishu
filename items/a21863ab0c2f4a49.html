@@ -22,9 +22,11 @@
 <h1>Entropy-Punctured Bloom Filters for Memory-Efficient Machine Learning</h1>
 <p class="meta-line">arXiv（John Cartmell 等，cs.LG） · 2026-09-12 · 论文PDF</p>
 
-<p>Memory-efficient feature representations are increasingly important in machine learning settings where storage, transmission cost, bandwidth, or privacy constraints limit access to raw data.</p>
-<blockquote><p>Memory-efficient feature representations are increasingly important in machine learning settings where storage, transmission cost, bandwidth, or privacy constraints limit access to raw data. Bloom Filter (BF) encodings provide compact probabilistic representations of engineered features, but their behavior under structural compression and their applicability to regression tasks remain underexplored. In this work, we propose entropy-punctured Bloom Filters, a memory-aware encoding strategy that removes low-variability bit positions identified using empirical entropy. Starting from fixed-length BF encodings of quantized features, the proposed approach produces reduced representations that preserve predictive structure while improving predictive efficiency relative to encoded representation size. We evaluate the approach on diverse regression datasets, comparing raw features, Principal Component Analysis (PCA), Random Projection (RP), and Bloom Filter variants under leakage-free evaluation protocols and approximately matched representation sizes. Performance is assessed using ridge regression, XGBoost, and neural networks, with predictive efficiency measured as R2 relative to encoded …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 存储、带宽或隐私受限场景需要紧凑特征表示；Bloom Filter 编码在结构压缩下的行为及其对回归任务的适用性研究不足。</p>
+<p><strong>方法</strong> 熵剪枝 Bloom Filter：对量化特征的定长 BF 编码，按经验熵删去低变化 bit 位；与原始特征、PCA、随机投影及 BF 变体在无泄漏评估协议、近似匹配表示大小下比较；ridge 回归、XGBoost 与神经网络三种模型，以单位表示大小的 R² 度量预测效率。</p>
+<p><strong>关键数字</strong> BF 编码在大幅节省存储的同时与经典压缩表示竞争力相当；熵剪枝在几乎不损失预测保真度下进一步缩小表示（摘要未给具体数值）。</p>
+<p><strong>为什么值得看</strong> 表示层压缩的轻量新选项，评估协议干净（leakage-free + 等大小对比），可直接复用其方法。</p>
+<p><a href="https://arxiv.org/abs/2609.14187v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.14187v1">阅读原文 ↗</a></p>
 </body>
 </html>

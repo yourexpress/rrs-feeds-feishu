@@ -22,9 +22,11 @@
 <h1>Product-Aware Deterministic Rounding for Quantized Matrix Multiplication</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-11 · 论文PDF</p>
 
-<p>面向量化矩阵乘法的结果感知确定性舍入</p>
-<blockquote><p>Scalar rounding decisions interact through matrix multiplication. We study deterministic product-aware rounding after scales, clipping bounds, and grids are fixed, with each active scalar choosing between adjacent levels. For dynamic activation rounding, null-space reduction preserves the relaxed product while leaving at most $r$ fractional decisions, where $r$ is the rank of the active gap-weighted weight block. Conditional-expectation completion gives a deterministic polynomial-time algorithm with squared product error at most $ \mathrm{OPT}_{\mathrm{dyn}}+rν_{\max}^2/4$, where $\mathrm{OPT}_{\mathrm{dyn}}$ is the best admissible error and $ν_{\max}$ is the largest row norm of that block. For reusable static weights, the exact expected product-loss metric is the uncentered input second moment with fixed output bias; free bias recalibration yields the centered covariance. Exact optimization is NP-hard even at rank one. In balanced blocks with $K=1024$ and $r=16$, conditional- expectation completion attains a dither-normalized median error of $0.010$, compared with $0.899$ for round-to-nearest. Clipping-aware initialization reduces median normalized error by a factor of $43.4$ at t…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 量化矩阵乘法中各标量舍入决策相互影响；在 scale、截断界与网格固定后，如何做确定性的「乘积感知」舍入。</p>
+<p><strong>方法</strong> 动态激活舍入用零空间约化保持松弛乘积，分数决策至多剩 r 个（r 为活跃 gap 加权权重块的秩），条件期望补全给出确定性多项式算法；静态权重的精确期望损失是非中心输入二阶矩，自由 bias 重校准后得中心协方差；精确优化即使秩一也是 NP-hard。</p>
+<p><strong>关键数字</strong> 平方乘积误差上界 OPT_dyn + r·ν_max²/4；K=1024、r=16 时中位归一化误差 0.010（RTN 为 0.899）；截断感知初始化把中位误差降 43.4 倍。</p>
+<p><strong>为什么值得看</strong> 给「比 round-to-nearest 好多少」一个带保证的确定性答案，理论与实证都扎实。</p>
+<p><a href="https://arxiv.org/abs/2609.31641">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.31641">阅读原文 ↗</a></p>
 </body>
 </html>

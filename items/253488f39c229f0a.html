@@ -22,9 +22,11 @@
 <h1>RoofLang: Enabling AI-Driven Architecting of LLM Inference Systems</h1>
 <p class="meta-line">arXiv（Ziyue Yang 等，cs.DC） · 2026-09-11 · 论文PDF</p>
 
-<p>AI is beginning to make substantive contributions to LLM inference optimization.</p>
-<blockquote><p>AI is beginning to make substantive contributions to LLM inference optimization. Existing AI optimizations are predominantly profiling-based. Profiling-bound feedback confines the search to the capabilities and performance of an existing software stack, preventing a fundamentally better architecture of LLM inference systems from being identified. To enable the AI-driven LLM inference system architecting loop, we argue that a general workload representation, a verifiable mutation space, and an implementation-independent evaluator are required. We present the RoofLang domain-specific language (DSL) that provides these features. In our evaluation, RoofLang reveals that DeepSeek V4-series models could achieve 3.5-39.5$\times$ higher peak decode throughput than other representative models. This gap is disproportionate to their total parameter counts and arises largely from compact KV-cache designs that support larger batches and reduce memory traffic. A persistent optimizer agent further discovered several new architectures that improved both throughput and interactivity of DeepSeek V4 Pro on NVIDIA B300 by 6.23-50.1%.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> AI 优化 LLM 推理目前多为 profiling 驱动，搜索被困在现有软件栈的能力与性能内，无法发现根本性更优的系统架构。</p>
+<p><strong>方法</strong> 提出 RoofLang DSL，提供 AI 驱动架构探索闭环所需三要素：通用 workload 表示、可验证的变异空间、与实现无关的评估器；并接入持久优化 agent 自动搜索新架构。</p>
+<p><strong>关键数字</strong> 评估显示 DeepSeek V4 系列峰值解码吞吐可高出其他代表模型 3.5–39.5x，差距主要来自紧凑 KV cache 设计支撑更大 batch；agent 发现的新架构使 DeepSeek V4 Pro 在 B300 上吞吐与交互性提升 6.23–50.1%。</p>
+<p><strong>为什么值得看</strong> 把「AI 自动设计推理系统」从调参推进到架构层，DSL 三要素的抽象值得借鉴。</p>
+<p><a href="https://arxiv.org/abs/2609.12551v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.12551v1">阅读原文 ↗</a></p>
 </body>
 </html>

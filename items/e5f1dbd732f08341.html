@@ -22,9 +22,11 @@
 <h1>Affinity-Aware Sharding for Delayed Tensor Parallelism</h1>
 <p class="meta-line">arXiv（Eloi de Reynal，cs.LG） · 2026-09-12 · 论文PDF</p>
 
-<p>Delayed Tensor Parallelism (DTP) removes the blocking all-reduce of tensor-parallel Transformer inference.</p>
-<blockquote><p>Delayed Tensor Parallelism (DTP) removes the blocking all-reduce of tensor-parallel Transformer inference. Every device adds its own partial output to its residual stream (and broadcasts it) immediately, but only gathers (receives) the other devices' partials $δ$ modules later. A TP to DTP change therefore amounts to a real architecture change, and dense Transformer models need to be retrained or distilled after adaptation. We show that DTP breaks the permutation symmetry of neurons inside FFNs and of KV heads inside attention modules, and that this symmetry breakage makes the sharding itself a modelling decision. We show that maximising the affinity between the KV heads and the FFN neurons co-located on a device, by permuting the dense model before sharding, speeds up the distillation or retraining process. The affinity is measured with a first-order approximation of the damage that losing a head's contribution does to each neuron's output, and the co-located affinity is maximised with a coordinate-ascent optimiser that alternates an exact balanced assignment of neurons with an exhaustive search over the KV head partitions. The whole procedure takes under two minutes on one GPU fo…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 延迟张量并行（DTP）去掉 TP 推理的阻塞 all-reduce（每台设备 δ 个模块后才 gather 其他设备的部分结果），但它打破 FFN 神经元与 KV head 的置换对称性，使切分本身成为影响蒸馏/重训的建模决策。</p>
+<p><strong>方法</strong> 切分前先置换 dense 模型，最大化同设备 KV head 与 FFN 神经元的亲和度（用丢失某 head 对各神经元输出损伤的一阶近似度量）；坐标上升优化器交替做神经元精确平衡分配与 KV head 分区穷举。</p>
+<p><strong>关键数字</strong> Qwen3-0.6B、Danube3-500M 上全流程单 GPU 两分钟以内；δ=1 时达到任意蒸馏目标所需步数约为朴素连续布局的一半到三分之二；初始化亲和分数与训练后 KL 的 Pearson 相关 -0.81/-0.89（17 种布局）。</p>
+<p><strong>为什么值得看</strong> 两分钟预处理换一半蒸馏步数，还附赠一个能预测训练结果的诊断分数。</p>
+<p><a href="https://arxiv.org/abs/2609.13846v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.13846v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>mKernel: Fast Multi-GPU, Multi-Node Fused Kernels</h1>
 <p class="meta-line">arXiv（Ziming Mao 等，cs.DC） · 2026-09-11 · 论文PDF</p>
 
-<p>Communication has become a bottleneck in distributed training and inference of large models.</p>
-<blockquote><p>Communication has become a bottleneck in distributed training and inference of large models. Overlapping communication with computation at the granularity of kernels, on separate streams, reduces only part of this communication cost. Fused kernels often have better performance by transmitting each output tile as soon as it is produced, but existing fused kernels are largely confined to a single NVLink domain. We present mKernel, a library of multi-GPU, multi-node fused kernels that overlap computation, intra-node NVLink communication, and inter-node RDMA at tile granularity. mKernel partitions the streaming multiprocessors (SMs) of a persistent kernel into compute and communication roles, and an on-GPU controller tunes the SM partition adaptively at run time, since the best SM partition varies with the kernel and the input shape. It structures data movement hierarchically so that data traversing the inter-node network is minimized. Finally, it drives the network from the GPU through a lightweight command queue and host proxy implemented directly on RDMA verbs, which allows the same kernels to run on any network backend (e.g. InfiniBand and on AWS EFA); we observe, surprisingly, tha…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 大模型分布式训练与推理中通信成为瓶颈；tile 级融合 kernel 性能好，但现有融合大多局限于单 NVLink 域，跨节点无解。</p>
+<p><strong>方法</strong> mKernel 把持久 kernel 的 SM 划分为计算与通信角色，片上控制器运行时自适应调比例；分层组织数据移动以最小化跨节点流量；通过 RDMA verbs 上的轻量命令队列与 host 代理从 GPU 驱动网络，同一 kernel 可跑 InfiniBand 与 AWS EFA；并发现 IBGDA 相对 host 辅助的 GPU 发起通信收益甚微。</p>
+<p><strong>关键数字</strong> 实现张量、序列、专家并行共 5 个 kernel；两个 16-GPU H200 集群上 GEMM+AllReduce 最高 1.72x、Ring Attention 最高 1.88x。</p>
+<p><strong>为什么值得看</strong> 把 tile 级计算-通信融合扩展到多节点，对网络选型还有反直觉的实证结论。</p>
+<p><a href="https://arxiv.org/abs/2609.13585v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.13585v1">阅读原文 ↗</a></p>
 </body>
 </html>

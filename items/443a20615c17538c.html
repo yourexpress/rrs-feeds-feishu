@@ -22,9 +22,11 @@
 <h1>Quality-Constrained Routing over a Fixed Pool of Quantized Mixture-of-Experts Instances</h1>
 <p class="meta-line">arXiv（Zhenghong Huang 等，cs.LG） · 2026-09-11 · 论文PDF</p>
 
-<p>Quantized Mixture-of-Experts (MoE) services can hold several pre-materialized instances of one base model, but quantization damage varies sharply across requests and bitwidths.</p>
-<blockquote><p>Quantized Mixture-of-Experts (MoE) services can hold several pre-materialized instances of one base model, but quantization damage varies sharply across requests and bitwidths. Because instance materialization and replica counts consume memory and require slow reconfiguration, we treat them as upstream provisioning decisions and study routing within a fixed resident pool. Within this fixed-pool boundary, we route each request to maximize modeled throughput under a class-level expected quality-degradation budget and measured instance capacities. To predict this request-specific risk, we introduce FWP (Fragility-Weighted Perplexity), computed from prompt tokens on a reference-instance prefill and calibrated to candidate-instance degradation. Underlying FWP is an exact two-expert affinity--fragility decomposition and a conditional multi-layer top-$k$ expansion whose bias, interaction, route-change, separability, and higher-order terms remain explicit. Using these calibrated risks, a window-level linear program yields a signed reduced-reward score that is KKT-consistent with the LP optimum under optimal prices and primal-feasible tie allocation. On 88 extended Qwen prompts, complete W2…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 同一基座的多个量化 MoE 实例常驻池固定后，如何在类级质量降级预算内把请求路由到实例，最大化建模吞吐。</p>
+<p><strong>方法</strong> 提出 FWP（Fragility-Weighted Perplexity）：由参考实例 prefill 的 prompt token 计算并校准到候选实例降级；底层是精确的双专家亲和-脆弱分解与条件多层 top-k 展开；窗口级线性规划给出与 KKT 最优一致的打分与分配。</p>
+<p><strong>关键数字</strong> 88 条扩展 Qwen prompt 上，W2/W3/W4 实例（6144 专家块全量化）平均 ΔNLL 为 0.9437/0.1832/0.0513；τ=0.1513 下 FWP 分配达 1.284x 离线倍率（请求无关混合 1.253x、静态 W4 1.000x），相对增益 2.5%。</p>
+<p><strong>为什么值得看</strong> 把「量化损伤因请求而异」变成可路由信号，固定池场景下即插即用。</p>
+<p><a href="https://arxiv.org/abs/2609.12550v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.12550v1">阅读原文 ↗</a></p>
 </body>
 </html>

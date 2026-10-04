@@ -22,9 +22,11 @@
 <h1>SynthSentry: Detecting Synthetic Data Contamination in Language Model Training Data</h1>
 <p class="meta-line">arXiv（Praveen Kumar Myakala 等，cs.CL） · 2026-09-11 · 论文PDF</p>
 
-<p>Large language models trained recursively on their own or other models' outputs undergo model collapse, in which distributional tails and factual accuracy deteriorate while fluency survives.</p>
-<blockquote><p>Large language models trained recursively on their own or other models' outputs undergo model collapse, in which distributional tails and factual accuracy deteriorate while fluency survives. Prior work diagnoses collapse after training; the actionable problem is screening a corpus of unknown provenance before training. We introduce SynthSentry, a corpus-level, model-agnostic contamination signal requiring no access to the generating model, no generation history, and no synthetic labels. The score is a distributional divergence over three statistics: lexical diversity collapse, n-gram tail truncation, and perplexity variance across reference models. We evaluate on corpora contaminated by small open-weight generators and an instruction-tuned open-weight model under a leave-one-generator-out protocol. A domain-stratified study measures false positives on naturally repetitive human text (legal, clinical, source code). The score ranks corpora by severity with little loss when whole generator families are held out. Per-domain calibration holds near its nominal false-positive budget once covariance shrinkage and a bootstrap threshold replace a naive quantile, which runs four times over bu…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 用模型输出递归训练会导致 model collapse；可行动的问题是训练前筛查来源不明的语料是否被合成数据污染。</p>
+<p><strong>方法</strong> SynthSentry 给出语料级、模型无关的污染信号：对词汇多样性塌缩、n-gram 尾部截断、跨参考模型困惑度方差三个统计量做分布散度；无需访问生成模型、生成历史或合成标签；分域校准用协方差收缩加 bootstrap 阈值。</p>
+<p><strong>关键数字</strong> leave-one-generator-out 下按污染严重程度排序几乎无损；朴素分位数阈值误报超预算 4 倍，校准后回到名义预算附近；剪枝超过真实污染比例会出现过度剪枝风险。</p>
+<p><strong>为什么值得看</strong> 把污染检测从事后诊断前移到数据策展防线，评分工具包已公开。</p>
+<p><a href="https://arxiv.org/abs/2609.12353v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.12353v1">阅读原文 ↗</a></p>
 </body>
 </html>

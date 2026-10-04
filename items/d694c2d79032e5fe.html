@@ -22,9 +22,11 @@
 <h1>LayerRoute: Adaptive Layer-Skipping with LoRA-Preserved Quality for Efficient LLM Inference</h1>
 <p class="meta-line">arXiv（Prateek Kumar Sikdar，cs.CL） · 2026-09-12 · 论文PDF</p>
 
-<p>We introduce LayerRoute, a parameter-efficient method for adaptive transformer layer-skipping that combines per-layer hard-gated routing (trained via a straight-through estimator) with joint LoRA fine-tuning.</p>
-<blockquote><p>We introduce LayerRoute, a parameter-efficient method for adaptive transformer layer-skipping that combines per-layer hard-gated routing (trained via a straight-through estimator) with joint LoRA fine-tuning. LayerRoute augments each of the 24 transformer blocks in Qwen2.5-0.5B-Instruct with a lightweight per-layer router (~21.5K parameters) and LoRA adapters (rank 8, ~1.08M parameters), training both jointly under a gate-regularized language-modeling objective. Across 10 independently-seeded training runs, LayerRoute converges to an identical skip-pattern structure in every run - a consistent set of 9 middle layers (8-16) becomes skip-eligible in all 10 seeds - and delivers genuine, verified wallclock speedup in every run (1.02x-1.06x, mean 1.04x). Quality is preserved or improved in every configuration tested: joint LoRA adaptation yields a perplexity improvement over the unmodified backbone in all 10 seeds (mean delta = -1.16 and -1.11 across the two evaluation splits used). We further verify the router performs genuine, non-trivial per-input computation: gate decisions in skip-eligible layers change the actual skip/run outcome for 87-100% of held-out samples, confirming real in…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 自适应跳过 transformer 层以节省推理算力，同时用 LoRA 微调保住质量。</p>
+<p><strong>方法</strong> 给 Qwen2.5-0.5B-Instruct 的 24 个 block 各加轻量逐层路由器（约 21.5K 参数，straight-through estimator 训练硬门控）与 rank 8 LoRA（约 1.08M 参数），在门正则的语言模型目标下联合训练。</p>
+<p><strong>关键数字</strong> 10 个独立种子全部收敛到同一 skip 结构（第 8–16 层共 9 层可跳过）；实测 wallclock 加速 1.02–1.06x（均值 1.04x）；10 个种子困惑度全部优于原模型（两个评估划分均值 Δ 为 -1.16/-1.11）；skip 层 87–100% 留出样本的门决策真实随输入变化；单卡 A100 训练不到 7 分钟。</p>
+<p><strong>为什么值得看</strong> 罕见的「每个种子都复现」的效率工作，加速数字保守但真实可信，可复现性方法论完整。</p>
+<p><a href="https://arxiv.org/abs/2609.13682v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.13682v1">阅读原文 ↗</a></p>
 </body>
 </html>

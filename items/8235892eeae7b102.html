@@ -22,9 +22,11 @@
 <h1>Hardware-Aware Learned Representation Compression for Distributed In-Sensor Vision</h1>
 <p class="meta-line">arXiv（Chengwei Zhou 等，cs.LG） · 2026-09-12 · 论文PDF</p>
 
-<p>In-sensor computing reduces the cost of transmitting high-resolution image data by performing early-stage processing near the sensor.</p>
-<blockquote><p>In-sensor computing reduces the cost of transmitting high-resolution image data by performing early-stage processing near the sensor. However, the logic chip integrated with a CMOS image sensor (CIS) is tightly constrained in compute and memory, limiting conventional deep neural network partitioning. We present OASIS, a distributed in-sensor vision framework that uses a lightweight encoder to generate compact, task-relevant representations before off-chip transmission. The encoder is trained end-to-end using task, entropy, and reconstruction objectives, while the decoder is used only during training. OASIS supports two complementary deployment paths. The first applies 4-bit quantization and Huffman coding while preserving the spatial structure required by classification and dense-prediction tasks. The second uses Sobol-based hyperdimensional computing (HDC) to transform the encoder latent into a fixed-dimensional binary hypervector for associative-memory classification. For the SwinViT-based VWW model, mapping a $3\times3\times8$ latent to a 64-dimensional hypervector provides an additional $1.77\times$ communication reduction with less than one percentage point of accuracy loss re…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 传感器内计算可减少高分辨率图像传输成本，但 CIS 集成逻辑芯片算力与内存极受限，常规 DNN 切分方案行不通。</p>
+<p><strong>方法</strong> OASIS：轻量编码器在片上传输前生成紧凑任务相关表示（任务/熵/重建目标端到端训练，解码器仅训练时使用）；两条部署路径——4bit 量化加 Huffman 编码（保空间结构），或 Sobol 超维计算把 latent 转成定长二值超向量做联想记忆分类。</p>
+<p><strong>关键数字</strong> VWW 模型上 3×3×8 latent 映到 64 维超向量再降 1.77x 通信、精度损失不到 1 个点，相对原始 8bit 图像总降 18816x；FPGA 板级实测下，视觉唤醒词、手部追踪、眼动追踪三任务系统总能耗降约 2–4.5x。</p>
+<p><strong>为什么值得看</strong> 少见的「算法-电路-板级实测功耗」全链路 in-sensor vision 协同设计。</p>
+<p><a href="https://arxiv.org/abs/2609.13947v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.13947v1">阅读原文 ↗</a></p>
 </body>
 </html>

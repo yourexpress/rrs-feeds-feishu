@@ -22,9 +22,11 @@
 <h1>Pedestrian Crossing Intent Classification From Event-Based Vision Using Convolutional Spiking Neural Networks With Temporal Augmentation</h1>
 <p class="meta-line">arXiv（Henok Teklu 等，cs.CV） · 2026-09-11 · 论文PDF</p>
 
-<p>Anticipating whether a pedestrian will cross the road is safety-critical for autonomous vehicles, requiring real-time inference under challenging conditions including motion blur, high dynamic range, and class imbalance.</p>
-<blockquote><p>Anticipating whether a pedestrian will cross the road is safety-critical for autonomous vehicles, requiring real-time inference under challenging conditions including motion blur, high dynamic range, and class imbalance. Conventional frame-based deep networks process redundant RGB data at fixed frame rates, limiting their temporal resolution and energy efficiency. In this work we present an end-to-end pipeline that (i) converts real-world driving footage from the Joint Attention in Autonomous Driving (JAAD) dataset into synthetic dynamic vision sensor (DVS) event streams using the v2e simulator, (ii) augments training with the CARLA-simulated DVS sequences of the DVS-PedX dataset under both normal and adverse weather conditions, and (iii) trains a novel convolutional spiking neural network (Conv-SNN) with clip-consistent DVS augmentation to classify pedestrian crossing intent as binary: crossing or non-crossing. We detail all architectural decisions, the exact leaky-integrate-and-fire neuron dynamics with surrogate-gradient learning, the class-balanced loss formulation, JAAD oversampling at 6x, and a 70/15/15 stratified splitting protocol. The trained model achieves 95.83% accuracy…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 自动驾驶需实时预判行人是否过马路，帧式网络受固定帧率限制，时间分辨率与能效不足，还要应对运动模糊与高动态范围。</p>
+<p><strong>方法</strong> 用 v2e 把 JAAD 真实驾驶视频转成 DVS 事件流，混合 CARLA 仿真的 DVS-PedX（含恶劣天气）增广；训练带 clip 一致增广的卷积脉冲神经网络，LIF 神经元加代理梯度学习，类别平衡损失，JAAD 六倍过采样，70/15/15 分层划分。</p>
+<p><strong>关键数字</strong> 仅 1.07M 参数、CPU 训练；JAAD DVS 准确率 95.83%、F1 0.9695；CARLA 正常天气 97.79%/F1 0.9478；恶劣天气 94.78%/F1 0.8369。</p>
+<p><strong>为什么值得看</strong> 稀疏事件表征达到甚至超过帧式方法精度，复现细节（神经元动力学、增广、收敛分析）完整，适合低功耗边缘视觉参考。</p>
+<p><a href="https://arxiv.org/abs/2609.13328v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.13328v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Transpilation-Aware Runtime Prediction for Noisy Quantum Circuit Simulation</h1>
 <p class="meta-line">arXiv（Davud Azizov 等，quant-ph） · 2026-09-11 · 论文PDF</p>
 
-<p>Predicting the runtime of noisy quantum circuit simulations is important for scheduling, resource allocation, and performance optimization.</p>
-<blockquote><p>Predicting the runtime of noisy quantum circuit simulations is important for scheduling, resource allocation, and performance optimization. However, accurate prediction is challenging because backend-aware transpilation can substantially alter the original circuit structure, while the backend-derived noise model and simulator execution behavior can introduce additional runtime variation. We study the effectiveness of graph neural networks (GNNs) and conventional regression methods in predicting Qiskit Aer simulation runtime measured after transpilation. We construct a dataset from a benchmark pool of 1,402 unique circuits spanning 22 circuit families, two Qiskit fake-backend configurations, and four transpiler optimization levels. Specifically, we compare a source GNN using original circuit information, hybrid GNN combining source-level graph with post-transpilation features, and transpiled GNN using only transpiled circuit information, along with five regression models. In the overall-model setting, the transpiled GNN achieves the strongest performance among the graph-based representations at all four optimization levels, obtaining $R^2$ values of 0.974, 0.713, 0.745, and 0.605 fo…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 含噪量子电路模拟的运行时预测对调度与资源分配重要，但后端感知 transpilation 会大幅改变电路结构，使准确预测困难。</p>
+<p><strong>方法</strong> 构建 1402 个独特电路、22 个电路族、2 种 Qiskit 假后端、4 档优化级别的数据集；比较 source GNN（原始电路）、hybrid GNN（源图加 transpile 后特征）、transpiled GNN（仅 transpile 后信息）与 5 个传统回归模型预测 Qiskit Aer 运行时。</p>
+<p><strong>关键数字</strong> 整体模型设定下 transpiled GNN 在四个优化级别的 R² 分别为 0.974、0.713、0.745、0.605；但按后端细分评估时，传统回归在多个设定追平或超过 GNN。</p>
+<p><strong>为什么值得看</strong> 结论务实：transpile 后信息确实有用，但显式图建模的价值依赖后端与优化级别，不必盲目上 GNN。</p>
+<p><a href="https://arxiv.org/abs/2609.12980v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.12980v1">阅读原文 ↗</a></p>
 </body>
 </html>
