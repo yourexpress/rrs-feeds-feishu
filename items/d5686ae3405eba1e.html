@@ -22,9 +22,11 @@
 <h1>Partition-Aware Scheduling for Mobile Heterogeneous Inference Co-Execution</h1>
 <p class="meta-line">arXiv（Zhuojin Li 等，cs.DC） · 2026-09-13 · 论文PDF</p>
 
-<p>Modern mobile inference runs on heterogeneous platforms combining mobile GPUs with multiple CPU core clusters.</p>
-<blockquote><p>Modern mobile inference runs on heterogeneous platforms combining mobile GPUs with multiple CPU core clusters. Existing optimizations typically exploit either inter-operator parallelism, by assigning entire operators to CPU cores or to the GPU, or intra-operator parallelism, by partitioning each operator for CPU-GPU co-execution. We consider these two forms of parallelism together, to improve inference latency of tasks that can be represented by a static DAG of operators with predefined input/output tensor shapes (e.g., CNNs or vision transformers). We define the problem of partition-aware DAG scheduling for mobile heterogeneous inference, illustrating that the best strategy depends on the structure of the inference DAG, thus motivating a joint formulation capturing operator partition choices, device assignment, and execution order. We propose an online iterative search framework, which decomposes large DAGs into stages, focuses search on critical operators, and uses latency predictors to estimate partitioned execution without exhaustive profiling. Across representative mobile inference workloads, our approach achieves latency close to an offline solution while keeping scheduling o…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：移动端异构推理（移动 GPU+多 CPU 簇）的现有优化通常只取其一：算子间并行（整个算子分配给设备）或算子内并行（算子内切分 CPU-GPU 协同）——最优策略其实取决于推理 DAG 的结构。</p>
+<p><strong>方法</strong>：定义分区感知 DAG 调度问题，联合刻画算子切分选择、设备分配与执行顺序；在线迭代搜索框架把大 DAG 分阶段、聚焦关键算子、用延迟预测器估计切分执行而免全量 profiling。</p>
+<p><strong>关键数字</strong>：摘要未给具体加速比；称在代表性移动推理负载上延迟接近离线最优解，调度开销仅为模型初始化成本的一小部分，可在部署时按平台定制调度。</p>
+<p><strong>为什么值得看</strong>：移动 SoC 上 CPU-GPU 协同推理的实用框架，「接近离线最优的在线方案」对端侧部署有直接价值。</p>
+<p><a href="https://arxiv.org/abs/2609.14213v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.14213v1">阅读原文 ↗</a></p>
 </body>
 </html>

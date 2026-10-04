@@ -22,9 +22,11 @@
 <h1>Carryover Drafting: Recycling Rejected States for Speculative Decoding</h1>
 <p class="meta-line">arXiv（Jahyun Koo 等，cs.LG） · 2026-09-13 · 论文PDF</p>
 
-<p>Speculative decoding accelerates LLM inference by verifying multiple drafted tokens in parallel, allowing a single target forward pass to accept several tokens.</p>
-<blockquote><p>Speculative decoding accelerates LLM inference by verifying multiple drafted tokens in parallel, allowing a single target forward pass to accept several tokens. By construction, verification computes representations for both accepted and rejected tokens. Yet, conventional drafters retain only the representations of accepted tokens, leaving the substantial verifier computation spent on rejected tokens effectively wasted. We find that these discarded hidden states generated during target forward retain useful information about future tokens that can improve subsequent drafts. However, realizing this opportunity poses two distinct challenges. At inference, recycling overhead can increase drafting latency, diminishing the speedup gained from increased acceptance length. During training, standard parallel drafter training does not produce inference-aligned rejected states, while obtaining them through sequential rollouts would sacrifice parallelism across training positions. We introduce Carryover Drafting, which addresses both challenges. Carryover recycles rejected target hidden states as temporary KV context, allowing the drafter to selectively attend to them. It reuses the drafter's…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：投机解码中验证器为被拒绝 token 计算的隐藏状态被白白丢弃——这些「废料」能否回收来提升后续草稿质量？</p>
+<p><strong>方法</strong>：Carryover Drafting 把被拒绝的目标模型隐藏状态作为临时 KV 上下文，让草稿器选择性注意；复用草稿器现有接口，仅加一个可学习嵌入区分拒绝态与已提交上下文；配套并行 draft-verify-draft 训练，在不牺牲训练并行性的前提下让草稿器见到推理对齐的拒绝态。</p>
+<p><strong>关键数字</strong>：两个目标模型上平均接受长度提升 6.5–14.7%，端到端 vLLM 加速 7.9–14.4%，翻译任务最高达 28.8%。</p>
+<p><strong>为什么值得看</strong>：思路简洁、改动小、收益实——把验证「废料」变草稿上下文，投机解码方向值得跟进。</p>
+<p><a href="https://arxiv.org/abs/2609.14717v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.14717v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Accurate Models of AMD Matrix Cores</h1>
 <p class="meta-line">arXiv（Faizan A Khattak 等，cs.AR） · 2026-09-13 · 论文PDF</p>
 
-<p>Matrix multipliers available on recent GPUs do not conform with the IEEE 754 floating point standard.</p>
-<blockquote><p>Matrix multipliers available on recent GPUs do not conform with the IEEE 754 floating point standard. Features of matrix multipliers differ across vendors and architectures of the same vendor, such as accumulator width, rounding behaviour, normalisation points, intermediate underflow and overflow logic, the handling of subnormals, and the treatment of special inputs. As a result, reproducibility of small matrix multiplier results across devices is not possible and cannot be achieved by software control. Implementation details of matrix multipliers are not documented, making it difficult to interpret discrepancies in the computed results. We characterise the numerical behaviour of matrix multipliers across three AMD GPU architectures: CDNA 1, CDNA 2, and CDNA 3, using the MI100, MI210/250, and MI300A/300X GPUs, respectively. We design test vectors to target numerical features for all supported input formats and provide the derivation and the reasoning for why each vector allows to determine a particular numerical feature based on the outputs of the devices. MATLAB-based software models of the matrix multipliers are then developed for each architecture and validated for bit-level rep…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：GPU 矩阵乘法器不符合 IEEE 754，且各家甚至同家各代架构的累加位宽、舍入、次正规处理都不同，跨设备结果不可复现且无文档可查，怎么办？</p>
+<p><strong>方法</strong>：设计针对性测试向量刻画 AMD CDNA 1/2/3（MI100、MI210/250、MI300A/300X）矩阵核的数值特征；构建 MATLAB 软件模型，用「随机测试→精化」循环迭代到位级一致。</p>
+<p><strong>关键数字</strong>：1000 万组随机输入向量验证模型与硬件位级一致；并演示了 AMD 矩阵核与 NVIDIA tensor core 在两个数值应用上的应用级精度差异量化。</p>
+<p><strong>为什么值得看</strong>：数值可复现性研究的基础工具——有了精确模型，才能在不上硬件的情况下分析矩阵运算的数值行为差异。</p>
+<p><a href="https://arxiv.org/abs/2609.14845v2">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.14845v2">阅读原文 ↗</a></p>
 </body>
 </html>

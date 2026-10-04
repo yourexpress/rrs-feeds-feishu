@@ -22,9 +22,11 @@
 <h1>Physically Partitioned KVCache Format for CPU--GPU Load Balancing in MoE Inference</h1>
 <p class="meta-line">arXiv（Enda Yu 等，cs.DC） · 2026-09-13 · 论文PDF</p>
 
-<p>Single-GPU long-context inference with Mixture-of-Experts (MoE) models requires spilling the key-value cache (KVCache) to CPU memory.</p>
-<blockquote><p>Single-GPU long-context inference with Mixture-of-Experts (MoE) models requires spilling the key-value cache (KVCache) to CPU memory. The spilled KV serves two complementary purposes---transferring to the GPU for attention computation, or computing in-place on the CPU---which demand opposing physical states. The optimal split between them varies with workload, yet existing KVCache abstractions offer only storage semantics over a monolithic object of a single physical state, and cannot express dynamic load balancing. We propose InplaceKVCache, the first KVCache abstraction whose format fixes each byte's physical residency at write time, so that the CPU--GPU load balance can be adjusted without moving data after placement. It realizes this as a four-region layout along two dimensions---device affinity and access pattern---turning load balancing into pure scheduling. Built on this abstraction, WriteScope splits CPU--GPU shares along the sequence dimension, and a portable roofline performance model determines the optimal CPU share as sequence length evolves, with online feedback tracking CPU cost drift. On three MoE models (DeepSeek-V2-Lite, Qwen3-30B-A3B, Mixtral-8$\times$7B) with a 3…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：单卡长上下文 MoE 推理必须把 KVCache 溢到 CPU，而「传回 GPU 算注意力」与「CPU 原地算」要求相反的物理状态，现有 KVCache 抽象只有存储语义，无法表达动态负载均衡。</p>
+<p><strong>方法</strong>：InplaceKVCache 在写入时即固定每字节的物理驻留，按设备亲和性与访问模式两维划四区，把负载均衡变成纯调度问题；WriteScope 沿序列维划分 CPU/GPU 份额，用可移植 roofline 模型加在线反馈随序列长演化定最优 CPU 份额。</p>
+<p><strong>关键数字</strong>：32GB 显存下在 3 个 MoE 模型（DeepSeek-V2-Lite、Qwen3-30B-A3B、Mixtral-8×7B）支持 100 万 token 聚合规模推理；长上下文（≥8K）几何均值加速 A100 上 1.5–2.5×、V100 上 1.4–1.7×，而 vLLM、SGLang、KTransformers 即使 KV 预算翻倍也跑不动。</p>
+<p><strong>为什么值得看</strong>：单卡百万 token MoE 推理的硬核系统工作，「写时定驻留」的抽象设计很漂亮。</p>
+<p><a href="https://arxiv.org/abs/2609.14507v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.14507v1">阅读原文 ↗</a></p>
 </body>
 </html>

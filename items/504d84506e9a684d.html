@@ -22,9 +22,11 @@
 <h1>HELENA for 5G NR LEO NTN Channel Estimation: A Comparative Evaluation</h1>
 <p class="meta-line">arXiv（Miguel Camelo Botero 等，eess.SP） · 2026-09-13 · 论文PDF</p>
 
-<p>Deep Learning (DL)-based channel estimation has shown high accuracy and low latency in terrestrial 5G NR, but Low Earth Orbit (LEO) Non-Terrestrial Networks (NTNs) introduce Doppler and synchronization impairments that m…</p>
-<blockquote><p>Deep Learning (DL)-based channel estimation has shown high accuracy and low latency in terrestrial 5G NR, but Low Earth Orbit (LEO) Non-Terrestrial Networks (NTNs) introduce Doppler and synchronization impairments that may require NTN-specific architectures. We test whether High-Efficiency Learning-based channel Estimation using dual Neural Attention (HELENA), originally designed for terrestrial channels, remains effective after NTN retraining and suitable across high-performance and power-constrained inference platforms. Its unchanged architecture is trained on paired receiver-compensated (NTN-1) and residual-impaired (NTN-2) datasets and compared with eight terrestrial-origin models trained on the same NTN data and the NTN-specific MDELAN-SISO. HELENA achieves the lowest observed SNR-averaged NMSE among the DL estimators in both conditions, including 55.8-62.7% lower linear-scale NMSE than MDELAN-SISO. All DL models degrade in NTN-2, demonstrating the challenge posed by residual Doppler and its associated impairments. On an RTX PRO 4500, HELENA achieves 0.0595 ms 99th-percentile (P99) inference latency, 88.1% below the 0.5 ms budget, with lower energy than its closest attention-b…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：地面 5G 的 DL 信道估计架构 HELENA 在 LEO 卫星 NTN 的多普勒与同步损伤下，重训后是否仍有效？能否上嵌入式平台？</p>
+<p><strong>方法</strong>：不改架构，在接收机补偿（NTN-1）与残余损伤（NTN-2）两类数据集上训练，与 8 个地面来源模型及 NTN 专用的 MDELAN-SISO 对比；在 RTX PRO 4500 与 10W Jetson Orin NX 上测延迟与能耗。</p>
+<p><strong>关键数字</strong>：HELENA 取得 SNR 平均 NMSE 最低，比 MDELAN-SISO 低 55.8–62.7%；RTX PRO 4500 上 P99 延迟 0.0595 ms，低于 0.5 ms 预算 88.1%；Jetson 上没有任何模型满足 P99 预算。</p>
+<p><strong>为什么值得看</strong>：结论实用——地面架构无需 NTN 专门重新设计，但嵌入式尾延迟仍是开放挑战。</p>
+<p><a href="https://arxiv.org/abs/2609.14735v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.14735v1">阅读原文 ↗</a></p>
 </body>
 </html>

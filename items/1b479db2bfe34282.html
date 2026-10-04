@@ -22,9 +22,11 @@
 <h1>Real-World Deployment and Performance Characterisation of Fog-Based Deep Learning for Cold-Chain Temperature Prediction over LoRaWAN</h1>
 <p class="meta-line">arXiv（Jeremiah Taguta 等，cs.DC） · 2026-09-12 · 论文PDF</p>
 
-<p>Fresh fruits and vegetables (FFVs) are highly perishable, and cold-chain breaks contribute significantly to global food waste.</p>
-<blockquote><p>Fresh fruits and vegetables (FFVs) are highly perishable, and cold-chain breaks contribute significantly to global food waste. While Machine Learning (ML) can enable proactive intervention, cloud-based inference faces challenges such as latency and data loss. Fog computing addresses these issues but has been tested only in simulation for FFV cold-chain temperature prediction. To the best of the authors' knowledge, this paper presents its first real-world deployment. A fog-deployed LSTM-GRU model predicted cold-room temperature using LoRaWAN sensor data collected from a South African apple cold-storage facility with induced cold-chain breaks. Running entirely on a Raspberry Pi 4 with no cloud dependency, the system generated conditional SHAP explanations only when a break is predicted. The deployed system predicts cold-room temperature with an MAE of 0.2°C at roughly 0.2 kWh per day ($\approx 0.7$ Wh per prediction). Predictions were delivered in under one second (555 ms), dominated by network and messaging rather than computation, with conditional explanations adding modest cost. SHAP consumes 28% more CPU but is well within the hardware's capacity. The model attributes its predict…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：果蔬冷链断链是全球食物浪费主因之一，雾计算深度学习温度预测此前只有仿真验证，真实部署到底表现如何？</p>
+<p><strong>方法</strong>：LSTM-GRU 模型部署在树莓派 4 上，用 LoRaWAN 传感器数据预测冷室温度；仅在预测到断链时生成条件 SHAP 解释；全程无云依赖，在南非苹果冷库实测（人为制造断链）。</p>
+<p><strong>关键数字</strong>：温度预测 MAE 0.2°C，约 0.2 kWh/天（单次预测约 0.7 Wh）；端到端预测 555 ms，瓶颈在网络与消息而非计算；SHAP 多耗 28% CPU。</p>
+<p><strong>为什么值得看</strong>：首个真实部署基准，暴露了仿真看不到的东西——传感器触发的单点故障，以及断网后的自治恢复能力。边缘 AI 落地必读。</p>
+<p><a href="https://arxiv.org/abs/2609.14036v2">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.14036v2">阅读原文 ↗</a></p>
 </body>
 </html>

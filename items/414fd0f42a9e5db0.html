@@ -22,9 +22,11 @@
 <h1>Can a local LLM beat -O3?</h1>
 <p class="meta-line">tijl.blog · 2026-09-13 · 技术博客</p>
 <img class="hero" src="https://tijl.blog/images/cppConPosterBanner.png" alt="" referrerpolicy="no-referrer">
-<p>实验性博客：本地 LLM 生成代码优化建议与编译器 -O3 的基准对比。</p>
-<blockquote><p>During his keynote at ACCU on Sea in June, Andrei Alexandrescu made some predictions. One of those was the integration of LLMs and compilers. Compilers can generate optimization remarks for LLMs to process. And LLMs can propose optimizations that are difficult for a conventional compiler to discover. If you haven’t yet, I very much recommend you to watch Andrei’s talk. It’s a great talk, and it led me down a rabbit hole of experimenting: what could an LLM do today? Integrated into the compiler pipeline, locally on my hardware?</p><p>These experiments resulted in a poster, which I will present today at the registration reception of CppCon. The aim of the poster is to answer these questions:</p><p>- How much performance improvements can a small, local LLM achieve as part of the compilation process?</p><p>- How likely is the LLM to produce code that is functionally correct?</p><p>- Is the IR optimization stage the right place to introduce LLM-based optimizations, or is it better to optimize the C++ code before it goes to the compiler?</p><p>This blog post allows me to dive a bit deeper into my project, with links to the code.</p><p>ℹ️ This post was written before I tested with larger cloud models. They perform drastically better and make LLVM IR optimization a viable approach. Please also check my follow-up post with those results.</p><p>The benchmark programs</p><p>The testing library consists of five exported functions, each implemented in a separate C++ file. They each test for a different optimization situation:</p><p>- fibonacci: A basic recursive implementation, with an obvious algorithmic optimization opportunity.</p><p>- format_list: Array serialization in a for loop, with opportunities for optimizing the string concatenation.</p><p>- repeated_sort: Gives the model an opportunity to notice unnecessary repeated work.</p><p>- count_matches: Finding elements of one array in another array, with a possible optimization in picking another data-structure.</p><p>…</p></blockquote>
-<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><strong>核心话题</strong>：小型本地 LLM 嵌入编译流程（直接优化 LLVM IR）能带来多少性能提升？生成代码功能正确的概率多大？IR 层是不是引入 LLM 优化的正确位置？</p>
+<p><strong>要点</strong>：作者受 Andrei Alexandrescu 演讲启发做实验：基于 Clang/LLVM 的文本 IR 让 LLM 直接优化；设计了 5 个刻意低效的 C++ 基准函数（斐波那契、序列化、重复排序、计数匹配、词频统计）；系统对比了各优化 flag，指出 -O3 并不总是最优、需要实测。作者坦承测试代码的算法级优化空间过大很可能影响了结论；后续用更大云模型的实验让 IR 优化路线变得可行。</p>
+<p><strong>关键数字</strong>：实验设置为 5 个基准函数、多档编译 flag 对比；正文未给出统一量化结论。</p>
+<p><strong>为什么值得看</strong>：编译器×LLM 融合的一手实验记录，含失败反思与代码链接，比论文更真实地呈现了这个方向的现状。</p>
+<p><a href="https://tijl.blog/posts/cppcon-local/">原文链接</a></p>
 <p><a class="origin" href="https://tijl.blog/posts/cppcon-local/">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>ECAS: An Edge-Controlled Agentic System for Validation-Gated Scientific Application Execution</h1>
 <p class="meta-line">arXiv（Baixi Sun 等，cs.DC） · 2026-09-13 · 论文PDF</p>
 
-<p>Scientific applications increasingly rely on high-performance computing (HPC), yet translating a scientist's high-level goal into a correct target-scale execution remains brittle and labor-intensive.</p>
-<blockquote><p>Scientific applications increasingly rely on high-performance computing (HPC), yet translating a scientist's high-level goal into a correct target-scale execution remains brittle and labor-intensive. Large language model (LLM) agents promise to automate this, but two obstacles remain: granting a cloud-hosted model direct HPC access exposes credentials and execution authority, while withholding it demands continuous human supervision; and one-shot generation cannot adapt when generated artifacts fail in a site-specific HPC environment. We present \textsc{ECAS}, an \textbf{E}dge-\textbf{C}ontrolled \textbf{A}gentic \textbf{S}ystem for closed-loop execution of scientific computing campaigns with limited human intervention. \textsc{ECAS} separates \emph{reasoning}, \emph{control}, and \emph{execution}: a cloud-hosted LLM proposes plans, artifacts, and repairs; a user-controlled edge agent retains credentials, workflow state, and execution authority while enforcing policy and resource constraints; and the HPC system computes. Its core mechanism is \emph{validation-gated execution}: generated artifacts pass static checks and small-scale validation, failures trigger repairs from sanitized…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM agent 直连 HPC 会暴露凭据与执行权，不给权限又要人全程盯——如何在保留边缘控制的前提下闭环执行科学计算任务？</p>
+<p><strong>方法</strong>：ECAS 三分架构：云端 LLM 提方案与修复、用户控制的边缘代理掌凭据/状态/执行权并执行策略、HPC 系统计算。核心机制是验证门控执行：产物先过静态检查与小规模验证，失败用脱敏反馈触发修复，验证与策略全通过才放行目标规模运行。</p>
+<p><strong>关键数字</strong>：3 个科学应用、2 套 ALCF 生产系统、6 类注入故障下，闭环修复把成功率从 0/6 提到 6/6；验证门挡下全部 3 次目标规模失败；技能条件化把成功率从 4/6 提到 6/6。</p>
+<p><strong>为什么值得看</strong>：「云推理、边缘控权」的职责划分是 LLM agent 接入敏感基础设施的可落地范式。</p>
+<p><a href="https://arxiv.org/abs/2609.14211v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.14211v1">阅读原文 ↗</a></p>
 </body>
 </html>

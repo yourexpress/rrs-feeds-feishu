@@ -22,9 +22,11 @@
 <h1>MANE: A Multi-Path Adaptive Network for Edge Onloading of Deep Neural Networks</h1>
 <p class="meta-line">arXiv（Sokratis Nikolaidis 等，cs.DC） · 2026-09-13 · 论文PDF</p>
 
-<p>Split computing constitutes a widely used distributed inference approach, where a lightweight head model is onloaded onto the device and a heavier tail model resides on an edge server, leveraging the growing computationa…</p>
-<blockquote><p>Split computing constitutes a widely used distributed inference approach, where a lightweight head model is onloaded onto the device and a heavier tail model resides on an edge server, leveraging the growing computational capabilities of modern System-on-Chips while alleviating server load. As intelligent indoor environments such as smart offices grow increasingly populated with diverse IoT devices, a single edge server must simultaneously assist multiple devices, each competing for the same shared inference resources. Without a principled mechanism to manage this shared load, the server is quickly overwhelmed, causing latency SLO violations and rendering server-assisted inference ineffective. In this work, we present MANE, a distributed inference framework that equips the server with a multi-path tail architecture, enabling a dynamic accuracy--throughput trade-off at runtime. By introducing a novel multi-path model architecture, a three-stage training scheme featuring a Joint Head Network Distillation loss and a hysteresis-based scheduler with an equitable device-fallback policy, MANE maintains over 80% SLO satisfaction rate where state-of-the-art onloading methods fail completely…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：边缘服务器同时服务多 IoT 设备做 split computing 时，缺乏共享负载管理机制，服务器很快被打爆、SLO 违约，服务器辅助推理形同虚设。</p>
+<p><strong>方法</strong>：MANE 给服务器配多路径尾模型架构，运行时动态做精度-吞吐权衡；三阶段训练（含联合头网络蒸馏损失）+ 基于迟滞的调度器与公平的设备回退策略。</p>
+<p><strong>关键数字</strong>：多达 40 并发设备下保持 80% 以上 SLO 满足率——同等条件下 SOTA onloading 方法完全失效；精度比纯端侧方案高 6 个百分点。</p>
+<p><strong>为什么值得看</strong>：多设备共享边缘推理的工程化方案，架构与调度联合设计对端边协同场景有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.14660v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.14660v1">阅读原文 ↗</a></p>
 </body>
 </html>

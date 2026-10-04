@@ -22,9 +22,11 @@
 <h1>OpWeave: Flexible Operator Disaggregation for Heterogeneous LLM Serving</h1>
 <p class="meta-line">arXiv（Zikun Li 等，cs.DC） · 2026-09-13 · 论文PDF</p>
 
-<p>LLM serving systems increasingly disaggregate inference into finer-grained stages, with recent approaches separating attention from FFN or MoE execution during decode.</p>
-<blockquote><p>LLM serving systems increasingly disaggregate inference into finer-grained stages, with recent approaches separating attention from FFN or MoE execution during decode. This operator-level disaggregated serving (ODS) can improve hardware matching and enable independent scaling, particularly across heterogeneous devices. However, existing systems fix operator boundaries and lack a unified characterization of when disaggregation reduces serving cost. We present OpWeave, an end-to-end framework for heterogeneous ODS. OpWeave provides an analytical cost model that bounds the gains of homogeneous and heterogeneous ODS over colocated serving. It jointly optimizes operator partitioning and deployment configuration through a regularity-aware planner that keeps the search tractable even for hybrid-attention models. A vLLM-based runtime executes the synthesized plans with flexible operator stages across heterogeneous device groups. In our evaluation, OpWeave reduces serving cost by up to $1.78\times$ on homogeneous and $1.89\times$ on heterogeneous GPU clusters relative to the best feasible baseline, while meeting latency SLOs.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM serving 的算子级解耦（如分离 attention 与 FFN/MoE）能改善硬件匹配，但现有系统算子边界固定，且缺乏「何时解耦能降本」的统一刻画。</p>
+<p><strong>方法</strong>：OpWeave 端到端框架：解析成本模型给出同构/异构 ODS 相对共址服务的收益上界；规则性感知规划器联合优化算子切分与部署配置（对混合注意力模型也可行）；基于 vLLM 的运行时在异构设备组上执行合成方案。</p>
+<p><strong>关键数字</strong>：满足延迟 SLO 前提下，同构 GPU 集群服务成本最高降 1.78×、异构集群最高降 1.89×（相对最优可行基线）。</p>
+<p><strong>为什么值得看</strong>：把「要不要解耦」从工程直觉变成有理论上界的成本模型问题，异构 GPU serving 直接可用。</p>
+<p><a href="https://arxiv.org/abs/2609.14237v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.14237v1">阅读原文 ↗</a></p>
 </body>
 </html>

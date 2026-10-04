@@ -22,9 +22,11 @@
 <h1>Joint Optimization for Federated Learning and Transmission over Unreliable Wireless Networks with Heterogeneous Data</h1>
 <p class="meta-line">arXiv（Changheng Wang 等，cs.DC） · 2026-09-13 · 论文PDF</p>
 
-<p>In wireless federated learning (FL), data heterogeneity and multiple local updates induce client drift, degrading model convergence.</p>
-<blockquote><p>In wireless federated learning (FL), data heterogeneity and multiple local updates induce client drift, degrading model convergence. It is further affected by unreliable wireless links, as transmission errors may invalidate model updates. To address these challenges, we propose a federated random walk averaging (FedRW) framework, which is a variant of federated averaging (FedAvg) that mitigates data heterogeneity by updating models along random walk (RW) paths and aggregating them at the server. Model parameters are transmitted in packets with retransmission support to improve training quality by mitigating wireless errors along RW paths. Meanwhile, wireless transmission delays hinder the exploration of FedRW. To this end, we formulate a joint optimization problem that integrates learning, RW path selection, and transmission parameter tuning, aiming to minimize the training loss under delay constraints. By deriving an upper bound on the expected convergence of FedRW over unreliable wireless networks, we reduce the problem to a general form agnostic to task type and model architecture. A distributed solution is then proposed, in which the server or clients optimize packet size and m…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：无线联邦学习中，数据异质与多次本地更新导致客户端漂移，不可靠无线链路的传输错误又会直接毁掉模型更新。</p>
+<p><strong>方法</strong>：FedRW 让模型沿随机游走路径更新并在服务器聚合，缓解数据异质；包级重传对抗无线错误；把学习、随机游走路径选择与传输参数统一为时延约束下的联合优化，推导 FedRW 在不可靠网络上的收敛上界后化为与任务/模型无关的形式，分布式求解（弹性感知束搜索+动态剪枝选下一跳）。</p>
+<p><strong>关键数字</strong>：高数据异质下准确率比 SOTA 基线高 2.26%–9%；联合优化后再高至少 2.78% 且收敛更快。</p>
+<p><strong>为什么值得看</strong>：把 FL 收敛分析落到可操作的联合优化问题，无线边缘 FL 的完整方案。</p>
+<p><a href="https://arxiv.org/abs/2609.14246v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.14246v1">阅读原文 ↗</a></p>
 </body>
 </html>

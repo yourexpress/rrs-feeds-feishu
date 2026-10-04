@@ -22,9 +22,11 @@
 <h1>One Size Does Not Fit All: Setting Inference Depth from the Questions a Deployment Actually Asks</h1>
 <p class="meta-line">arXiv（Jerry Kaplan，cs.CL） · 2026-09-12 · 论文PDF</p>
 
-<p>A transformer language model is trained to respond to any prompt, but each deployment asks only a narrow range of questions: a support assistant sees delivery complaints, a coding tool sees Python.</p>
-<blockquote><p>A transformer language model is trained to respond to any prompt, but each deployment asks only a narrow range of questions: a support assistant sees delivery complaints, a coding tool sees Python. Every deployment nonetheless pays the same computation per token. This paper measures how much of that cost is avoidable when the range of prompts is known in advance. The mechanism examined is early exit: a small, trained component - called a readout - is attached to an intermediate layer and proposes a token, and a confidence test decides whether to emit it or to run the remaining layers. The models are frozen, and the only supervision used is the model's own output on ordinary traffic. Three findings are reported. First, achievable savings depend strongly on the kind of traffic: at half depth on a 1.5-billion-parameter model, 96 percent of tokens could be emitted early for arithmetic word problems and 8 percent for Chinese-language explanations, at matched token-level fidelity to the full model (a measure whose limits the third finding exposes). Second, of three ways a deployment might use knowledge of its traffic, only customizing the threshold for exiting early is worthwhile: calibr…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：部署场景的 prompt 分布其实很窄（客服只看投诉、代码工具只看 Python），但每个 token 都付全模型算力。已知流量分布时，推理深度能省多少？</p>
+<p><strong>方法</strong>：冻结模型，在中间层挂一个小型 readout 提议 token，置信度测试决定提前退出还是跑完剩余层；只用模型自身输出做监督，按部署定制退出阈值。</p>
+<p><strong>关键数字</strong>：1.5B 模型半深度下，算术题 96% token 可提前退出、中文解释仅 8%；按部署校准阈值使退出率最高提升 59 个百分点；token 级保真度最高的配置下，60 道算术题全模型全对、早退只对 10–28 道。</p>
+<p><strong>为什么值得看</strong>：揭示 token 级保真度这一早退领域主流指标在有标准答案的任务上会严重误导，且「按部署调阈值」是唯一值得的定制——端侧小模型推理的直接参考。</p>
+<p><a href="https://arxiv.org/abs/2609.14144v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.14144v1">阅读原文 ↗</a></p>
 </body>
 </html>

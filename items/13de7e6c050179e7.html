@@ -22,9 +22,11 @@
 <h1>When Faster VLA Deployment Changes Closed-Loop Behavior: Task Success-Latency Analysis of SmolVLA Across PyTorch and ONNX Variants</h1>
 <p class="meta-line">arXiv（Rafiqul Islam，cs.RO） · 2026-09-12 · 论文PDF</p>
 
-<p>Vision-language-action (VLA) deployment can reduce inference latency while changing closed-loop task behavior.</p>
-<blockquote><p>Vision-language-action (VLA) deployment can reduce inference latency while changing closed-loop task behavior. We evaluate HuggingFaceVLA/smolvla_libero on an RTX 2060 (6 GB) in LIBERO Spatial and Object (MuJoCo 3.3.2, LeRobot 0.6.1, seed 42), comparing PyTorch+AMP with ONNX Runtime CUDA Execution Provider (CUDA EP). The main evaluation uses 100 episodes/suite; a paired rollout uses 300 episodes/suite. PyTorch+AMP reaches 70.0%/88.0% Spatial/Object success at 1181 ms p99. Requested-FP16 and requested-INT8 ONNX reduce tether-inspect p99 to 601 ms and 532 ms, while Spatial success falls to 41.0% and 40.0% and Object remains at 89.0%. A graph audit shows those artifacts are byte-identical FP32 graphs, so the requested-INT8 row is not operator-level INT8 quantization. A static language-width ablation (16/24/32 tokens) yields Spatial success of 41.0%, 75.0%, and 71.0%; widths 24 and 32 recover much of the Spatial drop while Object success and uniform-bench latency stay approximately stable. Width-24 ONNX Spatial success is comparable to the PyTorch+AMP baseline at roughly half the latency (Wilson intervals overlap; two-proportion chi-squared p=0.53). Context width is an important contri…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：VLA（视觉-语言-动作）模型部署加速会不会改变闭环任务行为？推理快了，任务还成吗？</p>
+<p><strong>方法</strong>：RTX 2060 上用 LIBERO 基准对比 SmolVLA 的 PyTorch+AMP 与 ONNX Runtime CUDA EP，主评估 100 episodes/套件、配对 300 episodes；含计算图审计与语言宽度（16/24/32 token）消融。</p>
+<p><strong>关键数字</strong>：PyTorch+AMP Spatial/Object 成功率 70%/88%、p99 1181 ms；ONNX 把 p99 压到 601/532 ms 但 Spatial 掉到 41%/40%；宽度 24 时 Spatial 恢复至 75%，与基线统计相当（p=0.53）而延迟约减半。</p>
+<p><strong>为什么值得看</strong>：图审计发现所谓 INT8 工件实为字节级相同的 FP32 图——部署评估必须同时报告延迟、工件检查、接口约束与闭环成功率，缺一不可。</p>
+<p><a href="https://arxiv.org/abs/2609.14146v2">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.14146v2">阅读原文 ↗</a></p>
 </body>
 </html>
