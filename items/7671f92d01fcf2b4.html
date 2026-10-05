@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Google's TurboQuant Does and Why It Actually Matters</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>What Google's TurboQuant Does and Why It Actually Matters</h1>
+<p class="meta-line">DEV Community（作者 Dishant Sharma） · 2026-10-04 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fcloudmate-test.s3.us-east-1.amazonaws.com%2Fres%252Fhashnode%252Fimage%252Fupload%252Fv1776138728976%252F8e715981-6bf7-40bf-87f6-288bea210392.webp" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong> KV cache 随上下文长度线性膨胀——单个 Llama-3.1-8B 在 128K 上下文下 KV cache 就占 16GB 显存，24GB 卡几乎放不下权重，长上下文任务首当其冲。</p>
+<p><strong>要点</strong> 解读 Google Research 的 TurboQuant：随机旋转让向量角度分布高度可预测（PolarQuant），无需为每块存储昂贵的归一化常数；第二级用 1bit QJL 处理残差。文章还汇总了社区在 llama.cpp、MLX、vLLM 上的独立复现验证。</p>
+<p><strong>关键数字</strong> KV cache 压到每值 3bit 且零精度损失，16GB 降到约 2.6GB；H100 上注意力计算最高 8x 加速；常规量化常需额外 1–2bit 存储量化常数。</p>
+<p><strong>为什么值得看</strong> 把论文原理讲得通俗，又收集了多框架复现结果，是快速了解这一 KV 压缩热点的入口。</p>
+<p><a href="https://dev.to/dishant0406/what-googles-turboquant-does-and-why-it-actually-matters-54eg">阅读原文</a></p>
+<p><a class="origin" href="https://dev.to/dishant0406/what-googles-turboquant-does-and-why-it-actually-matters-54eg">阅读原文 ↗</a></p>
+</body>
+</html>

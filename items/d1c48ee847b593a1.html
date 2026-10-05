@@ -22,9 +22,11 @@
 <h1>Agentic Autoscaling through Worker-Pool Orchestration for LLM-driven Text Classification in Cloud Computing Environments</h1>
 <p class="meta-line">arXiv（Bablu Kumar 等，cs.DC） · 2026-09-14 · 论文PDF</p>
 
-<p>The growing adoption of large language model (LLM)-based systems for large-scale text processing has created a critical need for dynamic autoscaling to manage high-latency, bursty, and computationally intensive workloads…</p>
-<blockquote><p>The growing adoption of large language model (LLM)-based systems for large-scale text processing has created a critical need for dynamic autoscaling to manage high-latency, bursty, and computationally intensive workloads. This paper proposes an agentic autoscaling framework through worker-pool orchestration for LLM-driven text classification. The framework integrates a priority task queue, a dynamic pool of agent workers, a real-time metrics collector, and an application-layer autoscaler. Its classifier-agnostic design supports both zero-shot and fine-tuned language models without modifying the autoscaling logic. The framework is evaluated using Autoscaling+BART and Autoscaling+DeBERTa against static allocation and standalone RoBERTa and DistilBERT baselines. On the AG News dataset, Autoscaling+BART achieves 84.5% accuracy, while Autoscaling+DeBERTa improves it to 90.5%. On the SMS Spam Collection dataset, Autoscaling+DeBERTa achieves 99.5% accuracy, whereas Autoscaling+BART attains 84.5% accuracy with lower execution time. Overall, the proposed framework consistently outperforms the baseline approaches in resource efficiency while maintaining high classification performance, demon…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 大规模文本分类负载高时延、突发性强、算力密集，需要动态自动扩缩来兼顾资源效率与性能。</p>
+<p><strong>方法</strong> 基于 worker-pool 编排的 agentic autoscaling 框架：优先级任务队列 + 动态 agent worker 池 + 实时指标采集器 + 应用层 autoscaler；分类器无关设计，无需改动扩缩逻辑即可支持 zero-shot 与微调模型。</p>
+<p><strong>关键数字</strong> AG News 上 Autoscaling+BART 准确率 84.5%、Autoscaling+DeBERTa 达 90.5%；SMS Spam 数据集上 Autoscaling+DeBERTa 达 99.5%；整体在资源效率上持续优于静态分配与 RoBERTa/DistilBERT 基线。</p>
+<p><strong>为什么值得看</strong> 弹性 worker-pool 编排为云环境 LLM 批处理提供了成本高效的工程范式。</p>
+<p><a href="https://arxiv.org/abs/2609.14898v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.14898v1">阅读原文 ↗</a></p>
 </body>
 </html>

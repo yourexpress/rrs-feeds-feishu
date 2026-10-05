@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Optimizing Jagged Flash Attention with TLX: The Road Toward SOTA FA4 on Blackwell</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Optimizing Jagged Flash Attention with TLX: The Road Toward SOTA FA4 on Blackwell</h1>
+<p class="meta-line">PyTorch Blog（Meta kernel team） · 2026-10-01 · 技术博客 / 每日精选</p>
+
+<p><strong>核心话题</strong> Meta 生成式广告模型 GEM 在 B200 上的 jagged（变长序列）attention 是单点最慢的 kernel，而达到 Blackwell 峰值性能过去只能靠手写 CuteDSL/CUDA，开发慢、难扩展。</p>
+<p><strong>要点</strong> 用 Triton 低层扩展 TLX 重写 Jagged Flash Attention：显式控制 SMEM/TMEM 分配、warp specialization、异步 TMA/MMA 等，把编译器调度的访存受限 kernel 改造成紧流水、warp 专用化的 kernel；代码约 3.2K 行，保持建模工程师也能读改扩展。</p>
+<p><strong>关键数字</strong> 代码量约为 SOTA FA4 CuteDSL 内核（~10K 行）的 1/3；在 GEM 关键 jagged shape 上比 FA4（2026 年 5 月版）前向快约 13%、反向快约 50%；padding 方案可浪费达 50% 计算。</p>
+<p><strong>为什么值得看</strong> 证明高层 Triton 模型配合显式硬件控制可以达到并超越手写 FA4，代码已开源，是做 attention kernel 与 Blackwell 优化的实操范本。</p>
+<p><a href="https://pytorch.org/blog/optimizing-jagged-flash-attention-with-tlx-the-road-toward-sota-fa4-on-blackwell/">阅读原文</a></p>
+<p><a class="origin" href="https://pytorch.org/blog/optimizing-jagged-flash-attention-with-tlx-the-road-toward-sota-fa4-on-blackwell/">阅读原文 ↗</a></p>
+</body>
+</html>

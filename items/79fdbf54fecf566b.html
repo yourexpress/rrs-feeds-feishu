@@ -22,9 +22,11 @@
 <h1>DeepSeek-V4-Flash on AMD gfx90a: Correctness Recovery and Inference Performance Engineering</h1>
 <p class="meta-line">arXiv（Siming Huang，cs.DC） · 2026-09-14 · 论文PDF</p>
 
-<p>We present the enablement, correctness recovery, and performance engineering of DeepSeek-V4-Flash inference on AMD Instinct MI250 GPUs using the gfx90a/CDNA2 architecture.</p>
-<blockquote><p>We present the enablement, correctness recovery, and performance engineering of DeepSeek-V4-Flash inference on AMD Instinct MI250 GPUs using the gfx90a/CDNA2 architecture. The system integrates native safetensors loading, tensor and expert parallelism, FP4 routed mixture-of-experts computation, FP8 dense projections, sparse attention, HIP graph execution, and OpenAI-compatible serving within SGLang. An initially fast execution path was found to be numerically incorrect because of a routed-expert W2 layout mismatch. We identify the output permutation, repair the weight layout at load time, and establish fixed-token and hash-based correctness checks before further optimization. On the corrected path, decode performance is improved through packed FP4 weights, INT8 activation quantization, CDNA2 dot-product instructions, peer-read all-reduce, and topology-aware kernel geometry. Prefill is accelerated using CDNA2 MFMA kernels, improved packed-weight reuse, reduced sparse-attention overhead, larger chunks, and retuned expert sorting. On four MI250 GCDs, TP4/EP1 native autoregressive decode reaches approximately 74.5 tok/s, while a 4,604-token prompt reaches 2.061-2.062 s TTFT, or approxi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 在 AMD Instinct MI250（gfx90a/CDNA2）上使能 DeepSeek-V4-Flash 推理：最初跑得快的路径被发现数值错误，如何先恢复正确性再做性能工程？</p>
+<p><strong>方法</strong> SGLang 内集成原生 safetensors 加载、张量与专家并行、FP4 路由 MoE、FP8 dense 投影、稀疏注意力、HIP graph 执行与 OpenAI 兼容服务；定位为 routed-expert W2 布局不匹配，加载时修复权重布局并建立固定 token 与哈希正确性检查，之后再做 decode（打包 FP4 权重、INT8 激活量化、CDNA2 点积指令、peer-read all-reduce）与 prefill（MFMA kernel、稀疏注意力开销削减等）优化。</p>
+<p><strong>关键数字</strong> 4 个 MI250 GCD 上 TP4/EP1 自回归 decode 约 74.5 tok/s；4604-token prompt 的 TTFT 2.061–2.062s（约 2234 input tok/s）。</p>
+<p><strong>为什么值得看</strong> "先修正确性再谈性能"的移植复盘，CDNA2 瓶颈分析（FP4 格式失配、低 M 利用率、层间同步）有普适参考性。</p>
+<p><a href="https://arxiv.org/abs/2609.15627v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.15627v1">阅读原文 ↗</a></p>
 </body>
 </html>

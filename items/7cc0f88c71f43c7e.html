@@ -22,9 +22,11 @@
 <h1>Cnuas: A Software-Defined AI/HPC Rack-scale Emulation Platform and Hyperscale Data Center Facility Twin</h1>
 <p class="meta-line">arXiv（Weqaar Janjua 等，cs.DC） · 2026-09-14 · 论文PDF</p>
 
-<p>Modern AI and HPC systems integrate accelerators, high-speed networks, and management controllers at rack scale.</p>
-<blockquote><p>Modern AI and HPC systems integrate accelerators, high-speed networks, and management controllers at rack scale. Developing software for this infrastructure typically requires access to scarce, costly hardware, while software abstractions can obscure how workloads depend on resources across servers and accelerators. This paper presents Cnuas, an open-source, experimental rack-scale emulation platform whose baseline architecture follows the Open Compute Project (OCP) Open Rack v3 specifications. Through functional emulation, it supports experimentation, learning and software development within academic and industrial research and development, rather than matching the throughput or latency of physical hardware. Its web-based user interface visualizes racks, devices and their interconnections to help developers build a system-level mental model of the infrastructure supporting their workloads. At its core, CnuasNIC and CnuasSwitch implement a guest-visible remote direct memory access (RDMA) adapter and a host-resident hybrid software switch supporting both RoCEv2 and native InfiniBand. The platform also provides a dedicated AI/ML accelerator (GPU) peer fabric and OpenBMC-based rack ma…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 机架级 AI/HPC 系统集成了加速器、高速网络与管理控制器，但为其开发软件通常需要稀缺昂贵的硬件，软件抽象又会掩盖负载对跨服务器/加速器资源的依赖。</p>
+<p><strong>方法</strong> Cnuas：开源实验性机架级仿真平台，基线架构遵循 OCP Open Rack v3 规范，通过功能仿真（不追求匹配真实硬件吞吐/时延）支持实验与软件开发；web 界面可视化机架、设备与互连；核心组件 CnuasNIC（guest 可见 RDMA 网卡）与 CnuasSwitch（host 侧混合软交换，支持 RoCEv2 与原生 InfiniBand），另有 GPU peer fabric 和基于 OpenBMC 的机架管理（RS-485 上可执行电源/备电固件）。</p>
+<p><strong>关键数字</strong> 摘要未给出性能数值，定位为有界原型结果。</p>
+<p><strong>为什么值得看</strong> 用普通主机就能研究设备/驱动/固件接口的机架级仿真平台，对基础设施软件与教学场景都有价值。</p>
+<p><a href="https://arxiv.org/abs/2609.15889v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.15889v1">阅读原文 ↗</a></p>
 </body>
 </html>

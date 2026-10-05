@@ -22,9 +22,11 @@
 <h1>What Input Resolution Is Required for Bird Species Identification, and What Is Its Latency Cost on an Edge Device? A Study of 14 Input Resolutions and Six Architectures with On-Device Measurements</h1>
 <p class="meta-line">arXiv（Takeshi Nishikawa，cs.CV） · 2026-09-13 · 论文PDF</p>
 
-<p>Bird-strike mitigation at wind farms requires identifying distant birds that span only tens of pixels, so the classifier's input resolution N is a design variable, not a fixed specification.</p>
-<blockquote><p>Bird-strike mitigation at wind farms requires identifying distant birds that span only tens of pixels, so the classifier's input resolution N is a design variable, not a fixed specification. We study it with a factorial design over 14 side lengths N (16 to 224), six architectures, two training and evaluation regimes and 30 random seeds -- 2,520 checkpoints and 5,040 evaluations -- plus latency measured on an NVIDIA Jetson Orin Nano. Four results. (1) The selected N depends on the target: 0.90 is met on validation by ResNet50 at N=112 in an estimated 1.85 ms (0.8980 on test) and 0.95 by DINOv2-L at N=144 in 12.70 ms; changing the model buys more accuracy than raising N (+5.93 versus +2.33 points at N=112). (2) The benefit of lowering N depends on the assumed preprocessing path: N=224 -&gt; 80 saves 13.5% when each individual is decoded from its own file but 46.2% when the detector decodes the 4K frame once; the Pareto set grows from 20 to 23 configurations. (3) Accuracy must be measured on the deployed engine: half precision costs ViT-S/16 alone 4 to 7 points at N&gt;=96 while the CNNs stay within 0.1 points, and with selection held at validation the choice differs at 26 of 176 targets. A…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 风电场防鸟撞需要识别远处只占几十像素的鸟，分类器输入分辨率 N 是设计变量而非固定规格——该取多大，边缘端时延代价是多少？</p>
+<p><strong>方法</strong> 析因实验：14 个边长 N（16–224）× 6 种架构 × 2 种训练/评估范式 × 30 个随机种子，共 2520 个 checkpoint、5040 次评估，并在 Jetson Orin Nano 上实测时延。</p>
+<p><strong>关键数字</strong> 验证 0.90 目标由 ResNet50 在 N=112 达成（约 1.85ms），0.95 由 DINOv2-L 在 N=144 达成（12.70ms）；N=112 时换模型比提高 N 多买 +5.93 vs +2.33 个点；半精度使 ViT-S/16 在 N≥96 掉 4–7 个点而 CNN 仅差 0.1 点；图切分把 FP32 限制在受影响的 transformer 段后，DINOv2-L 部署链快 1.85x。</p>
+<p><strong>为什么值得看</strong> 端侧精度/时延权衡少见的扎实测量研究，FP16 引擎陷阱（坏引擎可能更快且无法从时延察觉）对部署有普适警示意义。</p>
+<p><a href="https://arxiv.org/abs/2609.14247v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.14247v1">阅读原文 ↗</a></p>
 </body>
 </html>

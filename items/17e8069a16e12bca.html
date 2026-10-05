@@ -22,9 +22,11 @@
 <h1>FINNAS: FINN-Guided Hardware-Aware NAS and Pruning for FPGA Jet Substructure Classification</h1>
 <p class="meta-line">arXiv（Eva Chauffour 等，cs.AR） · 2026-09-14 · 论文PDF</p>
 
-<p>FPGAs are well suited to deploying quantised neural networks (QNNs) under strict accuracy, latency, and resource constraints; however, identifying efficient model-accelerator combinations commonly requires extensive manu…</p>
-<blockquote><p>FPGAs are well suited to deploying quantised neural networks (QNNs) under strict accuracy, latency, and resource constraints; however, identifying efficient model-accelerator combinations commonly requires extensive manual design-space exploration and repeated hardware synthesis. This paper presents FINNAS, a FINN-guided hardware-aware evolutionary neural architecture search framework. FINNAS jointly searches quantised MLP depth, width, and global precision settings, and ranks candidates using proxy validation accuracy together with FINN-estimated LUT usage and latency under a fully parallel mapping. Selected finalists are fully retrained, subjected to post-search unstructured pruning, and validated using RTL simulation and Vivado out-of-context synthesis. On the CERNBox jet substructure classification task, the searched implementations expose competitive accuracy-resource trade-offs. Compared with a manually optimised dense FINN accelerator, a compact FINNAS design improves accuracy from 73.78\% to 74.36\%, while reducing LUT usage by \(8.5\times\) and RTL-simulation latency by \(1.77\times\). Unstructured pruning further provides consistent LUT and FF reductions across the fully …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> FPGA 适合在严格精度/时延/资源约束下部署量化神经网络，但找到高效的模型-加速器组合通常要大量人工设计空间探索与反复硬件综合。</p>
+<p><strong>方法</strong> FINNAS：FINN 引导的硬件感知进化式 NAS，联合搜索量化 MLP 的深度、宽度与全局精度设置，用代理验证精度加 FINN 估计的 LUT 占用与时延（全并行映射）排序候选；入围者完整重训、做搜索后非结构化剪枝，并经 RTL 仿真与 Vivado out-of-context 综合验证。</p>
+<p><strong>关键数字</strong> CERNBox jet 子结构分类任务上，相比人工优化的稠密 FINN 加速器，紧凑 FINNAS 设计精度从 73.78% 提升到 74.36%，LUT 占用降低 8.5 倍、RTL 仿真时延降低 1.77 倍。</p>
+<p><strong>为什么值得看</strong> 高能物理触发这类硬实时场景下 FPGA NAS 的完整闭环（搜索-剪枝-RTL 验证），流程可直接复用。</p>
+<p><a href="https://arxiv.org/abs/2609.16367v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.16367v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Exo-GPU: Safe, Imperative, User-schedulable Programming for Tensor Cores</h1>
 <p class="meta-line">arXiv（David Zhao Akeley 等，cs.PL） · 2026-09-14 · 论文PDF</p>
 
-<p>Modern GPUs require not only SIMT-style parallelism but also software-managed concurrency between compute and data movement to reach maximum performance.</p>
-<blockquote><p>Modern GPUs require not only SIMT-style parallelism but also software-managed concurrency between compute and data movement to reach maximum performance. Performance engineers must reason about subdividing work into the hierarchy of computation resources (threads, warps, warpgroups, blocks, clusters), and, in many cases, also must use asynchronous tensor core and memcpy instructions on different levels of the memory hierarchy (registers, tensor core accumulators, shared memory, global memory). Unlike CPUs, where out-of-order execution is managed by hardware and hidden from programmers, GPUs expose explicit instruction reordering to software through these asynchronous instructions. Well-established GPU programming languages generally offer either direct low-level control without safety guarantees (e.g., CUDA C++ inline assembly or intrinsics) or easier-to-analyze, high-level abstractions (e.g., Triton's tile-based model) that hide asynchronous instructions in the compiler backend, which may prevent performance engineers from maximizing performance by tuning critical details. We propose Exo-GPU, an imperative, low-level language that creates minimal abstraction over CUDA. Our key ide…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> GPU 达到峰值性能需要软件显式管理计算与数据搬运的并发（异步 tensor core 与 memcpy 指令），但 CUDA 内联汇编/内联函数无安全保证，Triton 等高层抽象又把异步指令藏进编译器后端、限制调优空间。</p>
+<p><strong>方法</strong> Exo-GPU：对 CUDA 最小抽象的低层命令式语言，核心思想是把并行与同步视为顺序代码上的注解而非控制流原语——程序员按顺序语义推理代码，编译器验证顺序-并行等价，保证并行执行与顺序解释功能等价。</p>
+<p><strong>关键数字</strong> 用 Exo-GPU 编写的 H100 GEMM kernel（wgmma、TMA、split-k）在大问题规模上达到理论峰值的 80% 以上，部分场景超过厂商 CUBLAS 库。</p>
+<p><strong>为什么值得看</strong> 在"可控性"与"可验证性"之间找到新平衡点的 GPU 编程语言设计，tensor core 编程的值得关注的方向。</p>
+<p><a href="https://arxiv.org/abs/2609.16389v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.16389v1">阅读原文 ↗</a></p>
 </body>
 </html>

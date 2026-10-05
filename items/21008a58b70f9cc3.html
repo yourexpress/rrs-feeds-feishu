@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DeepSeek Harness v0.2 Brings Official Desktop Apps to Its Open-Source Agent Harness</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DeepSeek Harness v0.2 Brings Official Desktop Apps to Its Open-Source Agent Harness</h1>
+<p class="meta-line">DeepSeek · 2026-10-03 · 技术博客</p>
+<img class="hero" src="https://repository-images.githubusercontent.com/1333065091/05ca062c-0277-415c-90b5-f43277f73436" alt="" referrerpolicy="no-referrer">
+<p>为 MIT 开源 agent harness（dsh）推出官方 macOS/Windows 桌面应用，新增插件管理、文件与代码变更审查、定时自动化任务，支持 OpenAI 兼容第三方模型。</p>
+<blockquote><p>Releases: deepseek-ai/deepseek-harness</p><p>Releases · deepseek-ai/deepseek-harness</p><p>Release list</p><p>v0.2.1-alpha.1</p><p>tianyicui</p><p>released this</p><p>03 Oct 06:42</p><p>Immutable</p><p>release. Only release title and notes can be modified.</p><p>✨ 新增功能</p><p>- 新增实验性 Claude Code Mods 兼容层。目前阶段的主要目的是验证 Claude Code Mods API 功能大致为 DeepSeek Harness 插件的一个子集，而非为用户提供实际的完整兼容性。 @tianyicui</p><p>- 插件管理页新增「让 Agent 创建插件」入口，可保留草稿进入创造模式；发送需求后才开始执行。 @ZiyaZhang</p><p>- 新会话支持预填未发送的提示；恢复草稿或切换工作区时保留文件、目录和会话引用。 @imccyu</p><p>- Markdown 文件预览将 YAML 头部元数据显示为清晰的字段列表。 @turtle2099</p><p>- Web 支持通过</p><p>--public-url</p><p>指定显示、打开及提供给模型的对外访问地址，支持带路径前缀的反向代理入口。 @oraluben - 新增可选的开发者工具组合包，提供会话原始日志、聊天分组与正文的双向定位，以及内嵌 Host 调试工具；内嵌 DevTools 目前使用英文界面。 @imccyu</p><p>🐛 问题修复</p><p>- 目标编辑支持多行文本和 Shift+Enter 换行，并改善目标与排队消息编辑器的中文输入及宽度适配。 @turtle2099</p><p>- 修复目标任务停止、恢复并再次停止后，新消息滞留队列的问题。 @turtle2099</p><p>- 修复部分 Bash、PowerShell 和文件修改记录无法展开输出或差异的问题。 @turtle2099</p><p>- 关闭代码工作视图后仍可选择标准、创造和自定义模式；内置 PTC／极简默认值改为标准，已有会话保持原模式。 @ZiyaZhang</p><p>- 修复启停插件时其他插件的样式被移除、需要刷新页面才能恢复的问题。 @turtle2099</p><p>- 登录请求未收到响应时显示网络检查提示，便于区分连接问题与其他登录失败。 @lsdsjy</p><p>- 桌面端默认使用系统分配的端口，避免 Windows 保留端口范围导致应用无法启动。 @turtle2099</p><p>- 修复侧栏列表重排或重新显示后，会话加载动画不同步的问题。 @turtle2099</p><p>- 启用开发目录监听后，HMR 可刷新包入口和依赖映射配置，并正确重载仍在运行的原入口。 @imccyu</p><p>- 修复新组合包启用后找不到依赖，以及停用或卸载后残留依赖映射的问题；替换已安装包的版本仍需重启。 @imccyu</p><p>🎨 体验优化</p><p>- 改善自动化任务详情在窄窗口中的布局，关联会话入口会按可用空间收起为图标。 @turtle2099</p><p>- 组合包详情页显示代码来源和当前版本，便于查看安装来源及重装所需的信息。 @turtle1999</p><p>- 工具调用在准备阶段即可显示已到达的命令说明、文件路径和内容生成进度。 @imccyu</p><p>- 加快大量会话的列表读取，同时继续为其他操作提供执行机会。 @turtle1999</p><p>- 插件安装结果显示实际安装版本；因新版本冷却策略安装较旧版本时，提供说明和精确版本安装方式。 @turtle2099</p><p>⚠️ 其他变更</p><p>- 自动化任务改为 Web 内置能力，提醒工具按模式提供：标准、创造和 PTC 模式可用，极简模式和子代理不可用；旧实验组合包选择会自动清理，已有任务保留。 @Chinesezjc, @turtle1999</p><p>- 子路径插件不再读取独立的</p><p>package.json</p><p>，显示文本和图标须通过对应子路径导出；插件开发模板同步补齐本地化信息与图标。 @turtle1999 - 破坏性变更：移除运行时 invariant 插件及各包的</p><p>./invariant</p><p>导出；依赖这些诊断入口的扩展和自定义 profile 需要调整。 @turtle2099 - 输入区统计扩展拆为</p><p>activity</p><p>和usage</p><p>两个独立入口；覆盖旧stats</p><p>整行的插件需要更新注册 ID。 @turtle1999</p><p>New Features</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://github.com/deepseek-ai/deepseek-harness/releases">阅读原文 ↗</a></p>
+</body>
+</html>

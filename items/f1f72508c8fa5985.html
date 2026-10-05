@@ -22,9 +22,11 @@
 <h1>ETCInfer: An Energy-efficient Thermal-aware Cooling-joint Scheduler for LLM Inference in AI Datacenters</h1>
 <p class="meta-line">arXiv（Rui Lu 等，cs.DC） · 2026-09-14 · 论文PDF</p>
 
-<p>Large language model (LLM) inference in AI datacenters creates a coupled control problem between GPU serving and facility cooling.</p>
-<blockquote><p>Large language model (LLM) inference in AI datacenters creates a coupled control problem between GPU serving and facility cooling. Raising ambient temperature setpoints can reduce cooling energy and carbon, but also shrinks thermal headroom, induces GPU throttling, and leads to Service-Level-Objective (SLO) violations. In this paper, we study joint cooling--computing control for LLM inference: minimizing per-job GPU-plus-cooling energy while satisfying thermal safety and latency SLO constraints. We present ETCInfer, an energy-efficient, thermal-aware scheduler that selects a pre-job Computer Room Air Conditioner (CRAC) setpoint and adapts per-GPU frequency and micro-batch size during execution. ETCInfer builds compact physics-informed control models by calibrating GPU heat generation, chassis heat dissipation, CRAC power, and prefill/decode latency relations from telemetry. These models estimate hidden thermal states and time-to-throttle, enabling the scheduler to evaluate energy, temperature, and latency before applying an action. We formulate this joint setpoint--frequency--micro-batch control problem as a partially observable Markov decision process and design ETCAdapter, a lear…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> AI 数据中心里 LLM 推理把 GPU 服务与设施冷却耦合成一个控制问题：抬高环境温度设定值省冷却能耗，但缩减热余量、诱发 GPU 降频并导致 SLO 违约。</p>
+<p><strong>方法</strong> ETCInfer：能量效率与热感知调度器，为每个作业选 CRAC 设定值，执行中调节每 GPU 频率与 micro-batch 大小；用从遥测校准的物理信息紧凑模型（GPU 发热、机箱散热、CRAC 功率、prefill/decode 时延关系）估计隐热状态与降频时间；将联合控制建模为部分可观测 MDP，设计学习型控制器 ETCAdapter。</p>
+<p><strong>关键数字</strong> 真实 trace 仿真与验证实验中：作业总能耗最高降低 33.1%，热降频暴露最高降低 92.9%，环境温度高达 48°C 时 SLO 违约率仍低于 0.7%。</p>
+<p><strong>为什么值得看</strong> "算-冷"联合调度从论文走向推理服务栈的落地型方案，物理信息建模+学习控制的组合务实有效。</p>
+<p><a href="https://arxiv.org/abs/2609.15230v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.15230v1">阅读原文 ↗</a></p>
 </body>
 </html>

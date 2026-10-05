@@ -22,9 +22,11 @@
 <h1>Accelerating the Solving of Many Tiny General Linear Systems on GPUs: Application to Constitutive Laws</h1>
 <p class="meta-line">arXiv（Tristan Chenaille 等，cs.DC） · 2026-09-14 · 论文PDF</p>
 
-<p>Many applications require solving large numbers of independent linear systems on GPUs.</p>
-<blockquote><p>Many applications require solving large numbers of independent linear systems on GPUs. While this need is well addressed for small to large systems, tiny ones, understood here as systems of dimension below 32, remain challenging. This is especially relevant in constitutive law evaluation, where millions of integration points are handled independently, and where each constitutive update generally relies on a Newton iterative method. Each iteration then requires the double-precision solution of a tiny general square linear system using LU factorization with partial pivoting (LUpp). The present study was conducted within a closed-source prototype, which serves as a demonstrator for porting to NVIDIA GPUs constitutive law evaluations currently provided on CPUs by TFEL/MFront, an open-source code generation tool for material knowledge. We compare several double-precision LUpp solvers, including implementations from GPU linear algebra libraries as well as custom-designed CUDA kernels. The comparison is performed first on large batches of standalone linear systems, and then within the full constitutive-law evaluation workflow, where each integration point requires a sequence of distinct l…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 本构定律评估中数百万积分点各自独立地做 Newton 迭代，每次迭代都要解一个 32 维以下的双精度 tiny 线性系统（LUpp）——GPU 库对这类系统支持仍差。</p>
+<p><strong>方法</strong> 在为 TFEL/MFront 移植 GPU 的原型中，比较 cuSolverDx、MAGMA 等库实现与自研 CUDA 内核的双精度 LUpp 求解器：先在批量独立系统上测，再嵌入完整本构评估流程（每个积分点自己的 Newton 循环产生一串不同系统）。</p>
+<p><strong>关键数字</strong> H100 上自研 LUpp 求解器相对 cuSolverDx 最高加速 6.5x，相对 MAGMA 最高 17.7x；最优策略强依赖系统规模与应用上下文。</p>
+<p><strong>为什么值得看</strong> 对寄存器压力、占用率、能否从 device code 调用、每系统分配多线程是否划算等实操问题的分析，对 GPU 数值计算开发者很有参考性。</p>
+<p><a href="https://arxiv.org/abs/2609.15217v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.15217v1">阅读原文 ↗</a></p>
 </body>
 </html>

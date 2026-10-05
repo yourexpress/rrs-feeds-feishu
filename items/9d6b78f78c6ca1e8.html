@@ -22,9 +22,11 @@
 <h1>Expert-Space Exploration in Mixture-of-Experts Reinforcement Learning</h1>
 <p class="meta-line">Microsoft · 2026-09-14 · 论文PDF</p>
 
-<p>MoE 强化学习中的专家空间探索方法（微软研究院+清华，arXiv 2609.13058）</p>
-<blockquote><p>Reinforcement learning (RL) has become central to post-training of large language models. Recent advances in RL for Mixture-of-Experts (MoE) models have primarily focused on improving optimization stability and training efficiency, while treating the expert selection as a fixed component. Since routing determines the sparse computation paths that induce output distributions, expert selection offers an additional source of rollout diversity. Through empirical analysis, we find that perturbing expert routing effectively alters model output and increases rollout diversity, which is similar to increasing the decoding temperature. However, direct perturbation can activate unsuitable experts and substantially degrade rollout quality. Motivated by these observations, we introduce Expert-Space Exploration Reinforcement Learning (ESRL), an architecture-aware framework that explicitly explores the expert-routing space of MoE models. ESRL preserves high-confidence experts as anchors, and restricts stochastic routing to a plausible candidate pool, thereby retaining reliable computation paths. The perturbation strength is further adapted according to router entropy to avoid over-perturbation. T…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> MoE 模型的 RL 后训练普遍把专家路由当固定组件，但路由决定稀疏计算路径、可作为 rollout 多样性的额外来源——直接扰动路由又会激活不合适专家、劣化 rollout 质量。</p>
+<p><strong>方法</strong> ESRL（Expert-Space Exploration RL）：保留高置信专家作为锚点，随机路由限制在可信候选池内，并按 router 熵自适应扰动强度；rollout 时记录实际使用的专家路径，在策略优化阶段回放以消除路由失配。</p>
+<p><strong>关键数字</strong> Qwen3-30B-A3B 上平均 Pass@1 与 Pass@8 较 GRPO 分别提升 3.2 与 4.5 个百分点，为所有对比方法最优；在 top-K、top-1、shared-expert 路由及数学、科学、代码任务上均有效，且无额外采样或计算开销。</p>
+<p><strong>为什么值得看</strong> 把 MoE 结构本身变成 RL 探索维度的新思路，机制分析（专家利用率、训练动态）也做得充分。</p>
+<p><a href="https://arxiv.org/abs/2609.13058">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.13058">阅读原文 ↗</a></p>
 </body>
 </html>

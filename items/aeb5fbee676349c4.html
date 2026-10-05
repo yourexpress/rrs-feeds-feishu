@@ -22,9 +22,11 @@
 <h1>Channel-Informed Neural Network for Physical Layer Key Generation</h1>
 <p class="meta-line">arXiv（Jose Angel Sanchez Viloria 等，cs.LG） · 2026-09-14 · 论文PDF</p>
 
-<p>Physical-layer key generation (PKG) enables wireless devices to establish shared keys from reciprocal channel observations without directly exchanging the key.</p>
-<blockquote><p>Physical-layer key generation (PKG) enables wireless devices to establish shared keys from reciprocal channel observations without directly exchanging the key. This capability is attractive for edge networks, where distributed and resource-constrained devices may require lightweight key establishment with limited access to centralized infrastructure. We introduce a channel-informed neural network for PKG that derives binary key features directly from received IQ measurements while explicitly grounding the learned representation in the underlying multipath channel. The proposed multi-task recurrent neural network jointly learns reciprocity-preserving binary features and an auxiliary channel estimate using a training objective that combines deep metric learning with channel-informed supervision. Structured channel sounding enables channel estimation from over-the-air measurements, while Sionna-RT ray tracing is used to augment training with additional propagation conditions. We evaluate the framework using indoor and outdoor software-defined-radio measurements collected on the POWDER radio testbed. Across all evaluated scenarios, the proposed model produces lower bit disagreement for…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 物理层密钥生成（PKG）让无线设备从互易信道观测中建立共享密钥而不直接传输密钥，适合缺中心基础设施的边缘网络——如何用学习提升密钥质量？</p>
+<p><strong>方法</strong> 信道信息神经网络：多任务 RNN 从接收 IQ 测量直接导出二值密钥特征，同时学一个辅助信道估计，训练目标结合深度度量学习与信道监督；用结构化信道探测做空口测量，并用 Sionna-RT 射线追踪增广训练分布；在 POWDER 无线测试床做室内外实测。</p>
+<p><strong>关键数字</strong> 射线追踪增广后唯一密钥率在室内与两个室外场景分别达 0.94、0.99、0.99；调和后的密钥通过所选 NIST 随机性测试（SHA-3 隐私放大前）。</p>
+<p><strong>为什么值得看</strong> 把信道先验显式注入表征学习的 PKG 新思路，有真实 SDR 测量支撑，并揭示了密钥多样性与调和可靠性的权衡。</p>
+<p><a href="https://arxiv.org/abs/2609.16341v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.16341v1">阅读原文 ↗</a></p>
 </body>
 </html>

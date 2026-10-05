@@ -5,8 +5,47 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>每天一条，汇总当日两个检索源（AI 技术报告 + 高效计算文献）的重点内容。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 04 Oct 2026 23:29:34 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 10:56:21 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/daily-summary.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日精选 · 2026-10-05</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-10-05.html</link>
+      <guid isPermaLink="false">urn:daily-summary:2026-10-05</guid>
+      <pubDate>Mon, 05 Oct 2026 23:05:00 +0800</pubDate>
+    <category>每日精选</category>
+      <description>&lt;h1&gt;每日文献速览 · 2026-10-05&lt;/h1&gt;
+&lt;h2&gt;当日检索概况&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;AI 技术报告库：检索 3 条&lt;/li&gt;
+&lt;li&gt;高效计算库：检索 6 条&lt;/li&gt;
+&lt;li&gt;两库合计入选 3 条&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;重点推荐&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;What Google's TurboQuant Does and Why It Actually Matters&lt;/strong&gt;——通俗解读 Google Research TurboQuant：随机旋转 PolarQuant + 1bit QJL 残差两级压缩，KV cache 压到 3bit 零精度损失、H100 注意力计算 8x 加速，并汇总社区在 llama.cpp/MLX/vLLM 上的独立复现验证。&lt;a href="https://dev.to/dishant0406/what-googles-turboquant-does-and-why-it-actually-matters-54eg"&gt;原文链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Building a High-Performance and Portable vLLM Linear Backend with Helion（Red Hat × Meta）&lt;/strong&gt;——用 PyTorch Helion（tile 级 GPU kernel DSL）为 vLLM 实现量化 GEMM linear backend：单实现覆盖多种算法变体 + per-shape 自动调优，H100 上对 FP8/W8A8/Block-FP8 超越 CUTLASS 与 DeepGEMM 基线，端到端吞吐提升超 10%。&lt;a href="https://pytorch.org/blog/building-a-high-performance-and-portable-vllm-linear-backend-with-helion/"&gt;原文链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Optimizing Jagged Flash Attention with TLX: The Road Toward SOTA FA4 on Blackwell（Meta kernel team）&lt;/strong&gt;——用 Triton 低层扩展 TLX 实现面向推荐模型变长序列的 jagged flash attention：warp specialization + Blackwell 集群特性，约 1/3 代码量在关键 shape 上前向快约 13%、反向快约 50%，代码已开源。&lt;a href="https://pytorch.org/blog/optimizing-jagged-flash-attention-with-tlx-the-road-toward-sota-fa4-on-blackwell/"&gt;原文链接&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其他检索到但未入选：Kolibri 主权开放权重模型发布；DeepSeek Harness v0.2 为开源 agent harness 带来官方桌面应用；RTX 4090 在 100 T/s 场景胜过 H100 的本地推理分析；Strata 在 12GB 游戏卡上运行 125B Qwen3.8-Flash-Next；DeepSeek 与华为脱离 CUDA 的本地 AI 实践；联邦数据可证明隐私学习。&lt;/p&gt;
+&lt;h2&gt;主题速览&lt;/h2&gt;
+&lt;p&gt;当日条目高度集中在推理系统与 kernel 工程：量化 KV 压缩（TurboQuant）、kernel DSL（Helion、TLX）两条线都在用「高层抽象 + 自动/显式调优」逼近手写 SOTA。其余条目延续本地/端侧推理热潮——消费级显卡挑战数据中心 GPU、小显存跑超大模型、去 CUDA 化，反映出推理栈向多元硬件与本地部署的持续分化。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h1>每日文献速览 · 2026-10-05</h1>
+<h2>当日检索概况</h2>
+<ul>
+<li>AI 技术报告库：检索 3 条</li>
+<li>高效计算库：检索 6 条</li>
+<li>两库合计入选 3 条</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>What Google's TurboQuant Does and Why It Actually Matters</strong>——通俗解读 Google Research TurboQuant：随机旋转 PolarQuant + 1bit QJL 残差两级压缩，KV cache 压到 3bit 零精度损失、H100 注意力计算 8x 加速，并汇总社区在 llama.cpp/MLX/vLLM 上的独立复现验证。<a href="https://dev.to/dishant0406/what-googles-turboquant-does-and-why-it-actually-matters-54eg">原文链接</a></li>
+<li><strong>Building a High-Performance and Portable vLLM Linear Backend with Helion（Red Hat × Meta）</strong>——用 PyTorch Helion（tile 级 GPU kernel DSL）为 vLLM 实现量化 GEMM linear backend：单实现覆盖多种算法变体 + per-shape 自动调优，H100 上对 FP8/W8A8/Block-FP8 超越 CUTLASS 与 DeepGEMM 基线，端到端吞吐提升超 10%。<a href="https://pytorch.org/blog/building-a-high-performance-and-portable-vllm-linear-backend-with-helion/">原文链接</a></li>
+<li><strong>Optimizing Jagged Flash Attention with TLX: The Road Toward SOTA FA4 on Blackwell（Meta kernel team）</strong>——用 Triton 低层扩展 TLX 实现面向推荐模型变长序列的 jagged flash attention：warp specialization + Blackwell 集群特性，约 1/3 代码量在关键 shape 上前向快约 13%、反向快约 50%，代码已开源。<a href="https://pytorch.org/blog/optimizing-jagged-flash-attention-with-tlx-the-road-toward-sota-fa4-on-blackwell/">原文链接</a></li>
+</ul>
+<p>其他检索到但未入选：Kolibri 主权开放权重模型发布；DeepSeek Harness v0.2 为开源 agent harness 带来官方桌面应用；RTX 4090 在 100 T/s 场景胜过 H100 的本地推理分析；Strata 在 12GB 游戏卡上运行 125B Qwen3.8-Flash-Next；DeepSeek 与华为脱离 CUDA 的本地 AI 实践；联邦数据可证明隐私学习。</p>
+<h2>主题速览</h2>
+<p>当日条目高度集中在推理系统与 kernel 工程：量化 KV 压缩（TurboQuant）、kernel DSL（Helion、TLX）两条线都在用「高层抽象 + 自动/显式调优」逼近手写 SOTA。其余条目延续本地/端侧推理热潮——消费级显卡挑战数据中心 GPU、小显存跑超大模型、去 CUDA 化，反映出推理栈向多元硬件与本地部署的持续分化。</p>]]></content:encoded>
+    </item>
     <item>
       <title>每日精选 · 2026-10-04</title>
       <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-10-04.html</link>

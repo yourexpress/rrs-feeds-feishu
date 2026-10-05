@@ -22,9 +22,11 @@
 <h1>AgentKV: Phase-Aware KV Eviction for Agentic LLMs</h1>
 <p class="meta-line">arXiv（Taowen Tony Liu 等，cs.LG） · 2026-09-14 · 论文PDF</p>
 
-<p>Agentic serving can consume orders of magnitude more tokens than chatbot workloads, stressing both KV-cache capacity and decode-time bandwidth.</p>
-<blockquote><p>Agentic serving can consume orders of magnitude more tokens than chatbot workloads, stressing both KV-cache capacity and decode-time bandwidth. Most KV-eviction methods score cached keys against representative queries drawn from the most recent tokens, assuming future attention resembles recent attention. We show that agentic generation violates this assumption: future queries form a mixture over think, act, tool, and others phases, and principal-angle analysis shows these components occupy measurably different query subspaces, so recency representatives systematically undervalue keys that upcoming phases will need. We propose AGENTKV, which maintains a small query buffer per phase and scores cached keys against their union. We further implement AGENTKV in a persistent multi-turn serving path that carries compressed KV state across turns and compacts retained KV pages online. Across two models, six task domains, and three KV budgets each, AGENTKV improves task score by 5.5 points on average over R-KV and 5.3 over Tri-attention. Relative to upstream full-KV SGLang, AGENTKV improves output-token throughput by up to 1.80x. Code: https://github.com/LiuTaowen-Tony/agentkv.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Agentic serving 的 token 消耗比聊天负载高几个数量级，而现有 KV 驱逐方法用最近 token 作代表 query 打分，假设未来注意力与近期相似——agentic 生成的未来 query 是 think/act/tool 等阶段的混合，该假设失效。</p>
+<p><strong>方法</strong> AgentKV：为每个阶段维护一个小 query buffer，对缓存 key 按各阶段 query 的并集打分（主角分析显示各阶段占据可区分的 query 子空间）；并实现了持久多轮 serving 路径，跨轮携带压缩 KV 状态、在线压缩保留的 KV 页。</p>
+<p><strong>关键数字</strong> 在 2 个模型、6 个任务域、各 3 档 KV 预算下，任务得分平均超 R-KV 5.5 分、超 Tri-attention 5.3 分；相对全量 KV 的 SGLang，输出 token 吞吐最高提升 1.80x。</p>
+<p><strong>为什么值得看</strong> 针对 agent 长链路推理的 KV 管理方案，阶段感知的视角新颖且已开源。</p>
+<p><a href="https://arxiv.org/abs/2609.14872v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.14872v1">阅读原文 ↗</a></p>
 </body>
 </html>

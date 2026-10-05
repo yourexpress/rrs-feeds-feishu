@@ -22,9 +22,11 @@
 <h1>TriCalRAG: A Three-Strategy, Retrieval-Augmented Benchmark for On-Premise LLM-Based Root Cause Analysis in AIOps</h1>
 <p class="meta-line">arXiv（Rohit Patel 等，cs.DC） · 2026-09-13 · 论文PDF</p>
 
-<p>Cloud-hosted large language models (LLMs) are increasingly used for root cause analysis (RCA) in AIOps pipelines, but they introduce data privacy risk, network latency, and per-query cost that scale poorly with productio…</p>
-<blockquote><p>Cloud-hosted large language models (LLMs) are increasingly used for root cause analysis (RCA) in AIOps pipelines, but they introduce data privacy risk, network latency, and per-query cost that scale poorly with production log volumes. We present TriCalRAG, a benchmark evaluating open-weight LLMs served locally via vLLM on a single high-memory workstation GPU (NVIDIA RTX PRO 6000, 96GB) against a classical LSTM-based log anomaly detector (DeepLog), across four real, publicly available log datasets (BGL, HDFS, Thunderbird, OpenStack). We evaluate two open-weight models (Qwen2.5-14B, Mistral-Small) under three prompting strategies: zero-shot, few-shot, and retrieval-augmented generation (RAG) over a labeled incident history, reporting accuracy, precision/recall, and F1 with bootstrap 95% confidence intervals across 3 random seeds, alongside throughput and VRAM footprint. Our results show that RAG not only improves mean F1 by 0.10-0.27 over zero-shot prompting but, more importantly, substantially stabilizes model calibration: zero-shot prompting drives both models toward near-degenerate behavior (predicting "anomaly" on up to 100% of incidents on some datasets), while RAG keeps predict…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 云端 LLM 做 AIOps 根因分析（RCA）有数据隐私、网络时延和随日志量膨胀的按次成本问题——本地部署的开源 LLM 能否替代？</p>
+<p><strong>方法</strong> TriCalRAG 基准：单张 RTX PRO 6000（96GB）上用 vLLM 服务 Qwen2.5-14B 与 Mistral-Small，在 BGL、HDFS、Thunderbird、OpenStack 四个真实日志数据集上对比 zero-shot、few-shot、RAG 三种提示策略与 LSTM 基线 DeepLog，报告带 bootstrap 置信区间的 F1 与吞吐、显存占用。</p>
+<p><strong>关键数字</strong> RAG 使平均 F1 较 zero-shot 提升 0.10–0.27；zero-shot 在部分数据集上 100% 报异常（近退化）；批处理使单卡吞吐提升 41 倍；4bit 量化降时延 20% 且无可测精度损失。</p>
+<p><strong>为什么值得看</strong> on-prem AIOps 少见的可复现基准，对模型校准问题的量化分析尤其扎实，代码与数据切分已开放。</p>
+<p><a href="https://arxiv.org/abs/2609.14762v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.14762v1">阅读原文 ↗</a></p>
 </body>
 </html>

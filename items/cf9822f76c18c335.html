@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How a $1,600 RTX 4090 Beat an H100 at 100 T/s – The LLM Revolution You're Missing</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>How a $1,600 RTX 4090 Beat an H100 at 100 T/s – The LLM Revolution You're Missing</h1>
+<p class="meta-line">DEV Community（作者 amrit） · 2026-10-05 · 技术博客</p>
+<img class="hero" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fue6h7w6tnhpqu2cwtrxr.png" alt="" referrerpolicy="no-referrer">
+<p>社区项目 Strata 用 int4 量化 + 投机解码 + CUDA graph 融合在单张 RTX 4090 上跑 125B 模型，宣称聚合吞吐约 100 tok/s 量级；数据为自测合成负载，未经第三方核验，谨慎参考。</p>
+<blockquote><p>Qwen 3.8 Flash Next on a Single RTX 4090 Cracks the 100 T/s Barrier</p><p>“A $1,600 graphics card now pushes a 125‑billion‑parameter LLM at 100 trillion tokens per second.” – community lead on the Strata repo</p><p>The headline sounds like a stunt, but the numbers survive a hard audit. A volunteer team folded the 125 B‑parameter Qwen 3.8 Flash Next model into an RTX 4090 and recorded an aggregate throughput of roughly 100 T tokens / s. This dramatically lowers the cost of large‑scale inference and forces Nvidia to rethink how it markets “data‑center‑only” performance.</p><p>Below, I break down the engineering tricks, the benchmark outcomes, the cost calculus, and the competitive picture against Nvidia’s newest GPUs. I also flag the risks that keep this achievement from becoming a universal prescription.</p><p>The Lead: Why a Consumer GPU Matters</p><p>Most analysts still equate 125‑billion‑parameter inference with multi‑GPU clusters, H100 farms, or purpose‑built ASICs. Those solutions cost tens of thousands of dollars per card and demand sophisticated rack infrastructure. The RTX 4090, a 2022‑era enthusiast board, costs about $1,600 and fits in a desktop case. If a single 4090 can sustain 100 T/s, the per‑token price plummets, opening the door for startups, research labs, and even power users to run state‑of‑the‑art LLMs without a data‑center lease.</p><p>Case Study: From GitHub Fork to 100 T/s Run</p><p>The community project lives under the Strata GitHub organization. Its contributors followed a three‑step recipe, which can be summarised as follows:</p><p>- Aggressive int4 quantisation – Using the Quantize the Target, Quantize the Drafter (QTD) recipe, both the main model and its lightweight drafter were compressed to a custom int4 weight format. VRAM demand dropped from &gt;30 GB to ≈22 GB, and the KV‑cache was shrunk to int8, saving another 2–3 GB.</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://dev.to/amrithesh_dev/how-a-1600-rtx-4090-beat-an-h100-at-100-ts-the-llm-revolution-youre-missing-33nh">阅读原文 ↗</a></p>
+</body>
+</html>

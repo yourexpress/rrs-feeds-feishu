@@ -22,9 +22,11 @@
 <h1>WaterKron and FlipFlop Hessian: Information-Theoretically Grounded Quantization with Kronecker-factored Hessians</h1>
 <p class="meta-line">arXiv（Johann Birnick 等，cs.LG） · 2026-09-13 · 论文PDF</p>
 
-<p>How should a Kronecker-factored Hessian approximation be chosen for post-training quantization?</p>
-<blockquote><p>How should a Kronecker-factored Hessian approximation be chosen for post-training quantization? We address this question through WaterKron, which combines two-sided GPTQ with row- and column-dependent waterfilling scales and entropy coding. We derive its high-rate distortion with respect to the full Hessian using an explicit Kronecker-Hessian mismatch factor $Φ$. This factor quantifies the asymptotic distortion penalty due to the Kronecker Hessian approximation and provides a criterion for selecting the factors optimally. Minimizing $Φ$ leads to a Gaussian covariance-fitting problem with classical ``flip-flop'' updates. We thus give a rate-distortion justification for using the resulting FlipFlop Hessian in quantization. We evaluate it empirically, finding that the FlipFlop Hessian consistently improves KL divergence and perplexity over input-only, marginal, and Frobenius-based Hessian choices.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 后训练量化中 Kronecker 分解 Hessian 近似的两个因子应当如何选取，缺乏理论依据。</p>
+<p><strong>方法</strong> 提出 WaterKron：双侧 GPTQ 结合行/列依赖的 waterfilling 尺度与熵编码；推导其相对完整 Hessian 的高码率失真，定义显式的 Kronecker-Hessian 失配因子 Φ 量化渐近失真惩罚；最小化 Φ 归结为高斯协方差拟合问题，可用经典 flip-flop 迭代求解，由此得到 FlipFlop Hessian。</p>
+<p><strong>关键数字</strong> 摘要未给出具体压缩率或困惑度数值；实验上 FlipFlop Hessian 在 KL 散度与 perplexity 上一致优于 input-only、marginal 与 Frobenius 三类 Hessian 选择。</p>
+<p><strong>为什么值得看</strong> 为量化中 Hessian 因子的选择给出了率失真理论判据，把经验做法变成了可优化的目标。</p>
+<p><a href="https://arxiv.org/abs/2609.14706v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.14706v1">阅读原文 ↗</a></p>
 </body>
 </html>

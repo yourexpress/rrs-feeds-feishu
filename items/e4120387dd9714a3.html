@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building a High-Performance and Portable vLLM Linear Backend with Helion</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Building a High-Performance and Portable vLLM Linear Backend with Helion</h1>
+<p class="meta-line">PyTorch Blog（Sean Chen, Red Hat / Shangdi Yu, Meta） · 2026-10-02 · 技术博客 / 每日精选</p>
+
+<p><strong>核心话题</strong> vLLM 的量化 linear 层需要针对 FP8/INT8/INT4/NVFP4 等格式和不同硬件手工集成 CUTLASS、DeepGEMM 等内核库，能否用一个高层 kernel DSL 统一覆盖？</p>
+<p><strong>要点</strong> 将 PyTorch Helion（tile 级 GPU kernel DSL）接入 vLLM linear backend：单个 Helion GEMM 实现覆盖 Standard、Split-K、Swap-AB 多种算法变体，靠 per-shape AOT 自动调优+混合派发选最优配置，并支持 LLM 引导搜索进一步提升调优效率。</p>
+<p><strong>关键数字</strong> H100 上对所评估模型全面超过 vLLM 默认 CUTLASS 与 DeepGEMM 后端，部分工作负载端到端吞吐提升超过 10%。</p>
+<p><strong>为什么值得看</strong> "一次写 kernel、跨负载跨硬件自动调优"的路线在真实推理引擎里拿到端到端收益，对推理系统与 kernel 工程都有参考价值。</p>
+<p><a href="https://pytorch.org/blog/building-a-high-performance-and-portable-vllm-linear-backend-with-helion/">阅读原文</a></p>
+<p><a class="origin" href="https://pytorch.org/blog/building-a-high-performance-and-portable-vllm-linear-backend-with-helion/">阅读原文 ↗</a></p>
+</body>
+</html>

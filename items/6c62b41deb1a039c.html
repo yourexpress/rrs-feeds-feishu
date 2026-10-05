@@ -22,9 +22,11 @@
 <h1>EBL: Efficient Broad Learning for Distributed Adaptive Harmonic Analysis</h1>
 <p class="meta-line">arXiv（Changhong Li 等，cs.AR） · 2026-09-14 · 论文PDF</p>
 
-<p>Renewable energy systems and electrified transport have found widespread adoption in recent years.</p>
-<blockquote><p>Renewable energy systems and electrified transport have found widespread adoption in recent years. The integration of these non-linear loads, dominated by electric vehicle (EV) charging, however, has introduced severe harmonic distortion into the power grid, impacting the efficiency and lifetime of substation equipment and switchgear in the distribution network. Rapid and high-precision harmonic analysis has hence become a prerequisite for effective harmonic control at the source of injection. This paper proposes an Efficient Broad Learning (EBL) framework for distributed adaptive harmonic estimation. As a quantised FPGA acceleration framework for BLS-style harmonic estimation, it offers high-accuracy estimation with half-cycle input, reconfigurable flexibility enabled by the FPGA implementation, and ultra-low latency, achieving 17.4 $\times$ faster predictions than the nearest reported FPGA method. For harmonic prediction across multi-scenario charging and discharging nodes, the online transfer learning based on a closed-form solution rather than backpropagation in EBL demonstrates rapid adaptability. By exploiting bespoke quantisation and sparsity, the approach consumes 5.9\% of …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 电动车充电等非线性负载给电网带来严重谐波失真，需要在注入源头做快速、高精度的谐波分析与控制。</p>
+<p><strong>方法</strong> Efficient Broad Learning（EBL）：面向 BLS 式谐波估计的量化 FPGA 加速框架，半周期输入即可高精度估计，FPGA 实现带来可重构灵活性；跨多场景充放电节点的谐波预测采用基于闭式解（而非反向传播）的在线迁移学习实现快速适应；配合定制量化与稀疏性。</p>
+<p><strong>关键数字</strong> 预测速度比最近的已报道 FPGA 方法快 17.4 倍；仅消耗 Zynq Ultrascale+ ZU7EV 上 5.9% 的 LUT（约为 SOTA FPGA 估计器所需 LUT 的 82%）。</p>
+<p><strong>为什么值得看</strong> 电力谐波估计在精度、资源、时延三个维度同时做到领先的 FPGA 实践，闭式解迁移学习思路适合资源受限在线场景。</p>
+<p><a href="https://arxiv.org/abs/2609.16358v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.16358v1">阅读原文 ↗</a></p>
 </body>
 </html>

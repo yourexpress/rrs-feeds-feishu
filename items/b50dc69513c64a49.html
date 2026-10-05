@@ -22,9 +22,11 @@
 <h1>CapsuleMotion: A Lightweight Real-Time Visual Motion Predictor for Capsule Endoscopy</h1>
 <p class="meta-line">arXiv（Oliver Bause 等，cs.CV） · 2026-09-14 · 论文PDF</p>
 
-<p>Video Capsule Endoscopy (VCE) is a non-invasive medical examination that allows for the observation of the small intestine, which is otherwise difficult to access.</p>
-<blockquote><p>Video Capsule Endoscopy (VCE) is a non-invasive medical examination that allows for the observation of the small intestine, which is otherwise difficult to access. A fundamental challenge persists in the form of their limited size in order to still be swallowable. The resulting restricted battery capacity, however, contradicts with the power-intensive nature of image capture and transmission. Therefore, we propose CapsuleMotion, a patient-specific dynamic capsule behavior that utilizes the available energy in a goal-oriented manner to increase the likelihood of a complete screening of the gastrointestinal tract. By investigating and combining metrics from the on-device image compression, CapsuleMotion predicts the motion between two successive frames. The camera's frame rate will be modified in accordance with the predicted magnitude of motion. Furthermore, prior to entering the small intestine, the capsule operates in a low power mode with a significantly reduced frame rate. In this mode, the LocalizationNet is employed to determine the current organ, provided that motion was predicted. The proposed framework is evaluated on the Rhode Island VCE dataset and deployed on an ultra-lo…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 胶囊内镜要可吞咽就必须小，电池容量受限与图像采集传输的高耗电相矛盾，如何目标导向地用能以提升完整筛查消化道的概率？</p>
+<p><strong>方法</strong> CapsuleMotion：利用片上图像压缩的多项指标预测相邻帧间运动，按预测运动量动态调整相机帧率；进入小肠前以显著降低帧率的低功耗模式运行，并用 LocalizationNet 判断当前所在器官；在 Rhode Island VCE 数据集评估，部署到带硬件加速器的超低功耗单核 RISC-V 演示器。</p>
+<p><strong>关键数字</strong> 相对无动态帧率的传统胶囊，电能消耗最高降低 20.66%，小肠入口点检测精度同时提升。</p>
+<p><strong>为什么值得看</strong> 超低功耗端侧医疗设备上算法-硬件协同节能的完整范例。</p>
+<p><a href="https://arxiv.org/abs/2609.15367v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.15367v1">阅读原文 ↗</a></p>
 </body>
 </html>

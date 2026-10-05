@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strata Runs 125B Qwen3.8-Flash-Next on a 12GB Gaming GPU</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Strata Runs 125B Qwen3.8-Flash-Next on a 12GB Gaming GPU</h1>
+<p class="meta-line">AI Weekly（聚合资讯） · 2026-10-04 · 技术博客</p>
+
+<p>与上一条同一事件（Strata 在 12GB 消费级 GPU 上运行 125B 模型）的聚合报道，无增量技术细节。</p>
+<blockquote><p>Strata Runs 125B Qwen3.8-Flash-Next on a 12GB Gaming GPU</p><p>TL;DR</p><p>- Open-source Strata runs Qwen3.8-Flash-Next's 125 billion parameters on a single consumer GPU with 12 GB of VRAM and 32 GB of system RAM.</p><p>- The model activates only 10 of 24,576 experts per token, and a built-in speculative drafter is claimed to add a 1.6-1.8x throughput gain.</p><p>- Self-reported figures include 94 tokens per second on an NVIDIA RTX 5070 and 60 on an AMD RX 9070 XT at Q2_0 quantization.</p><p>Strata, an MIT-licensed open-source inference engine, claims to run Qwen3.8-Flash-Next, a 125-billion-parameter model, on a single consumer GPU with 12 GB of VRAM and 32 GB of system memory.</p><p>The README's architectural explanation is unusually plain: "The model is a team of 24,576 small specialists ('experts'). Each word needs only 10 of them." That sparse routing is what lets a nominally 125B model fit a gaming rig at all. Strata keeps the hot experts on the GPU and offloads the rest to system RAM, which the project describes in kitchen terms: "the things you use all the time stay on the counter, and the rest waits in the pantry."</p><p>On an NVIDIA RTX 5070, Strata's own figures report 94 tokens per second on output and 2,650 tokens per second on input at Q2_0 quantization. On an AMD RX 9070 XT, the same quantization yields 60 output and 1,160 input tokens per second. A speculative drafter is claimed to add another 1.6-1.8x on top: "A small helper guesses the next few words. The big model checks them all at once." The IQ3_S variant on the same NVIDIA card drops to 53 tokens per second output, trading throughput for quality.</p><p>The weights were compressed by ISTA-DASLab, UkisAI, and Unsloth; the engine credits llama.cpp/ggml. No third-party benchmarks are posted yet, so every figure here is the project's own claim until someone reproduces it. Strata lands in a visible run of local-inference releases on our tracker, after Cloudflare's Clef earlier this week and AI2's Olmo-core 3 MoE throughput work yesterday.</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://aiweekly.co/alerts/strata-runs-125b-qwen38-flash-next-on-a-12gb-gaming-gpu">阅读原文 ↗</a></p>
+</body>
+</html>
