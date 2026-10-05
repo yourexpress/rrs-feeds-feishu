@@ -22,9 +22,11 @@
 <h1>FAME: An FPGA-Based Platform for Approximate Multipliers Evaluation with Pattern-Guided DNN Retraining</h1>
 <p class="meta-line">arXiv（Rappy Saha 等，cs.AR） · 2026-09-15 · 论文PDF</p>
 
-<p>Approximate multipliers can reduce hardware area and energy consumption in Deep Neural Network (DNN) inference; however, they introduce computational errors.</p>
-<blockquote><p>Approximate multipliers can reduce hardware area and energy consumption in Deep Neural Network (DNN) inference; however, they introduce computational errors. Assessing the accuracy of numerous approximate multiplier designs across diverse DNN models and large-scale datasets remains challenging due to prohibitive evaluation times. This overhead primarily stems from the slow emulation of approximate multiplier behavior using look-up tables (LUTs) on CPU and GPU platforms. Moreover, the resulting accuracy degradation must be carefully quantified and, if necessary, mitigated (e.g., through retraining), further increasing the overall evaluation cost. To address these challenges, we propose FAME, an FPGA-based platform for evaluating approximate multipliers. The platform exploits the reconfigurable logic of Field-Programmable Gate Arrays (FPGAs) to implement approximate multipliers directly in hardware, eliminating the need for LUT-based emulation on CPU/GPU platforms and thereby enabling efficient DNN inference while significantly reducing evaluation time on large datasets. Furthermore, we introduce a pattern-guided DNN retraining technique to mitigate accuracy degradation induced by ap…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 近似乘法器可降低 DNN 推理的面积与能耗，但引入计算误差；用 LUT 在 CPU/GPU 上仿真近似行为极慢，海量乘法器设计 × 多模型 × 大数据集的精度评估成本高不可攀。</p>
+<p><strong>方法</strong> FAME：FPGA 平台把近似乘法器直接实现进可重构逻辑，摆脱 LUT 仿真；并提出模式引导的 DNN 重训练技术——按乘法器专属模式引导重训练，挽回近似引入的精度损失。代码已开源（github.com/gicLAB/FAME）。</p>
+<p><strong>关键数字</strong> ResNet-18 与 MobileNetV2、ImageNet、27 种近似乘法器上：评估速度较此前 LUT 仿真最高提升 3.47 倍；重训练技术较现有方法精度最高提升 65.5%。</p>
+<p><strong>为什么值得看</strong> 近似计算评估从"仿真"走向"真硬件"的平台化一步，开源可直接复用。</p>
+<p><a href="https://arxiv.org/abs/2609.17730v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.17730v1">阅读原文 ↗</a></p>
 </body>
 </html>

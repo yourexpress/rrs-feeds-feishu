@@ -22,9 +22,11 @@
 <h1>Cross-Domain Inference for Human Localization: Applying Wi-Fi RSSI Data to CSI-Trained Models</h1>
 <p class="meta-line">arXiv（Ariel Duschanek-Myers 等，cs.CR） · 2026-09-15 · 论文PDF</p>
 
-<p>Wi-Fi signal data can be used to compromise the privacy of individuals.</p>
-<blockquote><p>Wi-Fi signal data can be used to compromise the privacy of individuals. While many existing approaches rely on Channel State Information (CSI), collecting this data on typical IoT devices often requires elevated operating system permissions and specialized drivers. Consequently, this paper investigates the feasibility of utilizing Received Signal Strength Indicator (RSSI) data to predict human locations. RSSI was selected because it is accessible even on devices with limited user permissions, and therefore is more applicable to a wider array of IoT devices. To bypass the tedious process of obtaining training data needed to train an RSSI-based model, an existing Wi-Fi pose prediction project was used in this research. However, that project assumed CSI data as input. Therefore, we investigate the feasibility of cross-domain inference, i.e., feeding RSSI data into that existing CSI-based model. We collected an RSSI dataset, synchronized with video ground-truth of a person moving within a room, to evaluate the model's performance. This evaluation confirmed that RSSI data can predict locations with approximately 80% confidence when human movement is present. This demonstrates that a mod…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Wi-Fi 信号可侵犯个人隐私，但多数方法依赖 CSI 数据——采集需提权与专用驱动；免权限即可获取的 RSSI 能否用于定位人？</p>
+<p><strong>方法</strong> 跨域推理：把 RSSI 数据直接喂给已有的 CSI 训练的姿态预测模型，免去向 RSSI 采集训练数据的繁琐过程；自采与视频真值同步的室内走动 RSSI 数据集评估。</p>
+<p><strong>关键数字</strong> 评估确认在有人移动时，RSSI 数据能以约 80% 的置信度预测位置。</p>
+<p><strong>为什么值得看</strong> 结论细思极恐：大量普通 IoT 设备都可能在 Wi-Fi 密集环境中被用于粗略定位入侵，隐私研究与 IoT 安全从业者都应关注。</p>
+<p><a href="https://arxiv.org/abs/2609.17204v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.17204v1">阅读原文 ↗</a></p>
 </body>
 </html>

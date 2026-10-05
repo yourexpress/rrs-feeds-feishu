@@ -22,9 +22,11 @@
 <h1>FastPair: GPU-Optimized String Decoding</h1>
 <p class="meta-line">arXiv（Joseph Isaacs 等，cs.DB） · 2026-09-14 · 论文PDF</p>
 
-<p>Modern data systems compress data at rest and decompress it only when needed to preserve interconnect bandwidth.</p>
-<blockquote><p>Modern data systems compress data at rest and decompress it only when needed to preserve interconnect bandwidth. This design is often inefficient on GPU-based compute platforms because many conventional compression techniques exhibit serial data dependencies that limit GPU parallelism, leaving resources idle. Recent NVIDIA GPUs address this decoding deficiency through the Decompression Engine (DE), an on-die, fixed-function decompression accelerator for general-purpose compression formats such as Deflate, LZ4, and Snappy. Recent work has proposed string codecs that replace frequent substrings with fixed-width codes from a small, trained dictionary, making each code's lookup independent. While these lookups can run in parallel, the resulting scattered reads and short output writes still do not align well with GPU hardware, which handles contiguous memory accesses more efficiently. We present FastPair, a GPU decoder that optimizes the existing dictionary decoding process by reorganizing lookups and assembling decoded substrings for contiguous output writes. On a B300, FastPair decodes ten real-world columns 2.4 to 4.2x faster than the DE, reaching up to 1.6 TB/s.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 数据系统普遍压缩存储、用时解压，但传统压缩格式存在串行依赖，GPU 解压并行度低；NVIDIA 新 GPU 虽有片上解压引擎（DE），字典式字符串解码的散乱读写仍不匹配 GPU 的连续访存特性。</p>
+<p><strong>方法</strong> FastPair 面向基于训练字典的字符串编码，重新组织码本查找顺序，并把解码出的子串拼装为连续输出写，使并行查找真正转化为 GPU 友好的访存模式。</p>
+<p><strong>关键数字</strong> 在 B300 上解码十个真实数据列，速度为 DE 的 2.4~4.2 倍，峰值达 1.6 TB/s。</p>
+<p><strong>为什么值得看</strong> GPU 解压是分析型负载的真实瓶颈，这篇用纯软件重构就大幅超过硬件解压引擎，思路对 GPU 数据管道设计有直接借鉴。</p>
+<p><a href="https://arxiv.org/abs/2609.15034v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.15034v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>The World Model Hardware Accelerator</h1>
 <p class="meta-line">arXiv（Shashank Chaurasia，cs.AR） · 2026-09-14 · 论文PDF</p>
 
-<p>Diffusion transformers invert the arithmetic that autoregressive decoding made familiar.</p>
-<blockquote><p>Diffusion transformers invert the arithmetic that autoregressive decoding made familiar. There is no token-by-token recurrence: every denoising step is a full-sequence forward pass over static shapes, so the entire schedule is known at compile time and the only serial dimension is the step count itself. We exploit that structure in WMHA, a latency-first diffusion-transformer inference accelerator: a very-long-instruction-word sequencer issues four engines from one instruction word, a weight-stationary 16x16 dual-dot array streams FP8 and BF16 contractions, and a single-pass online-softmax attention pipeline keeps keys and values resident through a skewed software pipeline. The design is specified in a frozen micro-architecture document, implemented in synthesizable SystemVerilog, and verified against a double-precision reference model by a UVM environment whose acceptance criterion is semantic: the device must run a real denoising trajectory and reduce mean squared error against a clean latent by at least a factor of ten. It does so by a factor of 23, at both synthesized configurations, with zero element failures across 237 million checked values. Eleven application benchmarks buil…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 扩散 Transformer 没有自回归的逐 token 串行：每个去噪步都是对静态形状的全序列前向，整个调度编译期已知——如何把这种结构压榨成低延迟硬件？</p>
+<p><strong>方法</strong> WMHA 延迟优先的扩散 Transformer 推理加速器：VLIW 定序器单指令字发射四个引擎；权重驻留的 16×16 双点积阵列流式处理 FP8/BF16 收缩；单遍 online-softmax 注意力流水线配合倾斜软件流水线保持 K/V 驻留。以可综合 SystemVerilog 实现，UVM 验证采用语义验收标准：跑真实去噪轨迹并把对干净隐变量的 MSE 至少降 10 倍。</p>
+<p><strong>关键数字</strong> 实际降 MSE 达 23 倍（两种综合配置），2.37 亿个校验值零失败；11 个应用基准上报实测占用率；五个引擎完成 sky130 布线（含寄生标注时序与实测活动功耗），并量化了整芯片布局布线的主机瓶颈。</p>
+<p><strong>为什么值得看</strong> 从微架构文档到流片级布局的完整开源式硬件论文，扩散模型加速方向少有的全栈样本。</p>
+<p><a href="https://arxiv.org/abs/2609.16244v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.16244v1">阅读原文 ↗</a></p>
 </body>
 </html>

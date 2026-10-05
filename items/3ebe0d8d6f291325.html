@@ -22,9 +22,12 @@
 <h1>LLM Inference in a Flash!</h1>
 <p class="meta-line">arXiv（Sebastian Zhao 等，cs.LG） · 2026-09-14 · 论文PDF</p>
 
-<p>Large Language Models (LLMs) have shown impressive capabilities across a range of natural language processing tasks, and LLM inference has emerged as a critical workload for enabling downstream applications.</p>
-<blockquote><p>Large Language Models (LLMs) have shown impressive capabilities across a range of natural language processing tasks, and LLM inference has emerged as a critical workload for enabling downstream applications. The demands of serving LLM inference are becoming increasingly challenging as requests shift toward longer sequences and heavier inference, driven by retrieval-augmented generation, inference-time compute scaling, and long-context applications. Additionally, these challenges are compounded by hardware trends, as memory capacity and communication bandwidth are not scaling as fast as increases in workload complexity. Compute-in-Flash is a promising solution to address memory bandwidth limitations by moving computation close to memory, and to exploit the large capacity of SSD technologies. However, it is challenging to deploy LLMs on these systems as they lack support for high-precision floating point operations and have limited write endurance. In our work, we aim to address these challenges by designing inference algorithms to enable LLM inference on Flash compute-in-memory devices. We present an end-to-end integer-only quantization approach to eliminate expensive floating-point…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 长上下文与重推理负载下，内存带宽与容量增长跟不上需求；闪存内计算（Compute-in-Flash）容量大、带宽近，但不支持高精度浮点且写入寿命有限，难以直接部署 LLM。</p>
+<p><strong>方法</strong> 端到端纯整数量化消除浮点运算；针对写入寿命设计基于稀疏字典编码的 KV cache 压缩——每个 KV 向量表示为静态字典向量的线性组合，权重与 KV cache 均可驻留闪存内计算。</p>
+<p><strong>关键数字</strong> 在 Llama-3.1-8B 和 Qwen-2.5-7B 上精度退化有限，动态 KV cache 流量减少 15 倍。</p>
+<p><strong>为什么值得看</strong> 把 LLM 推理推向 SSD 级存储介质的一次完整算法-硬件协同尝试，对超低成
+本推理部署方向有启发。</p>
+<p><a href="https://arxiv.org/abs/2609.16161v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.16161v1">阅读原文 ↗</a></p>
 </body>
 </html>

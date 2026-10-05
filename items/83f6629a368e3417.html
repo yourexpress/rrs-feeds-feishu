@@ -22,9 +22,11 @@
 <h1>Discovering Performance Archetypes: Critical-Path-Aware Pattern Analysis and Regression Detection</h1>
 <p class="meta-line">arXiv（Kaveh Shahedi 等，cs.PF） · 2026-09-15 · 论文PDF</p>
 
-<p>Software performance analysis and prediction requires integrating multiple signals, as code structure alone cannot capture runtime behavior shaped by execution frequency, resource contention, and I/O patterns.</p>
-<blockquote><p>Software performance analysis and prediction requires integrating multiple signals, as code structure alone cannot capture runtime behavior shaped by execution frequency, resource contention, and I/O patterns. We present a critical-path-aware performance analysis methodology that automatically discovers recurring performance patterns by synthesizing static code features, dynamic execution traces, and kernel-level resource data. In a preliminary study across six real-world C/C++ applications (SQLite, OpenSSL, Zstandard, FFmpeg, cURL, and jq), we first empirically confirm that static complexity metrics explain only 10.4% of the variance ($ρ^2$) in critical path execution time, quantifying a gap that, while theoretically expected, had not been measured systematically across applications. Motivated by this finding, we analyze nearly 80,000 critical execution paths and address two research questions. First, we discover 13 distinct performance archetypes: recurring behavioral patterns that appear consistently across different applications, independent of their domain or implementation. Five of these patterns are near-universal and appear in at least five of the six applications studied. …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 软件性能分析需要融合多路信号——静态代码特征、执行频率、资源争用、I/O 模式共同塑造运行时行为，单靠代码结构不足以预测性能。</p>
+<p><strong>方法</strong> 关键路径感知的性能分析方法：综合静态代码特征、动态执行轨迹与内核级资源数据，在近 80,000 条关键执行路径上自动发现反复出现的性能模式，并构建多信号回归检测框架（路径结构 + 资源消耗 + 原型偏差三路印证）。</p>
+<p><strong>关键数字</strong> 六个真实 C/C++ 应用（SQLite、OpenSSL、Zstandard、FFmpeg、cURL、jq）上：静态复杂度仅解释关键路径执行时间方差的 10.4%；发现 13 种性能原型，其中 3 种出现于全部六个应用、合计覆盖 56.4% 的路径；回归检测 F1 达 0.867，较仅资源方法提升 60.4%。</p>
+<p><strong>为什么值得看</strong> "性能原型"是可跨项目迁移的优化知识单元，做性能工程的读者能直接对照自己的瓶颈画像。</p>
+<p><a href="https://arxiv.org/abs/2609.17179v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.17179v1">阅读原文 ↗</a></p>
 </body>
 </html>

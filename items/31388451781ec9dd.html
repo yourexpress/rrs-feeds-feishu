@@ -22,9 +22,11 @@
 <h1>Semantic-TVM: Structure-Preserving Trustworthy Virtual Memory for Memory-Augmented and Tool-Using Agents</h1>
 <p class="meta-line">arXiv（Yu Li 等，cs.AI） · 2026-09-14 · 论文PDF</p>
 
-<p>Memory-augmented and tool-using agents expose exact private values when remote LLMs process retrieved memory, tool actions, and intermediate observations.</p>
-<blockquote><p>Memory-augmented and tool-using agents expose exact private values when remote LLMs process retrieved memory, tool actions, and intermediate observations. One-way masking limits direct exposure but removes values needed for trusted execution and can leak them through later observations. We propose Trustworthy Virtual Memory (TVM), a closed-loop runtime that keeps exact-value state local while presenting a protected view to the remote model. Within this single runtime, Rule-TVM replaces whole protected fields with locally recoverable handles, and Semantic-TVM instead replaces only sensitive spans predicted by a trusted local model, preserving surrounding task-relevant context. On Memory-EHR and Memory-RAP across two providers, span-level projection recovers most of the EHR utility lost under whole-field replacement (Task Success 84.17% vs. 52.33% on DeepSeek) while measured exposure stays low and workflows remain executable.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 带记忆与工具调用的 Agent 把检索到的记忆、工具动作、中间观察发给远程 LLM 时会暴露精确隐私值；整段遮蔽虽防泄露却丢失执行所需信息，还可能在后续观察中侧漏。</p>
+<p><strong>方法</strong> 提出可信虚拟内存（TVM）闭环运行时：精确值留在本地，远程模型只见受保护视图。Rule-TVM 整体替换受保护字段，Semantic-TVM 则由可信本地模型预测敏感片段、只替换片段，保留周边任务相关上下文。</p>
+<p><strong>关键数字</strong> 在 Memory-EHR 与 Memory-RAP、两家供应商上测试：DeepSeek 下任务成功率 84.17%（Semantic-TVM）对 52.33%（整段替换），暴露度保持低位且流程可执行。</p>
+<p><strong>为什么值得看</strong> Agent 隐私保护从"遮不遮"细化到"遮哪几个词"，是记忆型 Agent 落地的关键一环。</p>
+<p><a href="https://arxiv.org/abs/2609.15011v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.15011v1">阅读原文 ↗</a></p>
 </body>
 </html>

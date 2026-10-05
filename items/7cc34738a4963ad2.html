@@ -22,9 +22,11 @@
 <h1>Bridging the Gap Between Homogeneous and Heterogeneous Asynchronous Optimization Is Surprisingly Difficult</h1>
 <p class="meta-line">arXiv（Alexander Tyurin，math.OC） · 2026-09-15 · 论文PDF</p>
 
-<p>Modern large-scale machine learning tasks often require multiple workers, devices, CPUs, or GPUs to compute stochastic gradients in parallel and asynchronously to train model weights.</p>
-<blockquote><p>Modern large-scale machine learning tasks often require multiple workers, devices, CPUs, or GPUs to compute stochastic gradients in parallel and asynchronously to train model weights. Theoretical results typically distinguish between two settings: (i) the homogeneous setting, where all workers have access to the same data distribution, and (ii) the heterogeneous setting, where each worker operates on different data distributions. Known optimal time complexities in these settings reveal a significant gap, with far more pessimistic guarantees in the heterogeneous case. In this work, we investigate whether these pessimistic optimal time complexities can be overcome under different assumptions. Surprisingly, we show that improvement is provably impossible under widely used first- and second-order similarity assumptions for any randomized algorithm. We then turn to the interpolation regime and demonstrate that the weak interpolation assumption alone is also insufficient. Finally, we introduce a minimal combination of irreducible assumptions, strong interpolation and the local Polyak-Lojasiewicz condition, to derive a new time complexity bound that matches the dependence on worker comput…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 大规模异步优化中，同分布（homogeneous）与异分布（heterogeneous）设定的已知最优时间复杂度差距悬殊——异分布下的悲观保证能否在别的假设下被打破？</p>
+<p><strong>方法</strong> 理论工作：先证明在广泛使用的一阶/二阶相似性假设下，任何随机算法都不可改进；再证明弱插值假设单独也不足；最后给出一组不可约的最小假设组合——强插值加局部 Polyak-Łojasiewicz 条件，推出与同分布最优结果在 worker 计算时间依赖上相匹配的新界，且不要求数据同分布。</p>
+<p><strong>关键数字</strong> 理论结果，无实验数字；遗憾/复杂度以界的形式给出。</p>
+<p><strong>为什么值得看</strong> "不可能性 + 最小充分条件"的完整刻画，做异步/联邦优化理论的人可直接引用其边界结论。</p>
+<p><a href="https://arxiv.org/abs/2609.17483v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.17483v1">阅读原文 ↗</a></p>
 </body>
 </html>

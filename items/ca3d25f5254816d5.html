@@ -22,9 +22,11 @@
 <h1>Early-Bird Decoding: Accelerating Diffusion LLMs with Learnable Block Sizes and Parallel Sampling</h1>
 <p class="meta-line">arXiv（Lixuan Wei 等，cs.CL） · 2026-09-15 · 论文PDF</p>
 
-<p>Diffusion large language models (dLLMs) offer a promising parallel decoding paradigm as an alternative to autoregressive generation through iterative unmasking.</p>
-<blockquote><p>Diffusion large language models (dLLMs) offer a promising parallel decoding paradigm as an alternative to autoregressive generation through iterative unmasking. However, dLLMs typically require many steps before token confidence reaches the decoding threshold, resulting in inefficient inference even with block-wise KV caching. To accelerate dLLM inference, we for the first time propose an "early-bird (EB)" decoding framework, motivated by the observation that tokens with similarly low entropy tend to cluster and can be jointly decoded earlier, before reaching the confidence threshold. In particular, our EB-Decode framework integrates two key enablers: (1) a learnable network that adaptively groups tokens with similar uncertainty into variable-length blocks, rather than relying on fixed block sizes; (2) a position-aware sampler that learns to unmask tokens in parallel using fewer decoding steps within predicted variable-length blocks. Both components are developed without modifying pretrained dLLM weights and can therefore be directly deployed as plug-ins during serving, with negligible training and inference overhead. Extensive experiments across three models and four benchmarks co…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 扩散大语言模型（dLLM）虽有并行解码潜力，但 token 置信度达到解码阈值前需多步迭代，即使分块 KV 缓存也效率不高。</p>
+<p><strong>方法</strong> EB-Decode 早鸟解码框架，基于"低熵 token 倾向聚簇、可提前联合解码"的观察：① 可学习网络把不确定性相近的 token 自适应分组成变长块（取代固定块长）；② 位置感知采样器学会在预测块内用更少步数并行解掩。两组件均不改预训练权重，可作插件直接部署。</p>
+<p><strong>关键数字</strong> 三个模型、四个基准上：吞吐为原始解码的 3.53~18.76 倍，较最强基线 Fast-dLLM 最高再快 1.58 倍，精度相当。</p>
+<p><strong>为什么值得看</strong> 免训练的插件式加速，dLLM 推理落地门槛低，值得关注扩散语言模型推理的读者一试。</p>
+<p><a href="https://arxiv.org/abs/2609.16450v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.16450v1">阅读原文 ↗</a></p>
 </body>
 </html>

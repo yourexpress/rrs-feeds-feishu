@@ -22,9 +22,11 @@
 <h1>Adaptive Bayesian Partner Selection for Federated Clinical Centers</h1>
 <p class="meta-line">arXiv（Navid Seidi 等，cs.LG） · 2026-09-15 · 论文PDF</p>
 
-<p>Federated learning (FL) in healthcare faces pronounced heterogeneity and temporal concept drift across clinical centers, where evolving patient populations and care practices shift data distributions.</p>
-<blockquote><p>Federated learning (FL) in healthcare faces pronounced heterogeneity and temporal concept drift across clinical centers, where evolving patient populations and care practices shift data distributions. Existing approaches rely on persistent global communication, incurring substantial bandwidth overhead while risking negative transfer from poorly aligned peers. We propose Adaptive Bayesian Partner Selection (ABPS), a peer-to-peer framework that governs who collaborates, when, and at what cost. Each center maintains a Beta-Bernoulli posterior over prospective peers' Shapley marginal utility, ranks candidates with an Upper Confidence Bound (UCB) criterion, and forms collaborations through a lightweight propose-reject mechanism, with the option to abstain from communication when no mutually beneficial partner exists. The framework admits a stochastic decision interpretation, yielding finite-sample concentration guarantees and O(kappa log T) regret in partner selection, along with conditions under which intentional isolation is optimal under negative transfer. Lightweight extensions (head personalization, bfloat16 quantized communication, and a tunable active-set size) further improve ef…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 医疗联邦学习中各临床中心异质性强、患者群体随时间漂移；持续全局通信既费带宽又可能被不对齐的同伴负迁移，如何决定"和谁协作、何时协作、代价多少"？</p>
+<p><strong>方法</strong> ABPS 点对点框架：每个中心对候选同伴的 Shapley 边际效用维护 Beta-Bernoulli 后验，用 UCB 排序，经轻量提议-拒绝机制结成协作，无互利伙伴时可主动弃权通信；理论上有 O(κ log T) 遗憾界及"主动隔离最优"的条件；扩展含头部个性化、bfloat16 量化通信与可调活跃集。</p>
+<p><strong>关键数字</strong> 在 MIMIC-IV 抽取的 230 个非 IID 临床中心上做 ICU 入院 24 小时死亡预测：ABPS-X 以 FedAvg 0.09 倍的通信量追平最强联邦基线 FedDyn（AUROC 0.758），且方差更小。</p>
+<p><strong>为什么值得看</strong> 用 9% 的通信换同等精度，"学会不通信"的联邦范式对众多小机构场景很有吸引力。</p>
+<p><a href="https://arxiv.org/abs/2609.16446v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.16446v1">阅读原文 ↗</a></p>
 </body>
 </html>

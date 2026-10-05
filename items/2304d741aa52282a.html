@@ -22,9 +22,11 @@
 <h1>Fathom: Per-Query Read Depth for Sparse Decoding over Offloaded KV Caches</h1>
 <p class="meta-line">arXiv（Vivek Kalyanarangan，cs.LG） · 2026-09-15 · 论文PDF</p>
 
-<p>When agentic sessions run to a million tokens with many sessions resident at once, the KV cache and the index that ranks it live in host memory, and the scan that ranks all n keys for a top-k step becomes the traffic tha…</p>
-<blockquote><p>When agentic sessions run to a million tokens with many sessions resident at once, the KV cache and the index that ranks it live in host memory, and the scan that ranks all n keys for a top-k step becomes the traffic that bounds decoding. We present Fathom, a key scan in which each query decides how many bits of each key channel to read. The 4-bit K cache is stored channel-major as bit planes, so a prefix of t planes is exactly the channel's t-bit quantizer, and the query spends its bit budget by reverse water-filling over the variance-weighted importance of its channels. At one million tokens on Qwen3-8B a decode step is 1.67x faster in GPU time than with the 136-bit scans of Double Sparsity, Loki and SparQ r=32, and in the same GPU time as SparQ's 68-bit read (r=16) Fathom reads 18% fewer bytes with lower attention error on six of seven model and context settings. On RULER-style tasks every per-token scan matches exact top-k decoding, and on real coding-agent sessions Fathom reaches the step agreement of the most accurate 136-bit scan at 92 bits. The store is the 4-bit K copy a quantized serving stack already holds, and the method is not faster when the index is resident in GPU m…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Agent 会话跑到百万 token、多会话并存时，KV cache 及其排序索引只能放主机内存，每步 top-k 的全量 key 扫描成为解码流量的瓶颈。</p>
+<p><strong>方法</strong> Fathom 让每个 query 自行决定读取每个 key 通道的比特数：4-bit K cache 按通道主序存为位平面，读 t 个平面恰好等于 t-bit 量化；query 按通道的方差加权重要性以反向注水法分配比特预算。存储复用量化 serving 栈已有的 4-bit K 副本。</p>
+<p><strong>关键数字</strong> Qwen3-8B 百万 token 下：GPU 时间较 Double Sparsity/Loki/SparQ r=32 的 136-bit 扫描快 1.67 倍；与 SparQ 68-bit 读同耗时时字节数少 18% 且七组设置中六组注意力误差更低；92 bit 即达最准 136-bit 扫描的步级一致；RULER 风格任务上逐 token 扫描全部匹配精确 top-k。</p>
+<p><strong>为什么值得看</strong> 把"读多少精度"变成逐查询的预算分配问题，是长上下文 offload 推理的务实优化。</p>
+<p><a href="https://arxiv.org/abs/2609.17652v2">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.17652v2">阅读原文 ↗</a></p>
 </body>
 </html>

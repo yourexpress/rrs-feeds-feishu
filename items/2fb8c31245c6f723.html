@@ -22,9 +22,11 @@
 <h1>Skeletal Prototypes on Iterative Nerve Expansions</h1>
 <p class="meta-line">arXiv（Jordan Eckert 等，cs.LG） · 2026-09-14 · 论文PDF</p>
 
-<p>Prototype reduction replaces a training set with a smaller representation, and the established methods return a finite set of points.</p>
-<blockquote><p>Prototype reduction replaces a training set with a smaller representation, and the established methods return a finite set of points. We propose Skeletal Prototypes on Iterative Nerve Expansions (SPINE). The model for each class is an embedded 1-complex rather than a point set. Its initial edge set is a class-conditional Mapper graph, so the data decide which localized clusters are joined. Later phases fit the vertices under a classification objective, and an observation is assigned to the class whose complex is nearest. The segments therefore enter the decision rule and not only the fitting. We evaluate SPINE on seventeen benchmark datasets under stratified 10-fold cross validation, against seven other prototype reduction methods at a matched budget. SPINE attains the highest mean accuracy and the best average rank. It is significantly better than five of the seven competitors under Wilcoxon signed-rank tests with Holm correction. A budget sweep shows that the decision rule using the entire graph segments contribute most when prototypes are scarce, while the method as a whole competes best at moderate budgets. Construction cost places SPINE with the discriminative methods, and it …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 原型压缩用小集合替代训练集，但既有方法都返回离散点集，丢弃了数据内部的连接结构。</p>
+<p><strong>方法</strong> SPINE 把每个类别建模为嵌入的 1-复形（带边的图）而非点集：初始边集来自类别条件 Mapper 图，由数据决定哪些局部簇相连；之后在分类目标下优化顶点位置，样本归入复形最近的类——边段本身参与决策而非仅参与拟合。</p>
+<p><strong>关键数字</strong> 17 个基准数据集、分层 10 折交叉验证、对比 7 种方法：平均准确率最高、平均名次最佳，Wilcoxon 符号秩检验（Holm 校正）下显著优于其中 5 种；17 个数据集中 14 个上构建速度快于广义学习向量量化。</p>
+<p><strong>为什么值得看</strong> 拓扑数据分析与原型学习的一次干净结合，"稀缺原型下图结构贡献最大"的预算扫描结论尤其实用。</p>
+<p><a href="https://arxiv.org/abs/2609.16170v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.16170v1">阅读原文 ↗</a></p>
 </body>
 </html>

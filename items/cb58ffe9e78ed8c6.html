@@ -22,9 +22,11 @@
 <h1>FlashVector: Agent for Hierarchical Model Serving Stack Optimization</h1>
 <p class="meta-line">arXiv（Qi Wu 等，cs.AI） · 2026-09-15 · 论文PDF</p>
 
-<p>Model serving is one of the largest cost drivers in production recommender systems.</p>
-<blockquote><p>Model serving is one of the largest cost drivers in production recommender systems. Maximizing its throughput requires navigating a deeply layered hierarchy: GPU kernels, the ML framework computation graph, the model server, and on-demand feature processing -- each demanding specialized domain expertise. Such cross-layer expertise is inherently difficult to acquire, and does not scale with a workload that continuously grows and evolves, leaving significant cost efficiency gains unrealized. While recent AI agents have demonstrated human expert level efficiency in standalone GPU kernel optimization, automated tuning and optimization for the rest of the serving stack remain largely unexplored. We present FlashVector, an agentic system that optimizes performance across all layers of the model serving stack. The key contribution is an extensible framework to generalize the single kernel optimization agent paradigm to heterogeneous technical stacks, and to deliver performance improvements holistically. After deployment in Unity's Vector advertising platform, FlashVector achieved up to 2x throughput increase and up to 1.98x latency speedup on model server, and up to 1.6x throughput increa…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 模型 serving 是生产推荐系统最大的成本项之一，但吞吐优化要穿透 GPU kernel、框架计算图、模型服务器、按需特征处理多层栈，跨层专家经验难以获得也无法随负载演进扩展。</p>
+<p><strong>方法</strong> FlashVector：把单 kernel 优化 agent 范式推广到异构技术栈的可扩展框架，对 serving 栈各层做整体性能优化——优化发现不仅来自 GPU kernel 与计算图，还包括 Triton 推理服务器（C++）与特征变换服务（Python）等组件。</p>
+<p><strong>关键数字</strong> 部署于 Unity 的 Vector 广告平台后：模型服务器吞吐最高提升 2 倍、延迟最高加速 1.98 倍；特征存储吞吐最高提升 1.6 倍。</p>
+<p><strong>为什么值得看</strong> AI agent 做系统优化的落地样本，证明了 agentic 优化能跨越语言与组件边界，serving 团队可借鉴其框架设计。</p>
+<p><a href="https://arxiv.org/abs/2609.17391v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.17391v1">阅读原文 ↗</a></p>
 </body>
 </html>

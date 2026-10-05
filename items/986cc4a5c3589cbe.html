@@ -22,9 +22,11 @@
 <h1>GGUF-Metadata Prediction of Single-Sequence llama.cpp Throughput Across Three Systems</h1>
 <p class="meta-line">arXiv（Xinyu Qiu 等，cs.AI） · 2026-09-14 · 论文PDF</p>
 
-<p>We predict single-sequence model throughput from GGUF metadata using roofline-shaped predictors with quantization-specific scale factors fitted on reference models.</p>
-<blockquote><p>We predict single-sequence model throughput from GGUF metadata using roofline-shaped predictors with quantization-specific scale factors fitted on reference models. The scored cohort comprises 318 phase-depth measurements from 53 host-file configurations on two Apple M4 Max systems and an NVIDIA RTX 5080. On host-specific held-out sets of four, five, and two configurations, an active-parameter decode model obtains 13.1%, 14.4%, and 36.1% mean absolute percentage error (MAPE), versus 49.4%, 55.3%, and 51.9% when charging total parameters. Leave-one-host-out coefficients fitted on the other two systems yield 11.6%, 16.8%, and 36.0% test MAPE. A low-bit model ladder changes ordering across runtime stacks. The P2 prefill baseline gives 18.7%, 22.2%, and 108.2% test MAPE. GGUF structure helps on all three systems, but fitted efficiencies are not universal.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 能否仅凭 GGUF 元数据预测 llama.cpp 单序列推理吞吐？量化模型的实际速度取决于量化方式与硬件的耦合，粗略估算往往误差很大。</p>
+<p><strong>方法</strong> 用带量化专属系数的 roofline 形预测器，在参考模型上拟合后外推；在两台 Apple M4 Max 和一台 RTX 5080 上，对 53 个主机-文件配置采集 318 组相位-深度测量。</p>
+<p><strong>关键数字</strong> 按激活参数计费的 decode 模型留出集 MAPE 为 13.1%/14.4%/36.1%，远优于按总参数计费的 49.4%/55.3%/51.9%；留一主机交叉验证为 11.6%/16.8%/36.0%；prefill 基线误差最高达 108.2%。</p>
+<p><strong>为什么值得看</strong> 给本地部署选型提供了可操作的吞吐预估方法，同时诚实地指出拟合效率不能跨系统通用。</p>
+<p><a href="https://arxiv.org/abs/2609.14864v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.14864v1">阅读原文 ↗</a></p>
 </body>
 </html>

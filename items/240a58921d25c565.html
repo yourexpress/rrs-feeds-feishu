@@ -22,9 +22,11 @@
 <h1>Shared KV Caching for Replicated 27B Inference: Correctness Failures and Performance Boundaries</h1>
 <p class="meta-line">arXiv（Frank Li，cs.DC） · 2026-09-14 · 论文PDF</p>
 
-<p>Shared host-memory caching can avoid repeated prefill when a request moves between inference replicas.</p>
-<blockquote><p>Shared host-memory caching can avoid repeated prefill when a request moves between inference replicas. Its usefulness depends on both correct state transfer and lost prefix locality. We study two single-GPU 27B vLLM replicas sharing a 256 GiB LMCache pool. After adopting an existing packed-page patch, we isolate a raw-pointer fallback that omits the dependency on the current CUDA stream. Controlled byte tests fail under an imposed delay and pass when the dependency is restored; the existing mixed allocator provides a working deployment path. Full-pool allocation checks and service regression complete the validation. A four-block OFF-ON-ON-OFF comparison contains 768 measured requests within two block pairs. Median cross-replica time to first content token falls from 31.715 to 0.605 seconds at 128k input and from 92.047 to 0.790 seconds at 256k. Six-turn synthetic sessions alternating replicas improve by approximately 35% and 45% at initial contexts of 32k and 128k, while fixed placement shows little benefit. This engineering case study identifies practical validation steps and the locality conditions in which shared caching pays off.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 多副本 LLM 推理中，请求在副本间迁移会重复 prefill；共享主机内存 KV 缓存能否既保证状态传输正确、又真正赚回前缀局部性？</p>
+<p><strong>方法</strong> 工程案例研究：两个单 GPU 27B vLLM 副本共享 256 GiB LMCache 池。定位并修复一个遗漏 CUDA stream 依赖的裸指针回退（受控字节测试在人为延迟下失败、恢复依赖后通过）；以四段 OFF-ON-ON-OFF 对照实验量化收益。</p>
+<p><strong>关键数字</strong> 768 个实测请求：128k 输入下跨副本首 token 中位时延从 31.715 秒降到 0.605 秒，256k 下从 92.047 秒降到 0.790 秒；六轮会话在 32k/128k 初始上下文分别提速约 35%/45%；固定放置则几乎无收益。</p>
+<p><strong>为什么值得看</strong> 罕见地同时给出正确性缺陷定位与收益边界条件，是共享 KV 缓存部署的实操参考。</p>
+<p><a href="https://arxiv.org/abs/2609.15021v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.15021v1">阅读原文 ↗</a></p>
 </body>
 </html>

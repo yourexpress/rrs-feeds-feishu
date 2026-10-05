@@ -22,9 +22,11 @@
 <h1>Privacy-Aligned Personalized Federated Learning with Compact Adaptation and Variable-Length Gaussian Communication</h1>
 <p class="meta-line">arXiv（Yilin Xu 等，cs.LG） · 2026-09-14 · 论文PDF</p>
 
-<p>Record-level differential privacy exposes a structural misalignment in personalized federated learning when client-specific variation is low-dimensional while training repeatedly releases high-dimensional updates.</p>
-<blockquote><p>Record-level differential privacy exposes a structural misalignment in personalized federated learning when client-specific variation is low-dimensional while training repeatedly releases high-dimensional updates. In this paper, we address this misalignment by releasing a private client context once and confining repeated adaptation to a fixed coefficient space. Beyond dimensionality reduction, the factorized generator induces an adaptive optimization geometry that reshapes noisy updates, and controlled ablations show that most of its private-training gain is retained by radial evolution. To further reduce the communication cost, we realize the Gaussian mechanism for coefficient updates directly through variable-length quantization with finite expected code length, so that the quantization error itself serves as the required privacy perturbation rather than extra distortion. Across MNIST and CIFAR-10, our design matches or outperforms full-model private adaptation across privacy budgets and client heterogeneity, while reducing protected uplink by a factor of 2.67 at \(\varepsilon=16\) on CIFAR-10 with comparable future-client accuracy.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 记录级差分隐私下，个性化联邦学习存在结构性错配：客户端差异本是低维的，训练却反复发布高维更新，隐私预算被白白消耗。</p>
+<p><strong>方法</strong> 只发布一次私有客户端上下文，之后把反复适配约束在固定系数空间；因子化生成器诱导自适应优化几何；高斯机制通过变长量化直接实现——量化误差本身即隐私扰动，不引入额外失真。</p>
+<p><strong>关键数字</strong> 在 MNIST 与 CIFAR-10 上匹配或超过全模型私有适配；CIFAR-10、ε=16 时受保护上行通信量减少 2.67 倍，未来客户端精度相当。</p>
+<p><strong>为什么值得看</strong> 把量化误差直接当作隐私噪声的巧思值得一看，通信-隐私-精度三角的一次漂亮折中。</p>
+<p><a href="https://arxiv.org/abs/2609.15950v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.15950v1">阅读原文 ↗</a></p>
 </body>
 </html>

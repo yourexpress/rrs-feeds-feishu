@@ -22,9 +22,11 @@
 <h1>SpliTEE: Improving LLM Inference on Trusted Hardware with Differentially Private GPU Outsourcing</h1>
 <p class="meta-line">arXiv（Shashie Dilhara Batan Arachchige 等，cs.CR） · 2026-09-14 · 论文PDF</p>
 
-<p>User prompts provided to large language models (LLMs) may contain sensitive or private information that can be misused by remotely deployed models, such as through inadvertent memorization during retraining.</p>
-<blockquote><p>User prompts provided to large language models (LLMs) may contain sensitive or private information that can be misused by remotely deployed models, such as through inadvertent memorization during retraining. One way to protect user prompts is to execute the LLM inside a trusted execution environment (TEE), with the guarantee that the service provider has no access to computations performed within or information exchanged with the TEE. However, current TEEs are primarily CPU-based and significantly slower than GPUs optimized for LLM inference. To circumvent this, Tramer and Boneh (2019) proposed Slalom, which splits neural network inference between a TEE and an untrusted GPU and encrypts intermediate inputs sent to the GPU. We extend this split-inference architecture to LLM inference and instead protect intermediate inputs using differential privacy. We show that masking intermediate representations is necessary by showing that a prompt-reconstruction attack can recover prompts from these representations with nearly 80% accuracy. Our main contribution is a global sensitivity analysis of key LLM functions, which bounds the required scale of differentially private noise. Unlike encryp…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 用户 prompt 可能含敏感信息，TEE 内跑 LLM 可保护隐私，但现有 TEE 以 CPU 为主、远慢于 GPU；Slalom 式拆分推理需加密中间结果，开销可观。</p>
+<p><strong>方法</strong> SpliTEE 把拆分推理扩展到 LLM：用差分隐私而非加密保护发给 GPU 的中间表示——先证明不做遮蔽时 prompt 重构攻击能以近 80% 准确率还原输入；再给出 LLM 关键函数的全局敏感度分析以界定噪声规模，DP 避免量化、模型保持浮点域。基于 Intel TDX 实现。</p>
+<p><strong>关键数字</strong> 在 Llama-3.2-3B 与 Qwen3-4B 上：比 TDX 内纯 CPU 推理快近 2 倍，比加密式 Slalom 快 5~15 秒且精度更高；即使攻击者知晓 DP 机制也无法重构出比无关 prompt 更多的信息。</p>
+<p><strong>为什么值得看</strong> 机密计算与 DP 的务实组合，为隐私敏感 LLM 服务提供了可量化的中间路线。</p>
+<p><a href="https://arxiv.org/abs/2609.15039v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.15039v1">阅读原文 ↗</a></p>
 </body>
 </html>
