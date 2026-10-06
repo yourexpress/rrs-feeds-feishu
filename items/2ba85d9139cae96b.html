@@ -22,9 +22,11 @@
 <h1>A Calibrated Instrument for Measuring How Inference Optimizations Affect Output Quality</h1>
 <p class="meta-line">arXiv（Jerry Kaplan，cs.CL） · 2026-09-16 · 论文PDF</p>
 
-<p>Large language model optimization is an active research area, spanning quantization of model weights, early-exit methods for skipping layers, and speculative decoding.</p>
-<blockquote><p>Large language model optimization is an active research area, spanning quantization of model weights, early-exit methods for skipping layers, and speculative decoding. Each track uses its own quality measures, typically an idiosyncratic benchmark score. Few approach the measurement precision required by other scientific disciplines. We propose a rigorous methodology for measuring output quality, suitable for cross-system and cross-technique comparison. We score outputs with an LLM as a judge, but calibrate the judge formally: we compare its scores on two ordinary runs of a model given the same prompts, verifying that it shows no systematic preference between statistically equivalent outputs and measuring its per-sample noise. Each design also includes a 'null' condition, provably identical in distribution to the unmodified model, whose measured difference must be zero. With this one instrument we measure several acceleration techniques on the same prompts, so their quality costs can be compared. Perceived quality proves highly dependent on the domain of discourse. A 4-bit model was indistinguishable from its 16-bit original down to our design's +/-0.3-point resolution, in English p…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 推理优化（量化、早退、投机解码）各用各的质量指标，缺乏跨技术可比的精确测量方法——如何严谨度量"优化到底损失了多少输出质量"？</p>
+<p><strong>方法</strong> 提出一套校准测量方法学：用 LLM-as-judge 打分但先形式化校准评委——在同一模型两次普通运行上验证评委无系统性偏好并测其单样本噪声；每个设计都含一个与原始模型同分布的"零条件"，其测得差异必须为零；用同一把尺在同一批 prompt 上测多种加速技术。</p>
+<p><strong>关键数字</strong> 4 bit 模型在 ±0.3 分分辨率内与 16 bit 原模型不可区分（中英文皆然）；3 bit 时英文散文掉 0.5 分、中文掉 0.9 分、多步数学掉 1.1 分；早退在散文上掉 0.7 分但在数学上掉 2.5 分（27 题中正确数从 19 降到 6）；同一量化器对 Meta 模型损失 1.8 分、对阿里模型仅 0.7 分。</p>
+<p><strong>为什么值得看</strong> 少见的"先校准尺子再测量"的严谨实证，数学任务对压缩远比散文敏感的结论对部署选型很实用。</p>
+<p><a href="https://arxiv.org/abs/2609.18005v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.18005v1">阅读原文 ↗</a></p>
 </body>
 </html>

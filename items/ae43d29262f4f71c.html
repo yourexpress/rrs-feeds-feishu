@@ -22,9 +22,11 @@
 <h1>OptiPrime: Optimizing Private Inference through Protocol-Hardware Co-design</h1>
 <p class="meta-line">arXiv（Jiangrui Yu 等，cs.AR） · 2026-09-15 · 论文PDF</p>
 
-<p>Private deep neural network (DNN) inference based on hybrid homomorphic encryption (HE) and multi-party computation (MPC) can protect user data with a formal guarantee, but at the cost of significant latency overhead due…</p>
-<blockquote><p>Private deep neural network (DNN) inference based on hybrid homomorphic encryption (HE) and multi-party computation (MPC) can protect user data with a formal guarantee, but at the cost of significant latency overhead due to HE. Customized HE accelerators have been proposed and have achieved orders-of-magnitude speedup for individual HE operations. However, when directly applying a commercial HE accelerator to state-of-the-art HE-MPC frameworks, we observe only limited end-to-end performance gain. This is because HE-MPC frameworks often require wireless transmission of input and output ciphertexts for each HE operation, leading to a severe network communication bottleneck. To overcome this challenge, we introduce OptiPrime, a protocol-hardware co-optimization framework for efficient private DNN inference. OptiPrime features a novel HE protocol for convolutions that substantially reduces the number of transmitted output ciphertexts and mitigates the network communication bottleneck. Meanwhile, as the new protocol introduces complex computation for fewer output ciphertext, we observe new memory access challenges due to a high volume of weight plaintexts and intermediate ciphertexts. H…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 基于同态加密（HE）+ 多方安全计算（MPC）混合方案的隐私 DNN 推理有形式化安全保证，但 HE 带来显著延迟；直接把商用 HE 加速器接到现有 HE-MPC 框架上端到端收益有限——每个 HE 算子都要网络传输输入输出密文，通信成为瓶颈。</p>
+<p><strong>方法</strong> OptiPrime 做协议-硬件协同优化：提出一种卷积 HE 新协议，大幅减少需传输的输出密文数量、缓解网络瓶颈；针对新协议引入的权重明文与中间密文访存压力，再设计轻量级权重明文压缩系统和专用数据流以最大化片上数据复用。</p>
+<p><strong>关键数字</strong> 权重明文内存流量降低 10 倍；端到端相比 Cheetah 基线在 CPU 上最高快 5.7 倍、配加速器最高快 4.2 倍。</p>
+<p><strong>为什么值得看</strong> 戳破"买个 HE 加速器就能加速隐私推理"的直觉，指出瓶颈在协议侧的密文传输，协同设计思路对隐私计算落地很有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.16898v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.16898v1">阅读原文 ↗</a></p>
 </body>
 </html>

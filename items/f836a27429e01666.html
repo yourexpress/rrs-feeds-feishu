@@ -22,9 +22,11 @@
 <h1>LCAP: Population-Informed Latent Chip Adaptation from Few Output Probes for Photonic Neural Networks</h1>
 <p class="meta-line">arXiv（Tianyu Gao 等，cs.LG） · 2026-09-15 · 论文PDF</p>
 
-<p>Photonic neural networks (PNNs) offer efficient analog inference, but parameters optimized under ideal device models can degrade after fabrication, creating a persistent simulation-to-hardware (sim-to-real) gap.</p>
-<blockquote><p>Photonic neural networks (PNNs) offer efficient analog inference, but parameters optimized under ideal device models can degrade after fabrication, creating a persistent simulation-to-hardware (sim-to-real) gap. When many identically designed chips are deployed, calibrating each device from scratch compounds this cost. We propose Latent Chip Adaptation from Probes (LCAP), a population-informed framework that decomposes hardware adaptation into a transferable population correction and probe-inferred latent personalization. LCAP first learns a shared correction from 80 historical chips, then extracts a low-dimensional correction space from device-specific refinements. At deployment, 32 fixed unlabeled output probes infer an unseen chip's latent correction coordinates, enabling feed-forward personalization without target-device optimization. On a three-layer 64-mode MZI simulator with phase variation, beam-splitter errors, quantization, and crosstalk, accuracy improves from 80.4147% under direct deployment to 92.6860% after shared calibration and 93.3617% with LCAP. LCAP improves 27/30 unseen chips and raises worst-device accuracy from 89.18% to 90.54%.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 光子神经网络（PNN）可高效做模拟推理，但理想器件模型下调好的参数在流片后会退化，存在持续的 sim-to-real 鸿沟；批量部署同款芯片时逐片从头校准代价高昂。</p>
+<p><strong>方法</strong> LCAP（Latent Chip Adaptation from Probes）把硬件适配分解为可迁移的群体校正 + 探针推断的潜在个性化：先从 80 片历史芯片学习共享校正并提取低维校正空间；部署时用 32 个固定的无标签输出探针前馈推断新芯片的潜在坐标，无需对目标器件做优化。</p>
+<p><strong>关键数字</strong> 在含相位扰动、分束器误差、量化与串扰的三层 64 模式 MZI 仿真器上，直接部署准确率 80.4147%，共享校正后 92.6860%，LCAP 达 93.3617%；30 片未见芯片中 27 片改善，最差芯片从 89.18% 提升至 90.54%。</p>
+<p><strong>为什么值得看</strong> 把"逐片校准"变成"群体先验 + 少量探针前馈推断"，对光子/模拟 AI 芯片量产部署的校准成本问题给出了一条实用路径。</p>
+<p><a href="https://arxiv.org/abs/2609.16823v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.16823v1">阅读原文 ↗</a></p>
 </body>
 </html>

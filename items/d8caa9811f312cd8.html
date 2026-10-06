@@ -22,9 +22,11 @@
 <h1>Nested Parallel von Neumann Architecture and Nested BSP</h1>
 <p class="meta-line">arXiv（Heng Liao，cs.DC） · 2026-09-15 · 论文PDF</p>
 
-<p>Large-scale AI computing is no longer a contest of ''one stronger processor,'' but of how an army of processors under one command can still be one computer.</p>
-<blockquote><p>Large-scale AI computing is no longer a contest of ''one stronger processor,'' but of how an army of processors under one command can still be one computer. This paper offers two interlocking extensions. First, extend BSP to Nested BSP. The Turing machine describes computation as a single tape, in sequence. A million processors need not a longer tape, but a battle plan nested layer within layer: at every layer, parallel work, barrier, exchange and aggregate, then the next phase. Every ``parallel advance'' inside a layer repeats the same four steps. Nested BSP extends classic BSP by nesting it recursively, a computing paradigm for million-scale parallelism, under one rule: every node at every layer is a peer. Second, extend von Neumann to the Nested Parallel von Neumann Architecture, and Unified Bus is its interconnect. Von Neumann taught us how to build one stored-program computer. The false extrapolation of eighty years was that wiring many computers into a network yields one larger computer. A second habit ran deeper: nearly every design assumes a master that commands and slaves that obey---host over device, CPU over accelerator, center over edge. The Nested Parallel Architecture…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 大规模 AI 计算的竞争不再是"一颗更强的处理器"，而是百万级处理器在统一指挥下如何仍是"一台计算机"；作者认为"把多台计算机连成网络就得到一台更大计算机"是冯·诺依曼架构八十年来的错误外推。</p>
+<p><strong>方法</strong> 提出两个相互咬合的扩展：软件侧把经典 BSP 递归嵌套为 Nested BSP——每层都是"并行推进、屏障、交换、聚合"四步，且每层每个节点都是对等体；硬件侧把冯·诺依曼架构扩展为嵌套并行冯·诺依曼架构，以 Unified Bus 作为从封装到自治区的端到端内存语义互连，物理稀疏、逻辑紧密，并与华为 τ Scaling 定律配合（τ 管每层如何折叠时间，架构管嵌套并行计算机如何逐层对等站立）。</p>
+<p><strong>关键数字</strong> 架构概念性论文，摘要未给出量化实验指标。</p>
+<p><strong>为什么值得看</strong> 对"去主从化"的全对等百万级并行计算给出了软件模型 + 硬件架构 + 缩放定律的完整叙事，适合关注超大规模 AI 系统架构演进的读者。</p>
+<p><a href="https://arxiv.org/abs/2609.16787v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.16787v1">阅读原文 ↗</a></p>
 </body>
 </html>

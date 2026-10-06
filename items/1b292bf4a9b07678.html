@@ -22,9 +22,11 @@
 <h1>Beyond Truncation: Rethinking LLM Decoding as Ensemble Pruning</h1>
 <p class="meta-line">arXiv（Dunyao Xue 等，cs.AI） · 2026-09-16 · 论文PDF</p>
 
-<p>We introduce Mahalanobis-Ensemble Decoding (ME-Decoding), a novel Large Language Model (LLM) decoding framework that frames candidate token selection as ensemble pruning.</p>
-<blockquote><p>We introduce Mahalanobis-Ensemble Decoding (ME-Decoding), a novel Large Language Model (LLM) decoding framework that frames candidate token selection as ensemble pruning. Existing selection strategies rely predominantly on scalar probabilities, ignoring geometric semantic relationships and causing candidate redundancy. Meanwhile, current geometry-aware methods often require complex optimization or directly reweighting the original token probabilities, leading to significant computational overhead or inference instability. To address this, we formulate decoding as a subset optimization problem using a Mahalanobis distance-driven objective to enhance semantic diversity while preserving high probabilities. Specifically, we dynamically discount redundant generation paths using a token similarity matrix, constructed via an adaptive-bandwidth kernel over token embeddings. We further devise an efficient greedy selection algorithm with near-linear complexity in the candidate size under early stopping, while establishing its theoretical approximation guarantees. This renders ME-Decoding a robust, plug-and-play module with negligible inference overhead. Extensive experiments across diverse r…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 解码的候选 token 选择长期依赖标量概率，忽略候选间的几何语义关系导致冗余；现有几何感知方法要么优化复杂、要么直接改写原始概率，带来计算开销或推理不稳定。</p>
+<p><strong>方法</strong> ME-Decoding 把解码重构为"集成剪枝"的子集优化问题：用马氏距离驱动的目标在保持高概率的同时增强语义多样性；通过自适应带宽核在 token 嵌入上构建相似度矩阵，动态折减冗余生成路径；设计贪心选择算法，早停下对候选数接近线性复杂度，并给出理论近似保证，作为即插即用模块开销可忽略。</p>
+<p><strong>关键数字</strong> 摘要未给出具体基准数值，称在多种推理与生成任务上持续取得强性能。</p>
+<p><strong>为什么值得看</strong> 用子集选择/集成剪枝视角重新看采样截断，理论保证 + 即插即用，为解码策略研究提供了一个优雅的新框架。</p>
+<p><a href="https://arxiv.org/abs/2609.18723v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.18723v1">阅读原文 ↗</a></p>
 </body>
 </html>

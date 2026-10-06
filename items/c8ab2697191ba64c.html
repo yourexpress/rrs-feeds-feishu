@@ -22,9 +22,11 @@
 <h1>Align, Integrate, and Fire: Efficient Token-Level Alignment for Zero-Shot SpeechLLMs</h1>
 <p class="meta-line">arXiv（Abderrahmane Issam 等，cs.CL） · 2026-09-16 · 论文PDF</p>
 
-<p>While Large Language Models excel in natural language processing, efficiently extending their capabilities to spoken input remains a significant challenge.</p>
-<blockquote><p>While Large Language Models excel in natural language processing, efficiently extending their capabilities to spoken input remains a significant challenge. Existing methods for building SpeechLLMs often rely on computationally expensive full-model fine-tuning, or employ parameter-efficient projectors that suffer from inefficient token sequence lengths and costly full-model supervision. In this paper, we introduce Aligned Continuous Integrate-and-Fire, a highly efficient framework for zero-shot speech processing. Our method dynamically compresses continuous acoustic frames into the exact discrete token length of the target text utilizing explicit Dynamic Time Warping alignments. This allows our initial training stage to establish a robust acoustic-to-semantic bridge using lightweight distance metrics, entirely bypassing the computationally expensive LLM forward pass. For subsequent fine-tuning, we propose a memory-efficient knowledge distillation objective that targets a single LLM layer, performing competitively with full-model cross-entropy training at a fraction of the computational cost. Through extensive evaluations on Automatic Speech Recognition and Speech Translation, we dem…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 把 LLM 能力扩展到语音输入仍代价高昂：全模型微调算力贵，参数高效投影器则受困于 token 序列过长与全模型监督成本。</p>
+<p><strong>方法</strong> 提出 Aligned Continuous Integrate-and-Fire 零样本语音处理框架：利用显式动态时间规整（DTW）对齐，把连续声学帧动态压缩到目标文本的精确离散 token 长度；首阶段仅用轻量距离度量建立声学到语义的桥梁，完全绕过昂贵的 LLM 前向；后续微调采用面向单个 LLM 层的内存高效知识蒸馏目标，以很小算力达到与全模型交叉熵训练相当的水平。</p>
+<p><strong>关键数字</strong> 在自动语音识别与语音翻译上的大量评估显示，该方法优于先前的参数高效基线（摘要未给出具体数值）。</p>
+<p><strong>为什么值得看</strong> "对齐驱动压缩 + 单层蒸馏"把 SpeechLLM 训练成本大幅压低，对语音大模型的高效接入有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.18516v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.18516v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>TasmScan: Continuation-Aware Taint Analysis for TVM Bytecode with Savelist Abstraction</h1>
 <p class="meta-line">arXiv（Yixuan Liu 等，cs.SE） · 2026-09-15 · 论文PDF</p>
 
-<p>The Open Network (TON), with a peak market capitalization exceeding $20 billion and over 175 million activated on-chain addresses, relies on the TVM (TON Virtual Machine) to execute smart contracts.</p>
-<blockquote><p>The Open Network (TON), with a peak market capitalization exceeding $20 billion and over 175 million activated on-chain addresses, relies on the TVM (TON Virtual Machine) to execute smart contracts. TVM uses first-class continuations with savelists to manage control flow and register state across continuation invocations. Since savelist-captured registers allow data to flow across continuation boundaries without passing through the operand stack, bytecode-level analyses cannot construct complete data flow tracking without explicitly modeling savelist semantics. We present TasmScan, the first bytecode-level static analysis framework for TVM that enables cross-continuation data flow reasoning without requiring source code. TasmScan models savelist semantics via forward register analysis with a formal over-approximation guarantee for exact-resolved save sites and locally tracked register definitions, then lifts bytecode into TASIR, a typed intermediate representation, and performs path-sensitive taint analysis with context-aware sources to detect defects. We evaluate TasmScan on 2,921 contracts from the TON verifier registry and a labeled benchmark of 208 contracts with human-confirme…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> TON 区块链（峰值市值超 200 亿美元、超 1.75 亿激活链上地址）的智能合约运行在 TVM 虚拟机上；TVM 用一等延续（continuation）与 savelist 管理控制流和寄存器状态，savelist 捕获的寄存器使数据可不经操作数栈跨延续流动，字节码级分析若不显式建模 savelist 语义就无法构建完整数据流。</p>
+<p><strong>方法</strong> TasmScan 是首个 TVM 字节码级静态分析框架：以前向寄存器分析建模 savelist 语义并给出形式化过近似保证，将字节码提升为类型化中间表示 TASIR，再做路径敏感、上下文感知污染源的污点分析，无需源代码即可检测缺陷。</p>
+<p><strong>关键数字</strong> 在 2,921 个合约全量语料上以 100% 精度解析 294,546 个动态延续目标；208 个带人工标注合约的基准上检出五类缺陷的 95.3%、精度 96.8%；366 对分层抽样估计总体精度 85.8%；中位速度比最优符号执行基线快 17 倍，路径分析 100% 完成、零崩溃零超时。</p>
+<p><strong>为什么值得看</strong> 把"延续语义"显式引入字节码静态分析，指标扎实，对区块链合约安全审计工具链是实质推进。</p>
+<p><a href="https://arxiv.org/abs/2609.16987v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.16987v1">阅读原文 ↗</a></p>
 </body>
 </html>

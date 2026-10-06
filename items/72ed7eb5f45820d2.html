@@ -22,9 +22,11 @@
 <h1>Personalized Federated Learning through Global Knowledge Distillation and Local Head Adaptation</h1>
 <p class="meta-line">arXiv（Polycarpo Souza Neto 等，cs.LG） · 2026-09-15 · 论文PDF</p>
 
-<p>Statistical heterogeneity limits federated learning when a single global classifier cannot represent client-specific label distributions.</p>
-<blockquote><p>Statistical heterogeneity limits federated learning when a single global classifier cannot represent client-specific label distributions. In this work, we propose Personalized Federated Knowledge Distillation with Head Adaptation (pFedKDH), which aggregates only the shared backbone, keeps persistent client-specific heads, and uses a recalibrated global head as a teacher during local training. Across MNIST, Fashion-MNIST, CIFAR10, and CIFAR100 under class-wise Dirichlet partitions, pFedKDH obtains the best accuracy in most settings, with accuracy gaps up to 37.67\% over the weakest baseline and consistently low standard deviation across repetitions. Component-wise diagnostics and convergence results support the role of persistent heads and distillation-guided local optimization under label-skewed data.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 联邦学习中统计异质性（客户端标签分布各异）使单一全局分类器难以表征所有客户端，限制整体性能。</p>
+<p><strong>方法</strong> pFedKDH（Personalized Federated Knowledge Distillation with Head Adaptation）：只聚合共享骨干网络，各客户端保留持久的个性化分类头，本地训练时用重校准的全局头作为教师做知识蒸馏，引导本地优化。</p>
+<p><strong>关键数字</strong> 在 MNIST、Fashion-MNIST、CIFAR10、CIFAR100 上按类别 Dirichlet 划分做实验，多数设定下取得最佳准确率，与最弱基线的准确率差距最高达 37.67%，多次重复的标准差持续较低。</p>
+<p><strong>为什么值得看</strong> "骨干共享 + 分类头个性化 + 蒸馏引导"的组合简单有效，且附带逐组件诊断与收敛分析，是标签倾斜场景个性化联邦学习的扎实工作。</p>
+<p><a href="https://arxiv.org/abs/2609.17284v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.17284v1">阅读原文 ↗</a></p>
 </body>
 </html>

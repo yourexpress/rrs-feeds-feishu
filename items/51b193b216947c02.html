@@ -22,9 +22,11 @@
 <h1>Ask the Tool, Don't Guess: Agent Tool Calls Hold Their Progress, and the Serving System Should Read It</h1>
 <p class="meta-line">arXiv（Yipeng Liu 等，cs.DC） · 2026-09-16 · 论文PDF</p>
 
-<p>An agentic request spends substantial wall-clock time waiting for tools, and its KV cache holds GPU memory the whole time.</p>
-<blockquote><p>An agentic request spends substantial wall-clock time waiting for tools, and its KV cache holds GPU memory the whole time. Serving systems decide whether that cache stays, leaves, or comes back by guessing how long the tool will run, from the tool's name, its history, a duration declared before the call, or the engine's own occupancy. We show that no estimate fixed before a call starts can know its duration, and such estimates may not even rank the calls. Meanwhile, the running tool already holds the answer, but the agent stack together with the tool silences it. We propose that tool calls report their progress explicitly while they run, and we measure what that takes. A census of four public agent corpora finds a readable signal in most tool time once it is revealed, in two strengths: a fraction of the work remaining, or an accurate signal that the end is near. A harness recovers it without changing what the agent sees, at no measurable cost to the agent's benchmark score. At the points where a KV cache decision is made, the reported progress is between several times and an order of magnitude more accurate than the best published predictors, and it stays accurate when the environm…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Agentic 请求的墙钟时间大量消耗在等待工具上，期间 KV 缓存一直占着 GPU 显存；服务系统决定缓存去留时只能"猜"工具耗时——靠工具名、历史、调用前声明或引擎占用，但任何调用前固定的估计都无法预知时长，甚至连排序都可能排错。</p>
+<p><strong>方法</strong> 主张工具在运行时显式上报进度，并实测其可行性：对四个公开 agent 语料的普查发现多数工具时间里存在可读信号（剩余工作比例或"临近结束"信号）；一个 harness 可在不改变 agent 所见、不损基准分数的前提下恢复该信号；通过少量 hint 接入生产引擎做 KV 缓存决策。</p>
+<p><strong>关键数字</strong> 上报进度的准确度比已发表最优预测器高数倍到一个数量级，且环境变化时仍保持准确；工具调用后 p90 TTFT 相比 LRU 降低 20.7%（仅 HBM）和 20.8%（HBM+DRAM），接近 oracle。</p>
+<p><strong>为什么值得看</strong> "别猜，问工具要进度"的理念简单却有力，为 agent 服务的显存调度指出了一条被忽视的工程路径。</p>
+<p><a href="https://arxiv.org/abs/2609.18849v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.18849v1">阅读原文 ↗</a></p>
 </body>
 </html>

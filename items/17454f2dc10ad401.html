@@ -22,9 +22,11 @@
 <h1>AUPE: Collaborative byzantine fault-tolerant peer-sampling</h1>
 <p class="meta-line">arXiv（Augusta Mukam 等，cs.DC） · 2026-09-16 · 论文PDF</p>
 
-<p>Peer sampling is a crucial primitive in distributed systems, used to manage overlays and disseminate information in large-scale scenarios such as permissionless blockchain systems.</p>
-<blockquote><p>Peer sampling is a crucial primitive in distributed systems, used to manage overlays and disseminate information in large-scale scenarios such as permissionless blockchain systems. Its purpose is to maintain and regularly update a local and partial snapshot, or view, of the complete system's membership. These protocols are often targeted by malicious actors who aim to disrupt higher-level protocols. Typically, an adversary who controls a set of byzantine nodes attempts to manipulate how legitimate nodes perceive the presence of byzantine ones by increasing their representation in the view of honest nodes. While state-of-the-art byzantine-tolerant peer sampling protocols mitigate this bias, their effectiveness decreases significantly as the number of malicious nodes increases. This paper introduces AUPE, the first collaborative Byzantine-tolerant peer sampling protocol that leverages the presence of trusted nodes, such as Intel's SGX capable devices, to collaboratively track the spread of identifiers in the system and locally debias the representation of byzantine nodes. Simulations with 10,000 nodes demonstrate that AUPE outperforms state-of-the-art solutions, achieving nearperfect…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 对等采样（peer sampling）是分布式系统维护成员视图的关键原语，广泛用于无许可区块链；拜占庭节点会操纵诚实节点的视图、抬高自身代表性，而现有拜占庭容忍协议随恶意节点增多效果显著下降。</p>
+<p><strong>方法</strong> AUPE 是首个协作式拜占庭容忍对等采样协议：利用可信节点（如支持 Intel SGX 的设备）协作追踪系统中标识符的传播，在本地对拜占庭节点的代表性去偏。</p>
+<p><strong>关键数字</strong> 10,000 节点仿真中，面对控制 26% 节点的对手仍近乎完美韧性；只需 10% 可信节点，即可把 BRAHMS 的容忍度提高最多 60%，即便对手掌握多达 40% 节点也能限制攻击影响。</p>
+<p><strong>为什么值得看</strong> "少量可信硬件节点 + 协作去偏"换取大幅拜占庭容忍提升，对区块链网络层与大规模 overlay 设计是实用思路。</p>
+<p><a href="https://arxiv.org/abs/2609.18563v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.18563v1">阅读原文 ↗</a></p>
 </body>
 </html>

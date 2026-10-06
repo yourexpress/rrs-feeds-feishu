@@ -22,9 +22,11 @@
 <h1>Automated Instruction Encoding Synthesis for Modern GPU ISA Compression</h1>
 <p class="meta-line">arXiv（Mingyuan Ma 等，cs.AR） · 2026-09-16 · 论文PDF</p>
 
-<p>Modern GPU kernels increasingly stress the instruction supply path, while fixed instruction containers can leave substantial footprint slack.</p>
-<blockquote><p>Modern GPU kernels increasingly stress the instruction supply path, while fixed instruction containers can leave substantial footprint slack. This paper presents an automated encoding-synthesis framework that treats instruction layout as a constrained slot-assignment problem over a validated instruction-form field specification. The formulation separates semantic field identity from physical bit positions and supports tied, pinned, and free placement constraints, making it applicable when recurring decoded fields are not frozen by a public format contract. We instantiate the framework for NVIDIA SASS: raw public encoding text is normalized into a machine-readable specification, a SASS disassembler is validated against nvdisasm on 3.78M instructions, released as an open benchmark, and CP-SAT synthesis is used for fixed-length and variable-length encodings. On 142 Blackwell kernel inputs, variable-length synthesis reduces instruction footprint by 33%, with comparable reductions after re-synthesis on Ampere and Hopper; fixed-length synthesis on the same specification reduces decoder area by 16% against a decoder generated from the NVIDIA-observed 128-bit layout by the same generator a…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 现代 GPU kernel 对指令供给路径压力日增，而固定长度的指令容器常留有大量空间冗余；如何自动合成更紧凑的指令编码？</p>
+<p><strong>方法</strong> 把指令布局建模为带约束的槽位分配问题：分离语义字段与物理比特位，支持绑定、钉住、自由放置约束；以 NVIDIA SASS 为实例——把公开编码文本规范化为机器可读规格，构建经 nvdisasm 验证的 SASS 反汇编器（作为开放基准发布），用 CP-SAT 合成定长与变长编码，并生成取指/译码 RTL。</p>
+<p><strong>关键数字</strong> 反汇编器经 378 万条指令验证；142 个 Blackwell kernel 上变长合成减少指令占用 33%（Ampere/Hopper 重合成结果相当）；定长合成使译码器面积较 NVIDIA 128 位布局减少 16%；RTL 在 TSMC 22nm 达 1.5 GHz，复制面积增量仅为 GA100 级芯片的 0.12%， footprint 缩减约合 9 倍该逻辑面积的指令 SRAM 位单元。</p>
+<p><strong>为什么值得看</strong> 用约束求解自动"重新设计"GPU 指令编码，33% 的指令存储缩减对指令缓存与供给设计意义重大，方法论也可迁移到其他 ISA。</p>
+<p><a href="https://arxiv.org/abs/2609.18662v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.18662v1">阅读原文 ↗</a></p>
 </body>
 </html>

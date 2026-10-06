@@ -22,9 +22,11 @@
 <h1>ScaleLUT: A Fully-Parallel Configurable LUT-Based Accelerator for Real-Time Multi-Scale Super-Resolution</h1>
 <p class="meta-line">arXiv（Boyu Li 等，cs.AR） · 2026-09-15 · 论文PDF</p>
 
-<p>Real-time super-resolution (SR) remains challenging for edge devices because deep-learning-based methods require substantial multiply-accumulate (MAC) operations, resources, and power.</p>
-<blockquote><p>Real-time super-resolution (SR) remains challenging for edge devices because deep-learning-based methods require substantial multiply-accumulate (MAC) operations, resources, and power. Lookup-table (LUT)-based SR reduces computation by replacing convolutional inference with table queries, but existing methods still suffer from limited speed, large storage overhead, and poor scalability across upsampling factors. We present ScaleLUT, a hardware-oriented LUT design framework and fully parallel reconfigurable accelerator for real-time multi-scale SR. ScaleLUT combines a hardware-friendly YUV-domain strategy with power-of-two kernels and rotation ensemble to improve receptive-field coverage while reducing LUT dimensionality; division operations are replaced by shifts. These designs reduce memory by 18.4% over state-of-the-art LUT-based SR methods. ScaleLUT supports arbitrary input resolutions and configurable x2^n upsampling factors using a deeply pipelined, massively parallel architecture. Implemented on a Xilinx ZCU102 FPGA, it achieves real-time 4K SR at 95.3 FPS for x2 upscaling at 300 MHz. Compared with existing SR accelerators, ScaleLUT uses at least 58.6% fewer LUTs, 41.1% fewer…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 边缘设备上的实时超分辨率（SR）受限于深度方法庞大的乘加运算、资源与功耗；查找表（LUT）型 SR 以查表替代卷积，但现有方法速度有限、存储开销大、难以跨放大倍数扩展。</p>
+<p><strong>方法</strong> ScaleLUT 是面向硬件的 LUT 设计框架 + 全并行可重构加速器：采用硬件友好的 YUV 域策略、2 的幂次卷积核与旋转集成来扩大感受野覆盖并降低 LUT 维度，除法全部替换为移位；支持任意输入分辨率与可配置 x2^n 放大倍数，深度流水、大规模并行。</p>
+<p><strong>关键数字</strong> 内存较现有最优 LUT 型 SR 降低 18.4%；Xilinx ZCU102 FPGA 上 300 MHz 实现 4K x2 超分 95.3 FPS 实时；LUT 用量至少少 58.6%、触发器少 41.1%、零 DSP、功耗低 42.0%；比最优 CPU 实现快 10 倍、比此前 FPGA SR 加速器快 1.2 倍。</p>
+<p><strong>为什么值得看</strong> 算法-硬件协同设计的 LUT 超分加速器，4K 实时且零 DSP，对边缘视频增强落地很实在。</p>
+<p><a href="https://arxiv.org/abs/2609.16508v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.16508v1">阅读原文 ↗</a></p>
 </body>
 </html>

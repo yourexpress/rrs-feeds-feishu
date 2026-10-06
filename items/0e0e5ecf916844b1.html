@@ -22,9 +22,11 @@
 <h1>Block Parallelism For Efficient Distributed Long-Context Diffusion Language Model Training</h1>
 <p class="meta-line">arXiv（Tarun Suresh 等，cs.LG） · 2026-09-16 · 论文PDF</p>
 
-<p>Block diffusion language models (BDLMs) combine autoregressive dependencies across blocks with parallel denoising within blocks, but long-context training is constrained by distributed attention communication and activat…</p>
-<blockquote><p>Block diffusion language models (BDLMs) combine autoregressive dependencies across blocks with parallel denoising within blocks, but long-context training is constrained by distributed attention communication and activation memory. Conventional context parallelism (CP) shards the combined clean-plus-corrupted sequence by position, communicating shared clean K/V together with block-specific corrupted K/V and their gradients. We observe that the BDLM objective separates over target blocks. We introduce block parallelism (BP), a new distributed parallelism dimension that assigns each corrupted-block computation to one rank. To scale BP to long contexts, we introduce context-sharded block parallelism (CSBP), which also shards the shared clean sequence across those ranks. CSBP keeps corrupted K/V and gradients local, avoids replicated clean prefixes, and preserves BDLM training semantics. On 16 H200 GPUs at 256K context, CSBP improves throughput over the best baseline by 1.18-1.45x for supervised fine-tuning and 1.27-1.33x for conversion of autoregressive models to BDLMs, while matching or reducing peak HBM. Full-model speedup reaches 1.61x at 512K. On eight H100 GPUs, CSBP accelerates …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 块扩散语言模型（BDLM）块间自回归、块内并行去噪，但长上下文训练受限于分布式注意力通信与激活显存；传统上下文并行（CP）按位置切分"干净+加噪"混合序列，需通信共享干净 K/V 与各块加噪 K/V 及其梯度。</p>
+<p><strong>方法</strong> 观察到 BDLM 目标可按目标块分解，提出块并行（BP）新维度——每个加噪块计算独占一个 rank；进而提出上下文分片块并行（CSBP），把共享干净序列也分片到这些 rank，使加噪 K/V 与梯度保持本地、避免干净前缀复制，且保持 BDLM 训练语义不变。</p>
+<p><strong>关键数字</strong> 16 张 H200、256K 上下文下 SFT 吞吐较最优基线提升 1.18~1.45 倍、自回归模型转 BDLM 提升 1.27~1.33 倍，峰值 HBM 持平或更低；512K 全模型加速 1.61 倍；8 张 H100 上 DFlash2 投机解码器训练 512K 加速 2.48 倍、1M 加速 7.59 倍；12 小时 DiffusionGemma 26B-A4B SFT 对照中各 checkpoint 在 SWE-bench Verified 与 Terminal-Bench Lite 上通过率均更高。代码已开源。</p>
+<p><strong>为什么值得看</strong> 为扩散语言模型长上下文训练找到"块"这个天然并行轴，通信与显存双受益，长上下文 dLLM 训练必看。</p>
+<p><a href="https://arxiv.org/abs/2609.19242v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19242v1">阅读原文 ↗</a></p>
 </body>
 </html>

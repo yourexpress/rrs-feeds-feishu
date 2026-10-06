@@ -22,9 +22,11 @@
 <h1>PipeSwift: Revisiting Pipeline Parallelism for Large-Scale Completion-Oriented Agentic LLM Serving</h1>
 <p class="meta-line">arXiv（Shiju Wang 等，cs.DC） · 2026-09-15 · 论文PDF</p>
 
-<p>LLM agents execute long-horizon workflows where each model response determines the progress of subsequent tool interactions and environment transitions.</p>
-<blockquote><p>LLM agents execute long-horizon workflows where each model response determines the progress of subsequent tool interactions and environment transitions. Unlike chatbot serving, where TTFT and TPOT SLO constraints are critical, agentic workloads are increasingly governed by completion time. This shift challenges existing LLM serving designs, which are optimized around token-level SLOs. We revisit scheduling and parallelism under this completion-oriented objective. Through systematic exploration, we show that job completion time (JCT) is governed by the balance between prefill and decode efficiency. Prefill-prioritized scheduling, while achieving the best TTFT and decode throughput, renders suboptimal JCT; across the scheduling-policy space, completion time varies by up to 1.40$\times$, with the optimum at neither extreme. We further show that pipeline parallelism (PP), previously overlooked due to its limited decode latency advantage, benefits JCT by providing a favorable balance of prefill--decode trade-off. Based on these insights, we build \name{}, an optimized open-source pipeline-parallel runtime that co-designs scheduling and parallelism through a JCT-aware scheduling layer an…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Agentic LLM 服务以任务完成时间（JCT）为主导指标，而非聊天场景的 TTFT/TPOT 类 token 级 SLO；围绕 token 级 SLO 优化的现有服务设计在该目标下并不最优。</p>
+<p><strong>方法</strong> 系统性探索调度与并行策略：发现 JCT 由 prefill 与 decode 效率的平衡决定，prefill 优先调度虽 TTFT 与 decode 吞吐最优但 JCT 次优；此前被忽视的流水线并行（PP）因提供有利的 prefill-decode 折中反而利于 JCT。据此构建开源运行时 PipeSwift——JCT 感知调度层 + 流水线集成的多 token 预测。</p>
+<p><strong>关键数字</strong> 调度策略空间内完成时间最多相差 1.40 倍；在 64 张 H800 上用两个 360B+ MoE 模型回放真实编程与网页搜索 agent 轨迹，JCT 相比 SGLang wide-EP 最高降 1.45 倍、相比 vLLM PP2 降 2.33 倍、相比现有最强开源 PD 分离部署降 1.54 倍。</p>
+<p><strong>为什么值得看</strong> 为 agent 负载的 LLM serving 提供了"以 JCT 为中心"的新视角和可直接使用的开源系统，做推理服务的人值得一读。</p>
+<p><a href="https://arxiv.org/abs/2609.16491v2">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.16491v2">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>What Breaks Under Pruning in Smart Homes, and When? Evaluating LLM Degradation Across Architectures and Task Complexity</h1>
 <p class="meta-line">arXiv（Congjing Zhang 等，cs.CL） · 2026-09-15 · 论文PDF</p>
 
-<p>Pruning can reduce the deployment cost of large language models (LLMs), but its impact on context-grounded tool calling remains poorly understood.</p>
-<blockquote><p>Pruning can reduce the deployment cost of large language models (LLMs), but its impact on context-grounded tool calling remains poorly understood. We systematically study pruning-induced degradation in smart-home tool calling across four LLMs spanning dense Transformer, dense hybrid, and mixture-of-experts (MoE) architectures, together with depth, width, hybrid, and expert pruning methods. After post-pruning supervised fine-tuning (SFT), we evaluate more than 19,500 instances from three smart-home datasets. Beyond aggregate task accuracy, we characterize degradation along two dimensions: action components (i.e., operation, device, argument, and value) and task complexity. Our results show that dense models have narrow safe pruning regions followed by sharp degradation, while MoE models tolerate substantially more pruning. Pruning degrades grounded specificity before schema-level intent, and aggressive dense pruning can induce systematic over-refusal. These findings highlight the importance of evaluating pruning beyond aggregate accuracy when selecting pruned LLMs for reliable tool execution.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 剪枝可降低 LLM 部署成本，但其对"上下文落地的工具调用"（如智能家居控制）的影响尚不清楚——聚合准确率之外，退化的具体形态是什么？</p>
+<p><strong>方法</strong> 系统研究智能家居工具调用中的剪枝退化：覆盖稠密 Transformer、稠密混合、MoE 三种架构的 4 个 LLM，配合深度、宽度、混合、专家四种剪枝方法，剪枝后做 SFT，在三个智能家居数据集超 19,500 个实例上评估；沿"动作组件"（操作、设备、参数、取值）与任务复杂度两个维度刻画退化。</p>
+<p><strong>关键数字</strong> 稠密模型安全剪枝区间窄、随后急剧退化；MoE 模型耐受剪枝能力强得多；剪枝先损伤落地精确性（设备/取值），再损伤 schema 级意图；激进稠密剪枝可诱发系统性过度拒绝。</p>
+<p><strong>为什么值得看</strong> 给"剪枝后能不能可靠调工具"提供了细粒度实证答案，对端侧部署剪枝模型的选型与评估有直接指导意义。</p>
+<p><a href="https://arxiv.org/abs/2609.17515v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.17515v1">阅读原文 ↗</a></p>
 </body>
 </html>

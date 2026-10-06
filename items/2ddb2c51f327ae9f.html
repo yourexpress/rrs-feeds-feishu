@@ -22,9 +22,11 @@
 <h1>LoopSpec: Pipelined Self-Speculative Decoding for Looped Transformers</h1>
 <p class="meta-line">arXiv（SangLyul Cho 等，cs.LG） · 2026-09-15 · 论文PDF</p>
 
-<p>Looped Transformers achieve strong performance with compact parameter sizes by repeatedly applying a shared stack of Transformer blocks across recurrent depths.</p>
-<blockquote><p>Looped Transformers achieve strong performance with compact parameter sizes by repeatedly applying a shared stack of Transformer blocks across recurrent depths. However, they incur higher decoding latency than standard Transformer models of comparable parameter size because shared weights are accessed at every recurrent depth. To improve decoding efficiency, self-speculative decoding is particularly well suited to Looped Transformers, as their intermediate recurrent states can directly provide draft predictions without an auxiliary draft model. We therefore propose LoopSpec, a training-free self-speculative decoding framework tailored for Looped Transformers. LoopSpec extracts draft tokens from early recurrent states and operates in a pipelined manner, overlapping draft generation of future tokens with target verification of the current token. To improve draft accuracy without excessive compute overhead, we introduce a selective second proposal from deeper recurrent depth while ensuring lossless decoding under both greedy and sampling regimes. Furthermore, we derive the optimal proposal depths in closed form and show the prediction matches measurement. Across reasoning and coding b…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Looped Transformer 通过反复应用共享的 Transformer 块堆栈，以紧凑参数量获得强性能，但因每个递归深度都要访问共享权重，解码延迟高于同参数量的标准 Transformer。</p>
+<p><strong>方法</strong> LoopSpec 是为 Looped Transformer 量身定制的免训练自投机解码框架：从早期递归状态直接提取草稿 token（无需辅助草稿模型），并以流水线方式重叠未来 token 的草稿生成与当前 token 的验证；引入来自更深递归深度的选择性二次提议以提升草稿准确率，在贪心与采样下均保证无损解码；最优提议深度有闭式解且与实测吻合。</p>
+<p><strong>关键数字</strong> 在推理与编程基准上，LoopSpec 对多种 Looped Transformer 实现最高 6.83 倍推理加速。</p>
+<p><strong>为什么值得看</strong> 把循环结构自带的中间状态变成天然草稿源，免训练、无损、流水线化，是递归式/权重共享模型推理加速的一个漂亮设计。</p>
+<p><a href="https://arxiv.org/abs/2609.17184v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.17184v1">阅读原文 ↗</a></p>
 </body>
 </html>
