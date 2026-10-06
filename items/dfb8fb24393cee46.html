@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Budgeted Cache Repair for Cross-Context KV-Cache Reuse</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Budgeted Cache Repair for Cross-Context KV-Cache Reuse</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-10-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 跨上下文 KV 缓存复用（新前缀下预测共享段的 KV 而非重算）被报道无质量损失，本文发现事实相反，并指出"是否复用"的整段级决策无法消除该代价。</p>
+<p><strong>方法</strong> Budgeted Cache Repair（BCR）在选择仍有收益的粒度上行动：先从组装缓存起草两个 token，按这两个 token 对缓存行的注意力排序，在固定预算内精确重算部分行（三种布局之一）。成本是"付掉的"而非"预测掉的"。</p>
+<p><strong>关键数字</strong> 行级（单 token 的 KV）选择可消除 49.5% 超出随机基线的缓存误差，64-token 块级仅 10.6%，整段级为零；BCR 将 GSM8K 恢复到 dense prefill 精度，同时大多数调用仍由缓存服务。</p>
+<p><strong>为什么值得看</strong> 纠正了 KV 复用"无损"的社区认知，"选择的单位粒度"是成败关键，评测还补上了以往缺失的随机选择对照。</p>
+<p><a href="https://arxiv.org/abs/2610.02233">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.02233">阅读原文 ↗</a></p>
+</body>
+</html>

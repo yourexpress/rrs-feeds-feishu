@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feature Freshness Budgets for Real-Time ML Inference Under Stream Lag</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Feature Freshness Budgets for Real-Time ML Inference Under Stream Lag</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-10-05 · 论文PDF</p>
+
+<p>流滞后约束下实时 ML 推理系统的特征新鲜度预算管理</p>
+<blockquote><p>Online feature stores decouple feature computation from model serving, materializing features from upstream event streams into a low-latency store that inference reads at request time. This decoupling introduces a freshness gap - the interval between an event occurring at the source and its effect becoming visible in the served feature vector - that is widely documented as a cause of training-serving skew but has no formal treatment as a bounded, cost-quantified quantity. We model the online feature store as a materialized view over an event stream and define a per-feature freshness budget: the difference between the decision window a feature is consumed within and the staleness the serving pipeline imposes on it. We prove two propositions - a per-feature staleness bound, and a closed-form threshold below which a feature can never be served within budget - and validate them in a seeded, reproducible discrete-event simulation and on a real Apache Kafka, Redis, and PostgreSQL pipeline. The predicted collapse threshold reproduces on real infrastructure, with the decision-error transition landing where the closed form predicts. Reconciling simulated and real drop rates surfaces a metho…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.02259">阅读原文 ↗</a></p>
+</body>
+</html>

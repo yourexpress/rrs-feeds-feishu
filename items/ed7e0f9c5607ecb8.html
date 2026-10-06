@@ -22,9 +22,11 @@
 <h1>LACE: Layer-Wise Compression for Dynamic Frame Rate Codecs</h1>
 <p class="meta-line">arXiv（Thanapat Trachu 等，cs.SD） · 2026-09-15 · 论文PDF</p>
 
-<p>Neural audio codecs are a key component in speech language modeling.</p>
-<blockquote><p>Neural audio codecs are a key component in speech language modeling. However, their high frame rates lead to long sequence lengths, increasing computational costs. Dynamic frame rate codecs mitigate this by reducing the effective frame rate using a compression step to merge multiple frames together. However, most prior methods either operate on single-codebook codecs or apply a single compression step before multi-layer quantization. This forces all quantization layers to share the same segmentation boundaries, despite the residual embeddings at different quantization layers exhibiting different rates of change over time. We propose LACE (Layer-Adaptive Codec Encoding), a dynamic frame rate codec that applies an independent compression step at each quantization layer, enabling layer-specific segmentation boundaries. To use LACE tokens in downstream text-to-speech (TTS), we further introduce union alignment and boundary anchor mechanisms to make durations consistent across layers while preserving compression benefits. Experiments on LibriTTS show that LACE offers a better rate-quality tradeoff than prior dynamic frame rate methods on the reconstruction task and improves TTS inferenc…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 神经音频 codec 的高帧率导致语音语言建模序列过长；动态帧率 codec 用压缩步合并多帧降帧率，但以往方法多在多层量化前只做一次压缩，强制所有量化层共享分段边界——尽管各层残差嵌入随时间的变化速率并不相同。</p>
+<p><strong>方法</strong> LACE（Layer-Adaptive Codec Encoding）在每个量化层独立施加压缩步，允许层特定的分段边界；为使 LACE token 用于下游 TTS，进一步引入 union alignment 与 boundary anchor 机制，在保留压缩收益的同时保持跨层时长一致。</p>
+<p><strong>关键数字</strong> LibriTTS 实验：重建任务上率-质量权衡优于既往动态帧率方法，TTS 推理效率提升且合成质量保持竞争力（摘要未给出具体数值）。</p>
+<p><strong>为什么值得看</strong> 逐层自适应压缩的思路对语音 token 序列压缩与 TTS 加速都有参考，代码随 ESPnet3 codec recipe 开源。</p>
+<p><a href="https://arxiv.org/abs/2609.17509v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.17509v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ServeTwin: A Benchmark-Validated Simulator for Distributed LLM Architecture Exploration</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ServeTwin: A Benchmark-Validated Simulator for Distributed LLM Architecture Exploration</h1>
+<p class="meta-line">arXiv (cs.PF) · 2026-10-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 在真实集群上评估分布式 LLM 服务设计成本高，而现有模拟器无法同时提供闭环有状态执行、免目标机 profiling 的时延预测、以及原样运行未修改服务基准三项能力。</p>
+<p><strong>方法</strong> ServeTwin 把规格驱动的分析式计时与有状态服务循环耦合，捕捉请求完成、调度、队列状态与 KV 缓存演化间的反馈；iSTAGE 分析式 trace 生成器从模型与引擎规格推导每迭代 trace，免目标机算子 profiling；执行时间按组件归属分解，跨平台迁移时只需重标定变化的组件。实现 vLLM 兼容接口。</p>
+<p><strong>关键数字</strong> 复现 InferenceX 稳态吞吐-交互性前沿均误差 3.6%；预测 LMBenchmark 多轮性能误差 9.9%（含 KV 缓存演化追踪）。</p>
+<p><strong>为什么值得看</strong> 目标硬件未到位即可做 pre-silicon 架构扫参——例如 HBM 带宽-容量权衡会随负载状态反转。</p>
+<p><a href="https://arxiv.org/abs/2610.02732">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.02732">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Closing the Prediction Gap: Completing Machine Shape So That Predicted Time, Power, Energy, and Mapping Match What Real Hardware Does</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Closing the Prediction Gap: Completing Machine Shape So That Predicted Time, Power, Energy, and Mapping Match What Real Hardware Does</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-10-05 · 论文PDF</p>
+
+<p>补全“机器形状”使预测的时延/功耗/能耗/映射与真实硬件一致的建模方法</p>
+<blockquote><p>A companion paper derives a weighted, communication free partition for heterogeneous, multi institution device ensembles from each device measured shape, rho_machine(d), validated on real hardware. Its experiments show rho_machine is incomplete: fp32 to fp16 speedup and power shifts are not fully indexed, and memory capacity predictions rely on an assumed, not measured, reservation overhead. This paper closes that gap, indexing five unmeasured fields in the psi selection vocabulary: memory capacity $M_i^{cap}$, power draw $P_i$, execution unit capability $X_d$, compiler directive configuration $C_d$, and memory reservation overhead $R_d$. We introduce reached(d), a Boolean for whether compiled code dispatches to specialized hardware, explaining the NVIDIA fp16 power shift that hardware availability alone cannot predict. MoA fixes a computation independently of its target, so compiler directives get a two part admissibility criterion: select a real hardware quantity without discretionary reordering, and be deterministic, not compiler overridable. Across Intel, AMD, NVIDIA, OpenMP, OpenACC, and Open MPI, this admits only cache placement controls, deterministic vector or tile widths, …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.03197">阅读原文 ↗</a></p>
+</body>
+</html>

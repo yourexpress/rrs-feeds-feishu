@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RAPID: Row-Parallel Arithmetic Processing in DRAM</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>RAPID: Row-Parallel Arithmetic Processing in DRAM</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-10-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 存内计算（PUM）可直接在 DRAM 内运算、减少数据搬运，但电荷共享操作局限于单条位线内，现有 DRAM-PUM 被迫采用列式位串行布局，与常规处理器的行式字并行布局根本不兼容，PUM 与常规执行间切换需昂贵的布局转换。</p>
+<p><strong>方法</strong> RAPID 为 DRAM 子阵列增加两类轻量扩展：迁移单元支持相邻位线间的局部水平数据移动，反相单元提供高效的阵列内逻辑取反。这两个原语使 RAPID 直接在行并行、位并行数据上做算术，保持与 CPU 兼容的布局，并通过晶体管级布局与 SPICE 电路仿真验证开销。</p>
+<p><strong>关键数字</strong> 19 个 MLPerf 基准上，DDR4 PUM 执行的端到端性能较 SIMDRAM 高 5.9×。</p>
+<p><strong>为什么值得看</strong> 免去布局转换是 PUM 实用化的关键一步，电路级验证增强了可信度。</p>
+<p><a href="https://arxiv.org/abs/2610.02502">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.02502">阅读原文 ↗</a></p>
+</body>
+</html>

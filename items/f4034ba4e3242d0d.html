@@ -22,9 +22,11 @@
 <h1>GrowMTP: Can RL Grow Its Own Draft Head?</h1>
 <p class="meta-line">arXiv（Minghua He 等，cs.LG） · 2026-09-15 · 论文PDF</p>
 
-<p>Reinforcement learning (RL) post-training drives the frontier capabilities of large language models, with its wall-clock dominated by autoregressive rollout generation.</p>
-<blockquote><p>Reinforcement learning (RL) post-training drives the frontier capabilities of large language models, with its wall-clock dominated by autoregressive rollout generation. Speculative decoding is an established remedy for this bottleneck, but existing draft heads must be pretrained or warmed up before RL, introducing substantial training cost outside the RL run to be accelerated. We observe that RL training itself provides both conditions required for online draft-head training: its rollout distribution is far narrower than that of pretraining, and its verification step continuously produces supervision signals aligned with this distribution. Building on these observations, we propose GrowMTP, which uses this supervision to train a draft head from scratch entirely within the RL loop, with all head updates detached from the policy backbone. On Qwen3-4B (no draft head), MiMo-7B-SFT (weak head), and Qwen3.5-4B-Base (strong head), GrowMTP achieves rollout speedups of 2.13x, 1.93x, and 1.36x, and end-to-end speedups of 1.60x, 1.41x, and 1.20x, respectively. GrowMTP therefore serves existing RL training frameworks as a modular component, particularly offering a from-scratch acceleration pat…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> RL 后训练的墙钟时间被自回归 rollout 生成主导；投机解码是成熟解法，但现有草稿头必须在 RL 之前预训练或预热，在被加速的 RL 流程之外引入可观训练成本。</p>
+<p><strong>方法</strong> 观察到 RL 训练本身具备在线训练草稿头的两个条件：rollout 分布远窄于预训练分布，且验证步持续产生与该分布对齐的监督信号。GrowMTP 利用这些信号在 RL 循环内从零训练草稿头，头部更新与策略骨干完全解耦。</p>
+<p><strong>关键数字</strong> Qwen3-4B（无草稿头）/MiMo-7B-SFT（弱头）/Qwen3.5-4B-Base（强头）上：rollout 加速 2.13×/1.93×/1.36×，端到端加速 1.60×/1.41×/1.20×。</p>
+<p><strong>为什么值得看</strong> 为没有预训练草稿头的模型提供"边 RL 边长草稿头"的即插即用加速路径，模块化易集成。</p>
+<p><a href="https://arxiv.org/abs/2609.16648v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.16648v1">阅读原文 ↗</a></p>
 </body>
 </html>

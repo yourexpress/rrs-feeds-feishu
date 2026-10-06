@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exact Memory-Time Optimization for Prefix-Cached Language Model Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Exact Memory-Time Optimization for Prefix-Cached Language Model Serving</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-05 · 论文PDF</p>
+
+<p>前缀缓存语言模型服务的精确内存-时间联合优化</p>
+<blockquote><p>Retaining language-model prefix states trades recomputation against storage time. Optimizing each cached block independently can overcount savings: a resident block is usable only when the required preceding prefix is also available. We introduce Prefix-Certificate Retention (PCR), an exact finite-trace formulation for static, grouped, reset-on-access timeouts. Usable-prefix rewards become nodes whose prerequisites are timeout thresholds and preceding hit certificates. The resulting maximum-weight closure reduces to one minimum cut, with graph size linear in the number of block lookups and timeout choices. A breakpoint theorem extends the construction to all nonnegative timeouts without discretization error. We also derive a linear-time-in-grid-size dynamic program for ordered timeouts and bounds that certify the cost of this restriction. Exhaustive small-instance checks and chronological replay of 39,632 public Mooncake requests validate the formulation. On the fixed grid, ordered timeouts attain the unrestricted training optimum in 118 of 120 trace-grouping-price cases. Heterogeneous retention improves several held-out memory-time tradeoffs, but finer training optimization does n…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.02766">阅读原文 ↗</a></p>
+</body>
+</html>

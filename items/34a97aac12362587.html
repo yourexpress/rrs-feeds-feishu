@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dense Mixture-of-Experts as a Reparameterized Wide FFN: A Granularity Sweep at Fixed Compute</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Dense Mixture-of-Experts as a Reparameterized Wide FFN: A Granularity Sweep at Fixed Compute</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-05 · 论文PDF</p>
+
+<p>固定算力预算下把稠密 MoE 视作重参数化宽 FFN 的专家粒度扫描</p>
+<blockquote><p>Sparse Mixture-of-Experts (MoE) models combine learned routing with selection from a large expert pool. We isolate the contribution of dynamic expert combination using a dense analogue: $K$ SwiGLU experts, all active for every token and combined by a softmax gate, at fixed total FFN width. With no larger pool or discrete selection, the dense baseline is the $K=1$ case. Validation loss varies non-monotonically with $K$: $K=2$ improves over the baseline by $0.0048$, whereas $K=4$ and $K=6$ worsen it by $0.0053$ and $0.0197$, respectively. Routing generally remains soft and expert usage balanced, except in the first layer of the $K=4$ model, where routing is nearly one-hot. Forcing this gate to uniform increases loss by $2.4$ nats on a diagnostic subset, indicating that its concentrated routing is functionally important. We further show that the architecture is exactly a dense SwiGLU with token-dependent, simplex-constrained group scaling and contains the dense baseline in its function class. These single-run results suggest a granularity sweet spot for always-active, softly gated FFNs at fixed width, with $K=2$ performing best among the configurations tested.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.02584">阅读原文 ↗</a></p>
+</body>
+</html>

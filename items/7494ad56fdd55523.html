@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capability Scaling-Down Laws for LLM Compression</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Capability Scaling-Down Laws for LLM Compression</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LLM 压缩（剪枝/量化/蒸馏）的方法与配置选择仍主要靠试错：相近的资源削减可能带来迥异的能力损失，缺乏可预测的刻画。</p>
+<p><strong>方法</strong> 系统研究 LLM 压缩的"能力缩减律"：度量数学、代码生成、问答上的能力损失，关联模型规模、训练阶段、压缩设置、数据可用性等因素，建立简单预测关系，并评估其精度、测量效率与对未见配置/模型状态的外推能力。</p>
+<p><strong>关键数字</strong> 跨剪枝档位共享密度响应使拟合所需配置测量减半；在新 Pythia 状态、预注册 OLMo-2 测试状态及 Wanda 剪枝下，紧凑关系与全测量回归在数学和代码上相差不超过 0.020 nats/token。</p>
+<p><strong>为什么值得看</strong> 把压缩选型从经验试错变成可量化预测，代码已开源（GitHub LabRAI/scaling_down_law）。</p>
+<p><a href="https://arxiv.org/abs/2610.02462">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.02462">阅读原文 ↗</a></p>
+</body>
+</html>

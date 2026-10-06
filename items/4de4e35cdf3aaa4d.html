@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tailoring the Quantization Space for 1-Bit KV Cache Compression</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Tailoring the Quantization Space for 1-Bit KV Cache Compression</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 向量量化（VQ）是 KV 缓存激进压缩的候选路线，但 1-bit 极端压缩下每个码本要用有限质心表示更大通道组，现有 VQ 方法质量大幅下降。</p>
+<p><strong>方法</strong> TaSQ 定制 VQ 目标空间：查询引导的通道加权+跨头归一化+协方差感知的通道分组，更好反映缓存激活的误差敏感度与统计结构。这些变换与 RoPE 兼容、可并入投影权重与码本，保持常规 VQ 查找结构、服务开销可忽略。</p>
+<p><strong>关键数字</strong> 通用、长链推理、长上下文检索三类基准上均超现有低比特 VQ 基线；单张 RTX 6000 Ada 上 SGLang 实现支持最大 14× 批量、峰值吞吐较 BF16 基线高 1.87×。</p>
+<p><strong>为什么值得看</strong> 1-bit KV 量化下仍保持推理稳定性的实用方案，可直接部署。</p>
+<p><a href="https://arxiv.org/abs/2610.03027">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.03027">阅读原文 ↗</a></p>
+</body>
+</html>

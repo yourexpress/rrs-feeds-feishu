@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenMP Meta-Lowering: A Declarative Approach to Performance Portable Parallel Code Generation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>OpenMP Meta-Lowering: A Declarative Approach to Performance Portable Parallel Code Generation</h1>
+<p class="meta-line">arXiv (cs.PL) · 2026-10-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> OpenMP 提供了可移植的共享内存并行抽象，但现有编译器把前端语义与固定 lowering 策略紧耦合，限制了跨运行时与架构的性能可移植性。</p>
+<p><strong>方法</strong> 基于 MLIR 的 OpenMP meta-lowering：OpenMP 前端加一个描述"如何针对目标 lowering"的领域特定语言（DSL），把 lowering 从编译器内部逻辑变为可编程组件，显式控制代码 outlining、数据共享与运行时接口。</p>
+<p><strong>关键数字</strong> 同一 OpenMP 子集用 5,182 行实现，较 Clang 相应 lowering 代码少约 32%、较 GCC 少约 76%；PolyBench/C-OMP 上性能匹配 SOTA 工具链，代码体积开销 &lt;0.7%；支持 pmsis 运行时只需几行声明（论文标注 CGO 2027）。</p>
+<p><strong>为什么值得看</strong> 支持新运行时/架构不再需要改编译器，并行编译基础设施的模块化范例。</p>
+<p><a href="https://arxiv.org/abs/2610.03571">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.03571">阅读原文 ↗</a></p>
+</body>
+</html>

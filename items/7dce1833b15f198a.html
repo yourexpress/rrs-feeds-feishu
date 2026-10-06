@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beaver: Elastic GPU Sharing between ML and Latency-Critical vRAN Workloads</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Beaver: Elastic GPU Sharing between ML and Latency-Critical vRAN Workloads</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-10-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> AI-RAN 愿景下，时延关键的虚拟化无线接入网（vRAN）负载与吞吐导向的 ML 服务需要共享 GPU，但两者资源诉求天然不对称，朴素共存会威胁 vRAN 的严格处理截止期。</p>
+<p><strong>方法</strong> Beaver 联合管理计算与内存资源：按每个槽位的调度负载确定 vRAN 的 SM 配额并以槽粒度重切分；同时重写编译后的 ML kernel，使其在 vRAN 的内存关键阶段主动让出 HBM 带宽。基于 NVIDIA Aerial、真实蜂窝 trace 与全栈 LLM 服务评估。</p>
+<p><strong>关键数字</strong> H200 上 vRAN 的 p99.9 时延守住 1.5ms 上行截止期，同时保留 Llama-3.3-70B 74% 的服务吞吐；保护 375µs 下行截止期，并泛化到 A100、GB10、GH200。</p>
+<p><strong>为什么值得看</strong> AI-RAN 共驻方向稀缺的实测系统工作，调度粒度设计值得借鉴。</p>
+<p><a href="https://arxiv.org/abs/2610.02522">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.02522">阅读原文 ↗</a></p>
+</body>
+</html>

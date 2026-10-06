@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CORE: COverage CAlibration and Evicted-Mass REdistribution for KV Cache</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CORE: COverage CAlibration and Evicted-Mass REdistribution for KV Cache</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-10-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> KV 缓存固定预算压缩中，现有方法把"保留排序"与"误差补偿"割裂：保留排序既不指明被驱逐的注意力质量，也不指明由此引起的输出误差方向。</p>
+<p><strong>方法</strong> 从精确分解"驱逐误差=驱逐注意力质量×方向差"出发，CORE 将结合查询效用与 log-det 覆盖率的离线分配蒸馏为轻量 cache-aware indexer；推理时同一校准分布驱动两路——Top-B 排序保留互补 KV 状态，被排除的分配质量与条件权重参数化潜记忆写入，无需独立的写入权重预测器或在线 log-det 计算。</p>
+<p><strong>关键数字</strong> 三个骨干模型上，90% 压缩率时超最强 RULER 基线最多 3.78 分；LongBench 与反复驱逐评测同样有效。</p>
+<p><strong>为什么值得看</strong> 少见的理论驱动 KV 压缩设计，附四项预补偿误差证书与分层界分析。</p>
+<p><a href="https://arxiv.org/abs/2610.02235">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.02235">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -5,8 +5,55 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>每天一条，汇总当日两个检索源（AI 技术报告 + 高效计算文献）的重点内容。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 05 Oct 2026 23:29:28 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 10:53:11 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/daily-summary.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日精选 · 2026-10-06</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-10-06.html</link>
+      <guid isPermaLink="false">urn:daily-summary:2026-10-06</guid>
+      <pubDate>Tue, 06 Oct 2026 23:05:00 +0800</pubDate>
+    <category>每日精选</category>
+      <description>&lt;h1&gt;每日文献速览 · 2026-10-06&lt;/h1&gt;
+&lt;h2&gt;当日检索概况&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;AI 技术报告库：检索 0 条&lt;/li&gt;
+&lt;li&gt;高效计算库：检索 85 条&lt;/li&gt;
+&lt;li&gt;两库合计入选 22 条&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;重点推荐&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Hardware-Native Joint Sparse-Quantization for Trillion-Scale Mixture-of-Experts&lt;/strong&gt;——万亿参数 MoE 的软硬协同部署框架：稀疏支撑与量化权重联合可微优化+定制 grouped sparse GEMM，30B–1T 规模保留原模型 96.09% 性能，B200 上端到端时延最高降 4.03×。&lt;a href="https://arxiv.org/abs/2610.02241"&gt;arXiv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Budgeted Cache Repair for Cross-Context KV-Cache Reuse&lt;/strong&gt;——纠正"跨上下文 KV 复用无损"的社区认知：行级（单 token）选择重算即可消除 49.5% 缓存误差，BCR 将 GSM8K 恢复到 dense prefill 精度。&lt;a href="https://arxiv.org/abs/2610.02233"&gt;arXiv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Efficient FlashAttention on Blackwell via Fixed-Shift Softmax and Persistent Scheduling&lt;/strong&gt;——用 Triton TLX 复现并局部超越官方 FA4：固定移位 softmax+保存逆分母，B200 上 24 项 BF16 用例几何均值吞吐 +7.3%。&lt;a href="https://arxiv.org/abs/2610.02229"&gt;arXiv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Beaver: Elastic GPU Sharing between ML and Latency-Critical vRAN Workloads&lt;/strong&gt;——AI-RAN 共享 GPU 的稀缺实测：槽粒度切分 SM+重写 ML kernel 让出 HBM 带宽，H200 上守住 vRAN 1.5ms 截止期且保留 Llama-3.3-70B 74% 吞吐。&lt;a href="https://arxiv.org/abs/2610.02522"&gt;arXiv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AFORE: Attention-FFN Disaggregation with Overlapped Reconfiguration of Experts&lt;/strong&gt;——AFD 架构下利用微批专家-token 分布提前重配专家放置，110B MoE 吞吐 +10.1–17.6%，迁移时延可被流水完全隐藏。&lt;a href="https://arxiv.org/abs/2610.03203"&gt;arXiv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;EdgeAgent: Orchestrating On-Device LLM inference for End-User Multi-Agent Systems&lt;/strong&gt;——端侧多智能体推理系统：零拷贝 UMA 张量并行+方差感知投机调度，Apple M4 上全系统加速 1.77×。&lt;a href="https://arxiv.org/abs/2610.03394"&gt;arXiv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;D2K-Bench: Can LLM Agents Turn Expert Designs into Efficient GPU Kernels?&lt;/strong&gt;——26 任务/85 负载诊断基准：专家设计指导使 LLM 智能体 kernel 正确率 93.1%→98.5%，前沿模型几何均值加速 1.69×→2.49×。&lt;a href="https://arxiv.org/abs/2610.03226"&gt;arXiv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ServeTwin: A Benchmark-Validated Simulator for Distributed LLM Architecture Exploration&lt;/strong&gt;——闭环分布式 LLM 服务模拟器：免目标机 profiling，复现 InferenceX 前沿均误差 3.6%，支持硬件未到位前的架构扫参。&lt;a href="https://arxiv.org/abs/2610.02732"&gt;arXiv&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;主题速览&lt;/h2&gt;
+&lt;p&gt;当日条目全部来自高效计算库，主题呈三大板块：LLM 推理系统与 KV 缓存压缩（BCR、CORE、TaSQ、SpAx、WakeKV）、MoE 训练与服务的通信调度（AFORE、RailWave、硬件原生稀疏量化、跨设施预训练），以及硬件架构与编译（MCM GPU 扩展性、DRAM 存内计算 RAPID、Blackwell FlashAttention、RISC-V 端侧 ViT、OpenMP meta-lowering）。此外间歇计算、AI-RAN GPU 共享、音频 codec 压缩等方向各有零星但扎实的工作。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h1>每日文献速览 · 2026-10-06</h1>
+<h2>当日检索概况</h2>
+<ul>
+<li>AI 技术报告库：检索 0 条</li>
+<li>高效计算库：检索 85 条</li>
+<li>两库合计入选 22 条</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>Hardware-Native Joint Sparse-Quantization for Trillion-Scale Mixture-of-Experts</strong>——万亿参数 MoE 的软硬协同部署框架：稀疏支撑与量化权重联合可微优化+定制 grouped sparse GEMM，30B–1T 规模保留原模型 96.09% 性能，B200 上端到端时延最高降 4.03×。<a href="https://arxiv.org/abs/2610.02241">arXiv</a></li>
+<li><strong>Budgeted Cache Repair for Cross-Context KV-Cache Reuse</strong>——纠正"跨上下文 KV 复用无损"的社区认知：行级（单 token）选择重算即可消除 49.5% 缓存误差，BCR 将 GSM8K 恢复到 dense prefill 精度。<a href="https://arxiv.org/abs/2610.02233">arXiv</a></li>
+<li><strong>Efficient FlashAttention on Blackwell via Fixed-Shift Softmax and Persistent Scheduling</strong>——用 Triton TLX 复现并局部超越官方 FA4：固定移位 softmax+保存逆分母，B200 上 24 项 BF16 用例几何均值吞吐 +7.3%。<a href="https://arxiv.org/abs/2610.02229">arXiv</a></li>
+<li><strong>Beaver: Elastic GPU Sharing between ML and Latency-Critical vRAN Workloads</strong>——AI-RAN 共享 GPU 的稀缺实测：槽粒度切分 SM+重写 ML kernel 让出 HBM 带宽，H200 上守住 vRAN 1.5ms 截止期且保留 Llama-3.3-70B 74% 吞吐。<a href="https://arxiv.org/abs/2610.02522">arXiv</a></li>
+<li><strong>AFORE: Attention-FFN Disaggregation with Overlapped Reconfiguration of Experts</strong>——AFD 架构下利用微批专家-token 分布提前重配专家放置，110B MoE 吞吐 +10.1–17.6%，迁移时延可被流水完全隐藏。<a href="https://arxiv.org/abs/2610.03203">arXiv</a></li>
+<li><strong>EdgeAgent: Orchestrating On-Device LLM inference for End-User Multi-Agent Systems</strong>——端侧多智能体推理系统：零拷贝 UMA 张量并行+方差感知投机调度，Apple M4 上全系统加速 1.77×。<a href="https://arxiv.org/abs/2610.03394">arXiv</a></li>
+<li><strong>D2K-Bench: Can LLM Agents Turn Expert Designs into Efficient GPU Kernels?</strong>——26 任务/85 负载诊断基准：专家设计指导使 LLM 智能体 kernel 正确率 93.1%→98.5%，前沿模型几何均值加速 1.69×→2.49×。<a href="https://arxiv.org/abs/2610.03226">arXiv</a></li>
+<li><strong>ServeTwin: A Benchmark-Validated Simulator for Distributed LLM Architecture Exploration</strong>——闭环分布式 LLM 服务模拟器：免目标机 profiling，复现 InferenceX 前沿均误差 3.6%，支持硬件未到位前的架构扫参。<a href="https://arxiv.org/abs/2610.02732">arXiv</a></li>
+</ul>
+<h2>主题速览</h2>
+<p>当日条目全部来自高效计算库，主题呈三大板块：LLM 推理系统与 KV 缓存压缩（BCR、CORE、TaSQ、SpAx、WakeKV）、MoE 训练与服务的通信调度（AFORE、RailWave、硬件原生稀疏量化、跨设施预训练），以及硬件架构与编译（MCM GPU 扩展性、DRAM 存内计算 RAPID、Blackwell FlashAttention、RISC-V 端侧 ViT、OpenMP meta-lowering）。此外间歇计算、AI-RAN GPU 共享、音频 codec 压缩等方向各有零星但扎实的工作。</p>]]></content:encoded>
+    </item>
     <item>
       <title>每日精选 · 2026-10-05</title>
       <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-10-05.html</link>

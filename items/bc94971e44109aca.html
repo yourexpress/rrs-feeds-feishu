@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why Does Adaptive Batching Help LLM Pretraining? A Perspective from Unbounded Variance</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Why Does Adaptive Batching Help LLM Pretraining? A Perspective from Unbounded Variance</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-05 · 论文PDF</p>
+
+<p>从无界方差视角解释自适应批大小为何有助 LLM 预训练</p>
+<blockquote><p>Increasing the batch size during training is a common practice in large language model (LLM) pretraining, yet the theoretical justification behind its success is not well understood. Analyses of stochastic optimization often assume uniformly bounded stochastic gradient variance, yet recent evidence suggests that this assumption fails in many practical nonconvex problems. The Blum--Gladyshev (BG-$0$) noise model relaxes this assumption by allowing the variance to grow quadratically with the distance from initialization, suggesting that batch size schedulers can help by controlling the variance growth during training. However, this growth can be overly conservative in practice. We empirically investigate variance growth in LLM pretraining and observe that a generalized BG model with a tunable growth exponent provides a tighter description of practical noise behavior. Motivated by this observation, we introduce the generalized BG-$a$ noise model, which interpolates between bounded variance ($a=0$) and BG-$0$ noise ($a=2$). Under $L$-smoothness, we derive an information-theoretic lower bound with growth-dependent oracle complexity $Ω(ε^{-(4+a)})$ and establish a matching upper bound in…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.02355">阅读原文 ↗</a></p>
+</body>
+</html>

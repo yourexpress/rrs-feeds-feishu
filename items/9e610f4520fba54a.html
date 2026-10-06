@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calibrating the Checksum: An Empirical False-Positive Bound for One-Sided ABFT on bfloat16 GEMM, and What It Fails to Catch</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Calibrating the Checksum: An Empirical False-Positive Bound for One-Sided ABFT on bfloat16 GEMM, and What It Fails to Catch</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-10-05 · 论文PDF</p>
+
+<p>实测 bfloat16 GEMM 单边 ABFT 校验的误报率经验上界及其无法捕获的错误类型</p>
+<blockquote><p>Algorithm-based fault tolerance detects corrupted matrix multiplications by comparing a checksum of the product against a checksum recomputed from the factors, flagging a fault when the residual exceeds a threshold. The classical threshold is tau = Ku, derived from a dot-product rounding bound that requires Ku &lt;= 0.01. At bfloat16 with contraction length K = 4096, Ku is approximately 32, so the bound does not hold and the threshold is not defined. Prior work therefore evaluated checksum ABFT only at float32. We supply the missing calibration. This paper is a characterization of a detector under an output-level, post-GEMM perturbation model; it is not a characterization of faults in silicon, and no rate reported here estimates fault incidence in deployed hardware. We fit a Generalized Pareto distribution to 7.99e7 clean per-row residuals and extrapolate a threshold at a per-GEMM false-positive rate of 1e-6, obtaining 3.1445e-6, which sits between the two clean sample maxima we observed. The independence assumption behind the per-GEMM conversion is checked empirically rather than asserted, at a variance ratio of 0.985 against a binomial reference. Against this threshold the detector …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.02240">阅读原文 ↗</a></p>
+</body>
+</html>

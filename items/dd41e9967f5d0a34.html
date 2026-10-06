@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ByteSplat: Efficient Distributed 3D Gaussian Splatting Training via Intra- and Inter-GPU communication reduction</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ByteSplat: Efficient Distributed 3D Gaussian Splatting Training via Intra- and Inter-GPU communication reduction</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-10-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 大规模场景的 3D Gaussian Splatting 训练需要多 GPU 分布，但性能被两类数据搬运严格制约：前后向光栅化的反复片外访存，以及 GPU 间的部分高斯梯度通信。</p>
+<p><strong>方法</strong> ByteSplat 联合削减片内外与 GPU 间数据移动：前向+反向光栅化融合为单 kernel、中间结果留在片上；硬件感知剪枝兼顾渲染质量与每 tile 共享内存约束；利用梯度稀疏性剔除零梯度通信，并用高效编解码 kernel 压缩记录、在属主 GPU 上直接聚合。</p>
+<p><strong>关键数字</strong> 六个数据集上：片外流量降 63.4%、反向 GPU 间通信量降 65.8%；8 GPU 最高 6.1× 训练加速，重建质量不降。</p>
+<p><strong>为什么值得看</strong> 通信与访存联合优化的 3DGS 分布式训练完整方案，融合 kernel 与梯度稀疏利用的思路可迁移。</p>
+<p><a href="https://arxiv.org/abs/2610.02851">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.02851">阅读原文 ↗</a></p>
+</body>
+</html>

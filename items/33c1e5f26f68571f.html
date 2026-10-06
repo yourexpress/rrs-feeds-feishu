@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EdgeAgent: Orchestrating On-Device LLM inference for End-User Multi-Agent Systems on CPU-GPU Unified Memory Architectures</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>EdgeAgent: Orchestrating On-Device LLM inference for End-User Multi-Agent Systems on CPU-GPU Unified Memory Architectures</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-10-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 端侧多智能体 LLM 系统在 CPU-GPU 统一内存（UMA）架构上举步维艰：decode 阶段内存受限导致严重总线争用、多智能体投机解码的起草难度方差极大、工具调用频繁造成停顿，静态批处理彻底失效。</p>
+<p><strong>方法</strong> EdgeAgent 跨层协同设计：微架构级绕过图编译器刚性约束，实现零拷贝 UMA 感知张量并行，用非对称内存布局同时打满 CPU 与 GPU；调度级按序列实时可预测性动态分配草稿预算，并用异步挂起-让出机制主动驱逐停滞的智能体。</p>
+<p><strong>关键数字</strong> Apple M4 上：仅 UMA 感知执行即较批量投机解码加速 1.29×；叠加智能体感知调度后，极端工具延迟下全系统加速 1.77×。</p>
+<p><strong>为什么值得看</strong> 端侧多智能体落地的稀缺系统工作，调度与执行两层设计都有直接借鉴价值。</p>
+<p><a href="https://arxiv.org/abs/2610.03394">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.03394">阅读原文 ↗</a></p>
+</body>
+</html>

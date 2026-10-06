@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zephon: Elastic Determinism for Online, Stateful Foundation Model Data Loading Pipelines</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Zephon: Elastic Determinism for Online, Stateful Foundation Model Data Loading Pipelines</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-05 · 论文PDF</p>
+
+<p>在线有状态基础模型数据加载流水线的弹性确定性设计 Zephon</p>
+<blockquote><p>Deterministic data loading is important for foundation model development: model researchers need confidence that differences they observe across costly ablations are caused by the parameter they changed rather than non-determinism in the training data sequence. The data loader must provide elastic determinism, i.e., a deterministic sequence of global training data batches despite changes to the GPU topology across runs (e.g., due to GPU scarcity), frequent checkpoint-resume cycles, and different data processing execution backends. Achieving this is difficult because modern foundation model data pipelines tokenize, pack, and mix samples online, introducing stateful n-to-m transformations that break sample indexing. Existing data loaders largely assume indexable 1-to-1 pipelines, and the common workaround of offline materialization is expensive and, for some modalities such as video, infeasible. We present Zephon, a data loader for foundation models that supports online, stateful pipelines while providing elastic determinism and efficient resumption from checkpoints. It partitions the global stream into topology-independent lanes, serializes ordering decisions while parallelizing sta…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.03087">阅读原文 ↗</a></p>
+</body>
+</html>

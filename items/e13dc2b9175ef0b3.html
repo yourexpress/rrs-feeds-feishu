@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cross-Facility LLM Pre-training on HPC: Elastic Aggregation, Data Leasing, and Queue-Aware Placement</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Cross-Facility LLM Pre-training on HPC: Elastic Aggregation, Data Leasing, and Queue-Aware Placement</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-10-05 · 论文PDF</p>
+
+<p>跨三大洲三台超算预训练单一 LLM：弹性聚合、数据租约与队列感知放置的完整系统</p>
+<blockquote><p>Academic compute is fragmented: allocations are granted per facility, and facilities differ in accelerators and software stacks, schedule jobs independently, and share neither a network nor a filesystem. We present a system that pools such allocations to pre-train a single language model across three supercomputers on two continents, up to 7,400km apart: Snellius (NVIDIA H100), LUMI and Frontier (both AMD MI250X). It combines (i) DiLoCo-style two-loop training with an elastic, token-weighted Nesterov outer step for which zero, one or many live sites are all normal states; (ii) DARL, a data-leasing protocol whose heartbeat-backed leases guarantee that, within an epoch, no sample is trained twice or lost under crashes, late joins and work stealing; and (iii) queue-aware placement driven by unprivileged sbatch --test-only probes. Training Qwen3-0.6B on C4 for 20,000 optimizer steps, the three-site run reaches a held-out perplexity of 34.7, against 28.2 for a centralised baseline. Per-round overhead (weight exchange and checkpointing) stays near 110 s regardless of the number of local steps H, so its share of wall-clock time falls from 32% at H=100 to 5.7% at H=1,000 and 3.1% at H=2,00…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.03457">阅读原文 ↗</a></p>
+</body>
+</html>

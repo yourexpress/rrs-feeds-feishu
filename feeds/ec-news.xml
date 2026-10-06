@@ -5,7 +5,7 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>模型压缩 / ML 编译 / HPC / 边缘计算 / 低功耗计算方向最新技术博客与官方公告（网页类内容）。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 05 Oct 2026 23:29:27 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 10:53:10 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/ec-news.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How a $1,600 RTX 4090 Beat an H100 at 100 T/s – The LLM Revolution You're Missing</title>
@@ -314,51 +314,6 @@
     <category>技术博客</category>
       <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：AIbase（资讯）　&lt;strong&gt;发布&lt;/strong&gt;：2026-09-29　&lt;strong&gt;分类&lt;/strong&gt;：技术博客&lt;/p&gt;&lt;p style="font-size:1.05em"&gt;开源 Jan-v1 蒸馏自 Qwen3-4B-Thinking（400M 参数），主打本地部署，SimpleQA 准确率 91%，推理与工具调用超预期。&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;This is an experimental quantized version of the dense model based on Qwen3-4B-Thinking-2507. It adopts the innovative MXFP4 mixed quantization technology, aiming to explore the combination of weights with different precisions (such as MXFP4, Q8_0, Q6_K, etc.) to significantly reduce the model file size, improve the inference speed (TPS), and at the same time, maintain the precision as close as possible to the original F16 model. This project demonstrates the potential of the mixed quantization method, but it has been replaced by the author's updated version.&lt;/p&gt;&lt;p&gt;Natural Language ProcessingSafetensorsOther&lt;/p&gt;&lt;p&gt;…&lt;/p&gt;&lt;/blockquote&gt;&lt;p style="color:#6b7280;font-size:0.9em"&gt;以上为原文正文节选（机器抓取），中文省流版整理中。&lt;/p&gt;&lt;p style="margin-top:14px"&gt;&lt;a href="https://www.aibase.com/search/Qwen3-4B&amp;amp;type=0"&gt;阅读原文 ↗&lt;/a&gt;&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p><strong>发表方</strong>：AIbase（资讯）　<strong>发布</strong>：2026-09-29　<strong>分类</strong>：技术博客</p><p style="font-size:1.05em">开源 Jan-v1 蒸馏自 Qwen3-4B-Thinking（400M 参数），主打本地部署，SimpleQA 准确率 91%，推理与工具调用超预期。</p><blockquote><p>This is an experimental quantized version of the dense model based on Qwen3-4B-Thinking-2507. It adopts the innovative MXFP4 mixed quantization technology, aiming to explore the combination of weights with different precisions (such as MXFP4, Q8_0, Q6_K, etc.) to significantly reduce the model file size, improve the inference speed (TPS), and at the same time, maintain the precision as close as possible to the original F16 model. This project demonstrates the potential of the mixed quantization method, but it has been replaced by the author's updated version.</p><p>Natural Language ProcessingSafetensorsOther</p><p>…</p></blockquote><p style="color:#6b7280;font-size:0.9em">以上为原文正文节选（机器抓取），中文省流版整理中。</p><p style="margin-top:14px"><a href="https://www.aibase.com/search/Qwen3-4B&amp;type=0">阅读原文 ↗</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>ESP32-S3 Edge AI in Practice: Deep Optimization of TensorFlow Lite Micro Inference Performance</title>
-      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/d9f14f083bb3d7c6.html</link>
-      <guid isPermaLink="true">https://dev.to/zediot/esp32-s3-edge-ai-in-practice-deep-optimization-of-tensorflow-lite-micro-inference-performance-4b0g</guid>
-      <pubDate>Tue, 29 Sep 2026 12:00:00 +0800</pubDate>
-    <category>技术博客</category>
-    <category>每日精选</category>
-      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：DEV Community (ZedIoT)　&lt;strong&gt;发布&lt;/strong&gt;：2026-09-29　&lt;strong&gt;分类&lt;/strong&gt;：技术博客 / 每日精选&lt;/p&gt;&lt;p&gt;&lt;img src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fr86kn88z06waz3avnc9c.png" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;核心话题&lt;/strong&gt;：在 ESP32-S3 上把 TensorFlow Lite Micro 模型「跑起来」容易，跑到实时可用是另一回事——关键就三件事：全 INT8 量化、ESP-NN 硬件加速、SRAM/PSRAM 内存布局。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;要点&lt;/strong&gt;：ESP32-S3 的双核 Xtensa LX7 带 AI 向量指令，SIMD 单周期可完成多个 8/16-bit MAC；512KB 片上 SRAM 加可选 PSRAM 支撑 MobileNet 级模型；esp-nn 已深度集成进 TFLM，标准 API 自动选优化 kernel。文章逐一讲透 Interpreter、Op Resolver、Tensor Arena 的角色与模型转换、xxd 转 C 数组链接固件的流程。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;关键数字&lt;/strong&gt;：SIMD 对卷积/全连接层带来 5–10 倍推理加速；FP32 转 INT8 模型体积缩小 75%、推理快 4–10 倍。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;为什么值得看&lt;/strong&gt;：面向实战的 TinyML 调优指南，附基准数字与「悄悄吃掉性能」的坑位清单，做 ESP32 端侧推理可直接照做。&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://dev.to/zediot/esp32-s3-edge-ai-in-practice-deep-optimization-of-tensorflow-lite-micro-inference-performance-4b0g"&gt;阅读原文&lt;/a&gt;&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p><strong>发表方</strong>：DEV Community (ZedIoT)　<strong>发布</strong>：2026-09-29　<strong>分类</strong>：技术博客 / 每日精选</p><p><img src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fr86kn88z06waz3avnc9c.png" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"></p><p><strong>核心话题</strong>：在 ESP32-S3 上把 TensorFlow Lite Micro 模型「跑起来」容易，跑到实时可用是另一回事——关键就三件事：全 INT8 量化、ESP-NN 硬件加速、SRAM/PSRAM 内存布局。</p>
-<p><strong>要点</strong>：ESP32-S3 的双核 Xtensa LX7 带 AI 向量指令，SIMD 单周期可完成多个 8/16-bit MAC；512KB 片上 SRAM 加可选 PSRAM 支撑 MobileNet 级模型；esp-nn 已深度集成进 TFLM，标准 API 自动选优化 kernel。文章逐一讲透 Interpreter、Op Resolver、Tensor Arena 的角色与模型转换、xxd 转 C 数组链接固件的流程。</p>
-<p><strong>关键数字</strong>：SIMD 对卷积/全连接层带来 5–10 倍推理加速；FP32 转 INT8 模型体积缩小 75%、推理快 4–10 倍。</p>
-<p><strong>为什么值得看</strong>：面向实战的 TinyML 调优指南，附基准数字与「悄悄吃掉性能」的坑位清单，做 ESP32 端侧推理可直接照做。</p>
-<p><a href="https://dev.to/zediot/esp32-s3-edge-ai-in-practice-deep-optimization-of-tensorflow-lite-micro-inference-performance-4b0g">阅读原文</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Intel三芯片AI硬件战略瞄准英伟达推理边缘（Hot Chips 2026）</title>
-      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/4557b9566fd9affb.html</link>
-      <guid isPermaLink="true">https://autonainews.com/intels-three-pronged-ai-hardware-offensive-targets-nvidia/</guid>
-      <pubDate>Mon, 28 Sep 2026 12:00:00 +0800</pubDate>
-    <category>官方公告</category>
-    <category>每日精选</category>
-      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：Auton AI News　&lt;strong&gt;发布&lt;/strong&gt;：2026-09-28　&lt;strong&gt;分类&lt;/strong&gt;：官方公告 / 每日精选&lt;/p&gt;&lt;p&gt;&lt;img src="https://autonainews.com/wp-content/uploads/2026/09/IntelsFiveProngedAIH.webp" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;核心话题&lt;/strong&gt;：Hot Chips 2026 上 Intel 公布迄今最完整的 agentic AI 硬件路线，三条产品线分别瞄准数据中心、推理机架与客户端 PC，避开英伟达主导的训练市场，押注推理与编排环节。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;要点&lt;/strong&gt;：Diamond Rapids Xeon 采用 18A-P 工艺、最多 256 个能效核，主打加速器间的请求编排与多步推理管线调度；Crescent Island 是专为推理设计的数据中心 GPU，低功耗、大显存、可塞进现有风冷机房；Wildcat Lake（Core Ultra Series 3）用 18A 工艺与 RibbonFET + PowerVia 集成 NPU；软件侧 OpenVINO 2026.4 新增 MTP 推测解码，支持 Gemma 4 与 Qwen 3.5。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;关键数字&lt;/strong&gt;：agentic 推理负载的 Xeon 订单量约为 Intel 当前供货能力的 2 倍；Intel 预计 2026 年全球约 2.6 亿台出货 PC 中超半数具备 AI 能力；Crescent Island 尚无第三方推理基准数据。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;为什么值得看&lt;/strong&gt;：Intel 的差异化赌注——agentic AI 把瓶颈从训练算力转向 CPU 编排与推理能效，是观察推理硬件格局演变的标志性信号。&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://autonainews.com/intels-three-pronged-ai-hardware-offensive-targets-nvidia/"&gt;原文链接&lt;/a&gt;&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p><strong>发表方</strong>：Auton AI News　<strong>发布</strong>：2026-09-28　<strong>分类</strong>：官方公告 / 每日精选</p><p><img src="https://autonainews.com/wp-content/uploads/2026/09/IntelsFiveProngedAIH.webp" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"></p><p><strong>核心话题</strong>：Hot Chips 2026 上 Intel 公布迄今最完整的 agentic AI 硬件路线，三条产品线分别瞄准数据中心、推理机架与客户端 PC，避开英伟达主导的训练市场，押注推理与编排环节。</p>
-<p><strong>要点</strong>：Diamond Rapids Xeon 采用 18A-P 工艺、最多 256 个能效核，主打加速器间的请求编排与多步推理管线调度；Crescent Island 是专为推理设计的数据中心 GPU，低功耗、大显存、可塞进现有风冷机房；Wildcat Lake（Core Ultra Series 3）用 18A 工艺与 RibbonFET + PowerVia 集成 NPU；软件侧 OpenVINO 2026.4 新增 MTP 推测解码，支持 Gemma 4 与 Qwen 3.5。</p>
-<p><strong>关键数字</strong>：agentic 推理负载的 Xeon 订单量约为 Intel 当前供货能力的 2 倍；Intel 预计 2026 年全球约 2.6 亿台出货 PC 中超半数具备 AI 能力；Crescent Island 尚无第三方推理基准数据。</p>
-<p><strong>为什么值得看</strong>：Intel 的差异化赌注——agentic AI 把瓶颈从训练算力转向 CPU 编排与推理能效，是观察推理硬件格局演变的标志性信号。</p>
-<p><a href="https://autonainews.com/intels-three-pronged-ai-hardware-offensive-targets-nvidia/">原文链接</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>BitNet b1.58 e Modelos Ternários: Inferência em CPU Comercial</title>
-      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/7bce7f41a0f0de71.html</link>
-      <guid isPermaLink="true">https://dev.to/ricardofriba/bitnet-b158-e-modelos-ternarios-inferencia-em-cpu-comercial-29kd</guid>
-      <pubDate>Mon, 28 Sep 2026 12:00:00 +0800</pubDate>
-    <category>技术博客</category>
-      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：DEV Community（社区博客）　&lt;strong&gt;发布&lt;/strong&gt;：2026-09-28　&lt;strong&gt;分类&lt;/strong&gt;：技术博客&lt;/p&gt;&lt;p&gt;&lt;img src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fpromptx.blog%2F_astro%2Fimg0.BCWokiuj.jpg" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"&gt;&lt;/p&gt;&lt;p style="font-size:1.05em"&gt;社区长文：三元权重（约 1.58 bit/参数）让 LLM 推理去 MatMul 化，商用 CPU（AVX-512/AMX/NEON）跑百亿级模型达 5-7.5 tok/s，能效提升 7-10 倍的分析。&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;Durante mais de sete décadas de história da ciência da computação e ao longo de toda a era moderna do aprendizado profundo (Deep Learning), um axioma matemático permaneceu inquestionado como o alicerce fundamental de qualquer arquitetura neural: a Multiplicação de Matrizes (MatMul - Matrix Multiplication). Dos perceptrons primitivos aos supermodelos de fronteira contemporâneos de setembro de 2026, calcular o produto escalar entre vetores de ativações e tensores de pesos em representações de ponto flutuante (FP32, FP16, BF16 e, mais recentemente, FP8) ditou a construção de toda a cadeia global de hardware de semicondutores.&lt;/p&gt;&lt;p&gt;…&lt;/p&gt;&lt;/blockquote&gt;&lt;p style="color:#6b7280;font-size:0.9em"&gt;以上为原文正文节选（机器抓取），中文省流版整理中。&lt;/p&gt;&lt;p style="margin-top:14px"&gt;&lt;a href="https://dev.to/ricardofriba/bitnet-b158-e-modelos-ternarios-inferencia-em-cpu-comercial-29kd"&gt;阅读原文 ↗&lt;/a&gt;&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p><strong>发表方</strong>：DEV Community（社区博客）　<strong>发布</strong>：2026-09-28　<strong>分类</strong>：技术博客</p><p><img src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fpromptx.blog%2F_astro%2Fimg0.BCWokiuj.jpg" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"></p><p style="font-size:1.05em">社区长文：三元权重（约 1.58 bit/参数）让 LLM 推理去 MatMul 化，商用 CPU（AVX-512/AMX/NEON）跑百亿级模型达 5-7.5 tok/s，能效提升 7-10 倍的分析。</p><blockquote><p>Durante mais de sete décadas de história da ciência da computação e ao longo de toda a era moderna do aprendizado profundo (Deep Learning), um axioma matemático permaneceu inquestionado como o alicerce fundamental de qualquer arquitetura neural: a Multiplicação de Matrizes (MatMul - Matrix Multiplication). Dos perceptrons primitivos aos supermodelos de fronteira contemporâneos de setembro de 2026, calcular o produto escalar entre vetores de ativações e tensores de pesos em representações de ponto flutuante (FP32, FP16, BF16 e, mais recentemente, FP8) ditou a construção de toda a cadeia global de hardware de semicondutores.</p><p>…</p></blockquote><p style="color:#6b7280;font-size:0.9em">以上为原文正文节选（机器抓取），中文省流版整理中。</p><p style="margin-top:14px"><a href="https://dev.to/ricardofriba/bitnet-b158-e-modelos-ternarios-inferencia-em-cpu-comercial-29kd">阅读原文 ↗</a></p>]]></content:encoded>
     </item>
   </channel>
 </rss>

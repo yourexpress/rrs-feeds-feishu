@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Efficient FlashAttention on Blackwell via Fixed-Shift Softmax and Persistent Scheduling</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Efficient FlashAttention on Blackwell via Fixed-Shift Softmax and Persistent Scheduling</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-10-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> Blackwell 架构上，矩阵乘已深度流水化的 attention kernel，瓶颈转移到归一化与操作数搬移。</p>
+<p><strong>方法</strong> 在 Triton TLX 中实现 FA4 风格流水线：固定移位稠密 softmax 免去累加器的反复校正；保存逆分母把反向传播的逐行归一化从二次循环移入线性预处理；带守卫的 causal 路径用首块锚定+选择性恢复，跳过全掩码对角收缩；打包 BF16 指数近似与流水化 dQ 发布进一步削减每元素工作量与片上搬移。</p>
+<p><strong>关键数字</strong> B200@1000W：FA4 BF16 可变批量网格 24 个用例几何均值吞吐 +7.3%；稠密前向/反向 +13.0%/+10.4%；causal 反向 +8.0%（causal 前向慢 1.5%）；TritonBench 对比前向 +13.4%、反向 +24.4%。</p>
+<p><strong>为什么值得看</strong> 用 Triton 复现并局部超越官方 FA4，固定移位 softmax 等技巧可直接复用。</p>
+<p><a href="https://arxiv.org/abs/2610.02229">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.02229">阅读原文 ↗</a></p>
+</body>
+</html>
