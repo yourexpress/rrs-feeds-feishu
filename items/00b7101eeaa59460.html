@@ -22,9 +22,11 @@
 <h1>Higher-order pruning of experts in mixture-of-experts language models</h1>
 <p class="meta-line">arXiv（Alex M. Tseng 等，cs.LG） · 2026-09-16 · 论文PDF</p>
 
-<p>Mixture-of-Experts (MoE) language models suffer from large parameter counts, which create a significant memory bottleneck.</p>
-<blockquote><p>Mixture-of-Experts (MoE) language models suffer from large parameter counts, which create a significant memory bottleneck. Expert pruning is the most direct approach for reducing this parameter count, yet existing methods make pruning decisions for each expert independently, and assume experts' contributions are purely additive. In reality, expert usage in MoEs is inherently cooperative. We derive HOPE (Higher-Order Pruning of Experts), a second-order pruning objective which provably minimizes an upper bound on the error resulting from pruning. We show that REAP (a state-of-the-art first-order pruning method) is a special case of HOPE where interaction terms are ignored. Across three frontier MoE models (up to 122B parameters), two distinct calibration sets, and multiple benchmarks (including math, instruction following, coding, and an agentic suite), we demonstrate that HOPE produces better pruning decisions than existing methods, and its advantage is most pronounced at high pruning rates and on challenging agentic workloads. At 50% pruning, HOPE outperforms all baselines and achieves an average rank of 1.58 out of 5 methods (versus 2.42 for the next-best method, REAP), with gains…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> MoE 语言模型参数量巨大造成显存瓶颈，专家剪枝是最直接的压缩手段；但现有方法对每个专家独立做剪枝决策、假设专家贡献纯可加，而 MoE 中专家使用本质上是协作的。</p>
+<p><strong>方法</strong> HOPE（专家高阶剪枝）推导了二阶剪枝目标，可证明地最小化剪枝误差的上界；理论上此前最先进的 REAP（一阶方法）正是 HOPE 忽略交互项的特例。</p>
+<p><strong>关键数字</strong> 在三个前沿 MoE 模型（最大 122B 参数）、两套校准集与多类基准（数学、指令遵循、编程、智能体套件）上：50% 剪枝率时 HOPE 平均名次 1.58/5（次优 REAP 为 2.42），智能体编程最高 +6.1%；全部条件下 HOPE 平均名次最佳，且在多数头对头比较中胜出，高剪枝率与复杂智能体负载上优势最明显。</p>
+<p><strong>为什么值得看</strong> 保留一阶方法忽略的专家协作结构，让激进压缩在长序列复杂任务上几乎不掉点——MoE 部署压缩的新基线。</p>
+<p><a href="https://arxiv.org/abs/2609.18916v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.18916v1">阅读原文 ↗</a></p>
 </body>
 </html>

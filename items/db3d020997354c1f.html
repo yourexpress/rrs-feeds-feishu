@@ -22,9 +22,11 @@
 <h1>Rethinking Streaming-Perception Evaluation on Heterogeneous Edge Platforms</h1>
 <p class="meta-line">arXiv cs.DC · 2026-10-06 · 论文PDF / 每日精选</p>
 
-<p>异构边缘平台流式感知评测反思：隔离单流评测会误排加速器放置方案</p>
-<blockquote><p>Multi-camera streaming perception is increasingly deployed on heterogeneous edge platforms shared with co-resident workloads, yet accelerator placement is often evaluated using isolated single-stream experiments and mean streaming average precision (sAP). Using two end-to-end pipelines on a single GPU--NPU platform, we show that isolated evaluation can mis-rank deployment-time placement. Although the GPU pipeline is preferred in isolation, GPU-localized contention introduces deadline misses that make detections stale and can reverse the preferred placement before full GPU saturation. The NPU pipeline is less accurate than the GPU pipeline on small and medium objects in isolation, but nearly matches it on large objects. The largest absolute sAP losses in our latency and contention experiments occur for large objects. In our four-stream experiments, the preferred placement depends on which path becomes stale, and increasing GPU-side contention shifts the best placement from All-GPU to All-NPU. Under a GPU-saturating vision--language co-tenant, All-NPU achieves $5.2\times$ the worst-stream sAP of All-GPU. Because mean sAP can hide severe single-stream degradation, evaluation should re…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 多摄像头流式感知常与共存负载共享异构边缘平台，但加速器放置方案通常用隔离单流实验和平均 sAP 评测，这种评测能否指导真实部署？</p>
+<p><strong>方法</strong> 在同一 GPU+NPU 平台上跑两条端到端流水线，系统对比隔离评测与竞争环境下的表现：GPU 流水线隔离评测更优，但 GPU 局部竞争引发截止时间错失、检测过期，在 GPU 未饱和前就会反转最优放置；NPU 流水线中小目标精度较弱但大目标接近 GPU。</p>
+<p><strong>关键数字</strong> 四流实验中最优放置随「哪条路径先过期」在 All-GPU 与 All-NPU 间切换；在 GPU 饱和的视觉-语言共存负载下，All-NPU 的最差流 sAP 达 All-GPU 的 5.2 倍。</p>
+<p><strong>为什么值得看</strong> 直接挑战边缘部署评测惯例：作者建议必须同时报告竞争扫描、双路径截止时间错失率与最差流 sAP，而非只看平均值。</p>
+<p><a href="https://arxiv.org/abs/2610.05578">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05578">阅读原文 ↗</a></p>
 </body>
 </html>

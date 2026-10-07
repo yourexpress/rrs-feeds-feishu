@@ -22,9 +22,11 @@
 <h1>SparseCraft: Agentic Hardware-Software Co-Optimization for Sparse Computing</h1>
 <p class="meta-line">arXiv cs.AR · 2026-10-06 · 论文PDF / 每日精选</p>
 
-<p>LLM 智能体闭环协同优化稀疏加速器 RTL/存储/调度，以周期精确实测为准</p>
-<blockquote><p>Sparse-accelerator design spaces are usually searched against analytical models, so a design point is admitted on what a model predicts rather than on what the hardware does. SparseCraft closes that gap with a language model inside a closed CHIA loop. In each of 15 iterations the model reads the measured outcome of the previous one and edits the Chisel RTL, the memory configuration and the sparse-kernel schedule of a Gemmini accelerator through MCP tool servers, and no candidate counts until it has been checked for legality, elaborated, simulated cycle-accurately, checked bit-for-bit on every output against a golden reference, and synthesised. The harness turns each measurement into the next work order, a diagnosed bottleneck with matching strategy guidance, the history of tried designs and a score of the model's own prediction, and a second model repairs changes that fail a gate. On a $512 \times 512$ GraphChallenge sparse-DNN layer the loop reaches 2.1x fewer cycles, 9.8x less off-chip traffic and 22.8% less area than the block-sparse Gemmini baseline, with 5.61x higher modelled perf/W and 11.8x lower EDP. The levers span three layers: a schedule that keeps the dense operand resi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 稀疏加速器设计空间通常靠解析模型搜索——设计点凭「模型预测」而非「硬件实测」被采纳，预测与真实硬件之间存在鸿沟。</p>
+<p><strong>方法</strong> SparseCraft 把语言模型放进闭环（CHIA loop）：每轮读取上一轮实测结果，通过 MCP 工具服务器修改 Gemmini 加速器的 Chisel RTL、存储配置与稀疏 kernel 调度；候选必须通过合法性检查、精化、周期精确仿真、逐位比对黄金参考和综合才作数；harness 把每次测量转成带瓶颈诊断与策略指导的下一工单，第二个模型负责修复未过闸的改动。</p>
+<p><strong>关键数字</strong> 15 轮迭代后，在 512×512 GraphChallenge 稀疏 DNN 层上：周期数降 2.1 倍、片外流量降 9.8 倍、面积省 22.8%，建模 perf/W 高 5.61 倍、EDP 低 11.8 倍。</p>
+<p><strong>为什么值得看</strong> 「以实测为准」的智能体硬件-软件协同优化样板，三层优化杠杆（调度/零门控 MAC/存储裁剪）的归因清晰可查。</p>
+<p><a href="https://arxiv.org/abs/2610.05037">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05037">阅读原文 ↗</a></p>
 </body>
 </html>

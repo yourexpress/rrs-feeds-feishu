@@ -22,9 +22,11 @@
 <h1>SyclKittens: A Tile Programming Model for Programmers and Coding Agents on Intel GPUs</h1>
 <p class="meta-line">arXiv cs.DC · 2026-10-06 · 论文PDF / 每日精选</p>
 
-<p>Intel GPU 瓦片编程模型，同时服务程序员与编码智能体</p>
-<blockquote><p>New AI accelerators arrive before the kernels that make them fast, because peak kernel performance requires architecture-specific expertise in operand pipelines and data-movement techniques. Coding agents can now write, compile, and tune kernels on their own, so they could greatly accelerate kernel development and optimization. What agents produce depends on the interfaces they are given. These interfaces may expose a machine's raw capabilities or encode the known-good methods for exploiting its hardware features efficiently. We test the performance impact of these two interfaces on Intel GPUs through controlled experiments with three coding models on three kernels. With raw SYCL and execution feedback, Opus 4.8, the strongest of the three models tested, writes a single-GPU GEMM kernel reaching only 57.5% of Intel's tuned oneDNN library. We present SyclKittens, a hardware-aware tile programming model for Intel GPUs that encodes these known-good methods, so its operations place operands in matrix-engine layouts, prefetch through the L1 cache, and communicate over the fabric that links GPU stacks into a node. With SyclKittens under the same agent, task, and feedback budget, the agent…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 新 AI 加速器总是先于「让它变快的 kernel」出现，而编码智能体已能自行编写调优 kernel——但给智能体什么接口，决定了它能写出什么：裸能力接口，还是编码了已知好方法的接口？</p>
+<p><strong>方法</strong> 在 Intel GPU 上用 3 个编码模型 × 3 个 kernel 做受控实验。随后提出 SyclKittens：面向 Intel GPU 的硬件感知瓦片编程模型，把已知好方法编码进接口——操作数自动放入矩阵引擎布局、经 L1 缓存预取、通过连接 GPU stack 的 fabric 通信。</p>
+<p><strong>关键数字</strong> 裸 SYCL 加执行反馈下，最强模型 Opus 4.8 写的单卡 GEMM 仅达 oneDNN 的 57.5%；换 SyclKittens 后同预算达 82.1%；人与智能体联合打磨的 kernel 套件在 GEMM 形状上几何平均约达 oneDNN 的 96%；Llama-3.1-8B 推理单卡比 torch.compile 快 1.59 倍，对 oneCCL 多卡解码路径最高快 2.91 倍。</p>
+<p><strong>为什么值得看</strong> 用受控实验证明「接口里编码领域方法」能把硬件能力转化为性能，开源可用。</p>
+<p><a href="https://arxiv.org/abs/2610.04277">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04277">阅读原文 ↗</a></p>
 </body>
 </html>

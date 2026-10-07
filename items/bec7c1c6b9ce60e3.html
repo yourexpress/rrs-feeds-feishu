@@ -22,9 +22,11 @@
 <h1>Terracotta: Enabling the Adoption of New DRAM Techniques via a Flexible DRAM Interface and Memory Controller</h1>
 <p class="meta-line">arXiv cs.AR · 2026-10-06 · 论文PDF / 每日精选</p>
 
-<p>柔性 DRAM 接口与内存控制器，降低新型 DRAM 技术的重复改造落地成本</p>
-<blockquote><p>DRAM continues to limit the performance, energy efficiency, and robustness of modern systems. Many prior works propose DRAM techniques that support in-DRAM computation, improve memory access latency and parallelism, and enhance DRAM maintenance and reliability. However, adopting each new technique requires repeated modifications to the rigid DRAM interface and memory controller, hindering its deployment. Our goal is to reduce these repeated modifications. We observe that the DRAM commands and memory controller structures of many DRAM techniques are similar. Our key idea is to use these similarities to compose a set of primitives for implementing diverse DRAM techniques. We propose Terracotta, a new framework with two flexible components: (i) custom command extensions that let DRAM vendors define new commands within a single, standardized interface, and (ii) a programmable memory controller that system designers can program to support new DRAM techniques post-silicon. Together, these enable deployment by configuring the memory controller instead of modifying the interface and controller. We design Terracotta for a DDR5-based system and evaluate its performance, energy, and hardware …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 大量 DRAM 新技术（存内计算、降延迟、增强并行、可靠性维护）因每项都要重复改造僵硬的 DRAM 接口与内存控制器而难以落地。能否把重复改造降下来？</p>
+<p><strong>方法</strong> Terracotta 观察到众多 DRAM 技术的命令与控制器结构相似，据此抽象出可组合原语，提供两个柔性组件：厂商可在单一标准化接口内定义新命令的自定义命令扩展；系统设计者可在流片后编程的可编程内存控制器。落地变成「配置控制器」而非「改接口与控制器」。</p>
+<p><strong>关键数字</strong> 基于 DDR5 系统评估，对来自四个不同领域的 4 项 DRAM 技术保留了自定义实现超过 96% 的性能收益；两项技术的 Terracotta 组合优于各自单独实现；在高端服务器级处理器上仅引入 0.6~3.2% DRAM 能耗、0.03% 面积、0.56% 功耗开销。</p>
+<p><strong>为什么值得看</strong> 把「新技术落地成本」从硬件改造降为配置问题，CMU-SAFARI 出品且源码开放，体系结构社区关注度高的方向。</p>
+<p><a href="https://arxiv.org/abs/2610.06475">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06475">阅读原文 ↗</a></p>
 </body>
 </html>

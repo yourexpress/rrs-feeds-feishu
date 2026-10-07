@@ -22,9 +22,11 @@
 <h1>You Only Convert Twice: Ozaki Scheme II for Chained Tensor Mode Products</h1>
 <p class="meta-line">arXiv cs.DC · 2026-10-06 · 论文PDF / 每日精选</p>
 
-<p>Ozaki 方案 II 链式张量模积仅首尾两次转换，INT8 张量核 CuTe 实现</p>
-<blockquote><p>This work proposes OzII-RescaleBE, a method that enables persistent execution of chained tensor mode products in Ozaki scheme II, keeping the intermediate tensors in residue form. By performing rescaling and base extension directly on the residue representation, it requires conversion to residues only at the beginning of the chain and reconstruction only at the end. An implementation using CuTe DSL and INT8 Tensor Cores is provided for verification and evaluation. The method is compared with per-mode composition of Ozaki scheme~II (GEMMul8-Composed) and a dense Kronecker-product formulation (GEMMul8-KRON), both implemented using the GEMMul8 library. Across three datasets with different input distributions, OzII-RescaleBE achieves normwise relative errors ranging from $2.5\times10^{-16}$ to $2.6\times10^{-15}$ for chain depths $d=3$ through $7$. The corresponding errors range from $10^{-16}$ to $10^{-15}$ for GEMMul8-KRON and from $1\times10^{-16}$ to $3\times10^{-16}$ for GEMMul8-Composed and the FP64 chain. At $d=8$, the errors of OzII-RescaleBE increase to between $7\times10^{-14}$ and $6\times10^{-13}$. For mode sizes $n=8$ to $256$, OzII-RescaleBE achieves throughputs ranging f…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Ozaki 方案 II 用 INT8 张量核做高精度矩阵乘，但链式张量模积若逐模重组，中间结果要反复在余数域与浮点域间转换。能否让整条链保持在余数表示中执行？</p>
+<p><strong>方法</strong> OzII-RescaleBE 直接在余数表示上做重缩放与基扩展，链首只做一次到余数的转换、链尾只做一次重构，中间张量全程驻留余数域；用 CuTe DSL 与 INT8 Tensor Core 实现验证，并与 GEMMul8-Composed、GEMMul8-KRON 两基线对比。</p>
+<p><strong>关键数字</strong> 链深 d=3~7 时范数相对误差 2.5e-16~2.6e-15，d=8 升至 7e-14~6e-13；模尺寸 n=8~256 吞吐 1.47~4.42 GDoF/s；对 GEMMul8-Composed 在 n≤128 时快 2.1~60 倍、n=256 时低 6~12%；设备内存占用也更低。</p>
+<p><strong>为什么值得看</strong> 余数域持久执行的张量链新范式，为低精度张量核承载高精度科学计算提供了一条误差可控的工程路径。</p>
+<p><a href="https://arxiv.org/abs/2610.05059">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05059">阅读原文 ↗</a></p>
 </body>
 </html>

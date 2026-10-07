@@ -22,9 +22,11 @@
 <h1>Understanding the Weight Averaging Mechanism in LLM Training for Post-Training Quantization</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF / 每日精选</p>
 
-<p>权重平均改善 PTQ 的机理剖析，给出可靠应用条件</p>
-<blockquote><p>Large language models (LLMs) are typically pretrained in high precision but increasingly deployed with low-precision post-training quantization (PTQ). Recent studies have shown that using weight averaging during pretraining can improve PTQ performance compared with learning-rate decay, suggesting that it might provide a simple way to improve the pretraining-to-quantization transition. But the mechanism behind weight averaging remains insufficiently explained. This leads to inconsistent and fragile performance gains, thereby preventing practitioners from applying such a technique confidently. As a response, we formulate weight averaging as a trade-off between retaining training progress and improving robustness under perturbation. We further derive a continuous family of averaging kernels that unifies conventional strategies and achieves the Pareto frontier between the two competing goals. Critically, a theoretical framework for performing weight averaging under PTQ is developed. It can be shown that coarser quantization is more susceptible to perturbations, whereas finer quantization could be less affected. Thus, our results could provide unified theoretical guidance for performing…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 预训练常用高精度、部署却越来越依赖低比特 PTQ。近期发现预训练时用权重平均比学习率衰减更利于 PTQ，但机理不明导致收益不稳定、实践者不敢放心用。</p>
+<p><strong>方法</strong> 作者把权重平均形式化为「保留训练进度」与「抗扰动鲁棒性」之间的权衡，推导出一族连续平均核，统一了常规策略并达到两目标的帕累托前沿；进一步建立 PTQ 下权重平均的理论框架，证明越粗的量化对扰动越敏感、越细的量化受影响越小，从而为不同 PTQ 条件给出统一理论指导。</p>
+<p><strong>关键数字</strong> 摘要未给具体量化数值；实验验证了理论预测的行为与所提平均策略的有效性，代码已开源。</p>
+<p><strong>为什么值得看</strong> 把一个「玄学技巧」变成有理论边界、可知何时可靠的工程手段，做低比特部署的人值得据此校准预训练策略。</p>
+<p><a href="https://arxiv.org/abs/2610.05329">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05329">阅读原文 ↗</a></p>
 </body>
 </html>

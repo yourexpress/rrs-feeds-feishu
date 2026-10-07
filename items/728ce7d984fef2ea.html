@@ -22,9 +22,11 @@
 <h1>RESOLVE: Language-Agnostic Validation of GPU Kernels Through Testing, Reduction, and Proof</h1>
 <p class="meta-line">arXiv cs.PL · 2026-10-06 · 论文PDF / 每日精选</p>
 
-<p>测试+归约+形式证明的语言无关 GPU kernel 验证流水线</p>
-<blockquote><p>AI systems can now write and optimize production GPU kernels, but validating them remains an important challenge. Evaluating the kernel on a few random inputs and checking that its outputs match a trusted reference kernel within numeric tolerances is not sufficient: races can cause nondeterministic behavior that fails to manifest in tests, and numeric tolerances can hide bugs and cause false positives even after extensive calibration. To address this challenge, we present RESOLVE, which combines testing and formal verification to build a comprehensive kernel validation pipeline. It operates in three steps: First, it tests for nondeterminism using binary instrumentation that perturbs execution timing to expose races. Second, an agent rewrites the candidate and reference kernels to obtain "reduced-concurrency" versions that are simpler to analyze but still produce bitwise-identical outputs in all tests. Third, the reduced kernels are formally analyzed in the F*/Pulse framework and prove that they perform the same computation on real numbers. This sidesteps the need for numeric tolerances. We show that RESOLVE can validate a broad selection of kernels using KernelBench, and prove equi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> AI 已能编写和优化生产级 GPU kernel，但验证仍是难题：随机输入对比参考实现的数值容差判据，既抓不住竞态导致的非确定性，也可能掩盖 bug 或误报。</p>
+<p><strong>方法</strong> RESOLVE 把测试与形式化验证串成三步流水线：先用二进制插桩扰动执行时序暴露竞态；再由 agent 把候选与参考 kernel 改写为「降并发」版本（输出仍逐位一致）；最后在 F*/Pulse 框架中证明两者在实数上计算等价，彻底绕开数值容差。</p>
+<p><strong>关键数字</strong> 在 KernelBench 上验证了多类 kernel；跨 CUTLASS、Triton、Gluon 三种框架证明融合 GEMM 等价；分析难啃的 mega-kernel 时发现 4 个未报告问题，其中 2 个是明确 bug，agent 可借 RESOLVE 修复且性能损失极小。</p>
+<p><strong>为什么值得看</strong> 「agent 激进优化 + 严格验证兜底」的闭环范式，是 AI 生成 kernel 走向生产可信的关键拼图。</p>
+<p><a href="https://arxiv.org/abs/2610.05683">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05683">阅读原文 ↗</a></p>
 </body>
 </html>

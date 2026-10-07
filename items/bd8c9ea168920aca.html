@@ -22,9 +22,11 @@
 <h1>Do AI Agents Understand Computer Architecture?</h1>
 <p class="meta-line">arXiv（Ambika Sharan 等，cs.AI） · 2026-09-16 · 论文PDF</p>
 
-<p>Agents are increasingly asked to design hardware, and increasingly reported to succeed.</p>
-<blockquote><p>Agents are increasingly asked to design hardware, and increasingly reported to succeed. Such reports establish that a design improved; they cannot establish why. An agent that improves an accelerator may be reasoning about the machine, or may be searching competently over knobs whose meaning it never recovers -- and only the first transfers to the next architecture. Existing evaluations cannot tell the two apart, because they vary the agent while holding the framing of the problem fixed. We do the opposite. AutoTuring hands the same agent the same 15-dimensional accelerator space twice: once as named architectural knobs with simulator counters, once as anonymous variables on [0,1], with the evaluator, the legal space and the reachable optima held identical, so that the only thing that varies is whether the problem means anything. The gap between the two is the measurement. On a nine-kernel FP16 GEMM basket, meaning pays: the architect beats a modeled H200 by 5.4% and its blind counterpart by 12.3% on average, with 70.1% fewer simulator calls. It does not pay uniquely: a critic loop recovers most of that gap for the blind agent and buys the architect nothing, so architectural knowle…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 越来越多报告说智能体能成功设计硬件，但「设计变好了」不等于「智能体在推理机器」——它也可能只是在盲目搜索一堆不理解含义的旋钮。既有评测固定问题框架只换智能体，无法区分两者。</p>
+<p><strong>方法</strong> AutoTuring 反其道而行：同一智能体面对同一 15 维加速器设计空间两次——一次给出命名的架构旋钮与仿真计数器，一次只给 [0,1] 上的匿名变量；评估器、合法空间与可达最优点完全一致，唯一变量是「问题是否有意义」，两种条件下的差距即度量。</p>
+<p><strong>关键数字</strong> 在 9 个 kernel 的 FP16 GEMM 篮子上：「建筑师」条件平均超建模 H200 5.4%、超「盲」条件 12.3%，且仿真调用少 70.1%；但 critic 循环能为盲智能体追回大部分差距、对建筑师无增益——架构知识与结构化批评互为替代而非互补；每条件仅 5~6 次运行，作者自定为初步发现。</p>
+<p><strong>为什么值得看</strong> 实验设计本身即贡献：给「AI 智能体是否真懂体系结构」提供了可复用的判别范式。</p>
+<p><a href="https://arxiv.org/abs/2609.19387v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19387v1">阅读原文 ↗</a></p>
 </body>
 </html>

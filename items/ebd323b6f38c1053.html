@@ -22,9 +22,11 @@
 <h1>Epic: Efficient Programming Paradigm for In-Storage Computing</h1>
 <p class="meta-line">arXiv（Yuyue Wang 等，cs.AR） · 2026-09-16 · 论文PDF</p>
 
-<p>In-storage computing (ISC) reduces host--storage data movement by executing computation inside computational storage devices (CSDs).</p>
-<blockquote><p>In-storage computing (ISC) reduces host--storage data movement by executing computation inside computational storage devices (CSDs). For multi-stage applications, realizing these benefits requires coordinating data placement, I/O--compute overlap, and device-resident state across the workflow, yet existing interfaces lack a unified abstraction for these decisions. We present Epic, an NVMe-based ISC stack that provides this abstraction by capturing data residency and lifetime in the program: location types declare logical residency, dataflow derives lifetimes for intermediate values and operation state within an invocation, and a keep primitive extends selected state across invocations. These semantics expose the complete offloaded workflow as a located, stateful dataflow. A storage-aware compiler transforms this workflow, performs movement-aware logical mapping and fusion, and exposes I/O--compute overlap; a runtime completes the plan using execution-time information, asynchronously binding work to physical resources and managing device-resident state. Across 12 file-scanning, database, and machine learning workloads, Epic is 1.6$\times$ faster on average than the strongest of five…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 存内计算（ISC）把计算放进计算型存储设备以减少主机-存储间数据搬移，但多阶段应用需要跨工作流协调数据放置、I/O-计算重叠与设备驻留状态，现有接口缺少统一抽象。</p>
+<p><strong>方法</strong> Epic 是基于 NVMe 的 ISC 栈：用位置类型声明逻辑驻留、数据流推导单次调用内中间值与操作状态的生命周期、keep 原语把选定状态跨调用保留，从而把整个卸载工作流暴露为「带位置的有状态数据流」；存储感知编译器做搬移感知的逻辑映射与融合并暴露 I/O-计算重叠，运行时按执行时信息异步绑定物理资源。</p>
+<p><strong>关键数字</strong> 跨 12 个文件扫描、数据库与机器学习负载：平均比 5 个既有 ISC 系统中最强者快 1.6 倍；对相应主机基线平均加速 4.2 倍、最高 16.1 倍；应用侧代码量最多减少 14 倍。</p>
+<p><strong>为什么值得看</strong> 把 ISC 编程从手工编排抬升到「声明驻留与生命周期」的抽象层级，性能与代码量双赢，系统味十足。</p>
+<p><a href="https://arxiv.org/abs/2609.19206v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19206v1">阅读原文 ↗</a></p>
 </body>
 </html>

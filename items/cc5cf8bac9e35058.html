@@ -22,9 +22,11 @@
 <h1>RoSA: Rotational Sparse Adaptation for Memory-Efficient Fine-Tuning</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF / 每日精选</p>
 
-<p>旋转稀疏适配：逐层轮换可训块降低微调优化器显存</p>
-<blockquote><p>Parameter-efficient fine-tuning (PEFT) reduces the cost of adapting foundation models by focusing training on a small parameter subset. Complementary to this idea, we introduce RoSA (Rotational Sparse Adaptation), which narrows adaptation to a subset of layers at a time. RoSA freezes lower layers close to the input throughout training and rotates a trainable block over later layers, progressively increasing the number of frozen layers close to the input. This design reduces optimizer-state memory, shortens backpropagation, and even forward propagation if activations at the last frozen layer are cached. Because RoSA is orthogonal to the choice of trainable parameterization, it can be combined with PEFT methods or sparse optimizers within each active block. Experiments across multiple LLM architectures and tasks show that RoSA reduces peak memory while maintaining strong fine-tuning performance.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 参数高效微调（PEFT）只训练小参数子集以降成本，RoSA 从另一正交维度切入：能否每次只在「层的子集」上做适配，进一步压缩显存？</p>
+<p><strong>方法</strong> RoSA（旋转稀疏适配）全程冻结靠近输入的底层，把可训练块在靠后的层间轮换，并逐步增加近输入端的冻结层数。这减少了优化器状态显存、缩短反向传播；若缓存最后冻结层的激活，前向也能缩短。它与具体可训练参数化方式正交，可与 PEFT 方法或稀疏优化器在每个活跃块内组合。</p>
+<p><strong>关键数字</strong> 摘要未给具体数值；在多种 LLM 架构与任务上的实验显示 RoSA 降低峰值显存的同时保持强劲的微调性能。</p>
+<p><strong>为什么值得看</strong> 思路简单、与现有 PEFT 完全兼容，是低资源微调工具箱里可即插即用的一层「层维度」省显存开关。</p>
+<p><a href="https://arxiv.org/abs/2610.06243">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06243">阅读原文 ↗</a></p>
 </body>
 </html>

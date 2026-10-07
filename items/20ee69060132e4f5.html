@@ -22,9 +22,11 @@
 <h1>StagQ: Constraint-Driven Multi-Precision Weight Quantization for LLMs</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF / 每日精选</p>
 
-<p>约束驱动多精度权重量化：2 比特基底+1 比特细化平面，前缀可读</p>
-<blockquote><p>Serving a large language model (LLM) across a fleet of deployments requires several weight-precision operating points. Multi-precision formats serve them all from one stream whose prefixes are valid lower-precision codes, instead of storing multiple copies. We present StagQ, a multi-precision weight format whose main stream is a 2-bit group-wise affine base followed by a configurable number of 1-bit refinement planes on a dyadic step schedule. Every supported precision is a readable prefix, decoded by an affine map derived from metadata shared across all precisions, with no per-weight lookup. A sparse side record, filled both before and after the grid is fitted, holds out the few weights the grid serves worst. We report two configurations of the encoder. At two bits the cheaper one leads the strongest multi-precision baseline on Llama-3.1-8B, Phi-4, and OLMo-2-7B by 3.1 to 7.0 MMLU points, at a slightly lower logical rate. At three bits it leads on Llama-3.1-8B, leads on Phi-4 at a higher rate, and ties on OLMo-2-7B. At four bits it ties on all three, at a higher rate. In a batch-one matrix-vector product on an NVIDIA A100 GPU, timed on synthetic weights, our kernel is faster than …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 跨多部署服务一个 LLM 需要多个权重精度档位，多精度格式用「前缀即合法低精度码」的单一流替代多份拷贝。如何设计这种格式并兼顾各档精度？</p>
+<p><strong>方法</strong> StagQ 主流为 2 比特分组仿射基底，后接可配置数量的 1 比特细化平面（二进步长调度）；所有支持精度都是可读前缀，用跨精度共享元数据导出的仿射映射解码，无需逐权重查表；稀疏旁录在网格拟合前后收留网格服务最差的少数权重。</p>
+<p><strong>关键数字</strong> 2 比特档在 Llama-3.1-8B、Phi-4、OLMo-2-7B 上领先最强多精度基线 3.1~7.0 个 MMLU 点且逻辑码率略低；3 比特档领先 Llama-3.1-8B、Phi-4（码率更高）、平 OLMo-2-7B；4 比特档三者打平（码率更高）；A100 上批量为 1 的矩阵向量积多数形状-精度组合快于两个基线 kernel。</p>
+<p><strong>为什么值得看</strong> 单份权重服务全精度档位的实用方案，编码器与 GPU kernel 都开源可用。</p>
+<p><a href="https://arxiv.org/abs/2610.05977">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05977">阅读原文 ↗</a></p>
 </body>
 </html>

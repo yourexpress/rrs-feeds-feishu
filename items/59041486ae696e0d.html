@@ -22,9 +22,11 @@
 <h1>Colla-Q: Toward Collaborative Experts in MoE Quantization via Minimax Precision Balancing</h1>
 <p class="meta-line">arXiv（Eunju Shin 等，cs.LG） · 2026-09-16 · 论文PDF</p>
 
-<p>In this paper, we present a Mixture-of-Experts (MoE) quantization method based on activation entropy.</p>
-<blockquote><p>In this paper, we present a Mixture-of-Experts (MoE) quantization method based on activation entropy. Although quantization reduces memory and computational costs, it can substantially degrade performance. In particular, performance decline is pronounced in quantized MoE models, where individual experts have a small number of parameters that are sensitive to low-bit representation. Considering that MoE operates as an ensemble model with collaborative contributions from routed experts, a significant performance decline of a particular expert due to quantization can harm model performance. Therefore, we propose Colla-Q, a bit-allocation framework to maintain balanced performance across experts through an activation-entropy-based bit-width allocation algorithm. This approach encourages each expert to operate collaboratively in the quantized model, thereby 1) improving the overall MoE performance and 2) reducing the dependence on the calibration dataset. Since uniformly adjusting each expert's performance facilitates robustness and stability of the MoE model, the proposed MoE quantization method can generalize more consistently across different calibration datasets. Our code is availab…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> MoE 模型量化后性能下降尤其明显：单个专家参数少、对低比特表示敏感，而 MoE 靠路由专家协作集成，个别专家因量化严重掉点会拖累整体。</p>
+<p><strong>方法</strong> Colla-Q 提出基于激活熵的比特分配框架：按各专家的激活熵分配比特宽度，目标是让各专家在量化后保持均衡的性能水平，促使专家间继续「协作」而非个别掉队；性能均衡还带来对校准数据集依赖的降低，使量化结果在不同校准集上泛化更稳定。</p>
+<p><strong>关键数字</strong> 摘要未给具体量化数值；作者称该方法同时改善 MoE 整体性能与跨校准集的鲁棒稳定性，代码已在 GitHub 开源。</p>
+<p><strong>为什么值得看</strong> 把 MoE 量化的比特分配从「逐专家独立优化」转向「专家间 minimax 均衡」，切中 MoE 区别于稠密模型量化的结构性痛点。</p>
+<p><a href="https://arxiv.org/abs/2609.18131v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.18131v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>GeoMesh: Workload-Balanced and Sign-Compressed Geo-Distributed LLM Training</h1>
 <p class="meta-line">arXiv（Changyong Shin 等，cs.DC） · 2026-09-16 · 论文PDF</p>
 
-<p>Large language models are increasingly trained on GPUs distributed across multiple regions, but geo-distributed training is challenging in practice.</p>
-<blockquote><p>Large language models are increasingly trained on GPUs distributed across multiple regions, but geo-distributed training is challenging in practice. Real clusters often contain GPUs with different speeds and memory capacities, and they communicate over slow wide-area networks. Our analysis shows that this creates serious problems: existing synchronous methods preserve stable updates, but fast GPUs wait up to 20.9% of their runtime for slower ones, and all workers spend, on average, 65.8% of their runtime on synchronization. Recent asynchronous methods reduce waiting time but worsen the model accuracy due to stale updates. To address the problems, we present GeoMesh, a synchronous geo-distributed training framework for heterogeneous GPUs. GeoMesh balances per-worker workloads by assigning each GPU a suitable batch size and number of inner steps, so faster GPUs do more useful work instead of waiting. It also reduces communication volume by nearly 32x by exchanging compressed sign-based pseudo-gradients with lightweight magnitude and token count. Across heterogeneous GPUs and Azure-derived WAN, GeoMesh reduces time-to-target perplexity by up to 70.2% over representative baselines and …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 跨地域分布式训练 LLM 面临现实困境：各区域 GPU 速度与显存不一、广域网带宽低。分析显示同步方法中快 GPU 最多 20.9% 的运行时间在等慢节点，所有 worker 平均 65.8% 的运行时间耗在同步上；异步方法减少等待却因过期更新损害精度。</p>
+<p><strong>方法</strong> GeoMesh 是面向异构 GPU 的同步跨地域训练框架：按各 GPU 能力分配合适的批大小与内步数做负载均衡，让快卡做更多有效功而非空等；通信侧交换压缩的符号化伪梯度（附轻量幅值与 token 计数），通信量降近 32 倍。</p>
+<p><strong>关键数字</strong> 在异构 GPU 与 Azure 衍生的 WAN 上：达到目标困惑度的时间较代表性基线最多缩短 70.2%；落后者与 WAN 导致的 GPU 空闲分别最多降 8.0 倍与 5.6 倍；零样本精度与基线相当。</p>
+<p><strong>为什么值得看</strong> 负载均衡 + 符号压缩双管齐下，为「用地理分散的异构算力训大模型」提供了精度无损的同步方案。</p>
+<p><a href="https://arxiv.org/abs/2609.18388v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.18388v1">阅读原文 ↗</a></p>
 </body>
 </html>
