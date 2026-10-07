@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BARQ: Balanced Codebook Refinement for Low-Bit LLM Quantization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>BARQ: Balanced Codebook Refinement for Low-Bit LLM Quantization</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 码本式 LLM 权重量化中，最近码字分配不均会让部分码字得不到充分更新，码本利用率受限，量化质量受损。</p>
+<p><strong>方法</strong> BARQ 分两步：先用带均匀边际的熵正则最优传输（以曲率加权重构代价）计算权重块与码字间的联合软分配，使精确解下每个码字获得相等的拟合质量；再做按分配加权的重心更新（证明在固定分配下最小化拟合目标）。最后丢弃软分配，用精炼后的码本做常规硬最近邻编码。</p>
+<p><strong>关键数字</strong> 多个 LLM 上，同等比特预算下困惑度更低、平均 zero-shot 准确率更高（论文未在摘要给出具体点数）；代码已开源。</p>
+<p><strong>为什么值得看</strong> 把"码本不均衡"这个老问题用最优传输理论干净地解决，分析与实现对应完整，量化方向可直接借鉴。</p>
+<p><a href="https://arxiv.org/abs/2610.04490">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.04490">阅读原文 ↗</a></p>
+</body>
+</html>

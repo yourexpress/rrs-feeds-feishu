@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Byte Language Models: Scaling, Emergent Abstractions, and Information Allocation（arXiv 2610.05978）</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Byte Language Models: Scaling, Emergent Abstractions, and Information Allocation（arXiv 2610.05978）</h1>
+<p class="meta-line">arXiv（Jie Wang 等） · 2026-10-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 无 tokenizer 的字节级语言模型去掉了固定分词的归纳偏置，但序列更长、计算更贵、显式文本抽象消失——多花的计算是否有用？标准 Transformer 能否自己学会分词所提供的抽象？</p>
+<p><strong>方法</strong> 在无专用分词架构的标准 Transformer 上，用 token-superposition 训练与 hash embedding 研究字节模型的扩展行为，并分析其内部表征结构。</p>
+<p><strong>关键数字</strong> 随模型规模增大，字节 Transformer 一致优于 subword Transformer；字节模型会自发形成类似分词的局部抽象——约 25% 的中间层可限制只用这些局部表征而不损失下游性能；利用学到的结构做投机解码，接受 token 数是 subword 模型的 3.4 倍。</p>
+<p><strong>为什么值得看</strong> 为"tokenizer-free 是否值得"给出系统性肯定答案，且发现的可解释结构直接转化为解码加速，兼具科学与实用价值。</p>
+<p><a href="https://arxiv.org/abs/2610.05978">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.05978">阅读原文 ↗</a></p>
+</body>
+</html>

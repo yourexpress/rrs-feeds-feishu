@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DIALER: A Case for Improving Rare-Class Accuracy in Retraining-Free Edge Video Analytics</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DIALER: A Case for Improving Rare-Class Accuracy in Retraining-Free Edge Video Analytics</h1>
+<p class="meta-line">arXiv cs.DC · 2026-10-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 边缘视频分析中轻量模型受持续分布漂移影响准确率下滑；持续学习能应对漂移但会耗尽边缘服务器本就紧张的算力。作者发现视觉基础模型（VFM）是免重训的实用替代——平均准确率高且省算力，但会把稀有类（往往是关键目标）误分为视觉相似的常见类。</p>
+<p><strong>方法</strong> DIALER 利用 VFM 免重训推理省下的空闲算力修复稀有类误分：离线为高频"稀有→常见"混淆对预建多级纠正流水线，运行时把候选路由到对应流水线，按 GPU 空闲余量执行尽可能多的纠正级数。</p>
+<p><strong>关键数字</strong> 四个真实驾驶数据集上稀有类准确率最高提升 14.0%，且不干扰多路实时 VFM 推理。</p>
+<p><strong>为什么值得看</strong> "用基础模型省下的算力补基础模型的短板"是很聪明的资源闭环设计，边缘视频分析落地可直接参考。</p>
+<p><a href="https://arxiv.org/abs/2610.06358">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.06358">阅读原文 ↗</a></p>
+</body>
+</html>

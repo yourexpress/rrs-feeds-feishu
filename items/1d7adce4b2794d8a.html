@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Few-Shot Prototype Head Adaptation for On-Device ECG Personalization on PSoC~6</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Few-Shot Prototype Head Adaptation for On-Device ECG Personalization on PSoC~6</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 可穿戴/床旁 ECG 监护需适配患者个体形态才能维持心律失常检测准确率，但微控制器级设备上做反向传播个性化太贵：要优化器状态、反复卷积反向、还要部署期未必拿得到的心律失常标注。</p>
+<p><strong>方法</strong> 仅原型头的个性化：1D CNN（1,314 参数、每心搏 72.6k 次乘加）在 MIT-BIH 心律失常库上按跨患者协议离线训练后冻结为特征提取器，部署到 PSoC 6；患者适配只需在 32 维嵌入空间计算类均值的闭式解——无卷积反向、无迭代优化、每个支持心搏仅一次前向。</p>
+<p><strong>关键数字</strong> 跨患者 macro-F1 在 1/5/10-shot 下从 0.635/0.639/0.646 升至 0.731/0.771/0.797，各 shot 数均优于线性 SGD 头微调；PSoC 6 Cortex-M4F 上 18 个 one-shot episode 复现 macro-F1 0.798，每心搏 11.39ms、5.2KB flash、22.2KB SRAM；仅更新正常类原型的受限变体稳增 +0.05 macro-F1。</p>
+<p><strong>为什么值得看</strong> TinyML 医疗个性化"零反向传播"的干净范式，对端侧小模型个性化很有启发。</p>
+<p><a href="https://arxiv.org/abs/2610.06241">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.06241">阅读原文 ↗</a></p>
+</body>
+</html>

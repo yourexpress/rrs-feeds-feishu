@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MetaKernelBench: Measuring GPU Kernel Knowledge Transfer Beyond Code</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MetaKernelBench: Measuring GPU Kernel Knowledge Transfer Beyond Code</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> GPU kernel 优化 agent 会把经验存进知识库或蒸馏成技能，但现有 kernel benchmark 只评单次实现的正确性与速度，没人度量"沉淀下来的经验换个 DSL 还有没有复用价值"。</p>
+<p><strong>方法</strong> MetaKernelBench：74 道题分属六个融合子图家族，每题给出仅 DSL 不同的 CuTe DSL 与 TIRx 变体；agent 先独立做一变体并把所学蒸馏成自然语言技能，该技能作为唯一额外输入条件化同一模型在另一 DSL 上的新尝试，在匹配预算下与独立尝试对比正确性与端到端运行时。</p>
+<p><strong>关键数字</strong> 六个模型、两个迁移方向上配对提升幅度从 -19% 到 +29%；四个模型双向均有收益，但每个模型每个方向有 16%–45% 的题目出现退化；源尝试强于目标独立尝试时 71% 改善，反之 54% 退化。</p>
+<p><strong>为什么值得看</strong> 揭示"经验蒸馏迁移"并不稳——效果取决于源尝试相对水平，对 agentic kernel 优化方法评估补上关键维度。</p>
+<p><a href="https://arxiv.org/abs/2610.05014">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.05014">阅读原文 ↗</a></p>
+</body>
+</html>

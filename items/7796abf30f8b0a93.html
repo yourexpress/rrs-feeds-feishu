@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LoRA's Second Descent Extends Beyond Parameter Parity</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LoRA's Second Descent Extends Beyond Parameter Parity</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
+
+<p>LoRA 二次下降超越参数持平现象</p>
+<blockquote><p>Double descent has sparked considerable interest, with recent work relating it to the data, the model and the learning configuration. Practical fine-tuning commonly involves training a small adapter on top of frozen pretrained weights, as in low-rank adaptation (LoRA). The adapter's rank is the hyperparameter that sets its capacity, yet how this rank relates to double descent has not been well explored. We quantify this relation under label noise on four vision backbones and a 7B language model with a module-matched rank sweep (MMRS), which extends past full rank and compares every rank with dense fine-tuning of the same modules, paired by seed. On DeiT-Tiny, risk is lowest at rank one and rises sharply as the adapter becomes able to fit the noisy labels, forming an interpolation cliff. Past the peak, risk falls again, but every tested post-peak rank that still saves parameters remains above dense risk. Rank-one LoRA outperforms dense fine-tuning on three of the four vision backbones, consistent with strong regularization at small rank. LoRA thus exhibits a second descent, but matches dense risk only after losing its parameter advantage, first on DeiT-Tiny at four times dense's pro…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.04507">阅读原文 ↗</a></p>
+</body>
+</html>

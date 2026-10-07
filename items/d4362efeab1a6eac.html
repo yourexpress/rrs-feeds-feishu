@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOLT: A Fine-Grained GPU Memory Sharing System for LLM Serving with Opportunistic Fine-Tuning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MOLT: A Fine-Grained GPU Memory Sharing System for LLM Serving with Opportunistic Fine-Tuning</h1>
+<p class="meta-line">arXiv cs.DC · 2026-10-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LLM 服务按负载扩副本，但副本内显存仍大量闲置：加副本要分钟级，而副本所需显存秒级波动，自动扩缩容最小单位是整个副本，回收不了这些碎片。把 PEFT 微调与推理共置能利用闲置显存，但推理必须在秒级内回收显存，现有共置系统要么常驻、要么按整个训练样本粒度回收且丢弃进行中的训练步。</p>
+<p><strong>方法</strong> MOLT：细粒度显存共享——允许推理回收正在运行的微调步为反向 pass 保存的单个激活，微调步继续运行、反向时重算这些激活；在 CPU-GPU 异步与张量并行下保证只回收无在途 GPU 工作访问的显存。</p>
+<p><strong>关键数字</strong> 四个模型部署（24B–70B）、H100 SXM 与 B200 上 trace 驱动负载下，推理 SLO 达成率保持 ≥99.7%，完成的微调工作量是丢弃式共享的 1.9–3.3 倍。</p>
+<p><strong>为什么值得看</strong> 把 serving 集群的显存碎片变成可调度的训练资源，混部系统设计的新思路。</p>
+<p><a href="https://arxiv.org/abs/2610.05748">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.05748">阅读原文 ↗</a></p>
+</body>
+</html>

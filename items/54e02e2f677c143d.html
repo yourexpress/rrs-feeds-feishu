@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morph-Aware Computing: Compiler-Ordered Updates of Program State after Topology Changes</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Morph-Aware Computing: Compiler-Ordered Updates of Program State after Topology Changes</h1>
+<p class="meta-line">arXiv cs.PL · 2026-10-06 · 论文PDF</p>
+
+<p>拓扑变化后编译器排序修复程序状态的形态感知计算模型</p>
+<blockquote><p>In wireless sensor and mesh networks, modular robots, and shape-adaptive computers, computing modules attach, detach, or are replaced while the others keep running with their local state. A value computed under the old arrangement, such as a cached next hop, stays in memory but may no longer describe the current one, so a program can send to a neighbor that has left without any runtime errors. We present morph-aware computing, a programming model in which the application specifies a corrective update of such state, called a repair, and the compiler decides when it runs. In MorphLang, the repair is a Reconfigure branch next to the ordinary branches that handle sends, receives, and sensor samples. MorphC compiles MorphLang to bare-metal RISC-V and inserts a guard before every ordinary branch, so that each module repairs its state before any other branch sees a new topology. Relying on this order, MorphC also rejects sends whose target may be a literal or a value the repair does not always refresh. For a model of the code MorphC generates, we prove in Rocq that the repair precedes every later ordinary branch for any number of roles and topology changes. This shows that send-target che…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.03985">阅读原文 ↗</a></p>
+</body>
+</html>

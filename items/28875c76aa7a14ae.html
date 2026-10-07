@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One Global Beam Across Many GPUs: High-Throughput Beam Search at Billion-Record Frontier Scale</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>One Global Beam Across Many GPUs: High-Throughput Beam Search at Billion-Record Frontier Scale</h1>
+<p class="meta-line">arXiv cs.DC · 2026-10-06 · 论文PDF</p>
+
+<p>多 GPU 全局 beam search，十亿记录级前沿规模高吞吐</p>
+<blockquote><p>Beam search repeatedly makes many children, removes duplicates, and keeps the best $B$. We show how many GPUs can perform these steps as one search even when the retained set does not fit on one device. States and candidates stay on the GPUs; the CPU receives only small control and ancestry records. We prove that an abstract distributed pipeline returns the monolithic reduced-key top-$B$ for the same complete candidates, integer scores, Hash128 equivalence, and a fully specified physical-layout tie order, provided that its implementation performs one global reduction per key and race-free routing. A static audit of the historical one-T4 pin leaves cross-buffer uniqueness unresolved and identifies a separate multi-rank scatter risk; neither is a reproduced failure, and other revisions inherit neither defects nor correctness without comparison. On eight H200 GPUs, a Cube4 run completed saturated depth 8 at $B_{\rm eff}=2{,}900{,}361{,}216$ in $931.266$ s: $69{,}608{,}669{,}184$ nominal parent--generator pairs, or a derived $74.746$ million pairs/s. A separate two-T4 Megaminx run yielded a derived $30.274$ million nominal parent--generator pairs/s at $B_{\rm eff}=82{,}837{,}504$. Thos…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.06718">阅读原文 ↗</a></p>
+</body>
+</html>

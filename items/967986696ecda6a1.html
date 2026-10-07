@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OVAL: Output-Aware Local Page Bases for KV Cache Retrieval</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>OVAL: Output-Aware Local Page Bases for KV Cache Retrieval</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 长上下文推理的注意力要扫不断膨胀的 KV cache；页稀疏注意力把每个 KV 页压缩表示后按 query 检索子集，但现有检索方法估计的是注意力分数或页相关度，其目标并不直接约束近似误差对值加权注意力输出的影响。</p>
+<p><strong>方法</strong> OVAL：输出感知的页编码——从 key 与 value 的联合结构导出，同时保留准确检索所需的 key 信息；免训练，推理时无需额外的 value 相关统计，构建后存储开销与 decode 打分代价和仅 key 谱表示相同。</p>
+<p><strong>关键数字</strong> 摘要未给具体百分比；在长推理、长上下文理解与长生成基准上一致优于仅 key 谱基线，与近期 KV cache 压缩/检索方法相当，长推理基准上 avg@k 表现强，解码开销 modest。</p>
+<p><strong>为什么值得看</strong> 把 KV 检索目标从"分数估准"换成"输出误差别大"，视角正且工程代价不变，长上下文 serving 可直接借鉴。</p>
+<p><a href="https://arxiv.org/abs/2610.06686">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.06686">阅读原文 ↗</a></p>
+</body>
+</html>

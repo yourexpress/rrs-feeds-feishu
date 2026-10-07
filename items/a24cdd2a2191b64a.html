@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond Masked Sparsity: SNACK Enables Truly Sparse Neural Networks on GPU</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Beyond Masked Sparsity: SNACK Enables Truly Sparse Neural Networks on GPU</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 稀疏神经网络与动态稀疏训练理论上能省算力、显存与能耗，但多数 GPU 实现只是"稠密张量 + 二值掩码"，理论收益几乎拿不到。</p>
+<p><strong>方法</strong> SNACK：只存储、只计算非零连接的真稀疏 GPU 层，提供简单 PyTorch API 在稀疏范式下完成连接重构与梯度反传；自带 SNACK-COO 自定义 COO 格式 SpMM CUDA kernel，针对大模型训练与单流推理典型的小 batch、高稀疏场景做 batch 到 SM 的映射调优。</p>
+<p><strong>关键数字</strong> kernel 级比 Dense+Mask 快至 7 倍，95% 稀疏度下与 cuSPARSE/Sputnik/FlashSparse 相当；90% 稀疏度单层训练加速 8×/3.7×、推理 4×/2×（对 Dense+Mask/全稠密），显存省 72%；端到端 GPT-2 峰值训练显存降 40%，99% 稀疏度下图式推理延迟降 4.8 倍。</p>
+<p><strong>为什么值得看</strong> 把"伪稀疏"变成"真稀疏"的系统工作，API 友好、收益可复现，做稀疏训练的人值得上手试。</p>
+<p><a href="https://arxiv.org/abs/2610.04093">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.04093">阅读原文 ↗</a></p>
+</body>
+</html>

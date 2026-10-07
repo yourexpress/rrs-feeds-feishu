@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HiNa-MoE: High-Performance, Non-Intrusive MoE Inference on CPUs with Matrix Engines</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>HiNa-MoE: High-Performance, Non-Intrusive MoE Inference on CPUs with Matrix Engines</h1>
+<p class="meta-line">arXiv cs.DC · 2026-10-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> MoE 推理在本地/私有化部署增多，专家参数常超 GPU 显存；低并发、延迟敏感场景下反复把路由专家权重从 CPU 搬到 GPU 代价过高，路由专家 FFN 落在多路 CPU 关键路径上。现有 CPU 加速多依赖侵入式要求（AMX 专用权重布局、手工 NUMA 放置），可移植性差。</p>
+<p><strong>方法</strong> HiNa-MoE：面向 Intel AMX CPU 的高性能非侵入 MoE 算子库——①优化微核让专家权重保持标准布局，把轻量布局变换融合进 token 聚集与写回；②在简单 page-interleaved 策略下做 NUMA 感知任务划分，不改框架分配器；③把 decode 阶段的矩阵-向量运算转成小块矩阵-矩阵执行以利用 AMX。</p>
+<p><strong>关键数字</strong> 多个 MoE 模型上 FFN kernel 最高加速 3.37 倍、端到端推理最高加速 2.09 倍（对比 SOTA 基线），且与现有框架和部署流水线即插即用。</p>
+<p><strong>为什么值得看</strong> "非侵入"是落地关键——不改权重格式、不改分配器就能吃满 AMX，CPU offload 路线的实用参考。</p>
+<p><a href="https://arxiv.org/abs/2610.05123">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.05123">阅读原文 ↗</a></p>
+</body>
+</html>

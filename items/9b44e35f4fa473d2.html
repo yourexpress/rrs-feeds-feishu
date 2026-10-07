@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Co-Optimizing Graph Sparsification and Approximate Computing for Energy-Efficient FPGA-Based GCN Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Co-Optimizing Graph Sparsification and Approximate Computing for Energy-Efficient FPGA-Based GCN Inference</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> GCN 在资源受限边缘平台上的部署受制于稀疏图聚合的计算与访存开销，稀疏化、量化、近似计算各自有效但相互作用不清楚。</p>
+<p><strong>方法</strong> 在 AMD Kria KV260 FPGA 上构建 GCN 加速器，组合 DSpar 图稀疏化、8 比特量化与近似乘法器，在密度差异很大的三个数据集上系统探索稀疏化与近似的交互。核心发现：近似算术的有效性由 GCN 计算中的累加深度决定——近似乘法器最适合稀疏聚合操作，而图稀疏化通过降低聚合深度进一步提升其可用性。</p>
+<p><strong>关键数字</strong> Amazon Photo 上加速至 9.88 倍、保持 86.6% 分类准确率；Cora 上 1.52 倍加速、77.0% 准确率；总功耗低于 1W。</p>
+<p><strong>为什么值得看</strong> "稀疏化与近似计算互补"的协同优化结论对边缘低功耗图推理有直接指导意义。</p>
+<p><a href="https://arxiv.org/abs/2610.06138">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.06138">阅读原文 ↗</a></p>
+</body>
+</html>

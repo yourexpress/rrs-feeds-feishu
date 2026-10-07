@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cross-Time Directional Selection in Diffusion Sampling</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Cross-Time Directional Selection in Diffusion Sampling</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
+
+<p>扩散采样的跨时方向选择</p>
+<blockquote><p>How strongly do the remaining diffusion-sampling steps amplify a perturbation at a late latent state? Standard measurements answer this question with newly sampled isotropic noise, even though perturbations encountered during sampling have already been transformed by earlier steps. We compare these two cases directly. For each trajectory, we transport a centered perturbation from an earlier step to a late state, then replay its direction at the same magnitude as a newly sampled isotropic perturbation; both then undergo the same remaining updates. Across the samplers we study, median paired shaped-to-fresh angular-gain ratios range from $1.14$ to $2.35$. Shaped angular gain exceeds its matched fresh counterpart in every trajectory in the original main cohorts. The same pattern appears when endpoint change is measured by latent RMS. The effect also appears in perceptual feature representations: earlier-sampling directions cause larger feature changes at the endpoint, even when the corresponding pixel-space change is comparable. Permuting shaped directions across trajectories weakens the effect, including within class, indicating that the advantage depends on alignment with the receiv…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.05199">阅读原文 ↗</a></p>
+</body>
+</html>

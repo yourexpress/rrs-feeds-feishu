@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loopy: Low-Bit Quantization Framework for Looped Language Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Loopy: Low-Bit Quantization Framework for Looped Language Models</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 循环语言模型靠共享循环核反复执行来扩展测试时计算，但 PTQ 量化共享核的误差会随循环深度向后传播。作者发现：channel scaling 与正交旋转等量化配置的候选排序会随循环深度变化，因此必须在目标部署深度选配置；而在该深度对全校准集评估每个候选代价太高。</p>
+<p><strong>方法</strong> Loopy：以循环深度感知的目标建模共享核量化，按目标部署深度的最终预测损失挑选共享低比特表示（候选由 channel scaling 与正交旋转参数化）；用逐进分配校准窗口的方式只做前向评估、近似高效求解选择问题。</p>
+<p><strong>关键数字</strong> 八个设置上均为 SOTA；Ouro-1.4B 在 W4A4 下 LAMBADA 困惑度较 SpinQuant 相对降低 36.5%；代码已开源。</p>
+<p><strong>为什么值得看</strong> 循环/递归架构是参数高效扩展 test-time compute 的新路线，其量化有独特陷阱，Loopy 是第一个系统解法。</p>
+<p><a href="https://arxiv.org/abs/2610.05265">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.05265">阅读原文 ↗</a></p>
+</body>
+</html>

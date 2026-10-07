@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prompt Dominance and Asymmetric Verifier Costs: Empirical Ablations of GRPO at 1B Scale on GSM8K</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Prompt Dominance and Asymmetric Verifier Costs: Empirical Ablations of GRPO at 1B Scale on GSM8K</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
+
+<p>1B 规模 GRPO 消融：提示主导与验证器成本不对称</p>
+<blockquote><p>This paper studies GRPO at 1B scale from both directions: what estimator choices do to the learning signal, and what a degraded reward signal does to what is learned. We train OLMo-2-0425-1B on GSM8K with a from-scratch implementation and measure both sides in controlled sweeps, including a verifier-quality experiment that degrades the training reward and the test-time selector identically. Four results stand out. The prompt is the first-order decision: the zero-shot prompt leaves the base model at 0.08% (its outputs are degenerate continuations, not wrong answers), so almost no group carries a gradient, and training succeeds because the 3-shot prompt reaches 18.3%. At this scale the estimator variants sit within seed noise, with Dr. GRPO ahead on both seeds. In the off-policy regime, clipping is the whole story: training on data without a clipped ratio loses 4-6 points relative to the on-policy reference, while GRPO-style clipping and GSPO recover the loss entirely. Finally, the same weak verifier is far cheaper in RL than in test-time selection: a 10%-flip verifier leaves RL's attainable gain intact (91% and 106% retained across two seeds) where selection retains 57%, and a forma…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.04928">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fine-Tuning a 3B-Parameter LLM on a Smartphone: Characterizing Sustained Training</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Fine-Tuning a 3B-Parameter LLM on a Smartphone: Characterizing Sustained Training</h1>
+<p class="meta-line">arXiv cs.DC · 2026-10-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 手机上已能跑多十亿参数 LLM 推理，那能否在端侧完成微调、让数据不出手机就实现个性化？此前只有单步训练测量，没有完整训练流程的系统刻画。</p>
+<p><strong>方法</strong> 首个移动端多十亿参数 LLM 微调的系统性研究，覆盖内存、步时、热行为与能耗；并审计十个推理运行时对训练反向 pass 的支持。</p>
+<p><strong>关键数字</strong> iPhone 17 Pro 可在一次电池充电内把 3B LLM 微调到典型用户，所得 adapter 的个性化提升与服务器训练相当；持续训练会因热降频掉到约一半吞吐，各种暂停/突发调度都救不回来；训练步几乎全部时间花在冻结基模（主要在反向 pass），十个运行时中九个不加速反向；Apple MLX 有个从未被 dispatch 且实现有误的 kernel，作者修复（已合入上游）后 adapter 训练快 1.47 倍、能耗省三分之一。</p>
+<p><strong>为什么值得看</strong> "端侧训练可行但需运行时与 OS 把训练当一等公民"的论证扎实，做端侧 AI 的人必读。</p>
+<p><a href="https://arxiv.org/abs/2610.06325">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.06325">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Progressive Multi-Ancestor Bit-Depth Distillation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Progressive Multi-Ancestor Bit-Depth Distillation</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
+
+<p>渐进多祖先位宽蒸馏：FP32 到 INT4 稳定联合压缩</p>
+<blockquote><p>Model compression strategies are widely employed to reduce memory footprint and network complexity, particularly for devices with constrained computational, memory, and energy resources. Prior works that rely on simultaneous conversion from floating-point high-precision (FP32) to integer low-precision (INT4) representations and distillation into smaller models suffer from unstable training and drastic degradation of prediction performance. To address these limitations, we propose a unified framework, known as \textbf{P}rogressive \textbf{M}ulti-\textbf{A}ncestor \textbf{B}it-depth \textbf{D}istillation (PMABD), that progressively compresses the network while transferring knowledge through a growing pool of higher-precision ancestor teachers. PMABD generates a sequence of intermediate teachers that each learn from all higher-precision ancestors and jointly supervise the final target student. This multi-ancestor, multi-stage design stabilizes ultra-low-bit quantization by lowering quantization noise profiles across training and ensuring stable quantization. Experiments on CIFAR-10/100 with ResNet-20/32/18, and Tiny-ImageNet with MobileNetV2 show that PMABD outperforms state-of-the-ar…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.04100">阅读原文 ↗</a></p>
+</body>
+</html>

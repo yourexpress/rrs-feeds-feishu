@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CommuteProp: Decoupled Training for Communication Bound Split LLM Fine-Tuning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CommuteProp: Decoupled Training for Communication Bound Split LLM Fine-Tuning</h1>
+<p class="meta-line">arXiv cs.DC · 2026-10-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 分割学习（split learning）是隐私保护 LLM 微调的热门范式，但同步流水线中客户端要等服务器回传梯度才能继续，通信-计算串行造成大量空转，实际部署效率低下。</p>
+<p><strong>方法</strong> CommuteProp：异步分割学习算法，把训练解耦为跨块前向-反向传播与块内权重更新两个并发阶段，让计算与通信重叠，把单轮边际耗时从各阶段延迟之和降到主导计算瓶颈。论文给出严格的异步误差与收敛分析，并基于分析导出 NS 预条件子以缓解陈旧性噪声。</p>
+<p><strong>关键数字</strong> 摘要未给具体加速数值；实验显示吞吐显著提升、精度与同步方法相当，且作为即插即用模块能兼容并增强现有隐私增强方法。</p>
+<p><strong>为什么值得看</strong> 把分割微调的通信瓶颈从系统层面解开，理论分析与工程实现配套，做隐私计算/联邦微调的人值得关注。</p>
+<p><a href="https://arxiv.org/abs/2610.05105">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.05105">阅读原文 ↗</a></p>
+</body>
+</html>

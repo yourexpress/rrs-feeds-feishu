@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Priced Guidance: Can Language Models Generate Future Research Ideas?</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Priced Guidance: Can Language Models Generate Future Research Ideas?</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
+
+<p>语言模型能否产生未来研究想法</p>
+<blockquote><p>We evaluate language models' capability to generate novel research ideas through the lens of compression. We aim to lower-bound the potentially tiny probability that a language model generates the essence of a future research idea without any hints. Rather than estimate this probability through expensive repeated sampling, our Priced Guidance framework measures the compression cost: how many additional bits of information are needed to guide the model to recover the target idea. We prove that if the model can recover the target idea with at most K bits of guidance in expectation, then it can generate the idea without any guidance with probability at least $2^{-K}$. In our framework, the language model, called the generator, can pose a sequence of multiple-choice questions and specify a probability distribution over possible answers. A guide, which is a language model with access to the target idea, selects answers. If a selected answer has prior probability p, the generator pays $-\log_2 p$ bits. The generator aims to produce an idea that matches the essence of the target idea with minimal cumulative cost. This cumulative cost equals, up to an additive constant, the number of bits …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.04976">阅读原文 ↗</a></p>
+</body>
+</html>

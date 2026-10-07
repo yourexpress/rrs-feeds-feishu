@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CIPHER-MoE: Balancing Efficiency and Routing Fidelity in Trillion-Scale MoE Training</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CIPHER-MoE: Balancing Efficiency and Routing Fidelity in Trillion-Scale MoE Training</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 万亿级 MoE 训练中，非均匀 token 路由导致专家与设备间负载严重不均：冷专家浪费资源、热专家超载，训练效率与稳定性双输。现有系统级方案（复杂并行策略、资源重分配）在受限算力下越来越难以负担。</p>
+<p><strong>方法</strong> CIPHER-MoE 保持路由器 token 侧 Top-K 选择不变，改用亲和度感知的 Expert-to-Token 过滤加显式容量控制，削减热点专家负载，无需额外硬件资源或复杂运行时设计。</p>
+<p><strong>关键数字</strong> 在包括 DeepSeek-V4-Pro 在内的大规模 MoE 模型上，Top-1 专家负载最多降低 64.9 个百分点，训练加速 1.10×–1.94×，且训练质量保持不变。</p>
+<p><strong>为什么值得看</strong> 用"改过滤不改路由"的轻量改动撬动万亿级 MoE 训练均衡，工程侵入性低，值得做大规模训练的团队参考。</p>
+<p><a href="https://arxiv.org/abs/2610.05744">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.05744">阅读原文 ↗</a></p>
+</body>
+</html>

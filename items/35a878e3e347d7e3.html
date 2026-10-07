@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You Only Convert Twice: Ozaki Scheme II for Chained Tensor Mode Products</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>You Only Convert Twice: Ozaki Scheme II for Chained Tensor Mode Products</h1>
+<p class="meta-line">arXiv cs.DC · 2026-10-06 · 论文PDF / 每日精选</p>
+
+<p>Ozaki 方案 II 链式张量模积仅首尾两次转换，INT8 张量核 CuTe 实现</p>
+<blockquote><p>This work proposes OzII-RescaleBE, a method that enables persistent execution of chained tensor mode products in Ozaki scheme II, keeping the intermediate tensors in residue form. By performing rescaling and base extension directly on the residue representation, it requires conversion to residues only at the beginning of the chain and reconstruction only at the end. An implementation using CuTe DSL and INT8 Tensor Cores is provided for verification and evaluation. The method is compared with per-mode composition of Ozaki scheme~II (GEMMul8-Composed) and a dense Kronecker-product formulation (GEMMul8-KRON), both implemented using the GEMMul8 library. Across three datasets with different input distributions, OzII-RescaleBE achieves normwise relative errors ranging from $2.5\times10^{-16}$ to $2.6\times10^{-15}$ for chain depths $d=3$ through $7$. The corresponding errors range from $10^{-16}$ to $10^{-15}$ for GEMMul8-KRON and from $1\times10^{-16}$ to $3\times10^{-16}$ for GEMMul8-Composed and the FP64 chain. At $d=8$, the errors of OzII-RescaleBE increase to between $7\times10^{-14}$ and $6\times10^{-13}$. For mode sizes $n=8$ to $256$, OzII-RescaleBE achieves throughputs ranging f…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.05059">阅读原文 ↗</a></p>
+</body>
+</html>

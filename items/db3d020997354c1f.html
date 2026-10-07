@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rethinking Streaming-Perception Evaluation on Heterogeneous Edge Platforms</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Rethinking Streaming-Perception Evaluation on Heterogeneous Edge Platforms</h1>
+<p class="meta-line">arXiv cs.DC · 2026-10-06 · 论文PDF / 每日精选</p>
+
+<p>异构边缘平台流式感知评测反思：隔离单流评测会误排加速器放置方案</p>
+<blockquote><p>Multi-camera streaming perception is increasingly deployed on heterogeneous edge platforms shared with co-resident workloads, yet accelerator placement is often evaluated using isolated single-stream experiments and mean streaming average precision (sAP). Using two end-to-end pipelines on a single GPU--NPU platform, we show that isolated evaluation can mis-rank deployment-time placement. Although the GPU pipeline is preferred in isolation, GPU-localized contention introduces deadline misses that make detections stale and can reverse the preferred placement before full GPU saturation. The NPU pipeline is less accurate than the GPU pipeline on small and medium objects in isolation, but nearly matches it on large objects. The largest absolute sAP losses in our latency and contention experiments occur for large objects. In our four-stream experiments, the preferred placement depends on which path becomes stale, and increasing GPU-side contention shifts the best placement from All-GPU to All-NPU. Under a GPU-saturating vision--language co-tenant, All-NPU achieves $5.2\times$ the worst-stream sAP of All-GPU. Because mean sAP can hide severe single-stream degradation, evaluation should re…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.05578">阅读原文 ↗</a></p>
+</body>
+</html>

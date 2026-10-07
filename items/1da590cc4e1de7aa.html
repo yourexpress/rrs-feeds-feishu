@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>An equality condition for the Dobrushin bound on attention rollout and how often it holds in trained transformers</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>An equality condition for the Dobrushin bound on attention rollout and how often it holds in trained transformers</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
+
+<p>注意力 rollout Dobrushin 界等号条件及成立频率</p>
+<blockquote><p>The Dobrushin coefficient of each attention-rollout factor satisfies $κ(\frac12(I+A))\le\frac12(1+κ(A))$, and multiplying these inequalities over layers bounds the coefficient of the whole rollout. We characterise exactly when the layerwise bound is tight: equality holds if and only if some token pair attaining $κ(A)$ is mutually self-dominant - each of the two attends to itself at least as strongly as the other attends to it. The condition is far from automatic: uniformly random stochastic matrices satisfy it only 24-30% of the time. When tested on the head-averaged attention of each individual input and restricted to content tokens - image patches, words or tabular features, excluding cls, register and separator tokens - the condition holds for essentially every input at every layer of DINOv2 (three model sizes), RoBERTa and DistilBERT. In the supervised models DeiT-B and ViT-B/16 it holds for 91% and 64% of input-layer pairs respectively, with all failures occurring late in depth. In FT-Transformer trained on two standard tabular benchmarks it holds for only 11-44% of input-layer pairs. The special tokens account for almost all failures in DINOv2 and the language models: when th…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.05558">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alkaid: A Compiler Framework for Ultra-Low-Latency Kernels on Hardware</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Alkaid: A Compiler Framework for Ultra-Low-Latency Kernels on Hardware</h1>
+<p class="meta-line">arXiv cs.AR · 2026-10-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 亚微秒级超低延迟 ML/数据处理管线中的静态数据流 kernel 需要细粒度位宽控制、算术优化和快速硬件性能估计，现有 ML-to-hardware 流程（如 hls4ml）覆盖不全。</p>
+<p><strong>方法</strong> 开源 DSL 编译器 Alkaid：以算术中心的中间表示 ALIR 保留定点语义、异构位宽与算子级结构，配套硬件感知优化 pass 和可解释的白盒解析性能模型，无需综合即可做设计空间探索，秒级生成平台无关的 RTL/HLS 代码。</p>
+<p><strong>关键数字</strong> 在 MLP、GNN、transformer 等代表负载上，比此前最优流程 LUT 用量低 20–30%（比特精确等价设计），部分场景延迟低达 40%；对 boost 决策树综合与 SOTA 相当，还支持排序网络、直方图等非 ML kernel。</p>
+<p><strong>为什么值得看</strong> 把"低延迟物理/触发类 ML"的编译栈做成通用开源工具，白盒性能模型对硬件-算法协同设计很实用。</p>
+<p><a href="https://arxiv.org/abs/2610.04808">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.04808">阅读原文 ↗</a></p>
+</body>
+</html>

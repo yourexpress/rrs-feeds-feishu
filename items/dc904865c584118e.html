@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When Does a Diffusion Model Decide What to Draw ?</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>When Does a Diffusion Model Decide What to Draw ?</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
+
+<p>扩散模型何时决定画什么</p>
+<blockquote><p>A diffusion model starts from pure noise and removes it step by step. Somewhere along the way it stops being able to become "anything" and becomes committed to, say, a horse rather than a truck. We measure when this happens, and what a trained model gets wrong about it, on CIFAR-10. The most direct measurement is to freeze a half-finished image, restart the generation from that point many times, and count how often each class comes out. We call this probability the committor. Measured this way, the model settles coarse questions (vehicle or animal?) at roughly twice the noise level of fine ones (which animal?). A much cheaper measurement, the noise level at which a classifier's opinion about two classes splits into two distinct groups, gets the order of these decisions right (rank correlation 0.73-0.88) but not their exact timing. We then compare pretrained models with their</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.05645">阅读原文 ↗</a></p>
+</body>
+</html>

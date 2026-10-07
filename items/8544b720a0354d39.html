@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clean: Second-order LLM Training at Linear Memory Cost via Nyström Sketching</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Clean: Second-order LLM Training at Linear Memory Cost via Nyström Sketching</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LLM 训练存在显存-曲率权衡：Adam 类省显存但丢掉跨参数曲率信息；SOAP 类全曲率方法收敛快但显存代价随模型维度二次增长，难以承受。</p>
+<p><strong>方法</strong> Clean 用随机 Nyström 方法近似 SOAP 的左右预条件子，把优化器显存复杂度从二次降到线性；再把低秩子空间外的分量重新积分，保住低秩近似之外的曲率信息。另有低精度变体 Q-Clean 激进压缩优化器状态。</p>
+<p><strong>关键数字</strong> LLaMA-1.3B 预训练上 Q-Clean 比 Muon 省 50%+ 优化器显存且性能有竞争力；Clean 优化器状态占用比 AdamW 还小，同时达到 AdamW 最终性能的墙钟时间快 26%；并首次让 13B 模型在单张 80GB GPU 上完成预训练。</p>
+<p><strong>为什么值得看</strong> 把二阶优化的显存门槛打到一个 80GB 卡可及的范围，对算力受限团队是实打实的可选项。</p>
+<p><a href="https://arxiv.org/abs/2610.04204">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.04204">阅读原文 ↗</a></p>
+</body>
+</html>

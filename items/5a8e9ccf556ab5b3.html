@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decompiling Quantum Assembly into Structured Programs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Decompiling Quantum Assembly into Structured Programs</h1>
+<p class="meta-line">arXiv cs.PL · 2026-10-06 · 论文PDF</p>
+
+<p>量子汇编反编译为结构化程序</p>
+<blockquote><p>Quantum compilers translate programs into native gates, insert SWAP gates to route interactions onto a device, and optimize the result. The output is quantum assembly, a flat gate list that hides the algorithm's structure (QFT, Grover iteration, QAOA layers). Understanding, auditing, porting, or reusing such assembly requires recovering a program that exposes this structure. We present Quelle, a decompiler that recovers structured programs (library calls, loops, functions, symbolic angles) from routed and optimized quantum assembly (OpenQASM) and checks every output for equivalence with its input. Quelle is built on one invariant: every step is either an exact rewrite, checked where it is applied, or a hypothesis, checked against the input before use. It first lifts the assembly into a circuit by removing compilation artifacts, notably un-routing, which recovers the SWAPs that routing inserted, including those merged into other gates. It then recovers algorithm templates (sketches) whose parameters are solved from quantities preserved by compilation, and, for algorithms without a template, library calls and loops by anti-unification. Failed hypotheses are rejected; the correspondin…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.05012">阅读原文 ↗</a></p>
+</body>
+</html>

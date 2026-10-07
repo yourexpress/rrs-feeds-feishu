@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LLBPE: Linked-List Based GPU-Parallel BPE Tokenizer</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LLBPE: Linked-List Based GPU-Parallel BPE Tokenizer</h1>
+<p class="meta-line">arXiv cs.PF · 2026-10-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 每次 LLM 推理都始于分词；BPE 传统上在 CPU 上跑，近年虽有 GPU 实现，但作者指出其瓶颈不在计算而在数据搬运。</p>
+<p><strong>方法</strong> LLBPE 用数组式链表表示 token 序列，把每次归约（merge）变成常数时间的指针更新；并把 rank 查表、最小值选择与合并融合进单个 kernel，消除冗余哈希表查询。</p>
+<p><strong>关键数字</strong> 吞吐最高达现有最优 GPU 实现的 5.2 倍、优化 CPU 实现的 24.6 倍，代价是分词输出存在少量差异。</p>
+<p><strong>为什么值得看</strong> 思路朴素但有效——用经典数据结构把 GPU 分词的数据搬运瓶颈拿掉；对长上下文高吞吐 serving，分词不再是隐形税。</p>
+<p><a href="https://arxiv.org/abs/2610.04951">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.04951">阅读原文 ↗</a></p>
+</body>
+</html>

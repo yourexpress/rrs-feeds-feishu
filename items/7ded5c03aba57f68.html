@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Introducing Beam: Reflection’s 501B open-weight model</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Introducing Beam: Reflection’s 501B open-weight model</h1>
+<p class="meta-line">Reflection AI · 2026-10-05 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://cdn.sanity.io/images/sp40emik/production/771cfe201a3d24d7a340c3372e6a1654ec1a6e42-1800x1013.png" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong> Reflection AI 发布首个开放权重模型 Beam：面向编码、推理与 agentic 负载的稀疏 MoE，目标是"前沿能力 + 推理效率"的开放旗舰。</p>
+<p><strong>要点</strong> 预训练 23.8T tokens；把高算力 RL 作为核心扩展轴——异步 policy gradient，针对性处理长 rollout 中多 checkpoint 混排导致的 policy staleness。官方称推理算力效率是主要卖点：高阶推理基准上分数与 GLM-5.2 相当，但推理算力少 3–4 倍；对比 2T+ 参数家族（如 Qwen 3.8-Max）效率优势更明显。</p>
+<p><strong>关键数字</strong> 501B 总参 / 23B 激活；RL 阶段 10.5K 张 NVIDIA GB300 跑 4 周、生成 1 亿+ rollouts、最大上下文 256K tokens，训练与评分共用约 13 亿个 sandbox、百万级环境。</p>
+<p><strong>为什么值得看</strong> 开放权重阵营少见的超大规模 RL 工程披露；权重、技术报告与 model card 本月放出，值得蹲。</p>
+<p><a href="https://reflection.ai/blog/introducing-beam">阅读原文</a></p>
+<p><a class="origin" href="https://reflection.ai/blog/introducing-beam">阅读原文 ↗</a></p>
+</body>
+</html>

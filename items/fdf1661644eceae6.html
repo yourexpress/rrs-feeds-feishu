@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PhaseGate: Phase-Aware CPU Retrieval Scheduling for On-Device LLMs on Unified Memory</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>PhaseGate: Phase-Aware CPU Retrieval Scheduling for On-Device LLMs on Unified Memory</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 统一内存系统上，端侧助手让 GPU 跑 LLM 推理、CPU 跑本地检索并发进行——CPU 检索会如何干扰 LLM 延迟、该用什么信号做准入控制？</p>
+<p><strong>方法</strong> 先量化干扰：两台 M4 系统上四个并发检索 worker 使 p95 解码延迟上升 60–61%，而 prefill 仅升 5.7–6.9%。据此 PhaseGate 以 LLM 相位为准入信号，为 prefill 与 decode 分别校准并发上限（基础 M4 上取 4 与 1）。对照组 TimeGate 用相同两档限额但按校准时间表切换、不观测相位。</p>
+<p><strong>关键数字</strong> 积压队列下 PhaseGate 检索总吞吐达最优可行固定策略的 2.0 倍，七次留出运行中两项 p95 LLM 延迟均在无检索基线的 1.25 倍以内；TimeGate 吞吐相近但每次运行都违反输出 token 延迟约束；M2/M2 Pro 复现该策略排序。</p>
+<p><strong>为什么值得看</strong> "相位感知准入"简单有效且可复现，对统一内存端侧部署（Apple Silicon 类）的 LLM+RAG 混合负载是现成的调度策略。</p>
+<p><a href="https://arxiv.org/abs/2610.04537">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.04537">阅读原文 ↗</a></p>
+</body>
+</html>

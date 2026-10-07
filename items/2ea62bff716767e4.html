@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond In-Distribution Preservation: Recovering Generalization in Quantized VLAs via Vulnerability-Oriented Tuning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Beyond In-Distribution Preservation: Recovering Generalization in Quantized VLAs via Vulnerability-Oriented Tuning</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 训练后量化（PTQ）的 VLA 策略在分布内表现尚可，但遇到环境扰动时是否保住全精度模型的鲁棒性与泛化？论文系统研究发现：量化策略会对细微环境变化变脆，且动作偏差集中在少数 rollout 状态上。</p>
+<p><strong>方法</strong> PIVOT-Q：脆弱性感知的 On-Policy 蒸馏。用折扣累积偏差在短窗口内识别脆弱状态，由冻结的全精度教师只对这些状态做相位均衡的稀疏监督，并加 Behavioral Anchor 防止无关改动——而非全局蒸馏学生。</p>
+<p><strong>关键数字</strong> 在 LIBERO-Plus 七种环境变化、多个 VLA 骨干与量化方法下一致恢复；所有设置下均超过全状态蒸馏，而只用后者 7.4% 的状态级蒸馏预算。</p>
+<p><strong>为什么值得看</strong> "教师引导在高偏差状态有益、低偏差状态反而有害"的观察很尖锐，低成本修复量化鲁棒性的思路可迁移到其他策略模型。</p>
+<p><a href="https://arxiv.org/abs/2610.05745">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.05745">阅读原文 ↗</a></p>
+</body>
+</html>

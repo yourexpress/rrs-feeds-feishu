@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EmbeddingGemma 2: an open, lightweight multimodal embedding model</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>EmbeddingGemma 2: an open, lightweight multimodal embedding model</h1>
+<p class="meta-line">Google DeepMind · 2026-10-06 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/embeddinggemma2-banner_169.width-1300.png" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong> Google 发布 EmbeddingGemma 2：把一代的文本嵌入扩展到代码、图像、视频、音频统一的共享嵌入空间，继续主打端侧轻量高质量嵌入。</p>
+<p><strong>要点</strong> 基于 Gemma 4 架构、Apache 2.0 许可；模块化设计——纯文本负载最少 270M 参数，可选 170M 视觉、300M 音频编码器拼全模态；Matryoshka 表示学习支持把 768 维输出动态截断到 512/256/128 维；与 Gemma 4 共享 text tokenizer 与音频编码器，可同机搭配跑端侧 RAG。</p>
+<p><strong>关键数字</strong> 740M 参数；8K 上下文（一代的 4 倍），可处理 5.5 分钟音频/29 张图/58 帧视频；MTEB Code 从 68.76 升至 78.68（+9.92）；Pixel 11 Pro 上量化后纯文本约 191MB 内存、全模态约 567MB；截断最低带来 6 倍存储缩减。</p>
+<p><strong>为什么值得看</strong> sub-1B 多模态嵌入的质量-参数比新标杆，端侧语义搜索/路由/检索的现成积木。</p>
+<p><a href="https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/">阅读原文</a></p>
+<p><a class="origin" href="https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/">阅读原文 ↗</a></p>
+</body>
+</html>

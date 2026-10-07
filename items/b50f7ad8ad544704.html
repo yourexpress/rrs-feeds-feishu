@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GPU-Initiated Discrete Simulated Bifurcation: Low-Latency Requests and Streaming Dense Couplings</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>GPU-Initiated Discrete Simulated Bifurcation: Low-Latency Requests and Streaming Dense Couplings</h1>
+<p class="meta-line">arXiv cs.DC · 2026-10-06 · 论文PDF</p>
+
+<p>GPU 发起的离散模拟分岔：低延迟请求与流式稠密耦合</p>
+<blockquote><p>GPU-based optimization faces two communication bottlenecks: coordinating frequent requests and delivering dense models that exceed device memory. We present a discrete simulated bifurcation (dSB) architecture that addresses both through NVIDIA DOCA GPUNetIO. For resident models, a persistent service receives field updates, executes each solve within one GPU thread block, and returns the result. Exact integer coupling sums, GPU work queues, and batched transmission keep the receive--solve--reply path on the device without a dedicated CPU data-path core. In comparisons with socket-based servers using the same solver, the largest latency gains occur under concurrent load. As the offered load increases from 400 to 800 thousand requests per second, median round-trip latency rises by only 6\%. At the highest tested load, median and 99th-percentile latencies are 189 and 218~$μ$s, compared with 288 and 609~$μ$s for the tuned persistent CPU proxy across repeated runs. For models larger than device memory, a streaming solver retains dynamical state on the GPU and reuses incoming coupling tiles across replicas. It evaluates ten-million-variable dense binary matrices at approximately 307~Gb/s,…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.06622">阅读原文 ↗</a></p>
+</body>
+</html>
