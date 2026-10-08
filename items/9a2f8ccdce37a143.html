@@ -22,9 +22,11 @@
 <h1>PHBA: Prefix-State Hybrid Block Attention</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF / 每日精选</p>
 
-<p>用 top-k 块稀疏检索替代局部滑窗的线性注意力-softmax 混合架构（PHBA）</p>
-<blockquote><p>Hybrid architectures combining linear sequence models with softmax attention provide an effective balance between efficient long-context modeling and precise token retrieval. Existing designs such as Native Hybrid Attention (NHA) combine compressed long-term states with sliding-window attention, but their exact attention is restricted to a fixed local window. In this work, we introduce Prefix-State Hybrid Block Attention (PHBA), which replaces local sliding-window attention with top-k block-sparse retrieval and couples each retrieved block with a compact prefix state summarizing its preceding context. The prefix states are constructed by a gated linear recurrence at block boundaries and retrieved together with the corresponding token blocks, allowing the model to combine precise long-range evidence with compressed historical context within a unified layer. We further develop a hardware-aware Triton implementation that streams routed token blocks and prefix states without materializing large intermediate tensors. Experiments show that PHBA improves long-context and retrieval performance over strong linear and hybrid baselines while retaining efficient training and inference.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 线性序列模型与 softmax 注意力的混合架构（如 NHA）中，精确注意力被限制在固定局部滑窗内，长程精确检索能力不足。</p>
+<p><strong>方法：</strong> PHBA 用 top-k 块稀疏检索替代局部滑窗，每个检索到的 token 块搭配一个紧凑前缀状态（由块边界处的门控线性递归构造），块与前缀状态一起被检索，在单层内同时利用精确长程证据与压缩历史；并开发硬件感知的 Triton 实现，流式处理路由块与前缀状态、不实例化大中间张量。</p>
+<p><strong>关键数字：</strong> 摘要未给出具体数值，报告在长上下文与检索性能上优于强的线性及混合基线，同时保持高效的训练与推理。</p>
+<p><strong>为什么值得看：</strong> 把"精确长程检索 + 压缩历史摘要"统一进单个注意力层，是混合注意力架构的一个新设计点，值得长上下文方向参考。</p>
+<p><a href="https://arxiv.org/abs/2610.08527">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.08527">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Stepped MoE: Segment-Level Routing with Configurable Inference Complexity</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF / 每日精选</p>
 
-<p>段级路由 + 可配置推理复杂度的统一弹性 MoE 框架，对齐端侧内存与算力限制</p>
-<blockquote><p>Training large language models (LLMs) is resource-intensive, and adapting them for diverse deployment scenarios with varying computational constraints remains challenging. While elastic architectures enable flexible model deployment and sparsely activated models allow input-adaptive computation, existing approaches treat these dimensions independently. Moreover, models catered towards on-device edge inference need to conform to the memory and compute limitations of the serving devices. In this paper, we introduce a unified framework that combines elastic structures with sparsely gated architectures to create models that adapt simultaneously to both deployment constraints and task requirements. Our approach employs a model backbone that conditions on both the context and target efficiency specifications, enabling fine-grained control over the accuracy-efficiency trade-off at inference time. The model learns to activate task-relevant parameters within elastically-nested sub-networks, allowing a single model to span multiple capacity points while maintaining input-adaptive routing. Through experiments we demonstrate that we can create a model that allows the flexibility to use 1,2,3,4…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 弹性架构（适配部署约束）与稀疏激活（适配输入）被现有工作独立处理，单一模型难以同时适应不同算力档位的部署场景，端侧还有内存与算力硬限制。</p>
+<p><strong>方法：</strong> Stepped MoE 把弹性结构与稀疏门控架构统一到同一框架：骨干网络同时以上下文和目标效率规格为条件，推理时细粒度控制精度-效率权衡；模型学会在弹性嵌套子网内激活任务相关参数，单模型横跨多个容量点且保持输入自适应路由。</p>
+<p><strong>关键数字：</strong> 一个模型可在 1/2/3/4B 参数档间切换，知识密集基准上比对应 dense 模型准 2–5%，与各档静态版本持平、延迟与 dense 相当；参数共享节省设备磁盘空间。</p>
+<p><strong>为什么值得看：</strong> "一份权重、多档算力"对端侧分发极具实用价值，弹性与稀疏的统一设计值得端侧模型团队参考。</p>
+<p><a href="https://arxiv.org/abs/2610.07348">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07348">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>T-CCL: Resource Efficient and Performant Collective Communication using Tensor Memory Accelerator</h1>
 <p class="meta-line">arXiv cs.DC · 2026-10-08 · 论文PDF / 每日精选</p>
 
-<p>基于 Tensor Memory Accelerator 的集合通信库，压低 SM 侧资源占用实现算通高效并发</p>
-<blockquote><p>Large transformer-based models increasingly depend on multi-GPU execution, which requires frequent collective communication among GPUs. Existing communication libraries often rely on many GPU threads to achieve high bandwidth or low latency, resulting in a large streaming multiprocessor (SM)-side resource footprint. This footprint can limit the resources available to other GPU work, particularly when communication and computation execute concurrently. Thus, efficient collective communication should not only achieve high collective performance but also reduce its SM-side resource usage. This paper presents T-CCL, a resource-efficient collective communication library based on the Tensor Memory Accelerator (TMA) for intra-node communication. T-CCL offloads both data movement and reduction operations to TMA and executes each collective as a pipelined series of asynchronous TMA operations, reducing the SM resources required for collective communication while maintaining high bandwidth. Evaluated across AllReduce, AllGather, and ReduceScatter collectives, T-CCL outperforms NCCL by up to 2.4x with unrestricted communication resources and up to 3.42x under restricted resource budgets, rema…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 多 GPU 大模型执行依赖频繁集合通信，现有通信库为抢带宽或低延迟占用大量 SM，挤占与通信并发的计算资源。</p>
+<p><strong>方法：</strong> T-CCL 基于 Tensor Memory Accelerator（TMA）做节点内集合通信：把数据搬运与归约都卸载给 TMA，每个集合操作执行为流水化的异步 TMA 操作序列，在保持高带宽的同时大幅降低 SM 侧资源占用。</p>
+<p><strong>关键数字：</strong> AllReduce/AllGather/ReduceScatter 上比 NCCL 最高快 2.4 倍（资源不受限）与 3.42 倍（资源受限）；GEMM 重叠场景算子级加速从 1.12→1.25（2 卡）、1.04→1.14（4 卡）；作为 vLLM 通信后端端到端吞吐最高提升 1.31 倍，各 batch size 均优于自动调度。</p>
+<p><strong>为什么值得看：</strong> 通信不占 SM 才是真重叠——对训练与推理的通信-计算重叠都直接可用，已落地 vLLM。</p>
+<p><a href="https://arxiv.org/abs/2610.07098">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07098">阅读原文 ↗</a></p>
 </body>
 </html>

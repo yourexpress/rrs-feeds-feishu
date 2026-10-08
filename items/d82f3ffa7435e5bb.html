@@ -22,9 +22,11 @@
 <h1>TRACE: Rollout-Guided Quantization-Aware Training for FP4 Reinforcement Learning of MoE Language Models</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF / 每日精选</p>
 
-<p>rollout 引导的量化感知训练，对齐 FP4 强化学习中训练与 rollout 两条量化执行路径</p>
-<blockquote><p>Reinforcement learning (RL) for post-training large language models (LLMs) incurs substantial computation and memory overhead during rollout generation, which motivates low-precision rollout for efficient RL training. However, existing FP4 RL methods suffer from a key limitation: they primarily optimize quantization accuracy on the training and rollout paths independently rather than directly reducing the discrepancy between the two quantized execution paths. In this work, we propose TRACE (Train-Rollout Quantization Alignment via Compact GuidancE), an FP4 quantization framework for RL training of Mixture-of-Experts (MoE) language models that addresses the limitation of existing FP4 RL methods. TRACE incorporates rollout-guided quantization-aware training that uses rollout-side quantization outcomes to guide training-side FP4 rounding decisions, directly reducing train-rollout discrepancy. Moreover, TRACE adopts an efficient quantization-information caching scheme that selectively retains mantissa and scale information from deeper layers to reduce the storage and communication overhead introduced by rollout guidance. We evaluate TRACE on four large-scale MoE language models across …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> FP4 低精度 rollout 可大幅降低 RL 后训练的开销，但现有 FP4 RL 方法分别优化训练侧与 rollout 侧的量化精度，没有直接缩小两条量化执行路径之间的偏差。</p>
+<p><strong>方法：</strong> TRACE 用 rollout 侧量化结果指导训练侧的 FP4 舍入决策（rollout-guided QAT），直接对齐训练-rollout 偏差；并采用量化信息缓存方案，选择性保留深层的尾数与 scale 信息，压缩 rollout 指导引入的存储与通信开销；面向 MoE 语言模型。</p>
+<p><strong>关键数字：</strong> 在四个大规模 MoE 模型、推理/代码/长程 RL 任务上：FP4 权重/激活 + FP4 KV-cache rollout 达到与 BF16 rollout 相当的 RL 表现，rollout 最高提速 5.4 倍，最终 FP4 性能优于 BF16 训练后的事后量化。</p>
+<p><strong>为什么值得看：</strong> RL 后训练全链路 FP4 化补上关键一块，rollout 这个大头的成本被直接压缩，且思路对 QAT 设计有普适启发。</p>
+<p><a href="https://arxiv.org/abs/2610.07767">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07767">阅读原文 ↗</a></p>
 </body>
 </html>

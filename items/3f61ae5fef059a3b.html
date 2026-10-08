@@ -22,9 +22,11 @@
 <h1>NeMo-DCR: Bit-Exact Delta-Compressed Refit for Scalable Agentic RL at Trillion-Parameter Scale</h1>
 <p class="meta-line">arXiv cs.DC · 2026-10-08 · 论文PDF / 每日精选</p>
 
-<p>位精确 delta 压缩同步万亿参数权重，agentic RL 的跨集群 refit 从 87.5 分钟大幅压缩</p>
-<blockquote><p>Agentic reinforcement learning (RL) disaggregates training from rollout, so each policy update must reach the rollout clusters before the next batch. Transferring a full 1T checkpoint for such weight synchronization (refit) takes 87.5 min between two AWS regions. Measurements of BF16 training show that about 1% of weights change their stored values per step. Recent systems exploit this sparsity but fall short on placement, exactness, or efficiency: they reimplement placement rules, assemble full tensors, rebuild values arithmetically, or use a cross-cluster collective, and none fully recovers from mid-refit failures. We present NeMo-DCR (Delta-Compressed Refit), which sends only changes yet is bit-exact: receivers obtain the same parameter and buffer bits as a dense refit. For placement, fixed affine mappings project changes from training shards into the checkpoint's canonical coordinates, residual conversion covers the other changes, and the serving runtime's native loader places all changes in receiver storage. For exactness, compressible XOR masks carry affine changes whose projection and loader preserve stored bits, and overwrites carry the others. Receivers apply both in place…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> Agentic RL 把训练与 rollout 解耦后，每次策略更新都要把权重同步（refit）到 rollout 集群，1T checkpoint 跨 AWS 区域全量传输需 87.5 分钟，成为瓶颈。</p>
+<p><strong>方法：</strong> NeMo-DCR 只传变化部分但保持位精确：固定仿射映射把训练分片的变化投影到 checkpoint 规范坐标，XOR 掩码携带可压缩变化、覆写携带其余变化，接收端原地应用、重试覆盖部分写入；对象存储或中继树在 delta 构建期间流式传输，无需跨集群集合通信，支持中途失败恢复。</p>
+<p><strong>关键数字：</strong> 实测每步约 1% 权重改变存储值；3% 与 5% 变化率下 30B–1T 模型 refit 比全量参考快 12–40 倍；1T 在 3% 变化率下用中继树 150 秒完成（原为 87.5 分钟）。</p>
+<p><strong>为什么值得看：</strong> 万亿参数跨集群 agentic RL 的权重同步首次同时做到快速、位精确、可断点恢复，是大规模 RL 系统的关键基础设施。</p>
+<p><a href="https://arxiv.org/abs/2610.08430">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.08430">阅读原文 ↗</a></p>
 </body>
 </html>

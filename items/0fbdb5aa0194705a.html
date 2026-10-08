@@ -22,9 +22,11 @@
 <h1>SVRF: Efficient Register Storage for Long-Vector Architectures</h1>
 <p class="meta-line">arXiv cs.AR · 2026-10-08 · 论文PDF / 每日精选</p>
 
-<p>长向量架构中标量语义值重定向存储，削减向量寄存器堆面积、能耗与寄存器压力</p>
-<blockquote><p>Vector processors exploit data-level parallelism to provide high computational throughput, but very long vectors can make the Vector Register File (VRF) a significant source of area, energy, and register pressure. This cost is exacerbated when vector instructions operate on values with scalar semantics: although such values are architecturally represented using vector registers, they do not require full-width storage. This paper proposes the Scalarized Vector Register File (SVRF), a microarchitectural enhancement that redirects scalar-semantics vector values to a dedicated scalar register file, avoiding unnecessary allocation and access of full-width physical vector registers. The SVRF integrates with vector register renaming while preserving compatibility with the supported vector ISA. We implement and evaluate SVRF in an Register Transfer Level (RTL)-based RISC-V Vector Extension (RVV)-compliant vector processing unit supporting very long vectors. Across representative HPC and AI/ML workloads, the SVRF reduces vector-register pressure and VRF activity without degrading performance. By exploiting the resulting reduction in VRF demand, the proposed design achieves up to 15.8% VRF a…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 长向量架构中，带标量语义的值虽不需全宽存储，却仍占用完整的物理向量寄存器，使向量寄存器堆（VRF）成为面积、能耗与寄存器压力的重要来源。</p>
+<p><strong>方法：</strong> SVRF 把标量语义的向量值重定向到一个专用标量寄存器堆，避免不必要的全宽物理向量寄存器分配与访问；与向量寄存器重命名机制集成，并保持对 RISC-V 向量扩展（RVV）ISA 的兼容，在 RTL 级 RVV 向量处理单元上实现评估。</p>
+<p><strong>关键数字：</strong> 在代表性 HPC 与 AI/ML 负载上：VRF 面积最多减少 15.8%、总面积最多减少 6%、总功耗最多降低 12%，性能无退化，部分负载最高获 1.12 倍加速。</p>
+<p><strong>为什么值得看：</strong> 微架构层面的一处小改动换来两位数的面积与功耗收益，且对 ISA 透明，长向量处理器设计可直接借鉴。</p>
+<p><a href="https://arxiv.org/abs/2610.07078">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07078">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>X-OPM: Explainable Automatic Digital On-Chip Power Modeling for Enhanced Robustness</h1>
 <p class="meta-line">arXiv cs.AR · 2026-10-08 · 论文PDF / 每日精选</p>
 
-<p>可解释自动数字片上功耗建模，增强功耗预测器鲁棒性</p>
-<blockquote><p>Proactive power management systems reduce processor dynamic power through runtime power prediction and power-aware scheduling. Accurate, stable and low-overhead digital on-chip power meters (OPMs) are crucial for improving the prediction quality. Recent studies have explored various modeling methods, including using linear models, decision trees, and multi-layer perceptrons (MLPs) to construct OPMs. However, most current approaches train models end-to-end without analyzing the physical interpretability of features, affecting their ability to generalize to unseen workloads. Grounded in the design principles of synchronous digital VLSI circuits, X-OPM introduces a robust feature engineering framework that uses tree-based models to capture feature interactions and linear models for prediction. It also incorporates a human-in-the-loop workflow to balance model accuracy against modeling effort. Evaluated on a commercial C906 vector processor, X-OPM consistently achieves $R^2 &gt; 0.93$ across all workloads with sampling window size set below $8$ cycles. In contrast, state-of-the-art methods including APOLLO, COBIT, and standard MLPs fail to generalize across all test cases. Layout with com…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 数字片上功耗计（OPM）是运行时功耗预测与调度的基础，但现有方法大多端到端训练、不分析特征的物理可解释性，对未见过的负载泛化差。</p>
+<p><strong>方法：</strong> X-OPM 从同步数字 VLSI 电路的设计原理出发做特征工程：用树模型捕捉特征交互、线性模型做预测，并引入人在环工作流平衡模型精度与建模工作量。</p>
+<p><strong>关键数字：</strong> 在商用 C906 向量处理器上，所有负载在采样窗小于 8 个周期时 R² 均超过 0.93；对比方法 APOLLO、COBIT 与普通 MLP 均无法在所有测试用例上泛化；版图评估面积开销低于 0.1%，与轻量树/线性模型相当、远小于 MLP 方案。</p>
+<p><strong>为什么值得看：</strong> 功耗建模从"黑盒拟合"回到"电路原理驱动"，泛化性与面积开销双优，对低功耗处理器设计直接有用。</p>
+<p><a href="https://arxiv.org/abs/2610.08502">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.08502">阅读原文 ↗</a></p>
 </body>
 </html>

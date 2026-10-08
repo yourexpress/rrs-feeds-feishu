@@ -22,9 +22,11 @@
 <h1>TRANSIT: Transparent Scale-in for Multi-Node LLM Training</h1>
 <p class="meta-line">arXiv cs.DC · 2026-10-08 · 论文PDF / 每日精选</p>
 
-<p>用户态拦截层把 CPU DRAM 透明扩展为 GPU 显存，多节点 LLM 训练可缩容到更少 GPU 不减效</p>
-<blockquote><p>TRANSIT is a transparent scale-in framework to enable multi-node model training on fewer GPUs while maintaining training efficiency by transparently leveraging CPU DRAM as an extension of GPU memory during distributed training. It achieves this through a user-space interposition layer, requiring no modifications to the application, training framework, cluster scheduler, device driver, or operating system. Furthermore, TRANSIT achieves higher efficiency by leveraging a zero-copy data path for CPU-GPU transfers. We evaluate TRANSIT on dense and MoE models across scales up to 64 NVIDIA H100 GPUs and multiple parallelism configurations over a RoCE network. Our evaluation shows that TRANSIT can: (a) outperform state-of-the-art framework-managed offloading techniques, achieving up to 68%, 59%, and 42% higher per-GPU throughput than TorchTitan, ZeRO-Offload, and ZeRO-Infinity, respectively, (b) enables training with 50% fewer GPUs while maintaining over 90% of baseline per-GPU throughput, (c) lower per-node network traffic by up to 33%, and (d) improve per-GPU throughput by up to 35% in communication-bound settings.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 多节点 LLM 训练想用更少 GPU 完成，同时不明显损失训练效率。</p>
+<p><strong>方法：</strong> TRANSIT 通过一个用户态拦截层，把 CPU DRAM 透明地扩展为 GPU 显存用于分布式训练——不需要修改应用、训练框架、集群调度器、设备驱动或操作系统；CPU-GPU 传输走零拷贝数据路径提升效率。</p>
+<p><strong>关键数字：</strong> 在最多 64 张 H100、RoCE 网络、多种并行配置上评估：per-GPU 吞吐比 TorchTitan、ZeRO-Offload、ZeRO-Infinity 分别最高高 68%、59%、42%；GPU 减半时仍保持基线 per-GPU 吞吐的 90% 以上；每节点网络流量最多降低 33%；通信受限场景吞吐最高提升 35%。</p>
+<p><strong>为什么值得看：</strong> "透明"是核心卖点——不改任何一层软件栈就能缩容训练，对弹性算力与成本敏感的训练场景有直接的实用价值。</p>
+<p><a href="https://arxiv.org/abs/2610.07593">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07593">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>$α$Transfer: Coefficient Transfer for Efficient Model Merging</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Model merging offers a promising solution for combining multiple fine-tuned checkpoints into a single model th…</p>
-<blockquote><p>Model merging offers a promising solution for combining multiple fine-tuned checkpoints into a single model through parameter arithmetic. However, finding optimal merging coefficients requires an extensive search that becomes prohibitively expensive as models scale in both size and number, due to high memory requirements and combinatorial growth in the search space. We show that, within the same model family, models exhibit highly congruent performance distributions over merging coefficients across different model sizes. This distributional similarity enables a practical paradigm we call \textit{$α$Transfer}: searching for optimal coefficients on a small proxy model, then directly transfer them to larger target models. We verify $α$Transfer across multiple merging methods, model families, and tasks. Experimental results demonstrate a 6$\times$ speedup and 70\% memory reduction on vision transformers, and a 20$\times$ speedup and 85\% memory reduction on large language models, while maintaining comparable performance. Our findings establish $α$Transfer as an efficient and generalizable approach to scaling model merging.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 模型合并（model merging）通过参数算术把多个微调 checkpoint 合成一个模型，但最优合并系数的搜索随模型规模与数量组合爆炸，内存与算力开销过大。</p>
+<p><strong>方法：</strong> 作者发现同一模型族内，不同规模模型在合并系数上的性能分布高度一致；据此提出 αTransfer：在小代理模型上搜索最优系数，直接迁移到大目标模型，无需在大模型上重复搜索。</p>
+<p><strong>关键数字：</strong> 跨多种合并方法、模型族与任务验证：Vision Transformer 上 6 倍加速、内存减少 70%；LLM 上 20 倍加速、内存减少 85%，且合并性能与直接搜索相当。</p>
+<p><strong>为什么值得看：</strong> 把模型合并的调参成本与目标模型规模解耦，方法简单、通用、立即可用，做模型融合的工作流可以直接采纳。</p>
+<p><a href="https://arxiv.org/abs/2610.07819">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07819">阅读原文 ↗</a></p>
 </body>
 </html>

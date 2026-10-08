@@ -22,9 +22,11 @@
 <h1>Judged Useless, Queried Anyway</h1>
 <p class="meta-line">arXiv（NTU/A*STAR 等） · 2026-10-07 · 论文PDF / 每日精选</p>
 
-<p>实证结论：agent 以 97%-100% 准确率判定工具结果无用却仍持续查询，执行层强制停止规则可显著提升成功率</p>
-<blockquote><p>An agent whose tool keeps returning nothing useful should stop relying on it. In a retrieval environment with controlled source failures, we separate how agents judge results from what they do. We compare stopping at the same step after longer and shorter runs of results the agent judged useless; this contrast is zero for clock- or deadline-driven stopping. Where we record their judgments, the seven agents we test call a failing source's results useless 97-100% of the time, yet most of them rarely stop on that judgment. Prompt cues change when they stop but not what they stop on. Permission to answer from memory and a reasoning mode can bring early stops regardless of evidence, a stated budget moves the 7-8B models' stops to the deadline, and a stopping rule or call cost in the prompt is followed at most partly. Stopping follows the evidence only when the harness enforces an integration step that makes the agent answer after five consecutive results it judged useless. This step raises failing-source success for every model, keeps the stopping point fixed when the budget doubles, and needs no extra judgment call when the agent states its judgments. A pre-registered replication on 30…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 工具持续返回无用结果时，agent 理应停止依赖它；但实验中 agent 明明判断结果无用却仍继续调用——判断与行动为何脱节？</p>
+<p><strong>方法：</strong> 在带可控检索源失效的环境中分离"评判"与"行为"：对比 agent 在连续长/短串无用结果后的停止点（排除时钟/期限驱动的停止）；测试 7 个 agent 与多种 prompt 干预，并用 300 个全新问题做预注册复现。</p>
+<p><strong>关键数字：</strong> agent 把失效源结果判为"无用"的比例高达 97–100%，但大多数极少据此停止；prompt 提示只能改变何时停、改变不了依据什么停；唯有 harness 强制的整合步骤（连续 5 个被判无用的结果后必须作答）让所有模型的停止行为随证据走、预算翻倍也不漂移，且每个模型的失效源成功率都提升；预注册复现确认了该效应。</p>
+<p><strong>为什么值得看：</strong> 揭示 agent"知道没用还硬查"的系统性缺陷，并给出 harness 层简单有效的修法，对工具型 agent 设计直接有用。</p>
+<p><a href="https://arxiv.org/abs/2610.06191">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06191">阅读原文 ↗</a></p>
 </body>
 </html>

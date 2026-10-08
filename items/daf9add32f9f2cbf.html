@@ -22,9 +22,11 @@
 <h1>vTen: Tensor-Centric Verification Framework for Domain-Specific Accelerators</h1>
 <p class="meta-line">arXiv cs.DC · 2026-10-08 · 论文PDF / 每日精选</p>
 
-<p>声明式 DSL + kernel 粒度批处理的专用加速器验证框架，解耦验证意图与执行机制</p>
-<blockquote><p>The semantic gap between tensor-centric software models and signal-level hardware testbenches creates significant productivity bottlenecks in verifying Domain-Specific Accelerators (DSAs). Existing frameworks like Cocotb suffer from prohibitive synchronization overheads due to fine-grained interactions. To address this, we propose vTen, a data-centric framework that strictly decouples verification intent from execution mechanics. By leveraging a declarative DSL and kernel-granular batching, vTen minimizes host-simulator interaction frequency. Evaluation on a production-scale 3D U-Net accelerator demonstrates that vTen achieves a 2x performance improvement in simulation latency and a 60.3% reduction in code complexity compared to Cocotb.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 验证领域专用加速器（DSA）时，张量级软件模型与信号级硬件 testbench 之间的语义鸿沟造成生产力瓶颈；Cocotb 等框架因细粒度交互带来过高的同步开销。</p>
+<p><strong>方法：</strong> vTen 是以数据为中心的验证框架，用声明式 DSL 表达验证意图、以 kernel 粒度做批处理执行，把验证意图与执行机制严格解耦，从而最小化宿主与仿真器之间的交互频率。</p>
+<p><strong>关键数字：</strong> 在一个生产级 3D U-Net 加速器上，vTen 相比 Cocotb 仿真延迟改善 2 倍，代码复杂度降低 60.3%。</p>
+<p><strong>为什么值得看：</strong> 验证框架"声明式化 + 批量化"的落地案例，自研加速器团队可参考其思路压缩验证成本。</p>
+<p><a href="https://arxiv.org/abs/2610.08372">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.08372">阅读原文 ↗</a></p>
 </body>
 </html>

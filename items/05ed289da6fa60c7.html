@@ -22,9 +22,11 @@
 <h1>Pattern-Guided Graph Synthesis for Suppressing Known Defects in DL Compiler Fuzzing</h1>
 <p class="meta-line">arXiv cs.PL · 2026-10-08 · 论文PDF / 每日精选</p>
 
-<p>模式引导图合成在生成期抑制 DL 编译器 fuzzing 重复触发已知缺陷（Reprise）</p>
-<blockquote><p>Fuzzing is effective at finding bugs in deep learning (DL) compilers, but existing fuzzers repeatedly trigger faults they have already uncovered. Current fuzzers diversify the generated programs, and downstream tools deduplicate bug reports post hoc, but neither stops a fuzzer from generating programs that re-trigger known defects. We present Reprise, a DL compiler fuzzer that suppresses reports of known defects during test generation. Reprise uses a deliberately lightweight generator that builds graphs in a unified intermediate representation (UIR) with local operator signatures. Instead of diversifying programs, Reprise distills each discovered defect into a semantic graph pattern that captures the operators, value constraints, graph context, and data flow required to trigger it. During graph synthesis, it regenerates any node that completes a known pattern, so known defect triggers are avoided before compilation and execution. We evaluate Reprise on three DL compilers: TVM, PyTorch Inductor, and ONNX Runtime. Against its unguided variant, patterns written for the dominant known defects reduce crash reports by 90.2% on TVM (254 to 25) and by 93.8% on PyTorch Inductor (594 to 37),…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> DL 编译器 fuzzer 会反复触发已经发现过的缺陷；现有做法靠生成多样化程序和事后去重报告，都无法从源头阻止重复触发。</p>
+<p><strong>方法：</strong> Reprise 把每个已发现缺陷蒸馏成一条语义图模式（涵盖算子、值约束、图上下文与数据流），在图合成阶段一旦某个节点补全了已知模式就重新生成该节点，让已知缺陷的触发在编译执行前就被避免；生成器本身刻意保持轻量。</p>
+<p><strong>关键数字：</strong> 在 TVM、PyTorch Inductor、ONNX Runtime 上评估：TVM 崩溃报告减少 90.2%（254→25）、Inductor 减少 93.8%（594→37），分支覆盖率相当、执行测试数少 1.0–17.9%；另发现 25 个此前未知的 bug，7 个已修复、12 个获开发者确认。</p>
+<p><strong>为什么值得看：</strong> 把 fuzzing 从"事后去重"推进到"生成期抑制"，实测覆盖三个主流编译器且找到真 bug，思路可直接迁移。</p>
+<p><a href="https://arxiv.org/abs/2610.06968">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06968">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>SoloQ: Calibration-Free Quantization for Diffusion Language Models</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF / 每日精选</p>
 
-<p>免校准的扩散语言模型低比特权重-激活后训练量化</p>
-<blockquote><p>Diffusion large language models dLLMs) have emerged as a promising alternative to autoregressive language models through bidirectional diffusion-based token generation. However, their growing model sizes and high inference costs make efficient deployment challenging: full-sequence denoising repeatedly invokes compute-intensive forward passes, while block-diffusion models additionally introduce a memory-intensive KV-cache. Low-bit weight-activation quantization is therefore attractive, yet existing dLLM post-training quantization methods rely on calibration data despite activation distributions shifting across masking states and denoising steps. We present SoloQ, a calibration-free quantization framework that maps weights and activations into a normalized rotated basis with a predictable marginal distribution, enabling data-independent quantization. SoloQ combines a structured K-RPBH rotation with a lightweight rescaling correction for calibration-free quantization. Its predictable post-rotation distribution supports both distribution-matched codebooks and hardware-native NVFP4. For block-diffusion models, SoloQ further applies commit-time KV-cache quantization to compress persisten…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 扩散语言模型（dLLM）权重-激活低比特量化的现有方法依赖校准数据，但激活分布随掩码状态与去噪步数漂移，校准路线先天不稳。</p>
+<p><strong>方法：</strong> SoloQ 免校准：用结构化 K-RPBH 旋转把权重与激活映射到边缘分布可预测的旋转基，配轻量 rescaling 校正实现数据无关量化；可预测分布同时支持分布匹配码本与硬件原生 NVFP4；对 block-diffusion 模型另加提交时刻的 KV-cache 量化，不扰动正在去噪的块。</p>
+<p><strong>关键数字：</strong> 在 LLaDA、Dream、Fast-dLLM v2 与 Nemotron-Diffusion 上，4-bit 下保持精度并优于校准基线；NVFP4 下峰值内存最多降 2.61 倍、端到端推理最多加速 2.24 倍。</p>
+<p><strong>为什么值得看：</strong> dLLM 量化首次摆脱校准数据依赖，且直接落到 NVFP4 硬件路径，dLLM 部署的实用一步。</p>
+<p><a href="https://arxiv.org/abs/2610.07121">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07121">阅读原文 ↗</a></p>
 </body>
 </html>

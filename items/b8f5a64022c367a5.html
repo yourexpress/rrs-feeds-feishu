@@ -22,9 +22,11 @@
 <h1>SchemaFill: Efficient LLM Tool Calling via Slot-Parallel Speculative Decoding</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF / 每日精选</p>
 
-<p>利用工具调用参数结构的槽位并行投机解码，降低多工具多字段请求延迟</p>
-<blockquote><p>LLM agents interact with external systems by generating structured tool calls. Given a user request, conversational context, and a catalog of tool schemas, a tool-calling model must select tools and generate their arguments, potentially producing multiple calls in a single response. Standard autoregressive decoding generates these calls token by token, incurring substantial latency for requests involving multiple calls or many argument fields. The explicit argument structure offers opportunities for parallel generation, but later argument values may depend on preceding fields and calls, so independently generated values can differ from the target model's output. We present SchemaFill, a framework for efficient LLM tool calling through slot-parallel speculative decoding. SchemaFill generates future slot values concurrently as candidates, without requiring advance knowledge of the actual call sequence or argument values. Candidates spanning multiple fields and calls are concatenated for verification by the target model under the actual output prefix. Only verified tokens are committed, and the target supplies corrections when candidates disagree. This applies target verification whil…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> LLM 工具调用的结构化参数逐 token 自回归生成，多调用、多字段请求延迟高；但后续参数值依赖前面的字段与调用，独立并行生成会与目标模型输出不一致。</p>
+<p><strong>方法：</strong> SchemaFill 做槽位并行投机解码：无需预知调用序列与参数值，并发地为未来槽位生成候选值，把跨字段、跨调用的候选拼接后在真实输出前缀下由目标模型统一验证，只提交验证通过的 token，分歧处由目标模型纠正。</p>
+<p><strong>关键数字：</strong> 在 Glaive 与 BFCL 上，端到端吞吐相对自回归解码最高提升 4.05 倍；代码已开源。</p>
+<p><strong>为什么值得看：</strong> 把投机解码从自由文本扩展到结构化工具调用，多参数、多调用场景收益直接，agent 链路延迟优化可即插即用。</p>
+<p><a href="https://arxiv.org/abs/2610.07086">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07086">阅读原文 ↗</a></p>
 </body>
 </html>

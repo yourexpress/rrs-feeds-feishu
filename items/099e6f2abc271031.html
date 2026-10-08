@@ -22,9 +22,11 @@
 <h1>SSR: Sparse Segment Reduction for Ternary GEMM Acceleration</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF / 每日精选</p>
 
-<p>利用三值权重稀疏结构的稀疏段归约 GEMM 加速</p>
-<blockquote><p>Large Language Models (LLMs) require substantial computational resources, limiting their deployment on resource-constrained hardware. Ternary LLMs mitigate these demands through weight quantization via ternary values, achieving significant compression often with 50-90% sparsity. However, existing approaches have limitations: methods optimized for ternary weights, such as BitNet, redundant segment reduction (RSR), and its improved version RSR++, do not exploit sparsity structures, while conventional sparse formats neglect ternary characteristics, foregoing dual optimization opportunities. In this paper, we introduce Sparse Segment Reduction (SSR), a ternary matrix multiplication method designed to accelerate the inference of ternary LLMs and general Ternary Weight Networks (TWNs). SSR has a dedicated optimized ternary data format and an algorithm that systematically exploits sparsity patterns through computation trees that scale with the sparsity. SSR provides theoretical gains with asymptotically faster inference than RSR++ for sparsity above 50%, while practical evaluations reveal performance improvements across all sparsity levels. Evaluation results show that SSR achieves 2.1-11…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 三值（ternary）LLM 权重天然带 50–90% 稀疏度，但现有方法要么（如 BitNet、RSR/RSR++）不利用稀疏结构，要么用通用稀疏格式而忽略三值特性，两份优化红利只吃了一份。</p>
+<p><strong>方法：</strong> SSR 设计专用三值数据格式与稀疏段归约算法，用随稀疏度伸缩的计算树系统性地利用稀疏模式加速三值 GEMM，同时适配三值 LLM 与一般三值权重网络。</p>
+<p><strong>关键数字：</strong> 45–95% 稀疏度下比 RSR++ 快 2.1–11.3 倍；Llama-3 1B 端到端推理快 3.5–6.3 倍并节省 4.9% 内存；理论上稀疏度超过 50% 时渐近复杂度优于 RSR++。</p>
+<p><strong>为什么值得看：</strong> 同时吃"三值 + 稀疏"两份红利，是资源受限硬件上部署三值模型的实用加速件。</p>
+<p><a href="https://arxiv.org/abs/2610.08403">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.08403">阅读原文 ↗</a></p>
 </body>
 </html>
