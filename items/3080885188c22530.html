@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lachesis: Lifetime-Aware KV Cache Placement for Agent Serving across HBM and High-Bandwidth Flash</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Lachesis: Lifetime-Aware KV Cache Placement for Agent Serving across HBM and High-Bandwidth Flash</h1>
+<p class="meta-line">arXiv cs.AR · 2026-10-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> Agent 及子 Agent 跨大量请求累积 KV cache、吞掉大量内存；高带宽闪存（HBF）容量高一个数量级且读带宽达 HBM 级，但写入寿命有限。</p>
+<p><strong>方法：</strong> 洞察是按生命周期放置：短命数据进 HBM，让 HBM 吸收 agent 运行的大部分写入、少写 HBF；分析 agent harness 行为，识别时间、结构、worker 间三个生命周期分化轴；Lachesis 作为 harness 与推理引擎间的放置层，写时按寿命选 HBM/HBF，段不再被读即释放。</p>
+<p><strong>关键数字：</strong> trace 驱动仿真中 HBF 寿命比 HBM-first 放置延长 1.19–3.13x（达 3.3–12.2 设备年）；在紧 SLO 允许的满载 24x7 运行下，多 agent trace 上 HBF 寿命超过其五年保修。</p>
+<p><strong>为什么值得看：</strong> agent serving 时代的新存储分层问题，HBF 写寿命的量化解法，问题定义新鲜。</p>
+<p><a href="https://arxiv.org/abs/2610.08378">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.08378">阅读原文 ↗</a></p>
+</body>
+</html>

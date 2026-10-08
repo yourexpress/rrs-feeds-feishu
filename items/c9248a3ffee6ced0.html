@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AttSVD:Prompt-Adaptive Low-Rank KV Cache Compression via Attention-Guided SVD</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>AttSVD:Prompt-Adaptive Low-Rank KV Cache Compression via Attention-Guided SVD</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 自回归 Transformer 的 KV cache 随上下文线性增长、长上下文时主导内存；主流免训练方法沿序列轴驱逐低重要性 token，选择不可逆。</p>
+<p><strong>方法：</strong> AttSVD 改沿「特征轴」低价存储、不丢任何 token：对每个 prompt 在线做注意力引导的截断 SVD，只保留注意力真正读取的方向，按保留 rank 比例削减每头持久 KV 内存；提供 accumulating/streaming 两种解码期缓存策略，以及逐矩阵能量规则与注意力感知基截断两个自适应细化。</p>
+<p><strong>关键数字：</strong> 多模型、agentic 基准与全套 LongBench 上与稠密 cache 持平，KV cache 内存最多只用 50%。</p>
+<p><strong>为什么值得看：</strong> 不丢 token 的 KV 压缩新路线，还免费给出每头有效秩等可解释性洞察。</p>
+<p><a href="https://arxiv.org/abs/2610.06927">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.06927">阅读原文 ↗</a></p>
+</body>
+</html>

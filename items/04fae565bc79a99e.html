@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>An Empirical Fault Vulnerability Exploration of ReRAM-based Process-in-Memory CNN Accelerators</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>An Empirical Fault Vulnerability Exploration of ReRAM-based Process-in-Memory CNN Accelerators</h1>
+<p class="meta-line">arXiv cs.AR · 2026-10-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 遥感、医疗等领域因许可与隐私限制拿不到分布内数据，量化缺乏校准数据；且部署上常需同一产物服务多种精度。</p>
+<p><strong>方法：</strong> ApexQuant 免数据量化：递归再量化残差误差，作为现有量化器之上的精修层；证明一次新的随机旋转会把残差恢复为超球面上的均匀分布，从而在读任何权重前就能确定达到目标误差需要的 pass 数；标量、E8、trellis 三个可互换阶段，且每个前缀本身就是一个有效的低比特模型（弹性量化）。</p>
+<p><strong>关键数字：</strong> 4 比特下距全精度仅差几个百分点；完全免数据设定下给出实测最佳的 2 比特方案；在四个开源 LLM 及遥感、医疗领域验证。</p>
+<p><strong>为什么值得看：</strong> 弹性量化（一产物多精度）与免数据两个卖点都瞄准真实部署痛点。</p>
+<p><a href="https://arxiv.org/abs/2610.07904">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.07029">阅读原文 ↗</a></p>
+</body>
+</html>

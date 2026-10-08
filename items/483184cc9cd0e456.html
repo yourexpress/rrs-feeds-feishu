@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ECO: Energy-Oriented Configuration Optimization for Attention FFN Disaggregated LLM Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ECO: Energy-Oriented Configuration Optimization for Attention FFN Disaggregated LLM Serving</h1>
+<p class="meta-line">arXiv cs.AR · 2026-10-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> Attention-FFN 分离（AFD）的 LLM 服务要省能，需在「部署结构约束运行控制」的层级配置空间里联合搜索，而物理评估昂贵、只能测少量候选。</p>
+<p><strong>方法：</strong> ECO 从校准的阶段行为与流水线依赖构建结构感知能量先验，用高斯过程学习残差预测误差；成本感知的约束贝叶斯优化按预期节能排测量优先级，兼顾 SLO 可行性、执行成功率与评估成本，返回测过的最低能耗可行配置。</p>
+<p><strong>关键数字：</strong> A6000/A100 共 16 个场景（Qwen/DeepSeek），在不相交请求上评估的冻结配置平均降服务能耗 40.5%、输出 token 率升 20.7% 且满足 SLO；A6000 场景可行能耗比通用约束 BO 低 33.1%、比遗传搜索低 25.8%。</p>
+<p><strong>为什么值得看：</strong> LLM 推理能耗优化是真金白银的成本问题，AFD 场景的系统性配置搜索很少见。</p>
+<p><a href="https://arxiv.org/abs/2610.08373">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.08373">阅读原文 ↗</a></p>
+</body>
+</html>

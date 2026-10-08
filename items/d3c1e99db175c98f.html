@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MemFLoRA: Memory-Floor LoRA for CNN Adaptation at the Edge</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MemFLoRA: Memory-Floor LoRA for CNN Adaptation at the Edge</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 边缘 CNN 的设备端学习（应对用户/传感器/环境漂移）瓶颈常不在可训练参数量，而是反向传播前必须保留的激活状态内存——直接套 Transformer 式 LoRA 并不解决它。</p>
+<p><strong>方法：</strong> MemFLoRA 以内存优先原则重设计低秩 CNN adapter：定义激活内存底线准则（可训练的反向计算不得依赖全宽层输入），冻结 down-projection、只训尺度匹配的 up-projection，配合 eval 模式骨干归一化与激活最小反向规则，把保存状态压缩到低秩分支。</p>
+<p><strong>关键数字：</strong> 3 个 HAR 数据集、2 个 CNN 骨干上，保存激活内存降 98.5–98.7%、峰值训练状态内存降 94.9–97.3%（相对全参微调），性能匹配或超过 CNN PEFT 基线。</p>
+<p><strong>为什么值得看：</strong> 点破「LoRA 搬到 CNN 不省激活内存」的盲区，边缘自适应部署的实用工作。</p>
+<p><a href="https://arxiv.org/abs/2610.08669">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.08669">阅读原文 ↗</a></p>
+</body>
+</html>

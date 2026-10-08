@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mask-Guided KV Cache Eviction in Block Diffusion Language Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Mask-Guided KV Cache Eviction in Block Diffusion Language Models</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 块扩散语言模型在整个生成过程保持大 KV cache 且每步去噪都要 attend 全部缓存，限制内存容量与生成速度；降低开销需同时决定去噪当前块用哪些 token（选择）、为未来块保留哪些（驱逐）。</p>
+<p><strong>方法：</strong> MaskAhead 免训练方法，用单一 mask-query 排序机制同时解决两件事：当前块的 mask 指导选择，即将处理块的 probe 指导驱逐，都按对注意力输出的估计贡献排序；Q-MaskAhead 变体直接从低位 KV 计算选择与注意力，被选中条目基本保留精度。</p>
+<p><strong>关键数字：</strong> 长 prompt QA 上 KV 内存平均降 9.5x（平均 F1 损失 1.2 点），Q-MaskAhead 达 20.1x（损失 2.3 点）；batch-32 系统 profile 中端到端 1.23x、解码阶段 1.68x 加速。</p>
+<p><strong>为什么值得看：</strong> 块扩散模型 KV 管理的先行工作，mask 引导的统一选择/驱逐设计巧妙且免训练。</p>
+<p><a href="https://arxiv.org/abs/2610.06996">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.06996">阅读原文 ↗</a></p>
+</body>
+</html>

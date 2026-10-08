@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpecBraM: What Should an EEG Foundation Model Predict? Masked Band-Power Prediction versus Waveform Reconstruction</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SpecBraM: What Should an EEG Foundation Model Predict? Masked Band-Power Prediction versus Waveform Reconstruction</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
+
+<p>Self-supervised EEG models often reconstruct masked waveforms or predict discrete codes.</p>
+<blockquote><p>Self-supervised EEG models often reconstruct masked waveforms or predict discrete codes. We study a task-aligned alternative: masked band-power prediction (MBP), which predicts fixed narrow-band log spectral energy for masked channel-time patches. This target retains rhythm power relevant to sleep staging while avoiding phase-sensitive waveform reconstruction and a learned codebook. Across three pretraining seeds, we compare band-power and waveform targets with matched backbones, pretraining data (2,388 hours), and training steps, including a 2x2 tokenizer-by-target design. On ISRUC and HMC sleep staging, MBP exceeds raw- and band-waveform reconstruction by 1.6-2.8 balanced-accuracy points with all labels and 4.7-7.3 points with 1% of labels under a strict linear probe; the target effect exceeds the tokenizer effect. Its frozen features reach 0.7916/0.7425 balanced accuracy, versus 0.7636/0.7227 for a matched rich handcrafted spectral baseline, although the gap is about one point with 1% of labels. Full fine-tuning reaches 0.8107/0.7669. The gains do not extend to every task with spectral cues, including motor imagery, depression screening, and vigilance regression. These results s…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.07484">阅读原文 ↗</a></p>
+</body>
+</html>

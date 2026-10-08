@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Activation Denoising: A Robustness View on Parallel vs Sequential LLM Quantization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Activation Denoising: A Robustness View on Parallel vs Sequential LLM Quantization</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> LLM 后训练量化中，并行量化（逐层同时量化）的误差经残差流逐层复合放大；串行量化在前层已量化输出上重校准、效果更好，但串行调度在大规模下成瓶颈。</p>
+<p><strong>方法：</strong> 提出带激活去噪的并行量化：把上游量化误差当作噪声，从鲁棒性视角通过预处理加度量加权舍入做正则化，形成深度复合的平滑性惩罚抑制误差放大；用比正交旋转更一般的线性变换乘权重，两者效果互补可叠加。</p>
+<p><strong>关键数字：</strong> 单次并行通过即可恢复串行量化的相当部分收益，时间开销仅为后者的一小部分（原文未给具体倍数）。</p>
+<p><strong>为什么值得看：</strong> 给「并行 vs 串行量化」建立了鲁棒性理论框架，方法论创新大于工程调参。</p>
+<p><a href="https://arxiv.org/abs/2610.07522">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.07522">阅读原文 ↗</a></p>
+</body>
+</html>

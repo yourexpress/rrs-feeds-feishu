@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DySCo: Dynamic Sharding for Collaborative Edge-Cloud LLM Inference with Depth-Synchronized Batching</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DySCo: Dynamic Sharding for Collaborative Edge-Cloud LLM Inference with Depth-Synchronized Batching</h1>
+<p class="meta-line">arXiv cs.DC · 2026-10-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 层间 edge-cloud LLM 推理让边缘设备参与算不起的大模型，但异构切分点带来两个耦合低效：边缘执行/通信在云端调用间制造空隙；到达深度不同的请求无法常规组批。</p>
+<p><strong>方法：</strong> DySCo 运行时保持 KV cache 本地化，dyForward 模型感知层范围执行器免重载权重运行常驻 shard 的连续层段；深度同步组批（DSB）把异构请求推进到最深切点、组批计算公共后缀。</p>
+<p><strong>关键数字：</strong> 实测空隙使每解码步增加最高 25 ms 云端后缀延迟；平均并发 8 时 DSB 吞吐比 FIFO 提升 275%、比精确匹配组批提升 48%、比轮询交错提升 79%，同时降低平均会话延迟。</p>
+<p><strong>为什么值得看：</strong> 「异构切分也能复用常驻权重、共享批计算」的协同推理解法，实测覆盖本地与广域网链路。</p>
+<p><a href="https://arxiv.org/abs/2610.08268">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.08268">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cleave: Scaling Tensor Program Optimization via Decoupled Algebraic Search and Operator Scheduling</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Cleave: Scaling Tensor Program Optimization via Decoupled Algebraic Search and Operator Scheduling</h1>
+<p class="meta-line">arXiv cs.PL · 2026-10-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> FlashAttention 等优质 kernel 多为专家手写、ML 编译器难以匹敌；生成这类 kernel 需要同时做计算图代数变换与算子调度，联合搜索空间过大无法遍历。</p>
+<p><strong>方法：</strong> Cleave 用符号化解耦两步：先在符号 shape 图上做超优化发现变换（等价性检查因此变得便宜，新 Split 算子以符号 split 数沿归约维并行），再在具体 shape 上调度；调度器通过迭代 tiling 与水平融合处理含多归约的图。</p>
+<p><strong>关键数字：</strong> 常见 LLM 子图上 kernel 比最佳基线快最高 2.8x（平均 1.6x），比 Mirage 平均省 5.9x 编译时间；生产服务 trace 的动态负载上对 FlashInfer 手写 FA2/FA3 后端几何平均加速 1.4x/1.7x。</p>
+<p><strong>为什么值得看：</strong> 编译器自动生成媲美手写的 attention kernel 是 AI 编译方向的硬指标，代码已开源。</p>
+<p><a href="https://arxiv.org/abs/2610.07742">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.07742">阅读原文 ↗</a></p>
+</body>
+</html>

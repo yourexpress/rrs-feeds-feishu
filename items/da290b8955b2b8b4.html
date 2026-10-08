@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learning to Remember: Distilling Memory Retention for Compact Recurrent Neural Networks</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Learning to Remember: Distilling Memory Retention for Compact Recurrent Neural Networks</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> RNN/LSTM 类时序模型在可穿戴与边缘平台部署时体积与计算量受限；现有知识蒸馏方法源自 CV 任务，忽略时序模型的时序依赖与记忆保持特性。</p>
+<p><strong>方法：</strong> MemKD（Memory-Discrepancy Knowledge Distillation）：设计专门损失函数捕捉 teacher 与 student 在时间序列各子序列上的记忆保持差异，让 student 有效模仿 teacher 的行为，得到适合实时时序分析的紧凑 RNN。</p>
+<p><strong>关键数字：</strong> 在扩展时序基准上显著超越 SOTA KD 方法；在较宽压缩级别范围内可匹配 teacher 性能，参数量与内存用量显著降低（原文未给具体压缩倍数）。</p>
+<p><strong>为什么值得看：</strong> 把 KD 从 CV 视角适配到时序 RNN 的「记忆视角」，对语音唤醒等时序小模型蒸馏有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.06942">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.06942">阅读原文 ↗</a></p>
+</body>
+</html>

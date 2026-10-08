@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agentic Design Space Exploration for Joint Hardware Configuration Selection and Mapping of AI Inference Workloads on Heterogeneous Edge SoCs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Agentic Design Space Exploration for Joint Hardware Configuration Selection and Mapping of AI Inference Workloads on Heterogeneous Edge SoCs</h1>
+<p class="meta-line">arXiv cs.AR · 2026-10-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 异构边缘 SoC（CPU/GPU/NPU）上 AI 推理的负载映射与处理单元配置（核心数、频率）需联合搜索，空间组合爆炸；黑盒优化与现有 LLM 引导 DSE 只用延迟/能耗等聚合指标做反馈，浪费了 LLM 的推理能力。</p>
+<p><strong>方法：</strong> TraceDSE 智能体式 DSE：LLM proposer 生成候选映射与配置，LLM critic 携带程序化 trace 分析工具解析系统执行 trace、定位瓶颈并提出针对性改进，形成迭代 proposer-critic 循环。</p>
+<p><strong>关键数字：</strong> Intel Meteor Lake SoC 上 4 个 AI 推理负载，Pareto 前沿超体积比 NSGA-II 提升最高 35%、比贝叶斯优化提升最高 68%，硬件评估次数减少约 6–9x。</p>
+<p><strong>为什么值得看：</strong> 用执行 trace 作为 LLM 反馈信号，比稀疏指标更可解释、更省评估预算，DSE 智能体化的代表工作。</p>
+<p><a href="https://arxiv.org/abs/2610.07191">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.07191">阅读原文 ↗</a></p>
+</body>
+</html>

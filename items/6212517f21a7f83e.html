@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lost in the bf16 Cast: Exporting Ternary Language Models Can Revert Most Low-Learning-Rate Code Changes</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Lost in the bf16 Cast: Exporting Ternary Language Models Can Revert Most Low-Learning-Rate Code Changes</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 三值语言模型（BitNet b1.58、Falcon-E、BitCPM）用高精度潜权重微调、导出三值码时按各实验室文档先 cast 到 bf16——这一步可能回退大部分低学习率训练改动。</p>
+<p><strong>方法：</strong> 审计三家实验室的导出流水线：检查发布 checkpoint 中 fp32 量化与部署码的分歧来源；按标称学习率-bf16-ULP 比选学习率微调，实测文档化导出对终点的影响；提出两个兼容补救——直接写训练量化器的码，或微调 bf16 输入直到既有工具能输出正确码。</p>
+<p><strong>关键数字：</strong> 部署码分歧占比：Falcon-E/BitCPM 0.83–1.77%、BitNet 2B-4T 1.530%；文档导出使 Falcon-E-1B-Base GSM8K 严格准确率 58.79%→0.78%、BitCPM-CANN-0.5B 36.13%→0.39%；BitNet 2B-4T 经 bf16 存取严格准确率降 27.54 点；两种补救在三个模型上均满足 4 点非劣性准则。</p>
+<p><strong>为什么值得看：</strong> 三值模型导出细节导致能力崩塌的实锤审计，部署 BitNet 类模型前必读。</p>
+<p><a href="https://arxiv.org/abs/2610.07853">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.07853">阅读原文 ↗</a></p>
+</body>
+</html>

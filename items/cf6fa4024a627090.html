@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Shape-Adaptive Architecture with Disaggregated Quantization for Efficient LLM Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>A Shape-Adaptive Architecture with Disaggregated Quantization for Efficient LLM Serving</h1>
+<p class="meta-line">arXiv cs.AR · 2026-10-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> LLM 推理分 prefill（大 GEMM）与 decoding（小 GEMV）两阶段，服务系统还有连续组批与两阶段分离，现有加速器与这些系统级行为脱节、效率低下。</p>
+<p><strong>方法：</strong> DynaCore 系统-架构协同设计：把脉动阵列的最小执行单元（MEU）沿三个 GEMM 维度重塑（空间上非对称权衡阵列宽高、时间上用 Split-K 折叠部分和）；提出分离量化——prefill 双侧量化、decoding 仅权重量化，内积混合精度通路保持输出位宽不变；运行时按批次选 MEU。</p>
+<p><strong>关键数字：</strong> 真实服务 trace 上，相对量化加速器与可重构加速器，TTFT 分别提升 3.50x 与 2.97x，TPOT 分别提升 36.55x 与 8.02x。</p>
+<p><strong>为什么值得看：</strong> 「按推理阶段选量化策略」的思路对做推理服务优化的人有直接借鉴价值。</p>
+<p><a href="https://arxiv.org/abs/2610.07443">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.07443">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FailBench: Evaluating Fault Tolerance Across Distributed Training Architectures</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>FailBench: Evaluating Fault Tolerance Across Distributed Training Architectures</h1>
+<p class="meta-line">arXiv cs.DC · 2026-10-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 分布式训练依赖数据/流水线/张量/混合并行，但容错机制通常只在设计时针对的架构上评估，跨架构选型缺乏依据。</p>
+<p><strong>方法：</strong> FailBench 统一评估框架：覆盖 7 种分布式训练架构、8 种崩溃容错机制 + 无 FT 基线，含单个/并发/级联 fail-stop 故障；在 8xV100 集群评估 142 个（架构、机制、trace）组合，各 rank checkpoint 状态 205 MB–2.7 GB。</p>
+<p><strong>关键数字：</strong> 磁盘 checkpoint 稳态开销最低 0.5%、内存复制恢复最快约 17 ms、JIT checkpoint 失败时多耗约 0.9 s；gossip 训练丢 worker 后样本吞吐升 17.9%，但 loss 进展相对无故障基线无可测改善；内存复制开销随架构在 3.7%–176% 间浮动。</p>
+<p><strong>为什么值得看：</strong> 给大规模训练集群容错选型提供决策框架；「gossip 不改善 loss」这类反直觉实证结论值得注意。</p>
+<p><a href="https://arxiv.org/abs/2610.07688">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.07688">阅读原文 ↗</a></p>
+</body>
+</html>

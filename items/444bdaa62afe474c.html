@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Align, Then Correct: Training-Free Two-Stage Low-Rank Compensation for Extremely Quantized Large Language Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Align, Then Correct: Training-Free Two-Stage Low-Rank Compensation for Extremely Quantized Large Language Models</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 极低比特量化后的免训练低秩误差补偿（LQEC）受两个共性简化限制：对称校准使补偿目标本质高秩、固定秩预算只能覆盖一小部分；只最小化损失二阶项，忽略每层残留的一阶下降方向。</p>
+<p><strong>方法：</strong> 两阶段闭式框架：Stage 1 在 Fisher 加权非对称目标下把每层输出与全精度模型对齐，把秩预算集中到秩可压缩目标上；Stage 2 在补偿后模型上重测统计，做秩约束自然梯度步吸收剩余一阶信号；每个 adapter 只需一次截断 SVD，反向传播仅用于收集统计量。</p>
+<p><strong>关键数字：</strong> 2 比特 QuIP# 下，Qwen3-8B WikiText-2 困惑度 12.43→10.26、Qwen3-4B 21.11→13.22；held-out C4 上分别恢复 51%/84% 与 FP16 的差距（最强基线为 31%/63%）。</p>
+<p><strong>为什么值得看：</strong> 对免训练量化补偿的数学缺陷剖析干净利落，2-bit 结果显著超基线。</p>
+<p><a href="https://arxiv.org/abs/2610.08164">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.08164">阅读原文 ↗</a></p>
+</body>
+</html>

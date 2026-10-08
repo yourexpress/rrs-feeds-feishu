@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A gem5-based Simulation Framework for Computing-in-DRAM</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>A gem5-based Simulation Framework for Computing-in-DRAM</h1>
+<p class="meta-line">arXiv cs.AR · 2026-10-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 计算在 DRAM（CIMD）研究缺少能跑完整应用的现代模拟器——FPGA 测试床昂贵费人力，开源模拟器多为 trace 驱动，唯一的全应用模拟器（MIMDRAM 自带）基于过时 gem5。</p>
+<p><strong>方法：</strong> 基于最新 gem5 构建 gem5-CIMD：模拟指令从 4 个位运算扩展到 16 条 CIM 指令（覆盖算术/关系/条件/工具类，位宽 4–64 bits）；配套多级大页、CIM 感知分配器、子阵列感知地址映射保证操作数同子阵列共置，并建模 DRAM 刷新调度；提供 CIM 标准库作为编译目标。</p>
+<p><strong>关键数字：</strong> 指令集 16 条、支持 4–64 位宽，含端到端 KNN 等多案例评估；源码与负载公开。</p>
+<p><strong>为什么值得看：</strong> 可跑完整应用的开源 CIMD 模拟基建，做存算方向实验可直接复用。</p>
+<p><a href="https://arxiv.org/abs/2610.08186">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.08186">阅读原文 ↗</a></p>
+</body>
+</html>

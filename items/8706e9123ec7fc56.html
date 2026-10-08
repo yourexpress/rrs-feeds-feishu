@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CACHEFORGE: LLM-Guided End-to-End Generative Cache Replacement Policy for Performance and Hardware Efficiency</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CACHEFORGE: LLM-Guided End-to-End Generative Cache Replacement Policy for Performance and Hardware Efficiency</h1>
+<p class="meta-line">arXiv cs.AR · 2026-10-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 缓存替换策略设计已饱和——固定表示结构、手工特征工程预测器或只会模仿离线最优的模型都无法生成新决策逻辑，性能提升趋于平台期且在动态负载下过拟合。</p>
+<p><strong>方法：</strong> CACHEFORGE 首个端到端进化缓存替换策略的框架：把 LLM 嵌入受治理的硬件感知闭环，每轮由 LLM 提出新 C++ 替换逻辑，在 trace 驱动的 CRC-2 ChampSim 模拟器上评估，辅以 reward shaping、结构检查、动态突变、温度调度与跨策略交叉保证可行性。</p>
+<p><strong>关键数字：</strong> SPEC CPU2006 上总命中率比 MPPPB/ReD/Hawk-eye/SHiP++/LIME/LRU 分别提升 27.36%/19.69%/13.72%/13.15%/11.83%/5.73%；内存密集负载上 IPC 比 LRU 提升 10.15%。</p>
+<p><strong>为什么值得看：</strong> LLM 生成硬件策略代码的完整工程闭环范本，可迁移到其他系统策略设计。</p>
+<p><a href="https://arxiv.org/abs/2610.07668">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.07668">阅读原文 ↗</a></p>
+</body>
+</html>

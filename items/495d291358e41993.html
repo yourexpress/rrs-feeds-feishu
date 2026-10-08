@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Framework for Accelerating Transformer Inference on RISC-V for Edge AI</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>A Framework for Accelerating Transformer Inference on RISC-V for Edge AI</h1>
+<p class="meta-line">arXiv cs.AR · 2026-10-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 如何在 IoT 级资源受限设备上加速 BERT-Tiny、MobileBERT 等紧凑语言模型的 Transformer 推理。</p>
+<p><strong>方法：</strong> 针对模型的非常规计算模式定制轻量 RISC-V 指令集扩展，新增定制指令加速批量矩阵乘的地址生成阶段，并配合编译器主导的循环展开策略，用代码体积换执行时间。</p>
+<p><strong>关键数字：</strong> 地址生成性能提升 15.39–21.74%（ASIC 面积开销 6.79%、功耗 2.33%）；Synopsys trv32p3f 核上推理加速最高 2.19x；TSMC 28nm ASIC 实现面积开销 21.08%（250 MHz），FPGA（ZCU102）面积开销 32.94%。</p>
+<p><strong>为什么值得看：</strong> 从 ISA 扩展、编译器到 FPGA/ASIC 实现的完整边缘 NLP 加速流程参考，各环节数字口径齐全。</p>
+<p><a href="https://arxiv.org/abs/2610.08688">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.08688">阅读原文 ↗</a></p>
+</body>
+</html>

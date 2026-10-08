@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NCCL M2N: A Layout- and Topology-Aware Collective for Distributed Tensor Resharding</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>NCCL M2N: A Layout- and Topology-Aware Collective for Distributed Tensor Resharding</h1>
+<p class="meta-line">arXiv cs.DC · 2026-10-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 分布式训练与 rollout 生成常用不同张量布局，权重需跨不同进程组 reshard（M-to-N），标准集合通信表达不了：flat 直发在目的副本间重复流量，gather-再广播则把注入压力集中到一个 root。DeepSeek-V3 256 GPU 上 legacy all-gather+broadcast 占报告的 RL step 时间 29.4%。</p>
+<p><strong>方法：</strong> NCCL M2N 布局与拓扑感知集合通信原语：由源/目的 mesh 与 placement 推导必需传输区域与全局通信调度；层级路由在合格目的 rank 间平衡源贡献、跨 NVLink 域只转发一份拷贝、本地复制走 NVLink，网络传输与本地复制重叠。</p>
+<p><strong>关键数字：</strong> 最多 256 GB200（NVL72 集群 + NDR InfiniBand）：单 FFN-MoE 层传输比 flat 直发快 7.9x（9.8 ms vs 77.3 ms）；256 GPU DeepSeek-V3 NeMo-RL 权重同步 5.78 s→2.77 s（2.09x），step 时间降 12.7%。</p>
+<p><strong>为什么值得看：</strong> 直击 RL 训练-生成权重同步痛点，给出通信原语级方案，大规模 MoE RL 场景直接可用。</p>
+<p><a href="https://arxiv.org/abs/2610.07516">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.07516">阅读原文 ↗</a></p>
+</body>
+</html>

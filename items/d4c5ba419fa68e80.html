@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mosaic: GPU Sharing with Latency Guarantees through Kernel-Level Interference Prediction</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Mosaic: GPU Sharing with Latency Guarantees through Kernel-Level Interference Prediction</h1>
+<p class="meta-line">arXiv cs.DC · 2026-10-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> GPU 常大量空闲、共置（colocation）可提高利用率，但干扰会破坏延迟敏感负载的 SLO；现有方法要么靠粗粒度启发式、要么依赖模拟器特定的预测指标，忽略 thread-block 摆放、内存层级争用与 SM 内资源竞争等多机制干扰。</p>
+<p><strong>方法：</strong> Mosaic kernel 级干扰预测器，用解析模型 + 轻量学习模型组合显式建模上述机制；配套 MosaicSched 调度器做在线 kernel 准入控制，并在整 GPU 共置与 SM 分区之间选择，以最大化 best-effort 吞吐同时满足延迟 SLO。</p>
+<p><strong>关键数字：</strong> 四种 GPU 架构上预测误差比既有预测器降低最高一个数量级；全部负载上 p99 延迟保持低于或非常接近目标 SLO。</p>
+<p><strong>为什么值得看：</strong> 把 GPU 干扰从「玄学调参」变成机制化可预测可调度的模型，共享 GPU 集群运维直接可用。</p>
+<p><a href="https://arxiv.org/abs/2610.07504">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.07504">阅读原文 ↗</a></p>
+</body>
+</html>
