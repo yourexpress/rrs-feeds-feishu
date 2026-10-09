@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Activation-Aware Weight Tensorization: A Calibration-Time Preconditioner for Tensor-Network LLM Compression</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Activation-Aware Weight Tensorization: A Calibration-Time Preconditioner for Tensor-Network LLM Compression</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 训练后张量网络压缩（TT/TTN）最小化的是权重空间 Frobenius 误差，而非该层激活分布下的功能误差，导致压缩后精度损失。</p>
+<p><strong>方法</strong> Activation-aware Weight Tensorization（AWT）：免训练的校准封装，在分解前用激活导出的对角缩放对权重矩阵预条件化，TT/TTN 求解器保持不变，部署时只需输入侧逐元素重缩放。</p>
+<p><strong>关键数字</strong> 在 Llama 3.1 8B、Ministral 8B、Qwen2.5 7B 上，2–6× 压缩率下闭合 12–35%（单算子替换）至 27–60%（多算子替换）的 WikiText 困惑度差距；对角预条件在 53/81 例中留出功能保真度优于全协方差 oracle。</p>
+<p><strong>为什么值得看</strong> 不改求解器、即插即用的校准技巧，还揭示了"鲁棒性-模块化"权衡的本质，工程落地成本低。</p>
+<p><a href="https://arxiv.org/abs/2610.10085">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.10085">阅读原文 ↗</a></p>
+</body>
+</html>

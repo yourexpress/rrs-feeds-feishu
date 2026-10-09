@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Q-PACE: Dynamic Precision Allocation for Quantization-Aware Training</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Q-PACE: Dynamic Precision Allocation for Quantization-Aware Training</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 量化感知训练（QAT）用低精度算术降低 LLM 部署成本，激进量化伤性能，混合精度训练则需要训练期间逐层的精度指派方案。</p>
+<p><strong>方法</strong> Q-PACE：二阶敏感度模型把损失增量预测为量化噪声 MSE 按逐层曲率系数加权的和；训练过程中周期性用跨层扰动重算这些系数，并据此重新分配各层精度。</p>
+<p><strong>关键数字</strong> 最高 4B 参数模型的预训练与 SFT 实验中持续优于现有混合精度训练方案，在显著更低的总显存预算下达到相当损失；作者还发现量化敏感度按深度与层型高度可预测，允许低频、廉价的重校准。</p>
+<p><strong>为什么值得看</strong> 把混合精度 QAT 的位宽分配变成可预测、低开销的在线过程，适合低资源训练场景。</p>
+<p><a href="https://arxiv.org/abs/2610.09183">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.09183">阅读原文 ↗</a></p>
+</body>
+</html>

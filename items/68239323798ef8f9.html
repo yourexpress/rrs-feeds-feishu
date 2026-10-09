@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Part of the Strassen algorithm can speed up matrix multiplication in a parallel pebbling game</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Part of the Strassen algorithm can speed up matrix multiplication in a parallel pebbling game</h1>
+<p class="meta-line">arXiv cs.DC · 2026-10-09 · 论文PDF</p>
+
+<p>部分采用 Strassen 步骤的 Partial Strassen 矩阵乘变体，多线程下内存占用可证很小、比 BLAS 快约 20%</p>
+<blockquote><p>We present a novel variant of the Strassen algorithm called the Partial Strassen algorithm, which uses a fraction of the Strassen steps to perform matrix multiplication in less time than traditional implementations. The memory footprint required to implement this algorithm is provably small whether used with a single thread or in a multi-threaded context. Data comparing the Partial Strassen algorithm at depths one, two, and three with BLAS matrix multiplication show that the three-level Partial Strassen algorithm is able to perform matrix multiplication in $80\%$ the time of BLAS with $2.25$ times the memory requirement, with a theoretical improvement of $75\%$ for sufficiently large matrices. The Partial Strassen algorithm is also compared against an implementation of the traditional Strassen algorithm, and is shown to be more performant with increasing matrix size due to decreased memory consumption. An open source implementation of the Partial Strassen algorithm for arbitrary depth and rectangular matrix multiplication is also included.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.08929">阅读原文 ↗</a></p>
+</body>
+</html>

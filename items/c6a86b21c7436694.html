@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NeuralZip: Reusable Setup for Fast Lossless Compression</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>NeuralZip: Reusable Setup for Fast Lossless Compression</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 无损压缩可减少模型权重的存储与搬运且不改浮点值，但重复的统计分析与码表构建带来额外计算开销。</p>
+<p><strong>方法</strong> NeuralZip：按指数分布相似性对 chunk 分组、共享 Huffman 码、对重复出现的指数元组用打包表示；setup 一次选定表示方式，之后每次编码仍处理当前张量值；setup 还可从另一个兼容架构预计算并迁移，权重随训练演化也能持续复用。</p>
+<p><strong>关键数字</strong> 浮点 checkpoint 上 setup 后压缩较基线快 1.81–21.33×，逐比特精确重建；GPU 实验在精确复现 logits 的同时活跃显存最多降 27.5%。</p>
+<p><strong>为什么值得看</strong> "统计结构一次准备、处处复用"的思路朴素有效，对 checkpoint 存储与传输场景立即可用。</p>
+<p><a href="https://arxiv.org/abs/2610.09916">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.09916">阅读原文 ↗</a></p>
+</body>
+</html>

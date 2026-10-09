@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ResidualQuant: KV Cache Quantization for Looped Transformers with 2-Bit Residuals</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ResidualQuant: KV Cache Quantization for Looped Transformers with 2-Bit Residuals</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> Looped Transformer 靠循环复用共享 block 提升参数效率，但 KV cache 随循环数增长成为内存瓶颈，限制 batch 与吞吐；现有 KV 量化在激进低精度下精度损失大。</p>
+<p><strong>方法</strong> 观察到各循环间 KV 状态高度相似：ResidualQuant 以最后一轮 KV 为参考，其余循环用低精度残差表示，配合最小二乘缩放、残差旋转与按循环混合精度，压到 INT2 仍能精确重建。</p>
+<p><strong>关键数字</strong> 混合精度设置下精度接近 BF16，理论 KV 存储减少 80.7%，同内存预算下比旋转式基线精度最高 +13.0%；RTX 5090 上定 batch 解码吞吐最高 2.73×，支持 2× batch 后峰值吞吐最高 4.15×。</p>
+<p><strong>为什么值得看</strong> 把循环架构的结构冗余直接变现为 2-bit KV 压缩，是架构-压缩协同设计的漂亮案例。</p>
+<p><a href="https://arxiv.org/abs/2610.10381">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.10381">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Are Parameter-Efficient Fine-tuning Methods Really Different?</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Are Parameter-Efficient Fine-tuning Methods Really Different?</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> PEFT 方法众多，但各参数化方式与任务性能、遗忘程度、预训练权重几何变化之间的关系一直不清楚。</p>
+<p><strong>方法</strong> 在语言与扩散模型上系统比较六种方法：检验谱保持是否真是适应与保留的关键，做奇异值谱恢复干预实验，并刻画不同方法在适应-保留权衡上的差异。</p>
+<p><strong>关键数字</strong> LoRA 最稳定地以有竞争力的性能限制遗忘；DoRA 在多数比较中平均分高于 LoRA；PiSSA 常付出更大保留代价；恢复主导谱成分（而非中间或尾部成分）对通用文本 NLL 与基础图像漂移的降低最大。</p>
+<p><strong>为什么值得看</strong> 主张用功能性后果而非几何保持本身来评价 PEFT，结论直接指导"该选哪种微调方法"的实务决策；代码开源。</p>
+<p><a href="https://arxiv.org/abs/2610.09122">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.09122">阅读原文 ↗</a></p>
+</body>
+</html>

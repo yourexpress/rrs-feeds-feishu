@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RoboJEPA: Scaling Robotic Latent World Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>RoboJEPA: Scaling Robotic Latent World Models</h1>
+<p class="meta-line">Meta (FAIR) · 2026-10-07 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 潜在世界模型能预测未来状态并做规划，但能力如何随模型规模、数据、算力扩展缺乏可预测的规律，阻碍领域进展。</p>
+<p><strong>方法</strong> 提出基于 JEPA 架构的 RoboJEPA，在覆盖 12 种机器人本体的大规模真实数据上训练；系统测量其"想象误差"随算力的标度行为，并验证想象误差可作为下游规划性能的可靠代理；最后以单张目标图像做零样本长程规划部署到真实硬件。</p>
+<p><strong>关键数字</strong> 想象误差服从关于算力的二阶幂律，可外推预测更大规模的模型质量；8B 参数为迄今最大的 JEPA 预测器；模型 checkpoint 与训练、部署代码全部开源。</p>
+<p><strong>为什么值得看</strong> 首次为多本体真实数据机器人世界模型建立 scaling law，给"还要不要继续 scale"提供定量依据。</p>
+<p><a href="https://arxiv.org/abs/2610.10515">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.10515">阅读原文 ↗</a></p>
+</body>
+</html>

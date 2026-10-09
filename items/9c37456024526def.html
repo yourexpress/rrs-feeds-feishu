@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIMESIS: Learning User Simulators as Training Environments for Interactive Agents</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MIMESIS: Learning User Simulators as Training Environments for Interactive Agents</h1>
+<p class="meta-line">Meta Superintelligence Labs · 2026-10-07 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 训练交互式语言智能体需要大量真实用户交互，人类反馈贵且难规模化；而直接拿助手型 LLM 当模拟用户又过于配合、行为单一，不像真人。</p>
+<p><strong>方法</strong> MIMESIS 用真实人类对话加显式推理监督训练专用用户模拟器，内置 13 种源自真实交互的行为模式；冻结模拟器后用多轮强化学习训练智能体，并提出 Coached On-Policy Self-Distillation（CSD），把模拟器的私密推理轨迹转成教练笔记式稠密监督。</p>
+<p><strong>关键数字</strong> 9B 模型 SOUL-Index 65.7，超过最强前沿模型；相比 Claude-Opus-5，行为保真度 +13.4 分、图灵距离 -3.6 分；在 9 个未见用户模拟器下泛化优于用 GPT-5.5 训练。</p>
+<p><strong>为什么值得看</strong> 把"用户模拟器"从现成 LLM 升级为专门训练对象，并给出可复用的 agent 训练环境范式。</p>
+<p><a href="https://arxiv.org/abs/2610.09484">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.09484">阅读原文 ↗</a></p>
+</body>
+</html>

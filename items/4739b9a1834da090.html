@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Self-Pruning Transformer: Extreme KV-Cache Compression with Universal Attention</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>A Self-Pruning Transformer: Extreme KV-Cache Compression with Universal Attention</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> KV cache 体积制约 LLM 部署；把 RoPE 换成衰减机制虽可做推理期剪枝，但现有衰减函数表达力有限，实践中退化成滑窗式淘汰。</p>
+<p><strong>方法</strong> 提出 Universal Attention：一个统一互补衰减机制的框架，在保留 RoPE 与 Softmax 注意力的同时捕获复杂的 key 统计与交互；复合衰减天然充当自适应剪枝准则，端到端可训练，直接移除对注意力贡献最小的 token。</p>
+<p><strong>关键数字</strong> 自然语言与合成任务上实现 SOTA 的 10× KV 压缩，且下游性能相比强基线和未剪枝 oracle 不降反升；16k 长度下达到 25× 压缩并展现更强的长上下文泛化。</p>
+<p><strong>为什么值得看</strong> "压缩反而提质"的结果少见，衰减机制与剪枝准则合一的思路对长上下文部署有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.09051">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.09051">阅读原文 ↗</a></p>
+</body>
+</html>

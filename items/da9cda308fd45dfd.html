@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RollVerify: Bridging Efficiency and Accuracy in Long-Tail Rollout Reinforcement Learning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>RollVerify: Bridging Efficiency and Accuracy in Long-Tail Rollout Reinforcement Learning</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> RL 训练的 rollout 长度日益长尾化，on-policy 训练因此产生 GPU 气泡；异步/部分 rollout 提了吞吐却引入陈旧 off-policy 样本，现有 reweight 方法仍与全 on-policy 有精度差距。</p>
+<p><strong>方法</strong> RollVerify：不被动加权，而在样本进入训练前主动验证修复——提出 off-policy 偏移度量 OPS 量化部分生成轨迹的偏差，在 OPS 约束下做序列级与 token 级验证，识别并截断轨迹的无效后缀，兼顾部分 rollout 的效率与样本质量。</p>
+<p><strong>关键数字</strong> 数学推理与工具辅助数学推理上达到与 on-policy 相当的精度且降低训练成本（摘要未给具体数值）；代码生成任务给出初步泛化证据。</p>
+<p><strong>为什么值得看</strong> 从"训练时被动加权"转向"入库前主动质检"，思路干净，对大规模 RL 系统实用。</p>
+<p><a href="https://arxiv.org/abs/2610.09914">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.09914">阅读原文 ↗</a></p>
+</body>
+</html>

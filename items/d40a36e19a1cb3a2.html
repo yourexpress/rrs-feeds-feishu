@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fast and Memory Efficient Offload Training Framework with Hybrid XPU Computation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Fast and Memory Efficient Offload Training Framework with Hybrid XPU Computation</h1>
+<p class="meta-line">arXiv cs.DC · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> ZeRO-Offload 把优化器状态搬到 CPU 缓解显存不足，但存在 GPU 利用率低、通信计算重叠不完美、offload 不灵活等缺陷。</p>
+<p><strong>方法</strong> 利用 GPU 的 Direct Host Access（DHA）直接计算 CPU 内存中的数据，形成 GPU 加 DHA 的混合计算：调度器选择哪些参数层走 DHA、其余同时传入显存以缩短前向，反向时再把 DHA 参数载入显存；shadow model 提供统一内存抽象；动态规划算法把梯度也经 DHA offload；ScaleUp-MemFerry 再利用 scale-up 互联带宽做自适应多路径传输。</p>
+<p><strong>关键数字</strong> 单卡训练最快 1.68×、可训模型大 1.52×（对比 ZeRO-Offload）；8 卡数据并行提速至少 28.1%；华为 CloudMatrix384 上端到端迭代时间较 DeepSpeed 最多降 20.7%。</p>
+<p><strong>为什么值得看</strong> DHA 这一少被利用的硬件能力被用出系统级收益，且已在国产 scale-up 节点验证。</p>
+<p><a href="https://arxiv.org/abs/2610.09657">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.09657">阅读原文 ↗</a></p>
+</body>
+</html>

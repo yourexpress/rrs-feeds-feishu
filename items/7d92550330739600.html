@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compiling Semi-Ring Dynamic Programming to Tier-Aware 3D-DRAM Processing-in-Memory</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Compiling Semi-Ring Dynamic Programming to Tier-Aware 3D-DRAM Processing-in-Memory</h1>
+<p class="meta-line">arXiv cs.AR · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 单片 3D DRAM 存内计算（PIM）是破解动态规划类负载内存墙的希望，但今天要靠手写 kernel：选 tile、跨非均匀延迟存储层摆数据、在异构单元间分工、手工插广播与队列。</p>
+<p><strong>方法</strong> MLIR 编译器 GenMLIR：把 APSP 与序列对齐共享的半环广义网格更新作为一等 IR 抽象，经四组 GenDRAM 感知 pass 自动完成分块、层级放置、tile 到处理单元指派与显式通信；并精确刻画哪些 DP 递推能被该抽象表达。</p>
+<p><strong>关键数字</strong> 较无编译器支持的 lowering 快至 5.8×（APSP）/16.7×（序列对齐）；较标准仿射分块 PIM 编译器快 1.2–1.4×；达到可达性能上界的 90–100%；代码从 300–500 行缩至 4–9 行。</p>
+<p><strong>为什么值得看</strong> 编译器抽象直接吃到 PIM 性能上界九成以上，是"声明式 DP → PIM"的完整答卷。</p>
+<p><a href="https://arxiv.org/abs/2610.09156">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.09156">阅读原文 ↗</a></p>
+</body>
+</html>

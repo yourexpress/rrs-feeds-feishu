@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPIN: Shadow Predictive Indexer for Sparse Attention</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SPIN: Shadow Predictive Indexer for Sparse Attention</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 基于 indexer 的稀疏注意力只把少量重要 token 送进核心注意力，但 indexer 每个解码步仍要给整个 KV cache 打分，上下文变长后打分本身成为主要瓶颈。</p>
+<p><strong>方法</strong> SPIN（Shadow Predictive Indexer）：用轻量的历史预测识别重要 KV block，避免每个解码步全量打分；并把 KV block 与投机解码作为一等设计考量融入实现。</p>
+<p><strong>关键数字</strong> 长上下文与 agentic 基准上实现 30–40% 稀疏度且保持任务质量；vLLM 端到端服务中输出吞吐最高 +14.9%，中位 token 间延迟最多降 13.2%。</p>
+<p><strong>为什么值得看</strong> 瞄准"稀疏注意力的 indexer 自身开销"这个被忽视的二级瓶颈，系统收益经过端到端实测。</p>
+<p><a href="https://arxiv.org/abs/2610.09025">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.09025">阅读原文 ↗</a></p>
+</body>
+</html>

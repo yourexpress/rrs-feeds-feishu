@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CurveTQ: Rotation-Free Trellis Quantization of LLM Weights via Curvature-Weighted Search</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CurveTQ: Rotation-Free Trellis Quantization of LLM Weights via Curvature-Weighted Search</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 最好的 2-bit 权重量化器（QTIP、Proteus）每步解码都要撤销随机正交旋转，且 Hessian 只通过误差反馈进入编码——作者指出其信息被浪费了：误差反馈把损失变成按 Hessian LDL 分解对角加权的逐坐标舍入误差，而现有量化器算出了这些权重却从不使用。</p>
+<p><strong>方法</strong> 把这些曲率权重直接放进 Viterbi 分支度量，让格码搜索在原生基底下跟随曲率；理论上证明"原生加权"与"旋转"互为替代。据此构建无旋转 trellis 编解码器 CurveTQ，配因子化尺度场、闭式分位表与逐编码块起始状态。</p>
+<p><strong>关键数字</strong> 2-bit 下比 QTIP/Proteus 平均下游精度高 1–3 分（三个 4–8B Instruct 模型）；据作者所知是首个 35B MoE 上的格码结果；无旋转可撤销，解码器在所有测试 batch 与位宽下最快。</p>
+<p><strong>为什么值得看</strong> 把一个"大家都算却没人读"的量变成核心机制，还顺手解释了旋转为何有效，理论与系统双赢。</p>
+<p><a href="https://arxiv.org/abs/2610.09212">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.09212">阅读原文 ↗</a></p>
+</body>
+</html>

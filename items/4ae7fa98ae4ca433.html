@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OrBIT: Structure-Guided Embedding Compression</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>OrBIT: Structure-Guided Embedding Compression</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 嵌入表是 LLM 最大组件之一，现有压缩方法都先固定某种编码几何（坐标块、低秩子空间、自由码本）再优化——作者问：编码几何本身能否被发现？</p>
+<p><strong>方法</strong> OrBIT：从轨道动力学学习可复用局部几何，约束一小组共享码字；全局重建残差决定固定编码预算花在哪里，冗余重叠的 chart 让局部误差在粘合后相互补偿；理论给出紧 chart 几何如何控制失真；轨道机制在编译期消除，只留下紧凑解码器。</p>
+<p><strong>关键数字</strong> 四个 LLM 嵌入表上：GPT-2 相对 16-bit 存储压缩 37.9×，每个 7B 表超过 23×；率失真性能与成熟量化、低秩基线相当。</p>
+<p><strong>为什么值得看</strong> 把"先学结构再压缩"做到嵌入表上且压缩率领先，为超大嵌入的端侧部署开新路。</p>
+<p><a href="https://arxiv.org/abs/2610.10385">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.10385">阅读原文 ↗</a></p>
+</body>
+</html>

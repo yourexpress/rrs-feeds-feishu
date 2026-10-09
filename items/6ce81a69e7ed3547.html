@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Democratizing MoE inference on commodity GPUs with CoMoE</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Democratizing MoE inference on commodity GPUs with CoMoE</h1>
+<p class="meta-line">arXiv cs.DC · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> MoE 推理依赖专家并行，通信密集，只有带 NVLink 的数据中心 GPU 扛得住；消费级 GPU 算力相当但 PCIe 带宽弱、无 P2P 互联，通信成为严重瓶颈。</p>
+<p><strong>方法</strong> CoMoE 把主机提升为主动路由枢纽：token 分发采用主机支撑的组播，共享 token 只写主机一次，消除出站传输冗余；token 合并用细粒度 token 级聚合加主机暂存缓冲，替代刚性全局同步、缓解拖尾效应。</p>
+<p><strong>关键数字</strong> RTX 5090 上推理吞吐最高提升 1.46×；以 A800 仅 23.4% 的硬件成本逼近其 NVLink 性能。</p>
+<p><strong>为什么值得看</strong> "主机当路由 hub"的拓扑洞察让消费卡跑 MoE 变得实际，对个人部署与隐私本地推理意义直接。</p>
+<p><a href="https://arxiv.org/abs/2610.09424">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.09424">阅读原文 ↗</a></p>
+</body>
+</html>

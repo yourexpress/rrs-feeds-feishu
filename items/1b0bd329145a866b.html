@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reproducible LLM Inference Benchmarking: A Sequential Isolation Protocol for Regression Testing</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Reproducible LLM Inference Benchmarking: A Sequential Isolation Protocol for Regression Testing</h1>
+<p class="meta-line">arXiv cs.PF · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LLM 推理基准测试难以复现：重复测量随执行与系统状态波动，回归测试缺乏稳定参照。</p>
+<p><strong>方法</strong> Sequential Isolation Methodology：一套受控基准与回归测试协议，在刻意变化负载并发的同时压低运行间方差；评测覆盖三款代表性开源 LLM、A100 80GB、vLLM 0.9.1、6 种上下文长度 × 8 档并发 × 5 次重复。</p>
+<p><strong>关键数字</strong> 平均变异系数（CV）从 15.2%（最不受控阶段）降到 2.2%；144 个配置中 113 个（78.5%）P50 TTFT 的 CV 低于 3%；观测到 200–500 并发用户间明显的延迟转折；附对 API 定价敏感的成本盈亏模型；IaC 与脚本开源。</p>
+<p><strong>为什么值得看</strong> 做推理性能对比或回归测试可直接照搬的稳定协议，附成本模型加分。</p>
+<p><a href="https://arxiv.org/abs/2610.09778">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.09778">阅读原文 ↗</a></p>
+</body>
+</html>

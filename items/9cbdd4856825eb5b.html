@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consistent Distribution Matching for Data-Free Diffusion Distillation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Consistent Distribution Matching for Data-Free Diffusion Distillation</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 扩散/流模型推理慢，蒸馏可实现单步或少步生成，但现有方法依赖蒸馏数据集、昂贵的教师 rollout 或辅助代理网络，训练与扩展复杂。</p>
+<p><strong>方法</strong> Consistent Distribution Matching：免仿真、免数据的蒸馏——用一个学生网络统一样本生成与 score 估计，全框架只有冻结教师加可训学生两个模型、一个优化目标；理论上最小化该目标意味着学生流映射以 Wasserstein 距离收敛到教师边际分布。</p>
+<p><strong>关键数字</strong> ImageNet 256×256 上 1-NFE FID 2.04、4-NFE FID 1.37，40 个 epoch 内超过无数据蒸馏 SOTA；代码与模型已开放。</p>
+<p><strong>为什么值得看</strong> 两个模型、一个目标就拿到单步生成 SOTA，且不依赖数据，对生成加速落地极具吸引力。</p>
+<p><a href="https://arxiv.org/abs/2610.09221">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.09221">阅读原文 ↗</a></p>
+</body>
+</html>

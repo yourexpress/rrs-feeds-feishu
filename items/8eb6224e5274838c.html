@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Layerwise Error Attribution for Fast and Robust Mixed-Precision Post-Training Quantization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Layerwise Error Attribution for Fast and Robust Mixed-Precision Post-Training Quantization</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 混合精度训练后量化要在全局显存预算下逐层分配比特，难点在于分配问题是组合优化，且对小而可能受污染的校准集敏感。</p>
+<p><strong>方法</strong> 对量化误差做逐层概率分析，把传播误差与该层局部扰动分离，用局部项构造可分离分数，得到无需外部求解器的简单分配算法；概率化建模天然带来对污染校准数据的鲁棒性。</p>
+<p><strong>关键数字</strong> DRUNet 去噪、平均 4 bit 预算下匹配或超过 SOTA 混合精度基线，受污染校准时 PSNR 最高 +7.5 dB；比特分配速度较基线快 28×–2570×；框架直接迁移到量化扩散模型也有提升。</p>
+<p><strong>为什么值得看</strong> 把逐层误差归因做成闭式可算的形式，又快又抗污染，实用价值高。</p>
+<p><a href="https://arxiv.org/abs/2610.09877">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.09877">阅读原文 ↗</a></p>
+</body>
+</html>

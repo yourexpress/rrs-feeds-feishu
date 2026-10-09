@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dual-QK: Sharp Queries and Flat Keys for Prunable 2-bit KV Caches</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Dual-QK: Sharp Queries and Flat Keys for Prunable 2-bit KV Caches</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> KV cache 低比特量化加 query 通道剪枝可省存储与读量，但旋转式量化要求同一正交变换同时施加到 query，会打散 query 能量，削弱"少数大分量保留、多数小分量剪枝"所需的分离度。</p>
+<p><strong>方法</strong> Dual-QK 用成对的非正交 query/key 变换化解冲突：部分 key 白化加 query 对齐基，既平衡 INT2 量化的 key 尺度，又把 query 能量集中起来支持动态通道剪枝；另配 channel-0 保护与 bucket 相对 RoPE 保住长上下文低比特精度。</p>
+<p><strong>关键数字</strong> 128K 上下文下 6.8× KV cache 压缩、KV 读量估计降 8.3×（相对未剪枝 BF16）；40% query 通道稀疏下多数任务优于 OSCAR；SGLang 实现解码吞吐最高 3.75×。</p>
+<p><strong>为什么值得看</strong> 把量化与剪枝的耦合矛盾讲透并给出配对变换解，长上下文推理优化可直接借鉴。</p>
+<p><a href="https://arxiv.org/abs/2610.09827">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.09827">阅读原文 ↗</a></p>
+</body>
+</html>

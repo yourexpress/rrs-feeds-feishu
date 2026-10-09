@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Koopman Observers for Diffusion Acceleration: Correcting Feature Forecasts with Shallow Measurements</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Koopman Observers for Diffusion Acceleration: Correcting Feature Forecasts with Shallow Measurements</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 特征缓存加速扩散采样时，基于历史特征的预测无法感知当前去噪状态的变化。</p>
+<p><strong>方法</strong> 观察修正的 Koopman 框架：用校准轨迹识别浅层与深层网络特征增量的有限维时变 Koopman 近似；加速采样时算子预测昂贵深层特征的演化，新鲜计算的廉价浅层特征作为观测来修正预测状态；周期性全量评估刷新观察器，生成模型参数完全冻结。</p>
+<p><strong>关键数字</strong> 三个万图级实验：配对 Inception 特征 MSE 较逐通道仿射预测降 19.9%（CIFAR-10）/11.9%（ImageNet 十类子集），消融把其中 4.54%/4.67% 归于观测修正；较 DDIM-50 实测加速 1.89×/1.85×。</p>
+<p><strong>为什么值得看</strong> 把控制论的观察器思想干净地搬进扩散加速，免重训、带对照消融，方法学扎实。</p>
+<p><a href="https://arxiv.org/abs/2610.10366">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.10366">阅读原文 ↗</a></p>
+</body>
+</html>
