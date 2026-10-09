@@ -22,9 +22,11 @@
 <h1>Byzantine-Tolerant Causal Unicast with Constant Message Space Overhead</h1>
 <p class="meta-line">arXiv cs.DC · 2026-10-08 · 论文PDF</p>
 
-<p>Causal message ordering provides essential semantics for distributed applications, yet ensuring it w</p>
-<blockquote><p>Causal message ordering provides essential semantics for distributed applications, yet ensuring it within an asynchronous system subject to Byzantine failures presents fundamental theoretical and practical challenges. Prior research establishes that algorithms cannot guarantee both strong safety and liveness without using cryptography under these conditions. Existing Byzantine-tolerant solutions make synchrony assumptions or suffer from $O(n)$ message space overheads and $O(n^2)$ message complexity, where $n$ is the number of processes in the system, or use cryptography, but may not guarantee strong safety. In this paper, we present a novel Byzantine-tolerant causal ordering algorithm that achieves an optimal $O(1)$ application message space overhead for point-to-point messages. Our approach uses a Sender Permission to Send (SPS) invariant and an \textit{Isolated-Buffer Optimistic Model} for the memory management architecture. To circumvent Byzantine state-pinning and head-of-line blocking attacks, instead of unified causal buffers, we use isolated, per-peer queues equipped with event-driven \textit{Cascading Space Evictions}. We formally prove that our algorithm guarantees system-…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 异步拜占庭系统中实现因果消息序，既有方案或依赖同步假设/密码学，或承受 O(n) 消息空间开销与 O(n²) 消息复杂度，能否做到常数空间开销？</p>
+<p><strong>方法</strong> 提出新的拜占庭容错因果序算法：发送方许可（SPS）不变量加隔离缓冲乐观内存模型；不用统一因果缓冲，改为按对端隔离队列配事件驱动的级联空间驱逐，抵御状态钉扎与队头阻塞攻击。</p>
+<p><strong>关键数字</strong> 应用消息空间开销达最优 O(1)（点对点消息）；形式化证明系统级活性与"拥塞松弛因果交付"安全性——诚实方间弱因果安全仅在极端延迟或扣留攻击超出可量化本地缓冲时才被乐观驱逐打破。</p>
+<p><strong>为什么值得看</strong> 在不用密码学的前提下逼近理论下界，且诚实说明安全松弛条件，分布式系统方向值得细读。</p>
+<p><a href="https://arxiv.org/abs/2610.07368">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07368">阅读原文 ↗</a></p>
 </body>
 </html>

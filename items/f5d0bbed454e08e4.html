@@ -22,9 +22,11 @@
 <h1>Adversarially Trained Linear Transformers Are Optimal Robust In-Context Learners for Gaussian Mixtures</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Adversarial training is one of the most reliable defenses against adversarial attacks, but its high</p>
-<blockquote><p>Adversarial training is one of the most reliable defenses against adversarial attacks, but its high computational cost must generally be paid anew for each task. Robust foundation models offer a promising alternative: adversarially pretrain a model once and then transfer its robustness to downstream tasks through lightweight adaptation. However, a fundamental question remains open: can robustness acquired during pretraining transfer to unseen tasks without further adversarial training? In this study, we answer this question affirmatively. A single model adversarially pretrained at scale can achieve optimal robustness on new tasks without additional task-specific training. Specifically, we show that, for a family of Gaussian-mixture classification tasks, a sufficiently deep linear transformer adversarially trained across tasks can asymptotically attain the robust Bayes error on previously unseen tasks through in-context learning from clean demonstrations. By contrast, a standardly trained model cannot. We further analyze convergence under gradient flow, an accuracy--robustness trade-off, and demonstration complexity.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 对抗训练的鲁棒性能否从预训练零成本迁移到未见任务，而无需逐任务重做昂贵的对抗训练？</p>
+<p><strong>方法</strong> 理论分析一族高斯混合分类任务：证明足够深的线性 transformer 经跨任务对抗预训练后，在全新任务上仅靠干净示范的上下文学习即可渐近达到鲁棒贝叶斯误差；标准训练模型则做不到。另给出梯度流收敛、精度-鲁棒权衡与示范复杂度的分析。</p>
+<p><strong>关键数字</strong> 核心结论是渐近最优性证明（鲁棒贝叶斯误差可达），非经验数字。</p>
+<p><strong>为什么值得看</strong> 为"一次对抗预训练、多任务复用鲁棒性"提供了首个肯定性理论答案，是鲁棒基础模型方向的重要支撑。</p>
+<p><a href="https://arxiv.org/abs/2610.07754">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07754">阅读原文 ↗</a></p>
 </body>
 </html>

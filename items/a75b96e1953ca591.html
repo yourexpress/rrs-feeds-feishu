@@ -22,9 +22,11 @@
 <h1>Training Parallel Speculative Draft Models by Directly Minimizing Expected Decoding Rounds</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF / 每日精选</p>
 
-<p>把投机解码建模为马尔可夫奖励过程、直接最小化期望解码轮数训练并行 draft 模型</p>
-<blockquote><p>Speculative decoding accelerates large language model inference by using a low-cost draft model to propose tokens that the full-size target model verifies in parallel. Parallel and semi-autoregressive (semi- AR) drafters improve drafting efficiency by proposing an entire block in a single forward pass, but training them raises a new difficulty: the draft distribution for a given position depends on where the decoding round starts, and where rounds start depends on how many tokens earlier rounds accepted. Existing training objectives typically rely on block-local surrogates that ignore this cross-round coupling, and therefore do not directly optimize the global decoding efficiency. In this work, we develop a theoretical framework for training and evaluating these drafters by representing speculative decoding as a Markov reward process. This formulation yields the Expected Decoding Rounds (EDR) objective, which weights local rejection costs by state occupancies and exactly equals the expected number of decoding rounds. Unlike prior surrogate objectives, EDR introduces no auxiliary hyperparameters. We then derive an exact temporal-difference gradient that supports unbiased stochastic …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 并行/半自回归投机解码草稿模型的训练目标普遍是块内局部代理，忽略了"轮次起始位置依赖前轮接受长度"的跨轮耦合，无法直接优化全局解码效率。</p>
+<p><strong>方法</strong> 把投机解码建模为马尔可夫奖励过程，推出 Expected Decoding Rounds（EDR）目标：按状态占用加权局部拒绝代价，恰好等于期望解码轮数且无额外超参；并给出精确 TD 梯度与离线轮数评估器。</p>
+<p><strong>关键数字</strong> 用 EDR 微调 DSpark、DFly 两个 SOTA 草稿模型，在覆盖数学推理、代码生成、对话的 9 个基准上平均接受长度一致提升并超过既有训练目标。</p>
+<p><strong>为什么值得看</strong> 首次把草稿模型训练目标与真实加速指标严格对齐，方法论干净且可直接复用。</p>
+<p><a href="https://arxiv.org/abs/2610.10411">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10411">阅读原文 ↗</a></p>
 </body>
 </html>

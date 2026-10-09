@@ -22,9 +22,11 @@
 <h1>Beyond Marginal Monitoring: Distributed Joint-Distribution Testing for Data Concept Drift in Large Scale E-Commerce Operations</h1>
 <p class="meta-line">arXiv cs.DC · 2026-10-08 · 论文PDF</p>
 
-<p>Concept drift threatens production machine learning, yet the empirical behavior of multivariate two-</p>
-<blockquote><p>Concept drift threatens production machine learning, yet the empirical behavior of multivariate two-sample drift detectors at scale remains under-characterized. Existing benchmarks rarely address the hundreds of millions of rows and high-cardinality features typical of industrial-operational datasets. We evaluate five multi-column two-sample tests (marginal, projection-based, and kernel embedding methods) across three complementary environments: the Harvard Dataverse, a validated Failing Loudly reproduction (mean absolute error between 0.030 and 0.053), and a novel synthetic-injection benchmark on the 137.5-million-row Trendyol collection-ranking feature table. Testing four drift types across two severity-scope regimes, we demonstrate that distributed Maximum Mean Discrepancy with Random Fourier Features on Apache Spark scales robustly. Averaged over the four drift types in the strong regime and under a calibrated threshold, it achieves a Pearson correlation of r = 0.940 with expected drift magnitude, an 80.4% true positive rate, and a 3.2% false positive rate. Conversely, the per-dimension Kolmogorov-Smirnov test failed due to statistic saturation from ID-like columns under asymme…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 工业级数据（亿级行、高基数特征）上，多变量双样本概念漂移检测器的实证行为缺乏刻画，边缘监控之外该选什么方法？</p>
+<p><strong>方法</strong> 在 Harvard Dataverse、Failing Loudly 复现环境（复现 MAE 0.030–0.053）与 1.375 亿行 Trendyol 特征表合成注入基准上评测 5 类多列双样本检验，覆盖 4 种漂移类型与两种强度机制。</p>
+<p><strong>关键数字</strong> Apache Spark 上随机傅里叶特征的分布式 MMD 在强机制校准阈值下与期望漂移量 Pearson 相关 r=0.940，真正率 80.4%、假正率 3.2%；逐维 KS 检验因 ID 类列统计量饱和而失效；弱机制（翻转比例至多 0.57%）下所有检测器均难以可靠判别。</p>
+<p><strong>为什么值得看</strong> 罕见的工业尺度漂移检测基准，明确了可扩展方案与失效边界。</p>
+<p><a href="https://arxiv.org/abs/2610.08132">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.08132">阅读原文 ↗</a></p>
 </body>
 </html>

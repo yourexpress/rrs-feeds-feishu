@@ -22,9 +22,11 @@
 <h1>Attenuated in-context identification in time-series foundation models: diagnosis under counterfactual inputs and repair by synthetic forced-system fine-tuning</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Covariate-aware time-series foundation models (TSFMs) promise training-free what-if answers for inst</p>
-<blockquote><p>Covariate-aware time-series foundation models (TSFMs) promise training-free what-if answers for instrumented plants: the change in output that a different future input would cause. We test this on forced engineering systems with exact counterfactuals, comparing Chronos-2, TimesFM-2.5 and TabPFN-TS with classical system identification fitted to the same context. Through their default covariate interfaces, TimesFM-2.5 and TabPFN-TS are memoryless: the predicted effect of an input change is a same-time function of that change ($R^2 = 1.000$ for TimesFM-2.5). Chronos-2 identifies dynamics in context but attenuates them. Its predicted effect is 0.33-0.80 of the true effect, its recovered impulse response has the wrong shape, and its error on a one-degree-of-freedom oscillator levels off at 0.57 with 8192 context samples, where ARX fitted to 256 samples reaches 0.02. Context dither at inference lowers the what-if error on all six synthetic classes without training. A 26-minute fine-tune on synthetic forced systems restores the response magnitude (sensitivity 0.83-0.96) and outperforms structure-agnostic identification on Wiener-Hammerstein and a held-out friction class. A specialised in-…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 协变量感知时间序列基础模型号称免训练回答 what-if 问题，但它们在受迫工程系统上能否真正识别输入-输出动力学？</p>
+<p><strong>方法</strong> 用带精确反事实的合成与实测系统检验 Chronos-2、TimesFM-2.5、TabPFN-TS 与同上下文拟合的经典系统辨识；并尝试推理期上下文扰动与合成受迫系统微调两种修复。</p>
+<p><strong>关键数字</strong> TimesFM-2.5 与 TabPFN-TS 接口是无记忆的（R²=1.000 的同时刻函数）；Chronos-2 会识别但衰减，预测效应仅为真实值 0.33–0.80，单自由度振子误差 8192 样本仍停在 0.57（ARX 用 256 样本即达 0.02）；26 分钟微调把敏感度恢复到 0.83–0.96。</p>
+<p><strong>为什么值得看</strong> 揭示 TSFM 协变量接口的系统性缺陷并给出廉价修复，对工业 what-if 应用是重要警示。</p>
+<p><a href="https://arxiv.org/abs/2610.08118">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.08118">阅读原文 ↗</a></p>
 </body>
 </html>

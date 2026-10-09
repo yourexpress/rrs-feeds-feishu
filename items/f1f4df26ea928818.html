@@ -22,9 +22,11 @@
 <h1>Cite What You Explore: Budget-Aware LLM Reasoning over Medical KGs with Verifiable Evidence</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Post-discharge risk prediction from electronic health records (EHRs) is difficult because many depen</p>
-<blockquote><p>Post-discharge risk prediction from electronic health records (EHRs) is difficult because many dependencies that link discharge-time observations to downstream complications, such as comorbidity cascades and drug-disease interactions, are absent from the record. External medical knowledge graphs (KGs) can supply these missing dependencies, but tracing them demands three properties: KG exploration must remain cost-bounded, retrieved evidence must be differentiated by source quality, and the resulting rationale must be citable for retrospective review. Large language models (LLMs) can plan and verify over structured evidence, making them natural candidates for KG reasoning, but existing LLM-based methods do not satisfy these three properties jointly. In this paper, we propose BAR, a Budget-Aware LLM Reasoning framework over medical KGs with three contributions. First, BAR refines the raw KG into disease-specific evidence graphs whose edges carry support scores and provenance records, turning the KG into a quality-annotated reasoning space rather than a static feature source. Second, an LLM then reasons over this graph through a plan-navigate-verify loop that decomposes the question i…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 出院后风险预测需要病历中缺失的共病级联、药物-疾病相互作用等依赖；外部医学知识图谱可补，但探索需成本有界、证据需按来源质量分级、推理需可引用——既有 LLM 方法无法三者兼得。</p>
+<p><strong>方法</strong> BAR 框架：先把原始 KG 精炼为带支持度分数与出处记录的疾病专属证据图；LLM 以计划-导航-验证循环在患者专属预算内检索并修订；推理策略用"有无证据的预测差异+获取成本+引用完整性"组合奖励训练。</p>
+<p><strong>关键数字</strong> MIMIC-III/IV 上 8 种疾病、3 个预测窗口：AUPRC 较最强基线提升 3.4 点，引用精度 59.8%→77.9%，仅消耗预算上限的 62%–65%。</p>
+<p><strong>为什么值得看</strong> 把预算约束与可审计引用同时纳入 KG 推理，契合临床回顾性审查的真实需求。</p>
+<p><a href="https://arxiv.org/abs/2610.07739">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07739">阅读原文 ↗</a></p>
 </body>
 </html>

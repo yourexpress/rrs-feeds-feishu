@@ -22,9 +22,11 @@
 <h1>TR-PTQ: High-Accuracy Integer-Only Transformer Post Training Quantization via Taylor Region Reformulation</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF / 每日精选</p>
 
-<p>TR-PTQ：共享 Taylor Region 指数/对数原语的纯整数 Transformer PTQ，定位归一化与 GELU 为主误差源</p>
-<blockquote><p>Post-training quantization (PTQ) enables efficient deployment, yet transformer architectures remain challenging to quantize due to nonlinear layers. While existing methods attribute accuracy loss to insufficient numerical precision, often necessitating floating-point fallbacks, we demonstrate that degradation is actually driven by specific structural error sources. We find that learned scale parameters in normalization layers and compounded approximations in GELU are the primary error contributors, whereas SoftMax remains inherently robust to aggressive quantization. To address these bottlenecks, we introduce TR-PTQ, a unified integer-only formulation using shared Taylor Region (TR) exponential and logarithm primitives. This approach allows computationally expensive operations, including division and square roots, to be performed entirely in the log-domain via standard integer arithmetic. Combined with a calibration-free, outlier-aware optimization for LayerNorm parameters, our method eliminates the need for floating-point hardware units for nonlinearities, achieving less than 1.5\% absolute accuracy degradation across vision and language benchmarks.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Transformer 后训练量化的精度损失真凶是什么？本文推翻"数值精度不足"的主流归因，定位到归一化层可学缩放参数与 GELU 复合近似，而 SoftMax 反而天然鲁棒。</p>
+<p><strong>方法</strong> 提出 TR-PTQ：用共享 Taylor Region 的指数/对数原语统一整数-only 表达，除法与开方全部转入对数域用标准整数运算完成；配合免校准、离群点感知的 LayerNorm 参数优化，彻底甩掉浮点单元。</p>
+<p><strong>关键数字</strong> 视觉与语言基准上绝对精度下降不到 1.5%。</p>
+<p><strong>为什么值得看</strong> 为非线性层提供了纯整数实现路径，对无浮点硬件的边缘端 Transformer 部署有直接意义。</p>
+<p><a href="https://arxiv.org/abs/2610.09969">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09969">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>CLM-as-a-Judge: Evaluating an Open Contrastive Decision Model on Public Judge Benchmarks</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>An open contrastive decision model is near chance as a judge on the hard public benchmarks: Contrast</p>
-<blockquote><p>An open contrastive decision model is near chance as a judge on the hard public benchmarks: Contrastive-LM/CLM-v0.1-8B scores between 0.351 (best- of-four, chance 0.250) and 0.593 (pairwise, chance 0.500), is statistically indistinguishable from coin flipping on RM-Bench and JudgeBench, and answers every HaluEval item with one constant label, matching the trivial always-first baseline at 0.581. Judges with the same parameter count score far higher everywhere: a reward model reaches 0.764 to 0.976 and a generative judge 0.611 to 0.778, and every gap to CLM is significant after Benjamini-Hochberg correction. Two properties do work. Raw confidences are overconfident by up to +0.401, yet one pooled temperature fit on held-out calibration items repairs expected calibration error to at most 0.062, and the repaired confidence ranks the model's own errors above chance on three of six benchmarks. The decision order-flip rate is 0.0002 against 0.2188 for the generative judge, and the length-preference shift is -0.023 against -0.217. The confidence-gated cascade, however, escalates between 0.923 and 1.000 of items to the strong judge at the preregistered 0.97 retention bar: calibrated confide…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 开源对比式决策模型能否担当 LLM-as-a-Judge？本文对 CLM-v0.1-8B 在公开评审基准上做预注册评测。</p>
+<p><strong>方法</strong> 五个公开偏好基准加一个幻觉基准，冻结预注册后评测，对照生成式评审、奖励模型与平凡基线，逐题预测公开；另测置信度校准、顺序翻转与长度偏好。</p>
+<p><strong>关键数字</strong> CLM 在四选一 0.351（随机 0.250）到成对 0.593（随机 0.500）之间，RM-Bench 与 JudgeBench 上与抛硬币不可区分；同参数奖励模型 0.764–0.976、生成式评审 0.611–0.778。亮点仅两处：一次温度缩放把期望校准误差修到至多 0.062；顺序翻转率 0.0002（生成式评审为 0.2188）。</p>
+<p><strong>为什么值得看</strong> 预注册+负结果的严谨示范：对比式决策模型当评审接近随机，级联路由也因此无处可省。</p>
+<p><a href="https://arxiv.org/abs/2610.07177">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07177">阅读原文 ↗</a></p>
 </body>
 </html>

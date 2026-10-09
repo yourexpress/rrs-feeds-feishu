@@ -22,9 +22,11 @@
 <h1>Climbing the Design Ladder: Sequential Knowledge Distillation for Early-Stage Circuit Timing Prediction</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Integrated circuit design involves multiple design stages: logic synthesis, floorplanning, placement</p>
-<blockquote><p>Integrated circuit design involves multiple design stages: logic synthesis, floorplanning, placement, and routing, with each stage taking hours to weeks to complete. Discovering timing violations late in this flow forces costly iterations back to earlier stages, wasting computational resources and delaying product launches. While predicting post-routing timing from early-stage data could prevent these failures, existing machine learning approaches struggle with the massive abstraction gap between post-synthesis logical descriptions and post-routing physical layouts. We propose STEP-KD (Sequential Timing Evaluation via Progressive Knowledge Distillation), which leverages intermediate design stages as ``stepping stones'' for progressive knowledge transfer rather than attempting direct prediction. STEP-KD trains teacher models at the post-routing, post-placement, and post-floorplan stages, then sequentially distills their knowledge to a post-synthesis student model through representation alignment. Experiments on diverse circuits demonstrate that STEP-KD reduces timing prediction error compared to direct distillation and supervised baselines, and in most settings compared to the indus…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 芯片设计流程各阶段耗时数小时到数周，晚期才发现时序违例代价高昂；但从综合后逻辑描述直接预测布线后时序，抽象鸿沟巨大，既有 ML 方法效果有限。</p>
+<p><strong>方法</strong> STEP-KD 不直接跨越鸿沟，而以中间设计阶段为"踏脚石"：分别训练布线后、布局后、规划后教师模型，再通过表示对齐把知识逐级蒸馏给综合后学生模型。</p>
+<p><strong>关键数字</strong> 多种电路上，总负裕量（TNS）预测的加权平均绝对百分比误差降至 19.78%，而工业标准 STA 工具为 74.84%；多数设定下也优于直接蒸馏与监督基线。</p>
+<p><strong>为什么值得看</strong> "沿设计阶梯逐级蒸馏"思路简洁有效，有望把时序问题发现提前到综合期，避免昂贵的后期返工。</p>
+<p><a href="https://arxiv.org/abs/2610.08457">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.08457">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>What Bloats Your Floats? Right-Sizing Numerical Precision for Scientific Computing</h1>
 <p class="meta-line">arXiv cs.DC · 2026-10-09 · 论文PDF / 每日精选</p>
 
-<p>以 SNR 判据论证科学计算的离散化噪声底掩盖 FP64 低位，给出混合精度子图自动降精度工作流</p>
-<blockquote><p>While FP64 (binary64) remains the standard representation of real numbers in scientific computing, hardware trends increasingly favor low-precision formats optimized for AI workloads. This shift prioritizes throughput and energy efficiency over full-precision capabilities. We challenge the necessity of high-precision arithmetic in PDE-governed simulations, where spatial and temporal discretization errors introduce a physical noise floor that masks the lower-order bits of the FP64 format, rendering them irrelevant. We propose a criterion based on the Signal-to-Noise Ratio (SNR) with respect to spatial and temporal refinements to evaluate the impact of safe precision reduction on scientific computations. Finally, we present an automated dataflow-centric workflow for targeted lowering within mixed-precision subgraphs in complex scientific applications. Large-scale evaluations of weather and climate applications show that strategic precision reduction on GPUs achieves up to 1.8x speedup without compromising physical fidelity.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> FP64 仍是科学计算默认精度，但硬件趋势偏向 AI 导向的低精度格式；PDE 控制类仿真中离散化误差形成的"物理噪声底"是否已让 FP64 低位失去意义？</p>
+<p><strong>方法</strong> 提出基于时空加密信噪比（SNR）的判据评估安全降精度空间，并给出数据流中心的自动化工作流，在复杂科学应用的混合精度子图内做定向降级。</p>
+<p><strong>关键数字</strong> 大规模天气与气候应用评测显示，GPU 上策略性降精度最高取得 1.8 倍加速，且不损失物理保真度。</p>
+<p><strong>为什么值得看</strong> 为"何时可以放心降精度"给出可量化判据与自动化工具，是异构算力时代科学计算的实用指南。</p>
+<p><a href="https://arxiv.org/abs/2610.09089">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09089">阅读原文 ↗</a></p>
 </body>
 </html>

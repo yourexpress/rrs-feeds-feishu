@@ -22,9 +22,11 @@
 <h1>TAP: Efficient Long-Horizon Agent Pruning via Trajectory-Anchored Recovery</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF / 每日精选</p>
 
-<p>TAP：首个面向 RL 训练智能体的结构剪枝框架，轨迹锚定在线恢复抑制跨轮误差累积</p>
-<blockquote><p>Emerging long-horizon agentic tasks require repeated model calls, worsening the inference cost of already-costly language models. While narrow agentic tasks suggest potential for aggressive model pruning without performance drop, empirical results show existing methods proposed for question answering tasks severely degrade task performance when applied to agentic models. We trace this failure to two decisions: what to prune and how to recover. For pruning, one-shot importance estimates fail to track how the pruned model adapts. For recovery, offline distillation covers only teacher prefixes, while full-trajectory on-policy distillation causes student errors to compound across turns. In this work, we propose Trajectory-Anchored Pruning (TAP), the first structural pruning framework for reinforcement learning (RL)-trained agents. TAP couples structural pruning with efficient on-policy recovery, anchoring interactions to teacher trajectories while allowing the student to generate each reasoning-action response. A frozen dense teacher supervises the student's response prefixes, addressing within-response training-inference mismatch while preventing student-induced deviations from propag…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 长程 agent 任务需反复调用模型，推理成本高昂；为问答设计的既有剪枝方法直接套用到 agent 上会严重掉点，问题出在"剪什么"和"怎么恢复"。</p>
+<p><strong>方法</strong> 提出首个面向 RL 训练 agent 的结构剪枝框架 TAP：交互锚定教师轨迹、学生逐段生成响应，冻结教师监督学生前缀；并用恢复目标的梯度在已恢复学生上迭代重打分通道，替代一次性剪枝。</p>
+<p><strong>关键数字</strong> 剪去 60% FFN 通道后，7B agent 在 ALFWorld 与 WebShop 上分别保留 99.2% 与 88.0% 的任务成功率，单任务 GPU 时间约降 22% 与 17%。</p>
+<p><strong>为什么值得看</strong> 证明长程 agent 可在有限恢复预算下做激进结构压缩，直接降低 agentic 推理账单。</p>
+<p><a href="https://arxiv.org/abs/2610.09074">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09074">阅读原文 ↗</a></p>
 </body>
 </html>

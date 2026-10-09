@@ -22,9 +22,11 @@
 <h1>Shared Low-rank Basis Factorization for Data-free Mixture-of-Experts Compression</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF / 每日精选</p>
 
-<p>SLBF：专家间共享秩 k 基的免数据 MoE 权重重构压缩，避免剪枝/合并的结构性误差</p>
-<blockquote><p>Mixture-of-Experts (MoE) large language models decouple capacity from compute through sparse routing, but their large parameter count creates storage and serving challenges. We analyze three MoE compression families: expert pruning, expert merging, and weight reconstruction, and derive structural error bounds showing that pruning and merging can incur non-vanishing errors tied to routing and expert heterogeneity. In contrast, weight reconstruction avoids these structural costs by preserving expert structure and routing. Motivated by the analysis, we propose Shared Low-rank Basis Factorization (SLBF), a data-free weight reconstruction method that uses rank-$k$ bases shared among experts, enabling richer cross-expert sharing, faster convergence, and lower reconstruction error. A post-hoc gauge fixing removes redundant parameters at no representational cost. Across five MoE architectures spanning 16B to 122B parameters, SLBF consistently outperforms methods from all three compression families.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> MoE 大模型靠稀疏路由把容量与算力解耦，但庞大参数量带来存储与服务难题；专家剪枝、合并与权重重建三类压缩路线何者更优？</p>
+<p><strong>方法</strong> 先推导三类压缩的结构误差界，指出剪枝/合并存在与路由和专家异质性绑定的不可消除误差；据此提出 SLBF——无数据的权重重建法，用跨专家共享的秩 k 基做分解，并以后验规范固定消去冗余参数。</p>
+<p><strong>关键数字</strong> 在 16B 到 122B 参数的 5 种 MoE 架构上，SLBF 一致优于三大压缩族的方法。</p>
+<p><strong>为什么值得看</strong> 给 MoE 压缩立了可对比的误差理论框架，且全程无需训练数据，适合端侧与低成本部署场景。</p>
+<p><a href="https://arxiv.org/abs/2610.09342">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09342">阅读原文 ↗</a></p>
 </body>
 </html>
