@@ -22,9 +22,11 @@
 <h1>Learning to Decide, Not to Reason: Parameter-Efficient Decision Operators via Low-Rank Activation Steering</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Injecting skills into a frozen language model currently costs a million parameters and a reinforcement-learnin…</p>
-<blockquote><p>Injecting skills into a frozen language model currently costs a million parameters and a reinforcement-learning pipeline. We introduce \method{}, a System-1 decision operator trained by behavior cloning that lowers this cost by roughly two orders of magnitude. The default operator uses 330K parameters to match a 1.33M-parameter operator trained with reinforcement learning, exceeds or achieve comparable performance, while collapsing 3,685-token deliberation into a 6-token decision with no loss in accuracy. A rank-4 variant with 23K parameters, 1/58 of the strongest published skill operator, suffices for SearchQA and near-suffices for LiveMath, where higher rank still helps; the same recipe transfers across five tasks and three backbones, with out-of-distribution gains persisting on LiveMath problems released months after training. The gap to prior work is trainability, and it is set jointly by initialization and architecture: the initialization of prior operators zeroes the gradient of both large factor matrices at the first optimization step, whereas our zero-initialized output projection inside a shared low-rank backbone receives a gradient immediately, which a gradient-flow probe…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 给冻结语言模型注入技能目前要百万级参数加一条 RL 流水线。能否用行为克隆训练一个"系统 1"决策算子，把成本压低约两个数量级？</p>
+<p><strong>方法</strong> 低秩激活转向的决策算子：默认 330K 参数匹配 1.33M 参数 RL 训练算子，把 3685 token 的深思熟虑压缩为 6 token 决策且不损失准确率。作者指出差距根源是可训性：先前算子的初始化让两个大因子矩阵首步梯度为零，而本方案共享低秩骨干内的零初始化输出投影立即获得梯度。</p>
+<p><strong>关键数字</strong> rank-4 变体仅 23K 参数（最强已发表技能算子的 1/58）足以胜任 SearchQA、接近胜任 LiveMath；迁移至 5 任务 3 基座，训练数月后发布的 LiveMath 新题上 OOD 增益仍在；57 道 LiveMath 中 23 道超过基座 best-of-8；13 组基座-任务对上增益跟踪基座余量，技能可作近似线性算子相加、插值、热插拔。</p>
+<p><strong>为什么值得看</strong> 机制解释（梯度流探针、logit-lens）与工程效果同样扎实，"技能即线性算子"的组合性尤其有想象空间。</p>
+<p><a href="https://arxiv.org/abs/2610.06950">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06950">阅读原文 ↗</a></p>
 </body>
 </html>

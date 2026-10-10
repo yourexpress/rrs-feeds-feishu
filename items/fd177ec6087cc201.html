@@ -22,9 +22,11 @@
 <h1>ElecSafety: Diagnosing Large Language Model Safety Judgments for Microcontroller Boards</h1>
 <p class="meta-line">arXiv cs.AR · 2026-10-08 · 论文PDF</p>
 
-<p>Large language models (LLMs) progressively support embedded hardware development, but a plausible re</p>
-<blockquote><p>Large language models (LLMs) progressively support embedded hardware development, but a plausible recommendation may pose safety risks when acting on the physical hardware. Because electrical safety can be different between every microcontroller board, a practical question is raised: can LLMs have the capability to make the right decision on whether a proposed user operation is safe for the board? Although benchmarks for embedded development exist, they primarily target code generation and hardware design tasks. This highlights the lack of tested board-specific judgment regarding electrical safety. To address this gap, we introduce the ElecSafety benchmark to evaluate whether an LLM can respond with the correct label and derive that label from the proper manufacturer constraints and rules. We extract these constraints from vendor datasheets and hardware manuals. Each scenario is defined by a decisive condition and a gold label (safe, hazardous, or cannot determine) before translating the scenario into natural language. We categorize the scenarios into violation and compliant cases, board-swap, near-boundary, and missing-information. We then evaluated the scenario on six open-weight…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 越来越多参与嵌入式硬件开发，但看似合理的建议作用到物理板卡上可能有电气安全风险：LLM 能否针对具体微控制器板判断用户操作是否安全？现有嵌入式基准主要考代码生成与硬件设计，缺乏板级电气安全判断评测。</p>
+<p><strong>方法</strong> 提出 ElecSafety 基准：从厂商数据手册与硬件手册提取约束，构造带决定性条件与金标签（安全 / 危险 / 无法判断）的场景，覆盖违规/合规、换板、近边界、信息缺失四类，在 6 个开源权重 LLM 上评测不同规则访问与 token 限制条件。</p>
+<p><strong>关键数字</strong> 提供板级规则可提升准确率，限制 token 影响较小；但即便最佳配置，在近边界与信息缺失场景仍不可靠，且正确标签常建立在不准确的约束推理之上。</p>
+<p><strong>为什么值得看</strong> 给"LLM 做硬件助手"补上了一块安全评测拼图，结论提醒：答对标签 ≠ 推理正确，物理世界落地需谨慎。</p>
+<p><a href="https://arxiv.org/abs/2610.06905">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06905">阅读原文 ↗</a></p>
 </body>
 </html>

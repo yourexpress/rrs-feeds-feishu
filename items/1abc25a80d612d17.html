@@ -22,9 +22,11 @@
 <h1>Learning from Unreliable Trajectories: Adversarially-Robust Federated Q-Learning</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>We study federated reinforcement learning in which multiple agents interact with a common Markov dec</p>
-<blockquote><p>We study federated reinforcement learning in which multiple agents interact with a common Markov decision process and communicate through a central server to collaboratively learn the optimal state-action value function. Our goal is to understand whether the sample-efficiency benefits of collaboration can be retained when a fraction of the agents behave adversarially and transmit arbitrarily corrupted information. To address this problem, we introduce Robust Async-Fed-Q, an epoch-based federated learning algorithm that combines variance-reduced estimation of the Bellman optimality operator at the agents with robust aggregation at the server. We establish high-probability finite-time guarantees showing that the proposed method preserves the statistical gains of collaboration among the honest agents while tolerating adversarial corruption. In particular, the effect of the adversarial agents decreases as the amount of data collected by each honest agent grows and eventually vanishes in the infinite-sample limit. We complement these guarantees with information-theoretic lower bounds that characterize the unavoidable statistical cost of adversarial corruption, leading to the first nearl…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 联邦强化学习中多个 agent 协作学最优 Q 函数，若部分 agent 是恶意的、发送任意损坏信息，协作带来的样本效率收益还能保住吗？</p>
+<p><strong>方法</strong> Robust Async-Fed-Q：基于 epoch 的算法，agent 端对 Bellman 最优算子做方差缩减估计，服务器端做鲁棒聚合。给出高概率有限时间保证：诚实 agent 间的协作统计收益保留，恶意 agent 的影响随每个诚实 agent 数据量增长而衰减、无限样本极限下消失。</p>
+<p><strong>关键数字</strong> 配套信息论下界刻画了对抗损坏不可避免的统计代价，构成对抗鲁棒联邦强化学习首个近乎匹配的上下界；epoch 式设计还显著改进异步采样下联邦 Q 学习已知的最佳通信复杂度。</p>
+<p><strong>为什么值得看</strong> 理论闭环漂亮：鲁棒聚合 + 方差缩减拿到近匹配上下界，做联邦/分布式 RL 理论的必读。</p>
+<p><a href="https://arxiv.org/abs/2610.06918">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06918">阅读原文 ↗</a></p>
 </body>
 </html>

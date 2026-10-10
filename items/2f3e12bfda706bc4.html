@@ -22,9 +22,11 @@
 <h1>MASKerade: Token-Routed Mask Experts for Dense-to-MoE Upcycling</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Sparsely activated Mixture-of-Experts (MoE) models increase model capacity without a proportional increase in…</p>
-<blockquote><p>Sparsely activated Mixture-of-Experts (MoE) models increase model capacity without a proportional increase in per-token computation. Dense-to-MoE upcycling reuses pretrained dense models to construct such systems, commonly by copying feed-forward networks (FFNs) into independently trained experts. We introduce MASKerade, a dense-to-MoE training method that instead learns experts as sparse subnetworks of a frozen pretrained FFN. Each expert is defined by a learned binary mask, and a token-level router selects which masked FFNs to execute and combine. The router and mask scores are optimized jointly, while the underlying FFN weight values remain unchanged. This formulation supports neuron-structured, semi-structured, and unstructured experts within the same routing architecture. Our main configuration uses four 2:4 experts with top-2 routing, where two half-dense expert passes have the nominal FFN arithmetic of one dense pass, without requiring independent expert weight matrices. On five vision-language benchmarks with Qwen and Gemma backbones, this configuration achieves the highest performance among the compared baselines. Comparisons across mask granularities, routing intervention…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 稀疏 MoE 能不成比例地扩大容量，dense-to-MoE upcycling 通常把预训练 FFN 复制成独立训练的专家，开销大。能否复用冻结预训练权重直接构造专家？</p>
+<p><strong>方法</strong> MASKerade：每个专家是冻结预训练 FFN 上学出的二值掩码稀疏子网络，token 级路由器选择执行并组合哪些掩码 FFN；路由器与掩码分数联合优化，FFN 权重不变；同一架构支持神经元结构、半结构与非结构专家。主配置为 4 个 2:4 半稀疏专家 + top-2 路由，两个半密专家前向的标称 FFN 算量等于一次稠密前向。</p>
+<p><strong>关键数字</strong> Qwen 与 Gemma 基座、5 个视觉-语言基准上该配置在对比基线中性能最高；掩码粒度、路由干预与算量匹配对照区分了"学到的连接结构"与"专家激活数"的各自贡献。</p>
+<p><strong>为什么值得看</strong> 冻结权重 + 学掩码的 MoE upcycling 新路线，省显存省训练，与结构化稀疏硬件友好（2:4）结合得很巧。</p>
+<p><a href="https://arxiv.org/abs/2610.07809">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07809">阅读原文 ↗</a></p>
 </body>
 </html>

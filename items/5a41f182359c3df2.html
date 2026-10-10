@@ -22,9 +22,11 @@
 <h1>FlowCF: Sparse Counterfactual Explanations for Mixed-Type Tabular Data using Flow Matching</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>In the field of Explainable AI (XAI), counterfactual (CF) explanations interpret a model's decision</p>
-<blockquote><p>In the field of Explainable AI (XAI), counterfactual (CF) explanations interpret a model's decision by suggesting the changes to the input that would lead to a more favourable outcome. To be useful in practice, such an explanation should change few features and change them as little as possible, properties known as sparsity and proximity. We observe that existing methods remain limited in this respect, especially for numerical features, whether they are model-agnostic and amortised, or gradient-based with full access to the model. In this paper, we propose FlowCF, a model-agnostic generative method that frames CF generation as sparse transport from the factual to the target class. We solve this transport with flow matching, which we extend to mixed feature types with a novel mixed flow operator, and exploit the resulting geometry to optimise for sparsity through a gating network that minimises the number of features the transport changes. Extensive experiments on six benchmark datasets demonstrate that FlowCF produces the best numerical sparsity and proximity, changing 29% of the numerical features where the best baseline changes 89%, at 70% smaller displacement, while remaining co…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 反事实解释要实用，需改动的特征少（稀疏）且改动幅度小（邻近）。现有方法——无论模型无关摊销式还是全访问梯度式——在数值特征上都受限。</p>
+<p><strong>方法</strong> FlowCF 把反事实生成建模为从事实到目标类别的稀疏传输，用流匹配求解，并提出混合流算子扩展至混合类型特征；利用该几何结构通过门控网络最小化被改动的特征数。模型无关、生成式。</p>
+<p><strong>关键数字</strong> 6 个基准数据集上数值稀疏性与邻近性最优：只改 29% 数值特征（最优基线改 89%），位移幅度小 70%，其余期望性质与基线相当。</p>
+<p><strong>为什么值得看</strong> 反事实解释"少改、小改"两个核心诉求同时显著推进，混合类型表格数据的处理也实用，XAI 工具箱可更新。</p>
+<p><a href="https://arxiv.org/abs/2610.08537">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.08537">阅读原文 ↗</a></p>
 </body>
 </html>

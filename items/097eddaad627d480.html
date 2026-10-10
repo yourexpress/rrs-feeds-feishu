@@ -22,9 +22,11 @@
 <h1>Harmful SFT Leaves a Continuous Trace in LLM Checkpoint Updates</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Safety auditing of post-trained large language models typically relies on model behavior, requiring</p>
-<blockquote><p>Safety auditing of post-trained large language models typically relies on model behavior, requiring model execution and depending on the coverage of available evaluations. This work asks a different question: Do the target behaviors optimized during supervised fine-tuning (SFT) leave readable evidence directly in checkpoint updates? We find that harmful-compliance SFT induces a continuous, objective-dependent ordering in checkpoint-update space. Using a reference geometry defined by pure harmful-compliance, safety-targeted, and benign-utility SFT, we find that a checkpoint-level coordinate s_H tracks controlled harmful-objective composition with Spearman correlations of 0.986-0.992 across four 7-8B backbones, with the same ordering persisting at larger model scales. Matched compliance-versus-refusal controls show that this checkpoint trace reflects the SFT objective rather than harmful-input exposure, while additional controls rule out simple explanations based on harmful-example count or generic training intensity. Building on this structure, we introduce TRACE, a weights-only auditing method that localizes an unknown checkpoint update relative to frozen harmful and non-harmful re…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 后训练安全审计通常依赖行为评测，需要跑模型且受评测覆盖度限制。有害 SFT 优化的目标会不会直接在 checkpoint 权重更新里留下可读证据？</p>
+<p><strong>方法</strong> 发现有害合规 SFT 在 checkpoint 更新空间诱导出连续、目标依赖的排序。据此提出 TRACE：仅基于权重的审计方法，将未知 checkpoint 更新相对冻结的有害/无害参考原型定位，转换为连续有害目标分数，无需查询模型、无需访问原 SFT 数据。</p>
+<p><strong>关键数字</strong> checkpoint 级坐标 s_H 与受控有害目标配比的 Spearman 相关达 0.986–0.992（4 个 7–8B 基座），更大模型上排序保持；跨分布漂移、未见数据、不同 SFT 配置、部分 checkpoint、LoRA/全参微调下轨迹稳定，并与独立测量的攻击成功率正相关，低有害占比下仍有信息量。</p>
+<p><strong>为什么值得看</strong> "看权重就能审计有害微调"的纯静态信号，给行为评测之外补了一条互补防线，数字与控制实验都扎实。</p>
+<p><a href="https://arxiv.org/abs/2610.07518">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07518">阅读原文 ↗</a></p>
 </body>
 </html>

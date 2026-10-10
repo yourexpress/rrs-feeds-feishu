@@ -22,9 +22,11 @@
 <h1>Evaluating Inference Compute for Generative AI: A Framework for Enterprise Workloads</h1>
 <p class="meta-line">arXiv cs.AR · 2026-10-08 · 论文PDF</p>
 
-<p>LLM deployment is shifting from single-turn completion to agentic trajectories in which a model plan</p>
-<blockquote><p>LLM deployment is shifting from single-turn completion to agentic trajectories in which a model plans, calls tools, reads results and reasons at test time before acting. This inverts the economics of inference hardware: chat serving amortises weight reads across large batches, whereas agent trajectories are sequentially dependent, run at effective batch one, and make per-token decode latency (TPOT) the dominant term in task completion time. Using a roofline analysis and a closed-form episode-latency model, we show why this regime favours accelerators that keep weights in on-die SRAM (Cerebras WSE-3/3T, Groq/NVIDIA LPU) or compiler-managed tiered memory (SambaNova SN40L/SN50), and why three vendor ecosystems converged in 2026 on disaggregated prefill/decode serving. We show that per-step reliability compounds exponentially in trajectory length-a 2% per-step failure rate erases a 2x decode advantage for a 20-step agent-so determinism and tail latency are first-order performance variables. We then propose a four-layer evaluation framework (silicon, serving system, agent episode, enterprise) with a metric set built on goodput at an agentic SLO and cost per successful episode, a six-axi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 部署从单轮补全转向 agent 轨迹（规划、调工具、测试时推理），颠覆了推理硬件经济学：对话服务靠大批次摊薄权重读取，而 agent 轨迹顺序依赖、等效 batch=1，单 token 解码延迟（TPOT）主导任务完成时间。</p>
+<p><strong>方法</strong> 用 roofline 分析与闭式 episode 延迟模型论证：该范式青睐权重驻留片上 SRAM（Cerebras WSE-3/3T、Groq/NVIDIA LPU）或编译器管理分层内存（SambaNova SN40L/SN50）的加速器；并提出四层评估框架（硅片、服务系统、agent episode、企业），含 goodput@SLO、单成功 episode 成本等指标、六任务族基准协议与 TCO 模型。</p>
+<p><strong>关键数字</strong> 逐步可靠性随轨迹长度指数复合——2% 的单步失败率即可抹掉 20 步 agent 的 2 倍解码优势；文中性能数字均公开并标注证据等级，另提出 7 条可证伪假设。</p>
+<p><strong>为什么值得看</strong> 少见地把"agent 时代的推理硬件选型"系统化：token 吞吐排名很可能与长程任务的单成功任务成本排名背离。</p>
+<p><a href="https://arxiv.org/abs/2610.07094">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07094">阅读原文 ↗</a></p>
 </body>
 </html>

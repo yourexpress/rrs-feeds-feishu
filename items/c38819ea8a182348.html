@@ -22,9 +22,11 @@
 <h1>Identifiable World Models from Pretrained Diffusion Representations</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Diffusion-based world models can generate and predict trajectories in high-dimensional dynamical sys</p>
-<blockquote><p>Diffusion-based world models can generate and predict trajectories in high-dimensional dynamical systems, but predictive accuracy does not imply that their latent coordinates recover the underlying state variables or causal interactions. We ask whether a frozen pretrained diffusion model can be equipped with identifiable coordinates without retraining its generative backbone. We show that auxiliary-variable nonlinear ICA guarantees can be transferred to Contrastive Diffusion Alignment (ConDA), which learns only a lightweight alignment map on top of frozen diffusion latents. Under standard TCL/GCL assumptions, the aligned representation identifies latent dynamical states up to permutation and componentwise invertible transformations, preserves the latent dynamic structural causal model, and reduces lagged graph recovery to transition-Jacobian sparsity. We evaluate TCL-, GCL-, and CEBRA-based ConDA against TDRL, CaRiNG, IDOL, temporal SuaVE, and iVAE across physical and robotic video systems. TCL and GCL achieve near-perfect blockwise state recovery and competitive lagged graph recovery, including exact recovery in a simulated falling-body system. In a simulated bipedal robot, learne…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 扩散式世界模型能生成和预测高维动力系统轨迹，但预测准不等于其隐坐标恢复了真实状态变量与因果交互。能否不重训生成骨干、给冻结的预训练扩散模型装上可辨识坐标？</p>
+<p><strong>方法</strong> 将辅助变量非线性 ICA 的可辨识性保证迁移到 Contrastive Diffusion Alignment（ConDA）：只在冻结扩散隐变量上学一个轻量对齐映射。标准 TCL/GCL 假设下，对齐表征可在置换与逐分量可逆变换意义下辨识隐动态状态，保留隐动态结构因果模型，并把滞后图恢复化为转移雅可比稀疏性问题。</p>
+<p><strong>关键数字</strong> 在物理与机器人视频系统上对比 TDRL、CaRiNG、IDOL、temporal SuaVE、iVAE：TCL 与 GCL 取得近完美的分块状态恢复与有竞争力的滞后图恢复，模拟落体系统中精确恢复；模拟双足机器人上学到的动态能恢复对未见控制扰动响应的符号与时序结构。</p>
+<p><strong>为什么值得看</strong> 让预训练扩散世界模型"白得"可辨识、结构可解释的坐标，理论与实验闭环，对世界模型可解释性方向是实质推进。</p>
+<p><a href="https://arxiv.org/abs/2610.07028">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07028">阅读原文 ↗</a></p>
 </body>
 </html>

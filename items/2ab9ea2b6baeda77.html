@@ -22,9 +22,11 @@
 <h1>FAPO: Fanout-Aware Post-Mapping Optimization for LUT-Based FPGAs</h1>
 <p class="meta-line">arXiv cs.AR · 2026-10-08 · 论文PDF</p>
 
-<p>Reducing logic depth during FPGA technology mapping does not necessarily eliminate fanout bottleneck</p>
-<blockquote><p>Reducing logic depth during FPGA technology mapping does not necessarily eliminate fanout bottlenecks in the resulting LUT networks.Replicating heavily loaded LUTs can alleviate these bottlenecks, but the added copies consume area and may increase upstream loading. We propose FAPO, a mapper-independent post-mapping optimizer that jointly refines sink assignments and LUT cuts under a final-area constraint.Replication, cut switching, and recovery are evaluated by the resulting live LUT count.We derive a necessary all-critical-path condition for delay reduction and obtain minimum-copy proposals by minimum cut within a restricted same-cut family.These proposals complement greedy refinement, with mappings selected by full-network area and timing.Experiments on EPFL benchmarks with three initial mappers achieve geometric-mean reductions of up to 14.48% in fanout-aware area--timing product (ATP) with a 5% final-area allowance.VPR evaluation shows a 7.04% reduction in routed critical-path delay relative to ABC if.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> FPGA 技术映射中降低逻辑深度并不必然消除 LUT 网络的扇出瓶颈；复制高负载 LUT 可缓解，但副本占面积还可能增加上游负载。</p>
+<p><strong>方法</strong> 提出映射器无关的后映射优化器 FAPO：在最终面积约束下联合优化汇聚分配与 LUT cut；推导出延迟降低的全关键路径必要条件，并在受限同 cut 族内用最小割求得最少副本方案，与贪心细化互补，按全网面积与时序选解。</p>
+<p><strong>关键数字</strong> EPFL 基准、三种初始映射器上，允许 5% 最终面积时扇出感知面积-时序积（ATP）几何平均最高降 14.48%；VPR 布线评估中关键路径延迟较 ABC if 降 7.04%。</p>
+<p><strong>为什么值得看</strong> 把扇出瓶颈作为一等公民做后映射优化，理论条件 + 最小割构造都干净，对 FPGA CAD 工具链有实际增益。</p>
+<p><a href="https://arxiv.org/abs/2610.06937">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06937">阅读原文 ↗</a></p>
 </body>
 </html>

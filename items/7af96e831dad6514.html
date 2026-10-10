@@ -22,9 +22,11 @@
 <h1>Event-Driven ML Pipeline Orchestration for Manufacturing: An AWS Industry Experience</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>We present an industry experience report on three years of operating an event-driven cloud infrastru</p>
-<blockquote><p>We present an industry experience report on three years of operating an event-driven cloud infrastructure for continuous machine learning training in automotive manufacturing. Our system orchestrates GPU-accelerated training of product-specialized model pairs, a physics prediction model and a reinforcement-learning control policy, across multiple plants, coordinating long-running GPU workloads triggered by manufacturing events. The architecture combines Amazon ECS with EC2 GPU capacity providers, SQS-based messaging with dead-letter queues, and an admission-controlled Lambda dispatcher that enforces cluster concurrency limits. A Conductor orchestrator on ECS Fargate initiates dependency-aware retraining chains on a weekly schedule. The entire infrastructure is codified in modular Terraform with multi-account separation. From 40000+ production training jobs we report a 72-78% cost reduction versus always-on GPU infrastructure. A discrete-event simulation confirms that admission control is necessary (naive dispatch loses 65% of jobs) and that queue-draining matches AWS Step Functions latency while eliminating per-job startup overhead. We provide lessons learned and release the simula…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 汽车制造中跨工厂持续训练产品专用的"物理预测模型 + 强化学习控制策略"模型对，需要编排由制造事件触发的长时 GPU 工作负载，成本与可靠性如何兼顾？</p>
+<p><strong>方法</strong> 三年产业经验报告：事件驱动云架构，Amazon ECS + EC2 GPU 容量提供者、SQS 消息 + 死信队列、带准入控制的 Lambda 调度器强制集群并发上限，ECS Fargate 上的 Conductor 编排器按周触发依赖感知重训链，全部用模块化 Terraform 多账户 codify。</p>
+<p><strong>关键数字</strong> 40000+ 生产训练任务，相比常驻 GPU 基础设施成本降低 72–78%；离散事件仿真表明准入控制必不可少（朴素调度丢失 65% 任务），队列排空延迟与 Step Functions 持平且省掉逐任务启动开销。仿真器与 Terraform 模块骨架已开源。</p>
+<p><strong>为什么值得看</strong> 难得的 ML 训练基础设施长周期实战复盘，事件驱动 + 准入控制的设计取舍与成本数字对工程团队很实在。</p>
+<p><a href="https://arxiv.org/abs/2610.06890">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06890">阅读原文 ↗</a></p>
 </body>
 </html>

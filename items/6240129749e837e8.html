@@ -22,9 +22,11 @@
 <h1>Efficient Multimodal Inference through Adaptive Acquisition and Sequential Fusion</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Multimodal systems often encode every available input, even when a subset suffices for prediction.</p>
-<blockquote><p>Multimodal systems often encode every available input, even when a subset suffices for prediction. Adaptive acquisition can reduce this cost by using predictions from incrementally fused evidence to decide which modality to encode next and when to stop. However, sequential fusion makes these predictions order-dependent, so decisions based on them may need to distinguish factorially many histories of the same acquired set. We introduce SemARC, which couples a Sequential Modality Aggregator (SeMA) with an Adaptive Runtime Controller (ARC) and uses acquired evidence to select each modality before its encoder runs. SeMA executes only selected encoder and fusion branches, updates a fixed-size state, and predicts after each acquisition without recomputing earlier branches. We supervise every acquisition prefix under randomized modality subsets and orders to encourage consistent predictions across acquisition orders. ARC combines a set-dependent marginal-utility prior with residual fitted-Q learning to select the next available modality or stop, without inspecting unacquired inputs or retaining acquisition order. Across six multimodal classification datasets and eleven baselines, SemARC a…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 多模态系统常对所有输入都编码，但子集往往已足够预测。自适应采集可省算力，但顺序融合使预测依赖采集顺序，决策需区分同一集合的阶乘级历史。</p>
+<p><strong>方法</strong> SemARC 由顺序模态聚合器（SeMA）与自适应运行时控制器（ARC）组成：先选模态再跑编码器，只执行被选分支并用固定大小状态增量更新；在随机模态子集与顺序下监督每个采集前缀以消除顺序依赖；ARC 用集合依赖的边际效用先验加残差 fitted-Q 学习决定下一个模态或停止。</p>
+<p><strong>关键数字</strong> 6 个多模态分类数据集、11 个基线上：平均 macro-F1 高 3.2%，推理 GFLOPs 低 61.4%；端到端延迟 GPU/CPU 降 44.0%、Android INT8 降 47.2%；模态缺失场景下 24 个条件中 21 个持平或超过最优基线，GFLOPs 再低 14.8%。</p>
+<p><strong>为什么值得看</strong> 面向异构设备的"按需编码"多模态推理方案，数字扎实，对端侧多模态部署有直接参考意义。</p>
+<p><a href="https://arxiv.org/abs/2610.07466">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07466">阅读原文 ↗</a></p>
 </body>
 </html>

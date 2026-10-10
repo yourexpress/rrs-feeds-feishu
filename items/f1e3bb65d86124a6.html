@@ -22,9 +22,11 @@
 <h1>Enhancing Diffusion Language Models with Autoregressive Post-Training Weights</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Diffusion language models (dLLMs) have emerged as a promising alternative to autoregressive (AR) lan</p>
-<blockquote><p>Diffusion language models (dLLMs) have emerged as a promising alternative to autoregressive (AR) language models, offering flexible token-update orders and parallel decoding. Recent dLLMs are often initialized from pretrained AR models before diffusion conversion in order to inherit their learned representations. After the conversion, however, they typically ignore the extensive post-training ecosystem of their AR ancestors. In this work, we show that these existing AR post-training weight updates can instead be effectively recycled to enhance diffusion models. Despite the changes by AR-to-diffusion conversion, directly adding an AR post-training weight update to a diffusion base model remains effective, bringing its performance close to that achieved by direct diffusion post-training. Notably, AR and diffusion post-training updates are nearly orthogonal in weight space, yet induce substantially more aligned representation changes in the diffusion model. Their distinct updates are also complementary: composing their weights can retain gains from both regimes and further improve the post-trained diffusion model. Based on these findings, we propose A2D, a simple training-free framewo…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 扩散语言模型（dLLM）常从预训练 AR 模型初始化再做扩散转换，但转换后通常抛弃了 AR 祖先庞大的后训练生态（SFT/RLHF 权重更新）。这些现成的 AR 后训练增量能否回收复用？</p>
+<p><strong>方法</strong> 发现直接把 AR 后训练权重增量加到扩散基座仍有效，性能接近直接做扩散后训练；AR 与扩散后训练更新在权重空间近乎正交，却在扩散模型中诱导更对齐的表征变化，二者互补可组合。据此提出免训练框架 A2D：把 AR 后训练能力迁移到扩散基座，或组合两类更新进一步增强已后训练的扩散模型。</p>
+<p><strong>关键数字</strong> 在 Dream、DreamReasoner、DiffuCoder、Dream-Coder、Nemotron-Labs-Diffusion、DiffusionGemma 等多个 dLLM 上，SFT 与 RL 更新均能稳定提升指令遵循、数学推理与代码能力，且无需额外训练或推理开销。</p>
+<p><strong>为什么值得看</strong> 免训练"白嫖"AR 后训练生态增强扩散语言模型，思路简单实用，权重空间分析也有启发性。</p>
+<p><a href="https://arxiv.org/abs/2610.08108">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.08108">阅读原文 ↗</a></p>
 </body>
 </html>

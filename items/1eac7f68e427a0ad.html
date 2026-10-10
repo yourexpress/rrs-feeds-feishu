@@ -22,9 +22,11 @@
 <h1>Finding the Heads and the Neurons Responsible for Network Information Retrieval in Language Models</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>We ask whether specific attention heads, and more finely specific neurons inside those heads, are re</p>
-<blockquote><p>We ask whether specific attention heads, and more finely specific neurons inside those heads, are responsible for recognizing that a language model's context contains network infrastructure information (a hostname paired with its IP address), and whether that responsibility can be validated causally rather than by correlation alone. At the head level the answer is yes, across five models spanning three architecture families: in every model, a small set of heads (1 to 9 out of 128 to 1152 candidates), found by causal ablation screening and tested for selectivity against matched negative and context-free controls, supports a detector with 99.5--100\% held-out accuracy. We then ask whether a head's responsibility concentrates into one neuron or stays spread across its dimensions; this is model-specific. In one model, the top head's signal concentrates into a single neuron, found independently by both a causal intervention and a correlational ranking, which agree exactly (AUC = 1.000, matching the full head). In another, the single clean head works as a whole (AUC = 1.000) but the best causally ranked neuron inside it does not (AUC = 0.665), so the responsibility there is spread across…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 语言模型中是否存在特定的注意力头——乃至头内特定神经元——负责识别上下文里的网络基础设施信息（主机名 + IP 配对）？这种"责任"能否因果验证而非仅靠相关性？</p>
+<p><strong>方法</strong> 跨 3 个架构族、5 个模型做因果消融筛查，并以匹配的负样本与无上下文对照检验选择性；再下钻到头内神经元，比较因果干预与相关性排序两条路径。</p>
+<p><strong>关键数字</strong> 每个模型都有 1–9 个头（候选总数 128–1152）支撑 99.5–100% 留出准确率的检测器；某模型中责任收敛到单个神经元（因果与相关方法一致，AUC=1.000），另一模型头整体 AUC=1.000 但最佳单神经元仅 0.665。独立机构收集的反向 DNS 数据上，所有模型的全头检测器对正样本 100% 命中，单神经元版本迁移不稳，一例甚至低于随机。</p>
+<p><strong>为什么值得看</strong> 机制可解释性里少见的"因果 + 跨模型 + 独立数据集迁移"三重检验，结论诚实：头级定位稳，神经元级因模型而异。</p>
+<p><a href="https://arxiv.org/abs/2610.08200">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.08200">阅读原文 ↗</a></p>
 </body>
 </html>

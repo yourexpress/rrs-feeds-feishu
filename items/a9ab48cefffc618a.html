@@ -22,9 +22,11 @@
 <h1>Exact Unlearning via Quantized Sufficient Statistics</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Exact unlearning requires a deployed predictor to match one rebuilt without the information named by a deletio…</p>
-<blockquote><p>Exact unlearning requires a deployed predictor to match one rebuilt without the information named by a deletion request. Existing general-purpose exact methods localize retraining through disjoint shards, but every request still invalidates a model, and smaller shards reduce the data available to each constituent predictor. We introduce Quantized Sufficient Statistics (QSS), which separates a small frozen schema from mutable, sum-decomposable content. The schema learns global structure; the content stores local prediction corrections as additive statistics indexed by quantized regions. Deleting content is therefore exact subtraction rather than optimization. We distinguish two guarantees: QSS-L exactly removes a label while retaining the unlabelled input, whereas QSS-E exactly removes both input and label by learning the schema without deletable examples. A deletion takes the arithmetic fast path with probability $1-ρ$ and triggers a full rebuild with probability $ρ$; all reported expected latencies include both events. Across 15 vision, text, and tabular datasets at $ρ=0.5\%$, QSS-L is within 2 percentage points of SISA on 11 tasks and provides 4--483$\times$ lower expected deleti…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 精确机器遗忘要求部署模型与"从未见过被删数据"的重训模型一致。现有通用精确方法靠分片隔离重训，但每个删除请求仍会使模型失效，且分片越小单模型可用数据越少。</p>
+<p><strong>方法</strong> 提出量化充分统计量（QSS）：把小型冻结 schema（学全局结构）与可变、可求和分解的内容（按量化区域索引的加性局部预测修正）分离，删除即精确减法而非再优化。QSS-L 精确移除标签保留输入，QSS-E 连输入一起精确移除。</p>
+<p><strong>关键数字</strong> 15 个视觉/文本/表格数据集、ρ=0.5% 下：QSS-L 在 11 个任务上与 SISA 精度差在 2 个百分点内，schema 紧凑有效的低类别数任务上期望删除延迟低 4–483 倍；QSS-E 量化了彻底移除输入痕迹的额外精度代价。</p>
+<p><strong>为什么值得看</strong> 把精确遗忘从"重训"变成"查表减法"，延迟数字可观，是合规驱动模型维护的一条实用路线。</p>
+<p><a href="https://arxiv.org/abs/2610.07197">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07197">阅读原文 ↗</a></p>
 </body>
 </html>

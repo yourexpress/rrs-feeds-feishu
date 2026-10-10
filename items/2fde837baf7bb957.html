@@ -22,9 +22,11 @@
 <h1>LLM-Based Multi-Agent Collaboration for Constrained Multi-Objective Container Placement</h1>
 <p class="meta-line">arXiv cs.DC · 2026-10-08 · 论文PDF</p>
 
-<p>Container placement in data centers must simultaneously minimize power consumption and maximize affi</p>
-<blockquote><p>Container placement in data centers must simultaneously minimize power consumption and maximize affinity preferences, while satisfying multi-resource capacity and anti-affinity constraints. Traditional approaches typically rely on fixed rules, which lack adaptability to dynamic cluster states and are difficult to extend for adaptive decision-making. On the other hand, meta-heuristic methods, although more flexible, are often computationally expensive, slower and prone to getting trapped in local optima. In this work, we propose an adaptive and efficient approach based on an LLM-driven multi-agent collaboration framework, where four specialized agents operate in a closed-loop ReAct cycle at each placement step. A Power Consumption Agent and an Affinity Agent debate over competing objectives, while a Placement Agent resolves conflicts using Tolerance-Gated Arbitration (TGA). A Rearrangement Agent further refines decisions through the Monotone Improvement Rule (MIR) in a post-placement refinement phase. All the agents reason over deterministic, feasibility-filtered candidate tables provided by the environment, ensuring that every proposed action inherently satisfies hard constraints. …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 数据中心容器放置要同时最小化功耗、最大化亲和偏好，并满足多资源容量与反亲和硬约束。固定规则不适应动态集群，元启发式方法慢且易陷局部最优。</p>
+<p><strong>方法</strong> LLM 驱动的四智能体闭环 ReAct 协作框架：功耗智能体与亲和智能体就竞争目标辩论，放置智能体用容忍门控仲裁（TGA）化解冲突，重排智能体以单调改进规则（MIR）做放置后精炼；所有智能体只在环境提供的确定性、可行性过滤后的候选表上推理，天然满足硬约束。</p>
+<p><strong>关键数字</strong> Google Cluster Trace（100 应用、25 机器）上：较功耗贪心基线功耗低 8.36%、亲和度高 39.30%；消融显示多轮辩论、TGA、MIR 任一移除都会同时恶化两项指标。</p>
+<p><strong>为什么值得看</strong> 多智能体辩论 + 可行性过滤的组合让 LLM 调度决策既灵活又不越界，是 LLM-for-系统优化的一个清晰范式。</p>
+<p><a href="https://arxiv.org/abs/2610.07030">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07030">阅读原文 ↗</a></p>
 </body>
 </html>

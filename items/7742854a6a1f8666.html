@@ -22,9 +22,11 @@
 <h1>Learning What to Distill: Bilevel Top-K Token Selection for Self-Distillation in Large Language Models</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Large language models have shown strong reasoning capabilities, but their high inference costs make</p>
-<blockquote><p>Large language models have shown strong reasoning capabilities, but their high inference costs make knowledge distillation an important approach for transferring such capabilities to compact models in resource-constrained scenarios. On-policy self-distillation further reduces the reliance on external large teacher models while improving the reasoning ability of compact language models. However, existing methods typically either distill all token positions uniformly or select tokens using fixed heuristic criteria, assigning the same distillation strength to the selected positions rather than adaptively learning which tokens are most beneficial for distillation. To address these limitations, we propose BiToK-SD (Bilevel Top-K Token Selection for Self-Distillation), a bilevel-optimization-based token selection method that learns where distillation should be applied during on-policy self-distillation. Specifically, BiToK-SD is formulated as a bilevel optimization problem, where the lower-level problem models Top-K token selection as a differentiable threshold-based relaxation, allowing the selected positions to adapt as the student policy evolves, while the upper-level problem performs…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> On-policy 自蒸馏让小模型摆脱对外部大教师的依赖，但现有方法要么对所有 token 均匀蒸馏，要么用固定启发式选 token，无法自适应地学习"哪些 token 最值得蒸馏"。</p>
+<p><strong>方法</strong> BiToK-SD：把 token 选择建模为双层优化——下层用可微阈值松弛建模 Top-K 选择，使被选位置随学生策略演化自适应调整；上层在被选位置上做知识蒸馏。</p>
+<p><strong>关键数字</strong> 数学推理基准上，BiToK-SD 在所有对比方法中平均性能最佳，且只需轻量额外计算；摘要未列具体分数。</p>
+<p><strong>为什么值得看</strong> 把"在哪里蒸馏"从人工启发式变成可学习变量，双层优化 formulation 干净，对推理能力蒸馏这条线是直接可复用的改进。</p>
+<p><a href="https://arxiv.org/abs/2610.07247">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07247">阅读原文 ↗</a></p>
 </body>
 </html>
