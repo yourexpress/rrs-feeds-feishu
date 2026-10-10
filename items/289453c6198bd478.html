@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dynamics as Code: On Model Compression via Dynamic System</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Dynamics as Code: On Model Compression via Dynamic System</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 预训练模型越来越大，压缩成为严苛内存/算力约束下部署的前置条件。此前提出的「动力系统（DS）」范式把压缩重构为紧凑权重表示：高维参数用动力系统产生的一条轨迹的索引来编码，解压时再恢复向量——机制上与剪枝、量化、蒸馏、低秩分解都不同。</p>
+<p><strong>方法</strong> 该文沿此方向证明：在 Diophantine 条件下，无理环绕中 M = O(ε^-(d+ν)) 个状态的有限轨迹构成 d 维权重空间的 ε-网，从而把状态分辨率、解压误差与压缩比联系起来。进而统一四类动力系统家族（Hilbert/Peano/Morton/Snake 空间填充曲线、Lorenz 混沌系统、LCG/PCG 同余伪随机数、Halton 低差异序列），引入 KD 树与坐标模板加速以扩展到大模型，外加离群点识别控制误差。</p>
+<p><strong>关键数字</strong> 在 ResNet-18 与 Qwen2.5-1.5B / Qwen1.5-7B 上验证：无需事后重训练即可获得有竞争力的压缩比，解压误差可控；摘要未给出具体压缩比数值。</p>
+<p><strong>为什么值得看</strong> 理论保证 + 可落地的完整框架，给模型压缩提供了一条与主流四件套正交的新路线。</p>
+<p><a href="https://arxiv.org/abs/2610.11115">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.11115">阅读原文 ↗</a></p>
+</body>
+</html>

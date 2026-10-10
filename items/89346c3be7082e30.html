@@ -22,9 +22,11 @@
 <h1>Does On-Policy Distillation for Safety Pose Backdoor Risks?</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>On-policy distillation (OPD) has attracted growing attention as an effective way to transfer capabil</p>
-<blockquote><p>On-policy distillation (OPD) has attracted growing attention as an effective way to transfer capabilities from teacher models to student models. Recent studies further explore OPD as a tool for improving large language model safety with promising results. However, these approaches typically assume that the teacher and training data are trustworthy. In this paper, we uncover an overlooked threat to OPD for safety: a safety-aligned but backdoored teacher can propagate its hidden malicious behavior to an initially clean student. Under our threat model, a poisoning rate as low as 3% results in an attack success rate (ASR) of up to 70% on the distilled student. We further identify two training choices that can amplify this risk. First, increasing the number of training epochs can lead to high ASR even at low poisoning rates. With only 10 poisoned samples, ASR reaches 67% after 16 epochs. Second, the commonly used top-k KL can accelerate backdoor transfer, causing trigger-conditioned harmful behavior to emerge earlier than sampled-token KL in most settings. Alongside these findings, we explore a simple mitigation, Lazy Defense, which clips KL rewards to make student updates less aggressi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 在线策略蒸馏（OPD）被用于把教师能力（含安全性）迁移给学生，但这类方法默认教师与训练数据可信——如果教师本身带后门，OPD 会怎样？</p>
+<p><strong>方法</strong> 揭示一个被忽视的威胁：安全对齐但带后门的教师可把隐藏恶意行为蒸馏给原本干净的学生。威胁模型下量化投毒率与攻击成功率的关系，并识别两个放大风险的训练选择：训练轮数越多、ASR 越高；常用的 top-k KL 比采样 token KL 更快触发后门迁移。同时提出简单缓解方案 Lazy Defense：截断 KL 奖励让学生更新更保守，从而延缓后门学习。</p>
+<p><strong>关键数字</strong> 投毒率低至 3% 时学生攻击成功率最高达 70%；仅 10 个投毒样本、16 个 epoch 后 ASR 达 67%。Lazy Defense 在低投毒率场景能延迟后门迁移。</p>
+<p><strong>为什么值得看</strong> 「蒸馏供应链安全」的具体化：给 OPD 用于安全对齐这一流行做法敲响警钟，数字触目，做安全蒸馏/防后门的读者必看。</p>
+<p><a href="https://arxiv.org/abs/2610.07654">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07654">阅读原文 ↗</a></p>
 </body>
 </html>

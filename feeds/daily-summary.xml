@@ -5,8 +5,53 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>每天一条，汇总当日两个检索源（AI 技术报告 + 高效计算文献）的重点内容。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 09 Oct 2026 23:34:41 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 10:57:01 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/daily-summary.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日精选 · 2026-10-10</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-10-10.html</link>
+      <guid isPermaLink="false">urn:daily-summary:2026-10-10</guid>
+      <pubDate>Sat, 10 Oct 2026 23:05:00 +0800</pubDate>
+    <category>每日精选</category>
+      <description>&lt;h2&gt;当日检索概况&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;AI 技术报告库：检索 2 条，入选 1 条（通义千问 Qwen3.8-Flash 新模型发布）。&lt;/li&gt;
+&lt;li&gt;高效计算文献库：检索 98 条，入选 19 条（稀疏注意力内核、KV 缓存压缩与量化、剪枝、优化器量化、MoE 服务系统、扩散 LLM 加速、缓存替换策略、边缘网关架构、动态编译等）。&lt;/li&gt;
+&lt;li&gt;合计检索 100 条，入选 20 条。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;重点推荐&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Zepp: Accelerating Distributed MoE Serving under Relaxed Balance Constraints&lt;/strong&gt;：把负载均衡从优化目标降级为约束，直接优化瓶颈通信，对 7 个 SOTA MoE 服务系统取得最高 6.68 倍 MoE 层加速（&lt;a href="https://arxiv.org/abs/2610.11158"&gt;arXiv&lt;/a&gt;）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bridging KV-Cache Quantization and Linear Attention&lt;/strong&gt;：识别 RAM-Net 作为单条压缩与多条聚合之间的理论桥梁，并给出 Transformer→RAM-Net 权重迁移路径，0.3B–7B 九个模型平均恢复教师 87.1% 准确率增益（&lt;a href="https://arxiv.org/abs/2610.11214"&gt;arXiv&lt;/a&gt;）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Read What Matters: Query-Adaptive Quantization for KV Caches&lt;/strong&gt;：「存宽读窄」的查询自适应 KV 读取，8 位缓存平均读 4 位困惑度最多增 0.66%，并证明查询依赖访问严格优于任何查询无关读取器（&lt;a href="https://arxiv.org/abs/2610.11245"&gt;arXiv&lt;/a&gt;）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;QUILT: Rethinking Sparse-Attention Prefill through Shared Query Execution&lt;/strong&gt;：利用相邻查询共享 KV 条目的复用机会，内核延迟最多降 55.1%、TTFT 最多降 36.8%（&lt;a href="https://arxiv.org/abs/2610.11134"&gt;arXiv&lt;/a&gt;）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DynaTE: Accelerating Diffusion LLMs via Dynamic Token Execution&lt;/strong&gt;：按 token 状态动态跳过低价值计算的 dLLM 加速器，比 SOTA dLLM 加速器快 2.05–2.78 倍、能效高 2.99–3.93 倍（&lt;a href="https://arxiv.org/abs/2610.11284"&gt;arXiv&lt;/a&gt;）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Deflating the Hessian: Rank-4 W4A4 Quantization for Multimodal Diffusion Transformers&lt;/strong&gt;：用小 8 倍的秩在 SANA/FLUX 上反超秩 32 SVDQuant，Qwen3-8B MMLU 61.50%→68.17%（&lt;a href="https://arxiv.org/abs/2610.11315"&gt;arXiv&lt;/a&gt;）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Freeze the Decoder, Heal the Encoder&lt;/strong&gt;：编码器单侧修复省 3 倍可训练参数与优化器状态内存，还记录了「共享学习率比较」这一方法论陷阱（&lt;a href="https://arxiv.org/abs/2610.10552"&gt;arXiv&lt;/a&gt;）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;通义千问 Qwen3.8-Flash 新模型发布&lt;/strong&gt;：原生百万级上下文 + 图文/视频多模态 + OpenAI/Anthropic 双协议兼容，输入 0.8 元/百万 tokens（&lt;a href="https://help.aliyun.com/zh/model-studio/qwen3-8-flash"&gt;官方文档&lt;/a&gt;）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;主题速览&lt;/h2&gt;
+&lt;p&gt;高效计算库今日主题高度集中在「LLM 推理效率」主线：KV 缓存一条龙（压缩、量化、查询自适应读取、SVD 分解修复）与稀疏注意力执行层（PageWeaver、QUILT）合占近半；训练/优化侧出现两篇量化深入作——4 位 AdamW 优化器状态的预条件子空间舍入重设计，以及 D-SLR 闭式矩阵分解。系统方向从 MoE 服务（Zepp）到扩散 LLM 加速（DynaTE）、缓存替换策略成本建模（CacheFit）与动态形状 AOT 编译（DLCB），覆盖面较广。AI 库条数较少，唯一入选是阿里 Qwen3.8-Flash 的官方模型文档。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2>当日检索概况</h2>
+<ul>
+<li>AI 技术报告库：检索 2 条，入选 1 条（通义千问 Qwen3.8-Flash 新模型发布）。</li>
+<li>高效计算文献库：检索 98 条，入选 19 条（稀疏注意力内核、KV 缓存压缩与量化、剪枝、优化器量化、MoE 服务系统、扩散 LLM 加速、缓存替换策略、边缘网关架构、动态编译等）。</li>
+<li>合计检索 100 条，入选 20 条。</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>Zepp: Accelerating Distributed MoE Serving under Relaxed Balance Constraints</strong>：把负载均衡从优化目标降级为约束，直接优化瓶颈通信，对 7 个 SOTA MoE 服务系统取得最高 6.68 倍 MoE 层加速（<a href="https://arxiv.org/abs/2610.11158">arXiv</a>）。</li>
+<li><strong>Bridging KV-Cache Quantization and Linear Attention</strong>：识别 RAM-Net 作为单条压缩与多条聚合之间的理论桥梁，并给出 Transformer→RAM-Net 权重迁移路径，0.3B–7B 九个模型平均恢复教师 87.1% 准确率增益（<a href="https://arxiv.org/abs/2610.11214">arXiv</a>）。</li>
+<li><strong>Read What Matters: Query-Adaptive Quantization for KV Caches</strong>：「存宽读窄」的查询自适应 KV 读取，8 位缓存平均读 4 位困惑度最多增 0.66%，并证明查询依赖访问严格优于任何查询无关读取器（<a href="https://arxiv.org/abs/2610.11245">arXiv</a>）。</li>
+<li><strong>QUILT: Rethinking Sparse-Attention Prefill through Shared Query Execution</strong>：利用相邻查询共享 KV 条目的复用机会，内核延迟最多降 55.1%、TTFT 最多降 36.8%（<a href="https://arxiv.org/abs/2610.11134">arXiv</a>）。</li>
+<li><strong>DynaTE: Accelerating Diffusion LLMs via Dynamic Token Execution</strong>：按 token 状态动态跳过低价值计算的 dLLM 加速器，比 SOTA dLLM 加速器快 2.05–2.78 倍、能效高 2.99–3.93 倍（<a href="https://arxiv.org/abs/2610.11284">arXiv</a>）。</li>
+<li><strong>Deflating the Hessian: Rank-4 W4A4 Quantization for Multimodal Diffusion Transformers</strong>：用小 8 倍的秩在 SANA/FLUX 上反超秩 32 SVDQuant，Qwen3-8B MMLU 61.50%→68.17%（<a href="https://arxiv.org/abs/2610.11315">arXiv</a>）。</li>
+<li><strong>Freeze the Decoder, Heal the Encoder</strong>：编码器单侧修复省 3 倍可训练参数与优化器状态内存，还记录了「共享学习率比较」这一方法论陷阱（<a href="https://arxiv.org/abs/2610.10552">arXiv</a>）。</li>
+<li><strong>通义千问 Qwen3.8-Flash 新模型发布</strong>：原生百万级上下文 + 图文/视频多模态 + OpenAI/Anthropic 双协议兼容，输入 0.8 元/百万 tokens（<a href="https://help.aliyun.com/zh/model-studio/qwen3-8-flash">官方文档</a>）。</li>
+</ul>
+<h2>主题速览</h2>
+<p>高效计算库今日主题高度集中在「LLM 推理效率」主线：KV 缓存一条龙（压缩、量化、查询自适应读取、SVD 分解修复）与稀疏注意力执行层（PageWeaver、QUILT）合占近半；训练/优化侧出现两篇量化深入作——4 位 AdamW 优化器状态的预条件子空间舍入重设计，以及 D-SLR 闭式矩阵分解。系统方向从 MoE 服务（Zepp）到扩散 LLM 加速（DynaTE）、缓存替换策略成本建模（CacheFit）与动态形状 AOT 编译（DLCB），覆盖面较广。AI 库条数较少，唯一入选是阿里 Qwen3.8-Flash 的官方模型文档。</p>]]></content:encoded>
+    </item>
     <item>
       <title>每日精选 · 2026-10-09</title>
       <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-10-09.html</link>

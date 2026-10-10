@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DEX: Digit-Level Early Exit for Energy-Efficient MSDF Neural Network Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DEX: Digit-Level Early Exit for Energy-Efficient MSDF Neural Network Inference</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 脑肿瘤分割的 U-Net 推理需要数十亿次乘加运算，硬件需要能动态削减计算，而非只靠固定精度或静态模型压缩。</p>
+<p><strong>方法</strong> 利用最高有效数位优先（MSDF）算术在结果生成前先暴露高位数位的特性，提出带两级分组处理单元（支持有符号 INT8、流内偏置累加）的量化 U-Net 加速器。四个运行时机制直接作用于输出数位流：ReLU 层精确负数提前检测（END）、分割头只做符号决策、校准的低阶数位跳过与校准剪枝；后两者离线按精度约束选定，运行时不改权重。</p>
+<p><strong>关键数字</strong> BraTS 上数位周期减少 38.38%，73 个留出病例平均 Dice 80.58%（浮点模型 81.20%）；仅精确机制即减 18.79% 且不改输出。45nm 工艺下 500MHz、0.858mm²、每 192×192 patch 0.726mJ；八路输出加速器预计 16.6ms、1.67mJ。</p>
+<p><strong>为什么值得看</strong> 数位级提前退出的完整软硬协同实现，精确与近似机制分离的设计对高能效医疗影像推理硬件很有参考性。</p>
+<p><a href="https://arxiv.org/abs/2610.11748">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.11748">阅读原文 ↗</a></p>
+</body>
+</html>

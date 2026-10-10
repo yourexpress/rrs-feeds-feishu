@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DADP: Dynamic Activity-Dependent Pruning, A Reverse Hebbian-Inspired Structural Pruning Method</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DADP: Dynamic Activity-Dependent Pruning, A Reverse Hebbian-Inspired Structural Pruning Method</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 现代神经网络严重过参数化，而现有剪枝方法多依赖事后幅值阈值或静态初始化启发式，常需逐层手工设定稀疏度目标或昂贵的重训练。</p>
+<p><strong>方法</strong> DADP 是一种受逆向赫布规则启发的结构化可塑性机制：训练过程中用突触前激活与突触后误差梯度的累积乘积衡量连接重要性，用单一全局阈值代替逐层预算，沿网络深度动态分配稀疏度，自然诱导神经元级与通道级剪枝。</p>
+<p><strong>关键数字</strong> 在 MLP、VGG-16、ResNet-18、BiLSTM-CRF、MiniBERT 上匹配或超过 Magnitude、SNIP、RigL；ResNet-18 在 99% 稀疏度下保持 73.67% 准确率（稠密基线 76.06%）。基于矩阵的香农熵与有效秩测量证实极端稀疏下未发生表示坍缩。</p>
+<p><strong>为什么值得看</strong> 免逐层调参、训练中动态完成的结构剪枝，且对表示多样性有量化验证，是剪枝方向一个有实证支撑的新机制。</p>
+<p><a href="https://arxiv.org/abs/2610.11853">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.11853">阅读原文 ↗</a></p>
+</body>
+</html>

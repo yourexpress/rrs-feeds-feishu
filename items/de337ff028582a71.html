@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Federated Zeroth-Order Optimization with Direction Aggregation and Variance Reduction</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Federated Zeroth-Order Optimization with Direction Aggregation and Variance Reduction</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 联邦环境下客户端只能拿到随机函数评估（零阶信息）的受约束非光滑非凸优化如何高效求解？现有联邦零阶方法主要做「本地零阶更新 + 模型平均」，受本地投影更新带来的客户端漂移与随机零阶估计的采样方差困扰。</p>
+<p><strong>方法</strong> 提出基于方向聚合的联邦零阶框架，配两种本地采样方案：FedZOO 用跨多次球面查询共享的小批量构造本地方向，同时控制数据采样与梯度近似的随机误差；FedVRZO 用独立的「样本-方向」对构造本地估计，其采样误差直接由对数控制。两种算法中，客户端对本地投影轨迹上评估出的方向取均值，服务器用客户端方向的加权聚合做一次投影更新。两者均给出收敛保证。</p>
+<p><strong>关键数字</strong> 在黑盒对抗攻击实验上验证有效性；摘要未给出具体量化数字。</p>
+<p><strong>为什么值得看</strong> 无梯度联邦优化给了收敛性保证的系统化方案，做联邦学习理论、黑盒优化的读者可以直接对照两种采样设计的误差控制差异。</p>
+<p><a href="https://arxiv.org/abs/2610.11821">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.11821">阅读原文 ↗</a></p>
+</body>
+</html>

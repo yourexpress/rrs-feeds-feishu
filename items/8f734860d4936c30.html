@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rounding in Preconditioner Space: Redesigning 4-bit AdamW Optimizer-State Quantization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Rounding in Preconditioner Space: Redesigning 4-bit AdamW Optimizer-State Quantization</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 量化 AdamW 优化器状态能省持久存储，但量化误差会沿动量递推式传播、扰动后续自适应更新——4 位优化器状态量化应在哪个空间里做舍入？</p>
+<p><strong>方法</strong> 从「舍入空间」（量化器在相邻重建电平间做选择的坐标系）视角重新设计：对二阶矩，对零点附近量化格的局部分析表明状态误差小不代表下一步预条件子误差小；一维二次构造进一步显示状态空间与预条件子空间舍入会产生定性不同的优化动态。据此提出 ZIP-SR（含零的预条件子空间随机舍入）与 ZE-EDEN（不含零码本 + 量化块重标定）两种配置，一阶矩均用 NF4，训练最后 10% 对 LM 头一阶矩做定向随机舍入。</p>
+<p><strong>关键数字</strong> 130M 到 2.7B 参数的 GPT/Llama 式预训练实验中，两法在每个模型规模上都缩小 TorchAO 4 位 AdamW 相对 32 位的平均验证损失差距，最大降幅达 70%。</p>
+<p><strong>为什么值得看</strong> 把「在哪个空间舍入」这个被忽视的坐标选择讲透了，对做低比特优化器、省显存训练的人是直接可用的配方。</p>
+<p><a href="https://arxiv.org/abs/2610.12444">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.12444">阅读原文 ↗</a></p>
+</body>
+</html>

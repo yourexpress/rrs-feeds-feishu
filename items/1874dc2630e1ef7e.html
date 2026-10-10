@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CacheFit: The Rising Cost of Cache Replacement and Constraint-Driven Redesign of Last-Level Cache Replacement Policies</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CacheFit: The Rising Cost of Cache Replacement and Constraint-Driven Redesign of Last-Level Cache Replacement Policies</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 末级缓存（LLC）替换策略的延迟、功耗、面积成本长期没人建模：现有成本模型只能给规整结构估价，策略选定时只看 IPC、成本到 RTL 阶段才被压缩，导致成本无法参与设计决策。</p>
+<p><strong>方法</strong> CacheFit 是首个把电路级成本放进搜索目标的 LLC 替换策略设计闭环：连接 ChampSim、电路级成本模型 HARCOM 与大语言模型，由 LLM 提出策略变体，每个候选在算法成形前就按延迟、面积、功耗、加速比打分；设计者设定预算，搜索过程全程以可读文本留痕、可检查可编辑。</p>
+<p><strong>关键数字</strong> 从功耗/晶体管最贵的 MPPPB 得到 Fit-MPPPB：存储省 60.3%、静态功耗省 56.3%、晶体管省 58.9%，SPEC CPU2017 上 IPC 反升 1.1%、命中率高 7.5 个百分点；从最高 IPC 的 SHiP++ 得到 Fit-SHiP++：三项分别省 56%、61%、56%，IPC 仅降 1.54%。</p>
+<p><strong>为什么值得看</strong> 把「成本前置」理念做成可运行的 LLM 辅助架构搜索工具，对缓存/微架构设计方法论是个实质性推进。</p>
+<p><a href="https://arxiv.org/abs/2610.10579">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.10579">阅读原文 ↗</a></p>
+</body>
+</html>

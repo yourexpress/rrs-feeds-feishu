@@ -22,9 +22,11 @@
 <h1>DART-ES: Difficulty-Aware Reweighting and Targeted Replay for Fine-Tuning LLMs with Evolution Strategies</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Evolution Strategies (ES) enable memory efficient full parameter fine-tuning of large language models (LLMs) u…</p>
-<blockquote><p>Evolution Strategies (ES) enable memory efficient full parameter fine-tuning of large language models (LLMs) using only forward computation. However, standard ES uniformly averages rewards across problems and compresses problem level population feedback into a single scalar, making it difficult to capture how the learning value of each problem changes with model capability. To address this limitation, we propose Difficulty-Aware Reweighting and Targeted Replay for Evolution Strategies (DART-ES). DART-ES estimates the local solvability of each problem from its pass rate across the perturbation population and aggregates historical observations to construct a dynamic difficulty state. This shared state jointly guides continuous difficulty reweighting and rare solvable sample replay, thereby improving perturbation direction evaluation and training data allocation without introducing an additional difficulty model or backpropagation. Extensive experiments show that DART-ES achieves good fine-tuning performance. DART-ES outperforms ES on all five base models and improves the average accuracy from 72.07\% to 73.53\%, exceeding the 73.26\% achieved by GRPO on GSM8K. Across five challenging…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 进化策略（ES）让 LLM 全参微调只用前向计算、内存高效，但标准 ES 对所有问题平均计奖、把问题级种群反馈压成一个标量，难以刻画每个问题的学习价值随模型能力的变化。</p>
+<p><strong>方法</strong> DART-ES 从扰动种群中每个问题的通过率估计其局部可解性，聚合历史观测构建动态难度状态；该共享状态联合引导连续难度重加权与稀有可解样本回放，从而改进扰动方向评估与训练数据分配，不引入额外难度模型、不做反向传播。</p>
+<p><strong>关键数字</strong> 五个基座模型上全面超过标准 ES，平均准确率 72.07%→73.53%，超过 GRPO 的 73.26%（GSM8K）；五个数学推理基准平均 49.20%（ES 为 48.34%）；相比 GRPO 单步运行时间省 15.2%–50.2%、单卡峰值显存省 21.1%–51.1%，且比 GRPO+LoRA 更省时间与显存。14B 模型在指令微调、代码生成与 Countdown 任务上同样有效。</p>
+<p><strong>为什么值得看</strong> 无反向传播的 ES 微调路线补上了「按难度分配训练信号」这关键一环，显存与时间同时占优，适合小团队做全参微调。</p>
+<p><a href="https://arxiv.org/abs/2610.06993">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06993">阅读原文 ↗</a></p>
 </body>
 </html>

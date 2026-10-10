@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zepp: Accelerating Distributed MoE Serving under Relaxed Balance Constraints</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Zepp: Accelerating Distributed MoE Serving under Relaxed Balance Constraints</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> MoE 模型规模化后越来越依赖跨设备专家并行（EP），而倾斜的专家负载造成计算、通信、内存三维失衡。作者观察「均衡不是免费的」：为均衡某一维度引入的操作本身可能昂贵或失衡，因此提出把均衡当约束而非优化目标。</p>
+<p><strong>方法</strong> Zepp 在 GPU 与网卡等物理资源的简化均衡约束下，直接优化分布式 MoE 服务中的瓶颈通信，沿放置、路由、执行渐进优化：先在 GPU 约束下放置专家副本减少 token 通信；再在 NIC 约束下用拆分/合并原语重塑通信流；最后切分调度专家计算以重叠通信。每次迭代动态联合协调计算、token 通信与专家权重移动以适配动态负载。</p>
+<p><strong>关键数字</strong> 对比 7 个最先进 MoE 服务系统，MoE 层加速最高 6.68 倍，相对最快的对比基线几何均值加速 1.86 倍。</p>
+<p><strong>为什么值得看</strong> 把「负载均衡」从目标降级为约束的思路反直觉但有效，对做大规模 MoE 推理系统的同学是一次目标函数层面的重新审视。</p>
+<p><a href="https://arxiv.org/abs/2610.11158">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.11158">阅读原文 ↗</a></p>
+</body>
+</html>

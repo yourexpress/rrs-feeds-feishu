@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SparseDecoding: Decoding-Aware Pruning for Accurate and Efficient LLM Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SparseDecoding: Decoding-Aware Pruning for Accurate and Efficient LLM Inference</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LLM 解码阶段受内存带宽限制、延迟显著。Hessian 引导的逐层免训练剪枝是主流方案，但现有方法用预采集的自然序列算 Hessian，而解码时模型吃的是自生成 token——两种序列分布有漂移，导致剪枝后的模型在生成时激活分布偏离校准分布。此外多数带真实加速的剪枝只优化稀疏矩阵-矩阵乘（SpMM），对解码中占主导的稀疏矩阵-向量乘（SpMV）支持有限。</p>
+<p><strong>方法</strong> SparseDecoding 是解码感知的剪枝框架：算法侧只从稠密模型自回归生成（排除 prefill）的逐层激活构造校准矩阵，让剪枝目标对齐解码激活；系统侧开发带位掩码索引与定步长遍历的优化 N:M 稀疏矩阵-向量内核。</p>
+<p><strong>关键数字</strong> 在 Llama-3.1-8B、Llama-3.3-70B、Qwen3-14B/32B 上，长文本生成基准持续优于固定文本校准，A100 GPU 上端到端解码墙钟加速最高 1.48 倍。</p>
+<p><strong>为什么值得看</strong> 「用自生成 token 校准」这个视角纠正了剪枝校准的系统性偏差，且系统内核对 SpMV 的补齐让加速落到解码这一真正的瓶颈上。</p>
+<p><a href="https://arxiv.org/abs/2610.12327">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.12327">阅读原文 ↗</a></p>
+</body>
+</html>

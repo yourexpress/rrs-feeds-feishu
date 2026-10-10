@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DLCB: Ahead-of-Time Compilation for Dynamic Deep Learning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DLCB: Ahead-of-Time Compilation for Dynamic Deep Learning</h1>
+<p class="meta-line">arXiv (cs.PL) · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 深度学习部署中张量形状常在编译期未知（batch 大小、序列长度、分辨率各异），而 AOT 编译 GPU 内核要峰值性能就要全静态形状，JIT 支持动态形状却要付运行时编译开销——两者矛盾。</p>
+<p><strong>方法</strong> DLCB（Deep Learning Compiler Backend）用统一三层编译策略化解：形状全静态时提前生成静态 CUDA C++ 内核；张量秩已知但维度大小动态时，生成按维度参数化的 AOT 内核，一次编译、跨形状执行；秩未知时回退运行时 JIT。对动态形状 AOT，从输入程序构建形状约束系统并用求解器归约——能定死的变成内核里的硬编码常量，定不下来的变成启动时传入的内核参数，并配解释型宿主代码校验约束、计算取值。编译器与运行时嵌入 PyTorch，配自动形状泛化 pass。</p>
+<p><strong>关键数字</strong> 摘要未给出具体量化指标。</p>
+<p><strong>为什么值得看</strong> 在静态性能与动态灵活性之间给出清晰的分层编译方案，嵌入 PyTorch 的实现路径对做推理引擎/编译器的人有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.10547">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.10547">阅读原文 ↗</a></p>
+</body>
+</html>

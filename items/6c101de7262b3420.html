@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Missing Fourth Term for the Emulation Tensor Memory Equilibrium (TME) Model: The Residue Deconstruction Cost</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>The Missing Fourth Term for the Emulation Tensor Memory Equilibrium (TME) Model: The Residue Deconstruction Cost</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-10-09 · 论文PDF</p>
+
+<p>张量内存均衡（TME）模型缺失的第四项：残差解构成本</p>
+<blockquote><p>The Tensor-Memory Equilibrium (TME) model of "FP8 is All You Need (Part 1)" calculates the execution time of Ozaki Scheme II emulation of fp64 as the maximum of a tensor-core term and a High-Bandwidth Memory (HBM) traffic term, plus a per-output reconstruction term. However, it omits the per-input deconstruction cost: every streamed fp64 operand must be scaled, rounded, and reduced modulo each of the $r$ moduli on SIMT pipes before any matrix multiply can issue. In this note we add this fourth term, calibrate its constant from the cuBLAS emulation path, and derive a closed-form operational-intensity threshold $\mathrm{OI}^{*} = c_q r P_{\mathrm{fp64}}/(8P_{\mathrm{int}})$ below which emulation cannot match native fp64 regardless of tensor-core throughput. On the NVIDIA B300 GPU the threshold is $\mathrm{OI}^{*}\approx 0.56$ FLOP/B. As a result, GEMV, SpMV, and low-batch GEMV, which are the memory-bound kernels the original paper claims to accelerate, are limited to 0.3-0.9x of native performance, and the 7-point stencil to 1.8x rather than the claimed 3.1x. Dense GEMM is unaffected as expected. We also show that precomputing and storing the residues moves the same cost into the ban…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.10924">阅读原文 ↗</a></p>
+</body>
+</html>

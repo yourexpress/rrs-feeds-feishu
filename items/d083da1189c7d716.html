@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Hackable Is Your Speech Quality Metric? A Corrected Protocol, a Benchmark, and What Patching Buys</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>How Hackable Is Your Speech Quality Metric? A Corrected Protocol, a Benchmark, and What Patching Buys</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
+
+<p>语音质量度量可被黑掉：修正协议与基准及补丁收益</p>
+<blockquote><p>Speech quality predictors are increasingly used as rewards, yet no agreed measure of their hackability exists. The usual measurement has two flaws. First, the perturbation reaches the predictor through a processing chain -- here a neural codec -- that shifts the score on its own, which scoring against the raw input charges to the attack. Referencing the unperturbed round trip instead changes measured hackability by up to a factor of four (0.31 to 0.08 for one defence). Second, one trained attacker is a sample, not a measurement: five attackers differing only in random seed reach success rates from 0.00 to 0.38 against one fixed predictor, so a defence claim needs the worst case over several. Under this protocol, four published predictors differ widely: NISQA is hacked on 90% of utterances, SSL-MOS on 21%, DNSMOS on 14% and UTMOS on 6%. We then audit a closed attack-detect-patch loop. It hardens the predictor only in its own attack space, by less than the spread between attackers; a random-perturbation baseline matches it; and it costs up to 0.30 system SRCC out of domain. Enhancers post-trained against patched predictors hack them far less (PESQ -0.03 versus -0.23). Code, preregist…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.10899">阅读原文 ↗</a></p>
+</body>
+</html>

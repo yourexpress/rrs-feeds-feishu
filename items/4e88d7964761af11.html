@@ -22,9 +22,11 @@
 <h1>Distributionally Robust Mixture-of-Experts Training</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Mixture-of-Experts (MoE) transformers scale capacity by activating only a few experts per token, but</p>
-<blockquote><p>Mixture-of-Experts (MoE) transformers scale capacity by activating only a few experts per token, but this sparsity creates a hidden reliability problem: when routing is imperfect, load-balanced models may send tokens to experts that are insufficiently trained for the assigned inputs. We propose Distributionally Robust MoE Training (DRMoET), a drop-in objective that treats layer-wise experts as endogenous robustness groups and optimizes high-loss routing outcomes rather than merely equalizing traffic. DRMoET updates a per-layer expert distribution by an entropy-regularized softmax rule on EMA-smoothed, activation-weighted expert losses, strengthening plausible non-top routing paths while preserving standard MoE computation. Under the FLAME-MoE recipe at 746M-total and 10.3B-total scales, DRMoET improves downstream averages over both standard FLAME-MoE and auxiliary-loss-free balancing. At 10.3B total parameters and 67B training tokens, DRMoET improves the seven-task average from 0.6625 to 0.6767, while the auxiliary-loss-free baseline achieves 0.6431. Mechanistic analyses show lower expert-loss variance with nearly unchanged mean loss, 4.3% lower excess loss under forced mid-$k$ mis…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> MoE Transformer 靠稀疏激活扩展容量，但路由不完美时负载均衡模型可能把 token 送到对该输入训练不足的专家——稀疏路由带来一个被忽视的可靠性问题。</p>
+<p><strong>方法</strong> DRMoET 是即插即用的训练目标：把每层专家当作内生鲁棒性分组，优化高损失路由结果而非只均衡流量；按熵正则的 softmax 规则、在 EMA 平滑与激活加权的专家损失上更新每层专家分布，强化可行的非 top 路由路径且保持标准 MoE 计算不变。</p>
+<p><strong>关键数字</strong> 按 FLAME-MoE 配方在 746M 与 10.3B 总参数两个规模上验证；10.3B 参数、67B 训练 token 下，七任务平均从 0.6625 提到 0.6767（无辅助损失均衡基线为 0.6431）；机制分析显示专家损失方差下降而平均损失几乎不变，强制中位 k 错路由下超额损失低 4.3%，领域专家特化度提升。</p>
+<p><strong>为什么值得看</strong> 「路由鲁棒性而非利用率均衡」是 MoE 缩放的新目标主张，有开源代码页，做 MoE 训练的可以直接上手。</p>
+<p><a href="https://arxiv.org/abs/2610.07207">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07207">阅读原文 ↗</a></p>
 </body>
 </html>

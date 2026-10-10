@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D-SLR: The Disjoint Row-Sparse plus Low-Rank Decomposition</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>D-SLR: The Disjoint Row-Sparse plus Low-Rank Decomposition</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 矩阵压缩重建长期默认截断 SVD；要再加行稀疏分量降低残差，现有联合求解方法往往依赖迭代求解器和正则参数调优。</p>
+<p><strong>方法</strong> 提出不交行稀疏加低秩分解（D-SLR）：每行只能「原样存储」或「由低秩近似表示」，二选一。作者证明在平方误差下该限制零代价——每个非平凡秩与存储行数组合下，不交形式都能以更少的参数达到联合最优。零存储行时退化为截断 SVD，因此同成本下永不更差。整个误差-参数权衡网格只需三次 SVD，无需调参，并给出无假设的逐点误差下界作为可选方案的可计算「证书」。</p>
+<p><strong>关键数字</strong> 在 LLM 嵌入表、网络流量、高光谱图像等真实数据上验证了相对截断 SVD 的收益；摘要未给出具体百分比数字。</p>
+<p><strong>为什么值得看</strong> 闭式、免调参、直接替换截断 SVD 且自带最优性证书，是很实用的一套矩阵压缩基础工具。</p>
+<p><a href="https://arxiv.org/abs/2610.10636">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.10636">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DynaTE: Accelerating Diffusion LLMs via Dynamic Token Execution</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DynaTE: Accelerating Diffusion LLMs via Dynamic Token Execution</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 扩散式大语言模型（dLLM）能双向并行细化、缓解自回归解码的串行瓶颈，但其并行迭代细化与面向顺序解码的 AR 加速器不匹配，现有 dLLM 加速器又把所有 token 一并保留执行，忽视各 token 细化价值与执行需求的差异。</p>
+<p><strong>方法</strong> DynaTE 是软硬件协同架构，让加速器执行随解码中的 token 状态动态适配：跳过低价值 token 计算实现自适应执行，维度可重构 PE 阵列在不同活跃 token 模式下维持高利用率；通过 FLDD 在当前迭代内细化少量局部依赖 token 以减少去噪迭代轮数，Merge-Split-Merge 数据流隐藏串行开销；流式词表引擎交错处理 LM head 的多 token 流。</p>
+<p><strong>关键数字</strong> 在两个代表性 dLLM 上，比现有最先进 dLLM 加速器快 2.05–2.78 倍、能效高 2.99–3.93 倍；比 Jetson AGX Orin 快 2.55 倍、能效高 6.07 倍。</p>
+<p><strong>为什么值得看</strong> dLLM 推理加速尚属早期，这是「按 token 状态动态调度」方向的代表作，做新范式推理硬件的同学值得细读。</p>
+<p><a href="https://arxiv.org/abs/2610.11284">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.11284">阅读原文 ↗</a></p>
+</body>
+</html>

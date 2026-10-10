@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QUILT: Rethinking Sparse-Attention Prefill through Shared Query Execution</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>QUILT: Rethinking Sparse-Attention Prefill through Shared Query Execution</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 稀疏注意力降低了长上下文注意力的成本，但现有内核各查询独立处理，反复加载并反量化相邻查询共用的 KV 条目，冗余内存流量可观。</p>
+<p><strong>方法</strong> QUILT 是负载感知的稀疏注意力执行机制：联合处理相邻查询、复用共享 KV 条目。核心是 Shift-and-Compare 集合分解（SCSD），把不规则集合运算转成适合现代加速器的规整数据并行原语，并与注意力计算流水化以隐藏开销；级联共享在多粒度上分层捕获复用；tile 感知执行在共享粒度与硬件 tile 利用率之间权衡，并选择性移除低重要性查询尾部消除低利用率 tile。</p>
+<p><strong>关键数字</strong> 在 LongBench 上用 GLM-5.3 与 DeepSeek-3.2（张量/序列并行两种模式）评估：比最先进稀疏注意力内核平均内核延迟最多降 55.1%、处理 KV 数据量最多降 55.9%，TTFT 延迟最多降 36.8%，精度几乎无损。</p>
+<p><strong>为什么值得看</strong> 「跨查询复用」是稀疏注意力执行层面被低估的优化维度，这篇给出了系统化的分解与流水化方案。</p>
+<p><a href="https://arxiv.org/abs/2610.11134">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.11134">阅读原文 ↗</a></p>
+</body>
+</html>

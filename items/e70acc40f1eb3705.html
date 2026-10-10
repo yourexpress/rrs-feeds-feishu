@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bridging KV-Cache Quantization and Linear Attention: From Theory to Pretrained Weight Migration</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Bridging KV-Cache Quantization and Linear Attention: From Theory to Pretrained Weight Migration</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> KV 缓存量化把每条 KV 压成离散码但保留全部条目，线性注意力则把多条历史 KV 循环聚合进固定大小连续状态但会引入干扰——单条压缩与多条聚合能否统一进同一个高效注意力机制？</p>
+<p><strong>方法</strong> 作者识别出 RAM-Net 正是这座桥梁：通过离散地址空间上的软分配，决定对每个地址连续槽状态的循环更新。在受限构造下证明软地址分配把硬量化匹配扩展为可分离的读写重叠，局部近似全注意力相似度；并据此开辟一条经软量化中间构造的 Transformer→RAM-Net 权重迁移路径。</p>
+<p><strong>关键数字</strong> 在 0.3B 到 7B 的 9 个预训练 Transformer 上，每个模型仅用 500M token 预算，RAM-Net 在 6 个常识与知识任务上平均恢复教师模型相对随机猜测准确率增益的 87.1%。</p>
+<p><strong>为什么值得看</strong> 同时打通量化与线性注意力两条高效推理路线的理论 + 权重迁移实证，对低成本改造现有大模型注意力很有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.11214">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.11214">阅读原文 ↗</a></p>
+</body>
+</html>

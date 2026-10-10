@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Freeze the Decoder, Heal the Encoder: Parameter-Efficient Adaptation for SVD-Based KV-Cache Compression</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Freeze the Decoder, Heal the Encoder: Parameter-Efficient Adaptation for SVD-Based KV-Cache Compression</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 比较参数高效微调配方时共用单一学习率是个普遍但有缺陷的做法：当被比较的分支可训练参数量差异很大时，共享学习率会同时压低大分支的均值并放大方差，给最小的分支制造出看似多随机种子显著、实则虚假的优势。</p>
+<p><strong>方法</strong> 以事后 SVD 式 KV 缓存压缩为具体场景做剖析：预训练模型的键/值权重被分解为下投影（编码器）与上投影（解码器），短时微调（「healing」）恢复截断损失。共享学习率下「冻结解码器、只修复编码器」看似明显更优；给每个分支独立调学习率后该优势消失，编码器修复仅与其它方案持平。经逐分支调学习率、每配置三个随机种子在 Qwen2.5-VL-3B-Instruct 上验证，并在文本测试台跨两个骨干复现。</p>
+<p><strong>关键数字</strong> 编码器单侧修复实打实省 3 倍可训练参数与 3 倍优化器状态内存。</p>
+<p><strong>为什么值得看</strong> 结论本身是低显存 KV 压缩配方的实用结论，更可贵的是把「共享学习率比较」这一方法论陷阱记录在案，对所有微调配方对比实验都是警示。</p>
+<p><a href="https://arxiv.org/abs/2610.10552">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.10552">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TraceRelay: Attention-Aligned Recurrence over Rolling Traces</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>TraceRelay: Attention-Aligned Recurrence over Rolling Traces</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
+
+<p>滚动轨迹上的注意力对齐递归 TraceRelay</p>
+<blockquote><p>We present TraceRelay, an attention-aligned recurrent architecture that distributes persistent representations over a rolling sequence of low-dimensional traces. Local right looking attention forms increments from lower-layer representations; delivery is delayed until all attended inputs are in the causal past. A fixed additive phase recurrence accumulates the delayed increments, and left-looking attention reads the resulting residual augmented stream. A stride-wise prefix sum supports parallel prefill and bounded-buffer continuation. We study 36 small-model runs on Equal Repeats, bounded Dyck closing-type prediction, and causal Most-Freq generation, using three seeds per setting. At trained length 256, Equal Repeats models with recurrent phase inheritance reach 98.81-99.69% accuracy versus 50.73-51.63% for separately trained variants without inheritance, despite the latter receiving more updates. Accuracy drops sharply at lengths beyond the training range. At the longest evaluated lengths, models with more dimensions in the middle layer's recurrent traces perform better on Dyck (76.34% versus 55.49% close accuracy at length 4096), whereas models with fewer trace dimensions perform…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.11743">阅读原文 ↗</a></p>
+</body>
+</html>
