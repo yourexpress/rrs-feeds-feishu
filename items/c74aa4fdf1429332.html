@@ -22,9 +22,11 @@
 <h1>SepsisLens: Structure-Preserving Sequence Modelling for Decomposable Early Sepsis Warning</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Early sepsis warning from ICU records can be cast as a structure-preserving prediction problem.</p>
-<blockquote><p>Early sepsis warning from ICU records can be cast as a structure-preserving prediction problem. A model needs to detect deterioration from irregular measurements while keeping each alert connected to the physiological signals that support it. Many temporal models fuse clinical variables into a patient-level representation, supporting scalar risk prediction but weakening the structure needed for clinical decomposition. We present SepsisLens, which preserves variable-indexed temporal states until risk composition. Observation-aware representations encode each variable's dynamics and measurement history, while a shared temporal encoder models each trajectory without collapsing the variable axis. The StructuredRiskHead composes multi-horizon risk from explicit variable-level and organ-level components. We evaluate SepsisLens on three public ICU cohorts and one private-hospital cohort under a common pre-onset protocol. SepsisLens achieves strong discrimination on all four cohorts and lower alert burden at matched event recall on MIMIC-IV. Structural ablations support the design, while input-side masking shows that the ranked components reflect variables with greater influence on predict…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> ICU 脓毒症早期预警可建模为"保结构"预测：既要不规则测量中检测恶化，又要让每次告警能追溯到支撑它的生理信号。许多时序模型把临床变量融合成患者级表征，虽支持标量风险预测，却削弱了临床分解所需的结构。</p>
+<p><strong>方法</strong> SepsisLens 在风险合成之前保留变量索引的时序状态：观测感知表征编码每个变量的动态与测量历史，共享时序编码器沿轨迹建模而不坍缩变量轴，StructuredRiskHead 从显式的变量级与器官级成分合成多时域风险。</p>
+<p><strong>关键数字</strong> 在三个公开 ICU 队列加一个私立医院队列、统一 pre-onset 协议下评估：四个队列上区分度均强，MIMIC-IV 上在相同事件召回下告警负担更低；结构消融支持设计选择，输入侧掩码显示排名靠前的成分确实是对预测影响更大的变量。摘要未给具体 AUC 数值。</p>
+<p><strong>为什么值得看</strong> 把可解释性做成结构约束而非事后附加，临床预警建模的思路值得医疗 AI 从业者参考。</p>
+<p><a href="https://arxiv.org/abs/2610.08046">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.08046">阅读原文 ↗</a></p>
 </body>
 </html>

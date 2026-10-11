@@ -22,9 +22,11 @@
 <h1>Neuromotor Hierarchy Network: Physiological Inductive Biases for Robust Generalization in sEMG Decoding</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Surface electromyography (sEMG) provides a wearable, noninvasive interface to neuromuscular activity</p>
-<blockquote><p>Surface electromyography (sEMG) provides a wearable, noninvasive interface to neuromuscular activity for movement decoding and human-computer interaction. Population-scale decoding remains difficult because the relationship between sEMG and neuromuscular activity varies across users and sessions, while task-relevant dynamics span channels and multiple timescales. Learning waveform-to-output mappings from task labels leaves the distinction between recording variability and coordinated motor activity implicit. We introduce the Neuromotor Hierarchy Network (NHN), which learns a compact latent neuromotor state from task supervision to represent task-relevant neuromuscular coordination. NHN constructs this latent state through a hierarchy inspired by neuromotor organization. It adapts recording statistics while preserving relative intensity. Its spatiotemporal encoder uses parameter-efficient channel interactions and modulates features with multi-timescale history. The resulting features yield candidate activations of learned motor primitives, which are temporally integrated and continuously weighted to form the state. Theoretical analysis characterizes the efficiency, temporal behavior…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 表面肌电（sEMG）是可穿戴、无创的人机交互接口，但 sEMG 与神经肌肉活动的关系因用户、会话而异，跨人群解码难；从任务标签直接学波形到输出的映射，无法区分记录变异与协调的肌肉活动。</p>
+<p><strong>方法</strong> 提出神经运动层级网络（NHN）：按神经运动组织的层级结构学习紧凑的潜在"神经运动状态"——先适配记录统计、保留相对强度，再用参数高效的通道交互与多时间尺度历史调制做时空编码，得到运动原语的候选激活并时序整合加权。</p>
+<p><strong>关键数字</strong> emg2pose 上三个泛化划分的角度误差降低 0.52%~2.84%，参数量减少约 48.5%；emg2qwerty 上 beam-search 字符错误率零样本降 19.40%、微调后降 30.42%，参数量少 65.86%。</p>
+<p><strong>为什么值得看</strong> 用生理归纳偏置换泛化与参数效率的范本，做可穿戴传感和肌电交互的人值得细读。</p>
+<p><a href="https://arxiv.org/abs/2610.07713">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07713">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Should We Skip Diffusion?</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Diffusion models learn semantic representations while generating images.</p>
-<blockquote><p>Diffusion models learn semantic representations while generating images. In the Decoupled Diffusion Transformer (DDT), a condition encoder provides features that guide a velocity decoder in denoising. To enable effective denoising at all noise levels, these features must capture both high-level abstract structures and low-level details. However, skip/residual connections in the encoder allow shallow features to bypass successive transformations, which may limit progressive abstraction, or at least make it difficult to disentangle different levels of abstraction. We propose DDT-RFE, which removes the residual connections around the Self-Attention and MLP operations in each encoder block while maintaining stable training. To retain the information that abstraction discards but that the decoder still needs, we fuse the input patch embedding with intermediate and final encoder features to form the encoder output. The decoder thus has access to information from multiple encoder depths, while each encoder block is able to learn more abstract representations. DDT-RFE achieves overall improvements over DDT across visual understanding tasks, including image classification, semantic segmenta…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 扩散模型在生成图像的同时也学到语义表征。解耦扩散 Transformer（DDT）中条件编码器要给速度解码器提供各噪声层级的引导特征，需兼顾高层抽象与低层细节；但编码器的残差/跳跃连接让浅层特征绕过逐层变换，可能限制渐进抽象。</p>
+<p><strong>方法</strong> 提出 DDT-RFE：移除编码器每个 block 内 Self-Attention 与 MLP 周围的残差连接（同时保持训练稳定），并把输入 patch embedding 与中间层、最终层编码器特征融合作为编码器输出——让解码器能访问多个深度的信息，而每个编码器 block 被迫学习更抽象的表征。</p>
+<p><strong>关键数字</strong> 在图像分类、语义分割、物体发现、语义对应等视觉理解任务上全面超过 DDT，且使用更少的编码器 block；ImageNet 生成 FID 也更低。摘要未列具体数值。</p>
+<p><strong>为什么值得看</strong> 对"编码器里该不该留残差"给出反直觉但有实证支持的答案，做扩散表征与统一生成-理解模型的人值得一看。</p>
+<p><a href="https://arxiv.org/abs/2610.07002">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07002">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Probabilistic Counterfactual Inference for Discrete Outcomes in Gaussian-Process Causal Models</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Counterfactual inference in Gaussian-process structural causal models (GP-SCMs) has been developed p</p>
-<blockquote><p>Counterfactual inference in Gaussian-process structural causal models (GP-SCMs) has been developed primarily for continuous endogenous variables, limiting applicability to causal graphs that contain discrete child nodes with continuous parents. We introduce a unified probabilistic framework for counterfactual inference with heterogeneous variable types by pairing GP predictors with explicit exogenous noise mechanisms. For discrete outcomes, we derive exact conditional noise-abduction procedures using a uniform threshold for binary variables, a Gumbel-max race for nominal categories, and a latent Gaussian cut-point model for ordinal ones. In each case, we propagate abducted noise through interventions while accounting for posterior uncertainty in the GP latent functions, and prove that the resulting mechanisms reproduce the fitted model's observational and interventional distributions. On synthetic SCMs with known ground-truth counterfactuals, we evaluate estimation accuracy, consistency, and robustness to coupling misspecification. A key finding is that applying a categorical coupling to ordinal data inflates counterfactual error roughly threefold even when observational fit remain…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 高斯过程结构因果模型（GP-SCM）的反事实推断主要面向连续变量，难以处理"连续父节点+离散子节点"的因果图。</p>
+<p><strong>方法</strong> 提出统一概率框架：GP 预测器配显式外生噪声机制——二元变量用均匀阈值、名义变量用 Gumbel-max race、序数变量用潜在高斯切点模型，分别给出精确的条件噪声归因，并把归因噪声沿干预传播、同时计入 GP 潜在函数的后验不确定性。</p>
+<p><strong>关键数字</strong> 合成 SCM 上的关键发现：对序数数据误用类别耦合会使反事实误差放大约三倍，且观测拟合相近、误差也不随数据增多而下降（拟合方程收敛而反事实误差触底）；反之给名义数据强加顺序会损害拟合方程本身。</p>
+<p><strong>为什么值得看</strong> 给出"耦合选择必须基于结构论证、不能从拟合度读出"的明确警示，做因果反事实推断的人应收藏。</p>
+<p><a href="https://arxiv.org/abs/2610.08689">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.08689">阅读原文 ↗</a></p>
 </body>
 </html>

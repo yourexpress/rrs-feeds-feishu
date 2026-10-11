@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AIR-LLM: Broadcasting AI Weights over Radio for Memory-Free Edge LLM Inference via RF Computing</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>AIR-LLM: Broadcasting AI Weights over Radio for Memory-Free Edge LLM Inference via RF Computing</h1>
+<p class="meta-line">arXiv (cs.IT/cs.LG, MIT) · 2026-09-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 边缘设备跑 LLM 的瓶颈不在算力而在权重：存不下、或加载权重的能耗付不起。能否让设备不存储、不加载权重，直接"空中接收、即用即算"？</p>
+<p><strong>方法</strong> AIR-LLM 借鉴无线广播：中心电台（如 5G 基站）把 LLM 权重广播到空中，边缘用户接收后在射频（RF）域用混频器直接完成 GEMV 运算；配合 MIMO 空间复用和边缘侧预编码-后编码校准信道。广播对用户无感知，覆盖范围内可服务无限用户。</p>
+<p><strong>关键数字</strong> LLaMA-3.1-8B 在 WikiText-2 上困惑度仅劣化 4.0%；能耗较 FP16 与纯权重量化基线分别降低 157.7×/40.4×；20 用户时空中传输时间缩短 104.1×/26.0×。</p>
+<p><strong>为什么值得看</strong> 把"权重分发"变成通信问题、把矩阵乘搬进射频域，是端侧推理很有想象力的路线，做边缘部署和通信计算融合的都值得一看。</p>
+<p><a href="https://arxiv.org/abs/2610.00465">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.00465">阅读原文 ↗</a></p>
+</body>
+</html>

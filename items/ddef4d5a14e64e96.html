@@ -22,9 +22,11 @@
 <h1>On the Impact of Degradation-Balanced Scheduling in Manycore Systems</h1>
 <p class="meta-line">arXiv cs.AR · 2026-10-08 · 论文PDF</p>
 
-<p>Electromigration degradation in manycore systems depends strongly on how runtime workload is distributed acros…</p>
-<blockquote><p>Electromigration degradation in manycore systems depends strongly on how runtime workload is distributed across cores. Task placement affects power, temperature, and current density, which in turn shape the spatial distribution of degradation over time. However, a scheduler that ranks cores only by their current reliability state may not always distinguish among candidate cores, especially when reliability values are close at decision time. In this case, scheduling decisions can be driven by secondary factors rather than by long-term degradation balance. This paper studies degradation-balanced scheduling and proposes a Reliability-Balanced (RB) policy that predicts the full-task effect of each candidate assignment. RB penalizes added imbalance in electromigration exposure, stress, active time, and task count while guarding the predicted Rvalue floor. On randomized continuous mixed workloads, the proposed scheduler preserves completed tasks while improving average Rvalue by 0.37% and minimum Rvalue by 4.35%. It reduces Rvalue, exposure, stress, and active-time standard deviation by 10.84%, 9.39%, 8.35%, and 16.38%, respectively.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 众核系统的电迁移老化强依赖于运行时负载在核间的分布，而仅按当前可靠性状态给核排序的调度器，在候选核可靠性接近时无法区分，调度会被次要因素主导，长期退化失衡。</p>
+<p><strong>方法</strong> 提出 Reliability-Balanced（RB）调度策略：预测每个候选分配的"全任务效应"，对新增的电迁移暴露、应力、活跃时间、任务数不均衡施加惩罚，同时守住预测的 Rvalue 下限。</p>
+<p><strong>关键数字</strong> 随机连续混合负载下，在保持任务完成量的同时：平均 Rvalue 提升 0.37%、最小 Rvalue 提升 4.35%；Rvalue、暴露、应力、活跃时间的标准差分别降低 10.84%、9.39%、8.35%、16.38%。</p>
+<p><strong>为什么值得看</strong> 把"长期老化均衡"显式编码进调度目标，做众核可靠性管理与运行时调度的系统研究者可参考。</p>
+<p><a href="https://arxiv.org/abs/2610.08190">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.08190">阅读原文 ↗</a></p>
 </body>
 </html>

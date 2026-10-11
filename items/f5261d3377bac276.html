@@ -22,9 +22,11 @@
 <h1>Muon Is Theoretically Wrong For Convolutions, But Empirically Effective</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Muon, an optimizer known for its efficiency, has a clear interpretation for matrix-valued updates, b</p>
-<blockquote><p>Muon, an optimizer known for its efficiency, has a clear interpretation for matrix-valued updates, but convolutional kernels are stored as four-dimensional tensors. Standard implementations reshape these tensors into matrices, a shortcut which breaks the theoretical understanding behind Muon. To investigate this, we formalize the corresponding optimization objective directly in convolutional operator geometry and introduce Convolutional Newton-Schulz (Conv-NS), which approximates the polar factor in this geometry while preserving kernel support. When applied in fast training experiments, Conv-NS and reshape-based Muon are both computationally efficient and achieve comparable accuracy on CIFAR-10 and ImageNet classification tasks. However, as one could expect a theoretically aligned Conv-NS to outperform reshape-based Muon, we investigate this mismatch between practice and theoretical understanding, with the hypothesis that exact convolutional orthogonalization may overconstrain updates. These findings highlight Muon's strong practical performance while opening directions for its further development on convolutions. Our code is publicly available at \href{https://github.com/thib-s/m…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Muon 优化器的理论解释建立在矩阵值更新上，但卷积核是四维张量，标准实现将其 reshape 成矩阵——这一捷径破坏了理论前提。理论对齐的卷积版 Muon 会更好吗？</p>
+<p><strong>方法</strong> 在卷积算子几何中直接形式化优化目标，提出 Convolutional Newton-Schulz（Conv-NS）：在该几何下近似 polar factor 且保持卷积核的支撑结构，与 reshape 版 Muon 在快速训练实验中对比。</p>
+<p><strong>关键数字</strong> CIFAR-10 与 ImageNet 分类上，Conv-NS 与 reshape 版 Muon 计算效率相当、精度相当——理论对齐版并未胜出。作者假设精确的卷积正交化可能过度约束了更新。代码已开源。</p>
+<p><strong>为什么值得看</strong> 一个诚实的负结果：理论"正确"不等于实证更优。对用 Muon 训卷积网络的人直接有用，也提示 Muon 理论仍有空白。</p>
+<p><a href="https://arxiv.org/abs/2610.07103">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07103">阅读原文 ↗</a></p>
 </body>
 </html>

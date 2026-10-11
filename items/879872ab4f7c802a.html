@@ -22,9 +22,11 @@
 <h1>Preserving Unstable Modes Through Inverse Dynamics in JEPA World Models</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Robotic systems often exhibit unstable modes, along which small perturbations and disturbances can c</p>
-<blockquote><p>Robotic systems often exhibit unstable modes, along which small perturbations and disturbances can cause unbounded growth unless corrected through feedback. Controlling such systems from high-dimensional visual observations requires representations that preserve these modes. Joint-embedding predictive architectures (JEPAs) provide a natural framework for learning such representations and their dynamics from visual data. However, we demonstrate that next step prediction combined with anti-collapse regularization does not guarantee that controllable unstable modes are preserved: the training loss can be minimized while these modes are collapsed, making stabilization from the learned representation impossible. To address this, we augment world-model training with an action reconstruction objective (i.e., an inverse dynamics loss) that encourages control-aware representations, namely, visual representations that preserve crucial features for control. We prove that exact action reconstruction makes the encoder injective on the finite-horizon reachable subspace. Thus, the encoder cannot discard any state direction reachable by an action sequence within $H$ steps. Moreover, we show that, …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 机器人系统常有"不稳定模态"：微小扰动会沿这些方向无界增长，除非反馈纠正。从视觉观测学习控制时，表征必须保留这些模态；但 JEPA 的"下一步预测+防坍缩正则"并不保证——损失最小化的同时可控不稳定模态可能已被坍缩掉。</p>
+<p><strong>方法</strong> 在世界模型训练中加入动作重建目标（逆动力学损失），鼓励"控制感知"表征。理论上证明：精确动作重建使编码器在有限时域可达子空间上单射，且随 H 增大，有限时域可控性 Gramian 的主特征空间收敛到可控不稳定子空间。</p>
+<p><strong>关键数字</strong> 理论结果针对线性系统；在 CartPole、Walker2D、PointMaze 三个非线性视觉控制任务上实证成立。摘要未给具体性能数字。</p>
+<p><strong>为什么值得看</strong> 给 JEPA 世界模型指出一个隐蔽的失败模式并给出有理论保证的修补，做视觉控制与表征学习的人都该知道。</p>
+<p><a href="https://arxiv.org/abs/2610.07540">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07540">阅读原文 ↗</a></p>
 </body>
 </html>

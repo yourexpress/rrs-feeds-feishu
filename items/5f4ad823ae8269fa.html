@@ -22,9 +22,11 @@
 <h1>Source-Learned Reliance for Selective Test-Time Adaptation of Multimodal Time Series</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Multimodal wearable systems must remain reliable when sensor streams become noisy or unavailable.</p>
-<blockquote><p>Multimodal wearable systems must remain reliable when sensor streams become noisy or unavailable. Existing multimodal test-time adaptation (TTA) methods often assess reliability online, but cross-modal agreement can be misleading when sensors measure different physical processes, and evaluating alternative modality configurations adds inference cost. We propose CARAT, which decouples model reliance from runtime corruption detection to guide omission or attenuation, amortizing reliance estimation through source training. An asymmetric modality-dropout curriculum prepares a missingness-resilient backbone for omission and derives a frozen, backbone-specific reliance proxy from windowed input-projection gradient norms. At deployment, a lightweight one-class detector flags suspect streams, and the proxy guides a joint choice between replacing the suspect set with the backbone's trained missingness symbol and attenuating its representations before fusion, without candidate-subset evaluation. Across four wearable datasets, five corruption types, three backbones, and eight TTA baselines, CARAT achieves the highest overall macro-F1 and best mean rank (2.42), exceeding EATA, the strongest ba…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 多模态可穿戴系统在传感器变噪或缺失时要保持可靠。现有多模态测试时适应（TTA）在线评估可靠性，但跨模态一致性在传感器测不同物理量时会误导，且枚举评估备选模态子集增加推理成本。</p>
+<p><strong>方法</strong> CARAT：把"模型依赖"与"运行时损坏检测"解耦——源训练阶段用非对称模态 dropout 课程准备抗缺失骨干，并从窗口化输入投影梯度范数导出冻结的骨干专属依赖代理；部署时轻量单类检测器标记可疑流，代理在"用训练好的缺失符号替换"与"融合前衰减其表征"之间联合选择，无需评估候选子集。</p>
+<p><strong>关键数字</strong> 4 个可穿戴数据集、5 种损坏、3 种骨干、8 个 TTA 基线：总体 macro-F1 最高、平均排名 2.42，12 个数据集-骨干设置上比最强基线 EATA 高 1.58 F1；GFLOPs 少 9.49%、更新参数量少 47.82%。</p>
+<p><strong>为什么值得看</strong> 把多模态 TTA 的依赖估计摊销到训练期，推理期零枚举开销；文中"IMU 主导同质 vs 异质数据集上多模态/单模态 TTA 优劣互换"的规律也很实用。</p>
+<p><a href="https://arxiv.org/abs/2610.07499">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07499">阅读原文 ↗</a></p>
 </body>
 </html>

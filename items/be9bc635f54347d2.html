@@ -22,9 +22,11 @@
 <h1>Reinforcement Learning for Hierarchical Reasoning Rewards: Minimax-Optimal Rates with Transformers</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Reinforcement learning (RL) has become a standard tool for post-training language models on reasonin</p>
-<blockquote><p>Reinforcement learning (RL) has become a standard tool for post-training language models on reasoning tasks, where the policy is updated by reward feedback while exploring the space of responses. Despite its empirical success, theoretical understanding of RL post-training remains limited, in particular of why on-policy exploration combined with a neural reward model is effective. In this paper, we address this question by modeling the reward as a hierarchical function on the response space: the reward consists of infinitely many local components, each of which becomes relevant only after the preceding ones have been resolved. We show that a natural Transformer-based actor--critic algorithm, which alternates between sampling from the current KL-regularized policy, fitting a Transformer critic to the observed rewards, and updating the policy, achieves the minimax optimal rates in the query budget and in the regularization strength up to logarithmic factors, and is minimax optimal for a fixed number of prompts. In contrast, we prove that sampling from the fixed reference distribution, as in offline reward modeling, can limit regret decay to a logarithmic rate. These results show that …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> RL 已成为推理任务后训练的标准工具，但理论上为什么"on-policy 探索+神经奖励模型"有效仍不清楚。</p>
+<p><strong>方法</strong> 把奖励建模为响应空间上的层级函数：无穷多个局部成分，只有前一个被解决后下一个才变得相关。分析一个自然的 Transformer actor-critic：交替进行 KL 正则策略采样、用 Transformer critic 拟合观测奖励、更新策略。</p>
+<p><strong>关键数字</strong> 该算法在查询预算与正则强度上达到 minimax 最优速率（至多差对数因子），固定 prompt 数下亦 minimax 最优；而从固定参考分布采样（离线奖励建模的做法）的遗憾衰减被证明只能是对数速率。</p>
+<p><strong>为什么值得看</strong> 首次量化"on-policy 探索逐级聚焦奖励集中区域"的收益，为 RLHF/RLVR 的 on-policy 设计提供了理论支撑。</p>
+<p><a href="https://arxiv.org/abs/2610.08561">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.08561">阅读原文 ↗</a></p>
 </body>
 </html>

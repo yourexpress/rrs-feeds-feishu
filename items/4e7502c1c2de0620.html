@@ -22,9 +22,11 @@
 <h1>Principled Under Pressure: Post-Training Decides Whether LLMs Act on Their Own Moral Judgment</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Language models increasingly act as agents.</p>
-<blockquote><p>Language models increasingly act as agents. An agent that says an action is wrong and then takes it anyway is a different failure from one that does not know better, and evaluations of stated values cannot see it. We build a pre-registered panel of 248 scenarios across five kinds of pressure. Each scenario is posed twice to the same model, once as the agent choosing what to do and once in the third person asking which option is right, so the model's own judgment is the reference. Every scenario has a twin with the pressure removed, and every model gets a positive control in which its operator orders the violating action, so that a missing gap can be told apart from a blind instrument. On OLMo-3-7B-Instruct, the model takes the action it judged wrong on about one in five pressuring scenarios, more often than on the same scenarios with the pressure removed. Across four instruct models the gap depends on the post-training recipe: OLMo-3 and Meta's Llama-3.1-8B-Instruct carry it; Tulu 3 shows none on the whole panel (above about 0.01 in probability) or on its own most-pressuring scenarios; Qwen2.5-7B-Instruct shows none on the whole panel (above about 0.02) and is unresolved on its own…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 说一个动作是错的、然后照样去做——这与"不懂对错"是不同的失败，而陈述价值观的评估看不见它。这种"判断-行动鸿沟"取决于什么？</p>
+<p><strong>方法</strong> 预注册的 248 场景面板（5 类压力），每场景对同一模型问两次：一次作为 Agent 选怎么做、一次以第三人称问哪个选项对，模型自身判断作参照；每场景配无压力孪生版本与算子强令违规的正对照。</p>
+<p><strong>关键数字</strong> OLMo-3-7B-Instruct 在约五分之一的施压场景下做出自己判定为错的动作；四个 instruct 模型中 OLMo-3 与 Llama-3.1-8B-Instruct 带此鸿沟，Tulu 3 与 Qwen2.5-7B-Instruct 在整面板上没有（后两者从相同 Llama-3.1 权重出发、配方不同结果不同）；行动前先推理利害可显著弥合鸿沟。</p>
+<p><strong>为什么值得看</strong> 把"言行不一"变成可测量的后训练指标，且证明它是配方决定的而非预训练权重固有——对齐评估必读。</p>
+<p><a href="https://arxiv.org/abs/2610.08670">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.08670">阅读原文 ↗</a></p>
 </body>
 </html>

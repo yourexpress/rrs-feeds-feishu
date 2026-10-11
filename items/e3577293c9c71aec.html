@@ -22,9 +22,11 @@
 <h1>Neutrosophic Ensemble Classification for Uncertainty-Aware Bearing Fault Detection: Evidence from Laboratory and Variable-Speed Industrial Benchmarks</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Machine learning classifiers for bearing fault detection produce scalar confidence scores that confl</p>
-<blockquote><p>Machine learning classifiers for bearing fault detection produce scalar confidence scores that conflate confident errors with genuinely ambiguous predictions, and the conventional truth/falsity pair (F = 1 - T) is algebraically redundant by construction. We operationalize a refined neutrosophic decomposition of a Random Forest + XGBoost + Logistic Regression ensemble into four indicators -- T-hat (top-class evidence), F-hat (best-competitor evidence), predictive entropy I1-hat, and decision disagreement I2-hat -- evaluated on two bearing benchmarks (CWRU and JNU, 600-1000 rpm) under a leave-one-condition-out protocol. On CWRU, after correcting a file-to-class mapping error, the ensemble reaches 100.00 percent accuracy on three of four held-out loads (92.27 percent on the fourth), leaving too few errors for uncertainty analysis. On JNU, holding out 1000 rpm, accuracy collapses to 40.64 percent, below a majority-class baseline; Logistic Regression (57.91 percent) generalizes far better than the tree ensembles. I1-hat shows a robust association with error beyond T-hat/F-hat, while I2-hat contributes little; standalone Logistic Regression confidence outperforms the full decomposition, …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 轴承故障检测分类器的标量置信度混淆了"自信的错误"与"真正的模糊"，常规 T/F 对（F=1−T）在代数上冗余。如何得到有意义的不确定性分解？</p>
+<p><strong>方法</strong> 将 RF+XGBoost+LR 集成按中智学（neutrosophic）分解为四指标：T-hat（top 类证据）、F-hat（最强竞争类证据）、预测熵 I1-hat、决策分歧 I2-hat，在 CWRU 与 JNU 两个轴承基准上按 leave-one-condition-out 评估；另试验时频双模型的 Jensen-Shannon 散度作不确定性指标。</p>
+<p><strong>关键数字</strong> CWRU 三个留出负载上 100% 准确率（第四个 92.27%）；JNU 留出 1000 rpm 时集成准确率仅 40.64%、低于多数类基线，而单 LR 达 57.91%；时频融合的 JS 散度 AURC 0.29 优于自身熵 0.36；包络谱三特征在 CWRU 上达 99.57%。</p>
+<p><strong>为什么值得看</strong> 诚实报告边界条件（分解不如单模型置信度）的不确定性研究，工业故障诊断从业者可借鉴其协议与教训。</p>
+<p><a href="https://arxiv.org/abs/2610.06880">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06880">阅读原文 ↗</a></p>
 </body>
 </html>

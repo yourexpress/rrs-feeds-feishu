@@ -22,9 +22,11 @@
 <h1>On-Policy Distillation with Negative-Policy Rollouts</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>On-policy distillation (OPD) has been widely studied as a post-training method in which a student mo</p>
-<blockquote><p>On-policy distillation (OPD) has been widely studied as a post-training method in which a student model obtains token-level supervision from a stronger teacher on its own rollouts. Recent studies have improved OPD through alternative distillation reward formulations and teacher configurations, while the objective of distillation remains centered on mimicking the teacher. However, when a stronger teacher has limited distributional overlap with the student, such positive guidance can provide insufficient learning signals. In this work, we introduce Negative-Policy OPD (NP-OPD), which complements teacher supervision with rollouts from a lower-performing, lower-capability negative policy that serves as a negative reference for the student. Rather than modifying the distillation reward formulation, NP-OPD introduces the negative policy at the rollout stage, continuously supplying tokens preferred by the negative policy over the teacher so that they remain exposed to teacher supervision throughout training. This provides an explicit negative signal through negative-policy rollouts while preserving the positive teacher supervision used in OPD. Through extensive experiments, we show that N…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> On-policy 蒸馏（OPD）让学生在自身 rollout 上接受教师 token 级监督，但当强教师与学生分布重叠有限时，单纯的"模仿教师"正向引导信号不足。</p>
+<p><strong>方法</strong> 提出 Negative-Policy OPD（NP-OPD）：不改蒸馏奖励形式，而在 rollout 阶段引入一个更弱的"负策略"，持续产出负策略偏好于教师的 token，使其在训练中始终暴露于教师监督之下，构成显式负信号，与正向教师监督互补。</p>
+<p><strong>关键数字</strong> 在多个模型规模、生成模式、推理领域及不同 OPD 变体上均提升 OPD；分析显示 NP-OPD 有效抑制负策略偏好的 token、让学生远离负策略。摘要未给单一汇总数字。代码将开源（naver-ai/np-opd）。</p>
+<p><strong>为什么值得看</strong> 给 OPD 提供"rollout 策略本身也是设计变量"的新视角，做法简单、可叠加在现有蒸馏配方上。</p>
+<p><a href="https://arxiv.org/abs/2610.07874">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07874">阅读原文 ↗</a></p>
 </body>
 </html>
