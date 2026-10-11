@@ -22,9 +22,11 @@
 <h1>Long-Lived Characters, Local Inference: Incremental Memory Maintenance for Game NPCs</h1>
 <p class="meta-line">arXiv（Zimu Xu，cs.CL） · 2026-09-16 · 论文PDF</p>
 
-<p>A game character should not have to reread its entire life before every conversation.</p>
-<blockquote><p>A game character should not have to reread its entire life before every conversation. For locally deployed language-model characters, however, revising a few memories can invalidate a long reusable prefix. The resulting preparation cost competes with both foreground dialogue and the maintenance of other characters. This matters especially when dialogue feeds game-defined actions and value judgments: a fluent but incorrect account of who owns an item, or whether a transfer has already happened, can corrupt the input to otherwise deterministic rules. We study incremental memory maintenance for long-lived game NPCs in a quantized Qwen hybrid recurrent-attention model. Our runtime removes superseded attention KV entries, computes replacement records at the true sequence tail, and preserves the continuing recurrent state and unchanged KV. Existing local experiments combine multi-update dialogue replays, fixed-input placement ablations, and attention diagnostics. Independent block composition weakens query-conditioned memory selection without a uniform chunk-initial attention collapse. True-tail updates preserve important current-state and historical bindings across eight scripted mainte…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：本地部署的语言模型游戏 NPC 不该每轮对话前重读「一生」——少量记忆修订就会使长可复用前缀失效，准备成本与前台对话及其它角色的维护相互竞争；且事实性记忆错误会污染游戏规则输入。</p>
+<p><strong>方法</strong>：在量化 Qwen 混合循环-注意力模型上研究增量记忆维护：运行时删除被取代的注意力 KV 项、在真实序列尾部计算替换记录、保留连续的循环状态与未变 KV。实验结合多更新对话回放、固定输入位置消融与注意力诊断。</p>
+<p><strong>关键数字</strong>：八轮脚本化维护中真实尾部更新保住重要的当前状态与历史绑定；一个位置案例在三次重建中恢复全量重填的数量，而保槽位替代方案重复出现双重扣减错误；注意力分布接近性本身无法解释这些语义差异。</p>
+<p><strong>为什么值得看</strong>：提出把角色推理状态当作「需维护的历史依赖资源」而非一次性编码，对长寿命本地 NPC 与边缘部署 agent 的记忆工程有新启发。</p>
+<p><a href="https://arxiv.org/abs/2609.18935v1">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.18935v1">阅读原文 ↗</a></p>
 </body>
 </html>

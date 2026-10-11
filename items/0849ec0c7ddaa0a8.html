@@ -22,9 +22,11 @@
 <h1>WASD: Wasserstein-based Knowledge Distillation for Large Language Models</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Autoregressive large language models (LLMs) have rapidly advanced in capability, but their increasin</p>
-<blockquote><p>Autoregressive large language models (LLMs) have rapidly advanced in capability, but their increasing scale comes with substantial computational and memory costs at inference time. Knowledge distillation (KD) offers a practical solution by transferring knowledge from a large teacher model to a smaller student model via alignment of discrete probability distributions. However, existing KD methods for LLMs primarily rely on divergences that evaluate discrepancies through probability values at each vocabulary index, without explicitly leveraging token-level semantic information. We propose Wasserstein-based knowledge distillation (WASD) for LLMs, which incorporates token-level semantic information via the Wasserstein-based distance with a cost matrix derived from token embeddings. To ensure computational tractability, we adopt the Sinkhorn divergence and derive a gradient-equivalent objective that can be efficiently optimized without introducing additional networks. Experiments across multiple LLM families and scales show that WASD consistently improves distillation performance on diverse tasks, including instruction following, mathematical reasoning, and code generation. Our results …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 知识蒸馏普遍依赖逐词元概率值差异的散度，没有显式利用 token 级语义信息——语义上相近的 token 被错误对齐时惩罚是否合理？</p>
+<p><strong>方法</strong>：提出 WASD：用 Wasserstein 距离做分布对齐，代价矩阵由 token 嵌入导出，从而把 token 语义纳入蒸馏目标；为保证可计算性采用 Sinkhorn 散度，并推导出梯度等价目标，无需引入额外网络即可高效优化。</p>
+<p><strong>关键数字</strong>：跨多个 LLM 家族与规模的实验显示，WASD 在指令跟随、数学推理、代码生成等多样任务上持续提升蒸馏效果（摘要未给具体数值）。</p>
+<p><strong>为什么值得看</strong>：把蒸馏对齐从「概率值匹配」升级为「语义感知的分布搬运」，改动优雅（梯度等价、无额外模块），代码已开源，做模型压缩可直接上手。</p>
+<p><a href="https://arxiv.org/abs/2610.07706">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07706">阅读原文 ↗</a></p>
 </body>
 </html>

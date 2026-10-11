@@ -22,9 +22,11 @@
 <h1>Tram-FL: Reducing Communication and Computation Costs through Sequential Model Circulation in Decentralized Federated Learning</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Conventional decentralized federated learning (DFL) often focuses on clients, with each client maint</p>
-<blockquote><p>Conventional decentralized federated learning (DFL) often focuses on clients, with each client maintaining a model copy, performing updates individually, and undertaking model exchange and integration. While fully leveraging computational resources can shorten training times, it can also lead to significant computational and communication waste. This is especially pronounced with non-independent and identically distributed (non-IID) data, where achieving high model accuracy demands extra resources. This research shifts focus to the model itself, aiming to realize DFL with minimal computation and communication costs. To this end, we propose Tram-FL (Traveling Model Training Mechanism for Decentralized Federated Learning), a mechanism designed to efficiently address these challenges. It sequentially trains a single model by circulating it among nodes. We address the training scheduling problem in model circulation-based training, specifically determining which nodes should update the model and the number of updates to perform. This is approached by considering the model's circulation route and update iteration allocation, for which we propose simple yet effective methods. Additionall…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：去中心化联邦学习（DFL）让每个客户端各持模型副本、各自更新并交换融合，在 non-IID 数据下计算与通信浪费严重。</p>
+<p><strong>方法</strong>：转换视角到模型本身——Tram-FL 让单个模型像「有轨电车」一样在节点间循环顺序训练。研究模型循环下的训练调度问题（哪些节点更新、各更新多少轮），给出关于循环路线与迭代分配的简洁有效方法；配合量化动量，在控制单次传输通信量的同时以更少循环达到高准确率。</p>
+<p><strong>关键数字</strong>：实验表明即使 non-IID 数据下，Tram-FL 也以更低的通信与计算成本收敛到全局模型（摘要未给具体数值）。</p>
+<p><strong>为什么值得看</strong>：「模型旅行」替代「副本交换」的范式转换，为资源受限边缘场景的去中心化训练提供了极简的降本路径。</p>
+<p><a href="https://arxiv.org/abs/2610.07859">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07859">阅读原文 ↗</a></p>
 </body>
 </html>

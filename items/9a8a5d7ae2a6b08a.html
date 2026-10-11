@@ -22,9 +22,11 @@
 <h1>SpecBraM: What Should an EEG Foundation Model Predict? Masked Band-Power Prediction versus Waveform Reconstruction</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Self-supervised EEG models often reconstruct masked waveforms or predict discrete codes.</p>
-<blockquote><p>Self-supervised EEG models often reconstruct masked waveforms or predict discrete codes. We study a task-aligned alternative: masked band-power prediction (MBP), which predicts fixed narrow-band log spectral energy for masked channel-time patches. This target retains rhythm power relevant to sleep staging while avoiding phase-sensitive waveform reconstruction and a learned codebook. Across three pretraining seeds, we compare band-power and waveform targets with matched backbones, pretraining data (2,388 hours), and training steps, including a 2x2 tokenizer-by-target design. On ISRUC and HMC sleep staging, MBP exceeds raw- and band-waveform reconstruction by 1.6-2.8 balanced-accuracy points with all labels and 4.7-7.3 points with 1% of labels under a strict linear probe; the target effect exceeds the tokenizer effect. Its frozen features reach 0.7916/0.7425 balanced accuracy, versus 0.7636/0.7227 for a matched rich handcrafted spectral baseline, although the gap is about one point with 1% of labels. Full fine-tuning reaches 0.8107/0.7669. The gains do not extend to every task with spectral cues, including motor imagery, depression screening, and vigilance regression. These results s…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：EEG 自监督基础模型的预训练目标该预测什么——重建掩码波形、预测离散码，还是别的更贴合下游任务的量？</p>
+<p><strong>方法</strong>：提出掩码频带功率预测（MBP）：对掩码的通道-时间块预测固定窄带 log 谱能量，保留与睡眠分期相关的节律功率，回避相位敏感的波形重建与码本学习。在 2,388 小时预训练数据上，以匹配骨干与训练步数做 2×2（tokenizer×目标）对照。</p>
+<p><strong>关键数字</strong>：在 ISRUC 与 HMC 睡眠分期上，MBP 比波形重建目标高 1.6–2.8 个平衡准确率点（全标签）、1% 标签下高 4.7–7.3 点；冻结特征达 0.7916/0.7425，全量微调达 0.8107/0.7669。增益不泛化到运动想象、抑郁筛查等任务。</p>
+<p><strong>为什么值得看</strong>：用干净的对照实验证明「预训练目标应对齐下游标签的物理量与时空尺度」，目标效应大于 tokenizer 效应，为 EEG 基础模型设计提供明确选型依据。</p>
+<p><a href="https://arxiv.org/abs/2610.07484">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07484">阅读原文 ↗</a></p>
 </body>
 </html>

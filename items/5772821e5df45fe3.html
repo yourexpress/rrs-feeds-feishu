@@ -22,9 +22,11 @@
 <h1>M2Tok: Multi-head Multi-codebook Discrete Action Tokenization for Vision-Language-Action Models</h1>
 <p class="meta-line">arXiv（Chunpu Xu 等，cs.RO） · 2026-09-16 · 论文PDF</p>
 
-<p>Recent advancements have successfully adapted autoregressive language models to process multimodal signals, such as images and actions.</p>
-<blockquote><p>Recent advancements have successfully adapted autoregressive language models to process multimodal signals, such as images and actions. Since raw action signals are continuous, effective tokenization is essential to map high-dimensional inputs into compact discrete tokens for autoregressive processing. However, existing discrete action tokenizers often suffer from high reconstruction loss, failing to preserve the fine-grained dynamics required for precise control. This "discretization bottleneck" significantly limits the performance ceiling of downstream Vision-Language-Action (VLA) models. To address this, we propose ${M}^2$Tok, a Multi-head Multi-codebook Action Tokenizer designed to minimize reconstruction error and enhance policy performance. Our approach introduces two key structural innovations: (1) we decompose the latent action features into multiple heads, enabling the model to implicitly align specific heads with distinct action dimensions; (2) we assign independent codebooks to each head for quantization. By leveraging the combinatorial nature of multiple codebooks, we significantly expand the representational expressivity of the tokenizer, leading to substantially lower…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：连续动作信号需离散化才能自回归处理，但现有离散动作 tokenizer 重建损失高，丢失精细控制所需的细粒度动态——这一「离散化瓶颈」压低 VLA 模型的性能上限。</p>
+<p><strong>方法</strong>：提出 M²Tok 多头多码本动作 tokenizer：将潜在动作特征分解为多个头，隐式对齐不同动作维度；每个头分配独立码本量化。利用多码本的组合特性大幅扩展表示能力，显著降低重建损失。</p>
+<p><strong>关键数字</strong>：基于 M²Tok 的 VLA 在 RoboTwin、Simpler-Env 及 3 个零样本真实任务上评测，重建保真度更优且显著提升 VLA 成功率；消融证实多头与多码本机制各自有效（摘要未给具体数值）。</p>
+<p><strong>为什么值得看</strong>：针对 VLA 动作离散化痛点的结构性改进，思路简洁（分头+多码本组合）、收益直接，代码已开源，做机器人策略建模值得跟进。</p>
+<p><a href="https://arxiv.org/abs/2609.18259v2">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.18259v2">阅读原文 ↗</a></p>
 </body>
 </html>

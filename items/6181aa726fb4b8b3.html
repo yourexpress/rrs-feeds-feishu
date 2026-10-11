@@ -22,9 +22,11 @@
 <h1>Will the Judge Flip? Predicting Position-Sensitive LLM Judgments from Residual Stream Activations</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>The order in which candidate responses are presented can change an LLM judge's verdict.</p>
-<blockquote><p>The order in which candidate responses are presented can change an LLM judge's verdict. Detecting such a position flip ordinarily requires judging each pair in both orders, which doubles the number of judgments. We investigate whether residual stream activations recorded immediately before the initial verdict can predict a flip. We use nested grouped cross-validation to evaluate regularized linear probes on 534 JudgeBench pairs for three Qwen3 judges and Llama-3.1-8B. The linear probes achieve AUROCs of .621-.850 and outperform a combined baseline that uses verbalized confidence, verdict-label logits, response lengths, and the judge's initial choice by .062-.113 AUROC. Linear probes trained on JudgeBench and then frozen achieve AUROCs of .685-.853 on 1,802 MT-Bench comparisons without MT-Bench fitting or recalibration. These results show that pre-verdict activations support prediction of susceptibility to candidate order and outperform the non-activation predictors evaluated here.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：候选答案的呈现顺序会改变 LLM 评判的裁决（位置偏差）；检测这种翻转通常需要每个 pair 两种顺序各判一次，成本翻倍。能否从裁决前的内部激活预测翻转？</p>
+<p><strong>方法</strong>：用嵌套分组交叉验证，在 534 个 JudgeBench pair 上为三个 Qwen3 评判模型与 Llama-3.1-8B 训练正则化线性探针，以初始裁决前记录的残差流激活预测位置翻转；并在 1,802 个 MT-Bench 比较上做零拟合迁移。</p>
+<p><strong>关键数字</strong>：线性探针 AUROC 达 .621–.850，比「口语化置信度+裁决 logits+回复长度+初始选择」组合基线高 .062–.113；冻结迁移到 MT-Bench 后 AUROC .685–.853。</p>
+<p><strong>为什么值得看</strong>：裁决前激活即可预测顺序敏感性且跨分布迁移，为 LLM-as-judge 的偏差检测提供了比行为特征更省更强的信号，可据此有选择地做双序复核。</p>
+<p><a href="https://arxiv.org/abs/2610.07115">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07115">阅读原文 ↗</a></p>
 </body>
 </html>

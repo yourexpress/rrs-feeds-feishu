@@ -22,9 +22,11 @@
 <h1>Structuring MoE Expert Selection for Agentic Reinforcement Learning</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Long-horizon LLM agents are frequently implemented using sparse mixture-of-experts (MoE) models, yet</p>
-<blockquote><p>Long-horizon LLM agents are frequently implemented using sparse mixture-of-experts (MoE) models, yet the co-design of agentic behavior and MoE structures remains underexplored. In this work, we comprehensively study the connections between agentic post-training and MoE expert selection. In off-the-shelf MoE models, we observe expert selection exhibits a specialized structure that naturally aligns with agentic trajectories. Specifically, expert routing overlaps more between turns where the agent performs semantically similar operations (e.g., READ, UPDATE) than between turns with differing operations. However, standard RL algorithms ignore this specialization, allowing the MoE routing to go uncontrolled during training, which empirically limit task performance and inference efficiency. To address this, we introduce a hierarchical routing control framework for agentic tasks. We explicitly encourage turn-level expert selections to align with agentic operations while regularizing token-level expert selections to maintain local consistency. To resolve stability issues that arise during post-training with the proposed methods, we further introduce an entropy-gated control mechanism. Over…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：长程 LLM 智能体常用稀疏 MoE 模型实现，但智能体行为与 MoE 专家结构的协同设计几乎无人研究——RL 后训练中路由放任不管会有什么代价？</p>
+<p><strong>方法</strong>：先观察现成 MoE 模型中专家选择与智能体轨迹天然对齐（语义相似操作如 READ/UPDATE 的轮次间路由重叠更高）；再提出分层路由控制框架：轮级专家选择对齐智能体操作、token 级保持局部一致，并用熵门控机制解决训练稳定性问题。</p>
+<p><strong>关键数字</strong>：在所有评测基准上成功率提升超过 10 个点。</p>
+<p><strong>为什么值得看</strong>：首次系统揭示智能体轨迹结构可作为优化 MoE 容量的有效信号，为 agentic RL 后训练提供了新的结构化控制维度，兼具性能与推理效率收益。</p>
+<p><a href="https://arxiv.org/abs/2610.07332">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07332">阅读原文 ↗</a></p>
 </body>
 </html>

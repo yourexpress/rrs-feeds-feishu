@@ -22,9 +22,11 @@
 <h1>Weight Oracles: Reading Neural Network Weights with Language Models</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Interpretability methods for neural networks are predominantly reactive: they analyse activations pr</p>
-<blockquote><p>Interpretability methods for neural networks are predominantly reactive: they analyse activations produced during specific forward passes, requiring known inputs to find hidden capabilities such as backdoors. We propose Weight Oracles, fine-tuned language models that diagnose properties of a target network by reading its raw weights directly, without behavioural testing. We investigate this paradigm in two phases. Phase I establishes feasibility: through a staged curriculum and an external chain-of-computation that delegates parameter-free operations to deterministic code, an explainer LLM learns to simulate the forward pass of small transformers from their weights, achieving 99% holdout accuracy on unseen targets. Phase II repurposes this infrastructure for safety auditing. We train an oracle on natural language diagnostic questions about weight anomalies using only benign pathologies as training signal, and evaluate it zero-shot on backdoors absent from training. The oracle achieves AUROC 0.93 on attention-routed backdoors and 0.81 across a diversified threat distribution including stealth and adversarially regularized variants. Hand-crafted statistical detectors are sharp on the…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：神经网络可解释性方法都是「反应式」的——需要已知输入跑前向才能发现后门等隐藏能力。能否让语言模型直接「读权重」诊断网络属性？</p>
+<p><strong>方法</strong>：提出 Weight Oracles：微调语言模型直接读取目标网络的原始权重。分两阶段：阶段一通过分阶段课程与「无参数操作外包给确定性代码」的外部计算链，让解释器 LLM 从小 transformer 权重模拟其前向；阶段二转用于安全审计——只用良性病理做训练信号，零样本检测训练中未见的后门。</p>
+<p><strong>关键数字</strong>：阶段一在未见目标上达 99% holdout 准确率；阶段二对注意力路由后门 AUROC 0.93，对含 stealth 与对抗正则化变体的多样化威胁分布 AUROC 0.81；手工统计检测器在威胁模型漂移时崩溃而 oracle 保持稳定。</p>
+<p><strong>为什么值得看</strong>：开辟了「权重即文本」的审计范式，对威胁模型漂移的鲁棒性明显优于统计检测器；扩展到真实规模模型是关键开放挑战。</p>
+<p><a href="https://arxiv.org/abs/2610.07334">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07334">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Structure, Not Belief: Correlated Thompson Sampling from LLM-Derived Covariance in Combinatorial Semi-Bandits</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Combinatorial Thompson sampling (CTS) draws independent posterior samples for every arm, so its expl</p>
-<blockquote><p>Combinatorial Thompson sampling (CTS) draws independent posterior samples for every arm, so its exploration dynamics ignore any relation among arms. We study a minimal change to those dynamics: an LLM is queried once for a partition of the arms, the partition becomes a positive-definite correlation matrix $Σ$ through an RBF kernel on cluster ranks, and the per-round posterior sample is drawn with covariance $Σ$ while the Beta posteriors are updated from real rewards only, so the LLM shapes how the sampler moves, not what it believes. We give a self-contained Bayesian regret bound for the idealized Gaussian sampler whose information gain splits into a $K\log T$ term from the $K$-cluster structure and a ridge term that grows to $d\log T$: the $\sqrt{d/K}$ improvement over independent sampling is a finite-horizon transient, exact only as the within-cluster correlation tends to one. The correlated sampler reduces regret by 19% over CTS on 16 synthetic Bernoulli families at $T=2{,}500$ (6-7% at $T=25{,}000$ with data-adaptive kernels) and by 41% on the Microsoft MIND-small news benchmark ($d=200$ real articles), while pseudo-observation warm starts give nothing. An LLM-free ablation wit…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：组合 Thompson 采样对每个臂独立采样，忽略臂间关系；能否用 LLM 提供的结构改善探索，而不让 LLM 影响「信念」？</p>
+<p><strong>方法</strong>：LLM 只被查询一次给出臂的划分，经 RBF 核转正定协方差矩阵 Σ；每轮后验采样带协方差 Σ，而 Beta 后验只由真实奖励更新——LLM 塑造采样器如何移动，而非它相信什么。并给出理想高斯采样器的自包含贝叶斯 regret 界。</p>
+<p><strong>关键数字</strong>：16 个合成 Bernoulli 族上 regret 降 19%（T=2,500），T=25,000 时降 6–7%；Microsoft MIND-small 新闻基准（200 篇真实文章）上降 41%；伪观测热启动无效。</p>
+<p><strong>为什么值得看</strong>：把 LLM 先验注入的位置从「信念」挪到「结构」，理论清晰（√(d/K) 改进是有限时域瞬态），消融还揭示无结构实例上增益来自核形状本身——对 LLM+bandit 结合方式是有趣的纠偏。</p>
+<p><a href="https://arxiv.org/abs/2610.07470">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07470">阅读原文 ↗</a></p>
 </body>
 </html>

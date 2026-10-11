@@ -22,9 +22,11 @@
 <h1>Spectra: Exact Component Transport for Test-Time Prior Adaptation in Simulation-Based Inference</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Simulation-based inference (SBI) has become a powerful approach to Bayesian inference in complex sci</p>
-<blockquote><p>Simulation-based inference (SBI) has become a powerful approach to Bayesian inference in complex scientific models whose likelihoods are difficult or impossible to evaluate. Amortized SBI learns reusable inference models from simulated data, enabling rapid posterior inference for new observations, and modern generative models have made these models increasingly expressive. However, this reuse is limited to the prior distribution chosen during training, whereas scientific analyses often need revised priors as knowledge accumulates or alternative assumptions are tested. We introduce Spectra, a test-time adaptation method for diffusion-based SBI. Spectra uses an exact score-transport identity to obtain the adapted score from a frozen diffusion model in closed form for structured prior changes, without additional simulation or training. Across six SBI benchmarks, Spectra achieves accurate adaptation under strong prior shifts at low online sampling cost. This enables pretrained SBI models to incorporate updated prior information at test time.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：摊销式仿真推断（SBI）模型训练时绑定了固定先验，科学分析中先验需要更新或替换时，难道只能重新训练？</p>
+<p><strong>方法</strong>：提出 Spectra——面向扩散式 SBI 的测试时先验适配方法。利用精确的 score 传输恒等式，从冻结的扩散模型闭式导出适配新先验的 score，对结构化先验变更无需额外仿真或训练。</p>
+<p><strong>关键数字</strong>：在 6 个 SBI 基准上，Spectra 在强先验偏移下实现准确适配，在线采样成本低。</p>
+<p><strong>为什么值得看</strong>：把「换先验」从重新训练变成测试时闭式计算，让预训练 SBI 模型能随知识积累灵活纳入更新后的先验信息，对贝叶斯工作流的实用性提升直接。</p>
+<p><a href="https://arxiv.org/abs/2610.08021">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.08021">阅读原文 ↗</a></p>
 </body>
 </html>

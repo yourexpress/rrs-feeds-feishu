@@ -22,9 +22,11 @@
 <h1>Towards One-for-All Foundation Model for Attributed Graph Clustering</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Attributed graph clustering aims to discover node groups by jointly exploiting node attributes and g</p>
-<blockquote><p>Attributed graph clustering aims to discover node groups by jointly exploiting node attributes and graph topology, yet its unsupervised nature makes model selection and adaptation inherently difficult. Existing methods typically train and tune a separate model for each input graph, leading to costly and fragile pipelines that often fail to transfer across graphs with different feature spaces, structural patterns, and attribute-structure correlations. In this paper, we study a one-for-all alternative: can a single model be trained once and directly applied to diverse attributed graphs without graph-specific training, fine-tuning, or hyperparameter search? We propose OFAG, a foundation model for attributed graph clustering. Building upon Prior-data Fitted Networks, OFAG learns a reusable clustering inference strategy from synthetic attributed graphs generated under broad priors over latent clusters, node attributes, and graph structures. To handle incompatible feature spaces across graphs, OFAG adopts a dimension-agnostic signal-wise graph encoder that treats each feature channel as a graph signal and models its response to shared graph filters. The model is trained with a hyperspher…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：属性图聚类每来一张新图就要单独训练调参，能否训一个「one-for-all」基础模型，直接用于多样属性图而无需图特定训练、微调或搜参？</p>
+<p><strong>方法</strong>：提出 OFAG：基于 Prior-data Fitted Networks，从广先验生成的合成属性图上学习可复用的聚类推理策略；用维度无关的逐信号图编码器处理跨图不兼容的特征空间；以超球面聚类目标训练，推理时单次前向即得聚类友好的节点表示。</p>
+<p><strong>关键数字</strong>：一个冻结 OFAG 模型在 10 个数据集上 NMI/ACC/ARI/F1 均取得最优平均性能与平均排名；全部 10 个数据集仅耗时 12.43 分钟，比第二快基线快 6 倍以上，比聚类质量第二好的方法快近 28 倍。</p>
+<p><strong>为什么值得看</strong>：把 PFN 思路引入属性图聚类，真正实现「开箱即用」的图聚类基础模型，速度与质量双赢，代码与预训练权重已开源。</p>
+<p><a href="https://arxiv.org/abs/2610.07778">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07778">阅读原文 ↗</a></p>
 </body>
 </html>

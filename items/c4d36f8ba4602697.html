@@ -22,9 +22,11 @@
 <h1>When Can Stateless Recovery Defeat Byzantine Quorum Safety? A Tight Normal Form for Single-Step BFT</h1>
 <p class="meta-line">arXiv cs.DC · 2026-10-08 · 论文PDF</p>
 
-<p>Byzantine quorum safety relies on correct replicas refusing to sign conflicting values.</p>
-<blockquote><p>Byzantine quorum safety relies on correct replicas refusing to sign conflicting values. A replica that loses its protocol state during recovery but retains its identity and signing key may forget an earlier vote. We study certificates formed by matching signed votes from at least $q$ of $n$ replicas, assuming that each correct replica avoids conflicting votes between recoveries. If two conflicting certificates form, their overlap has size between $2q-n$ and $b+c$, where $b$ counts Byzantine replicas and $c$ counts correct identities that recovered during the execution considered. Our main result decomposes the slack $b+c-(2q-n)$ into four nonnegative counts: extra signers in the first certificate, extra signers in the second, identities in neither certificate, and Byzantine or recovering identities outside their overlap. Zero slack forces an exact signer partition. With $n=3f+1$ replicas, threshold $q=2f+1$, at most $f$ Byzantine replicas, and exactly one correct recovery event, any conflicting pair forces exactly $f$ Byzantine replicas, all in the overlap together with the recovered replica; each certificate has a disjoint side of $f$ correct replicas. A minimal protocol attains t…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：拜占庭法定人数安全依赖正确副本拒签冲突值；副本在恢复中丢失协议状态（但保留身份与签名密钥）后可能忘记已投过的票——无状态恢复何时能击破 quorum 安全？</p>
+<p><strong>方法</strong>：研究由 n 个副本中至少 q 个匹配签名构成的证书。给出主要结果：把松弛量 b+c−(2q−n) 分解为四个非负计数（两份证书的额外签名者、不在任一证书中的身份、重叠区外的拜占庭/恢复身份）；零松弛时强制精确签名者划分。区分证书形成与接受，给出基于配置故障与恢复上限的充分检查。</p>
+<p><strong>关键数字</strong>：n=3f+1、q=2f+1、至多 f 个拜占庭副本且恰好一次正确恢复时，任何冲突证书对恰好强制 f 个拜占庭副本全部落在重叠区，每份证书各有 f 个不相交的正确副本侧；存在达到该形式的最小协议。</p>
+<p><strong>为什么值得看</strong>：对单步 BFT 在崩溃-恢复场景下给出紧的正规形刻画，并解释了「签名释放前写持久投票记录」为何能防冲突——理论直接指导工程。</p>
+<p><a href="https://arxiv.org/abs/2610.07759">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07759">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Which and When to Admit: Gradient Admission for Data-Centric Small Language Model Finetuning</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>LoRA fine-tuning adapts small language models (SLMs) to heterogeneous instruction data within a low-</p>
-<blockquote><p>LoRA fine-tuning adapts small language models (SLMs) to heterogeneous instruction data within a low-rank update subspace, making it vulnerable to three structural problems: conflicting gradients that cancel, static data selection that cannot track evolving learning dynamics, and subspace saturation that causes later updates to overwrite useful directions. We argue that effective adaptation therefore requires controlling which data-induced gradients enter the LoRA subspace and when. We propose GRADE (GRadient-Aligned Data-centric rEcipe), a data-centric framework combining two mechanisms: a state-aware selector that continually admits samples aligned with the evolving multi-task gradient field, and a self-calibrating step-level gate that rejects updates likely to cause destructive overwrite near saturation. Across three current-generation backbones and a heterogeneous seven-dataset instruction pool, GRADE outperforms strong data-selection and PEFT-stabilization baselines in accuracy and robustness. It is the only method to improve consistently over standard LoRA on every architecture, while producing more coherent gradient trajectories and less destructive overwrite. These results s…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LoRA 微调小语言模型时，低秩子空间存在三个结构性问题：梯度冲突抵消、静态数据选择跟不上学习动态、子空间饱和导致后续更新覆盖有用方向。</p>
+<p><strong>方法</strong>：提出 GRADE——数据中心框架，控制「哪些数据诱导的梯度、在何时进入 LoRA 子空间」：状态感知选择器持续接纳与演化中的多任务梯度场对齐的样本；自校准步级门控在接近饱和时拒绝可能造成破坏性覆盖的更新。</p>
+<p><strong>关键数字</strong>：在三个当代骨干与七个数据集组成的异质指令池上，GRADE 在准确率与鲁棒性上优于强数据选择与 PEFT 稳定化基线；是唯一在每个架构上都持续优于标准 LoRA 的方法，并产生更连贯的梯度轨迹、更少的破坏性覆盖。</p>
+<p><strong>为什么值得看</strong>：把数据选择从「选哪些数据」深化为「准入哪些梯度」，直击 LoRA 子空间饱和问题，对 SLM 指令微调的工程实践有直接指导意义。</p>
+<p><a href="https://arxiv.org/abs/2610.07553">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07553">阅读原文 ↗</a></p>
 </body>
 </html>

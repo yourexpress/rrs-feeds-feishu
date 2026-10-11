@@ -22,9 +22,11 @@
 <h1>Variance-Averse $n$-Step Offline Reinforcement Learning for Sparse Long-Horizon Environments</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Generative actors are transforming offline reinforcement learning (RL) by enabling expressive policy</p>
-<blockquote><p>Generative actors are transforming offline reinforcement learning (RL) by enabling expressive policy classes that model complex action distributions. However, this expressiveness also exposes a key challenge in heterogeneous datasets: generative policies can reproduce unreliable action modes whose return distributions exhibit high variance, occasionally yielding high returns by chance but lacking consistency. Consequently, maximizing the expected $Q$-value alone is insufficient for identifying reliable actions. We propose VAN-Flow (Variance-Averse $n$-step Flow), a framework that promotes reliable actions in generative offline RL. VAN-Flow combines (i) a categorical distributional critic, (ii) a variance-averse expectation operator that smoothly reweights atom probabilities to favor actions with both high returns and low dispersion, and (iii) a flow-matching generative actor guided via rejection sampling. Unlike CVaR or mean-variance objectives, the operator redistributes probability mass over the categorical return distribution without hard truncation or auxiliary penalty terms. Across more than 40 tasks from D4RL and OGBench, VAN-Flow consistently outperforms strong baselines, wi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：生成式 actor 让离线 RL 能表达复杂动作分布，但在异质数据上也会复现「回报方差大、偶尔碰运气拿高分」的不可靠动作模式——只最大化期望 Q 值不够。</p>
+<p><strong>方法</strong>：提出 VAN-Flow：组合（i）类别分布式 critic、（ii）方差厌恶期望算子——平滑重加权原子概率，偏好高回报且低离散的动作、（iii）经拒绝采样引导的 flow-matching 生成 actor。与 CVaR 或均值-方差目标不同，该算子在类别回报分布上重分配概率质量，无硬截断、无辅助惩罚项。</p>
+<p><strong>关键数字</strong>：在 D4RL 与 OGBench 的 40 多个任务上持续优于强基线，长程、高方差场景增益最大。</p>
+<p><strong>为什么值得看</strong>：针对生成式离线 RL 的可靠性痛点给出干净的分布级解法，在长 horizon 稀疏场景尤其有用，值得做离线 RL 的同学关注。</p>
+<p><a href="https://arxiv.org/abs/2610.07899">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07899">阅读原文 ↗</a></p>
 </body>
 </html>

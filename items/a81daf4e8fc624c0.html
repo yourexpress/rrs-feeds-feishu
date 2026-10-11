@@ -22,9 +22,11 @@
 <h1>When Attention Does Not Explain the Peak: Temporal Reference vs. Forecast Output in Attention-Based Time-Series Forecasting</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Attention maps are often interpreted as evidence of what a forecasting model uses when making predictions.</p>
-<blockquote><p>Attention maps are often interpreted as evidence of what a forecasting model uses when making predictions. In our load-forecasting model, a CLS representation of historical demand queries 24 future exogenous horizon tokens through cross-attention, inviting a temporal interpretation in which highly attended horizons may appear to explain forecast peak timing. We test this interpretation using a horizon-level attention descriptor, $Ψ_{\mathrm{out}}$. Across 31 day-aligned windows of the Panama load dataset, the forecast achieves a median peak-time error of 0 h and a 51.6% exact-match rate, whereas the argmax of $Ψ_{\mathrm{out}}$ has a median error of 5 h and 0% exact match. The forecast peak is closer to the observed peak in 27 of 31 windows. This dissociation is not merely an argmax artifact: within $\pm1$ h, attention reaches only $1.16\times$, $1.11\times$, and $1.14\times$ the uniform baseline around observed, predicted, and weekly-naive peaks, respectively, indicating weak and non-selective concentration. Yet the attention profile is structured, with cross-window consistency of 0.83. Replacing 12 future weather features with their training-set means makes the profile nearly uni…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：时序预测中注意力图常被当作「模型用了什么」的证据——高关注的 horizon 真的能解释预测峰值的时点吗？</p>
+<p><strong>方法</strong>：在负荷预测模型（CLS 表示经 cross-attention 查询 24 个未来外生 horizon token）上提出 horizon 级注意力描述子 Ψ_out 检验该解释。在 Panama 负荷数据 31 个日对齐窗口上对比预测峰值与注意力 argmax 的峰值时点误差，并做特征替换与多种子复现。</p>
+<p><strong>关键数字</strong>：预测峰值中位误差 0 小时、精确匹配率 51.6%；注意力 argmax 中位误差 5 小时、精确匹配 0%。±1 小时内注意力仅达均匀基线的 1.11–1.16 倍；跨窗口一致性 0.83，三种子复现结论一致。</p>
+<p><strong>为什么值得看</strong>：给「注意力即可解释性」一记实证反例——结构化、输入敏感、可复现的 cross-attention 并不构成峰值选择性的有效解释，对可解释性研究有警示价值。</p>
+<p><a href="https://arxiv.org/abs/2610.07080">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.07080">阅读原文 ↗</a></p>
 </body>
 </html>

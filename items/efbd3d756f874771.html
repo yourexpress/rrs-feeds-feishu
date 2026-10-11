@@ -22,9 +22,11 @@
 <h1>When Does External Guidance Help LLM Reasoning? A Bias-Variance Theory of Guidance-Augmented GRPO</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-08 · 论文PDF</p>
 
-<p>Reinforcement learning with verifiable rewards (RLVR) has become the dominant paradigm for eliciting</p>
-<blockquote><p>Reinforcement learning with verifiable rewards (RLVR) has become the dominant paradigm for eliciting multi-step reasoning in large language models, and a recent wave of methods (LUFFY, ExPO, PAPO, TAPO) further augments RL with \emph{external guidance} - expert traces, self-explanations, or retrieved thought patterns. Although each method reports empirical gains, none provides convergence rates, bias bounds, or an optimal weighting rule for the guidance signal. We close this gap with \emph{Guidance-Augmented GRPO} (GA-GRPO), a unified theoretical framework that casts external guidance as a stochastic guidance operator G re-writing the question distribution, and analyses the resulting policy-gradient estimator as a biased on-policy estimator whose bias is bounded by the total-variation guidance divergence delta\_G between the guidance-augmented sampling distribution and the policy's own distribution. The framework subsumes vanilla GRPO, LUFFY, ExPO, PAPO, and TAPO as special cases obtained by particular choices of G. Under smoothness and bounded-divergence assumptions we prove that GA-GRPO converges at rate O(1/sqrt(T)) to an O(delta sqrt(T))-neighbourhood of the GRPO stationary poi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：RLVR 加外部引导（专家轨迹、自我解释、检索思维模式）的方法（LUFFY、ExPO、PAPO、TAPO）各自报告增益，但都没有收敛速率、偏差界或引导信号的最优加权规则。</p>
+<p><strong>方法</strong>：提出 Guidance-Augmented GRPO（GA-GRPO）统一理论框架：把外部引导建模为改写问题分布的随机引导算子 G，分析所得策略梯度估计为有偏在策略估计，偏差受全变差引导散度 δ_G 界定。该框架以特定 G 选择涵盖 vanilla GRPO、LUFFY、ExPO、PAPO、TAPO。</p>
+<p><strong>关键数字</strong>：证明 GA-GRPO 以 O(1/√T) 速率收敛到 GRPO 驻点的 O(δ√T) 邻域，给出闭式 MSE 最优引导权重 λ*(T,δ,σ₀²)，并有匹配的 minimax 下界；Qwen2.5-Math-7B-Base 在 9 个数学与 OOD 基准上匹配或超越上述方法且 GPU 时数减少 31%。</p>
+<p><strong>为什么值得看</strong>：给「外部引导何时有用」一个偏差-方差理论答案，最优权重有闭式解且实验逐条验证理论预测，理论与实践结合得很扎实。</p>
+<p><a href="https://arxiv.org/abs/2610.06861">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06861">阅读原文 ↗</a></p>
 </body>
 </html>
