@@ -22,9 +22,11 @@
 <h1>Radio-Frequency Convolutional Neural Networks</h1>
 <p class="meta-line">arXiv（Zhihui Gao 等，cs.LG） · 2026-09-16 · 论文PDF</p>
 
-<p>Running artificial intelligence (AI) models directly on edge devices such as smartphones, wearables, and drones offers low latency, pervasive scalability, and data privacy, but these devices rarely carry the computing ca…</p>
-<blockquote><p>Running artificial intelligence (AI) models directly on edge devices such as smartphones, wearables, and drones offers low latency, pervasive scalability, and data privacy, but these devices rarely carry the computing capability that modern neural networks demand. Edge accelerators have been developed in response, yet each adds computing hardware to devices already constrained in size, weight, power, and cost (SWaP-C). An alternative lies in what these devices already carry: the frequency mixer in every wireless radio multiplies signals in time, natively performing convolution in the frequency domain. Here we introduce radio-frequency convolutional neural networks (RF-CNNs), which repurpose existing communication hardware for CNN inference. Multi-channel convolutions are mapped onto frequency tones for a passive mixer to execute in a single pass. We experimentally demonstrate that RF-CNN runs deep CNNs up to 26.4 million parameters and nine layers from classification of wireless signals and images to controllable image generation, close to full-precision performance. Because the weights arrive over the air and the analog hardware is shared with communication, the edge device spends…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 手机、可穿戴、无人机等边缘设备直接跑 AI 可获得低时延与隐私优势，但设备算力不足；外挂边缘加速器又会加重本就紧张的体积/重量/功耗/成本（SWaP-C）约束。</p>
+<p><strong>方法</strong> 提出 RF-CNN：复用每台无线设备里都有的射频混频器——它在频域天然执行乘法/卷积，把多通道卷积映射到频率音调上，由无源混频器一遍执行 CNN 推理；权重经空中下发，模拟硬件与通信共用。</p>
+<p><strong>关键数字</strong> 实验演示 RF-CNN 可运行最大 26.4M 参数、9 层的深度 CNN，覆盖无线信号分类、图像分类到可控图像生成，性能接近全精度；每次乘加能耗低至 0.72 飞焦耳，比外加数字处理器低两个数量级。</p>
+<p><strong>为什么值得看</strong> 「通信硬件兼职做推理」的思路在能耗上极具想象力，为 SWaP-C 受限的边缘设备给出了一条不加专用加速器的路径；对端侧 AI 部署与模拟计算方向都有启发。</p>
+<p><a href="https://arxiv.org/abs/2609.19279v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19279v1">阅读原文 ↗</a></p>
 </body>
 </html>

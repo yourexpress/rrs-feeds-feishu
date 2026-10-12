@@ -22,9 +22,11 @@
 <h1>Token Latency Fairness: Performance Isolation for Multi-Tenant LLM Serving</h1>
 <p class="meta-line">arXiv（Dev Bali 等，cs.DC） · 2026-09-16 · 论文PDF</p>
 
-<p>LLM serving is typically offered as a shared, multi-tenant service, where high-demand workloads from one client can cause latency SLO violations for others.</p>
-<blockquote><p>LLM serving is typically offered as a shared, multi-tenant service, where high-demand workloads from one client can cause latency SLO violations for others. Existing solutions for performance isolation equalize client throughput in the long run, for example through queueing and batching fairness. However, these approaches do not provide latency isolation guarantees; as a result, well-behaved clients can still experience significant degradation to their token-level latencies. In this paper, we present FairInference, which provides the novel δ-token fairness guarantee: for a well-behaved client, if a token is generated in d time units in isolation, it will be generated within d + δ time units in multi-tenant execution, providing strong latency isolation guarantees for LLM serving. To achieve this, FairInference addresses a key challenge of LLM serving: bounding delays from sharing GPU resources without support for fine-grained scheduling or resource allocation. In FairInference, the scheduler enforces per-token deadlines, while bounding the delays from GPU compute sharing and accounting for the additional delays introduced by the shared KV caching in GPU memory. We show that FairInfe…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 推理服务通常是多租户共享的：一个客户端的高负载请求会导致其他客户端的时延 SLO 违约；现有性能隔离方案多在长期上拉平各客户端吞吐（排队与批处理公平），但并不提供时延隔离保证——守规矩的客户端 token 级时延仍可能被严重拖慢。</p>
+<p><strong>方法</strong> 提出 FairInference，给出新的 δ-token 公平性保证：对守规矩客户端，若某 token 在独占运行时 d 个时间单位内生成，则多租户运行下会在 d+δ 内生成。实现上调度器强制每 token 截止时间，同时界定 GPU 计算共享带来的延迟、并计入共享 KV 缓存占显存引入的额外延迟。</p>
+<p><strong>关键数字</strong> 摘要未给出具体量化数值；实验显示 FairInference 有效界住守规矩客户端的 token 级时延尖峰，同时相比现有 LLM 服务系统还提升了整体吞吐。</p>
+<p><strong>为什么值得看</strong> 把「公平」从吞吐维度精确到 token 级时延并给出可证形式（d+δ）的保证，在推理服务 QoS/SLO 工程上是很实用的形式化框架。</p>
+<p><a href="https://arxiv.org/abs/2609.18112v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.18112v1">阅读原文 ↗</a></p>
 </body>
 </html>

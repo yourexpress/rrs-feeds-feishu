@@ -22,9 +22,11 @@
 <h1>VLA-ULAP: Interleaving Cloud VLA Calls with Ultra-Lightweight Local Action Prediction at the Edge</h1>
 <p class="meta-line">arXiv（Deyu Cao 等，cs.RO） · 2026-09-16 · 论文PDF</p>
 
-<p>Billion-parameter vision--language--action (VLA) policies demand substantial onboard power, while communication delays in remote inference hinder timely responses.</p>
-<blockquote><p>Billion-parameter vision--language--action (VLA) policies demand substantial onboard power, while communication delays in remote inference hinder timely responses. We propose VLA-ULAP, which interleaves remote VLA calls with an Ultra-Lightweight Local Action Predictor (ULAP). With approximately 7.4M parameters including the frozen vision encoder, ULAP combines current views, proprioception, and executed action history to predict chunks in one pass. Trained independently, it requires no VLA hidden states, online verification, or server round trips. On Jetson Orin Nano, ULAP takes 19.9 ms and 0.183 J per inference, compared with 284.3 ms and 50.55 J for GR00T on RTX A6000. Across three simulated base-policy/benchmark pairs, selected operating points remove 48.8--76.7\% of VLA calls while retaining 95.0--97.5\% of the baseline success rate. Against local VLA-acceleration alternatives on VLA-JEPA, ULAP uses an estimated 49.2\% less inference time and 51.0\% less GPU energy per successful episode than ACT at comparable success rates, and 77.1\% less time and 79.9\% less energy than SP-VLA at equal success rates. Physical SO-101 experiments retain 95.2--100\% of the baseline success rate…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 十亿参数级的视觉-语言-动作（VLA）策略对端上功率要求极高，而远程推理的通信时延又阻碍及时响应——机器人操作需要在「云端大模型智能」与「本地低时延」之间找平衡。</p>
+<p><strong>方法</strong> 提出 VLA-ULAP：把远程 VLA 调用与超轻量本地动作预测器（ULAP，约 7.4M 参数、含冻结视觉编码器）交错执行；ULAP 融合当前视角、本体感知与已执行动作历史，一遍前向预测动作块，独立训练、无需 VLA 隐状态、在线验证或服务器往返。</p>
+<p><strong>关键数字</strong> Jetson Orin Nano 上单次推理 19.9 ms、0.183 J，对比 GR00T 在 RTX A6000 上的 284.3 ms、50.55 J；三组仿真中选定工作点可砍掉 48.8%–76.7% 的 VLA 调用并保留 95.0%–97.5% 基线成功率；真机 SO-101 实验保留 95.2%–100% 成功率，推理时间估算减少 47.9%–58.0%；时延感知 LIBERO-Safety 仿真上较 π₀.₅ 在两个任务上高出 11.0 与 15.5 个百分点。</p>
+<p><strong>为什么值得看</strong> 「小模型补时延、大模型保智能」的云-端交错范式在机器人上有完整落点，能耗与成功率数字给得非常足，对端侧 VLA 部署有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.18663v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.18663v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>On the Effective Computation Power of Transformers</h1>
 <p class="meta-line">Microsoft · 2026-09-16 · 论文PDF</p>
 
-<p>理论：Transformer 不同数据表示下的有效计算能力刻画，解释多模态计算分配偏好</p>
-<blockquote><p>Geospatial foundation models provide reusable representations of satellite imagery that support downstream mapping with limited task-specific modelling. We evaluate whether annual AlphaEarth embeddings support binary cultivated-versus-non-cultivated mapping in Maine, USA, using 192 spatially separated patches and labels derived from the USDA Cropland Data Layer (CDL). Without fine-tuning the foundation model, a lightweight classifier reaches 93.7% overall accuracy and 90.8% balanced accuracy on held-out patches. Logistic regression is within 0.3 percentage points of a gradient-boosted ensemble, while a nearest-class-centroid rule, which uses class centroids but fits no parameters, reaches 90.2%. A balanced sample of 60,000 labelled pixels is within 1.3 percentage points of the full pool of 8.6 million pixels; because pixels are spatially autocorrelated, this result concerns pixel-sample efficiency rather than 60,000 independent annotation sites. In a same-region transfer experiment, classifiers trained in one year remain accurate across 2018 to 2023. Against a blind, two-interpreter consensus at 385 randomly sampled points in one contiguous 2023 block, the AlphaEarth-plus-random-fo…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> ⚠️ 元数据疑似错配：本条目标题为《On the Effective Computation Power of Transformers》，但抓取到的摘要实际是一篇关于卫星遥感嵌入用于农田分类的研究，以下省流版基于实际摘要撰写，标题对应内容请以原文页面核实为准。</p>
+<p><strong>方法</strong> 评估年度 AlphaEarth 嵌入能否免微调支持美国缅因州的耕地/非耕地二分类：冻结基础模型，仅训练轻量分类器（逻辑回归、梯度提升、最近类中心），标签来自 USDA 耕地数据层（CDL），并用 192 个空间隔离图块做留出验证，另做跨年份迁移与双人盲评一致性检验。</p>
+<p><strong>关键数字</strong> 轻量分类器在留出图块上达 93.7% 总体精度、90.8% 平衡精度；无参数的最近类中心规则达 90.2%；对 2023 年一个连续区块 385 个随机点，AlphaEarth+随机森林与双人盲评一致率 95.3%（κ=0.82），高于 CDL 的 91.7%（κ=0.72，McNemar p=0.0161）；与微调 TerraMind 的差异不显著（95.3% vs 93.5%，p=0.14）。</p>
+<p><strong>为什么值得看</strong> 展示了冻结地理空间嵌入作为「低算力区域级土地覆盖制图」候选路径的实证，含审慎的局限说明（单州研究、30m 衍生训练参考）。</p>
+<p><a href="https://arxiv.org/abs/2609.17138">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.17138">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>vidax: A Unified JAX Framework for Video Generative Models on Accelerator Meshes</h1>
 <p class="meta-line">arXiv（Congyue Deng，cs.CV） · 2026-09-16 · 论文PDF</p>
 
-<p>Open-source video generative models ship almost exclusively as PyTorch/CUDA reference implementations.</p>
-<blockquote><p>Open-source video generative models ship almost exclusively as PyTorch/CUDA reference implementations. This leaves Cloud TPU pods without a production-ready inference path, despite offering large, cost-effective accelerator memory pools ideal for long-sequence spatiotemporal attention. We present vidax, an open-source JAX/Flax inference engine and zero-copy PyTorch-to-JAX weight translator for modern video generation architectures. vidax covers a diverse set of spatiotemporal models --- including Diffusion Transformers, omnimodal Mixture-of-Transformers, 3D VAEs, text encoders, and native samplers --- with zero PyTorch dependency in the execution path. The framework unifies 1D tensor parallelism with DeepSpeed-Ulysses sequence parallelism on a single JAX sharding mesh, integrates TPU flash-attention kernels, and implements per-layer weight offloading to support reference resolutions that exceed single-device memory. We benchmark compile times, latency, and peak memory utilization on TPU v4-8 hardware, and document real-world numerical bugs surfaced during checkpoint translation. vidax is released open-source as a baseline for JAX and TPU video generation research.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 开源视频生成模型几乎只以 PyTorch/CUDA 参考实现发布，Cloud TPU pod 虽有大而便宜的加速器内存池（适合长序列时空注意力）却没有生产可用的推理路径。</p>
+<p><strong>方法</strong> 提出 vidax：开源 JAX/Flax 推理引擎 + 零拷贝的 PyTorch→JAX 权重转换器，覆盖扩散 Transformer、全模态 Mixture-of-Transformers、3D VAE、文本编码器与原生采样器，执行路径零 PyTorch 依赖；在单一 JAX 分片网格上统一 1D 张量并行与 DeepSpeed-Ulysses 序列并行，集成 TPU flash-attention 内核，并支持逐层权重卸载以跑超出单卡显存的参考分辨率。</p>
+<p><strong>关键数字</strong> 在 TPU v4-8 上实测编译时间、时延与峰值显存；并记录了权重转换过程中发现的多个真实数值 bug。</p>
+<p><strong>为什么值得看</strong> 补齐了视频生成在 TPU/JAX 生态的开源基线，权重翻译中踩到的数值坑本身就是跨框架迁移的实用经验，做视频生成部署或 JAX 生态的人值得关注。</p>
+<p><a href="https://arxiv.org/abs/2609.18077v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.18077v1">阅读原文 ↗</a></p>
 </body>
 </html>

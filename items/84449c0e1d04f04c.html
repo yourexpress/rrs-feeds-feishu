@@ -22,9 +22,11 @@
 <h1>Rosetta: Automating First-Principles Performance Modeling Using Multi-Agent LLMs</h1>
 <p class="meta-line">arXiv（Karthikeyan Sankaralingam，cs.PF） · 2026-09-16 · 论文PDF</p>
 
-<p>Analytical performance models --- derivations of throughput or speedup from hardware parameters --- make claims independently verifiable and expose binding constraints, yet rarely accompany architecture papers because bu…</p>
-<blockquote><p>Analytical performance models --- derivations of throughput or speedup from hardware parameters --- make claims independently verifiable and expose binding constraints, yet rarely accompany architecture papers because building one by hand takes weeks of expert effort. We present Rosetta, a multi-agent LLM pipeline that automatically generates first-principles analytical models from research paper PDFs. Given a paper as sole input, Rosetta produces a mathematical specification, an executable Python model, and a plain-English interpretation --- all autonomously, with zero human intervention. The formalization process itself is the primary value: it surfaces implicit assumptions and identifies missing parameters. Four design decisions address failure modes of naïve LLM-based generation: a scientific constitution that prohibits circular reasoning, verify-repair loops with independent critic agents, dual verification separating functional correctness from scientific validity, and a best-of-$N$ ensemble that exploits LLM stochasticity. We evaluate Rosetta across three complementary tracks: expert evaluation of 12 landmark papers (CS1), automated scoring of 97 unfiltered ISCA 2025 and HPC…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 解析性能模型（从硬件参数推导吞吐/加速比）能让体系结构论文的结论可独立验证、暴露关键瓶颈，但因为人工构建要花数周专家时间，几乎从不随论文一起出现。</p>
+<p><strong>方法</strong> 提出 Rosetta：多智能体 LLM 流水线，输入仅一份论文 PDF，自主产出数学规约、可执行 Python 模型与英文解读，全程零人工干预。针对朴素 LLM 生成的失效模式做了四项设计：禁止循环论证的科学宪章、带独立批评者的验证-修复循环、分离功能正确性与科学有效性的双重校验、利用 LLM 随机性的 best-of-N 集成。</p>
+<p><strong>关键数字</strong> 专家评审 12 篇经典论文（CS1）：10/12 篇规约质量达 4–5/5 且零显著幻觉；对 97 篇未经筛选的 ISCA 2025 / HPCA 2026 论文（CS2）：56% 通过筛选的论文达到 Tier A 洞见质量；作者自评（CS3）：6 个活跃研究组中 5 个表示会再次使用，且其产出导致投稿论文修订了结论并新增实验。</p>
+<p><strong>为什么值得看</strong> 「AI 审 AI 论文」从口号落到可复现流水线，CS3 里真实课题组据其产出改结论、加实验的结果是最硬的证据，体系结构与性能建模方向值得关注。</p>
+<p><a href="https://arxiv.org/abs/2609.19376v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19376v1">阅读原文 ↗</a></p>
 </body>
 </html>

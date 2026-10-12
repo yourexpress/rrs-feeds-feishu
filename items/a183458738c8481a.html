@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>H-JEPA: End-to-End Learning of Hierarchical World Models for Visual Planning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>H-JEPA: End-to-End Learning of Hierarchical World Models for Visual Planning</h1>
+<p class="meta-line">AMI (LeCun 创办) · 2026-10-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 长时程规划要求世界模型跨时间尺度与抽象层级推理，而现有任务无关的 JEPA 世界模型在单一潜空间、单一尺度上做预测与规划，难以处理数据中各因子以不同速度演化的场景。</p>
+<p><strong>方法</strong> H-JEPA 给出端到端训练动作条件 JEPA 层级的方案：每层在各自学到的潜空间中预测更远的未来，规划自顶向下进行——顶层优化向目标的推进，其预测成为下一层规划的子目标；高层会丢弃快速、不可预测的细节，保留慢变的任务相关状态。配合逆动力学监督，方法可扩展到 DROID 真机视频。</p>
+<p><strong>关键数字</strong> 在 Visual AntMaze 上，三层层级结构将成功率从 18% 提升到 73%，且规划算力开销更低；消融实验表明收益同时来自时间分解与高层目标表示。</p>
+<p><strong>为什么值得看</strong> LeCun 创办的 AMI 出品，是 JEPA 走向分层世界模型的代表性端到端方案，且代码与权重开源，适合关注世界模型与具身规划的人跟进。</p>
+<p><a href="https://arxiv.org/abs/2610.06805">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.06805">阅读原文 ↗</a></p>
+</body>
+</html>

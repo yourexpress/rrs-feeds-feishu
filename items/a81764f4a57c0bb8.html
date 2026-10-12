@@ -22,9 +22,11 @@
 <h1>Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling</h1>
 <p class="meta-line">arXiv（Mobina Kashaniyan 等，cs.LG） · 2026-09-16 · 论文PDF</p>
 
-<p>Test-time scaling can improve large language model reasoning by generating and combining multiple candidate responses.</p>
-<blockquote><p>Test-time scaling can improve large language model reasoning by generating and combining multiple candidate responses. In sampling-based methods, the inference budget is often described by the number of generated candidates, N. However, N tells us how many candidates are generated, not how they are executed. The same candidate budget can be produced in one batched generation call or split across several sequential calls with smaller batch sizes. We first study the effect of increasing N on reasoning accuracy using Phi-3-mini and Qwen2.5-1.5B on 500 GSM8K prompts. As expected, increasing N from 1 to 8 improves accuracy by 8.4 percentage points for Phi-3-mini and 18.4 points for Qwen2.5-1.5B. However, accuracy alone does not show the systems cost of using a larger candidate budget. We therefore fix N = 8 and compare four generation schedules: 1x8, 2x4, 4x2, and 8x1, where axb denotes a generation calls with b candidates per call. We measure latency, throughput, GPU-hours, and gross GPU-device energy while keeping the total candidate count fixed. On A100 GPUs, eight serial calls use 4.64-4.86x as much gross GPU-device energy and have 5.77-6.12x the P95 latency of one batched call with…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Test-time scaling 靠生成并组合多个候选回答提升推理能力，但推理预算通常只用「候选数 N」描述——N 只说明生成多少个候选，没说明怎么执行：同样的 N 可以一次大批量生成，也可以拆成多次小批量的串行调用，系统成本天差地别。</p>
+<p><strong>方法</strong> 固定 N=8，对比四种生成调度 1x8、2x4、4x2、8x1（a 次调用 × 每次生成 b 个候选），在 A100 上测量时延、吞吐、GPU 时数与总 GPU 能耗；先在 500 条 GSM8K 上验证增大 N 的精度收益（Phi-3-mini、Qwen2.5-1.5B）。</p>
+<p><strong>关键数字</strong> N 从 1 到 8 使精度提升 8.4 个百分点（Phi-3-mini）、18.4 个百分点（Qwen2.5-1.5B）；但同为 N=8，A100 上 8 次串行调用的总 GPU 能耗是一次批量调用的 4.64–4.86 倍，P95 时延为 5.77–6.12 倍；结论在三个独立调度的 A100 节点及短输出的 SciQ/V100 实验中一致。</p>
+<p><strong>为什么值得看</strong> 给「推理预算」补上了系统成本维度的清醒剂：报告 test-time scaling 结果时应同时给出候选数、生成调度与 GPU 级指标——做推理服务与评测的人都用得上。</p>
+<p><a href="https://arxiv.org/abs/2609.19499v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19499v1">阅读原文 ↗</a></p>
 </body>
 </html>

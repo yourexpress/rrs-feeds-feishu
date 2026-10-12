@@ -22,9 +22,11 @@
 <h1>Rollback the World, Keep the Reflection: Rollback-Induced Reflection for Long-Horizon LLM Agents</h1>
 <p class="meta-line">arXiv（Yi Yu 等，cs.CL） · 2026-09-16 · 论文PDF</p>
 
-<p>Large language model (LLM) agents increasingly tackle long-horizon tasks through multi-step environment interaction, yet a single erroneous action can alter subsequent states and observations, causing errors to compound …</p>
-<blockquote><p>Large language model (LLM) agents increasingly tackle long-horizon tasks through multi-step environment interaction, yet a single erroneous action can alter subsequent states and observations, causing errors to compound over time. Existing methods either correct the context without repairing altered environment states or restore earlier states while discarding useful experience, making it difficult to both eliminate failure conditions and avoid repeating past mistakes. We argue that reliable recovery should instead be treated as a rollback-boundary control problem that jointly determines when to intervene, where to resume, and what information should survive recovery. Based on this view, we propose Rollback-Induced Reflection (RIR), a unified recovery framework that restores execution to a selected prior state while carrying forward reusable knowledge distilled from the abandoned trajectory to guide subsequent decisions. We further characterize recovery through a unified operator over rollback depth and retained memory, providing a general view of state restoration and knowledge retention. Experiments on three long-horizon benchmarks demonstrate that RIR consistently improves task …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 智能体执行长时程任务时，一步错误动作会改变后续状态与观察，使误差随时间复利放大；现有恢复方法要么只修上下文不修被改变的环境状态，要么回滚状态却丢掉有用经验，难以兼顾消除失败条件与避免重蹈覆辙。</p>
+<p><strong>方法</strong> 提出 Rollback-Induced Reflection（RIR）：把可靠恢复视为回滚边界控制问题，联合决定何时干预、从哪恢复、哪些信息在恢复后保留——执行回滚到选定先前状态的同时，把被放弃轨迹中蒸馏出的可复用知识带回去指导后续决策；并用「回滚深度 × 保留记忆」的统一算子刻画恢复策略空间。</p>
+<p><strong>关键数字</strong> 摘要未给出具体量化数值；在三个长时程基准上、多个 LLM 骨干下一致提升任务表现，结构化反思记忆能保留有用经验、选择性回滚带来高效恢复。</p>
+<p><strong>为什么值得看</strong> 对「状态修复」与「经验保留」这对矛盾的统一形式化很有辨识度，是智能体错误恢复方向上少见的框架级而非 trick 级工作，与 KWS/语音算法同属序列决策场景可借鉴。</p>
+<p><a href="https://arxiv.org/abs/2609.18304v2">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.18304v2">阅读原文 ↗</a></p>
 </body>
 </html>

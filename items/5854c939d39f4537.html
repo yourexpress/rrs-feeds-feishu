@@ -22,9 +22,11 @@
 <h1>When Keywords Drop but Classifiers Hold: Soft Refusals under KV Cache Compression</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-16 · 论文PDF</p>
 
-<p>KV 缓存压缩下的软拒绝行为：关键词命中率下降但分类能力保持</p>
-<blockquote><p>KV cache compression is widely used for long context LLM inference under memory constraints, while deployed systems typically score refusals after generation with keyword filters or learned classifiers. Such monitors are intended to indicate whether a model declined a harmful request under the serving regime actually used. However, it remains unclear whether matched compression that preserves task accuracy also preserves agreement between lightweight lexical monitors and stronger refusal classifiers. We study this with a paired protocol on n=200 harmful prompts with a long filler context: each prompt is answered once under full retention and once under matched eviction after a shared prefill, and the same replies are scored by keyword heuristics, the HarmBench Llama-2-13B classifier, an auxiliary LLM judge, and humans on disagreements. On Qwen2.5-3B, keyword refusal falls from 98.0% to 80.5% (McNemar p~1e-8) while classifier refusal stays near ceiling (99.0%-99.5%) and MMLU accuracy is unchanged (50.0%); human labels predominantly follow the classifier, consistent with soft refusals. The gap is not universal and weakens under short fillers and paired SnapKV, so safety auditing unde…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> KV 缓存压缩被广泛用于显存受限下的长上下文推理，部署系统通常在生成后用关键词过滤或学习分类器给拒绝回答打分；但保持任务精度的匹配压缩，是否也保持了「轻量词汇监控器」与「强分类器」判定的一致性？</p>
+<p><strong>方法</strong> 配对协议：200 条带长填充上下文的有害提示，同一提示在共享预填后分别以全保留与匹配逐出各答一次，同一批回复由关键词启发式、HarmBench Llama-2-13B 分类器、辅助 LLM 评委与人工（仅分歧样本）共同打分。</p>
+<p><strong>关键数字</strong> Qwen2.5-3B 上，关键词拒绝率从 98.0% 跌到 80.5%（McNemar p≈1e-8），而分类器拒绝率保持近上限（99.0%–99.5%），MMLU 精度不变（50.0%）；人工标注多数与分类器一致，指向「软拒绝」；该差距不普适，短填充与配对 SnapKV 下会减弱。</p>
+<p><strong>为什么值得看</strong> 对压缩推理的安全审计提出具体警告：关键词命中率单打独斗会漏报软拒绝，压缩场景下的安全评测应使用与服务上下文匹配的多个评委——对部署 KWS/安全监控类模型的人同样有方法论借鉴。</p>
+<p><a href="https://arxiv.org/abs/2609.31678">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.31678">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Objective vs. Search: Decomposing What Makes a Good Tokeniser</h1>
 <p class="meta-line">arXiv（Ahmetcan Yavuz 等，cs.CL） · 2026-09-16 · 论文PDF</p>
 
-<p>Two dominant tokenisation algorithms are used by modern language models: byte-pair encoding (BPE) and UnigramLM.</p>
-<blockquote><p>Two dominant tokenisation algorithms are used by modern language models: byte-pair encoding (BPE) and UnigramLM. These differ along two orthogonal axes: their optimisation objective (compression vs. log-likelihood) and their search procedure (bottom-up merging vs. top-down pruning). Existing comparisons confound these axes, making it unclear whether their observed differences stem from what is being optimised vs. how it is being optimised. We disentangle the two by introducing two new tokenisation algorithms that complete this 2x2 design space: BottomUpLL, a bottom-up likelihood-based tokeniser, and TopDownComp, a top-down compression-based tokeniser. We train language models with tokenisers produced by each algorithm, varying: model size, vocabulary sizes, and domain (English-only vs. multilingual). Evaluating models on bits-per-byte, we find that the search procedure -- not the objective -- is the dominant factor: bottom-up tokenisers consistently achieve lower bits-per-byte in most settings. Evaluating models on the BLiMP task, however, shows no consistent relationship between design choice and performance. Overall, our results disentangle the effect of tokeniser design choices …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 现代语言模型的两大分词算法 BPE 与 UnigramLM 同时在两个正交维度上不同——优化目标（压缩 vs 对数似然）与搜索过程（自底向上合并 vs 自顶向下剪枝），既有比较把两个维度混在一起，说不清性能差异究竟源于「优化什么」还是「怎么优化」。</p>
+<p><strong>方法</strong> 引入两个补全 2×2 设计空间的新分词算法：BottomUpLL（自底向上、似然目标）与 TopDownComp（自顶向下、压缩目标），在变化模型规模、词表大小、单语/多语域的设置下训练语言模型并评测。</p>
+<p><strong>关键数字</strong> 以 bits-per-byte 评测时，起主导作用的是搜索过程而非优化目标：自底向上分词器在多数设置下持续取得更低 bits-per-byte；而 BLiMP 语法任务上设计选择与性能无一致关系。</p>
+<p><strong>为什么值得看</strong> 把分词器的「目标 vs 过程」之争拆成正交可控实验的干净工作，为分词器的更有原则性构建提供具体指引，做 tokenizer 选型或预训练数据管线的人值得一读。</p>
+<p><a href="https://arxiv.org/abs/2609.19145v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19145v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Quantifying the Effect of HCLs on a Fixed-Microarchitecture MXFP4 Accelerator</h1>
 <p class="meta-line">arXiv（Daniele Passaretti 等，cs.AR） · 2026-09-16 · 论文PDF</p>
 
-<p>Hardware Construction Languages (HCLs) aim to improve hardware design productivity while generating register-transfer-level (RTL) circuits without changing the designer's microarchitecture.</p>
-<blockquote><p>Hardware Construction Languages (HCLs) aim to improve hardware design productivity while generating register-transfer-level (RTL) circuits without changing the designer's microarchitecture. However, most comparisons between HCLs are either qualitative or evaluate quality of results (QoR) across different designs, making it difficult to separate language effects from design effects. This paper compares the most widely used HCLs using the same fixed design, the OCP MXFP4 block dot product, a quantization primitive at the heart of edge Physical-AI inference, implemented as a single 12-stage, II=1 pipeline. A SystemVerilog baseline is followed by implementations in Chisel, SpinalHDL, Amaranth, Clash, Bluespec, and C++ for high-level synthesis (HLS). Every variant goes through the same flow on the same Artix-7 device set at 100 MhZ, driven by a RISC-V soft core. With the micro-architecture held constant, the comparison is clean: every variant meets timing, and the HCLs match or even undercut hand-written RTL in area. The remaining differences stem not from the algorithm but from how each back end lowers arithmetic, and from a single width choice that silently toggles DSP inference. Unli…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 硬件构造语言（HCL，如 Chisel、SpinalHDL、Amaranth 等）声称提升设计生产率且不改变微架构地生成 RTL，但既有比较多为定性或跨设计对比，难以把「语言本身的影响」与「设计本身的影响」分开。</p>
+<p><strong>方法</strong> 用同一个固定设计做受控实验：OCP MXFP4 块点积（边缘 Physical-AI 推理核心的量化原语），实现为单一 12 级、II=1 流水线；先写 SystemVerilog 基线，再分别用 Chisel、SpinalHDL、Amaranth、Clash、Bluespec 与 C++ HLS 实现，全部在相同 Artix-7 器件、100 MHz、RISC-V 软核驱动下走同一流程。</p>
+<p><strong>关键数字</strong> 微架构保持恒定时所有变体均满足时序，各 HCL 的面积与手写 RTL 相当甚至更低；剩余差异来自各后端对算术运算的 lowering 方式，以及一个会静默切换 DSP 推断的位宽选择。</p>
+<p><strong>为什么值得看</strong> 迄今少见的「同设计、同流程」HCL 横评，结论干净：HCL 可达到与手写 RTL 相当的面积与时序，选择主要落在生态而非 QoR——对硬件语言选型有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.18792v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.18792v1">阅读原文 ↗</a></p>
 </body>
 </html>

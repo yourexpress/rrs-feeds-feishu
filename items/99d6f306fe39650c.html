@@ -22,9 +22,11 @@
 <h1>Zero-I/O Fault Recovery for Sharded Deep Learning via Dynamic Framework Dependency Rebinding</h1>
 <p class="meta-line">arXiv（Genlang Chen 等，cs.DC） · 2026-09-16 · 论文PDF</p>
 
-<p>Distributed model training at scale is frequently interrupted by transient network failures, conventionally forcing cluster managers to abort all processes and roll back to the latest checkpoint.</p>
-<blockquote><p>Distributed model training at scale is frequently interrupted by transient network failures, conventionally forcing cluster managers to abort all processes and roll back to the latest checkpoint. While periodic checkpointing provides durability, frequent snapshotting introduces severe storage backpressure: our measurements on a 1.216B-parameter decoder reveal that per-update asynchronous checkpointing incurs up to a +656.7% latency overhead, consumes 32.5 GiB of host memory, and generates 3.39 TB/hour of storage traffic. To eliminate this overhead, we present AccelPact, a parallel runtime enabling zero-I/O in-memory fault recovery for sharded distributed training. When communication fails at a committed optimizer step, device memory remains quiescent and uncorrupted, yet continuation fails because frameworks like PyTorch FSDP cache internal communication handles across module wrappers and parameter hierarchies. AccelPact resolves this dependency invalidation via a non-invasive reference-rebinding mechanism coordinated by an out-of-band Gloo consensus protocol. On 16 NVIDIA RTX 5880 GPUs training full-parameter Mistral-7B, AccelPact eliminates checkpoint replay, yielding a 1.197x wh…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 大规模分布式训练频繁被瞬时网络故障打断，惯例做法是全部进程中止并回滚到最近检查点；但频繁快照带来严重存储反压——在 1.216B 参数解码器上实测，每步异步检查点引入最高 +656.7% 时延开销、占用 32.5 GiB 主机内存、产生 3.39 TB/小时的存储流量。</p>
+<p><strong>方法</strong> 提出 AccelPact：分片分布式训练的零 I/O 内存容错运行时。通信故障发生时设备内存仍完好，只是 PyTorch FSDP 等框架跨模块包装与参数层级缓存的通信句柄失效；AccelPact 用带外 Gloo 共识协议协调的非侵入式「引用重绑定」解决依赖失效，直接作用于原生 communicator，零应用代码修改、不触发 torch.compile 图断裂。</p>
+<p><strong>关键数字</strong> 16 块 NVIDIA RTX 5880 GPU 全参训练 Mistral-7B：免检查点重放，整轮 goodput 较冷重启提升 1.197 倍、较 NVRx 检查点恢复提升 1.194 倍（检查点年龄 5），年龄 18 时升至 1.698 倍；连续 10 次故障注入后 16 个 rank 全部保持逐位一致、零数值漂移；4–16 GPU 拓扑下引用重绑定恒定时间 0.493–0.518 ms。</p>
+<p><strong>为什么值得看</strong> 把「检查点容错」换成「句柄重绑定」的思路干净且实测扎实，对任何跑大规模训练的基建团队都是能直接省钱的方案。</p>
+<p><a href="https://arxiv.org/abs/2609.18178v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.18178v1">阅读原文 ↗</a></p>
 </body>
 </html>
