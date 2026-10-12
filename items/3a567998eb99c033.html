@@ -22,9 +22,11 @@
 <h1>Calibrated RF-Fingerprinting Under Interference With Heterogeneous Transmission Protocols</h1>
 <p class="meta-line">arXiv（Tariq Abdul-Quddoos 等，cs.LG） · 2026-09-17 · 论文PDF</p>
 
-<p>Radio Frequency(RF)-Fingerprinting is a spectrum monitoring technique that identifies specific transmitters based on hardware impairments imprinted within the emitted signal.</p>
-<blockquote><p>Radio Frequency(RF)-Fingerprinting is a spectrum monitoring technique that identifies specific transmitters based on hardware impairments imprinted within the emitted signal. Although widely researched, studies almost exclusively consider scenarios where only one transmitter is emitting at a time, limiting real world applicability. In this work, we further the study of RF-Fingerprinting by considering co-channel interference, with multiple emitted signals interfering with each other, overlapping in time and frequency. Specifically, we formulate this problem as a multi-label classification problem and employ a 1D convolutional neural network (CNN). Furthermore, the models are calibrated such that the confidence thresholds for the label probabilities are derived, with guarantees on the upper bound on the average number of False Negatives, providing a degree of confidence in not missing a true spectrum policy violation. The proposed method is validated using real world data from the POWDER 5G testbed on devices transmitting 802.11a(Wi-Fi), 4G LTE, and 5G NR waveforms. The results show accuracy as high as 97% and as low as 73% after calibration depending on channel conditions. Also cal…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：RF指纹（按硬件缺陷识别发射机）研究几乎都假设同一时刻只有一个发射机，真实场景中同频多信号互相干扰时识别如何做。</p>
+<p><strong>方法</strong>：把干扰下的识别建模为多标签分类，用1D CNN处理时频重叠信号；并对模型做校准，导出标签概率的置信阈值，为「平均漏报数上界」提供保证，降低漏掉真实频谱违规的风险。</p>
+<p><strong>关键数字</strong>：在POWDER 5G测试台真实数据（802.11a/4G LTE/5G NR）上，校准后准确率视信道条件在73%~97%之间；微召回约等于（1-校准漏报上界），且校准对分布外干扰稳健。</p>
+<p><strong>为什么值得看</strong>：把RF指纹从理想单发射机设定推向高冲突真实无线环境，并给出可量化的漏报保证。</p>
+<p><a href="https://arxiv.org/abs/2609.20765v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20765v1">阅读原文 ↗</a></p>
 </body>
 </html>

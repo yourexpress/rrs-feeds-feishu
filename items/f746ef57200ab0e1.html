@@ -22,9 +22,11 @@
 <h1>CoRe: Coherence and Relational Alignment for Multivariate Time Series Forecasting</h1>
 <p class="meta-line">arXiv（Xiaoyu Lin 等，cs.LG） · 2026-09-17 · 论文PDF</p>
 
-<p>CoRe：多变量时序直接预测中的时间一致性与变量关系对齐目标。</p>
-<blockquote><p>Direct forecasting has become a standard paradigm for multivariate time-series forecasting because it predicts the full future horizon in a single pass. However, its training objective is often still decomposed into pointwise errors such as MSE. Such objectives provide stable supervision, but they do not explicitly preserve the structure of the future trajectory: temporal coherence within each variable and relational consistency across variables can both be weakened. We propose CoRe, a model-agnostic learning objective for direct multivariate forecasting. CoRe replaces pointwise supervision with two output-space constraints: a frequency coherence loss that aligns predicted and target spectra, and a low-rank relational graph loss that matches sampled pairwise differences in a target-derived PCA subspace. The resulting objective introduces no trainable parameters and can be applied to existing forecasting backbones by changing only the loss. Experiments on standard benchmarks show that CoRe improves strong baselines, compares favorably with recent forecasting objectives, and remains effective across different backbones, datasets, and hyperparameter settings overall consistently.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：多元时序直接预测虽一次输出全 horizon，但训练目标常是逐点MSE，无法显式保持未来轨迹的结构——变量内的时间连贯性与变量间的关系一致性都会被削弱。</p>
+<p><strong>方法</strong>：提出模型无关的学习目标CoRe，用两个输出空间约束替代逐点监督：频率连贯损失对齐预测与目标的频谱；低秩关系图损失在目标PCA子空间中匹配采样的成对差分。不引入任何可训练参数，改损失即可用于现有骨干。</p>
+<p><strong>关键数字</strong>：摘要未列具体数值，结论为在标准基准上提升强基线、优于近年预测目标，并跨骨干、数据集、超参总体稳定有效。</p>
+<p><strong>为什么值得看</strong>：零参数、即插即用的损失改造，直接补齐直接预测范式在轨迹结构上的短板。</p>
+<p><a href="https://arxiv.org/abs/2609.19670v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19670v1">阅读原文 ↗</a></p>
 </body>
 </html>

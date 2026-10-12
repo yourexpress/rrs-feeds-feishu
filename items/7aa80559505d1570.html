@@ -22,9 +22,11 @@
 <h1>CliniCIRCA: A Modular LLM Framework for Constructing Longitudinal Mental Health Patient Journeys from Raw EHR Narratives</h1>
 <p class="meta-line">arXiv（Aiwei Ivy Zhang 等，cs.CL） · 2026-09-17 · 论文PDF</p>
 
-<p>CliniCIRCA：从原始 EHR 叙事构建纵向精神健康患者历程的模块化 LLM 框架。</p>
-<blockquote><p>In mental health care, reasoning over patient journeys is a key task for clinicians. Yet these journeys, encompassing a longitudinal progression of biological, psychological, and social events, are often spread across disparate unstructured text narratives, making temporal recovery challenging. We present CliniCIRCA, a multi-stage LLM framework for Calendar-anchored, Imprecision-aware Reconstruction of Clinical Annals. To our knowledge, CliniCIRCA is the first to temporally classify clinical events across unstructured discharge summaries without event-level timestamps. From 14,882 MIMIC-III mental health admissions, we first construct a benchmark of 52 discharge summaries on which CliniCIRCA produces 15,891 temporally tagged events. After correcting 629 errors based on a clinician-in-the-loop evaluation, we produce verified gold-standard labels. Finally, the corrected timelines drive a temporally grounded summarization stage that compresses each source 1.52 times into a date-grouped chronological record. We then scale the framework to generate 1,000 silver-standard timelines and evaluate them as training data. Compared with zero- and few-shot prompting, instruction tuning generally…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：精神卫生临床中，患者纵向病程散落在非结构化出院小结里，缺乏事件级时间戳，时间线恢复困难。</p>
+<p><strong>方法</strong>：提出CliniCIRCA多阶段LLM框架：先对临床事件做时间分类（据称是首个在无事件时间戳的出院小结上做到这点的框架），经临床医生在环校正形成金标准，再驱动时间锚定的分日期时序摘要；并规模化生成银标准时间线用于指令微调。</p>
+<p><strong>关键数字</strong>：从14,882例MIMIC-III精神科入院中构建52份小结基准，产出15,891个时间标注事件，医生校正629处错误；摘要阶段把原文压缩1.52倍；另生成1,000条银标准时间线，微调普遍提升五个开源模型。</p>
+<p><strong>为什么值得看</strong>：把「病程时间线重建」做成了可评测、可微调的任务管线，对临床NLP落地有示范意义。</p>
+<p><a href="https://arxiv.org/abs/2609.19585v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19585v1">阅读原文 ↗</a></p>
 </body>
 </html>

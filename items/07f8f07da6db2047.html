@@ -22,9 +22,11 @@
 <h1>AURA: Adaptive Uncertainty-Routed Analysis for Email Threat Detection</h1>
 <p class="meta-line">arXiv（Omran Berjawi 等，cs.LG） · 2026-09-17 · 论文PDF</p>
 
-<p>AURA：不确定度路由的自适应邮件威胁检测。</p>
-<blockquote><p>Email spam and phishing attacks remain a critical security threat. Adversaries increasingly exploit large language models to craft contextually convincing malicious messages, and existing spam detection systems often struggle to keep pace. Generalization across diverse and evolving attack scenarios is limited, which reduces effectiveness once these systems are deployed in practice. This paper introduces Adaptive Uncertainty-Routed Analysis (AURA), a multimodal email threat detection system that analyzes both the content of an email and its embedded URLs. AURA is built around two layers: the first quantifies prediction uncertainty from a URL classifier, and only ambiguous messages are escalated to a fine-tuned transformer encoder for semantic analysis. The system is evaluated on eight heterogeneous training corpora together with two held-out real-world corpora spanning a decade of adversarial campaigns. AURA reaches a macro F1-score of 0.9858 in-distribution, and on NazPhish-Eval and GuenterTrap-Eval it maintains 0.9502 and 0.9436, respectively, which is evidence of robust generalization under genuine distribution shift.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：攻击者越来越多地用LLM生成上下文可信的垃圾邮件与钓鱼邮件，现有检测系统跨场景泛化能力不足，部署后效果打折。</p>
+<p><strong>方法</strong>：提出AURA多模态邮件威胁检测系统，同时分析邮件正文与内嵌URL；第一层量化URL分类器的预测不确定性，只有模棱两可的邮件才升级到微调Transformer编码器做语义分析，兼顾成本与精度。</p>
+<p><strong>关键数字</strong>：分布内宏F1达0.9858；在两个跨越十年真实攻击活动的留出语料NazPhish-Eval与GuenterTrap-Eval上分别保持0.9502与0.9436。</p>
+<p><strong>为什么值得看</strong>：不确定性路由的两层设计在真实分布偏移下仍稳健，对实际部署的反钓鱼系统有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.19873v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19873v1">阅读原文 ↗</a></p>
 </body>
 </html>

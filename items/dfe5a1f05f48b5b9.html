@@ -22,9 +22,11 @@
 <h1>An Approximate Queueing Model of LLM Inference Serving for SLO-Driven Autoscaling</h1>
 <p class="meta-line">arXiv（Vishakha Ramani 等，cs.PF） · 2026-09-17 · 论文PDF</p>
 
-<p>用可解析的近似排队模型预测 LLM 服务 TTFT/ITL，支撑 SLO 驱动的自动扩缩与推理优化</p>
-<blockquote><p>Performance models of LLM servers support both latency evaluation and the design of controllers for autoscaling against service level objectives (SLOs) and for inference optimization. We model the multiplexed execution of prefill and decode operations with a tractable, approximate queueing model under Markovian assumptions. Three parameters characterize a model-accelerator pair, namely a baseline per-iteration overhead, a per-token compute cost, and a per-token key-value (KV) cache access cost. The model combines a mean-value analysis of per-iteration work with a state-dependent Markov chain for batch occupancy to predict mean time to first token (TTFT) and inter-token latency (ITL). We validate these predictions against measurements and show that the three parameters can be estimated from observed latencies. Over a grid of input and output lengths and arrival rates spanning light to moderate load, the relative error of the average ITL is about 5% for Llama-3.1-8B and 8% for Qwen2.5-14B running on an H100 GPU, and the corresponding TTFT errors are 14% and 16%. We then implement an autoscaling controller that uses the model to adjust inference-server replica counts as the workload c…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM推理服务需要可解析的性能模型来支撑时延评估与面向SLO的自动扩缩容控制。</p>
+<p><strong>方法</strong>：在马尔可夫假设下建立近似排队模型，刻画prefill与decode的复用执行：仅用每迭代基线开销、每token计算代价、每token KV缓存访问代价三个参数描述「模型-加速器」组合，结合均值分析与批占用马尔可夫链预测TTFT与ITL，参数可由实测时延反推。</p>
+<p><strong>关键数字</strong>：H100上Llama-3.1-8B平均ITL相对误差约5%、Qwen2.5-14B约8%，TTFT误差14%/16%；H100集群上跟踪4倍负载爬坡时127个控制周期仅失误7个，对照方法128周期失误27个。</p>
+<p><strong>为什么值得看</strong>：三参数模型即可驱动实用的SLO自动扩缩，工程落地门槛低。</p>
+<p><a href="http://arxiv.org/abs/2609.20957">阅读原文</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2609.20957">阅读原文 ↗</a></p>
 </body>
 </html>

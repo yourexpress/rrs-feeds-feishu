@@ -22,9 +22,11 @@
 <h1>Accelerating Visual Policy Learning with Sampling-Based Model Predictive Control</h1>
 <p class="meta-line">arXiv（Yilang Liu 等，cs.RO） · 2026-09-17 · 论文PDF</p>
 
-<p>SGPS：采样式 MPC 引导视觉策略学习，兼顾训练计算/显存开销与接触模式收敛。</p>
-<blockquote><p>Learning visual policies for locomotion and manipulation requires coordinating contact with the environment and can incur substantial computation and GPU memory costs. First-order policy gradients (FoPG) reduce training cost through differentiable simulation, but local optimization can converge to unintended contact patterns. To address this shortfall, we propose Sampling-Guided Policy Search (SGPS), which couples recurring action-target refinement by sampling-based model-predictive control with first-order policy optimization. Behavior cloning initializes the policy from sampled actions; training then alternates sampling-based refinement with short-horizon FoPG updates under perturbed initial states and randomized dynamics. For visual policy training, we use a decoupled FoPG formulation that excludes rendering from the computation graph, enabling direct learning from depth observations without a state-policy teacher. On a single GPU, SGPS learns policies for locomotion, obstacle traversal, crate pushing, and bimanual carrying on simulated Unitree Go2 and G1 robots. Our experiments further show that refinement improves policy learning beyond initialization and tracking alone. For h…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：视觉策略学习需要协调与环境的接触，一阶策略梯度（FoPG）虽借可微仿真降低训练成本，但局部优化容易收敛到非预期的接触模式。</p>
+<p><strong>方法</strong>：提出SGPS（采样引导策略搜索）：行为克隆用采样动作初始化策略，之后交替进行采样式模型预测控制的动作精修与短视野FoPG更新；视觉训练采用解耦FoPG，把渲染排除在计算图外，直接从深度图学习。</p>
+<p><strong>关键数字</strong>：单GPU即可在Unitree Go2与G1上学会行走、越障、推箱、双臂搬运；蒸馏策略零样本迁移到真实Go2，用机载深度自主完成小跑、爬行、跨栏及行为切换。</p>
+<p><strong>为什么值得看</strong>：把MPC的采样精修与一阶策略优化结合，兼顾训练成本与接触丰富的策略质量，且真机零样本可用。</p>
+<p><a href="https://arxiv.org/abs/2609.20575v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20575v1">阅读原文 ↗</a></p>
 </body>
 </html>

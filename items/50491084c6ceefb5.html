@@ -22,9 +22,11 @@
 <h1>ALIBI: Adversarial Legitimacy Injection in Binary Input against LLM Malware Analyzers</h1>
 <p class="meta-line">arXiv（Hyeongjun Choi 等，cs.CR） · 2026-09-17 · 论文PDF</p>
 
-<p>Large language models are being integrated into malware triage workflows as reasoning components that summarize static evidence and produce analyst-facing verdicts.</p>
-<blockquote><p>Large language models are being integrated into malware triage workflows as reasoning components that summarize static evidence and produce analyst-facing verdicts. This paper shows that the same reasoning capability introduces a new attack surface. We present ALIBI, a semantic cover story attack against frontier LLM-based malware analyzers. ALIBI adds a small, non-executed read-only section to a compiled binary, containing a coherent but false security product narrative, without altering imports or executable behavior. Instead of issuing direct instructions to the model, it reframes suspicious evidence as expected behavior of a benign endpoint security tool. On a frozen PE set of 50 malicious samples, the payload flips 30 of the 35 baseline-malicious samples to benign on Gemini 2.5 Pro, while GPT-5.5 Pro and Claude Opus 4.7 produce substantial severity downgrades with significant confidence reductions even when verdict labels are preserved. The attack transfers to ELF binaries, where Gemini flips 16 of 40. A verification-guided defense prompt roughly halves the benign verdicts, but 42.9 percent of malicious samples still reach benign. LLM malware analyzers therefore require proven…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM被集成进恶意软件分析流程后，其推理能力本身会不会成为新的攻击面。</p>
+<p><strong>方法</strong>：提出ALIBI「语义掩护故事」攻击：在编译好的二进制中附加一个不被执行的只读段，写入连贯但虚假的安全产品叙述，不改导入表与可执行行为，把可疑证据重新包装成良性端点安全软件的正常行为。</p>
+<p><strong>关键数字</strong>：50个恶意PE样本中，35个基线判恶样本有30个被Gemini 2.5 Pro翻成良性；GPT-5.5 Pro与Claude Opus 4.7也显著下调严重度；ELF上Gemini翻案16/40；验证引导防御提示仍漏过42.9%。</p>
+<p><strong>为什么值得看</strong>：直指LLM安全分析的命门——必须把「已验证事实」与「攻击者可控叙述」分开，而非信任叙事。</p>
+<p><a href="https://arxiv.org/abs/2609.19722v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19722v1">阅读原文 ↗</a></p>
 </body>
 </html>

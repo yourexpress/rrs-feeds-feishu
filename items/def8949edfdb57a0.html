@@ -22,9 +22,11 @@
 <h1>Accelerating Sharded Data Parallelism at Scale with Federated Learning</h1>
 <p class="meta-line">arXiv（Gianluca Mittone 等，cs.DC） · 2026-09-17 · 论文PDF</p>
 
-<p>The symbiotic scaling of artificial intelligence models and high-performance computing systems continually creates algorithmic challenges in their convergence.</p>
-<blockquote><p>The symbiotic scaling of artificial intelligence models and high-performance computing systems continually creates algorithmic challenges in their convergence. Foundation models (FMs) are a crucial example, requiring months-long training on thousands of cutting-edge GPUs. Sharded data parallelism (DP) is the dominant strategy to accelerate such computations by splitting data and models across multiple GPUs. However, it incurs prohibitive communication overhead when deployed at scale, particularly on multi-tier interconnects with heterogeneous performance. Inspired by the efficient communication principles of federated learning (FL), this work introduces two hybrid algorithms - FL+FSDP and FL+HSDP - interleaving sharded DP with FedAvg-style aggregations. Such approaches decouple large DP deployments into smaller, loosely-coupled federation groups, requiring minimal inter-group traffic while keeping the global batch size bounded by the groups' size. Formal analysis of communication costs and experimental validation prove their scalability and flexibility. A Llama3.1 8B pre-training on 512 A100 GPUs shows that, under identical hyperparameters, FL+FSDP and FL+HSDP achieve up to 8.04 fa…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：分片数据并行（FSDP/HSDP）在大规模、多层异构互连上通信开销过高，制约基础模型训练扩展。</p>
+<p><strong>方法</strong>：借鉴联邦学习的通信思路，提出FL+FSDP与FL+HSDP两个混合算法：把大DP部署解耦成若干松耦合联邦组，组间穿插FedAvg式聚合，组间流量最小化，同时全局batch被组规模约束住，并给出通信代价的形式化分析。</p>
+<p><strong>关键数字</strong>：Llama3.1 8B在512张A100上预训练，相同超参下数据处理速度最高提升8.04倍，评估困惑度降低4.48（相对基线）。</p>
+<p><strong>为什么值得看</strong>：通信降载与模型质量兼得，为千卡级训练的并行策略提供了一个简洁有效的新组合。</p>
+<p><a href="https://arxiv.org/abs/2609.20359v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20359v1">阅读原文 ↗</a></p>
 </body>
 </html>

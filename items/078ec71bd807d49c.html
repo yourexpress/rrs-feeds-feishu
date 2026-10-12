@@ -22,9 +22,11 @@
 <h1>Agile-WAM: An Agile Tactile World Action Model for Contact-Rich Robot Control</h1>
 <p class="meta-line">arXiv（Hanchu Zhou 等，cs.RO） · 2026-09-17 · 论文PDF</p>
 
-<p>触觉世界动作模型用于接触丰富的机器人控制，针对大骨干推理效率与部署灵活性做轻量化。</p>
-<blockquote><p>World Action Models (WAMs) advance beyond conventional visuomotor policies by jointly predicting future world states and robot actions, enabling the policy to learn physical dynamics that support effective control. However, recent tactile WAMs often rely on large-scale pretrained generative backbones to capture contact-rich physical dynamics, which limit their inference efficiency and flexible deployment. In this paper, we present \ABBR{}, an agile tactile World Action Model for contact-rich robot control. \ABBR{} encodes visual and tactile observations into a shared latent that serves as the source of a direct vision-tactile-to-action flow-matching process, which can jointly generate latent representations of action chunks and future visual/tactile latents. A key observation is that vision and tactile signals evolve at inherently different timescales: adjacent visual frames are often highly similar, whereas tactile signals can change abruptly upon contact. We therefore introduce multi-horizon multimodal prediction in \ABBR{}, which provides supervision for visual latent at a larger temporal offset while predicting the tactile latent in the next frame to capture fine-grained contac…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：触觉世界动作模型（WAM）多依赖大规模预训练生成骨干来捕捉接触动力学，推理效率低、部署不灵活。</p>
+<p><strong>方法</strong>：提出Agile-WAM：视觉与触觉观测编码进共享隐空间，直接做「视觉-触觉到动作」的流匹配，联合生成动作块与未来视触觉隐表示；针对视觉慢变、触觉突变的时标差异，引入多视野多模态预测——视觉隐变量在更大时间偏移上监督、触觉在下一帧预测。</p>
+<p><strong>关键数字</strong>：9个仿真+5个真实接触任务上，真实实验整体成功率相对提升29.4%，推理延迟仅11.9ms。</p>
+<p><strong>为什么值得看</strong>：证明多模态WAM可以用轻量架构实现，适合高频精密的机器人接触控制。</p>
+<p><a href="https://arxiv.org/abs/2609.20761v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20761v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Correct Now, Insufficient Later: Auditing Update Sufficiency in Context Compression</h1>
 <p class="meta-line">arXiv（Guangzhe Zhang 等，cs.LG） · 2026-09-17 · 论文PDF</p>
 
-<p>配对历史审计试点：上下文压缩记忆可能当前答对、却在后续更新后失效。</p>
-<blockquote><p>A memory can answer a current query correctly while discarding distinctions required by a later update. We investigate this failure with a paired-history audit: two histories have the same current answer, receive a shared future update, and require different subsequent answers. A pilot evaluates 24 history pairs across six synthetic mechanisms, 12 memory conditions, two repeats, and two model backends. A deterministic frontier selector obtains strict reveal accuracy of 96/96 on DeepSeek and 82/96 on GLM; a structured writer obtains 62 successes with one unresolved outcome and 56/96. The configured four-outcome joint contrast has finite-sample identification intervals of [0.521, 0.542] and [0.292, 0.313], not confidence intervals. A record-level audit distinguishes retained-state adequacy, response delivery, and answer-schema compliance without changing those original scores. It finds 26 and 25 well-formed but semantically wrong structured reveal memories, while all 14 GLM frontier reveal failures contain correct values in the wrong wrapper. Tombstone removal produces 16/16 exact replay failures in the targeted mechanism. Identifier renaming then exposes a separate flaw: original fr…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：记忆压缩可能当前答得对，却丢掉了未来更新所需的区分信息——如何系统审计这种「更新充分性」失效。</p>
+<p><strong>方法</strong>：设计成对历史审计：两段历史当前答案相同、接收同一未来更新、却要求不同的后续答案；在24对历史、6种合成机制、12种记忆条件、两种模型后端上做试点，并做记录级审计区分状态保持、应答与格式合规。</p>
+<p><strong>关键数字</strong>：确定性frontier选择器严格揭示准确率为DeepSeek 96/96、GLM 82/96；结构化写入器62次成功；发现26+25条格式良好但语义错误的记忆；移除tombstone造成16/16精确回放失败；标识符重命名后late-reference充分性从8/8跌至94/320。</p>
+<p><strong>为什么值得看</strong>：把「记忆对未来是否够用」变成可复现的审计方法学，直指上下文压缩的隐性风险。</p>
+<p><a href="https://arxiv.org/abs/2609.20045v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20045v1">阅读原文 ↗</a></p>
 </body>
 </html>

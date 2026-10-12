@@ -22,9 +22,11 @@
 <h1>A Kubernetes-Native Request Router for Quality-Aware Inference Serving in the Computing Continuum</h1>
 <p class="meta-line">arXiv（Ignjat Karanovic 等，cs.DC） · 2026-09-17 · 论文PDF</p>
 
-<p>We introduce Adaptive Score-based Routing Balancer (ASRB), a dynamic, score-based request routing mechanism for Kubernetes-based service deployments over the computing continuum.</p>
-<blockquote><p>We introduce Adaptive Score-based Routing Balancer (ASRB), a dynamic, score-based request routing mechanism for Kubernetes-based service deployments over the computing continuum. ASRB jointly considers infrastructure-level information, response time measurements, and application-level quality indicators, with a particular focus on serving Machine Learning (ML) workloads. For these workloads, ASRB balances requests over service instances deployed in the continuum, following service provider-defined policies encoded as weighted combinations of QoS criteria to flexibly address latency-accuracy trade-offs. To drive routing decisions and swiftly adapt to changes in the operating environment, ASRB monitors a range of runtime metrics across multiple system layers. To deal with the associated monitoring overhead, particularly important for large-scale deployments, it selectively and adaptively controls monitoring intensity without sacrificing on routing quality. ASRB is implemented without requiring any modifications to Kubernetes, making it straightforward to deploy and operate in existing cluster environments. Our testbed experiments demonstrate the versatility of ASRB: When tuned for la…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：在算力连续体（computing continuum）上 serving 机器学习推理时，如何同时考虑基础设施状态、响应时延与应用层质量指标做请求路由，且不给 Kubernetes 带来改造成本。</p>
+<p><strong>方法</strong>：提出ASRB（自适应评分路由均衡器），按服务商定义的QoS加权策略在服务实例间分配请求；监控多层运行时指标驱动决策，并自适应调节监控强度以控制开销；实现上无需修改Kubernetes。</p>
+<p><strong>关键数字</strong>：时延优先配置下平均响应时间比SOTA延迟导向路由至少低10ms；监控开销最多降低约70%；准确率优先配置下精度更高。</p>
+<p><strong>为什么值得看</strong>：为ML推理服务提供了可落地的延迟-准确率可控折中方案，且直接可部署在现有K8s集群上。</p>
+<p><a href="https://arxiv.org/abs/2609.20497v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20497v1">阅读原文 ↗</a></p>
 </body>
 </html>

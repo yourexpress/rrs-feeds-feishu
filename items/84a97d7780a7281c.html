@@ -22,9 +22,11 @@
 <h1>Conservation Buys Stability and Factoring Buys Counterfactuals in Physical World Models</h1>
 <p class="meta-line">arXiv（Yufeng Wang 等，cs.LG） · 2026-09-17 · 论文PDF</p>
 
-<p>物理世界模型中：守恒归纳偏置换长程稳定性，因式分解换反事实能力。</p>
-<blockquote><p>A learned simulator can reproduce its training conditions accurately yet fail in two distinct ways once those conditions change. Over long rollouts, small errors accumulate until the trajectory drifts away from physically plausible behavior; under an intervention on a physical parameter, the model may continue to follow the law seen during training rather than the intervened one. We show that these two failures require different structural remedies. Evolving a learned energy with a symplectic integrator preserves the geometry of the conservative dynamics and keeps rollouts bounded and physically meaningful for up to $100\times$ the training horizon, while equal-capacity predictors, an energy-regularized predictor, and a tuned neural ODE diverge. By contrast, encoding the physical coupling through an explicit linear factorization enables the model to follow a never-seen sign of that coupling, whereas an unrestricted parameterization remains locked to the training law. Crucially, the two mechanisms are separable: removing the structure responsible for long-horizon stability leaves counterfactual transfer intact, while removing the factorized coupling destroys counterfactual transfer …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：学习型物理模拟器在训练分布内准确，但长程rollout会漂移、物理参数被干预后又死守训练时的定律——这两种失败是否同源。</p>
+<p><strong>方法</strong>：对照实验表明两种失败需要不同的结构补救：用辛积分器演化学习到的能量可保持保守动力学几何；用显式线性分解编码物理耦合才能跟随未见过的耦合符号。通过逐项移除结构做双重解离验证，并在三体之外、需从像素推断状态的设定下依然成立。</p>
+<p><strong>关键数字</strong>：辛积分方案在长达100倍训练horizon内保持rollout有界且物理合理，等容量预测器、能量正则预测器与调优神经ODE均发散。</p>
+<p><strong>为什么值得看</strong>：给出清晰设计原则——长程稳定与变律泛化来自不同的结构承诺，可分别按需施加。</p>
+<p><a href="https://arxiv.org/abs/2609.19674v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19674v1">阅读原文 ↗</a></p>
 </body>
 </html>

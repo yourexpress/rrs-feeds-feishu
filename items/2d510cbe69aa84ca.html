@@ -22,9 +22,11 @@
 <h1>Cross-Architecture Foundation-Model Distillation for Edge Flood Segmentation</h1>
 <p class="meta-line">arXiv（Fabian Schmalstieg 等，cs.CV） · 2026-09-17 · 论文PDF</p>
 
-<p>Geospatial foundation models can provide strong flood-segmentation performance, but their size limits deployment on memory-constrained edge hardware.</p>
-<blockquote><p>Geospatial foundation models can provide strong flood-segmentation performance, but their size limits deployment on memory-constrained edge hardware. We distill a 300-million-parameter Prithvi-EO-2.0 teacher, fine-tuned on the 252 manually labeled Sen1Floods11 training scenes, into a 0.7-million-parameter EfficientViT-B0 student. The teacher supervises additional unlabeled Sentinel-2 imagery, allowing the student training set to grow without new manual annotations. At the matched budget of 252 scenes, teacher-supervised training is competitive with direct training and improves STURM-Flood performance across tested configurations; a geometry-matched control shows that label source alone does not explain the difference. Scaling the teacher-supervised pool to 2,500 scenes narrows the remaining student--teacher gap: the float student reaches 0.787 water intersection over union on the Sen1Floods11 test split against 0.822 for the teacher, matches the teacher on STURM-Flood under our evaluation protocol, and remains below it on WorldFloods-v2. After activation replacement and quantization-aware training, the student runs as a 1.5-megabyte 8-bit integer (INT8) TensorRT engine on a Jetson …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：地理空间基础模型的洪水分割效果好，但体量太大，难以部署到内存受限的边缘设备。</p>
+<p><strong>方法</strong>：把3亿参数的Prithvi-EO-2.0教师（在252景人工标注Sen1Floods11上微调）蒸馏进70万参数的EfficientViT-B0学生；教师监督额外无标注Sentinel-2影像，把训练集扩到2,500景而无需新人工标注；再做激活替换与量化感知训练。</p>
+<p><strong>关键数字</strong>：学生在Sen1Floods11测试集水体IoU 0.787（教师0.822）；最终以1.5MB INT8 TensorRT引擎在Jetson Xavier NX上运行，512×512图像GPU计算仅5.57ms、运行时显存约14MB；外部基准上固定MNDWI阈值与两模型相当。</p>
+<p><strong>为什么值得看</strong>：证明基础模型监督可把固定标注预算放大成更大训练集，产出真正可部署的边缘洪水分割模型。</p>
+<p><a href="https://arxiv.org/abs/2609.20441v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20441v1">阅读原文 ↗</a></p>
 </body>
 </html>

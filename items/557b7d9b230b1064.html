@@ -22,9 +22,11 @@
 <h1>D-Quant: Driftable Entropy Coding for KV Cache Quantization</h1>
 <p class="meta-line">arXiv（Yi Su 等，cs.CL） · 2026-09-17 · 论文PDF</p>
 
-<p>The KV cache has become a major bottleneck in deploying LLMs, as its memory footprint grows linearly with sequence length and batch size, imposing substantial pressure on both memory capacity and bandwidth.</p>
-<blockquote><p>The KV cache has become a major bottleneck in deploying LLMs, as its memory footprint grows linearly with sequence length and batch size, imposing substantial pressure on both memory capacity and bandwidth. Among various KV cache compression techniques, quantization is particularly attractive due to its effectiveness and ease of deployment. However, most existing methods rely on fixed-width quantization, where a $b$ bit representation is inherently limited to $2^b$ quantization levels. As the bit width decreases, the number of available levels shrinks exponentially, leading to severe information loss and rapid performance degradation. We further observe that fixed-width quantization fails to exploit the highly non-uniform distribution of KV cache. After rotation and normalization, KV values approximately follow a normal distribution, with most values concentrated near the center and only a small fraction appearing in the tails. Nevertheless, fixed-width coding allocates the same number of bits to frequent and rare symbols. Entropy coding naturally exploits such non-uniformity by assigning shorter codewords to frequent symbols and longer ones to rare symbols, substantially reducing …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：KV缓存随序列长度与batch线性增长，是LLM部署的显存与带宽瓶颈；定宽量化在低bit下量化层级指数减少，信息损失严重，而熵编码虽契合KV的非均匀分布，其变长输出又不适合高度并行的attention kernel。</p>
+<p><strong>方法</strong>：提出D-Quant：观察到旋转归一化后KV近似正态分布、集中于中心，用熵编码给高频符号短码字；再引入「drift」机制把每个token的熵编码表示转换成定长比特流，从而支持规则内存访问与attention kernel内的并行反量化。</p>
+<p><strong>关键数字</strong>：摘要未给出具体压缩率或精度数值。</p>
+<p><strong>为什么值得看</strong>：在「熵编码的率失真优势」与「kernel的定长访问需求」之间搭了一座桥，为低bit KV缓存量化提供了新思路。</p>
+<p><a href="https://arxiv.org/abs/2609.19880v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19880v1">阅读原文 ↗</a></p>
 </body>
 </html>
