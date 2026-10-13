@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deploying RDMA for Large-Scale Inference and Training Workloads</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Deploying RDMA for Large-Scale Inference and Training Workloads</h1>
+<p class="meta-line">arXiv · 2026-10-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：生产环境大规模训练/推理中，RDMA 为什么不能「只换 TCP」就用好？
+<strong>方法</strong>：总结字节跳动参数服务器系统部署 ByteExpress 的三条经验：跨应用与传输层的缓冲管理、连接/接收容量/在途数据的协同管理、传输层之上的恢复机制；系统组合 RDMA 感知分配器、零拷贝、QP 复用、接收信用流控、软件发送窗口与 RPC 辅助恢复。
+<strong>关键数字</strong>：推理取参数延迟均值降 35.7%、P99 降 43.7%，CPU 总用量降 10.69%；训练参数推送 P99 最高降 74.0%，运行时无 PFC 暂停。
+<strong>为什么值得看</strong>：罕见的一线生产 RDMA 部署复盘，三条经验对自建推理/训练集群的通信层设计直接可用。</p>
+<p><a href="https://arxiv.org/abs/2610.12815">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.12815">阅读原文 ↗</a></p>
+</body>
+</html>

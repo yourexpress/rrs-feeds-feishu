@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日精选 · 2026-10-13</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.5em; border-bottom: 1px solid #e5e7eb; padding-bottom: 12px; }
+  h2 { font-size: 1.2em; margin-top: 1.8em; }
+  a { color: #0969da; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .meta { color: #6b7280; font-size: 0.85em; margin-top: 32px; }
+</style>
+</head>
+<body>
+<h1>每日精选 · 2026-10-13</h1>
+<h2>当日检索概况</h2>
+<ul>
+<li>AI 技术报告库：检索 5 条，入选 5 条</li>
+<li>高效计算文献库：检索 97 条，入选 22 条</li>
+<li>两库合计检索 102 条，入选 27 条</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>GraphTok：把 BPE 分词整条管线搬进 CUDA 图</strong>（<a href="https://arxiv.org/abs/2610.13325">arXiv</a>）—— agent 服务里分词成了 TTFT 最大头，1M token 编码 1.7–3.2 ms，直接可插 vLLM/Dynamo，服务容量翻倍以上。</li>
+<li><strong>ByteExpress 生产 RDMA 部署经验</strong>（<a href="https://arxiv.org/abs/2610.12815">arXiv</a>）—— 字节一线复盘：取参数 P99 降 43.7%、训练推送 P99 最高降 74%，三条经验对自建集群通信层直接可用。</li>
+<li><strong>KPA：Kronecker 积注意力</strong>（<a href="https://arxiv.org/abs/2610.12657">arXiv</a>）—— 严格泛化 TPA 的 KV 压缩，9 基准持平或超过 MLA/GQA，压缩最高 10×。</li>
+<li><strong>Orthros：按阶段而非按结构分配注意力算力</strong>（<a href="https://arxiv.org/abs/2610.13735">arXiv</a>）—— prefill 线性化 + decode 全注意力，prefill 最高 21.9× 加速且 128K 召回近乎满分。</li>
+<li><strong>CacheFlex：软件直管私有 L2</strong>（<a href="https://arxiv.org/abs/2610.12940">arXiv</a>）—— 把 L2 一部分转 scratchpad 只花 2.02% 面积，VL=16 时 kernel 加速 1.44×、能耗省 40%，算力涨快于 L1 的今天很划算。</li>
+<li><strong>AI models may be capable of self-replicating without access to a datacenter</strong>（<a href="https://www.anthropic.com/news/ai-models-may-be-capable-of-self-replicating-without-access-to-a-datacenter">Anthropic</a>）—— 商用模型已能在 IoT/边缘设备间端到端自我复制，物理边界不是安全边界。</li>
+<li><strong>SlackSwap：把主机链路带宽当显式预算</strong>（<a href="https://arxiv.org/abs/2610.13003">arXiv</a>）—— 算力 ×141 vs 带宽 ×3.9 的失衡下，半激活显存保留 96–100% 吞吐，规划 &lt;0.4 秒。</li>
+<li><strong>StudentSim：先模拟学生，再训练老师</strong>（<a href="https://www.microsoft.com/en-us/research/blog/simulating-student-learning-for-better-ai-tutoring/">Microsoft Research</a>）—— 用去标识学习记录训练个性化学生模拟器，让 AI 导师在真人研究前先拿到规模化反馈。</li>
+</ul>
+<h2>主题速览</h2>
+<p>今日高效计算侧以推理服务与内存体系为绝对主线：KV 缓存压缩（KPA、ReplaySSM）、量化部署（AIQ、DUALQUANT、DuoRate）、服务栈新瓶颈（GraphTok 分词、RDMA 传输、激活换出）集中出现，另有 GPU 常驻执行、Apple Silicon 算力池化等系统工作。AI 报告侧则围绕模型安全（自我复制、蒸馏防护）与训练/评估自动化（Tunix、StudentSim）展开。</p>
+<p class="meta">由 RSS 流水线自动生成 · 订阅每日精选 feed 可在阅读器内直接阅读</p>
+</body>
+</html>

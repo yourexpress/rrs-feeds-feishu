@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DuoRate: Two-Rate Per-Expert Precision Allocation for Mixture-of-Experts Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DuoRate: Two-Rate Per-Expert Precision Allocation for Mixture-of-Experts Serving</h1>
+<p class="meta-line">arXiv · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：MoE 服务为专家精度「付两次钱」——常驻占用按所有可达专家计费、每步解码只读被选专家；现有每专家分配器只约束了前者，「存-读差距」怎么补？
+<strong>方法</strong>：DuoRate「一次存储、按负载读取」：离线存一层统一前缀可读权流并烘焙畸变张量；在线用自身 prefill 无标签剖析，在解码泛函下解拉格朗日率失真分配（路由频率在各专家决策中可证消去），每专家一个点积 + 一次二分。
+<strong>关键数字</strong>：BitsMoE 检查点存 2.54 bpw 读时 7.50 bpw；Qwen3-30B-A3B 上 2.3 bpw 读取超所有 2-bit 档基线 6.3~47.0 点；2.9 bpw 下 GSM8K 与 BF16 只差 0.25 点；分配本身值 0.07~0.11 bpw 读率。
+<strong>为什么值得看</strong>：把存储率与读取率拆开优化的视角很新，长解码 MoE 服务的量化部署可直接抄作业。</p>
+<p><a href="https://arxiv.org/abs/2610.13328">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.13328">阅读原文 ↗</a></p>
+</body>
+</html>

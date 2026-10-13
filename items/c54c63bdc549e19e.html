@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Hybrid and Hierarchical Ray Tracing Method for Efficient 3D Gaussian Rendering</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>A Hybrid and Hierarchical Ray Tracing Method for Efficient 3D Gaussian Rendering</h1>
+<p class="meta-line">arXiv · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：光追版 3D 高斯泼溅（3DGS）面临负载不均衡、相邻像素光线遍历冗余、高斯/三角形异构求交三大难题，如何高效光追 3DGS？
+<strong>方法</strong>：H2-Ray 三件套：负载均衡空间 BVH（LB-SBVH）把不均衡全局负载转为均衡局部遍历单元；光线簇路径复用（RCPR）让代理光线与邻光线共享遍历状态；统一求交引擎（UIE）用模式复用数据通路支持两类图元混合求交。
+<strong>关键数字</strong>：8 个场景上较 RaySplats 几何均值加速 3.77×、最高 9.26×（RTX A5000，RT Core 修改的周期精确模型 + CUDA 实测）；高斯/三角形两模式共享 40% 浮点单元。
+<strong>为什么值得看</strong>：3DGS 走光追路线后的体系结构级答案，三个技术点也可迁移到其它异构图元渲染。</p>
+<p><a href="https://arxiv.org/abs/2610.13498">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.13498">阅读原文 ↗</a></p>
+</body>
+</html>

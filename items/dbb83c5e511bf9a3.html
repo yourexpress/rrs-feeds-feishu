@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taking Tokenization off the Host for Agentic LLM Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Taking Tokenization off the Host for Agentic LLM Serving</h1>
+<p class="meta-line">arXiv · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：Agent 负载反复发送几乎不变的长上下文，前缀缓存跳过了 prefill，但每个请求仍要完整分词才能查缓存——分词这个「可忽略的 CPU 阶段」成了 TTFT 最大头，还限制一个前端能喂多少 GPU。
+<strong>方法</strong>：GraphTok 把从预分词、BPE 合并到 token-ID 组装的整条编码管线做成一个可重放的 CUDA 图；短输入回落 CPU 引擎；比特级复现 GPT-2/Llama 3/Qwen 2.5/DeepSeek-V3/Gemma 3 的参考 token ID，即插即用 vLLM 与 NVIDIA Dynamo。
+<strong>关键数字</strong>：100 万 GPT-2 token 编码 1.7~3.2 ms（含传输）；Llama 3 上比最强 CPU 分词器 gigatoken 快 4.7~6.0×；缓存前缀下 vLLM 平均 TTFT 降 2.1~2.4×；2 秒 P99 目标下单前端 518 请求/秒（121k token 流量），约为 gigatoken 的 1.75~2.5×。
+<strong>为什么值得看</strong>：盯住了 agent 时代服务栈里最反直觉的新瓶颈，工程完整性（位级一致、可插拔）是范本级。</p>
+<p><a href="https://arxiv.org/abs/2610.13325">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.13325">阅读原文 ↗</a></p>
+</body>
+</html>

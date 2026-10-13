@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ReplaySSM: Cache SSM Inputs, Not State</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ReplaySSM: Cache SSM Inputs, Not State</h1>
+<p class="meta-line">arXiv · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：状态空间模型（SSM）每步解码都要读写定长循环状态，状态 I/O 大而算术强度低，还让投机解码没有便宜的回滚、状态量化误差还会滚进后续更新，怎么办？
+<strong>方法</strong>：ReplaySSM 把循环展开，将状态表示为「检查点 + 近期 SSM 输入缓冲」：多数步不写状态（检查点周期性更新），投机回滚变成缓冲指针操作；输出计算与循环更新可用不同精度——低精度检查点供输出、高精度检查点供更新，量化误差不进后续状态。
+<strong>关键数字</strong>：在 vLLM 中实现（Mamba-2、Gated DeltaNet）；batch 256 下四个混合模型标准解码加速 1.20~1.47×；两个 120B 级模型上吞吐约为 vLLM 投机解码的 1.8×。
+<strong>为什么值得看</strong>：「缓存输入而非状态」与 KV 缓存思路异曲同工，对混合架构推理引擎的工程优化直接可抄。</p>
+<p><a href="https://arxiv.org/abs/2610.13778">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.13778">阅读原文 ↗</a></p>
+</body>
+</html>

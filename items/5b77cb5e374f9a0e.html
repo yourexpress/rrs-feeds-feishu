@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAST: Credit Alignment for Cross-Tokenizer On-Policy Distillation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CAST: Credit Alignment for Cross-Tokenizer On-Policy Distillation</h1>
+<p class="meta-line">arXiv · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：跨分词器在线蒸馏（OPD）里，解码文本对齐解决了块级对应，但「信用对齐」——块级信号如何分摊到学生 token、无教师对应处的 token 如何约束——仍未解。
+<strong>方法</strong>：CAST 用 shift-or-stay 框架一次解决两件事：对齐块内按预测不确定性与教师信号局部平滑度重分配 advantage（精确求解一个 KL 正则信用分配问题）；未对齐位置用 KL 惩罚把学生锚定在初始策略上。信用分配与块构造解耦，也适用于标点或定长块。
+<strong>关键数字</strong>：6 个数学/科学/代码基准上，Qwen3-8B→Mistral-7B 与 →Llama-3.1-8B 的跨分词器迁移平均超最强基线 2.45 与 1.32 点，共享分词器迁移（→Qwen3-1.7B）超 2.10 点。
+<strong>为什么值得看</strong>：把蒸馏里最容易被忽略的「无监督 token」处理成显式优化问题，跨分词器蒸馏做对细节的范本。</p>
+<p><a href="https://arxiv.org/abs/2610.13257">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.13257">阅读原文 ↗</a></p>
+</body>
+</html>

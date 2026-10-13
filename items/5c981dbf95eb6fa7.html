@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GPU-resident Execution for Timing-predictable Sensor Processing Systems</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>GPU-resident Execution for Timing-predictable Sensor Processing Systems</h1>
+<p class="meta-line">arXiv · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：闭环实时系统里 GPU 只做加速器、CPU 主机仍是每轮迭代的编排者——中断、调度与 CUDA API 开销让端到端延迟不可控，能否让 I/O 与执行全程驻留 GPU？
+<strong>方法</strong>：提出 GPU-resident Execution 执行模型：传感器输入直达 GPU 显存、触发 GPU 侧处理、到达 GPU 可见输出端点，全程无主机唤醒；在 NVIDIA Holoscan C++ 框架实现并提供参考组件。
+<strong>关键数字</strong>：1080p/60 Hz 工业级相机到显示应用上，光子到显示抖动从 4.83 ms 降到 0.66 ms（7.3×），软件处理抖动从 1.70 ms 降到 0.01 ms（170×）（对比 CPU 驱动的 GPU 显存 RDMA 基线）。
+<strong>为什么值得看</strong>：机器人/AR 等硬实时感知管线对「去主机化」需求强烈，这是 NVIDIA 官方框架背书的系统化答案。</p>
+<p><a href="https://arxiv.org/abs/2610.13809">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.13809">阅读原文 ↗</a></p>
+</body>
+</html>

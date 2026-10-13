@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Simplified Layout Algebra for GPU Kernels</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>A Simplified Layout Algebra for GPU Kernels</h1>
+<p class="meta-line">arXiv · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：NVIDIA CuTe 布局代数的组合、补、除、积等运算被至少六个交互的适用性条件守护，这种复杂度是领域固有的还是表示选择的产物？
+<strong>方法</strong>：给出一个「每个布局都标明输入输出所在空间（逻辑/物理/线程值）」的简化布局代数：逻辑与线程值空间要求双射，物理空间只要求无别名（广播须显式标记）；组合条件简化为「f 的值域恰为 g 的扁平坐标集」，并证明当复合可化简为布局时存在最粗形式。用 OCaml 实现、在 Rocq 中证明判定过程正确。
+<strong>关键数字</strong>：验证方式为在代数内重现 CuTe 的组合、补、除等运算，并据此重新推导 CuTe 的原子与使用模式（文中未给出运行时数据）。
+<strong>为什么值得看</strong>：对写 GPU kernel 的人是「把 CuTe 讲明白」的形式化教材，也示范了如何用类型化空间消除库 API 的隐式约束。</p>
+<p><a href="https://arxiv.org/abs/2610.13679">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.13679">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orthros: Phase-Aware Heterogeneous Attention for Efficient Transformers</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Orthros: Phase-Aware Heterogeneous Attention for Efficient Transformers</h1>
+<p class="meta-line">arXiv · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：线性/滑窗注意力降到线性复杂度后上下文召回退化，常需穿插全注意力层、长上下文的二次瓶颈仍在那——能不能按「阶段」而非按「结构」分配算力？
+<strong>方法</strong>：Orthros 注意力作为一个统一模块，在序列处理不同阶段动态切换计算模式：prefill 走线性复杂度、decode 走全注意力；在重 prefill、轻解码的长上下文场景渐近复杂度低于原生 Transformer，并支持从已有 Transformer 数据高效转换。
+<strong>关键数字</strong>：prefill 较 Transformer 最高 21.9× 端到端加速；128K 大海捞针近乎满分；真实上下文召回任务保持 Transformer 级表现。
+<strong>为什么值得看</strong>：点破了「结构分配」不如「阶段分配」这一范式转换，且给了从存量 Transformer 低成本迁移的路径。</p>
+<p><a href="https://arxiv.org/abs/2610.13735">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.13735">阅读原文 ↗</a></p>
+</body>
+</html>

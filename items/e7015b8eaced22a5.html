@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SnapShare: Isolation-Preserving Deduplication for Serverless Snapshots</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SnapShare: Isolation-Preserving Deduplication for Serverless Snapshots</h1>
+<p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
+
+<p>面向serverless快照的保持隔离性去重</p>
+<blockquote><p>The efficiency of serverless computing fundamentally depends on rapid function startup, a challenge increasingly addressed by restoring from virtual machine snapshots. However, because content deduplication techniques can open timing-channel attacks that leak sensitive tenant data, production platforms like AWS Lambda instead enforce strict, zero-sharing isolation between snapshots of different tenants. While secure, this isolation precludes the deduplication of common infrastructure components, wasting per-worker cache capacity and exacerbating cold-start latency through inefficient remote fetching. Our characterization reveals that non-sensitive, shareable infrastructure accounts for roughly 70% of a typical snapshot's contents and, on average, about 50% of its working set. We present SnapShare, a cluster-wide snapshot management system that co-designs storage and caching to exploit this commonality without compromising sensitive data isolation. SnapShare classifies a snapshot page as shareable only when its full content matches that of a page from a provider-approved source; any non-matching content is treated as isolated private content. Common infrastructure components are sel…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.13318">阅读原文 ↗</a></p>
+</body>
+</html>

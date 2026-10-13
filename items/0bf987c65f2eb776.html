@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CacheFlex: Direct Software-Managed Access to Higher-Level Cache for Scalable Vector Support</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CacheFlex: Direct Software-Managed Access to Higher-Level Cache for Scalable Vector Support</h1>
+<p class="meta-line">arXiv · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：向量/SIMD 通路越来越宽，但 L1 容量受流水线耦合与延迟约束难以扩大，私有 L2 有一个量级更大的容量却软件不可见，如何打通？
+<strong>方法</strong>：CacheFlex 做 ISA 与微架构协同设计：允许运行时把部分 L2 转成 scratchpad（SPM），软件显式控制 L2 内数据放置与生命周期；集成乱序流水线、跨域内存一致性与 OS 上下文切换支持；基于 Armv8-A SVE 在 gem5 原型化。
+<strong>关键数字</strong>：12 nm 后版图实现中相对 L2 仅 2.02% 面积开销；向量长 VL=16（2048-bit）时 kernel 级几何均值加速 1.44×、内存子系统能耗降 40%；整 Transformer 层最高 1.78× 加速、45% 能耗节省（BERT-Base, T=4096）。
+<strong>为什么值得看</strong>：向量宽度和算力涨得比 L1 快的今天，「软件可管 L2」是对 AI kernel 相当划算的一手，且随 VL 增大收益递增。</p>
+<p><a href="https://arxiv.org/abs/2610.12940">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.12940">阅读原文 ↗</a></p>
+</body>
+</html>

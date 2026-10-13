@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SlackSwap: Bandwidth-Aware Activation Swapping and Recomputation for Memory-Efficient DNN Training</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SlackSwap: Bandwidth-Aware Activation Swapping and Recomputation for Memory-Efficient DNN Training</h1>
+<p class="meta-line">arXiv · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：GPU 算力涨得远快于主机链路带宽（Titan X→H100 训练吞吐 ×141，主机链路仅 ×3.9），激活换出到主机的老办法已经失衡，A100 上链路只能藏住 11~38% 的激活，如何把主机链路当显式预算管起来？
+<strong>方法</strong>：SlackSwap 用单次剖析迭代，把前向链路时间预算分给「重计算最贵」的张量，剩余内存缺口用「最便宜」的张量重计算补上；FIFO 换出 + 最早截止期预取，无逐层同步屏障。
+<strong>关键数字</strong>：BERT-Large、GPT-2 XL、Llama-7B 类模型在 A100 上，保留无限显存吞吐的 96~100%，激活内存减半；较最优基线吞吐 1.10~1.11×；规划 &lt;0.4 秒，与 6600~14000 个候选的遗传搜索差距 0.5% 以内。
+<strong>为什么值得看</strong>：「换出 vs 重算」的经典权衡如今被带宽预算严格约束，这个显式建模 + 快速求解的方案可直接改进 vDNN 系一系工作。</p>
+<p><a href="https://arxiv.org/abs/2610.13003">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.13003">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -22,9 +22,11 @@
 <h1>DeliveryGym: An RL Environment for Long-Horizon Embodied Agent Planning with Adaptive Curriculum</h1>
 <p class="meta-line">arXiv（Haoqiang Kang 等，cs.LG） · 2026-09-17 · 论文PDF</p>
 
-<p>DeliveryGym：带自适应课程的长程具身智能体规划 RL 环境。</p>
-<blockquote><p>Executable environments enable LLM agents to learn from the consequences of their actions. For embodied agents, those consequences extend beyond whether the current task succeeds: completing a delivery can consume the time, energy, or money needed for later work. Learning to plan therefore requires environments that preserve these dependencies and turn them into feedback across a complete trajectory. We introduce DeliveryGym, a 3D environment for evaluating and training agents on continuous courier shifts. It couples multimodal tool interaction with persistent world dynamics and computes trajectory rewards from simulator events, making the costs of an agent's decisions available for reinforcement learning (RL). The environment also adapts future training shifts to the policy's observed weaknesses while keeping evaluation fixed. Across six models and 13 city maps, evaluation exposes a gap between reliably executing assigned deliveries and choosing and sequencing work over a shift. On the fixed test suite, RL improves Qwen3-VL-4B's net income by 54.3%, showing that learning from complete shifts improves performance under these coupled constraints. Adapting the training environment im…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：具身智能体要学会的不仅是「执行分配的任务」，更是整班次里「选什么活、按什么顺序做」——完成一单会消耗后续需要的时间/能量/金钱，环境必须把这种跨轨迹依赖变成 RL 反馈。
+<strong>方法</strong>：DeliveryGym 是一个快递班次 3D 环境：多模态工具交互 + 持久世界动态，从模拟器事件计算轨迹奖励；训练班次还会按策略观察到的弱点自适应（评测固定不变）。
+<strong>关键数字</strong>：6 个模型、13 张城市地图评测暴露「可靠执行」与「班次级工作规划」的差距；固定测试集上 RL 把 Qwen3-VL-4B 净收入提高 54.3%；自适应环境在同等 rollout 预算下再为测试收入贡献 +16.5%。
+<strong>为什么值得看</strong>：长时程具身规划的环境设计里，「资源会跨任务消耗」与「课程自适应」两点做得干净，适合做具身 RL 的标准化试炼场。</p>
+<p><a href="https://arxiv.org/abs/2609.19801v1">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19801v1">阅读原文 ↗</a></p>
 </body>
 </html>

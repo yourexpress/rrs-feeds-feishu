@@ -22,9 +22,11 @@
 <h1>Detecting Soft Errors in Parallel Software with LLM-tuned Instruction Duplication</h1>
 <p class="meta-line">arXiv（Yafan Huang 等，cs.DC） · 2026-09-17 · 论文PDF</p>
 
-<p>We propose PaRID (PaRallel Instruction Duplication), a software-directed soft error detection framework that requires only compile-time effort for multithreading parallel programs.</p>
-<blockquote><p>We propose PaRID (PaRallel Instruction Duplication), a software-directed soft error detection framework that requires only compile-time effort for multithreading parallel programs. PaRID addresses two key challenges: supporting parallel programs with mixed serial and parallel regions and minimizing performance overhead without relying on costly dynamic profiling. It combines parallel-aware code transformation with LLM-tuned performance modeling, guided by eight generalizable findings from an offline characterization study, to enable fast soft error detection in parallel applications. Evaluation on NPB benchmarks shows that PaRID reduces protection overhead from 162.79% to 59.84% on average and achieves up to 5x speedup while maintaining full error detection effectiveness.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：多线程并行程序的软错误检测通常靠运行时冗余，开销大且要动态 profiling——能否只在编译期做指令复制就完成检测？
+<strong>方法</strong>：PaRID（PaRallel Instruction Duplication）= 并行感知的代码变换 + LLM 调优的性能建模，支撑混合串行/并行区域；离线特征研究提炼出八条可泛化发现指导变换，避免昂贵的动态剖析。
+<strong>关键数字</strong>：NPB 基准上保护开销平均从 162.79% 降到 59.84%，最高 5× 加速，同时保持完整检错能力。
+<strong>为什么值得看</strong>：「LLM 做性能建模指导编译变换」的少样本落地，对可靠性编译与 IR 优化两个方向都有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.19531v1">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19531v1">阅读原文 ↗</a></p>
 </body>
 </html>

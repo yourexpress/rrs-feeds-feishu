@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CompileMask: Bridging the Gap Between Expressiveness and Efficiency in Attention Masking</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CompileMask: Bridging the Gap Between Expressiveness and Efficiency in Attention Masking</h1>
+<p class="meta-line">arXiv · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：现代注意力需要依赖运行时元数据的多样掩码模式，而高效注意力核原生只支持少量模式；谓词法表达力强但开销大，区间法高效但表达受限，如何兼得？
+<strong>方法</strong>：CompileMask 离线阶段用编译器分析可见性规则并生成掩码专属预处理核（配套区域化 DSL MaskSpec）；在线阶段该核读取批次元数据，产出紧凑的「执行描述符」，注意力核只需比较元素下标与预计算端点即可判定可见性。
+<strong>关键数字</strong>：较最先进方法最高 3.8× 加速。
+<strong>为什么值得看</strong>：把「表达力」留在 DSL、把「效率」留给代码生成，编译期/运行期分界的思路适合所有自定义掩码场景（多文档、变长 agent 上下文等）。</p>
+<p><a href="https://arxiv.org/abs/2610.13474">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.13474">阅读原文 ↗</a></p>
+</body>
+</html>

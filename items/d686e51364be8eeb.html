@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S$^3$R: Fast and Faithful RL Rollouts via Self-Sparse Speculative Decoding</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>S$^3$R: Fast and Faithful RL Rollouts via Self-Sparse Speculative Decoding</h1>
+<p class="meta-line">arXiv · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：长上下文 RLVR 的瓶颈是 rollout 生成——注意力占解码核时间 72~76%；但稀疏注意力直接采样会改变策略优化用的响应组，即使逐响应精确重加权也无法恢复稠密策略的期望更新，怎么办？
+<strong>方法</strong>：S³R 用稀疏注意力起草 token，再经全注意力验证与精确投机采样生成响应；起草与验证共享同一策略参数，无需单独训练 drafter，响应组仍服从稠密策略分布；配 KV 感知调度器限制 KV 缓存的反复卸载/恢复。
+<strong>关键数字</strong>：Qwen3 长上下文数学推理上，端到端训练吞吐为自回归 rollout 的 1.39×/1.35×，任务性能相当；消融中激进稀疏直接采样训练不稳定而 S³R 稳定。
+<strong>为什么值得看</strong>：把投机解码从「服务加速」搬到「训练正确性」上，证明了稀疏 rollout 可以不破坏 on-policy 语义。</p>
+<p><a href="https://arxiv.org/abs/2610.13202">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.13202">阅读原文 ↗</a></p>
+</body>
+</html>

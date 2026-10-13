@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DualQuant: Dual-scale Calibration-free Weight-and-Activation Quantization for LLMs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DualQuant: Dual-scale Calibration-free Weight-and-Activation Quantization for LLMs</h1>
+<p class="meta-line">arXiv · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：原生 4-bit 硬件上要权重和激活同时低比特才有吞吐红利，但激活量化通常需要校准数据——能否免校准地做 W4A4？
+<strong>方法</strong>：DUALQUANT 直接最小化权重重建 MSE，其副产品天然给出按通道的激活重缩放；把问题表述为不可微的权重重建，用变量分裂 + 块坐标下降求解（子问题闭式更新），统一支持 MX 家族与 NVFP4 等块格式。
+<strong>关键数字</strong>：Llama/Qwen 在 WikiText-2、C4 与零样本任务上，多数模型与格式持平或超过基于校准的 SmoothQuant；RTX 4090 上 Llama-3.1-8B 真实打包 W4A4 推理较 BF16 内存最高降 2.61×、吞吐最高 2.46×。
+<strong>为什么值得看</strong>：据称是首个正式支持 MX 与 NV 块格式的双尺度免校准方法，落点正是当前推理芯片的主流格式。</p>
+<p><a href="https://arxiv.org/abs/2610.13767">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.13767">阅读原文 ↗</a></p>
+</body>
+</html>

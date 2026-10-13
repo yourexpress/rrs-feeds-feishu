@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Continually Post-training Small Models via Synthetic Self-distillation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Continually Post-training Small Models via Synthetic Self-distillation</h1>
+<p class="meta-line">arXiv · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：自蒸馏微调（SDFT）靠上下文示例做分布内重写，但小模型上下文学习与指令遵循能力弱，持续后训练在小模型上失效，怎么办？
+<strong>方法</strong>：先证明「学不会」与「遗忘」都和后训模型的分布偏移线性相关，凸显分布内学习的必要性；提出 SynthSelf：把分布内重写外包给同家族、略大的对齐器，配合离策略监督与拒绝采样，为小模型提供高质量监督而不破坏其原分布。
+<strong>关键数字</strong>：4 个习得数据集 + 14 个保持基准上，3 个小模型规模下一致超过 6 种方法（含离/在线蒸馏）。
+<strong>为什么值得看</strong>：端侧小模型持续升级是落地刚需，本文的「分布偏移线性相关」归因 + 最小外援改写方案很实用。</p>
+<p><a href="https://arxiv.org/abs/2610.13113">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.13113">阅读原文 ↗</a></p>
+</body>
+</html>

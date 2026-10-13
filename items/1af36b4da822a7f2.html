@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kronecker Product Attention: Memory-Efficient KV Compression via Structured Factorization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Kronecker Product Attention: Memory-Efficient KV Compression via Structured Factorization</h1>
+<p class="meta-line">arXiv · 2026-10-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：KV 缓存随序列长度线性膨胀，MQA/GQA/MLA/TPA 各有表达力或位置编码的代价，能否两全？
+<strong>方法</strong>：提出 Kronecker 积注意力（KPA），把 key/value 表示为紧凑、随 token 变化的矩阵因子的 Kronecker 积之和；严格泛化 TPA（秩一向量外积是其退化情形），并设计匹配的结构化 RoPE 算子，免去 MLA 式解耦 RoPE 分支。
+<strong>关键数字</strong>：同训练条件下在 4 个模型规模、9 个下游基准上持平或超过 TPA/MHA/MQA/GQA/MLA，KV 缓存压缩最高 10×；头切分方式可设计期调节压缩-精度权衡。
+<strong>为什么值得看</strong>：把「结构化因子化」做到比 TPA 更一般的形式，是 KV 压缩架构演进里少见的严格泛化工作。</p>
+<p><a href="https://arxiv.org/abs/2610.12657">原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.12657">阅读原文 ↗</a></p>
+</body>
+</html>
