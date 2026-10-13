@@ -22,9 +22,11 @@
 <h1>LLVM Translation Validation Automated with Large Language Models and Lean</h1>
 <p class="meta-line">arXiv（Chunhao Liao 等，cs.PL） · 2026-09-17 · 论文PDF</p>
 
-<p>LLVM is the cornerstone of modern compilers, but its subtle intermediate representation (IR) semantics make transformations error-prone and necessitate formal verification.</p>
-<blockquote><p>LLVM is the cornerstone of modern compilers, but its subtle intermediate representation (IR) semantics make transformations error-prone and necessitate formal verification. Alive2, a state-of-the-art translation validator based on satisfiability modulo theories, has achieved substantial success in automating the validation of LLVM transformations. However, it still faces scalability limitations, does not support symbolic bitwidths, and offers only bounded guarantees for loops. In contrast, interactive theorem provers such as Lean can address these cases but require substantial proof engineering. In this paper, we present Trivet, a framework combining large language models (LLMs) and Lean for automated translation validation of LLVM transformations. Trivet generates structured proof scaffolds based on source and target functions, automatically discharges obligations amenable to deterministic reasoning, and delegates transformationspecific obligations to LLMs. It produces refinement proofs or counterexample-based refutations, with every successful verdict checked by the Lean kernel. On 148 LLVM transformations, Trivet verifies or refutes 147, leaving one invalid case unresolved. Succ…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLVM IR 语义微妙、变换易错；SMT 翻译验证器 Alive2 存在可扩展性限制、不支持符号位宽、对循环仅有有界保证。</p>
+<p><strong>方法</strong> Trivet 结合 LLM 与 Lean：按源/目标函数生成结构化证明脚手架，自动解除可确定性推理的义务，把变换特定义务交给 LLM；每个成功裁决都经 Lean 内核检查，失败则给出反例式反驳。</p>
+<p><strong>关键数字</strong> 148 个 LLVM 变换中验证或反驳 147 个（含 60 个无循环符号位宽、27 个受限循环类、10 个 Alive2 超时的复杂定宽用例）；脚手架比无脚手架基线多证成 26 例，平均证明时间降 75.9%、平均费用降 88%。</p>
+<p><strong>为什么值得看</strong> 「LLM 拟证明、Lean 内核把关」的编译器形式化验证范式代表，结果扎实。</p>
+<p><a href="https://arxiv.org/abs/2609.19583v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19583v1">阅读原文 ↗</a></p>
 </body>
 </html>

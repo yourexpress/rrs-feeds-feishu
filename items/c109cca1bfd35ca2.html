@@ -22,9 +22,11 @@
 <h1>Marginal utility, matrix factorization, and the Key-Value (KV) cache: a unified information-economic framework for sovereign geo-mining inference</h1>
 <p class="meta-line">arXiv（Caroline Gans Combe，cs.AI） · 2026-09-17 · 论文PDF</p>
 
-<p>This paper builds a theoretical bridge between the economic notion of marginal utility and two machine-learning constructs, matrix factorization and the Key--Value cache of transformer language models.</p>
-<blockquote><p>This paper builds a theoretical bridge between the economic notion of marginal utility and two machine-learning constructs, matrix factorization and the Key--Value cache of transformer language models. The singular value spectrum of a rating matrix is shown to be a diminishing marginal utility schedule for latent factors, the eigenvalue spectrum of the projected covariance operator to be the marginal utility schedule of a model's learned representation, and cache eviction and low-rank cache compression to be instances of constrained utility maximization under a memory budget. The three collapse into a single allocation rule: retain the top dimensions whose eigenvalue exceeds the shadow price of the binding constraint. The framework is applied to the automated extraction of structured information from geo-mining documents, where it motivates a multi-pass inference protocol, a layer-wise TIES model merging procedure, and a selection policy combining extraction quality, localization drift and energy, scalarized with a Conditional Value-at-Risk term on drift. Two empirical contributions are reported. An 11.2-million-parameter hierarchical classifier, trained in about five minutes on a …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 在经济学边际效用与机器学习构造（矩阵分解、Transformer KV cache）之间建立理论桥梁，统一刻画缓存淘汰与低秩压缩。</p>
+<p><strong>方法</strong> 把评分矩阵奇异值谱、投影协方差算子特征值谱分别解释为边际效用表，将缓存管理归约为一条分配规则：保留特征值超过约束影子价格的头部维度；应用于地质采矿文档结构化抽取，配套多遍推理、逐层 TIES 模型合并与含 CVaR 漂移项的选择策略。</p>
+<p><strong>关键数字</strong> 1120 万参数层级分类器单卡约 5 分钟训练，在 973 篇铀矿勘探语料测试集上 level-1 准确率 90.0%（专有模型人工审计为 92.0%），单卡延迟 2.62ms 对 API 约 2000ms；完整抽取基准仅为预估。</p>
+<p><strong>为什么值得看</strong> 信息经济学统一框架加地质抽取实证，跨学科色彩浓，值得带着批判眼光看。</p>
+<p><a href="https://arxiv.org/abs/2609.20068v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20068v1">阅读原文 ↗</a></p>
 </body>
 </html>

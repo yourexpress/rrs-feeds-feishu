@@ -22,9 +22,11 @@
 <h1>From "Who Is This User?" to "What Does This Purchase Mean?": A Deployed Pipeline for Semantic User Profiling at Bank Scale</h1>
 <p class="meta-line">arXiv（Ryota Mitsuhashi 等，cs.AI） · 2026-09-17 · 论文PDF</p>
 
-<p>银行级语义用户画像部署管线：按交易模式而非按用户推理，压缩 LLM 推理预算。</p>
-<blockquote><p>Per-user LLM inference on transaction histories binds the inference budget linearly to user count, which becomes prohibitive at applied scale. We re-cast attribute inference from per-user to per-transaction-pattern. The pipeline runs in three phases: Resolve abstracts item names with optional web grounding, Profile infers attributes for each frequent pattern, and Tag clusters free-text attributes into a queryable database. In Profile, a single LLM call per pattern emits predefined categorical labels, free-text attributes, and per-attribute prevalence estimates. Because inference runs over patterns rather than users, the budget grows with the pattern count rather than the user count. On the public Open e-commerce corpus, the database is statistically indistinguishable from an LLM that reads each user's raw history directly in AUC across the evaluated attributes, and the prevalence estimates carry discriminative signal between positive and negative users. The pipeline is deployed at a major Japanese bank profiling on the order of tens of millions of users, with close to a three-order-of-magnitude reduction in LLM inference targets versus a per-user pipeline. The code is publicly avai…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 按用户做 LLM 推理来推断交易属性，推理预算随用户数线性增长，银行级规模下不可承受。</p>
+<p><strong>方法</strong> 把属性推理从「按用户」重构为「按交易模式」：Resolve 解析商品名并可选联网佐证，Profile 对每个高频模式一次 LLM 调用输出类别标签、自由文本属性与流行度估计，Tag 将自由文本属性聚成可查询数据库。</p>
+<p><strong>关键数字</strong> 公开 Open e-commerce 语料上，该数据库与逐用户读原始历史的 LLM 在各属性 AUC 上统计不可区分；已部署于一家日本大型银行，覆盖数千万用户，LLM 推理目标较按用户方案减少近三个数量级。</p>
+<p><strong>为什么值得看</strong> 「对模式推理而非对用户推理」是压缩大规模画像推理预算的高价值工程范式，代码开源。</p>
+<p><a href="https://arxiv.org/abs/2609.19928v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19928v1">阅读原文 ↗</a></p>
 </body>
 </html>

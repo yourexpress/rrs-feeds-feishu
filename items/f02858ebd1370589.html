@@ -22,9 +22,11 @@
 <h1>How Often Does Your Program Fail?</h1>
 <p class="meta-line">arXiv（Arnab Ray 等，cs.PL） · 2026-09-17 · 论文PDF</p>
 
-<p>Software in production encounters inputs shaped by how it is used in practice.</p>
-<blockquote><p>Software in production encounters inputs shaped by how it is used in practice. We study distribution-aware reliability estimation: given a program, its operational input distribution, and a condition of interest, determine how often that condition holds and certify the result with a guaranteed error bound. Symbolic and statistical methods offer two ways to answer this question. Symbolic methods reason about entire regions of the input space and can certify rates exactly, but often struggle with complex arithmetic or loops. Statistical methods instead sample inputs and apply concentration bounds. They are broadly applicable, but can require many samples when failures are rare. We bring these approaches together in a framework that includes both as special cases. Each estimator has three components: a mass estimator, a per-leaf confidence bound, and a symbolic closure rule. We prove that any instantiation satisfying three invariants returns an interval containing the true rate with confidence 1-delta, regardless of when it stops. The certified error has two parts: a statistical term, reduced by sampling, and a structural term, reduced by symbolic closure. Pure sampling and pure symbo…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 分布感知可靠性估计：给定程序、实际运行输入分布与关注条件，计算该条件成立频率并给出带保证误差界的认证。</p>
+<p><strong>方法</strong> 统一框架把符号与统计方法都作为特例：每个估计器含质量估计器、逐叶置信界、符号闭包规则三组件；证明满足三条不变式即可以 1-δ 置信返回包含真实频率的区间，且与何时停止无关。</p>
+<p><strong>关键数字</strong> 摘要未给实验数值；认证误差分解为统计项（靠采样减小）与结构项（靠符号闭包减小），纯采样与纯符号执行各自只能减小其一。</p>
+<p><strong>为什么值得看</strong> 符号执行与统计采样在可靠性估计上的统一理论，还兼容稀有事件方差缩减，程序分析方向值得关注。</p>
+<p><a href="https://arxiv.org/abs/2609.20037v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20037v1">阅读原文 ↗</a></p>
 </body>
 </html>

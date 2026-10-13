@@ -22,9 +22,11 @@
 <h1>Don't Mask the Environment: Observation Supervision Changes How Agents Explore Under RL</h1>
 <p class="meta-line">arXiv（Juzheng Zhang 等，cs.LG） · 2026-09-17 · 论文PDF</p>
 
-<p>ActObs：SFT 阶段同时监督环境观测 token，改变智能体后续 RL 的探索方式。</p>
-<blockquote><p>Agent trajectories record what an agent does and what happens next. Yet standard supervised fine-tuning (SFT) applies loss only to agent-authored action tokens, using environment observations as context but not as prediction targets. We ask whether this convention provides the best initialization for subsequent reinforcement learning. We introduce ActObs, which also supervises the observation tokens already present in each trajectory. Although deployed agents never generate observations, learning to predict them encourages the policy to model action consequences without adding data, parameters, sequence tokens, or forward passes. The methods perform similarly after SFT but diverge after GRPO. On Qwen3-4B, GRPO from ActObs achieves higher pass@k at every evaluated sampling budget than its action-only counterpart on Terminal-Bench 2.0. On Qwen3-8B, it trades some pass@1 reliability for higher pass@k (+3.4 pp at pass@16) and solves more distinct tasks. The advantage extends to cross-domain code editing on aider-polyglot (+4.2 pp at pass@1 at 4B), whose tasks are unseen during SFT and RL. ActObs retains more entropy during RL while requiring less policy movement, leaving the final poli…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 标准 SFT 只对智能体动作 token 计损失，环境观测仅作上下文——这种惯例是后续 RL 的最佳初始化吗？</p>
+<p><strong>方法</strong> ActObs 在 SFT 阶段同时监督轨迹中已有的观测 token：部署时智能体虽不生成观测，但预测它们能促使策略建模动作后果，且不加数据、参数或前向开销。</p>
+<p><strong>关键数字</strong> Qwen3-4B 上 GRPO 从 ActObs 出发，在 Terminal-Bench 2.0 各采样预算下 pass@k 均优于仅动作监督；8B 上 pass@16 +3.4pp，aider-polyglot 跨域代码编辑 pass@1 +4.2pp。</p>
+<p><strong>为什么值得看</strong> 分析指出仅动作监督会让动作/观测梯度快速正交、环境预测退化到低于基座模型；联合监督保住熵、利于探索，是低成本的 agent 训练改进。</p>
+<p><a href="https://arxiv.org/abs/2609.20715v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20715v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>FedeRICo: Federated Region-Influenced Coupling for Traffic Flow Prediction</h1>
 <p class="meta-line">arXiv（Fermin Orozco 等，cs.AI） · 2026-09-17 · 论文PDF</p>
 
-<p>Urban traffic forecasting often relies on information distributed across stakeholders who may be unable to share raw data due to privacy or commercial constraints, motivating federated spatial-temporal approaches.</p>
-<blockquote><p>Urban traffic forecasting often relies on information distributed across stakeholders who may be unable to share raw data due to privacy or commercial constraints, motivating federated spatial-temporal approaches. In such federated settings, each client observes traffic over a distinct sensor subgraph with its own spatial topology and temporal dynamics, leading to significant heterogeneity across clients. Existing federated spatial-temporal methods typically rely on model parameter aggregation and provide limited mechanisms for recovering spatial dependencies across client boundaries. This introduces two key limitations. Specifically, parameter aggregation across heterogeneous graph domains tends to dilute client-specific representations, while road network partitioning breaks the propagation of traffic dynamics across client boundaries. To address these challenges, we propose FedeRICo, a federated traffic forecasting framework that combines gradient-level collaboration with boundary-aware residual communication. FedeRICo employs a dual-branch forecasting architecture in which a globally guided branch captures transferable forecasting structure, while a private residual branch pres…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 联邦交通预测中各客户端观测不同传感器子图：参数聚合稀释客户端特有表示，路网切分又切断跨边界的交通动态传播。</p>
+<p><strong>方法</strong> FedeRICo 双分支架构：全局引导分支经梯度对齐跨客户端协同优化、捕捉可迁移预测结构；私有残差分支保留客户端特有修正并纳入边界残差信号，边界消息用趋势-残差分解提取，仅在物理相邻客户端间传递瞬态时空残差。</p>
+<p><strong>关键数字</strong> 摘要未给具体数值，称在四个真实交通预测基准上一致优于最先进联邦时空基线，训练耗时保持有竞争力。</p>
+<p><strong>为什么值得看</strong> 梯度级协作加边界感知残差通信，是恢复联邦场景下跨客户端空间依赖的新思路。</p>
+<p><a href="https://arxiv.org/abs/2609.20026v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20026v1">阅读原文 ↗</a></p>
 </body>
 </html>

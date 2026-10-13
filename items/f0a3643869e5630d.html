@@ -22,9 +22,11 @@
 <h1>Intrinsic Sequence-Likelihood Confidence in Retrieval-Dominated Extractive QA: Two Pre-Specified Negatives, and What They Do and Do Not Attribute</h1>
 <p class="meta-line">arXiv（Gunwoo Lee 等，cs.CL） · 2026-09-17 · 论文PDF</p>
 
-<p>检索主导抽取式 QA 中序列似然置信度的两个预注册负结果及其归因边界。</p>
-<blockquote><p>In extractive document question answering whose questions were generated from the passages that contain their answers -- so that retrieval recovers 92-99.8% of what any mode combination could reach, whatever its absolute accuracy -- confidence-driven mechanisms have little to gain. Fine-tuning an open language model on a specialized domain corpus yields a model whose own confidence is a tempting control signal: it could decide which queries warrant further adaptation, and which answers to trust. We evaluate both uses under criteria fixed before the runs were executed, across four 7-9B model families whose adaptation moved closed-book F1 by at most +0.03, and both fail: a distillation trigger on all four families, under its pre-specified three-step transfer budget, and a routing-and-abstention policy in its single-model pilot. Retrieval alone recovers 92-99.8% of best-case combined accuracy under every correctness criterion we test, leaving routers no meaningful gain. The sequence-likelihood signal is insufficient relative to that mode -- area under the receiver operating characteristic curve 0.65-0.81 under the registered criterion -- before adaptation as well as after, unchanged b…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 检索主导的抽取式 QA（问题由含答案段落生成）中，序列似然置信度能否作为蒸馏触发与路由/弃权的有效控制信号？</p>
+<p><strong>方法</strong> 预注册标准下评估：四个 7-9B 模型家族，微调适配对闭卷 F1 提升最多 +0.03；分别检验蒸馏触发（三步迁移预算）与路由-弃权策略（单模型试点）。</p>
+<p><strong>关键数字</strong> 仅检索即可恢复 92%~99.8% 的最佳组合准确率；序列似然 ROC AUC 仅 0.65~0.81，标量重校准无改善；两项假设均按预注册标准失败。</p>
+<p><strong>为什么值得看</strong> 一份把失败归因讲透的预注册负结果：检索已近乎占满上限时，置信度机制无利可图，值得校准相关期望。</p>
+<p><a href="https://arxiv.org/abs/2609.19942v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19942v1">阅读原文 ↗</a></p>
 </body>
 </html>

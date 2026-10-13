@@ -22,9 +22,11 @@
 <h1>Online Adaptive Kernel Mixing for Gaussian Process Decision Making</h1>
 <p class="meta-line">arXiv（Kavin Aravindan 等，cs.LG） · 2026-09-17 · 论文PDF</p>
 
-<p>HACK GPs：在线自适应核混合，提升高斯过程序贯决策的鲁棒性。</p>
-<blockquote><p>Gaussian Processes (GPs) are widely used as surrogates for black-box functions in sequential decision-making problems such as Bayesian optimization (BO), level set estimation (LSE), and Bayesian active learning (BAL). GP performance critically depends on kernels, and standard kernels can lead to suboptimal decisions under misspecification. To address this, we introduce HACK GPs (Hedge Adaptive Cumulative Kernels), a method that views kernel selection as an online learning with expert advice problem. HACK treats each candidate kernel as a GP "expert" and updates a distribution over experts online using AdaHedge, based on a loss received as a proxy for their ability to fit the function and align with the task objective. We provide two variants of HACK: (i) Mixture of Gaussians (MoG) and (ii) categorical sampling. We establish general guarantees showing that, under a loss-gap condition, the weight concentrates on the best kernel and the resulting acquisition function is close to that of the best expert. Empirically, we observe robust performance across BO, LSE, and BAL compared to standard kernels such as Squared Exponential and Matern-5/2, as well as simple ensemble baselines.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 高斯过程在贝叶斯优化、水平集估计、主动学习等序贯决策中广泛用作黑盒代理，性能高度依赖核选择，核误设会导致次优决策。</p>
+<p><strong>方法</strong> HACK GPs 把核选择看作带专家建议的在线学习：每个候选核是一个 GP 专家，用 AdaHedge 按拟合与任务对齐的代理损失在线更新专家分布；提供高斯混合（MoG）与类别采样两个变体。</p>
+<p><strong>关键数字</strong> 摘要未给具体数值；理论上证明损失间隙条件下权重集中于最佳核、采集函数逼近最佳专家；实验在 BO / LSE / BAL 上较 SE、Matern-5/2 及简单集成基线表现稳健。</p>
+<p><strong>为什么值得看</strong> 在线学习与核选择结合的轻量方案，免调核又稳健，适合贝叶斯优化实践者。</p>
+<p><a href="https://arxiv.org/abs/2609.19891v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19891v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>NS3Learn: Transferring 5G NR Mode-2 Reception Realism from ns-3 to the Veins/SUMO Stack for Connected-Vehicle Safety Assessment</h1>
 <p class="meta-line">arXiv（Rasheed Bello 等，cs.NI） · 2026-09-17 · 论文PDF</p>
 
-<p>将 ns-3 的 5G NR Mode-2 接收真实度迁移至 Veins/SUMO，用于车联网安全评估。</p>
-<blockquote><p>Connected-vehicle safety evaluations rely on coupled traffic and network simulations, but standard channel models ignore radio resource competition in 5G NR sidelink Mode-2, reporting unrealistically high message delivery in dense traffic. This study introduces resource-competition losses without requiring full protocol reimplementation. We labeled 10.5 million reception outcomes from ns-3 5G-LENA traces (calibrated on 3GPP scenarios and driven by SUMO trajectories) to fit NS3Learn - a closed-form model capturing half-duplex loss, scheduling collisions, receiver capture, and decoding. Evaluation spanned two signalized urban networks, six penetration levels (1-100%), and five random seeds per condition. NS3Learn achieved a mean absolute deviation of 0.06 in per-instant delivery compared to ns-3 5G-LENA, outperforming alternative models (0.44 and 0.55 deviation). Fitted parameters transferred to a distinct intersection with only 20% additional error. Crucially, using realistic communication models reversed simulated traffic speed trends and more than doubled predicted hard-braking events. The framework transfers reception realism between simulators via model distillation instead of f…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 车联网安全评估依赖交通-网络耦合仿真，但标准信道模型忽略 5G NR sidelink Mode-2 的无线资源竞争，密集交通下消息投递率虚高。</p>
+<p><strong>方法</strong> 用 SUMO 轨迹驱动的 ns-3 5G-LENA 轨迹标注 1050 万次接收结果，拟合闭式模型 NS3Learn（刻画半双工损失、调度碰撞、接收捕获与解码），通过模型蒸馏把接收真实度从 ns-3 迁移到 Veins/SUMO，无需完整协议重实现。</p>
+<p><strong>关键数字</strong> 逐时刻投递率平均绝对偏差 0.06，优于对比模型的 0.44 与 0.55；拟合参数迁移到另一路口仅增加 20% 误差；采用真实通信模型后预测的急刹事件翻倍以上。</p>
+<p><strong>为什么值得看</strong> 通信真实度修正直接反转安全评估结论，对 V2X 仿真方法学是很好的参考。</p>
+<p><a href="https://arxiv.org/abs/2609.20578v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20578v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Enhanced Knowledge Distillation for Detection Transformer via Teacher Prediction Refinement</h1>
 <p class="meta-line">arXiv（Yitong Xing 等，cs.CV） · 2026-09-17 · 论文PDF</p>
 
-<p>Detection Transformers (DETRs) achieve strong performance in object detection but remain challenging to deploy on edge devices due to their high computational cost.</p>
-<blockquote><p>Detection Transformers (DETRs) achieve strong performance in object detection but remain challenging to deploy on edge devices due to their high computational cost. Existing DETR distillation methods mainly focus on aligning distillation points, while largely overlooking the quality of the teacher's supervision itself. We observe that due to stage-wise non-monotonic prediction behavior in DETRs, well-localized or correctly classified predictions from earlier stages may degrade in later ones, and some negative predictions become increasingly overconfident. As a result, relying solely on the current stage's predictions yields inaccurate and inconsistent supervision. To address this issue, we propose Teacher Prediction Refinement Distillation (TPRD), a plug-and-play module that refines teacher predictions before distillation by exploiting stage-wise prediction information. TPRD improves supervision quality through Positive Prediction Correction (PPC), which corrects degraded positive predictions by restoring more accurate ones from earlier stages, ensuring reliable localization and classification signals, and Negative Prediction Suppression (NPS) suppresses the influence of overconfid…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> DETR 检测性能强但计算成本高、难部署边缘；现有蒸馏主要对齐蒸馏点，忽略了教师监督本身的质量。</p>
+<p><strong>方法</strong> 提出即插即用模块 TPRD：PPC 从早阶段恢复退化的正预测，NPS 抑制过度自信的负预测，MDKP 选择性精修目标类 logits 同时保留暗知识。</p>
+<p><strong>关键数字</strong> 摘要未给具体数值，称在 MS COCO 与 PASCAL VOC 上的大量实验验证了有效性与鲁棒性；代码已开源。</p>
+<p><strong>为什么值得看</strong> 针对 DETR 逐阶段预测非单调这一真问题，从教师监督质量入手做蒸馏，思路对边缘端检测部署实用。</p>
+<p><a href="https://arxiv.org/abs/2609.19964v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19964v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Not All AI Agents Are Equal: Characterizing Resource and Performance Dynamics</h1>
 <p class="meta-line">arXiv（Wonmi Choi 等，cs.AI） · 2026-09-17 · 论文PDF</p>
 
-<p>LLM-based AI agents process user requests through iterative reasoning and tool execution, often involving the invocation of remote LLM APIs with local tool containers.</p>
-<blockquote><p>LLM-based AI agents process user requests through iterative reasoning and tool execution, often involving the invocation of remote LLM APIs with local tool containers. This execution model can make the optimization of agent serving difficult because latency, local resource demand, and container bottlenecks inter-mix across requests. However, the current agent ecosystem runs without much consideration of resource dynamics, which results in significant waste of the precious resources. This paper analyzes the resource inter-mix of AI agents for three representative tasks: retrieval-augmented question answering, web search, and software coding. To this end, we characterize the latency with respect to the resource dynamics of processing multiple requests and tasks concurrently. Our measurements show that agents have a wide range of behaviors depending on tasks, so that even the same tool can differ substantially in resource dynamics. We also find that running multiple requests concurrently exposes task-dependent bottlenecks in resource dynamics such as CPU, disk I/O, and memory. Furthermore, we uncover that faster LLM responses or more CPU cores do not always accelerate agents. Based on…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 智能体通过迭代推理与工具执行处理请求，延迟、本地资源需求与容器瓶颈跨请求交织，现有生态忽视资源动态、浪费严重。</p>
+<p><strong>方法</strong> 对检索增强问答、网页搜索、软件编码三类代表性任务刻画并发处理时的资源动态，发现任务相关的 CPU、磁盘 I/O、内存瓶颈，并据此设计 CPU 感知的工具准入与任务感知的 CPU 分配两种优化。</p>
+<p><strong>关键数字</strong> CPU 敏感型智能体任务延迟改善约 5.4 倍；跨任务平均延迟较原生智能体降低约 32%。</p>
+<p><strong>为什么值得看</strong> 「更快的 LLM 响应或更多 CPU 核未必让智能体更快」等反直觉发现，对 agent serving 与部署优化很实用。</p>
+<p><a href="https://arxiv.org/abs/2609.19947v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19947v1">阅读原文 ↗</a></p>
 </body>
 </html>

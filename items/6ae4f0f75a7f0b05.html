@@ -22,9 +22,11 @@
 <h1>FedeRage: Provably Convergent Agnostic Federated Learning under General Client Drift</h1>
 <p class="meta-line">arXiv（Herlock Rahimi 等，cs.LG/cs.DC） · 2026-09-17 · 论文PDF</p>
 
-<p>客户端参与概率未知且高度倾斜时仍可证明收敛的不可知联邦学习框架</p>
-<blockquote><p>Federated learning (FL) enables collaborative model training without sharing raw data, but its performance degrades under non-IID data and stochastic client participation. Remedies built on classical Federated Averaging (FedAvg) typically presuppose that client participation probabilities are known to the server, which is rarely the case in deployed systems. We first discuss and then characterize the optimization problem that \emph{distributionally agnostic} FedAvg actually solves when participation is entirely unknown, possibly highly skewed, and of variable size across rounds: uniform aggregation is shown to minimize a well-defined stochastic objective, weighted by the participation-induced marginal, at a standard $\mathcal{O}(1/\sqrt{T})$ rate for convex and possibly nonsmooth losses. Building on this characterization, we propose \emph{Federated Risk-Averse Averaging} (\textsc{FedeRage}), a risk-averse extension of FedAvg that embeds the \emph{Conditional Value-at-Risk} (CVaR) into the local objective within a natural distributionally robust optimization (DRO) framework. \textsc{FedeRage} implicitly upweights high-loss and infrequently participating clients while adding only a \…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> FedAvg 类改进通常假设服务器已知客户端参与概率，而真实部署中参与往往未知、高度倾斜且规模逐轮变化。</p>
+<p><strong>方法</strong> 先刻画分布不可知 FedAvg 实际求解的优化目标（均匀聚合最小化参与诱导加权的随机目标），再提出 FedeRage：在 DRO 框架下把 CVaR 嵌入本地目标，隐式上调高损失与低频参与客户端权重，每客户端仅增加一个标量。</p>
+<p><strong>关键数字</strong> 凸（可非光滑）损失下标准 O(1/√T) 收敛；FedeRage 为 O(κ/√T)，κ 为风险厌恶代价上界；三个异构基准上准确率、公平性、收敛速度一致提升。</p>
+<p><strong>为什么值得看</strong> 可证收敛且无需参与分布输入，对联邦学习理论与系统设计者都值得读。</p>
+<p><a href="http://arxiv.org/abs/2609.21057">阅读原文</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2609.21057">阅读原文 ↗</a></p>
 </body>
 </html>
