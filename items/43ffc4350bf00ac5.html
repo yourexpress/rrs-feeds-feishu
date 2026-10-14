@@ -22,9 +22,11 @@
 <h1>Truncated automatic sparse differentiation for machine learning interatomic potentials</h1>
 <p class="meta-line">arXiv（Marcel F. Langer 等，physics.chem-ph） · 2026-09-17 · 论文PDF</p>
 
-<p>Machine learning interatomic potentials (MLIPs) learn the mapping from atomic positions to potential energy.</p>
-<blockquote><p>Machine learning interatomic potentials (MLIPs) learn the mapping from atomic positions to potential energy. The forces, the negative gradient of this energy, drive molecular dynamics and are readily obtained using automatic differentiation. Higher-order derivatives, most notably the Hessian, describe collective motion and allow the direct prediction of experimental observables, but are considered computationally inaccessible for large systems. We suggest a solution: in physical systems, interactions decay with distance, and most MLIPs build on this locality through message passing up to a finite receptive field. This implies both sparsity of higher-order derivatives and their decay with distance. This structure can be exploited using automatic sparse differentiation (ASD). We explain how to compute the sparsity pattern for MLIP derivatives and demonstrate that, for multiple foundation MLIPs, ASD computes full Hessians of large porous materials exactly, but with modest speedups at best. The larger gains come from truncated ASD: discarding small, but nonzero, Hessian entries between distant atoms yields order-of-magnitude speedups with negligible impact on predicted observables.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：机器学习原子间势（MLIP）的 Hessian 等高阶导数能描述集体运动、直接预测实验可观测量，但大系统上被认为计算不可行。
+<strong>方法</strong>：利用物理相互作用的局域性——MLIP 经有限感受野的消息传递构造，高阶导数天然稀疏且随距离衰减；先推导 MLIP 导数的稀疏模式，用自动稀疏微分（ASD）精确计算，再以截断 ASD 丢弃远距原子间的小非零元素换取加速。
+<strong>关键数字</strong>：对多个基础 MLIP，ASD 可精确计算大型多孔材料的全 Hessian，但加速有限；截断 ASD 带来数量级加速，对可观测量预测影响可忽略。
+<strong>为什么值得看</strong>：直接缓解 MLIP 分子动力学中二阶导数计算的瓶颈，计算化学/材料方向值得关注。
+<a href="https://arxiv.org/abs/2609.20510v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20510v1">阅读原文 ↗</a></p>
 </body>
 </html>

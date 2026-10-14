@@ -22,9 +22,11 @@
 <h1>Zarya: A Hybrid Autoregressive--Masked Diffusion Language Model with Flexible Training and Dual-Mode Inference</h1>
 <p class="meta-line">arXiv（Leonid Sinev 等，cs.CL） · 2026-09-17 · 论文PDF</p>
 
-<p>Autoregressive language models (ARMs) are constrained by sequential, left-to-right generation, while masked diffusion models (MDMs) enable parallel decoding but suffer from high computational overhead due to the inability to reuse Key-Value (KV) cache and from incoherent generation arising from learning dependencies over an intractable space of token combinations.</p>
-<blockquote><p>Autoregressive language models (ARMs) are constrained by sequential, left-to-right generation, while masked diffusion models (MDMs) enable parallel decoding but suffer from high computational overhead due to the inability to reuse Key-Value (KV) cache and from incoherent generation arising from learning dependencies over an intractable space of token combinations. We introduce Zarya, a family of hybrid language models that jointly optimizes an autoregressive (AR) objective and a masked-diffusion objective within a single architecture. Zarya structures training data into variable-size slots and employs a curriculum that gradually increases slot granularity, enabling a smooth transition from fine-grained AR learning to coarse-grained diffusion learning. At inference, Zarya provides two distinct decoding paradigms through a unified interface: (i) MDM sampling with first-hitting denoising, and (ii) slotted speculative decoding that interleaves inter-slot diffusion-based selection with intra-slot autoregressive infilling, achieving full KV cache reuse. The training and inference regimes are fully decoupled, allowing a model trained with any configuration to be deployed in either mode. E…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：自回归语言模型受限于从左到右的串行生成；掩码扩散模型（MDM）能并行解码，但无法复用 KV 缓存、且因组合空间上的依赖学习导致生成不连贯。
+<strong>方法</strong>：Zarya 在单一架构内联合优化自回归目标与掩码扩散目标：训练数据组织为可变大小 slot，课程逐步增大 slot 粒度，从细粒度 AR 学习平滑过渡到粗粒度扩散学习；训练与推理完全解耦，推理提供 MDM 首达去噪与槽化投机解码（槽间扩散选择+槽内 AR 填充、完整复用 KV 缓存）两种模式。
+<strong>关键数字</strong>：公开 0.6B、1.7B、4B 三个规模模型（摘要截断）。
+<strong>为什么值得看</strong>：AR+扩散混合语言模型的代表性工作，开源、双模式推理，适合关注新一代 LM 架构的团队跟进。
+<a href="https://arxiv.org/abs/2609.19868v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19868v1">阅读原文 ↗</a></p>
 </body>
 </html>

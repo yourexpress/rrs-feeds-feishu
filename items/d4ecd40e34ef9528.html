@@ -22,9 +22,11 @@
 <h1>Syndrome Decoding for Silent Data Corruption in Quantized Integer GPU Arithmetic</h1>
 <p class="meta-line">arXiv（Pranav Napolean 等，cs.DC） · 2026-09-17 · 论文PDF</p>
 
-<p>Quantized neural network inference runs integer matrix multiplications on GPU tensor cores, and the INT32 accumulators inside those cores have neither parity nor ECC.</p>
-<blockquote><p>Quantized neural network inference runs integer matrix multiplications on GPU tensor cores, and the INT32 accumulators inside those cores have neither parity nor ECC. A transient fault in this datapath returns a valid but wrong integer and raises no interrupt. Checksum based Algorithm Based Fault Tolerance (ABFT) can detect such silent data corruptions (SDCs), but its verdict is binary. It cannot identify the corrupted element or its magnitude, and unweighted row and column checksums are blind by construction to errors that cancel on both axes. We present SProbe, a trailing verification kernel that reads the output of an unmodified vendor GEMM. A randomized Freivalds gate with three independent evaluation points in a 61 bit prime field misses a nonzero error with probability at most $2^{-141}$. When the gate fires, per row power sum syndromes over three primes are decoded with the Reed Solomon chain of Berlekamp Massey, Chien search, and Forney, recovering the column and exact magnitude of up to four colliding errors per row. SProbe then repairs the accumulator in place or recomputes the GEMM. On an NVIDIA H100, SProbe detects every injected fault across seven fault classes and fou…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：量化推理在 GPU 张量核上做整数矩阵乘，INT32 累加器无奇偶校验和 ECC，瞬态故障会产生「合法但错误」的静默数据损坏（SDC）；校验和式 ABFT 只能给出二元判定，无法定位。
+<strong>方法</strong>：SProbe 尾部验证内核读取未修改的厂商 GEMM 输出：先以 61 位素域上三个独立评估点的随机化 Freivalds 门把关；触发后用每行三素数幂和综合征，经 Berlekamp-Massey、Chien 搜索、Forney 的 Reed-Solomon 解码链恢复错误列与精确幅值，就地修复或重算。
+<strong>关键数字</strong>：漏检非零错误概率 ≤ 2^-141；每行最多恢复 4 个碰撞错误；在 NVIDIA H100 上检测出七类故障注入的全部故障（摘要截断）。
+<strong>为什么值得看</strong>：从检测到定位到修复的完整 SDC 闭环，对大规模量化推理集群的可靠性工程有直接参考。
+<a href="https://arxiv.org/abs/2609.19743v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19743v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Score Centering Stabilizes Off-policy Reinforcement Learning</h1>
 <p class="meta-line">arXiv（Martin Marek 等，cs.LG） · 2026-09-17 · 论文PDF</p>
 
-<p>Reinforcement learning (RL) of large language models is notoriously sensitive to small differences between training and inference engines, often referred to as the training-inference mismatch (TIM).</p>
-<blockquote><p>Reinforcement learning (RL) of large language models is notoriously sensitive to small differences between training and inference engines, often referred to as the training-inference mismatch (TIM). However, completely eliminating TIM is impractical, as it would come at a major cost to rollout efficiency. In this paper, we show that the instability of RL under TIM is primarily caused by drift: a persistent bias between training and inference engines that accumulates with every training step. We derive an additive "score centering" correction term that stabilizes RL under TIM by canceling drift. When training models from 0.6B to 30B parameters, score centering alone matches or outperforms methods based on importance sampling under quantization, with the gap growing as the mismatch becomes more severe. Because the correction is additive, score centering also composes with importance sampling -- their composition outperforms pure importance-sampling baselines in our staleness experiments.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 强化学习中训练引擎与推理引擎的微小差异（训练-推理不匹配，TIM）引发训练不稳定，而彻底消除 TIM 会严重牺牲 rollout 效率。
+<strong>方法</strong>：证明不稳定主因是随每步累积的持续性偏差「漂移」，推导出加性「score centering」修正项抵消漂移；因修正项可加，还能与重要性采样组合。
+<strong>关键数字</strong>：0.6B~30B 模型训练中，仅用 score centering 在量化场景即追平或超过重要性采样，且失配越严重优势越大；组合方案在 staleness 实验中超过纯重要性采样基线。
+<strong>为什么值得看</strong>：RLVR 训练中训推不一致是普遍痛点，这是一种轻量、可组合的稳定化手段。
+<a href="https://arxiv.org/abs/2609.20807v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20807v1">阅读原文 ↗</a></p>
 </body>
 </html>

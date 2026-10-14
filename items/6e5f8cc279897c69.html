@@ -22,9 +22,11 @@
 <h1>Trust, but Validate the Instrument: Auditing AI-Generated RTL Verification Plans on Authored Security-Regression Proxies</h1>
 <p class="meta-line">arXiv（Hang Xiao 等，cs.CR） · 2026-09-17 · 论文PDF</p>
 
-<p>AI-generated RTL verification plans can satisfy a provider schema yet fail at the boundary to trusted execution.</p>
-<blockquote><p>AI-generated RTL verification plans can satisfy a provider schema yet fail at the boundary to trusted execution. We present SecTB-RTL, an auditable framework covering 31 tasks and 124 authored hardware-security regressions. A deterministic non-AI baseline killed 36, 75, and 78 mutants at increasing resource limits. The first confirmatory run (C1-R2) failed before model execution because the provider rejected its response schema. After a schema-only repair made without viewing outcomes, a separately frozen follow-up run (C1-R3) completed 1,860 calls. The provider accepted 1,857 responses, but only nine passed the production semantic validator. The generation and execution rules did not match. We therefore preserve the run as an instrument-validation incident and report no prompt-effect estimate. This incident shows that provider or schema acceptance does not establish execution validity. Compilation and coverage are only diagnostics; the exact saved artifact must pass the full production path. A subsequent follow-up is excluded because it did not satisfy the preregistered evidence-completeness gate and is treated only as future work. We release the benchmark, failure-preserving cont…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：AI 生成的 RTL 验证计划可以满足提供方 schema，却在可信执行边界上失败——「被接受」是否等于「可执行」？
+<strong>方法</strong>：提出可审计框架 SecTB-RTL：31 个任务、124 条人工编写的硬件安全回归用例，配确定性非 AI 基线对照；把一次 schema 事故完整保留为「仪器验证事故」，不报告提示效应估计；公开基准、失败保留契约、事故溯源与治理控制。
+<strong>关键数字</strong>：确定性基线在三档资源上限下分别杀死 36、75、78 个变异体；C1-R3 运行完成 1,860 次调用，提供方接受 1,857 条响应，但只有 9 条通过生产级语义校验器。
+<strong>为什么值得看</strong>：1857 通过 vs 9 有效的悬殊对比，是 AI4EDA 与一切 LLM 评测研究关于评测方法学的警示样本。
+<a href="https://arxiv.org/abs/2609.19844v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19844v1">阅读原文 ↗</a></p>
 </body>
 </html>

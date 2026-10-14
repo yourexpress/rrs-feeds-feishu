@@ -22,9 +22,11 @@
 <h1>Self Improvement via Fast Tree-search</h1>
 <p class="meta-line">arXiv（Xinghong Fu 等，cs.AI） · 2026-09-17 · 论文PDF</p>
 
-<p>Coding agents can recursively modify their own implementations, forming a loop of self-improvement.</p>
-<blockquote><p>Coding agents can recursively modify their own implementations, forming a loop of self-improvement. While prior work shows this can boost performance on coding benchmarks, existing approaches are costly and compute-intensive. We introduce a simple, sample-efficient self-improvement framework that significantly improves coding performance under strict budget constraints. We identify evaluation of candidate self-modifications as the main runtime bottleneck since prior approaches estimate their effectiveness by re-running a subset of benchmark tasks with the modified agent, which is time-consuming. We introduce Recursive Self Improvement via Fast Tree-search (SIFT), which augments these downstream task evaluations with an LLM-as-a-judge signal that performs pairwise comparisons between candidate patches, where the win-loss record is aggregated with a regularized Bradley-Terry model, and the resulting strength scores drive rank-based parent sampling inside a lightweight disaggregated tree search. Expensive downstream task evaluations are reserved only for the most promising nodes. Using a fully disaggregated tree search pipeline, the judge scores provide intermediate signal to guide ex…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：编码智能体递归修改自身实现可自我提升，但已有方法靠重跑基准任务来评估候选改动，开销高、算力密集。
+<strong>方法</strong>：提出 SIFT——用 LLM-as-a-judge 对候选补丁做成对比较，胜负记录经正则化 Bradley-Terry 模型聚合为强度分，驱动轻量解耦树搜索中的按排名父本采样；昂贵的下游任务评估只留给最有希望的节点。
+<strong>关键数字</strong>：摘要称在严格预算约束下显著提升编码性能（未给出具体数值）。
+<strong>为什么值得看</strong>：用廉价评审信号替代昂贵基准重跑，使递归自我改进变得样本高效，值得 agent 自进化方向参考。
+<a href="https://arxiv.org/abs/2609.19526v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19526v1">阅读原文 ↗</a></p>
 </body>
 </html>

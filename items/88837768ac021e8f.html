@@ -22,9 +22,11 @@
 <h1>Scaling Fourier-Based Sparse Matrix Analysis on GPUs</h1>
 <p class="meta-line">arXiv（Ruifeng Zhang 等，cs.PF） · 2026-09-17 · 论文PDF</p>
 
-<p>Sparse computations are important workloads in applications such as scientific computing, graph neural networks (GNNs), and machine learning.</p>
-<blockquote><p>Sparse computations are important workloads in applications such as scientific computing, graph neural networks (GNNs), and machine learning. While many sparse operations can benefit from modern GPUs, the sparsity pattern remains important to performance because it affects memory coalescing, block organization, and load balancing. Previous studies show that spectral signatures can help analyze the global structure of sparse matrices. The fast Fourier transform (FFT) is commonly used to extract spectral signatures, and efficient GPU FFT libraries are available. However, sparse matrices, especially adjacency matrices for large graphs, tend to be very large and sparse. Existing dense-matrix-based FFT implementations are difficult to scale up, making the spectral patterns of these matrices difficult to obtain. We therefore propose a three-fold research approach comprising a lossless Binary-Sparse FFT (BS-FFT) and two compression methods: Elastic BS-FFT, which reuses the BS-FFT pipeline on a sampled frequency grid, and density-map-based spatial compression. Experiments show that BS-FFT reduces GPU memory use by 2.9--11.6 times relative to dense cuFFT and completes all 15 GNN adjacency m…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：谱签名可分析稀疏矩阵全局结构，但基于稠密矩阵的 FFT 实现难以扩展到超大稀疏矩阵（如图邻接矩阵）。
+<strong>方法</strong>：提出无损 Binary-Sparse FFT（BS-FFT）及两种压缩变体：Elastic BS-FFT（在采样频率网格上复用 BS-FFT 流水线）与基于密度图的空间压缩。
+<strong>关键数字</strong>：相比稠密 cuFFT，GPU 显存降低 2.9~11.6 倍，并完成全部 15 个 GNN 邻接矩阵的测试（摘要截断）。
+<strong>为什么值得看</strong>：面向科学计算与 GNN 的稀疏矩阵谱分析提供了可直接落地的 GPU 加速路线。
+<a href="https://arxiv.org/abs/2609.20483v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20483v1">阅读原文 ↗</a></p>
 </body>
 </html>

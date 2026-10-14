@@ -22,9 +22,11 @@
 <h1>Where the LLM Ends and Reliable Decisions Begin</h1>
 <p class="meta-line">arXiv（Priyadarshan Patil 等，math.OC） · 2026-09-17 · 论文PDF</p>
 
-<p>Systems that turn natural-language descriptions of optimization problems into solver-ready code generally use a language model at every stage, including the final translation from a mathematical formulation into executab…</p>
-<blockquote><p>Systems that turn natural-language descriptions of optimization problems into solver-ready code generally use a language model at every stage, including the final translation from a mathematical formulation into executable model-building code. We propose the ANVIL compiler architecture, where we separate these concerns. A language model is called only once, assisted by constraint guidance based on problem type, to produce a LaTeX formulation. A deterministic compiler then translates that LaTeX into code with no language model involvement. We describe the deterministic compiler (a normalizer, a recursive-descent parser producing a typed intermediate representation, analysis passes that bind symbols to a dataset schema, and a code emitter) and evaluate it on the 354 easy and hard problems of the NLP4LP benchmark. The compiler produced code for 329 of 354 formulations (92.9%), taking the deterministic path in every one of those cases and never falling back to model-generated code. Median compile time was below the 10ms resolution of our timer. Overall, our formulations achieved an accuracy of 98.9% over easy problems and 91.1% for hard problems. The gap between these compilation and a…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：把自然语言优化问题转成求解器代码的系统，通常连「数学形式化 → 建模代码」这最后一步也依赖语言模型——这段依赖能否去掉？
+<strong>方法</strong>：提出 ANVIL 编译器架构：语言模型只调用一次（按问题类型提供约束引导）生成 LaTeX 形式化；随后由确定性编译器接管——归一化器、生成类型化中间表示的递归下降解析器、把符号绑定到数据集 schema 的分析 pass、代码发射器。
+<strong>关键数字</strong>：NLP4LP 基准 354 道易/难题上，329/354（92.9%）的形式化编译成代码，全部走确定性路径、零次回退到模型生成代码；编译时间中位数低于计时器 10ms 分辨率；形式化准确率易题 98.9%、难题 91.1%。
+<strong>为什么值得看</strong>：错误分析显示几乎所有错误源自形式化而非翻译，为「LLM 到哪里为止、可靠决策从哪里开始」提供了架构样本。
+<a href="https://arxiv.org/abs/2609.19545v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19545v1">阅读原文 ↗</a></p>
 </body>
 </html>

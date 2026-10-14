@@ -22,9 +22,11 @@
 <h1>Understanding and Exploiting Diagonal Attention Sparsity in Autoregressive Image Generation</h1>
 <p class="meta-line">arXiv（Daeun Kim 等，cs.CV） · 2026-09-17 · 论文PDF</p>
 
-<p>Autoregressive image generation has emerged as a paradigm for multimodal AI systems due to its compatibility with transformer-based LLM serving infrastructures.</p>
-<blockquote><p>Autoregressive image generation has emerged as a paradigm for multimodal AI systems due to its compatibility with transformer-based LLM serving infrastructures. However, generating thousands of visual tokens per request makes decoding increasingly bottlenecked by KV cache accesses during attention computation. Sparse attention is particularly attractive for this workload because many visual generation applications tolerate moderate quality degradation in exchange for improved performance and efficiency. While sparse attention has been extensively explored for text-based LLM inference, it remains unclear whether its sparsity assumptions generalize effectively to autoregressive image generation. We present the first systematic characterization of attention sparsity in autoregressive image generation across diverse workloads and representative open-source models. Our analysis reveals several distinguishing properties, including a pronounced prefill-decode asymmetry, strong attention concentration on prompt and local tokens, and a unique diagonal attention sparsity pattern arising from the spatial locality of visual tokens. Motivated by these observations, we propose a diagonal-aware s…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：自回归图像生成每请求产生数千视觉 token，解码被注意力中的 KV 缓存访问瓶颈化；文本 LLM 的稀疏注意力假设能否迁移过来？
+<strong>方法</strong>：首次系统性刻画自回归图像生成的注意力稀疏性——发现 prefill/decode 显著不对称、注意力集中于提示与局部 token、以及视觉 token 空间局部性带来的独特对角稀疏模式；据此提出对角感知稀疏注意力，在近期窗口内沿对角方向选择性跳过 KV 项。
+<strong>关键数字</strong>：基于 FlexGen、FlashAttention-2 与自定义核的 GPU 服务系统上，吞吐最高提升 3.1 倍、延迟最高改善 1.19 倍（摘要截断）。
+<strong>为什么值得看</strong>：多模态自回归生成服务化的实测优化，稀疏注意力落地团队可直接借鉴。
+<a href="https://arxiv.org/abs/2609.19702v1">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19702v1">阅读原文 ↗</a></p>
 </body>
 </html>
