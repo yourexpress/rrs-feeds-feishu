@@ -22,9 +22,11 @@
 <h1>Prediction-Powered Smoothing and Validation for Disaggregated AI Evaluation</h1>
 <p class="meta-line">arXiv（Sho Kawano 等，stat.ML） · 2026-09-17 · 论文PDF</p>
 
-<p>Evaluating an AI system requires disaggregated assessment, as performance varies across domains such as benchmark task types or conversation types in deployed agents.</p>
-<blockquote><p>Evaluating an AI system requires disaggregated assessment, as performance varies across domains such as benchmark task types or conversation types in deployed agents. Exhaustive testing is expensive, so evaluation rests on a sample of labeled units. We treat the evaluation set as a finite population and seek accurate point and interval estimates of each domain mean. Direct estimators, including prediction-powered inference (PPI), use only a domain's own labels and are imprecise where labels are few. Small area estimation addresses this problem, and we build on it to develop an integrated workflow for estimation and validation. For estimation, we propose prediction-powered smoothing (PP-S), a Bayesian model fit to each domain's prediction-powered estimate, with an extension that borrows strength across a reporting taxonomy (PP-TS). For validation, we derive a new, approximately unbiased design-based cross-validation score for choosing among direct and smoothed estimators. We study a curated benchmark with verifiable grading and deployed agent traffic graded by humans, each with every outcome observed. In both, the proposed estimators improve on the direct estimators in point and int…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>: AI 系统评估必须分域（基准任务类型、对话类型等）进行，但逐域穷尽测试昂贵，标签少的域上直接估计（含 PPI）很不精确。</p>
+<p><strong>方法</strong>: 把评估集视为有限总体，引入小区域估计框架：PP-S 对每个域的 prediction-powered 估计做贝叶斯平滑，PP-TS 进一步跨报告分类体系借力；验证侧推导出一个近似无偏的基于设计的交叉验证分数，用于在直接估计与平滑估计之间做选择。在可验证评分的策划基准与人工评分的部署智能体流量两个数据集上验证。</p>
+<p><strong>关键数字</strong>: 摘要未给具体数值；两数据集上点估计与区间估计均优于直接估计，覆盖率接近名义水平；同预算下其模型选择能力与独立验证集相当。</p>
+<p><strong>为什么值得看</strong>: 做分域评估、样本量又不充裕的团队（如线上 agent 评测）可直接借用的统计工具链。</p>
+<p><a href="https://arxiv.org/abs/2609.20758v1">Prediction-Powered Smoothing and Validation for Disaggregated AI Evaluation</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20758v1">阅读原文 ↗</a></p>
 </body>
 </html>

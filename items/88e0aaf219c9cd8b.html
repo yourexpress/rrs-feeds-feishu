@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Run a 48 GB AI Model on a 32 GB Laptop: Janas Streams Model Experts From Your SSD at 37 tok/s</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Run a 48 GB AI Model on a 32 GB Laptop: Janas Streams Model Experts From Your SSD at 37 tok/s</h1>
+<p class="meta-line">DEV Community (jamilxt) · 2026-10-13 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk39qpdfiqibb8cr4whv1.png" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong>: 本地推理的通用困境——想跑的模型比内存大；Janas 项目声称用「从 SSD 流式加载专家权重」打破这堵墙。</p>
+<p><strong>要点</strong>: Janas 是 C 语言写的推理引擎，权重常驻磁盘、只按需用 O_DIRECT 读取专家权重（绕过页缓存），专为 MoE 模型设计——每个 token 只激活少数专家，瓶颈在于读对的那部分。文章作者声明所有数字来自项目自公布基准与 README，非独立实测。</p>
+<p><strong>关键数字</strong>: 据项目自报，Qwen3-Next-80B（48.4GB）在 32GB 内存笔记本上达 37 tok/s；同机同模型 llama.cpp 为 2.8 tok/s。</p>
+<p><strong>为什么值得看</strong>: 面向内存受限设备的 MoE 本地推理新思路，但数字未经第三方复现，使用前需自行验证。</p>
+<p><a href="https://dev.to/jamilxt/run-a-48-gb-ai-model-on-a-32-gb-laptop-janas-streams-model-experts-from-your-ssd-at-37-toks-2674">Run a 48 GB AI Model on a 32 GB Laptop: Janas Streams Model Experts From Your SSD at 37 tok/s</a></p>
+<p><a class="origin" href="https://dev.to/jamilxt/run-a-48-gb-ai-model-on-a-32-gb-laptop-janas-streams-model-experts-from-your-ssd-at-37-toks-2674">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -22,9 +22,11 @@
 <h1>QVAC Genesis III: A Large-Scale, High-Quality Open Synthetic STEM Corpus for Efficient Language Model Pre-Training</h1>
 <p class="meta-line">arXiv（Davide Vitabile 等，cs.AI） · 2026-09-17 · 论文PDF</p>
 
-<p>High-quality pre-training data is a critical bottleneck for educational and STEM-specific language models targeting edge AI and on-device deployment where token budgets are tightly constrained.</p>
-<blockquote><p>High-quality pre-training data is a critical bottleneck for educational and STEM-specific language models targeting edge AI and on-device deployment where token budgets are tightly constrained. While major organizations train ever-larger models on private corpora, the open ecosystem lacks STEM-focused synthetic datasets that deliver high per-token learning value efficiently for small models. To address this gap, we introduce QVAC Genesis III, a 191.43B-token, STEM-focused multi-domain synthetic corpus covering 19 domains across several difficulty levels and different educational styles. QVAC Genesis III is built via a dual generation strategy that performs targeted teacher distillation using a weak edge-scale student model as signal: the student's failures are converted into corrective explanations, while its successes are expanded into contrastive option-level reasoning over all answer choices. We further introduce an LLM-as-a-parser evaluation protocol that extracts final answers from free-form outputs and tracks both accuracy and answer validity. To validate the effectiveness of our QVAC Genesis III data, we conduct controlled from-scratch ablations with 1.7B-parameter models, s…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>: 面向边缘 AI 与教育场景的小模型缺少高「每 token 学习价值」的开源 STEM 合成预训练语料。</p>
+<p><strong>方法</strong>: QVAC Genesis III 采用双生成策略，以弱边缘学生模型为信号做定向教师蒸馏：学生的错误被转化为纠正性解释，学生的正确回答被扩展为覆盖所有选项的对比推理；并提出 LLM-as-a-parser 评测协议，从自由格式输出抽取答案并同时跟踪准确率与答案有效性。</p>
+<p><strong>关键数字</strong>: 语料规模 191.43B token、覆盖 19 个领域；1.7B 模型从头训练的对照消融中，相对 Cosmopedia-v2 语料与 Cosmo-1B 模型，ARC-E 最高 +28.57%、ARC-C 最高 +21.35%，有效答案率最高 99.45%。</p>
+<p><strong>为什么值得看</strong>: 完全开放的超大规模 STEM 合成语料，其「以弱模型错误为蒸馏信号」的构造思路对端侧模型预训练有借鉴价值。</p>
+<p><a href="https://arxiv.org/abs/2609.19513v1">QVAC Genesis III: A Large-Scale, High-Quality Open Synthetic STEM Corpus for Efficient Language Model Pre-Training</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19513v1">阅读原文 ↗</a></p>
 </body>
 </html>

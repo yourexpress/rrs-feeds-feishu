@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SonicBoom: 52 tok/s decode on a laptop RTX 3050 (llama.cpp: 45) with the same quantized kernels</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SonicBoom: 52 tok/s decode on a laptop RTX 3050 (llama.cpp: 45) with the same quantized kernels</h1>
+<p class="meta-line">DEV Community (Roy Mu) · 2026-10-13 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Feaj6lz9x35vu0xxgn2lz.png" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong>: SonicBoom——C++/CUDA 原生张量运行时（无 Python），v0.0.1 首个目标是消费级 GPU 本地 LLM 推理。</p>
+<p><strong>要点</strong>: 量化矩阵乘核（MMVQ/MMQ）直接移植自 ggml，与 llama.cpp 用同一批核；14% 的 decode 优势全部来自核之上的图层：图规划器预重写模型——激活量化一次复用、norm/激活与量化融合、剔除死计算，每步 decode 以单个 CUDA Graph 回放。前缀复用是精确的（续写与全量 prefill 逐 token 一致），利好多轮对话场景。</p>
+<p><strong>关键数字</strong>: 笔记本 RTX 3050 8GB 上 Gemma 4 E4B-it Q3_K_M：decode 51.65 vs llama.cpp 45.20 tok/s；prefill 1051 vs 约 1944 tok/s（落后约一半）；4000-token 前缀复用 TTFT 503ms。</p>
+<p><strong>为什么值得看</strong>: 实证「同核之上仍有编译器层收益」，路线图含 MLIR GPU codegen 与投机解码；GPL-3.0。</p>
+<p><a href="https://dev.to/nalaginrut/sonicboom-52-toks-decode-on-a-laptop-rtx-3050-llamacpp-45-with-the-same-quantized-kernels-24kj">SonicBoom: 52 tok/s decode on a laptop RTX 3050 (llama.cpp: 45) with the same quantized kernels</a></p>
+<p><a class="origin" href="https://dev.to/nalaginrut/sonicboom-52-toks-decode-on-a-laptop-rtx-3050-llamacpp-45-with-the-same-quantized-kernels-24kj">阅读原文 ↗</a></p>
+</body>
+</html>

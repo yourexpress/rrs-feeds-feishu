@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Extending Inductor for the IBM Spyre Accelerator</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Extending Inductor for the IBM Spyre Accelerator</h1>
+<p class="meta-line">PyTorch Blog · 2026-10-13 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://pytorch.org/wp-content/uploads/2026/10/All-PyTorch-Blog-Social-Images-33.png" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong>: IBM Spyre 加速器的 PyTorch 软件栈把 torch.compile 后端从自研 sendnn 迁移到扩展版 Inductor。</p>
+<p><strong>要点</strong>: Spyre 是面向企业推理的 75W PCIe 数据流加速器：32 个小核组成环，每核 2MB 本地 scratchpad，数据以 128 字节的「stick」（fp16 下 64 个值）为单位搬运。与 GPU 假设的冲突集中在数据搬运、片上存储管理与核间工作分发三处，其余 Inductor 大部分原样复用；团队正与 PyTorch 上游合作固化这些扩展点。</p>
+<p><strong>关键数字</strong>: 新编译器代码规模约为被替换的 sendnn 的 1/7；加速器功耗 75W，无需定制供电散热。</p>
+<p><strong>为什么值得看</strong>: Inductor 作为 tree-out 硬件后端基座的实证案例，对自研芯片编译器选型有直接参考意义。</p>
+<p><a href="https://pytorch.org/blog/extending-inductor-for-the-ibm-spyre-accelerator">Extending Inductor for the IBM Spyre Accelerator</a></p>
+<p><a class="origin" href="https://pytorch.org/blog/extending-inductor-for-the-ibm-spyre-accelerator">阅读原文 ↗</a></p>
+</body>
+</html>

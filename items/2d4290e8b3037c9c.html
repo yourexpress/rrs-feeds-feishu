@@ -22,9 +22,11 @@
 <h1>QUALS: Corpus Equilibrium for Universal Forecasting via Pattern Quantization and Learnability Synchronization</h1>
 <p class="meta-line">arXiv（Yujie Li 等，cs.LG） · 2026-09-17 · 论文PDF</p>
 
-<p>Ubiquitous time series data across diverse domains enables critical applications in areas such as transportation systems and power grids.</p>
-<blockquote><p>Ubiquitous time series data across diverse domains enables critical applications in areas such as transportation systems and power grids. Recently, training foundation models on massive datasets to achieve accurate zero-shot forecasting has emerged as a major research focus. However, current studies predominantly prioritize architectural innovations while insufficiently addressing data diversity, often relying on simple data sampling strategies that fail to manage complex data distributions effectively, leading to inefficient use of training data and suboptimal performance. To address this, we propose QUALS, a large-scale time series corpus equilibrium framework. QUALS significantly enhances data efficiency, i.e., enabling existing models to achieve superior performance using only a small fraction of the original training data. Specifically, QUALS operates through two core mechanisms. First, a pattern quantization framework systematically decodes heterogeneous patterns from mixed corpora via vector quantization and uniform binning. Second, a learnability synchronization framework calibrates sampling weights for heterogeneous patterns, bridging the optimization gap between simple an…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>: 时序预测基础模型的预训练过度依赖架构改进，数据分布复杂而采样策略粗糙，导致数据效率低、性能次优。</p>
+<p><strong>方法</strong>: QUALS 语料均衡框架：先以向量量化 + 均匀分箱把混合语料解构成异质模式集合，再用「可学习性同步」机制按模式难度校准采样权重，拉平简单模体与复杂模体之间的优化差距，让每个训练步都花在刀刃上。</p>
+<p><strong>关键数字</strong>: 摘要无具体数字；报告在大幅压缩训练预算的条件下，zero-shot 预测仍一致优于原采样策略的基线。</p>
+<p><strong>为什么值得看</strong>: 与同批收录的另一链接为同一工作（v1 版）；强调「数据均衡」而非更大模型，适合算力受限团队借鉴。</p>
+<p><a href="https://arxiv.org/abs/2609.20156v1">QUALS: Corpus Equilibrium for Universal Forecasting via Pattern Quantization and Learnability Synchronization</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20156v1">阅读原文 ↗</a></p>
 </body>
 </html>

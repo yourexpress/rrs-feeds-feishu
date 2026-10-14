@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[TVM] PR #20706 mailing list activity</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>[TVM] PR #20706 mailing list activity</h1>
+<p class="meta-line">Apache TVM · 2026-10-13 · 技术博客</p>
+<img class="hero" src="https://opengraph.githubassets.com/6d4c4351d43c6301362afc9c5a81a88a6855750a1f6ba3add0dadc6d388672a9/apache/tvm/pull/20706" alt="" referrerpolicy="no-referrer">
+<p>TVM 常规 PR 评审活动，无实质性新功能发布</p>
+<blockquote><p>Repository navigation</p><p>refactor(layout): remove unused TIRx layout helpers - #20706</p><p>Merged</p><p>spectrometerHBH merged 1 commit intoOct 13, 2026</p><p>Merged</p><p>Conversation</p><p>Contributor</p><p>Remove layout algorithms and convenience APIs left unused after CUDA tile dispatch moved to explicit instruction patterns.</p><p>- Delete reverse tile/direct-sum matching, layout slicing,</p><p>group_many</p><p>,apply_to_shape</p><p>,storage</p><p>,broadcast</p><p>, and their unused C++/FFI support, including axis splitters. - Remove</p><p>Tensor.local/tile/chunk</p><p>, unused CUDA/Trainium layout factories, and fragment allocation wrappers. Use explicit tensor views and layouts at call sites; retainLayout.tile/tile_to</p><p>for shared-memory layout construction. - Preserve the existing CUDA and Trainium kernel cases, including their operand layouts and regions. Keep shared register/scale-factor layouts in private test fixtures and rewrite documentation examples with explicit layouts.</p><p>Companion integration updates: mlc-ai/TIRx-kernels#9.</p><p>Validation:</p><p>- Rebuilt TVM; changed-file pre-commit checks passed.</p><p>- Full TIRx suite with the companion kernels branch: 3266 passed, 298 skipped on three B200 GPUs.</p><p>- Benchmark import gate (93 kernels) and strict registry import gate passed.</p><p>- Strict TIRx documentation build passed; TMEM round-trip and MMA examples passed on GPU, and the API fragment example compiled to the specified PTX load.</p><p>tqchen</p><p>approved these changes</p><p>Oct 13, 2026</p><p>This file contains hidden or bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.</p><p>Learn more about bidirectional Unicode characters</p><p>Sign up for free</p><p>to join this conversation on GitHub.</p><p>Already have an account?</p><p>Sign in to comment</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://github.com/apache/tvm/pull/20706">阅读原文 ↗</a></p>
+</body>
+</html>

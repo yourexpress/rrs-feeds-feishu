@@ -22,9 +22,11 @@
 <h1>SCGFM-ART: Amortized Relational Transport for Structure-Centric Graph Foundation Models</h1>
 <p class="meta-line">arXiv（Xiaodong He 等，cs.LG） · 2026-09-17 · 论文PDF</p>
 
-<p>SCGFM-ART：结构中心图基础模型，用摊销关系传输对齐异构图到共享关系空间。</p>
-<blockquote><p>Graph foundation models (GFMs) aim to learn transferable representations across severely heterogeneous graph domains. However, severe domain shifts in topology, graph scale, and feature semantics impede the construction of a unified, domain-agnostic representation space. To address this, we propose SCGFM-ART, a structure-centric GFM framework that aligns arbitrary graphs onto a shared relational atlas via Amortized Relational Transport (ART). The relational atlas serves as a universal coordinate system defined by a finite set of relational landmarks (bases), while ART directly predicts reusable, end-to-end graph-to-base transport plans, bypassing costly runtime Gromov-Wasserstein optimizations. Under this formulation, SCGFM-ART decomposes a graph into a unified representation: globally via its relational response coordinates relative to the atlas, and locally via its node-to-role structural correspondences. These correspondences project disparate node attributes into a canonical role space, resolving structural and semantic heterogeneity within a singular alignment interface. Rigorously modeling graphs and atlas bases as finite measured relational spaces, we establish coordinate fi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>: 图基础模型（GFM）要跨严重异质的图域学习可迁移表示，但拓扑、规模与特征语义的域偏移阻碍统一表示空间的构建。</p>
+<p><strong>方法</strong>: SCGFM-ART 以结构为中心：用 Amortized Relational Transport（ART）把任意图对齐到由有限「关系地标」定义的共享关系图集上，直接端到端预测可复用的图-到-基传输方案，绕开运行时昂贵的 Gromov-Wasserstein 优化；全局以相对图集的关系响应坐标表示，局部以节点-角色对应把异质节点属性投影到规范角色空间，并给出坐标保真界与稳定性证明。</p>
+<p><strong>关键数字</strong>: 14 个跨域图级/节点级分类任务上平均排名 2.29 与 1.14，达到 SOTA 可迁移性；免去测试时迭代对齐后，冻结目标域推理加速 44.2–85.1 倍。</p>
+<p><strong>为什么值得看</strong>: GFM 统一表示的强结果，且摊销化设计把对齐成本从推理期移到了训练期，工程意义重大。</p>
+<p><a href="https://arxiv.org/abs/2609.20419v1">SCGFM-ART: Amortized Relational Transport for Structure-Centric Graph Foundation Models</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20419v1">阅读原文 ↗</a></p>
 </body>
 </html>

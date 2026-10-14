@@ -22,9 +22,11 @@
 <h1>Opinion Dynamics-based Coalition Formation for Federated Learning in Heterogeneous IoT Systems</h1>
 <p class="meta-line">arXiv（cs.LG） · 2026-09-17 · 论文PDF</p>
 
-<p>基于舆论动力学的异构 IoT 联邦学习联盟形成</p>
-<blockquote><p>Federated learning (FL) enables privacy-preserving, on-device training across heterogeneous Internet-of-Things (IoT) deployments such as smart-city water-metering networks, where each smart meter observes a household-specific consumption time series. Under such statistical heterogeneity, the standard Federated Averaging (FedAvg) aggregation averages dissimilar local models into a single global model that may fail to capture client-specific patterns. We address this by forming client coalitions directly in the local-weight space and aggregating at the coalition level. Extending a prior weight-driven coalition-formation scheme, we model coalition formation as a Hegselmann-Krause (HK) bounded-confidence opinion-dynamics process acting on the local weights, and develop variants of the HK interaction based on Euclidean-distance and cosine-similarity confidence criteria. The framework is applied to short-term water-consumption forecasting with local Long Short-Term Memory (LSTM) models and evaluated against FedAvg, Per-FedAvg, FedProx, and FedAvg with Euclidean-distance or cosine-similarity coalition formation. Experiments on a real smart-metering dataset of water consumption show that t…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>: 智慧城市水表等异构 IoT 场景下，FedAvg 的全局平均会抹掉客户端特有的用水时序模式。</p>
+<p><strong>方法</strong>: 用 Hegselmann-Krause 有界信任观点动力学在本地权重空间内生地形成客户端联盟，按联盟聚合；提供欧氏距离与余弦相似度两种信任准则变体，在真实水表数据集上以本地 LSTM 做短期用水预测，并与 FedAvg、Per-FedAvg、FedProx 及两种距离驱动的联盟基线对比。</p>
+<p><strong>关键数字</strong>: 联盟结构至多 10 轮内迭代收敛且客户端侧零额外开销；平均 MAE 相对 FedAvg 最多降 54%、相对 FedProx 降 39%、相对 Per-FedAvg 降 24%；全局准确率 83–85% 居首。</p>
+<p><strong>为什么值得看</strong>: 与 v1 版为同一工作的另一收录链接；权重空间联盟化聚合是低成本个性化的可行路径。</p>
+<p><a href="http://arxiv.org/abs/2609.19695">Opinion Dynamics-based Coalition Formation for Federated Learning in Heterogeneous IoT Systems</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2609.19695">阅读原文 ↗</a></p>
 </body>
 </html>

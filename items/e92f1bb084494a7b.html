@@ -22,9 +22,11 @@
 <h1>Relational Attention for Data-Efficient Language Modeling</h1>
 <p class="meta-line">arXiv（Adrian Brasoveanu 等，cs.CL） · 2026-09-17 · 论文PDF</p>
 
-<p>BabyLM 2026 系统：双注意力 Transformer 以关系偏置提升小数据语言建模效率。</p>
-<blockquote><p>We present Relational BabyLM, a system submission to the BabyLM 2026 challenge that combines two cognitively motivated inductive biases in a single decoder-only Transformer. Architecturally, we replace standard self-attention with a Dual Attention Transformer (DAT), which separates the routing of object-level ("sensory") lexical features from structural/relational information (Altabaa and Lafferty, 2025; Altabaa et al., 2024; Webb et al., 2024; Kerg et al., 2022; Webb et al., 2021). Relational attention (RA) disentangled from self-attention greatly increases data efficiency and out-of-training-sample generalization on purely relational tasks, but language modeling requires object-level and relational information to be integrated as well as disentangled, and RA-based LMs have remained largely unexplored. BabyLM's data-constrained training and comprehensive evaluation is an ideal testing ground for whether that data efficiency transfers. As a training intervention, we add a Next-Latent Prediction (NextLat; Teoh et al. 2026) objective that encourages hidden states to compress history incrementally into a dense belief state. Architecture is the dominant factor for structural linguistic…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>: 关系注意力（RA）在纯关系任务上数据效率高、泛化好，但语言建模需要同时整合与解耦对象级和关系级信息——这条路线在数据受限语言建模中是否成立。</p>
+<p><strong>方法</strong>: BabyLM 2026 参赛系统 Relational BabyLM：用双注意力 Transformer（DAT）把对象级「感知」词汇特征与结构/关系信息的路由分离，叠加 Next-Latent Prediction 训练目标促使隐状态把历史增量压缩为稠密信念状态；另提出零参数的 RoPE 符号检索机制替代学习式符号库。</p>
+<p><strong>关键数字</strong>: 严格赛道（100M 词）55 队中总榜第 6、NLP 任务子集第 3；两个最强模型在多数基准上超过 GPT-2 基线，其一取得严格赛道最高 EWoK 分；10M 词时三种 RA 变体相当，100M 词时完整 RA 领先。</p>
+<p><strong>为什么值得看</strong>: 认知启发的归纳偏置在严格数据预算下的扎实验证，架构是结构泛化的主导因素这一结论值得注意。</p>
+<p><a href="https://arxiv.org/abs/2609.20530v1">Relational Attention for Data-Efficient Language Modeling</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20530v1">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Past, Future, All at Once: Mitigating Stability-Plasticity Dilemma via Post-hoc JANUS Rectification</h1>
 <p class="meta-line">arXiv（Zhilong Zheng 等，cs.LG） · 2026-09-17 · 论文PDF</p>
 
-<p>JANUS：事后、无需调参的权重矫正框架，缓解基础模型微调的灾难性遗忘。</p>
-<blockquote><p>Fine-tuning foundation models on new tasks inevitably suffer from catastrophic forgetting. While existing works attempt to mitigate this on the basis of parameter-efficient fine-tuning methods, they adopted an overly restrictive Subspace Orthogonality condition. In this paper, we introduce a purely post-hoc and tuning-agnostic weight rectification framework that achieves Parameter Space Orthogonality, which is the necessary and sufficient condition for preserving historical performance to the first order. By projecting parameter updates into the JAcobian NUll Space (JANUS), our method significantly recovers compromised historical knowledge without interfering with the underlying fine-tuning process. To overcome the local validity of the Jacobian approximation, we further propose a Multi-step Adaptive Rectification mechanism that utilizes the JANUS shift to dynamically verify the valid trust region and adjust step sizes. Coupled with our proposed ghost projection, ghost orientation comparison, and sequence-level singular value decomposition compression techniques, JANUS also achieves great temporal and spatial efficiency. Experiments demonstrate that JANUS seamlessly integrates with…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>: 基础模型微调必然遭遇灾难性遗忘；现有基于 PEFT 的缓解方案采用了过于严格的子空间正交条件。</p>
+<p><strong>方法</strong>: 提出 JANUS——一个纯后处理、与微调方法无关的权重校正框架：把参数更新投影到 Jacobian 零空间（JANUS），实现参数空间正交性，这是一阶意义上保持历史表现的充要条件；配合多步自适应校正机制动态验证信任域、调整步长，克服 Jacobian 近似的局部有效性，并用幽灵投影与序列级 SVD 压缩保证时空效率。</p>
+<p><strong>关键数字</strong>: 摘要未给出具体数值；实验表明 JANUS 可与多种微调方法无缝结合，在保留下游适应能力的同时显著恢复历史知识。</p>
+<p><strong>为什么值得看</strong>: 「零空间投影 = 一阶遗忘消除」的视角干净利落，且对微调方法完全无侵入。</p>
+<p><a href="https://arxiv.org/abs/2609.19985v1">Past, Future, All at Once: Mitigating Stability-Plasticity Dilemma via Post-hoc JANUS Rectification</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19985v1">阅读原文 ↗</a></p>
 </body>
 </html>

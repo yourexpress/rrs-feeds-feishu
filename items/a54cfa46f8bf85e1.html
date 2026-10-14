@@ -22,9 +22,11 @@
 <h1>QVAC Genesis III: A Large-Scale, High-Quality Open Synthetic STEM Corpus for Efficient Language Model Pretraining</h1>
 <p class="meta-line">arXiv（cs.LG） · 2026-09-17 · 论文PDF</p>
 
-<p>面向高效语言模型预训练的大规模开放合成 STEM 语料</p>
-<blockquote><p>High-quality pre-training data is a critical bottleneck for educational and STEM-specific language models targeting edge AI and on-device deployment where token budgets are tightly constrained. While major organizations train ever-larger models on private corpora, the open ecosystem lacks STEM-focused synthetic datasets that deliver high per-token learning value efficiently for small models. To address this gap, we introduce QVAC Genesis III, a 191.43B-token, STEM-focused multi-domain synthetic corpus covering 19 domains across several difficulty levels and different educational styles. QVAC Genesis III is built via a dual generation strategy that performs targeted teacher distillation using a weak edge-scale student model as signal: the student's failures are converted into corrective explanations, while its successes are expanded into contrastive option-level reasoning over all answer choices. We further introduce an LLM-as-a-parser evaluation protocol that extracts final answers from free-form outputs and tracks both accuracy and answer validity. To validate the effectiveness of our QVAC Genesis III data, we conduct controlled from-scratch ablations with 1.7B-parameter models, s…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>: 端侧/教育类小模型的预训练受限于 token 预算，而开源生态缺少高学习价值的 STEM 合成数据集。</p>
+<p><strong>方法</strong>: 构建 QVAC Genesis III 合成语料：用边缘规模的弱学生模型作为蒸馏信号源——失败样本生成纠正性讲解、成功样本展开为逐选项对比推理；配套 LLM-as-a-parser 协议评估最终答案的准确率与有效性。</p>
+<p><strong>关键数字</strong>: 191.43B token、19 个领域、多难度多教学风格；1.7B 对照实验中超越 Cosmopedia-v2 训练的模型与 Cosmo-1B：ARC-E 最高 +28.57%、ARC-C 最高 +21.35%，Valid Answer Rate 最高 99.45%。</p>
+<p><strong>为什么值得看</strong>: 与同批另一链接为同一工作的不同收录；开放的 STEM 合成语料 + 可复现消融，端侧预训练团队的现成资源。</p>
+<p><a href="http://arxiv.org/abs/2609.19513">QVAC Genesis III: A Large-Scale, High-Quality Open Synthetic STEM Corpus for Efficient Language Model Pretraining</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2609.19513">阅读原文 ↗</a></p>
 </body>
 </html>

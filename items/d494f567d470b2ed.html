@@ -22,9 +22,11 @@
 <h1>Opinion Dynamics-based Coalition Formation for Federated Learning in Heterogeneous IoT Systems</h1>
 <p class="meta-line">arXiv（Mohammed El Hanjri 等，cs.LG） · 2026-09-17 · 论文PDF</p>
 
-<p>Federated learning (FL) enables privacy-preserving, on-device training across heterogeneous Internet-of-Things (IoT) deployments such as smart-city water-metering networks, where each smart meter observes a household-spe…</p>
-<blockquote><p>Federated learning (FL) enables privacy-preserving, on-device training across heterogeneous Internet-of-Things (IoT) deployments such as smart-city water-metering networks, where each smart meter observes a household-specific consumption time series. Under such statistical heterogeneity, the standard Federated Averaging (FedAvg) aggregation averages dissimilar local models into a single global model that may fail to capture client-specific patterns. We address this by forming client coalitions directly in the local-weight space and aggregating at the coalition level. Extending a prior weight-driven coalition-formation scheme, we model coalition formation as a Hegselmann-Krause (HK) bounded-confidence opinion-dynamics process acting on the local weights, and develop variants of the HK interaction based on Euclidean-distance and cosine-similarity confidence criteria. The framework is applied to short-term water-consumption forecasting with local Long Short-Term Memory (LSTM) models and evaluated against FedAvg, Per-FedAvg, FedProx, and FedAvg with Euclidean-distance or cosine-similarity coalition formation. Experiments on a real smart-metering dataset of water consumption show that t…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>: 异构 IoT 联邦学习（如智能水表网络）中，FedAvg 把差异巨大的本地模型平均成单一全局模型，无法捕捉客户端个性化模式。</p>
+<p><strong>方法</strong>: 直接在本地权重空间做客户端联盟形成并在联盟层级聚合：把联盟形成建模为 Hegselmann-Krause（HK）有界信任观点动力学过程，分别用欧氏距离与余弦相似度两种信任准则做 HK 交互；应用于本地 LSTM 的短期用水量预测。</p>
+<p><strong>关键数字</strong>: 在真实智能水表数据集上，联盟结构最多 10 轮内迭代即稳定；相比 FedAvg 平均 MAE 最多降低 54%，相比 FedProx 降低 39%，相比 Per-FedAvg 降低 24%；全局准确率 83–85% 为各方法最高；客户端无额外计算与通信开销。</p>
+<p><strong>为什么值得看</strong>: 观点动力学与联邦学习个性化结合的跨界方案，零额外通信成本、收敛快。</p>
+<p><a href="https://arxiv.org/abs/2609.19695v1">Opinion Dynamics-based Coalition Formation for Federated Learning in Heterogeneous IoT Systems</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.19695v1">阅读原文 ↗</a></p>
 </body>
 </html>

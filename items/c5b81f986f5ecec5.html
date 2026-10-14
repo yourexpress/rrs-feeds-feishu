@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Small Models at the Edge: When 3B Beats 70B</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Small Models at the Edge: When 3B Beats 70B</h1>
+<p class="meta-line">DEV Community (Ayraix) · 2026-10-13 · 技术博客</p>
+<img class="hero" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fpostiz.aj-hub.com%2Fuploads%2F2026%2F10%2F09%2Fec45932af9276a787c66871fa421c318.webp" alt="" referrerpolicy="no-referrer">
+<p>边缘小模型部署的厂商观点文，偏营销性质，无新方法或可复现数据</p>
+<blockquote><p>Not every inference needs a datacenter brain. Small models on device win on latency, privacy, and bills — if you scope them right.</p><p>Everyone wants the biggest model that fits. Meanwhile the warehouse scanner needs to classify damage types in 200ms offline, and the factory can't send photos to a cloud API. Small models at the edge are not diet cloud — they're a different product category.</p><p>Here's the thing: 3B models excel at classification, extraction, routing, and constrained generation with tight schemas. They fail at open-ended reasoning and rare long-tail knowledge. Edge wins when the task is narrow, latency-sensitive, privacy-bound, or connectivity-poor.</p><p>&lt;300msedge target for interactive assist on-device — cloud round-trips rarely competeLatency budgetOfflinethe feature — not a fallback mode you apologize forEdge value prop</p><p>Design for small</p><p>Shrink the output space — enums, JSON schemas, picklists. Distill from teacher models on your labels. Test on real devices, not developer laptops with unlimited RAM.</p><p>FitEdge small model vs. cloud largeIllustrativeOn-device classificationEdgePrivate field assistEdgeOpen researchCloud</p><p>&gt; Edge AI's enemy isn't model size — it's scope creep. One job per deployment.</p><p>Hardware reality on the edge</p><p>Developer laptops lie. Edge devices have thermal throttling, shared RAM with cameras, and batteries that hate sustained inference. Profile on the actual SoC — ARM NPU, Jetson, industrial PC — not your M3 Max. Latency budgets that work in the lab die in the warehouse at noon in July.</p><p>Small edge model outrunning large cloud model.</p><p>Quantize aggressively for edge, but validate accuracy on real labels after quant — not on MMLU. A 3B Q4 that misclassifies dent types is worthless at 300ms. Sometimes Q8 or a slightly bigger model is the correct ops call.</p><p>- OTA updates — signed model bundles; rollback when field accuracy drops</p><p>- Offline-first UX — queue and sync; don't spin forever waiting for cloud</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://dev.to/ayraix/small-models-at-the-edge-when-3b-beats-70b-1fkh">阅读原文 ↗</a></p>
+</body>
+</html>

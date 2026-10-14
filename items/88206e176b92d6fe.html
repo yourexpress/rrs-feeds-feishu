@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rollout-Time Intervention: Unlocking Agentic Reinforcement Learning Beyond Policy Limits</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Rollout-Time Intervention: Unlocking Agentic Reinforcement Learning Beyond Policy Limits</h1>
+<p class="meta-line">阿里通义（Alibaba-NLP） · 2026-10-12 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>: 智能体强化学习受 on-policy 瓶颈制约：任务一旦超出模型当前能力边界，有效轨迹极度稀疏，训练往往崩溃。</p>
+<p><strong>方法</strong>: 提出 Rollout-Time Intervention（RTI）：在 rollout 阶段利用奖励侧证据（评测 rubric）把错误轨迹改写为成功轨迹，为策略几乎做不出的任务提供学习信号。干预轨迹天然是 off-policy 的，作者通过过滤分布偏移过大的轨迹使其仍能有效引导策略优化。</p>
+<p><strong>关键数字</strong>: 摘要未给出具体数值；在五个基准上一致优于 RL 基线，后训练策略可逼近更强同期 LLM 的水平。</p>
+<p><strong>为什么值得看</strong>: 直击 agentic RL「能力边界外无训练信号」的核心痛点，思路简单且代码已开源（Alibaba-NLP/qqr）。</p>
+<p><a href="https://arxiv.org/abs/2610.13438">Rollout-Time Intervention: Unlocking Agentic Reinforcement Learning Beyond Policy Limits</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.13438">阅读原文 ↗</a></p>
+</body>
+</html>

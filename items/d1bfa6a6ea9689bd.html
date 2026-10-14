@@ -22,9 +22,11 @@
 <h1>QoS-Aware Federated Learning for Multimodal In-Cabin Interaction in Smart Vehicles</h1>
 <p class="meta-line">arXiv（Baran Can Gül 等，cs.LG） · 2026-09-17 · 论文PDF</p>
 
-<p>FedQoS：面向智能座舱多模态交互的 QoS 感知联邦学习，适配车载网络资源不对称。</p>
-<blockquote><p>Modern smart vehicles leverage multimodal sensors, ranging from high-bandwidth vision systems to low-rate physiological monitors, to provide personalized in-cabin services. However, integrating high-fidelity multimodal fusion with collaborative training is often hindered by the heterogeneous and time-varying Quality of Service (QoS) constraints of vehicular networks. Standard Federated Learning (FL) approaches enforce rigid synchronous rounds that fail to account for these resource asymmetries, leading to safety-critical timing violations and energy exhaustion. In this paper, we propose FedQoS, a novel asynchronous, event-triggered FL framework that decouples local computation from global communication via a two-phase gating mechanism. First, we introduce a resource-aware training gate that initializes local learning only when sensing buffers and energy reserves meet safety thresholds, preventing ML tasks from compromising core vehicle mobility. Second, a QoS-aware transmission policy gates uplink updates based on an efficiency score that balances model novelty against instantaneous latency and energy costs. Locally, clients optimize an objective featuring a staleness-aware proxima…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>: 智能座舱多模态联邦学习受制于车载网络异构、时变的 QoS 约束，标准同步 FL 会造成安全关键的时序违例与能量耗尽。</p>
+<p><strong>方法</strong>: FedQoS——异步、事件触发的联邦框架，用两阶段门控解耦本地计算与全局通信：① 资源感知训练门，仅当感知缓冲与能量储备满足安全阈值才启动本地学习；② QoS 感知传输策略，以平衡模型新颖性与即时延迟/能耗的效率分数决定是否上传；本地目标含按更新年龄调节锚点强度的陈旧感知近端项。</p>
+<p><strong>关键数字</strong>: 在多模态车载数据集上保持与 FedAvg 相当的个性化精度（仅边际损失），QoS 违例大幅下降，通信开销减少 76.7%，延迟成本降低 26.0%。</p>
+<p><strong>为什么值得看</strong>: 把车辆安全约束显式编入 FL 训练/通信门控，是车载场景联邦学习落地的工程化范本。</p>
+<p><a href="https://arxiv.org/abs/2609.20123v1">QoS-Aware Federated Learning for Multimodal In-Cabin Interaction in Smart Vehicles</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.20123v1">阅读原文 ↗</a></p>
 </body>
 </html>
