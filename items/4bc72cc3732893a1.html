@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gemma 4's MTP Drafter, Explained: Speculative Decoding and a 4-Bit Drafter at 60% of the Size</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Gemma 4's MTP Drafter, Explained: Speculative Decoding and a 4-Bit Drafter at 60% of the Size</h1>
+<p class="meta-line">dev.to (gde) · 2026-10-15 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fraw.githubusercontent.com%2Fxbill9%2Fgemma4-dev%2Fmain%2Flocal-llamacpp-3050oem-2b-q4_0%2Fdocs%2Fmtp-drafter-intro%2Fdevto-cover.f5d57346.jpg" alt="" referrerpolicy="no-referrer">
+<p>解析 Gemma 4 的 MTP 草稿模型与推测解码机制：4-bit 量化、体积缩减 60% 的 drafter 工程实现。</p>
+<blockquote><p>This article provides a step by step introduction to speculative decoding with Gemma 4's multi-token prediction (MTP) drafter, served by llama.cpp on a local, desktop hosted GPU enabled system. It is the first of a short series: this part explains what the drafter is and why you would use it, and the next part has the measurements.</p><p>https://github.com/xbill9/gemma4-dev/tree/main/local-llamacpp-3050oem-2b-q4_0</p><p>Gemma 4 ships a small companion model for every size, a drafter that guesses the next few tokens so the main model can check them in one pass. Google's QAT drafters are trained onto a 4-bit grid; stored that way they shrink from 97.8 MB to 59.2 MB and are published on Hugging Face.</p><p>What is this project trying to Do?</p><p>The rigs in this repository serve Gemma 4 E2B and E4B from local hardware: an RTX 3050 OEM in a desktop and a GTX 1650 Ti in a laptop. Both already run the exact 4-bit QAT builds of the main models. Google also publishes a drafter for each Gemma 4 model, and llama.cpp can now run it.</p><p>This part covers three things: how speculative decoding works, how Gemma 4's drafter differs from the usual draft model, and the exact Q4_0 repacks of Google's QAT drafters that these rigs serve.</p><p>Why Is Generating One Token at a Time Slow?</p><p>A language model writes one token per forward pass, and every pass reads every weight. For one user on a small GPU, the arithmetic is light and the memory traffic is heavy: the card spends most of each step moving weights, not computing with them.</p><p>That leaves spare compute on every step. Checking several tokens in one pass reads the same weights once and does a little more arithmetic, so it takes little more time than producing one. Speculative decoding exists to use that spare capacity.</p><p>How Does Speculative Decoding Work?</p><p>Each step has two parts.</p><p>- Draft. A small, fast model guesses the next few tokens.</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://dev.to/gde/gemma-4s-mtp-drafter-explained-speculative-decoding-and-a-4-bit-drafter-at-60-of-the-size-1oc0">阅读原文 ↗</a></p>
+</body>
+</html>

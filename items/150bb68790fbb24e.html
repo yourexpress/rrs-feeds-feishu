@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PRIME: Frequency-Aware Unified Pruning and Merging for MoE Compression</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>PRIME: Frequency-Aware Unified Pruning and Merging for MoE Compression</h1>
+<p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：MoE 模型参数庞大，现有压缩常把专家剪枝与合并当作割裂操作、依赖贪心启发式，导致不可逆信息损失或表征污染。</p>
+<p><strong>方法</strong>：PRIME 提出统一的剪枝-合并优化框架，把离散的剪枝/合并指派建模为频率加权代理目标上的全局整数线性规划，联合选择剪枝与合并决策并计入专家使用频率；理论分析表明该形式倾向选高频专家作为质心，利于路由稳定。</p>
+<p><strong>关键数字</strong>：在 Qwen3-30B-A3B 与 Qwen3.5-122B-A10B 上，PRIME 在知识、编码等任务保持强劲精度（摘要于此处截断，完整精度表见原文）。</p>
+<p><strong>为什么值得看</strong>：用全局最优化替代贪心启发式做 MoE 压缩，兼顾专家使用频率与路由稳定性，是大模型瘦身部署的方法论参考。</p>
+<p><a href="https://arxiv.org/abs/2610.13982">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.13982">阅读原文 ↗</a></p>
+</body>
+</html>

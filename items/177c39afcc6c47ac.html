@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Byzantine-linearizable Single-Writer Multi-Reader Register in the GPU-Inspired Shared Memory Model</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Byzantine-linearizable Single-Writer Multi-Reader Register in the GPU-Inspired Shared Memory Model</h1>
+<p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
+
+<p>The construction of fault-tolerant atomic registers is a fundamental problem in distributed computing.</p>
+<blockquote><p>The construction of fault-tolerant atomic registers is a fundamental problem in distributed computing. GPUs, widely used in scientific computing and machine learning, face Byzantine thread behaviour, while their shared memory lacks access control, allowing any thread to modify shared objects. This raises the question of whether atomic register semantics can be maintained when any thread, including the designated writer, may behave Byzantine. We study this problem in the GPU-inspired shared-memory model of Georgiou et al. and present implementations of a Byzantine-linearizable single-writer multi-reader (SWMR) register. CAReg uses constant memory with a quantifiable probability of invalid reads, while SnapObject maintains a bounded window of authenticated writes, eliminating invalid reads and tolerating up to \(n-1\) Byzantine processes through lock-free and wait-free variants. Our results demonstrate how GPU phase-based, lock-step execution can partially compensate for the absence of access control.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.14543">阅读原文 ↗</a></p>
+</body>
+</html>

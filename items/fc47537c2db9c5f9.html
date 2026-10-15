@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GPU Goldmines: Tunable WebGPU Kernels for Edge LLM Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>GPU Goldmines: Tunable WebGPU Kernels for Edge LLM Inference</h1>
+<p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：WebGPU 提供跨平台可移植性与浏览器可达性，但同一实现难以在不同设备上保持高性能，如何兼顾？</p>
+<p><strong>方法</strong>：提出 GPU Goldmines 框架，用于指定、执行与调优 WebGPU 内核，并以矩阵乘、矩阵向量乘、flash attention 三个 LLM 关键算子实例化；在多设备、多形状、多浏览器上刻画性能并建库，加速后续自动调优与配置选择。</p>
+<p><strong>关键数字</strong>：取自 Llama 与 Qwen 的形状上，矩阵乘内核几何均值分别超 ONNX Runtime 7.0 倍、超 llama.cpp WebGPU 内核 1.41 倍；聊天负载下 llama.cpp prefill 阶段端到端提升 1.48 倍。</p>
+<p><strong>为什么值得看</strong>：为边缘 LLM 推理提供可调优的可移植内核方案，直击跨平台与高性能难兼得的痛点。</p>
+<p><a href="https://arxiv.org/abs/2610.17321">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.17321">阅读原文 ↗</a></p>
+</body>
+</html>

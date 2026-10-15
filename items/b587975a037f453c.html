@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capacity over TFLOPS: Memory-Centric Deployment of Large Clinical Language Models on Consumer CPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Capacity over TFLOPS: Memory-Centric Deployment of Large Clinical Language Models on Consumer CPUs</h1>
+<p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：在诊疗点部署大型临床语言模型，瓶颈到底是算力还是显存？</p>
+<p><strong>方法</strong>：提出把边缘节点视为"容量型"（系统内存）而非"算力受限"（GPU 显存），用 27B 开源模型的 INT4 版作为医学模型的架构等价替身，在消费级硬件上做纯 CPU 推理实测。</p>
+<p><strong>关键数字</strong>：两台消费级机器上模型完全装入系统内存（占用 37% 与 60%），而两块 GPU 在第一步前就已 OOM；27B 模型推理 0.6–2.4 tokens/s（夜间批处理速度）；联邦微调只需传 22.6 MB 低秩适配器，较全权重减少 99.96%。</p>
+<p><strong>为什么值得看</strong>：为隐私保护的本地化临床 AI 给出一条不依赖昂贵 GPU 的落地路径，对边缘大模型部署有参考意义（全合成数据，属研究原型而非医疗器械）。</p>
+<p><a href="https://arxiv.org/abs/2610.17551">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.17551">阅读原文 ↗</a></p>
+</body>
+</html>

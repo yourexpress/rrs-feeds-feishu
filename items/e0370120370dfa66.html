@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Multi-Turn Memory, Mixed Precision, and Safer Rollouts — Serving Catches Up to Agentic Workloads (LLM Inference Digest)</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Multi-Turn Memory, Mixed Precision, and Safer Rollouts — Serving Catches Up to Agentic Workloads (LLM Inference Digest)</h1>
+<p class="meta-line">dev.to (Felipe 0liveira) · 2026-10-14 · 技术博客</p>
+<img class="hero" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F2apsr0oxw4ay8v0s5c49.png" alt="" referrerpolicy="no-referrer">
+<p>LLM 推理周报（10-07~10-14），汇总 arXiv/vLLM/HF/Modal 等动态；二手汇编，主要原始来源已另行收录。</p>
+<blockquote><p>This edition of the LLM Inference Digest covers new developments from 2026-10-07 to 2026-10-14 across arXiv, the vLLM and Hugging Face blogs, Together AI, Modal, and Latent Space.</p><p>🔥 Highlights</p><p>- Improve TTFT for Multi-Turn Agentic Workloads with Bi-Directional KV Transfer in vLLM — lets decode nodes hand KV blocks back to prefill</p><p>- DeepSeek-V4.1-Flash on vLLM: 5x Agentic Throughput Since Day 0 — three kernel tricks, 5.3x throughput under TPS limits</p><p>- Endpoint Candidates: evaluate and promote inference endpoints — built-in traffic-mirrored canarying for serving changes</p><p>- Vesta: Queueing-Aware LLM Scheduling for Real-World Workloads — balances cache locality vs. queueing, cuts TTFT sharply</p><p>- Run fast, private agents on-device with LFM2.5-24B-A2B — sparse MoE hits 21K tok/s on one GPU</p><p>arXiv (cs.LG, cs.DC)</p><p>- MultiAlloc: Budget-Aware Precision Allocation for KV Cache Quantization (2026-10-13): splits a fixed KV quantization budget between layer-wise precision boosts and token-wise preservation, using lightweight offline profiling instead of uniform compression. Outperforms single-granularity baselines on Mistral/Llama/QwQ at matched memory budgets — useful when tuning KV memory limits per model rather than applying one blanket bit-width.</p><p>- E8 Lattice Key Quantization for Low-Bit KV-Cache Compression (2026-10-11): replaces scalar KV quantization with vector quantization on an E8 lattice that exploits cross-dimension correlation, reaching a 2-bit keys/2-bit values config (previously needing 3-bit keys) for roughly 6x compression with decode throughput matching scalar baselines. Relevant for anyone pushing long-context serving memory limits.</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://dev.to/felipe0liveira/multi-turn-memory-mixed-precision-and-safer-rollouts-serving-catches-up-to-agentic-workloads-3kme">阅读原文 ↗</a></p>
+</body>
+</html>

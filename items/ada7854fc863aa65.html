@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Multi-GPU Communication Schemes for Iterative Solvers: When CPUs are Not in Charge</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Multi-GPU Communication Schemes for Iterative Solvers: When CPUs are Not in Charge</h1>
+<p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
+
+<p>This paper proposes a fully autonomous execution model for multi-GPU applications that completely excludes the involvement of the CPU beyond the initial kernel launch.</p>
+<blockquote><p>This paper proposes a fully autonomous execution model for multi-GPU applications that completely excludes the involvement of the CPU beyond the initial kernel launch. In a typical multi-GPU application, the host serves as the orchestrator of execution by directly launching kernels, issuing communication calls, and acting as a synchronizer for devices. We argue that this orchestration, or control flow path, causes undue overhead and can be delegated entirely to devices to improve performance in applications that require communication among peers. For the proposed CPU-free execution model, we leverage existing techniques such as persistent kernels, thread block specialization, device-side barriers, and device-initiated communication routines to write fully autonomous multi-GPU code and achieve significantly reduced communication overheads. We demonstrate our proposed model on two broadly used iterative solvers, 2D/3D Jacobi stencil and Conjugate Gradient(CG). Compared to the CPU-controlled baselines, the CPU-free model can improve 3D stencil communication latency by 58.8% and provide a 1.63x speedup for CG on 8 NVIDIA A100 GPUs. The project code is available at https://github.com/Pa…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.15878">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vesta: Queueing-Aware LLM Scheduling for Real-World Workloads</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Vesta: Queueing-Aware LLM Scheduling for Real-World Workloads</h1>
+<p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
+
+<p>Agentic applications generate multi-turn sequences of LLM requests, with each new turn extending the context accumulated from prior interactions and tool calls.</p>
+<blockquote><p>Agentic applications generate multi-turn sequences of LLM requests, with each new turn extending the context accumulated from prior interactions and tool calls. Prefix caching reuses the KV cache of earlier turns and avoids redundant prefill, but routing every turn to its cache-affine instance can create severe local queues while capacity remains idle elsewhere. Remote KV cache access relaxes this tension, yet migrating execution adds transfer work and is harmful when the cluster is already congested. Thus, deciding where to execute a request requires reasoning jointly about cache locality, queueing, and the current operating point of the cluster. We present Vesta, a queueing-aware scheduler for distributed agentic LLM serving. Vesta assigns each session a stable holder for its authoritative KV cache while independently selecting an executor for every request. Grounded in classical queueing theory, its objective accounts for backlog, reusable prefixes, KV cache transfer, and the queueing externality of additional service demand; it migrates execution to recover idle capacity when beneficial and favors placements that add the least prefill and transfer work as congestion rises. Vest…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.14686">阅读原文 ↗</a></p>
+</body>
+</html>

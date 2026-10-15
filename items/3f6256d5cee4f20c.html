@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A New Lens on Multi-GPU Communication: API-Level Memory Models for Portable Optimization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>A New Lens on Multi-GPU Communication: API-Level Memory Models for Portable Optimization</h1>
+<p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
+
+<p>As network communication increasingly becomes a performance bottleneck for ML and HPC workloads, it is more important than ever to optimize multi-GPU data transfers.</p>
+<blockquote><p>As network communication increasingly becomes a performance bottleneck for ML and HPC workloads, it is more important than ever to optimize multi-GPU data transfers. Recently, low-level device APIs have emerged that allow programmers to perform fine-grain optimizations via one-sided put/get operations triggered directly from the device. However, the communication libraries providing these device APIs (e.g., rocSHMEM, MSCCL++, and NCCL/RCCL GIN) currently lack a rigorous memory model defining how their primitives interact with the underlying memory systems. Without this, emerging HPC and ML workloads aggressively optimizing network communication via device APIs can be brittle, error-prone, and face compatibility and inter-operability challenges. This paper proposes the use of API-level memory models for these emerging device communication APIs. An API-level memory model defines the memory semantics of communication API calls in a way that abstracts lower-level details from the API user and simplifies development. This work defines one such model for device-side communication (implemented in AMD's recently open sourced rocSHMEM library) and demonstrates how formal relaxations to such…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.16190">阅读原文 ↗</a></p>
+</body>
+</html>

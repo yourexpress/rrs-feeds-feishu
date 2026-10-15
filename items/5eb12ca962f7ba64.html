@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HeteroVDiff: Pipelining Video Diffusion across Mobile NPU and GPU with Shared Weights</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>HeteroVDiff: Pipelining Video Diffusion across Mobile NPU and GPU with Shared Weights</h1>
+<p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：视频生成正从云端走向手机（隐私+离线），应用常一次要多个片段，端侧视频生成先是吞吐问题而非时延问题；现有方案让 NPU 或 GPU 一方闲置。</p>
+<p><strong>方法</strong>：HeteroVDiff 让移动 NPU 与 GPU 共享同一份权重做流水化执行——先测量平台边界（单缓冲大小、双运行时能否映射同一缓冲、NPU 工具链允许的单图激活内存），再把基础权重以 INT8 存一次、用 NPU 原生布局，GPU 直接消费同一字节作整数点积操作数，双方无需重排；去噪轨迹展平后在块边界切一刀，GPU 跑前缀、NPU 跑后缀，切点按实测速率（含仅 NPU 能跑的解码器）确定。</p>
+<p><strong>关键数字</strong>：服务多专家视频扩散模型时权重内存比双引擎各存一份少 48%；Galaxy S25 上背靠背生成（解码纳入流水线）时流吞吐达 NPU-only 执行的 1.35 倍；VBench-2.0 全部 18 维总分与 FP32 持平。</p>
+<p><strong>为什么值得看</strong>：为多片段并发的端侧视频生成给出异构双引擎共享权重的新范式，区别于移动 LLM 的逐算子同步与权重切分做法。</p>
+<p><a href="https://arxiv.org/abs/2610.16244">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.16244">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Revisiting Cauchy-Schwarz Norm Bounds for SDC Detection in LLM Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Revisiting Cauchy-Schwarz Norm Bounds for SDC Detection in LLM Inference</h1>
+<p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
+
+<p>Large Language Models (LLMs) execute billions of floating-point operations per output token across many hardware accelerators.</p>
+<blockquote><p>Large Language Models (LLMs) execute billions of floating-point operations per output token across many hardware accelerators. At this scale, hardware-induced faults can bypass system-level detection mechanisms and cause Silent Data Corruption (SDC). Algorithm-Based Fault Tolerance (ABFT) is the state-of-the-art technique for protecting matrix multiplication from such faults, but it incurs non-negligible computational overhead and requires thresholds to distinguish hardware-induced errors from floating-point roundoff. In this paper, we revisit Cauchy--Schwarz Norm Bounds (CSNB) as a low-overhead alternative for detecting SDC during LLM inference. We compare CSNB against ABFT through controlled fault injection and evaluate the runtime overhead of both verification and threshold determination across multiple model sizes, batch sizes, and generation lengths. Our results show that, on average, CSNB retains 99% of the fault detection capability of ABFT for the evaluated dense linear layers while reducing verification overhead by 87% and threshold determination overhead by 67%. For Mixture-of-Experts (MoE) router gate computations, however, CSNB retains only 55% of the fault detection ca…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.18557">阅读原文 ↗</a></p>
+</body>
+</html>

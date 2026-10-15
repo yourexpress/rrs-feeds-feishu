@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lightweight Scheduling Policies for Continuously Batched LLM Serving Across GPU Architectures</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Lightweight Scheduling Policies for Continuously Batched LLM Serving Across GPU Architectures</h1>
+<p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：连续批处理（continuous batching）下自回归解码的调度日益成为瓶颈，轻量调度策略能否不改模型、内核或上学习式调度器就改善时延-吞吐权衡？</p>
+<p><strong>方法</strong>：实现 Python/PyTorch 连续批处理测试台（真实 Hugging Face 执行），以 ShareGPT 派生流量、6 个 Qwen/Gemma/Mistral 模型、L40S/A100/H100 GPU 共 1152 次运行评测 8 种策略。</p>
+<p><strong>关键数字</strong>：固定模型、GPU、负载、批大小与 prefill 预算下，调度器选择显著改变吞吐、TTFT、完成时延与尾部行为；"aging + 最短 prompt 优先"在多数 L40S 与混合负载场景是最强实用基线，而 oracle 剩余长度调度表明仅知道任务长度并不够。</p>
+<p><strong>为什么值得看</strong>：为 LLM serving 调度提供大规模可控实证与可直接部署的实用基线。</p>
+<p><a href="https://arxiv.org/abs/2610.15899">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.15899">阅读原文 ↗</a></p>
+</body>
+</html>

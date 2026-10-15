@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LocalTrain: Integer-Only Local Learning for Energy-Efficient CNN Training on Edge FPGAs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LocalTrain: Integer-Only Local Learning for Energy-Efficient CNN Training on Edge FPGAs</h1>
+<p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：边缘端训练 CNN 如何做到高能效？本地学习能减少跨层依赖，但加速器仍需保存操作数、累加梯度并选择量化尺度。</p>
+<p><strong>方法</strong>：LocalTrain 提出纯整数本地学习的 FPGA 系统，用共享整数矩阵引擎训练 CNN 及其区域辅助分类器；紧凑误差在片上展开，梯度逐 tile 折叠，历史尺度支持直接输出转换。</p>
+<p><strong>关键数字</strong>：200 MHz 下 KV260 原型在 CIFAR-10 达 76.57%、SVHN 达 91.85% 精度，平均模块功耗约 4.20 W，有效矩阵吞吐 31.22/31.57 GMAC/s；对比同整数方法跑在 Jetson Orin Nano 上，训练能耗低 40.4%/42.1%，续航时间长 1.86/1.82 倍。</p>
+<p><strong>为什么值得看</strong>：纯整数端侧训练的可实测参照，功能与软件参考一致，对边缘 FPGA 训练系统有直接借鉴。</p>
+<p><a href="https://arxiv.org/abs/2610.17099">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.17099">阅读原文 ↗</a></p>
+</body>
+</html>

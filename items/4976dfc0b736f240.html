@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Distributed View from a Single GPU: RankLens for Distributed Training</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>A Distributed View from a Single GPU: RankLens for Distributed Training</h1>
+<p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
+
+<p>Modern distributed training is costly to debug, tune, and analyze because faithful analysis often requires repeated target-scale executions.</p>
+<blockquote><p>Modern distributed training is costly to debug, tune, and analyze because faithful analysis often requires repeated target-scale executions. We observe that many analysis tasks depend on the original distributed execution path, but not on full all-rank execution. We present RankLens, a single-rank emulation system that runs one survivor rank on a single GPU while preserving the target job's distributed semantics. The survivor rank executes the original training program and performs real local computation. At communication boundaries, the system replaces real multi-rank communication with task-dependent semantics, selectively restoring recorded communication results and recorded or estimated completion timing while preserving the asynchronous dependencies required for analysis. This enables replay from real executions and supports analysis, debugging, and tuning with existing debuggers and performance analysis tools. We evaluate the system on DeepSpeed and Megatron-LM across 8-64-GPU target configurations. RankLens achieves 100% training-tensor communication-structure match, keeps emulation timing error below 5%, supports local anomaly reproduction and execution analysis, and reduce…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.18009">阅读原文 ↗</a></p>
+</body>
+</html>

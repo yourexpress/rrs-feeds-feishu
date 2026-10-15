@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FORGE: Procedural Weight Generation for Sparse MoE Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>FORGE: Procedural Weight Generation for Sparse MoE Inference</h1>
+<p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：稀疏 MoE 自回归解码中，专家权重既吃 HBM 带宽又迫使多节点专家并行，能否不存储而现场重建权重？</p>
+<p><strong>方法</strong>：FORGE 提出片上程序化权重生成——每个 SM 内置固定功能数据通路（RGU），从每投影 O(log²d) 个转子参数实时重建专家权重，与 Tensor Core 执行互不争用。</p>
+<p><strong>关键数字</strong>：用不到 1 MB 种子近似每层数 GB 专家权重；5 个模型替换 30% MoE FFN 层，估计同 GPU 数下系统吞吐提升 1.3–2.8 倍、短上下文每用户解码时延降至 1.10–1.15 倍，KV cache 容量扩大 1.2–2.6 倍；RGU 在 SystemVerilog 完整实现，7nm 下每 SM 面积开销约 0.9%（0.032 mm²）。</p>
+<p><strong>为什么值得看</strong>：以硬件换取 MoE 存储与流量瓶颈的新思路，代价是下游精度低于未替换微调版，替换比例可调权衡。</p>
+<p><a href="https://arxiv.org/abs/2610.16890">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.16890">阅读原文 ↗</a></p>
+</body>
+</html>

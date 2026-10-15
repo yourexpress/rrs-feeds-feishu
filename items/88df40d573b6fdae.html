@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Substep Linearizability: Relaxing Atomicity While Preserving Sequential Specification</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Substep Linearizability: Relaxing Atomicity While Preserving Sequential Specification</h1>
+<p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
+
+<p>Linearizability is a standard correctness condition for concurrent objects.It takes a correct by construction sequential specification of a concurrent data structure, and produces a composable specification under atomic interleavings of operations.</p>
+<blockquote><p>Linearizability is a standard correctness condition for concurrent objects. It takes a correct by construction sequential specification of a concurrent data structure, and produces a composable specification under atomic interleavings of operations. However, some operations like atomic exchangers are not specifiable atomically, making it difficult to reason compositionally about their specifications. Interval linearizability is the state of the art in relaxing linearizability's constraints. Formally it is a powerful framework, but it requires an interval-sequential specification of the target data structure, which we show is challenging to correctly generate or understand, even for simple operations on a single concurrent register. We propose substep linearizability, which we show is equivalent to interval linearizability using X-CCorrectness, a relaxed concurrency framework we created to compare existing linearizability semantics. We show that substep linearizability's sequential specifications are suitable for previously infeasible specification tasks, while being comparable in complexity to linearizability's sequential specifications. For evaluation, we model an atomic exchanger…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.16099">阅读原文 ↗</a></p>
+</body>
+</html>

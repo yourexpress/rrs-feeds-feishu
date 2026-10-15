@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AgentWeave: Efficient Distributed Agent Serving via Flow Decomposition</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>AgentWeave: Efficient Distributed Agent Serving via Flow Decomposition</h1>
+<p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
+
+<p>Agent applications are evolving into workflows composed of large language model (LLM) calls and tool invocations, termed modules.</p>
+<blockquote><p>Agent applications are evolving into workflows composed of large language model (LLM) calls and tool invocations, termed modules. Existing distributed agent systems typically adopt a disaggregated architecture, deploying different modules on separate devices. While this enables pipeline parallelism, imbalanced module latencies introduce severe pipeline bubbles that limit throughput. A natural alternative is an aggregated architecture that co-deploys all modules across all devices, eliminating bubbles by keeping every device continuously active. However, this introduces request blocking: short requests are forced to progress in lockstep with longer ones in the same batch, and newly arriving requests must wait until the entire ongoing batch completes the full workflow. To address this, we propose AgentWeave, an efficient distributed serving system for agent applications built on the aggregated architecture. Its core mechanism, flow decomposition, decomposes long agent requests into fine-grained execution units while preserving agent semantics, allowing short and newly arriving requests to proceed without being stalled by long-running ones. Complementing this, a flow-adaptive schedule…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.14804">阅读原文 ↗</a></p>
+</body>
+</html>

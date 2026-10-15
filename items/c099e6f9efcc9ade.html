@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LFM2.5-24B-A2B: Built for Fast On-Device Agents</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LFM2.5-24B-A2B: Built for Fast On-Device Agents</h1>
+<p class="meta-line">Liquid AI · 2026-10-13 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://aypchzzf9pftwuto.public.blob.vercel-storage.com/image%20(3)-oOdUn61bDRSykk4H951SoDOHzqoOe1.png" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong>：Liquid AI 发布 LFM2.5 家族收官模型 LFM2.5-24B-A2B——总参数 24B、每 token 仅激活 2B 的 MoE 推理模型，主打端侧快速私有 agent。</p>
+<p><strong>要点</strong>：保持 40 层、每层 64 专家 top-4 路由的门控短卷积+GQA 混合架构；上下文从 32K 扩至 131K，词表从 65K 翻倍至 128K；预训练从 17T 扩到 33T token，并做大规模强化学习。与前代不同，本版是 reasoning-only 模型，先输出显式思维链再作答；权重已开放在 Hugging Face。</p>
+<p><strong>关键数字</strong>：在 8 项 agentic/工具使用基准中的 5 项超过总参数与激活参数多约 50% 的 Qwen3.6-35B-A3B（LiveClaw 48.09 vs 38.19；AutomationBench 27.69 vs 8.72）；端侧解码比同级 MoE 快至 1.7 倍，Apple M5 Max 上 184 tokens/s，单块 NVIDIA B300 输出可达 21K tokens/s。</p>
+<p><strong>为什么值得看</strong>：2B 激活参数做出能打的 agentic 推理，是端侧/低功耗设备跑推理模型的最新参照，对可穿戴与边缘 LLM 部署选型有直接借鉴。</p>
+<p><a href="https://www.liquid.ai/blog/lfm2-5-24b-a2b">原文链接</a></p>
+<p><a class="origin" href="https://www.liquid.ai/blog/lfm2-5-24b-a2b">阅读原文 ↗</a></p>
+</body>
+</html>

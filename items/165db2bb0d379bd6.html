@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compositional Performance Modeling of LLM Inference Clusters with Hierarchical KV Caching</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Compositional Performance Modeling of LLM Inference Clusters with Hierarchical KV Caching</h1>
+<p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
+
+<p>Design-space exploration of LLM inference clusters requires predicting how hardware and serving policies interact with hierarchical key-value (KV) caching.</p>
+<blockquote><p>Design-space exploration of LLM inference clusters requires predicting how hardware and serving policies interact with hierarchical key-value (KV) caching. Isolated operation profiles alone do not determine cluster latency: reuse changes computational demand, while KV location, capacity, and contention govern execution order. We present a compositional discrete-event simulator based on separating local service costs from shared resource and KV availability. Compute and transfer models calibrated on one-prefill/one-decode (1P-1D) deployments are reused across compatible workers, enabling policy and topology comparisons without per-configuration latency fitting. Validation against SGLang covers Qwen3-8B and Qwen3-32B on 1P-1D and 3P-1D clusters. Mean request end-to-end latency error is 1.34% for question answering and 6.36% for captured coding sessions, measured as mean absolute percentage error. CPU simulation reduces replay turnaround by 15.33 times on average; real replay includes prescribed arrival gaps. Measured session-affinity and simulated retention studies demonstrate how the framework guides policy selection by predicting the joint effects on computation, latency, and KV oc…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.15366">阅读原文 ↗</a></p>
+</body>
+</html>
