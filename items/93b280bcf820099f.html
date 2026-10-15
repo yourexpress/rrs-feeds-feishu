@@ -22,8 +22,11 @@
 <h1>SP$^2$ec: Adaptive Self-Speculative Decoding for Vision-Language Models</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
 
-<p>SP²ec：视觉语言模型的自适应自推测解码，按多模态输入动态选择草稿层以稳定吞吐。</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> VLM 输入模态多样，小型 drafter 难保持稳定的推测解码吞吐；自推测解码复用目标模型自身做 drafter，但效率取决于为每个 prompt 选对草稿配置。</p>
+<p><strong>方法</strong> SP²ec：免训练的 bandit 算法，在生成过程中自适应调整草稿配置，利用现有自推测方法（SWIFT、KnapSpec、SpecVLM 等）中观察到的单峰吞吐模式，显式最小化每查询的墙钟时间 regret 并给出理论保证。</p>
+<p><strong>关键数字</strong> 在 Qwen2.5-VL-7B-Instruct 与 LLaVA-NeXT-Mistral-7B 的视觉与文本任务上，较原自推测方法一致提升最高 11%。</p>
+<p><strong>为什么值得看</strong> 用 bandit 把自推测解码的草稿配置选择从"逐 prompt 调"变成自动适应，免训练即插即用。</p>
+<p><a href="https://arxiv.org/abs/2610.18735">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.18735">阅读原文 ↗</a></p>
 </body>
 </html>

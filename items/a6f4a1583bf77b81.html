@@ -22,8 +22,11 @@
 <h1>Towards Green AI: Evaluating Energy Efficiency for Quantized LLM Inference</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
 
-<p>首个统一评测 weight-only 量化 LLM 推理在不同 GPU 与输入输出长度下能耗效率与碳强度的实证研究。</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> 量化降内存已知，但量化推理对能耗与碳强度的影响缺乏系统定量研究。</p>
+<p><strong>方法</strong> 首个统一评测：5 个模型（Llama 2 7B、Phi 3.5 Mini、OLMo 1B、Qwen 2.5 7B/14B）× 4 数据集 × 10 种 PTQ 策略 × 4 款 GPU（H100/A6000/A100/L4），在不同输入输出长度下比较能效、精度损失与运行时间。</p>
+<p><strong>关键数字</strong> 输入足够长、输出短时量化相对全精度的能效收益最大；批增大带来的能效提升有限；EETQ int8、Bitsandbytes int8 等融合内核最省电，短文本生成较 FP32 最高省 4 倍且精度损失可忽略；能耗与运行时间高度同步。</p>
+<p><strong>为什么值得看</strong> 首份 weight-only 量化能效统一评测，"优化时延≈减碳"的结论对绿色 AI 实践有直接指导性。</p>
+<p><a href="https://arxiv.org/abs/2610.17531">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17531">阅读原文 ↗</a></p>
 </body>
 </html>

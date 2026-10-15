@@ -22,8 +22,11 @@
 <h1>FlashMask-3: Efficient and Expressive Mask-Aware Distributed Attention</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
 
-<p>FlashMask-3：高效且富表达力的掩码感知分布式注意力，支撑结构化掩码的多节点上下文并行训练。</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> 长上下文训练把结构化注意力掩码与多节点上下文并行耦合，掩码成为主要瓶颈。</p>
+<p><strong>方法</strong> FlashMask-3 在 FlashAttention-3 的 TMA/WGMMA 流水线上做掩码感知 Hopper 内核（三角色 warp 专精化），分布式扩展实现零通信掩码定位、稀疏感知负载均衡（HCC-IPO）与掩码驱动的计算通信重叠。</p>
+<p><strong>关键数字</strong> 单 H100、4K~128K、12 种掩码下，TFLOPs 较 FlashMask/FlexAttention/MagiAttention 分别提升 45~141%/34~71%/2~44%；并行度 4~32 时吞吐较 Megatron-Core CP ring 提升 1.80~3.71 倍；128 张 H100 训练 118B-A14B MoE 端到端提升 7.3~11.0%。</p>
+<p><strong>为什么值得看</strong> 把"结构化掩码+上下文并行"做实的工程重器，Hopper 专项优化与大模型实测兼备。</p>
+<p><a href="https://arxiv.org/abs/2610.17901">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17901">阅读原文 ↗</a></p>
 </body>
 </html>

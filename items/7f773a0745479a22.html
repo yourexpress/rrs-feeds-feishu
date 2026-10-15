@@ -22,8 +22,11 @@
 <h1>WUSPruner: Second-Moment-Optimal Transforms for Structured Pruning</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
 
-<p>WUSPruner：二阶矩最优变换的结构化剪枝框架，为坐标删除专门选择最优剪枝基而非仅选删除维度。</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> 结构化剪枝通常只问"删哪些维度"，但坐标删除的效果根本上取决于在哪个基下执行剪枝。</p>
+<p><strong>方法</strong> WUSPruner 把基选择形式化为局部线性重建问题：由激活与权重统计联合构造的 WUS 变换最小化剪枝重建损失，同时将两者二阶矩对角化并平衡，使删除误差分解为独立谱贡献；实现用分块 WUS 变换与紧凑输入投影。</p>
+<p><strong>关键数字</strong> 摘要未给具体数值；在 Llama 与 Qwen 8B~72B 上，语言建模、知识、常识推理、数学与代码基准一致优于结构化剪枝基线，并带来实际时延与内存下降。</p>
+<p><strong>为什么值得看</strong> 正面回答"该在哪个基下剪"的理论问题，给出二阶矩意义下的最优变换，并有 72B 规模验证。</p>
+<p><a href="https://arxiv.org/abs/2610.15394">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15394">阅读原文 ↗</a></p>
 </body>
 </html>

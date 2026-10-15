@@ -22,9 +22,11 @@
 <h1>Quota-Based Aging for Prediction-Guided Scheduling in LLM Serving</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
 
-<p>QBA：配额制老化策略，为预测引导的短优先调度防止长请求饥饿，轻量可部署。</p>
-<blockquote><p>Large language model (LLM) serving systems use token-level continuous batching to improve resource utilization, but heterogeneous response lengths complicate request scheduling. Prediction-guided short-first scheduling reduces average latency but can severely delay long requests, while unrestricted aging may over-promote delayed long requests under congestion. We propose Quota-Based Aging (QBA), a lightweight policy that combines predicted short-first admission with quota-bounded, debt-enforced promotion of aged predicted-long requests. We also use a reduced M/G/n queueing surrogate, calibrated from simulator traces, to explain first-order mean-latency trends. QBA is evaluated using a serving-aware event-driven simulator that models decode-priority batching, chunked prefill, token-budget constraints, and KV-cache-safe admission. We compare QBA with FCFS, predicted short-first, and aggressive aging under asymmetric prediction errors on synthetic and production-derived workloads. The evaluation considers queueing delay, throughput, utilization, and class-conditional tail performance. Results show that QBA provides a controllable middle ground between aggressive short-first prioritiza…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 预测引导的短优先调度降低平均时延但会严重拖延长请求，无限制老化又可能在拥塞下过度提升长请求。</p>
+<p><strong>方法</strong> QBA：预测短优先准入 + 配额约束、债务强制的老化提升；用仿真轨迹校准的精简 M/G/n 排队代理模型解释均值时延趋势；评估在含 decode 优先批处理、chunked prefill、token 预算与 KV 安全准入的事件驱动模拟器上进行。</p>
+<p><strong>关键数字</strong> 摘要未给具体数值；结果显示 QBA 在显著降低长请求尾时延的同时保留预测调度大部分均值时延收益，是激进短优先与无限制老化之间的可控中间路线。</p>
+<p><strong>为什么值得看</strong> 针对"长请求饥饿"这一真实痛点的轻量策略，评估还覆盖非对称预测误差，方法务实。</p>
+<p><a href="https://arxiv.org/abs/2610.17795">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17795">阅读原文 ↗</a></p>
 </body>
 </html>

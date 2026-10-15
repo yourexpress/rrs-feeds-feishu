@@ -23,7 +23,8 @@
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
 <p>Choosing a mixed-precision configuration for large language model (LLM) serving trades speed against accuracy.</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<blockquote><p>Choosing a mixed-precision configuration for large language model (LLM) serving trades speed against accuracy. Allocators that use average bit-width or a memory budget as a speed proxy can miss changes in the resource that limits execution. We argue that served speed can be limited by compute, weight loading, or key-value (KV) cache access, depending on the phase, batch size, and context length. A byte-based proxy does not capture all of these costs, so fewer bits do not always mean faster serving. To address this gap, we build a cost model that accounts for the binding resource and use it in two ways. First, as a predictor: given a configuration and operating point, it estimates serving latency using constants calibrated for the model, GPU, and serving stack. We evaluate its accuracy across three hardware classes. Second, as an allocator: we combine modeled time costs with measured per-tensor accuracy costs and use a dynamic program to select a configuration under a latency or accuracy budget. We compare its configurations against byte-aware and sensitivity-only allocation.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15629">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,8 +22,11 @@
 <h1>MultiAlloc: Budget-Aware Precision Allocation for KV Cache Quantization</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
 
-<p>MultiAlloc：KV cache 量化的预算感知精度分配，层间精度调节与 token 级信息保留结合，轻量离线 profiling 驱动。</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> KV cache 量化已有层间与 token 级两类粒度，但实际部署的关键是固定内存预算下如何在两种策略间分配有限量化资源。</p>
+<p><strong>方法</strong> MultiAlloc：轻量离线 profiling 刻画层敏感度与 token 重要性，依据内存-精度权衡自动推导精度分配策略，无需在线搜索，推理时直接执行策略。</p>
+<p><strong>关键数字</strong> 摘要未给具体数值；在推理与长上下文基准上，相同内存预算下于 Mistral、Llama、DeepSeek-Qwen、QwQ 等模型一致优于层间、token 级及近期多粒度方法。</p>
+<p><strong>为什么值得看</strong> 把"精度分配"而非"压缩本身"当作 KV 量化第一问题，轻量 profiling 替代在线搜索，部署成本低。</p>
+<p><a href="https://arxiv.org/abs/2610.18642">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.18642">阅读原文 ↗</a></p>
 </body>
 </html>

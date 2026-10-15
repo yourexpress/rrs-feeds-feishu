@@ -22,8 +22,11 @@
 <h1>Heterogeneous Structured Pruning Under Resource Constraints for Hardware-Efficient Large Language Models</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
 
-<p>资源约束下的异构结构化剪枝：剪枝决策考虑目标硬件存储/计算权重的实际方式，而非只优化保留权重总数。</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> 现有免训练剪枝只考虑保留权重总数，不考虑目标硬件如何存储与计算这些权重，也忽视不同结构的资源权衡。</p>
+<p><strong>方法</strong> HSP：搜索空间含稠密、非结构化、2:4、块稀疏、头/通道剪枝五类选项，配时延与内存模型的正则化约束；全局求解器在资源预算下为每个子层选一结构与密度，最小化代理剪枝损失。</p>
+<p><strong>关键数字</strong> 摘要未给具体数值；在 OPT 与 LLaMA 上面向 NVIDIA Jetson Orin Nano Super 边缘设备评测，质量-资源前沿优于免训练基线。</p>
+<p><strong>为什么值得看</strong> 把"硬件感知"落到结构选择上：连存储与计算方式都计入预算，对边缘部署更贴近现实。</p>
+<p><a href="https://arxiv.org/abs/2610.15781">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15781">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,8 +22,11 @@
 <h1>E8 Lattice Key Quantization for Low-Bit KV-Cache Compression</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
 
-<p>用 E8 格向量量化替代标量量化压缩 KV cache 至 2-bit 键/值，利用维度间相关性，在低比特下保持质量稳定。</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> KV cache 标量量化在 2-bit 下面临质量不稳，往往需要 3-bit 键才能保住模型质量。</p>
+<p><strong>方法</strong> 用 E8 格对键做向量量化，利用相邻维度相关性在相同载荷下取得高于标量量化的 SQNR；配表式非对称打分算法，注意力计算时免显式码本反量化、保持解码吞吐持平。</p>
+<p><strong>关键数字</strong> 统一 k2v2（2-bit 键+2-bit 值）实现约 6 倍 KV 压缩、比标量 k3v2 体积再小约 20%，长上下文困惑度接近基线；80% 的模型-数据集-上下文设置优于标量 k3v2。</p>
+<p><strong>为什么值得看</strong> 结构化向量量化在不损失吞吐的前提下提升"每字节质量"，是低比特 KV 压缩栈里一个低开销新原语。</p>
+<p><a href="https://arxiv.org/abs/2610.15384">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15384">阅读原文 ↗</a></p>
 </body>
 </html>

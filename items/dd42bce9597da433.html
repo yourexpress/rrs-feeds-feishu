@@ -22,9 +22,11 @@
 <h1>Prorsa: Unleashing the Potential of Prefill-Decode Disaggregation in Agentic Reinforcement Learning</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
 
-<p>Prorsa：释放 prefill-decode 分离在 agentic RL rollout 中的潜力，应对多轮交互中 prefill/decode 共存负载。</p>
-<blockquote><p>Agentic reinforcement learning (RL) is commonly used to enhance the capabilities of large language models (LLMs) in solving complex multi-turn tasks. During rollout, agentic RL exhibits a workload pattern distinct from that of traditional RL: multi-turn interactions repeatedly introduce prefill requests, causing prefill and decode workloads to coexist throughout rollout. This workload makes prefill-decode (PD) disaggregation, a design widely used for online LLM serving, promising for speeding up agentic RL rollout. This paper shows that PD disaggregation can improve rollout efficiency by (a) mitigating interference among data-parallel attention modules, (b) enabling stage-specific parallelism, and (c) reducing end-to-end trajectory completion time. However, a fixed prefill-decode allocation may fail to sustain these benefits as workload composition varies across tasks and over time. We therefore present Prorsa, an agentic RL framework for prediction-guided prefill-decode resource allocation. Prorsa observes the lifecycle of every trajectory to forecast short-horizon prefill and decode demand. These forecasts then guide worker allocation decisions and trigger role switching of rollo…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Agentic RL 的 rollout 因多轮交互反复引入 prefill 请求，prefill 与 decode 负载全程共存，固定 PD 分离分配难以跟上负载变化。</p>
+<p><strong>方法</strong> Prorsa：预测引导的 prefill-decode 资源分配框架，观测每条轨迹生命周期以预测短视界的 prefill/decode 需求，指导 worker 分配并触发 rollout 引擎的角色切换，使容量与预期负载对齐。</p>
+<p><strong>关键数字</strong> 同步与异步 agentic RL 设置下，较 prefill-decode 同置（colocation）取得 1.11~4.05 倍端到端 rollout 加速。</p>
+<p><strong>为什么值得看</strong> PD 分离多用于在线推理服务，这篇把它带进 agentic RL 训练场景并配动态分配，直接提升训练 rollout 效率。</p>
+<p><a href="https://arxiv.org/abs/2610.16592">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16592">阅读原文 ↗</a></p>
 </body>
 </html>

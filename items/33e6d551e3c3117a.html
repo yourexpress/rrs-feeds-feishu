@@ -22,8 +22,11 @@
 <h1>Linear-Time Non-Local Codec Placement for Machine Learning Model Compression</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
 
-<p>端侧模型压缩的线性时间非局部 codec 放置算法，避免编解码器放置不当抵消压缩带来的操作数流量收益。</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> 端侧推理受益于压缩操作数表示，但编解码算子的朴素放置可能抵消压缩带来的操作数流量收益。</p>
+<p><strong>方法</strong> 提出线性时间的 codec 放置算法：对计算图边着色，使每个诱导子图弱连通且存在唯一"绝对支配者"节点（后支配全部输入、支配全部输出），作为观测流量与学习参数化 codec 的天然位置。</p>
+<p><strong>关键数字</strong> 相对朴素局部放置，4 个模型上建模操作数流量减少 24%~44%，其中 SigLIP 减 24%、SmolLM2 减 34%。</p>
+<p><strong>为什么值得看</strong> 端侧压缩里的图论细节活，指出"codec 放哪"这个容易被忽视的问题本身就能吃掉压缩收益。</p>
+<p><a href="https://arxiv.org/abs/2610.14703">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14703">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,8 +22,11 @@
 <h1>Accelerating Cross-Model LLM Inference via Attention Map Reuse</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
 
-<p>MapFlow：跨异构模型推理复用注意力图（而非 KV）加速 LLM 增强的多模型数据工作流。</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> LLM 数据工作流常涉及多个异构模型共享大量公共上下文，但 KV 状态与特定架构绑定，前缀缓存只能在同模型内复用。</p>
+<p><strong>方法</strong> MapFlow 改为复用注意力图——它刻画 token 间依赖模式、更易跨模型迁移；配合部分重计算与跨层跨头的轻量线性转换，并引入块级稀疏压缩与融合检索内核支持长上下文。</p>
+<p><strong>关键数字</strong> 摘要未给出具体数值，只说明降低 prefill 延迟、提升端到端服务效率且保持生成质量；代码已开源（PKU-DAIR/MapFlow）。</p>
+<p><strong>为什么值得看</strong> 用注意力图而非 KV 打破前缀缓存的同模型壁垒，思路新颖，尤其适合前缀密集的多模型数据流水线。</p>
+<p><a href="https://arxiv.org/abs/2610.14688">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14688">阅读原文 ↗</a></p>
 </body>
 </html>

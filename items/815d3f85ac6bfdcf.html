@@ -22,9 +22,11 @@
 <h1>Simulate Before You Scale: High-Fidelity LLM Inference Planning Without GPUs</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
 
-<p>无需 GPU 的高保真 LLM 推理部署模拟规划，联合选择硬件布局/并行策略/调度/准入/路由。</p>
-<blockquote><p>Deploying large language model (LLM) inference at scale requires jointly selecting hardware layout, parallelism strategy, scheduling policy, admission control, and request routing to meet latency and throughput targets. These choices interact: a routing decision that improves cache locality can concentrate load, and an admission threshold that triggers only at saturation allows queues to grow deep enough to degrade critical-tier traffic. Evaluating candidates on GPU clusters is too expensive for iterative exploration, yet existing predictive tools either ignore batching and queueing dynamics or model only fragments of the pipeline. In this paper, we present BLIS, a deterministic, CPU-only discrete-event simulator that models the full inference serving pipeline (admission, routing, scheduling, prefill/decode execution, KV-cache management, and preemption). BLIS pairs analytical basis functions with learned scaling coefficients and overhead terms, fit once globally, to predict step latency without per-model or per-GPU profiling. Across 36 experiments spanning six models and three GPU types, BLIS achieves 6.7% median end-to-end error while running around 200 times faster than real exe…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 推理规模化部署需联合选择硬件布局、并行策略、调度、准入与路由，GPU 试错昂贵，现有预测工具只建模管线片段。</p>
+<p><strong>方法</strong> BLIS：纯 CPU 确定性离散事件模拟器，覆盖准入、路由、调度、prefill/decode、KV 管理与抢占全管线；解析基函数加全局拟合的学习系数预测步延迟，无需逐模型/逐 GPU 画像。</p>
+<p><strong>关键数字</strong> 6 模型 3 类 GPU 共 36 个实验，中位端到端误差 6.7%，比真实执行快约 200 倍；为 Llama-2-70B 搜索 420 个配置找到满足 300ms TTFT SLO 的 4-GPU 方案；模拟中演化出的准入/流控策略经真机验证并入 llm-d，关键层 TTFT P90 最多降 82%。</p>
+<p><strong>为什么值得看</strong> "先模拟再扩容"省去 GPU 试错成本，策略被开源平台 llm-d 采纳，落地成色足。</p>
+<p><a href="https://arxiv.org/abs/2610.14255">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14255">阅读原文 ↗</a></p>
 </body>
 </html>

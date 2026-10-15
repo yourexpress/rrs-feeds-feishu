@@ -22,8 +22,11 @@
 <h1>GA-SVD: Generation-aware Singular Value Decomposition for LLM Compression</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
 
-<p>GA-SVD：生成感知的 SVD 压缩，按生成输出的实际分布而非仅权重重建误差优化低秩分解。</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> 现有 SVD 低秩压缩主要针对多选评测，生成任务常掉点，秩分配也多靠启发式。</p>
+<p><strong>方法</strong> GA-SVD：① 生成感知权重白化（GAWW），利用在线策略蒸馏的梯度构造对齐生成行为的白化变换；② 进化式全局秩分配，在给定压缩比下搜索逐层秩。</p>
+<p><strong>关键数字</strong> 在 Mistral-7B、Qwen3 系列、Llama-3.3 上，多选与生成基准均一致超过现有 SVD 基线并达到 SoTA；可扩展到 70B 参数模型。</p>
+<p><strong>为什么值得看</strong> SVD 压缩长期被诟病"评测友好、生成掉点"，这篇用生成感知优化正面补上这块短板。</p>
+<p><a href="https://arxiv.org/abs/2610.15398">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15398">阅读原文 ↗</a></p>
 </body>
 </html>

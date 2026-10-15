@@ -23,7 +23,8 @@
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
 <p>Counting is a simple task on which transformers can nevertheless fail at long sequence lengths.</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<blockquote><p>Counting is a simple task on which transformers can nevertheless fail at long sequence lengths. We study the cost of counting in a single attention layer, up to a maximum length $L$, focusing on how softmax attention and layer normalization shape the representation from which the count is recovered. We mainly focus on regression read-out but also consider classification read-out. For regression, we show unnormalized linear attention counts exactly at parameter norms independent of $L$. For softmax attention, regression cannot count exactly with finite parameters; it recovers the count after rounding, but only when the vector parameter norms grow with $L$. We measure this cost by $B_{\min}$, the smallest bound that can be placed on every trainable vector to ensure exact counting after rounding, and derive tight rates. At fixed model dimension, $B_{\min}$ grows as $L$ without normalization, as $L^{3/2}$ under bare post-normalization, and as $L^{3/4}$ with learned post-normalization. The last rate is unexpected: post-normalization discards the magnitude that carries the count and might be expected to make counting harder, yet with a learnable gain it counts at a smaller norm than soft…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16653">阅读原文 ↗</a></p>
 </body>
 </html>

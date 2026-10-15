@@ -22,8 +22,11 @@
 <h1>BELT : BEhavior-Aligned Low-Rank KV Cache Compression with Learned Top-k Rank Allocation</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
 
-<p>BELT：行为对齐的低秩 KV cache 压缩，优化目标对准注意力分布而非原始键，配可学习全局 top-k 秩分配。</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> 长上下文推理中 KV cache 成为 LLM 主要内存瓶颈，低秩压缩又常以质量为代价。</p>
+<p><strong>方法</strong> BELT 的 key 侧优化目标对准注意力分布而非原始键，得到带闭式低秩解的二次代理目标；可学习全局秩分配器训练时用可微软选择、部署时硬选择，满足用户指定的组件预算。</p>
+<p><strong>关键数字</strong> 最高 70% 低秩 KV 压缩，LongBench 上超最强基线最多 23.3 分；结合量化总体 KV 缩减最高 17.8 倍；配 Triton 内核注意力模块最高加速 2.7 倍、端到端解码吞吐 3.3 倍。</p>
+<p><strong>为什么值得看</strong> "对齐行为而非对齐键"给低秩压缩一个有原则的优化目标，压缩与加速数字都很完整。</p>
+<p><a href="https://arxiv.org/abs/2610.17966">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17966">阅读原文 ↗</a></p>
 </body>
 </html>

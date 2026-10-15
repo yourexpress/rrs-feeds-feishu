@@ -22,8 +22,11 @@
 <h1>Mixed Precision Scaling Laws for Quantized Pretraining</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
 
-<p>混合精度量化预训练缩放律：分离前向/反向传播精度，基于优化理论建模并实证验证。</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> 现有量化预训练缩放律未区分前向/反向混合精度，也未建模量化引入的持续优化误差。</p>
+<p><strong>方法</strong> 基于优化理论建模：分离量化对模型容量与优化效率的影响，显式建模前向/反向量化的持续优化误差；先把现有 4-bit 配方分解为前向/反向组件再选拟合区间。</p>
+<p><strong>关键数字</strong> Qwen3 与公开 Llama 式 4-bit 实验显示，其 loss 预测 MSE 较现有缩放律最高低 11 倍；扩展到逐层混合精度，在硬件感知算力预算下给出最优配方（模型规模、token 数、每层前向/反向精度）。</p>
+<p><strong>为什么值得看</strong> "最优精度随算力预算上升"的结论与先前精度缩放律相反，给混合精度训练配置提供了理论依据。</p>
+<p><a href="https://arxiv.org/abs/2610.17637">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17637">阅读原文 ↗</a></p>
 </body>
 </html>

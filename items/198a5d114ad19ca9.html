@@ -23,7 +23,8 @@
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
 <p>Linear attention and recurrent models compress past tokens into a fixed-size state that is updated at every step.</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<blockquote><p>Linear attention and recurrent models compress past tokens into a fixed-size state that is updated at every step. However, storing these states in high precision incurs substantial memory and bandwidth costs at large batch sizes, motivating low-bit state quantization. Unlike weights and key--value caches, a recurrent state is requantized after every update, so its quantization errors accumulate across steps. Our analysis shows that these errors are highly coherent across steps, so reducing per-step errors alone is insufficient. This coherence arises mainly from small updates that are lost in rounding. To preserve these updates, we intervene both before and at rounding. Before rounding, we propose Low-Rank Bypass (LRB), which accumulates small updates in a compact low-rank buffer and periodically merges its sufficiently large elements into the state. At rounding, we observe that a state element can even move opposite to its update, and such reversals prove particularly harmful. Therefore, we propose Bounded Directional Rounding (BDR), which rounds reversed elements toward their updates without additional storage. Although BDR enlarges the rounding error, it improves the model, sugge…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15709">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,8 +22,11 @@
 <h1>Context-Aware Precision Scheduling for Small Language Models</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
 
-<p>端侧小语言模型的上下文感知动态精度调度，随上下文增长重新平衡精度配置的精度-时延权衡。</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> 端侧小语言模型须在上下文增长中平衡精度与时延，而为短上下文选定的混合精度配置在长上下文下不再最优。</p>
+<p><strong>方法</strong> 用不同精度/上下文长度的实测校准时延模型，结合张量敏感度在时延或精度预算下选配置；预测器按校准执行成本而非权重字节估时延；运行时按预生成调度执行并保留会话 KV。</p>
+<p><strong>关键数字</strong> 摘要未给统一量化结论；在笔记本 GPU 上评测，含三种权重格式的长上下文调度与工具调用基准（完整响应时间与正确率）。</p>
+<p><strong>为什么值得看</strong> 指出"比特更少不等于更快"的反直觉点，把精度调度做成随上下文动态变化的问题，对端侧部署有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.15640">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15640">阅读原文 ↗</a></p>
 </body>
 </html>

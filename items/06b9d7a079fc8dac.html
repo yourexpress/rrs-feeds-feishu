@@ -22,8 +22,11 @@
 <h1>MLAfication: Efficiently Enabling High-Fidelity MLA for Modern LLMs</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
 
-<p>MLAfication：QKNorm 兼容、参数高效地把现代 LLM（含 MoE）升级为 MLA 以压缩 KV cache，无需昂贵恢复。</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> MLA 把 KV cache 压进潜表示以降低内存与带宽，但现有 MHA2MLA/TransMLA 不支持 QKNorm，在现代 LLM（尤其 MoE）上还需昂贵恢复。</p>
+<p><strong>方法</strong> MLAfication：QKNorm 兼容、参数高效的 MHA2MLA 扩展，组合校准 KNorm、参数高效蒸馏、贡献感知 Partial-RoPE 与激活感知联合 KV 初始化。</p>
+<p><strong>关键数字</strong> Qwen3-30B-A3B 上服务吞吐最高达 BF16 GQA 的 5.35 倍；叠加 4-bit KV 量化，KV 占用减少 94.73%；常识与长上下文基准超过当前 SOTA；代码开源。</p>
+<p><strong>为什么值得看</strong> 把现有 MHA/GQA 模型"升级"为 MLA 是改造式 KV 压缩的务实路线，这篇补齐了 QKNorm 与 MoE 两个硬骨头。</p>
+<p><a href="https://arxiv.org/abs/2610.17202">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17202">阅读原文 ↗</a></p>
 </body>
 </html>

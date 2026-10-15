@@ -23,7 +23,8 @@
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
 <p>Model merging combines fine-tuned experts into one network without retraining, and closed-form methods compute each merged layer from statistics of its input activations.</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<blockquote><p>Model merging combines fine-tuned experts into one network without retraining, and closed-form methods compute each merged layer from statistics of its input activations. However, these statistics are measured on a single expert, while in the merged model, each layer receives activations from the merged layers that precede it. Recent work re-measures these statistics in the merged model but still forms them from a single network. We formulate closed-form methods as a linear system and show that they use the same matrix on both sides. We then introduce CrossMean, which replaces this matrix on one side with a bilinear statistic that pairs merged and expert activations. From the same statistics, we also derive a label-free criterion that indicates the task sets in which accounting for the merged activations improves the merge more. Empirically, task sets with a lower criterion value show a larger improvement. On the eight-task benchmark of each vision backbone that we tested and on BERT encoders, CrossMean improves on merging with statistics measured on the experts, and with all linear layers merged, it also improves on re-measuring these statistics in the merged model. These results …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14762">阅读原文 ↗</a></p>
 </body>
 </html>

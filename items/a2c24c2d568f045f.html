@@ -23,7 +23,8 @@
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
 <p>Pipeline parallelism has become a critical technique for training large language models.</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<blockquote><p>Pipeline parallelism has become a critical technique for training large language models. To address the throughput limitation of existing sequence-level methods that schedule subsequences unidirectionally, we propose bidirectional sequence-level interleaved pipeline parallelism (BSIPipe), which co-schedules two opposing V-shaped interleaved pipelines at the subsequence level. To bound the activation accumulation from subsequence scaling, BSIPipe introduces a basic-unit concatenation mechanism that keeps activation memory invariant to the subsequence count. To eliminate communication deadlock risk from bidirectional scheduling, BSIPipe employs a communication optimization strategy that combines topology-aware device mapping with communication-computation overlap. In addition, BSIPipe composes with tensor parallelism to overcome the memory limitation of single-dimensional parallelism, neutralizing its bidirectional memory overhead while maintaining throughput. Experiments on GPT and LLaMA3 demonstrate that BSIPipe achieves average speedups of 1.11$\times$ to 1.13$\times$ in long-sequence training over SOTA sequence-level baselines.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14935">阅读原文 ↗</a></p>
 </body>
 </html>

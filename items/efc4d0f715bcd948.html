@@ -23,7 +23,8 @@
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
 <p>Decision models such as Jev score candidate answers or actions.</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<blockquote><p>Decision models such as Jev score candidate answers or actions. A small decision head trained label-free can recover about 99% of a frozen language model's multiple-choice accuracy while using only two-thirds of its transformer layers. It learns the full model's answer probabilities with KL divergence, without correct-answer labels for training. One backbone pass reads the question and all options together; the head returns probabilities for every option. We call this model FunDM (Fun Decision Model). Using 24 of Qwen3-8B's 36 layers and skipping the LM head, its +1T variant reaches 75.0% mean accuracy over eight benchmarks, versus 75.7% for the full model. On MMLU-Pro, both heads achieve 1.56 to 1.57 times batched vLLM throughput with about one-third lower peak GPU allocator memory. Both heads score higher than released Contrastive Language Models (CLM), fine-tuned CLM, and CLM-shaped heads trained from scratch on the eight multiple-choice benchmarks and coding-agent selection. Separately trained agent heads learn judge probabilities without pass/fail labels and select passing runs for 74.4 to 74.6 of 100 held-out tasks on average, versus 74 for the full-model judge and 52.0 for a…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17175">阅读原文 ↗</a></p>
 </body>
 </html>

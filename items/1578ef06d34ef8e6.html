@@ -23,7 +23,8 @@
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
 <p>Temporal graph neural networks (TGNNs) achieve superior performance in many dynamic graph learning tasks.</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<blockquote><p>Temporal graph neural networks (TGNNs) achieve superior performance in many dynamic graph learning tasks. These models use node state vectors (i.e., memories) to capture and record graph changes (i.e., events), and then exploit these memories to assist prediction. However, this memory-centric design makes multi-GPU training challenging because predictions for later events often depend on memory updates from earlier events. To maintain model quality, existing multi-GPU TGNN training schemes strictly preserve all event dependencies, which limits parallelism and causes expensive cross-GPU memory synchronization. In this work, we observe that many of these dependencies can be handled more flexibly without harming training quality. Specifically, (a) dependencies in TGNN training have high locality in both time and graph topology, (b) the short-range dependencies missed within a large batch can often be recovered cheaply, and (c) many memory updates are not immediately needed. Based on these observations, we propose DepBloom to accelerate multi-GPU TGNN training with three techniques: (1) temporally bounded spatial partitioning to reduce unnecessary cross-GPU synchronization and improve …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15730">阅读原文 ↗</a></p>
 </body>
 </html>

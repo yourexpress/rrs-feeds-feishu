@@ -22,8 +22,11 @@
 <h1>LoopQuant: Accurate and Efficient Post-Training Quantization for Looped Transformers</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
 
-<p>LoopQuant：面向 Looped Transformer 的训练后量化，处理跨循环激活动态、异构循环敏感度与递归误差累积。</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong> LoopLM 靠复用共享模块提升参数效率，但现有 PTQ 面向前馈 Transformer，忽略跨循环激活动态、异构循环敏感度与递归误差累积。</p>
+<p><strong>方法</strong> LoopQuant：跨循环分布规范化（CLDC）学习共享的量化友好表示；交互感知的循环级精度分配（ILPA）在固定比特预算下分配激活精度；循环条件任务校准（LCTC）对齐量化推理与低比特递归轨迹。</p>
+<p><strong>关键数字</strong> Ouro-2.6B 上 W4A4 超过全部 W4A8 基线，模型内存减少 65.3%，较朴素 INT4 仅多 3.4% 存储开销，解码较 BF16 加速 1.7 倍；代码开源。</p>
+<p><strong>为什么值得看</strong> 首个针对"循环复用"架构的 PTQ 方案，LoopLM/权重复用回潮正需要这类部署工作。</p>
+<p><a href="https://arxiv.org/abs/2610.16368">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16368">阅读原文 ↗</a></p>
 </body>
 </html>

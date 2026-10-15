@@ -22,9 +22,11 @@
 <h1>SP-Allreduce: Symmetric Tree Schedules for Tori and Beyond</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
 
-<p>SP-Allreduce：d 维环面拓扑的对称树 allreduce 调度，最短路径路由实现完全带宽最优。</p>
-<blockquote><p>Allreduce is a fundamental communication primitive in large-scale distributed training, and torus interconnects remain widely deployed in high-performance systems. We introduce SP-allreduce, a new allreduce algorithm for $d$-dimensional tori that exploits the symmetry of the topology and routes only along shortest paths. We call an allreduce algorithm \emph{fully bandwidth-optimal} if it incurs no bandwidth overhead, no multihop-induced traffic inflation, and achieves perfect per-round load balance. SP-allreduce is based on a family of carefully symmetrized shortest-path trees that guarantees full bandwidth optimality in the $α$--$β$ model. We prove that it uses the minimum possible number of rounds among all fully bandwidth-optimal allreduce algorithms on $d$-dimensional tori, and therefore the minimum running time in this class. In this sense, SP-allreduce refines Bucket allreduce: it preserves Bucket's key strengths while reducing the number of rounds by a factor of two. We further extend our approach to broader symmetric topologies and to communication trees of prescribed depths. Experimentally, the resulting algorithms improve over the best compared state-of-the-art algorithms…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Allreduce 是分布式训练核心原语，环面互连广泛部署，但现有算法难以同时做到零带宽开销、无多跳流量膨胀与逐轮完全负载均衡。</p>
+<p><strong>方法</strong> SP-allreduce：基于精心对称化的最短路径树、仅沿最短路径路由，在 α-β 模型下保证完全带宽最优；证明其在 d 维环面的同类算法中轮数最少，并推广到更一般的对称拓扑与指定深度通信树。</p>
+<p><strong>关键数字</strong> 相比 Bucket allreduce 轮数减半；方形环面较最优基线最高提速 1.19 倍、矩形环面 1.65 倍；HyperX 最高 14.82 倍、spine-leaf 网络最高 1.72 倍。</p>
+<p><strong>为什么值得看</strong> 集合通信调度里少见的理论完备工作：既证明同类最优，又在多种拓扑上给出实打实的加速数字。</p>
+<p><a href="https://arxiv.org/abs/2610.16387">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16387">阅读原文 ↗</a></p>
 </body>
 </html>

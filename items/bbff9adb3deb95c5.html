@@ -23,7 +23,8 @@
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
 <p>KV caches make long-context serving efficient by reusing past computation, but model switching breaks this reuse and forces the receiver to prefill the context again.</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<blockquote><p>KV caches make long-context serving efficient by reusing past computation, but model switching breaks this reuse and forces the receiver to prefill the context again. We study \emph{zero-prefill cross-model context handoff}: translating a sender cache into a receiver-compatible state so that the receiver can continue directly without prefilling same context. Existing affine transport methods show that receiver KV states can be substantially reconstructed from sender caches. However, through extensive analyses, we find that reconstruction fidelity is a poor proxy for receiver utility. Similar K/V reconstruction errors can lead to substantially different attention patterns, predictive distributions, and downstream accuracy, because conventional reconstruction objectives overlook the query-dependent functional importance of K and V in receiver attention. We thus introduce CACHELINK, which learns a coupled K/V correction through the receiver behavior directly. Across four independently trained sender--receiver pairs and seven evaluation panels, CACHELINK improves the equal-weight mean over all methods for every pair. In matched diagnostics, CACHELINK changes K/V squared error by less t…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15509">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Seamless Deployment of Machine Learning Inference at the Far Edge: An Empirical AWS IoT Greengrass Architecture for Industrial Predictive Maintenance</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
 
-<p>AWS IoT Greengrass v2 远边缘 ML 推理架构的工业预测性维护实证：混合云边部署替代全云回传。</p>
-<blockquote><p>Industrial IoT sensors produce continuous, high-volume data streams that predictive maintenance needs to analyse in real time. Cloud-centric architectures send all raw telemetry to central servers, which costs latency, bandwidth and resilience. This paper presents a hybrid cloud-edge architecture for manufacturing predictive maintenance built on AWS IoT Core and AWS IoT Greengrass v2, with local machine learning inference at the edge and selective cloud synchronization. We deploy two configurations on real AWS infrastructure and compare them: a cloud-only baseline (Configuration A) and the proposed hybrid edge architecture (Configuration B). We measure end-to-end inference latency, bandwidth consumption and inference accuracy. Configuration B cuts cloud-bound bandwidth by 86.8% (63.6 KB to 7.2 KB per 200-reading window) and decision latency by 256x (23.1 ms cloud round trip to 0.09 ms local inference). At the edge, with no cloud involvement, it keeps an anomaly-class F1 score of 0.84 and 91% recall. The evaluation also instruments system uptime and Stream Manager queuing under cloud disconnection; the quantitative disconnection experiment is left as planned work. Our review of the …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 工业预测性维护的云中心架构把全部遥测回传云端，付出时延、带宽与韧性代价。</p>
+<p><strong>方法</strong> 基于 AWS IoT Core + IoT Greengrass v2 构建混合云边架构：边缘本地机器学习推理 + 选择性云同步；在真实 AWS 设施上部署纯云基线与混合架构两种配置并实测对比。</p>
+<p><strong>关键数字</strong> 云回传带宽减少 86.8%（每 200 读数窗口 63.6 KB 降至 7.2 KB），决策时延降低 256 倍（云端往返 23.1 ms 对本地 0.09 ms）；边缘无云参与仍保持异常类 F1 0.84 与 91% 召回率。</p>
+<p><strong>为什么值得看</strong> Greengrass v2 预测性维护少见的端到端实测，带宽与时延收益都给了明确数字，工程参考价值高。</p>
+<p><a href="https://arxiv.org/abs/2610.14815">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14815">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -23,7 +23,8 @@
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
 <p>Dynamic sparse training (DST) aims to reduce training costs while maintaining accuracy.</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<blockquote><p>Dynamic sparse training (DST) aims to reduce training costs while maintaining accuracy. Existing DST methods mask out parameters but keep matrix dimensions unchanged. Training speedups therefore depend on specialized support, such as sparse kernels. We introduce BARTER, a structured DST framework that reduces training cost using standard dense kernels by keeping training tensors physically compact while dynamically reallocating capacity across layers. Unlike existing works that require computing gradients for all parameters, BARTER instead uses statistics collected only from active units during ordinary backpropagation to prune and clone attention heads and feed-forward channels under separate fixed global budgets. At each topology update, it resizes the affected parameter tensors and remaps their optimizer states, so subsequent training steps operate directly on the compact model. Training and fine-tuning experiments with Transformer-based vision models on two image classification benchmarks at densities from $0.1$ to $0.7$ show competitive Top-1 accuracy relative to full-tensor DST baselines. On an NVIDIA L40, BARTER achieves speedups of up to $6.29\times$ in measured training se…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16147">阅读原文 ↗</a></p>
 </body>
 </html>

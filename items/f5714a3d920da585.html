@@ -23,7 +23,8 @@
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
 <p>Post-training pruning enables efficient deployment, but conventional methods do not explicitly preserve internal-gradient alignment between sparse and dense models.</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<blockquote><p>Post-training pruning enables efficient deployment, but conventional methods do not explicitly preserve internal-gradient alignment between sparse and dense models. We study novel connections between downstream performance of compressed models and the ability to retain gradient information via influence-function preservation. Central to this connection is a curvature-aware objective that accounts for both layer activations and backpropagated gradients. Despite its promise, this objective remains underexplored in pruning due to a lack of efficient solvers. We introduce $\texttt{CACTUS}$, a novel ADMM-based optimizer supporting both pruning and sparse-plus-low-rank decompositions of pre-trained weights. Compared to LLM-Surgeon which targets the same objective, $\texttt{CACTUS}$ can achieve over an order-of-magnitude speedup. At $50\%$ pruning of Qwen3-4B, $\texttt{CACTUS}$ reduces the C4 perplexity gap to the dense model by $45\%$, improves compressed-to-dense per-sample gradient cosine similarity on WikiText-2 from $0.670$ to $0.755$, and runs over $28\times$ faster than LLM-Surgeon on substantially weaker hardware. By preserving influence functions, $\texttt{CACTUS}$ supports effec…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.18516">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -23,7 +23,8 @@
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
 <p>A language model that keeps learning online must not slowly erode its own base capabilities.</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<blockquote><p>A language model that keeps learning online must not slowly erode its own base capabilities. We ask which part of a modern LLM should absorb continual updates, by measuring how each choice changes the model's internal representations. On a 48-layer mixture-of-experts model with a native pretrained N-gram memory, we train a seven-task chain under three update mechanisms with identical data and budgets: updating only the N-gram memory table, continually training one shared LoRA adapter, and training a fresh LoRA per task that is merged into the backbone. We capture fixed-context representations at every layer and task boundary. Updating only the N-gram memory changes the base model's representations of general math and code inputs by 26%/15% (relative RMS), against 64%/35% for merged and 97%/39% for shared LoRA. This drift does not grow with the number of tasks: it reaches 25% after the first task and stays there for all seven, while both LoRA variants keep accumulating. Its generic behaviour is essentially unchanged (no code problem lost, math NLL -0.01), and every change is confined to inspectable, reversible table rows. The cost appears elsewhere: N-gram memory acquires new tasks …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14921">阅读原文 ↗</a></p>
 </body>
 </html>
