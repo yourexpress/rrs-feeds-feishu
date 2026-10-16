@@ -22,8 +22,11 @@
 <h1>TALU: A Reconfigurable Tiled-ALU Grid for RISC-V</h1>
 <p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
 
-<p>TALU：RISC-V 向量核执行级用可重构瓦片 ALU 阵列替代单一 ALU，加速归约与深层依赖链</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong>：lane 式 RISC-V 向量处理器对两类常见模式代价高：归约需要额外的树状遍历，深依赖表达式链无法融合、只能串行发射。</p>
+<p><strong>方法</strong>：TALU 是一个 5 级流水 RISC-V 核，执行级用 NxN 带寄存器的 ALU tile 网格替代单一 ALU；tile 只从非后向邻居取操作数，配合对角转发让归约在空间上折叠。最小自定义扩展配置每个 tile 的运算、路由与常数，操作数流式穿过阵列。</p>
+<p><strong>关键数字</strong>：同 lane 数下比 RISC-V2 快 1.8–5.5×、比 Vicuna 快 4.5–15.5×；归约成本（dot÷add）1.05×，而两个向量核为 1.96× 和 1.26×；45nm 重定时实现可布局布线到 1.03 GHz、0.30 mm²，面积为 RISC-V2 的一半。</p>
+<p><strong>为什么值得看</strong>：同一张 fabric 统一跑标量、深路径表达式与多 lane 向量核，把归约开销压到接近加法本身。</p>
+<p><a href="https://arxiv.org/abs/2610.19277">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.19277">阅读原文 ↗</a></p>
 </body>
 </html>

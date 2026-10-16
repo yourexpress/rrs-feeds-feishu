@@ -22,8 +22,11 @@
 <h1>Understanding NVIDIA Grace-Blackwell Unified Memory Through Placement-Controlled Microbenchmarks</h1>
 <p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
 
-<p>放置受控微基准揭示 NVIDIA Grace-Blackwell 统一内存的放置/迁移/预取/驱逐实际行为</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong>：NVIDIA Grace-Blackwell 上 CPU-GPU 内存编程层面统一了，但统一可寻址不等于内存系统均质——同一个「统一内存带宽」数字可能掩盖 HBM 本地、主机内存、迁移、预取、驱逐重载等完全不同的硬件路径。</p>
+<p><strong>方法</strong>：在 GB200 上做放置受控的微基准研究（GH200 作基线、GB10/DGX Spark 验证），分别隔离本地 HBM 访问、主机内存访问、显式搬移、managed 首触、预取、复用、访问模式敏感性、超配与 CPU-GPU 交接，并汇总成测量校准的成本模型。</p>
+<p><strong>关键数字</strong>：1 GB STREAM 风格 triad：本地 HBM 3963 GB/s，经主机映射内存仅 304 GB/s；256 MB 流式 kernel：冷的 CPU 初始化 managed 内存 14.1 GB/s，而 managed 预取/复用达 4606 / 4504 GB/s；容量内预取/复用保持在 4.6 TB/s 以上，超配到 125% 时跌至 968 / 1214 GB/s。</p>
+<p><strong>为什么值得看</strong>：给出计算、访问、迁移、驱逐、同步、交接的分项成本模型，说明统一内存必须按放置、访问历史与容量压力来理解。</p>
+<p><a href="https://arxiv.org/abs/2610.20354">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.20354">阅读原文 ↗</a></p>
 </body>
 </html>

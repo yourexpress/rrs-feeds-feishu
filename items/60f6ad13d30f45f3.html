@@ -22,8 +22,11 @@
 <h1>The Cost of Context: Profiling the Energy Footprint of Input Tokens in Large Language Models</h1>
 <p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
 
-<p>Cost of Context：剖析 LLM prefill 阶段输入 token 的能耗足迹，解释功率尖峰与次线性边际成本的矛盾</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong>：RAG 与长上下文把算力负担推向 prefill 阶段，但其能耗足迹刻画不足——硬件级功率尖峰与「输入 token 边际成本次线性」的系统级结论看似矛盾。</p>
+<p><strong>方法</strong>：在 NVIDIA A100 上对 Llama-3.1 与 Qwen-2 做高分辨率遥测，定位 O(n²) 注意力压过 GPU 并行化的效率阈值，并对比 PagedAttention / vLLM 等优化 serving 与非优化基线。</p>
+<p><strong>关键数字</strong>：优化内存编排（PagedAttention）把扩展瓶颈推迟三个数量级，在 112,000 token 时相比标准基线有最高 8.9× 的能效优势；优化 serving 下输入/输出 token 能耗比从约 850× 收窄到 750×，非优化基线则维持在约 150–230× 的较小且大致恒定的差距。</p>
+<p><strong>为什么值得看</strong>：建立区分引擎级优化与模型固有约束的上下文能耗 scaling law，为可持续 LLM 部署提供实证框架。</p>
+<p><a href="https://arxiv.org/abs/2610.19819">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.19819">阅读原文 ↗</a></p>
 </body>
 </html>

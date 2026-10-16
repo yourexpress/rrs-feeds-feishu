@@ -22,8 +22,11 @@
 <h1>Your Transformer Is Secretly Elastic</h1>
 <p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
 
-<p>免重训的弹性 Transformer：按硬件与负载在线调节模型规模，摆脱固定 S/B/L 尺寸束缚</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong>：模型家族只提供少数固定尺寸（S/B/L），用户必须按硬件与延迟约束预先选定一个模型，面对波动负载这种刚性往往次优。</p>
+<p><strong>方法</strong>：提出免重训的弹性化方法，把预训练 transformer 变成单个可按算力预算在线自适应的模型。核心是对功能单元排序问题的可微松弛：不像以往按 MLP 块或注意力头给单一重要性权重，而是在统一尺度上联合排序每一个 MLP 神经元与注意力头，一次性在多个稀疏度目标下最小化软剪枝损失。</p>
+<p><strong>关键数字</strong>：27 个 22M–8B 参数的视觉/文本 encoder 上，稀疏度至 60% 均平滑退化且深剪枝下优于 one-shot 基线；DINOv3 ViT-H+/16 剪到 50% 移除 4.27 亿参数，ImageNet-1k 线性探测精度仅降 0.8%；AugReg ViT-B/16 在 60% 稀疏度下于 A100 吞吐量最高提升 1.80×、单查询延迟降低 1.26×；弹性模型分钟级产出，构建时间随参数量次线性增长。</p>
+<p><strong>为什么值得看</strong>：一个模型在连续算力谱上即时伸缩，免去为不同部署场景在家族里选尺寸。</p>
+<p><a href="https://arxiv.org/abs/2610.20588">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.20588">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Multi-Domain Clustering via Measure Quantization</h1>
 <p class="meta-line">arXiv（cs.LG） · 2026-09-18 · 论文PDF</p>
 
-<p>基于测度量化（最优传输意义，非模型权重量化）的多域聚类</p>
-<blockquote><p>Clustering is a fundamental task in data analysis, typically addressed through centroid-based methods such as K-means. In this work, we present a general framework for multi-domain clustering via measure quantization: given samples from multiple domains, we learn a shared set of cluster prototypes by minimizing a probability metric, such as the Sinkhorn divergence or the Maximum Mean Discrepancy, between each domain's probability measure and the measure of prototypes. Data points are then assigned to clusters either via nearest centroid, or via optimal transport, a collaborative strategy that couples all samples within a domain. A mini-batch optimization strategy makes both fitting and assignment scalable, reducing memory and computational cost while preserving clustering performance. Experimental results on 5 multi-domain benchmarks spanning image, audio and sensor data show that our Sinkhorn-based method consistently outperforms classical and multi-domain clustering baselines, and that this advantage persists when scaling to hundreds of thousands of samples.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：聚类通常由 K-means 等质心方法处理；本文研究多域聚类——从多个领域样本中学习共享的簇原型。</p>
+<p><strong>方法</strong>：提出基于度量量化（measure quantization）的通用框架：最小化每个域的概率测度与原型测度之间的概率度量（Sinkhorn 散度或最大均值差异 MMD）来学习共享簇原型；数据点分配走最近质心或最优传输（域内全体样本协同耦合）。mini-batch 优化策略使拟合与分配都可扩展，降低内存与计算成本而不损失聚类性能。</p>
+<p><strong>关键数字</strong>：在覆盖图像、音频与传感器数据的 5 个多域基准上，Sinkhorn 方法稳定优于经典与多域聚类基线，且扩展到数十万样本时优势依然保持（摘要未给出具体精度数值）。</p>
+<p><strong>为什么值得看</strong>：把聚类统一为度量量化问题，两种分配机制各适其境，且给出了大规模样本下的可扩展路径。</p>
+<p><a href="http://arxiv.org/abs/2609.21664">原文链接</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2609.21664">阅读原文 ↗</a></p>
 </body>
 </html>

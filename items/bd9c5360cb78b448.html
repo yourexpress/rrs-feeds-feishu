@@ -23,7 +23,8 @@
 <p class="meta-line">arXiv · 2026-10-15 · 论文PDF</p>
 
 <p>Equivariant interatomic potentials enable accurate and efficient simulations of molecules and materials.</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<blockquote><p>Equivariant interatomic potentials enable accurate and efficient simulations of molecules and materials. Among them, models based on SO(2) convolutions reduce the cost of tensor products and achieve state-of-the-art accuracy, but their training remains time-consuming and memory-intensive. Existing training implementations materialize large edge tensors for representation transformations surrounding dense matrix multiplications, increasing memory usage and data movement. We observe that these transformations can be integrated into the model's existing dataflow, avoiding separate intermediate materialization. We introduce TrimSO(2), a fast and memory-efficient algorithm for SO(2)-based equivariant models. It realizes this principle through rotation on gather, recombination with activation, and inverse rotation on reduction, with support for the higher-order differentiation required for training. By avoiding intermediate materialization, TrimSO(2) delivers 2.71-16.73$\times$ operator speedups across forward, backward, and double backward and reduces model-level high-bandwidth memory traffic by 3.81-9.88$\times$. Finally, TrimSO(2) achieves 2.07-2.94$\times$ training speedups and 1.53-…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.20029">阅读原文 ↗</a></p>
 </body>
 </html>

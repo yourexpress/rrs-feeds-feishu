@@ -22,9 +22,11 @@
 <h1>Adapting the Actor Model of Concurrency for High-Frequency Trading: Synchronous Message Delivery (fast_send) and a Tick-to-Book Latency Study</h1>
 <p class="meta-line">arXiv（Vincent Maciejewski，q-fin.TR/cs.DC） · 2026-09-18 · 论文PDF</p>
 
-<p>Actor 并发模型用于高频交易的同步消息传递与 tick-to-book 时延研究</p>
-<blockquote><p>The actor model - state isolation, data-race freedom, deadlock resistance, and sequential single-message reasoning - has long been dismissed as unsuitable for high-frequency trading (HFT): actors seem to imply many threads, a mailbox per actor, and a heap-allocated message plus a context switch per interaction, overhead incompatible with a microsecond budget. This paper argues the dismissal is wrong for co-located actors, and supports it both analytically and with a deployed, measured implementation: kaspar-hft, an open-source C++20 framework. Four extensions adapt the model for HFT: fast_send, a synchronous delivery mechanism in which the sending thread runs the receiver's handler inline and returns the reply as a value; actor groups, which co-schedule actors on one thread behind a shared mailbox; per-actor selectable mailbox queues; and a memory pool. fast_send has receiver transparency: the handler cannot tell whether delivery was synchronous or asynchronous, or which thread runs it. A grouped synchronous chain runs on one thread, cutting scheduler context switches from O(N) to O(1), and a thread-local call-chain test catches cyclic invocation before any lock is taken. Microbenc…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：Actor 模型长期被认为不适合高频交易——多线程、每 actor 邮箱、堆分配消息与上下文切换看似与微秒级预算不兼容。</p>
+<p><strong>方法</strong>：基于开源 C++20 框架 kaspar-hft 提出四项扩展：fast_send 同步投递（发送线程内联执行接收方 handler 并以值返回应答）、actor 组（多个 actor 共享邮箱共调度到一个线程）、每 actor 可选邮箱队列、内存池。同步链把上下文切换从 O(N) 降到 O(1)，线程本地调用链检测在加锁前捕获循环调用。</p>
+<p><strong>关键数字</strong>：微基准上同步往返为数十纳秒级；在 CME 实时行情（ES、NQ、ZN 期货）上，socket-to-book 延迟分解为约 7 微秒的解码建仓基底加每消息斜率，框架自身贡献不到基底的 1%。</p>
+<p><strong>为什么值得看</strong>：对接收方透明的投递使同一份 actor 代码在实盘与确定性回测中原样运行，兼具低延迟与生产/仿真一致性。</p>
+<p><a href="http://arxiv.org/abs/2609.21173">原文链接</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2609.21173">阅读原文 ↗</a></p>
 </body>
 </html>

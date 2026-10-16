@@ -23,7 +23,8 @@
 <p class="meta-line">arXiv · 2026-10-15 · 论文PDF</p>
 
 <p>We study how to improve LLM reasoning at inference time without updating model weights or using external reward models.</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<blockquote><p>We study how to improve LLM reasoning at inference time without updating model weights or using external reward models. Recent reward-free power-sampling methods define the sequence-level power target $π_α(y\mid x)\propto p_0(y\mid x)^α$, where $α&gt;1$, which increases the relative probability of completions that are already likely under the base model. Existing methods use Metropolis--Hastings or Sequential Monte Carlo (SMC) to approximately sample from this target. However, two challenges arise at different levels. At the target level, full-sequence sharpening can concentrate probability on a few exact reasoning--answer trajectories, suppressing alternative paths that support the same answer. At the sampler level, finite-particle SMC can suffer from path collapse when resampling repeatedly duplicates a few high-weight prefixes. To address these challenges, we propose Decoupled Marginal Sharpening (DMS), which separately controls how strongly the model favors particular reasoning paths and how strongly it favors final answers after aggregating support across those paths. At the target level, DMS first samples from a sharpened reasoning distribution, then marginalizes the model's ans…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.20483">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Brain API: An Intent-Aware Control Plane for Policy-Governed Agentic Systems</h1>
 <p class="meta-line">arXiv（Alexander Chernov，cs.DC） · 2026-09-18 · 论文PDF</p>
 
-<p>策略治理智能体系统的意图感知控制平面</p>
-<blockquote><p>Contemporary cloud and distributed systems expose control through resource-centric abstractions: services, deployments, network flows, execution graphs. Agentic and tool-augmented systems have meanwhile shifted application logic toward intent-driven, adaptive execution. Existing control planes, workflow engines and service meshes lack abstractions for intent-level decision governance: they cannot represent high-level goals as first-class control objects, cannot enforce policy over the mapping from intent to execution plan, and cannot produce auditable records of why one execution path was chosen over its alternatives. Control logic is therefore embedded in application code, leaving systems brittle, opaque and hard to govern. We propose Brain API, an intent-aware control plane for policy-governed agentic systems. Its central contribution is the decision artifact: a durable, versioned, auditable record of how an intent became an executable plan, capturing which policies applied, which capabilities were evaluated, which alternatives were rejected, and why. A motivating use case is agentic datasets: datasets participating as policy-governed capabilities under residency, compliance and …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：现有控制平面、工作流引擎与服务网格缺少意图级决策治理抽象：无法把高层目标表示为一等控制对象，无法在「意图→执行计划」映射上执行策略，也无法产出为何选择某条执行路径的可审计记录，控制逻辑只能埋在应用代码里。</p>
+<p><strong>方法</strong>：提出 Brain API——面向策略治理 agentic 系统的意图感知控制平面，核心是 decision artifact：持久、带版本、可审计的记录，说明一个意图如何变成可执行计划（应用了哪些策略、评估了哪些能力、拒绝了哪些备选及原因）。</p>
+<p><strong>关键数字</strong>：原型在两个非作者编写的外部策略语料上评测——对 OPA Gatekeeper 约束库，42/42 个可编码案例与其官方公布结论一致（19 admit、23 deny）；对 Cedar 示例策略做差分测试，暴露出 3 个模型缺陷，包括一个足以反转所有授权策略的 default-allow 假设；上下文信号与排序仍属设计主张，负载下的决策延迟未量化。</p>
+<p><strong>为什么值得看</strong>：把「决策」本身做成一等可审计对象，并敢于用对抗性策略语料暴露自身缺陷，是 agentic 治理方向的罕见诚实评测。</p>
+<p><a href="http://arxiv.org/abs/2609.21299">原文链接</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2609.21299">阅读原文 ↗</a></p>
 </body>
 </html>

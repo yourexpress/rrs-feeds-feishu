@@ -22,9 +22,11 @@
 <h1>Authorization Revocation for Long-Running AI Agents: Root-Scoped Quiescence under Delegation and Asynchronous Execution</h1>
 <p class="meta-line">arXiv（Genliang Zhu 等，cs.PL/cs.AI） · 2026-09-18 · 论文PDF</p>
 
-<p>长时运行 AI 智能体在委托与异步执行下的授权撤销机制</p>
-<blockquote><p>Long-running AI agents outlive initiating processes through credentials, delegated tasks, queues, callbacks, reservations, and provider-side operations. Cancellation, process exit, and credential revocation neither close every pre-cut carrier nor distinguish independently authorized shared work. We define root-scoped authorization quiescence: for each manifested sink, a certificate accounts for every cut-relevant acceptance under the retired root-epoch atom that precedes its local fence and excludes protected acceptance under that atom after the fence, while permitting exact rebind to a current, independently sufficient support. The root-scoped quiescence protocol linearizes a root cut, fences old-root expansion and protected sinks, represents alternative and conjunctive authority as antichains of minimal sufficient root sets, and composes provider-frontier certificates into a cutset over registered old-root paths. Exact channel-token accounting reconciles transfers; missing or conflicting evidence remains indeterminate. Under stated assumptions, we prove post-cut issuer non-expansion, support-sound projection, compositional soundness under exact channel conservation, independent-s…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：长时程 AI agent 会借助凭据、委派任务、队列、回调、预约和提供商侧操作存活超过发起进程；取消、进程退出与凭据吊销既关不掉所有预先切出的载体，也无法区分被独立授权的共享工作。</p>
+<p><strong>方法</strong>：定义 root-scoped authorization quiescence：对每个显化的 sink，证书须说明本地 fence 之前、在退役 root-epoch atom 下的所有切相关接受，排除 fence 之后该 atom 下的受保护接受，同时允许精确重绑定到当前独立充分的支持。协议线性化 root cut、fence 旧 root 扩展与受保护 sink，用最小充分 root 集合的反链表示替代/合取权限，并把 provider-frontier 证书组合成注册旧 root 路径上的 cutset。</p>
+<p><strong>关键数字</strong>：无 provider 的晚到效应测试套件匹配 17/17 注册结果；2 个仅取消与 1 个仅切实验接受同类已调度晚到效应，2 个切加 fence、1 个重启与 1 个过期进程实验则拒绝它；独立实现的 checker 验证 17/17 条 trace，并拒绝 44/44 个重哈希语义回归变体。</p>
+<p><strong>为什么值得看</strong>：为长时程 agent 的委派与异步执行场景给出形式化的授权静默方案，并证明了切实后发布方不扩展、崩溃/重放稳定等性质。</p>
+<p><a href="http://arxiv.org/abs/2609.21284">原文链接</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2609.21284">阅读原文 ↗</a></p>
 </body>
 </html>

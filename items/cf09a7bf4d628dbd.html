@@ -22,9 +22,11 @@
 <h1>Beyond Kinematics: Benchmarking Simulation Fidelity for Muscle-Driven Imitation Learning</h1>
 <p class="meta-line">arXiv（cs.LG） · 2026-09-18 · 论文PDF</p>
 
-<p>肌肉驱动模仿学习的仿真保真度基准</p>
-<blockquote><p>In this work, we conduct a systematic comparison of two state-of-the-art motion-imitation reinforcement learning (MIRL) pipelines, one built on SCONE/HyFyDy and one built on MuJoCo/MyoSim. HyFyDy emphasizes physiological realism through detailed musculotendon modeling, while MuJoCo prioritizes computational efficiency and scalable policy learning. While recent work has demonstrated that both pipelines reproduce human kinematics with high fidelity, it remains unclear if they accurately capture the underlying neuromuscular behavior that produced the movement. This limitation is particularly important for robotic assistive-device design and control, where outcome measures such as muscle activation patterns and metabolic cost are often used as optimization targets. To conduct a systematic comparison, our work compares both pipelines using a common set of human motion-capture and electromyography (EMG) measurements. The results find that while both pipelines produce similar kinematics with relative accuracy, the muscle activations from HyFyDy are more aligned with the experimental EMG, as supported by the average pooled (RMSE, r) values for muscle activations from HyFyDy and MuJoCo: (0.…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：两条 SOTA 动作模仿强化学习（MIRL）管线都能高保真复现人体运动学，但是否准确捕捉产生动作的底层神经肌肉行为并不清楚——这对以肌肉激活模式、代谢成本为优化目标的机器人辅助设备设计尤为关键。</p>
+<p><strong>方法</strong>：用同一套人体动作捕捉与肌电（EMG）测量，系统对比基于 SCONE/HyFyDy（强调生理真实、精细肌腱建模）与基于 MuJoCo/MyoSim（强调计算效率与可扩展策略学习）的两条管线。</p>
+<p><strong>关键数字</strong>：两条管线运动学相对精度相近；肌肉激活与实验 EMG 的平均 pooled（RMSE, r）分别为 HyFyDy（0.164, 0.4）、MuJoCo（0.344, 0.11），HyFyDy 与实验 EMG 更一致。</p>
+<p><strong>为什么值得看</strong>：说明运动学保真不足以验证仿真真实性；HyFyDy 当前更适合肌骨建模，但两者都还需把生理真实带进 GPU 可并行的仿真环境。</p>
+<p><a href="http://arxiv.org/abs/2609.21909">原文链接</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2609.21909">阅读原文 ↗</a></p>
 </body>
 </html>

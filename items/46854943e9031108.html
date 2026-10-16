@@ -22,9 +22,11 @@
 <h1>Performance Analysis of Low-Order, GPU-accelerated Finite Element Kernels using Kokkos</h1>
 <p class="meta-line">arXiv（cs.PF） · 2026-09-18 · 论文PDF</p>
 
-<p>基于 Kokkos 的低阶 GPU 加速有限元内核性能分析（HPC 内核调优）</p>
-<blockquote><p>We study performance portability for low-order, matrix-free finite element kernels, using the example of a vectorial, variable-coefficient PDE operator originating in geophysical models. Written in Kokkos, the kernel is compared on NVIDIA H100, AMD MI250X, AMD MI300A and Intel PVC Max 1550 GPUs. Owing to its low order and to optimizations that reduce the arithmetic, the kernel has a low arithmetic intensity, so that its performance is determined by how the finite element assembly is mapped onto the memory hierarchy. This is a dimension in which the architectures differ even within one vendor family, causing different performance characteristics. We examine how Kokkos' hierarchical parallelism and shared scratch memory, which are used for the shared degrees of freedom of the conforming discretization, behave on each device. Finally, we show how portability gaps can be narrowed with tuning levers such as the size of the thread groups, the balance between occupancy and register use, and the atomic accumulation strategy at the end of the kernel.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：研究低阶、无矩阵（matrix-free）有限元 kernel 的性能可移植性，示例对象是一个源自地球物理模型的向量值变系数 PDE 算子。</p>
+<p><strong>方法</strong>：kernel 用 Kokkos 编写，在 NVIDIA H100、AMD MI250X、AMD MI300A、Intel PVC Max 1550 四款 GPU 上对比；考察 Kokkos 层级并行与共享 scratch 内存（用于 conforming 离散的共享自由度）在各设备上的表现。</p>
+<p><strong>关键数字</strong>：摘要未给出具体加速数值；核心观察是：低阶与算术优化使 kernel 算术强度低，性能取决于有限元组装如何映射到内存层级——这一维度上架构差异甚至存在于同一厂商内部；通过线程组大小、占用率与寄存器用量的平衡、kernel 末尾原子累加策略等调优杠杆，可缩小可移植性差距。</p>
+<p><strong>为什么值得看</strong>：为低阶无矩阵有限元在异构 GPU 平台上的性能可移植问题给出具体案例与调优清单，对地球物理类数值计算移植有直接参考价值。</p>
+<p><a href="http://arxiv.org/abs/2609.21681">原文链接</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2609.21681">阅读原文 ↗</a></p>
 </body>
 </html>

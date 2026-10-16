@@ -22,8 +22,11 @@
 <h1>SpectrumQuant: Spectrum Alignment for LLM Quantization</h1>
 <p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
 
-<p>SpectrumQuant：从第一性原理做谱对齐的正交旋转选择，改进 LLM 低比特量化变换设计</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong>：LLM 低比特量化的正交变换路线目前要么用固定的数据无关变换（如 Hadamard 旋转），要么在校准期优化学习旋转，两者之间缺少有原则的桥梁。</p>
+<p><strong>方法</strong>：从第一性原理出发，证明最大化协方差可带来谱对齐，并据此提出闭式旋转方法 SpectrumQuant：用校准数据估计激活协方差，构造协方差感知的正交变换；该形式可分解为「对齐 + 混合」两部分，Hadamard 矩阵是其特例，一类 butterfly 矩阵也属此类。</p>
+<p><strong>关键数字</strong>：在 Llama 与 Mistral 模型上，SpectrumQuant 与 SOTA 旋转策略效果相当，而 GPU 显存需求不到 SpinQuant、DartQuant 等学习旋转方法的三分之一，耗时也显著更少。</p>
+<p><strong>为什么值得看</strong>：弥合数据无关结构化旋转与学习旋转之间的空白，为训练后量化提供高效的数据感知替代方案。</p>
+<p><a href="https://arxiv.org/abs/2610.20303">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.20303">阅读原文 ↗</a></p>
 </body>
 </html>

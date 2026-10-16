@@ -22,8 +22,11 @@
 <h1>Spectral-MoE: Heterogeneous Per-Layer Expert Utilization in Dense-to-MoE Conversion</h1>
 <p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
 
-<p>Spectral-MoE：利用逐层异构专家利用率的 dense-to-MoE 转换，降低 LLM 推理内存与算力成本</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong>：Dense 转 MoE 的现有方法在每一层都固定相同的激活专家数（utilization），忽略了层间异构分配的可能收益。</p>
+<p><strong>方法</strong>：提出 Spectral-MoE，学习跨层异构地分配 utilization 预算，含两种分配器：静态（每层一个标量、跨 token 共享）与动态（逐 token 输出调度）。</p>
+<p><strong>关键数字</strong>：25% FFN 利用率下，动态分配相对均匀分配在 learned base 上使 Llama-2-7B / Llama-3-8B / Qwen2.5-7B 的 WikiText-2 困惑度分别降低 1.04 / 2.96 / 2.71 点（analytic base 上为 2.45 / 6.26 / 2.17 点）；12.5% / 25% / 50% 利用率下六任务平均准确率平均提升 1.5 / 4.2 / 3.6 个百分点。</p>
+<p><strong>为什么值得看</strong>：把「每层专家利用率」确立为 dense-to-MoE 转换的新优化轴，且在解析式与学习式两类 SOTA 转换方法上都有效。</p>
+<p><a href="https://arxiv.org/abs/2610.19232">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.19232">阅读原文 ↗</a></p>
 </body>
 </html>

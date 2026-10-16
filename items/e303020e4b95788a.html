@@ -22,8 +22,11 @@
 <h1>Unlocking Structured Pruning for Reasoning Language Models via Attention-Preserving MLP Trimming</h1>
 <p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
 
-<p>LayerTrim：免训练、保留注意力的 MLP 修剪，让结构化剪枝后的推理 LLM 在长程推理任务上不崩塌</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong>：结构化剪枝能降低 LLM 推理成本，但现有方法在 AIME 等长程推理任务上会让推理性能崩塌。</p>
+<p><strong>方法</strong>：提出 LayerTrim——免训练的结构化剪枝：识别冗余 decoder 层，选择性裁剪其 MLP 特征，同时保留注意力与 decoder 深度，全程不需要梯度或恢复训练。</p>
+<p><strong>关键数字</strong>：在 3 个推理模型、5 个基准上，多数设置优于现有结构化剪枝方法，平均准确率比 RESP 最高提升 21.4 个百分点；在 Qwen3-14B 上相比稠密模型 prefill 加速 1.24×、峰值 GPU 显存降低 19.7%，且在被剪模型中平均生成长度最短、平均准确率最高。</p>
+<p><strong>为什么值得看</strong>：首个面向长程推理保持的免训练结构化剪枝方法，同时通过结构压缩与减少生成 token 两条路径提升推理效率。</p>
+<p><a href="https://arxiv.org/abs/2610.19121">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.19121">阅读原文 ↗</a></p>
 </body>
 </html>

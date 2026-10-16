@@ -22,9 +22,11 @@
 <h1>Efficient Architecture Search under Leave-One-Subject-Out Evaluation</h1>
 <p class="meta-line">arXiv（cs.LG） · 2026-09-18 · 论文PDF</p>
 
-<p>留一被试（LOSO）评估协议下的高效架构搜索</p>
-<blockquote><p>Deep neural architectures are widely used for signal processing in automated pain assessment systems. However, architecture design has remained largely a manual task despite the potential efficiency benefits of Neural Architecture Search (NAS). Embedding NAS in a Leave-One-Subject-Out (LOSO) evaluation is computationally demanding because a fully nested implementation requires $N$ independent architecture searches and, assuming approximately linear training cost, scales as $\mathcal{O}(N^2)$. We propose a block-based, leakage-controlled approach that shares NAS runs between subjects, reducing the number of searches from $N$ to $B$, where $B \ll N$, dubbed PainNAS. On the BioVid Heat Pain dataset, PainNAS yields comparable subject-level accuracy with substantially fewer parameters and FLOPs.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：自动疼痛评估系统的深度架构设计仍以手工为主；把 NAS 嵌入 Leave-One-Subject-Out（LOSO）评估代价高昂——完全嵌套实现需要 N 次独立架构搜索，训练成本近似线性时按 O(N²) 增长。</p>
+<p><strong>方法</strong>：提出 PainNAS：基于分块、泄漏受控的方式在受试者之间共享 NAS 运行，把搜索次数从 N 降到 B（B ≪ N）。</p>
+<p><strong>关键数字</strong>：在 BioVid Heat Pain 数据集上，PainNAS 以显著更少的参数量与 FLOPs 取得相当的受试者级准确率（摘要未给出具体数值）。</p>
+<p><strong>为什么值得看</strong>：让 NAS 与严格的跨受试者评估在计算上可行，为生理信号处理场景的自动化架构设计提供了可复用的折中方案。</p>
+<p><a href="http://arxiv.org/abs/2609.21457">原文链接</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2609.21457">阅读原文 ↗</a></p>
 </body>
 </html>
