@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memory-Efficient Subspace Optimization with Residual Correction: From Momentum SGD to Muon</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Memory-Efficient Subspace Optimization with Residual Correction: From Momentum SGD to Muon</h1>
+<p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 内存高效子空间优化可降低 LLM 训练内存成本，但已有算法依赖随机梯度的主奇异子空间，训练后期梯度噪声可能主导子空间、阻碍收敛。</p>
+<p><strong>方法</strong> 采用残差校正框架：优化器状态维持在子空间内，正交残差梯度加回参数更新；与动量 SGD 结合得 SMRC（引入子空间虚拟迭代解开动量与残差校正的耦合），与 Muon 结合得 PMRC（对投影动量施加矩阵符号）；两者均设计周期性重算基的多阶段变体，并用边界校正保持虚拟迭代跨阶段一致。</p>
+<p><strong>关键数字</strong> SMRC 与 PMRC 分别证得 O(T^-1/4) 收敛率，与全空间动量 SGD、全空间 Muon 持平；多阶段变体保持同阶速率；实验确认有效性与效率（摘要未给具体内存节省数字）。</p>
+<p><strong>为什么值得看</strong> 为"动量 SGD 到 Muon"的子空间省内存训练补齐收敛理论，做大模型训练内存优化方向值得读。</p>
+<p><a href="https://arxiv.org/abs/2610.19844">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.19844">阅读原文 ↗</a></p>
+</body>
+</html>

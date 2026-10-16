@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MFSA: A Multi-Format Systolic Array with Native Micro Scaling Support</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MFSA: A Multi-Format Systolic Array with Native Micro Scaling Support</h1>
+<p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> AI 负载混合使用 BF16/FP8/FP4/MX/INT 等多种低精度格式，硬件需灵活且高效地原生支持。</p>
+<p><strong>方法</strong> MFSA 是权重驻留的多格式脉动阵列：PE 级用由开源跨精度 FPU 扩展的 DPA-PE，以共享数据通路支持 FP32 到 INT4 并按格式比例扩展吞吐；阵列级用在线块尺度重定基（OBSR），在块边界把块尺度折入 FP32 部分和，无需第二套跨块累加器。</p>
+<p><strong>关键数字</strong> TSMC 28nm、1GHz 下，BF16/FP8/FP4 级联基线面积是单格式 DPA-PE 的 1.5/2.5/4.5 倍；16×16 MFSA 峰值 0.5/1/2/4 TOPS（FP32/BF16/FP8/FP4）；OBSR 相对朴素 MX 实现省 64.2% 面积、67.5% 能耗；在 BF16+CFP8 基线上补全其余格式仅多 25.7% 面积，支持 NVFP4 额外代价为 11.8% 面积、7.3% 功耗。</p>
+<p><strong>为什么值得看</strong> 多格式低精度阵列设计的完整工程范例，关注 MX/NVFP4 生态的架构设计者值得细读。</p>
+<p><a href="https://arxiv.org/abs/2610.19645">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.19645">阅读原文 ↗</a></p>
+</body>
+</html>

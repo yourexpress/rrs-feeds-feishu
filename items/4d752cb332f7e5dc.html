@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ESL-former: Event Sparse Linear Transformer for FPGA-Accelerated Malware Detection</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ESL-former: Event Sparse Linear Transformer for FPGA-Accelerated Malware Detection</h1>
+<p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 基于 Transformer 的恶意软件检测有潜力，但自注意力的计算与内存成本使其难以部署到资源受限的边缘 FPGA。</p>
+<p><strong>方法</strong> 提出事件稀疏线性 Transformer（ESL-former）：不构造显式注意力矩阵，直接从 Linear Transformer 累积的键值状态推导 token 与通道重要性；贡献感知打分函数度量各 token/通道对线性注意力状态的扰动，剪掉冗余；硬件上用 Top-K 活跃 token 缓冲与压缩单元替代二值掩码执行，将活跃 token/通道重组为稠密定长数据流，让处理单元执行规则乘累加。</p>
+<p><strong>关键数字</strong> 摘要未给出具体量化指标，结论为在保持恶意软件分类精度的同时降低硬件成本。</p>
+<p><strong>为什么值得看</strong> 把 Transformer 安全检测落到功耗敏感的边缘 FPGA，线性注意力 + 稀疏化 + 硬件重组的协同设计值得借鉴。</p>
+<p><a href="https://arxiv.org/abs/2610.19665">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.19665">阅读原文 ↗</a></p>
+</body>
+</html>

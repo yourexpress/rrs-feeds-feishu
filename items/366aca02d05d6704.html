@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LatentLoop: Scaling Looped MoE Models with Asymmetric Compute Allocation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LatentLoop: Scaling Looped MoE Models with Asymmetric Compute Allocation</h1>
+<p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 循环 MoE 以参数复用 + 稀疏计算在相同预算下提升性能，但共享参数的各次循环访问作用不同，计算应如何按角色分配尚不清楚。</p>
+<p><strong>方法</strong> 通过学习独立残差系数发现第一次访问尺度更小、且降低第一次访问尺度不损害甚至改善性能（第二次则相反）；据此提出 LatentLoop：压缩第一次访问的序列长度、第二次保持全分辨率，把省下的计算转投更大隐藏维度；循环间共享 MoE 权重、注意力参数独立以适配不同序列分辨率。</p>
+<p><strong>关键数字</strong> 1.3B–7B 参数、15 种配置（最大预算超 10^21 FLOPs）下一致降低验证 NLL；在拟合 NLL 1.988 处，相对 vanilla MoE 与循环基线分别预计节省 19.0%、7.9% 计算量，并在 9 个基准的 0-shot/5-shot 下全尺寸提升平均分。</p>
+<p><strong>为什么值得看</strong> 给出循环架构下"非对称算力分配"的可落地方案，对权重复用与循环网络设计方向有参考意义。</p>
+<p><a href="https://arxiv.org/abs/2610.19975">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.19975">阅读原文 ↗</a></p>
+</body>
+</html>

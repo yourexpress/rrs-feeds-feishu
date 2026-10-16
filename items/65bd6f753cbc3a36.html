@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond Expert Rankings: Contrast Calibration for Mixed-Precision MoE Quantization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Beyond Expert Rankings: Contrast Calibration for Mixed-Precision MoE Quantization</h1>
+<p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> MoE 语言模型每 token 只激活少数专家，但全部专家权重都需存储；混合精度量化可降低存储成本，但仅凭专家排序无法确定各专家误差应加多强的权重。</p>
+<p><strong>方法</strong> 提出 NatScale 对比校准分配框架：用模型特定的幂变换把基于梯度的专家权重校准到信息论对比目标、同时保留排序；联合评估每个专家的 gate/up/down 配置估计输出误差，再结合基于权重谱、方差与精度衰减的先验，在存储预算下选择配置。</p>
+<p><strong>关键数字</strong> 3 个模型、5 种分配基线对比下，NatScale 在全部 9 个设置中取得最低原生-量化 KL 散度与最高 top-token 一致性，其中 7 个设置困惑度最低。</p>
+<p><strong>为什么值得看</strong> 指出"目标感知"的精度分配优于单纯专家排序，对 MoE 低比特部署有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.20353">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.20353">阅读原文 ↗</a></p>
+</body>
+</html>

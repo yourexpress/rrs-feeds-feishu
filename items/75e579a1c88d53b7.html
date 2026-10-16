@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Progress-Aware Distillation for Mitigating Stagnation in Small Language Model Agents</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Progress-Aware Distillation for Mitigating Stagnation in Small Language Model Agents</h1>
+<p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 用蒸馏把 agent 能力迁移到小模型（SLM）时，随交互轨迹变长，学生模型易出现"进展停滞"：困在反复失败的策略循环里难以推进，该现象跨模型、跨任务域普遍存在。</p>
+<p><strong>方法</strong> 提出进度感知蒸馏（ProD）：显式检测学生生成轨迹中的停滞并施加惩罚，把学生与教师之间的停滞差距编码为自适应裕度，动态惩罚潜在停滞行为；迭代施加该过程使学生逐步逼近教师行为。</p>
+<p><strong>关键数字</strong> 在 0.6B–8B 的 8 个 SLM、域内与域外基准上，ProD 显著缓解进展停滞，同时提升蒸馏 SLM agent 的成功率与任务完成效率（摘要未给具体百分比）。</p>
+<p><strong>为什么值得看</strong> 指出小模型 agent 蒸馏的一个共性失效模式并给出训练侧解法，做低成本 agent 的团队值得参考。</p>
+<p><a href="https://arxiv.org/abs/2610.19439">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.19439">阅读原文 ↗</a></p>
+</body>
+</html>

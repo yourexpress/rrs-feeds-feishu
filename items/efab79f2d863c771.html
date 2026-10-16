@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CacheSmith: Accurate RAG Serving under Latency SLOs with Adaptive KV Reuse</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CacheSmith: Accurate RAG Serving under Latency SLOs with Adaptive KV Reuse</h1>
+<p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> RAG prefill 中复用检索块的预计算 KV 可降低延迟，但会漏掉跨块注意力；已有选择性重算方案采用静态一刀切配置，无法应对请求异质性与动态延迟预算。</p>
+<p><strong>方法</strong> CacheSmith 把选择性重算分解为 WarmUp、Probe、Patch 三阶段，可动态配置以覆盖宽范围的成本-精度权衡；服务时由 SLO 感知调度器组批降低请求间干扰，预算感知规划器跨批次配置重算阶段，两组件均基于剖析得到的成本-精度带做免求解器快速决策。</p>
+<p><strong>关键数字</strong> 在 4 个基准、不同到达率与突发度下，质量门控 SLO 达成率较四个 SOTA 基线最高提升 27.5%。</p>
+<p><strong>为什么值得看</strong> 针对 RAG 服务"精度门控 + 延迟 SLO"联合目标的系统设计，做 RAG 推理服务的团队可直接参考。</p>
+<p><a href="https://arxiv.org/abs/2610.18925">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.18925">阅读原文 ↗</a></p>
+</body>
+</html>

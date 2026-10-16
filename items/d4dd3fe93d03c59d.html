@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scaling LLM Inference via Parallelism: Throughput-Latency Trade-off</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Scaling LLM Inference via Parallelism: Throughput-Latency Trade-off</h1>
+<p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LLM 推理含决定首字延迟（TTFT）的 prefill 与决定逐字延迟（ITL）的 decode 两个本质不同的阶段，TP/PP/混合并行对两者的权衡各异，但不同负载与 SLO 下如何选并行配置缺乏系统理解。</p>
+<p><strong>方法</strong> 构建吞吐-延迟权衡的系统分析框架：通过构造 TTFT-ITL 可行集与 Pareto 前沿、提出"并行操作区域"概念刻画不同负载构成，并用 goodput 形式化 SLO 感知的并行选择。</p>
+<p><strong>关键数字</strong> 摘要未给实测数字，核心定性结论：负载越偏 prefill，最优配置从 TP 主导系统性迁移到 PP 主导；TTFT 要求严苛偏向 PP 主导，延迟约束宽松则转向容量更高的 TP 主导；长上下文中 PP 主导的扩展性与 SLO 达成更优。</p>
+<p><strong>为什么值得看</strong> 为分布式推理的并行配置选型给出系统性指导框架，做 serving 部署的团队值得参考。</p>
+<p><a href="https://arxiv.org/abs/2610.19405">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.19405">阅读原文 ↗</a></p>
+</body>
+</html>

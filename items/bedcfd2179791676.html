@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JointServe: Serving Multi-Model Agents on Memory-Constrained GPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>JointServe: Serving Multi-Model Agents on Memory-Constrained GPUs</h1>
+<p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LLM agent 从单模型调工具演进为编排多个专家模型，模型工作集超出显存；在私有/边缘的显存受限 GPU 上，整模型换入换出会把传输与计算串行，且丢失会话状态。</p>
+<p><strong>方法</strong> JointServe 把权重分片与 KV 块统一为共享同一内存预算的驻留对象，利用 agent 负载的定向调用、间隙执行、双态驻留三个结构性质：从调用方输出流解析意图信号、在生成期间触发预取；部分 k* 驻留把切换降为增量换层；抢占式传输调度器以保证带宽份额保护活跃会话 KV，另有控制步骤动态调整权重/KV 分配。</p>
+<p><strong>关键数字</strong> 会话完成时间比最强整模型换页基线低 21.7%；在所有整模型基线都无法完成的崩溃场景中保持可用（46 倍差距）；回放 SWE-bench、tau-bench、OSWorld 轨迹时完成时间最多降 49%，SLO 达成率从 2.8–24.5% 升至 76.8–100%。</p>
+<p><strong>为什么值得看</strong> 面向多模型 agent 这一新范式的 serving 系统，显存受限设备部署 agent 的团队值得跟进。</p>
+<p><a href="https://arxiv.org/abs/2610.19822">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.19822">阅读原文 ↗</a></p>
+</body>
+</html>

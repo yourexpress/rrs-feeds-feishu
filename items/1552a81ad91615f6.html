@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seeing at the Edge: Energy Characterization of Vision-Language Model Inference on Edge Platforms</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Seeing at the Edge: Energy Characterization of Vision-Language Model Inference on Edge Platforms</h1>
+<p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> VLM 正走向边缘设备，但带 NPU/GPU 加速器的单板计算机上 VLM 能耗多少、耗在何处，此前知之甚少。</p>
+<p><strong>方法</strong> 在树莓派 5（Hailo-10H NPU）与 Jetson Orin Nano Super 上测量 Qwen2-VL-2B-Instruct 及其纯文本版的系统总能耗、延迟与热行为，CPU 与加速器后端各测，并把能耗拆为每请求固定部分与随输出长度增长部分；因加速器量化与服务软件不同，比较的是部署栈而非芯片。</p>
+<p><strong>关键数字</strong> NPU 卸载使树莓派每生成 token 能耗约降三分之二，并避免 CPU 后端持续运行时的热降频；图像输入增加固定与每 token 能耗，但典型响应长度下生成答案远比处理图像耗能；Jetson GPU 固定成本低、利于短响应，树莓派 NPU 每 token 成本低、利于长响应，两条能耗曲线在约 40 个输出 token 处相交。</p>
+<p><strong>为什么值得看</strong> 少见的边缘 VLM 系统能耗实测，"固定成本 vs token 成本"拆解对边缘多模态选型很实用。</p>
+<p><a href="https://arxiv.org/abs/2610.20136">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.20136">阅读原文 ↗</a></p>
+</body>
+</html>

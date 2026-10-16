@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How the Dirty Set Moves: Characterizing Schedule Reuse in Incremental Sparse Matrix Multiplication</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>How the Dirty Set Moves: Characterizing Schedule Reuse in Incremental Sparse Matrix Multiplication</h1>
+<p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 稀疏矩阵固定、每步仅少数输入行变化（dirty set）的增量稀疏矩阵乘可复用结果，但 inspector-executor 的分块调度在 dirty set 移动后何时仍有利，此前缺乏系统刻画。</p>
+<p><strong>方法</strong> 在 21 个 SuiteSparse 矩阵与受控的 dirty set 移动模式上，系统比较增量更新、调度复用（分块执行器 + 缓存调度）与全量重算代码。</p>
+<p><strong>关键数字</strong> 直接按列增量更新比 8 种全量重算实现（含 Intel oneMKL、PyTorch）中最好者快 2.1–8.2 倍；在 837 个工作负载中 779 个优于保留分块调度的执行器；收益来自分块预处理而非调度缓存；仅当分块能把多个非零元合并进同一次输出写时才更快——该结构性质可在测量前预测。</p>
+<p><strong>为什么值得看</strong> 为增量稀疏计算"何时值得做调度复用"划出清晰边界，对稀疏运行时开发者是实用指南。</p>
+<p><a href="https://arxiv.org/abs/2610.19489">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.19489">阅读原文 ↗</a></p>
+</body>
+</html>
