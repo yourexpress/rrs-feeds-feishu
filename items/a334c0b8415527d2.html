@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PSA: A Pruning-Friendly Sparse-Aware Accelerator for Efficient Sparse Convolution in SNNs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>PSA: A Pruning-Friendly Sparse-Aware Accelerator for Efficient Sparse Convolution in SNNs</h1>
+<p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> SNN 中脉冲稀疏与剪枝稀疏叠加产生高度不规则的稀疏负载，现有加速器难以高效执行。</p>
+<p><strong>方法</strong> PSA 三项设计：SAMA 数据流对齐稀疏脉冲索引、把不规则激活转成连续计算流；SIG-im2col 机制以低映射与内存开销把稀疏卷积片上转换为 SpMM；集成轻量剪枝友好的门控机制，直接支持已剪枝 SNN。</p>
+<p><strong>关键数字</strong> ResNet-18/CIFAR-10 上，相比稠密基线能效提升 4.45 倍，能量-时延积（EDP）降低 18.52 倍。</p>
+<p><strong>为什么值得看</strong> 同时覆盖稀疏输入执行、稀疏卷积降级与剪枝友好执行三方面，是 SNN 硬件的完整方案。</p>
+<p><a href="https://arxiv.org/abs/2610.21313">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.21313">阅读原文 ↗</a></p>
+</body>
+</html>

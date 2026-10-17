@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exact Makespan Bounds and the GPipe Homogeneity Bias for Heterogeneous LLM Inference Pipelines</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Exact Makespan Bounds and the GPipe Homogeneity Bias for Heterogeneous LLM Inference Pipelines</h1>
+<p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 经典同构 GPipe 公式在异构 GPU 推理流水线的 makespan 估计上偏差有多大、偏差从哪来。</p>
+<p><strong>方法</strong> 给出精确临界路径刻画：纯前向无通信时 T(M)=(M−1)τ_max+Στ_j；异步 NCCL 通信下附加纯加性常数 Σd_j；阻塞通信下仅当 d_s&gt;τ_max−τ_s 时通信才进入稳态斜率；并把 GPipe 偏差分解为同构项与通信忽略项。</p>
+<p><strong>关键数字</strong> 在 11 种配置与 1.6×10^5 点模糊测试上逐点验证（误差小于 10^-9），包括 RTX 5090/3090/GTX 1070 混合分区。</p>
+<p><strong>为什么值得看</strong> 为异构推理流水线设计提供闭式调度依据，并给出「均衡各阶段计算比削减通信更主导稳态吞吐」的直接结论。</p>
+<p><a href="https://arxiv.org/abs/2610.21815">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.21815">阅读原文 ↗</a></p>
+</body>
+</html>

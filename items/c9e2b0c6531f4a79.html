@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Close Enough is Nowhere Near: Fidelity-Consumability Decoupling in KV Caches</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Close Enough is Nowhere Near: Fidelity-Consumability Decoupling in KV Caches</h1>
+<p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 多智能体系统中双方模型都冻结时，能否把发送方的 KV 缓存直接替换给阅读方，实现无损的缓存通信。</p>
+<p><strong>方法</strong> 答案是不能：冻结的 transformer 只能消费与其自写缓存足够接近的缓存（可容忍集），几何相似性无法预测可消费性，且失败不是渐进的；作者用竞争性注意力机制解释该现象。</p>
+<p><strong>关键数字</strong> 8 种替换方法对照无信息缓存基线与阅读方自读精度两个锚点，全部停留在基线水平；改让阅读方保留自身缓存、仅调整 query 去注意发送方缓存则能超过基线，合并 8 个发送方时仍高于基线。</p>
+<p><strong>为什么值得看</strong> 把一串零散负结果整合为带推翻条件的单一结论，并指明「叠加缓存而非替换」的可行方向。</p>
+<p><a href="https://arxiv.org/abs/2610.22016">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.22016">阅读原文 ↗</a></p>
+</body>
+</html>

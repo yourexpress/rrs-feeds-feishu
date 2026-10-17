@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minimum RISC-V: Maximum FPGA Efficiency</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Minimum RISC-V: Maximum FPGA Efficiency</h1>
+<p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> FPGA 软处理器系统（含内存）常占用不成比例的资源面积，性能却相对器件潜力平平。</p>
+<p><strong>方法</strong> 设计轻量深流水线 RISC-V 核，并提出应用二进制与专用处理器实例同步编译的优化：指令展开为应用特定编码，综合时删除未使用的数据通路与译码逻辑；产物保持汇编器兼容，但不再与通用 RISC-V 二进制兼容。</p>
+<p><strong>关键数字</strong> 中档器件上主频超 700 MHz、理想条件每时钟退休一条指令；最小核仅 170 个 ALM，在 Altera Agilex-5 上 775 MHz 收敛时序；RV32I/RV32M/RV32F 三种配置验证；核可装入确定性面积连续步进重复排布，便于多核密度规划。</p>
+<p><strong>为什么值得看</strong> 应用专属软核的极致面积效率路线，适合密集软核与确定性布局场景。</p>
+<p><a href="https://arxiv.org/abs/2610.21552">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.21552">阅读原文 ↗</a></p>
+</body>
+</html>

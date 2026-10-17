@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RoLaQ: Joint Rotation and Range Calibration for 2-Bit KV Caches in Multi-Head Latent Attention</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>RoLaQ: Joint Rotation and Range Calibration for 2-Bit KV Caches in Multi-Head Latent Attention</h1>
+<p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 多头潜在注意力（MLA）把 KV 压成每 token 共享潜变量，2-bit 存储下量化误差会同时扰动注意力匹配与值读出。</p>
+<p><strong>方法</strong> RoLaQ 离线联合旋转与范围校准：在冻结 key/value 投影定义的子空间内精化共享旋转，联合学习量化范围，使阈值与重构增益耦合控制共享信号响应；冻结权重，用预测匹配与注意力输出监督引导校准。</p>
+<p><strong>关键数字</strong> 三个 MLA 模型、六个基准上，无论是否启用 token 保护，RoLaQ 在对比的 2-bit 方法中平均精度最高；DeepSeek-V2-Lite 上 SGLang 实现同内存预算下 KV 容量为 BF16 的 3.96 倍，256K 输入时解码吞吐 2.51 倍。</p>
+<p><strong>为什么值得看</strong> 为长上下文推理的极限 KV 压缩提供可直接落地的校准路线。</p>
+<p><a href="https://arxiv.org/abs/2610.20686">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.20686">阅读原文 ↗</a></p>
+</body>
+</html>

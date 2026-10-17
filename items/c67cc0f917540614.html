@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Expanding Attention: A Taylor-Series Route to Linear-Time Transformers with a Fixed Number of Recurrent States</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Expanding Attention: A Taylor-Series Route to Linear-Time Transformers with a Fixed Number of Recurrent States</h1>
+<p class="meta-line">arXiv · 2026-10-02 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> softmax 注意力的二次复杂度限制长上下文，如何在把注意力降到线性时间的同时保持固定数量的递归状态。</p>
+<p><strong>方法</strong> 把指数核展开为 n 项截断泰勒级数，每项分解为张量幂内积，将因果历史压缩成与上下文长度无关的 n 个递归状态，每 token 只做一次秩一外积更新；状态跨块可加，prefill 可并行扫描。</p>
+<p><strong>关键数字</strong> 实测复杂度从 softmax 的 t∝N^2.28 降至 N^0.91，交叉点 N≈728，N=8192 时快 20.8 倍；逐 token 解码恒定 7.3μs，N=65536 时快 76.0 倍；最优取 n=3，误差 6.5×10^-4、每头 9945 个状态元素。</p>
+<p><strong>为什么值得看</strong> 给线性注意力提供一条严格无损的泰勒路线，并指出 QK 归一化是级数收敛的前提条件。</p>
+<p><a href="https://arxiv.org/abs/2610.20637">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.20637">阅读原文 ↗</a></p>
+</body>
+</html>

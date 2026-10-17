@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LCT: Losslessly Compressed Tensors with GPU friendly execution for Training</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LCT: Losslessly Compressed Tensors with GPU friendly execution for Training</h1>
+<p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 无损张量压缩能降低训练内存，但训练过程要求张量被反复重新编码，编解码开销是关键。</p>
+<p><strong>方法</strong> LCT 面向反复编解码场景的 GPU 执行框架：利用浮点数据的天然冗余，用预计算码本的 Huffman 编码压缩权重、激活与优化器状态，高度优化的 GPU kernel 保证低压缩与解压开销。</p>
+<p><strong>关键数字</strong> 压缩率最高 1.455 倍；162M 参数 NanoGPT 训练内存降 24.6%，步时增加 7.2%；Qwen3-4B 微调峰值内存最多省 23.8%，同一 GPU 上训练上下文长度可放大 3.5 倍。</p>
+<p><strong>为什么值得看</strong> 无损路线的内存-时间权衡测得清楚，可与其他显存优化手段叠加使用。</p>
+<p><a href="https://arxiv.org/abs/2610.22179">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.22179">阅读原文 ↗</a></p>
+</body>
+</html>

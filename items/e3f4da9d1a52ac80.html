@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ABNAT: Attention-Based Noise-Aware Training for Robust Transformers on Analog Compute-in-Memory Systems</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ABNAT: Attention-Based Noise-Aware Training for Robust Transformers on Analog Compute-in-Memory Systems</h1>
+<p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 模拟存算一体（CIM）的硬件噪声会扰动存储权重、拖累 Transformer 性能，而现有噪声感知训练忽视了注意力机制。</p>
+<p><strong>方法</strong> 作者观察到干净与含噪注意力图的偏差随层深显著增大，且常规 NAT 在注意力路由已偏离时仍过度自信；ABNAT 让含噪学生模仿干净教师的逐头注意力路由而非只复现答案，不改硬件、无推理开销。</p>
+<p><strong>关键数字</strong> 视觉、语言、多模态 Transformer 上一致优于对应 NAT 基线：噪声下精度最多提升 11.28%，注意力偏差最多降低 85.77%。</p>
+<p><strong>为什么值得看</strong> 用注意力路由蒸馏提升 CIM 上 Transformer 的鲁棒性，训练侧低成本、部署侧零改动。</p>
+<p><a href="https://arxiv.org/abs/2610.22065">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.22065">阅读原文 ↗</a></p>
+</body>
+</html>

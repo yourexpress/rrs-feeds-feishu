@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cyclotron: A Recurrence Language for Expressing Interprocessor Communication</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Cyclotron: A Recurrence Language for Expressing Interprocessor Communication</h1>
+<p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 标准分布式线性代数库往往不支持近邻脉动交换、一对多广播、双向分裂环等通信模式。</p>
+<p><strong>方法</strong> Cyclotron 用递归方程语言表达流式数据流算法，数据可直接驻留在迭代空间上点对点通信；编译器按用户选定的空间-时间映射，自动生成每个处理器的收发与计算程序，无需重写算法。</p>
+<p><strong>关键数字</strong> 在最多 16 个 CPU 节点和 16 块 GPU 上评测分布式矩阵乘、TRSM、Cholesky 与融合 Cholesky-TRSM，与 ScaLAPACK、SLATE、cuSolverMp 等手工优化库相当且经常更优。</p>
+<p><strong>为什么值得看</strong> 把通信模式变成算法语言的一等公民；还发现 Cholesky 的最优通信策略随问题规模与架构而变。</p>
+<p><a href="https://arxiv.org/abs/2610.20981">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.20981">阅读原文 ↗</a></p>
+</body>
+</html>

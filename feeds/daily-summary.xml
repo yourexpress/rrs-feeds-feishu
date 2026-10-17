@@ -5,8 +5,51 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>每天一条，汇总当日两个检索源（AI 技术报告 + 高效计算文献）的重点内容。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 16 Oct 2026 23:25:31 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 17 Oct 2026 11:08:27 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/daily-summary.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日精选 · 2026-10-17</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-10-17.html</link>
+      <guid isPermaLink="false">urn:daily-summary:2026-10-17</guid>
+      <pubDate>Sat, 17 Oct 2026 23:05:00 +0800</pubDate>
+    <category>每日精选</category>
+      <description>&lt;h2&gt;当日检索概况&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;AI 技术报告检索&lt;/strong&gt;：新收 6 条，入选 6 条：MAI-Base-2、Nemotron 3.5、Ling 3.1-flash 三个开放模型/家族发布，加上 Simons 基金会资助数学界、Google Deep Review、Mistral Timestral 三条行业动态（均为补漏）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;高效计算文献检索&lt;/strong&gt;：新收 102 条，入选 30 条（以 arXiv 论文为主，另含 Muse Spark Open、RTX Spark 发售两条产业博客）。两库合计入选 36 条。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;重点推荐&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Frontier Pre-training at Microsoft AI（MAI-Base-2）&lt;/strong&gt;：80B 激活/2.8T 总参 MoE 基座，16384 块 GB200 训练 38 天，MFU 21%/goodput 89%，称预训练 FLOPs 效率为 DeepSeek-V4-Pro-Base 的 4–12 倍——前沿预训练少有的全栈工程披露。&lt;a href="https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Muse Spark Is Now an Open-Weights Model&lt;/strong&gt;：Meta 开放 816B-A42B 权重，Helion 可移植内核在 GB300 上 1.03–3.95 倍内核级加速并可直移 AMD，PyTorch 生态 Day-0 支持。&lt;a href="https://pytorch.org/blog/muse-spark-open/"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Architecting for Hardware Diversity: Meta's End-to-End Co-Design for High-Performance AI Training on AMD GPUs&lt;/strong&gt;：超大规模厂商首次公开 AMD MI350X 大规模训练生产化方法，端到端吞吐较直接移植提升最高 1.5 倍。&lt;a href="https://arxiv.org/abs/2610.22230"&gt;arXiv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;How to Train Your Little Dragon&lt;/strong&gt;：8B 模型学会生成并改进 GPU kernel 优化脚本，单次正确率超 91%，胜过 GPT-6 Astra、Opus 5 等前沿大模型。&lt;a href="https://arxiv.org/abs/2610.20980"&gt;arXiv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;EdgeWise: Bringing Long-Horizon Agents to the Edge via Selective Cloud Delegation&lt;/strong&gt;：本地 SLM + 步骤级 RL 选择性委派云 LLM，SWE-Rebench 推理成本降 62% 且精度不损。&lt;a href="https://arxiv.org/abs/2610.17560"&gt;arXiv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Close Enough is Nowhere Near: Fidelity-Consumability Decoupling in KV Caches&lt;/strong&gt;：干净利落的负结果——冻结模型间直接替换发送方 KV 缓存全部失败，但「保留自身缓存+叠加对方缓存」可行。&lt;a href="https://arxiv.org/abs/2610.22016"&gt;arXiv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RoLaQ: Joint Rotation and Range Calibration for 2-Bit KV Caches in Multi-Head Latent Attention&lt;/strong&gt;：MLA 2-bit KV 校准，同内存预算下 KV 容量达 BF16 的 3.96 倍、256K 输入解码吞吐 2.51 倍。&lt;a href="https://arxiv.org/abs/2610.20686"&gt;arXiv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ling 模型家族官方文档（含新开放权重 Ling-3.1-flash）&lt;/strong&gt;：蚂蚁新开放 560B 总参/25B 激活混合推理 MoE，1M 上下文上限，权重已在 Hugging Face 开放。&lt;a href="https://developer.ant-ling.com/zh-CN/docs/models/ling/"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;主题速览&lt;/h2&gt;
+&lt;p&gt;EC 库今日主线是 LLM 训练与推理的效率工程：KV 缓存一环尤其密集（2-bit 校准、查找表压缩、边云迁移、远程分层与替换可行性的正负结果各占一席），量化方向出现分数幂二与两篇负结果/边界刻画，异构训练与推理调度（ETH、makespan 精确界、Meta AMD 协同）成簇出现，加速器侧则有 Krylov 可编程加速器、最小化 RISC-V 软核与 SNN 稀疏卷积架构。AI 库则是开放模型密集发布日：微软、Meta、NVIDIA、蚂蚁同日各有重磅，配合 AI 治理（Simons 资助数学界）与 AI 审稿（Google Deep Review）两条行业动态。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2>当日检索概况</h2>
+<ul>
+<li><strong>AI 技术报告检索</strong>：新收 6 条，入选 6 条：MAI-Base-2、Nemotron 3.5、Ling 3.1-flash 三个开放模型/家族发布，加上 Simons 基金会资助数学界、Google Deep Review、Mistral Timestral 三条行业动态（均为补漏）。</li>
+<li><strong>高效计算文献检索</strong>：新收 102 条，入选 30 条（以 arXiv 论文为主，另含 Muse Spark Open、RTX Spark 发售两条产业博客）。两库合计入选 36 条。</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>Frontier Pre-training at Microsoft AI（MAI-Base-2）</strong>：80B 激活/2.8T 总参 MoE 基座，16384 块 GB200 训练 38 天，MFU 21%/goodput 89%，称预训练 FLOPs 效率为 DeepSeek-V4-Pro-Base 的 4–12 倍——前沿预训练少有的全栈工程披露。<a href="https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/">原文</a></li>
+<li><strong>Muse Spark Is Now an Open-Weights Model</strong>：Meta 开放 816B-A42B 权重，Helion 可移植内核在 GB300 上 1.03–3.95 倍内核级加速并可直移 AMD，PyTorch 生态 Day-0 支持。<a href="https://pytorch.org/blog/muse-spark-open/">原文</a></li>
+<li><strong>Architecting for Hardware Diversity: Meta's End-to-End Co-Design for High-Performance AI Training on AMD GPUs</strong>：超大规模厂商首次公开 AMD MI350X 大规模训练生产化方法，端到端吞吐较直接移植提升最高 1.5 倍。<a href="https://arxiv.org/abs/2610.22230">arXiv</a></li>
+<li><strong>How to Train Your Little Dragon</strong>：8B 模型学会生成并改进 GPU kernel 优化脚本，单次正确率超 91%，胜过 GPT-6 Astra、Opus 5 等前沿大模型。<a href="https://arxiv.org/abs/2610.20980">arXiv</a></li>
+<li><strong>EdgeWise: Bringing Long-Horizon Agents to the Edge via Selective Cloud Delegation</strong>：本地 SLM + 步骤级 RL 选择性委派云 LLM，SWE-Rebench 推理成本降 62% 且精度不损。<a href="https://arxiv.org/abs/2610.17560">arXiv</a></li>
+<li><strong>Close Enough is Nowhere Near: Fidelity-Consumability Decoupling in KV Caches</strong>：干净利落的负结果——冻结模型间直接替换发送方 KV 缓存全部失败，但「保留自身缓存+叠加对方缓存」可行。<a href="https://arxiv.org/abs/2610.22016">arXiv</a></li>
+<li><strong>RoLaQ: Joint Rotation and Range Calibration for 2-Bit KV Caches in Multi-Head Latent Attention</strong>：MLA 2-bit KV 校准，同内存预算下 KV 容量达 BF16 的 3.96 倍、256K 输入解码吞吐 2.51 倍。<a href="https://arxiv.org/abs/2610.20686">arXiv</a></li>
+<li><strong>Ling 模型家族官方文档（含新开放权重 Ling-3.1-flash）</strong>：蚂蚁新开放 560B 总参/25B 激活混合推理 MoE，1M 上下文上限，权重已在 Hugging Face 开放。<a href="https://developer.ant-ling.com/zh-CN/docs/models/ling/">原文</a></li>
+</ul>
+<h2>主题速览</h2>
+<p>EC 库今日主线是 LLM 训练与推理的效率工程：KV 缓存一环尤其密集（2-bit 校准、查找表压缩、边云迁移、远程分层与替换可行性的正负结果各占一席），量化方向出现分数幂二与两篇负结果/边界刻画，异构训练与推理调度（ETH、makespan 精确界、Meta AMD 协同）成簇出现，加速器侧则有 Krylov 可编程加速器、最小化 RISC-V 软核与 SNN 稀疏卷积架构。AI 库则是开放模型密集发布日：微软、Meta、NVIDIA、蚂蚁同日各有重磅，配合 AI 治理（Simons 资助数学界）与 AI 审稿（Google Deep Review）两条行业动态。</p>]]></content:encoded>
+    </item>
     <item>
       <title>每日精选 · 2026-10-16</title>
       <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-10-16.html</link>

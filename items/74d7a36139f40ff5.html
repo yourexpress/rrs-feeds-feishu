@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ETH: Data-Balanced Heterogeneous Pipeline Parallelism for Training Large Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ETH: Data-Balanced Heterogeneous Pipeline Parallelism for Training Large Models</h1>
+<p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 现有异构感知训练系统靠给各阶段分配不等层数来均衡负载，既解决不了内存约束，均衡粒度也太粗。</p>
+<p><strong>方法</strong> 提出数据均衡的异构流水线并行（HPP）并用 ETH 系统实现：分层工作负载均衡框架联合优化跨流水线与阶段内的均衡，块级梯度聚合缓解非对称 All-Reduce 通信，专门优化大幅降低 HPP 配置搜索开销。</p>
+<p><strong>关键数字</strong> 相比最先进系统，训练加速最高 2 倍，配置生成开销最高降低 56 倍。</p>
+<p><strong>为什么值得看</strong> 数据均衡比按层切分更细粒度，且直面异构训练的内存瓶颈，代码已开源。</p>
+<p><a href="https://arxiv.org/abs/2610.22035">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.22035">阅读原文 ↗</a></p>
+</body>
+</html>

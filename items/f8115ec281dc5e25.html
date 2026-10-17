@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Helix: A Unified Programmable Accelerator for Diverse Krylov Subspace Solvers</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Helix: A Unified Programmable Accelerator for Diverse Krylov Subspace Solvers</h1>
+<p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 现有 Krylov 子空间方法的 FPGA 加速器通常只支持单一求解器，或需要独立硬件配置。</p>
+<p><strong>方法</strong> Helix 按算法族设计：先从多种 Krylov 求解器抽象公共计算原语，围绕可编程原语 kernel 搭架构，解耦硬件实现与求解器执行，实现 HBM 复用与零求解器切换时延；再配 DSL 编译器把不同求解器高效映射到架构上。</p>
+<p><strong>关键数字</strong> 在 Xilinx Alveo U55C 上编译运行 8 种求解器：相对 Xilinx XcgSolver 最高加速 7.91 倍，相对 SOTA FPGA 加速器 Callipepla 最高 1.16 倍；吞吐达 RTX PRO 6000 GPU 的 47.5%–96.9%，能效高 2.29–4.66 倍；可编程开销仅 0.25%–0.57% 执行时间与 4.7% LUT、4.0% FF。</p>
+<p><strong>为什么值得看</strong> 领域加速器「族抽象＋可编程原语」的范本案例，开销数据说明可编程性几乎免费。</p>
+<p><a href="https://arxiv.org/abs/2610.21096">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.21096">阅读原文 ↗</a></p>
+</body>
+</html>

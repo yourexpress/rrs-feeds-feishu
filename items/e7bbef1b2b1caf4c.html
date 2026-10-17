@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Train Your Little Dragon: Teaching a Small Language Model to Construct and Refine GPU Optimization Scripts</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>How to Train Your Little Dragon: Teaching a Small Language Model to Construct and Refine GPU Optimization Scripts</h1>
+<p class="meta-line">arXiv · 2026-10-14 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> GPU kernel 优化本质是编译器变换的组合搜索，能否把这项搜索交给小语言模型。</p>
+<p><strong>方法</strong> 训练 SLM 直接生成 TVM MetaSchedule 优化脚本：采用紧凑无损表示，确定性解码可精确重构编译器变换轨迹；先监督微调，再用正确性加实测时延的塑形奖励做强化学习。</p>
+<p><strong>关键数字</strong> 以 54,116 个 workload 构建 108,594 条训练样本；8B 模型构造与改进脚本的单次正确率分别达 91.27% 和 92.01%；RL 在 102 个构造任务中的 88 个、170 个改进任务中的 145 个上产出比 SFT 更快的 kernel，并超过 GPT-6 Astra、Opus 5 等前沿大模型。</p>
+<p><strong>为什么值得看</strong> 8B 模型靠专门训练胜过千亿至万亿参数模型，是「用 SLM 替代搜索」的具体样板。</p>
+<p><a href="https://arxiv.org/abs/2610.20980">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.20980">阅读原文 ↗</a></p>
+</body>
+</html>
