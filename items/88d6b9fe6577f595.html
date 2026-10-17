@@ -22,8 +22,11 @@
 <h1>Training-Free On-Policy Distillation</h1>
 <p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
 
-<p>免训练在线策略蒸馏：仅前向传播即可把多个专家模型能力聚合进单一学生模型</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong>：On-policy 蒸馏能把多个专家模型合并进一个学生模型，但每个教师都要付出 rollout、教师前向和梯度步；能否不训练、只做前向就完成合并？</p>
+<p><strong>方法</strong>：当各专家共享同一基座模型时，蒸馏存在精确的逐层解——融合模型的每个线性层须在读取自身答案的同时复现各专家在其输入上的输出，这是一个最小二乘问题，只需这些输入的二阶矩，几百条 rollout 的前向即可得到；作者发现 rollout 的内容比求解器更重要，剔除重复循环截断的答案后融合效果显著提升。</p>
+<p><strong>关键数字</strong>：在 Olmo 3 7B 上，每个专家只需几 GPU-小时的前向计算，得到的通才模型在 7 个数学与代码基准上保留了各专家的大部分收益；融合模型平均比任一单独专家更准；剔除截断 rollout 后 AIME25 从 task arithmetic 水平提升到与专家持平（相同精度档位）。</p>
+<p><strong>为什么值得看</strong>：免梯度的专家合并，成本极低，且揭示 rollout 质量（而非求解器）才是关键，对多专家融合与模型合并方向有直接启发。</p>
+<p><a href="https://arxiv.org/abs/2610.22236">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.22236">阅读原文 ↗</a></p>
 </body>
 </html>

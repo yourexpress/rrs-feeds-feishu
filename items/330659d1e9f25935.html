@@ -22,8 +22,11 @@
 <h1>PocketTSLM: Deploying an On-Device Soft-Prompt Time-Series Language Model for Privacy-Preserving Smartphone Reasoning</h1>
 <p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
 
-<p>PocketTSLM：端侧软提示时序语言模型，在智能手机上做隐私保护的生理时序推理</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong>：手机与可穿戴设备采集的生理时间序列越来越多，但云端时序语言模型要反复把敏感数据送出设备；如何把时序语言模型（TSLM）完整跑在消费级手机上、保留时间结构又保护隐私。</p>
+<p><strong>方法</strong>：提出 PocketTSLM，将 OpenTSLM 的 SoftPrompt 变体做移动端原生部署——时间序列窗口编码为 embedding 注入软提示，而非序列化成文本；用数值一致性协议验证 Swift 移植与 Apple MLX 参考实现的贪心解码 token 序列逐位一致，答案与 PyTorch 参考也一致。</p>
+<p><strong>关键数字</strong>：在同一个骨干上，软提示路径相比文本序列化基线少用约 12 倍的时间序列 token，同时降低上下文与内存占用。</p>
+<p><strong>为什么值得看</strong>：端侧时序大模型落地少有的完整工程样本——从移植、数值校验到上下文经济学评测，对端侧健康类隐私推理有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.21308">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.21308">阅读原文 ↗</a></p>
 </body>
 </html>

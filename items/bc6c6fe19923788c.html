@@ -22,9 +22,11 @@
 <h1>RheoSampling: Resolving the One-Hot Dilemma in Stochastic Dynamic-Tree Speculative Decoding</h1>
 <p class="meta-line">arXiv（cs.CL/cs.LG） · 2026-09-18 · 论文PDF</p>
 
-<p>解决随机动态树投机解码中 one-hot 困境的采样与调度方法</p>
-<blockquote><p>Speculative decoding accelerates LLM inference by drafting multiple tokens in parallel, with tree-based methods further improving efficiency through hierarchical structures. Dynamic-tree methods such as EAGLE-3 perform well under greedy decoding via deterministic top-K expansion and global pruning. However, in stochastic decoding (T&gt;0), this mechanism collapses the draft distribution into one-hot probabilities, causing a severe drop in acceptance rate. This creates a dilemma: dynamic-tree methods sacrifice stochastic sampling to preserve context-aware topology, while static-tree methods preserve stochastic sampling with context-agnostic structures. The issue arises because the same probability distribution is used for two conflicting tasks: constructing the tree and verifying tokens. This coupling makes direct injection of randomness challenging due to the resulting stochastic process. We resolve this by decoupling these roles: RheoSampling assigns a token sampled from the draft distribution a proxy probability for tree expansion and pruning alongside its true sampling probability for verification. Specifically, we inject a sampled token among the deterministic top-K slots and trea…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：动态树投机解码（如 EAGLE-3）靠确定性 top-K 扩展在贪心解码下表现好，但随机采样（T&gt;0）时会把草稿分布塌缩成 one-hot、接受率骤降——根源是同一概率分布被同时用于构建草稿树和验证 token 两个互相冲突的任务。</p>
+<p><strong>方法</strong>：RheoSampling 解耦这两个角色：从草稿分布中采样的 token 在树的扩展与剪枝中使用代理概率、在验证时使用真实采样概率，并把采样 token 注入确定性 top-K 槽位；通过等价类分析给出无损性证明。</p>
+<p><strong>关键数字</strong>：摘要未报告量化加速，定性结论是首个同时具备上下文感知 top-K 构建、随机采样且保持无损的动态树投机解码方法。</p>
+<p><strong>为什么值得看</strong>：动态树结构与随机采样长期二选一的困境，被"代理概率解耦"干净地解开并附无损证明，对做投机解码的工程团队有直接参考价值。</p>
+<p><a href="http://arxiv.org/abs/2609.21827">原文链接</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2609.21827">阅读原文 ↗</a></p>
 </body>
 </html>

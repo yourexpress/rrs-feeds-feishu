@@ -22,9 +22,11 @@
 <h1>Verifiable Computation with Trusted Execution Environments and On-Chain Digital Rights Tokens</h1>
 <p class="meta-line">arXiv（Bingle Stegmann Kruger 等，cs.CR/cs.DC） · 2026-09-18 · 论文PDF</p>
 
-<p>TEE 可验证计算与链上数字权利令牌结合</p>
-<blockquote><p>We present an architecture that enables data owners to combine private data into data pools using Trusted Execution Environments (TEEs) and manage these pools by issuing narrowly scoped computational rights, encoded as Digital Rights Tokens (DRTs), to third-party data analysts. Each DRT binds specific open-source code to a pool and is issued and redeemed on a distributed ledger. Data analysts can obtain the right to execute open-source code on the combined sealed data inside a TEE and receive the result from this code execution, but not the underlying data. We argue for a control-centric view of privacy in which creators retain ex ante control over how their data is processed. A reference implementation runs WebAssembly (WASM)/Python jobs over sealed datasets and records redemptions on Solana, illustrating the feasibility and limitations of the platform.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：数据所有者如何把私有数据安全地合并成数据池，并向第三方分析师发放范围受限的计算权利——让分析师拿到代码执行结果，却拿不到底层数据？</p>
+<p><strong>方法</strong>：提出一套架构：用可信执行环境（TEE）把私有数据合并成数据池，通过数字权利令牌（DRT）管理访问——每个 DRT 把一段特定开源代码绑定到一个池上，在分布式账本上发行与赎回；分析师获得在 TEE 内对密封数据执行该代码并取回结果的权利。作者主张"以控制为中心"的隐私观：创作者对数据如何被处理保有事前控制权。参考实现在密封数据集上运行 WASM/Python 作业，赎回记录在 Solana 上。</p>
+<p><strong>关键数字</strong>：摘要未给出量化指标，定位为可行性与局限性的演示实现。</p>
+<p><strong>为什么值得看</strong>：TEE + 链上权利凭证 + 可验证计算组合成完整的隐私计算授权架构，对数据要素市场与机密计算方向是有信息量的设计样本。</p>
+<p><a href="http://arxiv.org/abs/2609.21728">原文链接</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2609.21728">阅读原文 ↗</a></p>
 </body>
 </html>

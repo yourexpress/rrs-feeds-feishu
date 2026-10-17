@@ -22,9 +22,11 @@
 <h1>Benchmarking StreamNTT with a Verilog-to-Routing Toolchain</h1>
 <p class="meta-line">arXiv · 2026-09-19 · 论文PDF</p>
 
-<p>StreamNTT 数论变换的 Verilog-to-Routing 工具链基准</p>
-<blockquote><p>As post-quantum cryptography algorithms move toward large-scale data center deployment, hardware acceleration of their computational bottleneck, which is the number theoretic transform (NTT), has gained increasing attention. StreamNTT, a high-level synthesis- and field-programmable gate array-based accelerator, achieves state-of-the-art throughput through various optimization techniques. However, its reliance on a commercial tool and a device makes direct comparisons difficult for researchers without access. We address this by building StreamNTT on an open-source Verilog-to-Routing toolchain, which achieves similar digital signal processing and multiplier usage. Significant differences in internal memory utilization indicate that further memory-level optimization is needed to approach commercial tool performance.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：后量子密码算法走向大规模数据中心部署，硬件加速其计算瓶颈数论变换（NTT）备受关注；StreamNTT 是基于 HLS 与 FPGA 的 SOTA 加速器，但依赖商业工具链与特定器件，没有许可的研究者难以直接对比。</p>
+<p><strong>方法</strong>：在开源 Verilog-to-Routing 工具链上重建 StreamNTT，使其可复现、可对比；与商业工具链实现对照资源占用，评估开源路径逼近商业实现的可能性。</p>
+<p><strong>关键数字</strong>：开源实现的 DSP 与乘法器用量与商业工具链相近；内部内存利用率存在显著差异，说明还需内存级优化才能逼近商业工具的性能。</p>
+<p><strong>为什么值得看</strong>：把 SOTA 的 PQC 加速器搬到开源工具链上，既补齐了可复现性，也量化暴露了开源工具在内存利用上的差距，FPGA 与后量子加速方向值得参考。</p>
+<p><a href="https://arxiv.org/abs/2609.23116">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.23116">阅读原文 ↗</a></p>
 </body>
 </html>

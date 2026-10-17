@@ -22,8 +22,11 @@
 <h1>Resource-aware Sub-network Allocation for Heterogeneous Decentralized Learning</h1>
 <p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
 
-<p>RASA-DL：资源感知的子网分配，为异构去中心化学习按部署资源联合决定各节点模型容量</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong>：同步去中心化学习每一轮都被资源最弱的节点卡住，计算、通信、内存异构下，如何为每个节点分配合适的模型容量（子网络宽度）。</p>
+<p><strong>方法</strong>：提出 RASA-DL，把每节点可分配的最大子网络宽度当作部署变量；结合离线硬件画像（计算/内存开销）与部署感知的学习效用画像，把部署建模为带内存约束与聚合学习效用要求的瓶颈时延最小化问题，利用时延阈值的单调可行性做二分搜索求解。</p>
+<p><strong>关键数字</strong>：在 Moderate 与 Severe 两种异构档位下，最小时延工作点在相同轮次时延下，比全局可行的最大统一部署分别高 2.80 与 2.43 个百分点的精度；强 Non-IID 数据异构下优势进一步放大。</p>
+<p><strong>为什么值得看</strong>：把"部署资源"直接纳入模型容量决策，为异构边缘上的分布式训练提供了画像驱动、可复现的分配框架。</p>
+<p><a href="https://arxiv.org/abs/2610.22015">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.22015">阅读原文 ↗</a></p>
 </body>
 </html>

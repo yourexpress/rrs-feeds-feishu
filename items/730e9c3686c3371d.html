@@ -23,7 +23,8 @@
 <p class="meta-line">arXiv · 2026-10-15 · 论文PDF</p>
 
 <p>Top-Down Microarchitecture Analysis (TMA) is the standard for identifying CPU bottlenecks.</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<blockquote><p>Top-Down Microarchitecture Analysis (TMA) is the standard for identifying CPU bottlenecks. However, TMA implicitly models performance via a single causal path: Workload(dataset, algorithm) =&gt; CPU(CPI) =&gt; System(Performance) (microarchitectural efficiency path). It overlooks two hidden causal paths: Workload(dataset, algorithm) =&gt; Instructions(Retired) =&gt; System(Performance) (algorithmic efficiency path) and Workload(dataset, algorithm) =&gt; Instructions(Retired) =&gt; CPU(CPI) =&gt; System(Performance) (microarchitecture-algorithm efficiency path). This causal blindness often misleads architects into futile hardware optimizations. To address this, we propose Causal Top-Down Microarchitecture Analysis (CTMA). Utilizing the object causal model, CTMA explicitly models these three causal paths among the workload, instructions, CPU, and system. We validate CTMA across Intel, AMD, and ARM platforms. Our experiments reveal counterintuitive insights: (1) CPI Profiling Blindness: Algorithmic instruction bloat can double elapsed time while the CPI profile remains frozen. (2) Over-Speculation Congestion: Throttling the Frontend paradoxically improves performance in pointer-chasing algorithms. (3) ILP…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.21387">阅读原文 ↗</a></p>
 </body>
 </html>

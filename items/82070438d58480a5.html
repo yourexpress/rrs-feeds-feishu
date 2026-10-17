@@ -22,9 +22,11 @@
 <h1>DeepSeek v4 Flash Vision Exp is Released as Open Weights（讨论帖）</h1>
 <p class="meta-line">NVIDIA Developer Forums · 2026-09-19 · 技术博客</p>
 <img class="hero" src="https://global.discourse-cdn.com/nvidia/original/3X/e/4/e41d27491ee72562cf68c340597ca95f587879bd.png" alt="" referrerpolicy="no-referrer">
-<p>DeepSeek v4 Flash Vision 开放权重的论坛讨论</p>
-<blockquote><p>Tx. I didn’t optimize for cache at all, with 3.5M KV cache I still have 116/121Gb on head and 115/121Gb on worker, so it can be bumped to probably like somewhere in 4-5-6 ish M range. I just don’t really need that, since I my harness compacts after 200k with 16k reserved for output and 12 x 200k = 2.4M :)</p><p>P.S. Updated main with --long-prefill-token-threshold 1024. Also added couple of tool call fixes (backports from vllm main tree), but they are off by default. I haven’t experienced them and don’t really have time to built artificial tests.</p><p>…</p></blockquote>
-<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><strong>核心话题</strong>：NVIDIA 开发者论坛上的讨论帖：DeepSeek v4 Flash Vision Exp 以开放权重发布后，社区用户交流自建推理服务的部署经验。</p>
+<p><strong>要点</strong>：帖中用户分享自维护推理分支的实测参数：未做任何缓存优化的情况下，3.5M 的 KV cache 仍留有可观内存余量，估计可上调到 4–6M 区间；其运行框架每 200k token 压缩一次上下文、预留 16k 输出，总上下文预算约 2.4M；同时更新了长 prefill 阈值参数，并回合了两个默认关闭的 tool call 修复（来自 vLLM 主干）。</p>
+<p><strong>关键数字</strong>：KV cache 3.5M 时，主节点内存余量 116/121 GB、工作节点 115/121 GB；上下文压缩策略为每 200k 压缩、16k 输出预留、总预算约 2.4M。</p>
+<p><strong>为什么值得看</strong>：开放权重视觉大模型在大显存 GPU 上自部署的一手参数经验，自己跑 vLLM 类服务、规划 KV cache 与上下文预算的人可作参考。</p>
+<p><a href="https://forums.developer.nvidia.com/t/deepseek-v4-flash-vision-exp-is-released-as-open-weights/381911/408">原文链接</a></p>
 <p><a class="origin" href="https://forums.developer.nvidia.com/t/deepseek-v4-flash-vision-exp-is-released-as-open-weights/381911/408">阅读原文 ↗</a></p>
 </body>
 </html>

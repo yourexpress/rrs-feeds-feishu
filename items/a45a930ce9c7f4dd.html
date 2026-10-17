@@ -22,8 +22,11 @@
 <h1>ShiftQAT: Quantization-Aware Training for the Numerical Contract of a Fixed-Function Edge CNN Accelerator</h1>
 <p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
 
-<p>ShiftQAT：满足 MAX7800x 固定功能边缘 CNN 加速器数值契约（2 的幂尺度/8-bit/纯整型）的量化感知训练</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong>：固定功能边缘 CNN 加速器（MAX7800x 系列）只执行满足严格数值契约的网络——2 的幂每张量对称 scale、8-bit 激活与偏置、纯整数运算、每层一个静态配置移位；如何用量化感知训练（QAT）构造性地训出满足契约的网络。</p>
+<p><strong>方法</strong>：提出 ShiftQAT（已是开源工具链 ai8x-training 的默认训练路径）：解析残差、拼接与权重共享依赖使激活 scale 静态传播，每层重量化归约为一个离线配置的移位；权重与偏置在同一个 2 的幂网格上联合训练以适配 8-bit 偏置预算。</p>
+<p><strong>关键数字</strong>：对比方法中只有 ShiftQAT 满足全部 scale 约束（含符号 8-bit 激活存储）；ImageNet 上 W8A8 精度损失与约束更松的 QAT 方法持平，W4A8 距 FP32 在 2.9 个百分点以内；MAX78002 芯片上 MobileNetV2 / ResNet-18 单次推理 14.6 / 8.4 ms、5.1 / 2.8 mJ。</p>
+<p><strong>为什么值得看</strong>：固定功能加速器的数值契约如何进 QAT 流程的完整答案，对自研边缘推理芯片的模型工具链建设有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.21695">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.21695">阅读原文 ↗</a></p>
 </body>
 </html>

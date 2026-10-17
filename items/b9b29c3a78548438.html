@@ -22,9 +22,11 @@
 <h1>TokaGLINT: A Scalable GPU-Tailored Implicit Solver for Full 3D Tokamak Electromagnetic Simulations</h1>
 <p class="meta-line">arXiv（cs.DC） · 2026-09-18 · 论文PDF</p>
 
-<p>面向全三维托卡马克电磁模拟的 GPU 定制可扩展隐式求解器（HPC）</p>
-<blockquote><p>We introduce TokaGLINT, a GPU-accelerated implicit solver for electromagnetic field computations in full 3D tokamak simulations, aimed at efficient large-scale parallel GPU computing. Its central innovation lies in the co-design of hierarchical domain decomposition and a fast exact local solver, where hierarchical partitioning is tailored to match fine-grained intra-card subdomains and exploit the tensor-based solver dedicated to curvilinear-coordinate symplectic CN-FDTD-discretized 3D Maxwell equations. Backed by automated operator fusion and batching customized for the intra-card multi-subdomain structure, the solver decouples unknowns through discrete transformations and leverages tensor-structured computations to achieve high hardware utilization, while preserving the long-time stability characteristic of symplectic discretizations. TokaGLINT scales the electromagnetic field solve beyond 10,000 GPUs, achieving 90.1% weak and 53.9% strong scaling efficiency, while delivering a 2.67X single-node speedup over an unpreconditioned BiCGStab baseline (HIP-enabled HYPRE). It is validated in EAST tokamak simulations within the SymPIC plasma simulation code, enabling high-fidelity long-d…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：托卡马克全三维电磁场模拟需要面向大规模 GPU 并行的高效隐式求解器，如何把电磁场求解扩展到上万张 GPU？</p>
+<p><strong>方法</strong>：提出 TokaGLINT，GPU 加速的隐式电磁场求解器：层级化区域分解与快速精确局部求解器协同设计，分解粒度对齐卡内细粒度子域；张量化求解器专门针对曲线坐标下辛 CN-FDTD 离散的三维 Maxwell 方程，配合自动算子融合与面向卡内多子域结构的批处理，通过离散变换解耦未知量、利用张量结构计算提高硬件利用率，同时保持辛离散的长时稳定性；在 SymPIC 等离子体模拟代码中的 EAST 托卡马克模拟中得到验证。</p>
+<p><strong>关键数字</strong>：电磁场求解扩展到 10,000 张 GPU 以上，弱扩展效率 90.1%、强扩展效率 53.9%；单节点比无预条件 BiCGStab 基线（HIP 版 HYPRE）快 2.67 倍。</p>
+<p><strong>为什么值得看</strong>：聚变模拟大规模 GPU HPC 的完整案例，其区域分解与张量化求解器协同设计对其它隐式 PDE 求解器同样有借鉴意义。</p>
+<p><a href="http://arxiv.org/abs/2609.21366">原文链接</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2609.21366">阅读原文 ↗</a></p>
 </body>
 </html>

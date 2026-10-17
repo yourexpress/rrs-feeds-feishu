@@ -22,8 +22,11 @@
 <h1>When the KV Cache Is Slower Than the GPU: Scaling Remote KV Tiers for Context-Parallel Prefill</h1>
 <p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
 
-<p>KV 缓存比 GPU 还慢时怎么办：上下文并行 prefill 下远程 KV 分层的扩展实证（GLM-5.3 FP8 MoE，8xB300）</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong>：长上下文 LLM 服务常用远程分层（remote tier）承载跨请求复用的 KV 缓存，但开启后为什么 p99 反而恶化、队列变得不稳定？远程 KV 层该怎么扩展？</p>
+<p><strong>方法</strong>：在 8×B300 节点上研究 GLM-5.3（FP8 MoE + MLA）上下文并行 prefill（PCP8）部署中的 LMCache/Valkey 远程层；建立两项成本模型——命中只在远程带宽超过盈亏平衡点 B* 时才划算，且每次命中有固定引擎成本 T0；据此做三件事：把 MLA KV 库跨 PCP rank 分片（附最长前缀查询正确性证明与不会打乱集合通信的加载协议）、按 rank 划分远程层（每 rank 一个 server 实例、无需协调）、加异步加载。</p>
+<p><strong>关键数字</strong>：开启远程层后 16k token 的 p99 从 3.96 s 涨到 17.3 s（中位 TTFT 不变）；远程命中耗时 0.88 s，重算 prompt 仅 0.31 s；同步加载下 p99 达 83.32 s 而 GPU 利用率只有 7%；该模型与 GPU 的盈亏平衡带宽 B*=2.53 GB/s、T0≈0.33 s，短于约 17k token 的 prompt 命中在任何带宽下都不如重算；按 rank 划分后 GET 带宽提升 6.3 倍至 10.76 GB/s。</p>
+<p><strong>为什么值得看</strong>：用量化成本模型驱动系统设计的完整案例，给出可直接套用的设计阈值；做推理系统与 KV 缓存分层的人值得精读。</p>
+<p><a href="https://arxiv.org/abs/2610.21500">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.21500">阅读原文 ↗</a></p>
 </body>
 </html>

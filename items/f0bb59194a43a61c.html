@@ -22,9 +22,11 @@
 <h1>TrustBOM: A Scalable Architecture for Confidentiality-Preserving SBOMs Across Organizations</h1>
 <p class="meta-line">arXiv（Van Thang Nguyen 等，cs.CR/cs.DC） · 2026-09-18 · 论文PDF</p>
 
-<p>跨组织保密软件物料清单（SBOM）的可扩展架构</p>
-<blockquote><p>Software Bills of Materials (SBOMs) have emerged as a key mechanism for software supply chain governance in enterprise architectures. However, their adoption across organizations remains limited due to concerns about exposing sensitive dependency information. To address this limitation, we propose TrustBOM, a scalable architecture for confidentiality-preserving SBOMs integrated into enterprise CI/CD workflows. TrustBOM enables software providers to attest that specific vulnerabilities or restricted licenses are absent from their software without revealing the underlying dependency graph. This is achieved using zero-knowledge non-membership proofs, which are applied selectively based on consumer-defined policy constraints. The architecture ensures that proof generation scales linearly with the number of asserted constraints rather than with the size of the SBOM, enabling efficient operation in large-scale enterprise environments. Empirical evaluation demonstrates linear performance, with an average proof generation time of 0.9 seconds per constraint on commodity hardware, indicating the feasibility of deployment in enterprise platform ecosystems.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：SBOM 是企业软件供应链治理的关键机制，但跨组织共享会暴露敏感依赖信息，导致落地受限——如何在证明合规的同时保住机密性？</p>
+<p><strong>方法</strong>：提出 TrustBOM，一个集成进企业 CI/CD 的机密性保护 SBOM 架构：软件提供方借助零知识非成员证明，在不泄露底层依赖图的前提下，向使用方证明"特定漏洞或受限许可证不存在于软件中"；证明按使用方定义的策略约束选择性施加。</p>
+<p><strong>关键数字</strong>：证明生成复杂度随断言约束的数量线性增长，而非随 SBOM 规模增长；普通硬件上平均每条约束的证明生成时间为 0.9 秒。</p>
+<p><strong>为什么值得看</strong>：零知识证明与供应链合规结合的可落地方案，线性扩展性设计让它在大规模企业环境里真实可用，安全与供应链方向值得关注。</p>
+<p><a href="http://arxiv.org/abs/2609.21419">原文链接</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2609.21419">阅读原文 ↗</a></p>
 </body>
 </html>

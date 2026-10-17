@@ -22,9 +22,11 @@
 <h1>DVA-Neurons: Design and Verification of Adaptive LIF Neurons</h1>
 <p class="meta-line">arXiv · 2026-09-19 · 论文PDF</p>
 
-<p>自适应 LIF 神经元设计与验证（神经形态计算方向）</p>
-<blockquote><p>Spiking Neural Networks (SNNs) offer a promising path toward ultra-low-power artificial intelligence inference by emulating the event-driven computation of biological neurons. However, two challenges limit their practical deployment. First, fixed-parameter Leaky Integrate-and-Fire (LIF) neurons lack the adaptation mechanisms observed in biology, where neurons modulate their excitability based on firing history. Second, scaling from single neurons to multi-neuron networks introduces challenges in synaptic weight distribution and inter-neuron spike routing that are absent in isolated designs. This paper addresses both issues through the extension, verification, and physical implementation of adaptive LIF neurons at three architectural scales. This work contributes: a 2nd-order neuron with two-stage synaptic filtering for richer temporal dynamics; a fully-connected 6-neuron spiking network with configurable weights (100 to 5) demonstrating weight-based inter-neuron communication; and a direct verification methodology enabling per-cycle observation of all internal states. All designs were synthesized targeting Selected Area Electron Diffraction (SAED) 14 nm Complementary Metal-Oxide-Se…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：脉冲神经网络（SNN）是超低功耗推理的路径之一，但固定参数的 LIF 神经元缺少生物神经元按发放历史调节兴奋性的适应机制；从单神经元扩展到多神经元网络，还引入突触权重分布与神经元间脉冲路由等孤立设计中不存在的问题。</p>
+<p><strong>方法</strong>：在三个架构尺度上扩展、验证并物理实现自适应 LIF 神经元：二阶神经元（两级突触滤波，时间动态更丰富）；全连接 6 神经元脉冲网络，权重可配置（100 降至 5），验证基于权重的神经元间通信；以及可逐周期观察全部内部状态的直接验证方法。全部设计面向 SAED 14nm CMOS 工艺、1 GHz 综合，用 Cocotb Python 测试台在脉冲电流刺激下验证。</p>
+<p><strong>关键数字</strong>：适应机制有效调节发放——二阶神经元发放抑制 31%（25 对 36 个脉冲），突触后发放同样降低 31%。</p>
+<p><strong>为什么值得看</strong>：自适应脉冲神经元从架构到流片级验证的完整链条，逐周期验证方法学对神经形态芯片设计有通用参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.22775">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.22775">阅读原文 ↗</a></p>
 </body>
 </html>

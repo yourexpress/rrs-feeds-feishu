@@ -22,8 +22,11 @@
 <h1>When Does Muon Actually Win? A Paired Data-, Time-, and Tuning-Budget Benchmark</h1>
 <p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
 
-<p>Muon 何时真赢：数据/时间/调参预算配对的单卡 A100 实证基准（含与 AdamW 的公平对比协议）</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong>：Muon 优化器以数据效率高著称，但在明确限定数据、时间和调参预算后，它到底什么时候比 AdamW 强？</p>
+<p><strong>方法</strong>：单张 A100 上，用参考实现的 Muon 与 AdamW 配对对比：17.7M 与 33.6M 参数的因果语言模型、2.70M 参数的视觉 Transformer；统一的 23 候选开发预算选配置，每配置 5 个匹配种子、完整验证轨迹、优化器单步计时、冻结的一次性测试。</p>
+<p><strong>关键数字</strong>：相同数据量下，Muon 把验证损失 AUC 降低 3.25%–22.44%，全部 20 组主要配对中测试损失都更低；时间归一化的损失 AUC 在视觉上 Muon 好 19.68%–22.31%，在语言上 AdamW 反而好 3.38%–6.96%；Muon 完整优化器调用（含辅助 AdamW 更新）占训练时间的 56.1%–69.6%，AdamW 基线仅 6.1%–9.1%。</p>
+<p><strong>为什么值得看</strong>：少见的诚实配对基准——明确指出小模型、参考核的墙钟排序不能外推到大模型或优化实现，且把 Muon 自身的优化器开销问题量化摆上台面。</p>
+<p><a href="https://arxiv.org/abs/2610.21555">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.21555">阅读原文 ↗</a></p>
 </body>
 </html>

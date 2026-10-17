@@ -22,9 +22,11 @@
 <h1>AirGC-CD: Gaussian-Circulant Precoding for Exactly Debiasable PAPR Reduction in Over-the-Air Federated Learning</h1>
 <p class="meta-line">arXiv · 2026-09-19 · 论文PDF</p>
 
-<p>空中联邦学习的 PAPR 预编码（通信方向，超出本库方向）</p>
-<blockquote><p>Over-the-air federated learning lets edge devices transmit their local updates simultaneously, reducing the communication overhead. The resulting waveform, however, has a peak-to-average power ratio (PAPR) that grows with the model dimension, and keeping the amplifier in its linear range leaves two remedies: clipping the peaks or backing off the transmit power. Neither remedy is without cost: i) the clipping distortion appears at the receiver as a bias that cannot be removed, and ii) back-off keeps the signal intact but degrades the average signal-to-noise ratio (SNR). Independent of this trade-off, the transmission remains uncompressed, spending one channel use per model parameter, which keeps large-model training out of reach. To address these challenges, we propose AirGC-CD, an over-the-air scheme that precodes each local update with a partial Gaussian circulant matrix before clipping. In AirGC-CD, the precoder's output is exactly Gaussian regardless of the update's sparsity, so the clipping function is designed for a known distribution instead of inheriting it from the data. This enables the clipping to be inverted on average by a single scalar Bussgang gain in closed form, and…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：空中计算联邦学习让边缘设备同时发射本地更新以降低通信开销，但叠加波形的 PAPR 随模型维度增长——削峰会引入接收端无法去除的偏差，功率回退又拉低平均信噪比；如何两全？</p>
+<p><strong>方法</strong>：提出 AirGC-CD：每个本地更新在削峰前先用部分高斯循环矩阵做预编码；无论更新是否稀疏，预编码器输出都严格服从高斯分布，削峰函数因此是为已知分布设计的；削峰效应可由单个标量 Bussgang 增益闭式地在平均意义上反演，作者证明聚合结果严格无偏、削峰只增加方差；削峰比成为唯一自由参数，在削峰方差与回退信噪比损失之间权衡，并给出其近最优值的闭式解。</p>
+<p><strong>关键数字</strong>：摘要未报告仿真数值，核心贡献为无偏性证明与闭式近最优削峰比。</p>
+<p><strong>为什么值得看</strong>：把空中计算削峰失真从"不可控偏差"变成"可控方差"，闭式解干净利落，做联邦学习与无线聚合的团队值得精读。</p>
+<p><a href="https://arxiv.org/abs/2609.23084">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.23084">阅读原文 ↗</a></p>
 </body>
 </html>

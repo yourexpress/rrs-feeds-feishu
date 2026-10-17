@@ -22,9 +22,11 @@
 <h1>Scalable Packet Tracking on FPGAs for Erasure-Coded RDMA over Lossy WANs</h1>
 <p class="meta-line">arXiv（cs.AR） · 2026-09-18 · 论文PDF</p>
 
-<p>FPGA 上可扩展丢包追踪，支撑有损广域网上纠删码 RDMA 传输</p>
-<blockquote><p>Modern AI workloads increasingly rely on scale across architectures that interconnect multiple datacenters to form a single "AI factory", overcoming the power and cooling constraints of individual sites. However, extending Remote Direct Memory Access (RDMA) across wide area networks (WANs) introduces fundamental challenges: multi-path packet reordering, high latency, and packet loss that severely degrade performance. While erasure coding (EC) has emerged as a promising mechanism for loss recovery, its effectiveness critically depends on efficient packet arrival tracking implemented in hardware. We present COmpact Multi-path Erasure-coded Tracking (COMET), the first fully hardware-offloaded packet-arrival tracking design implemented on an FPGA-based network interface card (NIC) for multi-path RDMA over lossy WANs. COMET employs a scalable cache-based architecture that supports operation at high link rates. Our evaluation shows that COMET sustains line rate operation at 400 Gbps and beyond. Critically, COMET decouples on-chip memory footprint from link Bandwidth-Delay Product (BDP), and its cache-based architecture (COMET Cache) enables supporting 6 times more concurrent connections …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：现代 AI 负载把多个数据中心互联成单一"AI 工厂"，但 RDMA 跨有损广域网面临多路径乱序、高时延与丢包；纠删码（EC）恢复丢包的效果，关键取决于能否在硬件中高效跟踪报文到达。</p>
+<p><strong>方法</strong>：提出 COMET——首个在 FPGA 网卡上完整硬件卸载的报文到达跟踪设计，面向有损 WAN 上的多路径 RDMA；采用可扩展的缓存式架构（COMET Cache），把片上内存占用与链路带宽时延积（BDP）解耦，支持高链路速率运行。</p>
+<p><strong>关键数字</strong>：在 400 Gbps 及以上保持线速运行；支持的并发连接数是当前最先进 SoC 方案的 6 倍；架构可扩展到新兴的 1.6 Tbps 网卡。</p>
+<p><strong>为什么值得看</strong>：跨数据中心 AI 训练网络的真实痛点（WAN RDMA + 纠删码恢复）给出的硬件级答案，FPGA NIC 路线做高速网络值得精读。</p>
+<p><a href="http://arxiv.org/abs/2609.21774">原文链接</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2609.21774">阅读原文 ↗</a></p>
 </body>
 </html>

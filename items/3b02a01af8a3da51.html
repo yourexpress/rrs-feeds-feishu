@@ -22,8 +22,11 @@
 <h1>Physics-Aware Distillation of a Grid Foundation Model for Real-Time Edge Inference</h1>
 <p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
 
-<p>电网基础模型的物理感知蒸馏：从数据中心走向量测旁的实时边缘推理（单同步相量周期内）</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题</strong>：电网基础模型（GridFM）体积大、面向数据中心推理，如何把它蒸馏到边缘侧，在量测设备旁以 batch size 1、在一个 PMU 上报帧内完成实时潮流推断。</p>
+<p><strong>方法</strong>：把 20.1M 参数、12 层的教师模型蒸馏成 0.62M 参数、6 层的学生模型，损失函数组合 masked power-flow loss 与输出、物理残差、隐状态、注意力四类迁移项，其中物理残差项首次在带类型的电网图上使用；在 IEEE 118 节点可再生能源改造版基准上评测，并消融全部八种迁移项组合。</p>
+<p><strong>关键数字</strong>：参数量压缩 32.5 倍、消息传递深度减半；97,529 个 AC-OPF 可行运行场景；蒸馏使学生模型四项预测量误差全部下降，有功调度误差最多降 48%；所有蒸馏后的学生模型在无功调度上都比教师更准。</p>
+<p><strong>为什么值得看</strong>：给出科学计算图基础模型走向边缘实时推理的完整蒸馏配方，物理残差迁移项对图模型边缘化部署有直接借鉴价值。</p>
+<p><a href="https://arxiv.org/abs/2610.21833">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.21833">阅读原文 ↗</a></p>
 </body>
 </html>
