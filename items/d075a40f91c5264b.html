@@ -22,9 +22,11 @@
 <h1>Accurate Simulation of Distributed Training Jobs with Network Contention Modeling</h1>
 <p class="meta-line">arXiv · 2026-09-20 · 论文PDF</p>
 
-<p>含网络竞争建模的分布式训练作业模拟</p>
-<blockquote><p>Trace-driven simulation is widely used to evaluate distributed training (DT) jobs in GPU clusters, but existing simulators either ignore network contention or approximate it with a fixed penalty. This misses how scheduling decisions determine which jobs share server network interfaces and inter-server links, thereby changing networking time during training. As a result, our motivating experiments demonstrate that they incur large errors, reaching up to 73.64% mean absolute percentage error (MAPE) in average job completion time (JCT). This paper introduces MoSim, a GPU-cluster simulator that models DT job execution under dynamic network contention. MoSim combines GPU-free characterization with network contention model: it obtains each job's compute time, networking time, and networking volume without GPUs, then uses the current worker assignment to estimate how shared network interfaces affect each job's iteration time. Our evaluation shows that, compared with existing simulators, MoSim reduces simulation error for average JCT by up to 3.28$\times$, tail (99th-percentile) JCT by up to 7.79$\times$, and makespan by up to 8.48$\times$, while modeling NIC contention factors with only 8…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 现有 trace 驱动的分布式训练模拟器要么忽略网络争用、要么用固定惩罚近似，完成时间预测误差大。</p>
+<p><strong>方法</strong> MoSim 把免 GPU 画像（不占真 GPU 即获得每作业的计算/网络时间与网络量）与动态网络争用模型结合，按当前 worker 分配估计共享网卡与链路对每作业迭代时间的影响。</p>
+<p><strong>关键数字</strong> 动机实验显示现有模拟器平均 JCT 的 MAPE 最高达 73.64%；MoSim 将平均 JCT 误差最高降 3.28x、P99 尾部最高降 7.79x、makespan 最高降 8.48x；NIC 争用建模平均误差 8.63%；免真 GPU 画像使输入构建开销降 44.6x。</p>
+<p><strong>为什么值得看</strong> 大规模训练调度评估日益依赖仿真，「免 GPU 画像 + 争用建模」显著降低仿真成本，集群调度与容量规划团队可直接参考。</p>
+<p><a href="https://arxiv.org/abs/2609.23278">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.23278">阅读原文 ↗</a></p>
 </body>
 </html>

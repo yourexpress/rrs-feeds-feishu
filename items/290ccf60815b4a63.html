@@ -22,9 +22,11 @@
 <h1>Quality over Quantity: Diversity-Aware Data Selection for Efficient Verilog Code Generation</h1>
 <p class="meta-line">arXiv · 2026-09-19 · 论文PDF</p>
 
-<p>面向 Verilog 代码生成的多样性数据选择方法</p>
-<blockquote><p>Large Language Models (LLMs) have shown remarkable potential in Verilog code generation, yet existing datasets contain con siderable noise and redundancy. Prior data selection methods address only isolated quality aspects, neglect the global diversity of the training set, and cannot capture Verilog-specific structural semantics. To bridge this gap, we propose VeriSelector, the first data selection framework for Verilog code generation that jointly optimizes quality and diversity. We formulate the selec tion problem as a constrained bi-objective subset selection problem and solve it via a three-stage approximation. For quality, a multi-granularity pipeline first verifies functional correctness through testbench simulation and then filters misaligned samples via Instruction-Following Difficulty (IFD) scoring. For diversity, 109-dimensional Verilog-specific structural features (AST, CFG, and Netlist) are fused with textual embeddings for clustering-based diversity modeling. A proportional adaptive sampling strat egy then allocates per-cluster quotas guided by IFD ranks, with a provable distribution preservation guarantee. Experiments on three LLMs and three benchmarks show that VeriSe…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Verilog 代码生成数据集噪声与冗余大；已有数据选择方法只看孤立质量面、忽略全局多样性，也捕捉不到 Verilog 结构语义。</p>
+<p><strong>方法</strong> VeriSelector 把选择建模为带约束的双目标子集选择并三阶段求解：质量用 testbench 仿真验证 + IFD 指令遵循难度打分过滤；多样性用 109 维结构特征（AST/CFG/Netlist）融合文本嵌入做聚类；再按比例自适应采样配额，带分布保持保证。</p>
+<p><strong>关键数字</strong> 3 个 LLM × 3 个基准，仅用 20%–25% 数据超过全量训练与 SOTA 基线：性能保持率 118%+，训练时间减少 80%+；Pass@1 较全量提升 18.49%–29.43%、较最优基线提升 1.36%–7.95%。</p>
+<p><strong>为什么值得看</strong> 把硬件结构特征引入数据选择的少见系统性工作，质量+多样性范式可迁移到其他 EDA 代码生成。</p>
+<p><a href="https://arxiv.org/abs/2609.22765">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.22765">阅读原文 ↗</a></p>
 </body>
 </html>

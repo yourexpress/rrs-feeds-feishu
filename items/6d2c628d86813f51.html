@@ -22,9 +22,11 @@
 <h1>Same Pattern, Different Answer: A Reference Semantics and Divergence Map for GQL and SQL/PGQ</h1>
 <p class="meta-line">arXiv · 2026-09-19 · 论文PDF</p>
 
-<p>GQL 与 SQL/PGQ 查询语义差异（数据库语言，超出本库方向）</p>
-<blockquote><p>GQL (ISO/IEC 39075:2024) is the first international standard for a graph query language, and SQL/PGQ (ISO/IEC 9075-16:2023) embeds the same pattern-matching core, GPML, in SQL. Both fix a precise semantics for path patterns: four path modes, four selectors, quantified segments. What engines compute for those patterns has never been measured. Work on GQL is theoretical and runs no engine; cross-engine work measures performance and normalises the semantics away. We build an executable reference semantics for the GPML path core and gate it against the six worked answers printed in the standard's own reference exposition. We then run a 17-construct suite against six releases of five products - Kuzu, DuckPGQ, Neo4j at 5.26 and 2026.04, Memgraph, Apache AGE - scoring each cell as conforming, diverging, rejected, or inexpressible in that dialect. Nine of seventeen constructs draw more than one answer across the engines that accepted them. Of 26 disagreements, 15 are silent - the query runs, returns a different multiset, raises no error - a silence ratio of 0.58. Scoring each divergence against the path mode each engine's manual declares separates language from implementation: 9 of 15 are …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> GQL 与 SQL/PGQ 已为路径模式固定了精确语义，但各引擎实际算什么从未被测量过。</p>
+<p><strong>方法</strong> 为 GPML 路径核心构建可执行参考语义（用标准自带的 6 个示例答案把关），对 Kuzu、DuckPGQ、Neo4j（5.26 与 2026.04）、Memgraph、Apache AGE 五个产品六个版本跑 17 构造测试，逐格判一致/分歧/拒绝/不可表达；另加无需参考语义的蜕变层找自洽违规。</p>
+<p><strong>关键数字</strong> 17 个构造中 9 个在多个接受引擎间给出不同答案；26 处分歧中 15 处静默（比率 0.58），其中 6 处是实现偏离其所实现的标准；蜕变层发现 39 处自洽违规、两个最小缺陷。</p>
+<p><strong>为什么值得看</strong> 首个图查询语言标准的「实现差」被严肃测量，套件与语义全部开源，是图数据库选型与开发的稀缺评测资产。</p>
+<p><a href="https://arxiv.org/abs/2609.23032">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.23032">阅读原文 ↗</a></p>
 </body>
 </html>

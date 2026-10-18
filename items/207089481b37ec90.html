@@ -22,9 +22,11 @@
 <h1>Real-Time Plasma State Prediction via FPGA-Accelerated Quantized Recurrent Probabilistic Neural Networks</h1>
 <p class="meta-line">arXiv · 2026-09-19 · 论文PDF</p>
 
-<p>FPGA 加速量化 RNN 的实时等离子体状态预测（FPGA+量化但领域垂直）</p>
-<blockquote><p>Real time plasma state estimation for control of Tokamak devices are challenging due to the stringent latency requirements of the plasma control system (PCS). We present an end-to-end workflow for deploying a recurrent probabilistic neural network (RPNN) on FPGA hardware. We combine architecture size reduction with quantization-aware training via QKeras. The model is then synthesized using hls4ml, targeting a Xilinx Alveo U50 device. We report a design that fits comfortably within all four resource budgets (DSP, LUT, FF, BRAM) at deterministic sub-10~$μ$s single-timestep latency, meeting the requirements for real-time inference inside a model-predictive-control-style plasma control loop.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 托卡马克等离子体控制系统（PCS）的时延要求严苛，实时等离子体状态估计困难。</p>
+<p><strong>方法</strong> 循环概率神经网络（RPNN）部署到 FPGA 的端到端工作流：架构缩减 + QKeras 量化感知训练，再用 hls4ml 综合，目标器件 Xilinx Alveo U50。</p>
+<p><strong>关键数字</strong> 设计在 DSP/LUT/FF/BRAM 四项资源预算内均有余量；单时间步延迟确定性地低于 10μs，满足 MPC 式等离子体控制环内的实时推理要求。</p>
+<p><strong>为什么值得看</strong> 极端实时约束下概率循环网络 + QAT + hls4ml 的落地实例，是做量化循环网络 FPGA 部署的紧凑参考。</p>
+<p><a href="https://arxiv.org/abs/2609.23141">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.23141">阅读原文 ↗</a></p>
 </body>
 </html>

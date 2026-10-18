@@ -22,9 +22,11 @@
 <h1>Accurate Distributed Tracing for Large-Scale AI Infrastructure: Time Synchronization as a First-Class Concern</h1>
 <p class="meta-line">arXiv · 2026-09-20 · 论文PDF</p>
 
-<p>大规模 AI 基础设施分布式追踪的时间同步方法</p>
-<blockquote><p>Distributed tracing in large-scale AI infrastructure fails silently when clock accuracy is insufficient: causal events are misordered, fault attribution is corrupted, and performance diagnoses are unreliable. We present TempoTrace, a system that co-designs IEEE 1588v2 PTP time synchronization with distributed tracing to preserve causal ordering across heterogeneous, multi-tenant GPU clusters. We formally prove that NTP-grade clocks produce causal inversions at 25-30% of directed operation pairs under WAN/cloud conditions (11.3% under LAN NTP). A Laplace heavy-tail noise model extends the analysis beyond Gaussian assumptions, giving a weighted expected misorder rate of 27.76% vs. 29.37% Gaussian, confirming robustness to tail shape. TempoTrace reduces GPU-to-host timestamp uncertainty from 2.1 us to a design target of 0.056 us residual standard deviation via GPUDirect RDMA hardware timestamping, with sub-100 ns PTP synchronization. A bounded Sketch Vector Clock tracks causal relationships with false-positive rate below 10^-5 for up to four participants. A hybrid rule-based and XGBoost diagnosis engine achieves macro-F1 0.974 in controlled validation (1,800-incident corpus; McNemar p…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 时钟精度不足时分布式追踪会静默失效：因果乱序、故障归因错误、性能诊断不可信。</p>
+<p><strong>方法</strong> TempoTrace 把 IEEE 1588v2 PTP 时间同步与分布式追踪协同设计：形式化证明 NTP 级时钟在 WAN/云下导致因果倒置；拉普拉斯重尾噪声模型；GPUDirect RDMA 硬件时间戳 + 亚 100ns PTP；有界 Sketch Vector Clock 追因果；规则+XGBoost 混合诊断；多租户逻辑时钟域；RoCEv2/ECMP 用 P4 带内遥测校正路径时延不对称。</p>
+<p><strong>关键数字</strong> 证明 NTP 级时钟在 25–30% 操作对上因果倒置（LAN NTP 11.3%），五节点实测 44.978%；GPU-主机时间戳不确定度从 2.1μs 降到 0.056μs 残差标准差；向量时钟误报率 &lt;10^-5；诊断 macro-F1 0.974；归因准确率 99.1%。</p>
+<p><strong>为什么值得看</strong> 把时间同步当作追踪的一等公民来系统量化，对大规模 GPU 集群的故障归因团队既扎心又可操作。</p>
+<p><a href="https://arxiv.org/abs/2609.23301">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.23301">阅读原文 ↗</a></p>
 </body>
 </html>

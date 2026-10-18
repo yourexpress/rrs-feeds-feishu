@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>llama.cpp b11714</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>llama.cpp b11714</h1>
+<p class="meta-line">llama.cpp（GitHub Releases） · 2026-10-18 · 技术博客</p>
+<img class="hero" src="https://opengraph.githubassets.com/3d5e10405293b4aa369d00897957db41c9362d135b5c1cdfb09a5aba7aadd73d/ggml-org/llama.cpp/releases/tag/b11714" alt="" referrerpolicy="no-referrer">
+<p>llama.cpp UI 支持从 HF Hub 发现与下载模型，含量化-sidecar 文件解析与缓存管理</p>
+<blockquote><p>Repository navigation</p><p>b11714</p><p>Pre-releaseui : Discover &amp; Download Models from HF Hub (#29584)</p><p>- common : resolve - download tags and list cached sidecars</p><p>A Q4_0-mtp style tag now resolves the sidecar file when no model file matches it, so a solo draft or mmproj download actually pulls the file. Cached sidecar files list as their own entries so the state survives a restart, and removing such a tag deletes only the sidecar.</p><p>Assisted-by: pi:zai-org/GLM-5.3</p><p>- ui : optional sanitized raw HTML in markdown</p><p>Add an allowHtml prop to MarkdownContent: raw HTML found in the markdown is</p><p>rendered after DOMPurify sanitization instead of being escaped as literal</p><p>text. Default stays escaped.</p><p>Assisted-by: pi:GLM-5.3-Flash</p><p>- ui : add the discover models components</p><p>The Discover surface: the curated-catalog list with its search and</p><p>skeletons, the details pane with its readme, metadata, Hub stats and</p><p>download options, and the standalone download progress bar that replaces</p><p>the plain one. The quant download button sizes its select with a new xs</p><p>trigger, so the select gains that size and the muted box look. The store</p><p>stays incomplete when a repo fails, so the next mount retries it.</p><p>Assisted-by: pi:llama.cpp/DeepSeek-V4.1-Flash</p><p>- ui : put the discover view in the models manager</p><p>The manager dialog gains its second view: the Discover Models call to</p><p>action fades the table out, slides the title with its compass mark, and</p><p>fades the discover surface in; the arrow button returns to the table.</p><p>Assisted-by: pi:llama.cpp/DeepSeek-V4.1-Flash</p><p>Conflicts:</p><p>tools/ui/src/lib/components/ui/button/button.svelte</p><p>- ui : add the Enable Discover Models setting</p><p>The flag gates browsing and downloading HuggingFace GGUF models, so it is</p><p>declared on the discover layer; the repo-tree lookup in the manager layer</p><p>above reads it from here.</p><p>Assisted-by: pi:llama.cpp/DeepSeek-V4.1-Flash</p><p>- ui : resume model downloads from the pause point</p><p>A stopped download keeps its partial file instead of deleting it, so</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11714">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -22,9 +22,11 @@
 <h1>TEMPO: A Tag-Based Framework for Efficient Memory Ordering</h1>
 <p class="meta-line">arXiv · 2026-09-19 · 论文PDF</p>
 
-<p>标签式高效内存排序框架（体系结构方向）</p>
-<blockquote><p>Weak-memory processors rely on ordering instruc- tions for correctness, yet conventional implementations often en- force them more conservatively than the memory model requires. This over-enforcement manifests as drain-induced retirement stalls at ordering instructions and conservative squash/replay of speculative loads, suppressing legal executions and reducing throughput. We present TEMPO, a tag-based framework for precise microarchitectural implementation of ordering instructions. TEMPO assigns lightweight ordering tags to instructions and decomposes enforcement across retirement-time predicates and completion-time store ordering, allowing the core to enforce required ordering without conservative retirement serialization. TEMPO eliminates unnecessary retirement serialization at ordering instructions and speculative-load squash/replay. In our evaluation, TEMPO reduces geometric-mean normalized exe- cution cycles by 7.9% on native four-thread workloads and improves geometric-mean IPC by 15.9% on an instrumented SPEC2017 dynamic binary translation (DBT) proxy for cross- ISA execution (e.g., x86-on-Arm), while adding only 262 bytes per core.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 弱内存处理器的排序指令实现往往比内存模型要求更保守：drain 引起的退休停顿与投机载入的保守 squash/replay 抑制合法执行、压低吞吐。</p>
+<p><strong>方法</strong> TEMPO 为指令分配轻量排序标签，把强制拆到退休时谓词与完成时存储排序两层，消除不必要的退休串行化与投机载入的 squash/replay。</p>
+<p><strong>关键数字</strong> 原生四线程负载几何平均归一化执行周期降 7.9%；SPEC2017 DBT 代理（x86-on-Arm 等跨 ISA 场景）几何平均 IPC 提升 15.9%；开销每核仅 262 字节。</p>
+<p><strong>为什么值得看</strong> 「只强制模型要求的排序」的低开销微架构模板，对弱内存模型处理器与二进制翻译团队有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.22743">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.22743">阅读原文 ↗</a></p>
 </body>
 </html>

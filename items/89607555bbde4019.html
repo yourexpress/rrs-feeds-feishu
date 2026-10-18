@@ -22,9 +22,11 @@
 <h1>Real-to-Sim Generation: Synthesizing Scenario Programs from Real-World Data</h1>
 <p class="meta-line">arXiv · 2026-09-20 · 论文PDF</p>
 
-<p>从真实数据合成场景程序（自动驾驶仿真生成，超出本库方向）</p>
-<blockquote><p>The demand for synthetic training data is hindered by the sim-to-real gap, as current data-driven and LLM-based generators often produce physically implausible scenarios. To address this, we propose R2SGEN, a Real-to-Sim framework that synthesizes structured scenario programs from real-world data. To overcome the combinatorial explosion and intractability of monolithic Satisfiability Modulo Theories (SMT) encoding, we introduce a decoupled synthesis strategy. This approach separates the discrete structural program search from continuous geometric resolution using lightweight, atomic SMT constraints. Furthermore, we significantly accelerate the search process by integrating two tailored pruning mechanisms: Common Prefix Abstraction-based pruning for Breadth-First Search and Branch-and-Bound for Depth-First Search. We evaluate R2SGEN on 20 real-world scenes of varying complexity from the nuScenes dataset. Experimental results show that our method guarantees consistency with the input scene and produces substantially lower-cost programs than the LLM-based baselines under the evaluated inputs. Both proposed search paradigms exhibit complementary advantages, proving highly efficient and…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 合成训练数据受 sim-to-real 鸿沟制约：数据驱动与基于 LLM 的生成器常产出物理上不合理的情景。</p>
+<p><strong>方法</strong> R2SGEN 从真实世界数据合成结构化情景程序；解耦合成策略把离散结构程序搜索与连续几何求解分开，用轻量原子 SMT 约束规避单体 SMT 编码的组合爆炸；两种剪枝：BFS 的公共前缀抽象剪枝与 DFS 的分支定界。</p>
+<p><strong>关键数字</strong> 在 nuScenes 20 个不同复杂度的真实场景上评测：保证与输入场景一致，程序成本显著低于基于 LLM 的基线（摘要未给具体倍数）；两种搜索范式互补。</p>
+<p><strong>为什么值得看</strong> 面向自动驾驶仿真的形式化方法 + 情景生成的系统性方案，解耦加剪枝的思路对其他具身合成数据管线有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.23342">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.23342">阅读原文 ↗</a></p>
 </body>
 </html>

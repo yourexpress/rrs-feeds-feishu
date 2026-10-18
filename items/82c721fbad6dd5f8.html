@@ -22,9 +22,11 @@
 <h1>Mask-Aware Execution for Efficient JEPA Training</h1>
 <p class="meta-line">arXiv · 2026-09-19 · 论文PDF</p>
 
-<p>JEPA 训练的掩码感知执行优化（高效训练方向）</p>
-<blockquote><p>Joint Embedding Predictive Architectures (JEPAs) are becoming a core representation-learning primitive and a building block for latent world models across vision, video, audio, brain dynamics, and time series. Despite (potential of) wide deployment, current JEPA training pipelines are inefficient: each input is executed through multiple mask-specific branches, with redundant target-side work, and memory-bound token routing. These costs grow with the number of masks and limit GPU efficiency. We present M-JEPA, a mask-aware execution architecture that restructures JEPA training without changing the learning objective. M-JEPA separates mask-independent computation from mask-dependent routing, enabling shared context encoder execution, fused token routing and slicing with backward support, sparse target encoder execution over the union of target tokens, and masked patch embedding for sparse inputs. The resulting pipeline preserves training semantics while reducing computation, memory traffic, and synchronization overhead. We implement M-JEPA for five JEPA variants and evaluate it on NVIDIA A100 GPUs. Compared against the state-of-the-art baselines, M-JEPA achieves up to 1.7x end-to-end…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> JEPA 训练流水线存在多掩码分支重复执行、目标侧冗余计算与内存受限的 token 路由，开销随掩码数增长，限制 GPU 效率。</p>
+<p><strong>方法</strong> M-JEPA 在不改变学习目标的前提下，把掩码无关计算与掩码相关路由分离：共享 context encoder 执行、带反向支持的融合路由/切片、对目标 token 并集的稀疏 target encoder 执行、面向稀疏输入的 masked patch embedding。</p>
+<p><strong>关键数字</strong> A100 上实现 5 种 JEPA 变体：2–10 个掩码下端到端训练最高加速 1.7x；高稀疏度下 patch embedding 加速 4.75x。</p>
+<p><strong>为什么值得看</strong> JEPA 正成为潜在世界模型的构件，执行层重构是不改目标的加速杠杆，对多掩码自监督训练收益直接。</p>
+<p><a href="https://arxiv.org/abs/2609.22674">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.22674">阅读原文 ↗</a></p>
 </body>
 </html>

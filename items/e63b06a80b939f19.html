@@ -22,9 +22,11 @@
 <h1>io_uring in Oracle Database: A Hybrid Storage I/O Architecture at Production Scale</h1>
 <p class="meta-line">arXiv · 2026-09-19 · 论文PDF</p>
 
-<p>Oracle 数据库 io_uring 混合存储 I/O 架构（数据库系统，超出本库方向）</p>
-<blockquote><p>We describe the integration of io_uring into Oracle Database's storage layer and the architectural decisions required to deploy it in a production multi-process RDBMS. Our design uses per-process ring contexts that eliminate inter-process synchronization, a shared buffer registration mechanism now part of the mainline Linux kernel, and a transparent fallback to libaio on error. Evaluation on an internal development build of Oracle Database 26ai shows that io_uring's benefits concentrate on asynchronous batched I/O paths: on a mixed OLTP workload (TPC-C), io_uring delivers identical throughput while reducing server CPU utilization by 1.2 percentage points through more efficient background writes; on analytical queries (TPC-H), CPU per query drops by 8.5% (geometric mean). Isolating the write path alone shows 29% lower CPU per write and 34% higher throughput. Synchronous read paths -- the dominant I/O in OLTP -- show no improvement and even increased CPU usage for very large I/O sizes. These results motivate a hybrid I/O architecture that retains pread/pwrite for synchronous operations, adopts io_uring for asynchronous batched I/O, and falls back transparently to libaio -- a selectiv…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 如何把 io_uring 引入生产级多进程 RDBMS（Oracle Database）的存储层。</p>
+<p><strong>方法</strong> 每进程独立 ring 上下文消除进程间同步；共享缓冲区注册机制（已进入 Linux 主线内核）；出错时透明回退 libaio；最终采用混合架构：同步读写保留 pread/pwrite，异步批量 I/O 用 io_uring。</p>
+<p><strong>关键数字</strong> Oracle 26ai 内部构建评测：TPC-C 吞吐持平、服务器 CPU 利用率降 1.2 个百分点；TPC-H 单查询 CPU 降 8.5%（几何均值）；纯写路径单次写 CPU 降 29%、吞吐升 34%；OLTP 同步读无改善、超大 I/O 下 CPU 反升。</p>
+<p><strong>为什么值得看</strong> 少见的生产级 io_uring 集成实录，「收益集中在异步批量 I/O」的结论对数据库与存储引擎选型有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.22781">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.22781">阅读原文 ↗</a></p>
 </body>
 </html>

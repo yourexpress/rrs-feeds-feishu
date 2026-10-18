@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redesigning source control at Anthropic</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Redesigning source control at Anthropic</h1>
+<p class="meta-line">Anthropic · 2026-10-13 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://www-cdn.anthropic.com/images/4zrzovbb/website/d344b849251502fade67ad16f09bb86fa6f42363-500x263.png" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong> Claude 驱动的编码让源代码控制成为瓶颈：Anthropic 日均合并代码变更从 2026 年 5 月约 2500 次涨到 9 月的 3 万+ 次，主分支历史近 100GB，CI 每天约 2500 万次检出。</p>
+<p><strong>要点</strong> 弃用 git 自建版本控制系统 Scion，5 个月完成 monorepo 全量迁移，同期交付评审系统 Antique、代码搜索与权限体系；此前靠数百个内部 git 镜像与浅克隆扛负载，随合并频率上升愈发难运维。</p>
+<p><strong>关键数字</strong> 日合并 2500→30000+ 次；主分支历史约 100GB、压缩工作副本 25GB+；朴素全量拉取将产生 600PB+/天 git 流量。</p>
+<p><strong>为什么值得看</strong> 「AI 写代码快过人类基础设施」的第一手工程实录，是 agent 开发基建即将踩到的坑的预演。</p>
+<p><a href="https://www.anthropic.com/engineering/redesigning-source-control">阅读原文</a></p>
+<p><a class="origin" href="https://www.anthropic.com/engineering/redesigning-source-control">阅读原文 ↗</a></p>
+</body>
+</html>

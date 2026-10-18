@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>llama.cpp b11712</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>llama.cpp b11712</h1>
+<p class="meta-line">llama.cpp（GitHub Releases） · 2026-10-17 · 技术博客</p>
+<img class="hero" src="https://opengraph.githubassets.com/becea4729b7da566045482767a9ee06370b107f28b9d57bd8a4a37b65b213b5a/ggml-org/llama.cpp/releases/tag/b11712" alt="" referrerpolicy="no-referrer">
+<p>测试基建：随机模型生成器增加按张量 filler 表，修复 Muse Spark 在部分随机种子下 state_load 测试失败</p>
+<blockquote><p>Repository navigation</p><p>b11712</p><p>Pre-releasetests: give the random model generator a per-tensor filler table (#30674)</p><p>- tests: give the random model generator a per-tensor filler table</p><p>Muse Spark makes test-llama-context fail on state_load, cp_h and cp_d on about</p><p>six percent of the random seeds, with an NMSE of 1.0e-05 to 1.4e-05 against a</p><p>threshold of 1.0e-05. The sliding window is what exposes it: a restored state</p><p>keeps the window alone, so the attention of an SWA layer reduces over a</p><p>different cell layout and the continuation is not bit exact. Every SWA model</p><p>carries that, at 1e-08. Muse Spark carried it at 1e-05.</p><p>The generator is what turns 1e-08 into 1e-05. A norm preserving residual gate</p><p>holds alpha^2 + beta^2 == 1 and the conversion resolves both weights from one</p><p>raw weight, while the generator draws every tensor on its own. The pair then</p><p>scaled the stream and the branch independently, the stream lost an arbitrary</p><p>factor at each layer, and the model became an amplifier. The weights the test</p><p>ran on were not a Muse Spark.</p><p>Per-tensor rules lived inside the write path, where a flag picked the values of</p><p>a tensor inside each of the two branches that store them, so a new rule meant a</p><p>new flag threaded through both. The file asks to be rid of that in a TODO of its</p><p>own. Give each rule a filler, pick one from a table keyed on a substring of the</p><p>tensor name, and keep a single write path behind it. Mamba moves into the table</p><p>and Muse Spark joins it: the gate filler draws the raw weight once per block and</p><p>resolves alpha and beta the way the conversion does.</p><p>Over a thousand seeds on a CPU build the worst case drops from 1.36e-05 to</p><p>2.48e-06 and the median from 4.10e-06 to 5.48e-07, with no seed above the</p><p>threshold. The other 131 models come out identical to the bit, since no other</p><p>architecture carries these tensors. ctest is green on a CPU build and on a CUDA</p><p>build.</p><p>- tests: draw every tensor filler from fill_normal</p><p>The fillers repeated the generator and the distribution each time. The</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11712">阅读原文 ↗</a></p>
+</body>
+</html>
