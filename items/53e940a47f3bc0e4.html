@@ -22,9 +22,11 @@
 <h1>Conduit: An Experience Data Plane for Distributed Reinforcement Learning</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-22 · 论文PDF</p>
 
-<p>Conduit：分布式强化学习的经验数据平面，把经验缓冲从回放队列升级为低时延大容量存储底座。</p>
-<blockquote><p>Distributed reinforcement learning (RL) scales training by parallelizing actors and learners around an Experience Buffer. As RL workloads grow, however, the buffer becomes more than a replay queue: it is the storage substrate of a large-capacity, latency-critical experience path that every iteration traverses to move, transform, sample, and batch experiences before learner updates can begin. Existing RL systems embed this path inside framework control flow or expose it as a request-driven buffer service, leaving experience placement fixed and experience-path work difficult to schedule independently as a runtime-level optimization target. We present Conduit, a framework-agnostic runtime that exposes RL experience management as an explicit systems optimization problem. At its core is the Experience Data Plane (EDP), a runtime abstraction that separates RL experience-handling semantics from framework-specific execution logic by exposing experience ingestion, experience placement, and experience delivery as explicit control points. Built on EDP, Conduit introduces capacity-constrained, bandwidth-aware placement, which distributes experience state across CPU/GPU memory tiers and nodes u…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 分布式强化学习中经验缓冲已不只是回放队列，而是每轮迭代必经的大容量、延迟敏感关键路径，现有系统把它嵌入框架控制流，难以独立优化。</p>
+<p><strong>方法</strong> Conduit：框架无关运行时，把 RL 经验管理显式化为系统优化问题；核心是经验数据平面（EDP）抽象，将经验摄取、放置、交付暴露为显式控制点，实现容量受限、带宽感知的放置（跨 CPU/GPU 内存层与节点分布）与延迟感知调度。</p>
+<p><strong>关键数字</strong> 与 RLlib 集成且不改动其框架逻辑，暴露的经验路径延迟最多降低 97%，端到端迭代延迟最多降低 38%，可扩展到 1024 GPU 且保持收敛（论文摘要自述）。</p>
+<p><strong>为什么值得看</strong> 把经验管理抽成独立数据平面的思路清晰，数字可观，对构建大规模 RL 训练基础设施的团队有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.24456">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.24456">阅读原文 ↗</a></p>
 </body>
 </html>

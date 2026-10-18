@@ -22,9 +22,11 @@
 <h1>Acceptance-Aware Draft Model Training for Speculative Decoding</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-22 · 论文PDF</p>
 
-<p>面向投机解码的接受率感知草稿模型训练：直接优化决定加速比的接受长度。</p>
-<blockquote><p>Speculative decoding accelerates large language model (LLM) inference by using a lightweight draft model to generate multiple candidate tokens that are verified by the target model in a single forward pass. Its speedup is largely determined by the acceptance length, yet existing draft-model training methods mainly optimize cross-entropy or Kullback-Leibler (KL) divergence as proxies. These objectives encourage distribution matching but do not directly optimize acceptance length, and the acceptance mechanism also differs between greedy and sampling-based decoding. In this work, we propose acceptance-length-aware training losses that directly optimize the expected number of accepted tokens within a speculative window. For greedy verification, we derive an expected accepted length (EAL) loss that explicitly maximizes expected acceptance length. For sampling-based decoding, we introduce a window total variation (WTV) loss that optimizes the overlap between temperature-scaled draft and target distributions while accounting for sequential acceptance dependencies. Both objectives can be further combined with a group-relative reinforcement learning stage (GRPO) using simulated acceptance l…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 投机解码的加速比主要由接受长度决定，但现有草稿模型训练只优化交叉熵或 KL 等分布匹配代理目标，未直接优化接受长度。</p>
+<p><strong>方法</strong> 提出接受长度感知训练损失：面向贪心验证的 EAL 损失显式最大化期望接受长度；面向采样解码的 WTV 损失优化温度缩放后草稿与目标分布的窗口内重叠并考虑顺序接受依赖；两者均可叠加用模拟接受长度做奖励的 GRPO 阶段。</p>
+<p><strong>关键数字</strong> 摘要未给绝对数值：跨多种目标/草稿模型、任务与解码设置，接受长度一致优于 KL 基线训练（论文摘要自述）。</p>
+<p><strong>为什么值得看</strong> 直接对齐投机解码核心指标，按解码模式分别设计损失的思路对推理加速有参考意义。</p>
+<p><a href="https://arxiv.org/abs/2609.24150">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.24150">阅读原文 ↗</a></p>
 </body>
 </html>

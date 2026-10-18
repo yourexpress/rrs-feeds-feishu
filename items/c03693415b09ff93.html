@@ -22,9 +22,11 @@
 <h1>Byzantine Causal Reliable Broadcast (BCRB) with Constant-Size Message Metadata</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-22 · 论文PDF</p>
 
-<p>提出常数大小消息元数据的拜占庭因果可靠广播（BCRB）协议。</p>
-<blockquote><p>Asynchronous Byzantine Reliable Broadcast (BRB) is a fundamental primitive that guarantees agreement and validity in distributed systems subject to Byzantine faults, but it lacks ordering guarantees. In this paper, we address Byzantine Causal Reliable Broadcast (BCRB), which builds on BRB to enforce causal message ordering. We present a novel BCRB protocol that decouples causal ordering from the BRB layer, achieving constant-size $\mathcal{O}(1)$ message metadata overhead and $\mathcal{O}(n^2)$ communication word complexity as against $\mathcal{O}(n^3)$ communication word complexity of existing protocols; here $n$ is the number of processes. We present two variants of our protocol: a cryptographic version using a threshold encryption scheme and sequence gating, and its non-cryptographic version. In the cryptographic version, senders broadcast ciphertexts immediately, and decryption shares are piggybacked on out-of-band ACKs, preventing early decryption and front-running. In both versions, causal safety is achieved probabilistically. We evaluate the probability of causal safety violations using a random variable path analysis under independent exponential link delay distributions. W…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 异步拜占庭可靠广播（BRB）保证一致性与有效性但无顺序保证；如何高效实现强制因果消息序的拜占庭因果可靠广播（BCRB）？</p>
+<p><strong>方法</strong> 将因果排序与 BRB 层解耦，实现常数大小消息元数据开销；给出两个变体：门限加密+序号门控的加密版（立即广播密文，解密份额捎带在带外 ACK 上防抢跑）与非加密版，因果安全性以概率方式保证，用独立指数链路延迟下的随机路径分析评估违反概率。</p>
+<p><strong>关键数字</strong> 通信字复杂度从现有协议的 O(n³) 降到 O(n²)，元数据开销 O(1)；弱安全违反概率上界 O(f⁻³·ln³f)，加密版强安全违反上界 O(f⁻¹·ln²f)，f&lt;n/3（论文摘要自述）。</p>
+<p><strong>为什么值得看</strong> 显著降低通信复杂度的因果广播协议设计，概率安全与常数元数据的权衡对 BFT 系统研究有代表性。</p>
+<p><a href="https://arxiv.org/abs/2609.24018">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.24018">阅读原文 ↗</a></p>
 </body>
 </html>

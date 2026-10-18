@@ -22,9 +22,11 @@
 <h1>Design-Space Exploration of Post-Quantum Cryptography Acceleration on an Open-Source RISC-V GPGPU</h1>
 <p class="meta-line">arXiv (cs.AR) · 2026-09-22 · 论文PDF</p>
 
-<p>在开源 RISC-V GPGPU Vortex 上做后量子密码（PQC）加速的设计空间探索，首次将 PQC 硬件单元集成进 GPGPU。</p>
-<blockquote><p>Post-quantum cryptography (PQC) acceleration has been studied for CPUs and FPGAs, yet GPGPUs - dominating high-throughput computing - remain unexplored for PQC hardware integration as a functional unit. We present what is, to our knowledge, the first such integration: the Vortex Post-Quantum Crypto Unit (PCU) on the open-source Vortex RISC-V GPGPU. The PCU implements a 256-point NTT over Kyber (q=3329) and Dilithium (q=8380417) moduli in 134 logic cells (73 LUT4 + 61 CCU2C) - the smallest reported NTT accelerator by logic-cell count, 2.8x smaller than the next smallest design. It achieves 228.78 MHz on Lattice ECP5 and 299.8 MHz place-and-route on Xilinx Artix-7, and passes 253 functional tests across 7 suites. On Vortex SimX, it achieves 42.6x acceleration over GPU ALU execution, projecting to roughly 36x speedup on RTL. Synthesized to ASAP7 7nm, the NTT datapath occupies 96.53 um^2 (post-route) at 702 MHz. This work establishes a foundation for integrating PQC hardware acceleration into general-purpose parallel computing.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 后量子密码（PQC）加速只在 CPU 与 FPGA 上研究过；能否把 PQC 硬件单元作为功能单元集成进 GPGPU？</p>
+<p><strong>方法</strong> 首个此类集成：在开源 Vortex RISC-V GPGPU 上设计后量子密码单元 PCU，实现 Kyber（q=3329）与 Dilithium（q=8380417）模数下的 256 点 NTT，经 7 个测试套件共 253 项功能测试验证。</p>
+<p><strong>关键数字</strong> 仅耗 134 个逻辑单元（73 LUT4+61 CCU2C），比文献中次小设计小 2.8 倍；Lattice ECP5 上 228.78 MHz、Artix-7 上 299.8 MHz；SimX 仿真相对 GPU ALU 加速 42.6 倍（RTL 预计约 36 倍）；ASAP7 7nm 下 NTT 数据通路 96.53 μm²、702 MHz（论文摘要自述）。</p>
+<p><strong>为什么值得看</strong> "后量子+GPU"的首次硬件集成探索，面积与加速数据对 PQC 加速器设计和开源 RISC-V GPGPU 扩展均有参考意义。</p>
+<p><a href="https://arxiv.org/abs/2609.22343">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.22343">阅读原文 ↗</a></p>
 </body>
 </html>

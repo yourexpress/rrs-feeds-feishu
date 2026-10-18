@@ -22,9 +22,11 @@
 <h1>Distill What You Trust: Reliability-Aware Multi-Teacher On-Policy Distillation</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-22 · 论文PDF</p>
 
-<p>Distill What You Trust：按教师可信度路由蒸馏信号的多教师在线蒸馏，突破每样本固定单教师的局限。</p>
-<blockquote><p>Multi-teacher on-policy distillation allows a student to learn from complementary specialists on its own trajectories. Domain-routed approaches, however, select one teacher per example and keep it fixed throughout the response. This design both depends on labels that mixed training corpora often lack and cannot adapt teacher selection when the expertise required changes within a trajectory. We propose \textbf{TrustMOPD}, which replaces example-level teacher selection with label-free, token-level supervision allocation. At each student-generated prefix, TrustMOPD uses each specialist's RL-induced displacement from a shared pre-RL reference as a proxy for local reliability, calibrates these scores across teachers, and constructs a weighted distillation target. Across mathematics, code, and instruction following, TrustMOPD outperforms the strongest label-free baseline, increasing the recovery ratio from $54.4\%$ to $91.5\%$ on \textsc{SingleCap} and from $54.5\%$ to $98.0\%$ on \textsc{MultiCap}, while approaching label-based MOPD on \textsc{SingleCap}. Randomizing token-level weights independently of the student-generated prefix performs no better than uniform weighting, supporting t…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 多教师在线蒸馏中，按领域路由的方法每个样本固定一个教师，既依赖混合语料常缺的标签，又无法在轨迹内部按需切换教师专长。</p>
+<p><strong>方法</strong> TrustMOPD 用无标签的 token 级监督分配替代样本级教师选择：在每个学生生成前缀处，以各专家教师相对共享 pre-RL 参考的 RL 位移作为局部可信度代理，跨教师校准后构造加权蒸馏目标。</p>
+<p><strong>关键数字</strong> 相对最强无标签基线，SingleCap 恢复比从 54.4% 升至 91.5%，MultiCap 从 54.5% 升至 98.0%，SingleCap 上接近带标签 MOPD；与前缀无关的随机 token 权重不优于均匀加权（论文摘要自述）。</p>
+<p><strong>为什么值得看</strong> 把教师路由从样本级细化到 token 级且无需标签，多专家蒸馏的直接有效新范式，实现思路简洁。</p>
+<p><a href="https://arxiv.org/abs/2609.23697">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.23697">阅读原文 ↗</a></p>
 </body>
 </html>

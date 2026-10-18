@@ -22,9 +22,11 @@
 <h1>CLOOPD: Closing the Learner Loop in On-Policy Distillation</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-22 · 论文PDF</p>
 
-<p>CLOOPD：闭环在线蒸馏中的 learner 循环，让一次采集的轨迹被多次 actor 更新利用以摊薄教师评分成本。</p>
-<blockquote><p>On-policy distillation (OPD) pays twice for each fresh batch: the student generates trajectories and a stronger teacher scores them. Existing methods improve which trajectories are scored and how the teacher signal is constructed, but usually consume it with one actor update. We introduce CLOOPD, a closed-loop framework separating teacher-signal acquisition from student-side realization. CLOOPD selects an adaptive $α$ waypoint inside a KL envelope, freezes the scored batch and its advantages, re-forwards the student after each actor pass, measures realization, and allocates actor work under a separate token budget. The framework includes deterministic two- and three-pass policies, token-priced CLOOPD-TPMR, and a budget-matched control. Across six 300-step runs on an 8-H20 node, every CLOOPD policy improves the one-pass TOP-D anchor at comparable teacher-token scale: macro accuracy rises from 15.41 to 17.78 with CLOOPD-Fixed2 and 19.36 with CLOOPD-Fixed3. At step 100, CLOOPD-Fixed3 reaches 15.35, nearly matching TOP-D at step 300 while using 67.2% fewer teacher-scored tokens and 28.0% fewer GPU-hours. Earlier 8-A100 ablations show adaptive $α$ eliminates observed trust-envelope viol…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 在线蒸馏（OPD）每个新批次要付双份成本（学生生成+教师评分），现有方法只用教师信号做一次 actor 更新，评分成本被浪费。</p>
+<p><strong>方法</strong> CLOOPD 闭环框架把教师信号获取与学生端实现解耦：在 KL 包络内选自适应 α 路点，冻结评分批次与优势值，每次 actor 遍历后重前向学生并度量实现程度，按独立 token 预算分配 actor 工作量；含确定性两遍/三遍策略、token 计价的 TPMR 与预算匹配对照。</p>
+<p><strong>关键数字</strong> 8×H20 节点六轮 300 步实验：macro 精度从单遍 TOP-D 的 15.41 升至 Fixed2 的 17.78、Fixed3 的 19.36；Fixed3 第 100 步达 15.35，接近 TOP-D 第 300 步，且省 67.2% 教师评分 token、28.0% GPU 时（论文摘要自述）。</p>
+<p><strong>为什么值得看</strong> 直接回答"教师评分的 token 该学多透"的预算问题，做大规模蒸馏的团队可参考其框架与实测数据。</p>
+<p><a href="https://arxiv.org/abs/2609.24141">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.24141">阅读原文 ↗</a></p>
 </body>
 </html>

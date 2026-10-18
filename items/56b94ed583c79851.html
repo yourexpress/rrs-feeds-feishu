@@ -22,9 +22,11 @@
 <h1>1% of Tokens Can Be Enough: On Gradient Estimation in On-Policy Distillation</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-22 · 论文PDF</p>
 
-<p>研究在线蒸馏中稀疏教师监督的梯度估计问题：1% 的 token 也可能足够。</p>
-<blockquote><p>Sparse on-policy distillation (OPD) allocates teacher supervision to a small subset of tokens in student-generated trajectories. However, useful teacher guidance can yield a noisy update when its gradient is estimated from a sampled next token. We study this estimation problem at a fixed prefix in information geometry and propose an information-efficiency ratio (IER) based on a signal-to-noise decomposition. IER characterizes relative gradient estimation error under an optimal scalar baseline. A candidate-set approximation enables token selection based on IER and its combination with existing usefulness scores, while retaining the sampled reverse-KL training objective. On mathematical and medical reasoning tasks, adding IER improves existing selectors in multiple settings, with sparse configurations matching or exceeding full OPD without token selection at small token budgets of 0.1\%--1\%. These results support accounting for both usefulness and gradient-estimation reliability when allocating sparse supervision. Our code is available at https://github.com/BruceSheng1202/IER-OPD.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 稀疏在线蒸馏（OPD）只给少量 token 分配教师监督，但从采样下一 token 估计梯度会带来高噪声更新，如何刻画并优化这一估计的可靠性？</p>
+<p><strong>方法</strong> 在信息几何框架下研究固定前缀处的梯度估计问题，提出基于信噪分解的信息效率比（IER），刻画最优标量基线下的相对梯度估计误差；用候选集近似把 IER 与现有有用性评分结合做 token 选择，保持采样 reverse-KL 目标，代码开源。</p>
+<p><strong>关键数字</strong> 在数学与医疗推理任务上，0.1%–1% token 预算下稀疏配置即可达到或超过不做选择的全量 OPD（论文摘要自述）。</p>
+<p><strong>为什么值得看</strong> 指出稀疏监督分配要同时看"有用性"与"梯度估计可靠性"，为低预算蒸馏提供了可直接复用的选择准则。</p>
+<p><a href="https://arxiv.org/abs/2609.24432">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.24432">阅读原文 ↗</a></p>
 </body>
 </html>

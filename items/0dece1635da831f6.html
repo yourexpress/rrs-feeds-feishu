@@ -22,9 +22,11 @@
 <h1>ARM: Attention with Routed-Memory for Learnable Sparse Control</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-22 · 论文PDF</p>
 
-<p>ARM（Routed-Memory 注意力）：可学习稀疏控制的长上下文 KV cache 管理新机制。</p>
-<blockquote><p>Despite advances in long-context inference, large language models (LLMs) remain fundamentally limited by the key-value (KV) caching mechanisms that are necessary for stable computation. Techniques such as selective token eviction and pruning have vastly mitigated these issues, but often discard core information to manage the growing cache. In this paper, we propose Attention with Routed Memory (ARM) a novel KV caching structure that introduces a fully differentiable, fixed-size memory system organized as a hierarchical router. Via a Gumbel-Softmax, ARM learns to select memory slots and perform sigmoid-gated updates that softly combine new and stored information, avoiding hard eviction and reducing information loss. By further training a policy to dynamically select varying amounts of memory at inference, ARM adapts its accesses for both simple contexts and inputs that require deeper reasoning, enabling more scalable and effective retrieval on both short- and long-contexts. Experimental results on standard commonsense and long-context reasoning benchmarks demonstrate that ARM achieves superior performance and efficiency compared to fixed KV-caching approaches, while remaining effici…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 长上下文推理受 KV cache 机制制约，现有选择性驱逐/剪枝常丢弃关键信息；能否用可学习、固定大小的记忆系统管理 KV cache？</p>
+<p><strong>方法</strong> 提出 ARM（Attention with Routed Memory）：以层级路由器组织全可微的固定大小记忆，用 Gumbel-Softmax 选择记忆槽，sigmoid 门控更新软性混合新旧信息以避免硬驱逐；另训练策略在推理时按上下文难度动态调整记忆访问量。</p>
+<p><strong>关键数字</strong> 摘要未给出统一量化指标，仅定性描述在常识与长上下文推理基准上优于固定 KV cache 方案，且内存与生成延迟均可扩展（论文摘要自述）。</p>
+<p><strong>为什么值得看</strong> 可微固定记忆是长上下文 KV 管理的热门路线，路由选择+软更新设计对推理系统优化有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.24417">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.24417">阅读原文 ↗</a></p>
 </body>
 </html>

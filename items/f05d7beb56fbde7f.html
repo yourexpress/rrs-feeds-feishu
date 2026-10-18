@@ -22,9 +22,11 @@
 <h1>An Empirical Cost Attribution of Context-Compression Gateways in Multi-Turn Coding Agents</h1>
 <p class="meta-line">arXiv (cs.PF) · 2026-09-22 · 论文PDF</p>
 
-<p>对多轮编码 Agent 中上下文压缩网关做实证成本归因，检验“压缩文件读取就能省钱”这一流行假设是否成立。</p>
-<blockquote><p>Context compression is widely proposed as a way to cut the token bill of LLM coding agents, and public benchmarks report that aggressive compression preserves task-solving quality. These two facts do not imply the third one commonly assumed: that compressing file reads saves money in a real multi-turn agent. We instrument a production compression gateway (Paritok) between coding agents (Claude Code, Codex) and frontier LLMs (Claude Sonnet, GPT-5), and decompose the token bill of real sessions into three independent levers: tool-schema filtering, content compression of file reads and tool output, and history summarization. Measured in isolation under controlled A/B runs, the three save at fundamentally different rates. Tool-schema filtering removes a fixed block every turn, roughly 21K-57K tokens on a typical turn; it is linear in the turn count N and the only unambiguously and reproducibly positive lever. Content compression saves only about 2% of the cache-priced prefix per turn, but compressed reads accumulate in history and are re-sent on every later turn, so its cumulative saving grows quadratically, about 3350*N^2 tokens (measured), overtaking the fixed tool-filter saving with…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 上下文压缩在基准上"保质量"，是否等于在真实多轮 coding agent 中省钱？两者并不等价，需要逐杠杆成本归因。</p>
+<p><strong>方法</strong> 在生产级压缩网关 Paritok 上（介于 Claude Code、Codex 与 Claude Sonnet、GPT-5 之间）做受控 A/B，把 token 账单分解为三个独立杠杆：工具 schema 过滤、文件读取与工具输出的内容压缩、历史摘要，分别单独度量。</p>
+<p><strong>关键数字</strong> 工具 schema 过滤每轮省固定 21K–57K tokens；内容压缩每轮仅省约 2% 缓存计价前缀，但按约 3350·N² tokens 二次累积，约 6 轮内反超前者；Paritok-4B 以 25.7% 压缩率保留 86.5% SWE-bench 质量（论文摘要自述）。</p>
+<p><strong>为什么值得看</strong> 首个指出"单发压缩基准不能当省钱论据"的多轮成本实测，归因框架可直接用于 agent 成本工程。</p>
+<p><a href="https://arxiv.org/abs/2609.22114">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.22114">阅读原文 ↗</a></p>
 </body>
 </html>

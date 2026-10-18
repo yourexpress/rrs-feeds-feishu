@@ -22,9 +22,11 @@
 <h1>Anatomy of a Closed-Loop Collapse: A Causal Case Study of a Compressed VLA Policy</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-22 · 论文PDF</p>
 
-<p>对一个 Octo-Base 八层蒸馏压缩机器操作策略做闭环失效的因果解剖：离线评测通过但闭环执行崩溃的压缩风险案例。</p>
-<blockquote><p>Compressed manipulation policies can pass offline evaluation while failing in closed-loop execution; this dissociation is established in prior work and is not our claim. We contribute a causal anatomy of one naturally occurring case. An 8-layer distillation of Octo-Base retains 86% of parameters, passes every offline check we applied (0.996 and 1.000 teacher-ratios on the family's own validation metrics), and collapses in closed loop: 0/72 vs. the teacher's 40/72 on a simulated WidowX pick-and-place task. The collapse is structured, not diffuse: early task stages degrade gradually (the student moves the object at 90% of the teacher's rate and grasps at 55%), while transport-to-target fails categorically, at 0% in every training variant. Paired action-trace forensics isolate the signature: a negative, late-heavy $z$ residual, roughly 10x its post-repair magnitude, and persistent across the base distillation and both continuation branches. Four standard therapies fail under matched controls: continued training and in-domain offline data leave success at zero, even though the latter measurably improves marginal action statistics; command-level compensation recovers nothing at any offs…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 压缩后的操作策略可能通过离线评估却在闭环执行中崩溃；这类自然发生的崩溃其因果结构长什么样？</p>
+<p><strong>方法</strong> 对一个真实案例做因果解剖：8 层蒸馏的 Octo-Base 通过全部离线检查后闭环崩溃；依次用四种标准疗法（继续训练、域内离线数据、指令级补偿、症状钳制）做对照实验均失败，最后用最小对干预（把一半训练流替换为部署分布的教师 rollout，其余设置不变）定位根因。</p>
+<p><strong>关键数字</strong> 学生保留 86% 参数、离线教师比 0.996/1.000，但闭环成功率 0/72（教师 40/72）；最小对干预后恢复至 18/36（留出集教师 17/36）（论文摘要自述）。</p>
+<p><strong>为什么值得看</strong> 实证"离线门不是压缩策略的合格验收测试"：几十次闭环试验就能发现离线指标漏掉的问题，蒸馏部署必读。</p>
+<p><a href="https://arxiv.org/abs/2609.23048">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.23048">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>AVTR-1: Open Stack for Real-Time Interactive Avatars</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-22 · 论文PDF</p>
 
-<p>AVTR-1 开源实时交互数字人全栈：解决语音同步、视频帧调度与外部语音 Agent 对接的实时系统工程。</p>
-<blockquote><p>Talking-head and dyadic models now achieve real-time inference, yet fast motion generation alone does not produce an interactive conversation. A live system must synchronize the model's output with speech from an external voice agent, schedule video frames for playback, and handle interruptions. We introduce AVTR-1, an open stack for real-time interactive avatar conversations, built around a compact 153M-parameter autoregressive flow-matching motion generator conditioned on both participants' audio. We adapt its audio encoder for streaming through self-distillation. The stack turns the model's chunk-based generation into a continuous, synchronized audio-video stream driven by an external voice agent, and we analytically derive its contribution to the user-facing latencies and validate the resulting bounds with two commercial voice agents. Further experiments demonstrate that AVTR-1 leads the compared dyadic systems on all reported visual-quality metrics and most conventional listening-motion metrics while remaining competitive in lip synchronization. Its inference runtime operates in real time on data-center and consumer GPUs. However, conventional listening metrics do not establis…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 说话人头像模型已能实时生成动作，但实时交互式虚拟人对话还须同步外部语音、调度帧播放并处理打断——如何构建完整开放技术栈？</p>
+<p><strong>方法</strong> AVTR-1 围绕 153M 参数的自回归 flow-matching 动作生成器（以双方音频为条件），用自蒸馏改造音频编码器支持流式，把分块生成转为连续同步音视频流，解析推导并经两家商用语音代理实测延迟上界；另提出 R-DGG 指标，度量说话人语音对听众动作的额外预测信息。</p>
+<p><strong>关键数字</strong> 动作生成器 153M 参数；在全部视觉质量指标和多数听众动作指标上领先所对比的双人系统（论文摘要自述）。</p>
+<p><strong>为什么值得看</strong> 开放权重、渲染器与服务后端，R-DGG 补齐"配对音频是否真正驱动动作"的评测空白，数字人交互研究值得关注。</p>
+<p><a href="https://arxiv.org/abs/2609.22913">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.22913">阅读原文 ↗</a></p>
 </body>
 </html>

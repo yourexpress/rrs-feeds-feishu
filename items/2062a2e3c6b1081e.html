@@ -22,9 +22,11 @@
 <h1>Adaptive Determinantal Client Scheduling in Federated Learning</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-22 · 论文PDF</p>
 
-<p>用自适应行列式点过程做联邦学习客户端调度，同时兼顾数据质量与系统效率。</p>
-<blockquote><p>Scheduling clients for model training is critical in federated learning due to both data and system heterogeneity. Most previous works focus on the quality of the scheduled clients to achieve faster convergence, shorter wall-clock convergence time, or better average model performance. They rarely consider the diversity of clients, which is important to counter heterogeneity and improve performance for the worst-off clients. In this work, we advocate the use of determinantal point processes (DPPs) to model and enhance the diversity in client scheduling. We first design the kernel matrices of DPPs using gradient information and quality scores, which inherently enables a flexible quality-diversity trade-off. Applying fast MAP inference over DPPs, we propose Adaptive Determinantal Client Scheduling (ADCS) in FL. We further quantify the gradient approximation error of ADCS and develop convergence analysis for general biased client selection in FL with non-convex loss functions. We conduct comparative numerical experiments showing that ADCS outperforms state-of-the-art client scheduling algorithms, including both quality-based and diversity-based ones.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 联邦学习的客户端调度大多只关注被调度客户端的质量，很少考虑多样性——而多样性是对抗数据与系统异构、提升最差客户端表现的关键。</p>
+<p><strong>方法</strong> 用行列式点过程（DPP）建模并增强客户端调度的多样性：以梯度信息与质量评分设计核矩阵，天然支持质量-多样性权衡；经快速 MAP 推断提出 ADCS 算法，并给出梯度近似误差量化与非凸损失下一般偏置客户端选择的收敛分析。</p>
+<p><strong>关键数字</strong> 摘要未给绝对数值，对比实验中 ADCS 优于现有质量型与多样性型调度算法（论文摘要自述）。</p>
+<p><strong>为什么值得看</strong> 把 DPP 引入 FL 调度并配上收敛理论，对异构客户端选择与边缘联邦学习场景有直接借鉴价值。</p>
+<p><a href="https://arxiv.org/abs/2609.23843">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.23843">阅读原文 ↗</a></p>
 </body>
 </html>

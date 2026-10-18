@@ -22,9 +22,11 @@
 <h1>Bridging the Vendor Gap: Enabling AMD GPU Support for Awkward Array via ROCm/HIP for the HL-LHC Era</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-22 · 论文PDF</p>
 
-<p>为 Awkward Array 启用 AMD GPU（ROCm/HIP）支持，面向 HL-LHC 时代的多厂商 GPU 分析吞吐。</p>
-<blockquote><p>The High-Luminosity LHC (HL-LHC) will demand order-of-magnitude gains in analysis throughput, and increasingly those gains must come from GPUs that are not made by a single vendor. Leadership-class systems such as El Capitan, Frontier and LUMI are built on AMD accelerators, yet the Scikit-HEP analysis stack---and Awkward Array in particular---has grown up CUDA-first. We report on $rawkward$, a Rust-backed kernel engine that adds a ROCm/HIP backend for Awkward Array's nested, jagged, variable-length data structures. Our central finding is that a naive source-level port of CUDA kernels to HIP loses $5$--$10\times$ in performance on irregular kernels, because AMD's $64$-lane wavefronts, higher register pressure and more expensive divergence behave fundamentally differently from NVIDIA's $32$-thread warps. We show that a small, reusable set of optimization patterns---loop flattening, $128$-bit vectorized loads, splitting fused kernels, and profile-guided launch configuration---recovers CUDA-class performance without changing the public API. A Rust macro-and-match dispatch layer keeps a single, backend-agnostic call site while emitting vendor-specific kernel strategies, and the type sys…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Scikit-HEP 分析栈（尤其 Awkward Array）是 CUDA-first 的，而 El Capitan、Frontier、LUMI 等超算均为 AMD 加速器，面向 HL-LHC 如何在多厂商 GPU 上保住分析吞吐？</p>
+<p><strong>方法</strong> rawkward：Rust 支持的核引擎，为 Awkward Array 的嵌套、变长数据结构增加 ROCm/HIP 后端；总结一小组可复用优化模式（循环扁平化、128 位向量化加载、拆分融合核、profile 引导的启动配置），Rust 宏分发层保持单一后端无关调用点。</p>
+<p><strong>关键数字</strong> 朴素 CUDA→HIP 移植在不规则核上损失 5–10 倍性能；优化后在双路 MI210 节点上相对 128 核 EPYC 7763 加速 1.03–12.5 倍；Rust CPU 核相对现有 C++ 核几何平均运行时比 0.37 倍（论文摘要自述）。</p>
+<p><strong>为什么值得看</strong> GPU 跨厂商性能可移植的实战配方，wavefront 与 warp 的差异分析及优化模式对一般 HPC 核开发同样适用。</p>
+<p><a href="https://arxiv.org/abs/2609.24628">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.24628">阅读原文 ↗</a></p>
 </body>
 </html>

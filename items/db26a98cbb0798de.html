@@ -22,9 +22,11 @@
 <h1>Djinnlang: Higher-Level Programming by Unambiguous Specification with an LLM in the Compiler</h1>
 <p class="meta-line">arXiv (cs.PL) · 2026-09-22 · 论文PDF</p>
 
-<p>Djinnlang：以非歧义规范为核心、LLM 在编译器内实现并证明匹配规范的高层编程语言设计。</p>
-<blockquote><p>Programmers write formal specifications, and LLMs implement them, proving that each implementation matches its spec. Taken to its extreme, this makes specification languages the new programming languages. We argue that an unambiguity constraint is key: in addition to proving that its implementation satisfies the specification, the LLM must also prove that any other implementation satisfying it must produce the same outputs on the same inputs, i.e. that the relation formed by the constraints is deterministic. This leaves the LLM no leeway on program semantics: as with a conventional compiler, the generated code never needs to be read and can be regenerated from the spec at any time. Under this constraint and with a powerful LLM, the difference between a specification language and a programming language becomes essentially meaningless, and the LLM essentially becomes a part of the compiler toolchain. The arrangement doubles as a strong form of AI control: an untrusted model writes the code, yet its work is tightly checked by a verifier. To demonstrate that our LLM-in-the-compiler paradigm is feasible when supported by our unambiguity constraint, we present Djinnlang, a high-level spe…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 若程序员只写形式化规约、由 LLM 实现并证明实现符合规约，规约语言就成了新的编程语言——关键约束是无歧义性。</p>
+<p><strong>方法</strong> 提出语言 Djinnlang：程序仅由规约组成，永不手写可执行代码；符号翻译器把每条规约降为 Dafny 桩与证明义务，驱动程序调度 LLM 补全实现与证明，全部由 Dafny 验证器检查；无歧义约束还要求证明任何满足规约的实现都产生相同输入输出关系，使生成代码可随时从规约重新生成。</p>
+<p><strong>关键数字</strong> 摘要无量化指标；以多个示例验证可行性，且系统自举：LLM 可依据规约实现 Djinnlang 翻译器，重实现能自我验证（论文摘要自述）。</p>
+<p><strong>为什么值得看</strong> "LLM 写码+验证器把关"路线的完整工程实现，兼作一种强 AI 控制形式，自举结果是有力的可行性证据。</p>
+<p><a href="https://arxiv.org/abs/2609.23954">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.23954">阅读原文 ↗</a></p>
 </body>
 </html>
