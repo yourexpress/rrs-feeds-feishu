@@ -22,9 +22,11 @@
 <h1>TriFleetRCA: On-Premise LLM Root Cause Analysis for Kubernetes</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-22 · 论文PDF</p>
 
-<p>TriFleetRCA：面向 Kubernetes 的本地部署 LLM 根因分析，兼顾证据散落与日志不可外发的约束。</p>
-<blockquote><p>Root cause analysis at a remote site is slow: evidence is scattered across pod logs, Kubernetes events and cluster-level objects, and many operators cannot send production logs to a hosted model at all. On-premise inference removes the second constraint but raises a question live-cluster benchmarks have not addressed: when one workstation GPU fixes both the model and the context budget, how should evidence be retrieved, and what happens when the runbooks the model consults have been tampered with? We present TriFleetRCA, a pipeline running entirely on one on-premise GPU that collects evidence at one of three scopes (pod, namespace, cluster), ranks it by template de-duplication then BM25, filters runbooks through an ingest guard, and returns a root cause with the evidence lines supporting it. We evaluate on a live Kubernetes cluster into which we inject four faults, so ground truth is known by construction, across 100 analyses with Qwen2.5-14B-Instruct at temperature 0. The hit rate was 0.85, 0.90 and 0.95 at pod, namespace and cluster scope; intervals overlap, but the whole scope effect comes from the one fault whose cause is a cluster-level object, and cluster scope costs 55% more…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：远程站点的 Kubernetes 根因分析面临两个挑战：生产日志不能发给云端模型，本地 GPU 同时限制模型和上下文窗口。</p>
+<p><strong>方法</strong>：TriFleetRCA 在单块本地 GPU 上运行——按 pod/namespace/cluster 三个范围收集证据、模板去重 + BM25 排序、经 ingest guard 过滤 runbook 后返回根因及支撑证据行。</p>
+<p><strong>关键数字</strong>：命中率 0.85/0.90/0.95（三档范围）；去重使命中率从 0.75 升至 0.90 且 token 开销不变；含毒 runbook 被 guard 100% 拦截；中位延迟 1.6 秒（2,200 prompt token）。</p>
+<p><strong>为什么值得看</strong>：本地 GPU 根因分析的完整方案，特别关注了 runbook 投毒这一安全隐患，且将引用质量与准确性分开评估。</p>
+<p><a href="https://arxiv.org/abs/2609.23766">https://arxiv.org/abs/2609.23766</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.23766">阅读原文 ↗</a></p>
 </body>
 </html>

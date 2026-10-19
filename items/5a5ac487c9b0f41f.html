@@ -22,9 +22,11 @@
 <h1>Merge++: Universal Merge Refinement Through Data-Free Checkpoint Inversion</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-22 · 论文PDF</p>
 
-<p>提出 Merge++：通过无数据 checkpoint 反演让模型合并在权重空间运算之外利用专家模型行为信号，改进合并质量。</p>
-<blockquote><p>Model merging consolidates fine-tuned experts into one multi-task model without retraining. All existing data-free methods approach this problem entirely in weight space. Restricted to arithmetic on parameters, these methods never observe how each expert behaves, a signal that only emerges through forward evaluation. Accessing this behavioral signal requires inputs to evaluate on, which the data-free setting prohibits. We propose Merge++, a post-hoc method that addresses this by inverting the expert checkpoints to synthesize task-representative images, then distilling expert knowledge into the merged model using those images. Merge++ requires no additional data beyond the checkpoints themselves. It applies universally across merging algorithms and operates as a complementary refinement stage independent of the underlying weight-space method. The method consistently improves merging algorithms ranging from simple task arithmetic to state-of-the-art spectral methods, with average gains of +2 to +8 points and up to +25.9 on individual configurations.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：如何在无额外训练数据的前提下，让模型合并（Model Merging）后的多任务模型更准确地反映各专家模型的行为？</p>
+<p><strong>方法</strong>：Merge++ 通过反转专家检查点合成任务代表性图像，再借这些图像将专家知识蒸馏进合并模型，作为与底层权重空间方法互补的后处理精炼阶段。</p>
+<p><strong>关键数字</strong>：在多种合并算法上平均提升 2~8 个百分点，个别配置最高提升 25.9 个百分点。</p>
+<p><strong>为什么值得看</strong>：首次在 data-free 设定下引入"行为信号"来指导模型合并，通用性强，可与任意合并算法叠加使用。</p>
+<p><a href="https://arxiv.org/abs/2609.22886">https://arxiv.org/abs/2609.22886</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.22886">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>VSpector: Specification-Driven Bug Detection for RISC-V CPUs</h1>
 <p class="meta-line">arXiv (cs.AR) · 2026-09-22 · 论文PDF</p>
 
-<p>VSpector：以 RISC-V 官方自然语言规范为依据，检测开源 RISC-V CPU 的 RTL 设计 bug。</p>
-<blockquote><p>Detecting RTL design bugs in open-source RISC-V CPU implementations is critical for ensuring system reliability. Traditional detection approaches inherently rely on predefined artifacts. In this paper, we leverage the official,natural-language RISC-V specifications as an effective information source for bug detection. We present VSpector, a specification-driven bug detection pipeline that directly checks whether CPU register-transfer level (RTL) implementations adhere to official specification rules, without requiring specialized construction of reference models, formal properties, or custom bug patterns. To resolve the key technical trade-off between broad context scope and model reasoning accuracy when using Large Language Models (LLMs), VSpector employs a stepwise context refinement scheme across a four-stage pipeline: rule extraction, implementation localization, candidate identification, and sequential violation auditing. We evaluate VSpector on two industrial-strength RISC-V CPUs, CVA6 and XiangShan. Out of 217 reported candidates, manual inspection confirmed 148 true violations, representing a 68.2% precision. These violations correspond to 73 distinct bugs, including 42 pre…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：开源 RISC-V CPU 的 RTL 设计 bug 检测依赖预定义构件（参考模型、形式属性、bug 模式），缺乏直接利用官方规范的方案。</p>
+<p><strong>方法</strong>：VSpector 用 LLM 从自然语言 RISC-V 规范中直接检查 RTL 实现——四阶段流水线：规则提取→实现定位→候选识别→逐条违规审计。</p>
+<p><strong>关键数字</strong>：在 CVA6 和 XiangShan 上报告 217 个候选，148 个确认为真违规（精确率 68.2%），对应 73 个独立 bug——其中 42 个为首次发现；SOTA fuzzer DiveFuzz 在 24 小时运行中未检出任何一个新 bug。30 个已获上游确认或修复。</p>
+<p><strong>为什么值得看</strong>：直接从规范文本驱动 bug 检测，跳过了建参考模型/写属性的繁重前置工作，且发现了 fuzzer 抓不到的新 bug，方法学上有突破性。</p>
+<p><a href="https://arxiv.org/abs/2609.23517">https://arxiv.org/abs/2609.23517</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.23517">阅读原文 ↗</a></p>
 </body>
 </html>

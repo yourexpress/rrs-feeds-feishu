@@ -22,9 +22,11 @@
 <h1>TomasuLLM: Out-of-Order Speculative Execution for LLM Agents</h1>
 <p class="meta-line">arXiv / Jiangnan Yu 等 · 2026-09-22 · 论文PDF</p>
 
-<p>Long-running tools can dominate coding-agent latency: compilers, test suites, and reposit…</p>
-<blockquote><p>Long-running tools can dominate coding-agent latency: compilers, test suites, and repository commands take seconds to minutes while the agent idles. This observation stall presents the same tension that drove out-of-order processors -- asequential interface hides work that can be predicted and started early, but a speculative result may become visible only after it and every earlier step have been validated. We present TomasuLLM, a runtime that executes agent tool calls out of trajectory order while preserving task-execution correctness. It drafts future actions, runs them in isolated copy-on-write sandboxes, traces their dependencies and effects, and commits results in trajectory order only after validation against committed state. Across three benchmarks spanning sub-second to minutes-long tool calls, TomasuLLM improves the reported benchmark means and scales with tool latency: 1.31x on 100 SWE-bench Verified tasks, 1.35x on 28 Terminal-Bench 2.0 tasks, and 1.27x matched progress on 18 SWE-Marathon sessions. Across 4,010 audited commit-validation records, it produces zero false accepts.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：编码 agent 等待编译、测试等长耗时工具时处于空闲，但这些工具的结果通常可预测并提前执行。</p>
+<p><strong>方法</strong>：TomasuLLM 借鉴乱序处理器设计——草拟未来动作、在隔离 copy-on-write 沙箱中推测执行、追踪依赖与副作用、按轨迹顺序验证后提交。</p>
+<p><strong>关键数字</strong>：SWE-bench Verified 100 任务 1.31×、Terminal-Bench 2.0 28 任务 1.35×、SWE-Marathon 18 会话 1.27×；4,010 次提交验证记录中零误接受。</p>
+<p><strong>为什么值得看</strong>：把 Tomasulo 算法的思想搬到 LLM agent 运行时——乱序投机执行、顺序提交，思路优雅且工程上零误判。</p>
+<p><a href="https://arxiv.org/abs/2609.38201">https://arxiv.org/abs/2609.38201</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.38201">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>RPyForth: Exposing a Call-Shared Data Stack to a Meta-Tracing JIT Compiler</h1>
 <p class="meta-line">arXiv (cs.PL) · 2026-09-22 · 论文PDF</p>
 
-<p>RPyForth：把 Forth 的调用共享数据栈显式暴露给元追踪 JIT 编译器，实现可 JIT 化的 Forth 实现。</p>
-<blockquote><p>Forth is a concatenative language whose words share one data stack across calls, with a depth and call effects that need not be known before execution. That leaves a meta-tracing JIT compiler with no stack location it can name: a cell is reached through the stack pointer, so its accesses stay in the compiled code, and declaring every cell of the stack array instead ties what the compiler carries to the capacity the array reserves rather than to the depth a program uses. We answer with a fixed-width window over the top of the stack, a shared spill holding every deeper cell, and a decoding function that joins the two, on top of which call-entry normalization and adaptive entry are policies. Decoding shows that all of them preserve the logical stack and that a trace exit rebuilds data-stack state bounded by the window's width, not by the stack's depth. RPyForth realizes this in an RPython interpreter covering Forth's Core word set, with two scalar fields and eight frame positions and no static stack-effect analysis, and RPyFactor realizes the same window for a subset of Factor. Exposing the window to the compiler, rather than merely caching cells in it, is what pays. With the layout a…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：Forth 语言所有词共享一个数据栈且深度和效应在执行前不可知，这让元追踪 JIT 编译器难以命名栈位置。</p>
+<p><strong>方法</strong>：RPyForth 在栈顶引入固定宽度窗口 + 共享溢出区 + 解码函数，将窗口标注暴露给编译器；配合调用入口规范化与自适应策略。</p>
+<p><strong>关键数字</strong>：18 个 Shootout 内核在 x86-64 上快 1.44~1.45×，6 个 Appbench 应用快约 1.60×；整体快于 gforth-fast 和 SwiftForth，达到 VFX Forth 的 1.90~2.36×（内核），但应用端为 0.68~0.76×。</p>
+<p><strong>为什么值得看</strong>：解决了拼接语言 JIT 编译中一个经典难题——暴露而非缓存栈窗口让编译器直接利用，思路简洁而效果显著。</p>
+<p><a href="https://arxiv.org/abs/2609.23759">https://arxiv.org/abs/2609.23759</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.23759">阅读原文 ↗</a></p>
 </body>
 </html>

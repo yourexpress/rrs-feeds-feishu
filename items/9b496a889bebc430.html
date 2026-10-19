@@ -22,9 +22,11 @@
 <h1>Scout: Open-World Species Recognition on the Edge</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-22 · 论文PDF</p>
 
-<p>面向边缘设备的开放世界物种识别系统 Scout，在带宽受限下选择性卸载 VLM 推理以兼顾识别能力与通信开销。</p>
-<blockquote><p>Large vision-language models (VLMs) enable recognition beyond a fixed class set, but their computational demands prevent them from running on many edge devices. Cloud offload makes this capability accessible, but sending every image consumes scarce bandwidth and communication energy. We ask how to bring the open-world recognition capability of VLMs to the edge while operating within tight compute, energy, and bandwidth budgets. Wildlife monitoring provides a natural setting for exploring this question because camera traps encounter species not known at deployment. We present Scout, an autonomous open-world recognition system that invokes a cloud VLM intermittently to teach new classes to a compact edge model. Given only the deployment location and empty site frames, Scout autonomously turns each species identified by the VLM into persistent, site-conditioned recognition capability in a resource-efficient edge model, without a predefined species list, human labeling, or manual tuning. Across 30 camera-trap deployments in three regions on an NVIDIA Jetson Orin Nano, the accuracy of Scout remains within 0.1-2.5% of a model given a predefined species list. On species outside its initia…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：大视觉语言模型（VLM）能实现开放世界物种识别，但边缘设备算力有限，云卸载又消耗带宽与通信能量。</p>
+<p><strong>方法</strong>：Scout 在 Jetson Orin Nano 上部署，间歇调用云 VLM 识别新物种后教授给本地紧凑模型，形成持久、场地条件的识别能力，无需预定义物种列表或人工标注。</p>
+<p><strong>关键数字</strong>：准确率与预定义物种列表模型仅差 0.1~2.5%，对未见过物种的准确率 53.7~59.1%（全云卸载 56.5~65.1%），部署能耗降低 59~71%。</p>
+<p><strong>为什么值得看</strong>：巧妙结合云和边缘——只在遇到新物种时用云、其余时候用边，在野生动物监测中实现了近乎云端的性能、远低于云端的能耗。</p>
+<p><a href="https://arxiv.org/abs/2609.22897">https://arxiv.org/abs/2609.22897</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.22897">阅读原文 ↗</a></p>
 </body>
 </html>

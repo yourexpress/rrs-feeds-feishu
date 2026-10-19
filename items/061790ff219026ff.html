@@ -22,9 +22,11 @@
 <h1>Q-DEQ: Discrete Solving and Quantization for Deep Equilibrium Models in Time Series Forecasting under Edge Deployment Coding Constraints</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-22 · 论文PDF</p>
 
-<p>Q-DEQ：深度均衡模型的离散求解与量化，面向边缘部署低比特编码约束下的时序预测。</p>
-<blockquote><p>Edge deployment motivates forecasting models with compact parameter storage and low-bit representations. Deep equilibrium models (DEQs) obtain implicit depth by repeatedly applying a shared layer, reducing the parameter cost of explicit layer stacking. Their usual Anderson solver, however, searches for update coefficients in the continuous real domain. We propose Q-DEQ, which formulates local updates in DEQ forward solving as discrete optimization problems. Candidate directions are constructed from the current state and iteration history, and a local quadratic residual model is used to evaluate their combinations. Binary encoding of the direction coefficients yields a quadratic unconstrained binary optimization (QUBO) problem that can be solved by simulated annealing (SA) or a coherent Ising machine (CIM). After fixed-point solving, a re-forward pass applies W8A8 fake quantization to the shared layer's weights and activations. We evaluate Q-DEQ with an iTransformer backbone on five multivariate time series forecasting datasets. Relative MSE differences from the explicit multi-layer baseline range from $-1.16\%$ to $+2.90\%$, with lower MSE on two datasets. DEQ parameter sharing red…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：边缘部署要求时序预测模型参数紧凑且低位宽表示，DEQ 虽有隐式深度优势，但其 Anderson 求解器在连续域搜索，无法直接适配离散优化硬件。</p>
+<p><strong>方法</strong>：Q-DEQ 将 DEQ 前向求解中的局部更新建模为 QUBO 离散优化，用模拟退火或相干伊辛机求解；之后对共享层做 W8A8 伪量化。</p>
+<p><strong>关键数字</strong>：参数量缩减 1.80×~3.82×，结合 W8A8 后静态权重存储缩减 4.3×~12.8×；MSE 相对显式多层基线在 -1.16% 到 +2.90% 之间。</p>
+<p><strong>为什么值得看</strong>：将 DEQ 求解从连续域带入离散优化，使固定点更新可直接在不同组合优化后端（SA / CIM）上执行，为边缘时序预测开辟新路径。</p>
+<p><a href="https://arxiv.org/abs/2609.24042">https://arxiv.org/abs/2609.24042</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.24042">阅读原文 ↗</a></p>
 </body>
 </html>

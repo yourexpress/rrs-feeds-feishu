@@ -22,9 +22,11 @@
 <h1>Neural Residual Modeling for Scientific Data Compression under Guaranteed Error Bounds</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-22 · 论文PDF</p>
 
-<p>面向有误差界保证的科学数据有损压缩，改进残差向量量化（RVQ）等学习式潜空间压缩的神经残差建模。</p>
-<blockquote><p>Lossy compression of scientific simulation data increasingly relies on learned, latent-space architectures such as Residual Vector Quantization (RVQ), which iteratively quantize a base representation and its residuals to progressively reduce reconstruction error. While effective, RVQ performs this residual modeling entirely in latent space, leaving the pixel-space error structure of the reconstruction largely unaddressed. In this work, we propose a post-processing pipeline that augments an RVQ-based compressor with a U-Net trained to predict and correct pixel-space residuals between the original volume and its RVQ reconstruction. We show that these residuals are spatially structured rather than driven by local intensity or gradient features, motivating the need for a deep spatial model rather than simple statistical correction. The U-Net-corrected reconstruction is then passed through a Guaranteed Autoencoder (GAE) stage, which projects the remaining residual onto a per-block PCA basis to enforce a user-specified block-wise error bound. To the best of our knowledge, this is the first pipeline to combine latent-space RVQ, explicit pixel-space residual correction via a deep spatial p…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：科学仿真数据的有损压缩中，基于 RVQ 的潜空间建模无法直接处理像素空间的重建误差结构。</p>
+<p><strong>方法</strong>：提出 RVQ + U-Net 残差修正 + Guaranteed Autoencoder 三级流水线：U-Net 预测像素空间残差，GAE 按块 PCA 投影以保证用户指定的逐块误差上界。</p>
+<p><strong>关键数字</strong>：在 S3D、JHTDB 和 E3SM 数据集上，NRMSE 和压缩比均优于纯 RVQ 及常规残差修正基线，同时保持严格误差保证。</p>
+<p><strong>为什么值得看</strong>：首次将潜空间 RVQ、像素空间深度残差修正与误差界保证统一到一个框架中，兼顾压缩率与科学数据保真度。</p>
+<p><a href="https://arxiv.org/abs/2609.23185">https://arxiv.org/abs/2609.23185</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.23185">阅读原文 ↗</a></p>
 </body>
 </html>

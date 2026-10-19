@@ -22,9 +22,11 @@
 <h1>SkelOT: Reusing AOT Compilation Across EVM Contract Families</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-22 · 论文PDF</p>
 
-<p>SkelOT：跨 EVM 合约族（工厂/代理/变体）复用 AOT 编译产物，改进 Ethereum 虚拟机编译缓存粒度。</p>
-<blockquote><p>Ahead-of-time (AOT) compilers (e.g., revmc, evmone, and DTVM) for the Ethereum Virtual Machine (EVM) reuse compilation artifacts at contract-code-hash granularity. This granularity is poorly matched to real EVM workloads dominated by \emph{contract families}: factory-, proxy-, and template-driven deployments that share instruction structure but differ in a small set of embedded constants. Across four EVM chains (Base, Ethereum, BSC, and Arbitrum), we find that 23.1--47.6\% of unique compilable bytecodes map to shared family skeletons within 10K-block windows. Per-hash AOT therefore redundantly recompiles structurally equivalent code, inflating compile time and artifact footprint while reducing workload coverage under finite compile budgets. We present \textsc{SkelOT}, an AOT framework that lifts the unit of compilation reuse from code hash to family skeleton. \textsc{SkelOT} compiles one native artifact per family, bakes invariant constants into the artifact, and reads variant constants from a per-contract runtime table. Built on revmc/LLVM and evaluated on a 10K-block Base mainnet corpus (3.52M transactions), \textsc{SkelOT} reduces compilation units by 47.5\%, artifact footprint …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：EVM 合约由工厂/代理/模板驱动大量部署，虽指令结构相同但嵌入常量不同，按哈希粒度做 AOT 编译导致大量冗余重编译。</p>
+<p><strong>方法</strong>：SkelOT 将编译复用粒度从代码哈希提升为家族骨架——每个家族编译一份原生构件，不变量内嵌，变量从运行时表中读取。</p>
+<p><strong>关键数字</strong>：在 Base 主网 10K 块窗口上减少编译单元 47.5%、构件占用 57.4%、编译时间 2.19×，运行时每合约中位加速 1.31×。</p>
+<p><strong>为什么值得看</strong>：发现了 EVM 负载中合约家族的普遍性（23~48% 的字节码可归入共享骨架），并以此驱动编译复用，工程洞察精准。</p>
+<p><a href="https://arxiv.org/abs/2609.24404">https://arxiv.org/abs/2609.24404</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.24404">阅读原文 ↗</a></p>
 </body>
 </html>

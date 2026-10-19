@@ -22,9 +22,11 @@
 <h1>UniCASE: A Unified 16-bit Floating-Point Format with Criticality-Aware Selective ECC for Efficient DNN Protection</h1>
 <p class="meta-line">arXiv (cs.AR) · 2026-09-22 · 论文PDF</p>
 
-<p>提出 UniCASE：统一 16 位浮点格式搭配关键性感知选择性 ECC，以更低存储与计算开销保护 DNN 免受软错误。</p>
-<blockquote><p>Soft errors are an increasing reliability concern for Deep Neural Network execution because they can corrupt parameters, leading to accuracy degradation. While conventional ECC offers strong fault protection, it incurs additional parity storage and computational overhead. Embedded-parity formats reduce storage cost by reusing the least-significant bits, but they do not optimize protection while reducing computational overhead. We propose UniCASE, a unified 16-bit floating-point (FP) format that jointly optimizes data representation and error protection for reliable DNN execution. It identifies stable blocks across FP64, FP32, FP16, and BFloat16 that can be mapped into a unified representation. Based on bit-level criticality analysis, UniCASE uses selective ECC that assigns distinct levels of protection to different data bits according to their resilience against soft errors. Experimental results show that UniCASE reduces encoder/decoder cost by up to 30%, preserves model accuracy within 1% of the FP32 baseline, and provides significantly stronger soft error resilience than existing embedded-parity methods.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：DNN 推理中的软错误会破坏参数导致精度下降，传统 ECC 开销大，内嵌校验格式虽省存储但未优化保护策略。</p>
+<p><strong>方法</strong>：UniCASE 提出统一的 16 位浮点格式——识别 FP64/FP32/FP16/BFloat16 中可映射到统一表示的稳定块，基于位级关键性分析做选择性 ECC 分配。</p>
+<p><strong>关键数字</strong>：编解码成本降低 30%，模型精度在 FP32 基线的 1% 以内，软错误恢复力显著强于现有内嵌校验方法。</p>
+<p><strong>为什么值得看</strong>：不是一刀切的保护，而是根据每个比特对精度的影响差异化分配 ECC，在保护和开销间找到了更精细的平衡。</p>
+<p><a href="https://arxiv.org/abs/2609.22590">https://arxiv.org/abs/2609.22590</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.22590">阅读原文 ↗</a></p>
 </body>
 </html>

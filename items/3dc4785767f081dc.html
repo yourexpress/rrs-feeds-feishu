@@ -22,9 +22,11 @@
 <h1>Replacing Large Language Models with Jev Decision Models for Low-Latency Edge Service Orchestration</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-22 · 论文PDF</p>
 
-<p>用面向决策的 Jev 决策模型替代 LLM 做边缘服务编排，压缩请求时延预算中被语言模型决策吃掉的开销。</p>
-<blockquote><p>Natural-language service requests can require a language-model decision before execution starts, consuming part of the request's latency budget. We integrate Jev's decision-oriented application programming interface (API) into edge service orchestration to reduce this overhead while retaining service completion. The integration extracts four bounded intent fields and applies a shared validator, admission policy, and scheduler, accounting for decision waiting throughout the request timeline. We compare Jev with a short, structured-output DeepSeek deployment using live API measurements followed by modeled execution, and then a real two-node optical character recognition (OCR) service with self-hosted Qwen and rule-based references. Across three consecutive measurement blocks, Jev reduces median client decision latency by 15.9-26.5%. In eight paired OCR conditions, Jev matches DeepSeek's correct, on-time completion count in seven and exceeds it in one. Without caching, median end-to-end latency on requests completed correctly by both systems is 11.1-25.3% lower; API fees per correct completion are 69.0-70.6% lower. Repeated-request caching largely removes the latency difference. The r…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：自然语言服务请求常需 LLM 先做决策才执行，消耗了边缘服务的延迟预算。</p>
+<p><strong>方法</strong>：将 Jev 决策模型集成到边缘服务编排中——提取四个有界意图字段，施加共享验证器、准入策略和调度器，与 DeepSeek 短结构化输出对比。</p>
+<p><strong>关键数字</strong>：Jev 减少客户端决策延迟中位数 15.9~26.5%；在 8 组 OCR 条件下正确按时完成数相当或更优；每次正确完成的 API 费用降低 69.0~70.6%。</p>
+<p><strong>为什么值得看</strong>：用轻量决策模型替代 LLM 做服务编排决策，真正做到降延迟又省钱，且不影响服务质量。</p>
+<p><a href="https://arxiv.org/abs/2609.22753">https://arxiv.org/abs/2609.22753</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.22753">阅读原文 ↗</a></p>
 </body>
 </html>

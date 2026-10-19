@@ -22,9 +22,11 @@
 <h1>Scaling of Capability and Efficiency at Inference Time in Large Reasoning Models</h1>
 <p class="meta-line">Northeastern University（Barabási 组） · 2026-09-22 · 论文PDF</p>
 
-<p>大推理模型推理时能力/效率的 scaling 规律；本轮为 v2 修订版，非新发布，不重复收录</p>
-<blockquote><p>Capability and efficiency are two key dimensions of reasoning in large language models (LLMs). Capability refers to the ability to solve a given problem correctly, whereas efficiency refers to the ability to do so with limited resources. When LLMs use Chain-of-Thought (CoT) reasoning to solve problems of controlled hardness, both the number of problems solved correctly and the number of tokens required to reach a correct answer depend on problem hardness and model size. However, how these factors jointly shape capability and efficiency remains poorly understood. Here, we use hierarchical Bayesian models to evaluate the capability and efficiency of LLMs from the DeepSeek-R1-Distill model family across four classes of arithmetic and algorithmic reasoning problems. At a fixed model size, the probability of correctly solving an instance decays approximately exponentially with instance size, our proxy for problem hardness. The decay scale grows sublinearly with model size, indicating that larger models are more capable, but that capability gains diminish with scale. Output length grows as a power law with instance size, which serves as a proxy for difficulty. However, the parameters of …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 推理中，模型规模与问题难度如何共同塑造"能力"（正确解答）与"效率"（所需 token 数）？规模更大的模型是否也更高效？</p>
+<p><strong>方法</strong>：用分层贝叶斯模型分析 DeepSeek-R1-Distill 系列在四类算术与算法推理任务上的表现，以实例大小作为难度代理。</p>
+<p><strong>关键数字</strong>：正确解答概率随实例大小指数衰减，衰减尺度随模型规模亚线性增长（能力提升但边际递减）；输出长度随实例大小幂律增长，但幂律参数不随规模系统性地变化（效率无改善）。</p>
+<p><strong>为什么值得看</strong>：直接挑战"更大即更好"的推理标度律假设：规模带来能力——但回报递减，且效率几乎不增长。</p>
+<p><a href="https://arxiv.org/abs/2609.27166">https://arxiv.org/abs/2609.27166</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.27166">阅读原文 ↗</a></p>
 </body>
 </html>

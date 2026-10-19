@@ -22,9 +22,11 @@
 <h1>Total Cost of Agency: Exact Attribution of Memory Injection Cost in Multi-Agent LLM Workflows</h1>
 <p class="meta-line">arXiv (cs.PF) · 2026-09-22 · 论文PDF</p>
 
-<p>对多智能体 LLM 工作流中记忆注入 token 成本做精确归因，揭示按同价计费下的隐性开销。</p>
-<blockquote><p>Every node in a multi-agent large language model (LLM) workflow retrieves context from memory and injects it into its prompt, where those injected tokens are billed as input tokens at the same per-token price as the system prompt and the user query. Production observability tools report total token cost but do not separate the tokens a node generates from the tokens it is handed, so this component of the bill is invisible to the teams paying it. We introduce the Total Cost of Agency (TCA), a decomposition of multi-agent workflow cost into base prompt, inference, memory injection, miss penalty and context-accumulation components, and an exact attribution method: a two-pass, non-billable token count that measures injected tokens directly rather than estimating them from word-count proxies. On a 200-task enterprise benchmark executed against real model APIs, memory injection accounts for 13.6 percent of the variable cost a compile-time optimizer can act on, about 12 percent of the full billed cost, and its share rises from a structural zero at workflow depth one to 27.6 percent at depth six. Injected tokens grow linearly with depth over the measured range (R^2 = 0.9974, depths two thr…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：多 agent LLM 工作流中，每个节点从记忆注入上下文的 token 被按输入 token 计费，但现有监控工具不分离这部分成本，团队对这项开销完全无感。</p>
+<p><strong>方法</strong>：提出 TCA（Total Cost of Agency）成本分解框架和精确归因方法——通过两遍非计费 token 计数直接测量注入量，而非用词数代理估算。</p>
+<p><strong>关键数字</strong>：记忆注入占可变成本的 13.6%，占总计费成本约 12%；占比随工作流深度从 0%（深度 1）线性增长至 27.6%（深度 6，R²=0.9974）；将检索窗口从 32 条降至 2 条可减少注入 token 28.7%。</p>
+<p><strong>为什么值得看</strong>：首次将多 agent 系统中的"隐形成本"透明化，并证明它是可控的——只需调整检索窗口即可显著降低。</p>
+<p><a href="https://arxiv.org/abs/2609.23790">https://arxiv.org/abs/2609.23790</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.23790">阅读原文 ↗</a></p>
 </body>
 </html>

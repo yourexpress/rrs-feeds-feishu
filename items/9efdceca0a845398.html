@@ -22,9 +22,11 @@
 <h1>The Roadmap to Mastering LLM Inference Optimization</h1>
 <p class="meta-line">DeviceKick · 2026-09-22 · 技术博客</p>
 <img class="hero" src="https://devicekick.com/wp-content/uploads/2026/09/the-roadmap-to-mastering-llm-inference-optimization-1024x576.webp" alt="" referrerpolicy="no-referrer">
-<p>LLM 推理优化综述（PagedAttention/连续批处理/推测解码/P-D 分离），无新结果</p>
-<blockquote><p>The Roadmap to Mastering LLM Inference Optimization</p><p>The deployment of large language models (LLMs) has shifted from a novelty to a critical infrastructure requirement for modern enterprises, yet the bridge between a functional model and a production-ready application remains fraught with performance bottlenecks. While achieving acceptable output quality is often considered a solved problem, the engineering challenges of latency, cost-efficiency, and system reliability persist. As request volumes grow, standard implementations often fail, leading to ballooning operational costs and degradation in user experience. Inference optimization has consequently emerged as a high-stakes discipline, focusing on maximizing the utility of existing hardware—typically GPUs—without the necessity of expensive model retraining.</p><p>The Anatomy of the Inference Bottleneck</p><p>To understand the current state of LLM performance, one must look at the two-phase nature of the inference process: the prefill phase and the decode phase. The prefill phase, also known as the prompt processing stage, involves computing the key and value tensors for the entire input sequence simultaneously. Because this phase is highly parallelizable, it is compute-bound, meaning the limiting factor is the raw mathematical throughput of the GPU.</p><p>Conversely, the decode phase is autoregressive, meaning each generated token is dependent on the tokens that preceded it. This requirement makes parallel processing within a single sequence impossible, shifting the bottleneck from raw compute to memory bandwidth. The GPU spends a disproportionate amount of time moving data from high-bandwidth memory (HBM) to its processing cores, making memory access speed the primary constraint on throughput.</p><p>…</p></blockquote>
-<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><strong>核心话题</strong>：LLM 推理优化的工程全景——从 prefill/解码两阶段的瓶颈本质，到 KV Cache 管理、PagedAttention 等关键技术演进。</p>
+<p><strong>要点</strong>：prefill 阶段受限于 GPU 算力（compute-bound），解码阶段受限于显存带宽（memory-bound）；PagedAttention 借鉴操作系统虚拟内存分页思想实现 KV Cache 的非连续存储，大幅减少 GPU 显存浪费。</p>
+<p><strong>关键数字</strong>：KV Cache 随 batch size 和序列长度线性增长，128K+ 长上下文下显存开销已成为可扩展性的最大瓶颈，即使 H100 也很快耗尽 VRAM。</p>
+<p><strong>为什么值得看</strong>：系统梳理了推理优化的核心瓶颈与解决方案演进，适合想快速建立全局认知的工程实践者。</p>
+<p><a href="https://devicekick.com/the-roadmap-to-mastering-llm-inference-optimization/">https://devicekick.com/the-roadmap-to-mastering-llm-inference-optimization/</a></p>
 <p><a class="origin" href="https://devicekick.com/the-roadmap-to-mastering-llm-inference-optimization/">阅读原文 ↗</a></p>
 </body>
 </html>

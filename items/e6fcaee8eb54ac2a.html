@@ -22,9 +22,11 @@
 <h1>Presage: Prefetch Search via Agent-Guided Experiments</h1>
 <p class="meta-line">arXiv (cs.AR) · 2026-09-22 · 论文PDF</p>
 
-<p>提出 Presage，用 Agent 引导实验自动搜索软件预取插入点，替代耗时的手工预取优化。</p>
-<blockquote><p>Data prefetching is an established technique to mitigate cache miss latency and keep the processor saturated with data. Software exists in a unique position to issue prefetches, having algorithmic knowledge of the workload at hand. However, inserting software prefetches is a time consuming, unpredictable task, with a high degree of sensitivity to microarchitecture or future code changes. While several compiler- and FDO-based approaches insert and tune software prefetches automatically, they use heuristics that do not generalize and do not consider issues that arise in large codebases. In this paper, we show that semantic understanding and reasoning about a program is a vital component in inserting effective software prefetches. We also identify that prefetching at the scale of large codebases poses new challenges, including prefetch codependence and interference. To remedy this, we build Presage, a system that leverages the semantic reasoning of Large Language Models to insert effective software prefetches. Presage processes a workload through a custom agent harness specifically designed to navigate the wide space of potential prefetches on large-scale workloads. First, a proposer …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：软件预取（prefetch）能有效缓解缓存未命中延迟，但手动插入预取指令耗时且对微架构变化敏感，现有编译器方法泛化性差。</p>
+<p><strong>方法</strong>：Presage 用 LLM 的语义推理能力驱动预取插入——提议 agent 识别候选点，优化 agent 在循环中迭代改进，组合 agent 处理预取间依赖与干扰。</p>
+<p><strong>关键数字</strong>：在 81 个负载上几何平均性能提升 10%，SPEC CPU 2026 上降低 2.7% 运行时间（此前 SOTA 失败），相对 SOTA 评测套件提升 17%（SOTA 为 10%）。</p>
+<p><strong>为什么值得看</strong>：LLM + 编译器优化的交叉应用，用语义理解解决了启发式方法无法泛化的难题，在大规模代码库预取上开辟了新范式。</p>
+<p><a href="https://arxiv.org/abs/2609.22636">https://arxiv.org/abs/2609.22636</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.22636">阅读原文 ↗</a></p>
 </body>
 </html>

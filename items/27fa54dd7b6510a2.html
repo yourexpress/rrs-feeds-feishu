@@ -22,9 +22,11 @@
 <h1>ScaleMPA: Rethinking Scalable RRT* Acceleration With a Grid-Native Representation</h1>
 <p class="meta-line">arXiv (cs.AR) · 2026-09-22 · 论文PDF</p>
 
-<p>ScaleMPA：用网格原生表示重新思考 RRT* 加速，降低端到端复杂度并提升并行性。</p>
-<blockquote><p>Real-time motion planning remains challenging in large and high-dimensional environments. Prior acceleration of RRT* follows tree-centric state organization, which reduces per-query cost but preserves superlinear end-to-end complexity and limits parallelism through structural dependencies. This paper presents ScaleMPA, a motion-planning accelerator that rethinks RRT* with a grid-native representation. By replacing hierarchical traversal with direct grid-based access, ScaleMPA reduces the planner critical path and exposes fine-grained parallelism. To make this reformulation practical under sparse high-dimensional planning, ScaleMPA further proposes a multi-resolution grid search engine and a hash-grid memory system. Implemented in 28 nm CMOS, ScaleMPA achieves millisecond-level planning latency and delivers 4.7$\times$--44.4$\times$ speedup over state-of-the-art motion-planning accelerators.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：RRT* 运动规划加速的现有方法遵循树中心状态组织，保留了超线性端到端复杂度，且结构依赖限制了并行性。</p>
+<p><strong>方法</strong>：ScaleMPA 用网格原生表示替代分层遍历，实现直接网格访问以暴露细粒度并行；配合多分辨率网格搜索引擎和哈希网格内存系统。</p>
+<p><strong>关键数字</strong>：28 nm CMOS 实现，达到毫秒级规划延迟，相对 SOTA 运动规划加速器提速 4.7×~44.4×。</p>
+<p><strong>为什么值得看</strong>：彻底重新思考了 RRT* 的底层表示——把树换网格，换来的是关键路径的缩短和大规模并行的可能。</p>
+<p><a href="https://arxiv.org/abs/2609.24497">https://arxiv.org/abs/2609.24497</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.24497">阅读原文 ↗</a></p>
 </body>
 </html>

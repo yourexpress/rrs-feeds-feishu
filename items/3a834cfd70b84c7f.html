@@ -22,9 +22,11 @@
 <h1>NAVIR: Neuromorphic Audio-Visual Speech Recognition for Robust Human-Robot Interaction on Edge Hardware</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-22 · 论文PDF</p>
 
-<p>NAVIR：面向边缘硬件的神经形态音视频语音识别，用唇动线索对冲工业环境强噪声。</p>
-<blockquote><p>Voice-controlled interaction in industrial settings is hampered by acoustic noise, which severely degrades audio-only speech recognition. Audio-visual speech recognition (AVSR) addresses this by fusing lip-motion cues with the audio stream, but state-of-the-art pipelines rely on three-dimensional convolutions, recurrent units, and attention modules that exceed the budget of typical edge devices. We present NAVIR, an end-to-end AVSR system targeting the BrainChip Akida neuromorphic processor, which natively supports only sequential two-dimensional convolutional inference. The pipeline factorises spatial and temporal encoding into separate AkidaNet-based modules: a per-frame visual encoder, a temporal video encoder, and a spectrogram audio encoder, fused by a lightweight predictor head and decoded by constrained beam search. Models are trained with connectionist temporal classification on noise-augmented audio and then fine-tuned with quantization-aware training. On the GRID benchmark, the quantized audio-visual model reaches 14.0% word error rate (WER) under noise on the unseen-speaker split and 3.3% WER on the overlapped-speaker split, against 22.5% and 11.8% for audio-only baselin…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：工业场景中的嘈杂环境严重削弱纯音频语音识别，而现有音视频融合方案计算开销过大，无法在边缘设备运行。</p>
+<p><strong>方法</strong>：NAVIR 面向 BrainChip Akida 神经形态处理器，将空间与时序编码拆分为独立模块，用 CTC 训练 + 量化感知微调，通过约束 beam search 解码。</p>
+<p><strong>关键数字</strong>：量化版在噪声下词错误率 14.0%（纯音频基准 22.5%），指令准确率 98.6%；脉冲版本能效为 ANN 的 13 倍，推理能耗约为树莓派 CPU 的 1/5、笔记本 GPU 的 1/100。</p>
+<p><strong>为什么值得看</strong>：首个在神经形态硬件上跑通完整多模态 AVSR 流水线，为工业边缘语音交互提供了实际可行方案。</p>
+<p><a href="https://arxiv.org/abs/2609.24391">https://arxiv.org/abs/2609.24391</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.24391">阅读原文 ↗</a></p>
 </body>
 </html>

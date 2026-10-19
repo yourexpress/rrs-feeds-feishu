@@ -22,9 +22,11 @@
 <h1>SAGE: Optimal-Stopping Peer Selection for Decentralised Federated Learning</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-22 · 论文PDF</p>
 
-<p>SAGE：用最优停时理论做去中心化联邦学习的 peer 选择，按区分难度自适应分配探测预算。</p>
-<blockquote><p>Decentralised federated learning replaces server aggregation with peer-to-peer model exchange, making collaborator selection a local decision under uncertainty. Fixed probe budgets waste effort on easy choices yet fall short when peers are hard to distinguish. We propose SAGE (Sequential Anchor-Gated Exchange), an optimal-stopping peer selector under a one-model-bearing-exchange budget. A receiver scores candidate neighbours on receiver-owned anchor evidence and selects once an advantage is certified. It continues probing only while further evidence repays its cost, and otherwise falls back to random gossip. We show that the stopping problem admits an optimal rule attained at a finite stage, and that the anchor schedule is order-optimal in the peer-risk gap and the confidence level. We further show that the selector never returns a peer worse than random gossip with high probability, and prove that no such guarantee holds for selectors that commit without a certificate. A separability threshold follows, below which no probing budget improves on gossip. Experiments span two image benchmarks, two graph families and three heterogeneity levels. Selectors that always act on their eviden…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：去中心化联邦学习中，节点需本地选择协作对等方，固定探测预算要么浪费在简单选择上、要么不足以区分困难的候选。</p>
+<p><strong>方法</strong>：SAGE 提出最优停止对等选择器——接收方用锚定证据对候选打分，一旦优势被认证即停止探测，否则回退到随机 gossip。</p>
+<p><strong>关键数字</strong>：SAGE-OS 用比固定预算少 75.5% 的证据即匹配 gossip 效果，通信开销为两种已发表选择器的一半。</p>
+<p><strong>为什么值得看</strong>：核心洞察不是"选哪个对等方"而是"证据是否足以做出选择"，这种最优停止视角为去中心化 FL 提供了全新的决策框架。</p>
+<p><a href="https://arxiv.org/abs/2609.23773">https://arxiv.org/abs/2609.23773</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.23773">阅读原文 ↗</a></p>
 </body>
 </html>
