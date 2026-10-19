@@ -22,9 +22,11 @@
 <h1>Explicit State and Resource Contracts for Low-Precision Pipeline Parallel Training under Captured Graphs</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-22 · 论文PDF</p>
 
-<p>为 CUDA Graph 捕获下的 FP8 低精度流水线并行训练建立显式状态与资源契约，解决 scaling 状态与静态虚地址冲突。</p>
-<blockquote><p>CUDA Graphs eliminate launch overheads by replaying tensor operations over static virtual addresses. However, FP8 pipeline training continuously alters the scaling states, microbatches, and deferred backward tasks that those fixed addresses represent. Split-backward schedules (e.g., 1F1B, Zero-Bubble) decouple input-gradient ($dI$) and weight-gradient ($dW$) computations to minimize bubbles, breaking traditional LIFO lifecycles. Standard dataflow graphs cannot inform the runtime of hidden numerical updates, non-LIFO work ownership, or cache validity, leading to silent cross-stream data corruption. We present QEffect, an explicit state and resource contract runtime for low-precision pipeline training. QEffect formalizes four foundational invariants: (1) temporal serialization of hidden scaling updates, (2) generational ownership of retained backward resources, (3) validity versioning for cached weights across optimizer boundaries, and (4) bidirectional caller-graph stream completion synchronization. These invariants uniformly govern eager and captured execution, allowing ephemeral graph resources to be cleanly rebuilt across process restarts. Leveraging work-ownership semantics, we …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> CUDA Graphs 通过在静态虚地址上复放 tensor 操作消除 launch overhead；但 FP8 流水线训练持续改变 scaling state、microbatch 和延迟 backward 任务，固定地址对应的状态会变化。split-backward（1F1B、Zero-Bubble）打破 LIFO 生命周期，标准 dataflow 图无法告知运行时隐藏数值更新、非 LIFO work 所有权、缓存有效性，导致静默跨流数据损坏。</p>
+<p><strong>方法</strong> 提出 QEffect：明确的状态与资源契约运行时；形式化 4 个不变量（hidden scaling 更新的时序序列化、retained backward 资源的代际所有权、optimizer 跨边界的 cache validity、双向 caller-graph 流完成同步）；基于 work-ownership 引入 affine 直接梯度放置，去除冗余内存拷贝。</p>
+<p><strong>关键数字</strong> NVIDIA H800 上 captured Transformer 层相对 eager 执行加速 1.82–2.79×；affine 直接梯度放置额外带来 1.132× 加速，每 rank-step 减少 96 次矩阵拷贝；与 TorchTitan + NVIDIA Transformer Engine 集成时维持与原生基线的 bitwise 一致性。</p>
+<p><strong>为什么值得看</strong> 解决 FP8 pipeline + CUDA Graphs 的隐藏陷阱；对大规模低精度分布式训练的系统层稳定性有借鉴价值。</p>
+<p><a href="https://arxiv.org/abs/2609.23536">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.23536">阅读原文 ↗</a></p>
 </body>
 </html>

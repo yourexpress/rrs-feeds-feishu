@@ -22,9 +22,11 @@
 <h1>KerColle: Unlocking Fine-Grained GPU Concurrency in Vision-Language-Action Models</h1>
 <p class="meta-line">arXiv (cs.AR) · 2026-09-22 · 论文PDF</p>
 
-<p>提出 KerColle，解锁视觉-语言-动作（VLA）模型 VLM 与动作头两阶段间的 GPU 细粒度并发，提升机器人控制所需推理吞吐。</p>
-<blockquote><p>Vision-Language-Action (VLA) models have emerged as foundational models for next-generation robotics. High VLA inference throughput is critical for meeting the control-rate requirements of robots. VLA models comprise two phases, a vision-language model (VLM) and an action head, that can be decoupled and executed asynchronously and concurrently across independent robot requests. Through a detailed characterization of four state-of-the-art VLAs, we observe that GPUs are severely underutilized in VLA inference as the Cooperative Thread Array (CTA) scheduler of GPU is unable to fully overlap the two independent phases of VLA execution. We identify that this inefficiency is caused by head-of-line blocking in the hardware thread-block dispatcher. We demonstrate that prior scheduling frameworks do not address the challenges posed by VLA concurrency. First, the independent phases across different robot requests each comprise numerous kernels, and at any given time, there are different combinations of kernels that are executed in parallel. This makes static or ahead-of-time scheduling policies largely ineffective. Second, many of the action-head operators are short-running kernels and there…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> VLA（Vision-Language-Action）模型是下一代机器人基础模型，但推理吞吐必须满足机器人控制率要求。VLA 分 VLM 与 action head 两阶段，可解耦异步并发。实测 4 个 SOTA VLA：GPU 严重欠利用，原因是 GPU 的 CTA 调度器无法充分重叠两阶段——硬件 thread-block 派发器的 head-of-line blocking 造成。</p>
+<p><strong>方法</strong> 提出 KerColle 轻量 GPU 调度框架：基于在线 Streaming Multiprocessor 利用率与各 kernel 资源需求，动态共调度以同时 ① 缓解 head-of-line blocking、② 与互补资源需求的 kernel 共调度来高效重叠两阶段。</p>
+<p><strong>关键数字</strong> 模拟 2 种 GPU 架构、4 个 SOTA VLA 模型：吞吐最高提升 28%。</p>
+<p><strong>为什么值得看</strong> 揭示 VLA 推理 GPU 利用率低的根因，并给出在 edge GPU 资源约束下提升吞吐的实用调度方案。</p>
+<p><a href="https://arxiv.org/abs/2609.22335">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.22335">阅读原文 ↗</a></p>
 </body>
 </html>

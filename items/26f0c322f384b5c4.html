@@ -22,9 +22,11 @@
 <h1>Extreme-Scale Ising Machines with Cluster Mean-Field Theory</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-22 · 论文PDF</p>
 
-<p>用簇平均场理论（CMFT）划分大规模交互图，突破模拟/数字伊辛机的设备容量与跨设备通信成本限制。</p>
-<blockquote><p>Scaling analog and digital Ising machines to larger problems requires overcoming finite device capacity and the cost of communication between devices. We present cluster mean-field theory (CMFT), a framework that partitions a large interaction graph into clusters sized to fit available hardware. Each cluster performs local updates independently, while interactions across cluster boundaries enter through periodically updated effective biases computed from boundary-spin averages. To reduce the error introduced by fixed cluster boundaries, we introduce dynamic partitioning, which cycles through multiple partitions so that interactions approximated by mean fields at one stage can act through instantaneous spins at another. On three-dimensional spin glasses and planted Pegasus instances, dynamic CMFT exhibits power-law decay of residual energy over sweep budgets. This shows that solution quality continues to improve with computational effort despite the mean-field approximation. An automated graph partitioner combined with a weighted recovery ratio provides a practical heuristic for selecting partition combinations on graphs without natural cut directions. We demonstrate CMFT on four GP…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 把模拟与数字 Ising 机扩展到更大问题要克服有限器件容量与器件间通信成本。</p>
+<p><strong>方法</strong> 提出 cluster mean-field theory (CMFT)：将大交互图按硬件容量分簇，每簇独立局部更新，簇间交互通过定期更新的 effective bias 注入（基于边界自旋平均）；动态分区循环多种划分，使一种划分下用 mean field 近似的交互在另一种划分下用瞬时自旋作用。</p>
+<p><strong>关键数字</strong> 4 GPU 约 400 万 p-bits 达到与单 GPU 全图实现相当的能量密度，速度提升最高 15×；三维自旋玻璃与 planted Pegasus 实例上残差能量随 sweep 预算呈幂律衰减。</p>
+<p><strong>为什么值得看</strong> 给出「模拟+数字」两端都适用的极大规模 Ising 机实现路径，对组合优化加速器研究是关键参考。</p>
+<p><a href="https://arxiv.org/abs/2609.22645">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.22645">阅读原文 ↗</a></p>
 </body>
 </html>

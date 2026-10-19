@@ -22,9 +22,11 @@
 <h1>MCP-GRANITE Benchmark: GRANularity Interface TEsting for MCP-Based LLM Agents</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-22 · 论文PDF</p>
 
-<p>发布 MCP-GRANITE 基准：系统评估 MCP 工具接口粒度（功能如何分解为工具）对 Agent 选器有效性的影响。</p>
-<blockquote><p>As LLM agents increasingly interact with external tools through standardized protocols such as MCP, tool-interface design becomes a critical yet underexplored factor. How funψtionality is decomposed into tools affects whether an agent can select the right tool and construct valid arguments. This choice is especially consequential at the edge, where resource constraints limit which models can run locally and scaling up is often not an option. We present MCP-GRANITE, an open-source extensible benchmark framework that treats tool-interface granularity as a controlled variable for MCP-based agents, evaluated under edge and IoT scenarios. It comprises 81 multi-step scenarios across 9 domains, instantiated at 4 granularity levels from fine-grained primitive tools to a single tool. We evaluate 9 locally deployed models (268M-20.9B parameters) across 8,748 trials using task completion, tool selection F1, argument accuracy, latency, and resource-usage metrics. Results show that a 4-tool interface offers the best trade-off, improving task completion by 16.4% over fine-grained primitives and 33.6% over a single monolithic tool, while nearly doubling argument accuracy. Model size is only weakl…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM agent 通过 MCP 等标准化协议使用工具时，工具接口设计——功能如何被分解为工具——成为影响 agent 能否选对工具、构造有效参数的关键因素；在边缘/IoT 场景下尤其重要（资源受限、模型规模受限）。</p>
+<p><strong>方法</strong> 公开 MCP-GRANITE 基准框架，把工具接口粒度作为受控变量；81 个多步场景覆盖 9 个域、4 个粒度级（从细粒度原始工具到单一工具）；评估 9 个本地部署模型（268M–20.9B 参数）、共 8,748 次试验。</p>
+<p><strong>关键数字</strong> 4 工具接口最优：任务完成度比细粒度原始工具高 16.4%、比单一整体工具高 33.6%，参数准确率近翻倍；3.2B 模型在最优粒度下表现超过 20.9B 模型在错配粒度下的表现。</p>
+<p><strong>为什么值得看</strong> 把「工具粒度」实证为 MCP agent 的关键设计维度；对边缘/IoT 部署 LLM agent 的工程决策有直接指导。</p>
+<p><a href="https://arxiv.org/abs/2609.24161">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.24161">阅读原文 ↗</a></p>
 </body>
 </html>

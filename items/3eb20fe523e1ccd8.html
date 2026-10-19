@@ -22,9 +22,11 @@
 <h1>Low-Rank Frequency Convolution and Noise-Range Augmentation for Real-Time Pitch Estimation on Edge Devices</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-22 · 论文PDF</p>
 
-<p>面向边缘设备实时基频（pitch）估计：低秩频率卷积网络与噪声范围增广，兼顾小模型、抗噪与帧内实时约束。</p>
-<blockquote><p>Pitch estimation on an edge device is constrained in three ways at once. The model must be small, it must stay accurate when the input is noisy, and one frame must be produced inside the frame period. In this report the Frequency Convolution Network (FrCN) of our earlier work is factored into a low-rank form. The number of parameters is reduced by 35.9%, from 17,787 to 11,397, and accuracy is not reduced, either in domain or on two corpora the model was never trained on. The range of the noise used during training is also shown to dominate the architecture in setting how the model behaves when the interference is severe. When the training noise floor is lowered from +6.02 dB to -20 dB, 0.35 points of clean RPA50 are lost and RPA50 at -20 dB is raised from 2.44 to 22.41. This effect is about two orders of magnitude larger than any architectural effect that was measured. The semi-orthogonal constraint used in TDNN-F is found to be redundant with the normalization inside the bottleneck, and accuracy is reduced when both are applied. Whether the factorization saves time depends on the runtime: in eager PyTorch the factored model is 45% slower, while in a compiled kernel it is 15% faste…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 边缘设备基频估计受三重约束：模型必须小、噪声下必须准、单帧必须在帧周期内完成。</p>
+<p><strong>方法</strong> 把作者前作 FrCN（Frequency Convolution Network）拆为低秩形式；系统研究训练噪声范围对模型抗噪行为的影响；分析 TDNN-F 半正交约束与 bottleneck 归一化的冗余；写一个 83 kB 的小型 C kernel 做部署。</p>
+<p><strong>关键数字</strong> 参数从 17,787 降至 11,397（-35.9%）；训练噪声下限从 +6.02 dB 降至 -20 dB，干净 RPA50 损失 0.35 点、-20 dB 处 RPA50 从 2.44 提升到 22.41；eager PyTorch 慢 45%、编译内核快 15%；C kernel 比 OpenBLAS 在 4 个 CPU 上都快，比 ONNX Runtime 快 3.8×、比 PyTorch 快 13×；27.19 万 held-out 帧上与 PyTorch 输出完全一致。</p>
+<p><strong>为什么值得看</strong> 边缘端 KWS 关键基础设施参考：参数、抗噪、运行时三方面都有可量化结论。</p>
+<p><a href="https://arxiv.org/abs/2609.23340">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.23340">阅读原文 ↗</a></p>
 </body>
 </html>

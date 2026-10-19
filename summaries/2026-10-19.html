@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日精选 · 2026-10-19</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.5em; border-bottom: 1px solid #e5e7eb; padding-bottom: 12px; }
+  h2 { font-size: 1.2em; margin-top: 1.8em; }
+  a { color: #0969da; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .meta { color: #6b7280; font-size: 0.85em; margin-top: 32px; }
+</style>
+</head>
+<body>
+<h1>每日精选 · 2026-10-19</h1>
+<h2>当日检索概况</h2>
+<ul>
+<li>AI 技术报告检索：收录 8 条，入选 7 条（Anthropic 一次性放出 6 篇研究/公告 + 1 篇 Google 递归 agent 论文）</li>
+<li>高效计算文献检索：收录 6 条，入选 4 条（vLLM v0.32.0 大版本 + 3 个 llama.cpp 连续小版本）</li>
+<li>合计入选 11 条</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>Claude reveals ECDSA curve origins</strong>（Anthropic）：Claude 半小时破解 NIST P-192/224/256/384/521 椭圆曲线 seed 的多年悬案——不是 hash，而是 lrand48 以 Unix 时间戳为种子的迭代输出；并非发现后门，反而让社区对曲线无意图弱点更有信心。<a href="https://www.anthropic.com/research/ecdsa-curve-origins">链接</a></li>
+<li><strong>Designing more efficient quantum circuits with Claude</strong>（Anthropic）：给 Claude 8 个跨领域电路的纯语言规范和自动评估器，Claude 自主设计出优于已发表最佳版本的电路，部分案例提升「一个数量级或更多」；FeMoco 模拟所需 Toffoli 门从约 50 万亿降至约 3.4 亿（≈150,000× 缩减）。<a href="https://www.anthropic.com/research/designing-efficient-quantum-circuits">链接</a></li>
+<li><strong>How employment is changing at Anthropic</strong>（Anthropic）：用内部数据 + 17 位员工访谈量化 AI 对自家岗位与招聘的重塑——agent 工时与员工工时比 6:1、初级技术岗招聘占比下降、人均产出提升，员工半数工作时间用于「读 agent 输出」等元工作。<a href="https://www.anthropic.com/research/employment-at-anthropic">链接</a></li>
+<li><strong>The AI expectations gap</strong>（Anthropic）：对比 1.1 万美国公众与 Anthropic 员工的 AI 预期：91% vs 39% 预期 2030 年 AI 能做出诺奖级发现；5% vs 50%+ 预期 AI 2030 年能完成自身 80% 工作——分歧主要来自日常接触 AI 能力强度。<a href="https://www.anthropic.com/research/ai-expectations-gap">链接</a></li>
+<li><strong>Investing in the public benefit</strong>（Anthropic）：宣布 Anthropic Public Benefit Fund，即日承诺 5% 股份（需股东批准），公司价值每较基线增长 50%、董事会可酌情再追加 2%；连同员工匹配与创始人 80% 捐赠承诺，合计约 20% 股份用于公共利益。<a href="https://www.anthropic.com/news/public-benefit-fund">链接</a></li>
+<li><strong>Harness²: Recursive Agent Harnessing for an Open World</strong>（Google Research）：即插即用递归 agent 框架，任务级 Propose-Probe-Compose 递归 + harness 级递归，无需 ground-truth 验证器即可在 3 个专业基准上稳定获益（WorkBuddy-Bench +11.5、JobBench +4.5、LAB +11.8pp）。<a href="https://arxiv.org/abs/2610.14224">链接</a></li>
+<li><strong>vLLM v0.32.0</strong>（GitHub Releases）：814 commits / 363 贡献者的大版本；NVFP4 KV 缓存全架构铺开（SM8x/90/12x、Sparse attention）、GLM-5.x 默认 FP8 KV 显存减半、ROCm 4-bit ultraquant KV 密度约 FP8 的 2×；新增 POST /v1/systemone 结构化决策端点与通用 hf 工具/推理解析器。<a href="https://github.com/vllm-project/vllm/releases/tag/v0.32.0">链接</a></li>
+</ul>
+<h2>主题速览</h2>
+<p>今日主线是「Anthropic 一次性放出研究矩阵」——就业、预期差距、ECDSA 谜题、量子电路设计、公共利益基金五篇连发，外加一篇 Harness² 递归 agent 论文，构成 AI 能力、社会影响与治理结构的完整图景。高效计算侧是 vLLM v0.32.0 大版本与 llama.cpp 三个连续小版本（b11717 Hexagon HTP 极低比特、b11718 Intel GPU ESIMD 恢复、b11721 qwen4exp 四内核融合为一），整体在「推理全架构低比特化」与「特定模型算子融合」两条线推进。其余收录未入选条目包括 OpenAI 人形机器人项目进展、llama.cpp b11719/b11720。</p>
+<p class="meta">由 RSS 流水线自动生成 · 订阅每日精选 feed 可在阅读器内直接阅读</p>
+</body>
+</html>

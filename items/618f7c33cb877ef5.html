@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>llama.cpp b11721</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>llama.cpp b11721</h1>
+<p class="meta-line">llama.cpp（GitHub Releases） · 2026-10-18 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://opengraph.githubassets.com/e44556229c02ac236d5b927d4a99f2a2f8f62ce3de27475889d6085b19471afc/ggml-org/llama.cpp/releases/tag/b11721" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong> llama.cpp b11721 把 qwen4exp 模型的 SCALE→SIGMOID→SCALE→hc_post 四内核链融合为单个 CUDA 内核。</p>
+<p><strong>要点</strong> 移植 Vulkan 上 PR #29520 的 HC_POST_GATE 融合：hc_combine 直接由原始权重构建 hc_post 的门控模板（2·sigmoid(inject/hc)），dsv4_hc_post_f32 新增 gated template 标记并从原始权重直接计算 scale_out·sigmoid(scale_in·p)，四内核变一内核。</p>
+<p><strong>关键数字</strong> 摘要未给出具体加速比。</p>
+<p><strong>为什么值得看</strong> 算子融合是 GPU 推理性能优化的关键路径之一；该 PR 在 qwen4exp 上展示的具体收益对同类 hybrid 架构模型有借鉴意义。</p>
+<p><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b11721">阅读原文</a></p>
+<p><a class="origin" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11721">阅读原文 ↗</a></p>
+</body>
+</html>

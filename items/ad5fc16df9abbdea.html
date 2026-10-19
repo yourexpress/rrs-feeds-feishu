@@ -22,9 +22,11 @@
 <h1>Leveraging Industrial Foundation Models at the Edge of Particle Physics Detectors via Distillation Learning and Hardware Co-design</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-22 · 论文PDF</p>
 
-<p>通过蒸馏学习与硬件协同设计，把工业基础模型能力下沉到粒子物理探测器端 DAQ 系统的实时特征提取。</p>
-<blockquote><p>Data acquisition (DAQ) systems at future particle physics experiments stand to benefit from the extremes of AI/ML development: large-scale foundation models can enhance the performance of feature extraction algorithms, and small-scale on-detector deployments can enable real-time intelligent data handling. This work provides the first fine-tuning of an industrial foundation model for particle physics DAQ. Starting from the backbone of Google Research's TimesFM (Time Series Foundation Model), we demonstrate fine-tuning on real-time regression tasks for drift chamber trackers and dual-readout calorimeters. Furthermore, the fine-tuned TimesFM model is distilled into a student and co-designed with FPGA implementation to enable these models to run in real-time at future colliders. The fine-tuned distillations meet or exceed the performance of previously published AI/ML solutions for each task. Further, the pipeline of distillation and model compression from TimesFM is generic and can be easily adapted to a variety of 1D waveform tasks across domains.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 未来粒子物理实验的 DAQ 系统同时需要 AI/ML 的两端：基础模型可提升特征抽取，端侧部署可实时处理——但此前没有针对粒子物理 DAQ 的工业基础模型微调工作。</p>
+<p><strong>方法</strong> 以 Google Research 的 TimesFM（时间序列基础模型）为骨架，对漂移室跟踪器与双读出量能器的实时回归任务做微调；之后蒸馏到 student 模型并与 FPGA 实现协同设计，以在 FPGA 上实现实时运行。</p>
+<p><strong>关键数字</strong> 摘要未给出具体精度提升数字；提到蒸馏在每个任务上达到或超过此前发表的 AI/ML 方案。</p>
+<p><strong>为什么值得看</strong> 工业基础模型 + 蒸馏 + 硬件协同设计的端侧落地范本；可迁移到其他 1D 波形任务领域。</p>
+<p><a href="https://arxiv.org/abs/2609.23385">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.23385">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Garlene: Guarded Recursion in Lean</h1>
 <p class="meta-line">arXiv (cs.PL) · 2026-09-22 · 论文PDF</p>
 
-<p>Garlene：在 Lean 中实现 Nakano 守卫递归的类型理论扩展。</p>
-<blockquote><p>Extending the recursion principles of a formal system is an enticing but dangerous endeavour with a well-documented history of leading to consistency bugs. Nakano's guarded recursion is an elegant, type-based approach to soundly extend type theory with a powerful recursion principle. This makes guarded recursion useful for many applications, from programming with infinite structures such as streams to reasoning about advanced programming language features using synthetic guarded domain theory. Sadly, guarded recursion is not directly supported by any major interactive theorem prover, which leaves users of guarded recursion with unmechanised pen-and-paper proofs or mechanisations that depend on unmaintained theorem provers. In this paper, we present an implementation of guarded recursion as an embedded language in Lean consisting of a simply-typed lambda calculus for definitions and a higher-order logic for reasoning. Using Lean's excellent support for metaprogramming, our language allows users to write guarded recursive definitions in an intuitive syntax and to prove properties about them using a dedicated proof mode. We give our language a presheaf model, which we use to prove the…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 形式系统的递归原则扩展虽诱人但常导致一致性 bug。Nakano 守卫递归是优雅、类型化扩展，但主流交互式定理证明器都不直接支持，使用者只能写非机械化证明或依赖已不再维护的 prover。</p>
+<p><strong>方法</strong> 提出 Garlene：在 Lean 中以嵌入式语言实现守卫递归；包含一个简单类型 lambda 演算用于定义、一个高阶逻辑用于推理；用 Lean 的元编程能力提供直观语法与专门 proof mode；用 presheaf 模型证明语言 soundness，并允许把守卫递归定义与定理导出到标准 Lean。</p>
+<p><strong>关键数字</strong> 摘要未给出具体基准数字；展示了多个编程与推理案例。</p>
+<p><strong>为什么值得看</strong> 把守卫递归「装进」主流 ITP（Lean），对用合成守卫域理论做程序验证、流处理与共归纳定义的研究者有直接价值。</p>
+<p><a href="https://arxiv.org/abs/2609.24345">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.24345">阅读原文 ↗</a></p>
 </body>
 </html>

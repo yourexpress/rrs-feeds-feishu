@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harness²: Recursive Agent Harnessing for an Open World</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Harness²: Recursive Agent Harnessing for an Open World</h1>
+<p class="meta-line">Google Research（google-research） · 2026-10-14 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LLM agent 的能力既取决于底层模型，也取决于其执行 harness（脚手架）。开放世界任务在 harness 设计阶段往往未见过、测试时又是新颖的，缺少 ground-truth 验证器来可靠指导 harness 在线编辑；递归自改进（RSI）过程任务特定、难以泛化。</p>
+<p><strong>方法</strong> 提出 Harness² 即插即用递归框架：任务级递归用对比式 Propose-Probe-Compose 步骤精化当前任务的 harness，无需 ground-truth 验证器，并可并行或串行扩展；harness 级递归从这些编辑中提取经验，更新持续改进 harness。</p>
+<p><strong>关键数字</strong> 3 个专业基准、4 种模型-harness 配置下，WorkBuddy-Bench 提升最高 11.5 分、JobBench 4.5 分、LAB 11.8 百分点；任务级递归预算增大可进一步获益。</p>
+<p><strong>为什么值得看</strong> 把 RSI 从「依赖 ground-truth」扩展到开放世界无验证器场景，对 agent 自改进方向是可落地的实证，4 个具体基准增益可作基线。</p>
+<p><a href="https://arxiv.org/abs/2610.14224">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.14224">阅读原文 ↗</a></p>
+</body>
+</html>

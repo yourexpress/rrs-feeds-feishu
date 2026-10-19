@@ -22,9 +22,11 @@
 <h1>If You Hear It, Help Find It: Orthogonal Knowledge Distillation for Open-Vocabulary Audio-Visual Event Localization</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-22 · 论文PDF</p>
 
-<p>面向开放词汇音视频事件定位的正交知识蒸馏：融合时间边界可靠性不同的多教师监督信号。</p>
-<blockquote><p>Open-vocabulary audio-visual event localization (OV-AVEL) grounds a text-queried event in time from video, audio, and language. The supervision sources available to this task can differ in temporal-boundary reliability: on OV-AVEBench, our configured visual teacher gives more reliable boundary cues than the configured audio teacher, although the latter is a strong pretrained audio model and remains semantically informative. This is a setting-specific diagnostic rather than a universal ranking of vision and audio. We formulate the resulting challenge as supervision placement: which teacher signals may shape the localization decision, and which should remain auxiliary. Based on this view, we propose OV-OrthKD, a reliability-aware asymmetric distillation framework. Visual feature transfer shapes a decision-aligned representation, audio feature transfer enriches a complementary auxiliary subspace, a text prototype anchors seen/unseen category semantics, and an orthogonality loss limits directional overlap between the two teacher-specific projections. The student continues to use both modalities through query-aware fusion at inference, while the default training recipe keeps audio-teach…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Open-vocabulary audio-visual event localization (OV-AVEL) 用文本查询把事件在时间上定位于视频/音频/语言。不同监督源在时间边界可靠性上有差异：本文配置下视觉教师给出更可靠的边界线索，音频教师虽强且语义信息丰富却不如视觉精确——但这是设置相关诊断，并非对视觉/音频的普遍排序。</p>
+<p><strong>方法</strong> 提出 OV-OrthKD（reliability-aware asymmetric distillation）：视觉特征迁移塑形「决策对齐」表示；音频特征迁移丰富互补辅助子空间；文本原型锚定 seen/unseen 类别语义；正交损失限制两个 teacher-specific 投影方向重叠；默认训练不把音频教师监督放在 segment-logit 路径上。</p>
+<p><strong>关键数字</strong> OV-AVEBench 上 OV-OrthKD 取得 0.816 segment AP；F1@0.5 较官方微调基线整体 +2.7 点、unseen 类别 +3.4 点。</p>
+<p><strong>为什么值得看</strong> 把「监督放置」作为 OV-AVEL 的设计维度，对多模态知识蒸馏的可解释性与可调性有方法论价值。</p>
+<p><a href="https://arxiv.org/abs/2609.23376">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.23376">阅读原文 ↗</a></p>
 </body>
 </html>
