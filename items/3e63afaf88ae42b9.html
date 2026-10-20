@@ -22,9 +22,11 @@
 <h1>WaveletECO: A Closed-Loop Physical ECO Platform and a Specialized Local Language Model</h1>
 <p class="meta-line">arXiv (cs.AR) · 2026-09-22 · 论文PDF</p>
 
-<p>WaveletECO：闭环物理 ECO 平台加专用局部语言模型，改进芯片后端 ECO 违例修复中模型决策质量与定向训练。</p>
-<blockquote><p>Engineering change order (ECO) is an important step in repairing timing and electrical violations during the late stages of chip design. Existing Agentic EDA methods primarily focus on tool invocation, with less attention to model decision quality and targeted training. A central challenge in ECO is multi-round decision-making: the model must use the results of each round to determine the next repair action. We propose WaveletECO, which integrates a closed-loop execution platform with large language models to enable agents to execute ECO decisions effectively. We also train a local 9B model through supervised fine-tuning and CPO-SimPO using execution demonstrations and decision-preference data, enabling ECO decision-making with a locally deployed model. Across 594 evaluation runs on 22 designs, WaveletECO-Policy (BF16) and (INT8) score 79.63 and 79.65, respectively, compared with GPT-6 Astra's 77.44. The estimated inference cost of INT8 is about 1/147 of GPT-6 Astra's. These results show that specialized model training supports effective, low-cost multi-round ECO repair, with repair quality retained under INT8 quantization.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 芯片设计后期 ECO（工程变更指令）修复时序/电气违规时，如何提升 LLM agent 的多轮决策质量？</p>
+<p><strong>方法：</strong> 提出 WaveletECO——闭环执行平台 + 本地 9B 模型（SFT + CPO-SimPO 训练），让 agent 根据每轮执行结果决定下一步修复动作；同时提供专门的 ECO 决策训练数据。</p>
+<p><strong>关键数字：</strong> 在 22 个设计上的 594 次评估运行中验证，本地 9B 模型即可做 ECO 决策。</p>
+<p><strong>为什么值得看：</strong> 将 Agentic EDA 从"调工具"升级到"做决策"，且证明了 9B 小模型在垂直领域微调后足以承担复杂决策任务。</p>
+<p><a href="https://arxiv.org/abs/2610.21193">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.23444">阅读原文 ↗</a></p>
 </body>
 </html>

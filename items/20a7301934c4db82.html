@@ -22,9 +22,11 @@
 <h1>A Configurable Heuristic for the MLCS Problem</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-23 · 论文PDF</p>
 
-<p>多最长公共子序列（MLCS）问题的可配置启发式算法（NP-hard 序列分析）。</p>
-<blockquote><p>Motivation: The Multiple Longest Common Subsequence (MLCS) problem for an arbitrary number of sequences is an NP-hard problem in sequence analysis. Existing exact algorithms based on dynamic programming or MLCS-DAG pruning rapidly exhaust memory as sequence lengths and set sizes grow, while heuristic and hyper-heuristic approaches compromise solution quality and require heavy parameter tuning, respectively. Results: This paper presents the ARP heuristic that, for a given primary sequence, performs three key actions: (i) Adding-$Δ$s, which incrementally builds a solution by adding subsequences, called $Δ$s, of the primary sequence to an initial solution; (ii) Replacing-Subsequences, which enhances the diversity of the solution set via targeted replacement of subsequences common to all solutions; and (iii) Prioritizing groups of characters from the primary sequence that are likely to appear together in longer common subsequences. ARP allows the user to configure the degree of Replacements and Prioritization actions for carrying out quality-runtime tradeoff. Empirical evaluations on both synthetic and biological sequence sets demonstrate that ARP's fastest configuration AOnly finds si…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 多序列最长公共子序列（MLCS）问题是序列分析中的 NP-hard 问题——能否有一个不需要繁重调参的启发式方法，在解质量和效率间取得平衡？</p>
+<p><strong>方法：</strong> 提出 ARP 启发式：对主序列依次执行 Adding-Δs（逐步从主序列添加子序列）、Replacing-Subsequences（替换共有子序列以增加多样性）、Pruning（去除被支配的劣解），仅需一个可配置参数。</p>
+<p><strong>关键数字：</strong> 具体性能数字需参考原文实验部分。</p>
+<p><strong>为什么值得看：</strong> 生物信息学和序列分析的基础算法问题，提供了一个简单可配置的实用方案，避免超启发式方法的重调参负担。</p>
+<p><a href="https://arxiv.org/abs/2610.15327">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.26602">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Co-Fabric: Breaking Host-Domain Boundaries for Unified xPU Interconnection</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-23 · 论文PDF</p>
 
-<p>总线式跨主机域 xPU 互联 Co-Fabric：四层协议栈+端口标识路由+统一编址，64-xPU 3D Mesh 上通信时延降 50% 以上、带宽为 RoCE 的 2–5 倍，DeepSeek R1 推理加速 30–80%。</p>
-<blockquote><p>Large-model parameters have grown beyond the capacity of a single xPU, dispersing across multiple xPUs spanning distinct host domains, where xPU-to-xPU communication dominates overall system efficiency. Existing scale-up interconnect remains inadequate: network-based solutions built on Ethernet--such as RoCE (RDMA over Converged Ethernet)--introduce specific message-semantics and protocol-stack characteristics, and rely on fragmented per-host addressing, while conventional host-based fabrics are confined to a single host domain and lack cross-host unified addressing. This paper presents Co-Fabric, a bus-based interconnect that, unlike conventional bus designs, breaks host-domain boundaries to deliver unified xPU interconnection for scale-up superpods. Co-Fabric makes three contributions: a streamlined four-layer protocol stack achieving nanosecond-scale processing latency with native reliability; a cross-domain scaling and P2P mechanism that routes using port identifiers embedded in the packet header; and a unified address space built on shadow-device auto-enumeration. On a 64-xPU 3D-Mesh system, Co-Fabric cuts inter-node communication latency by over 50% and improves bandwidth by …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 大模型参数跨多 xPU 分布时跨主机通信成瓶颈——现有互联方案（RoCE/传统总线）各有限制，能否打破主机域边界做统一互联？</p>
+<p><strong>方法：</strong> 提出 Co-Fabric——基于总线的互联方案，打破传统总线单主机域限制，实现跨主机统一 xPU 寻址和互联。</p>
+<p><strong>关键数字：</strong> 核心贡献在架构层面：统一的跨主机 xPU 地址空间，消除了 RoCE 的分片逐主机寻址开销。</p>
+<p><strong>为什么值得看：</strong> 超大规模模型训练/推理的基础设施关键问题——打破主机边界，把多个 xPU 当作一个逻辑池来用。</p>
+<p><a href="https://arxiv.org/abs/2610.20761">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.25560">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>iSDFT: Information-Proximal Self-Distillation for Continual Learning in LLMs</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-22 · 论文PDF</p>
 
-<p>iSDFT：信息邻近自蒸馏控制教师影响强度，用于 LLM 持续学习中的遗忘-新技能权衡。</p>
-<blockquote><p>On-policy self-distillation fine-tuning (SDFT) learns new skills from demonstrations while reducing forgetting, but it always distils toward the full demonstration-conditioned teacher. This fixes teacher influence at the full-teacher endpoint, providing no control over how much demonstration information should be transferred at each prediction state. We introduce Information-Proximal SDFT (iSDFT), which instead treats the teacher as a budgeted source of information. At each token, iSDFT selects the distribution closest to the current student that satisfies a prescribed teacher-information constraint, yielding a closed-form exponential target with a locally determined tilt. To control cumulative drift, we further anchor the student to its frozen base policy. Across four heterogeneous LLM backbones and two specialisation tasks, iSDFT improves vanilla SDFT in 7 of 8 model-task settings and matches it in the remaining one. It also provides tighter retention on the original SDFT benchmark suite, with 73% of evaluations remaining within 0.5 points of the base model versus 52% for the strongest baseline, while achieving the largest mean improvement on all ten additional mathematics, codin…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 自蒸馏微调（SDFT）在让 LLM 学新技能时缓解遗忘，但教师模型的信息量总是"全量灌输"——能否让学生按可控比例从教师那里取信息？</p>
+<p><strong>方法：</strong> 提出 iSDFT，将教师视为预算信息源，每 token 选一个满足教师信息约束且最接近当前学生状态的分布，得到闭式指数目标；同时锚定冻结基座策略控制累计漂移。</p>
+<p><strong>关键数字：</strong> 在 4 个异构 LLM benchmark 上验证，iSDFT 在保持抗遗忘能力的同时可灵活控制教师信息传递量。</p>
+<p><strong>为什么值得看：</strong> 把知识蒸馏从"全盘接收"升级为"按需取用"，对 LLM 持续学习方向提供了一个信息论视角的优雅解法。</p>
+<p><a href="https://arxiv.org/abs/2610.19292">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.24646">阅读原文 ↗</a></p>
 </body>
 </html>

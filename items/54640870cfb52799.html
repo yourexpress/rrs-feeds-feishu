@@ -23,7 +23,8 @@
 <p class="meta-line">arXiv · 2026-10-20 · 论文PDF</p>
 
 <p>Users who run a memory-bound OpenFOAM case on an AMD EPYC cluster must decide how many nodes to use and how many MPI ranks to place on each core complex.</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<blockquote><p>Users who run a memory-bound OpenFOAM case on an AMD EPYC cluster must decide how many nodes to use and how many MPI ranks to place on each core complex. The fastest choice is often not the cheapest one. This paper revisits our earlier analytical model of this performance and energy trade-off with 560 measured configurations of the motorBike case on five Zen 4 and Zen 5 EPYC processors, including socket power from processor telemetry. On up to four nodes, small meshes are both fastest and cheapest on a single node on most processors. For the largest mesh the largest node count is both the fastest and the cheapest option, because its speedup is superlinear. A genuine trade-off arises only for medium meshes, where full speed costs a median of 20 to 97% more node hours than the cheapest option. The L3 miss rate and the halo traffic per cell are consistent with this pattern. For a new mesh of the same case, the configuration that was optimal on the nearest measured mesh is near optimal in 75 to 85% of the decisions. Running the two configurations it recommends for speed and for cost raises this share to 85 to 90% for runtime and node hours and determines the trade-off with median error…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.23383">阅读原文 ↗</a></p>
 </body>
 </html>

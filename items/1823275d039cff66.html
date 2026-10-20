@@ -22,8 +22,11 @@
 <h1>Peak-Memory Schedules You Can Trust: Exact Realization, Certified Optimality, and the Limits of Recomputation for Inference</h1>
 <p class="meta-line">arXiv · 2026-10-20 · 论文PDF / 每日精选</p>
 
-<p>Peak-Memory Schedules：推理激活峰值调度的精确实现、最优性证明与重计算极限</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题：</strong> 小设备实时推理需要低激活内存但不增加延迟——算子执行顺序是"免费的"内存杠杆，但编译器真的能做到吗？</p>
+<p><strong>方法：</strong> 不再信任编译器重新生成代码后能达到预测峰值，转而 profiling 已生成程序、从程序语句精确建模内存、对语句做排列搜索，证明在分配不依赖历史时总能精确兑现建模峰值。</p>
+<p><strong>关键数字：</strong> PyTorch Inductor 在 54 个 CPU 配置中 22 个未达预测峰值，9 个比原程序更差；GPU 上 50 个中 19 个更差且改变数值结果。</p>
+<p><strong>为什么值得看：</strong> 编译器不靠谱这件事在内存优化上被量化了，方法不依赖特定框架，对任何需要极致内存效率的推理部署都有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.21619">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.23328">阅读原文 ↗</a></p>
 </body>
 </html>

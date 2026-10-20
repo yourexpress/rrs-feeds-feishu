@@ -22,9 +22,11 @@
 <h1>DHSched: Stateless Control for Stateful Real-Time Avatar Serving</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-23 · 论文PDF</p>
 
-<p>实时数字人 serving 的无状态控制面 DHSched：会话重分配不破坏 GPU 有状态执行，支撑弹性扩缩。</p>
-<blockquote><p>Real-time avatar services run long-lived, GPU-backed sessions that transform a continuous text stream into speech, facial motion, rendered video, and RTC media. Elastic operation repeatedly reassigns these sessions across Workers. A reassignment updates shared placement state while the previous GPU runtime and RTC connection remain alive, opening a gap between control-plane assignment and execution authority. A stateful controller serializes ownership by retaining per-session authority, placing that state on the controller's scaling and failover path. We present DHSched, a control plane that manages long-lived stateful sessions through stateless peer Dispatch replicas. DHSched externalizes session ownership as a generation identified by (WorkerID, epoch). Dispatch conditionally commits each generation. Infer-Controller claims and revalidates the same generation before releasing state-advancing input. A stale runtime loses execution authority even if it remains alive. DHSched ranks candidates from periodically refreshed load views while keeping capacity admission authoritative. Recovery advances the same generation path via source-epoch guards and source-independent reconstruction. …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 实时虚拟人服务需长期持有 GPU 会话并反复弹性重分配——控制面的状态管理会成为扩缩容和故障转移的瓶颈。</p>
+<p><strong>方法：</strong> 提出 DHSched，用无状态的对等 Dispatch 副本管理有状态会话：将会话所有权外化为 (WorkerID, epoch) 世代标识，每个 Dispatch 副本条件性地提交分配决策。</p>
+<p><strong>关键数字：</strong> 将有状态控制器的扩缩容和故障转移路径从关键路径上移除。</p>
+<p><strong>为什么值得看：</strong> 实时 AI 服务（数字人、语音助手等）的基础设施难题——如何在保持长连接的同时做到弹性伸缩。</p>
+<p><a href="https://arxiv.org/abs/2610.16885">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.26363">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,8 +22,11 @@
 <h1>PairSight: Characterizing and Predicting Operator-Level Interference in GPU Sharing for DNN Inference</h1>
 <p class="meta-line">arXiv · 2026-10-20 · 论文PDF / 每日精选</p>
 
-<p>PairSight：GPU 共享 DNN 推理的算子级干扰表征与预测</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题：</strong> GPU 共享场景下，多个 DNN 推理任务共驻同一 GPU 时，算子级干扰到底来自哪里？能否做到既可解释又准确的慢化预测？</p>
+<p><strong>方法：</strong> 在 SM 分区下做算子级干扰实验，用硬件计数器追踪到共享内存路径上的争抢是关键根因；提出 PairSight，基于两算子特征联合预测慢化。</p>
+<p><strong>关键数字：</strong> 干扰取决于两个算子各自的内存带宽需求与计算强度组合，仅靠"算力型/内存型"二元分类远不够用。</p>
+<p><strong>为什么值得看：</strong> GPU 共享是降本关键手段，但粗暴的共存策略会引入不可预期的延迟抖动——这篇把干扰溯源到了可预测的算子级。</p>
+<p><a href="https://arxiv.org/abs/2610.22822">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.23086">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Damage Predicts Recovery: When Calibration Data Matters in Compressing Financial LLMs</h1>
 <p class="meta-line">arXiv (cs.CL) · 2026-09-23 · 论文PDF</p>
 
-<p>压缩金融 LLM 何时需要领域校准数据：任务级损伤程度而非领域匹配决定，给出预测信号。</p>
-<blockquote><p>Post-training quantization and pruning rely on a small calibration corpus. Whether specialized domains such as finance require domain-matched calibration data remains unsettled. We argue that the answer depends on the task-level damage caused by compression rather than on domain mismatch. If compression preserves the target capability, changing the calibration corpus has little effect. If compression causes large losses, task-formatted calibration can recover part of the loss. We test this hypothesis across two model families, six compression configurations, three token-matched calibration corpora, and ten financial classification and numerical question-answering tasks. The results support this hypothesis. Quantization largely preserves task performance, and calibration choice has little effect in this case. Pruning reduces numerical QA accuracy by over 40 points. In these damaged settings, another generic corpus does not help, while FinMix, a mixture of financial task examples, recovers a large part of the loss. The link between damage and recovery holds across model families and scales. These findings support a practical rule. Measure task-specific compression damage first, and c…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 金融 LLM 压缩（量化/剪枝）时，校准数据是否必须来自金融领域？还是说关键在于压缩对目标任务造成的"损伤"程度？</p>
+<p><strong>方法：</strong> 两个模型家族 × 六种压缩配置 × 三种 token 匹配校准语料，在十个金融分类和数值问答任务上测试。核心假设：压缩损伤大→领域校准数据能恢复部分损失；损伤小→校准数据选择无所谓。</p>
+<p><strong>关键数字：</strong> 量化基本不损伤任务性能，校准数据选择影响很小；剪枝造成大损伤时，任务格式化的校准数据能恢复部分损失。</p>
+<p><strong>为什么值得看：</strong> 金融 NLP 做模型压缩的实用指南——先看压缩对目标任务的损伤程度再决定是否需要领域校准数据。</p>
+<p><a href="https://arxiv.org/abs/2610.19184">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.26241">阅读原文 ↗</a></p>
 </body>
 </html>

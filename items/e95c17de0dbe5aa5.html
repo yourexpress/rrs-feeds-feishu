@@ -23,7 +23,8 @@
 <p class="meta-line">arXiv · 2026-10-16 · 论文PDF</p>
 
 <p>Standard autoregressive decoding advances one token at a time, even when several upcoming tokens can be predicted together.</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<blockquote><p>Standard autoregressive decoding advances one token at a time, even when several upcoming tokens can be predicted together. We propose CADENCE (Context-Adaptive DEcoding), a generation method that learns both what to draft and how far to draft. Gaussian prediction heads represent future spans as continuous latent vectors, and a shared decoder converts the selected vector into token predictions in parallel. A learned router selects the prediction length from the model's own hidden states and predicted Gaussian parameters, adapting generation granularity to the current context with single-token generation as a fallback. The backbone verifies each proposed continuation and retains the prefix that matches its greedy predictions. Experiments with Llama-3.1-8B-Instruct on Alpaca, GSM8K, and HumanEval show that router-selected positions yield higher draft acceptance than applying the corresponding prediction length everywhere. CADENCE achieves up to 1.3x higher generation throughput than standard greedy decoding.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.22788">阅读原文 ↗</a></p>
 </body>
 </html>

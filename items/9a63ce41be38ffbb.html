@@ -23,7 +23,8 @@
 <p class="meta-line">arXiv · 2026-10-15 · 论文PDF</p>
 
 <p>Data availability sampling (DAS) lets blockchain nodes verify a block's data availability by downloading only a few random pieces of it.</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<blockquote><p>Data availability sampling (DAS) lets blockchain nodes verify a block's data availability by downloading only a few random pieces of it. Its network layer must disseminate each block in time for validators to attest (PUT), store it, and serve any piece on request (GET). A trustless DAS must sustain any number of Byzantine peers. The only known design with this guarantee, Robust Distributed Arrays (RDA), achieves it by full replication: each group of nodes responsible for part of a block stores that part in full, so a single good node per group suffices. The price to pay is a PUT load on the critical path to finality that grows with the network and cannot be tuned, hence the data may not reach validators before the attestation deadline. Coding is the natural remedy, but it was not known when a coded layer remains robust against an unbounded adversary, what it costs, or what it gains. We propose TCDA, a coded layer that is provably robust given enough good nodes, wherever they lie, with a tunable knob: how much of its assigned data each node keeps. Turning the knob trades PUT and storage costs against GET cost. It can be set per data type and adjusted as the good-node population chan…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.22508">阅读原文 ↗</a></p>
 </body>
 </html>

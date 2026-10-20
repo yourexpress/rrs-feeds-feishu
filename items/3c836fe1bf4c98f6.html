@@ -22,9 +22,11 @@
 <h1>When Does Learning Beat Heuristics? A Case Study in Kubernetes Scheduler Score Plugins</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-22 · 论文PDF</p>
 
-<p>用生产集群真实放置决策训练的学习型打分函数能否追平或超越手工调参的 Kubernetes 调度启发式，并分析其局限。</p>
-<blockquote><p>Kubernetes scheduler plugins that score candidate nodes are, in production, hand-tuned heuristics. We ask whether a learned scoring function - trained on real placement decisions from a production cluster trace - can match or exceed these heuristics, and if not, why. We implement an external, HTTP-backed scoring plugin for a widely used scheduler simulator and evaluate two learned models (a Random Forest over engineered features, and a graph neural network encoder over per-job task-dependency graphs) trained on a large-scale production cluster trace. Under standard regression fit (R^2), both models improve modestly but monotonically across four feature-engineering iterations, reaching R^2 of about 0.042. However, on the metric that actually matters for scheduling - Top-1 ranking accuracy, whether the model scores the machine the production scheduler actually chose highest - both learned models are outperformed by a trivial single-feature heuristic (rank by free CPU: 74-84% vs. 65-66% for either model). We show this gap is best explained by objective mismatch: both models were trained with pointwise regression (MSE) rather than a ranking-specific objective, echoing a long-standing d…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> Kubernetes 调度器的节点打分插件一直是手工调参的启发式规则——用真实集群数据训练一个学习型打分函数能否超越它们？</p>
+<p><strong>方法：</strong> 基于大规模生产集群 trace 训练随机森林和 GNN 两种模型，实现为 HTTP 外部打分插件接入调度模拟器，用 Top-1 排名准确率（而非回归 R²）评估。</p>
+<p><strong>关键数字：</strong> 回归 R² 最高约 0.042（提升单调但微小）；但在调度真正关心的 Top-1 排名准确率上，学习模型反而劣于手工启发式。</p>
+<p><strong>为什么值得看：</strong> 这是一个诚实的"机器学习没有赢"的案例研究——在真实生产调度场景中，简单启发式仍然很难被超越，值得做 ML for Systems 的人深思。</p>
+<p><a href="https://arxiv.org/abs/2610.22512">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.22142">阅读原文 ↗</a></p>
 </body>
 </html>

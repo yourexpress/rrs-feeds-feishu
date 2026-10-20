@@ -22,9 +22,11 @@
 <h1>Activation-Energy Pruning for Spiking Neural Networks: Unsupervised Personalization via Spike-Count Saliency</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-23 · 论文PDF</p>
 
-<p>SNN 激活能量剪枝（权重幅值×累计脉冲计数阈值）：面向边缘部署的无监督个性化。</p>
-<blockquote><p>Activation-energy pruning -- removing weights whose product of magnitude and cumulative pre-synaptic spike count falls below a threshold -- was established as an effective unsupervised personalization strategy for conventional deep neural networks~\citep{BINGHAM2025101242}. This paper asks what happens when the same criterion is applied to spiking neural networks (SNNs), where activation energy is not merely a useful heuristic but a literal physical quantity proportional to the metabolic cost of each synapse. The answer is surprising on three counts. First, gradient-based pruning methods that perform competitively on conventional networks (SNIP, GraSP, magnitude pruning) consistently underperform on SNNs, collapsing to near-chance accuracy by $σ= 0.2$ sparsity across all tested architectures and datasets. We trace this to a systematic incompatibility between surrogate-gradient saliency estimation and the binary spike-train representation, though we cannot rule out that alternative surrogate choices or hyperparameter settings might partially mitigate the effect. Second, activation-energy pruning applied to a neuromorphic benchmark \emph{improves} over the source model at high sparsi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 激活能量剪枝对传统 DNN 是无监督个性化有效策略——搬到脉冲神经网络（SNN）上，激活能量从"启发式"变成"真实物理量"，效果会怎样？</p>
+<p><strong>方法：</strong> 将 magnitude × 突触前累积脉冲数（即突触代谢成本的物理量）作为剪枝判据，与传统梯度剪枝方法（SNIP、GraSP、magnitude）在多种 SNN 架构上对比。</p>
+<p><strong>关键数字：</strong> 梯度剪枝方法在 SNN 上全面溃败：σ=0.2 稀疏度时准确率降至接近随机水平；而激活能量剪枝保持显著优势。</p>
+<p><strong>为什么值得看：</strong> SNN 剪枝不该照搬 ANN 的方法——这篇文章用"物理量 vs 启发式"给出了令人惊讶的对比证据。</p>
+<p><a href="https://arxiv.org/abs/2610.16011">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.26167">阅读原文 ↗</a></p>
 </body>
 </html>

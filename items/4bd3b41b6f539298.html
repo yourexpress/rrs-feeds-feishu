@@ -23,7 +23,8 @@
 <p class="meta-line">arXiv · 2026-10-16 · 论文PDF</p>
 
 <p>On-policy distillation (OPD) provides token-level teacher feedback, yet common sampled-token updates assign credit locally and omit the effects of earlier actions on subsequent feedback.</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<blockquote><p>On-policy distillation (OPD) provides token-level teacher feedback, yet common sampled-token updates assign credit locally and omit the effects of earlier actions on subsequent feedback. We introduce \method{} (Group-Relative On-Policy Distillation), which decouples feedback computation from credit assignment by aggregating token feedback into calibrated sequence-level credit. We establish a theoretical basis for this approach by showing that, under ideal on-policy assumptions, broadcasting raw summed feedback to every response token yields an unbiased estimate of the negative gradient of the sequence-level reverse-KL objective. To support effective learning in practice, \method{} discounts later feedback that may become less reliable under distribution shift and uses same-prompt rollout groups to calibrate teacher guidance. It preserves relative response preferences while retaining a controlled fraction of the group mean, which we term collective teacher pressure. Across five Qwen3 teacher--student settings and six mathematical reasoning benchmarks, \method{} outperforms vanilla OPD in macro Avg@K in every setting, including gains of 10.9 and 11.5 percentage points in two settings…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.23042">阅读原文 ↗</a></p>
 </body>
 </html>

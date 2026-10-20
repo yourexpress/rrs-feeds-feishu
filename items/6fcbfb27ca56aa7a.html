@@ -22,9 +22,11 @@
 <h1>CacheDyG: Decoupling Temporal Propagation for Efficient Dynamic Graph Learning</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-23 · 论文PDF</p>
 
-<p>CacheDyG：动态图学习的时间传播解耦+缓存机制，提升动态 GNN 训练推理效率。</p>
-<blockquote><p>Dynamic graphs are widely used to model time-evolving relational systems in real-world applications. Dynamic graph neural networks provide an effective framework for capturing both structural dependencies and temporal dynamics in such data. However, they typically intertwine temporal graph propagation with every optimization epoch and often maintain large trainable representations for each node-time pair. This design repeatedly recomputes largely unchanged historical structures, leading to substantial training and parameter overhead. To address this critical issue, we propose CacheDyG, a Cache-refine framework for efficient Dynamic Graph learning. Specifically, it decouples temporal propagation from routine parameter updates by constructing a time-ordered temporal dependency cache that stores graph-aware node-time representations in non-trainable buffers. During standard training epochs, CacheDyG reads from the cache and updates only a lightweight cache refiner, an adaptive residual gate, and the link predictor. Selective cache refresh further keeps cached representations aligned with the supervised objective while avoiding epoch-wise sparse propagation. Experiments on five dynamic…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 动态图神经网络（DyGNN）在每次优化 epoch 中都耦合时序传播和历史结构重算——能不能解耦以减少冗余？</p>
+<p><strong>方法：</strong> 提出 CacheDyG，将时序传播与常规参数更新解耦：构建时间顺序的时序依赖缓存，存储历史传播结果，后续 epoch 直接从缓存读取而非重算。</p>
+<p><strong>关键数字：</strong> 大量历史结构在训练过程中几乎不变却被反复重算——这是 CacheDyG 的核心优化点。</p>
+<p><strong>为什么值得看：</strong> 动态图学习效率提升的关键思路——缓存优于重算，尤其对长时间跨度的大规模动态图。</p>
+<p><a href="https://arxiv.org/abs/2610.21660">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.25814">阅读原文 ↗</a></p>
 </body>
 </html>

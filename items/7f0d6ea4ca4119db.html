@@ -23,7 +23,8 @@
 <p class="meta-line">arXiv · 2026-10-16 · 论文PDF</p>
 
 <p>Agentic large language model (LLM) applications turn one user request into a sequence of model and tool calls over a growing context.</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<blockquote><p>Agentic large language model (LLM) applications turn one user request into a sequence of model and tool calls over a growing context. Retaining this context's key-value (KV) state in GPU memory lets later calls reuse it instead of recomputing it, but at fleet scale this needs substantial memory. We characterize four production Microsoft M365 workload traces (Deep Research, Enterprise Assistant, Coding Agent and Enterprise Chat) spanning more than 121 million model calls. In Deep Research, the application issues 89% of model calls and the median context grows from about 10K to 68K tokens by the 30th call. About 80% of context tokens are served from the prefix cache. With the public Llama-2-70B KV layout standing in for confidential models, one 99th-percentile Deep Research session exceeds the 80 GB HBM of an NVIDIA H100, and holding all live sessions at their peak needs an estimated 501.8 TB of HBM, although inference occupies only 5.6% of that retention time. Trace-driven replay shows that a one-hour idle cap cuts this ceiling by 3.6x while raising the share of calls that recompute context only from 4.07% to 4.53%. Under tighter budgets, eviction alone is insufficient: at one tenth…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.22863">阅读原文 ↗</a></p>
 </body>
 </html>

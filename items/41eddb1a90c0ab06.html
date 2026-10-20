@@ -22,9 +22,11 @@
 <h1>Who Pays for the KV Cache? Attributing Shared AI Inference Spend Across Kubernetes and LLM Provider Bills</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-22 · 论文PDF</p>
 
-<p>unalloc：打通 Kubernetes 计费、网关日志与 API 供应商账单的开源工具，精确归因共享 AI 推理的 KV cache 成本。</p>
-<blockquote><p>Organizations pay for AI through disconnected ledgers: Kubernetes allocations for self-hosted inference, gateway logs, and per-token bills from API providers. We present unalloc, an open-source tool that joins OpenCost, LiteLLM, OpenAI and Anthropic cost data into one exact ledger and reports the share of spend with no owner, and use it to study where attribution breaks at the seams between these systems. Five case studies run inference for real or simulate it: a vLLM-style serving simulator with paged KV memory and prefix caching; a PyTorch transformer serving a multi-tenant trace with a real KV cache; tensor- and pipeline-parallel inference on torch.distributed; the unmodified CLI against mock provider APIs; and four downstream use cases. At the seams, in a constructed multi-pod deployment scenario -- one month of synthetic OpenCost allocations, not observed billing data -- owner labels set only on LeaderWorkerSet leader pods leave 66% of that deployment's GPU bill unowned, and the natural fallback key assigns 61% of it to a Helm chart name while the headline unallocated share falls to 4%; enabling every source double counts all gateway spend; and reading one page of a billing AP…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 企业的 AI 推理支出分散在 Kubernetes 资源账单、API 调用日志和 token 计费三套账里——谁能说清每笔钱花在了谁身上？</p>
+<p><strong>方法：</strong> 开源工具 unalloc，将 OpenCost、LiteLLM、OpenAI 和 Anthropic 的成本数据整合为一张精确账本，找出"无主支出"（share with no owner）。</p>
+<p><strong>关键数字：</strong> 在多 pod 部署场景中，KV cache 前缀共享导致大量 GPU 内存消费无法归因到具体租户——这正是无主支出的主要来源。</p>
+<p><strong>为什么值得看：</strong> AI 成本归因是 FinOps 的核心难题，这篇直接给出了可复现的开源工具和 5 个真实场景的 case study。</p>
+<p><a href="https://arxiv.org/abs/2610.19459">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.24991">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Agentic Algorithm Engineering: Improving Shared-Memory Exact Minimum Cuts</h1>
 <p class="meta-line">arXiv (cs.AI) · 2026-09-23 · 论文PDF</p>
 
-<p>用 agentic 工作流加速共享内存精确最小割算法的算法工程实践。</p>
-<blockquote><p>The minimum cut problem for an undirected edge-weighted graph asks us to divide its set of nodes into two blocks while minimizing the weighted sum of the cut edges. Over the last years, we engineered a range of fast algorithms for this problem. Our fastest exact algorithm uses an inexact algorithm to obtain a better bound for the problem, reductions that depend on this bound, improved data structures and parallel contraction routines. It is available in the open-source package VieCut and, on real-world instances, outperformed the previously fastest solvers by a factor of up to 2.5 sequentially and up to 12.9 when run in parallel. We improve this algorithm using agentic algorithm engineering (AAE), a methodology that we introduce here, in which autonomous large language model agents run the algorithm engineering cycle on an existing code base: they form hypotheses about where running time is lost, implement them, benchmark the result on a fixed instance set and keep or discard the change. Even though we had already tuned our algorithm by hand extensively, the agent finds significant optimizations, in particular on the DIMACS core instances: factors of 1.28 (sequential) and 1.63 (32 …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 最小割问题的最快精确算法还能更快吗？能否让 LLM agent 自动做算法工程优化？</p>
+<p><strong>方法：</strong> 提出 Agentic Algorithm Engineering (AAE) 方法论：LLM agent 自主运行算法工程循环——分析 profile、提出改进、实现并验证。用此方法优化 VieCut 中已高度优化的共享内存并行最小割算法。</p>
+<p><strong>关键数字：</strong> VieCut 原本比前最快求解器快 2.5×（串行）和 12.9×（并行）；经 AAE 进一步优化后仍有提升。</p>
+<p><strong>为什么值得看：</strong> "算法工程"本身被自动化了——这是 AI 辅助计算机科学研究的范式级演示，不局限于最小割这一个问题。</p>
+<p><a href="https://arxiv.org/abs/2610.19998">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.07204">阅读原文 ↗</a></p>
 </body>
 </html>

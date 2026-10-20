@@ -22,8 +22,11 @@
 <h1>Memory Bandwidth, Not FLOPs: Profiling and Accelerating Query-Based Segmentation Decoders on Edge GPUs</h1>
 <p class="meta-line">arXiv · 2026-10-20 · 论文PDF / 每日精选</p>
 
-<p>Memory Bandwidth Not FLOPs：边缘 GPU 上查询式分割解码器的带宽瓶颈剖析与加速</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<p><strong>研究问题：</strong> 边缘 GPU 上查询式分割模型（FastInst、Mask2Former）的 Transformer 解码器性能瓶颈究竟在算力还是内存带宽？</p>
+<p><strong>方法：</strong> 在 Jetson Orin Nano 上用 FP16 roofline 分析 + 硬件 DRAM 计数器做细粒度剖析，确认瓶颈后提出 CompactInst：用无参数 4× 空间池化压缩解码器内激活传输量，辅以双卷积精化头恢复空间细节。</p>
+<p><strong>关键数字：</strong> 非 Tensor Core 聚合仅占 CUDA-core 理论峰值的 2.5%–6%，却吃掉解码器 53%–70% 时间和 61%–71% 的字节搬运；单 kernel 可占满 90% DRAM 带宽。CompactInst 在 Jetson Orin Nano 上解码加速明显。</p>
+<p><strong>为什么值得看：</strong> 常见误区是"边缘推理瓶颈在算力"，本文用硬数据证明是内存带宽，且给出了无需重训的轻量解决方案。</p>
+<p><a href="https://arxiv.org/abs/2610.22377">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.22377">阅读原文 ↗</a></p>
 </body>
 </html>

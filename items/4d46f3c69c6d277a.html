@@ -22,9 +22,11 @@
 <h1>Verification Reward Model for Reinforcement Learning in Chip Design Verification</h1>
 <p class="meta-line">arXiv (cs.AR) · 2026-09-22 · 论文PDF</p>
 
-<p>提出验证奖励模型（VRM）框架，用版本化验证契约训练语言模型生成与修复芯片验证 artifact。</p>
-<blockquote><p>We propose a Verification Reward Model (VRM) framework for training language models to create and repair chip verification artifacts. The central object is a versioned verification contract that binds requirements, permissible stimulus, observation boundaries, reference behavior, evaluation budgets, and acceptance criteria. Compiler, simulator, formal, mutation, coverage, and expert-review evidence are converted into auditable records. Deterministic acceptance checks remain outside the learned model. A learned outcome model predicts expensive future evidence from the specification, the generated artifact, and explicitly masked partial evidence; a semantic critic identifies evidence-supported weaknesses; a deterministic reward composer translates the resulting quality vector into task-conditioned training rewards. Extensions include paired clean/fault interventions, marginal fault-discovery rewards, uncertainty-aware evaluation scheduling, and a quarantined cross-domain learning loop. Evaluation emphasizes independently validated fault detection, false alarms, generalization across design families, and total cost to reach a specified quality level. We describe a first experiment on …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 芯片设计验证中，如何用强化学习训练语言模型来创建和修复验证构件，同时保证每一步决策有可审计的证据链？</p>
+<p><strong>方法：</strong> 提出 Verification Reward Model (VRM) 框架，核心是一个版本化验证合约，绑定需求、激励、观察边界、参考行为等，编译/仿真/形式验证/变异/覆盖率等证据转为可审计记录；确定性的验收检查不进入学习模型。</p>
+<p><strong>关键数字：</strong> 未披露具体验证通过率数字，但框架覆盖了多类验证证据源的自动评估。</p>
+<p><strong>为什么值得看：</strong> 把芯片验证这个高风险场景的 LLM 应用从"黑箱生成"升级为"可审计决策"，对 EDA+AI 方向有方法论参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.21583">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.22347">阅读原文 ↗</a></p>
 </body>
 </html>
