@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GUMPIM: Unitary and Malleable Memory for Processing-in-Memory with Guaranteed PIM Pages</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>GUMPIM: Unitary and Malleable Memory for Processing-in-Memory with Guaranteed PIM Pages</h1>
+<p class="meta-line">arXiv · 2026-10-16 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：DRAM PIM 受内存交织与虚拟内存限制，可用 PIM 粒度受限；强行隔离 PIM 内存又会让 CPU 内存带宽下跌、引入额外数据搬运——如何兼得？</p>
+<p><strong>方法</strong>：GUMPIM 用统一可塑内存空间允许交织 CPU 页与非交织 PIM 页共存，带"保证 PIM 页"分配；提出双轨内存管理 + PIM DRAM 动态地址映射硬件 + PIM 辅助页迁移；无需改动商用 DRAM 标准，硬件修改只局限在 PIM-enabled DRAM。</p>
+<p><strong>关键数字</strong>：保持了 CPU 内存带宽，PIM 任务 offload 几乎零拷贝（具体基准数字详见原文图表）。</p>
+<p><strong>为什么值得看</strong>：把"PIM 内存隔离损失"与"PIM 内存墙"两难命题一起解决，做 PIM 系统/硬件的人必读。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.23406">GUMPIM: Unitary and Malleable Memory for Processing-in-Memory with Guaranteed PIM Pages</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.23406">阅读原文 ↗</a></p>
+</body>
+</html>

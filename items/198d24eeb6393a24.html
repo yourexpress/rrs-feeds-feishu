@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noise-shaped Sampling and Annealing for Scalable On-the-edge Training of Binary and Ternary AI Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Noise-shaped Sampling and Annealing for Scalable On-the-edge Training of Binary and Ternary AI Models</h1>
+<p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：二/三值神经网络的训练损失等价于高阶 Ising 模型能量，但 Ising 求解器找基态、训练要泛化——如何用 Ising 思路直接做离散权重训练？</p>
+<p><strong>方法</strong>：提出 ΣΔ-Sampler：在 ΣΔ 噪声整形闭环内嵌一个随机采样-退火步骤作为噪声量化器，把权重量化、高阶挫折与小批采样噪声推到低频适应带外，使离散权重更新沿平滑下降轨迹走。</p>
+<p><strong>关键数字</strong>：QUBO benchmark 上验证框架；CIFAR-10 上 13M 参数三值模型距全精度精度差 ≤1%；ImageNet-1k 上三值 ResNet-18 距三值基线 Top-5 精度差 ≤0.4%；class-incremental 持续学习保留 prior-task 精度；MatMul-free LM 上 ≤2.7B 参数优于 straight-through-estimator。</p>
+<p><strong>为什么值得看</strong>：把二/三值网络训练与 Ising 求解器视角统一，给了边缘训练一种可解释的新优化器。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.22621">Noise-shaped Sampling and Annealing for Scalable On-the-edge Training of Binary and Ternary AI Models</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.22621">阅读原文 ↗</a></p>
+</body>
+</html>

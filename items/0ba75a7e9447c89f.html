@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QuarkShard: Decomposing Cross-Shard Requests into Single-Input Transactions</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>QuarkShard: Decomposing Cross-Shard Requests into Single-Input Transactions</h1>
+<p class="meta-line">arXiv · 2026-10-16 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：分片区块链处理跨片用户请求时，传统"整体事务"范式同时带来片内 BFT 开销与片间通信开销——能否把跨片请求拆开降低两类开销？</p>
+<p><strong>方法</strong>：QuarkShard 把跨片请求分解为只需单分片共识与处理的"单输入分片事务"，并设计分解算法保证资金原子性或位置原子性；还通过结构特性增强抗 MEV/洪泛攻击能力。</p>
+<p><strong>关键数字</strong>：跨 4 个 AWS 区域的广域网评估峰值吞吐 1024k 请求/秒、时延 &lt;4 秒；较传统分片协议吞吐提升最高 210.7%（具体基线对比见原文）。</p>
+<p><strong>为什么值得看</strong>：把跨片交易从"原子单体"解构为单输入事务，性能与安全性同时改善，分片链协议设计的新基线。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.23014">QuarkShard: Decomposing Cross-Shard Requests into Single-Input Transactions</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.23014">阅读原文 ↗</a></p>
+</body>
+</html>

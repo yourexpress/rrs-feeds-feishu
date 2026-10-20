@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MemLLM: End-to-end In-Storage Acceleration of On-device Retrieval-Augmented Generation using Precomputed KV Caches</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MemLLM: End-to-end In-Storage Acceleration of On-device Retrieval-Augmented Generation using Precomputed KV Caches</h1>
+<p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：端侧 RAG 中多 GB 的预计算 KV 缓存必须穿过窄 PCIe，对设备侧 prefill 形成严重 I/O 墙；如何让 RAG 在边缘设备上真的可用？</p>
+<p><strong>方法</strong>：MemLLM 把完整的注意力流水线放进 SSD：每通道加速器利用 NAND 通道带宽，所有 KV 计算在存储侧完成；通过融合的 recomputation-query 内核与硬件过滤把 NAND 读量减半、消除写回开销；全局 SRAM 有状态归约引擎做到 DRAM-less 数据流，PCIe 出流量保持 O(1)。</p>
+<p><strong>关键数字</strong>：在 8 个真实 RAG 数据集 + 6 个端侧 LLM 上平均端到端加速（论文摘要未给出精确数字，详见原文图表）。</p>
+<p><strong>为什么值得看</strong>：把"端侧 RAG 的 I/O 墙"从算法层下沉到 SSD 内的计算/存储协同架构，工程思路值得做边缘 AI 的团队参考。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.22579">MemLLM: End-to-end In-Storage Acceleration of On-device Retrieval-Augmented Generation using Precomputed KV Caches</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.22579">阅读原文 ↗</a></p>
+</body>
+</html>

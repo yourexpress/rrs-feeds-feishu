@@ -5,7 +5,7 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>模型压缩 / ML 编译 / HPC / 边缘计算 / 低功耗计算方向最新技术博客与官方公告（网页类内容）。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 19 Oct 2026 23:26:11 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 11:29:47 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/ec-news.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>vLLM v0.32.0</title>
@@ -278,6 +278,24 @@
 <p><a href="https://pytorch.org/blog/muse-spark-open/">阅读原文</a></p>]]></content:encoded>
     </item>
     <item>
+      <title>Local and Distributed Large LLM Inference with MLX and RDMA on Mac Studio</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/98e6a11f87f3c75f.html</link>
+      <guid isPermaLink="true">https://machinelearning.apple.com/research/mlx-distributed-inference</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 +0800</pubDate>
+    <category>技术博客</category>
+    <category>每日精选</category>
+      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：Apple Machine Learning Research　&lt;strong&gt;发布&lt;/strong&gt;：2026-10-15　&lt;strong&gt;分类&lt;/strong&gt;：技术博客 / 每日精选&lt;/p&gt;&lt;p&gt;&lt;img src="https://mlr.cdn-apple.com/media/MLX_icon_F001_TC_2048_2600_6439f2ba0f.png" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;核心话题&lt;/strong&gt;：Apple 用 MLX + RDMA over Thunderbolt 5 在 Mac Studio 集群上跑千亿开源模型，公开 M5 Ultra 单机与 4 机互联的推理数据。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;要点&lt;/strong&gt;：M5 Ultra 集成 GPU Neural Accelerator，统一内存带宽 1.2 TB/s（M3 Ultra 为 819 GB/s）。单机可跑 Qwen 3.8 27B 与 Mistral Medium 3.5 128B（最长 65,536 上下文），Muse Spark Open 816B 需 NVFP4 + 多机。pipeline parallel 两层切模型，65k 上下文 prefill 最高 ~1.8x；tensor parallel 把宽度分到多机，4 机 decode 显著加速。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;关键数字&lt;/strong&gt;：4 台 M5 Ultra Mac Studio 跑 816B NVFP4 &amp;gt;36 tok/s；TTFT 上 M5 Ultra 较 M3 Ultra 最高 4.6x、decode 1.6x；峰值功耗 M3 Ultra ~200 W、M5 Ultra ~300 W。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;为什么值得看&lt;/strong&gt;：把"千亿模型塞进桌面集群"做成公开 benchmark + 可复现脚本，本地/家庭部署前沿模型的硬件/网络新基线。&lt;/p&gt;
+&lt;p&gt;原文：&lt;a href="https://machinelearning.apple.com/research/mlx-distributed-inference"&gt;Local and Distributed Large LLM Inference with MLX and RDMA on Mac Studio&lt;/a&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p><strong>发表方</strong>：Apple Machine Learning Research　<strong>发布</strong>：2026-10-15　<strong>分类</strong>：技术博客 / 每日精选</p><p><img src="https://mlr.cdn-apple.com/media/MLX_icon_F001_TC_2048_2600_6439f2ba0f.png" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"></p><p><strong>核心话题</strong>：Apple 用 MLX + RDMA over Thunderbolt 5 在 Mac Studio 集群上跑千亿开源模型，公开 M5 Ultra 单机与 4 机互联的推理数据。</p>
+<p><strong>要点</strong>：M5 Ultra 集成 GPU Neural Accelerator，统一内存带宽 1.2 TB/s（M3 Ultra 为 819 GB/s）。单机可跑 Qwen 3.8 27B 与 Mistral Medium 3.5 128B（最长 65,536 上下文），Muse Spark Open 816B 需 NVFP4 + 多机。pipeline parallel 两层切模型，65k 上下文 prefill 最高 ~1.8x；tensor parallel 把宽度分到多机，4 机 decode 显著加速。</p>
+<p><strong>关键数字</strong>：4 台 M5 Ultra Mac Studio 跑 816B NVFP4 &gt;36 tok/s；TTFT 上 M5 Ultra 较 M3 Ultra 最高 4.6x、decode 1.6x；峰值功耗 M3 Ultra ~200 W、M5 Ultra ~300 W。</p>
+<p><strong>为什么值得看</strong>：把"千亿模型塞进桌面集群"做成公开 benchmark + 可复现脚本，本地/家庭部署前沿模型的硬件/网络新基线。</p>
+<p>原文：<a href="https://machinelearning.apple.com/research/mlx-distributed-inference">Local and Distributed Large LLM Inference with MLX and RDMA on Mac Studio</a></p>]]></content:encoded>
+    </item>
+    <item>
       <title>Ling-3.1-flash 模型卡：560B-A25B 混合推理 MoE，1M 上下文，SGLang/vLLM 部署方案</title>
       <link>https://yourexpress.github.io/rrs-feeds-feishu/items/5241da4e264a9022.html</link>
       <guid isPermaLink="true">https://huggingface.co/inclusionAI/Ling-3.1-flash</guid>
@@ -334,14 +352,22 @@
 <p><a href="https://dev.to/gde/gemma-4-on-a-used-8-gb-rtx-3050-116-tokenss-for-one-user-618-for-64-k6h">阅读原文</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>Strata v0.1.44.1 Release Notes</title>
-      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/4e4ab33236dbdc26.html</link>
-      <guid isPermaLink="true">https://github.com/panchal-niraj/strata/releases/tag/v0.1.44.1</guid>
-      <pubDate>Wed, 14 Oct 2026 12:00:00 +0800</pubDate>
+      <title>Day 0 support for Muse Spark Open on vLLM</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/8041a204f40b2e6d.html</link>
+      <guid isPermaLink="true">https://vllm.ai/blog/2026-10-15-muse-spark-open</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 +0800</pubDate>
     <category>技术博客</category>
     <category>每日精选</category>
-      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：Strata (GitHub Releases)　&lt;strong&gt;发布&lt;/strong&gt;：2026-10-14　&lt;strong&gt;分类&lt;/strong&gt;：技术博客 / 每日精选&lt;/p&gt;&lt;p style="font-size:1.05em"&gt;本地 LLM 桌面推理工具 hotfix：无 AVX2 旧 CPU 恢复启动、CUDA 12.0/12.1 引擎构建、M2 输出正确性，补录（昨日窗口边缘未及收录）。&lt;/p&gt;&lt;p style="color:#6b7280;font-size:0.9em"&gt;本条为技术博客 / 每日精选，订阅源内提供主题摘要；完整内容请点击下方链接阅读原文。&lt;/p&gt;&lt;p style="color:#0969da;font-size:0.9em"&gt;★ 本条入选当日精选&lt;/p&gt;&lt;p style="margin-top:14px"&gt;&lt;a href="https://github.com/panchal-niraj/strata/releases/tag/v0.1.44.1"&gt;阅读原文 ↗&lt;/a&gt;&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p><strong>发表方</strong>：Strata (GitHub Releases)　<strong>发布</strong>：2026-10-14　<strong>分类</strong>：技术博客 / 每日精选</p><p style="font-size:1.05em">本地 LLM 桌面推理工具 hotfix：无 AVX2 旧 CPU 恢复启动、CUDA 12.0/12.1 引擎构建、M2 输出正确性，补录（昨日窗口边缘未及收录）。</p><p style="color:#6b7280;font-size:0.9em">本条为技术博客 / 每日精选，订阅源内提供主题摘要；完整内容请点击下方链接阅读原文。</p><p style="color:#0969da;font-size:0.9em">★ 本条入选当日精选</p><p style="margin-top:14px"><a href="https://github.com/panchal-niraj/strata/releases/tag/v0.1.44.1">阅读原文 ↗</a></p>]]></content:encoded>
+      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：vLLM Blog　&lt;strong&gt;发布&lt;/strong&gt;：2026-10-15　&lt;strong&gt;分类&lt;/strong&gt;：技术博客 / 每日精选&lt;/p&gt;&lt;p&gt;&lt;img src="https://vllm.ai/blog-assets/figures/2026-10-15-muse-spark-open/hero-vllm-muse-spark-open.png" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;核心话题&lt;/strong&gt;：Meta 816B-A42B MoE 模型 Muse Spark Open 在 vLLM 上 Day-0 集成：覆盖 NVIDIA/AMD/TPU、DSpark 投机解码与 LoRA RL。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;要点&lt;/strong&gt;：62 层 MoE + 每层共享 squeeze/expand 的 Latent MoE + 46 层 SWA / 16 层全注意力的混合注意力，让 1M context 的 KV 缓存仅约 1/4。DSpark 块扩散草稿最多 7 个 token；LoRA RL day-0（Verl FSDP2 + vLLM rollout，rank=32/α=64）训练 150 步在 AIME-2024 上 mean@8 由 0.56→0.85。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;关键数字&lt;/strong&gt;：TPU 上 megakernel + DSpark（acceptance=6）@4 芯片 650 tok/s、@8 芯片 960 tok/s；非投机下 270/350 tok/s；4xGB300 上 NVFP4/BF16 两版均带 SPEED-Bench 加速。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;为什么值得看&lt;/strong&gt;：前沿 MoE Day-0 全套（多硬件 + 推理 + 训练）一次集成范例，工程参考价值高。&lt;/p&gt;
+&lt;p&gt;原文：&lt;a href="https://vllm.ai/blog/2026-10-15-muse-spark-open"&gt;Day 0 support for Muse Spark Open on vLLM&lt;/a&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p><strong>发表方</strong>：vLLM Blog　<strong>发布</strong>：2026-10-15　<strong>分类</strong>：技术博客 / 每日精选</p><p><img src="https://vllm.ai/blog-assets/figures/2026-10-15-muse-spark-open/hero-vllm-muse-spark-open.png" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"></p><p><strong>核心话题</strong>：Meta 816B-A42B MoE 模型 Muse Spark Open 在 vLLM 上 Day-0 集成：覆盖 NVIDIA/AMD/TPU、DSpark 投机解码与 LoRA RL。</p>
+<p><strong>要点</strong>：62 层 MoE + 每层共享 squeeze/expand 的 Latent MoE + 46 层 SWA / 16 层全注意力的混合注意力，让 1M context 的 KV 缓存仅约 1/4。DSpark 块扩散草稿最多 7 个 token；LoRA RL day-0（Verl FSDP2 + vLLM rollout，rank=32/α=64）训练 150 步在 AIME-2024 上 mean@8 由 0.56→0.85。</p>
+<p><strong>关键数字</strong>：TPU 上 megakernel + DSpark（acceptance=6）@4 芯片 650 tok/s、@8 芯片 960 tok/s；非投机下 270/350 tok/s；4xGB300 上 NVFP4/BF16 两版均带 SPEED-Bench 加速。</p>
+<p><strong>为什么值得看</strong>：前沿 MoE Day-0 全套（多硬件 + 推理 + 训练）一次集成范例，工程参考价值高。</p>
+<p>原文：<a href="https://vllm.ai/blog/2026-10-15-muse-spark-open">Day 0 support for Muse Spark Open on vLLM</a></p>]]></content:encoded>
     </item>
   </channel>
 </rss>

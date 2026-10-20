@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>On the SPOT: Enhancing Speculative Decoding for Diffusion Language Models via Commit-Order Prediction</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>On the SPOT: Enhancing Speculative Decoding for Diffusion Language Models via Commit-Order Prediction</h1>
+<p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：扩散语言模型（DLM）兼具并行生成与质量权衡；标准自回归投机解码不直接适用，因为 DLM 还要决定"先填哪一格"。</p>
+<p><strong>方法</strong>：SPOT 观察到上一轮模型自身预测在 92–100% 位置上 token 已对，只是次序未定；用一个 0.62M 参数的小模型只读目标分布输出，提出候选 token 树，目标侧通过耦合噪声匹配做单遍验证。</p>
+<p><strong>关键数字</strong>：目标模型 pass 数最多下降 6.8x，吞吐最高达标准解码的 3.2x，击败已校准的免训练 drafting 基线。</p>
+<p><strong>为什么值得看</strong>：把生成次序从模型隐式行为变成可学习的显式信号，DLM 推理加速从算法到机制打通的一步。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.22543">On the SPOT: Enhancing Speculative Decoding for Diffusion Language Models via Commit-Order Prediction</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.22543">阅读原文 ↗</a></p>
+</body>
+</html>

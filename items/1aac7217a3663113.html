@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TALLOP: Joint Optimization of Local Training and Communication Compression for Time-Constrained Federated Learning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>TALLOP: Joint Optimization of Local Training and Communication Compression for Time-Constrained Federated Learning</h1>
+<p class="meta-line">arXiv · 2026-10-16 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：联邦学习里慢客户端拖累整轮时间；既有工作主要调本地计算，通信受限环境下通信压缩同样会成为瓶颈——如何在一个时间预算内联合调本地训练与通信压缩？</p>
+<p><strong>方法</strong>：TALLOP 用早期 mini-batch 损失轨迹预测不同计算预算可达训练损失（LENS），用压缩误差模型估计通信压缩损失（CLEN），二者组合求每轮时间预算下的最优本地训练工作量与通信压缩配比。</p>
+<p><strong>关键数字</strong>：在异构联邦环境下较仅调计算或仅调压缩的基线，达到目标精度所需墙钟时间更短（具体加速比详见原文图表）。</p>
+<p><strong>为什么值得看</strong>：把联邦学习的时间预算问题变成可联合优化的两个独立预测器，工程上可直接套用到联邦训练调度器。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.22996">TALLOP: Joint Optimization of Local Training and Communication Compression for Time-Constrained Federated Learning</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.22996">阅读原文 ↗</a></p>
+</body>
+</html>

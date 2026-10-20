@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Local and Distributed Large LLM Inference with MLX and RDMA on Mac Studio</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Local and Distributed Large LLM Inference with MLX and RDMA on Mac Studio</h1>
+<p class="meta-line">Apple Machine Learning Research · 2026-10-15 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://mlr.cdn-apple.com/media/MLX_icon_F001_TC_2048_2600_6439f2ba0f.png" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong>：Apple 用 MLX + RDMA over Thunderbolt 5 在 Mac Studio 集群上跑千亿开源模型，公开 M5 Ultra 单机与 4 机互联的推理数据。</p>
+<p><strong>要点</strong>：M5 Ultra 集成 GPU Neural Accelerator，统一内存带宽 1.2 TB/s（M3 Ultra 为 819 GB/s）。单机可跑 Qwen 3.8 27B 与 Mistral Medium 3.5 128B（最长 65,536 上下文），Muse Spark Open 816B 需 NVFP4 + 多机。pipeline parallel 两层切模型，65k 上下文 prefill 最高 ~1.8x；tensor parallel 把宽度分到多机，4 机 decode 显著加速。</p>
+<p><strong>关键数字</strong>：4 台 M5 Ultra Mac Studio 跑 816B NVFP4 &gt;36 tok/s；TTFT 上 M5 Ultra 较 M3 Ultra 最高 4.6x、decode 1.6x；峰值功耗 M3 Ultra ~200 W、M5 Ultra ~300 W。</p>
+<p><strong>为什么值得看</strong>：把"千亿模型塞进桌面集群"做成公开 benchmark + 可复现脚本，本地/家庭部署前沿模型的硬件/网络新基线。</p>
+<p>原文：<a href="https://machinelearning.apple.com/research/mlx-distributed-inference">Local and Distributed Large LLM Inference with MLX and RDMA on Mac Studio</a></p>
+<p><a class="origin" href="https://machinelearning.apple.com/research/mlx-distributed-inference">阅读原文 ↗</a></p>
+</body>
+</html>

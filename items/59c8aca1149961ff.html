@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Stronger Teacher Within: Strengthening MoE Models via On-Policy Bidirectional Distillation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>A Stronger Teacher Within: Strengthening MoE Models via On-Policy Bidirectional Distillation</h1>
+<p class="meta-line">arXiv · 2026-10-16 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：MoE 的 RLVR 奖励信号稀疏；on-policy 蒸馏需要更强的同源教师，自蒸馏又依赖特权信息——能否让 MoE 自身充当更强教师？</p>
+<p><strong>方法</strong>：MoEvolve 采用"恢复-再提升-反向回灌"的链式流程：先恢复高-k 模型，再利用其更多激活预算提升能力，然后反向把能力蒸馏回原低-k 学生，保留推理时的激活预算不变。</p>
+<p><strong>关键数字</strong>：跨多种 MoE 与基准上较初始模型平均提升最高 22.2 分；同算力 RLVR 基线之上再涨最高 6.5 分；最终低-k 模型常常超过其高-k 教师。</p>
+<p><strong>为什么值得看</strong>：无需外部教师就能在原激活预算下涨点的双向蒸馏，做 MoE 蒸馏与训练的人都该看。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.23185">A Stronger Teacher Within: Strengthening MoE Models via On-Policy Bidirectional Distillation</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.23185">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BaGuaLu-2: Taming Dynamic Memory Fluctuation for Efficient MoE Model Training over 10,000 GPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>BaGuaLu-2: Taming Dynamic Memory Fluctuation for Efficient MoE Model Training over 10,000 GPUs</h1>
+<p class="meta-line">arXiv · 2026-10-16 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：细粒度 MoE 训练中专家负载动态失衡带来严重显存波动；静态预留要么浪费要么 OOM——能否做到"按需"显存供给？</p>
+<p><strong>方法</strong>：BaGuaLu-2 把显存分配从一次性静态调参改为持续细粒度控制，按 batch 按需给精确的激活显存；并通过系统优化抵消动态管理开销。</p>
+<p><strong>关键数字</strong>：12,288 GPU 上训练 1040B 参数 MoE，维持 2 EFlops 以上、MFU 35%；较 Megatron-Kuai 与 AdaPipe 平均吞吐提升 1.14x / 1.13x。</p>
+<p><strong>为什么值得看</strong>：万卡 MoE 训练把"动态显存"从工程 hack 推到系统性能力，做大规模 MoE 训练基础设施的可读蓝本。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.23064">BaGuaLu-2: Taming Dynamic Memory Fluctuation for Efficient MoE Model Training over 10,000 GPUs</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.23064">阅读原文 ↗</a></p>
+</body>
+</html>

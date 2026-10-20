@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Day 0 support for Muse Spark Open on vLLM</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Day 0 support for Muse Spark Open on vLLM</h1>
+<p class="meta-line">vLLM Blog · 2026-10-15 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://vllm.ai/blog-assets/figures/2026-10-15-muse-spark-open/hero-vllm-muse-spark-open.png" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong>：Meta 816B-A42B MoE 模型 Muse Spark Open 在 vLLM 上 Day-0 集成：覆盖 NVIDIA/AMD/TPU、DSpark 投机解码与 LoRA RL。</p>
+<p><strong>要点</strong>：62 层 MoE + 每层共享 squeeze/expand 的 Latent MoE + 46 层 SWA / 16 层全注意力的混合注意力，让 1M context 的 KV 缓存仅约 1/4。DSpark 块扩散草稿最多 7 个 token；LoRA RL day-0（Verl FSDP2 + vLLM rollout，rank=32/α=64）训练 150 步在 AIME-2024 上 mean@8 由 0.56→0.85。</p>
+<p><strong>关键数字</strong>：TPU 上 megakernel + DSpark（acceptance=6）@4 芯片 650 tok/s、@8 芯片 960 tok/s；非投机下 270/350 tok/s；4xGB300 上 NVFP4/BF16 两版均带 SPEED-Bench 加速。</p>
+<p><strong>为什么值得看</strong>：前沿 MoE Day-0 全套（多硬件 + 推理 + 训练）一次集成范例，工程参考价值高。</p>
+<p>原文：<a href="https://vllm.ai/blog/2026-10-15-muse-spark-open">Day 0 support for Muse Spark Open on vLLM</a></p>
+<p><a class="origin" href="https://vllm.ai/blog/2026-10-15-muse-spark-open">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accelerated Dataflow: scaling inference in streaming data analytics with efficiency</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Accelerated Dataflow: scaling inference in streaming data analytics with efficiency</h1>
+<p class="meta-line">arXiv · 2026-10-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：流式数据系统历来按数据搬运优化，跑 GPU 上 LLM 推理这类重算负载很吃力；混合流式 ML 负载在异构资源上如何同时兼顾吞吐、时延与峰值资源占用？</p>
+<p><strong>方法</strong>：在 Google Cloud Dataflow 上做协同设计的系统：异构 worker 池的自动扩缩 + prefix-aware batching，把 LLM 推理自然嵌入流式管线，与数据搬运调度共享同一基础设施。</p>
+<p><strong>关键数字</strong>：相对已有流式处理系统，吞吐提升 1.5x–2x，峰值资源节省最高 75%，峰值尾时延下降 84%。</p>
+<p><strong>为什么值得看</strong>：把 LLM 推理塞进既有流式平台且给出生产级数据，给"实时风控/内容审核"类场景提供了一个可复用的工程样板。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.22731">Accelerated Dataflow: scaling inference in streaming data analytics with efficiency</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.22731">阅读原文 ↗</a></p>
+</body>
+</html>

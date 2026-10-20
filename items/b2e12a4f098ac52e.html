@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HBFSim: A Simulator for Exploring HBF in Memory Hierarchies for LLMs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>HBFSim: A Simulator for Exploring HBF in Memory Hierarchies for LLMs</h1>
+<p class="meta-line">arXiv · 2026-10-16 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：高带宽闪存（HBF）号称 TB 级加速器本地容量与接近 HBM 的带宽，但 NAND 的高延迟、异地更新与写入寿命又会直接影响性能与寿命——能否在系统层量化这些影响？</p>
+<p><strong>方法</strong>：HBFSim 是 LLM 感知的异构 HBM+HBF 内存系统事件驱动模拟器，联合 HBM、带 host-managed FTL 的 HBF 与常规容量层，以校准的 serving 前端驱动模拟；保留应用级内存语义同时建模闪存内部行为。</p>
+<p><strong>关键数字</strong>：在 Llama-3.1-70B 与 Qwen3-235B-A22B 三种负载上，HBF 较 host DRAM 快 11.0–19.0x 提供超 HBM 数据；HBM 更适合放运行序列的 KV 而非作为 HBF 的缓存；Llama-3.1-70B 在发布峰值负载下 HBF 寿命 2.0–6.9 年。</p>
+<p><strong>为什么值得看</strong>：把 HBF 这个新兴存储层级从规格表变成可量化的系统权衡，做 LLM 内存层级选型可以直接拿来用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.23503">HBFSim: A Simulator for Exploring HBF in Memory Hierarchies for LLMs</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.23503">阅读原文 ↗</a></p>
+</body>
+</html>

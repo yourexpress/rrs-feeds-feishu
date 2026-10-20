@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Local proxies for memory-efficient training</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Local proxies for memory-efficient training</h1>
+<p class="meta-line">arXiv · 2026-10-16 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：端到端反向传播要存所有激活，显存爆炸；现有 local learning 又常掉精度——能否在保持精度的同时把"全局反向"近似为块级局部代理？</p>
+<p><strong>方法</strong>：对每个 Transformer 块训练一个局部代理网络以蒸馏逼近全局网络输出；用代理独立反传来估计梯度；理论上对深度线性网络是精确的，对非线性残差模型梯度误差可被残差代理界定。</p>
+<p><strong>关键数字</strong>：CIFAR-100 + ViT 上代理传播相对其它 local 算法取得更优的精度/显存权衡；在小显存预算下微调 LLM 时比同等显存开销的零阶学习方法训练更快、性能更高。</p>
+<p><strong>为什么值得看</strong>：把"局部学习"从启发式变成"有理论保证的梯度近似"，小显存训练 LLM 的可选新底座。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.23145">Local proxies for memory-efficient training</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.23145">阅读原文 ↗</a></p>
+</body>
+</html>

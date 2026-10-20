@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Towards Looped Models Done Right, Part I: Topology, Input Injection, Recurrent-State Design</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Towards Looped Models Done Right, Part I: Topology, Input Injection, Recurrent-State Design</h1>
+<p class="meta-line">arXiv · 2026-10-16 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：循环语言模型用同一组物理 Transformer block 跨逻辑深度重复用，但 recurrence 位置、输入注入、循环状态组织常被混在一起——把这些轴拆开后哪一组合最优？</p>
+<p><strong>方法</strong>：在匹配参数/逻辑深度/token 预算下从零训练循环 Transformer，把 recurrence 位置、输入注入与循环状态组织三项正交化系统研究；优选 prelude-recurrent block-coda 三明治架构 + Huginn 风格设计，并迁移到 active-parameter 匹配的 MoE 模型。</p>
+<p><strong>关键数字</strong>：730M/336B token 规模下 Huginn 完整架构在 10 个基准上均优于 Ouro；优势迁移到 MoE：8B(32B unroll)/500B token 下知识/推理/编码基准近全胜；同 FLOPs 下常驻参数比 112 层 FF MoE 基线少 75%，DROP/GSM8K 仍优于基线，MATH500 持平。</p>
+<p><strong>为什么值得看</strong>：把循环模型设计从"各种变体"还原为可独立研究的三轴并给出 Huginn 风格的最优配方，做循环/重用参数模型的可参照蓝本。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.23036">Towards Looped Models Done Right, Part I: Topology, Input Injection, Recurrent-State Design</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.23036">阅读原文 ↗</a></p>
+</body>
+</html>

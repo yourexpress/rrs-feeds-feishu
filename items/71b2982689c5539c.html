@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One Communicator, Three Vendors: Extending the MoA Predictive Theory to a Real NVIDIA+AMD+CPU MPI Ensemble</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>One Communicator, Three Vendors: Extending the MoA Predictive Theory to a Real NVIDIA+AMD+CPU MPI Ensemble</h1>
+<p class="meta-line">arXiv · 2026-10-16 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：将 MoA（Multiple of an Algorithm）预测理论扩展到首个真正的多厂商 MPI 通信器时，1/t 权重切分的假设在哪种硬件上会失效？</p>
+<p><strong>方法</strong>：用 Slurm 异构作业把 A100/MI100/CPU 共 9 个 rank 装入一个 MPI communicator；给出三路并发 1/t 权重切分理论与异构作业的可接受指令；用基于形状的 key/value 切分做 ring Allreduce，对每次测量记录提前预测。</p>
+<p><strong>关键数字</strong>：MI100 上 6 rows 实测 597 ms，1/t 线性预测仅 1.6 ms；通过改 launch 设置把 ~600 ms 降至 14.6 ms，6 rows 下每调用能耗降 32x；MI100 仍约比 A100 在 8192 rows 下慢 95x；8.5 MB Allreduce 实测 11.3/16.0/15.3 ms。</p>
+<p><strong>为什么值得看</strong>：揭示了 MoA 1/t 假设在 GPU 上的失效边界，并把异构 MPI 实测与理论预测摆在一起，异构 HPC 通信建模可直接借鉴。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.22769">One Communicator, Three Vendors: Extending the MoA Predictive Theory to a Real NVIDIA+AMD+CPU MPI Ensemble</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.22769">阅读原文 ↗</a></p>
+</body>
+</html>

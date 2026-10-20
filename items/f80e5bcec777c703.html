@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BMuon: Budgeting Muon's Spectral Geometry for Structured Compressibility</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>BMuon: Budgeting Muon's Spectral Geometry for Structured Compressibility</h1>
+<p class="meta-line">arXiv · 2026-10-16 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：Muon 优化器在谱范数几何下表现强，但训练后的 Transformer 在 MLP 隐通道被结构化剪枝时性能掉得快——能否让 Muon 本身就为结构化压缩而训练？</p>
+<p><strong>方法</strong>：BMuon 改写 Muon 的谱几何，让跨 block 的隐通道共享一份"分配预算"；其 oracle 等价于在一族介于 Muon 几何与结构化稀疏几何之间的范数下的归一化最速下降；推导了 minorization–maximization 代理用于实际训练。</p>
+<p><strong>关键数字</strong>：在 ImageNet-1K ViT-S/16 上逐步结构化 MLP 剪枝时优于 Muon，且学到的通道分配比权重幅值更准；1B 参数 LLaMA-style 模型在 FineWeb 训练 + 训练后 MLP 通道剪枝下也优于 Muon。</p>
+<p><strong>为什么值得看</strong>：把"优化器几何"与"结构化压缩预算"打通，给"训完即压"提供了一个原理性配方。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.23571">BMuon: Budgeting Muon's Spectral Geometry for Structured Compressibility</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.23571">阅读原文 ↗</a></p>
+</body>
+</html>

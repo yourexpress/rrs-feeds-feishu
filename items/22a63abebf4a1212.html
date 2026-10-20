@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TileDRAM: Compiler-Controlled Tile-to-DRAM Layouts for 3D DRAM GPGPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>TileDRAM: Compiler-Controlled Tile-to-DRAM Layouts for 3D DRAM GPGPUs</h1>
+<p class="meta-line">arXiv · 2026-10-16 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：现代 GPU 编译器有 thread/on-chip 的丰富 layout 抽象，但 CU-local 3D DRAM 上没有 tile→DRAM 布局抽象；常规放置会让结构化 tile 访问撞到 row-buffer 冲突。</p>
+<p><strong>方法</strong>：TileDRAM 把 GPU Linear Layout 从计算侧映射扩展到 DRAM 放置坐标，按每个 tile 访问签名选 layout，以行缓冲行为单位评估候选；运行时仅做普通地址算术，无需新硬件或 ISA。</p>
+<p><strong>关键数字</strong>：在 Accel-Sim/Ramulator2 上 108 个 MoE FFN 用例的 full-trace replay：按请求加权的行冲突率从 75.7% 降至 15.2%，几何均速 1.77x；6 条 trace 在 6 种 3D DRAM 组织上几何均速 2.20x；RTX 3090 上地址变换可承受。</p>
+<p><strong>为什么值得看</strong>：把 GPU layout 抽象延伸到 3D DRAM 放置坐标，让编译器就能显著降冲突，做 GPU 编译器/3D DRAM 的桥梁工作。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.23767">TileDRAM: Compiler-Controlled Tile-to-DRAM Layouts for 3D DRAM GPGPUs</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.23767">阅读原文 ↗</a></p>
+</body>
+</html>

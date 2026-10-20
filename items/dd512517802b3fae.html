@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flash RNN-T: Memory-Efficient Joint Network and Transducer Loss Computation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Flash RNN-T: Memory-Efficient Joint Network and Transducer Loss Computation</h1>
+<p class="meta-line">arXiv · 2026-10-16 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：流式 ASR 主流仍是 RNN-T，但训练需要存大中间张量，显存吃紧——能否在保持吞吐的前提下大幅压低显存？</p>
+<p><strong>方法</strong>：Flash RNN-T 用专门 kernel 做联合网络与 transducer 损失，支持可选的按对齐空间与词表的 tiled 重计算；不 tiled 与 tiled 两个变体覆盖吞吐-显存前沿。</p>
+<p><strong>关键数字</strong>：H100 上，untiled Flash 相对最快基线吞吐提升 24–39%、显存下降 26–56%（适用时）；tiled Flash 中等长度上显存降至 1/9（吞吐低 16%），长序列下在 80 GB 显存中其他方案均无法用单反向 batch 跑通。</p>
+<p><strong>为什么值得看</strong>：把流式 ASR 训练的显存-吞吐前沿完整刻画，做端侧/长流式语音训练的人可直接对照配置。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.23409">Flash RNN-T: Memory-Efficient Joint Network and Transducer Loss Computation</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.23409">阅读原文 ↗</a></p>
+</body>
+</html>

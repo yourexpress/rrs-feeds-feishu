@@ -5,8 +5,51 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>每天一条，汇总当日两个检索源（AI 技术报告 + 高效计算文献）的重点内容。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 19 Oct 2026 23:26:14 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 11:29:49 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/daily-summary.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日精选 · 2026-10-20</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-10-20.html</link>
+      <guid isPermaLink="false">urn:daily-summary:2026-10-20</guid>
+      <pubDate>Tue, 20 Oct 2026 23:05:00 +0800</pubDate>
+    <category>每日精选</category>
+      <description>&lt;h2&gt;当日检索概况&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;AI 技术报告库：检索 18 篇，入选 7 篇，主题集中在通用编码 Agent 团队、终端递归自改写 Agent、Agent 安全治理、时序基础模型、消费级开源 LLM、端到端语音模型。&lt;/li&gt;
+&lt;li&gt;高效计算库：检索 84 篇（cs.DC 28、cs.AR 9、cs.PF 0、cs.PL 0；cs.LG 关键字过滤后 45；外加 2 篇社区/厂商技术博客），入选 28 篇，主题集中在 LLM 推理系统（KV 缓存/投机解码/扩散 LM/MoE 调度/编译器）、分布式与内存基础设施（PIM/HBF/3D DRAM/CXL 池化）、大规模训练框架与联邦/异构 MPI。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;重点推荐&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Gemini 4 Argon 端到端击杀 Minecraft 末影龙（DeepMind）&lt;/strong&gt;：4 个 Gemini 4 Argon 智能体在沙盒中以 27 小时 14 分钟（中途死亡 605 次、写入 2,783 个 JavaScript 程序）首次端到端通关，证明通用编码 Agent 团队可扛住跨日级长链条协作。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Muse Spark Open 在 vLLM Day-0 全套集成（vLLM Blog）&lt;/strong&gt;：816B-A42B MoE 配 1M 上下文，Latent MoE + SWA 混合注意力让 1M KV 缓存降至约 1/4；TPU megakernel + DSpark 投机解码 @8 芯片 960 tok/s。https://vllm.ai/blog/2026-10-15-muse-spark-open&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MLX + RDMA over Thunderbolt 5 在 4 个 M5 Ultra Mac Studio 跑 816B（Apple ML Research）&lt;/strong&gt;：4 机集群 decode &amp;gt;36 tok/s；M5 Ultra 较 M3 Ultra TTFT 最高 4.6x、decode 1.6x；峰值功耗 ~300 W。https://machinelearning.apple.com/research/mlx-distributed-inference&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;BaGuaLu-2：万卡 MoE 训练的动态显存驯化（arXiv:2610.23064）&lt;/strong&gt;：12,288 GPU 训练 1040B 参数 MoE，维持 2 EFlops、MFU 35%；较 Megatron-Kuai/AdaPipe 平均吞吐提升 1.14x/1.13x。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A Stronger Teacher Within（arXiv:2610.23185）&lt;/strong&gt;：MoE 双向蒸馏让低-k 学生超其高-k 教师，跨多 MoE 较初始模型 +22.2 分、同算力 RLVR 上 +6.5 分。https://arxiv.org/abs/2610.23185&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;On the SPOT（arXiv:2610.22543）&lt;/strong&gt;：扩散语言模型的 commit-order 预测投机解码，0.62M 参数小模型读目标分布提议候选 token 树，目标 pass 数最高 -6.8x、吞吐最高 3.2x。https://arxiv.org/abs/2610.22543&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GUMPIM（arXiv:2610.23406）&lt;/strong&gt;：统一可塑 PIM 内存空间 + 保证 PIM 页机制，无需改 DRAM 标准，CPU 内存带宽与 PIM 任务 offload 效率兼得。https://arxiv.org/abs/2610.23406&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DIFFLET（arXiv:2610.23047）&lt;/strong&gt;：AWS Trainium2 上 5 种扩散流水线共享编译后端，融合注意力较 PyTorch/XLA 加速 1.2–4.3x，常驻 serving 较每次重加载快 1.5–3.4x。https://arxiv.org/abs/2610.23047&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;主题速览&lt;/h2&gt;
+&lt;p&gt;当日高效计算库呈"推理系统优化 + 内存/存储层级"双主线：论文侧密集出现 KV 与注意力加速（TRACE、MemLLM、BS-Spec、On the SPOT、BMuon、Local proxies）、MoE/扩散/ASR 训练与推理（BaGuaLu-2、MoEvolve、DIFFLET、Flash RNN-T、HBFSim）、编译器与异构系统（TileDRAM、ArchAgent、GUMPIM、TALLOP、QuarkShard）；社区/厂商侧则由 vLLM（Muse Spark Open Day-0）与 Apple ML Research（MLX + RDMA over Thunderbolt）两家同时给出"千亿开源模型在主流推理栈与桌面集群上的端到端基线"。AI 技术报告库则把"通用编码 Agent、终端递归自改写、Agent 治理、时序基础模型、消费级 LLM、端到端语音"六类工程/产品动态串成一条主线。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2>当日检索概况</h2>
+<ul>
+<li>AI 技术报告库：检索 18 篇，入选 7 篇，主题集中在通用编码 Agent 团队、终端递归自改写 Agent、Agent 安全治理、时序基础模型、消费级开源 LLM、端到端语音模型。</li>
+<li>高效计算库：检索 84 篇（cs.DC 28、cs.AR 9、cs.PF 0、cs.PL 0；cs.LG 关键字过滤后 45；外加 2 篇社区/厂商技术博客），入选 28 篇，主题集中在 LLM 推理系统（KV 缓存/投机解码/扩散 LM/MoE 调度/编译器）、分布式与内存基础设施（PIM/HBF/3D DRAM/CXL 池化）、大规模训练框架与联邦/异构 MPI。</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>Gemini 4 Argon 端到端击杀 Minecraft 末影龙（DeepMind）</strong>：4 个 Gemini 4 Argon 智能体在沙盒中以 27 小时 14 分钟（中途死亡 605 次、写入 2,783 个 JavaScript 程序）首次端到端通关，证明通用编码 Agent 团队可扛住跨日级长链条协作。</li>
+<li><strong>Muse Spark Open 在 vLLM Day-0 全套集成（vLLM Blog）</strong>：816B-A42B MoE 配 1M 上下文，Latent MoE + SWA 混合注意力让 1M KV 缓存降至约 1/4；TPU megakernel + DSpark 投机解码 @8 芯片 960 tok/s。https://vllm.ai/blog/2026-10-15-muse-spark-open</li>
+<li><strong>MLX + RDMA over Thunderbolt 5 在 4 个 M5 Ultra Mac Studio 跑 816B（Apple ML Research）</strong>：4 机集群 decode &gt;36 tok/s；M5 Ultra 较 M3 Ultra TTFT 最高 4.6x、decode 1.6x；峰值功耗 ~300 W。https://machinelearning.apple.com/research/mlx-distributed-inference</li>
+<li><strong>BaGuaLu-2：万卡 MoE 训练的动态显存驯化（arXiv:2610.23064）</strong>：12,288 GPU 训练 1040B 参数 MoE，维持 2 EFlops、MFU 35%；较 Megatron-Kuai/AdaPipe 平均吞吐提升 1.14x/1.13x。</li>
+<li><strong>A Stronger Teacher Within（arXiv:2610.23185）</strong>：MoE 双向蒸馏让低-k 学生超其高-k 教师，跨多 MoE 较初始模型 +22.2 分、同算力 RLVR 上 +6.5 分。https://arxiv.org/abs/2610.23185</li>
+<li><strong>On the SPOT（arXiv:2610.22543）</strong>：扩散语言模型的 commit-order 预测投机解码，0.62M 参数小模型读目标分布提议候选 token 树，目标 pass 数最高 -6.8x、吞吐最高 3.2x。https://arxiv.org/abs/2610.22543</li>
+<li><strong>GUMPIM（arXiv:2610.23406）</strong>：统一可塑 PIM 内存空间 + 保证 PIM 页机制，无需改 DRAM 标准，CPU 内存带宽与 PIM 任务 offload 效率兼得。https://arxiv.org/abs/2610.23406</li>
+<li><strong>DIFFLET（arXiv:2610.23047）</strong>：AWS Trainium2 上 5 种扩散流水线共享编译后端，融合注意力较 PyTorch/XLA 加速 1.2–4.3x，常驻 serving 较每次重加载快 1.5–3.4x。https://arxiv.org/abs/2610.23047</li>
+</ul>
+<h2>主题速览</h2>
+<p>当日高效计算库呈"推理系统优化 + 内存/存储层级"双主线：论文侧密集出现 KV 与注意力加速（TRACE、MemLLM、BS-Spec、On the SPOT、BMuon、Local proxies）、MoE/扩散/ASR 训练与推理（BaGuaLu-2、MoEvolve、DIFFLET、Flash RNN-T、HBFSim）、编译器与异构系统（TileDRAM、ArchAgent、GUMPIM、TALLOP、QuarkShard）；社区/厂商侧则由 vLLM（Muse Spark Open Day-0）与 Apple ML Research（MLX + RDMA over Thunderbolt）两家同时给出"千亿开源模型在主流推理栈与桌面集群上的端到端基线"。AI 技术报告库则把"通用编码 Agent、终端递归自改写、Agent 治理、时序基础模型、消费级 LLM、端到端语音"六类工程/产品动态串成一条主线。</p>]]></content:encoded>
+    </item>
     <item>
       <title>每日精选 · 2026-10-19</title>
       <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-10-19.html</link>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DIFFLET: A Fast Inference Engine for Diffusion Transformer Models on AWS Trainium</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DIFFLET: A Fast Inference Engine for Diffusion Transformer Models on AWS Trainium</h1>
+<p class="meta-line">arXiv · 2026-10-16 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：AWS Trainium2 一切以固定 shape 预编译，扩散模型又跨请求/模型/缓存动态变化——如何在固定编译约束下做统一推理引擎？</p>
+<p><strong>方法</strong>：DIFFLET 用一个共享编译后端跑 5 种扩散流水线，注意力按 head 切到多核；host 控制器每步决定重跑去噪器或复用缓存，probe 程序在片上算缓存信号、常驻进程避免重加载。</p>
+<p><strong>关键数字</strong>：跨 5 种图像/视频模型，融合注意力较同框架 PyTorch/XLA 注意力提速 1.2–4.3x；在 32.8k 视觉 token 下是唯一可编译的注意力实现；4/5 模型上常驻 serving 较每次重加载快 1.5–3.4x。</p>
+<p><strong>为什么值得看</strong>：在硬件强约束下用"共享编译 + 注意力 head 切核 + 常驻"做扩散推理统一引擎，是 Trainium2 上做扩散推理的范本。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.23047">DIFFLET: A Fast Inference Engine for Diffusion Transformer Models on AWS Trainium</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.23047">阅读原文 ↗</a></p>
+</body>
+</html>
