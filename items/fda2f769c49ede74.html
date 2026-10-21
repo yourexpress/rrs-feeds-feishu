@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PACT: NVFP4 Data-Flow LoRA Fine-Tuning on Consumer GPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>PACT: NVFP4 Data-Flow LoRA Fine-Tuning on Consumer GPUs</h1>
+<p class="meta-line">arXiv/cs.LG · 2026-10-18 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 消费级 GPU 上微调语言模型受算力与显存双重限制：LoRA 虽减少了可训练参数与优化器状态，冻结投影依然昂贵，而为反向保留的激活又常常主导显存占用。</p>
+<p><strong>方法</strong> 提出 LoRA 微调系统 PACT：用原生 NVFP4 GEMM 加速冻结投影，同时降低量化/反量化开销并限制量化误差；复用量化后的 RMSNorm 输出、以 NVFP4 保存 gate/up 激活用于反向，以压低激活显存；前向非线性保留 BF16 输入以控数值误差，用改造到 NVFP4 刻度与量化激活的 GPTQ 离线校准冻结权重；融合非线性 kernel 并缓存前反向权重布局以减少量化反量化开销。</p>
+<p><strong>关键数字</strong> 在 16 GB 的 RTX 5080 上跨多个模型与任务评测，显存占用更低、LoRA 微调更快且精度具竞争力，使资源受限的消费级硬件也能做模型适配（摘要未列具体加速倍数）。</p>
+<p><strong>为什么值得看</strong> 把 4-bit 格式用在冻结权重与激活这类"乘得多却不更新"的地方，而非全链路量化，是小显存卡微调 LLM 的可复制套路。</p>
+<p><a href="https://arxiv.org/abs/2610.25048">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.25048">阅读原文 ↗</a></p>
+</body>
+</html>

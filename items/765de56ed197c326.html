@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LOOP: Recovery-Aligned Iterative Layer Pruning via On-Policy Distillation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LOOP: Recovery-Aligned Iterative Layer Pruning via On-Policy Distillation</h1>
+<p class="meta-line">arXiv/cs.LG · 2026-10-19 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 层剪枝通过删层缩小 LLM，同时保留稠密架构、便于在标准硬件高效执行。但现行 one-shot 范式先一次性剪到目标尺寸再训练恢复能力：直接剪到目标尺寸会显著损害推理能力，使有限训练预算下的恢复更困难；且层选择与恢复被分离，恢复信息无法反过来指导选择。</p>
+<p><strong>方法</strong> 提出层级的"恢复导向"on-policy 剪枝框架 LOOP，在多轮中交错进行剪枝与恢复：每轮只剪掉一层并做短时 on-policy 蒸馏，缓解一次性剪枝导致的能力突降；后续轮次复用恢复过程中的 on-policy 轨迹与优化信号，联合评估每个剩余层的推理贡献与恢复敏感度，使层选择具备恢复感知能力。</p>
+<p><strong>关键数字</strong> 在多个基准、不同模型规模与剪枝比例下，平均精度持续优于 one-shot 基线（摘要未列具体百分点）。</p>
+<p><strong>为什么值得看</strong> "一刀剪到目标再补"被证明是糟糕的顺序，改成小步迭代并用恢复信号选层，思路可直接迁移到其他结构化压缩。</p>
+<p><a href="https://arxiv.org/abs/2610.25679">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.25679">阅读原文 ↗</a></p>
+</body>
+</html>

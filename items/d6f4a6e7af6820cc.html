@@ -22,9 +22,11 @@
 <h1>From Experts to Sub-experts: Fine-grained Parameter-Efficient Fine-Tuning for MoE LLMs</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-23 · 论文PDF</p>
 
-<p>MoE LLM 的亚专家级细粒度 PEFT：以专家内部子模块为高效微调单元。</p>
-<blockquote><p>As large language models (LLMs) scale rapidly, dense full-parameter adaptation becomes increasingly expensive, motivating sparse and modular architectures such as Mixture-of-Experts (MoE) models. This shift raises a key question for parameter-efficient fine-tuning (PEFT): at what granularity should parameters be selected and updated? Existing PEFT methods such as LoRA operate on predefined weight matrices, while expert-level sparse tuning methods update entire selected experts. However, we observe that activated experts are internally sparse, with only a small fraction of intermediate channels strongly responding to downstream tasks, indicating that expert-level adaptation is still too coarse. We propose NSFT (Neural Sub-expert Fine-Tuning), a fine-grained PEFT framework that refines MoE adaptation from experts to sub-experts. NSFT decomposes each expert along the intermediate dimension into structured channel groups and selects task-relevant sub-experts by combining routing importance with intra-expert activation saliency. To optimize sparse partial updates, NSFT further introduces learning-rate scaling and dynamic gradient scaling to compensate for the reduced effective update ma…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> MoE 带来稀疏模块化架构，也给参数高效微调（PEFT）带来一个新问题：参数应以多细的粒度被选择与更新？LoRA 作用于预定义权重矩阵，专家级稀疏微调则整块更新被选中的专家。</p>
+<p><strong>方法</strong> 观察到被激活的专家内部同样稀疏——只有小部分中间通道对下游任务强烈响应，说明专家级适配仍然太粗。提出 NSFT（Neural Sub-expert Fine-Tuning），沿中间维把每个专家分解为结构化通道组，结合路由重要性与专家内激活显著性挑选任务相关的"子专家"；并引入学习率缩放与动态梯度缩放，补偿稀疏部分更新带来的有效更新幅度下降。</p>
+<p><strong>关键数字</strong> 在 OLMoE 与 Ling-mini-2.0 上、跨多个有挑战性的领域专用任务与通用基准，NSFT 持续优于代表性 PEFT 与专家级稀疏微调基线，且可训练参数显著更少、通用能力保持竞争力（摘要未列具体参数量）。</p>
+<p><strong>为什么值得看</strong> "激活专家内部也稀疏"这个观察，为 MoE 时代的 PEFT 指出了一条比 LoRA 更贴结构的粒度。</p>
+<p><a href="https://arxiv.org/abs/2609.25655">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.25655">阅读原文 ↗</a></p>
 </body>
 </html>

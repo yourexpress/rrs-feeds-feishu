@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LatLM: Line-Parallel Language Models with Deferred Commitment</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LatLM: Line-Parallel Language Models with Deferred Commitment</h1>
+<p class="meta-line">arXiv/cs.LG · 2026-10-09 · 论文PDF</p>
+
+<p>Line-parallel language models advance multiple lines concurrently for substantial speedups. However, frameworks like the Line-Coupled Language Model (LCLM) enforce a fixed commitment schedul</p>
+<blockquote><p>Line-parallel language models advance multiple lines concurrently for substantial speedups. However, frameworks like the Line-Coupled Language Model (LCLM) enforce a fixed commitment schedule across lines. Because dependencies vary within text, a fixed schedule cannot hold back a line whose prerequisites remain uncomputed, forcing premature commitments and cascading reasoning errors. To address this limitation, we introduce the Lattice Language Model (LatLM), making commitment schedules an adaptive decoding-time choice. Text occupies a 2D lattice where eligible frontier tokens are scored each round; a policy commits confident candidates while deferring unready ones for extended context. One forward pass supervises entire sampled trajectories via 2D causal masking, while an append-only cache retains exact states. At 482M parameters, we establish two findings. (1) LatLM matches a data- and capacity-matched autoregressive model on held-out text when decoded sequentially, while its adaptive parallel decoder achieves near-autoregressive accuracy on independent-line tasks using 25--41% as many decoding rounds. (2) When cross-line dependencies cause LCLM's fixed schedule to fail, deferred…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.23951">阅读原文 ↗</a></p>
+</body>
+</html>

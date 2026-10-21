@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TideKV: Delayed KV Eviction via Layer-Wise Chunked Prefill for Memory-Efficient Long-Context LLM Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>TideKV: Delayed KV Eviction via Layer-Wise Chunked Prefill for Memory-Efficient Long-Context LLM Inference</h1>
+<p class="meta-line">arXiv/cs.LG · 2026-10-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 长上下文 LLM 推理长期受制于 prompt prefill 期间的峰值显存。现有 KV 压缩能降解码显存，但通常要求完整 prefill 以保留全局上下文，构建期峰值依然高；在线分块驱逐虽更早降显存，却在每层尚未看全 prompt 时就做选择，可能损害缓存构建与解码。</p>
+<p><strong>方法</strong> 提出 GPU 内的缓存构建架构 TideKV，采用分层主序的延迟驱逐：在每个 Transformer 层内处理完所有 prompt 分块，只为当前活跃层保留完整 prompt 的 KV，并在层末统一驱逐。</p>
+<p><strong>关键数字</strong> 多平台上保持所评压缩方法的推理质量与最终缓存大小不变；A100 上 64K 上下文把构建期瞬时占用降低 83.89%；RTX 4090 上 64K 的首 token 时间仅增加 1.06%，并使 128K prefill 可行；TideKV 在 Jetson 上完成 128K，而同等条件的后 prefill 压缩在两个资源受限平台均 OOM。</p>
+<p><strong>为什么值得看</strong> "把驱逐推迟到层末"用极小的调度改动换来近 84% 的构建期显存下降，是可以立刻借鉴的工程手法。</p>
+<p><a href="https://arxiv.org/abs/2610.24499">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.24499">阅读原文 ↗</a></p>
+</body>
+</html>

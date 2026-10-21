@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Merge Hulls Without Copying Vertices: GPU Isotonic Regression</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Merge Hulls Without Copying Vertices: GPU Isotonic Regression</h1>
+<p class="meta-line">arXiv/cs.DC · 2026-10-16 · 论文PDF</p>
+
+<p>Isotonic regression finds the monotone sequence closest to the data in weighted least squares. It is used to calibrate probabilities and inside differentiable ranking.</p>
+<blockquote><p>Isotonic regression finds the monotone sequence closest to the data in weighted least squares. It is used to calibrate probabilities and inside differentiable ranking. Its standard algorithm, pool adjacent violators, is sequential within a sequence, and torchsort, the exact GPU solver of differentiable sorting libraries, runs it with one thread per sequence, which is slow on long ones. The fit is the slope sequence of the lower convex hull of cumulative sums, and hulls of sorted points can be merged in parallel. Merging partial hulls level by level, however, copies the surviving vertices at every level, which moves $\Theta(n \log n)$ data when most points survive. We store each chunk's hull once and represent a merged hull as a list of segments of these chunk hulls, at most one per chunk; a merge then updates the list. We prove the representation correct, bound the work and depth of the merge phase, and measure a CUDA implementation on four NVIDIA GPUs against a control that copies the surviving vertices with the whole GPU at every level. On dense hulls the merge phase is 17 to 276 times faster with segment lists and the whole operator 3.9 to 19 times; on noisy data, where few vert…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.24038">阅读原文 ↗</a></p>
+</body>
+</html>

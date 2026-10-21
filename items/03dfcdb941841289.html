@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>An Information-Geometric Framework for OCS-Reconfigurable Interconnect Topology in Large-Scale AI Clusters</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>An Information-Geometric Framework for OCS-Reconfigurable Interconnect Topology in Large-Scale AI Clusters</h1>
+<p class="meta-line">arXiv/cs.DC · 2026-10-18 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 光路交换（OCS）让 AI 集群 pod 间布线可编程，由此引出布线选择、偏离对称性、重构次数等设计问题。</p>
+<p><strong>方法</strong> 提出统一的信息几何框架：布线视为度数多胞体内各回路概率单纯形上的点，用相对对称 Fat-Tree 先验的 KL 散度度量偏离；代价 U 取平滑后的 DAG 关键路径长度，其梯度经前向-后向等于 Gibbs 分布的路径边缘；构造自由能 F = U + β₁⁻¹·KL，并证明适定性、对 β₁ 的单调依赖、Jeffreys 散度给出的适应界与静态最优性的对称性原理；熵正则近端梯度法做乘性更新并进行 |V| 维对偶 KL 投影，时变流量下阈值策略对无切换最优解的 regret 为 O(√(ΓCV₁T)；流量变化用多项 GLR-CUSUM 检测并给出非渐近虚警界；多作业广义均值公平与 α-公平（α≥2）对齐。</p>
+<p><strong>关键数字</strong> 摘要未给加速比等量化结果；在 pipeline、data 与 MoE 负载上与整数规划对比验证了框架。</p>
+<p><strong>为什么值得看</strong> 把 OCS 重构调度写成带 KL 约束的优化问题并做实证明，理论闭环相当完整，对做智算集群互连的人有方法论价值。</p>
+<p><a href="https://arxiv.org/abs/2610.25173">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.25173">阅读原文 ↗</a></p>
+</body>
+</html>

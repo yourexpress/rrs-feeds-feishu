@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PlaneZip: Lossless Bit-Plane Compression of Training Activations Offloaded over PCIe</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>PlaneZip: Lossless Bit-Plane Compression of Training Activations Offloaded over PCIe</h1>
+<p class="meta-line">arXiv/cs.DC · 2026-10-18 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 显存预算下的训练依赖张量重物化：被逐出的激活要么 swap 到主机内存，要么丢弃重算。可 GPU 算力增速已超 PCIe 带宽，MegTaiChi 这类按完整传输时间计费的成本模型规划器几乎不 swap；而利用空闲链路时间的 swap 也只能塞下很小一部分激活。</p>
+<p><strong>方法</strong> 提出 PlaneZip：在拷贝路径上压缩 swap 张量，并让规划器围绕压缩来规划。编码器对每个 128 字节块，在零值、delta bit-plane、bit-plane 与新增的零掩码 bit-plane 编码之间取最小者；逐张量预测器复用上一轮迭代的压缩率；规划器按压缩后的传输时间预算链路时间。</p>
+<p><strong>关键数字</strong> 在五个模型真实训练数据采集的激活上，BF16 压缩 1.71 倍、FP32 压缩 1.39 倍（几何平均），而零值压缩只有 1.18 倍与 1.20 倍；在 PCIe 3.0 消费级 GPU 与 PCIe 4.0 数据中心 GPU、激活显存减半的轨迹驱动仿真下，相对无压缩的带宽感知规划器分别降低 47% 与 31% 的重物化开销，相对 MegTaiChi 成本模型降低 73% 与 54%，预估引擎面积 0.036 mm²。</p>
+<p><strong>为什么值得看</strong> 激活的冗余远不止是零——按 bit-plane 挖出 1.7 倍后，"GPU 比 PCIe 快"这个前提下的 swap 才重新变得值得做。</p>
+<p><a href="https://arxiv.org/abs/2610.25033">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.25033">阅读原文 ↗</a></p>
+</body>
+</html>

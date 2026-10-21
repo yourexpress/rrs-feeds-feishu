@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpikeDuet: CPU-Accelerator Co-Execution of Sparse SNNs on Commodity MCUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SpikeDuet: CPU-Accelerator Co-Execution of Sparse SNNs on Commodity MCUs</h1>
+<p class="meta-line">arXiv/cs.AR · 2026-10-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> SNN 天然是稀疏的事件活动，但商用 MCU 越来越多地把通用处理器与稠密矩阵向量加速器配在一起，后者是否适合稀疏推理并不清楚。</p>
+<p><strong>方法</strong> 调研 EFR32MG24 的片上 Matrix Vector Processor（MVP）能否在优化过的事件驱动 Cortex-M33 执行之外进一步加速 SNN 推理；自动化的 snnTorch→C 部署流程包含硬件校准的引擎选择、保功能的神经元重排（把共同激活的神经元相邻摆放以适配加速器），以及让 CPU 与 MVP 计算重叠的异步调度。</p>
+<p><strong>关键数字</strong> 物理硬件上、五种网络配置下，异构执行相对优化后的稀疏 Cortex-M33 加速 1.27~1.87 倍、每次推理能耗降低 11~34%；最小的 Braille 网络仍以 CPU 为最优；仅重排一项就把 Braille-384 的主导隐藏层从 CPU 移到了 MVP。</p>
+<p><strong>为什么值得看</strong> 稀疏性的价值取决于"活动局部性"能否被硬件看见，这篇在 MCU 上给出了可复现的正向证据。</p>
+<p><a href="https://arxiv.org/abs/2610.24677">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.24677">阅读原文 ↗</a></p>
+</body>
+</html>

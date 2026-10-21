@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finite Interaction Lens: Structured Precision Sharing for Vision-Language Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Finite Interaction Lens: Structured Precision Sharing for Vision-Language Models</h1>
+<p class="meta-line">arXiv/cs.LG · 2026-10-18 · 论文PDF</p>
+
+<p>Identifying which visual interventions interact in a vision-language model requires comparing their joint and separate effects. The resulting four-output difference can be small enough for r</p>
+<blockquote><p>Identifying which visual interventions interact in a vision-language model requires comparing their joint and separate effects. The resulting four-output difference can be small enough for rounding error to obscure it. We introduce the Finite Interaction Lens (FIL), a mixed-precision method for evaluating finite intervention families. At each selected linear projection, FIL decomposes each candidate's input into a native state, two single-intervention components, and a full-dimensional mixed residual. It projects the single-intervention components at higher precision and reuses the same numerical contributions in the joint candidates, while retaining every mixed residual and nonlinear trajectory. We derive a local cancellation identity and a conditional bound on error propagation through a smooth nonlinearity. In one MLP of Qwen3-VL-4B-Instruct, FIL reduces final interaction MSE by 94.4% on 16 synthetic families and by 99.85% and 99.35% in two separate four-image COCO studies, relative to a control that has the same nominal BF16-product budget and higher-precision single interventions but projects each joint candidate independently. One image accounts for most of the absolute gain …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.25577">阅读原文 ↗</a></p>
+</body>
+</html>

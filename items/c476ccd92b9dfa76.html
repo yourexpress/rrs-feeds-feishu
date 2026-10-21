@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MX-Like Tensor Core for LLM Inference with NPU Integration via Hardware-Software Co-Design Exploration</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MX-Like Tensor Core for LLM Inference with NPU Integration via Hardware-Software Co-Design Exploration</h1>
+<p class="meta-line">arXiv/cs.AR · 2026-10-19 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> OCP Microscaling（MX）、NVFP4 等块缩放量化格式已广泛用于 LLM 推理，但由共享 scale、权重与激活格式组合张成的设计空间从未被系统探索，该空间上的联合精度—硅面积权衡也未被刻画，NPU 端侧 LLM 部署真正位于 Pareto 前沿的配置仍是未知数。</p>
+<p><strong>方法</strong> 做软硬件协同设计探索，三点创新：① 定义并系统刻画 MX-like 设计空间下完整的 8-bit scale 格式族，并与非对称权重-激活精度联合分析，找出优于 MX 与 NVFP4 类（无 per-tensor scaling，PTS）基线的配置；② 构建逐格式专用 MAC 数据通路模板，实现跨空间的公平硬件成本评估；③ 开发自动化协同设计流程并集成进开源 SNAX NPU 平台。</p>
+<p><strong>关键数字</strong> 结论是 scale 格式只在激进的 FP4 量化下才要紧；UE5M3 在 FP4 区间是精度-硬件的优选，相对 NVFP4 类基线把困惑度退化最多降低 25.3%，代价仅为面积 +0.06%、功耗 +0.49%。</p>
+<p><strong>为什么值得看</strong> 一张"什么场景该选什么 scale 格式"的判据，对正在做端侧 LLM 加速器的人比再一篇 survey 更有用。</p>
+<p><a href="https://arxiv.org/abs/2610.26083">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.26083">阅读原文 ↗</a></p>
+</body>
+</html>

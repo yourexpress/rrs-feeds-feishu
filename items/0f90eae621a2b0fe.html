@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EdgeKernelBench: Unified LLM-Driven Kernel Generation for Edge Backends</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>EdgeKernelBench: Unified LLM-Driven Kernel Generation for Edge Backends</h1>
+<p class="meta-line">arXiv/cs.LG · 2026-10-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LLM 在服务器 GPU 上生成 kernel 已见成效，但边缘部署硬件异构、软件栈割裂、资源预算紧张，跨多种边缘后端的 LLM kernel 生成尚无系统研究。</p>
+<p><strong>方法</strong> 提出 EdgeKernelBench：统一 IR 部署框架捕获可复用的计算、调度与访存决策，经编译器接口连到各目标后端；配套分层边缘工作负载基准，覆盖从单算子到紧凑模型图。以 TVM 为参考编译器实例化并跨异构边缘后端验证。</p>
+<p><strong>关键数字</strong> 单次生成下最好模型 Correct@1 达 64.5%，Fast@1.0 却只有 25.5%。作者据此提出按分层 IR 组织优化的 LEKA，在 agent 评测子集上 Fast@1.0 达 43.5%，直接生成为 13.0%、Claude Code 为 26.1%（LEKA 与 Claude Code 用同一基座模型与优化预算）。</p>
+<p><strong>为什么值得看</strong> 正确率与性能之间这道巨大落差说明"能跑通"远不等于"跑得快"，而这篇同时给出了边缘端可复现的评测基线。</p>
+<p><a href="https://arxiv.org/abs/2610.24648">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.24648">阅读原文 ↗</a></p>
+</body>
+</html>

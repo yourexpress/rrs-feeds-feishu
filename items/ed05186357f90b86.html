@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reinforcement learning on the EPRI AI-ccelerating Unit Commitment benchmark: diagnosing over-commitment and guiding MILP with learned policies</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Reinforcement learning on the EPRI AI-ccelerating Unit Commitment benchmark: diagnosing over-commitment and guiding MILP with learned policies</h1>
+<p class="meta-line">arXiv/cs.LG · 2026-10-18 · 论文PDF</p>
+
+<p>Reinforcement learning (RL) is increasingly proposed as a fast solver for unit commitment (UC), but standalone agents remain far more expensive than mixed-integer linear programming (MILP).</p>
+<blockquote><p>Reinforcement learning (RL) is increasingly proposed as a fast solver for unit commitment (UC), but standalone agents remain far more expensive than mixed-integer linear programming (MILP). In the first study of RL on the 51-generator, 72-hour benchmark of the Electric Power Research Institute (EPRI) AI-ccelerating Unit Commitment competition, we trace this gap to the agents' own exploration, close most of it, and show that the resulting policy can accelerate an exact solver. In every configuration tested, Proximal Policy Optimisation (PPO) and an action-branching Deep Q-Network (DQN) trained from scratch committed about twice the units of a thermal-only MILP optimum, at 39-64% higher cost, whereas a merit-order rule came within 1.6-7% (10-24% when unserved energy is priced). When each unit's decision is sampled independently, spare units insure against random de-commitments. Consistent with this, injecting exploration noise during fine-tuning enlarged a lean policy's fleet, a reward without shaping terms did not remove the over-commitment, and under their training noise the agents outperformed the rule subjected to comparable noise. Imitating the MILP solutions and fine-tuning con…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.25544">阅读原文 ↗</a></p>
+</body>
+</html>

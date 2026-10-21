@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Hybrid GPU and Processing-Near-Memory Architecture with Shared DRAM for Efficient Prefill-Decode Disaggregation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>A Hybrid GPU and Processing-Near-Memory Architecture with Shared DRAM for Efficient Prefill-Decode Disaggregation</h1>
+<p class="meta-line">arXiv/cs.AR · 2026-10-19 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LLM 推理服务中 prefill（算力受限）与 decode（带宽受限）错配严重：合在一起互相干扰，而做 prefill-decode（PD）分离又导致资源利用不足——prefill 让显存带宽闲置，decode 让算力闲置。GPU SM 切分这类空间划分方案受限于"decode 仍需大量 SM 才能打满带宽"，留给 prefill 的算力随之被压缩，形成固有权衡。</p>
+<p><strong>方法</strong> 提出混合 PD 分离架构 DuoPD：把轻量近存计算（PNM）单元集成进 HBM 逻辑层。与以往依赖昂贵内部带宽扩展、且只卸载部分解码算子的 PIM/PNM 设计不同，DuoPD 借与 GPU 共享的 HBM 接口做带宽共享，让整个解码在 PNM 上执行，从而使算力受限的 prefill 与带宽受限的 decode 并发、干扰极小；配套紧凑 PNM 微架构、TSV 级带宽共享机制，以及面向 GPU-PNM 混合执行的分层数据映射。</p>
+<p><strong>关键数字</strong> 在服务器规模 LLM 上评测，端到端吞吐最高达到传统 PD 分离的 2.23 倍。</p>
+<p><strong>为什么值得看</strong> PD 分离正被各推理框架广泛部署，"把解码整体搬到 HBM 逻辑层"给出了一个跳出 SM 切分死结的架构答案。</p>
+<p><a href="https://arxiv.org/abs/2610.26131">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.26131">阅读原文 ↗</a></p>
+</body>
+</html>

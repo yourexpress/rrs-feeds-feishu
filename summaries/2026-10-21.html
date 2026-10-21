@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日精选 · 2026-10-21</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.5em; border-bottom: 1px solid #e5e7eb; padding-bottom: 12px; }
+  h2 { font-size: 1.2em; margin-top: 1.8em; }
+  a { color: #0969da; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .meta { color: #6b7280; font-size: 0.85em; margin-top: 32px; }
+</style>
+</head>
+<body>
+<h1>每日精选 · 2026-10-21</h1>
+<h2>当日检索概况</h2>
+<ul>
+<li>AI 技术报告库：本轮 items 库入库 0 篇、入选 0 篇（当日检索由独立自动化产出，结果在合并推送中单独汇报）。</li>
+<li>高效计算库：检索 193 篇，入选 18 篇，主题集中在推理系统优化（KV 缓存 / 投机解码 / 跨模型编译 / 微调系统）、集群与互连（GPU 调度 / OCS 拓扑 / RDMA 可观测 / 激活压缩）、端侧与硬件（NPU 微调 / 块缩放格式协同设计 / MCU 稀疏 SNN / 混合信号推理引擎），以及 LLM 生成代码的形式化验证与评测基准。</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>DuoPD：共享 HBM 的 GPU/近存计算混合架构（arXiv:2610.26131）</strong>：把轻量 PNM 单元集成进 HBM 逻辑层，让整个 decode 在近存侧执行，prefill 与 decode 并发时干扰极小，端到端吞吐最高达传统 PD 分离的 2.23 倍——给出了跳出 GPU SM 切分死结的架构答案。https://arxiv.org/abs/2610.26131</li>
+<li><strong>Ineffective Occupancy：异构 GPU 集群的就绪感知调度（arXiv:2610.25066）</strong>：在阿里 GPU 集群轨迹上发现即使容量充足且放置完成，仍有 52.70% 的执行记录从未就绪；只用九个准入时可见属性预测就绪概率，即可把无效占用从 43.64% 压到 27.15%。https://arxiv.org/abs/2610.25066</li>
+<li><strong>TideKV：分层分块 prefill 的延迟 KV 驱逐（arXiv:2610.24499）</strong>：只在层末统一驱逐、保住"看完完整 prompt 再选择"的性质，A100 上 64K 上下文构建期瞬时显存降 83.89%，RTX 4090 首 token 仅增 1.06% 并解锁 128K prefill。https://arxiv.org/abs/2610.24499</li>
+<li><strong>PlaneZip：PCIe swap 激活的无损 bit-plane 压缩（arXiv:2610.25033）</strong>：BF16 激活压 1.71 倍（零值压缩只有 1.18 倍），让"按完整传输时间计费"而几乎不 swap 的成本模型重新愿意 swap，重物化开销相对 MegTaiChi 降 73%/54%，预估引擎面积仅 0.036 mm²。https://arxiv.org/abs/2610.25033</li>
+<li><strong>SigmaTrace：库无关的 CPU/GPU 发起 RDMA 逐操作可观测（arXiv:2610.24328）</strong>：在 libibverbs/mlx5dv 层用内存插桩，首次无需改源码即可看到 GPU-initiated RDMA，主机侧开销 128 GPU 上 1.3%，并暴露出现有 profiler 看不见的 2.13 倍节点间流量倾斜。https://arxiv.org/abs/2610.24328</li>
+<li><strong>EdgeKernelBench：面向多边缘后端的 LLM kernel 生成基准（arXiv:2610.24648）</strong>：单次生成最好模型 Correct@1 达 64.5% 但 Fast@1.0 只有 25.5%，作者提出的分层 IR agent LEKA 把后者拉到 43.5%（同基座模型与预算下 Claude Code 为 26.1%）——"能跑通"远不等于"跑得快"。https://arxiv.org/abs/2610.24648</li>
+<li><strong>First-Order LoRA Training with Phone NPUs（arXiv:2610.24816）</strong>：把一阶 LoRA 训练中三处冻结权重乘法全部放到手机 NPU（推理时已驻留这些权重），训练图与 adapter 留在 CPU 并可后台断点运行，为端侧隐私微调给出最省资源的路径。https://arxiv.org/abs/2610.24816</li>
+<li><strong>SIXPPAC：12nm FinFET 混合信号流式 ML 引擎（arXiv:2610.26552）</strong>：全参数片上存储，0.8 V 下以 105 MS/s 处理 8b I/Q 基带样本、每次推理仅 4.18 nJ（0.42 POPS/W），是边缘常驻感知任务功耗基线的一组硬数字。https://arxiv.org/abs/2610.26552</li>
+</ul>
+<h2>主题速览</h2>
+<p>当日高效计算库呈现"推理系统显存与调度 + 集群互连与观测"双主线：推理侧既有 KV 缓存构建期峰值（TideKV）、投机解码的跨模型联合编译（Conjugate Compilation）与消费级 GPU 上的 NVFP4 LoRA 微调（PACT），也有把解码整体下沉到 HBM 逻辑层的 DuoPD；系统侧则集体转向"被忽视的资源浪费"——已放置但从未就绪的 52.7%（RAS）、被 swap 的激活里不止零的冗余（PlaneZip）、对主机不可见的 GPU 发起的 RDMA（SigmaTrace）。硬件与端侧一侧，块缩放格式的精度-硅面积 Pareto（MX-Like Tensor Core）、MCU 上稀疏 SNN 的 CPU-加速器协同（SpikeDuet）与混合信号流式推理引擎（SIXPPAC）指向同一个诉求：把有限的片上算力与 nJ 预算用满。此外还有两篇"怎么信 LLM 生成的代码"——Lean+VerCors 浮点形式化验证与 GRADE-RTL 五级评估，把结构有效、行为正确、实现效率分开量。</p>
+<p class="meta">由 RSS 流水线自动生成 · 订阅每日精选 feed 可在阅读器内直接阅读</p>
+</body>
+</html>

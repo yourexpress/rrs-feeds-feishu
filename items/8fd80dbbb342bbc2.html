@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PolyGraph: Plan-Buffered CUDA Graphs for Adaptive Speculative Decoding</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>PolyGraph: Plan-Buffered CUDA Graphs for Adaptive Speculative Decoding</h1>
+<p class="meta-line">arXiv/cs.LG · 2026-08-14 · 论文PDF</p>
+
+<p><strong>研究问题</strong> 自适应投机解码会在相邻解码步之间改变活跃批大小 B 与草稿长度 d，而 CUDA Graph 重放的是固定的启动配置；验证宽度 M = B·d 迫使服务系统预捕获大量形状、在服务路径上现场捕获，或每步都补齐到最大草稿长度。</p>
+<p><strong>方法</strong> 提出面向自定义 Triton kernel 的计划缓冲机制 PolyGraph：只捕获一个最大网格的图，每次重放前把活跃形状写入 GPU 内存；kernel 跳过超出该形状的 tile，而图拓扑、内存分配、布局、指针与启动网格保持固定，每次更新只传输 28 字节。</p>
+<p><strong>关键数字</strong> 在单张 H800 上、按 Qwen2.5-3B 维度做轨迹驱动原型，把 64 个形状专用图替换为 1 个；观测步延迟与预热基线相当（P50 17.7 对 17.8 毫秒）；服务前建图实测时间从 3915 毫秒降到 93 毫秒；固定草稿长度的对照显示收益来自避免补齐负载——零浪费时与 MaxPad 的 P99 差异可忽略，100% 浪费时降低 18.7%。</p>
+<p><strong>为什么值得看</strong> 用 28 字节换掉整套多形状图捕获，是自适应投机解码落地时很实用的一招；作者也明确标注这只是单卡合成轨迹下的机制验证，不是生产服务系统。</p>
+<p><a href="https://arxiv.org/abs/2610.23861">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.23861">阅读原文 ↗</a></p>
+</body>
+</html>

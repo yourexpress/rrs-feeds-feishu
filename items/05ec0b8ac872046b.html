@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Predicting CVSS and CWE from CVE Descriptions with Fine-Tuned Small Language Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Predicting CVSS and CWE from CVE Descriptions with Fine-Tuned Small Language Models</h1>
+<p class="meta-line">arXiv/cs.LG · 2026-10-16 · 论文PDF</p>
+
+<p>Until April 2026, the National Vulnerability Database labeled nearly every published Common Vulnerabilities and Exposures (CVE) entry with a Common Vulnerability Scoring System (CVSS) v3.1 v</p>
+<blockquote><p>Until April 2026, the National Vulnerability Database labeled nearly every published Common Vulnerabilities and Exposures (CVE) entry with a Common Vulnerability Scoring System (CVSS) v3.1 vector, a severity tier, and a Common Weakness Enumeration (CWE) weakness type. Now, NIST enriches only the high priority CVEs, leaving many newly published vulnerabilities unlabelled with the classifiers that security teams use for patch triage. In CVE enrichment, we predict the eight base components of CVSS v3.1 vector, base score, severity tier, and CWE from the vulnerability's textual description alone. To prevent leakage between near-duplicate descriptions, all systems are trained only on CVEs published in 2022 and 2023. Results are evaluated on all 36,325 usable 2024 CVEs in the pinned NVD snapshot. All scores are either directly predicted, or calculated from predicted vectors using the CVSS formula. A fine-tuned 3.8B-parameter model Phi-3.5-mini, trained with LoRA in 2.5 hours on a single Apple M5 Pro chip, achieves 69.9% accuracy on severity and 70.9% on CWE. It matches the official vector exactly for 48.8% of test CVEs, outperforming TF-IDF logistic regression by 2.8 to 4.7 points on all…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.24297">阅读原文 ↗</a></p>
+</body>
+</html>

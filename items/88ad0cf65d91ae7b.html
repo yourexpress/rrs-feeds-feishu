@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ride, Raise, or Wake: A Theory of Light-Thread Placement on Multi-Tier Processors</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Ride, Raise, or Wake: A Theory of Light-Thread Placement on Multi-Tier Processors</h1>
+<p class="meta-line">arXiv/cs.PF · 2026-10-18 · 论文PDF</p>
+
+<p>hones and laptops now mix several kinds of cores, and each kind sits in its own voltage and clock domain. When a light thread arrives, should it run beside heavy threads on a fast cluster th</p>
+<blockquote><p>hones and laptops now mix several kinds of cores, and each kind sits in its own voltage and clock domain. When a light thread arrives, should it run beside heavy threads on a fast cluster that is already awake, or wake a cluster of efficient cores? We answer with three costs. A thread can \emph{ride} an awake domain at the voltage other threads hold, \emph{raise} that voltage for everyone, or \emph{wake} a sleeping domain and pay its fixed power. From these costs follows a simple rule: ride while the thread's demand is below $r^*=\Phi/(e_h-e_l)$, the fixed power of the cluster it would wake over the gap in energy per operation; otherwise wake the smallest tier that can serve it. The best tier is not monotone in demand: tiny threads ride high, medium threads wake a low tier, heavy threads go high again. Two common designs err on opposite sides of the rule: grouping a light thread with the heavy threads of its application overpays above the threshold, and an energy model without idle costs overpays below it. In a model with five tiers, grouping costs 80 to 145\% more energy than the rule, and more as tiers are added. Measurements on an Apple M6 anchor the parameters.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.25546">阅读原文 ↗</a></p>
+</body>
+</html>

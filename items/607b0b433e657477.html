@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compaction-Aware Reinforcement Learning For Ascend Triton Kernel Generation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Compaction-Aware Reinforcement Learning For Ascend Triton Kernel Generation</h1>
+<p class="meta-line">arXiv/cs.LG · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 用 LLM agent 自动生成高性能 kernel 有望大幅提升开发效率，但有两处硬伤：与执行环境的多轮交互会让上下文持续累积、迅速超出模型有效窗口；用 GRPO 训练长程任务又因依赖终局评估而奖励稀疏，步级信用分配困难。</p>
+<p><strong>方法</strong> 提出 ATRL（Ascend Triton Reinforcement Learning）后训练方法，把 GRPO 改造为压缩感知的分段级目标；配套轻量 agent harness，级联返回编译、正确性与性能剖析三类反馈，并在 agentic RL 训练与评测中注入昇腾专属知识库，补齐基座模型缺失的平台经验。</p>
+<p><strong>关键数字</strong> 在昇腾硬件上运行的 NPUKernelBench 与 KernelBench 上，ATRL 在正确性与加速比两项上都超过包括 GRPO 在内的全部基线（摘要未给出具体数值）。</p>
+<p><strong>为什么值得看</strong> 上下文压缩与步级奖励是长程 agentic RL 的共性痛点，而这篇顺带给出了非 NVIDIA 平台的完整落地证据。</p>
+<p><a href="https://arxiv.org/abs/2610.23950">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.23950">阅读原文 ↗</a></p>
+</body>
+</html>

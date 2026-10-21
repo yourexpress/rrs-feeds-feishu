@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Triple Overlap in Pipelined Krylov Methods on Multi-GPU Systems</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Triple Overlap in Pipelined Krylov Methods on Multi-GPU Systems</h1>
+<p class="meta-line">arXiv/cs.DC · 2026-10-18 · 论文PDF</p>
+
+<p>We introduce a novel triple-overlap implementation of the pipelined preconditioned conjugate gradient (Pipe-PCG) and pipelined stabilized biconjugate gradient (Pipe-BiCGStab) solvers, method</p>
+<blockquote><p>We introduce a novel triple-overlap implementation of the pipelined preconditioned conjugate gradient (Pipe-PCG) and pipelined stabilized biconjugate gradient (Pipe-BiCGStab) solvers, methods widely used in scientific applications. By leveraging a collective communication library, our approach extends conventional computation-communication overlap to concurrently execute collective operations, irregular P2P communication, and compute kernels, enabling computation-communication-communication overlap across multiple GPUs. We evaluate the design on the MareNostrum 5 (H100) and Leonardo (A100) supercomputers, comparing against PETSc and the state-of-the-art two-stream NCCL implementation using SuiteSparse matrices and three massive instances scaled up to 512 GPUs. The three-stream design outperforms the two-stream baseline on every instance, with the margin widening from 2-6% at 4 GPUs to 18-47% at 64 GPUs. At 64 GPUs, the geometric-mean speedup over the two-stream baseline is 1.33x on MareNostrum 5 and 1.23x on Leonardo for Pipe-PCG, and reaches 1.30x for Pipe-BiCGStab. In large-scale experiments, we observed a speedup up to 35% in Pipe-PCG and up to 33% in Pipe-BiCGStab compared to t…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.25058">阅读原文 ↗</a></p>
+</body>
+</html>

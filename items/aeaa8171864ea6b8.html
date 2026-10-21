@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>First-Order LoRA Training with Phone NPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>First-Order LoRA Training with Phone NPUs</h1>
+<p class="meta-line">arXiv/cs.LG · 2026-10-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 端侧微调可让 LLM 学习用户私有数据而不外传，但 LoRA 每一步一阶训练仍要与冻结的基座权重相乘（前向、激活重算、输入梯度）；手机 NPU 为推理已驻留这些权重，其推理接口却不支持计算输入梯度。</p>
+<p><strong>方法</strong> 提出系统把三处冻结权重乘法全部放到 NPU 上，训练图、adapter 与优化器留在 CPU；输入梯度 kernel 复用驻留权重 tile 与前向反量化器，避免转置权重拷贝并保证前反向使用同一有效权重；按梯度敏感度选精度、对 FP16 输出施加按行范围保护；运行时融合剩余 CPU 算子并与 NPU 执行重叠，可恢复执行与温度节流让训练以后台任务方式推进。</p>
+<p><strong>关键数字</strong> 在两个高通骁龙平台、Qwen 与 Llama 家族的四个 LLM 上评测，覆盖夜间个性化与公开 LaMP-2 基准，对比对象含优化过的 CPU 训练器、手机 GPU 训练器、仅前向训练与 GPU 训练参考（摘要未给最终量化指标）。</p>
+<p><strong>为什么值得看</strong> "把推理驻留的权重直接拿来训练"是端侧隐私微调最省资源的路径，对唤醒词这类常驻模型的端侧适配有直接启发。</p>
+<p><a href="https://arxiv.org/abs/2610.24816">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.24816">阅读原文 ↗</a></p>
+</body>
+</html>

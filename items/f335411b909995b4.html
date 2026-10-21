@@ -22,9 +22,11 @@
 <h1>FuncCode: Compressing Kolmogorov--Arnold Networks in Function Space with Hardware-Aware Quantization</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-23 · 论文PDF</p>
 
-<p>FuncCode：函数空间压缩 Kolmogorov–Arnold 网络，硬件感知量化的基无关系数编码。</p>
-<blockquote><p>Kolmogorov--Arnold Networks (KANs) replace scalar edge weights with learnable univariate functions, increasing flexibility but also parameter memory because each edge stores multiple coefficients, often together with a separate base branch. We introduce FuncCode, a basis-agnostic compression approach that forms shared codebooks from sampled edge responses, codes the basis and base branches independently, and exports the resulting codebooks and per-edge indices in a quantized, bit-packed format. Across spline and polynomial KANs, sampled edge responses exhibit $13$--$35\%$ lower effective rank than their coefficient representations. Further replicated controls show that function-space clustering alone is statistically tied with coefficient-space clustering; the consistent accuracy gain comes from preserving the distinct sharing structure of the two branches. On a ten-seed MNIST benchmark, FuncCode compresses spline and GRAM KANs by $31.6\times$ and $17.6\times$ with only $0.31$ and $0.34$ pp accuracy loss. On a 6.1M-edge convolutional KAGN, it achieves $19.9\times$ compression while remaining within $0.54$ pp of dense accuracy on CIFAR-10 and $1.89$ pp on CIFAR-100. After compressio…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> KAN 用可学习的单变量函数替换标量边权，灵活性更强但参数显存也更大——每条边要存多个系数，通常还另带一条基分支。</p>
+<p><strong>方法</strong> 提出基无关的压缩方法 FuncCode：从采样的边响应构造共享码本，基分支与函数分支分别独立编码，再以量化、位打包的格式导出码本与逐边索引；另用重复对照实验澄清"函数空间聚类本身"并不优于系数空间聚类，一致的精度收益来自保留了两条分支各自不同的共享结构。</p>
+<p><strong>关键数字</strong> 采样边响应的有效秩比其系数表示低 13%~35%；十种子 MNIST 基准上 spline KAN 与 GRAM KAN 分别压缩 31.6 倍与 17.6 倍，精度仅损失 0.31 与 0.34 个百分点；在 610 万边的卷积 KAGN 上压缩 19.9 倍，与稠密模型精度差 0.54 个百分点（CIFAR-10）与 1.89 个百分点（CIFAR-100）；压缩后逐边索引最多占存储权重的 99.4% 比特，表示受索引界约束；在九个 bit-exact FPGA 加速器上，SplineKAN 布线后权重内存相对稠密 INT4 降低 3.87 倍，且周期数与时延不增加。代码开源在 github.com/OSU-STARLAB/FuncCode。</p>
+<p><strong>为什么值得看</strong> "按函数响应而非系数聚类"把 KAN 压缩比推到 20~30 倍，且在真实 FPGA 上验证收益不只停留在纸面。</p>
+<p><a href="https://arxiv.org/abs/2609.26067">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.26067">阅读原文 ↗</a></p>
 </body>
 </html>

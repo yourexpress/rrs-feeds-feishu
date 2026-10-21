@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CEMA-Router: Infrastructure-Aware Batch Routing for LLM Inference in Cloud-Edge Systems</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CEMA-Router: Infrastructure-Aware Batch Routing for LLM Inference in Cloud-Edge Systems</h1>
+<p class="meta-line">arXiv/cs.DC · 2026-10-19 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LLM 被集成进跨异构云边资源的普适应用后，节点在算力、能效、网络条件与所部署模型质量上差异显著，路由需在响应质量、货币成本、能耗与批次完成时间之间取舍；而现有 LLM router 多按模型质量与 token 成本逐查询决策，云边调度器又常忽略模型质量差异，四目标协调不足。</p>
+<p><strong>方法</strong> 提出基础设施感知的批量路由器 CEMA-Router：把批量路由建模为多目标搜索问题，联合最小化模型质量损失、货币成本、能耗与受长尾任务支配的批次完成时间；用面向路由的 memetic 算法高效搜索，结合最大请求优先的负载感知播种与概率化、评估器引导的 Lamarckian 修复；决策依据部署相关节点画像、动态积压估计与模型质量信号；并实现为含请求管理器、路由服务与剖析器的端到端系统，支持真实云边部署与轨迹驱动仿真。</p>
+<p><strong>关键数字</strong> 用 RouterBench 轨迹与 GSM8K、MMLU 负载在异构云边测试床上评测，相对 SOTA 方法加权目标在 GSM8K 上最多降低 86%、MMLU 上降低 80%；能耗分别最多降 33% 与 19%；批次完成时间分别最多降 27% 与 30%。</p>
+<p><strong>为什么值得看</strong> 把"质量/钱/能耗/尾延迟"四个互相打架的目标收进同一个搜索，云边推理的路由决策终于不必再靠拍脑袋。</p>
+<p><a href="https://arxiv.org/abs/2610.26171">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.26171">阅读原文 ↗</a></p>
+</body>
+</html>

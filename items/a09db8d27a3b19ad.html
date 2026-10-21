@@ -22,9 +22,11 @@
 <h1>GRADE-RTL: Evaluating LLM-Generated RTL Beyond Compilation</h1>
 <p class="meta-line">arXiv (cs.AR) · 2026-09-23 · 论文PDF</p>
 
-<p>GRADE-RTL：LLM 生成 RTL 的五级评估框架（端口签名/编译/详化/模块完整性/功能等价），9 个模型端到端成功率 0–70%，并给出 FPGA/65nm ASIC 综合的资源功耗差异。</p>
-<blockquote><p>Large language models (LLMs) can generate register-transfer-level (RTL) code from natural-language specifications, but compilation alone does not establish structural completeness, functional correctness, or implementation efficiency. This paper presents a framework for evaluating LLM-generated RTL beyond compilation, which we named GRADE-RTL. Using fixed prompts and validation settings, GRADE-RTL applies five checks, such as Port Signature, Compilation, Elaboration, Module Completeness, and Functional Equivalence against trusted reference RTL. With the help of compact metrics, we identify where candidates fail and distinguish end-to-end success from eligibility for downstream synthesis. We evaluate nine general-purpose and RTL-specialized LLMs on ten edge-relevant intellectual property designs under a budget of three generation attempts with failure-directed feedback. End-to-end success ranges from 0% to 70% across the evaluated models, with failures extending beyond compilation to hierarchy resolution, incomplete logic, and behavioral mismatch. FPGA implementation and 65 nm ASIC synthesis results further show that functionally equivalent RTL can differ substantially in resource u…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 能从自然语言规格生成 RTL 代码，但"能编译"并不足以确立结构完整性、功能正确性与实现效率。</p>
+<p><strong>方法</strong> 提出超越编译的评估框架 GRADE-RTL：用固定提示与校验设置施加五项检查——端口签名、编译、细化（elaboration）、模块完整性，以及相对可信参考 RTL 的功能等价；用紧凑指标定位候选失败点，并区分端到端成功与"可进入下游综合"。在三次生成预算、失败导向反馈下，于十个面向边缘的 IP 设计上评测九个通用与 RTL 专用 LLM，再做 FPGA 实现与 65 nm ASIC 综合，并用 PID 控制器的布局布线案例展示不同 RTL 实现的物理设计后果。</p>
+<p><strong>关键数字</strong> 端到端成功率在 0% 到 70% 之间；失败不止于编译，还包括层次结构解析失败、逻辑不完整与行为不匹配；功能等价的 RTL 在资源、时序、面积与功耗上可相差极大。</p>
+<p><strong>为什么值得看</strong> 给"LLM 能不能写硬件"一把更细的尺子——把结构有效、行为正确、实现效率分开量，结论比单一通过率诚实得多。</p>
+<p><a href="https://arxiv.org/abs/2609.25335">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.25335">阅读原文 ↗</a></p>
 </body>
 </html>

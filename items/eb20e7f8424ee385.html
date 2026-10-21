@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pangolin: Efficient DAG-based BFT State-Machine Replication with TEE-Accelerated Commitment</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Pangolin: Efficient DAG-based BFT State-Machine Replication with TEE-Accelerated Commitment</h1>
+<p class="meta-line">arXiv/cs.DC · 2026-10-19 · 论文PDF</p>
+
+<p>Currently many Byzantine fault-tolerant (BFT) protocols use directed acyclic graphs (DAGs) to let replicas propose blocks of requests in parallel for improved throughput. Yet, the existing D</p>
+<blockquote><p>Currently many Byzantine fault-tolerant (BFT) protocols use directed acyclic graphs (DAGs) to let replicas propose blocks of requests in parallel for improved throughput. Yet, the existing DAG-based designs mainly consider the atomic-broadcast layer: They typically do not describe an efficient client interaction layer, their garbage collection is either unspecified or relies on trusted external storage, and the lowest-latency designs rely on timing assumptions that may be violated in geo-distributed deployments. In this paper, we propose the Pangolin protocol: It introduces a novel low-latency DAG-based atomic broadcast layer and completes it into an efficient state-machine replication (SMR) framework. To preserve system throughput, clients issue requests to a single replica and verify replies efficiently via compact execution proofs. Furthermore, Pangolin introduces a new garbage-collection scheme for DAGs which bounds memory usage even under full asynchrony. Pangolin leverages trusted execution environments to tolerate f Byzantine faults with only n &gt;= 2f + 1 replicas and accelerates vertex commitments significantly: Broadcasting certified vertices requires only a single communic…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.26295">阅读原文 ↗</a></p>
+</body>
+</html>

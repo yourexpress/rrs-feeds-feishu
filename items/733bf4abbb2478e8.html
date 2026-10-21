@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DS-Net: A Dynamic Split Network for Edge-Cloud Collaborative Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DS-Net: A Dynamic Split Network for Edge-Cloud Collaborative Inference</h1>
+<p class="meta-line">arXiv/cs.LG · 2026-10-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 现有边云协同推理把 DNN 在端与云之间切分，通信条件或设备变化时需为不同切分点加载不同模型，造成切换耗时长、端侧存储开销大。</p>
+<p><strong>方法</strong> 提出动态切分网络 DS-Net：动态切换框架在单一模型内灵活选择多个切分点，同时降低存储、内存与切换开销；配分层补偿机制——局部对齐校准各切分点解码后的特征分布，任务相关全局补偿恢复任务信息；并按样本复杂度与运行时资源，把样本自适应全局补偿纳入切分点选择。</p>
+<p><strong>关键数字</strong> 内存开销降低 74.6%，切换时延达毫秒级；Nano 平台 10 Mbps 带宽约束下，COCO 数据集精度高 1.2%、时延降 42.5%、吞吐提升 1.8 倍。</p>
+<p><strong>为什么值得看</strong> 在端侧资源紧张的现实约束下，"一份模型挂多个切分点"把存储与切换开销一次性摊掉，工程复用度很高。</p>
+<p><a href="https://arxiv.org/abs/2610.23949">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.23949">阅读原文 ↗</a></p>
+</body>
+</html>

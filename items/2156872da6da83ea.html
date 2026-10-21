@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAGE-CP: When Marginal Coverage Hides Route-Conditional Failures in Adaptive VLM Ensembles</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SAGE-CP: When Marginal Coverage Hides Route-Conditional Failures in Adaptive VLM Ensembles</h1>
+<p class="meta-line">arXiv/cs.LG · 2026-08-19 · 论文PDF</p>
+
+<p><strong>研究问题</strong> 自适应 VLM 集成对简单图片提前退出、难图片升级到更强模型以节省算力，但单一保形（conformal）阈值虽能让最终预测器边际有效，沿单条计算路径仍可能严重失效。</p>
+<p><strong>方法</strong> 精确刻画这一失效：若某条路径的流行率为 π，边际 1-α 覆盖率允许其条件覆盖率低至 max{0, 1-α/π}。提出 SAGE-CP——在开发集上学路由、冻结所有路由决策，再对提前退出与升级输入分别校准返回分数；校准步骤对路由产生的操作分组施加 Mondrian split conformal prediction，在可交换性假设下给出逐路径的有限样本覆盖。</p>
+<p><strong>关键数字</strong> 在 10 个基准、4 个冻结 VLM、5 个对齐划分上，全局校准与 SAGE-CP 都达到 0.900 的 0.90 目标边际覆盖，但路径行为差异显著：SAGE-CP 把平均最差路径覆盖率从 0.623 提到 0.887，平均路径覆盖差距从 0.324 降到 0.025，且用同样的路由分数与每图 1.177 次源模型调用；更强保证使平均预测集大小从 1.893 增至 2.212，仍小于完整集成的 2.486，且少 70.6% 的源模型调用；跨 5 个数据集，batch-one 时延降低 58.8%~63.4%、GPU 总能耗降低 55.7%~57.5%。</p>
+<p><strong>为什么值得看</strong> "平均有效"不等于"每条路径有效"，把保证按路由分组重新贴上，是任何早退/分级系统都该补的一课。</p>
+<p><a href="https://arxiv.org/abs/2610.23864">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.23864">阅读原文 ↗</a></p>
+</body>
+</html>

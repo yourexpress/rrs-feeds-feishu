@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conjugate Compilation: Self-Improving Agentic Co-Compilation for Speculative Decoding</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Conjugate Compilation: Self-Improving Agentic Co-Compilation for Speculative Decoding</h1>
+<p class="meta-line">arXiv/cs.LG · 2026-10-18 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 投机解码把小 draft 模型与大 target 模型同时带进服务流程，但分别编译二者会把共享执行留在编译器的优化边界之外——单模型上更优的 kernel，未必在二者协同执行时更优。</p>
+<p><strong>方法</strong> 提出 Conjugate Compilation，把投机解码重构为跨模型编译问题，在共享执行内联合优化 draft 与 target；设计把两模型数据块在公共 tile 内交错的 operand 布局，在保持各自数学语义的前提下共置 GEMM 与非 GEMM 作业；并用自改进 agentic 搜索实现——LLM 以编译器与 GPU 执行为环境编辑跨模型优化计划，每个计划都经协同执行实测打分，结合 kernel 级判定与编译器反馈驱动后续提案，Monte Carlo 树搜索累积奖励引导探索。</p>
+<p><strong>关键数字</strong> 在 NVIDIA B300 与 RTX 5090 的六种单 GPU 投机解码配置上，逐轮几何平均加速 1.37 倍；交错 kernel 提升到 1.45 倍，最好情形 1.59 倍；GPU 利用率平均提升 RTX 5090 上 1.46 倍、B300 上 1.50 倍。</p>
+<p><strong>为什么值得看</strong> "按协同执行的实测结果来编译"是编译器优化里少见的一层抽象，对任何多模型共置的推理服务都适用。</p>
+<p><a href="https://arxiv.org/abs/2610.25012">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.25012">阅读原文 ↗</a></p>
+</body>
+</html>
