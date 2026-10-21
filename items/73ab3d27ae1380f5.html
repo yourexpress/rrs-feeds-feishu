@@ -22,9 +22,10 @@
 <h1>AgriCountDINO: Parameter-Efficient Exemplar-Guided Counting and Localization in Agriculture</h1>
 <p class="meta-line">arXiv · Shengjie Guo 等 · 2026-09-24 · 论文PDF</p>
 
-<p>参数高效的示例引导农业计数定位模型，面向低成本边缘部署的农业感知</p>
-<blockquote><p>Accurate counting and localization of plants and their organs support phenotyping and yield estimation, yet target appearance, scale, and density vary widely across species and imaging conditions. Exemplar boxes specify the target without category-specific retraining, and point predictions identify the individual instances contributing to the count. We introduce AgriCountDINO, a parameter-efficient exemplar-guided framework for joint counting and localization. It conditions frozen multiscale DINOv3 features on exemplar appearance and size, then progressively decodes them into target points. Missed-object recovery extends supervision to targets overlooked by initial matching, and exemplar-adaptive point NMS filters duplicate predictions according to exemplar scale. With 8.4M trainable parameters, approximately one-tenth of TasselNetV4's, AgriCountDINO achieves a three-shot MAE of 11.92 on the TPC-268 benchmark, reducing counting error by 9.7\% while providing individual target locations. Trained only on TPC-268, it achieves a zero-shot MAE of 14.25 on unseen generic object categories in FSC-147, improving upon the best compared zero-shot method by 6.0\% without target-domain trainin…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 农业中植物及其器官的计数与定位支撑表型分析与产量估计，但目标外观、尺度与密度跨物种、跨成像条件差异大；能否不靠类别特定重训、以极低参数成本完成示例引导的联合计数与定位？</p>
+<p><strong>方法</strong> 提出 AgriCountDINO：参数高效的示例引导框架，用示例框指定目标（无需类别重训），把冻结的 DINOv3 多尺度特征按示例外观与尺寸做条件化，逐步解码为目标点；漏检恢复扩展监督到初始匹配遗漏的目标，示例自适应点 NMS 按示例尺度过滤重复预测。</p>
+<p><strong>关键数字</strong> 仅 840 万可训练参数（约为 TasselNetV4 的十分之一），TPC-268 基准上三样本 MAE 11.92，计数误差降低 9.7% 并给出个体目标位置；仅用 TPC-268 训练，在 FSC-147 未见通用类别上零样本 MAE 14.25，比最强对比零样本方法提升 6.0%，无需目标域训练或微调。</p>
+<p><strong>为什么值得看</strong> 十分之一参数、三样本示例即达 SOTA 级精度且带零样本迁移，对低成本边缘农业感知部署很有吸引力。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.29460">阅读原文 ↗</a></p>
 </body>
 </html>

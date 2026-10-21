@@ -22,9 +22,10 @@
 <h1>ZeroGate: Trust-Preserving Fast Paths for Governed AI Agent Runtimes</h1>
 <p class="meta-line">arXiv (cs.AI) · 2026-09-23 · 论文PDF</p>
 
-<p>ZeroGate：治理型 AI Agent 运行时的信任保留快路径，精确动作审批与本地准入分离以缩短派发边界。</p>
-<blockquote><p>Moving authorization earlier can shorten an agent's dispatch boundary without removing authorization work. It can also admit an action whose payload, authority, or relevant state has changed. ZeroGate separates exact-action approval from durable local admission: an issuer signs a short-lived ActionPass, and a trusted runtime adapter reconstructs the final action before a local gate checks its binding and consumes its nonce. A SQLite transaction couples nonce consumption, applicable quota updates, and an admission receipt. We state a conditional decision-preservation proposition: successful local admission implies that a specified synchronous policy would authorize the same action at the admission point, provided approval is sound, all policy dependencies are represented and current, observations are faithful, and consumption is atomic. The implementation alone establishes neither current-world freshness nor exactly-once remote effects. Evaluation separates authored semantic fixtures, controlled concurrency and crash experiments, and an Azure Blob study comparing synchronous and prepared execution through the same issuer and gate. Both modes mint an exact-action pass; lifecycle late…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 把授权决策提前可以缩短 agent 的派发边界，但可能放行载荷/权威/相关状态已变化的动作；能否在不牺牲信任的前提下为治理型 agent 运行时做一条"快路径"？</p>
+<p><strong>方法</strong> ZeroGate 把"精确动作审批"与"持久本地准入"分离：签发者签署短时 ActionPass，可信运行时适配器在本地门检查绑定、消费 nonce 前重建最终动作；SQLite 事务把 nonce 消费、配额更新与准入回执耦合；并给出条件性决策保持命题——在审批健全、策略依赖齐备且当前、观察忠实、消费原子四条件下，本地准入通过蕴含同步策略也会授权同一动作。</p>
+<p><strong>关键数字</strong> 4800 次云尝试中，prepared 模式 worker 从准入到派发的 p95 为 9.802~11.374ms，同步模式为 25.018~334.000ms；但 prepared 模式完整生命周期均值在每个并发水平都更长（摘要明示该边界改进并非净加速）。</p>
+<p><strong>为什么值得看</strong> 诚实标注"不是净加速"的取舍分析很少见，对治理型 agent 平台的授权架构取舍是难得的审计级参考。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.25443">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,10 @@
 <h1>Hydrozoan: Latency-Adaptive DAG Consensus under Mixed Byzantine and Crash Faults</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-23 · 论文PDF</p>
 
-<p>混合拜占宾/宕机故障下时延自适应的 DAG 共识协议，逼近三消息时延下界。</p>
-<blockquote><p>DAG-based consensus protocols can achieve great throughput and the optimal three-message-delay limit for n = 3f+1 consensus. While two-delay protocols exist, they pay with reduced resilience (requiring 5f+1-style committees) or rely on fallbacks that sacrifice the DAG's high throughput. This paper introduces Hydrozoan, the first DAG protocol with a dual commit path under a hybrid fault model of f Byzantine and c crashed validators, on n = 3f+c+2p+1 validators. Leaders commit in two message delays whenever at most p validators are faulty, and in three otherwise, with no extra messages, no view changes, and multiple leaders per round. Both paths are evaluated on the same DAG, using a novel graded indirect rule to reconcile them so that every honest validator reaches the same decision. We show that under geo-distributed conditions, which path is faster is a property of geography rather than the protocol, as rounds reaching a remote region cost far more than those that do not. The (f, c, p) knobs place the fast quorum where the deployment requires it, allowing a commit in two message delays. If misconfigured, Hydrozoan can still commit in three message delays: Hydrozoan commits on whic…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> DAG 共识协议可同时实现高吞吐与 n=3f+1 下的三消息时延最优，但已有的两消息时延协议要么牺牲容错（需 5f+1 式委员会）、要么回退时损失 DAG 吞吐，能否在不加消息、不改视图的前提下拿到双路径提交？</p>
+<p><strong>方法</strong> 提出 Hydrozoan——首个在 f 个拜占庭 + c 个崩溃验证者混合故障模型（n=3f+c+2p+1）下具有双提交路径的 DAG 协议：快速路径在两消息时延内提交（至多 p 个故障时），否则回退三消息时延；用全新的分级间接规则调和两条路径，保证诚实验证者达成同一决策；(f,c,p) 三个旋钮把快速法定人数放到部署所需位置。</p>
+<p><strong>关键数字</strong> 地理分布式评测中吞吐与 Mysticeti 持平；快速法定人数落在快速区域时提交快约 25%，不满足或超过 p 个故障时回退三消息时延（此时现有两消息协议停滞）；Optimal-Hydrozoan 变体在快速路径上多容忍一个故障，首次匹配已知下界；两条协议的安全性与活性均在 Lean 4 中机器验证。</p>
+<p><strong>为什么值得看</strong> 把"快慢两条路"在同一 DAG 上无缝并存的难题用分级规则解开，且带形式化证明，是做 BFT 共识的人值得读的方案。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.25918">阅读原文 ↗</a></p>
 </body>
 </html>

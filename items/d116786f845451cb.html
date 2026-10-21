@@ -22,9 +22,10 @@
 <h1>SLED-IFV: Solver-Validated LLM-Guided Decomposition for Scalable Hardware Information-Flow Verification</h1>
 <p class="meta-line">arXiv (cs.CR) · 2026-09-23 · 论文PDF</p>
 
-<p>SLED-IFV：LLM 引导分解+solver 校验的可扩展硬件信息流验证。</p>
-<blockquote><p>Formal hardware information-flow verification (IFV) provides strong guarantees against secret-dependent timing and control behavior, but often scales poorly on realistic RTL. We identify two recurring proof barriers in self-composed IFV: implementation complexity, where proof-hard datapath logic dominates even though the property needs only a compact boundary relation, and relational inductive complexity, where the proof depends on cross-copy public-control facts that the backend prover does not infer efficiently. To address them, we introduce two semantic proof decomposition forms: functional simplification, which replaces a proof-hard RTL region with a validated over-approximate summary, and relational strengthening, which exposes and proves the cross-copy relations needed for induction. We further present SLED-IFV, a solver-validated LLM-guided flow that automates the selection of these forms and their concrete targets. Given a self-composed miter and an oracle-free decision sheet, the LLM proposes a decomposition, then materializes it into proof artifacts under controller checks. The controller compiles the checked artifacts into proof obligations, and the formal verification b…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 硬件信息流验证（IFV）对防秘密依赖的时序与控制行为能给出强保证，但在真实 RTL 上扩展性差；自组合 IFV 有两类证明障碍——证明困难的 data-path 逻辑占主导（属性只需紧致的边界关系）、跨副本公共控制事实后端证明器推不出来。</p>
+<p><strong>方法</strong> 提出两种语义证明分解形式：功能简化（用经验证的过近似摘要替换证明困难区域）与关系加强（暴露并证明归纳所需的跨副本关系）；SLED-IFV 是求解器校验的 LLM 引导流程，LLM 提出分解方案后在控制器检查下物化为证明工件，编译成证明义务，形式验证后端是接受的唯一权威。</p>
+<p><strong>关键数字</strong> 九个真实 RTL 构造的非平凡基准上，相对仅求解器最高加速 603 倍，两个 12 小时超时被转为完成的证明；所有案例闭环产出被验证器接受的分解。</p>
+<p><strong>为什么值得看</strong> "LLM 提方案、求解器把关"的分工让 LLM 参与形式验证而不牺牲可信度，是可借鉴的人机协同验证范式。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.25637">阅读原文 ↗</a></p>
 </body>
 </html>

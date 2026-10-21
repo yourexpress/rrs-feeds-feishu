@@ -22,9 +22,10 @@
 <h1>Not All 4-bit Quantizers Are Equal: Deployment-Time Mitigation of PII Leakage in Fine-Tuned Small Language Models</h1>
 <p class="meta-line">arXiv (cs.CR) · 2026-09-23 · 论文PDF</p>
 
-<p>微调小模型 4bit 量化部署时的 PII 泄露差异：是否有样本校准的舍入是关键，提出部署时缓解方案。</p>
-<blockquote><p>Organizations fine-tune small language models on private data and then compress them to 4 bits for resource-efficient deployment. We show that the compression method also affects privacy. What separates the methods is not the bit width but whether they tune their rounding on a small sample of text, the calibration corpus. On our primary model, when each planted record's own opening text is used as the prompt, the two calibration-based methods we test, Activation-aware Weight Quantization (AWQ) and Gradient-based Post-Training Quantization (GPTQ), each reproduce none of the planted records, while the calibration-corpus-free GGUF Q4_K_M format reproduces 5.3% of them. Tracked across five open models with 0.5-7 billion parameters, AWQ leaks least at every size and in both families, with little accuracy loss at 3-7 billion. Controlled experiments associate the difference with calibration-induced rounding error in channels involved in rare-token prediction. Choosing the 4-bit method is therefore a deployment-time privacy decision, not only a question of speed and quality.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 组织在私有数据上微调小模型后压缩到 4bit 部署以节省资源——压缩方法本身是否影响隐私（训练数据是否会被复现）？</p>
+<p><strong>方法</strong> 系统比较 AWQ、GPTQ 等基于校准语料的量化方法与无校准语料的 GGUF Q4_K_M：区分关键不在位宽，而在舍入是否用一小段文本样本（校准语料）调过；并用受控实验把差异关联到稀有 token 预测相关通道的校准诱导舍入误差。</p>
+<p><strong>关键数字</strong> 主模型上，用每条植入记录的开头文本作 prompt 时，AWQ 与 GPTQ 均未复现任何植入记录，GGUF Q4_K_M 复现了 5.3%；跨 0.5~70 亿参数的五个开源模型，AWQ 在每个规模、两个模型家族里泄露最少，30~70 亿规模下精度损失很小。</p>
+<p><strong>为什么值得看</strong> 首次把"选哪种 4bit 量化"明确为部署时的隐私决策而非单纯的速度/质量取舍，对端侧小模型发布流程有直接警示作用。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.25014">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,10 @@
 <h1>MSA-CITE: A Co-Adapted LoRA Specialist Ecology for Fixed-Budget Small-Model Inference</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-23 · 论文PDF</p>
 
-<p>MSA-CITE：从废弃 checkpoint 组合共适应 LoRA 专家生态，固定小模型预算（Qwen3-4B）下的多能力部署。</p>
-<blockquote><p>Compact language models are typically deployed by retaining a single post-training checkpoint and sampling it repeatedly. In this work, we challenge this practice by treating multiple discarded checkpoints as composable assets for deployment. Starting from a single Qwen3-4B backbone, we preserve four frozen LoRA branches, each derived from a different post-training trajectory. stead of drawing four generations from one branch, we allocate a fixed four-generation budget by sampling one completion from each branch. Our method, Multi-path Specialist Adaptation with Calibrated Inference-Time Evidence (MSA-CITE), processes the resulting portfolio by grouping terminal answers into equivalence classes, scoring each class via summed calibration-derived source priors, and selecting a representative under deterministic tie-breaking rules. The readout stage does not learn from evaluation results, nor does it introduce additional generations, verifiers, or reranking steps. On 200 held-out mathematics items, the four-path portfolio achieves 65.5% accuracy, compared with 62.0% for the strongest single-branch baseline. On a 100-item subject-disjoint shift, it attains 42.0% versus 40.0%. Under in-…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 小模型部署惯例是保留单个后训练 checkpoint 反复采样；被丢弃的中间 checkpoint 能否当作可组合资产，在固定推理预算下带来更好效果？</p>
+<p><strong>方法</strong> 提出 MSA-CITE：以单个 Qwen3-4B 为骨干保留四个冻结 LoRA 分支（各来自不同后训练轨迹），固定四次生成预算改为每分支各采一次；把终端答案归入等价类，用校准来源先验打分并确定性平局裁决选出代表，读出阶段不学评测结果、不加生成/验证器/重排。</p>
+<p><strong>关键数字</strong> 200 道留出数学题上四路径组合准确率 65.5% vs 最强单分支基线 62.0%；100 题主题偏移场景 42.0% vs 40.0%；分布内提升稳健，偏移场景下对最强基线的优势不具结论性。</p>
+<p><strong>为什么值得看</strong> 结论克制但方向新颖：后训练分支即使不做共训也能在部署端集体受益，给"废弃 checkpoint"找到了第二条命。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.26217">阅读原文 ↗</a></p>
 </body>
 </html>

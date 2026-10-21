@@ -22,9 +22,10 @@
 <h1>Lizard: Bandwidth-Adaptive Real-Time Video Analytics through Content-Aware Packet Discarding at Last-Mile Edge Routers</h1>
 <p class="meta-line">arXiv (cs.NI) · 2026-09-23 · 论文PDF</p>
 
-<p>Lizard：末梢边缘路由上内容感知丢包的带宽自适应实时视频分析系统。</p>
-<blockquote><p>The timeliness and accuracy of edge-based video analytics can be hindered by drastic reductions in available bandwidth (ABW) at last-mile edge routers, causing prolonged queuing delays. This work proposes Lizard, a system that leverages video-content-aware packet discarding to mitigate the negative effects of drastic ABW degradation that may frequently occur at a last-mile edge router by judiciously discarding packets that contain frame blocks less important to the analytics at the destination. To achieve this, we first devise a frame-block-aware RTP header extension to effectively decouple packet dependencies to encode frame blocks. Second, Lizard uses a priority-based feedback mechanism that dynamically evaluates packet priorities based on relative accuracy impacts. Third, we develop an adaptive phase-transition-based packet discarding strategy at the router to discard packets that represent unimportant blocks. Our evaluation of Lizard shows improvements over existing methods are substantial: 53.2% reduction in latency and 27.1% increase in analysis accuracy.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 末梢边缘路由带宽骤降时，边缘视频分析任务会因排队延迟变长而失去时效性，能否在路由器侧主动丢弃对下游分析不重要的数据包来缓解？</p>
+<p><strong>方法</strong> 提出 Lizard：帧块感知的 RTP 头扩展解耦包依赖、按相对精度影响动态评估包优先级的反馈机制，以及路由器上的自适应相变丢包策略——只丢弃代表不重要帧块的包。</p>
+<p><strong>关键数字</strong> 相对现有方法，时延降低 53.2%，分析准确率提升 27.1%。</p>
+<p><strong>为什么值得看</strong> "内容感知丢包"把带宽稀缺时的取舍从网络层提升到语义层，是边缘视频分析里少见的端到端系统解法。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.25817">阅读原文 ↗</a></p>
 </body>
 </html>

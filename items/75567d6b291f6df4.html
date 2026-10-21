@@ -22,9 +22,10 @@
 <h1>Seeking Cost-Optimal Infrastructure Size for Distributed Filesystems: A Ceph Case Study</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-23 · 论文PDF</p>
 
-<p>Ceph 案例研究：分布式文件系统 I/O 性能成本最优的基础设施规模预测方法。</p>
-<blockquote><p>Distributed Filesystems (DFS) are a crucial component of modern computing environments, and their performance is critical to the success of all the facilities that rely on them. However, predicting the DFS I/O performance solely based on the storage system hardware is not trivial. In this paper, we address this challenge by presenting an empirical method that tries to quantitatively assess how hardware configuration choices influence the performance of a DFS using Ceph as a case study. We investigate the influence of three hardware parameters-number of CPU cores, amount of RAM, and disk bandwidth. To control these variables, we relied on the Linux hotplug interface and Cgroups, avoiding additional software overhead. Our results reveal that for the analyzed workloads, decreasing hardware resources does not always yield proportional performance losses. This method offers practical insights for designing cost-effective distributed storage systems, remaining general enough to be applied to other filesystems.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 分布式文件系统性能决定上层设施成败，但仅凭存储硬件预测 DFS I/O 性能并不容易；硬件配置（CPU 核数、内存量、磁盘带宽）如何量化影响性能？</p>
+<p><strong>方法</strong> 以 Ceph 为案例给出经验方法：用 Linux hotplug 接口与 Cgroups 控制三个硬件参数变量，避免额外软件开销；考察 CPU 核数、内存量、磁盘带宽对 I/O 性能的影响。</p>
+<p><strong>关键数字</strong> 对所分析的工作负载，降低硬件资源并不总是带来成比例的性能损失（摘要未给具体数值）。</p>
+<p><strong>为什么值得看</strong> "硬件降配未必等比掉性能"对做成本敏感的存储基础设施选型是实用信号，方法可迁移到其他文件系统。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.26616">阅读原文 ↗</a></p>
 </body>
 </html>

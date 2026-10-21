@@ -22,9 +22,10 @@
 <h1>Modular Composition of Inductive Types Using Lean Meta-programming</h1>
 <p class="meta-line">arXiv (cs.PL) · 2026-09-23 · 论文PDF</p>
 
-<p>用 Lean 元编程实现归纳类型的模块化组合，缓解表达式问题中的扩展性限制。</p>
-<blockquote><p>Inductive types are ubiquitous building blocks in many programming and theorem proving languages. An inductive type is a closed set of constructors from which values of the type can be created. That set cannot be extended though once a type is defined. This limits extensibility, reuse, and modular separation of concerns when defining types and functions operating over their values. This limitation is manifested in the expression problem, where extending an expression language with new syntactic constructors without having to modify or re-compile existing ones is a challenge in almost all programming languages. This paper presents inductive type and function implementation composition algorithms based on meta-programming. In addition, a set of syntactic extensions to the Lean proof assistant implementing those algorithms are presented. This framework allows for modular reuse, composition, and extension of a subset of Lean type and function definitions. In addition, semantic subtyping relations between component and composite types are discussed both at the type theoretic and implementation levels. The framework is demonstrated on a case study, involving the composition of syntactic …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 归纳类型的构造子集合一旦定义即封闭，无法扩展，这限制了类型与函数定义的可扩展性、复用与模块化隔离——即经典"表达式问题"，几乎所有语言里新增语法构造子都要改动既有代码。</p>
+<p><strong>方法</strong> 给出基于元编程的归纳类型与函数实现组合算法，并为 Lean 证明助手实现一组语法扩展；在类型论与实现两个层面讨论组件类型与复合类型间的语义子类型关系；用三个子语言（语法+语义构件）组合成一个语言的案例研究演示框架能力与局限。</p>
+<p><strong>关键数字</strong> 摘要未给量化数字；核心交付是一套可组合扩展 Lean 类型/函数定义的机制与案例验证。</p>
+<p><strong>为什么值得看</strong> 对在 Lean 里做语言工程/DSL 组合的人，这是一条绕过表达式问题、不必重编译既有定义的现成路径。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.25427">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,10 @@
 <h1>What Should a Self-Teacher See? Privileged Context Design for On-Policy Self-Distillation</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-23 · 论文PDF</p>
 
-<p>on-policy 自蒸馏的特权上下文设计实证：更多特权信息不一定造就更好教师。</p>
-<blockquote><p>More privileged information does not always make a better teacher. We study this tension in on-policy self-distillation (OPSD), where a frozen copy of the base model scores the student's own rollouts under privileged context, conventionally a complete reference solution that bundles the final answer with one particular reasoning path. Holding the student view and training fixed within each scale, we compare that default against three abstractions compiled offline, a named strategy, a method-independent framing, and a problem category, and against an answer-only control that keeps the destination but removes the path. In the primary runs on competition mathematics, the best intermediate contexts improve the in-domain peak mean over the full solution by 1.4 points at 4B and 1.6 at 8B, while storing an order of magnitude fewer hint tokens. Comparisons across three seeds also show positive mean gains for the framing and category contexts at both scales. Answer-only conditioning remains competitive in the primary runs, within 0.2 points of the full solution at these scales. The preferred context varies with student scale and task. Initial teacher-student KL does not order downstream per…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> on-policy 自蒸馏（OPSD）中，冻结的基座模型用特权上下文为学生自己的 rollout 打分，惯例给完整参考答案（最终答案+一条推理路径）；"更多特权信息是否一定造就更好教师"？</p>
+<p><strong>方法</strong> 在每规模内固定学生视图与训练，把默认完整解答与三种离线编译的抽象（命名策略、方法无关框架、问题类别）以及"只要答案去掉路径"的对照做比较。</p>
+<p><strong>关键数字</strong> 竞赛数学主运行中，最佳中间上下文在 4B 上提升域内峰值均值 1.4 分、8B 上 1.6 分，同时存储少一个数量级的 hint token；答案-only 条件在两类规模上距完整解答仅 0.2 分；三种子种子下框架与类别上下文在两个规模都呈正均值增益。</p>
+<p><strong>为什么值得看</strong> 结论反直觉且直接指导实践：教师该给的不是它能看到的一切，而是学生还能据此行动的那个抽象层级。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.25623">阅读原文 ↗</a></p>
 </body>
 </html>

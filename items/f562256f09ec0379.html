@@ -22,9 +22,10 @@
 <h1>SARA: SLO-Aware Resource Allocation for Disaggregated Agentic LLM Services</h1>
 <p class="meta-line">arXiv (cs.PF) · 2026-09-23 · 论文PDF</p>
 
-<p>SARA：面向云+边缘解耦式 agentic LLM 服务的 SLO 感知资源分配。</p>
-<blockquote><p>Recent advances in large language models (LLMs) are driving the emergence of multi-modal and agentic services for mobile users through cloud and edge infrastructures, where long-context workloads pose daunting challenges for inference latency. Existing disaggregated LLM serving systems largely rely on hardware profiling, configuration enumeration, or heuristic scheduling, offering limited analytical guidance for cost-efficient resource allocation. In this paper, we propose SARA, a Service level objectives (SLOs)-Aware Resource Allocation framework for disaggregated agentic LLM serving systems, which maximizes goodput under a deployment cost constraint and a series of quantile-based SLO constraints. By capitalizing on queuing theory, we first model the prefill, KV cache transfer, and decode stages as an M/G/k queue, an M/G/1 queue, and a generalized birth-death process, respectively. The analysis reveals that the prefill and decode stages are dominantly limited by computational capacity and high-bandwidth memory (HBM) resources, respectively. With these mathematical models, we further derive tractable tail behaviors of different stage-wise service level metrics for both light- and h…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 云+边缘解耦式 agentic LLM 服务面临长上下文推理时延挑战，现有解耦 serving 系统依赖硬件剖析、配置枚举或启发式调度，缺少有分析指导的成本高效资源分配方法。</p>
+<p><strong>方法</strong> 提出 SLO 感知资源分配框架 SARA：用排队论把 prefill、KV 缓存传输、decode 三阶段分别建模为 M/G/k 队列、M/G/1 队列与广义生灭过程，分析发现 prefill 与 decode 分别受限于算力与高带宽内存（HBM）；据此推导轻/重尾负载下各阶段 SLO 的尾行为，把负载、模型架构、硬件参数显式映射到阶段级 SLO 约束与最小资源需求，在成本预算下最大化 goodput。</p>
+<p><strong>关键数字</strong> 仿真与硬件实验显示阶段级 SLO 预测平均误差低于 5%；同等部署成本下相对 SOTA 基线平均提升 goodput 26.6%。</p>
+<p><strong>为什么值得看</strong> 用排队论给出可解析的资源分配而非纯启发式，对解耦式推理集群的成本-时延权衡有直接参考意义。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.26763">阅读原文 ↗</a></p>
 </body>
 </html>

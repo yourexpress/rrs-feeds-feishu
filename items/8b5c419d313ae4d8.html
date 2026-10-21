@@ -22,9 +22,10 @@
 <h1>WeightBridge: An Efficient Weight Transfer Library for Reinforcement Learning</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-23 · 论文PDF</p>
 
-<p>RL 训练系统权重同步库：自动对齐 trainer/rollout 权重布局、规划无冗余负载均衡传输，跨配置平均减少 GPU 停顿最高 42 倍。</p>
-<blockquote><p>Weight transfer - the propagation of updated parameters from trainers to rollout generators - is becoming an important performance bottleneck in reinforcement learning (RL) systems for LLMs. The central challenge is supporting the diverse trainer and rollout layouts and synchronization requirements of modern RL workloads without sacrificing efficiency. Existing solutions are efficient under some configurations but perform poorly or lack support under others. We present WeightBridge, a flexible, efficient weight-transfer library designed to deliver high performance across diverse RL configurations. WeightBridge first automatically extracts the correspondence between trainer and rollout weight layouts, then plans and executes redundancy-free and load-balanced weight transfer. It exposes a small, general API while coordinating workers across diverse synchronization modes. Across configurations spanning different models, parallelization layouts, and synchronization modes, WeightBridge reduces average GPU stall time by up to 42$\times$ over the state-of-the-art open-source RL framework and achieves high performance in all settings. A coding agent was able to integrate WeightBridge into …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 权重传输（把更新后的参数从 trainer 传播到 rollout 生成器）正成为 LLM 强化学习系统的性能瓶颈；现有方案只在部分配置下高效，跨不同模型、并行布局与同步模式时或低效或缺乏支持。</p>
+<p><strong>方法</strong> 提出 WeightBridge 权重传输库：自动提取 trainer 与 rollout 权重布局的对应关系，规划并执行无冗余、负载均衡的权重传输；暴露小而通用的 API，协调不同同步模式下的 worker。</p>
+<p><strong>关键数字</strong> 跨多种模型、并行布局与同步模式，相对最先进开源 RL 框架平均减少 GPU 停顿时间最高 42 倍；一个 coding agent 无需人工指导就把 WeightBridge 集成进两个不同 RL 框架，验证 API 通用性与易用性。</p>
+<p><strong>为什么值得看</strong> RL 训练中权重同步的"最后一公里"常常被低估，这篇用统一抽象一次性覆盖多样配置，工程参考价值直接。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.25442">阅读原文 ↗</a></p>
 </body>
 </html>

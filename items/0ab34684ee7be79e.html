@@ -22,9 +22,10 @@
 <h1>The Fleet Is the Model: Engineering Collective Intelligence with Fusion-MoA Pioneer R1</h1>
 <p class="meta-line">arXiv (cs.MA) · 2026-09-23 · 论文PDF</p>
 
-<p>Fusion-MoA："模型舰队即模型"，为多智能体组合定义稳定集体身份与治理的系统设计。</p>
-<blockquote><p>The model exposed to an application need not be a single checkpoint; it can be a governed fleet. Existing serving systems manage checkpoints and replicas, while multi-agent frameworks compose model calls without defining a stable collective identity, effect authority, or member-level evolution. We present Fusion-MoA, a runtime that exposes independently served heterogeneous Cells as one OpenAI-compatible model. A versioned Profile controls membership and evidence admission; read-only Analysts contribute bounded evidence, while a sole Executor retains all final-answer and tool authority. Cells can be qualified, promoted, or rolled back without changing the public API. We evaluate an eight-Cell, three-lineage deployment through three operational witnesses. On a fixed HMMT P1-P10 slice, the collective solves 8/10 problems versus 6/10 for the strongest individual Cell, and a preserved trace shows minority knowledge transferred to three initially incorrect or empty Cells. On 20 Terminal-Bench 2.1 tasks, all tool actions remain attributable to one Executor, with zero Analyst actions and zero bypass effects. Six Cells are promoted and one incompatible candidate is locally rolled back whil…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 面向应用暴露的"模型"不必是单个 checkpoint，可以是受治理的模型舰队；现有 serving 系统只管理 checkpoint 与副本，多智能体框架则在不定义稳定集体身份、效果权威与成员级演进的情况下组合模型调用——如何把异构模型舰队当作一个可观察、权威受约束、可独立演进的服务？</p>
+<p><strong>方法</strong> 提出 Fusion-MoA 运行时：把独立服务的异构 Cell 暴露为一个 OpenAI 兼容模型；版本化 Profile 控制成员资格与证据准入；只读 Analyst 贡献有界证据，唯一 Executor 保留全部最终答案与工具权威；Cell 可认证、晋升、回滚而不改公开 API。</p>
+<p><strong>关键数字</strong> 8 个 Cell、三条谱系的部署上：固定 HMMT P1-P10 切片，集体解出 8/10 vs 最强单 Cell 的 6/10；保留轨迹显示少数派知识转移到三个最初错误/空的 Cell；20 个 Terminal-Bench 2.1 任务全部工具动作可归因于唯一 Executor，零 Analyst 动作、零绕过；6 个 Cell 晋升、1 个不兼容候选就地回滚期间服务保持可用。</p>
+<p><strong>为什么值得看</strong> "模型舰队即模型"把多智能体组合从临时拼装提升为有身份、有权威边界、可治理的运行时，是 agent 服务化架构的重要一步。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.26080">阅读原文 ↗</a></p>
 </body>
 </html>

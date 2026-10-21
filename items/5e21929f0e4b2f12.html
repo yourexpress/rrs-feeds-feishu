@@ -22,9 +22,10 @@
 <h1>Lightweight Ranking Heads: Accelerating Multi-Task Experimentation in Production Recommender Systems</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-23 · 论文PDF</p>
 
-<p>生产推荐系统的轻量排序头：新任务以轻量头挂载加速多任务实验迭代并降低任务冲突。</p>
-<blockquote><p>Modern production-scale recommender systems rely on complex, multi-task ranking models. Introducing new prediction tasks into these massive systems often causes bottlenecks - it risks negative task conflicts with existing tasks, and can lead to long development and experimentation cycles due to the expensive retraining of backbone models and downstream models or tuning of reward combination formulas. To address the critical challenge of slow experimentation velocity, we introduce the Lightweight Ranking Heads (Light Heads) framework. Designed for continuous online learning environments, Light Heads enable the dynamic injection of new tasks into existing multi-task ranking models, effectively obviating the need for model cold-starting and retraining of backbone models. By utilizing stop-gradients and stateless daily training, this design strictly isolates new tasks, mitigating the risk of adverse task conflicts. Crucially, this framework uses a centralized configuration that allows Light Heads to be added to multiple models simultaneously, unblocking faster training data generation and co-training of downstream models. Successfully deployed at YouTube scale, this approach reduces th…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 生产级推荐系统是多任务大模型，新增预测任务常引发负向任务冲突，且因骨干与下游模型重训昂贵、奖励组合调参繁琐，实验迭代周期长达数周——如何在不冷启动、不重训骨干的前提下加速多任务实验？</p>
+<p><strong>方法</strong> 提出轻量排序头框架 Light Heads：面向持续在线学习环境，用 stop-gradient 与无状态日训严格隔离新任务，从机制上规避任务冲突；集中式配置使多个模型可同时挂载新头，解锁训练数据生成与下游模型共训。</p>
+<p><strong>关键数字</strong> 已在 YouTube 规模上线，把多任务实验迭代周期从数周缩短到数天。</p>
+<p><strong>为什么值得看</strong> 这是少见的"生产验证 + 系统设计"都齐的推荐系统基建论文，对新任务如何低风险快速上线有直接借鉴价值。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.25433">阅读原文 ↗</a></p>
 </body>
 </html>
