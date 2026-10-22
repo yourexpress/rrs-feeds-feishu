@@ -22,9 +22,11 @@
 <h1>An Input-Dependent Readout Phase for Resonant Sequence Models</h1>
 <p class="meta-line">arXiv · 2026-09-26 · 论文PDF</p>
 
-<p>谐振序列模型的输入依赖读出相位设计</p>
-<blockquote><p>Sequence models with a fixed-size state avoid the quadratic cost of attention, but face a design choice. An input-dependent state transition gives content-dependent memory at the cost of FFT-based training, while a fixed transition keeps the O(T log T) convolutional path but reads memory the same way for every input. ResonatorLM, a recent model of the second kind, reads a bank of damped complex oscillators through a fixed learned phase per head. We make that readout phase a function of the current token, which adds input dependence to the read only, keeps the convolution exact, and costs 0.2 percent more parameters. An analysis of the untrained bank shows that phase does encode elapsed time, but an ordinary token falls below the background within 2-8 steps and no choice of damping extends linear reconstruction beyond about 16 tokens. In 6M-parameter character-level models on WikiText-2, the input-dependent phase matches the original at the training length and removes its failure beyond it: trained on 256 tokens and tested on 1024, perplexity falls from 12.81 to 3.76. We trace the failure to long-memory heads that accumulate more history than training exposed them to. The learned ph…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 固定大小状态的序列模型避开 attention 二次成本，但面临设计取舍：输入相关状态转移给内容相关记忆却要 FFT 训练；固定转移保留卷积路径却对所有输入用同一方式读记忆——能否只让"读"输入相关？</p>
+<p><strong>方法</strong> 把 ResonatorLM 每头固定的读出相位改成当前 token 的函数：只给读出加输入依赖、保持卷积精确，参数仅增 0.2%；分析未训练振荡器组发现相位确实编码经过时间，但普通 token 在 2–8 步内即落到背景以下，无阻尼选择能把线性重建延伸到约 16 token。</p>
+<p><strong>关键数字</strong> 6M 参数字符级模型 WikiText-2：256 token 训练、1024 token 测试时困惑度从 12.81 降至 3.76，消除原模型训练长度外的失效。</p>
+<p><strong>为什么值得看</strong> 用极小参数代价补上固定转移序列模型的长程外推短板，对高效序列建模有启发。</p>
+<p><a href="https://arxiv.org/abs/2610.12496">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.12496">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>ThreadShift: Transparent Thread-Level Offloading on Transient Cloud Resources Using MPKs</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-26 · 论文PDF</p>
 
-<p>ThreadShift：基于 MPK 保护键在瞬时云资源上做线程级透明卸载，免重启跨机器迁移线程</p>
-<blockquote><p>Transient cloud resources offer significant cost savings, but their unpredictability makes them hard to use for applications that cannot be safely restarted after reclamation. Existing approaches require application changes or rely on coarse-grained checkpointing, whose cost limits its benefits. We present ThreadShift, a system that transparently offloads compute-intensive threads of unmodified Linux applications to cheap transient resources while preserving correctness under reclamation. By operating at thread granularity, ThreadShift enables fast, fine-grained checkpointing and offloads only the threads that benefit from transient execution. The main challenge is to checkpoint individual threads despite cross-thread dependencies. ThreadShift does so by efficiently tracking memory dependencies, identifying per-thread memory writes, and maintaining coherence across machines. Three novel uses of Memory Protection Keys (MPKs) make these mechanisms efficient, enabling fast incremental checkpoints without pausing the entire application. We implement ThreadShift on x86-64 Linux and evaluate it on workloads including machine-learning inference, cryptographic tasks, and in-memory data pro…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 瞬时云资源价格低但不可预测，无法安全重启的应用难以利用；现有方案要么改应用、要么粗粒度 checkpoint——能否透明卸载未修改 Linux 应用的线程且在被回收时保持正确性？</p>
+<p><strong>方法</strong> 提出 ThreadShift：按线程粒度透明卸载计算密集线程到廉价瞬时资源；用内存保护键（MPK）的三项新用法高效跟踪内存依赖、识别每线程内存写并跨机器维护一致性，实现快速细粒度增量 checkpoint 而无需暂停整个应用。</p>
+<p><strong>关键数字</strong> x86-64 Linux 实现：线程卸载低至 164µs，checkpoint 比 CRIU 快最多三个数量级；在机器学习推理、密码任务、内存数据处理等负载上，商用云部署成本最多降 56%。</p>
+<p><strong>为什么值得看</strong> 免改应用的线程级弹性卸载，为瞬时资源利用与容错提供了一条低侵入路径。</p>
+<p><a href="https://arxiv.org/abs/2609.32153">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.32153">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>No-Restart Elasticity in an Adaptive Runtime System for Cloud-Native HPC</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-26 · 论文PDF</p>
 
-<p>面向云原生 HPC 的自适应运行时系统实现无需重启的弹性伸缩</p>
-<blockquote><p>Exploiting discounted spot instances for HPC requires an application to change its resource allocation at runtime, shrinking ahead of an interruption and expanding onto replacement capacity. Existing elasticity mechanisms implement rescaling as a full process teardown followed by a cold restart at the new processor count, and the restart stage accounts for up to 95% of the total overhead, growing with node count and increasing substantially on GPUs due to CUDA context initialization. In this paper, we present a no-restart rescaling mechanism for the Charm++ runtime system in which surviving processes never exit: a rescaling operation consists of a membership negotiation with a lightweight external coordinator, reconciliation of the UCX communication endpoints with the new cluster view, and a return to the top of the runtime initialization path that preserves live application state. This reduces the cost of a rescaling operation, excluding the load balancing step that any rescaling model requires, from multiple seconds to 8--15ms on CPUs and 7--11ms on GPUs, at 4 to 32 instances. Because processes survive, GPU device state persists in place, eliminating the checkpointing daemons pre…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 用折扣 spot 实例跑 HPC 需在运行时改变资源分配（中断前收缩、扩容补位），但现有弹性机制按"完整进程拆除+冷重启"实现——重启阶段占总开销最高 95%，且随节点数与 GPU（CUDA 上下文初始化）增长。</p>
+<p><strong>方法</strong> 为 Charm++ 运行时提出无重启缩放机制：存活性进程永不退出；缩放操作 = 与轻量外部协调器做成员协商 + 按新集群视图对账 UCX 通信端点 + 回到保留活动应用状态的运行时初始化路径顶部；进程存活使 GPU 设备状态原地保留，取消 GPU 弹性所需的 checkpoint 守护进程，去启动器引导机制摆脱与 spot 中断不兼容的受管进程。</p>
+<p><strong>关键数字</strong> 缩放成本（不含负载均衡）在 4–32 实例上从数秒降到 CPU 8–15ms、GPU 7–11ms；8 次同时中断的端到端开销降到 CPU 0.2%、GPU 0.6% 运行时间；1% 开销以下可缩放速率提高 7 倍。</p>
+<p><strong>为什么值得看</strong> 无重启弹性是 spot 实例跑 HPC 的关键工程突破，对云原生高性能计算有直接价值。</p>
+<p><a href="https://arxiv.org/abs/2609.32217">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.32217">阅读原文 ↗</a></p>
 </body>
 </html>

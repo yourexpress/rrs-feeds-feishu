@@ -22,9 +22,11 @@
 <h1>Quantization-Aware Pre-Training with Constrained Empirical Weight Distribution</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-26 · 论文PDF</p>
 
-<p>以受约束经验权重分布做量化感知预训练</p>
-<blockquote><p>Quantization-Aware Pre-Training (QAPT) can increase the inference efficiency of DNNs, but a problematic behaviour known as rounding boundary weight oscillation can introduce detrimental noise into the training process and significantly reduce convergence speed. While existing methods can reduce this detrimental noise, they either introduce additional hyperparameters or memory overhead, or cannot consistently improve model accuracy. In this work, we propose optimization with $\textbf{C}$onstrained $\textbf{E}$mpirical $\textbf{W}$eight dis$\textbf{T}$ribution (CEWT), the first hyperparameter-free memory-overhead-free oscillation suppression method that consistently improves QAPT performance: an optimizer post-update step that projects weights to the nearest point in weight space whose empirical distribution (histogram) matches a zero-mean Gaussian. Our key insight is many quantizers are designed with the implicit assumption that the to-be-quantized data are permutations of samples from a zero-mean Gaussian, and this assumption is not true during QAPT. By enforcing the zero-mean Gaussian prior as a hard constraint, CEWT can suppress this detrimental noise. Empirical results on variou…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 量化感知预训练（QAPT）可提升 DNN 推理效率，但"舍入边界权重振荡"向训练引入有害噪声、显著拖慢收敛——现有抑制方法要么引入额外超参数或内存开销，要么无法一致提升精度。</p>
+<p><strong>方法</strong> 提出 CEWT（Constrained Empirical Weight disTribution）：首个无超参数、无内存开销的振荡抑制方法——优化器后更新步骤把权重投影到经验分布（直方图）匹配零均值高斯的最邻近点；关键洞察是多数量化器隐含假设待量化数据是零均值高斯样本的排列，而 QAPT 中该假设不成立。</p>
+<p><strong>关键数字</strong> 训练时间几何平均仅增 4%；在低至 1-bit 激活与权重、最大 610M 参数的 LLaMA/GPT 模型上，预训练困惑度平均降 2.5、最多降 21 点。</p>
+<p><strong>为什么值得看</strong> 零成本抑制量化振荡的通用优化器后处理，对低比特大模型预训练与微调都实用。</p>
+<p><a href="https://arxiv.org/abs/2609.32659">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.32659">阅读原文 ↗</a></p>
 </body>
 </html>

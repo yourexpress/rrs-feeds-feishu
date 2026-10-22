@@ -22,9 +22,11 @@
 <h1>RR-Evict: Fine-Grained Prefix Cache Eviction beyond LRU for Agentic LLM Serving</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-26 · 论文PDF</p>
 
-<p>RR-Evict：面向智能体 LLM 服务的细粒度前缀缓存淘汰策略，超越 LRU</p>
-<blockquote><p>LLM-based agents execute long-horizon tasks through repeated model calls interleaved with tool execution and user interaction. As each call extends the history accumulated in previous turns, prefix caching avoids repeated prefill of the agent's entire context. However, the aggregate cache footprint grows with context length and concurrency, forcing serving systems to reclaim cached KV tensors. We identify recency synchronization: accesses to an agent's cached history refresh its cache nodes together, causing least recently used (LRU) eviction to concentrate on a few agents' private histories. When a fully evicted agent returns, it must recompute nearly its entire accumulated context, producing a large time-to-first-token (TTFT) outlier even if most other requests retain substantial cache reuse. We present RR-EVICT, a fine-grained prefix-cache eviction strategy that distributes reclamation across idle agent trajectories. RR-EVICT visits agents in round-robin order and evicts a tail chunk from each, preserving reusable prefixes for more agents when capacity remains for idle state. Returning agents can reuse these partial histories and recompute smaller missing suffixes. The policy re…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 智能体通过重复模型调用执行长时任务，前缀缓存避免重复 prefill，但缓存足迹随上下文长度与并发增长；发现"recency synchronization"：agent 历史访问会一起刷新缓存节点，使 LRU 驱逐集中在少数 agent 的私有历史上——被完全驱逐的 agent 回归时几乎要重算全部上下文。</p>
+<p><strong>方法</strong> 提出 RR-EVICT：细粒度前缀缓存驱逐策略，轮询访问 agent、每次从各空闲轨迹驱逐尾部块，容量允许时为更多 agent 保留可复用前缀；返回的 agent 可复用部分历史、只重算较小缺失后缀；无需预测未来到达或工具延迟，在 SGLang 中实现。</p>
+<p><strong>关键数字</strong> 对话与编码 agent 工作负载下，相对 LRU：P99 TTFT 最多降 75.4%，P99 未缓存 prompt token 最多降 65.7%。</p>
+<p><strong>为什么值得看</strong> 针对 agent 场景缓存驱逐的系统性修补，对 agentic LLM serving 的时延稳定性有直接收益。</p>
+<p><a href="https://arxiv.org/abs/2609.32278">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.32278">阅读原文 ↗</a></p>
 </body>
 </html>

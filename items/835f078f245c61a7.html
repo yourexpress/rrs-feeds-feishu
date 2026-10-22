@@ -22,9 +22,11 @@
 <h1>Depth Laws for the Precision Floor of Trained Neural Networks: Amplification, Residual Scaling, and a Quantization-Aware Training Paradox</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-25 · 论文PDF</p>
 
-<p>训练网络精度下限的深度定律：放大效应、残差缩放与量化感知训练悖论</p>
-<blockquote><p>How many bits does a network need before its accuracy collapses, and how does this grow with depth? We study the precision floor, the perturbation level or bit-width at which accuracy falls halfway to chance, in MLPs, CNNs, Vision Transformers and nine pretrained language models, under post-training quantization (PTQ) and quantization- or noise-aware training (QAT). (i) A first-order theory sets the floor through one full-precision quantity, the predictive amplification $G$: $η_c=Λ/G$, and $G^2$ grows linearly in depth at a rate proportional to the squared residual branch scale. (ii) The predicted equality $α_{PTQ}=ρ$ of depth exponents holds within 95% intervals in twelve of thirteen trained architectures and in GPT-2 from 12 to 48 layers, with $Λ=1.45\pm14\%$ across trained architectures. (iii) Residual branches scaled by $1/\sqrt{D}$ and pre-normalisation remove the depth penalty, and each quantizer turns noise into bits at a rate fixed by its step rule, giving $b_c=(α/γ)\log_2 D+C$. (iv) A QAT paradox: noise-aware training roughly doubles the tolerable noise of shallow networks, but the gain decays with depth, so the depth law steepens ($α_{QAT}/α_{PTQ}=1.45$-$1.47$ on two data…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 网络精度崩溃前需要多少比特、这个下限如何随深度增长？——训练网络存在"精度地板"，现有结论缺乏统一理论。</p>
+<p><strong>方法</strong> 研究 MLP、CNN、Vision Transformer 与九个预训练语言模型在 PTQ 与 QAT 下的精度地板，提出一阶理论：地板由一个全精度量（预测放大 G）决定，η_c=Λ/G，且 G² 随深度线性增长、速率正比于残差分支尺度平方。</p>
+<p><strong>关键数字</strong> 13 个训练架构中 12 个满足 α_PTQ=ρ 的深度指数等式（95% 区间内），Λ=1.45±14%；QAT 悖论：噪声感知训练使浅层可容忍噪声约翻倍，但增益随深度衰减，α_QAT/α_PTQ 在两组数据、各十种子上为 1.45–1.47。</p>
+<p><strong>为什么值得看</strong> 为"量化网络能压到多低"给出可预测的深度定律，对低比特部署与量化感知训练策略选择有指导价值。</p>
+<p><a href="https://arxiv.org/abs/2609.32060">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.32060">阅读原文 ↗</a></p>
 </body>
 </html>

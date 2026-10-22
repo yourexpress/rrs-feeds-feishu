@@ -22,9 +22,11 @@
 <h1>What Should Federated LoRA Share? FedSAIL via Input-aware Subspace Alignment</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-26 · 论文PDF</p>
 
-<p>联邦 LoRA 该共享什么：输入感知子空间对齐（FedSAIL）</p>
-<blockquote><p>Federated low-rank adaptation (LoRA) requires identifying an update structure that is shared across heterogeneous clients. Prior work reports strong similarity among trained LoRA projection matrices across clients; however, such agreement may be largely induced by common initialization and collapses toward random overlap under independent initialization. More crucially, relying solely on parameter similarity inherently ignores the influence of local input regime. To uncover a more robust shared structure, we introduce an input-aware action matrix that weights the adapter update by the second-moment statistics of local layer inputs. Empirically, while parameter similarity vanishes, the leading right singular directions of this action matrix remain strongly aligned across clients. This shared geometry preserves task-conditioned differences and naturally varies across network depths. Motivated by these findings, we propose Federated Subspace-Guided Action-Informed Learning (FedSAIL). Instead of averaging weights, FedSAIL estimates a shared action subspace to regularize local training while preserving client-specific coefficients. Across several benchmarks, our approach consistently im…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 联邦 LoRA 需识别跨异构客户端共享的更新结构；已有研究报告训练后的 LoRA 投影矩阵跨客户端强相似，但这种一致性可能由共同初始化诱导、独立初始化下坍缩为随机重叠——且只靠参数相似性会忽略局部输入分布的影响。</p>
+<p><strong>方法</strong> 引入输入感知 action 矩阵：用局部层输入的二阶矩统计加权适配器更新；实证发现参数相似性消失时，该矩阵的主导右奇异方向仍跨客户端强对齐，且保留任务条件差异、随网络深度自然变化；据此提出 FedSAIL——估计共享 action 子空间正则化局部训练，同时保留客户端特定系数。</p>
+<p><strong>关键数字</strong> 多个基准上一致优于竞争联邦 LoRA 方法，并显著降低通信成本——摘要未给具体数值。</p>
+<p><strong>为什么值得看</strong> 从"参数相似"转向"输入感知几何对齐"，为联邦 LoRA 的共享结构提供了更稳健的基础。</p>
+<p><a href="https://arxiv.org/abs/2609.32485">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.32485">阅读原文 ↗</a></p>
 </body>
 </html>

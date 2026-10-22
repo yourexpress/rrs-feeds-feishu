@@ -22,9 +22,11 @@
 <h1>UniCache: Task- and Type-Aware KV Cache Compression for Unified Multimodal Models</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-26 · 论文PDF</p>
 
-<p>UniCache：统一多模态模型的任务与类型感知 KV 缓存压缩</p>
-<blockquote><p>Unified multimodal models combine understanding, generation, and editing within a single network, offering a promising foundation for versatile multimodal applications. However, growing multimodal contexts make KV cache storage and access increasingly costly. Existing KV cache compression methods are typically tailored to specific tasks and single-modality caches, while overlooking changes in cache importance across tasks and timesteps. However, in unified multimodal models, each task involves multiple KV cache types, and both their composition and dynamics differ across tasks. As a result, a single compression policy overlooks task- and type-specific requirements, leading to the loss of critical information and degraded quality across tasks. Based on these findings, we propose UniCache, a training-free framework for task- and type-aware KV cache compression. UniCache identifies the cache segments activated by each task and assigns suitable compression policies through offline calibration. It coordinates their parallel execution under a shared storage budget through attention-guided allocation and task-aware temporal scheduling. Experiments show that UniCache achieves $5\times$ KV …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 统一多模态模型在单网络内做理解、生成与编辑，多模态上下文让 KV cache 存储访问成本日益高昂；现有压缩方法针对特定任务与单模态缓存，忽视跨任务、跨时间步的缓存重要性变化——单一压缩策略会丢失关键信息。</p>
+<p><strong>方法</strong> 提出 UniCache：无训练的任务与类型感知 KV 缓存压缩框架——离线校准识别每个任务激活的缓存段并分配合适压缩策略，通过注意引导分配与任务感知时序调度在共享存储预算下协调并行执行。</p>
+<p><strong>关键数字</strong> 理解与编辑任务实现 5× KV 压缩、生成任务 2.5×，质量损失可忽略；长上下文场景吞吐最多提升 1.78×。</p>
+<p><strong>为什么值得看</strong> 任务/类型感知的压缩分配，是统一多模态模型规模化到长上下文的实用解法。</p>
+<p><a href="https://arxiv.org/abs/2609.32831">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.32831">阅读原文 ↗</a></p>
 </body>
 </html>

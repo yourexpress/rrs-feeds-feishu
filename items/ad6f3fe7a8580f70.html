@@ -22,9 +22,11 @@
 <h1>Extremely Fast and Compact Binary Graph Representations via Randomized Operator Sketching</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-26 · 论文PDF</p>
 
-<p>随机算子素描实现极快且紧凑的二值图表示</p>
-<blockquote><p>Graph neural networks typically rely on dense, floating-point node representations, which can impose substantial memory and computational costs. Binary graph hashing offers an alternative by encoding node information as compact bit strings. However, existing approaches either sacrifice global topological information for computational efficiency or incur substantial generation costs. We introduce an ultra-fast, entirely algebraic hashing method that constructs binary node representations directly from graph structure, without requiring node features or gradient-based training. Our method approximates a high-order structural transition matrix using randomized column sampling inspired by the Nyström method and combines it with an efficient label-safe semantic propagation mechanism. The resulting continuous representations are discretized through column-wise thresholding to obtain compact binary codes. Experiments on ten node classification datasets show that the proposed method consistently improves classification accuracy over existing feature-free binary baselines while requiring sub-second code generation on many datasets. The resulting binary representations are also naturally sui…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 图神经网络依赖稠密浮点节点表示，内存与计算成本高；二进制图哈希用紧凑比特串编码节点信息，但现有方法要么牺牲全局拓扑信息、要么生成成本高——能否纯代数、免训练地构造？</p>
+<p><strong>方法</strong> 提出超快全代数哈希：直接从图结构构造二进制节点表示，无需节点特征或梯度训练；用 Nyström 式随机列采样近似高阶结构转移矩阵，结合标签安全语义传播，再经列级阈值离散化为紧凑二进制码。</p>
+<p><strong>关键数字</strong> 十个节点分类数据集上一致优于现有 feature-free 二进制基线，多数数据集亚秒级生成码；二进制表示天然适配事件驱动计算，兼容脉冲神经网络与免梯度学习规则。</p>
+<p><strong>为什么值得看</strong> 免训练的代数近似替代学习管线，对图表示学习的能效与神经形态部署有实际价值。</p>
+<p><a href="https://arxiv.org/abs/2609.32641">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.32641">阅读原文 ↗</a></p>
 </body>
 </html>

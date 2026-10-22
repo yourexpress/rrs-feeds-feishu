@@ -22,9 +22,11 @@
 <h1>KCensus: Synthesizing Latency-Optimal Consensus Fast Paths (Extended Version)</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-25 · 论文PDF</p>
 
-<p>把 geo 复制共识快路径视为知识扩散机制并据此合成给定网络拓扑/时延目标下的最优快路径，跨 AWS 区域 KV 存储性能领先既有协议。</p>
-<blockquote><p>Strongly consistent geo-replication often relies on fast paths to reduce latency in the common case of no failures or contention. Existing fast-path schemes, however, are ad hoc and restrictive: each corresponds to a point in a broad design space shaped by network topology, workload, and latency objective, so no single scheme works best across settings. This paper looks at fast-path schemes from a new perspective, as mechanisms that spread knowledge about proposals. With this view, we identify a fundamental condition on the spread of knowledge for a fast-path scheme to work. We then introduce KCensus, a framework that turns this condition into an optimization problem, synthesizing new fast-path schemes that are optimal for a given setting. We use KCensus to build a geo-replicated key-value store and evaluate it across AWS regions. Our system outperforms competing protocols, with up to 16% lower average latency.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 强一致地理复制常靠快速路径降低无故障/无争用场景时延，但现有方案临时且受限——每个方案只是广阔设计空间（拓扑、负载、时延目标）中的一个点，没有普适最优解。</p>
+<p><strong>方法</strong> 换视角把快速路径机制看作"传播提案知识"的手段，据此识别方案成立所需的知识传播基本条件；提出 KCensus 框架把该条件转成优化问题，为给定设置合成时延最优的快速路径方案，并用它构建跨 AWS 区域的地理复制 KV 存储。</p>
+<p><strong>关键数字</strong> 跨 AWS 区域评测中，系统平均时延比竞争协议最多低 16%。</p>
+<p><strong>为什么值得看</strong> 把快速路径设计从"经验调参"提升为"可优化合成"，对强一致复制系统设计有方法论价值。</p>
+<p><a href="https://arxiv.org/abs/2609.31302">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.31302">阅读原文 ↗</a></p>
 </body>
 </html>

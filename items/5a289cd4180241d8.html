@@ -22,9 +22,11 @@
 <h1>Evaluation of portability and performance of an OpenMP5 offloaded Quantum-Inspired Evolutionary Optimization</h1>
 <p class="meta-line">arXiv (cs.PF) · 2026-09-25 · 论文PDF</p>
 
-<p>评估单一 OpenMP5 源（#pragma omp target 卸载）的量子启发进化优化器在实验室服务器/云工作站/超算三类平台间的可移植性与性能可行性。</p>
-<blockquote><p>Quantum-inspired evolutionary optimization (QIEO) is a new class of population-based metaheuristic optimization algorithms which represents design variables as a set of qubits and searches a continuous, multi-dimensional landscape through rotation of the qubit's amplitude pair. Every generation rotates those amplitudes toward a single elite, which corresponds to that generation's best. The per-generation cost scales as $O(N_p N_g)$ for $N_p$ chromosomes and $N_g$ genes (decision variables). Production use of such solvers is rarely confined to a single machine class. Prototypes are run on laboratory servers- before moving to rented cloud workstations for more involved campaigns. The largest problems are reserved for leadership-class accelerators. This paper asks whether a \emph{single} OpenMP~5 source of QIEO, offloaded with \texttt{\#pragma omp target}, is a viable production path in each of those settings. We report three independent, campaigns of the 0/1 knapsack problem against a same-source multi-core Intel CPU baseline. The study comprises approximately 3,000 runs spanning varying chromosome and gene counts, evaluated using both chromosome-level and gene-level offload strategi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 量子启发进化优化（QIEO）的生产使用横跨实验室服务器、云工作站与超算多类平台——单一 OpenMP5 源码经 #pragma omp target 卸载，能否在每类环境都是可行的生产路径？</p>
+<p><strong>方法</strong> 对同一份 QIEO 源码做三组独立 0/1 背包实验，对照同源多核 Intel CPU 基线；评估染色体级与基因级两种卸载策略在 NVIDIA Tesla V100 SXM2、A100 80GB、AMD Instinct MI300X 上的表现，并针对 Volta 常量内存、Ampere L2 持久化与 cp.async、CDNA3 Infinity Cache 等平台特性做适配。</p>
+<p><strong>关键数字</strong> 约 3000 次运行：基因级并行卸载相对单 CPU 核在 V100/A100/MI300X 上几何平均加速 90×/136×/155×，相对 72 host threads 为 12×/17×/16.6×；O(N_p) 的 DetermineElite 选择更适合留在 host 执行。</p>
+<p><strong>为什么值得看</strong> 单源多平台可移植性的实证评测，对异构 HPC 代码的 OpenMP5 卸载路线有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.30862">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.30862">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>AgentReplay: Token-Wise Trace Replay Is Essential for Fair Serving System Performance Benchmarking</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-26 · 论文PDF</p>
 
-<p>AgentReplay：主张 token 级 trace 回放才是公平评测 LLM 服务系统性能的关键</p>
-<blockquote><p>LLM-based agents execute multi-turn workflows with interleaved model inference and tool calls, making efficient serving increasingly important. However, evaluating serving optimizations is challenging because identical tasks can produce different execution trajectories. Changes in generated tokens can alter subsequent prompts, tool calls, and reasoning turns, making it difficult to distinguish system improvements from workload variation. Greedy decoding does not guarantee identical outputs, while replaying only sequence lengths loses token information that affects prefix caching and mixture-of-experts (MoE) routing. To address these problems, we propose AgentReplay, a configurable trace record-and-replay framework for agent serving. AgentReplay records input/output tokens, expert selections, request dependencies, and tool durations. During replay, it forces the recorded output tokens while performing normal autoregressive computation, with optional controls for MoE expert selection and tool delays. This allows different systems to execute the same recorded workload while retaining their own batching, scheduling, and parallelization decisions. We further separate trajectory generati…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 智能体多轮工作流交织模型推理与工具调用，服务优化评测却因"相同任务产生不同执行轨迹"而失真——生成 token 变化会改变后续 prompt、工具调用与推理轮次，难分系统改进与负载波动。</p>
+<p><strong>方法</strong> 提出 AgentReplay：可配置的 trace 记录-重放框架，记录输入/输出 token、专家选择、请求依赖与工具时长；重放时强制使用记录的输出 token 但保留正常自回归计算，可控制 MoE 专家选择与工具延迟；并把轨迹生成与性能评估分离，允许兼容小模型重放大模型采集的长程轨迹。</p>
+<p><strong>关键数字</strong> 摘要未给具体数值；核心结论是 token 级重放能消除贪婪解码与仅按长度重放无法避免的工作负载变化。</p>
+<p><strong>为什么值得看</strong> 为 agent serving 提供公平可复现的评测协议，是做 LLM 服务系统性能对比的人必读。</p>
+<p><a href="https://arxiv.org/abs/2609.32283">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.32283">阅读原文 ↗</a></p>
 </body>
 </html>

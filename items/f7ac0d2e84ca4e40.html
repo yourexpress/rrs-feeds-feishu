@@ -22,9 +22,11 @@
 <h1>Cross-Backend QIEO: Universal Runtime Portability across OpenMP5, CUDA, HIP, and Multi-Language Interfaces</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-25 · 论文PDF</p>
 
-<p>跨后端量子启发优化器运行时：单一 C++ 实现经单一事实源架构覆盖 OpenMP5/CUDA/HIP 与多语言接口的通用可移植执行。</p>
-<blockquote><p>Quantum-inspired algorithms emulate quantum mechanical principles, such as, superposition, interference, and probabilistic amplitude evolution, on classical hardware by representing candidate solutions as qubit vectors and evolving them through rotation-gate operators. This approach offers higher optimization performance without physical qubits, and has been shown to achieve order-of-magnitude speedups (10--80$\times$) over traditional solvers on combinatorial, high-dimensional NP-hard problems. A critical barrier to adoption, however, is the lack of a unified execution framework that delivers both algorithmic performance and hardware portability. We present \textbf{Cross-Backend Quantum Inspired Evolutionary Optimizer (QIEO)}, the runtime core of BQP's BQPhy solver, which addresses this gap through a \emph{single-source-of-truth} architecture. One C++ implementation of the QIEO algorithm is compiled once per hardware target and exposed to multiple high-level languages via thin binding layers. The framework dispatches to CPU (sequential), OpenMP~5 (multi-core), CUDA (NVIDIA), and HIP (AMD) backends at runtime, adapting kernels to each device's memory hierarchy and warp/wavefront ex…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 量子启发优化算法在组合、高维 NP-hard 问题上比传统求解器快一个数量级，但缺少同时保证算法性能与硬件可移植性的统一执行框架——如何一份实现跑遍 CPU/GPU/多语言接口？</p>
+<p><strong>方法</strong> 提出 Cross-Backend QIEO（BQPhy 求解器运行时核心）：single-source-of-truth 架构，一份 C++ 实现按硬件目标各编译一次，经薄绑定层暴露给多种高级语言；运行时在 CPU 顺序、OpenMP5 多核、CUDA（NVIDIA）、HIP（AMD）后端间派发，按各设备内存层次与执行模型适配 kernel。</p>
+<p><strong>关键数字</strong> 该类算法相对传统求解器可获 10–80 倍加速；MNIST 神经网络超参优化达 88.60% 测试准确率；风电场布局优化达 365,399 ± 4,552 MWh/yr，与粒子群统计上无差异、比遗传算法高 7.6%；Julia 包在 Lotka–Volterra 参数估计上把 mean SSE 降低 2.1 倍。</p>
+<p><strong>为什么值得看</strong> "一份源码、多后端多语言"的运行时设计对 HPC 与异构计算软件工程有直接借鉴意义。</p>
+<p><a href="https://arxiv.org/abs/2609.30914">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.30914">阅读原文 ↗</a></p>
 </body>
 </html>

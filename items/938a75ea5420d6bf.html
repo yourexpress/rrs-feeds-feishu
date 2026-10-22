@@ -22,9 +22,11 @@
 <h1>Efficient Extraction for Effectful E-Graphs</h1>
 <p class="meta-line">arXiv (cs.PL) · 2026-09-25 · 论文PDF</p>
 
-<p>面向含效应 e-graph 的高效提取（OOPSLA 2026）</p>
-<blockquote><p>Egraphs have enabled recent advances in program optimization, synthesis, and verification, yet remain difficult to apply to effectful programs whose memory and I/O operations must respect execution order. Existing effect-aware extraction algorithms rely on integer linear programming (ILP) and dominate total runtime. We introduce Statewalk DP, a new extraction algorithm that enforces effect ordering efficiently without external solvers. We prove that finding any effect-safe extraction is NP-complete, but show that Statewalk DP is tractable in statewalk width, a parameter that measures the complexity of dataflow interactions among effects. In practice, statewalk width generally remains small, enabling Statewalk DP to achieve order-of-magnitude speedups over ILP extraction while producing programs comparable to LLVM across our benchmarks. We implement the algorithm in eggcc, a prototype egraph-based compiler for imperative Bril programs and demonstrate that effect-aware extraction is no longer a bottleneck.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> e-graph 推动程序优化、综合与验证进展，但难以应用于内存与 I/O 操作必须遵守执行顺序的含效应程序——现有效应感知提取依赖整数线性规划（ILP）且主导总运行时间。</p>
+<p><strong>方法</strong> 提出 Statewalk DP 提取算法：无需外部求解器即可强制效应顺序；证明寻找任意效应安全提取是 NP 完全的，但 Statewalk DP 在 statewalk width（度量效应间数据流交互复杂度的参数）上可解；实践中该宽度通常很小，实现于 eggcc 原型编译器。</p>
+<p><strong>关键数字</strong> 相对 ILP 提取实现数量级加速，产出程序与 LLVM 在基准上可比——摘要未给具体倍率。</p>
+<p><strong>为什么值得看</strong> 把效应感知提取从"靠求解器"变成"可解算法"，是 e-graph 编译器落地的关键一步。</p>
+<p><a href="https://arxiv.org/abs/2609.31887">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.31887">阅读原文 ↗</a></p>
 </body>
 </html>

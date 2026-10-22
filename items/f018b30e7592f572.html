@@ -22,9 +22,11 @@
 <h1>SparSP: Exploiting Communication Sparsity for Sequence-Parallel Video DiTs</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-26 · 论文PDF</p>
 
-<p>SparSP：利用通信稀疏性加速序列并行视频扩散 Transformer 训练</p>
-<blockquote><p>Diffusion Transformers have become the dominant architecture for video generation. Their substantial computational cost motivates scaling inference across multi-GPU servers, yet efficient scaling remains challenging on commodity GPUs connected via PCIe, whose bandwidth is limited. Although sparse attention substantially reduces computation, its implications for communication remain underexplored. This paper argues that attention sparsity should be treated as a communication primitive. We present SparSP, an efficient sparse sequence parallel communication system that co-designs token distribution, communication routing, and asynchronous execution for sparse video diffusion models. First, Dependency-Aware Placement distributes sequence blocks according to diffusion models' sparse attention patterns. Second, Demand-Directed KV Routing transfers KV blocks directly to requesting GPUs without intermediate relays. Third, a Decoupled Transfer Runtime separates communication from GPU computation to reduce resource contention and maximize effective bandwidth. Our evaluation shows that SparSP improves attention performance by 1.38- 1.5$\times$, achieves an average 1.17$\times$ (up to 1.69$\ti…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 视频生成 Diffusion Transformer 计算量大，跨多 GPU 扩展在 PCIe 连接的商用 GPU 上受带宽限制；稀疏 attention 已大幅减计算，但稀疏性对通信的影响几乎未被探索。</p>
+<p><strong>方法</strong> 提出 SparSP：把注意力稀疏性当作通信原语的稀疏序列并行通信系统，联合设计 token 分布、通信路由与异步执行——Dependency-Aware Placement 按稀疏 attention 模式分配序列块；Demand-Directed KV Routing 把 KV 块直接送达请求 GPU、免中间转发；Decoupled Transfer Runtime 分离通信与计算以最大化有效带宽。</p>
+<p><strong>关键数字</strong> attention 性能提升 1.38–1.5×；三个服务器 × 三个视频扩散模型上端到端平均加速 1.17×（最高 1.69×）；通信量降 12.54–23.05%；相对 NCCL 带宽平均提升 1.53–1.76×。</p>
+<p><strong>为什么值得看</strong> "稀疏即通信原语"的系统视角，对视频生成推理在多卡集群上的扩展很实用。</p>
+<p><a href="https://arxiv.org/abs/2609.32197">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.32197">阅读原文 ↗</a></p>
 </body>
 </html>
