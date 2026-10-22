@@ -22,9 +22,10 @@
 <h1>To Store or To Regenerate? A Cost Model for AI-Generated Content at Scale</h1>
 <p class="meta-line">arXiv (cs.PF) · 2026-09-24 · 论文PDF</p>
 
-<p>建立 AIGC「持久存储 vs 按需再生」成本模型（纳入存储/电价/GPU 性价比走势），结论：图像生成场景约 2040 年前再生仍不比存储便宜。</p>
-<blockquote><p>AI-generated content is becoming a rapidly growing class of digital artifacts. Because these artifacts accumulate over time, their exponential growth creates a substantial storage, energy, and infrastructure cost for operators and society. At the same time, GPU compute cost continues to fall rapidly with each hardware generation. This divergence raises a fundamental question: when does on-demand regeneration become cheaper than persistent storage? This paper develops a cost model for comparing persistent storage and on-demand regeneration for AI-generated artifacts. The model accounts for corpus growth, HDD and tape price trends, drive replacement, electricity, request skew, caching, generator FLOPs, and future GPU price-performance improvements. For image generation, our analysis shows that prompt-based regeneration does not become cheaper than storage until around 2040, because every cache miss must still rerun the full prompt-to-artifact generation pipeline. We observe that widely used diffusion-based generation models operate in latent space, creating an alternative point in the cost tradeoff: instead of storing the final artifact or only the prompt, operators can store a compa…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> AI 生成内容指数增长带来存储、能耗与基建成本，而 GPU 算力成本随硬件代际快速下降——何时按需再生成比持久存储更便宜？</p>
+<p><strong>方法</strong> 建立比较持久存储与按需再生成的成本模型，纳入语料增长、HDD/磁带价格趋势、换盘、电费、请求偏斜、缓存、生成器 FLOPs 与未来 GPU 价格-性能改进；并分析第三条路——存紧凑中间表示（IR）、廉价按需解码。</p>
+<p><strong>关键数字</strong> 图像生成上 prompt 再生成约 2040 年才比存储便宜；缓存+IR 再生成今日就比全对象存储与 prompt 再生成至少便宜 2×；生产图像轨迹 20.7 亿请求上 prompt 再生成比存储贵超 100×，IR 方案总成本约为全对象存储一半且保持交互式未命中延迟。</p>
+<p><strong>为什么值得看</strong> 给"存还是算"一个可用成本模型，并指出 IR 中间表示这条反直觉的省成本路径。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.30448">阅读原文 ↗</a></p>
 </body>
 </html>

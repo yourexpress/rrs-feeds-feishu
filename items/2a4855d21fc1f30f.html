@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KPage: Cross-Block Page Compaction for Hardware-Efficient Sparse Attention</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>KPage: Cross-Block Page Compaction for Hardware-Efficient Sparse Attention</h1>
+<p class="meta-line">arXiv · 2026-10-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 长序列视频 Transformer 的稀疏注意力中，3D token 布局常让选中块部分占用、浪费物理 tile 容量——能否跨逻辑块边界把有效 K/V 页压实进大 tile，提升硬件利用率？</p>
+<p><strong>方法</strong> KPage 块稀疏注意力方案：加载时直接把有效 16 行 K/V 页跨逻辑块边界打包进大 tile（不在高带宽内存物化压缩张量）；Q 块在 64×256 与 128×128 tile 间路由以减 query 侧填充；精确掩码与 K/V 页打包在前反向保持原稀疏图。</p>
+<p><strong>关键数字</strong> 五个代表性负载上较 NVIDIA Block-Sparse Attention（BSA）前向 kernel 加速 1.35×–2.06×（几何平均 1.77×），完全占满块上近持平（1.03×）而 3D 部分块布局达 2.29×；物理 QK 对容量从 334.1G 降到 177.5G 而保留 160.6G 有效交互；SVG2 Wan 14B/720p 上较最强精确稀疏基线 1.49×、较 BSA 1.57×。</p>
+<p><strong>为什么值得看</strong> 系统性解决稀疏注意力"块内浪费"，跨开源稀疏基线全面占优，且合规审查后将开源并提交 PR 给 NVIDIA cuDNN Frontend。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.28096">阅读原文 ↗</a></p>
+</body>
+</html>

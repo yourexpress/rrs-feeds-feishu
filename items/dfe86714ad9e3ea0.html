@@ -22,9 +22,10 @@
 <h1>EvoTreeNAD: Genealogy-Guided Evolution for LLM-Driven Neural Architecture Discovery</h1>
 <p class="meta-line">arXiv · Lishan Yu 等 · 2026-09-24 · 论文PDF</p>
 
-<p>基因谱系引导的进化式 LLM 驱动神经架构搜索（NAS），探索高效网络结构自动发现</p>
-<blockquote><p>AI-driven scientific discovery accelerates research by autonomously developing solutions and designs. Large language model (LLM) agents support this process through iterative generation and evaluation. Yet these iterations alone do not ensure cumulative progress or establish which directions to pursue next. Costly evaluation further constrains the scope of exploration. Neural architecture discovery brings these challenges together, coupling open-ended design with resource-intensive experimentation. We introduce EvoTreeNAD, a genealogy-guided evolutionary algorithm that constructs trainable architectures without a supplied seed or a hand-specified search space. Starting from an empty root, it grows a persistent genealogy in which each new node represents a complete architecture. Top-percentile values computed from each node and its descendants guide lineage selection. Using the selected design history, an Idea Agent proposes a variant and a Code Agent implements it. Each evaluated variant becomes a child node, expanding the genealogy while providing evidence for subsequent lineage selection. Our theoretical analysis establishes the existence of stationary variation regimes as the ge…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM agent 驱动的科学发现靠迭代生成与评估，但迭代本身不保证累积进展、昂贵评估又限制探索范围——无种子架构、无手工搜索空间下，如何自主构建可训练架构并保证方向收敛？</p>
+<p><strong>方法</strong> EvoTreeNAD 谱系引导进化算法：从空根生长持久谱系（每个新节点=一个完整架构），用节点及其后代计算的 top 百分位值引导谱系选择；Idea Agent 基于选定设计史提变体、Code Agent 实现；每个评估过的变体成为子节点，为后续谱系选择提供证据。</p>
+<p><strong>关键数字</strong> CIFAR-10/100 测试错误 2.05±0.06% / 15.09±0.22%，超越对比 NAS/NAD 基线；六个 MedMNIST-v2 任务全部超过所列最强基线；受控 CIFAR-10 实验优于直接生成、best-of-N 贪心延续与全家族均值路由。</p>
+<p><strong>为什么值得看</strong> 用"谱系+top 百分位"把累积证据制度化，为无先验神经架构发现给出可扩展的进化范式。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.29016">阅读原文 ↗</a></p>
 </body>
 </html>

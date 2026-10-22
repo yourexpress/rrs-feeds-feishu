@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interflow: Breaking the Offline-Online Barrier for Private AI at the Edge</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Interflow: Breaking the Offline-Online Barrier for Private AI at the Edge</h1>
+<p class="meta-line">arXiv · 2026-10-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 隐私保护 ML 在边缘部署受 MPC 非线性推理的高通信、高计算、高数据搬运成本制约，且离线相关随机数生成与在线执行解耦造成巨大内存压力与补货停顿——能否打破离线-在线壁垒？</p>
+<p><strong>方法</strong> Interflow 算法-硬件协同：按批流水线化相关随机数生成与在线执行——当前批消耗预生成随机数执行安全非线性运算时，为下一批并行生成；用交错执行、高效数据搬运与硬件加速，把预处理从串行存储密集型变为连续重叠流水线。</p>
+<p><strong>关键数字</strong> Zynq UltraScale+ ZCU102 上非线性吞吐 CNN 算子最高提升 1.55×、transformer 算子 1.48×；ResNet-50 加速 1.26×、BERT-base 1.21×；内存占用较基线最高降 37%。</p>
+<p><strong>为什么值得看</strong> 用软硬协同把 MPC 预处理的"离线-在线壁垒"拆成重叠流水线，边缘隐私推理的工程范本。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.27431">阅读原文 ↗</a></p>
+</body>
+</html>

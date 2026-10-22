@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Day-0 Support for Flint on vLLM</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Day-0 Support for Flint on vLLM</h1>
+<p class="meta-line">vLLM Blog · 2026-10-21 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://vllm.ai/blog-assets/figures/2026-10-21-flint/hero.png" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong> 新 MoE 模型 Recursive Flint（40B 参数、每 token 激活约 2.5B、262K 上下文、滑动窗口注意力）如何在 vLLM 上拿到 Day-0 支持并做到高效解码。</p>
+<p><strong>要点</strong> vLLM 从发布第一天支持 Flint：NVFP4 与 BF16 两个 checkpoint 均可单 GPU 运行；架构上 35 层滑动窗口（513 token）+14 层全上下文（仅这 14 层保留全序列 KV，缓存 28 KiB/token）、256 专家 sigmoid top-6+共享专家；NVFP4 为 GGUF 封装、加载时无损重打包，以 W4A16 权重仅权重模式运行，各 kernel 对齐参考实现舍入点；逐项替换小批量 kernel（融合 Q/K norm+RoPE+KV 写、小批量 MoE GEMV、低时延解码路径等）。</p>
+<p><strong>关键数字</strong> 单请求 GB200 上约 500 token/s（100K 上下文）；NVFP4 decode 4.81→1.78 ms（2.7×）、BF16 3.53→2.34 ms（1.5×）、8K prefill 207→145 ms（1.4×），前向 kernel 数 1096→346；端到端 batch-1 100K 上下文 2.06 ms/token（约 485 token/s）。</p>
+<p><strong>为什么值得看</strong> 展示新 MoE 模型从"能跑"到"跑得快"的完整 kernel 优化路径，对长上下文+滑动窗口架构的推理调优有直接借鉴。</p>
+<p><a class="origin" href="https://blog.vllm.ai/2026/10/21/flint.html">阅读原文 ↗</a></p>
+</body>
+</html>

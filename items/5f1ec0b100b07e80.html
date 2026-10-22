@@ -22,9 +22,10 @@
 <h1>MaD-RL：面向分布匹配的强化学习框架，缓解 GRPO 模式坍缩</h1>
 <p class="meta-line">Meta AI · 2026-09-24 · 官方公告</p>
 <img class="hero" src="https://img.shlwsj.asia/pro/2026-09-25/img/1790301745012cx30655aj8h73cc549h69ac45jxbj9a4.png" alt="" referrerpolicy="no-referrer">
-<p>训练目标从单答案奖励最大化扩展为输出类别分布匹配预设目标分布（官方原文未能定位：arXiv 未检索到、ai.meta.com 本轮无法访问，链接为第三方报道，无法存档原文故不入选）。</p>
-<blockquote><p>Meta AI published a paper on September 24th, MaD-RL, focusing on a less obvious but very practical issue in large model reinforcement learning: training usually only rewards high scores for a single output, which may cause the model to gradually concentrate its probabilities on one solution or expression. For math problems, converging to an answer with a high success rate might be beneficial; however, in tasks involving synthetic data, strategy exploration, and those that require satisfying population distribution constraints, overly singular outputs can result in the loss of viable options.</p><p>The research team proposed the Distribution Matching framework, which does not merely aim to maximize the average reward, but rather to make the distribution of a certain potential category attribute in the model's output approach a pre-set target. The so-called “target distribution” can refer to the proportions of different problem-solving strategies, code structures, or other discernible categories. The paper demonstrates the effectiveness of this method through mathematical reasoning and programming experiments; however, these are still research findings and do not imply that all general models have automatically solved the issue of pattern collapse, nor does it mean that a single set of proportions can be used to control all open-ended texts.</p><p>GRPO may push the probability towards a single mode, and adjusting the temperature does not always solve the problem.</p><p>…</p></blockquote>
-<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><strong>核心话题</strong> 大模型 RL 后训练中 GRPO 式方法会把输出分布推向单一模式（模式坍缩），温度与熵正则难以在语义类别层面纠正——训练目标能否从"单答案好坏"扩展为"输出类别分布匹配预设目标分布"？</p>
+<p><strong>要点</strong> MaD-RL 提出 Distribution Matching 框架：先定义可分类输出的潜在属性，比较模型当前分布与目标分布（可指解题策略、代码结构等类别比例），用差异构造奖励；讨论 L2、KL、Jensen-Shannon 等散度对稀有类别、零概率与偏离度的不同敏感性；强调价值不在某个公式，而在把训练目标从"这个答案好不好"扩展到"许多答案合起来是否达标"；也指出新依赖——类别须可靠识别。</p>
+<p><strong>关键数字</strong> 论文于 9 月 24 日发布；示例提及部分任务需 70% 保守策略+30% 探索策略的目标比例（作为概念举例）。</p>
+<p><strong>为什么值得看</strong> 直面 GRPO 模式坍缩这一普遍痛点，给出"分布匹配"这一可落地扩展方向；注：本条为第三方报道，官方原文本轮未能存档。</p>
 <p><a class="origin" href="https://www.coinmeta.com/en/news/1246999">阅读原文 ↗</a></p>
 </body>
 </html>

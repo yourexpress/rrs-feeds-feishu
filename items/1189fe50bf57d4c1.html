@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SliMOO: Interpretable Multi-Objective Evolutionary Search for LLM Depth Pruning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SliMOO: Interpretable Multi-Objective Evolutionary Search for LLM Depth Pruning</h1>
+<p class="meta-line">arXiv · 2026-10-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LLM 深度剪枝直接降低内存与延迟，但 transformer 层对任务贡献高度异质，现有方法忽略异质性、易窄化到单一领域——剪枝是否应建模为多目标优化？</p>
+<p><strong>方法</strong> SliMOO 可解释多目标进化搜索：先做单层移除探测构建任务-层重要性图（可解释视图，作为搜索先验），再做 Pareto 感知进化搜索剪枝掩码，候选按任务层先验引导生成、按各任务相对稠密模型的偏差打分，经 NSGA-II 环境选择保留。</p>
+<p><strong>关键数字</strong> Llama-3.1 与 Qwen3 家族上多任务权衡一致强于规则/贪心/标量化基线；Llama-3.1-70B 25% 稀疏度下数学域均值从 24.33% 提到 34.40%、代码域从 35.03% 提到 39.14%。</p>
+<p><strong>为什么值得看</strong> 把深度剪枝从单分数排序升级为可解释多目标进化搜索，兼顾任务共享层与特异层，代码将开源。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.27812">阅读原文 ↗</a></p>
+</body>
+</html>

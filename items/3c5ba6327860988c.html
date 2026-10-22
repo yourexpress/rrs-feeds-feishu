@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Don't Skip the Baseline: A Controlled Comparison of Dynamic Expert Skipping in MoEs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Don't Skip the Baseline: A Controlled Comparison of Dynamic Expert Skipping in MoEs</h1>
+<p class="meta-line">arXiv · 2026-10-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 动态专家跳过方法声称保持质量的同时进一步减少激活参数，但校准机制、缩减幅度与评测套件各异让对比失真——它们真能胜过简单的静态 k 缩减吗？</p>
+<p><strong>方法</strong> 把四种代表性动态跳过方法归入统一分类，与"所有层所有 token 缩到相同 k"的静态基线做匹配专家计算预算的受控对比；覆盖 Gemma4-26B-A4B、Qwen3-30B-A3B 文本与 Qwen3-VL 多模态。</p>
+<p><strong>关键数字</strong> 简单静态基线难以被动态方法稳定超越，方法常落后基线、即便有增益也很小；校准得到的 effective k 与测试期有效 k 会偏离，导致推理算力被高估或低估；据此推荐免校准、按模态静态 k 缩减并在留出模型/模态上验证。</p>
+<p><strong>为什么值得看</strong> 纠正"动态跳过"文献的对比幻觉，明确静态控制是任何动态方法必须击败的基准。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.28369">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weight Placement Is Not Enough: Synchronization in Multi-Node CPU Decoding of Ternary LLMs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Weight Placement Is Not Enough: Synchronization in Multi-Node CPU Decoding of Ternary LLMs</h1>
+<p class="meta-line">arXiv · 2026-10-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 三值 LLM 每解码 token 只读几 GB，但四 NUMA 节点双路服务器上最快三值运行时只用不到一半内存带宽——把权重放在读取它的线程所在节点就够了吗？</p>
+<p><strong>方法</strong> 构建节点局部权重、复用 ik_llama kernel 的解码引擎，用逐线程 barrier 追踪定位等待来源；比较 Megatron 风格列切分与行切分（无跨节点归约），并隔离 barrier 数量效应。</p>
+<p><strong>关键数字</strong> 两代 Xeon 上线程每 token 有 20–48% 时间等在同步点，主要是等各节点最慢线程；列切分在全部配置下胜出；DRAM 受限解码较 ik_llama 全核快 1.5–2.1×、较其最快线程数 1.5–1.9×（L3 缓存小模型 3.2×/2.8×），同精度且每 token 能耗更低。</p>
+<p><strong>为什么值得看</strong> 指出多节点 CPU 三值解码的真正瓶颈在同步而非带宽，给出可复现的列切分工程答案。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.28620">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Token-Energy Law of LLM Decode: Active Bytes and Realized Time Account for Joules per Token</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>The Token-Energy Law of LLM Decode: Active Bytes and Realized Time Account for Joules per Token</h1>
+<p class="meta-line">arXiv · 2026-10-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 高效部署 LLM 需要理解模型架构、硬件与服务设置如何共同塑造每生成 token 的能耗——能否给出一个紧凑、可解释的每 token 能耗模型？</p>
+<p><strong>方法</strong> 提出 Token-Energy Law：GPU 板级每输出 token 能耗由两个核心维度决定——活跃字节（单次解码迭代内共享的稠密权重 + 每请求读写的私有 KV 历史）与实现解码时间（解码时长/输出 token 数）；两者与时间合成仿射形式，系数按模型与硬件/运行时配置校准。</p>
+<p><strong>关键数字</strong> 三模型 BF16 解码、NVIDIA Hopper 与 Blackwell GPU（含 Hopper 双卡张量并行）实测；固定系数+观测解码时间下，留出条件均值能耗估计与实测最大偏差 3.73%。</p>
+<p><strong>为什么值得看</strong> 一个定律统一解释 batch 摊销共享权重、长上下文推高私有 KV 需求、吞吐决定时间成本，能耗建模可直接复用。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.28576">阅读原文 ↗</a></p>
+</body>
+</html>

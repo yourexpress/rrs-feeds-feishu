@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>High-dimensional layer-state trajectories reveal the internal dynamics of transformer inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>High-dimensional layer-state trajectories reveal the internal dynamics of transformer inference</h1>
+<p class="meta-line">arXiv · 2026-07-15 · 论文PDF</p>
+
+<p><strong>研究问题</strong> 机制研究把功能定位到参数、注意力头或神经元，但这些部件并不说明一次推理如何展开——有序层状态轨迹作为经验过程，层序本身是否定义了可测的计算？</p>
+<p><strong>方法</strong> 把有序层状态轨迹当作经验过程，检验层序是否定义可测计算；跨 Qwen、Llama、Gemma checkpoint 比较真实序与保端点打乱的路径对齐度；用直接隐状态做机制坐标、以任务定义坐标使候选竞争可计算；加法干预失败后改用局部过渡执行器控制轨迹，并测试置信门控。</p>
+<p><strong>关键数字</strong> 真实序路径与端点弦的对齐度是打乱序的 1.60–2.24 倍；置信门驱动 87 条留出 Qwen 闭合轨迹中 17 条越过全词表 top-1 候选边界，203 条非闭合 top-1 输出不变。</p>
+<p><strong>为什么值得看</strong> 把 transformer 推理本身当作可观测、可计算、可干预的过程，为机制解释提供轨迹级新坐标。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.26866">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3D-MoE: Complementarity-Guided Hardware-Software Co-Design for MoE Decode on 3D-Stacked NMP</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>3D-MoE: Complementarity-Guided Hardware-Software Co-Design for MoE Decode on 3D-Stacked NMP</h1>
+<p class="meta-line">arXiv · 2026-10-19 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> MoE decode 内存受限且专家负载偏斜时变，3D 堆叠 DRAM 近存（NMP）提供所需带宽但 tile 化组织使负载均衡昂贵：EP 保局部性却热点失衡，分布式又弱局部性、增 NoC 流量——能否同时拿到局部性与均衡？</p>
+<p><strong>方法</strong> 观察到域特化路由带来跨解码步抵消的负载波动（专家互补性），提出 3D-MoE：离线一次性互补引导分组+局部感知映射建立组间粗均衡；残留热点由轻量协作内存网络（CMN）经本地广播路径把热专家权重流式搬一次；配合成本感知在线重映射抗负载漂移。</p>
+<p><strong>关键数字</strong> 平均 MoE 层较 EP 加速 4.63×，端到端吞吐较最强 NMP 基线提升 1.58×–1.86×，额外逻辑晶圆面积仅 2.11%。</p>
+<p><strong>为什么值得看</strong> 用"专家互补性"同时解开 3D 近存 MoE 的局部性-均衡死结，是近存计算服务 LLM 推理的代表作。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.26991">阅读原文 ↗</a></p>
+</body>
+</html>

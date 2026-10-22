@@ -22,9 +22,10 @@
 <h1>ViRDM: Taming Representation Distribution Matching for Few-Step Causal Video Generation</h1>
 <p class="meta-line">arXiv · Zichong Meng 等 · 2026-09-24 · 论文PDF</p>
 
-<p>用表征分布匹配实现少步因果视频生成蒸馏，降低视频生成推理成本</p>
-<blockquote><p>Few-step autoregressive (AR) video diffusion enables low-latency streaming generation, but existing post-training methods predominantly rely on Distribution Matching Distillation (DMD), requiring both a large pretrained teacher and an online critic to estimate distributional discrepancies through diffusion scores. In this work, we ask whether this resource-intensive teacher--critic stack can be eliminated by post-training only the generator against a precomputed target distribution. Drawing inspiration from representation distribution matching (RDM) for one-step image generation, we systematically study its transfer to few-step causal video generation and identify three key barriers: a memory-intractable gradient path, a distinct video optimization regime, and representation distributions that underconstrain temporal dynamics. We introduce ViRDM, a teacher- and critic-free video post-training recipe that addresses these barriers sequentially. By coupling RDM with stochastically truncated clean-exit supervision, a lightweight VAE decoder, and staged vector--Jacobian products, ViRDM makes representation distribution matching memory-feasible for multi-step causal video rollouts. We fu…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 少步自回归（AR）视频扩散的主流后训练依赖分布匹配蒸馏（DMD），需要大 teacher+在线 critic 估计分布差异——能否只后训练生成器、对着预计算目标分布做表示分布匹配（RDM）？</p>
+<p><strong>方法</strong> 系统研究 RDM 迁移到少步因果视频生成的三个障碍：内存不可行的梯度路径、不同的视频优化域、欠约束时间动态的表示分布；ViRDM 用随机截断 clean-exit 监督、轻量 VAE 解码器与分段 vector-Jacobian 乘积使 RDM 对多步因果视频滚动内存可行，并加轻量动态正则补偿欠约束。</p>
+<p><strong>关键数字</strong> 仅 20 次生成器更新即达官方 VBench 84.87，超此前最强少步因果基线 0.36，仅耗 16 A100 GPU 小时；另报告更低因果采样预算与 1/2/4 步双向生成的探索结果。</p>
+<p><strong>为什么值得看</strong> 把三网络蒸馏降为纯生成器后训练，大幅降低 GPU 内存与训练时间而不损视频质量。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.28923">阅读原文 ↗</a></p>
 </body>
 </html>

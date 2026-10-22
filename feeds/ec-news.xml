@@ -5,8 +5,50 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>模型压缩 / ML 编译 / HPC / 边缘计算 / 低功耗计算方向最新技术博客与官方公告（网页类内容）。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 21 Oct 2026 23:26:51 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 11:03:18 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/ec-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day-0 Support for Flint on vLLM</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/f5c47718bf779438.html</link>
+      <guid isPermaLink="true">https://blog.vllm.ai/2026/10/21/flint.html</guid>
+      <pubDate>Wed, 21 Oct 2026 12:00:00 +0800</pubDate>
+    <category>技术博客</category>
+    <category>每日精选</category>
+      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：vLLM Blog　&lt;strong&gt;发布&lt;/strong&gt;：2026-10-21　&lt;strong&gt;分类&lt;/strong&gt;：技术博客 / 每日精选&lt;/p&gt;&lt;p&gt;&lt;img src="https://vllm.ai/blog-assets/figures/2026-10-21-flint/hero.png" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;核心话题&lt;/strong&gt; 新 MoE 模型 Recursive Flint（40B 参数、每 token 激活约 2.5B、262K 上下文、滑动窗口注意力）如何在 vLLM 上拿到 Day-0 支持并做到高效解码。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;要点&lt;/strong&gt; vLLM 从发布第一天支持 Flint：NVFP4 与 BF16 两个 checkpoint 均可单 GPU 运行；架构上 35 层滑动窗口（513 token）+14 层全上下文（仅这 14 层保留全序列 KV，缓存 28 KiB/token）、256 专家 sigmoid top-6+共享专家；NVFP4 为 GGUF 封装、加载时无损重打包，以 W4A16 权重仅权重模式运行，各 kernel 对齐参考实现舍入点；逐项替换小批量 kernel（融合 Q/K norm+RoPE+KV 写、小批量 MoE GEMV、低时延解码路径等）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;关键数字&lt;/strong&gt; 单请求 GB200 上约 500 token/s（100K 上下文）；NVFP4 decode 4.81→1.78 ms（2.7×）、BF16 3.53→2.34 ms（1.5×）、8K prefill 207→145 ms（1.4×），前向 kernel 数 1096→346；端到端 batch-1 100K 上下文 2.06 ms/token（约 485 token/s）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;为什么值得看&lt;/strong&gt; 展示新 MoE 模型从"能跑"到"跑得快"的完整 kernel 优化路径，对长上下文+滑动窗口架构的推理调优有直接借鉴。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p><strong>发表方</strong>：vLLM Blog　<strong>发布</strong>：2026-10-21　<strong>分类</strong>：技术博客 / 每日精选</p><p><img src="https://vllm.ai/blog-assets/figures/2026-10-21-flint/hero.png" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"></p><p><strong>核心话题</strong> 新 MoE 模型 Recursive Flint（40B 参数、每 token 激活约 2.5B、262K 上下文、滑动窗口注意力）如何在 vLLM 上拿到 Day-0 支持并做到高效解码。</p>
+<p><strong>要点</strong> vLLM 从发布第一天支持 Flint：NVFP4 与 BF16 两个 checkpoint 均可单 GPU 运行；架构上 35 层滑动窗口（513 token）+14 层全上下文（仅这 14 层保留全序列 KV，缓存 28 KiB/token）、256 专家 sigmoid top-6+共享专家；NVFP4 为 GGUF 封装、加载时无损重打包，以 W4A16 权重仅权重模式运行，各 kernel 对齐参考实现舍入点；逐项替换小批量 kernel（融合 Q/K norm+RoPE+KV 写、小批量 MoE GEMV、低时延解码路径等）。</p>
+<p><strong>关键数字</strong> 单请求 GB200 上约 500 token/s（100K 上下文）；NVFP4 decode 4.81→1.78 ms（2.7×）、BF16 3.53→2.34 ms（1.5×）、8K prefill 207→145 ms（1.4×），前向 kernel 数 1096→346；端到端 batch-1 100K 上下文 2.06 ms/token（约 485 token/s）。</p>
+<p><strong>为什么值得看</strong> 展示新 MoE 模型从"能跑"到"跑得快"的完整 kernel 优化路径，对长上下文+滑动窗口架构的推理调优有直接借鉴。</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Announcing Humming: Fast, Flexible Kernels for Quantized Inference</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/a8e195ca94c63794.html</link>
+      <guid isPermaLink="true">https://blog.vllm.ai/2026/10/21/humming.html</guid>
+      <pubDate>Wed, 21 Oct 2026 12:00:00 +0800</pubDate>
+    <category>技术博客</category>
+    <category>每日精选</category>
+      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：vLLM Blog　&lt;strong&gt;发布&lt;/strong&gt;：2026-10-21　&lt;strong&gt;分类&lt;/strong&gt;：技术博客 / 每日精选&lt;/p&gt;&lt;p&gt;&lt;img src="https://vllm.ai/blog-assets/figures/humming/humming-summary-card-en.png" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;核心话题&lt;/strong&gt; 量化推理 kernel 开发维护成本随模型与 GPU 代际组合爆炸——每新增量化格式/后端都要专属 kernel、预处理、适配与测试，vLLM 生态需要一种通用、高性能的量化 kernel 库。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;要点&lt;/strong&gt; Ant Group 与 vLLM 社区开源 Humming：把量化描述与执行选择分离、kernel 由共享组件组合而成；统一量化表示转换各工具导出格式，支持 Turing 以来 NVIDIA GPU 与 CUDA 兼容设备（如 T-Head Zhenwu 810E），覆盖稠密与 MoE 的各类权重/激活格式组合（WNA16/W8A8/W4A8/W4A4 与 INT4/NVFP4 等）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;关键数字&lt;/strong&gt; 支持 NVIDIA Turing 起全系 GPU；覆盖多种整数/浮点类型、位宽与缩放方案组合；在多个代表性负载上显著优于 vLLM Marlin、FlashInfer、DeepGEMM 现有实现。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;为什么值得看&lt;/strong&gt; 把"为每种组合写 kernel"的维护负担降为"描述+组件组合"，是量化推理基础设施的一次范式简化，仓库已开源。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p><strong>发表方</strong>：vLLM Blog　<strong>发布</strong>：2026-10-21　<strong>分类</strong>：技术博客 / 每日精选</p><p><img src="https://vllm.ai/blog-assets/figures/humming/humming-summary-card-en.png" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"></p><p><strong>核心话题</strong> 量化推理 kernel 开发维护成本随模型与 GPU 代际组合爆炸——每新增量化格式/后端都要专属 kernel、预处理、适配与测试，vLLM 生态需要一种通用、高性能的量化 kernel 库。</p>
+<p><strong>要点</strong> Ant Group 与 vLLM 社区开源 Humming：把量化描述与执行选择分离、kernel 由共享组件组合而成；统一量化表示转换各工具导出格式，支持 Turing 以来 NVIDIA GPU 与 CUDA 兼容设备（如 T-Head Zhenwu 810E），覆盖稠密与 MoE 的各类权重/激活格式组合（WNA16/W8A8/W4A8/W4A4 与 INT4/NVFP4 等）。</p>
+<p><strong>关键数字</strong> 支持 NVIDIA Turing 起全系 GPU；覆盖多种整数/浮点类型、位宽与缩放方案组合；在多个代表性负载上显著优于 vLLM Marlin、FlashInfer、DeepGEMM 现有实现。</p>
+<p><strong>为什么值得看</strong> 把"为每种组合写 kernel"的维护负担降为"描述+组件组合"，是量化推理基础设施的一次范式简化，仓库已开源。</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Introducing vLLM TorchTPU</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/3713aa17431d16a8.html</link>
+      <guid isPermaLink="true">https://blog.vllm.ai/2026/10/20/torchtpu.html</guid>
+      <pubDate>Tue, 20 Oct 2026 12:00:00 +0800</pubDate>
+    <category>技术博客</category>
+    <category>每日精选</category>
+      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：vLLM Blog　&lt;strong&gt;发布&lt;/strong&gt;：2026-10-20　&lt;strong&gt;分类&lt;/strong&gt;：技术博客 / 每日精选&lt;/p&gt;&lt;p style="font-size:1.05em"&gt;vLLM TorchTPU 后端：Pytorch 原生 TPU 推理路径，简化 TPU 上的 vLLM 部署&lt;/p&gt;&lt;p style="color:#6b7280;font-size:0.9em"&gt;本条为技术博客 / 每日精选，订阅源内提供主题摘要；完整内容请点击下方链接阅读原文。&lt;/p&gt;&lt;p style="color:#0969da;font-size:0.9em"&gt;★ 本条入选当日精选&lt;/p&gt;&lt;p style="margin-top:14px"&gt;&lt;a href="https://blog.vllm.ai/2026/10/20/torchtpu.html"&gt;阅读原文 ↗&lt;/a&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p><strong>发表方</strong>：vLLM Blog　<strong>发布</strong>：2026-10-20　<strong>分类</strong>：技术博客 / 每日精选</p><p style="font-size:1.05em">vLLM TorchTPU 后端：Pytorch 原生 TPU 推理路径，简化 TPU 上的 vLLM 部署</p><p style="color:#6b7280;font-size:0.9em">本条为技术博客 / 每日精选，订阅源内提供主题摘要；完整内容请点击下方链接阅读原文。</p><p style="color:#0969da;font-size:0.9em">★ 本条入选当日精选</p><p style="margin-top:14px"><a href="https://blog.vllm.ai/2026/10/20/torchtpu.html">阅读原文 ↗</a></p>]]></content:encoded>
+    </item>
     <item>
       <title>vLLM v0.32.0</title>
       <link>https://yourexpress.github.io/rrs-feeds-feishu/items/51299d4c7c9cbf0b.html</link>
@@ -186,42 +228,6 @@
 <p><strong>关键数字</strong>：最高 1 petaflop 的 FP4 AI 算力、最高 128GB 统一内存；可在轻薄本上渲染 90GB+ 的 3D 场景、以 1440p 超 100 帧玩 3A 游戏。</p>
 <p><strong>为什么值得看</strong>：NVIDIA 把 CUDA 生态推进到 Windows 轻薄本形态，是端侧/本地 AI 推理的重要硬件节点，也直接影响本地大模型部署与个人 AI agent 的落地路径。</p>
 <p><a href="https://nvidianews.nvidia.com/news/nvidia-rtx-spark-pcs-available-today-a-new-beginning-for-windows-pcs">原文链接</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Bringing Elastically Deterministic Data Loading to TorchTitan with Zephon（补录：10-16 发布，昨日窗口漏检）</title>
-      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/a9d513a8f0e2cc39.html</link>
-      <guid isPermaLink="true">https://pytorch.org/blog/bringing-elastically-deterministic-data-loading-to-torchtitan-with-zephon/</guid>
-      <pubDate>Fri, 16 Oct 2026 12:00:00 +0800</pubDate>
-    <category>技术博客</category>
-    <category>每日精选</category>
-      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：PyTorch Blog（Meta）　&lt;strong&gt;发布&lt;/strong&gt;：2026-10-16　&lt;strong&gt;分类&lt;/strong&gt;：技术博客 / 每日精选&lt;/p&gt;&lt;p&gt;&lt;img src="https://pytorch.org/wp-content/uploads/2026/10/1.jpg" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;核心话题&lt;/strong&gt; 普通数据加载器会随 GPU 数量改变数据顺序，使消融实验与跨规模续训不可复现；Zephon 把「弹性确定性」数据加载带进 TorchTitan。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;要点&lt;/strong&gt; 在训练作业内即时完成 tokenize、打包、shuffle 与混比，利用空闲 CPU；从 16 卡 step-150 checkpoint 换到 8/32/64 卡续训，每个全局 batch 的 SHA-256 与基线完全一致，loss 曲线重合。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;关键数字&lt;/strong&gt; 标准加载器下 8–64 卡的分差最高 0.82 分（DCLM Core v1）与 0.64 分（FineWeb 套件），约为数据策展评估阈值的 4 倍；Zephon 将其压到 0.05 与 0.011 分。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;为什么值得看&lt;/strong&gt; GPU 数量是消融里的隐性混淆变量，是大规模训练团队的共性痛点；在 agent 并行实验与故障迁移时代尤其重要。&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://pytorch.org/blog/bringing-elastically-deterministic-data-loading-to-torchtitan-with-zephon/"&gt;阅读原文&lt;/a&gt;&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p><strong>发表方</strong>：PyTorch Blog（Meta）　<strong>发布</strong>：2026-10-16　<strong>分类</strong>：技术博客 / 每日精选</p><p><img src="https://pytorch.org/wp-content/uploads/2026/10/1.jpg" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"></p><p><strong>核心话题</strong> 普通数据加载器会随 GPU 数量改变数据顺序，使消融实验与跨规模续训不可复现；Zephon 把「弹性确定性」数据加载带进 TorchTitan。</p>
-<p><strong>要点</strong> 在训练作业内即时完成 tokenize、打包、shuffle 与混比，利用空闲 CPU；从 16 卡 step-150 checkpoint 换到 8/32/64 卡续训，每个全局 batch 的 SHA-256 与基线完全一致，loss 曲线重合。</p>
-<p><strong>关键数字</strong> 标准加载器下 8–64 卡的分差最高 0.82 分（DCLM Core v1）与 0.64 分（FineWeb 套件），约为数据策展评估阈值的 4 倍；Zephon 将其压到 0.05 与 0.011 分。</p>
-<p><strong>为什么值得看</strong> GPU 数量是消融里的隐性混淆变量，是大规模训练团队的共性痛点；在 agent 并行实验与故障迁移时代尤其重要。</p>
-<p><a href="https://pytorch.org/blog/bringing-elastically-deterministic-data-loading-to-torchtitan-with-zephon/">阅读原文</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>llama.cpp v0.7.0 Release Notes：LiLiCorr 推测解码、MoE 主机内存 GPU 缓存（--moe-cache-mib）</title>
-      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/7332f3e678c4456e.html</link>
-      <guid isPermaLink="true">https://github.com/ggml-org/llama.cpp/releases/tag/v0.7.0</guid>
-      <pubDate>Thu, 15 Oct 2026 12:00:00 +0800</pubDate>
-    <category>技术博客</category>
-    <category>每日精选</category>
-      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：llama.cpp（GitHub Releases）　&lt;strong&gt;发布&lt;/strong&gt;：2026-10-15　&lt;strong&gt;分类&lt;/strong&gt;：技术博客 / 每日精选&lt;/p&gt;&lt;p&gt;&lt;img src="https://opengraph.githubassets.com/b8d899892416c12e378245c0905307689ecdbded11f73d02cc56af498e5ef55f/ggml-org/llama.cpp/releases/tag/v0.7.0" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;核心话题&lt;/strong&gt;：llama.cpp v0.7.0 发布：新增 LiliCorr 推测解码、为主机内存中的 MoE 专家引入 GPU 缓存，并一次性接入大批新模型。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;要点&lt;/strong&gt;：--moe-cache-mib 把驻留主机内存的 MoE 专家放进 GPU 侧 LRU 缓存、直接在 GPU 上执行，专家缓存还支持多 GPU 共享；LiliCorr 推测解码在 DFlash 之上用小 draft transformer 选候选；GLM5-Next 支持 MTP 推测解码与优化稀疏注意力路径。Server 侧围绕 common_chat_session 重构 chat 会话 API，格式化输出改为 parts 数组，默认端口从 8080 改为 9931（Docker 容器内仍 8080），Web UI 新增完整模型管理器；ggml 更新到 v0.27.0。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;关键数字&lt;/strong&gt;：专家被 offload 时解码最高加速约 2.2×；新模型包括 K2 Horizon（dense 与 MoVA）、Prism Bonsai 2 27B 三值模型、EmbeddingGemma-2（文本+视觉+音频）、LiquidAI d1/d1-omni、MiniCPM-V 4.7、Nemotron Super 3.5 VL / Nemotron Bolt 74B A9B、maion-coder 及多款决策模型。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;为什么值得看&lt;/strong&gt;：MoE 主机内存专家 offload 场景拿到实用的解码加速路径，多模态、嵌入与决策类模型生态扩展明显。&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/ggml-org/llama.cpp/releases/tag/v0.7.0"&gt;原文链接&lt;/a&gt;&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p><strong>发表方</strong>：llama.cpp（GitHub Releases）　<strong>发布</strong>：2026-10-15　<strong>分类</strong>：技术博客 / 每日精选</p><p><img src="https://opengraph.githubassets.com/b8d899892416c12e378245c0905307689ecdbded11f73d02cc56af498e5ef55f/ggml-org/llama.cpp/releases/tag/v0.7.0" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"></p><p><strong>核心话题</strong>：llama.cpp v0.7.0 发布：新增 LiliCorr 推测解码、为主机内存中的 MoE 专家引入 GPU 缓存，并一次性接入大批新模型。</p>
-<p><strong>要点</strong>：--moe-cache-mib 把驻留主机内存的 MoE 专家放进 GPU 侧 LRU 缓存、直接在 GPU 上执行，专家缓存还支持多 GPU 共享；LiliCorr 推测解码在 DFlash 之上用小 draft transformer 选候选；GLM5-Next 支持 MTP 推测解码与优化稀疏注意力路径。Server 侧围绕 common_chat_session 重构 chat 会话 API，格式化输出改为 parts 数组，默认端口从 8080 改为 9931（Docker 容器内仍 8080），Web UI 新增完整模型管理器；ggml 更新到 v0.27.0。</p>
-<p><strong>关键数字</strong>：专家被 offload 时解码最高加速约 2.2×；新模型包括 K2 Horizon（dense 与 MoVA）、Prism Bonsai 2 27B 三值模型、EmbeddingGemma-2（文本+视觉+音频）、LiquidAI d1/d1-omni、MiniCPM-V 4.7、Nemotron Super 3.5 VL / Nemotron Bolt 74B A9B、maion-coder 及多款决策模型。</p>
-<p><strong>为什么值得看</strong>：MoE 主机内存专家 offload 场景拿到实用的解码加速路径，多模态、嵌入与决策类模型生态扩展明显。</p>
-<p><a href="https://github.com/ggml-org/llama.cpp/releases/tag/v0.7.0">原文链接</a></p>]]></content:encoded>
     </item>
   </channel>
 </rss>

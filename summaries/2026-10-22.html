@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日精选 · 2026-10-22</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.5em; border-bottom: 1px solid #e5e7eb; padding-bottom: 12px; }
+  h2 { font-size: 1.2em; margin-top: 1.8em; }
+  a { color: #0969da; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .meta { color: #6b7280; font-size: 0.85em; margin-top: 32px; }
+</style>
+</head>
+<body>
+<h1>每日精选 · 2026-10-22</h1>
+<h2>当日检索概况</h2>
+<ul>
+<li>AI 技术报告库：检索 13 条，入选 3 条——AI 漏洞发现与安全响应（OpenAI Patch the Planet / PHP 漏洞协调）、Anthropic 主动式 agent 应用 Claude Duet、MSR 以人类引导式 AI 研究流程证明 KLS 猜想。</li>
+<li>高效计算库：检索 75 条，入选 15 条，主题集中在 MoE 推理系统（3D 近存解码 / 专家剪枝 / 动态专家跳过对比）、可持续计算（PID 与光子加速器碳建模）、量化推理 kernel（vLLM Humming / Flint Day-0）、推测解码与稀疏注意力，以及 FPGA 与 CPU 端侧的时延/同步优化。</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>Patch the Planet：AI 协调全球关键漏洞响应（OpenAI）</strong>：GPT-5.6 Sol 发现 PHP 两个关键漏洞（Wiz 独立复现），OpenAI 牵头披露前协调并发布五阶段响应框架，另设 10 亿美元资助薄弱安全团队——前缘 AI 漏洞发现已到互联网级影响。https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/</li>
+<li><strong>Solving the KLS conjecture（Microsoft Research）</strong>：31 年高维几何/概率中心开放问题被证——log-concave 分布的最优割与平割只差不依赖维度的常数，附 Lean 4 形式化验证，是"人类引导式 AI 数学研究"的样板。https://www.microsoft.com/en-us/research/blog/solving-a-31-year-old-grand-challenge-in-mathematics-the-kls-conjecture/</li>
+<li><strong>Introducing Claude Duet（Anthropic）</strong>：Opus 5.5 驱动的主动式 agent 应用，自带虚拟机与独立浏览器后台持续工作，可信 agent 框架 + auto mode classifier 做敏感操作审批。https://www.anthropic.com/resources/articles/introducing-claude-duet</li>
+<li><strong>3D-MoE：3D 堆叠近存 MoE 解码软硬协同（arXiv:2610.26991）</strong>：用"专家互补性"同时解开局部性-均衡死结，平均 MoE 层较 EP 加速 4.63×、端到端吞吐提升 1.58×–1.86×。https://arxiv.org/abs/2610.26991</li>
+<li><strong>OptEP：重建优化的 MoE 专家剪枝（arXiv:2610.27123）</strong>：把后训练专家剪枝建模为连续松弛子集选择，激进剪枝下绝对精度增益最高 16.20%（Mixtral-8x7B）。https://arxiv.org/abs/2610.27123</li>
+<li><strong>Don't Skip the Baseline：动态专家跳过受控对比（arXiv:2610.28369）</strong>：在匹配专家计算预算下，简单静态 k 缩减基线难被动态方法稳定超越，并指出校准 effective k 与测试期的漂移问题。https://arxiv.org/abs/2610.28369</li>
+<li><strong>Announcing Humming：vLLM 量化推理 kernel 库（vLLM Blog）</strong>：量化描述与执行选择分离、kernel 由共享组件组合，覆盖多格式/多后端，显著优于 Marlin/FlashInfer/DeepGEMM 现有实现。https://blog.vllm.ai/2026/10/21/humming.html</li>
+<li><strong>Day-0 Support for Flint on vLLM（vLLM Blog）</strong>：40B-A3B MoE 单 GPU 部署，NVFP4 decode 2.7×、BF16 1.5×，单请求 GB200 约 500 token/s（100K 上下文）。https://blog.vllm.ai/2026/10/21/flint.html</li>
+</ul>
+<h2>主题速览</h2>
+<p>当日检索呈现两条主线：一是"可持续计算"成为显学——PID 加速器碳建模、光子加速器制造/运行碳足迹、能耗定律三篇同批出现，且都给出具体数量级改善；二是推理系统的"精确对照"意识——动态专家跳过与静态基线、draft 训练目标与点质量基线、同步瓶颈与带宽瓶颈都被拉回受控对比。MoE 依然是绝对主角：近存解码、剪枝、跳过、量化 kernel 四面开花；另有 KLS 猜想这类基础理论突破与 vLLM 两篇工程博客做点缀。AI 库一侧则以安全响应（Patch the Planet）与 agent 产品化（Claude Duet）为主。</p>
+<p class="meta">由 RSS 流水线自动生成 · 订阅每日精选 feed 可在阅读器内直接阅读</p>
+</body>
+</html>

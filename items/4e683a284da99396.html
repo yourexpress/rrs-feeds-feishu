@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond the Point Mass: Acceptance-Derived Weights and Distributional Losses for Speculative Decoding</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Beyond the Point Mass: Acceptance-Derived Weights and Distributional Losses for Speculative Decoding</h1>
+<p class="meta-line">arXiv · 2026-10-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 推测解码里 draft 模型训练（如 D-PACE）用点质量 CE 损失、只取 draft 对已记录目标 token 的概率——但拒绝采样下 draft token 被接受的概率实为 draft 与目标分布的重叠（1−总变差距离），能否据此导出更准的训练信号？</p>
+<p><strong>方法</strong> 从期望接受长度的精确式推导 D-PAL：以分布重叠作为接受信号，得到重叠度位置权重 + 每位置 log 接受（LA）损失，点质量目标下退化为 D-PACE；权重 detached 后任意每位置损失可替换 LA；证明 Rényi-1/2 从上下两侧夹住真实接受率。</p>
+<p><strong>关键数字</strong> Qwen3-4B 目标下六个基准平均接受长度 D-PACE 4.50→D-PAL 4.57（T=0）、4.20→4.28（T=1），两个温度下吞吐均更高；Rényi-1/2 替换 CE 在 D-PACE 与 D-PAL 两种权重下都提升接受长度。</p>
+<p><strong>为什么值得看</strong> 从分布重叠而非点质量推导 draft 训练目标，理论推导与实测一致的推测解码加速新配方。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.28355">阅读原文 ↗</a></p>
+</body>
+</html>

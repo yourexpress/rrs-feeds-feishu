@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How we built ChatGPT’s novel ad stack for user trust and relevance</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>How we built ChatGPT’s novel ad stack for user trust and relevance</h1>
+<p class="meta-line">OpenAI · 2026-10-21 · 官方公告</p>
+<img class="hero" src="https://images.ctfassets.net/kftzwdyauwt9/GsY5RrFvT4ZOnPC3oZUya/e3168194d55c5d9c8060ce5c5ba6c3ed/building-chatgpt-ad-stack-social.png?w=1600&amp;h=900&amp;fit=fill" alt="" referrerpolicy="no-referrer">
+<p>OpenAI 工程团队介绍 ChatGPT 广告系统构建（信任与相关性设计）。</p>
+<blockquote><p>How we built ChatGPT’s novel ad stack for user trust and relevance</p><p>By Ritendra Datta and Karthik Gopalratnam, Members of Technical Staff</p><p>Traditional advertising systems are built to respond to discrete units of user intent. A user searches for or views something online, the ads system receives those queries and page views as events, and the system looks for matching ads based on those events. Building an ads stack for ChatGPT was different: user intent develops across conversations and shifts over multiple turns of a conversation, sometimes without a fitting advertising moment. To support this new paradigm, we built a bespoke ads delivery system. This new type of ad stack is based on a custom, post-trained frontier LLM that makes tool calls for retrieval (identifying the top options), ranking (predicting user engagement), relevance (evaluating the usefulness of the ad), and running auctions for final ad selection and pricing.</p><p>Our ads system supports the nuance of evolving user goals by making three key design decisions: 1) implementing stateful ads sessions, meaning information is remembered across turns of a conversation and across multiple conversations, 2) relying on a custom, post-trained LLM that uses a tool call architecture to interpret a conversation’s context and underlying intent, and then effectively select, rank, and deliver ads, and 3) running the ads selection process separately from ChatGPT’s answer generation, in its own service, to keep ads from influencing answers and maintain ChatGPT’s neutral voice. We use our post-trained LLM to orchestrate the entire ads flow, determining the right ad to surface at the right time based on both the user’s current turn and conversation history. While bootstrapping a self-improving ads system like this used to take years, ChatGPT Ads reached $1 billion in annualized revenue run rate less than 200 days after launch; now, more than 100,000 advertisers have run ads on ChatGPT since launch.</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://openai.com/index/building-chatgpt-ad-stack/">阅读原文 ↗</a></p>
+</body>
+</html>

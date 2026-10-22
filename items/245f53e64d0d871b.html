@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reconstruction-Optimized Expert Pruning for Mixture-of-Experts Language Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Reconstruction-Optimized Expert Pruning for Mixture-of-Experts Language Models</h1>
+<p class="meta-line">arXiv · 2026-10-19 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> MoE 模型借稀疏专家激活省算力，但部署仍须存储大量专家参数——给定任务域校准数据，能否选出固定数量专家使其最优重建原层输出？</p>
+<p><strong>方法</strong> 把后训练专家剪枝建模为子集选择问题；OptEP 用可扩展连续松弛直接优化可微专家选择变量，随后对保留专家做轻量重建式权重更新；精确子集搜索对现代多专家 MoE 不可行，连续松弛规避组合爆炸。</p>
+<p><strong>关键数字</strong> 多架构多任务（数学推理与代码生成）上绝对精度增益：Qwen3-30B-A3B 达 15.05%、Qwen3-235B-A22B 14.55%、GLM-4.5-Air 11.06%、Mixtral-8x7B 16.20%；激进剪枝下优势尤其明显。</p>
+<p><strong>为什么值得看</strong> 重建驱动的专家选择+权重适配在减少保留专家的同时显著保住原模型性能，是 MoE 压缩部署的实用方案。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.27123">阅读原文 ↗</a></p>
+</body>
+</html>
