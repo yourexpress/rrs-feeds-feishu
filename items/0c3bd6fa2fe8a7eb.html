@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Is 2:4 Sparsity Still Worth It? Semi-Structured Sparsity versus Quantization in LLM Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Is 2:4 Sparsity Still Worth It? Semi-Structured Sparsity versus Quantization in LLM Inference</h1>
+<p class="meta-line">arXiv · 2026-10-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 给定当前精度，下一步应加 2:4 半结构化稀疏还是降到下一档更低精度？两者在 LLM 推理中哪个收益更大？</p>
+<p><strong>方法</strong> 等比特（计入稀疏元数据）与等名义 tensor-core 档位下，覆盖 transformer 层全部 6 个 GEMM 操作数，三代 GPU 实测内核，含在线剪枝与量化。</p>
+<p><strong>关键数字</strong> 只要更低精度可用，加 2:4 就是更差的选择（更不准确且更慢）；量化到硬件最低精度后 2:4 仍使线性层快 1.3-1.7x；H100 上重训 2:4 模型 FP8 vLLM 服务 prefill 吞吐比稠密 FP8 高 27%，GSM8K 精度持平。Blackwell 稀疏 FP4 用 4:8 模式损失更大，重训预算未能恢复。</p>
+<p><strong>为什么值得看</strong> 给"稀疏还是量化"提供量化证据，直接指导推理部署的精度/稀疏路线取舍。</p>
+<p><a href="https://arxiv.org/abs/2610.28947">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.28947">阅读原文 ↗</a></p>
+</body>
+</html>

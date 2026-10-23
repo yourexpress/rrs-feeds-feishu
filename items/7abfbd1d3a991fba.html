@@ -22,9 +22,11 @@
 <h1>DEALS: Decentralized Expertise-Aware Load Serving for Multi-Agent LLM Systems</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-27 · 论文PDF</p>
 
-<p>DEALS：多智能体 LLM 系统的去中心化专长感知负载服务</p>
-<blockquote><p>Multi-agent systems (MAS) have recently emerged as an effective approach for coordinating large language model (LLM)-based agents to solve complex tasks through structured interactions. In practice, MASs often handle a stream of heterogeneous and complex tasks, requiring agents to decompose each task and then self-organize and self-evolve to adapt to incoming tasks while sharing execution resources. However, most early approaches to MASs rely on centralized controllers or fixed coordination patterns, which can limit scalability or adaptability. In contrast, existing decentralized and dynamic MASs often require training dedicated routers or invoking LLMs for agent selection, resulting in substantial computational costs and coordination overhead. To address these challenges and enable efficient task-level self-organization and self-evolution for task- and workload-level collaboration, we propose Decentralized Expertise-Aware Load Serving (DEALS), a decentralized and low-complexity framework that enables agents to self-organize and dynamically route concurrent tasks for processing. Specifically, each agent maintains local queues of incoming tasks, and its router decides whether to pro…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 多智能体系统大多依赖集中控制器或固定协调模式，限制可扩展性与适应性；去中心化动态方案又常需训练专用路由器或调用 LLM 选 agent，计算与协调开销大。</p>
+<p><strong>方法</strong> DEALS 去中心化低复杂度框架：每个 agent 维护本地任务队列，路由器依据积压差与成功率决定本地处理还是转发给邻居；执行器在 agent 内外并发处理独立任务，部分完成的任务可被其他 agent 续接恢复。</p>
+<p><strong>关键数字</strong> 在异构与同质 agent 池上，答案准确率、任务吞吐等多维度均有提升，并自组织平衡 agent 专长与负载（摘要未给出具体量化数值）。</p>
+<p><strong>为什么值得看</strong> 免训练的纯本地去中心化路由，为大规模多 agent 协作的可扩展性提供新思路。</p>
+<p><a href="https://arxiv.org/abs/2609.33768">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.33768">阅读原文 ↗</a></p>
 </body>
 </html>

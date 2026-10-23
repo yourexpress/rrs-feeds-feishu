@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transformers as Generic Deep Neural Networks: Exact Compilation, the Cost of Removing Activation-Activation Products, and Multi-Agent Attention Clustering</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Transformers as Generic Deep Neural Networks: Exact Compilation, the Cost of Removing Activation-Activation Products, and Multi-Agent Attention Clustering</h1>
+<p class="meta-line">arXiv · 2026-10-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> Transformer 是否必须依赖专用 attention/归一化算子与特定量化算法？计算本身是否强制这种特殊化？</p>
+<p><strong>方法</strong> 证明每个 Transformer block（attention+LayerNorm+GELU MLP）可精确编译为通用 DNN（固定仿射映射、路由、square/sigmoid/inverse sqrt 加 GELU）；分析消除激活-激活乘积的代价；对 top-k attention 证明尾部质量估计的无偏/最小均方误差性质；查询聚类时由质心先选键。</p>
+<p><strong>关键数字</strong> 无激活-激活乘积时每个 head 的稠密分数至少增加 N² 次标量非线性求值，保留该运算即可免除；聚类使每 head 计算分数从 N² 降到 Nk；DeiT-Tiny/MambaIRv2-Light/Pythia-70M 编译后与参考完全匹配，DeiT-Tiny 上半数键的精确尾部质量估计即胜过 tail dropping。</p>
+<p><strong>为什么值得看</strong> 为没有专用 attention 算子的 NPU 提供精确编译路径，量化兼容性是额外加分。</p>
+<p><a href="https://arxiv.org/abs/2610.28958">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.28958">阅读原文 ↗</a></p>
+</body>
+</html>

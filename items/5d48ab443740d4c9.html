@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RISK-KV: Quality-Aware Selective KV Cache Reconstruction for Distributed LLM Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>RISK-KV: Quality-Aware Selective KV Cache Reconstruction for Distributed LLM Inference</h1>
+<p class="meta-line">arXiv · 2026-10-21 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 分布式 LLM 推理的请求迁移与中断恢复依赖历史 KV cache：完整保留/传输状态开销巨大，重放历史 token 又需额外计算。</p>
+<p><strong>方法</strong> RISK-KV 质量感知的选择性 KV 重建：用目标层两侧的精确 KV 状态配合跨层岭回归预测缺失层的 attention-projection 输入，再折叠原始 KV 投影矩阵降低预测器存储；以重建导致的 NLL 变化度量风险，低开销拓扑搜索+质量门控选择要重建的层组。</p>
+<p><strong>关键数字</strong> 三个 LM 上代表性恢复配置省略 18.2%-33.3% 历史 KV，困惑度变化低于 0.5%；512-token 历史的本机恢复实验中比完整 token 重放快 1.51-3.31 倍。</p>
+<p><strong>为什么值得看</strong> 用预测重建替代全量缓存/重放，为分布式 serving 容错与迁移提供低开销新路径。</p>
+<p><a href="https://arxiv.org/abs/2610.29544">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.29544">阅读原文 ↗</a></p>
+</body>
+</html>

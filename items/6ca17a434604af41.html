@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reorienting the Vector Axis: Restructuring FlashAttention for Long-Vector Processors</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Reorienting the Vector Axis: Restructuring FlashAttention for Long-Vector Processors</h1>
+<p class="meta-line">arXiv · 2026-10-21 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> FlashAttention 及其后续工作几乎都面向 GPU；长向量处理器（单向量寄存器可容 512 个单精度数）上向量化哪条循环是一阶决策，GPU 内核移植后性能大幅损失。</p>
+<p><strong>方法</strong> 将 PyTorch CPU FlashAttention 移植到 2KB 向量寄存器的 RISC-V CPU 后提出两项技术：转置 score tile 与运行输出使 query 沿连续轴（单参数即可匹配机器向量长，且两类 reduction 消失）；把 softmax 多项式系数移入标量寄存器消除溢出。</p>
+<p><strong>关键数字</strong> 原移植仅达峰值浮点吞吐的 16.2%；两项技术联合使整核周期减少 1.84-2.08x（head=64），浮点利用率升至 29.7%，softmax 向量内存指令减少 78.7%；同设计 FPGA 评分更高，达 2.71x。</p>
+<p><strong>为什么值得看</strong> 非 GPU 长向量架构的 attention 优化稀缺，对 RISC-V/边缘向量处理器有直接参考。</p>
+<p><a href="https://arxiv.org/abs/2610.29489">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.29489">阅读原文 ↗</a></p>
+</body>
+</html>

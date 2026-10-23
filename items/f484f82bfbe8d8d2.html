@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UlaCache: Unified Logical Addressing for Sparse LLM Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>UlaCache: Unified Logical Addressing for Sparse LLM Serving</h1>
+<p class="meta-line">arXiv · 2026-10-21 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 长上下文使 LLM 推理中 KV cache 内存成本大增；稀疏注意力虽降低计算与内存流量，但保留的 KV cache 必须在后续解码步骤持续可用，管理复杂。</p>
+<p><strong>方法</strong> UlaCache 围绕统一逻辑地址空间构建：跨越 GPU KV 池与可选 CPU 内存，稳定逻辑引用让分配与物理放置解耦；统一分配与稀疏访问接口支持数据并行（DP）与张量并行（TP）attention；启用 CPU 存储时用 Parallel Bucketed LRU（PB-LRU）并行管理共享 GPU 池。</p>
+<p><strong>关键数字</strong> 匹配 CPU/GPU 内存预算+推测解码下，H200 峰值解码吞吐较最先进基线 DP 1.16x/TP 1.70x，B300 上 DP 1.73x/TP 2.51x。</p>
+<p><strong>为什么值得看</strong> 稀疏注意力 serving 的 KV 管理基础设施，逻辑寻址思路简洁，DP/TP 双支持覆盖主流部署。</p>
+<p><a href="https://arxiv.org/abs/2610.29820">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.29820">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPARE: Sparsity Allocation via Routing Entropy for Efficient MoEs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SPARE: Sparsity Allocation via Routing Entropy for Efficient MoEs</h1>
+<p class="meta-line">arXiv · 2026-10-21 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> MoE 专家剪枝大多只关注剪哪些专家且对每层均等修剪，忽略了各层路由分散程度的差异，剪枝内存收益有提升空间。</p>
+<p><strong>方法</strong> SPARE 免训练、选择器无关：用校准数据上 token 归一化 Top-K 门控权重的路由熵决定每层移除多少专家——路由越分散说明删掉一个活跃专家损失越小，剪得越激进；随机剪枝下的扰动界形式化该直觉，并用固定选择器的受控干预验证。</p>
+<p><strong>关键数字</strong> 同一选择器与预算下，50% 专家剪枝时 Qwen3-30B-A3B 八任务平均从 57.2% 提升到 63.8%，DeepSeek-R1 数学/代码/科学平均从 80.1 提升到 82.8。</p>
+<p><strong>为什么值得看</strong> 免训练、即插即用的逐层稀疏分配，对 MoE 部署内存优化有直接实用价值。</p>
+<p><a href="https://arxiv.org/abs/2610.29662">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.29662">阅读原文 ↗</a></p>
+</body>
+</html>

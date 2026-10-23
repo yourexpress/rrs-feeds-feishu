@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LEAN: Loss-Engineered Modulation of the Model Weight-Sensitivity Distribution for Efficient, Error-Tolerant Neural Networks</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LEAN: Loss-Engineered Modulation of the Model Weight-Sensitivity Distribution for Efficient, Error-Tolerant Neural Networks</h1>
+<p class="meta-line">arXiv · 2026-10-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 网络权重对精度敏感性并不均匀：1% 最敏感权重承担约五分之一的位置翻转损害。现有方案只能被动接受训练留下的敏感性分布。</p>
+<p><strong>方法</strong> LEAN 复合正则器主动调制权重敏感性分布：range 项限制翻转步长、tail 项降低最敏感权重的梯度，单系数 λ 控制分布移动距离；配合 BCH 纠错码使用。</p>
+<p><strong>关键数字</strong> 9 个视觉模型（ResNet-18/50、VGG-16）上敏感尾部缩小 5-13 倍，精度损失 0.5 点内；1% 权重 BCH 编码下模型在 300 次渐进位搜索翻转全部种子存活、2/3 种子撑到 500 次（3/4 公开防御 300 次即失败）；固定保证下奇偶校验需求降 3.7 倍；8/6/4/3-bit 格式使 ImageNet ResNet-50 权重负载 3.29 bit，比 INT8 小 2.4 倍。</p>
+<p><strong>为什么值得看</strong> 位翻转容错与低比特存储的交叉前沿，对可靠性敏感部署与存算器件有直接价值。</p>
+<p><a href="https://arxiv.org/abs/2610.28872">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.28872">阅读原文 ↗</a></p>
+</body>
+</html>

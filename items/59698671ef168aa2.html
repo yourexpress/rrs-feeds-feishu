@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>To Keep or Not to Keep: Learning KV Cache Retention in Disaggregated LLM Serving Systems</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>To Keep or Not to Keep: Learning KV Cache Retention in Disaggregated LLM Serving Systems</h1>
+<p class="meta-line">arXiv · 2026-08-10 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 分离式 LLM serving 中 KV cache 未命中不再只是本地重算，还需跨节点网络传输；缓存准入也涉及额外传输，糟糕的保留决策同时浪费内存与带宽。</p>
+<p><strong>方法</strong> KVLearn 学习式框架：轻量前缀复用预测器 PRP 从结构与时序特征估计复用概率（不改模型权重）；成本感知保留分数 CARS 用重算/传输/存储成本把概率转为保留/准入决策；自适应阈值控制器 ATC 按观察到的命中率与内存压力在线调整准入阈值。</p>
+<p><strong>关键数字</strong> 端到端 TTFT 最高降低 56%（vs 无缓存）、38%（vs LRU-Pool）、33%（vs Mooncake 类基线）；节点间 KV 传输量最高降 53%；MM-Session 吞吐保持在 oracle 的约 5% 以内。代码已开源。</p>
+<p><strong>为什么值得看</strong> 把缓存策略从启发式升级为成本感知学习，且覆盖多模态异构复用模式，对分离式 serving 集群有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.28637">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.28637">阅读原文 ↗</a></p>
+</body>
+</html>

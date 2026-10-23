@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accelerating CPU Speculative Decoding via Unified Graph Execution and Transactional KV Isolation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Accelerating CPU Speculative Decoding via Unified Graph Execution and Transactional KV Isolation</h1>
+<p class="meta-line">arXiv · 2026-10-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 推测解码在 CPU 上部署面临严重系统瓶颈：draft 与 target 图之间的上下文切换延迟，以及 KV cache 回滚时的内存分配开销。</p>
+<p><strong>方法</strong> SubTernary 执行框架：统一图缓存 + 事务化 KV 隔离。两模型编译进单一内存 arena、配持久线程池，投机 token 走静态 scratchpad 实现零拷贝指针复位，彻底规避动态重分配与线程同步；并集成 256-bit AVX2 三元 SIMD 内核作为低位案例。</p>
+<p><strong>关键数字</strong> 消融显示系统运行时贡献 35.0% 吞吐增益，三元内核额外贡献 6.0%；相对 llama.cpp 推测解码 1.35x、相对自回归解码 3.99x 加速，回滚延迟保持 O(1)。</p>
+<p><strong>为什么值得看</strong> CPU 端 LLM 推理优化稀缺，消除上下文切换与回滚开销的系统设计对端侧/无 GPU 部署很有借鉴。</p>
+<p><a href="https://arxiv.org/abs/2610.28671">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.28671">阅读原文 ↗</a></p>
+</body>
+</html>

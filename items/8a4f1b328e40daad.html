@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enumeration-based Triangle Counting on GPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Enumeration-based Triangle Counting on GPUs</h1>
+<p class="meta-line">arXiv · 2026-10-21 · 论文PDF</p>
+
+<p>Subgraph enumeration in partitioned graphs across distributed-memory systems is beset with challenges in balancing data movement with the local computation.</p>
+<blockquote><p>Subgraph enumeration in partitioned graphs across distributed-memory systems is beset with challenges in balancing data movement with the local computation. Especially, counting the number of triangles induced by the closed wedges (i.e., length-3 cycles) is a measure of connectedness in a graph, but often limited by the significant search space caused by open wedges or length-2 paths (usually greater than the number of edges in a graph), which must be inspected to assess whether a particular wedge is closed. To mitigate triangle counting on massive graphs, distributed-memory partitioned-graph approaches are viable (i.e., assessing closed wedges independently within a partition), but load imbalance due to arbitrary communication can overshadow any gains from enhanced concurrency, owing to the inherent lack of structure in regular graphs. In this paper, we discuss a distributed-memory exact graph triangle counting implementation, and assess its performance over billion-edge real-world graphs on contemporary scale-out and scale-up based NVIDIA GPU platforms (considering NVIDIA ``Ampere'' and ``Hopper'' architectures), depicting a scalability spectrum of multiple orders of magnitude. C…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.29988">阅读原文 ↗</a></p>
+</body>
+</html>

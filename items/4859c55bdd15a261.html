@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building a Nested LADDER for LLM Unstructured Post-Training Pruning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Building a Nested LADDER for LLM Unstructured Post-Training Pruning</h1>
+<p class="meta-line">arXiv · 2026-10-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 非均匀分配能改善 LLM 后训练剪枝，但高稀疏度下模型质量仍可能急剧退化，如何随稀疏度上升控制退化？</p>
+<p><strong>方法</strong> LADDER（基于损坏驱动的逐层分配与细化）：增量分配稀疏度——每步评估从每个候选层额外剪掉一部分权重的端到端退化，提交"每删除一个参数退化最小"的层更新；产出非均匀稀疏配置与跨预算精确嵌套的掩码，以 SparseGPT 为候选生成后端。</p>
+<p><strong>关键数字</strong> 在 5 个 OPT/Llama/Qwen 模型、10%-90% 稀疏度上评估：良性稀疏度下与均匀/自适应基线相当或略弱，70% 以上显著更鲁棒；优势在 4/5 模型蒸馏后仍保留，并转化为聚合零样本准确率提升。</p>
+<p><strong>为什么值得看</strong> 高稀疏度正是端侧部署的关键区间，"损坏驱动+逐层分配"思路简洁实用且与 SparseGPT 兼容。</p>
+<p><a href="https://arxiv.org/abs/2610.28773">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.28773">阅读原文 ↗</a></p>
+</body>
+</html>

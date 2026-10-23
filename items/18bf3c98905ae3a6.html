@@ -22,9 +22,11 @@
 <h1>CipherGenome: Homomorphic Inference for Genomic Mixture-of-Experts</h1>
 <p class="meta-line">arXiv / Guang Yang 等 · 2026-09-27 · 论文PDF</p>
 
-<p>Genome foundation models are growing into sparse mixture-of-experts (MoE) networks whose …</p>
-<blockquote><p>Genome foundation models are growing into sparse mixture-of-experts (MoE) networks whose expert weights no longer fit on the machines that hold the sequences, yet sending a private genome to rented accelerators exposes it: we show that a single server hosting one expert recovers the input nucleotides with 99.8% top-1 accuracy. We present CipherGenome, a protocol that keeps the embedding, attention and router of a 15.1B-parameter MoE genome model on a trusted thin client and outsources every expert projection, 95.8% of the parameters, to untrusted and possibly colluding GPU servers under module-LWE encryption. The design exploits three structural facts: expert layers are linear between two SwiGLU gates, expert weights are public, and GPU integer tensor cores can evaluate a ciphertext-weight product exactly modulo $2^{48}$ in a single GEMM. The client evaluates the nonlinearity exactly and re-encrypts with fresh secrets, so no polynomial approximation or bootstrapping is ever needed. On 72 windows from 12 bacterial genomes, encryption adds $2.54 \times 10^{-4}$ nats per token of KL divergence (95% CI upper bound $3.95 \times 10^{-4}$), below a pre-registered non-inferiority margin an…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 基因组基础模型长成稀疏 MoE 后专家权重超出本地机器，但把私有基因组发给租用加速器会泄露隐私：单台托管一个专家的服务器即可 99.8% top-1 恢复输入核苷酸。</p>
+<p><strong>方法</strong> CipherGenome 协议：嵌入/attention/路由留在可信瘦客户端，95.8% 的参数（专家投影）以 module-LWE 加密外包给不可信甚至共谋的 GPU 服务器；利用专家层在 SwiGLU 门之间的线性、权重公开、GPU 整数张量核单次 GEMM 精确计算密文-权重乘积（模 2^48），客户端精确算非线性并重加密，全程无需多项式近似或 bootstrapping。</p>
+<p><strong>关键数字</strong> 15.1B 参数 MoE 基因组模型；12 个细菌基因组 72 窗口上加密仅增加 2.54e-4 nats/token 的 KL 散度（95% CI 上界 3.95e-4），与 bf16 推理不可区分；可复用提示削减端到端延迟 3.54x、压缩流量 6.8x、逐层填充把路由泄漏从 54.9% 降到 8.9%；服务器端单专家单 token 成本比 CKKS 基线低 6 个数量级以上。</p>
+<p><strong>为什么值得看</strong> 同态加密+MoE 外包的完整隐私协议，对基因组/医疗等敏感数据推理是重要路线。</p>
+<p><a href="https://arxiv.org/abs/2609.35883">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.35883">阅读原文 ↗</a></p>
 </body>
 </html>

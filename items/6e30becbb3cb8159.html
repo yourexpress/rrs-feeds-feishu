@@ -22,9 +22,11 @@
 <h1>Approximating Softmax in Pretrained LLMs: Model Sensitivity and Kernel Acceleration</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-27 · 论文PDF</p>
 
-<p>预训练 LLM 中逼近 softmax：模型敏感性与内核加速</p>
-<blockquote><p>On NVIDIA Blackwell B200, tensor-core throughput outpaces special-function exponential throughput by more than two orders of magnitude, exposing exponential evaluation in fused attention kernels. A pretrained Transformer, however, may not need it evaluated accurately at every element. We characterize what a pretrained model does need by approximating softmax at inference in ten frozen decoder-only models (0.5B-72B). The number of positions the softmax map assigns probability to and within-row resolution can be cut substantially, yet uniform weighting of the same positions is damaging. Where a fixed resolution budget is placed matters as much as its size, with resolution near the row maximum consistently favored. Perturbations matched on scalar distortion produce model-dependent responses of opposite sign. These findings motivate Rowmax-PoT, a coarse logarithmic weight representation anchored at each row maximum, and Rowmax-H15, its hardware specialization in FlashAttention-4. On B200, the patched FP8 attention forward is 12.4% faster at causal 8K and 25.8% faster at non-causal 8K in host-side call-latency measurements; board energy per forward falls by 8.4% at causal 16K. Measured …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Blackwell B200 上张量核吞吐比特殊函数指数吞吐高两个数量级以上，融合 attention 核中的指数求值成为瓶颈；预训练模型是否需要在每个元素上都精确求 softmax？</p>
+<p><strong>方法</strong> 在 10 个冻结 decoder-only 模型（0.5B-72B）上刻画推理期 softmax 近似需求；提出 Rowmax-PoT 粗对数权重表示（锚定每行最大值）与 FlashAttention-4 硬件特化 Rowmax-H15。</p>
+<p><strong>关键数字</strong> B200 上 FP8 attention forward causal 8K 快 12.4%、non-causal 8K 快 25.8%；causal 16K 每 forward 板级能耗降 8.4%；BF16 核路径 2K 下五个模型困惑度增加 0.091%-0.492%。</p>
+<p><strong>为什么值得看</strong> 指数运算成为 GPU 推理新瓶颈的量化证据，softmax 近似的精度/速度权衡数据扎实。</p>
+<p><a href="https://arxiv.org/abs/2609.33586">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.33586">阅读原文 ↗</a></p>
 </body>
 </html>

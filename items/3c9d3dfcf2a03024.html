@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Much Gradient Does Truncated Backprop Lose in Looped Transformers?</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>How Much Gradient Does Truncated Backprop Lose in Looped Transformers?</h1>
+<p class="meta-line">arXiv · 2026-10-20 · 论文PDF</p>
+
+<p>Looped transformers reuse one block of layers many times and are often trained by backpropagating through only the last k loops.</p>
+<blockquote><p>Looped transformers reuse one block of layers many times and are often trained by backpropagating through only the last k loops. We measure how much of the weight gradient this throws away, exactly and for every k from one backward pass, on nine looped language models, and report three findings. First, on a trained model this lost gradient is set near the output: once the loop count is well above k, it barely changes with the loop count (within about 0.03 from 32 to 64 loops on the three models we tested, as a pre-registered test predicted for Parcae). Where the backward signal shrinks, $ρ^k$, with $ρ$ the signal's fitted shrink per loop, approximates it at moderate loop counts but overstates it at long ones, because the fitted $ρ$ drifts up as the fit takes in more loops. On Ouro the signal grows, and keeping two of four loops still loses 81% of the final output's gradient. Second, the lost gradient falls during fine-tuning, by 0.07-0.22 within 300 steps on three of four models, on held-out problems too. The fall is not just the read-out's share of the gradient; training only the layers outside the loop reproduced up to half of it, and it also falls under truncated training. So a …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.28871">阅读原文 ↗</a></p>
+</body>
+</html>

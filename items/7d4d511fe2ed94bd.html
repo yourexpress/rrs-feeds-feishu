@@ -22,9 +22,11 @@
 <h1>When the Merge Coefficient Stops Mattering: Proximity Regularized Merging for Continual LoRA Adaptation</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-26 · 论文PDF</p>
 
-<p>持续 LoRA 适配中邻近正则化合并让合并系数不再关键</p>
-<blockquote><p>Rehearsal-free continual learning with parameter-efficient adapters can be cast as a sequence of task-vector write-in operations: for each new task, a low-rank adapter is learned and merged into a running model. We propose Proximity Regularized Merging (PRM), a minimal modification to sequential LoRA merging that adds a proximal penalty during task-vector training without changing the subsequent write-in rule. PRM acts as a robust task-vector regularizer: in the reported Base-&gt;+Prox diagnostics, it improves AAA across multiple write-in rules, backbones, and class-incremental settings, while its fixed-coefficient variant remains competitive with strong coefficient-based baselines. Mechanistically, matched-prefix norm controls and proximal-strength sweeps show that proximal training shrinks the task-vector radius, lowers Fisher-weighted interference, broadens the coefficient plateau, and exposes a stability-plasticity trade-off. Together, these results suggest that the effectiveness of sequential LoRA merging depends not only on how much of a task vector is written in, but also on whether the task vector itself has been trained to be mergeable.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 无回放的持续学习+参数高效适配可视为任务向量写入序列；顺序 LoRA 合并的效果是否只取决于"写入多少"任务向量？</p>
+<p><strong>方法</strong> 邻近正则化合并（PRM）：在任务向量训练期间加入邻近惩罚项，不改变后续写入规则，是最小改动；通过匹配前缀范数控制与邻近强度扫描，考察任务向量半径、Fisher 加权干扰、系数平台与稳定性-可塑性权衡。</p>
+<p><strong>关键数字</strong> Base-&gt;+Prox 诊断中跨多个写入规则、骨干网络与类增量设置提升 AAA；固定系数变体与强系数基线保持竞争力。</p>
+<p><strong>为什么值得看</strong> 提出"任务向量本身要训练得可合并"的视角，对参数高效持续学习有方法论价值。</p>
+<p><a href="https://arxiv.org/abs/2609.32332">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.32332">阅读原文 ↗</a></p>
 </body>
 </html>

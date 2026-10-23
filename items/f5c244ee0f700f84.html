@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Extreme Low-State Quantized Transformer for Electricity-Load Forecasting</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Extreme Low-State Quantized Transformer for Electricity-Load Forecasting</h1>
+<p class="meta-line">arXiv · 2026-10-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 激进的低状态权重量化大幅压缩神经网络表示灵活性，仅剩少数离散权重状态时预测性能难以保持。</p>
+<p><strong>方法</strong> 对电力负荷预测 Transformer 采用 3/5/7/16 状态权重量化（仅 FFN 与 attention+FFN 两种范围），任务为用前 48 小时预测下 1/24 小时；提出 accumulated-update thresholding，累积优化器提出的权重更新后再提交。</p>
+<p><strong>关键数字</strong> 直接 PTQ 使平均 NRMSE 相对全精度升 6.25/7.04 个百分点，QAT-FT 恢复约 90.2%/94.5% 的惩罚；累积阈值化相对配对控制减少约 99.7% shadow-weight 更新与 77%-80% 状态转移，平均 NRMSE 仅 +0.042/+0.197 个百分点。</p>
+<p><strong>为什么值得看</strong> 面向多电平存算器件与低活跃边缘预测的量化路线，QAT 恢复与更新抑制策略有实际启发。</p>
+<p><a href="https://arxiv.org/abs/2610.28784">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.28784">阅读原文 ↗</a></p>
+</body>
+</html>

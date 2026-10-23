@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LLMs are making formal software verification feasible at a much larger scale</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LLMs are making formal software verification feasible at a much larger scale</h1>
+<p class="meta-line">Anthropic · 2026-10-22 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://www-cdn.anthropic.com/images/4zrzovbb/website/80cf520cb540989c3643907f004b2514ec4d01f1-1200x630.jpg" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong> Anthropic 与 Theorem 合作，用 Claude 在汇编级对生产软件做大规模形式化验证。</p>
+<p><strong>要点</strong> 把 OSS-Fuzz 模糊测试转成规范：证明编译后的 RISC-V 指令"对任意小于 64MB 的输入都不会崩溃（单线程静态二进制、固定内存预算假设）"。过程中 Claude 自动修补发现的 bug 并继续证明；Anthropic 发布部分证明及 RISC-V/OS 语义，Theorem 开放同类管道并发布 Claude skill。</p>
+<p><strong>关键数字</strong> 123 个 OSS-Fuzz 开源库、239 个入口；证明共约 1.8 亿行 Rocq，典型证明约 60 万行（二进制中位长 18,000 条指令）；发现多年未被发现的 bug，尽管这些代码已被测试数万亿次。背景对比：seL4 内核实现 2 人年、形式化验证 20 人年。</p>
+<p><strong>为什么值得看</strong> 首次大规模把 AI 形式化验证推进到汇编级生产软件，安全软件开发工作流可能被重塑。</p>
+<p><a href="https://www.anthropic.com/research/formal-verification">原文链接</a></p>
+<p><a class="origin" href="https://www.anthropic.com/research/formal-verification">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -22,9 +22,11 @@
 <h1>CascadeEP: Asynchronous Expert Execution for MoE Prefill under Attention Imbalance</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-27 · 论文PDF</p>
 
-<p>CascadeEP：注意力负载不均下 MoE prefill 的异步专家执行</p>
-<blockquote><p>Mixture-of-experts (MoE) serving commonly deploys data and expert parallelism (DEP): attention replicas run distinct request batches while routed experts are sharded across an expert-parallel (EP) group. During prefill, attention replicas finish dispatch at different times, but synchronous EP delays expert feed-forward network (FFN) computation until routed inputs from all replicas are ready. Request schedulers seek to balance load while reusing the key-value (KV) cache of shared prompt prefixes to avoid redundant prefill computation. These goals can conflict when a replica holding a matching prefix is already overloaded, leaving residual attention imbalance. We present ASYNCEP, a distributed execution engine for MoE prefill. ASYNCEP proposes three mechanisms. Asynchronous EP allows expert computation to start before tokens from all attention replicas are ready. streamFFN batches ready tokens to balance early execution with FFN computation efficiency. Opportunistic expert weight fetching (OEWF) allows a faster replica to fetch expert weights and execute unstarted work from other GPUs. We evaluate ASYNCEP on DeepSeek-V4-Flash, DeepSeek-V4-Pro, and GLM-5.3, and our results show that …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> MoE prefill 中 attention replica 完成 dispatch 的时间不一，同步 EP 会拖到全部 replica 的 routed 输入就绪才启动专家 FFN 计算，且共享前缀复用与负载均衡可能冲突。</p>
+<p><strong>方法</strong> ASYNCEP 分布式执行引擎的三个机制：异步 EP（专家计算无需等所有 replica token）、streamFFN 批量就绪 token 平衡早期执行与 FFN 效率、机会性专家权重抓取（OEWF，更快 replica 从其他 GPU 取权重执行未开始的工作）。</p>
+<p><strong>关键数字</strong> 在 DeepSeek-V4-Flash、DeepSeek-V4-Pro、GLM-5.3 上，p95 TTFT 最高加速 1.48x，推理吞吐最高提升 1.17x。</p>
+<p><strong>为什么值得看</strong> 直击 MoE prefill 阶段注意力负载不均的痛点，对大规模 MoE serving 有直接价值。</p>
+<p><a href="https://arxiv.org/abs/2609.33252">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.33252">阅读原文 ↗</a></p>
 </body>
 </html>

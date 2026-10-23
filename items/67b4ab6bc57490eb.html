@@ -22,9 +22,11 @@
 <h1>AgentLoop: Runtime Control of Slot-closed Execution Loops for Tool-augmented LLM Agents</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-27 · 论文PDF</p>
 
-<p>AgentLoop：工具增强 LLM 智能体槽位封闭执行循环的运行时控制</p>
-<blockquote><p>Tool-augmented large language model (LLM) agents are becoming an important execution unit in service computing, but existing agent loops still lack explicit runtime signals for assessing task completion. The challenge lies in the fact that an agent may continue reasoning or invoking services even after the runtime context has stopped changing, while evidence already collected remains unsynthesized into a complete answer, which leads to inefficiency in resource usage. To address these challenges, this paper presents AgentLoop, which provides runtime control of slot-closed execution loops for tool-augmented agents. Slot closure means that the information slots required by a request have been covered by sufficient runtime evidence, and that unresolved slots are explicitly identified before the loop stops. AgentLoop converts open-ended agent iteration into state-driven execution control: it maintains a compact runtime state, uses model-assisted structured verification to check answer completeness and missing evidence, and applies bounded stability and low-gain signals over neighboring LLM/tool rounds before selecting one of three actions: Continue Invocation, Answer Synthesis, or Termi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 工具增强 LLM agent 循环缺乏评估任务完成的显式运行时信号：运行时上下文停止变化后 agent 仍继续推理或调用服务，已收集证据却未综合成答案，资源浪费严重。</p>
+<p><strong>方法</strong> AgentLoop 槽位封闭执行循环的运行时控制：维护紧凑运行时状态，模型辅助结构化验证检查答案完整性与缺失证据，对相邻 LLM/工具轮次应用有界稳定与低增益信号，三选一执行：继续调用、合成答案、终止迭代。</p>
+<p><strong>关键数字</strong> 总 token 成本最高降 88.44%，平均服务调用最高降 76.85%；消融显示槽位控制路径是核心，禁用后执行深度增加且准确率显著下降。</p>
+<p><strong>为什么值得看</strong> 把 agent 迭代从开放式改为状态驱动，为 agent 服务的成本与资源控制提供实用框架。</p>
+<p><a href="https://arxiv.org/abs/2609.33315">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.33315">阅读原文 ↗</a></p>
 </body>
 </html>
