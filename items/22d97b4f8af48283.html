@@ -22,9 +22,11 @@
 <h1>PQ-HSA: Reusing Product-Quantized Scores for Hybrid Sparse-Approximate Attention</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-27 · 论文PDF</p>
 
-<p>PQ-HSA：复用乘积量化分数做混合稀疏近似注意力</p>
-<blockquote><p>At each decoding step a language model attends over the key-value (KV) cache of every earlier token, so at long context the attention call is bounded by memory bandwidth. Sparse attention reads only a subset of keys chosen by a cheap score estimate, and most methods give the unread tokens zero weight. The output then draws on only a small fraction of the KV cache, and accuracy drops at small budgets, most on tasks that aggregate information across the context. An inverted-file product-quantization (IVF-PQ) index over the cached keys computes an approximate score for every indexed token in order to rank them; after ranking, those scores approximate the attention logits of the tokens left out. PQ-HSA (hybrid sparse-approximate attention) attends the selected tokens with their original keys and values, and the unselected tokens, the background, enter the same softmax through those scores, summed per inverted list and multiplied by the list's mean value. At 128K and a 1-2% retrieval budget, PQ-HSA is more accurate than Quest and SnapKV on Llama-3.1-8B and Qwen3-30B-A3B and stays close to full attention in macro accuracy; with the same selector, the background term raises macro accuracy…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 长上下文解码中 attention 受内存带宽限制，稀疏注意力只读一小部分 key 并把未读 token 权重置零，输出只来自 KV 缓存一小部分，小预算下精度下降、聚合类任务尤甚。如何保留被跳过 token 的信息？
+<strong>方法：</strong> 在缓存 key 上建倒排文件乘积量化（IVF-PQ）索引，排序后这些近似分数即未选中 token 的注意力 logits。PQ-HSA 对选中 token 用原始 key/value 做注意力，未选中的背景 token 经逐倒排表求和、乘以该表均值后进入同一 softmax。
+<strong>关键数字：</strong> 128K 上下文、1-2% 检索预算下精度优于 Quest 与 SnapKV；8B 模型宏观准确率从 0.71 提到 0.83；H20 上解码 attention 比 FlashAttention-3 快 1.6 倍。
+<strong>为什么值得看：</strong> 把"被丢弃 token"重新纳入 softmax，兼得稀疏注意力的速度与接近全注意力的精度。
+原文链接：<a href="https://arxiv.org/abs/2609.33746">PQ-HSA: Reusing Product-Quantized Scores for Hybrid Sparse-Approximate Attention</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.33746">阅读原文 ↗</a></p>
 </body>
 </html>

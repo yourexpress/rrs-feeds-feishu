@@ -22,9 +22,11 @@
 <h1>Accelerator Choice Is Not Enough: AlphaFold2 Inference on Cloud TPUs</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-28 · 论文PDF</p>
 
-<p>云 TPU 上 AlphaFold2 推理实测：光选对加速器还不够</p>
-<blockquote><p>AlphaFold2 is written in JAX, so the same inference code compiles and runs unchanged on CPUs, GPUs and Google Cloud TPUs. That portability makes the accelerator look like the main decision a user has to make. We show that it is not. Running one AlphaFold2 inference workload across a Colab CPU runtime, an NVIDIA T4 GPU and a dedicated eight-chip Cloud TPU v5e slice, we find a large hardware advantage for the TPU, 0.47 s per call in steady state on a single chip against 13.1 s on the T4 in the same measurement campaign, and three ways in which the software layer decides how much of it a user actually gets. The default execution path uses one chip of the eight, and at list prices the idle capacity makes the slice cost about as much per prediction as the GPU. Batching with JAX's vmap never exceeds single-query throughput, while mapping queries across chips with JAX's pmap gives eight chips 6.5-7.9x the throughput of one on a matched grid; automatic sharding leaves the per-chip footprint unchanged, consistent with replication, most plausibly because AlphaFold2 carries no sharding annotations. Our retained trace analysis of a first call at a new input shape reports about three quarters o…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> AlphaFold2 用 JAX 编写，同一份推理代码可无改运行在 CPU、GPU 与 Google Cloud TPU 上——这种可移植性是否意味着"选对加速器"就够了？
+<strong>方法：</strong> 在同一测量活动内，用 Colab CPU、NVIDIA T4 GPU 与专用八芯片 Cloud TPU v5e slice 跑同一 AlphaFold2 推理负载，并用留存 trace 分析新输入形状首次调用的时间构成。
+<strong>关键数字：</strong> TPU 单芯片稳态 0.47 s/call vs T4 13.1 s/call；默认路径只用八片中的一片，按目录价 slice 每预测成本与 GPU 相当；pmap 跨片映射使八芯片吞吐为单芯片 6.5-7.9 倍；首次调用约四分之三的 traced 时间花在 JAX tracing 与编译；五周后重跑两个云基线均未复现（GPU 偏差约 2 倍）。
+<strong>为什么值得看：</strong> 提醒"硬件优势取决于软件执行路径与结果可复现性"，云上 AI 推理选型与成本决策参考。
+原文链接：<a href="https://arxiv.org/abs/2609.34818">Accelerator Choice Is Not Enough: AlphaFold2 Inference on Cloud TPUs</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.34818">阅读原文 ↗</a></p>
 </body>
 </html>

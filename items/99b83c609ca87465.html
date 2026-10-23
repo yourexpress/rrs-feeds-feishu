@@ -22,9 +22,11 @@
 <h1>When to Evict, Not What to Keep: Draft-Guided Eviction for Training-Free KV-Cache Compression</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-27 · 论文PDF</p>
 
-<p>免训练 KV 缓存压缩：该驱逐什么（而非留什么）的草稿引导驱逐</p>
-<blockquote><p>Training-free KV-cache compression methods such as SnapKV, H2O, and PyramidKV evict tokens at the end of prefill, aiming to preserve the attention mass that future queries are expected to use -optimizing what to keep. We show that this objective fails in two distinct ways. (1) Compensation: restoring the evicted attention mass can recover the attention-level target without recovering task quality. (2) Selection: covering more of the true decode-query mass can hurt quality when the recovered mass is fragmented rather than concentrated in coherent spans. These failures share a common cause: eviction occurs before the queries that determine the answer trajectory exist. We propose Draft-Guided Eviction (DGE), which defers eviction until after drafting the first k=2 answer tokens using the full cache - just one decode step beyond prefill. Because the draft is generated from the answer's own prefix, no cache entries are discarded before this trajectory signal becomes available. The per-head cache budget remains unchanged, and DGE can be applied directly to SnapKV, PyramidKV, H2O, and StreamingLLM without modifying their eviction scores. Unlike extra-pass methods, DGE changes when evictio…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 免训练 KV 缓存压缩（SnapKV、H2O、PyramidKV）都在 prefill 末尾驱逐 token、优化"留什么"，为何在任务质量上仍失败？
+<strong>方法：</strong> 指出两类失败机制：补偿——恢复被驱逐的注意力质量不等于恢复任务质量；选择——覆盖更多真实解码 query 质量反而下降，因恢复的质量分散而非集中在连贯片段。DGE 改为用完整缓存草拟前 k=2 个答案 token（仅比 prefill 多一步解码）再驱逐——不丢弃任何缓存条目直到轨迹信号可用；驱逐时机后移而非改选什么，可直接套在四种方法上且不改驱逐分数。
+<strong>关键数字：</strong> 6 个指令微调骨干中 5 个在所有评估预算下优于先前方法；LongBench 44.2，接近 FullKV 的 44.3；纯时机控制版本 DGE-W 得分相同。
+<strong>为什么值得看：</strong> "何时驱逐"而非"驱逐什么"的视角翻转，训练免费、即插即用。
+原文链接：<a href="https://arxiv.org/abs/2609.33334">When to Evict, Not What to Keep: Draft-Guided Eviction for Training-Free KV-Cache Compression</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.33334">阅读原文 ↗</a></p>
 </body>
 </html>

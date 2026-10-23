@@ -22,9 +22,11 @@
 <h1>PackServe: SLO-Aware Request Scheduling for Agentic LLM Serving at Scale</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-27 · 论文PDF</p>
 
-<p>PackServe：面向规模化智能体 LLM 服务的 SLO 感知请求调度</p>
-<blockquote><p>Request scheduling is a key challenge in large-scale clusters serving agentic large language model (LLM) workloads. An effective scheduler must preserve key-value cache (KVC) reuse across long, shared prefixes, meet token-level latency service-level objectives (SLOs), and minimize GPU resource footprint. Existing schedulers struggle to reconcile these requirements: request consolidation can sacrifice cache locality and increase prefill/decode interference, compromising both SLO attainment and resource efficiency. We present PackServe, a scheduler designed to reduce resource costs while meeting latency SLOs for agentic LLM serving. PackServe uses compact white-box models to predict latency under prefill/decode interference. Guided by these predictions, it packs requests onto fewer serving instances while preserving KVC reuse and SLO constraints, trading available latency headroom for improved per-instance throughput. Evaluation on 64 NVIDIA H20 GPUs shows that PackServe uses up to 16.8% and 24.6% fewer GPU-hours than state-of-the-art schedulers under 30-ms and 50-ms TPOT targets, respectively, while meeting the target TPOT objectives. PackServe has also been deployed in our producti…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 大规模集群服务智能体 LLM 负载时，调度需同时满足三点：跨长共享 prefix 保住 KV 缓存复用、达成 token 级延迟 SLO、最小化 GPU 资源；现有调度常顾此失彼——请求合并牺牲缓存局部性、增加 prefill/decode 干扰。
+<strong>方法：</strong> PackServe 用紧凑白盒模型预测 prefill/decode 干扰下的延迟，据此把请求打包到更少的服务实例，在保住 KV 复用与 SLO 约束的前提下，用可用的延迟余量换每实例吞吐。
+<strong>关键数字：</strong> 64 张 H20 上，30ms/50ms TPOT 目标下比 SOTA 调度器少用 16.8%/24.6% GPU 小时；生产集群（1000+ GPU）上资源占用比原调度减 34.7%。
+<strong>为什么值得看：</strong> 有大规模生产验证的 SLO 感知调度器，工程参考价值高。
+原文链接：<a href="https://arxiv.org/abs/2609.33224">PackServe: SLO-Aware Request Scheduling for Agentic LLM Serving at Scale</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.33224">阅读原文 ↗</a></p>
 </body>
 </html>

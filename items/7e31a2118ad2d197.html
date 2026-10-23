@@ -22,9 +22,11 @@
 <h1>Performance vs Portability in Heterogeneous HPC Environments: Why Pre-execution Benchmarking is Required</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-27 · 论文PDF</p>
 
-<p>异构 HPC 环境下性能与可移植性的矛盾：为何需要执行前基准测试</p>
-<blockquote><p>Cloud computing and high-performance computing (HPC) typically follow different paradigms: cloud services are often orchestrated using Kubernetes, whereas HPC workloads are managed through batch schedulers such as Slurm. Growing demand for shared computational resources increases the need for interoperability between these environments. This study uses Podman as a user-accessible tool to benchmark quantum chemistry software distributed as precompiled executables. Containerized and on-system execution are compared across CPU-optimized builds and multiple compute nodes, without additional network optimizations. The results demonstrate that performance depends on software compilation, startup overhead, and execution configuration. Container preparation can dominate short-task workflows, while long-running calculations require monitoring of computational progress. These findings highlight the importance of workload-specific benchmarking and user-level monitoring when deploying scientific applications in containers on HPC systems.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 云（Kubernetes 编排）与 HPC（Slurm 批调度）范式不同，跨环境共享算力需求上升；在异构 HPC 环境部署科学软件时，性能与可移植性如何权衡，为什么需要执行前基准测试？
+<strong>方法：</strong> 用 Podman 作为用户可及工具，对以预编译可执行文件分发的量子化学软件做容器内与系统直跑对比，覆盖 CPU 优化构建与多计算节点，不做额外网络优化。
+<strong>关键数字：</strong> 原文未给出量化数据；结论为性能取决于软件编译、启动开销与执行配置。
+<strong>为什么值得看：</strong> 指出容器准备开销可主导短任务工作流、长任务需监控计算进度，强调按负载实测基准而非凭直觉部署。
+原文链接：<a href="https://arxiv.org/abs/2609.33847">Performance vs Portability in Heterogeneous HPC Environments: Why Pre-execution Benchmarking is Required</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.33847">阅读原文 ↗</a></p>
 </body>
 </html>

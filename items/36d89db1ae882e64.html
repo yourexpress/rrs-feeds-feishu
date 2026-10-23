@@ -22,9 +22,11 @@
 <h1>Pretraining Transformers with Quantized Softmax in Attention</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-27 · 论文PDF</p>
 
-<p>用量化 softmax 做注意力预训练 Transformer</p>
-<blockquote><p>Low-precision Transformer systems increasingly quantize attention matrix multiplications, while softmax often remains at higher precision. During pretraining, an approximate softmax changes the gradients that train the model as well as its forward computation. We study this interaction with K-interval attention, which approximates the exponential using K+1 grid values. We vary per-row grid calibration, interpolation versus hard rounding, and the placement of a straight-through surrogate relative to normalization. We derive the corresponding backward rules, including calibration derivatives, and compare these choices in pretraining experiments matched on model, data, and optimizer. Detaching the row extrema leaves the forward computation unchanged but produces a delayed increase in validation loss. With hard rounding at K=4, min-max calibration and a pre-normalization surrogate incur a large loss gap; changing either choice substantially reduces it. At 124M parameters and 2.5B training tokens, fixed-window calibration with a post-normalization surrogate yields a validation loss gap of +0.019 nats relative to softmax at K=4, and with a pre-normalization surrogate yields +0.004 nats a…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 低精度 Transformer 通常量化注意力矩阵乘而 softmax 保持高精度；预训练时近似 softmax 会同时改变前向计算与训练梯度。这种交互如何影响模型质量？
+<strong>方法：</strong> 用 K-interval attention 以 K+1 个网格值近似指数函数，对比逐行网格标定方式、插值 vs 硬舍入、straight-through 代理相对归一化的位置，推导相应反向规则（含标定导数），并在模型、数据、优化器对齐的预训练实验中比较。
+<strong>关键数字：</strong> 124M 参数、2.5B 训练 token；K=4 固定窗口标定 + 归一化后代理的验证损失差距 +0.019 nats；K=16 预归一化代理 +0.004 nats；解耦行极值会使验证损失延迟上升。
+<strong>为什么值得看：</strong> 量化 softmax 的梯度效应常被忽略，此文给出标定与代理放置的可操作准则。
+原文链接：<a href="https://arxiv.org/abs/2609.33591">Pretraining Transformers with Quantized Softmax in Attention</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.33591">阅读原文 ↗</a></p>
 </body>
 </html>

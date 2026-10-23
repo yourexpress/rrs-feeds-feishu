@@ -22,9 +22,11 @@
 <h1>AgentPerfBench: A Benchmarking and Evaluation Suite for Inference Performance of Agentic LLMs</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-28 · 论文PDF</p>
 
-<p>AgentPerfBench：智能体 LLM 推理性能评测基准套件</p>
-<blockquote><p>The optimization of LLM serving engines, such as vLLM and SGLang, is largely benchmark-driven: optimizations, scheduling policies, hardware and system designs are all selected based on representative workloads. However, a significant mismatch has emerged in the agentic era. Existing benchmarks primarily focus on simple single-turn chatbot workloads. LLM applications are increasingly agentic: coding agents, terminal execution systems, and tool-use agents issue multi-turn requests with growing context lengths. We introduce AgentPerfBench, a benchmark suite for agentic inference. It uses real traces from agentic benchmarks, such as SWE-Bench and TerminalBench, alongside standard chat baselines. This enables benchmarking of models on multi-turn tasks involving tool calling, skill utilization, and increasing context lengths. AgentPerfBench also samples from empirical distributions of input length, output length, and turn count derived from the real traces, generating representative synthetic profiles for cheap and accurate measurements on new hardware. In addition, we further find that several existing benchmarks fail to accurately reflect real hardware performance for two key reasons: …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> vLLM、SGLang 等服务引擎的优化高度依赖基准：调度策略、硬件与系统设计都按代表性负载选择；但现有基准以单轮聊天为主，与多轮、长上下文的智能体负载严重不匹配。如何量化"聊天到智能体"的推理差距？
+<strong>方法：</strong> AgentPerfBench 用 SWE-Bench、TerminalBench 等真实智能体 trace 与标准聊天基线构建多轮工具调用基准；从真实 trace 的经验分布采样输入/输出长度与轮数，生成可廉价测量新硬件的合成 profile；提供 kernel 级 Nsight Compute 追踪构建多维 roofline 模型，并附自动化脚本识别新兴硬件的瓶颈条件。
+<strong>关键数字：</strong> 识别出现有基准的两大失真——不考虑真实上下文长度增长、不在硬件饱和状态下测量（原文未给额外量化数字）。
+<strong>为什么值得看：</strong> 智能体时代推理基准的补缺之作，直接影响服务引擎的优化方向。
+原文链接：<a href="https://arxiv.org/abs/2609.34683">AgentPerfBench: A Benchmarking and Evaluation Suite for Inference Performance of Agentic LLMs</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.34683">阅读原文 ↗</a></p>
 </body>
 </html>

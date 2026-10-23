@@ -22,9 +22,11 @@
 <h1>GenomeOcean Anywhere: Private WebGPU Inference for Genome MoEs</h1>
 <p class="meta-line">arXiv / Guang Yang 等 · 2026-09-27 · 论文PDF</p>
 
-<p>Genome foundation models are most useful where sequences are generated, yet the largest m…</p>
-<blockquote><p>Genome foundation models are most useful where sequences are generated, yet the largest models need datacenter accelerators and a place to send private DNA. We ask whether a 15-billion-parameter genome mixture-of-experts (MoE) model can instead run on volunteers' web browsers, with the experts spread across many untrusted devices, without changing its predictions and without revealing the sequence to any single device. We build a system in which a trusted coordinator runs attention and routing while browser workers run every expert feed-forward network through hand-written WebGPU kernels, and we protect the expert inputs with real-valued Lagrange coded computing: each worker receives only a Gaussian-padded share, computes the expert's linear maps, and the coordinator decodes from any two of three workers. On GenomeOcean-MoE (8 experts, top-2 routing, 24 layers), the browser path matches native llama.cpp at every quantization level, the distributed path stays at the BF16 numerical noise floor (KL 0.0036 nats per token), and an unfitted latency model predicts decode time within 0.74% (median) under emulated wide-area links. We first show that plaintext expert inputs are not private: …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 基因组基础模型在序列产生处最有用，但最大模型需要数据中心加速器，且要把私有 DNA 送出本地。150 亿参数的基因组 MoE 模型能否跑在志愿者浏览器里——专家分散到大量不可信设备、不改变预测、且不让任何单台设备看到完整序列？
+<strong>方法：</strong> 可信协调者运行 attention 与路由，浏览器 worker 用手写 WebGPU 内核运行每个专家 FFN；用实数 Lagrange 编码计算保护专家输入：每个 worker 只拿到高斯加噪份额，协调者从三个 worker 中任意两个即可解码。
+<strong>关键数字：</strong> 浏览器路径在各量化档位匹配 llama.cpp；分布式路径保持 BF16 数值噪声底（KL 0.0036 nats/token）；明文不安全——探测可从单个向量恢复 token，一个 worker 从 300 个无序 token 以 92% 准确率识别来源基因组；编码解码 220-376 ms/token，worker 失效时无需副本继续。
+<strong>为什么值得看：</strong> 隐私、分布式与浏览器端推理三合一，对基因数据本地化处理有直接价值。
+原文链接：<a href="https://arxiv.org/abs/2609.35882">GenomeOcean Anywhere: Private WebGPU Inference for Genome MoEs</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.35882">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>OLED-MoE: Accelerating MoE-Based dLLM Inference via Inter-Iteration Locality-Aware Expert Offloading</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-27 · 论文PDF</p>
 
-<p>OLED-MoE：利用迭代间局部性的专家卸载加速 MoE 扩散语言模型推理（EuroSys'27）</p>
-<blockquote><p>Semi-autoregressive diffusion large language models (dLLMs) improve decoding parallelism through iterative block-wise denoising, but scaling them with mixture-of-experts (MoE) layers introduces a large expert parameter footprint that exceeds memory-constrained GPU capacity. Expert offloading is a natural remedy, yet existing MoE serving systems target autoregressive decoding and rely on intra-iteration layer-wise prefetching: while computing one layer, they predict and load experts for subsequent layers. Under dLLM inference, block-wise routing expands the active expert working set within each iteration, making such prefetches difficult to complete in time and costly when mispredicted. Consequently, existing prefetch-based solutions often degenerate into on-demand expert loading with high decoding latency. We propose OLED-MoE, an expert offloading system that shifts the optimization target from intra-iteration prefetching to inter-iteration expert retention. Its key insight is that adjacent denoising iterations exhibit strong expert routing overlap, and token confidence indicates which experts are likely to be reused. OLED-MoE uses confidence-guided inter-iteration prediction to re…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 半自回归扩散大模型（dLLM）靠迭代块式去噪提升解码并行度，但引入 MoE 层后专家参数超过受限 GPU 内存；现有面向自回归的专家卸载靠迭代内逐层预取，而 dLLM 的块式路由使每轮活动专家工作集膨胀，预取难以及时完成。
+<strong>方法：</strong> OLED-MoE 把优化目标从迭代内预取转为迭代间专家保留：相邻去噪迭代路由重叠度高，用 token 置信度预测将被复用的专家并保留在 GPU，不引入额外预取流量；对不可避免的缓存缺失用 CPU-GPU 协同执行补偿，联合考虑专家计算负载与未来复用。
+<strong>关键数字：</strong> TPOT 降低 1.23x-7.93x，专家缓存利用率提升 1.44x-4.23x；仅用 40% 专家 GPU 内存即接近全驻留性能——内存减少 60% 而 TPOT 仅高 23%。
+<strong>为什么值得看：</strong> EuroSys'27 论文，为扩散 MoE 推理给出与自回归完全不同的卸载策略。
+原文链接：<a href="https://arxiv.org/abs/2609.33385">OLED-MoE: Accelerating MoE-Based dLLM Inference via Inter-Iteration Locality-Aware Expert Offloading</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.33385">阅读原文 ↗</a></p>
 </body>
 </html>

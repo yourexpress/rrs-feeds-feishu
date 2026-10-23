@@ -22,9 +22,11 @@
 <h1>HiLoRe: What to Store, Compress, or Recompute for Efficient GRPO Training</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-27 · 论文PDF</p>
 
-<p>HiLoRe：GRPO 训练中该存、该压还是该重算的分层策略</p>
-<blockquote><p>Group-relative policy optimization (GRPO) makes learner-side activations a major memory-computation bottleneck: gradient checkpointing reduces activation memory through recomputation, but fixed schedules can leave roughly 18 GB unused on a 48-GB GPU despite substantial recomputation overhead. Existing activation-management methods set state fidelity from execution cost, tensor properties, or generic compression sensitivity, without explicitly incorporating GRPO's analytic update structure into state-fidelity allocation. We formalize this dependence as policy-update exposure, linking the current GRPO loss coefficients to state-level approximation sensitivity. These coefficients are available before backward without an additional backward pass. We introduce HiLoRe, which allocates graph-attributed recovery units among high-precision storage, low-precision compression, and deterministic recomputation using measured recovery utility and update-conditioned approximation risk. It combines high-precision storage and deterministic recomputation with low-precision recovery under a calibrated risk budget. Across five model-task settings with 2K responses and memory &lt; 1.10 times GC's per-GPU …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> GRPO 训练中学者侧激活是主要内存-计算瓶颈；梯度检查点（GC）靠重算降内存，但固定调度在 48GB GPU 上仍可能闲置约 18GB 且重算开销不小。激活该存、该压还是该重算？
+<strong>方法：</strong> 形式化"策略更新暴露度"：GRPO 的解析更新结构决定状态级近似敏感度，损失系数在 backward 前即可获得。HiLoRe 据此把图恢复单元分配为高精度存储、低精度压缩与确定性重算三种恢复方式，在标定风险预算下组合，并用量测的恢复效用与更新条件近似风险做分配。
+<strong>关键数字：</strong> 5 个模型-任务设置（2K responses，内存 &lt;1.10× GC 峰值）下 actor-update 吞吐比 GC 高 13.5%、比最快基线高 7.9%；下游分数均值差 &lt;0.6 个百分点。
+<strong>为什么值得看：</strong> 把 RL 训练的分析结构显式纳入激活保真分配，直接换来吞吐收益。
+原文链接：<a href="https://arxiv.org/abs/2609.33570">HiLoRe: What to Store, Compress, or Recompute for Efficient GRPO Training</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.33570">阅读原文 ↗</a></p>
 </body>
 </html>

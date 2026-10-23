@@ -22,9 +22,11 @@
 <h1>Does Execution Require Target KV Fidelity? A Mixed-Fidelity KV Runtime for LLM Serving</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-27 · 论文PDF</p>
 
-<p>混合保真 KV 运行时：执行是否需要目标 KV 保真度</p>
-<blockquote><p>Large language model (LLM) serving is increasingly constrained by the GPU memory consumed by key-value (KV) caches. Existing compression, eviction, and offloading techniques alleviate this pressure, but serving runtimes typically treat only the configured target KV representation as execution-ready. Under memory pressure, this target-only contract can turn KV shortage into request stalls and preemptions. We present ElasticKV, a mixed-fidelity KV runtime built on the observation that target fidelity need not gate execution. ElasticKV introduces a compact intermediate KV state, making fidelity a runtime-managed execution property. To realize this state in a paged serving runtime, ElasticKV combines (i) a pair-structured layout that turns fidelity reduction into reusable GPU capacity, (ii) a dual-mode attention backend that directly consumes the compact state while preserving the native target-only path, and (iii) pressure-aware fidelity management that adapts KV fidelity to memory pressure. Our extensive evaluation across diverse workloads, model families and scales, and GPU platforms demonstrates the effectiveness and generality of ElasticKV. Under high concurrency, ElasticKV achiev…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> LLM 服务的 KV 缓存挤占 GPU 内存，而运行时通常只把配置的目标保真度表示当作可执行状态——内存压力下这种"唯目标保真度"契约会把 KV 短缺变成请求停滞与抢占。执行是否真的需要目标 KV 保真度？
+<strong>方法：</strong> 提出 ElasticKV 混合保真 KV 运行时：引入紧凑中间 KV 状态，让保真度成为运行时管理的执行属性；用成对结构布局把降保真转化为可复用 GPU 容量，双模式注意力后端直接消费紧凑状态同时保留原生目标路径，并按内存压力自适应管理保真度。
+<strong>关键数字：</strong> 高并发下 TTFT 比 vLLM 低 3.8-4.0 倍、P90 TTFT 低 9.1 倍，生成质量保持不变。
+<strong>为什么值得看：</strong> 把"保真度"从静态配置变成运行时管理属性，为内存压力下的稳定服务提供新思路。
+原文链接：<a href="https://arxiv.org/abs/2609.33536">Does Execution Require Target KV Fidelity? A Mixed-Fidelity KV Runtime for LLM Serving</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.33536">阅读原文 ↗</a></p>
 </body>
 </html>

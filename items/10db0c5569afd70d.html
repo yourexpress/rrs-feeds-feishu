@@ -22,9 +22,11 @@
 <h1>Splitting Prompt Prefill from Response Replay for Context-Parallel Long-Context LLM Post-Training</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-27 · 论文PDF</p>
 
-<p>上下文并行长上下文后训练中把 prompt prefill 与 response replay 拆分调度</p>
-<blockquote><p>Training long-context LLM policies with RL requires re-evaluating groups of sampled responses under the updated policy, an update-stage attention workload that differs sharply from pre-training: each group shares one long prompt that fans out into multiple response branches. Standard context parallelism (CP) flattens each prompt--response pair into a linear sequence, so the same prompt key--value (KV) states are recomputed---or repeatedly rotated through the network---once per response branch. We present \textbf{AugTree}, a CP execution scheme built around this replay stage. AugTree separates the replay into two phases: a prompt-prefill phase that computes the shared prompt KV state once, and a response-replay phase that schedules the independent response branches over a bounded set of replay lanes. The replay phase instantiates two communication semantics, chosen by a lightweight online planner that enumerates CP degrees, schedules, and placements before GPU dispatch: rotating KV shards within response-local lanes when responses dominate, and moving response queries to stationary prompt-KV owners with a partial-softmax reduction when prompts dominate. The shared prompt state remai…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 长上下文 LLM 的 RL 后训练在更新阶段需按新策略重估响应组：每组共享一条长 prompt、扇出多个响应分支；标准上下文并行（CP）把每个 prompt-response 对展平成线性序列，同一 prompt 的 KV 被逐分支重算或反复轮转。
+<strong>方法：</strong> AugTree 把重放拆为两阶段：prompt-prefill 阶段一次算好共享 prompt KV；response-replay 阶段在有限重放通道上调度独立分支。轻量在线规划器在 GPU 调度前枚举 CP 度数、调度与放置，按负载选择两种通信语义：响应主导时在分支内轮转 KV 分片，prompt 主导时把响应 query 移到静态 prompt-KV 端并做部分 softmax 归约。共享 prompt 状态完全可微，保留精确训练语义。
+<strong>关键数字：</strong> 4 个真实后训练负载、最多 64 加速器上，平均训练步时比动态 CP 快 1.18 倍（最高 2.23 倍），比带 prompt 复用的 Megatron ring CP 快 2.63 倍，比无复用基线快 7.08 倍。
+<strong>为什么值得看：</strong> 面向长上下文 RL 后训练重放阶段的专用并行方案，语义无损且收益显著。
+原文链接：<a href="https://arxiv.org/abs/2609.33133">Splitting Prompt Prefill from Response Replay for Context-Parallel Long-Context LLM Post-Training</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.33133">阅读原文 ↗</a></p>
 </body>
 </html>

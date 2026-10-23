@@ -22,9 +22,11 @@
 <h1>Validating Memory-Optimal Transformer Kernels on Real Hardware: From Formal Derivation to Measured Performance Across Two HPC Clusters</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-27 · 论文PDF</p>
 
-<p>在两个真实 HPC 集群上实测验证形式化推导的内存最优 Transformer 内核</p>
-<blockquote><p>We validate memory-optimal cost functions for transformer kernels derived via the Mathematics of Arrays (MoA). Companion Papers I-IV formally derive kernels for attention forward, backward, fused forward+backward, decode, and the complete block (RMSNorm, gated MLP) as a hardware-independent specification (DNF) transformed to a machine-specific realization (ONF) via gamma, with verification to machine precision against PyTorch. This paper checks those predictions against measured performance on two HPC clusters (Purdue Anvil, NCSA Delta) across CPU and GPU. Three results stand out. (1) We identify and fix a GPU regression: fusing forward+backward, proven to avoid materializing an O(n^2) intermediate, initially ran slower than naive on GPU due to atomic contention. Profiling confirmed 2.00x more atomic instructions; a targeted ONF rewrite reversed it, yielding up to 2.5x speedup. (2) Identical derivations produce markedly different real costs by topology: 535x NUMA-locality penalty on one cluster vs &lt;3x oversubscription on another, showing optimal deployment is a function of the machine's array structure. (3) We report a partially resolved anomaly: identical denotational computations…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 用 Mathematics of Arrays（MoA）形式推导的内存最优 transformer 内核（attention 前后向、融合前后向、decode、完整 block）在真实硬件上是否如预测？
+<strong>方法：</strong> 在两个 HPC 集群（Purdue Anvil、NCSA Delta）CPU/GPU 上实测核对；把硬件特定优化视为对固定、已验证的 DNF 规格做常规 ONF 重写，不重推正确性。
+<strong>关键数字：</strong> 修复 GPU 回归：融合前后向因原子竞争最初慢于朴素版（原子指令多 2.00 倍），ONF 重写后最高 2.5 倍加速；拓扑差异巨大——一个集群 NUMA 局部性惩罚 535 倍、另一集群过订阅 &lt;3 倍；C/Fortran 性能差 3.17 倍与 3.35 倍停滞差吻合。
+<strong>为什么值得看：</strong> 形式化推导到实测的完整闭环方法论，为 AI 内核跨硬件迁移提供"不重推正确性"的路径。
+原文链接：<a href="https://arxiv.org/abs/2609.33916">Validating Memory-Optimal Transformer Kernels on Real Hardware</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.33916">阅读原文 ↗</a></p>
 </body>
 </html>

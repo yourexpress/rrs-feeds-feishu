@@ -22,9 +22,11 @@
 <h1>Where Activation Sparsity and KV-Cache Sparsity Cross in LLM Decoding</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-27 · 论文PDF</p>
 
-<p>LLM 解码中激活稀疏与 KV 缓存稀疏的交叉</p>
-<blockquote><p>At each step, decoding one sequence with a large language model rereads the projection weights, whose traffic is fixed, and the key-value (KV) cache, whose traffic grows with context. Activation sparsity trims the first term and KV-cache sparsity the second, yet their reported speedups are hard to compare because each depends on context length and on the dense attention kernel it is measured against. We derive a byte crossover, the context length at which the two savings are equal, together with ideal speedup bounds for each branch and for their composition, from model dimensions and keep ratios alone. We then time both branches and their composition from 2K to 128K tokens on two GPUs after a dense prefill of real text, with dense and sparse modes reading the cache through the same split-K attention kernel. The projection branch leads at short context and the KV branch at long context, with speedups that follow their byte bounds up to fixed kernel costs. Adding these costs, measured in separate sweeps, lets the byte account predict the measured crossings of three keep-ratio pairs, a second model, and a second GPU to within 4.1K tokens. Timing the dense baseline with masked instead …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 解码时投影权重流量固定、KV 缓存流量随上下文增长；激活稀疏削减前者、KV 稀疏削减后者，但两者报告的加速比因上下文长度与基线注意力内核而异、难以比较。两者在何处交叉？
+<strong>方法：</strong> 仅由模型维度与保留比例推导字节交叉点（两分支节省相等时的上下文长度）及各分支理想加速上界；在两张 GPU 上对 2K-128K token 实测两分支及组合，密集与稀疏模式用同一 split-K 注意力内核读缓存；用单独扫描测得的固定内核成本让字节模型预测实测交叉。
+<strong>关键数字：</strong> 交叉点预测误差在 4.1K token 内；用 masked 而非 split-K 内核计时基线会把同一 KV 策略的表观加速夸大约 5 倍；注意力评分 KV 选择在 127K token 内与密集解码在 passkey/多键定位上表现相同；匹配困惑度预算下组合解码比最优单分支快 14-26%。
+<strong>为什么值得看：</strong> 给出两类稀疏统一的字节级分析框架，并暴露基线选择对加速比的巨大影响。
+原文链接：<a href="https://arxiv.org/abs/2609.33889">Where Activation Sparsity and KV-Cache Sparsity Cross in LLM Decoding</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.33889">阅读原文 ↗</a></p>
 </body>
 </html>
