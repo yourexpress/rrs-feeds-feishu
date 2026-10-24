@@ -22,9 +22,11 @@
 <h1>DPS: Dual-Mode Precision LLM Serving with Semi-Unified Memory</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-28 · 论文PDF</p>
 
-<p>DPS：半统一内存的双模式精度 LLM 服务</p>
-<blockquote><p>Existing LLM serving systems virtualize and optimize KV-cache memory, but treat model-weight memory as fixed throughout execution. Recent work on multi-precision model representations challenges this design by allowing a single stored model to support both full-accuracy and lower-precision execution, making the effective weight footprint runtime-dependent. This creates an opportunity under bursty workloads, where temporary spikes in KV-cache demand often determine throughput and SLO compliance. We present DPS, a dual-precision LLM serving system that turns weight memory into an elastic resource: under normal load, DPS serves the full-accuracy model; under KV pressure, it switches to a nested, lower-precision variant and repurposes unused weight memory for KV cache blocks. DPS is built on Semi-Unified Memory (SUM), which partitions the weight region into a persistent lower-precision sub-region and a shared region that alternates between residual weight tensors and KV-cache blocks, preserving compatibility with paged KV-cache management. We implement DPS on top of vLLM and evaluate it across both dense and MoE models and various production workload traces. Our results show that \sysn…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 现有 LLM 服务系统虚拟化并优化 KV 缓存内存，但把模型权重内存视为执行期固定不变；突发负载下 KV 缓存需求的临时尖峰常决定吞吐与 SLO 达标率，权重内存却闲置浪费。</p>
+<p><strong>方法</strong> DPS 提出双精度 LLM 服务系统，把权重内存变成弹性资源：正常负载下服务全精度模型；KV 压力大时切换到嵌套的低精度变体，把闲置权重内存腾给 KV 缓存块。基于半统一内存（SUM）把权重区分为持久低精度子区与共享区（在残差权重张量与 KV 缓存块之间轮换），兼容分页 KV 缓存管理；在 vLLM 上实现。</p>
+<p><strong>关键数字</strong> 在稠密与 MoE 模型及多种生产负载轨迹上，DPS 相对静态 FP16 持续吞吐提升 2.1–3.3x，有效 pass@1 最高 +41 个百分点，同时保持 FP16 级精度。</p>
+<p><strong>为什么值得看</strong> 把权重精度当作可运行时调配的弹性资源，是对 KV 缓存内存压力的一种新化解思路，适合突发流量明显的推理集群。</p>
+<p><a href="https://arxiv.org/abs/2609.34380">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.34380">阅读原文 ↗</a></p>
 </body>
 </html>

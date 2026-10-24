@@ -22,9 +22,11 @@
 <h1>Cartridges++: KV Cache Compression without Off-Context Derailment</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-28 · 论文PDF</p>
 
-<p>Carrots++：不脱离上下文的 KV 缓存压缩</p>
-<blockquote><p>Serving long documents to a Large Language Model (LLM) repeatedly is expensive: computations grow with context length, and the memory footprint of the key-value (KV) cache balloons. Compressed KV (CKV) representations aim to mimic the cache of a document and are typically computed once and for all, ahead of inference time. Methods to obtain CKVs range from drop mechanisms that reduce their number of columns, to learned approaches. Among the latter, Cartridges have emerged as a leading compression method, learning compact KV representations through distillation on relevant Q/A pairs. While existing evaluations focus primarily on whether Cartridges and other CKVs yield approximately similar responses to document-related, on-context queries, we investigate the crucial deployment question of whether they can handle off-context queries, something the native KV representation is particularly good at, thanks to the mechanics of attention. We observe a fundamental trade-off: while Cartridges perform better for on-context queries, heuristic-variants preserve better the original LLM's ability to operate off-context. We measure this through their capability to avoid context contamination in t…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 长文档重复喂给 LLM 很贵：计算随上下文增长、KV 缓存内存膨胀。压缩 KV（CKV）表示可预先一次性计算，但现有评测只关心文档相关（on-context）查询，忽略了一个部署关键问题——压缩后模型处理文档外（off-context）查询的能力是否受损，而这恰是原生 KV 表示靠注意力机制擅长的。</p>
+<p><strong>方法</strong> 观察到基本权衡：Cartridges 在 on-context 查询上更好，启发式变体则更好保留 off-context 能力（避免上下文污染、保留通用知识、服从指令）。提出 Cartridges++：路由变体在推理时决定查询是否走学习到的长上下文记忆；数据混合变体把少量训练 QA 分给参考长文档之外的查询。</p>
+<p><strong>关键数字</strong> 正文未给出量化收益数字；核心结论是仅按文档效用评估 CKV 会掩盖模型整体能力的显著退化，而这些退化可用对 CKV 推理/训练的良性改动修复。</p>
+<p><strong>为什么值得看</strong> 首次系统讨论压缩 KV 对 off-context 能力的破坏，提醒从业者评估 CKV 时不能只看文档问答分数。</p>
+<p><a href="https://arxiv.org/abs/2609.35621">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.35621">阅读原文 ↗</a></p>
 </body>
 </html>

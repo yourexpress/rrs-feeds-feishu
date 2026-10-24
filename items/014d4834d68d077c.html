@@ -22,9 +22,11 @@
 <h1>MaskCoFT: Masked Co-Adaptive Fine-Tuning for Memory-Efficient MoE Inference</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-28 · 论文PDF</p>
 
-<p>MaskCoFT：面向内存高效 MoE 推理的掩码协同自适应微调</p>
-<blockquote><p>Mixture-of-experts (MoE) language models often exceed the memory of a single GPU. Expert offloading keeps most experts in host memory and loads them on demand, so decoding speed depends on how many experts each token must fetch. Caching and prefetching reduce this cost only as far as the routing allows. Router-only fine-tuning can reshape the routing to reuse experts, but it keeps the experts frozen, so they cannot adapt to the tokens the new routing sends them. We propose MaskCoFT, a masked co-adaptive fine-tuning method that trains routers and experts together with the cross-entropy loss alone. During fine-tuning, a learnable binary mask restricts the Top-K routing of each layer to a subset of experts, and the experts adapt to the tokens redirected to them. At inference, the learned mask becomes a soft prior that re-ranks experts, so every expert remains selectable. We simulate a GPU cache of 4 experts per layer for Mixtral-8x7B and 12 for DeepSeek-V2-Lite. MaskCoFT cuts expert fetches per token by 23.7% and 10.1% relative to the base model. In real offloading system serving, it lowers the time per output token by up to 16.4% and 5.5%, respectively. Its average accuracy over nine…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> MoE 语言模型常超出单 GPU 内存，专家卸载把多数专家放主机内存、按需加载，解码速度取决于每个 token 要取多少个专家；缓存与预取只能推进到路由允许的程度。仅路由器微调可重塑路由复用专家，但专家保持冻结、无法适应新路由送来的 token。</p>
+<p><strong>方法</strong> MaskCoFT 提出掩码协同自适应微调：仅用交叉熵损失同时训练路由器与专家；微调时可学习二值掩码把每层 Top-K 路由限制到专家子集，专家适应被重定向来的 token；推理时学习到的掩码变成软先验重排专家，每个专家仍可选。</p>
+<p><strong>关键数字</strong> 对 Mixtral-8x7B（模拟每层 4 专家 GPU 缓存）与 DeepSeek-V2-Lite（12 专家）分别减少每 token 专家获取 23.7% 与 10.1%；真实卸载系统中每输出 token 时间最多降 16.4% 与 5.5%；九个基准平均精度高出基线 0.92 与 0.53 点。</p>
+<p><strong>为什么值得看</strong> 让专家与路由器一起适应卸载场景，在精度不降反升的同时显著减少专家搬运，是 MoE 服务优化的直接增益。</p>
+<p><a href="https://arxiv.org/abs/2609.34077">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.34077">阅读原文 ↗</a></p>
 </body>
 </html>

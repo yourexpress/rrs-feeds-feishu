@@ -22,9 +22,11 @@
 <h1>LionMuon: Alternating Spectral and Sign Descent for Efficient Training</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-28 · 论文PDF</p>
 
-<p>LionMuon：交替谱下降与符号下降的高效训练优化器</p>
-<blockquote><p>Pretraining a language model takes enormous compute, and the right optimizer can save a good part of it. Muon's spectral step gives a stronger direction than a sign step, but it is expensive. Every step runs Newton-Schulz iterations on the full matrix and, in distributed training, an extra all-reduce. Sign steps, as in Lion and Signum, are cheap and stay local to each device. We propose LionMuon, which takes one Muon step every $P$ iterations and Lion steps in between, with a single dual-EMA momentum buffer shared by both. Muon's compute and communication are paid once per $P$ steps, and the optimizer state is half of AdamW's. A single-EMA variant, SignMuon, already improves on Muon. We prove complexity bounds under heavy-tailed noise in which the period sets an interpolation between Muon's and Lion's smoothness and noise constants, and which say when LionMuon is faster than both. On 124M and 355M models trained on FineWeb, LionMuon with $P=2$ and $P=5$ reaches a lower loss than Muon, AdamW, Lion and Signum at the same number of tokens. Under 4-GPU data-parallel training it reaches Muon's final loss with a third less wall-clock on PCIe, and it beats the communication-efficient Muon…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 预训练语言模型算力巨大，选对优化器能省下可观部分。Muon 的谱步方向比符号步更强但昂贵——每步都要对完整矩阵跑 Newton-Schulz 迭代、分布式训练还要额外 all-reduce；Lion/Signum 式符号步便宜且各设备本地化。</p>
+<p><strong>方法</strong> LionMuon 每 P 步取一个 Muon 步、其间用 Lion 步，两者共享单一双 EMA 动量缓冲：Muon 的计算与通信每 P 步只付一次，优化器状态仅为 AdamW 的一半。论文给出 heavy-tailed 噪声下的复杂度界，说明何时 LionMuon 比两者都快；单 EMA 变体 SignMuon 已优于 Muon。</p>
+<p><strong>关键数字</strong> 在 FineWeb 上训练的 124M 与 355M 模型中，P=2 与 P=5 的 LionMuon 在相同 token 数下达到比 Muon、AdamW、Lion、Signum 更低的 loss；4-GPU 数据并行下用约 1/3 的墙钟时间达到 Muon 的最终 loss，且暴露通信不多于 Dion、MuonBP。</p>
+<p><strong>为什么值得看</strong> 以极低开销近似 Muon 的谱方向，通信/计算成本与优化质量之间给了清晰的工程折中，值得训练预算有限的人一试。</p>
+<p><a href="https://arxiv.org/abs/2609.35297">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.35297">阅读原文 ↗</a></p>
 </body>
 </html>

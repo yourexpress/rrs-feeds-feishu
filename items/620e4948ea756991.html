@@ -22,9 +22,11 @@
 <h1>PulseInfer: I/O-Centric Sparse KV Cache Offloading for Efficient Long-Context LLM Decoding</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-28 · 论文PDF</p>
 
-<p>PulseInfer：I/O 为中心的稀疏 KV 缓存卸载加速长上下文解码</p>
-<blockquote><p>Long-context LLM serving is increasingly bottlenecked by decode, where large KV caches limit batch size and underutilize GPUs. Sparse KV cache offloading expands effective capacity by storing most historical KV blocks in CPU DRAM and recalling only selected blocks on demand. However, we find that existing offloading systems shift the bottleneck to CPU-GPU recall I/O: recall volume varies widely across layers, decode steps and requests, while headwise sparse selection fragments recalls into many small PCIe transfers. This paper presents PulseInfer, an I/O-centric sparse KV cache offloading system. PulseInfer hides variable recall latency with interruptible layer-wise scheduling, adapts offloading decisions with IO-Adaptive Offloading Admission, and coalesces fragmented transfers using SoloHead sparse selection and a gather-scatter I/O engine. Implemented on SGLang, PulseInfer improves decode throughput by up to 4.7x over SGLang and 2.6x over the best existing offloading baseline, while reducing TPOT by up to 76% and preserving near-lossless accuracy.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 长上下文 LLM 服务日益被解码阶段瓶颈化：大 KV 缓存限制批大小、GPU 利用率不足。稀疏 KV 缓存卸载把多数历史 KV 块放 CPU DRAM、按需召回以扩大有效容量，但现有系统把瓶颈转移到 CPU-GPU 召回 I/O：召回量跨层、跨解码步、跨请求差异大，逐头稀疏选择又把召回碎片化成大量小 PCIe 传输。</p>
+<p><strong>方法</strong> PulseInfer 是 I/O 为中心的稀疏 KV 缓存卸载系统：用可中断的逐层调度隐藏可变召回延迟，用 IO-Adaptive 卸载准入自适应决策，用 SoloHead 稀疏选择与 gather-scatter I/O 引擎合并碎片化传输；在 SGLang 上实现。</p>
+<p><strong>关键数字</strong> 解码吞吐相对 SGLang 提升最多 4.7x、相对最优现有卸载基线 2.6x，TPOT 最多降 76%，精度近无损。</p>
+<p><strong>为什么值得看</strong> 把长上下文解码的瓶颈识别为召回 I/O 而非容量本身，围绕 I/O 特性系统设计，数字显著，适合长上下文服务优化。</p>
+<p><a href="https://arxiv.org/abs/2609.34555">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.34555">阅读原文 ↗</a></p>
 </body>
 </html>

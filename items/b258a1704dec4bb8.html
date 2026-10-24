@@ -22,9 +22,11 @@
 <h1>MegaGraph: Towards Efficient Training of Large-Scale Graph Transformers with Automated Hybrid Parallelism</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-28 · 论文PDF</p>
 
-<p>MegaGraph：自动化混合并行训练大规模图 Transformer（ICCD 2026）</p>
-<blockquote><p>Graph Transformers (GTs) offer superior representation capabilities by overcoming the depth limitations and over-smoothing issues of traditional Graph Neural Networks (GNNs). However, scaling GTs to large graphs poses critical bottlenecks. Specifically, the attention score matrix and its associated topology-aware bias matrix jointly incur significant per-layer memory overhead, and heavy graph embedding layers result in severe workload imbalances. These characteristics are unique to GT training and are not addressed by parallelism techniques designed for either conventional GNNs or Transformers, making a dedicated solution necessary. This paper introduces MegaGraph, the first automated hybrid parallelism framework designed for efficient GT training. MegaGraph designs three specialized strategies, namely graph-aware context parallelism, heterogeneous pipeline parallelism, and hybrid data parallelism, to support efficient training on large-scale graphs. However, coordinating these three parallelism strategies yields an exponentially large configuration space. To address this complexity, an automatic search engine leverages precise cost models via a Profile - Model - Search workflow to…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 图 Transformer（GT）克服了传统 GNN 的深度限制与过平滑问题，但扩展到大规模图有独特瓶颈：注意力分数矩阵与拓扑感知偏置矩阵共同造成显著的单层内存开销，重图嵌入层导致严重负载不均——这些 GT 特有特征未被面向 GNN 或 Transformer 的并行技术覆盖。</p>
+<p><strong>方法</strong> MegaGraph（ICCD 2026）是首个面向 GT 高效训练的自动化混合并行框架，设计三种策略：图感知上下文并行、异构流水线并行、混合数据并行；为协调三者带来的指数级配置空间，用 Profile-Model-Search 工作流构建精确成本模型自动搜索最优并行配置。</p>
+<p><strong>关键数字</strong> 在 SOTA 基线因 OOM 失败的大规模图上成功训练；每设备峰值内存最高降低 77.8%，训练加速最高 4.51x，同时保持模型精度。</p>
+<p><strong>为什么值得看</strong> 首次为图 Transformer 训练做专门的自动化混合并行，解决内存与负载不均两大 GT 特有瓶颈，数字显著。</p>
+<p><a href="https://arxiv.org/abs/2609.34420">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.34420">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Fiona: Accelerating FHE Inference with Packing-Aware Ternary Weights</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-28 · 论文PDF</p>
 
-<p>Fiona：打包感知三值权重加速全同态加密推理</p>
-<blockquote><p>Fully homomorphic encryption (FHE) enables neural network inference directly on encrypted inputs, but it remains orders of magnitude slower than plaintext in- ference. Applying the server's plaintext weights to encrypted activations involves plaintext-ciphertext multiplications (PMult) and accounts for more than half of inference time in recent systems. Ternary quantization can replace these multipli- cations with additions and subtractions, but the savings rarely materialize under packed execution. A single PMult applies a weight group fixed by the packing layout and can be avoided only when all its weights share the same ternary value. Ternarizing all groups, however, largely degrades accuracy. We present FIONA, an offline optimizer that selectively ternarizes weights within a given packing layout based on the estimated effect of ternary conversion on the model's performance. FIONA encourages a shared ternary value within each weight group and retains full-precision weights for sensitive groups, so ternar- ized and full-precision paths coexist within a layer. It then compiles these hybrid operators exactly, applying common scaling factors once to accumulated inputs and reusing su…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 全同态加密（FHE）可直接在加密输入上做神经网络推理，但仍比明文推理慢数个数量级。明文-密文乘法（PMult）占近期系统推理时间的一半以上；三值量化可把乘法换成加减法，但在打包执行下收益难兑现——单个 PMult 作用于打包布局固定的权重组，只有组内所有权重同取一个三值时才能省掉。</p>
+<p><strong>方法</strong> FIONA 是离线优化器，基于三值转换对模型性能的估计影响，在给定打包布局内选择性三值化权重：鼓励组内共享同一三值、对敏感组保留全精度权重，层内三值与全精度路径共存；混合算子精确编译，公共缩放因子一次作用于累积输入、输出间复用求和；三值化还收窄下游多项式输入范围，在累计精度预算下拟合更低次替换，降低乘法深度与 bootstrapping。</p>
+<p><strong>关键数字</strong> 在 VGG11、ViT、BERT 上，PMult 操作减少 53.4–79.5%，端到端加密推理分别加速 2.38x、1.68x、1.84x，三个模型精度损失均小于 1%。</p>
+<p><strong>为什么值得看</strong> 打包感知的混合精度三值化直击 FHE 推理的最大瓶颈 PMult，数字扎实，适合关注隐私计算推理加速的人。</p>
+<p><a href="https://arxiv.org/abs/2609.35352">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.35352">阅读原文 ↗</a></p>
 </body>
 </html>

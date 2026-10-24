@@ -22,9 +22,11 @@
 <h1>Semantic Prefix Oracles for LLM Decoding: Contracts and Differential Validation</h1>
 <p class="meta-line">arXiv (cs.PL) · 2026-09-28 · 论文PDF</p>
 
-<p>LLM 解码的语义前缀预言机：契约与差分验证</p>
-<blockquote><p>Constrained decoding can enforce regular or context-free output formats, but many program-generation failures are semantic: scope, typing, and declaration effects depend on context. We present semantic grammar specifications, a declarative formalism that attaches such constraints to a context-free surface and executes them during Earley descent. Our implementation enforces \emph{safe pruning}: it rejects only prefixes whose semantic contradictions cannot be repaired by any continuation. A separate, grammar-dependent, \emph{dead-end freedom} property guarantees the existence of a realizable witness for each remaining branch. We give simple sufficient conditions based on surface productivity, type coverage, and left-to-right constraint flow. Our finite-lambda, core ML, and C-like fragments satisfy them, while the STLC instance used in our experiments does not: plain STLC can violate type coverage, and we show how restricting its type universe recovers it. A tokenizer-lifting lemma carries character-level witnesses to token sequences under an explicit vocabulary-coverage hypothesis. We validate the implementation differentially against production compilers (\texttt{ocamlc}, \texttt{cc…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 受限解码可强制正则或上下文无关输出格式，但许多程序生成失败是语义性的：作用域、类型、声明效应取决于上下文，纯语法约束兜不住。</p>
+<p><strong>方法</strong> 提出语义语法规范（semantic grammar specifications）：把这类约束附着在上下文无关表面语法上、在 Earley 下降期间执行；实现安全剪枝（safe pruning）——只拒绝"任何续写都无法修复语义矛盾"的前缀；定义文法依赖的"死端自由"性质保证剩余分支存在可实现见证，给出基于表面生产力、类型覆盖与从左到右约束流的充分条件，并用 tokenizer 提升引理把字符级见证带到 token 序列。</p>
+<p><strong>关键数字</strong> 65 个编译器验证程序的每个前缀零误剪枝；语义预言机中流定位 25/30 个无效程序（纯语法预言机 0/30），42/42 递归探针一致；12 模型生成研究中每个模型-语言对语义减语法点估计非负，STLC 任务正确性最高 +15.2 点、ML 有效性 +14.3 点。</p>
+<p><strong>为什么值得看</strong> 把程序生成的语义约束做成一等公民并给出可验证的剪枝安全性保证，比纯语法受限解码更贴近真实编译错误。</p>
+<p><a href="https://arxiv.org/abs/2609.35425">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.35425">阅读原文 ↗</a></p>
 </body>
 </html>

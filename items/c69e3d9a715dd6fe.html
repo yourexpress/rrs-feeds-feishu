@@ -22,9 +22,11 @@
 <h1>Faultless: A Program Equivalence Technique for Validating and Evaluating Neural Decompilers</h1>
 <p class="meta-line">arXiv (cs.PL) · 2026-09-28 · 论文PDF</p>
 
-<p>Faultless：验证与评测神经反编译器的程序等价性技术</p>
-<blockquote><p>Neural decompilers are machine learning models which perform the process of decompilation, lifting code from a lower-level language to a higher one. Neural decompilers offer substantial utility relative to traditional deterministic decompilers because they can probabilistically recover information discarded during lowering, like variable names, types, and control flow structuring. However, they can also make mistakes, producing code that is not equivalent to the original, making it difficult to trust their output. In this work, we introduce Faultless, a program equivalence technique for performing translation validation on neural decompilers. Faultless compares code produced by a deterministic decompiler, which has stronger correctness properties, with that of a neural decompiler. Faultless is also useful for model evaluation, a highly related task, in which the neural decompilers' prediction is compared with a reference solution. Neural decompilation introduces significant challenges to the task of program equivalence which existing techniques are not equipped to handle, including limited extrafunctional context and systematic semantic inconsistencies in decompiled code. Faultless…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 神经反编译器（用 ML 模型把低级语言提升为高级语言）能概率性恢复低级化过程中丢失的信息（变量名、类型、控制流结构），但也会犯错、产出与原程序不等价的代码，难以信任。</p>
+<p><strong>方法</strong> Faultless 提出面向神经反编译器的程序等价性技术，做翻译验证：把确定性反编译器（正确性属性更强）的输出与神经反编译器输出做等价性比较；同时适用于模型评测场景（预测与参考答案比较）。采用基于静态符号执行的方法，执行模型与内存模型专为神经反编译的挑战设计——受限的额外功能上下文、反编译代码中系统性语义不一致。</p>
+<p><strong>关键数字</strong> 正文未给出量化指标；贡献在于首次为神经反编译器建立可用的程序等价性验证框架。</p>
+<p><strong>为什么值得看</strong> 神经反编译信任问题的关键一步——用等价性验证兜住模型错误，对逆向工程工具链可靠性有实际意义。</p>
+<p><a href="https://arxiv.org/abs/2609.34089">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.34089">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Output-aware Residual Stream Pruning for Large Language Models</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-28 · 论文PDF</p>
 
-<p>输出感知的 LLM 残差流剪枝</p>
-<blockquote><p>Residual stream pruning methods reduce inference cost by shrinking the model's hidden dimension, but existing approaches typically choose these dimensions by minimizing activation reconstruction error. This criterion implicitly treats all perturbation directions as equally important, ignoring the sensitivity of downstream layers. We introduce a sensitivity-aware approach to residual-stream pruning that directly accounts for this direction-dependent sensitivity. Using a second-order approximation to the output KL divergence, we characterize the effect of a residual-stream perturbation through both its activation covariance and the local sensitivity of the model output. The resulting subspace selection objective couples these two quantities, but is difficult to optimize directly. We derive a tractable spectral upper bound that reduces subspace selection to an eigendecomposition of a sensitivity-weighted covariance matrix, retaining the efficiency and structural simplicity of rotation-based pruning methods. Across several instruction-tuned language model families, our method consistently reduces calibration KL divergence relative to activation-only pruning and improves perplexity and …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 残差流剪枝通过缩小模型隐藏维度降低推理成本，但现有方法通常以最小化激活重建误差选维度，隐含地把所有扰动方向视为同等重要，忽略了下游层的敏感性。</p>
+<p><strong>方法</strong> 提出敏感性感知的残差流剪枝：用输出 KL 散度的二阶近似刻画残差流扰动效应——同时考虑激活协方差与模型输出局部敏感性；推导可解的谱上界，把子空间选择约简为敏感性加权协方差矩阵的特征分解，保留基于旋转剪枝方法的效率与结构简洁性。</p>
+<p><strong>关键数字</strong> 多个指令微调语言模型家族上，相对仅激活剪枝一致降低校准 KL 散度，并在多种压缩水平下改善困惑度与下游任务性能；表明仅保留激活能量不足以指导残差流剪枝。</p>
+<p><strong>为什么值得看</strong> 把"扰动如何传播到模型输出"显式纳入剪枝判据，替代激活重建这一通行代理目标，压缩效果与理论清晰度兼备。</p>
+<p><a href="https://arxiv.org/abs/2609.35579">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.35579">阅读原文 ↗</a></p>
 </body>
 </html>

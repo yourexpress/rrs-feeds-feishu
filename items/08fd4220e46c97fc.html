@@ -22,9 +22,11 @@
 <h1>Nereus: Adaptive Parallelism for LLM Post-Training</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-28 · 论文PDF</p>
 
-<p>Nereus：LLM 后训练的自适应并行策略</p>
-<blockquote><p>Reinforcement learning (RL) post-training for large language models (LLMs) coordinates multiple models across generation, inference, and training on GPU clusters. Several factors may change during a run, including resource availability, sequence length, memory pressure, and stage bottlenecks. As a consequence, an execution plan that was initially suitable can then become slow or even infeasible over time. However, adapting a job whose models share GPUs entails significant challenges: deciding whether a new plan is worth the transition cost, reusing the job's distributed state, and coordinating GPU transfers across models and stages. Nereus targets these challenges as a cost-aware runtime that adapts RL post-training jobs into efficient execution plans. Its low-overhead controller selects a memory-feasible global plan and admits the transition using a cost model calibrated against the running job. To estimate and execute a transition, Nereus represents the distributed state of each replica of a model-stage (one model in one stage) as an Elastic Model Unit. It then employs a global transition graph to order the transformations and GPU transfers of these units. In a trace built from r…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 的强化学习（RL）后训练在 GPU 集群上协调多个模型（生成、推理、训练），运行中资源可用性、序列长度、内存压力、阶段瓶颈都可能变化，初始合适的执行计划会变慢甚至不可行；而适配共享 GPU 的任务面临三难：新计划是否值回迁移成本、复用任务分布式状态、跨模型与阶段协调 GPU 迁移。</p>
+<p><strong>方法</strong> Nereus 是成本感知运行时，把 RL 后训练任务适配为高效执行计划：低开销控制器用校准过的成本模型选择内存可行全局计划并准入迁移；用弹性模型单元（EMU）表示每个模型-阶段副本的分布式状态，以全局迁移图排序各单元的变换与 GPU 迁移。</p>
+<p><strong>关键数字</strong> 真实数据轨迹上，在线 TP/PP 适配相对固定初始布局 + DP 缩放平均步延迟降低 27.7%；1000 步、达 1024 GPU 的运行中 6 次迁移仅占运行总时间 0.079%；8B PPO 端到端吞吐相对 OpenRLHF 提升 2.14–7.27x、相对 Verl 提升 1.10–1.47x。</p>
+<p><strong>为什么值得看</strong> RL 后训练这类动态负载的运行时自适应并行，量化了"迁移成本极低、收益显著"，适合大规模 RL 训练平台参考。</p>
+<p><a href="https://arxiv.org/abs/2609.34645">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.34645">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>CacheRepair: Learning to Repair Cross-Chunk Context in RAG for KV Cache Fusion</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-28 · 论文PDF</p>
 
-<p>CacheRepair：学习修复 RAG 跨块上下文以融合 KV 缓存</p>
-<blockquote><p>Multi-document retrieval-augmented generation (RAG) requires a language model to process multiple retrieved text chunks before answering a question. Precomputing each chunk's KV cache independently and concatenating the caches when the chunks are retrieved can accelerate this step. However, the assembled cache lacks cross-chunk attention information, reducing answer quality. Selective recomputation methods recover the missing cross-chunk context by rerunning the target LLM on selected tokens, incurring substantial online computation. We introduce CacheRepair, a lightweight network that learns the difference between independently computed KV caches and those produced by processing the chunks together. The network combines compressed KV features with token embeddings and uses attention that is bidirectional within each chunk and flows from earlier to later chunks. Each repair block receives the compressed cache features, and the predicted residual is added to every document token's cache. Each repair network is trained for a specific frozen target LLM on a generic retrieval corpus and reused across downstream datasets. Our analysis shows that repair reduces KV errors both near chunk …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 多文档 RAG 中，对每个检索块独立预计算 KV 缓存再拼接可加速生成，但拼接后的缓存缺少跨块注意力信息、损害回答质量；选择性重算能恢复跨块上下文，却带来大量在线计算。</p>
+<p><strong>方法</strong> CacheRepair 引入轻量网络，学习"独立计算缓存"与"整块一起处理所得缓存"之间的差异：网络融合压缩 KV 特征与 token 嵌入，块内双向注意力、块间从前到后流动，把预测残差加到每个文档 token 的缓存上。每个修复网络针对特定冻结目标 LLM 在通用检索语料上训练，可复用于多个下游数据集。</p>
+<p><strong>关键数字</strong> 在 3 个目标 LLM × 4 个下游数据集的 12 个组合中，11 个处于回答质量-延迟帕累托前沿；最大修复器相对完整 prefill 的中位 TTFT 加速 1.69–4.61x，相对直接缓存复用平均 F1 提升 2.1–26.1 个百分点。</p>
+<p><strong>为什么值得看</strong> 用学习式残差修复代替昂贵重算，把 KV 缓存复用的质量损失压到可接受范围，是长上下文 RAG 服务化值得参考的折中方案。</p>
+<p><a href="https://arxiv.org/abs/2609.35139">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.35139">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Mirror-Score: Calibrated, Inference-only Scoring Exposes the Limits of Sequence-compatibility Ranking in D-peptide Design</h1>
 <p class="meta-line">arXiv / Jiada Li 等 · 2026-09-28 · 论文PDF</p>
 
-<p>D-peptides combine protease resistance with high target specificity, but computational de…</p>
-<blockquote><p>D-peptides combine protease resistance with high target specificity, but computational design of D-peptide binders remains immature. Mirror-Peptidizer introduced an in silico mirror-image screening pipeline using target reflection, backbone generation, and ProteinMPNN sequence design, but its raw ProteinMPNN negative log-likelihood (NLL) ranking was not validated against measured affinities, and only 4 of 9 tested MDM2 designs bound detectably. We introduce Mirror-Score, a calibrated, inference-only scoring framework for heterochiral D-peptide/L-protein complexes, and a public benchmark of 31 crystal complexes across four target families, including 18 with literature-verified affinities. Raw ProteinMPNN NLL is not a valid affinity ranker: its pooled Spearman correlation with affinity is 0.19, and correlations reverse between MDM2/CHIP (+0.62) and gp41 (-0.70). We therefore evaluate Boltz-2 mirror-space cofolding confidence. For the complete viral-entry family (7 structures representing 3 peptides), interface predicted local distance difference test (pLDDT) achieves structure-level leave-one-out Spearman rho = 0.90 (p = 0.006) and correctly orders all three peptides by affinity, whe…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> D-肽兼具蛋白酶抗性与高靶点特异性，但其结合物计算设计尚不成熟：Mirror-Peptidizer 的镜像筛选流水线中，原始 ProteinMPNN 负对数似然（NLL）排序未经实测亲和力验证，9 个测试 MDM2 设计中仅 4 个可检测结合。</p>
+<p><strong>方法</strong> Mirror-Score 提出面向异手性 D-肽/L-蛋白复合物的校准化、仅推理评分框架，并发布 31 个晶体复合物公共基准（4 个靶标家族，18 个有文献验证亲和力）。发现原始 NLL 不是有效亲和力排序器（合并 Spearman 相关 0.19，且 MDM2/CHIP 的 +0.62 与 gp41 的 −0.70 方向相反），改用 Boltz-2 镜像空间共折叠置信度评估。</p>
+<p><strong>关键数字</strong> 完整病毒进入家族（7 结构、3 肽）上，界面 pLDDT 的结构级留一法 Spearman ρ=0.90（p=0.006）并正确排序全部 3 个肽（NLL 仅 0.18）；跨家族校准在当前样本量下不迁移，支持按家族匹配校准的部署模式。代码与基准开源。</p>
+<p><strong>为什么值得看</strong> 为 D-肽设计提供首个带实测亲和力验证的校准评分与公共基准，并明确当前样本量下的统计边界，严谨度值得借鉴。</p>
+<p><a href="https://arxiv.org/abs/2609.36057">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.36057">阅读原文 ↗</a></p>
 </body>
 </html>

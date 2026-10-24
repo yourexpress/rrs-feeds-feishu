@@ -22,9 +22,11 @@
 <h1>Kafila: Serving Large Language Models on a Trusted Set of Heterogeneous Commodity Machines</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-28 · 论文PDF</p>
 
-<p>Kafila：在可信异构商用机器集群上服务大语言模型</p>
-<blockquote><p>Between them, the members of a research group or a circle of friends own several consumer computers, none large enough to run a capable large language model. Existing systems pool such capacity across open swarms anyone may join, which a group admitting only trusted machines cannot use. Bounding membership removes what they depend on: a swarm holds each part of the model on several peers and routes around a slow one. A bounded session must use every device it admits. Its pipeline advances at the pace of whichever device received a share it cannot serve quickly, so the division has to be right before serving begins. We propose Kafila, whose protocol assembles a ring from behind NATs, preferring direct paths and relaying where traversal fails, while its planner measures each device's memory bandwidth, capacity and reachability, divides the model exactly for a fixed ring order, and places the head, which holds the embedding and output projection, together with that division rather than beforehand. On machines with different capabilities across three fleets, from a shared LAN to five devices spanning two continents, Kafila shortens the slowest pipeline stage by up to $5.2\times$ agains…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 研究小组或朋友圈拥有的多台消费级电脑，单台都不够跑像样的 LLM。现有系统在开放群（swarm）上汇聚算力，但不接受只信任少数机器的受限群体；限定成员后，群依赖的"每部分模型放多个对等点、绕开慢节点"机制失效——受限会话必须用上接纳的每一台设备。</p>
+<p><strong>方法</strong> Kafila 提出协议：从 NAT 后组装环（prefer 直连路径、穿越失败则中继）；规划器测量每台设备的内存带宽、容量与可达性，按固定环序精确切分模型，并把持有嵌入与输出投影的 head 与该切分一起放置。</p>
+<p><strong>关键数字</strong> 在共享 LAN 到跨两大洲五设备的三种机群上，Kafila 相对 GPipe 式均匀流水切分把最慢流水级缩短最多 5.2x，相对 exo 式按内存比例切分最多 3x；共享网络下吞吐为均匀切分 1.56x、内存比例切分 1.25x，4 并发用户时领先放大到 3.2x。</p>
+<p><strong>为什么值得看</strong> 面向"可信小集群"的 LLM 分布式推理协议，测量驱动切分而非盲目均匀分，是个人设备联邦推理的实用方案。</p>
+<p><a href="https://arxiv.org/abs/2609.34045">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.34045">阅读原文 ↗</a></p>
 </body>
 </html>

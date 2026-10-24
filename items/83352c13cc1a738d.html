@@ -22,9 +22,11 @@
 <h1>KVCMAS: Efficient KV cache Correction for Shared Context in Multi-Agent Systems</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-28 · 论文PDF</p>
 
-<p>KVCMAS：多智能体共享上下文的高效 KV 缓存校正</p>
-<blockquote><p>Prompt-specialized multi-agent systems enable multiple agents to share a model while performing complementary roles to solve complex tasks. However, agent-specific prefixes change the KV cache generated for the same shared context, causing each agent to repeatedly prefill the growing context and construct a separate cache with high computation and memory overhead. Selective recomputation reduces this redundancy but still retains substantial model execution, while existing delta correction methods either support only recurring context relations or maintain memory-intensive online correction states for dynamically changing context. For first seen shared context, these methods also construct a reference cache outside the agent workflow, and an approximate correction at the first agent affects the outputs passed to subsequent agents. We present KVCMAS, an online KV cache correction framework that represents cross-agent cache deviations using compact low-rank states and seamlessly chains corrections along the agent workflow without an additional reference prefill. This design supports dynamically changing shared context while preserving an exact first-agent cache. Across multiple langua…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 提示词专业化的多智能体系统让多个 agent 共享一个模型、扮演互补角色，但 agent 特定前缀会改变同一共享上下文的 KV 缓存，导致每个 agent 重复 prefill 不断增长的上下文并各自构建缓存，计算与内存开销高。</p>
+<p><strong>方法</strong> KVCMAS 是在线 KV 缓存校正框架：用紧凑低秩状态表示跨 agent 缓存偏差，沿 agent 工作流无缝链式校正，无需额外参考 prefill；支持动态变化的共享上下文，同时保留精确的首个 agent 缓存。</p>
+<p><strong>关键数字</strong> 在多个语言与视觉-语言负载上，受控服务轨迹下相对无 KV 缓存共享提供 2.0x TTFT 加速，相对先前 KV 缓存校正方法峰值 GPU 内存降低最多 3.7x，同时保持或提升共享精度。</p>
+<p><strong>为什么值得看</strong> 多 agent 共享上下文场景的 KV 缓存复用痛点明确，低秩在线校正避免重复 prefill，对高并发 agent 服务有实用价值。</p>
+<p><a href="https://arxiv.org/abs/2609.34060">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.34060">阅读原文 ↗</a></p>
 </body>
 </html>

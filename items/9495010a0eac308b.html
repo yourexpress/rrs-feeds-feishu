@@ -22,9 +22,11 @@
 <h1>Improving Indirect Branch Prediction in Interpreters via Hardware/Software Co-Design</h1>
 <p class="meta-line">arXiv (cs.AR) · 2026-09-28 · 论文PDF</p>
 
-<p>软硬件协同设计改进解释器的间接分支预测（IEEE CAL）</p>
-<blockquote><p>Interpreters have a large indirect-branch footprint, requiring large predictor capacity for accurate prediction. We propose a hardware/software co-design in which a hardware lookahead engine, running ahead of the pipeline with software-provided bytecode metadata, supplies interpreter dispatch targets to the frontend. The engine requires only 1.3 KB of on-chip storage and changes to about 50 lines of CPython code. On 15 CPython server workloads, a 14 KB ITTAGE augmented with the engine reduces bytecode jump MPKI by 73.7% relative to a 16 KB ITTAGE baseline, yielding a 3.2% harmonic-mean IPC speedup.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 解释器有大量间接分支足迹，需要很大的预测器容量才能准确预测。本文（IEEE CAL）提出软硬件协同设计改进解释器的间接分支预测。</p>
+<p><strong>方法</strong> 硬件前瞻引擎（lookahead engine）领先流水线运行，配合软件提供的字节码元数据，把解释器调度目标（dispatch targets）供给前端。该引擎只需 1.3 KB 片上存储，改动约 50 行 CPython 代码。</p>
+<p><strong>关键数字</strong> 在 15 个 CPython 服务负载上，14 KB ITTAGE 加装该引擎后字节码跳转 MPKI 相对 16 KB ITTAGE 基线降低 73.7%，谐波平均 IPC 提升 3.2%。</p>
+<p><strong>为什么值得看</strong> 极小的硬件投入（1.3KB + 50 行软件改动）换来解释器显著的分支预测改善，是软硬件协同设计的低成本高收益范例。</p>
+<p><a href="https://arxiv.org/abs/2609.34263">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.34263">阅读原文 ↗</a></p>
 </body>
 </html>

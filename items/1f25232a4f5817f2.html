@@ -22,9 +22,11 @@
 <h1>From Experience to Expertise: Adoption-Aware Memory Learning for Data-Scarce NPU Kernel Synthesis</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-28 · 论文PDF</p>
 
-<p>从经验到专长：数据稀缺 NPU 内核综合的采用感知记忆学习</p>
-<blockquote><p>High-performance kernels underpin efficient accelerator execution but require expert tuning and lengthy manual optimization cycles. LLM coding agents promise automation, yet their CUDA knowledge transfers poorly to data-scarce domain-specific architectures (DSAs) such as NPUs, whose execution models and memory hierarchies differ substantially from those of GPUs. To address this transfer gap, post-training methods adapt LLMs to NPU programming but depend on scarce expert data and substantial training compute. Memory-learning agents instead adapt through external memory, but their uniform credit assignment gives adopted and unused experiences the same reward target, potentially biasing subsequent retrieval rankings. Moreover, when learned values guide only retrieval, high-value experiences that generalize across operators must be retrieved repeatedly rather than retained in context, thereby increasing retrieval overhead and weakening cross-task guidance. We therefore present SAGE, a persistent self-improving agent for NPU kernel synthesis. Adoption-Traced Utility estimation (ATU) combines explicit adoption records with kernel evaluation outcomes for adoption-aware credit assignment. …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 高性能内核是高效加速器执行的基础，但需要专家调优与漫长手工优化。LLM 编程 agent 有望自动化，但其 CUDA 知识难以迁移到数据稀缺的领域专用架构（DSA，如 NPU）；训练后适配依赖稀缺专家数据，记忆学习 agent 的均匀信用分配又给"被采用"与"未采用"经验相同奖励目标，可能偏置检索排序。</p>
+<p><strong>方法</strong> SAGE 是持久自改进的 NPU 内核综合 agent：采用追踪效用估计（ATU）结合显式采用记录与内核评测结果做采用感知信用分配；效用门控整合（UGC）用正效用与跨算子重复采用挑选并抽象可复用规则进有界驻留上下文。</p>
+<p><strong>关键数字</strong> NPUKernelBench 上 SAGE 执行率达 95.5%（最强受控基线 84.1%），86.9% 的已解算子优于 torch_npu；配 GLM-5.3 时稀疏 flash attention 相对 torch_npu 参考加速 43.99x。</p>
+<p><strong>为什么值得看</strong> 采用感知信用分配 + 选择性整合让 agent 跨任务积累硬件特定知识，是 NPU 内核自动化的前沿尝试。</p>
+<p><a href="https://arxiv.org/abs/2609.35568">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.35568">阅读原文 ↗</a></p>
 </body>
 </html>

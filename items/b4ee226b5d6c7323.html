@@ -22,9 +22,11 @@
 <h1>Arachne: Learning to Plan Parallel Training on Dynamic Heterogeneous Clusters</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-28 · 论文PDF</p>
 
-<p>Arachne：学习在动态异构集群上规划并行训练方案</p>
-<blockquote><p>Training large machine learning models on shared GPU infrastructures faces two challenges: (1) GPU availability shifts dynamically with varying resource demands from tenants, and (2) hardware heterogeneity accumulates as datacenters continuously adopt new GPU generations. Due to the vast search space induced by heterogeneous GPU types and node sizes, training planners must prune it aggressively to remain tractable, yet must also derive high-throughput plans promptly as cluster configurations change. Heddle achieves this goal through a learning-based planner that reduces the full planning problem to a search over pipeline structures. Heddle encapsulates planning decisions in a structural template and learns to construct plans from templates over diverse cluster configurations offline. This design is effective because structural decisions constitute the performancecritical core of a parallelism plan, while the rest follows by rule or from a small priced candidate set once the plan structure is fixed. Evaluation shows that Heddle matches or exceeds the best plan found by five existing planners across clusters with varying GPU types and node sizes for three models of different sizes by…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 共享 GPU 集群上训练大模型面临两大挑战：租户资源需求导致 GPU 可用性动态波动，数据中心持续引入新 GPU 代际造成硬件异构累积。异构类型与节点规模组合出巨大搜索空间，训练规划器必须在可处理性与及时给出高吞吐方案之间权衡。</p>
+<p><strong>方法</strong> Heddle 提出基于学习的并行训练规划器，将完整规划问题约简为对流水线结构（pipeline structures）的搜索：把规划决策封装进结构模板，离线从多样化集群配置中学习如何从模板构造方案；结构一旦确定，其余部分按规则或从小型候选集定价得出。</p>
+<p><strong>关键数字</strong> 在 GPU 类型与节点规模各异的集群上、针对三个不同规模模型，Heddle 达到或超过五个现有规划器的最佳方案：稠密模型吞吐最高提升 84.5%，MoE 模型最高 4.6x。</p>
+<p><strong>为什么值得看</strong> 把"结构决策"从完整搜索空间中剥离出来学习，是并行训练自动规划里少见的可扩展思路，对动态异构集群上的训练调度有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.34244">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.34244">阅读原文 ↗</a></p>
 </body>
 </html>
