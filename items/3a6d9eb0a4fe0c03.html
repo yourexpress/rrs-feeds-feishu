@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verified DRAM Address Mapping Reverse Engineering with Threshold Sweep</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Verified DRAM Address Mapping Reverse Engineering with Threshold Sweep</h1>
+<p class="meta-line">arXiv · 2026-10-21 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 嵌入式 LPDDR5 系统上如何求解并验证 DRAM 地址映射函数？</p>
+<p><strong>方法</strong> 端到端软件流水线：由地址对延迟数据构建直方图，阈值扫描获得候选同 bank 地址对；对每个阈值用 Knock-Knock 式线性约束求解器恢复 bank 掩码，GF(2) 行简化阶梯形计算最终掩码；再经组验证与单函数验证两级校验，系统性记录每个候选阈值的求解结果与验证指标。</p>
+<p><strong>关键数字</strong> 在 ARM 嵌入式平台上完成实例化，支持更稳健的 bank 掩码选择；未给出具体加速数字。</p>
+<p><strong>为什么值得看</strong> 可复现的"求解+验证"闭环，为 Rowhammer 分析等内存安全研究提供可靠逆向基础。</p>
+<p><a href="https://arxiv.org/abs/2610.30397">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.30397">阅读原文 ↗</a></p>
+</body>
+</html>

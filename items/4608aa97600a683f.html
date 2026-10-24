@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>uGDS: A User-Space Development Kit for High-Performance GPU Direct Storage</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>uGDS: A User-Space Development Kit for High-Performance GPU Direct Storage</h1>
+<p class="meta-line">arXiv · 2026-10-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> GPU Direct Storage（GDS）三大局限：控制路径每次 I/O 都过内核、流有序路径强加全序、闭源用户态引擎难诊断难定制。</p>
+<p><strong>方法</strong> uGDS 开源用户态 GPU Direct Storage 库：宿主机 CPU 在用户态管理整个 NVMe 命令生命周期，payload 走 PCIe P2P DMA 不占用 GPU 计算；统一跨厂商抽象（CUDA/AMD HIP）、负载感知调度、端到端透明；最小内核模块仅用于一次性特权设置。</p>
+<p><strong>关键数字</strong> A100 + Samsung 990 PRO 上批量读带宽最高 12.12× GDS、批量写 30.69×；4KiB 同步写延迟降 84.1%；单流 5.49 GiB/s（GDS 仅保留 40.8%）；LMCache 中 TTFT 中位降 62.7%、goodput 提升 2.63×。</p>
+<p><strong>为什么值得看</strong> 开源 + 用户态 + 跨厂商，数据密集型 GPU 应用的实用加速层，已用于 LMCache。</p>
+<p><a href="https://arxiv.org/abs/2610.30868">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.30868">阅读原文 ↗</a></p>
+</body>
+</html>

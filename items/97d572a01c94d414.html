@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FIGFLEX: A Mixed-Precision FP-INT GEMM Accelerator Co-Designed with Low-Bit LLM Quantization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>FIGFLEX: A Mixed-Precision FP-INT GEMM Accelerator Co-Designed with Low-Bit LLM Quantization</h1>
+<p class="meta-line">arXiv · 2026-10-21 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> Weight-only 量化使主流负载变为 FP-INT 矩阵乘，但硬件未跟上：GPU 需先反量化到 FP16，位并行加速器只跑单一精度——少比特省了内存却不省计算。</p>
+<p><strong>方法</strong> FIGFLEX 算法-硬件协同设计：shift-add radix-4 重述 FP-INT 乘法，融合为统一的精度灵活部分积归约；新增 INT3 优化回收空闲数据通路；按 GPTQ 无法补偿的误差为各通道组分配位宽，power-of-two 归一化避免激活落入 FP16 次正规区间。</p>
+<p><strong>关键数字</strong> LLaMA-2-7B 上 3/2-bit 平均精度达 5.85/8.77 WikiText-2 困惑度，优于 GPTQ、AWQ、SliM-LLM、AMQ、QuIP#；3-bit 混合精度模型线性 GEMM 的整片吞吐/面积比 AxCore 高 1.56×、比 FIGLUT 高 1.42×。</p>
+<p><strong>为什么值得看</strong> 量化与硬件协同设计的范式样例，把"省比特"兑现为"省计算"。</p>
+<p><a href="https://arxiv.org/abs/2610.30480">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.30480">阅读原文 ↗</a></p>
+</body>
+</html>

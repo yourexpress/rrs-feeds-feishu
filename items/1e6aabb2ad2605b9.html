@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MoEZip: Routing-Aware KV Cache Compression for Sparse Mixture-of-Experts LLMs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MoEZip: Routing-Aware KV Cache Compression for Sparse Mixture-of-Experts LLMs</h1>
+<p class="meta-line">arXiv · 2026-10-21 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> MoE 长上下文推理中 KV cache 随序列长度线性增长，但现有压缩方法忽略 MoE 特有问题：逐出 KV 会改变生成时的专家选择，降低生成质量。</p>
+<p><strong>方法</strong> MoEZip 路由感知压缩：基于路由分布 Fisher 信息矩阵的新度量估计路由对扰动的敏感性，与注意力权重组合做路由感知打分；再组合稠密与稀疏 MoE 架构的逐出方法构成互补打分系统。</p>
+<p><strong>关键数字</strong> 10% KV 保留率下，LongBench 平均比 SOTA 基线高 24 分、RULER 高 20 分，对应分数 2.3× 与 4.9× 提升。</p>
+<p><strong>为什么值得看</strong> 首个面向 MoE 路由结构的 KV 压缩方案，激进压缩率下依然稳健。</p>
+<p><a href="https://arxiv.org/abs/2610.30206">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.30206">阅读原文 ↗</a></p>
+</body>
+</html>

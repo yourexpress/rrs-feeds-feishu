@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gandalf: Flash Shall Not Die! Increasing Flash Storage Lifetime for KV Cache Offloading in LLM Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Gandalf: Flash Shall Not Die! Increasing Flash Storage Lifetime for KV Cache Offloading in LLM Serving</h1>
+<p class="meta-line">arXiv · 2026-10-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LLM 服务用 SSD 扩展 KV cache 容量，但多轮对话与 agent 等生产负载的 KV 写入总量远超 SSD 容量，寿命从数年缩短到数月。</p>
+<p><strong>方法</strong> Gandalf，首个 SSD 寿命感知的 KV offloading 系统：仅按历史访问模式门控写入会伤命中率——不同注意力类型的 KV 可能访问模式相同但未来模式不同；Gandalf 据此优先把 full-attention KV 准入 SSD。</p>
+<p><strong>关键数字</strong> 平均延长 SSD 寿命 7.3×，缓存命中率影响可忽略；设计可扩展到 High Bandwidth Flash 等闪存。</p>
+<p><strong>为什么值得看</strong> 把应用层注意力类型纳入 KV offload 决策，直面生产级闪存磨损这一真实成本问题。</p>
+<p><a href="https://arxiv.org/abs/2610.30791">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.30791">阅读原文 ↗</a></p>
+</body>
+</html>

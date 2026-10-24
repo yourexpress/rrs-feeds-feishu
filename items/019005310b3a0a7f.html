@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evaluating the Applicability of LLM Inference Optimizations on Apple Silicon</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Evaluating the Applicability of LLM Inference Optimizations on Apple Silicon</h1>
+<p class="meta-line">arXiv · 2026-10-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> Apple Silicon 是最广泛的本地 LLM 推理平台之一，但几乎所有推理优化都在服务器级 NVIDIA GPU 上设计与验证——哪些优化迁移后仍有效？</p>
+<p><strong>方法</strong> 评估四类优化（KV cache 剪枝、推测解码、移植 GPU kernel、后训练量化），覆盖 4 台 Apple 机器，并在可比条件下对照 RTX 4090。</p>
+<p><strong>关键数字</strong> KV 剪枝在 Apple 上端到端吞吐最高 1.75×，但在桌面 NVIDIA GPU 上反而降吞吐；全部推测解码方法在 Apple 上降吞吐（服务器 GPU 上报 2–6× 增益）；可移植 kernel 组件最高带来 1.20× decode 吞吐。</p>
+<p><strong>为什么值得看</strong> 结论"加速不是技术本身的便携属性，而是技术×运行时×硬件契约×负载的联合函数"，对端侧优化有直接指导。</p>
+<p><a href="https://arxiv.org/abs/2610.31479">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.31479">阅读原文 ↗</a></p>
+</body>
+</html>

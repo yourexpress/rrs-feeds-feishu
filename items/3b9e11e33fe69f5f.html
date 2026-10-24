@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Energy and Latency First: How Deployment Constraints Reverse Time-Series Model Selection</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Energy and Latency First: How Deployment Constraints Reverse Time-Series Model Selection</h1>
+<p class="meta-line">arXiv · 2026-10-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 时序模型通常按精度排名，但真实部署存在排名不包含的硬约束——蜂窝网络切换预测要求每 40ms 测量周期内完成推理，且能量是设备寿命级的累计预算。</p>
+<p><strong>方法</strong> 按尾部而非均值筛选 deadline 可行性，再对可行模型按实测推理能量排序，并计入前向传播前的特征计算成本。</p>
+<p><strong>关键数字</strong> 梯度提升树 F1=0.974 且运行成本最低；精度基准会排第一的 CNN-1D（F1=0.914）在真实 duty-cycled 部署下每次推理能耗高出 3 倍以上。</p>
+<p><strong>为什么值得看</strong> 证明精度导向基准不仅低估部署成本，还可能把无法部署的模型排第一；并给出可推广到电信之外的三个条件。</p>
+<p><a href="https://arxiv.org/abs/2610.30965">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.30965">阅读原文 ↗</a></p>
+</body>
+</html>

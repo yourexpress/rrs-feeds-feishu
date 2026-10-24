@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BeNice! Closing Looping's Inference-Memory Gap via KV-Sharing</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>BeNice! Closing Looping's Inference-Memory Gap via KV-Sharing</h1>
+<p class="meta-line">arXiv · 2026-10-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 循环架构推理时每次循环生成独立 KV cache，显存线性增长；既有 KV-sharing 方案可行但机制不明，同配置训练的模型也未必具备该性质。</p>
+<p><strong>方法</strong> 两阶段方案：预训练阶段用 stochastic depth 诱导收缩残差动力学，使表示跨循环趋于共同极限；后训练阶段 BeNice! 把最终循环的 KV cache 广播到首个循环，训练其产生兼容残差并保持原质量。</p>
+<p><strong>关键数字</strong> 模拟低显存长上下文推理中，cache 命中率最高提升 31.4%、吞吐最高 23.6%、p90 TTFT 最高降低 83.6%；可与 MLA、低精度 KV 量化等方法组合使用。</p>
+<p><strong>为什么值得看</strong> 首次系统理解并主动"开启"循环模型的 KV-shareability，且与既有压缩手段正交可叠加。</p>
+<p><a href="https://arxiv.org/abs/2610.31633">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.31633">阅读原文 ↗</a></p>
+</body>
+</html>

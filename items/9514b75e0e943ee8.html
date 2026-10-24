@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drift Says When, Budget Says How Much: Rate-Controlled KV Re-selection for Long-Form Multimodal Generation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Drift Says When, Budget Says How Much: Rate-Controlled KV Re-selection for Long-Form Multimodal Generation</h1>
+<p class="meta-line">arXiv · 2026-10-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 多模态 LLM 长形式生成中，KV 压缩通常在 prefill 一次性选定视觉 token 并全程复用，但生成过程中模型读取的证据持续移动，one-shot 选择严重受限。</p>
+<p><strong>方法</strong> RCR：由漂移决定何时/何处重选，每样本控制器调节重选频率；配合低秩漂移检测器、候选受限重选与 GPU 上决策，单一设置适配所有模型与任务。</p>
+<p><strong>关键数字</strong> 6 个 model-task 设置中 5 个比逐部检索的 InfiniGen 高 1.6–3.8 ROUGE-L，距精确逐步重选仅差 1.7 分；GPU 驻留检测器小 4×；DetailCaps 上漂移定时比随机定时高 2.0–5.0 分。</p>
+<p><strong>为什么值得看</strong> 指出"固定漂移阈值"系统性失效并给出按样本预算调控的可迁移方案。</p>
+<p><a href="https://arxiv.org/abs/2610.31433">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.31433">阅读原文 ↗</a></p>
+</body>
+</html>
