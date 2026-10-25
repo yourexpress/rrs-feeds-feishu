@@ -22,9 +22,11 @@
 <h1>WavePP: High-Throughput Pipeline Parallel LLM Prefill under Prefix Reuse</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-28 · 论文PDF</p>
 
-<p>WavePP：前缀复用场景下高吞吐流水线并行 LLM prefill</p>
-<blockquote><p>Pipeline parallelism can improve prefill throughput by processing multiple request chunks concurrently across different stages of the model. However, keeping the pipeline fully utilized requires efficient scheduling and request preparation. In systems where stages retain and evict cache state independently, a local cache hit does not guarantee that the same prefix can be reused across the pipeline. Here, coordination overhead can impede request admission cadence and thus reduce overall throughput. In this paper, we present WavePP, a prefill runtime built on top of TensorRT-LLM that addresses these challenges by overlapping request admission with pipeline execution. WavePP asynchronously finds a prefix that can be reused across all stages, protects the cached state, and reserves space for the remaining input while earlier requests continue to execute. It subsequently plans the chunk sizes of each request dynamically to maximize pipeline fill. Each stage then completes the local preparation before executing the request. In the same system and pipeline topology, WavePP improves TensorRT-LLM's prefill throughput in 37 of 40 tested settings on GLM 5.2 and MiniMax M2.7. At concurrency 12…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：流水线并行下各 stage 独立管理缓存，本地命中不保证跨流水线前缀复用，协调开销拖慢准入，如何解决？
+<strong>方法</strong>：WavePP（TensorRT-LLM）：异步找全 stage 可复用前缀并保护缓存；动态规划分块最大化流水线填充。
+<strong>关键数字</strong>：GLM 5.2/MiniMax M2.7 的 40 个设置中 37 个提升 prefill 吞吐；并发 128 高缓存复用吞吐提升 2.91/2.02 倍；Kimi K3 并发 8 以上 18 个设置全部最高。
+<strong>为什么值得看</strong>：把前缀复用提升为跨流水线协调，兑现 prefill 高吞吐，长上下文场景直接受益。</p>
+<p><a href="https://arxiv.org/abs/2609.35263">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.35263">阅读原文 ↗</a></p>
 </body>
 </html>

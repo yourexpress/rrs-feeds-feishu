@@ -22,9 +22,11 @@
 <h1>TopoEP: Topology-Aware Load Balancing for Expert-Parallel MoE Training</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-28 · 论文PDF</p>
 
-<p>TopoEP：专家并行 MoE 训练的拓扑感知负载均衡</p>
-<blockquote><p>Dynamic routing creates severe load imbalance in large-scale expert-parallel Mixture-of-Experts (MoE) training, turning GPUs that host hot experts into stragglers. As each MoE layer waits for its slowest rank, these stragglers prolong the expert-parallel stage and reduce overall training efficiency. Existing expert-parallelism load-balancing (EPLB) systems commonly compute load-balancing plans on the CPU, incurring device--host data transfers and cross-rank synchronization that make scheduling at every layer and microbatch expensive. Their planning formulations also overlook the hierarchical communication costs of modern scale-up and scale-out GPU clusters. We present \textit{TopoEP}, a GPU-native, topology-aware load-balancing system for large-scale MoE training. At each MoE layer and training microbatch, \textit{TopoEP} converts the current routing result into hot-expert replication and token-rerouting decisions and executes the resulting plan without data-dependent host synchronization, reducing critical-path overhead. To generate these decisions, \textit{TopoEP} uses a deterministic GPU solver that performs inter-node placement followed by intra-node refinement, allowing all ra…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：专家并行 MoE 训练动态路由致负载不均，CPU 规划开销大且忽视分层通信成本，能否 GPU 原生解决？
+<strong>方法</strong>：TopoEP 每层每微批把路由结果转为热专家复制与 token 重路由决策并直接执行，无数据相关主机同步；确定性 GPU 求解器先节点间放置再节点内细化。
+<strong>关键数字</strong>：32 张 H800 集成 Megatron-LM，三个 MoE 模型端到端训练吞吐提升 6.2%–11.4%。
+<strong>为什么值得看</strong>：把负载均衡规划搬到 GPU 并显式建模分层通信，减少关键路径开销，EP 训练系统的直接收益。</p>
+<p><a href="https://arxiv.org/abs/2609.35481">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.35481">阅读原文 ↗</a></p>
 </body>
 </html>

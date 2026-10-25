@@ -22,9 +22,11 @@
 <h1>Spexis: Speculative Lookahead Scheduling for LLM Inference</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-28 · 论文PDF</p>
 
-<p>Spexis：LLM 推理的投机前瞻调度（EMNLP 2026）</p>
-<blockquote><p>Spexis is a multi-GPU LLM inference framework that improves the efficiency of pipeline and tensor parallelism through speculative parallelism. Rather than using speculative decoding only to accelerate token generation, Spexis runs speculation in parallel with normal execution, introducing a new parallelism axis without increasing KV-cache memory usage. This improves memory efficiency and helps mitigate the bottlenecks of multi-GPU inference. Spexis further uses lookahead scheduling to predict speculation quality and future memory pressure, allowing it to reduce wasted speculation, KV-cache eviction, and recomputation. Built on top of vLLM, Spexis largely improves serving performance across a range of GPU configurations, achieving speedups of up to 34% over a baseline that uses the optimal combination of pipeline and tensor parallelism. Spexis's source code is publicly available at https://github.com/mlsys-seo/spexis.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：多 GPU LLM 推理的流水线/张量并行效率瓶颈，能否用投机并行改善？
+<strong>方法</strong>：Spexis 让投机与正常执行并行运行，引入新并行轴且不增 KV 缓存内存；前瞻调度预测投机质量与内存压力，减少浪费的投机、KV 驱逐与重算。
+<strong>关键数字</strong>：基于 vLLM，跨多种 GPU 配置，相对"流水线+张量并行最优组合"基线最高提速 34%。
+<strong>为什么值得看</strong>：把投机解码从"加速生成"升级为"新并行维度"，内存效率与多 GPU 瓶颈缓解有新意，源码公开。</p>
+<p><a href="https://arxiv.org/abs/2609.34370">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.34370">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>SlimWise: Decoupling Expert Pruning Across Prefill and Decode for Efficient MoE Serving</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-28 · 论文PDF</p>
 
-<p>SlimWise：把 MoE 专家剪枝在 prefill 与 decode 阶段解耦</p>
-<blockquote><p>Mixture-of-experts (MoE) models activate few experts per token, yet batched decoding can access nearly the entire expert pool, making expert-weight traffic a major bottleneck. Expert pruning reduces this traffic, but conventional approaches also prune compute-bound prefill, sacrificing model quality for little throughput benefit. We present SlimWise, a serving framework that tailors the expert pool to each inference phase. SlimWise performs prefill with the full model and decode with a pruned model that directly reuses the prefill-generated KV cache without conversion. Across two MoE backbones and three pruning criteria, this training-free KV cache handoff substantially narrows accuracy gaps relative to the full model in many settings. We also show that benchmark accuracy can conceal substantial pruning-induced changes in generation length. To address these distortions and residual accuracy loss, SlimWise introduces a low-cost distillation stage that trains the decoder to continue from full-model KV caches while updating only a small subset of parameters. Implemented in vLLM, SlimWise supports both prefill-decode (PD) disaggregation and PD-colocated serving. On Qwen3.6-35B-A3B, Sli…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：MoE 批量解码访问几乎全部专家池，权重流量成瓶颈；传统剪枝连 prefill 一起剪，能否按阶段定制？
+<strong>方法</strong>：SlimWise：prefill 用完整模型、decode 用剪枝模型并直接复用其 KV 缓存；低成本蒸馏仅更新少量参数。
+<strong>关键数字</strong>：vLLM 实现，支持 PD 分离/共置；Qwen3.6-35B-A3B 上 50% 专家剪枝时 decode 吞吐最高提升 1.81 倍、精度损失很小。
+<strong>为什么值得看</strong>：专家剪枝按阶段解耦，避免 prefill 质量损失，KV 交接免训练，MoE 服务调优的实用思路。</p>
+<p><a href="https://arxiv.org/abs/2609.34117">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.34117">阅读原文 ↗</a></p>
 </body>
 </html>

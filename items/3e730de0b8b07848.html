@@ -22,9 +22,11 @@
 <h1>Tool Waiting and Re-arrival in Compile-Time-Static LLM Serving: Cost Mechanisms and Configuration Selection</h1>
 <p class="meta-line">arXiv (cs.PF) · 2026-09-28 · 论文PDF</p>
 
-<p>编译期静态 LLM 服务中工具等待与再到达的成本机制与配置选择</p>
-<blockquote><p>In agentic LLM services, a session calls an external tool, waits for it, and re-arrives to continue inference. Statically compiled NPU serving can fix the batch bucket set, the maximum batch size, and the number of KV cache slots at compile time. We define such an environment as a compile-time-static serving substrate and analyze the execution-time cost that tool waiting and re-arrival incur in it. On a single LLM instance, we run synthetic workloads following a measured tool waiting time distribution and compare, on the same inputs, a baseline configuration with settings {1, 2, 4, 8}, 8, and 8 against configurations that change some of them. Because re-arrival times differ across configurations, we build a simulator that replays request processing in time order, select the candidate with the lowest predicted cost among 2,077 configurations, and validate it on new inputs. We identify three mechanisms: discrete batch alignment, KV cache survival, and prefill interference. At a concurrency of 6, absent from the bucket set, tool waiting lowered the padding ratio (0.235 to 0.120) yet increased decode execution time 1.51-fold, so padding alone did not indicate cost. On new inputs at a c…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：智能体调工具后等待、再到达，在编译期静态 NPU 服务上产生什么执行期成本？
+<strong>方法</strong>：用符合实测工具等待分布的合成负载对比配置；模拟器按时间序重放请求选预测成本最低者并验证。
+<strong>关键数字</strong>：识别批对齐、KV 存活、prefill 干扰三种机制；并发 6 时 padding 比 0.235→0.120 但 decode 时间增至 1.51 倍；并发 8 时扩大最大批大小降成本 8.25%、同时调批桶集降 9.72%。
+<strong>为什么值得看</strong>：padding 比不代表成本，应基于 KV 复用损失选配置，对 NPU 推理容量规划有指导意义。</p>
+<p><a href="https://arxiv.org/abs/2609.34663">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.34663">阅读原文 ↗</a></p>
 </body>
 </html>

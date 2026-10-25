@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GLM-5.3 Optimizations, Part 2: PCP, DCP, and Hybrid HiSparse on 16 H200s</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>GLM-5.3 Optimizations, Part 2: PCP, DCP, and Hybrid HiSparse on 16 H200s</h1>
+<p class="meta-line">vLLM Blog · 2026-10-23 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://vllm.ai/blog-assets/figures/2026-10-23-glm53-part2-pcp-dcp-hisparse/agentx-pareto.png" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong>：vLLM 在 16 张 H200（prefill+decode 两节点）服务 GLM-5.3 长智能体上下文。
+<strong>要点</strong>：PCP 按 token 跨 GPU 切分 prompt；DCP 分片 prefill 引擎 KV 去 MLA 复制；HiSparse 让 decode KV 放主机内存。
+<strong>关键数字</strong>：PCP8×DCP8+HiSparse 同吞吐下每用户速度是数据并行 1.7–3.2 倍，唯一能服务 1M token 的配置。
+<strong>为什么值得看</strong>：长上下文同时压垮 KV 内存与 prefill，本文给出 P/D 分离下可落地的组合拳。</p>
+<p><a href="https://vllm.ai/blog/2026-10-23-glm53-part2-pcp-dcp-hisparse">原文链接</a></p>
+<p><a class="origin" href="https://vllm.ai/blog/2026-10-23-glm53-part2-pcp-dcp-hisparse">阅读原文 ↗</a></p>
+</body>
+</html>

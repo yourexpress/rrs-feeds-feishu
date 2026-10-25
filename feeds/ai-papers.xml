@@ -5,8 +5,44 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>AI 机构与企业（DeepMind/OpenAI/Anthropic/Microsoft/Meta/xAI/Mistral/Qwen/Seed 等）最新论文与 PDF 技术报告（arXiv 等），正文含中文省流版。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 24 Oct 2026 22:53:54 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 11:08:40 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/ai-papers.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Fix for Softmax and Cross-Entropy</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/4f63ba38887ffa05.html</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2610.31642</guid>
+      <pubDate>Thu, 22 Oct 2026 12:00:00 +0800</pubDate>
+    <category>论文PDF</category>
+    <category>每日精选</category>
+      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：Google DeepMind　&lt;strong&gt;发布&lt;/strong&gt;：2026-10-22　&lt;strong&gt;分类&lt;/strong&gt;：论文PDF / 每日精选&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究问题&lt;/strong&gt;：标准 softmax 与交叉熵实现存在两个数值 bug，如何影响训练？
+&lt;strong&gt;方法&lt;/strong&gt;：定位 Softmax Collapse（目标 logit 过大时梯度舍入为零）与 Softmax Cancellation（师生 logit 接近时产生非零梯度），给出三个函数的简单修复。
+&lt;strong&gt;关键数字&lt;/strong&gt;：修复消除 "Slingshot"、加速带权重衰减的 grokking、防精度崩溃、止蒸馏漂移；logit 增长受权重衰减与 Adam ε 平衡约束。
+&lt;strong&gt;为什么值得看&lt;/strong&gt;：bug 影响所有主流框架，修复即换即用，对训练稳定性与蒸馏有普适价值。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://arxiv.org/abs/2610.31642"&gt;原文链接&lt;/a&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p><strong>发表方</strong>：Google DeepMind　<strong>发布</strong>：2026-10-22　<strong>分类</strong>：论文PDF / 每日精选</p><p><strong>研究问题</strong>：标准 softmax 与交叉熵实现存在两个数值 bug，如何影响训练？
+<strong>方法</strong>：定位 Softmax Collapse（目标 logit 过大时梯度舍入为零）与 Softmax Cancellation（师生 logit 接近时产生非零梯度），给出三个函数的简单修复。
+<strong>关键数字</strong>：修复消除 "Slingshot"、加速带权重衰减的 grokking、防精度崩溃、止蒸馏漂移；logit 增长受权重衰减与 Adam ε 平衡约束。
+<strong>为什么值得看</strong>：bug 影响所有主流框架，修复即换即用，对训练稳定性与蒸馏有普适价值。</p>
+<p><a href="https://arxiv.org/abs/2610.31642">原文链接</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A team of Gemini 4 Argon agents beats Minecraft</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/5f4c93b184e43bfe.html</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2610.22319</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 +0800</pubDate>
+    <category>论文PDF</category>
+    <category>每日精选</category>
+      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：Google DeepMind　&lt;strong&gt;发布&lt;/strong&gt;：2026-10-15　&lt;strong&gt;分类&lt;/strong&gt;：论文PDF / 每日精选&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究问题&lt;/strong&gt;：AI 智能体能否在无人类干预下完成需数千步协作的长程任务？
+&lt;strong&gt;方法&lt;/strong&gt;：四个 Gemini 4 Argon 智能体置于沙箱 Minecraft 世界，仅给"击败末影龙"一个目标；各自经 Mineflayer 控制玩家，靠游戏内聊天与共享记忆协作，程序全部自行编写调试。
+&lt;strong&gt;关键数字&lt;/strong&gt;：自主编写 2783 个程序，27 小时 14 分通关，途中死亡 605 次；研究者全程仅旁观。
+&lt;strong&gt;为什么值得看&lt;/strong&gt;：据称是 AI 首次端到端自主通关《我的世界》，验证了多智能体跨一天维持连贯规划的能力，对长时程工程协作有参考价值。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://arxiv.org/abs/2610.22319"&gt;原文链接&lt;/a&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p><strong>发表方</strong>：Google DeepMind　<strong>发布</strong>：2026-10-15　<strong>分类</strong>：论文PDF / 每日精选</p><p><strong>研究问题</strong>：AI 智能体能否在无人类干预下完成需数千步协作的长程任务？
+<strong>方法</strong>：四个 Gemini 4 Argon 智能体置于沙箱 Minecraft 世界，仅给"击败末影龙"一个目标；各自经 Mineflayer 控制玩家，靠游戏内聊天与共享记忆协作，程序全部自行编写调试。
+<strong>关键数字</strong>：自主编写 2783 个程序，27 小时 14 分通关，途中死亡 605 次；研究者全程仅旁观。
+<strong>为什么值得看</strong>：据称是 AI 首次端到端自主通关《我的世界》，验证了多智能体跨一天维持连贯规划的能力，对长时程工程协作有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.22319">原文链接</a></p>]]></content:encoded>
+    </item>
     <item>
       <title>Harness²: Recursive Agent Harnessing for an Open World</title>
       <link>https://yourexpress.github.io/rrs-feeds-feishu/items/9abfa6eaa744ebbe.html</link>
@@ -1034,42 +1070,6 @@
 <p><strong>关键数字</strong> Qwen3-30B-A3B 上平均 Pass@1 与 Pass@8 较 GRPO 分别提升 3.2 与 4.5 个百分点，为所有对比方法最优；在 top-K、top-1、shared-expert 路由及数学、科学、代码任务上均有效，且无额外采样或计算开销。</p>
 <p><strong>为什么值得看</strong> 把 MoE 结构本身变成 RL 探索维度的新思路，机制分析（专家利用率、训练动态）也做得充分。</p>
 <p><a href="https://arxiv.org/abs/2609.13058">阅读原文</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Breaking the Token Ceiling: Distilling Smaller, Stronger Byte Models</title>
-      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/18ada1a35e264610.html</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2609.12303</guid>
-      <pubDate>Fri, 11 Sep 2026 12:00:00 +0800</pubDate>
-    <category>论文PDF</category>
-    <category>每日精选</category>
-      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：Meta FAIR/华盛顿大学　&lt;strong&gt;发布&lt;/strong&gt;：2026-09-11　&lt;strong&gt;分类&lt;/strong&gt;：论文PDF / 每日精选&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究问题&lt;/strong&gt;：共享 tokenization 的蒸馏是常规模型缩小手段，但字节模型（byte model）与 token 模型的蒸馏 scaling 趋势是否一致？&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;方法&lt;/strong&gt;：① 提出两种 token logits→byte logits 高效转换：近似（Marginal-It）与精确（End-Of-Token）；② 首次大规模研究同时扫两个维度——tokenization 方案（Tokens / Bytes / Bytes w/ eot）×训练目标（蒸馏 vs 交叉熵），模型按层参数匹配。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;关键数字&lt;/strong&gt;：见原文训练矩阵。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;为什么值得看&lt;/strong&gt;：byte 模型蒸馏的首个系统对比，为"端侧要不要走 byte-level"提供 scaling 依据。&lt;/p&gt;
-&lt;p&gt;原文：&lt;a href="https://arxiv.org/abs/2609.12303"&gt;arXiv:2609.12303&lt;/a&gt;（Meta FAIR / 华盛顿大学）&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p><strong>发表方</strong>：Meta FAIR/华盛顿大学　<strong>发布</strong>：2026-09-11　<strong>分类</strong>：论文PDF / 每日精选</p><p><strong>研究问题</strong>：共享 tokenization 的蒸馏是常规模型缩小手段，但字节模型（byte model）与 token 模型的蒸馏 scaling 趋势是否一致？</p>
-<p><strong>方法</strong>：① 提出两种 token logits→byte logits 高效转换：近似（Marginal-It）与精确（End-Of-Token）；② 首次大规模研究同时扫两个维度——tokenization 方案（Tokens / Bytes / Bytes w/ eot）×训练目标（蒸馏 vs 交叉熵），模型按层参数匹配。</p>
-<p><strong>关键数字</strong>：见原文训练矩阵。</p>
-<p><strong>为什么值得看</strong>：byte 模型蒸馏的首个系统对比，为"端侧要不要走 byte-level"提供 scaling 依据。</p>
-<p>原文：<a href="https://arxiv.org/abs/2609.12303">arXiv:2609.12303</a>（Meta FAIR / 华盛顿大学）</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Grounding Agent Memory in the Real World</title>
-      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/6fe1236dc48f9fe7.html</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2609.11060</guid>
-      <pubDate>Thu, 10 Sep 2026 12:00:00 +0800</pubDate>
-    <category>论文PDF</category>
-    <category>每日精选</category>
-      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：Microsoft　&lt;strong&gt;发布&lt;/strong&gt;：2026-09-10　&lt;strong&gt;分类&lt;/strong&gt;：论文PDF / 每日精选&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究问题&lt;/strong&gt;：持久记忆正进入生产级 agent 平台，但只看已完成轨迹的事后策展 agent 会保留错误、过度泛化局部证据、留存过时知识。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;方法&lt;/strong&gt;：environment-probing curation：给既有异步策展 agent 一组最小权限、只读的"世界工具"，用于检查、限定与刷新候选记忆；不重训模型，任务 agent、检索器、记忆表示与生产写权限全部不变。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;关键数字&lt;/strong&gt;：在基于 GitHub Copilot SDK 的生产级 harness 中验证（详见原文）。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;为什么值得看&lt;/strong&gt;：agent 记忆可靠性的工程化落地——"用环境探针验证记忆"而不是"信轨迹"，思路可直接迁移。&lt;/p&gt;
-&lt;p&gt;原文：&lt;a href="https://arxiv.org/abs/2609.11060"&gt;arXiv:2609.11060&lt;/a&gt;（Microsoft）&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p><strong>发表方</strong>：Microsoft　<strong>发布</strong>：2026-09-10　<strong>分类</strong>：论文PDF / 每日精选</p><p><strong>研究问题</strong>：持久记忆正进入生产级 agent 平台，但只看已完成轨迹的事后策展 agent 会保留错误、过度泛化局部证据、留存过时知识。</p>
-<p><strong>方法</strong>：environment-probing curation：给既有异步策展 agent 一组最小权限、只读的"世界工具"，用于检查、限定与刷新候选记忆；不重训模型，任务 agent、检索器、记忆表示与生产写权限全部不变。</p>
-<p><strong>关键数字</strong>：在基于 GitHub Copilot SDK 的生产级 harness 中验证（详见原文）。</p>
-<p><strong>为什么值得看</strong>：agent 记忆可靠性的工程化落地——"用环境探针验证记忆"而不是"信轨迹"，思路可直接迁移。</p>
-<p>原文：<a href="https://arxiv.org/abs/2609.11060">arXiv:2609.11060</a>（Microsoft）</p>]]></content:encoded>
     </item>
   </channel>
 </rss>

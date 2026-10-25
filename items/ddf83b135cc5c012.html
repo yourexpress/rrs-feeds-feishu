@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>llama.cpp b11868: hexagon KV-head team split for multicore HMX flash attention (#31055)</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>llama.cpp b11868: hexagon KV-head team split for multicore HMX flash attention (#31055)</h1>
+<p class="meta-line">llama.cpp（GitHub Releases） · 2026-10-24 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://opengraph.githubassets.com/0183e934e313f4487bf40fdf643a422e49489de25fa419ccbe0556be68faf794/ggml-org/llama.cpp/releases/tag/b11868" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong>：llama.cpp b11868——Hexagon 后端为 HMX flash attention 引入 KV-head team split。
+<strong>要点</strong>：合并 FA_HEAD_SPLIT 与 FA_SPLIT 为单一开关：0 仅 token split、1 为 head-split 并在 KV head 少于核数时附加 team-split。
+<strong>关键数字</strong>：示例 gemma-4 仅 2 个 KV head 跑 4 核，team-split 让闲置核参与。
+<strong>为什么值得看</strong>：解决 KV head 少于核数致核闲置的场景，把多核并行扩展到 team 协作，提升端侧推理利用率。</p>
+<p><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b11868">原文链接</a></p>
+<p><a class="origin" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11868">阅读原文 ↗</a></p>
+</body>
+</html>

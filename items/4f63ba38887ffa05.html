@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Fix for Softmax and Cross-Entropy</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>A Fix for Softmax and Cross-Entropy</h1>
+<p class="meta-line">Google DeepMind · 2026-10-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：标准 softmax 与交叉熵实现存在两个数值 bug，如何影响训练？
+<strong>方法</strong>：定位 Softmax Collapse（目标 logit 过大时梯度舍入为零）与 Softmax Cancellation（师生 logit 接近时产生非零梯度），给出三个函数的简单修复。
+<strong>关键数字</strong>：修复消除 "Slingshot"、加速带权重衰减的 grokking、防精度崩溃、止蒸馏漂移；logit 增长受权重衰减与 Adam ε 平衡约束。
+<strong>为什么值得看</strong>：bug 影响所有主流框架，修复即换即用，对训练稳定性与蒸馏有普适价值。</p>
+<p><a href="https://arxiv.org/abs/2610.31642">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.31642">阅读原文 ↗</a></p>
+</body>
+</html>

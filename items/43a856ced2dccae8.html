@@ -22,9 +22,11 @@
 <h1>SlideDP: Scaling Host-Resident LLM Fine-Tuning Across Multiple GPUs</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-28 · 论文PDF</p>
 
-<p>SlideDP：跨多 GPU 扩展主机驻留内存的 LLM 微调</p>
-<blockquote><p>Host-resident layer streaming enables full-parameter LLM fine-tuning beyond GPU memory, but data-parallel ranks compete for shared host resources. Replicated transfers amplify traffic, while strong scaling can expose host work as computation windows shrink. We present SlideDP, a synchronous data-parallel runtime for shared-host multi-GPU systems. It maintains one authoritative host state, decouples communication routes from state layout, and pipelines parameter delivery, gradient aggregation, and CPU updates across ranks and chunks. An analytical step-time model characterizes resource bottlenecks and pipeline exposure; runtime measurements guide communication, chunking, and activation policies under a GPU memory budget. In matched-batch sweeps, SlideDP achieves geometric-mean throughput ratios of 1.46-2.64$\times$ over SlideFormer, MegaTrain, and ZeRO-Offload. On four H100s, SlideDP approaches GPU-resident FSDP2 throughput for Qwen3-14B at a smaller batch size. With a larger batch, it processes over 1M tokens per step and exceeds FSDP2's measured peak throughput by 11.2%. Separately, it supports 256K-token sequences for the same model and fine-tunes Qwen2.5-72B on four RTX 4090 GPU…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：主机驻留微调多卡扩展时 rank 争抢共享主机资源，如何提升吞吐？
+<strong>方法</strong>：SlideDP 同步数据并行运行时：单一权威主机状态、解耦通信路由与状态布局，流水化参数下发、梯度聚合与 CPU 更新。
+<strong>关键数字</strong>：吞吐为 SlideFormer/MegaTrain/ZeRO-Offload 的 1.46–2.64 倍；四张 H100 每步超 1M token、超 FSDP2 峰值 11.2%；四张 RTX 4090 微调 Qwen2.5-72B。
+<strong>为什么值得看</strong>：把主机驻留微调扩展到多卡共享主机，显存受限场景全参微调的实用方案。</p>
+<p><a href="https://arxiv.org/abs/2609.34162">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.34162">阅读原文 ↗</a></p>
 </body>
 </html>

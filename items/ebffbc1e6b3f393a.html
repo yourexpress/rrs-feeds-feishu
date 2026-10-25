@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>llama.cpp b11866: metal remove mul_mm_id amax rescaling (#30924)</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>llama.cpp b11866: metal remove mul_mm_id amax rescaling (#30924)</h1>
+<p class="meta-line">llama.cpp（GitHub Releases） · 2026-10-24 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://opengraph.githubassets.com/effeb9319a16c4af51826478c2e921a386b7b972268d74c16643d832e4e2d5f6/ggml-org/llama.cpp/releases/tag/b11866" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong>：llama.cpp b11866——Metal 后端移除 mul_mm_id 的 amax rescaling。
+<strong>要点</strong>：src1 的 2 次幂缩放改为计算图内 per-expert-token amax；删除两段式归约 kernel、scratch buffer、FP32 分支及测试。
+<strong>关键数字</strong>：删除自 #26223 引入的分支；验证环境 Qwen3.8-Flash-Next-GGUF。
+<strong>为什么值得看</strong>：MoE 数值缩放路径清理，消除冗余 kernel 与 FP32 分支，Metal 后端开发者值得跟进。</p>
+<p><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b11866">原文链接</a></p>
+<p><a class="origin" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11866">阅读原文 ↗</a></p>
+</body>
+</html>

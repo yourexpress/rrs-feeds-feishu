@@ -22,9 +22,11 @@
 <h1>Zero Sum SVD: Balancing Loss Sensitivity for Low Rank LLM Compression</h1>
 <p class="meta-line">arXiv / Ali Abbasi 等 · 2026-09-28 · 论文PDF</p>
 
-<p>【修订版】Advances in large language models have driven strong performance across many tasks, but t…</p>
-<blockquote><p>Advances in large language models have driven strong performance across many tasks, but their memory and compute costs still hinder deployment. SVD-based compression reduces storage and can speed up inference via low-rank factors, yet performance depends on how rank is allocated under a global compression ratio. Prior methods often use homogeneous ranks for similarly sized matrices, despite large differences in loss sensitivity, or rely on expensive iterative pre-truncation optimization to determine per matrix ranks. We propose Zero Sum SVD (ZS-SVD), a post-training method that performs global singular component selection using activation whitening and first-order calibration loss estimates in whitened coordinates. ZS-SVD prunes components across the whole model with a zero sum rule that keeps the cumulative predicted loss change near zero, automatically yielding heterogeneous ranks without solving a rank allocation optimization. Motivated by evidence that gradients near pretrained solutions exhibit low rank structure, we also introduce an optional lightweight correction that applies a single projected gradient update after truncation, followed by re-truncation. Extensive experimen…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：SVD 压缩的 rank 分配决定质量，同质 rank 忽视损失敏感性差异，迭代优化又昂贵，能否自动分配异构 rank？
+<strong>方法</strong>：ZS-SVD 后训练方法：白化坐标下用激活白化与一阶校准损失做全局奇异分量选择，以零和规则剪枝保持累计预测损失变化近零，免去 rank 优化；可选截断后单次投影梯度更新修正。
+<strong>关键数字</strong>：多个 LLM 架构、多基准与压缩比下一致优于现有方法；代码开源。
+<strong>为什么值得看</strong>：把 rank 分配从昂贵迭代变成一次零和规则全局选择，简单有效，低秩压缩的实用新路径。</p>
+<p><a href="https://arxiv.org/abs/2602.02848">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2602.02848">阅读原文 ↗</a></p>
 </body>
 </html>

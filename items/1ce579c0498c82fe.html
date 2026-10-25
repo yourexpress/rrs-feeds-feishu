@@ -22,9 +22,11 @@
 <h1>WaveAlign: Cache-Aware Query-Row Scheduling for Sparse Attention in Long-Video Generation</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-09-28 · 论文PDF</p>
 
-<p>WaveAlign：长视频生成稀疏注意力的缓存感知查询行调度</p>
-<blockquote><p>Long-video generation with diffusion transformers (DiTs) produces extremely long token sequences, making attention a dominant inference bottleneck. Dynamic sparse attention reduces computation, but its realized speedup remains limited because irregular query-row execution degrades L2 cache locality and increases HBM traffic. We present WaveAlign, a lightweight, cache-aware query-row reordering framework for dynamic sparse attention. WaveAlign formulates row ordering as an optimization problem and approximates it with two stages. The first stage derives a low-rank SVD representation of sparse-mask rows and groups query rows with similar K/V access patterns, increasing K/V overlap among concurrently scheduled rows. The second stage exploits streaming GPU scheduling by sorting rows within each wave in descending order of their K/V-block counts, so that short rows from the current wave are followed by long rows from the next. This aligns K/V accesses across wave boundaries and enables shared blocks to be reused before eviction. An adaptive skip module avoids unprofitable reordering. By only permuting query and mask rows, WaveAlign preserves sparse-attention semantics and requires no ch…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：长视频生成中动态稀疏注意力受不规则查询行拖累，L2 局部性差、HBM 流量高，如何兑现加速？
+<strong>方法</strong>：WaveAlign 缓存感知查询行重排：对掩码行低秩 SVD 分组相似 K/V 访问，跨波边界对齐访问、驱逐前复用共享块。
+<strong>关键数字</strong>：L2 命中率 28.48%–36.35%→79.38%–89.06%，HBM 读流量最高降 92.11%，kernel 提速 1.25 倍、端到端 1.17 倍无质量损失。
+<strong>为什么值得看</strong>：把稀疏注意力理论加速兑现为实际，无侵入适配现有栈，对长视频 DiT 推理很有价值。</p>
+<p><a href="https://arxiv.org/abs/2609.34814">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.34814">阅读原文 ↗</a></p>
 </body>
 </html>

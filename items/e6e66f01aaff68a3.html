@@ -22,9 +22,11 @@
 <h1>Torch-PIM: Automated Profile-Guided PIM Offloading for PyTorch</h1>
 <p class="meta-line">arXiv (cs.AR) · 2026-09-28 · 论文PDF</p>
 
-<p>Torch-PIM：PyTorch 的自动化 profile 引导 PIM 卸载</p>
-<blockquote><p>Modern deep learning (DL) workloads are limited by data movement, and processing-in-memory (PIM) targets this bottleneck by placing compute units near the memory. However, PyTorch and other DL frameworks lack compiler support for making this decision on the code they lower: existing offloading frameworks target hand-written C/C++ programs, while those that address DL fix the candidate set to a list of operator types before lowering. We present Torch-PIM, a compiler framework that uses profile-guided optimization (PGO) to decide host-versus-PIM placement over the loop nests that progressive lowering materializes. Every parallel loop nest the pipeline emits enters the candidate space, and each is assessed in two stages: the amount of work it carries, and its memory boundedness. Every quantity the assessment consumes is profiled on the host or obtained from the multi-level intermediate representation (MLIR) of the code. Across PIM configurations of 32 to 128 cores, Torch-PIM's offloading decisions yield speedups of up to 8.6x on tensor operators, 2.9x on MLP, 4.4x on Attention, 5.1x on GPT-J-6B, and 3.6x on LLaMA-7B over CPU-only execution.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：DL 数据搬运成瓶颈，PIM 把计算放内存旁可缓解，但 PyTorch 缺编译器支持，如何自动化 host/PIM 决策？
+<strong>方法</strong>：Torch-PIM 用 PGO 对渐进 lowering 的循环嵌套逐层决策：并行循环嵌套进候选空间，按"工作量+内存受限程度"两阶段评估。
+<strong>关键数字</strong>：PIM 32–128 核时相对纯 CPU：张量算子最高 8.6 倍、MLP 2.9 倍、Attention 4.4 倍、GPT-J-6B 5.1 倍、LLaMA-7B 3.6 倍。
+<strong>为什么值得看</strong>：把 PIM 卸载从手工/算子枚举推进到编译器自动决策，可落 PyTorch 生态。</p>
+<p><a href="https://arxiv.org/abs/2609.34657">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.34657">阅读原文 ↗</a></p>
 </body>
 </html>
