@@ -22,9 +22,11 @@
 <h1>DimGrow: Memory-Efficient Field-level Embedding Dimension Search</h1>
 <p class="meta-line">arXiv / Yihong Huang 等 · 2026-09-29 · 论文PDF</p>
 
-<p>【修订版】Key feature fields need bigger embedding dimensionality, others need smaller.</p>
-<blockquote><p>Key feature fields need bigger embedding dimensionality, others need smaller. This demands automated dimension allocation. Existing approaches, such as pruning or Neural Architecture Search (NAS), require training a memory-intensive SuperNet that enumerates all possible dimension combinations, which is infeasible for large feature spaces. We propose DimGrow, a lightweight approach that eliminates the SuperNet requirement. Starting training model from one dimension per feature field, DimGrow can progressively expand/shrink dimensions via importance scoring. Dimensions grow only when their importance consistently exceed a threshold, ensuring memory efficiency. Experiments on three recommendation datasets verify the effectiveness of DimGrow while it reduces training memory compared to SuperNet-based methods.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 推荐系统里不同特征字段需要不同大小的 embedding 维度——如何自动化分配维度？现有剪枝/NAS 需要训练内存密集的 SuperNet 枚举所有维度组合，大特征空间下不可行。</p>
+<p><strong>方法</strong> 提出 DimGrow：从每个特征字段 1 维起步训练，按重要性分数渐进扩/缩维度，只有重要性持续超过阈值才增长，保证内存效率，免去 SuperNet。</p>
+<p><strong>关键数字</strong> 在三个推荐数据集上验证有效性，训练内存相对 SuperNet 方法更低（摘要未给具体数值）。</p>
+<p><strong>为什么值得看</strong> 轻量化的字段级 embedding 维度搜索，推荐系统内存优化可参考的务实方案。</p>
+<p>原文：<a href="https://arxiv.org/abs/2505.12683">DimGrow: Memory-Efficient Field-level Embedding Dimension Search</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2505.12683">阅读原文 ↗</a></p>
 </body>
 </html>

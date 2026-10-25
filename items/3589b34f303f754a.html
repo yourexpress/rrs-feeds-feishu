@@ -22,9 +22,11 @@
 <h1>Hierarchical Compression of Vision-Language Model Benchmarks</h1>
 <p class="meta-line">arXiv / Hyunjong Ok 等 · 2026-09-29 · 论文PDF</p>
 
-<p>Thorough evaluation of vision-language models (VLMs) has become prohibitively expensive, …</p>
-<blockquote><p>Thorough evaluation of vision-language models (VLMs) has become prohibitively expensive, as benchmarks span an ever-broader spectrum of capabilities and new models arrive at a relentless pace. Benchmark compression methods that preserve model rankings at a fraction of the cost are well studied for language models, but for VLMs the question remains under-explored. We present PRIMEBench (Pruning Redundant Items for Multimodal Evaluation), a vision-aware hierarchical benchmark compression framework that substantially reduces evaluation cost while preserving model rankings. This hierarchical framework operates in four stages: data cleaning to remove items answerable without the image and all-correct items, category representative selection to pick one benchmark per capability category, item pruning with Vision-Aware Variance (VAW), and category-count pruning. VAW combines inter-model variance with a vision-dependence score computed from multimodal embeddings alone, while encouraging coverage of diverse items within each benchmark. On models held out from item selection, it has the highest mean fidelity at the released 5% retention. The hierarchical design lets practitioners stop at any…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> VLM 评测越来越贵——能力谱系拓宽、新模型层出不穷；语言模型侧已有保持排序的低成本基准压缩，VLM 侧尚少探索。</p>
+<p><strong>方法</strong> 提出 PRIMEBench：视觉感知的分层基准压缩框架，四阶段——数据清洗（去掉不看图也能答的项与全对项）、按能力类目选代表基准、Vision-Aware Variance（VAW）剪枝条目（结合模型间方差与仅由多模态 embedding 算出的视觉依赖分数）、类目计数剪枝；可停在任意阶段匹配算力预算。</p>
+<p><strong>关键数字</strong> 在未参与条目选择的留出模型上，5% 保留率下平均保真度最高；发布套件移除超 97% 条目同时保持模型排序。</p>
+<p><strong>为什么值得看</strong> 视觉评测压缩的成套方法 + 对模型面板演化的分析，做 VLM 评测基建的人值得读。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.37515">Hierarchical Compression of Vision-Language Model Benchmarks</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.37515">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>EpiKV: Epiphany-Aware KV Cache Eviction Without the Attention Matrix</h1>
 <p class="meta-line">arXiv / Steven Kolawole 等 · 2026-09-29 · 论文PDF</p>
 
-<p>【修订版】Reasoning models can generate chains of thought tens of thousands of tokens long, making …</p>
-<blockquote><p>Reasoning models can generate chains of thought tens of thousands of tokens long, making the key--value (KV) cache that holds them a major bottleneck for inference throughput. Existing eviction policies for long reasoning traces typically rank cached tokens using attention weights, requiring access to the attention matrix and making them incompatible with fast inference kernels. In this work we study the limits of such policies under tight cache budgets. Surprisingly, we find that under the strongest of them the generations that finish are wrong about as often as without eviction; most of the accuracy loss comes from generations that enter loops and run until the length limit, and retaining more tokens according to a fixed importance score exacerbates this behavior. What stops the looping is keeping the tokens the model's recent queries point to, and the forward pass the model already runs reveals them without the attention matrix. Motivated by this observation, we introduce epiphany-aware KV cache eviction EpiKV, which combines hidden-state shifts with the model's recent query--key relevance to rank cached tokens without materializing the attention matrix. On multiple benchmarks, …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 推理模型生成数万 token 的思维链，KV cache 成为吞吐瓶颈；现有驱逐策略依赖注意力权重排序，需要注意力矩阵、与快速推理 kernel 不兼容——能否不碰注意力矩阵做驱逐？</p>
+<p><strong>方法</strong> 研究紧缓存预算下注意力基驱逐的极限：发现最强的注意力基策略下，正常结束的生成出错率与不驱逐时相当，精度损失主要来自陷入循环跑到长度上限的生成，而按固定重要性分数多留 token 反而加剧循环；阻止循环的关键是保留模型近期 query 指向的 token，且前向过程无需注意力矩阵即可揭示它们。据此提出 EpiKV：结合隐状态偏移与近期 query-key 相关性给缓存 token 排序，不物化注意力矩阵。</p>
+<p><strong>关键数字</strong> 多个基准上与最强注意力基驱逐基线持平或更优，直接在 vLLM 未改注意力 kernel 下运行（摘要未给具体数值）。</p>
+<p><strong>为什么值得看</strong> 揭示注意力基驱逐在长推理链上的失效模式，给出与快速 kernel 兼容的替代，推理吞吐优化可直接用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2606.26472">EpiKV: Epiphany-Aware KV Cache Eviction Without the Attention Matrix</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2606.26472">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Block Sparse Flash Attention</h1>
 <p class="meta-line">arXiv / Daniel Ohayon 等 · 2026-09-29 · 论文PDF</p>
 
-<p>【修订版】Modern large language models increasingly require long contexts for reasoning and multi-d…</p>
-<blockquote><p>Modern large language models increasingly require long contexts for reasoning and multi-document tasks, but attention's quadratic complexity creates a severe computational bottleneck. We present Block Sparse Flash Attention (BSFA), a drop-in replacement that accelerates long-context inference while preserving model quality. Unlike methods that predict importance before computing scores, BSFA computes exact query-key similarities to select the top-k most important value blocks for each query. By comparing per-block maximum scores against calibrated thresholds, we skip approximately 50% of the computation and memory transfers for pruned blocks. Our training-free approach requires only a one-time threshold calibration on a small dataset to learn the per-layer and per-head attention score distributions. We provide a CUDA kernel implementation that can be used as a drop-in replacement for FlashAttention. On Llama-3.1-8B, BSFA achieves up to 1.13x end-to-end speedup on LongBench with only a 1.1% accuracy drop, and up to 1.24x on Needle-in-a-Haystack retrieval at a 1% accuracy drop. The attention kernel itself accelerates by up to 1.38x. We compare BSFA against five recent sparse attentio…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 长上下文推理/多文档任务受注意力二次复杂度制约——能否在保持质量的前提下做训练无关的注意力加速？</p>
+<p><strong>方法</strong> 提出 Block Sparse Flash Attention（BSFA），FlashAttention 的即插即用替代：先算精确 query-key 相似度选每个 query 的 top-k 重要 value 块，再把逐块最大分数与校准阈值比较，跳过约 50% 被剪块的运算与内存搬运；只需一次性在小数据集上校准逐层逐头阈值，提供 CUDA kernel。</p>
+<p><strong>关键数字</strong> Llama-3.1-8B 上 LongBench 端到端最高 1.13× 加速、精度仅降 1.1%；Needle-in-a-Haystack 最高 1.24×、精度降 1%；注意力 kernel 本身最高 1.38×；与 SpargeAttention、MInference、FlexPrefill、XAttention、BLASST 五个基线对比，并在 Qwen2.5-7B、A6000/H100 上验证。</p>
+<p><strong>为什么值得看</strong> 训练无关、精确选块而非预测重要性，长上下文推理加速可直接落地。</p>
+<p>原文：<a href="https://arxiv.org/abs/2512.07011">Block Sparse Flash Attention</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2512.07011">阅读原文 ↗</a></p>
 </body>
 </html>

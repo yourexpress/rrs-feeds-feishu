@@ -22,9 +22,11 @@
 <h1>Decoupled Early Exits for Task-Dependent Compute Allocation in Flow-Matching VLAs</h1>
 <p class="meta-line">arXiv / Riccardo Andrea Izzo 等 · 2026-09-29 · 论文PDF</p>
 
-<p>【修订版】Flow-matching Vision-Language-Action (VLA) models have emerged as a potential solution fo…</p>
-<blockquote><p>Flow-matching Vision-Language-Action (VLA) models have emerged as a potential solution for generalist robot control, designed by combining a pretrained Vision-Language Model (VLM) backbone with an action expert that generates continuous robot actions. While these models exhibit impressive capabilities, due to their very high number of parameters, their computational requirements are often prohibitive for robotics control. To mitigate these inefficiencies, existing methods predominantly skip VLM backbone layers with early exits or reduce denoising steps, while leaving action expert depth untouched. We propose a framework that exposes backbone depth $V$, action expert depth $A$, and denoising steps $D$ as three jointly configurable compute axes in a VLA. Starting from a pretrained VLA, we attach lightweight Exit Transformers (ET) at intermediate depths in both the backbone and the action expert, trained to distil the last layer of the policy into each exit. Furthermore, we introduce a KV Cache synthesis mechanism that manages the missing keys and values of the skipped backbone layers, allowing the action expert to exit deeper than the backbone. Finally, we show that the optimal compu…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Flow-Matching VLA（视觉-语言-动作）模型参数多、计算开销大，制约机器人控制部署；现有方法只跳 VLM 骨干层或减少去噪步数，不动动作专家深度——能否把三个计算轴一起暴露出来按任务分配？</p>
+<p><strong>方法</strong> 提出把骨干深度 V、动作专家深度 A、去噪步数 D 作为三个可联合配置的计算轴；在预训练 VLA 中间深度挂轻量 Exit Transformers（ET）蒸馏策略末层；引入 KV Cache 合成机制补被跳层缺失的 key/value，使动作专家可以比骨干退得更深；无需从头训练原策略。</p>
+<p><strong>关键数字</strong> 每个 exit 仅增参 2.1%（SmolVLA）/ 4.1%（π0.5）；在 LIBERO、Meta-World 两个基准上，联合配置 (V,A,D) 降低延迟 79.2%、FLOPs 31.8%，平均成功率提升 5.6%。</p>
+<p><strong>为什么值得看</strong> 把 VLA 计算分配从"单一剪枝"升级为三维联合配置，机器人控制部署省算力的新思路。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.29382">Decoupled Early Exits for Task-Dependent Compute Allocation in Flow-Matching VLAs</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.29382">阅读原文 ↗</a></p>
 </body>
 </html>

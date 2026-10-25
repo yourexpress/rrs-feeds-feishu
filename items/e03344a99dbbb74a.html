@@ -22,9 +22,11 @@
 <h1>KV-streams for Efficient Compaction in Agentic Reinforcement Learning</h1>
 <p class="meta-line">arXiv / Emiliano Penaloza 等 · 2026-09-29 · 论文PDF</p>
 
-<p>【修订版】Scaling the horizon of agentic LLMs is bottlenecked by the need to fit ever longer contex…</p>
-<blockquote><p>Scaling the horizon of agentic LLMs is bottlenecked by the need to fit ever longer context traces in GPU memory. Context compaction has been the most popular mechanism to alleviate this issue, keeping GPU memory constant for a given trace. Unfortunately, most compaction strategies rely on prefilling the LLM context many times over, hindering training throughput. To alleviate this bottleneck and enable efficient trainable compaction, we propose KV-streams, a plug-and-play strategy compatible with any compaction strategy that substantially increases throughput while showing no evidence of hindering performance. KV-streams enable scalable compaction by streaming the KV cache forward rather than flushing it after each compaction. We show that KV-streams enable three different compaction strategies, achieving a 2.6 to 5x wall-clock speedup in training. Beyond efficiency, we find that the streamed KV cache can act as a recurrent state, carrying forward information that has long since disappeared from the context. Specifically, in a controlled setting we show that, contrary to prior work, RL alone is all that is needed for this behavior to emerge. Overall, we show KV-streams to be an effi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> agentic LLM 扩展受限于 GPU 内存装不下越来越长的上下文轨迹；上下文压实（compaction）被广泛采用，但多数策略要反复 prefill LLM 上下文、拖慢训练吞吐——能否让压实可高效训练？</p>
+<p><strong>方法</strong> 提出 KV-streams：即插即用，把 KV cache 前向流式传递而非每次压实后清空，兼容任意压实策略；流式 KV 还可充当循环状态，携带早已从上下文消失的信息，且受控实验显示仅 RL 就足以让该行为涌现。</p>
+<p><strong>关键数字</strong> 三种不同压实策略下训练墙钟加速 2.6–5×，未见性能受损证据。</p>
+<p><strong>为什么值得看</strong> "流式 KV 当循环状态"让压实从训练瓶颈变成效率杠杆，agentic RL 训练管线可直接套用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.35750">KV-streams for Efficient Compaction in Agentic Reinforcement Learning</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.35750">阅读原文 ↗</a></p>
 </body>
 </html>

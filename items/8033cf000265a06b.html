@@ -22,9 +22,11 @@
 <h1>HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers</h1>
 <p class="meta-line">arXiv / Lizhi Yang 等 · 2026-09-29 · 论文PDF</p>
 
-<p>【修订版】Humanoid loco-manipulation benefits from one controller to coordinate locomotion, arm mov…</p>
-<blockquote><p>Humanoid loco-manipulation benefits from one controller to coordinate locomotion, arm movements, and fall recovery. These behaviors are difficult to learn together from scratch because they require different skills and objectives. We present HANDOFF, a training architecture that distills motion-tracking, locomotion, and recovery teachers into one 29-DoF policy, using context-conditioned KL losses over separate action slices and a soft mixture of experts. Commanded velocity continuously blends body supervision, while a binary recovery flag assigns the full action to the recovery teacher. The resulting controller takes a compact 10-D task-space command rather than a dense kinematic stream and does not switch policies at runtime. On the Unitree G1, HANDOFF matches state-of-the-art velocity tracking and obtains the largest robust manipulation workspace in a matched adapted-interface benchmark. The same controller executes natural-language-driven, multi-stage loco-manipulation tasks in simulation and hardware experiments without further data collection or fine-tuning.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 人形机器人需要单一控制器协调行走、手臂操作与跌倒恢复——这些行为目标各异，从零联合学习困难，能否蒸馏多教师？</p>
+<p><strong>方法</strong> 提出 HANDOFF 训练架构：把运动跟踪、行走与恢复三个教师蒸馏进一个 29-DoF 策略，用上下文条件 KL 损失分动作切片 + 软 MoE；指令速度连续混合身体监督，二元恢复标志把完整动作交给恢复教师；控制器只吃紧凑的 10-D 任务空间命令，运行时不切换策略。</p>
+<p><strong>关键数字</strong> Unitree G1 上匹配 SOTA 速度跟踪，在匹配适配接口基准中获得最大鲁棒操作工作空间；同一控制器无需再收集数据或微调即可在仿真与硬件上执行自然语言驱动的多阶段操作任务。</p>
+<p><strong>为什么值得看</strong> 人形操作"一个控制器管到底"的蒸馏方案，机器人全栈控制可借鉴。</p>
+<p>原文：<a href="https://arxiv.org/abs/2606.06493">HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2606.06493">阅读原文 ↗</a></p>
 </body>
 </html>

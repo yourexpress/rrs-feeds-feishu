@@ -22,9 +22,11 @@
 <h1>Beyond Retraining-Free MoE Compression: A Cost-Normalized Study of Post-Compression Adjustment</h1>
 <p class="meta-line">arXiv / Sieun Hyeon 等 · 2026-09-29 · 论文PDF</p>
 
-<p>【修订版】Retraining-free MoE compression reduces deployment memory by pruning or merging experts, …</p>
-<blockquote><p>Retraining-free MoE compression reduces deployment memory by pruning or merging experts, but often treats the compressed checkpoint as the final artifact. We argue that this view is incomplete: compressed MoE checkpoints are better understood as compressed initializations that benefit from a tiny post-compression adjustment stage. Across two MoE LLM backbones, four pruning/merging methods, three expert-retention ratios, and 28 benchmarks, we compare LM fine-tuning and teacher-based KD under matched small-data budgets and measured GPU costs. Using only 3,000 C4 examples and a single epoch of adjustment, Full FT recovers 37.3% of the original-to-compressed performance gap on average. Moreover, LM fine-tuning is more cost-effective than standard token-level KD, and full-parameter adjustment gives the strongest cost--recovery trade-off among the tested scopes. These results suggest that retraining-free compression should be paired with small post-compression adjustment to recover a substantial portion of the performance lost during compression.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 免重训 MoE 压缩（剪枝/合并专家）常把压缩后的 checkpoint 当最终产物——但压缩 checkpoint 更适合理解为"压缩初始化"，是否需要一段小的压缩后调整来恢复性能？</p>
+<p><strong>方法</strong> 在两个 MoE LLM 骨干、四种剪枝/合并方法、三种专家保留率、28 个基准上，对比 LM 微调与基于教师的 KD，匹配小数据预算并实测 GPU 成本。</p>
+<p><strong>关键数字</strong> 仅用 3,000 条 C4 样本 + 单 epoch 调整，Full FT 平均恢复原始-压缩性能差距的 37.3%；LM 微调比标准 token 级 KD 更具成本效益，全参数调整在成本-恢复权衡中最优。</p>
+<p><strong>为什么值得看</strong> "压缩即初始化"重新定义了压缩流程的收尾步骤，成本极低收益明确，MoE 部署优化可借鉴。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.06076">Beyond Retraining-Free MoE Compression: A Cost-Normalized Study of Post-Compression Adjustment</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.06076">阅读原文 ↗</a></p>
 </body>
 </html>

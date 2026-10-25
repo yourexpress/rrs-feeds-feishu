@@ -22,9 +22,11 @@
 <h1>Beyond Selection: Token Parameterization for Extreme Visual Token Compression</h1>
 <p class="meta-line">arXiv / Rui Zhong 等 · 2026-09-29 · 论文PDF</p>
 
-<p>【修订版】Visual-token compression is effective for improving the efficiency of vision-language mod…</p>
-<blockquote><p>Visual-token compression is effective for improving the efficiency of vision-language models, but under extreme compression budgets, token pruning can break visual grounding while learned resamplers increase parameter count, attention cost, and training complexity. We revisit compression through a token parameterization lens, separating (i) basis transformation and structured truncation (retained subspace/compressibility) from (ii) coordinate organization (optimization and cross-modal alignment). This view yields two coupled objectives, compressibility and learnability, which we formalize as unified functionals. Guided by these objectives, we design Braco, a lightweight four-step coder that combines transform-basis truncation, input-independent basis-coordinate embeddings, budget-dependent orthogonal re-parameterization, and learned spatial residual tokens from lightweight pooling. Experiments show that Braco forms the favorable empirical accuracy-efficiency frontier under $23\times$--$64\times$ compression and remains competitive at $144\times$, reaching 95.2% accuracy while reducing prefill FLOPs by 84.2%--86.7% relative to the uncompressed upper bound. Against prior methods, Bra…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 视觉 token 压缩能提升 VLM 效率，但在极端压缩预算下，token 剪枝会破坏视觉 grounding，而可学习 resampler 又增加参数量、注意力开销与训练复杂度——能否从"token 参数化"视角重做压缩？</p>
+<p><strong>方法</strong> 将压缩拆成两部分：(i) 基变换与结构化截断（保留子空间/可压缩性）与 (ii) 坐标组织（优化与跨模态对齐），形式化为两个耦合目标 compressibility 与 learnability；据此设计轻量四步编码器 Braco：变换基截断、输入无关的基-坐标嵌入、预算相关正交重参数化、轻量池化学得的空间残差 token。</p>
+<p><strong>关键数字</strong> 在 23×–64× 压缩下形成最优精度-效率前沿，144× 下仍具竞争力，达到 95.2% 精度、prefill FLOPs 相对未压缩上界降 84.2%–86.7%；相对先前方法精度持平或更高，端到端加速最高约 36%，压缩器延迟/FLOPs 低 16.6×/78.8×。</p>
+<p><strong>为什么值得看</strong> 极端压缩预算下"剪枝 vs resampler"之外的新路线，视觉 token 压缩选型可读。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.35232">Beyond Selection: Token Parameterization for Extreme Visual Token Compression</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.35232">阅读原文 ↗</a></p>
 </body>
 </html>

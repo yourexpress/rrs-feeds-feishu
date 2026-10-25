@@ -21,9 +21,12 @@
 <body>
 <h1>Serving DeepSeek-V4.1-Flash at Scale: vLLM Matches DeepInfer and Scales to GB300 NVL72</h1>
 <p class="meta-line">vLLM Blog · 2026-10-23 · 技术博客 / 每日精选</p>
-
-<p>vLLM 大规模服务 DeepSeek-V4.1-Flash：P/D disaggregation + Wide-EP 在 GB300 NVL72 上与 DeepInfer 对标并扩展，验证开源推理栈在旗舰 MoE 上的规模化能力</p>
-<p class="note">中文省流版整理中，可先阅读原文。</p>
+<img class="hero" src="https://vllm.ai/blog-assets/figures/2026-10-23-deepseek-v41-flash-pd-wide-ep/hero.png" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong> vLLM 用通用引擎在 GB300 NVL72 整机架上大规模服务 DeepSeek-V4.1-Flash，与 DeepSeek 自家引擎 DeepInfer 对标。</p>
+<p><strong>要点</strong> P/D disaggregation（prefill/decode 分离）+ Wide-EP 扩展；prefill 用小 DEP 实例、decode 用 Wide-EP + EPLB；指出 CPU 开销在 NVL72 规模成为关键；专用 decode 路径压低单用户延迟；通用引擎匹配模型专用引擎的关键是对模型结构（MoE 稀疏性、nextn）的理解与基于 DeepSeek 开源 kernel 的工程化。</p>
+<p><strong>关键数字</strong> SemiAnalysis AgentX 上 954K tokens/s/GPU，用户 P90 196 tokens/s，是首篇单节点结果的 7.9×；DeepSeek 非高峰电价下 $38.96/GPU-hour；单用户专用 decode 路径 826 tokens/s；与 DeepInfer 对比，batch 8–256 下 decode 吞吐差在 6% 以内。</p>
+<p><strong>为什么值得看</strong> 旗舰 MoE 模型上开源推理栈与官方引擎正面交锋的数据点，规模化推理选型可参考。</p>
+<p>原文：<a href="https://vllm.ai/blog/2026-10-23-deepseek-v41-flash-pd-wide-ep">Serving DeepSeek-V4.1-Flash at Scale: vLLM Matches DeepInfer and Scales to GB300 NVL72</a></p>
 <p><a class="origin" href="https://vllm.ai/blog/2026-10-23-deepseek-v41-flash-pd-wide-ep">阅读原文 ↗</a></p>
 </body>
 </html>

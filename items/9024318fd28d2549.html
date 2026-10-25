@@ -22,9 +22,11 @@
 <h1>Federation of Experts: Communication Efficient Distributed Inference for Large Language Models</h1>
 <p class="meta-line">arXiv / Muhammad Shahir Abdurrahman 等 · 2026-09-29 · 论文PDF</p>
 
-<p>【修订版】Mixture of experts has emerged as the primary mechanism for making Large Language Models …</p>
-<blockquote><p>Mixture of experts has emerged as the primary mechanism for making Large Language Models (LLMs) computationally efficient. However, in distributed settings, communicating token embeddings between experts is a significant bottleneck. We present the novel Federation of Experts (FoE) architecture. FoE restructures the MoE block of a transformer layer into multiple MoE clusters. Each cluster is responsible for only one of the KV heads and expert parallelism is applied between those experts. Between clusters, a sum synchronizes the post-attention residuals, which then drives routing and dispatch for the next MoE block. In a single-node setting, FoE completely eliminates all-to-all communication as all experts within a group are contained on the same GPU. In multi-node settings, FoE confines all-to-all communication to the intra-node fabric, thus significantly reducing communication overhead. An implementation of FoE finds that on LongBench, FoE significantly improves inference throughput and latency in both single-node and multi-node settings, reducing end-to-end prefill latency by up to 5.88x, TTFT by 3.66x, and TPOT by 1.53x. It does so while achieving comparable generation quality to…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> MoE 是 LLM 提效的主要机制，但分布式场景下专家间通信 token embedding 是显著瓶颈——能否重构 MoE 块消除 all-to-all 通信？</p>
+<p><strong>方法</strong> 提出 Federation of Experts（FoE）架构：把 transformer 层的 MoE 块重构成多个 MoE 集群，每集群只负责一个 KV head，集群内专家并行；集群间用一次求和同步 post-attention 残差，驱动下一 MoE 块的路由与分发。单节点内 all-to-all 完全消除，多节点下 all-to-all 被限制在节点内互联。</p>
+<p><strong>关键数字</strong> LongBench 上单节点与多节点均显著提升推理吞吐与延迟：端到端 prefill 延迟最高降 5.88×、TTFT 降 3.66×、TPOT 降 1.53×，生成质量与同规模同配置 MoE 相当。</p>
+<p><strong>为什么值得看</strong> 用"每集群一头"的重构把分布式 MoE 通信成本压到节点内，分布式推理架构值得关注。</p>
+<p>原文：<a href="https://arxiv.org/abs/2605.06206">Federation of Experts: Communication Efficient Distributed Inference for Large Language Models</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2605.06206">阅读原文 ↗</a></p>
 </body>
 </html>

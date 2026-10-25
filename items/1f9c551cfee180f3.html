@@ -22,9 +22,11 @@
 <h1>Data-Free Pruning of Self-Attention Layers in LLMs</h1>
 <p class="meta-line">arXiv / Dhananjay Saikumar 等 · 2026-09-29 · 论文PDF</p>
 
-<p>【修订版】Many self-attention sublayers in large language models (LLMs) can be removed with little …</p>
-<blockquote><p>Many self-attention sublayers in large language models (LLMs) can be removed with little to no loss. We attribute this to the Attention Suppression Hypothesis: during pre-training, some deep attention layers learn to mute their own contribution, leaving the residual stream and the MLP to carry the representation. We propose Gate-Norm, a one-shot, weight-only criterion that ranks attention sublayers by query-key coupling and removes the least coupled ones, requiring no calibration data, no forward passes, no fine-tuning, and no specialized kernels. On 40-layer, 13B-parameter LLaMA models, Gate-Norm prunes the model in under a second. Pruning 8-16 attention sublayers yields up to $1.30\times$ higher inference throughput while keeping average zero-shot accuracy within 1.5 percentage points of the unpruned baseline across BoolQ, RTE, HellaSwag, WinoGrande, ARC-Easy/Challenge, and OpenBookQA. Across these settings, Gate-Norm matches data-driven pruning methods in accuracy while being $\sim 1000\times$ faster to score layers, enabling practical, data-free compression of LLMs.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 大模型里许多自注意力子层可以近乎无损地移除——能否用一个无需数据的快速准则找出它们？</p>
+<p><strong>方法</strong> 提出 Attention Suppression Hypothesis：预训练中部分深层注意力层学会"自我静音"，表征由残差流与 MLP 承担；据此设计 Gate-Norm，一次性、仅权重的准则，按 query-key 耦合度给注意力子层排序并移除耦合最弱者，无需校准数据、前向、微调或专用 kernel。</p>
+<p><strong>关键数字</strong> 40 层 13B LLaMA 上不到 1 秒完成剪枝；剪掉 8–16 层注意力，推理吞吐最高提升 1.30×，BoolQ/RTE/HellaSwag/WinoGrande/ARC-Easy/Challenge/OpenBookQA 平均零样本精度损失在 1.5 个百分点内；打分比数据驱动剪枝快约 1000×。</p>
+<p><strong>为什么值得看</strong> 秒级、零数据的注意力层剪枝，推理压缩清单里值得一试的手段。</p>
+<p>原文：<a href="https://arxiv.org/abs/2512.20636">Data-Free Pruning of Self-Attention Layers in LLMs</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2512.20636">阅读原文 ↗</a></p>
 </body>
 </html>

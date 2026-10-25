@@ -22,9 +22,11 @@
 <h1>Jet-Long: Efficient Long-Context Extension with Dynamic Bifocal RoPE</h1>
 <p class="meta-line">arXiv / Haozhan Tang 等 · 2026-09-29 · 论文PDF</p>
 
-<p>【修订版】Modern LLMs are increasingly deployed in long-context applications such as retrieval-augm…</p>
-<blockquote><p>Modern LLMs are increasingly deployed in long-context applications such as retrieval-augmented generation, repository-level coding, and agentic workflows whose accumulated reasoning and tool traces routinely push the input an order of magnitude past the pretraining window, making zero-shot context extension the dominant deployment path for open-weight checkpoints. The dominant zero-shot methods (YaRN, Self-Extend, DCA) fix a single rescaling factor up front, so an aggressive factor sacrifices short-context fidelity while a conservative one breaks down at long contexts; recent length-aware variants adapt the mapping, but with a fitted or distance-dependent schedule. We propose Jet-Long, a tuning-free zero-shot method that pairs a local RoPE-faithful window with a long-range window whose rescaling factor adapts dynamically to the current sequence length via a parameter-free analytic schedule, recovering the base model exactly at short inputs while extrapolating cleanly at long ones. An inclusion-exclusion attention merge and on-the-fly RoPE correction enable a fused CuTe implementation. On H100 at 64K-128K, prefill retains 83-88% of FlashAttention-3 throughput across the evaluated Qw…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 零样本长上下文扩展（YaRN、Self-Extend、DCA）固定单一缩放因子——激进因子伤短上下文保真度、保守因子长上下文失效；能否自适应？</p>
+<p><strong>方法</strong> 提出 Jet-Long，免调参零样本方法：局部 RoPE 保真窗口 + 长程窗口，后者缩放因子按当前序列长度用无参数解析调度动态适配，短输入精确恢复基座模型、长输入干净外推；含 inclusion-exclusion 注意力合并与实时 RoPE 修正，提供融合 CuTe 实现。</p>
+<p><strong>关键数字</strong> H100 上 64K–128K prefill 保持 FlashAttention-3 吞吐的 83–88%，88–93% 于匹配 CuTe 对照组；Qwen3-8B 单 batch 生成达 FA3 的 1.04–1.08×；Qwen3-1.7B/4B/8B 到 128K 上下文，RULER 相对最强基线 +4.79/+2.18/+2.03 个百分点，HELMET-RAG 最佳总体精度、PG-19 困惑度最低；还覆盖 Meta-Llama-3-8B 与后训练 Qwen3、Jet-Nemotron 混合架构。</p>
+<p><strong>为什么值得看</strong> 免调参、动态缩放且带高效 kernel 的长上下文扩展，多模型验证充分，部署价值直接。</p>
+<p>原文：<a href="https://arxiv.org/abs/2607.07740">Jet-Long: Efficient Long-Context Extension with Dynamic Bifocal RoPE</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2607.07740">阅读原文 ↗</a></p>
 </body>
 </html>

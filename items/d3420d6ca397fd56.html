@@ -22,9 +22,11 @@
 <h1>Accelerating Transfer-Learning-Based Autotuning with Predictive LLVM IR Performance Ranking</h1>
 <p class="meta-line">arXiv / Md Arafat Hossain 等 · 2026-09-29 · 论文PDF</p>
 
-<p>【修订版】As the complexity of High Performance Computing (HPC) ecosys- tems continually increases,…</p>
-<blockquote><p>As the complexity of High Performance Computing (HPC) ecosys- tems continually increases, achieving optimal performance becomes a challenge. Traditional performance autotuning techniques pro- vide promising means to navigate this complexity, these techniques remain computationally intensive and require many evaluations to find optimal configurations. This work proposes an autotuning framework that designs a machine learning-based ensemble LLVM Intermediate Representa- tion (IR) ranker, Neural Configuration Scorer (NCS). NCS ranks the performance of IRs sampled by a transfer-learning-based autotuner, improving the efficiency of the tuning process by reducing tuning overheads and circumventing subpar evaluations. By leveraging knowledge from related tasks, we are able to effectively exploit the transfer relationship to access high-performing configurations in fewer samples than traditional techniques that rely upon itera- tive refinement. Our framework can achieve similar performance improvements as state-of-the-art autotuning techniques with up to 61.67% fewer evaluations, averaging 27.85% fewer evaluations across various HPC benchmarks.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> HPC 生态复杂度上升，传统性能自动调优（autotuning）需要大量评测才能找到最优配置、计算开销大——能否用机器学习给 LLVM IR 候选排序来加速调优？</p>
+<p><strong>方法</strong> 提出基于集成 LLVM IR 排序器的调优框架 Neural Configuration Scorer（NCS）：对迁移学习式自动调优器采样的 IR 做性能排序，减少低质评测，利用相关任务间的迁移关系在更少样本下触及高性能配置。</p>
+<p><strong>关键数字</strong> 与 SOTA 自动调优技术达到相近性能提升，最多减少 61.67% 评测次数，多个 HPC 基准平均减少 27.85%。</p>
+<p><strong>为什么值得看</strong> 把"IR 级性能预测"嵌入调优循环，是编译器自动调优减开销的实用方向。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.15807">Accelerating Transfer-Learning-Based Autotuning with Predictive LLVM IR Performance Ranking</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.15807">阅读原文 ↗</a></p>
 </body>
 </html>

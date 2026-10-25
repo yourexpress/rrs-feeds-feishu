@@ -22,9 +22,11 @@
 <h1>GradLev: Token-Parallel Test-Time Training Via Costate Prediction</h1>
 <p class="meta-line">arXiv / Bo Liu 等 · 2026-09-29 · 论文PDF</p>
 
-<p>【修订版】Test-time training (TTT) allows a model to improve its predictions at inference time by u…</p>
-<blockquote><p>Test-time training (TTT) allows a model to improve its predictions at inference time by updating weights after every observed token. However, sequential gra- dient writes make parallel training difficult. We observe that, given layer inputs and activation gradients (costates), online gradient descent admits exact parallel scans for both forward evaluation and reverse backpropagation. GradLev lever- ages this duality: a causal auxiliary network predicts costates across all tokens in parallel; associative scans compute the adapted weights and forward activations and propagate gradients backward; and the resulting gradient targets supervise the predictor via a consistency loss. Exact consistency guarantees exact recovery of the sequential online learner. At deployment, the auxiliary predictor is discarded, and the model updates natively via token-by-token forward and backward passes.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 测试时训练（TTT）让模型每观察一个 token 就更新权重以改进预测，但顺序梯度写入使并行训练困难——能否并行化？</p>
+<p><strong>方法</strong> 观察到给定层输入与激活梯度（costate），在线梯度下降的前向评估与反向传播都允许精确并行扫描；GradLev 据此用因果辅助网络并行预测所有 token 的 costate，关联扫描计算自适应权重与前向激活并回传梯度，一致性损失监督预测器；精确一致性保证精确恢复顺序在线学习器，部署时丢弃辅助网络。</p>
+<p><strong>关键数字</strong> 摘要未给具体性能数字；核心主张是"精确恢复顺序在线学习器"的理论保证。</p>
+<p><strong>为什么值得看</strong> 把 TTT 的顺序约束变成可并行扫描，测试时训练提速的理论新思路。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.34174">GradLev: Token-Parallel Test-Time Training Via Costate Prediction</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.34174">阅读原文 ↗</a></p>
 </body>
 </html>

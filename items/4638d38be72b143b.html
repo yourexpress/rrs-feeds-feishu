@@ -22,9 +22,11 @@
 <h1>Delta-Matching: Closing the Final Gap of Native 8-bit Training for LLMs</h1>
 <p class="meta-line">arXiv / Haozhan Tang 等 · 2026-09-29 · 论文PDF</p>
 
-<p>Reliable FP8 attention remains a barrier to fully native 8-bit large language model train…</p>
-<blockquote><p>Reliable FP8 attention remains a barrier to fully native 8-bit large language model training. We derive how forward-backward inconsistencies produce stale delta and empirically show how it distorts training dynamics. Our stale-delta hybrid runs show a modest loss gap at 569M parameters but substantial loss increases and downstream degradation at 1.67B and 5.29B. QK normalization, NoPE (no positional encoding), and lower-learning-rate context extension mitigate or delay degradation without eliminating it. This pattern suggests accumulated optimization error that smaller models and short runs can conceal. We propose Delta-Matching, proving that it restores the softmax gradient's zero-row-sum invariant under the stated numerical assumptions. It enables native block-scaled FP8 in every forward and backward attention-core matmul without architectural changes, smaller global batches, or auxiliary forward outputs. Across tested architectures, scales, and training stages, Delta-Matching matches BF16/FP32 mixed-precision training loss and overall downstream performance. We will release our implementation, trained models, and data recipes.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 可靠的 FP8 注意力是原生 8-bit LLM 训练的最后一堵墙——前向-反向不一致导致 stale delta，如何修复？</p>
+<p><strong>方法</strong> 先推导前向-反向不一致如何产生 stale delta，并实验展示其扭曲训练动态；提出 Delta-Matching，证明其在既定数值假设下恢复 softmax 梯度零行和不变式，使每个前向/反向注意力核心 matmul 可用原生 block-scaled FP8，无需架构改动、更小的全局 batch 或辅助损失。</p>
+<p><strong>关键数字</strong> stale-delta 混合精度运行在 569M 参数时损失差距尚小，1.67B 与 5.29B 时损失显著增大并出现下游退化；QK 归一化、NoPE、低学习率上下文扩展只能缓解或推迟退化。</p>
+<p><strong>为什么值得看</strong> 直指 8-bit 训练里 FP8 注意力的数值根因并给出理论保证的修复，大模型低精度训练方向的关键一环。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.37852">Delta-Matching: Closing the Final Gap of Native 8-bit Training for LLMs</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.37852">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Interactive-Policy Distillation with Bidirectional Propose-and-Verify</h1>
 <p class="meta-line">arXiv / Shutong Wu 等 · 2026-09-29 · 论文PDF</p>
 
-<p>On-policy distillation (OPD) trains a student model on its self-generated trajectories wi…</p>
-<blockquote><p>On-policy distillation (OPD) trains a student model on its self-generated trajectories with dense token-level teacher feedback. However, naive OPD may suffer from teacher unanchoring, where the student's reasoning trajectory drifts far from the teacher, causing the teacher to be queried on states it would hardly visit and thus provide unreliable supervision. We propose Interactive-Policy Distillation (IPD), which applies adaptive teacher intervention to the student rollout. Under a bidirectional propose-and-verify state machine, the student and teacher alternately exchange their roles as proposer and verifier, and collaboratively generate mixed-source trajectories. Then different supervisions are applied according to the source of each token. This bidirectional propose-and-verify mechanism and the source-split loss make IPD not only a more performant distillation method, but also a unified bridge between on-policy and off-policy paradigms. To make the interleaved dual-model rollouts more efficient, we also design a dedicated fused inference engine that co-hosts both models in one serving instance with separate KV caches and instantiates the state machine model to distribute, collec…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 在线策略蒸馏（OPD）中学生模型在自己生成的轨迹上训练、教师给密集 token 级反馈；但 naive OPD 会教师失锚——学生轨迹漂离教师，教师在被访问的罕见状态上给不可靠监督。</p>
+<p><strong>方法</strong> 提出 Interactive-Policy Distillation（IPD）：对学生 rollout 施加自适应教师干预，师生在双向 propose-and-verify 状态机中交替扮演提出者与验证者、协同生成混合来源轨迹，再按 token 来源施加不同监督；配套融合推理引擎同宿主双模型（独立 KV cache）提升交错 rollout 效率。</p>
+<p><strong>关键数字</strong> Qwen3-30B-A3B 蒸馏到 Qwen3-1.7B-Base，IPD 相比 OPD 平均提升 +3.28 mean@8 与 +3.28 best@8；仅用约 1/4 训练样本与步数即超过 OPD 用全量数据训练一个 epoch 的结果。</p>
+<p><strong>为什么值得看</strong> 修复 OPD 教师失锚 + 数据效率翻倍，师生蒸馏新范式，做小模型蒸馏可重点读。</p>
+<p>原文：<a href="https://arxiv.org/abs/2609.36546">Interactive-Policy Distillation with Bidirectional Propose-and-Verify</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.36546">阅读原文 ↗</a></p>
 </body>
 </html>
