@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>llama.cpp b11876 vulkan: one warp tile per subgroup in the small matmul tiles (#30106)</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>llama.cpp b11876 vulkan: one warp tile per subgroup in the small matmul tiles (#30106)</h1>
+<p class="meta-line">llama.cpp（GitHub Releases） · 2026-10-25 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://opengraph.githubassets.com/af9170671452eba652710001f0f1b91cc31a6570121f6d7ac9eb0120da91d8b8/ggml-org/llama.cpp/releases/tag/b11876" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong> Vulkan 小矩阵乘 tile 在不同 subgroup 宽度下的正确性 bug。</p>
+<p><strong>要点</strong> 修复前小 tile 的 warp tile 宽度固定为 32（8 宽 subgroup 时为 8），与 tile 的 BLOCK_SIZE 和 WARP 无关。16 宽 subgroup（如 Mali）下第二个 subgroup 会写进下一个 tile 的列；8 宽 subgroup 时部分 _id tile 的行从未被计算。修法是让每个 subgroup 恰好分到一个 warp tile。</p>
+<p><strong>关键数字</strong> 修复前在 Pixel 9 上有 20 个 MUL_MAT 与 6 个 MUL_MAT_ID 测试失败，修复后全部通过（对应上游 issue #28637）；改动标注由 Claude Opus 5.5 协助完成。</p>
+<p><strong>为什么值得看</strong> 这是典型的"只在特定 GPU 上出现"类 bug——Mali 与 Pixel 9 用户此前拿到的结果可能是错的，数值正确性问题比性能问题更值得警惕。</p>
+<p><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b11876">阅读原文</a></p>
+<p><a class="origin" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11876">阅读原文 ↗</a></p>
+</body>
+</html>

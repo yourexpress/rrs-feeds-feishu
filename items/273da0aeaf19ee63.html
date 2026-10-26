@@ -22,9 +22,11 @@
 <h1>From Dissonance to Orchestration: Teacher Intervention in On-Policy Distillation</h1>
 <p class="meta-line">arXiv / Yuhao Wang 等 · 2026-09-30 · 论文PDF</p>
 
-<p>在策略蒸馏中的教师干预机制（跨类）</p>
-<blockquote><p>On-policy distillation (OPD) trains a student on its own reasoning trajectories using feedback from a stronger teacher. Teacher interventions can improve these trajectories, but also change the distribution on which the student learns. Our controlled studies show that rollout quality alone is an incomplete criterion for allocating teacher guidance. Deeper intervention yields diminishing gains in rollout accuracy while increasing off-policy load. In a training probe with a restricted rollout horizon, peak student accuracy and performance retention favor different intervention strengths. The preferred intervention depth and placement also vary across benchmarks. These findings motivate MAESTRO, which uses local policy disagreement to jointly adapt when the teacher takes over and how long it generates. Its {policy disagreement score} combines teacher-weighted candidate coverage with local distribution similarity and is aggregated within reasoning paragraphs. Across eight mathematical reasoning benchmarks, MAESTRO achieves the highest macro-average accuracy among the compared methods for both 0.6B and 1.7B Qwen3 students, with the 1.7B student leading on every benchmark. MAESTRO also r…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 在线策略蒸馏（OPD）用更强教师为学生推理轨迹提供反馈，教师干预可改善轨迹但也改变学生所学分布——"何时接管、生成多久"该如何动态决定？</p>
+<p><strong>方法</strong> 受控实验表明：仅用 rollout 质量分配教师指导是不充分的判据——干预越深，rollout 准确率收益递减、离线负担却增加；受限 rollout 视野下，峰值学生准确率与性能保持偏好不同的干预强度，且最优深度与位置随基准变化。据此提出 MAESTRO：用局部策略分歧联合自适应教师接管时机与生成长度，其策略分歧得分把教师加权候选覆盖与局部分布相似度结合，并按推理段落聚合。</p>
+<p><strong>关键数字</strong> 八个数学推理基准上，0.6B 与 1.7B Qwen3 学生的宏平均准确率均为对比方法最高，1.7B 学生在每个基准上领先；平均训练响应长度相对标准 OPD 缩短 67.3%。</p>
+<p><strong>为什么值得看</strong> 把教师干预从"深度固定"改为"按分歧动态调节"，训练更短且更强，对 OPD 类训练管线有实用改进价值。</p>
+<p><a href="https://arxiv.org/abs/2609.37510">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.37510">阅读原文 ↗</a></p>
 </body>
 </html>

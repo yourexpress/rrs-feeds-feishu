@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qwen3.8 Flash Next: 3-bit near 16-bit accuracy, with MTP prefix caching</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Qwen3.8 Flash Next: 3-bit near 16-bit accuracy, with MTP prefix caching</h1>
+<p class="meta-line">ElioVP Blog · 2026-10-25 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://eliovp.com/_og/s/o_jf2szt.png" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong> 3-bit 量化权重能否逼近 16-bit 精度，长对话里前缀缓存与 MTP 能否同时生效。</p>
+<p><strong>要点</strong> 10 月 24 日发布的新 3-bit Qwen3.8 Flash Next 权重不改格式、体积与 kernel，只调整各专家输出投影的校准统计、扩充到约 400 万 token 校准集、保留 3-bit 专家之外的 8-bit 共享层；native worker 让 GPU 不再跑 PyTorch，vLLM 只提供 API 与调度。</p>
+<p><strong>关键数字</strong> 三项文本任务上 3-bit 与 16-bit 的差异均不具统计显著性，HumanEval 低 1.8 点（配对 95% 区间 −5.0 ~ +1.3）；重复 200K token 提示的缓存命中恢复 0.68s vs 冷启动 25.81s；262,144 token 窗口 213.5 tok/s（开 RAM 层）/250.0 tok/s（关）。</p>
+<p><strong>为什么值得看</strong> "3-bit 逼近 16-bit"目前只在文本任务上成立，作者自陈并不等价，视觉端亦未验证原生图像输入；而前缀缓存叠加 MTP 对多轮 coding agent 的等待收益更实在。</p>
+<p><a href="https://www.eliovp.com/blog/paiton-qwen38-3bit-accuracy-prefix-caching-mtp">阅读原文</a></p>
+<p><a class="origin" href="https://www.eliovp.com/blog/paiton-qwen38-3bit-accuracy-prefix-caching-mtp">阅读原文 ↗</a></p>
+</body>
+</html>

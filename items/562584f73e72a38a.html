@@ -22,9 +22,11 @@
 <h1>[PR][FIX][TIRx][CUDA] Support low-precision, tensor-map and cluster kernels in CUDA-host bundles</h1>
 <p class="meta-line">Apache TVM 社区 (mail-archive) · 2026-09-29 · 技术博客</p>
 
-<p>TVM 社区动态：TIRx CUDA host bundle 支持低精度、tensor-map 与 cluster 内核的修复 PR</p>
-<blockquote><p>spectrometerHBH opened a new pull request, #20489: URL: https://github.com/apache/tvm/pull/20489</p><p>…</p></blockquote>
-<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><strong>核心话题</strong> TVM 的 CUDA-host bundle（device 与 host 代码编译为同一 NVCC 翻译单元）此前编不过多类真实 kernel，本次修了哪几处坑。</p>
+<p><strong>要点</strong> 其一，低精度类型：cuda_fp16/bf16/fp8/fp6/fp4 及 fp8_e4_t 类别名原先只在 defined(<strong>CUDA_ARCH</strong>) 下定义，NVCC 的 host pass 因此无法处理签名含 half 或 nv_bfloat16 的 kernel，改为同时放行 host pass，NVRTC 与纯 device 路径不变。其二，tensor-map 参数原绑定为 C 可接受、C++ 拒绝的 ((void<em>)...) 形式，改为显式转换。其三，host 与 device 类型拼写不一致（如 bfloat16 在 host 是 uint16_t</em>），启动改经 helper 转换参数类型并调用 cudaLaunchKernelEx；clusterCtaIdx、programmatic dependent launch 等属性改为对应 cudaLaunchAttribute。</p>
+<p><strong>关键数字</strong> B200（sm_100a）、CUDA 13.2 上：cuda_host 相关 4 个测试（各含 NVCC 与 NVRTC）8 项全过，新增测试覆盖双 CTA cluster 启动（校验 cluster rank 为 [0, 1, 0, 1]）与 tensor-map 编译；另 4 个测试文件 614 项通过、8 项跳过；用 mlc-ai/TIRx-kernels 端到端验证 fp16_bf16_gemm、nvfp4_gemm、rmsnorm、alphamoe_fp8_blockscale_qwen3next、kda/msa/vsa/mla 系列共 220 个正确性配置全部通过，而修复前这些 kernel 无一能以 bundle 构建。</p>
+<p><strong>为什么值得看</strong> 这是"kernel 写对了却编不过"的完整排查记录，host/device 类型不一致与 launch 属性两处坑可直接复用。</p>
+<p><a href="https://www.mail-archive.com/discuss-archive@tvm.apache.org/msg17841.html">阅读原文</a></p>
 <p><a class="origin" href="https://www.mail-archive.com/discuss-archive@tvm.apache.org/msg17841.html">阅读原文 ↗</a></p>
 </body>
 </html>

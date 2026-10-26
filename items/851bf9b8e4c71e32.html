@@ -22,9 +22,11 @@
 <h1>Behavioral Capacity Certificates for Quantized Language Models</h1>
 <p class="meta-line">arXiv / Arian Eamaz 等 · 2026-09-30 · 论文PDF</p>
 
-<p>量化语言模型的行为能力证书</p>
-<blockquote><p>Activation and key-value cache precision change what a quantized language model computes without altering its stored weights. Direct weight-code bounds, however, assign identical complexity to deployments that behave differently and charge separately for weight codes that behave identically. Behavioral Capacity Certificates (BCC) charge for behavior using the aggregate prior mass of complete implementations---weights, scales, activation and cache rules---that induce the same bounded loss. When quantization merges implementations, this shared mass lowers the complexity penalty, and a break-even law determines when the saving survives the cost of validating it. BCC supports a three-step deployment workflow, and our experiments verify each step. First, a forward-only screen shortlists per-layer bit-widths by how often candidate perturbations preserve the reference predictions, with quality comparable to Hessian-guided selection at lower preprocessing cost. Second, margin-certified cells identify weights that can be pruned or sign-flipped without changing the deployed behavior: every permitted combination preserves all declared predictions, and on OLMoE-1B-7B and SmolLM2-1.7B, independ…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 激活与 KV 缓存精度改变量化模型的计算行为，但直接权重码界对"行为不同却码长相同"与"行为相同却码长不同"的部署一视同仁——能否按行为计价？</p>
+<p><strong>方法</strong> 提出行为容量证书（BCC）：用"引发相同有界损失的完整实现（权重、缩放、激活与缓存规则）的聚合先验质量"为行为计价；量化合并实现时共享质量降低复杂度惩罚，并给出收支平衡定律判定节省能否覆盖验证成本。配套三步部署流程：① 前向筛选按候选扰动保持参考预测的频率为逐层位宽排序（质量接近 Hessian 引导选择且预处理成本更低）；② 边缘认证单元识别可剪枝或翻符号而不改变部署行为的权重；③ BCC 为非平凡方式界定部署模型总体损失。</p>
+<p><strong>关键数字</strong> OLMoE-1B-7B 与 SmolLM2-1.7B 上独立探针界定了"任何允许组合改变新文本预测"的概率；等缓存内存下 key 精度高于 value 时，GPT-2、Qwen2.5、SmolLM2 的 NLL 更低、预测一致性更高。</p>
+<p><strong>为什么值得看</strong> 提供了一套可验证的量化部署审计框架，把"行为不变性"变成可界定的证书，对量化模型的可靠部署很有价值。</p>
+<p><a href="https://arxiv.org/abs/2609.37887">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.37887">阅读原文 ↗</a></p>
 </body>
 </html>

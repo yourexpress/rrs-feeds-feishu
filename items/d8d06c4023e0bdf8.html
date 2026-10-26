@@ -22,9 +22,11 @@
 <h1>Relative Kinetic Utility: Calibrating Cross-Layer Credit for Global Structured LLM Pruning</h1>
 <p class="meta-line">arXiv / Tianhao Qian 等 · 2026-09-29 · 论文PDF</p>
 
-<p>【修订版】Global structured pruning requires channels from different layers to compete under a shar…</p>
-<blockquote><p>Global structured pruning requires channels from different layers to compete under a shared sparsity budget, raising two coupled challenges: identifying which channels should be retained and making their scores comparable across layers. Raw channel scores can contain block-common scale that leaves within-block ordering unchanged but distorts model-wide competition. Our experiment indicates that similar layer-wise allocations can retain substantially different FFN channels, so layer allocation alone does not determine channel identity. Motivated by this separation, we introduce Global Relative Kinetic Utility (Global RKU), a label-free criterion that separates channel importance estimation from cross-layer comparison. Global RKU measures channel participation using a final-hidden-state activation-gradient signal, then applies block-relative normalization to mitigate block-common scale while preserving within-block ordering, requires only unlabeled calibration inputs, and produces a static pruning topology in a single calibration stage. Under questions-only calibration on Qwen-2.5-7B, RKU-GISP Mean3 margins are -0.98, +3.79, and +8.61 points at 30%, 40%, and 50% sparsity, respectivel…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 全局结构化剪枝中，不同层的通道要在同一稀疏预算下竞争：既要选对通道，又要让各层分数可比。</p>
+<p><strong>方法</strong> 论文指出原始通道分数含"块公共尺度"：不改变块内排序，却扭曲全局竞争；实验显示相近的层间分配实际可能保留差异很大的 FFN 通道，说明层分配不决定通道身份。据此提出 Global RKU：先用最终隐层状态的激活-梯度信号度量通道参与度，再做块相对归一化以消除块公共尺度、保留块内排序；只需无标签校准输入，单次校准即产出静态剪枝拓扑。</p>
+<p><strong>关键数字</strong> Qwen-2.5-7B 纯问题校准下，RKU-GISP Mean3 在 30%/40%/50% 稀疏度分别为 −0.98、+3.79、+8.61 分（均值 +3.81）；把 Wiki16K 换成纯问题 Q16K 后 Qwen/Llama/Gemma 各稀疏度 Mean3 均提升；消融显示相对归一化在 40% 与 50% 稀疏度下分别贡献 14.42 与 5.53 个 Mean3 分。</p>
+<p><strong>为什么值得看</strong> 把"通道重要性"与"跨层可比性"拆开处理，是对剪枝中常见混用误差的精准修正。</p>
+<p><a href="https://arxiv.org/abs/2605.09008">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2605.09008">阅读原文 ↗</a></p>
 </body>
 </html>

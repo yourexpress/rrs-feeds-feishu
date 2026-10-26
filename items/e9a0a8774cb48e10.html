@@ -22,9 +22,11 @@
 <h1>PAC-CF: Calibrating Irreversible Frontier Pruning in LLM-Guided Search</h1>
 <p class="meta-line">arXiv / Tianhao Qian 等 · 2026-09-29 · 论文PDF</p>
 
-<p>【修订版】LLM-guided search explores multiple candidate trajectories, but at substantial test-time …</p>
-<blockquote><p>LLM-guided search explores multiple candidate trajectories, but at substantial test-time cost. Pruning low-scoring frontier candidates can control this cost, yet it also turns potentially biased evaluator scores into irreversible decisions: systematic ranking errors can persist under repeated scoring and remove useful branches. We propose Probably Approximately Correct Conformal Filtering (PAC-CF). Its fixed-frontier analysis formulates elimination as an $(\varepsilon,δ)$-PAC problem under bounded evaluator bias; its operational rule separately calibrates a score-gap threshold on held-out tasks by running the original controller without PAC-CF and using post-search verifier labels to measure the deficit of solution-preserving candidates relative to the frontier leader. Conditional on exchangeable native-controller tasks with nonempty protected exposure, conformal calibration gives finite-sample coverage for retaining at least one verifier-defined valid continuation at every protected frontier on the native trajectory. At deployment, PAC-CF removes only candidates whose gap from the highest frontier score exceeds the frozen threshold. We evaluate PAC-CF across three domains, five co…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 引导搜索中剪掉低分前沿候选虽省测试时开销，却把可能有偏的评分变成不可逆决定——评估器的排序错误会持续累积并删掉有用分支。</p>
+<p><strong>方法</strong> 提出 PAC-CF：固定前沿分析把淘汰形式化为有界评估器偏差下的 (ε,δ)-PAC 问题；操作规则在留出任务上单独校准分差阈值——先不启用 PAC-CF 跑原控制器，再用搜索后验证标签度量保解候选相对前沿领先者的亏缺；部署时只移除分差超过冻结阈值的候选。</p>
+<p><strong>关键数字</strong> 覆盖 3 个领域、5 个控制器与 B100 至 B500 四档预算；三项负载指标在各预算点估计均更低，utility 的配对 bootstrap 95% 区间在 B100 与 B200 上排除 0；剪枝感知的 ToolTree 各预算跨领域 utility 差 +4.38 点，自然终止队列中物理请求减少 18.94%–18.95%、端到端 token 用量减少 23.57%–23.76%。</p>
+<p><strong>为什么值得看</strong> 把"敢剪"变成可标定、可证伪的工程决策。</p>
+<p><a href="https://arxiv.org/abs/2604.14345">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2604.14345">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>CF-LoRA: Decoupled Factor Aggregation and Adaptation-Aware Client Clustering for Federated LoRA Fine-Tuning</h1>
 <p class="meta-line">arXiv / Mengjun Yi 等 · 2026-09-30 · 论文PDF</p>
 
-<p>联邦 LoRA 微调的因子解耦聚合与自适应客户端聚类（跨类）</p>
-<blockquote><p>Federated LoRA fine-tuning enables parameter-efficient adaptation of pre-trained models without sharing private data, but suffers from two fundamental mismatches under heterogeneous client data: a structural aggregation mismatch caused by independently averaging LoRA factors, and a statistical collaboration mismatch caused by enforcing a single global adapter across divergent clients. To address these issues, we propose CF-LoRA, a clustered federated LoRA fine-tuning framework that combines decoupled factor aggregation with adaptation-aware client clustering. CF-LoRA first learns a globally shared $A$ factor while retaining personalized $B_i$ factors, then identifies clients with similar adaptation patterns based on the cosine similarity of their learned $B_i$ factors, and finally performs intra-cluster $B$-factor aggregation with a frozen $A$ factor. By decoupling LoRA factor aggregation, CF-LoRA preserves the low-rank structure and mitigates the structural aggregation mismatch, while adaptation-aware clustering promotes collaboration among clients with similar adaptation patterns and reduces negative transfer caused by statistical heterogeneity. Experiments on four language tasks…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 联邦 LoRA 微调在异构客户端数据下存在两类失配：独立平均 LoRA 因子造成的结构聚合失配，以及强制所有发散客户端共用单个全局 adapter 造成的统计协作失配——如何同时缓解？</p>
+<p><strong>方法</strong> 提出 CF-LoRA：解耦因子聚合 + 适配感知客户端聚类。先学习全局共享的 A 因子、保留个性化 B_i 因子；再按 B_i 因子余弦相似度识别适配模式相近的客户端；最后在冻结 A 因子的前提下做簇内 B 因子聚合。解耦聚合保留低秩结构、缓解结构失配；适配感知聚类促进相似客户端协作、降低统计异质性带来的负迁移。</p>
+<p><strong>关键数字</strong> 在 RoBERTa 与 ViT 上覆盖四个语言任务与四个视觉数据集，两种模态均取得最高平均准确率，且每轮优化只需通信一个 LoRA 因子。</p>
+<p><strong>为什么值得看</strong> 把"聚合粒度"从单全局 adapter 细化为"共享 A + 个性化 B + 簇内聚合"，思路清晰、通信开销小，对联邦微调实践有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.36986">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.36986">阅读原文 ↗</a></p>
 </body>
 </html>

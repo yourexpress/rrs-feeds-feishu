@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recycler: Cost-Free Latent Reasoning via Hidden State Recycling</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Recycler: Cost-Free Latent Reasoning via Hidden State Recycling</h1>
+<p class="meta-line">ByteDance Seed · 2026-10-25 · 技术博客 / 每日精选</p>
+
+<p><strong>研究问题</strong> 自回归解码只在离散 token 之间传递信息、丢弃前一步 hidden state 的连续语义，跨步语义因此损失；能否近乎零开销地把这份连续反馈接回来？</p>
+<p><strong>方法</strong> 借鉴 MTP 头同时传播 token embedding 与 hidden state 的观察，Recycler 让上一步的 hidden state 经一个轻量 adapter 连同 embedding 一起送入下一步，保留跨步语义且解码开销可忽略；配套覆盖预训练、SFT、继续预训练与 RL 的完整训练与推理流程。</p>
+<p><strong>关键数字</strong> 仅约 2% backbone 参数量的 MTP 头，损失可比肩体积约为其 25% 的独立模型；Recycler 在推理与数学任务上参数效率突出，后期阶段才引入仍有效，表现超过参数多 2–3 倍的模型。</p>
+<p><strong>为什么值得看</strong> 证明连续 hidden state 反馈本身就是一类可复用的推理增益来源，给"不扩参数只改连接方式"提供了具体做法。</p>
+<p><a href="https://seed.bytedance.com/zh/public_papers/recycler-cost-free-latent-reasoning-via-hidden-state-recycling">阅读原文</a></p>
+<p><a class="origin" href="https://seed.bytedance.com/zh/public_papers/recycler-cost-free-latent-reasoning-via-hidden-state-recycling">阅读原文 ↗</a></p>
+</body>
+</html>

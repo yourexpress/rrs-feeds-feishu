@@ -22,9 +22,11 @@
 <h1>GEM-KMeans: Memory-Efficient and Accurate Clustering on Massive Scale with GPU Optimization</h1>
 <p class="meta-line">arXiv / Peng Xu 等 · 2026-09-30 · 论文PDF</p>
 
-<p>GPU 优化的大规模内存高效 K-Means 聚类</p>
-<blockquote><p>Memory-efficient scaling on clustering problems without sacrificing statistical accuracy is of central interest for large-scale data analysis and machine learning problems. Nonnegative low-rank (NLR) matrix factorization for $K$-means is a scalable clustering method, which connects to semidefinite relaxations with optimal average-case exact recovery guarantees. However, a direct GPU implementation of NLR requires multiple large factor-sized buffers and substantial data movements that are essentially memory-bound. In this paper, we introduce GEM-KMeans, a spectrally normalized yet mathematically equivalent NLR formulation that fuses the gradient update, nonnegative projection, and sufficient statistics for normalization and iterate movement into a matrix-multiplication epilogue. Instead of retaining three massive factor-sized arrays, our IO-aware GPU implementation materializes only one single factor with small tile-reduction arrays as additional storage in the High Bandwidth Memory (HBM). We derive explicit memory costs and spectrally normalized smoothness bounds for optimizing the clustering objective function. Accurate clustering is demonstrated at massive scales on synthetic and…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 大规模聚类既要内存高效又要统计准确，非负低秩（NLR）矩阵分解版 K-means 可扩展且有最优平均情形精确恢复保证，但直接 GPU 实现需要多个大规模因子缓冲、受内存带宽束缚——能否削减内存占用同时保持数学等价？</p>
+<p><strong>方法</strong> 提出 GEM-KMeans：谱归一化但数学等价的 NLR 公式，把梯度更新、非负投影与归一化/迭代移动的充分统计量融合进矩阵乘 epilogue；IO 感知 GPU 实现不再保留三个大规模因子数组，只在 HBM 中物化单个因子加小块归约数组。导出显式内存成本与谱归一化光滑界。</p>
+<p><strong>关键数字</strong> 大规模合成与真实数据上实现准确聚类；相对现有 GPU 加速 Lloyd 算法的性能收益依赖数据的运行时间权衡（摘要未给出单一数值）。</p>
+<p><strong>为什么值得看</strong> 把"内存受限"的聚类算法改成单因子物化的 IO 感知实现，是大规模 K-means 在 GPU 上的实用系统优化，对分布式聚类与矩阵分解加速有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.36074">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.36074">阅读原文 ↗</a></p>
 </body>
 </html>

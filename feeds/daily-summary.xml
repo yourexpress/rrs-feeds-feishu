@@ -5,8 +5,55 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>每天一条，汇总当日两个检索源（AI 技术报告 + 高效计算文献）的重点内容。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 25 Oct 2026 23:25:52 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 22:54:37 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/daily-summary.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日精选 · 2026-10-26</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-10-26.html</link>
+      <guid isPermaLink="false">urn:daily-summary:2026-10-26</guid>
+      <pubDate>Mon, 26 Oct 2026 23:05:00 +0800</pubDate>
+    <category>每日精选</category>
+      <description>&lt;h1&gt;2026-10-26 文献检索日报&lt;/h1&gt;
+&lt;h2&gt;当日检索概况&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;AI 技术报告库：检索 1 条，入选 1 条&lt;/li&gt;
+&lt;li&gt;高效计算文献检索：检索 19 条（arXiv 73 篇候选与 10-24 完全重复、按去重规则不入表；收录 18 个 llama.cpp 版本发布 + 1 篇 ElioVP 技术博客），入选 8 条&lt;/li&gt;
+&lt;li&gt;合计入选计数 9（selected 含跨库重复计数，去重后独特条目 9 条）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;重点推荐&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Recycler: Cost-Free Latent Reasoning via Hidden State Recycling&lt;/strong&gt;：仅约骨干 2% 参数的 MTP 头即可达到独立模型约 25% 规模的损失，复用 hidden state 的零开销隐式推理在推理与数学任务上以 1× 模型超越 2–3× 参数量基线。&lt;a href="https://seed.bytedance.com/zh/public_papers/recycler-cost-free-latent-reasoning-via-hidden-state-recycling"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Qwen3.8 Flash Next: 3-bit near 16-bit accuracy, with MTP prefix caching&lt;/strong&gt;：Paiton 新 3-bit 权重逼近 16-bit 精度（GSM8K 97.4% vs 96.9%、KL 0.055），MTP 前缀缓存令 200K token 提示恢复 0.68s vs 冷启动 25.81s，262K 窗口 213.5 tok/s。&lt;a href="https://www.eliovp.com/blog/paiton-qwen38-3bit-accuracy-prefix-caching-mtp"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;llama.cpp b11870 model: DSV4.1 flash&lt;/strong&gt;：新增 DeepSeek-V4.1-Flash 支持：Engram 表格转 BF16、压缩 KV 读取层与图内 gather，MoE 端侧部署新模型接入。&lt;a href="https://github.com/ggml-org/llama.cpp/releases/tag/b11870"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;llama.cpp b11879 CUDA: fuse FFN gate/up matmuls and GLU in MMQ&lt;/strong&gt;：MMQ 路径融合 FFN gate/up 矩阵乘与 GLU（交错行），Q4_K/Q5_K/Q6_K/Q8_0/IQ4_XS 在 Turing+ 上减少 kernel 启动与访存。&lt;a href="https://github.com/ggml-org/llama.cpp/releases/tag/b11879"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;llama.cpp b11883 llama-quant: fix 4D tensor quantization&lt;/strong&gt;：修复 4D 张量量化行数计算（改 ggml_nrows()），以张量名识别专家替代 ne[2]&amp;gt;1 启发式，MXFP4_MOE 量化路径更可靠。&lt;a href="https://github.com/ggml-org/llama.cpp/releases/tag/b11883"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;llama.cpp b11875 hexagon: generic dims collapse/reshape&lt;/strong&gt;：Hexagon（骁龙 DSP）后端为 unary/binary/matmul 引入通用维度折叠与 reshape，提升端侧多核利用率。&lt;a href="https://github.com/ggml-org/llama.cpp/releases/tag/b11875"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;llama.cpp b11873 opencl: add initial q2_k support&lt;/strong&gt;：OpenCL 新增初始 q2_k 量化支持：mul_mv、SOA mv/tiled mm，含 Adreno dp4a/noshuffle 路径，面向移动 GPU 低比特推理。&lt;a href="https://github.com/ggml-org/llama.cpp/releases/tag/b11873"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;llama.cpp b11876 vulkan: one warp tile per subgroup in small matmul tiles&lt;/strong&gt;：修复小 matmul tile 每 subgroup 的 warp tile 分配，修正 Mali/Pixel 9 等设备正确性。&lt;a href="https://github.com/ggml-org/llama.cpp/releases/tag/b11876"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;主题速览&lt;/h2&gt;
+&lt;p&gt;当日 EC 侧几乎全为 llama.cpp 推理栈工程更新：端侧后端（Hexagon/OpenCL/Vulkan）并行与量化路径增强、CUDA MMQ 融合优化、新模型（DeepSeek-V4.1-Flash）接入与量化修复，另有一篇 3-bit 权重 + MTP 前缀缓存的端侧部署实测；AI 侧为 ByteDance Seed 的 Recycler，聚焦零开销隐式推理的参数效率。整体呈"端侧低比特推理 + 推理栈工程"双主线。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h1>2026-10-26 文献检索日报</h1>
+<h2>当日检索概况</h2>
+<ul>
+<li>AI 技术报告库：检索 1 条，入选 1 条</li>
+<li>高效计算文献检索：检索 19 条（arXiv 73 篇候选与 10-24 完全重复、按去重规则不入表；收录 18 个 llama.cpp 版本发布 + 1 篇 ElioVP 技术博客），入选 8 条</li>
+<li>合计入选计数 9（selected 含跨库重复计数，去重后独特条目 9 条）</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>Recycler: Cost-Free Latent Reasoning via Hidden State Recycling</strong>：仅约骨干 2% 参数的 MTP 头即可达到独立模型约 25% 规模的损失，复用 hidden state 的零开销隐式推理在推理与数学任务上以 1× 模型超越 2–3× 参数量基线。<a href="https://seed.bytedance.com/zh/public_papers/recycler-cost-free-latent-reasoning-via-hidden-state-recycling">原文</a></li>
+<li><strong>Qwen3.8 Flash Next: 3-bit near 16-bit accuracy, with MTP prefix caching</strong>：Paiton 新 3-bit 权重逼近 16-bit 精度（GSM8K 97.4% vs 96.9%、KL 0.055），MTP 前缀缓存令 200K token 提示恢复 0.68s vs 冷启动 25.81s，262K 窗口 213.5 tok/s。<a href="https://www.eliovp.com/blog/paiton-qwen38-3bit-accuracy-prefix-caching-mtp">原文</a></li>
+<li><strong>llama.cpp b11870 model: DSV4.1 flash</strong>：新增 DeepSeek-V4.1-Flash 支持：Engram 表格转 BF16、压缩 KV 读取层与图内 gather，MoE 端侧部署新模型接入。<a href="https://github.com/ggml-org/llama.cpp/releases/tag/b11870">原文</a></li>
+<li><strong>llama.cpp b11879 CUDA: fuse FFN gate/up matmuls and GLU in MMQ</strong>：MMQ 路径融合 FFN gate/up 矩阵乘与 GLU（交错行），Q4_K/Q5_K/Q6_K/Q8_0/IQ4_XS 在 Turing+ 上减少 kernel 启动与访存。<a href="https://github.com/ggml-org/llama.cpp/releases/tag/b11879">原文</a></li>
+<li><strong>llama.cpp b11883 llama-quant: fix 4D tensor quantization</strong>：修复 4D 张量量化行数计算（改 ggml_nrows()），以张量名识别专家替代 ne[2]&gt;1 启发式，MXFP4_MOE 量化路径更可靠。<a href="https://github.com/ggml-org/llama.cpp/releases/tag/b11883">原文</a></li>
+<li><strong>llama.cpp b11875 hexagon: generic dims collapse/reshape</strong>：Hexagon（骁龙 DSP）后端为 unary/binary/matmul 引入通用维度折叠与 reshape，提升端侧多核利用率。<a href="https://github.com/ggml-org/llama.cpp/releases/tag/b11875">原文</a></li>
+<li><strong>llama.cpp b11873 opencl: add initial q2_k support</strong>：OpenCL 新增初始 q2_k 量化支持：mul_mv、SOA mv/tiled mm，含 Adreno dp4a/noshuffle 路径，面向移动 GPU 低比特推理。<a href="https://github.com/ggml-org/llama.cpp/releases/tag/b11873">原文</a></li>
+<li><strong>llama.cpp b11876 vulkan: one warp tile per subgroup in small matmul tiles</strong>：修复小 matmul tile 每 subgroup 的 warp tile 分配，修正 Mali/Pixel 9 等设备正确性。<a href="https://github.com/ggml-org/llama.cpp/releases/tag/b11876">原文</a></li>
+</ul>
+<h2>主题速览</h2>
+<p>当日 EC 侧几乎全为 llama.cpp 推理栈工程更新：端侧后端（Hexagon/OpenCL/Vulkan）并行与量化路径增强、CUDA MMQ 融合优化、新模型（DeepSeek-V4.1-Flash）接入与量化修复，另有一篇 3-bit 权重 + MTP 前缀缓存的端侧部署实测；AI 侧为 ByteDance Seed 的 Recycler，聚焦零开销隐式推理的参数效率。整体呈"端侧低比特推理 + 推理栈工程"双主线。</p>]]></content:encoded>
+    </item>
     <item>
       <title>每日精选 · 2026-10-25</title>
       <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-10-25.html</link>

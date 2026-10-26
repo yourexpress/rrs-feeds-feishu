@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>llama.cpp b11888 common, grammar: add recursive depth limit, make it a requirement (#31153)</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>llama.cpp b11888 common, grammar: add recursive depth limit, make it a requirement (#31153)</h1>
+<p class="meta-line">llama.cpp（GitHub Releases） · 2026-10-25 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://opengraph.githubassets.com/ce87efe52042dac69c6313ea2ff1b058652b9918ebfd6ab518eaf4102cd9b736/ggml-org/llama.cpp/releases/tag/b11888" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong> grammar 采样对候选 token 的拒绝逻辑存在栈溢出与误拒风险。</p>
+<p><strong>要点</strong> 原先 llama_grammar_reject_candidates_for_stack 的深度限制按 token 的码点数量计数，导致任何长度 ≥256 字符的 token 在 grammar 下必然被拒——例如 GLM-4.7-Flash 的 512 空格 token、Laguna-S-2.1 的长空格 token。改为用自己的层级栈遍历码点、不再递归，于是没有限制也没有栈风险，掩码与 master 一致；同时把被拒候选记录为输入中的下标，并补齐若干递归函数与 peg 解析器清理。</p>
+<p><strong>关键数字</strong> 触发门槛原为 256 字符；作者称 GLM-4.7/Laguna/Qwen3.6/gemma-4 的 json、list、spaces grammar 均快于 master。</p>
+<p><strong>为什么值得看</strong> 这是"合法输出被静默拒绝"的真实 bug，且命中的是特定模型的保留 token——排查起来几乎没有线索，文中的根因定位值得记住。</p>
+<p><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b11888">阅读原文</a></p>
+<p><a class="origin" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11888">阅读原文 ↗</a></p>
+</body>
+</html>

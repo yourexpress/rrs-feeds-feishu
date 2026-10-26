@@ -22,9 +22,11 @@
 <h1>Foundation Neural-Network Quantum States for Molecular Potential Energy Surfaces in Second Quantization</h1>
 <p class="meta-line">arXiv / Lizhong Fu 等 · 2026-09-30 · 论文PDF</p>
 
-<p>分子势能面的基础神经网络量子态（跨类）</p>
-<blockquote><p>Second-quantized neural-network quantum states have achieved accurate molecular energies, but extending them across molecular geometries requires a shared representation of the geometry-dependent wavefunction coefficients. We introduce geometry-conditioned foundation neural-network quantum states for molecular electronic structure in second quantization. A single autoregressive model learns a family of ground states from sparse anchor geometries and provides wavefunctions at untrained geometries without further optimization. Orbital alignment matches orbital identities and transports their phases, establishing an aligned orbital basis across geometries. Frozen energies reach chemical accuracy at every untrained query geometry for N$_2$, CO, and H$_4$. On additional molecular paths, the energy-trained wavefunctions yield dipoles, quadrupoles, and natural occupations without property labels. Across three paired N$_2$ training seeds, orbital alignment lowers the mean absolute energy error over all untrained query geometries from 34-37 mHa to 0.049-0.085 mHa. At approximately 1 mHa mean absolute error, frozen evaluation reduces the per-geometry cost by $986\times$ relative to independe…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 二次量子化神经网路量子态（NNQS）已获精确分子能量，但跨分子几何扩展需要共享依赖几何的波函数系数表示——能否学习一族基态、在未见几何上直接给出波函数？</p>
+<p><strong>方法</strong> 引入几何条件的基座神经网路量子态：单个自回归模型从稀疏锚点几何学习一族基态，未经额外优化即可在未训练几何上提供波函数。轨道对齐匹配轨道身份并迁移相位，建立跨几何的对齐轨道基。</p>
+<p><strong>关键数字</strong> N₂、CO、H₄ 每个未训练查询几何的冻结能量均达化学精度；三对 N₂ 训练种子下，轨道对齐把全部未训练查询几何的平均绝对能量误差从 34–37 mHa 降至 0.049–0.085 mHa；约 1 mHa 平均绝对误差下，冻结评估相对独立优化每几何成本降 986×，在 161 点 N₂ 网格上端到端 GPU 成本估计降 25.8×。</p>
+<p><strong>为什么值得看</strong> 把"每个几何单独优化"变成"共享表示一次训练"，化学精度与成本降幅都相当可观，对量子化学机器学习与 NNQS 应用有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.37733">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.37733">阅读原文 ↗</a></p>
 </body>
 </html>

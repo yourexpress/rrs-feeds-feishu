@@ -22,9 +22,11 @@
 <h1>FlowMap-OPD: Rollout--Kernel Separation for On-Policy Distillation of Few-Step Flow-Map Generators</h1>
 <p class="meta-line">arXiv / Zhiqi Li 等 · 2026-09-30 · 论文PDF</p>
 
-<p>少步 flow-map 生成器的 rollout-kernel 分离在策略蒸馏（跨类）</p>
-<blockquote><p>Few-step flow-map generators, including MeanFlow and consistency models, enable efficient sampling through long-range transport, yet their on-policy distillation remains underexplored. We introduce FlowMap-OPD, an on-policy distillation framework that separates student-state acquisition from teacher--student distribution comparison. A formulation based on state marginals establishes this separation, while flow--velocity consistency connects local supervision to the deployed long-range map. Within this framework, we develop flow-map, induced-velocity, and instantaneous-velocity distribution supervision, each paired with a separately specified native flow-map rollout. Cross-capacity ImageNet experiments across three teacher rewards identify instantaneous-velocity distribution supervision with independently tunable student consistency as the most effective choice. In text-to-image experiments, FlowMap-OPD demonstrates strong multi-specialist consolidation capabilities and surpasses multi-reward Flow-Map GRPO in task performance and convergence speed.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 少步 flow-map 生成器（MeanFlow、一致性模型）靠长程传输实现高效采样，但其在线策略蒸馏（OPD）尚未被充分探索——学生状态获取与师生分布比较能否解耦？</p>
+<p><strong>方法</strong> 提出 FlowMap-OPD：基于状态边际的公式化建立分离，flow-velocity 一致性把局部监督连到部署的长程映射。框架内开发 flow-map、诱导速度与瞬时速度三种分布监督，各配独立指定的原生 flow-map rollout；跨能力 ImageNet 实验（三种教师奖励）表明瞬时速度分布监督 + 独立可调学生一致性最有效。</p>
+<p><strong>关键数字</strong> 文生图实验中表现出强多专家整合能力，任务性能与收敛速度均优于多奖励 Flow-Map GRPO；摘要未给出单一量化数值。</p>
+<p><strong>为什么值得看</strong> 首次系统探索少步 flow-map 生成器的在线蒸馏，给出监督选择与 rollout 分离的清晰方法论，对扩散/一致性模型蒸馏有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.37851">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.37851">阅读原文 ↗</a></p>
 </body>
 </html>

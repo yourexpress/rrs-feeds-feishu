@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>llama.cpp b11871 chat: reject JSON nested more than 128 levels before walking it (#30242)</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>llama.cpp b11871 chat: reject JSON nested more than 128 levels before walking it (#30242)</h1>
+<p class="meta-line">llama.cpp（GitHub Releases） · 2026-10-25 · 技术博客</p>
+<img class="hero" src="https://opengraph.githubassets.com/698c777db7d1db25738ead61848ded6631abfc108996869cc266e2c641e1ec03/ggml-org/llama.cpp/releases/tag/b11871" alt="" referrerpolicy="no-referrer">
+<p>chat 在处理 JSON 前拒绝嵌套超过 128 层的输入，防止递归遍历过深</p>
+<blockquote><p>Repository navigation</p><p>b11871</p><p>Pre-releasechat : reject JSON nested more than 128 levels before walking it (#30242)</p><p>- chat : reject JSON nested more than 128 levels before walking it</p><p>The schema builder, the jinja engine and the decision code walk request</p><p>JSON with recursion. A request nested deep enough overflows the stack of</p><p>the HTTP thread and llama-server dies (SIGBUS on macOS, SIGSEGV on Linux):</p><p>for a tool schema from a few hundred levels on macOS and about 10000 on</p><p>Linux.</p><p>Check the depth first and answer 400 past 128 levels: the chat inputs in</p><p>common_chat_templates_apply (tools, tool-call arguments,</p><p>chat_template_kwargs, json_schema), the json_schema of /completion, and the</p><p>whole /v1/systemone body. A gemma4 tool result that is too deep stays text.</p><p>- fix the root, not the call side</p><p>Co-authored-by: Xuan Son Nguyen son@huggingface.co</p><p>Website:</p><p>Attestations:</p><p>macOS/iOS:</p><p>- macOS Apple Silicon (arm64)</p><p>- macOS Apple Silicon (arm64, KleidiAI enabled) DISABLED</p><p>- macOS Intel (x64)</p><p>- iOS XCFramework</p><p>Linux:</p><p>- Ubuntu x64 (CPU)</p><p>- Ubuntu arm64 (CPU)</p><p>- Ubuntu s390x (CPU)</p><p>- Ubuntu x64 (Vulkan)</p><p>- Ubuntu arm64 (Vulkan)</p><p>- Ubuntu x64 (CUDA 12) - CUDA 12.8 libraries</p><p>- Ubuntu x64 (CUDA 13) - CUDA 13.4 libraries</p><p>- Ubuntu arm64 (CUDA 13) - CUDA 13.4 libraries</p><p>- Ubuntu x64 (ROCm 10.0)</p><p>- Ubuntu x64 (OpenVINO)</p><p>- Ubuntu x64 (SYCL FP32)</p><p>- Ubuntu x64 (SYCL FP16)</p><p>- Linux arm64 (Snapdragon: CPU, Adreno GPU, Hexagon NPU) - setup guide</p><p>Android:</p><p>Windows:</p><p>- Windows x64 (CPU)</p><p>- Windows arm64 (CPU)</p><p>- Windows arm64 (OpenCL Adreno)</p><p>- Windows x64 (CUDA 12) - CUDA 12.4 DLLs</p><p>- Windows x64 (CUDA 13) - CUDA 13.4 DLLs</p><p>- Windows arm64 (CUDA 13) - CUDA 13.4 DLLs</p><p>- Windows x64 (Vulkan)</p><p>- Windows arm64 (Vulkan)</p><p>- Windows x64 (OpenVINO)</p><p>- Windows x64 (SYCL)</p><p>- Windows x64 (ROCm 10.0)</p><p>openEuler:</p><p>- DISABLED</p><p>- openEuler x86 (310p)</p><p>- openEuler x86 (910b, ACL Graph)</p><p>- openEuler aarch64 (310p)</p><p>- openEuler aarch64 (910b, ACL Graph)</p><p>UI:</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11871">阅读原文 ↗</a></p>
+</body>
+</html>

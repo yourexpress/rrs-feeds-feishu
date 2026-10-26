@@ -22,9 +22,11 @@
 <h1>Beam Search as Test-Time Self-Distillation via Counterfactual Contexts</h1>
 <p class="meta-line">arXiv / Su Ee Tan 等 · 2026-09-30 · 论文PDF</p>
 
-<p>束搜索等价于反事实上下文下的测试时自蒸馏</p>
-<blockquote><p>Self-Distillation Fine-Tuning (SDFT) enables a language model to act as its own teacher: by conditioning on a demonstration, the model produces an implicit reward via pointwise mutual information, which guides on-policy learning without external supervision. However, SDFT operates at training time: it requires gradient updates and access to expert demonstrations, making it inapplicable at inference. We propose test-time self-distillation, a decoding-time method that extracts a steering signal from the self-distillation framework without any parameter updates, reward models, or training data. Our key insight is that counterfactual contexts, i.e. fixed textual templates that hypothetically prime the model for excellent versus poor reasoning, can substitute for the demonstration. The log-odds ratio of a candidate answer under these two counterfactual conditions defines a new reward signal. We derive the optimal KL-regularized policy under this reward, which takes the form of a Gibbs reweighting of the base distribution. Crucially, this reweighting is global: it cannot be decomposed into independent per-token operations without ignoring future trajectory quality. We therefore approxima…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 自蒸馏微调（SDFT）让模型以自身为师，但只适用于训练期（需梯度更新与专家示范）——能否把自蒸馏原理搬到推理期，无需任何参数更新或训练数据？</p>
+<p><strong>方法</strong> 提出测试时自蒸馏：用反事实上下文（hypothetically 提示模型"优秀 vs 糟糕"推理的固定文本模板）替代示范，候选答案在两种条件下的对数几率比构成奖励信号。推导该奖励下的最优 KL 正则策略，呈对基础分布的 Gibbs 重加权形式——该重加权是全局的，无法分解为逐 token 独立操作，因此用束搜索逼近目标分布。</p>
+<p><strong>关键数字</strong> 在数学推理（MATH500）、代码生成（HumanEval）与研究级科学问答（GPQA）多个模型规模上，平均优于标准采样、低温采样、束搜索与 power sampling 基线。</p>
+<p><strong>为什么值得看</strong> 首次把自蒸馏原则实操化到解码阶段，思路轻巧（纯推理、零训练），对推理时对齐与解码策略研究有启发。</p>
+<p><a href="https://arxiv.org/abs/2609.37041">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.37041">阅读原文 ↗</a></p>
 </body>
 </html>

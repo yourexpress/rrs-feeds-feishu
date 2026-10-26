@@ -22,9 +22,11 @@
 <h1>A Tilted Bowl Is Not a Slippery Slope: Compressing Looped Models</h1>
 <p class="meta-line">arXiv / Steven Kolawole 等 · 2026-09-30 · 论文PDF</p>
 
-<p>Looped models reason by applying the same block of weights many times, so compressing tha…</p>
-<blockquote><p>Looped models reason by applying the same block of weights many times, so compressing that block saves memory traffic on every loop. Compressed looped models, however, often collapse, and the collapse is usually blamed on rounding error that accumulates from loop to loop. In this work we test that account on more than 30 models from five families and find, to our surprise, that it holds only for loops that never settle. When a loop settles, a fixed rounding error does not accumulate. It moves the point where the loop settles, much as tilting a bowl moves where a ball comes to rest, and the answer is lost only when the shift is larger than the readout tolerates. This picture lets us predict which models fail from a single label-free measurement, and it tells us why failed models recover: their loops still settle, so a few final loops with 8-bit weights bring the answer back. Motivated by these findings, we build a controller that stops when the model's halting head fires and then finishes with 8-bit loops. On Sudoku-Extreme and Maze-Hard it beats fixed-depth inference by up to 15 points under a third of the weight traffic.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 循环模型（looped models）反复应用同一权重块进行推理，压缩该块可节省每轮循环的内存流量，但压缩后模型常发生"崩溃"——以往归咎于逐轮累积的舍入误差，这一解释是否成立？</p>
+<p><strong>方法</strong> 作者在五个模型家族的 30 多个模型上检验该归因，发现"误差累积"仅在从未收敛的循环中成立；当循环收敛时，固定舍入误差不会累积，只会移动收敛点（如同倾斜碗中球的落点），只有位移超出读出容限才丢失答案。据此可从单一无标签测量预测哪些模型会失败，并解释为何失败模型能恢复——循环仍会收敛，末尾补几轮 8-bit 权重即可找回答案。作者据此构建控制器：模型停头触发即停止，再用 8-bit 循环收尾。</p>
+<p><strong>关键数字</strong> 在 Sudoku-Extreme 与 Maze-Hard 上，比固定深度推理最多高 15 分，同时权重流量降至三分之一以下。</p>
+<p><strong>为什么值得看</strong> 澄清了"循环模型压缩必然误差累积"的流行误解，给出可操作的压缩后恢复策略，对循环架构与量化压缩研究均有价值。</p>
+<p><a href="https://arxiv.org/abs/2609.39277">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.39277">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>AutoLoCo: Communication Efficient Distributed LLM Training via Adaptive Synchronization</h1>
 <p class="meta-line">arXiv / Pengyu He 等 · 2026-09-30 · 论文PDF</p>
 
-<p>自适应同步的通信高效分布式 LLM 训练 AutoLoCo</p>
-<blockquote><p>The pre-training of Large Language Models (LLMs) is increasingly conducted across multiple data centers. As training scales to a larger number of accelerators, the fraction of time spent on computation decreases, while the fraction spent on communication increases. Therefore, frequent synchronization becomes a growing bottleneck. Local update methods reduce this cost by allowing workers to perform several optimizer steps between synchronizations. Most local update methods set the number of local optimizer steps between synchronizations before training and keep this interval fixed throughout the run. However, the best interval can change during the entire train process. If the interval and optimizer are adapted to the current training state, the communication frequency is reduced while maintaining the training performance. In this work, we introduce AutoLoCo, an adaptive training framework to reduce communication in LLM training. It adapts the local interval using scalar training statistics and corrects each outer update. Our method is motivated by two observations: 1) the appropriate local interval varies across training stages, and 2) changing the number of inner steps per interva…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 跨数据中心 LLM 预训练中，加速器越多、通信占比越高，频繁同步成为瓶颈——本地更新法允许两次同步间做多步优化，但固定间隔未必适配训练全程，能否自适应？</p>
+<p><strong>方法</strong> 提出 AutoLoCo：用标量训练统计量自适应调整本地更新间隔，并校正每次外部更新。动机来自两个观察：① 合适的本地间隔随训练阶段变化；② 改变间隔内步数会与未变的外部优化器失配，需用累积内部学习率校正外部优化器的动量与学习率。</p>
+<p><strong>关键数字</strong> 在通信约束实验中，相对 DiLoCo 通信频率降低 27%，同时保持训练性能。</p>
+<p><strong>为什么值得看</strong> 把"本地更新间隔"从超参变成自适应状态，直击多数据中心训练的通信瓶颈，对分布式训练系统设计有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.36662">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.36662">阅读原文 ↗</a></p>
 </body>
 </html>

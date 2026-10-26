@@ -22,9 +22,11 @@
 <h1>Architecture Alignment With Sparse Priors in Tabular Foundation Models</h1>
 <p class="meta-line">arXiv / Tianqi Zhao 等 · 2026-09-30 · 论文PDF</p>
 
-<p>表格基础模型中的稀疏先验架构对齐</p>
-<blockquote><p>Tabular foundation models (TFMs) are increasingly popular because they deliver strong predictions on new datasets through in-context learning, without task-specific training or extensive tuning. Yet released TFMs differ simultaneously in their pretraining priors, architectures, and objectives, obscuring their respective inductive biases. We therefore examine one concrete capability: irrelevant-feature suppression. Across synthetic tasks and real-world datasets, adding null features causes substantially greater predictive degradation in the row-token model TabDPT, whereas the cell-token alternating-axis model TabPFN v2 and other TFMs remain comparatively stable. This gap motivates us to ask whether architecture contributes to irrelevant-feature suppression. Because released TFMs remain confounded by other design choices, we train streamlined row-token and alternating-axis transformers under identical sparse-to-dense linear priors. Exact Bayes analysis shows that sparse prediction requires context-dependent feature gating, whereas the dense endpoint requires only uniform feature weighting. Consistent with this distinction, the alternating-axis model is substantially closer to the Bay…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 表格基础模型（TFM）能力随预训练先验、架构与目标混杂，难以归因——具体到"抑制无关特征"这一能力，架构本身是否起作用？</p>
+<p><strong>方法</strong> 在合成任务与真实数据集上发现：加入空特征（null features）时，行 token 模型 TabDPT 预测退化明显，而 cell-token 交替轴模型 TabPFN v2 等保持稳定。为消除混杂，作者在相同稀疏到稠密线性先验下训练精简的行 token 与交替轴 transformer。精确贝叶斯分析表明：稀疏预测需要上下文相关特征门控，而稠密端点只需均匀特征加权；交替轴模型在稀疏任务上显著更接近贝叶斯最优预测器，稠密任务上架构差距消失。进一步对特征注意力输出做干预，发现任务相关的选择性计算路由证据。</p>
+<p><strong>关键数字</strong> 无（论文以定性分析与受控实验为主，未给出单一量化指标）。</p>
+<p><strong>为什么值得看</strong> 用"架构-先验对齐"统一解释了表格模型的行为差异：保留可寻址特征轴为任务自适应相关性推断提供了归纳偏置，对理解与设计 TFM 架构有指导意义。</p>
+<p><a href="https://arxiv.org/abs/2609.36883">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.36883">阅读原文 ↗</a></p>
 </body>
 </html>

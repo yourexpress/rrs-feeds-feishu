@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>llama.cpp b11883 llama-quant: fix 4D tensor quantization using ggml_nrows() and name-based expert detection (#30820)</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>llama.cpp b11883 llama-quant: fix 4D tensor quantization using ggml_nrows() and name-based expert detection (#30820)</h1>
+<p class="meta-line">llama.cpp（GitHub Releases） · 2026-10-25 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://opengraph.githubassets.com/57d1c5a1d13d2175a5711b066d27038c76a9eb908d8d03f862d1448517f6b499/ggml-org/llama.cpp/releases/tag/b11883" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong> llama-quant 在 4D 张量与 MoE 专家张量识别上的两处误判。</p>
+<p><strong>要点</strong> 其一，nrows_total 原按 ne[1]<em>ne[2] 计算，4D 张量只有前 ne[2] 个切片被量化、其余行被丢弃，改用 ggml_nrows(tensor) 计入 ne[3]（修复 issue #29916）。其二，MXFP4_MOE 路径原先用 ne[2] &gt; 1 判断 MoE 专家张量，对 3 维及以上的非专家张量（如 MLA 投影 BailingMoE3、4D 卷积核）会误判，改为按张量名识别——所有用于 GGML_OP_MUL_MAT_ID 的张量均以 </em>_exps 或 *_chexps 命名，并借此删除 BailingMoE3 特例。</p>
+<p><strong>关键数字</strong> 同时修正 imatrix 尺寸：4D 张量下应为 ne[0]<em>ne[2]</em>ne[3] 而非 ne[0]*ne[2]，与 llama_tensor_quantize_impl 的按行索引方式一致。</p>
+<p><strong>为什么值得看</strong> 静默丢行和专家张量误判都属于"量化结果不可信但程序不报错"的类型，踩到的人往往只看到精度异常而查不到根因。</p>
+<p><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b11883">阅读原文</a></p>
+<p><a class="origin" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11883">阅读原文 ↗</a></p>
+</body>
+</html>

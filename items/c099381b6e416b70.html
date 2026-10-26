@@ -22,9 +22,11 @@
 <h1>Constitutional adapters: Inference-time interventions for misalignment and misuse</h1>
 <p class="meta-line">arXiv / Adam S. Lowet 等 · 2026-09-30 · 论文PDF</p>
 
-<p>宪法式 adapter：针对失准与滥用的推理时干预</p>
-<blockquote><p>Training models to act in accordance with an explicitly defined set of principles, or "constitution," has shown promise as a robust and transparent mechanism for AI alignment. However, the generality and flexibility of such methods remain unclear. Here, we show that constitution-consistent behavior can be distilled from synthetic corpora into lightweight objects (low-rank adapters and steering vectors). Despite never seeing a harmful request or jailbreak during training, such objects increase jailbreak defense success and measured alignment -- particularly at long context lengths and against multi-turn attacks, where they outperform both prompted and steered baselines. Subtracting control-trained from constitution-trained objects further accentuates these effects, yielding defenses we call "constitutional adapters" (CAs). CAs can be trained on a base model, transferred zero-shot to its post-trained checkpoint, and scaled at inference time to predictably trade off defense for benign compliance. Taken together, these results recommend CAs as a lightweight, portable, and tunable lever for mitigating misalignment and misuse in API deployments.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 让模型按显式"宪法"行事是对齐的有力手段，但其通用性与灵活性存疑——宪法一致行为能否蒸馏成轻量对象，在推理期干预滥用与失准？</p>
+<p><strong>方法</strong> 作者展示：从合成语料把宪法一致行为蒸馏进低秩 adapter 与转向向量（steering vectors）。这些对象训练时从未见过有害请求或越狱样本，却提升越狱防御成功与实测对齐度，尤其在长上下文与多轮攻击下优于提示与转向基线；用"控制训练对象减去宪法训练对象"进一步放大效果，得到"宪法适配器"（CAs）。CAs 可在基础模型上训练、零样本迁移到其后训练 checkpoint，并在推理期按比例伸缩，可预测地在防御与良性合规间权衡。</p>
+<p><strong>关键数字</strong> 摘要未给出单一量化指标（以多设置对比实验为主）。</p>
+<p><strong>为什么值得看</strong> 提供了一种轻量、可迁移、可调参的推理期安全杠杆，特别针对长上下文与多轮攻击场景，对 API 部署的失准/滥用缓解有实用价值。</p>
+<p><a href="https://arxiv.org/abs/2609.36657">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.36657">阅读原文 ↗</a></p>
 </body>
 </html>

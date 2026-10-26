@@ -22,9 +22,11 @@
 <h1>KVEraser: Learning to Steer KV Cache for Efficient Localized Context Erasing</h1>
 <p class="meta-line">arXiv / Mufei Li 等 · 2026-09-29 · 论文PDF</p>
 
-<p>【修订版】Post-hoc context erasing over the KV cache is challenging because a local edit has a glob…</p>
-<blockquote><p>Post-hoc context erasing over the KV cache is challenging because a local edit has a global consequence: once a span has been processed, its influence propagates into the cached states of all subsequent tokens. This issue arises naturally in long-context LLM applications, where stale, incorrect, or harmful context may be identified only after prefill. Exact erasing must then recompute all tokens after the deleted span, making its computational cost depend on suffix length rather than erased-span length. We introduce KVEraser, a learned KV-cache editing method for efficient localized context erasing. KVEraser replaces the KV states of the erased interval with learned steering states while reusing the remaining cache unchanged. To learn a transferable erasing mechanism, we use a two-stage pipeline: generic span-neighbor pre-training followed by task-specific fine-tuning. Experiments show that KVEraser nearly matches full recomputation in post-erasure performance on in-domain tasks across 1K-32K contexts, while its latency increases by only 29.6% compared with a 17.6x increase for full recomputation. KVEraser also generalizes to unseen long-document QA with harmful factual distractors…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 长上下文 LLM 中，若 prefill 之后才识别出该删的过期/有害片段，能否只做局部修改而不重算后缀？</p>
+<p><strong>方法</strong> KVEraser 把被删区间的 KV 状态替换为"学习到的 steering state"，其余缓存原样复用；训练分两阶段：先做通用 span-neighbor 预训练，再做任务特定微调，以获得可迁移的擦除机制。</p>
+<p><strong>关键数字</strong> 1K–32K 上下文下，擦除后性能几乎追平完全重算，延迟仅增 29.6%，而完全重算延迟增幅为 17.6 倍；在含事实干扰的长文档 QA 与含恶意技能文件注入的工具选择上优于其他近似基线，相对完全重算加速 2.9–10.7 倍；rank-16 LoRA 擦除器只训练约为生成器 0.6% 的参数，效果持平或更好。</p>
+<p><strong>为什么值得看</strong> 免去"删除即重算"的高昂代价且参数开销极小，对做上下文合规、可撤销 Agent 的团队直接可用。</p>
+<p><a href="https://arxiv.org/abs/2606.17034">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2606.17034">阅读原文 ↗</a></p>
 </body>
 </html>

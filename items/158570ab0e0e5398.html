@@ -22,9 +22,11 @@
 <h1>Binarization Flattens the Score Space</h1>
 <p class="meta-line">arXiv / Jacob Cole 等 · 2026-09-30 · 论文PDF</p>
 
-<p>二值化使扩散模型得分空间变平坦的分析</p>
-<blockquote><p>Large language model (LLM) judges are often used as rewards to train policies on objectives that deterministic verifiers cannot capture. However, these rewards are often collapsed to pass/fail ({0, 1}), which reports the verdict but not how well a response met each criterion. We model each pass/fail verdict as a score on an unreported scale, compared with one cutoff. A stretch of that scale moves every score proportionally toward or away from the cutoff, but never across it, so no verdict changes. A policy is therefore free to apply any stretch without changing anything the panel reports. Under a joint-Gaussian model, a third grade adds a second threshold and removes this affine stretch ambiguity. On MATH and SciBench outputs from one seven-criterion judge, all 14 constructed criterionwise stretches were invisible after binarization but visible with three grades. At $n=1{,}024$, a test given both population laws had at least 96.5% power at a $1.5\times$ stress. Retaining grades closes one blind spot created by binarization, but verdicts alone remain insufficient as some changes are still indistinguishable from genuine improvement. These include arbitrary within-grade changes and fi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 法官常被用作奖励信号，但奖励常被二值化为通过/失败（0/1），只报结论不报"各标准满足得多好"——二值化会掩盖什么信息？</p>
+<p><strong>方法</strong> 把每个 pass/fail 判定建模为未报告尺度上的一个分数与一个阈值比较：尺度拉伸只会成比例移动分数、不会跨越阈值，因此任何判定不变，策略可任意拉伸而不被面板察觉。在联合高斯模型下，第三档评分增加第二个阈值并消除仿射拉伸歧义。作者建议保留至少三档（如每标准"完全/部分/未满足"，奖励 {0, 0.5, 1}）。</p>
+<p><strong>关键数字</strong> 用含 7 个标准的法官对 MATH 与 SciBench 输出评分，构造的 14 个标准级拉伸在二值化后全部不可见、三档下全部可见；n=1024 时检验对 1.5× 应力至少有 96.5% 功效。</p>
+<p><strong>为什么值得看</strong> 用简洁的几何论证说明"二值化抹平评分空间"，并给出最小三档的实用建议，对用 LLM 做奖励模型与评测的人有直接意义。</p>
+<p><a href="https://arxiv.org/abs/2609.35797">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.35797">阅读原文 ↗</a></p>
 </body>
 </html>

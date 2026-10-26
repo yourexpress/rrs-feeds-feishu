@@ -22,9 +22,11 @@
 <h1>LLM Serving Optimization with Variable Prefill and Decode Lengths</h1>
 <p class="meta-line">arXiv / Meixuan Wang 等 · 2026-09-29 · 论文PDF</p>
 
-<p>【修订版】We study offline scheduling for large language model (LLM) serving under a fixed KV-cache…</p>
-<blockquote><p>We study offline scheduling for large language model (LLM) serving under a fixed KV-cache memory budget, where requests have heterogeneous prompt (prefill) and response (decode) lengths. Given a backlog of requests available at time zero, the scheduler forms mixed prefill/decode batches over time to minimize total end-to-end latency. We show that heterogeneity in prompt lengths fundamentally changes the problem: minimizing total latency is NP-hard, and standard policies that prioritize short outputs or small total sequence sizes can have unbounded approximation ratios. We propose Sorted-F, which repeatedly selects feasible batches using an F-metric that balances batch cardinality against downstream decode cost. With exact batch selection, Sorted-F achieves a constant-factor approximation guarantee in the unit-time, uninterrupted-decoding model with known output lengths; the guarantee also holds under a static peak-memory batch constraint. We develop an exact pseudopolynomial dynamic program for this static subproblem, scalable local-search and greedy heuristics, LP-guided variants, and a receding-horizon online extension. Experiments on public conversational and long-document summa…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> KV cache 显存预算固定、prompt 与 response 长度参差时，LLM 服务端如何批处理才能压低总端到端延迟？</p>
+<p><strong>方法</strong> 先证明问题本质：最小化总延迟是 NP-hard，且"优先短输出""优先小总序列"这类标准策略的近似比可以无界。提出 Sorted-F，反复用一项在批大小与下游 decode 成本间取平衡的 F-metric 选择可行批次；精确选批时在单位时间、已知输出长度、无中断 decode 模型下有常数因子近似保证，静态峰值内存约束下同样成立；配套给出该子问题的精确伪多项式 DP、局部搜索与贪心、LP 引导变体及滚动时域在线扩展。</p>
+<p><strong>关键数字</strong> 在公开对话与长文档摘要负载上，F-metric 调度相对标准基线显著降低延迟，并在可解实例上贴近 LP 松弛下界。</p>
+<p><strong>为什么值得看</strong> 把混合 prefill/decode 批处理从工程调参变成有近似保证的调度问题。</p>
+<p><a href="https://arxiv.org/abs/2508.06133">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2508.06133">阅读原文 ↗</a></p>
 </body>
 </html>

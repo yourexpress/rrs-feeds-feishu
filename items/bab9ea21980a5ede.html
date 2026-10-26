@@ -22,9 +22,11 @@
 <h1>GraphVQ: Structure-Aware Autoregressive Decoding over Context-Quantized Graph Tokens</h1>
 <p class="meta-line">arXiv / Yuxiang Yao 等 · 2026-09-30 · 论文PDF</p>
 
-<p>上下文量化图 token 上的结构感知自回归解码</p>
-<blockquote><p>Graph foundation models need a discrete token representation, but casting a graph as a generatable token sequence faces a structural obstacle: edges spanning beyond the serialization window cannot be emitted in one pass--so one-pass autoregressive generators systematically under-produce cycles--and a single global condition cannot tell candidate edges apart. GraphVQ removes both obstacles: node contexts--features plus a local edge mask under multi-order breadth-first serialization--are quantized into a shared codebook by a VQ-VAE with BCE-calibrated Bernoulli edge decoding, and a second-stage structure-aware decoder emits the global adjacency conditioned on token-derived pair features, whose necessity over any global-summary condition is formalized in a scoped impossibility result. The tokenizer reconstructs node features at 0.86--0.99 accuracy and decodes local edges at AUROC &gt;= 0.89 (ECE &lt;= 0.007). Under one same-split protocol on four datasets, pair conditioning improves orbit MMD 0.248 -&gt; 0.174 on PROTEINS and 3.4x on a ring stress test, and vanishes on a random-label control--the signature of attribute--topology coupling--so the gain is claimed exactly where attributes carry e…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 图基础模型需要离散 token 表示，但把图当可生成 token 序列有结构障碍：超出序列化窗口的边无法一次发出（单遍自回归生成器系统性欠产环），单一全局条件也无法区分候选边——如何让结构信息进入生成条件？</p>
+<p><strong>方法</strong> 提出 GraphVQ 双阶段方案：① 节点上下文（特征 + 多阶 BFS 序列化下的局部边掩码）经 VQ-VAE 量化进共享码本，用 BCE 校准的 Bernoulli 边解码；② 结构感知解码器基于 token 派生对特征发出全局邻接矩阵，并用受限不可能性结果形式化"对特征条件优于任何全局摘要条件"的必要性。</p>
+<p><strong>关键数字</strong> tokenizer 节点特征重建准确率 0.86–0.99，局部边解码 AUROC ≥ 0.89（ECE ≤ 0.007）；四数据集同切分协议下，对条件把 PROTEINS 的 orbit MMD 从 0.248 降至 0.174、环压力测试提升 3.4×，随机标签对照下增益消失（属性-拓扑耦合特征）；PROTEINS 上在学得生成器中排第一、SYN-COMM 并列第一，三数据集上 orbit MMD 相对单阶段提升 2.7–17×；MUTAG 无权重边目标欠生成，论文如实报告。</p>
+<p><strong>为什么值得看</strong> "条件粒度决定结构控制"的结论清晰，把 token 级对条件变成图生成分布保真的能力轴，为图 token 预训练铺路。</p>
+<p><a href="https://arxiv.org/abs/2609.37604">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.37604">阅读原文 ↗</a></p>
 </body>
 </html>

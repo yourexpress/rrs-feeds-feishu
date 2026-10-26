@@ -22,9 +22,11 @@
 <h1>Squeeze10-LLM: Squeezing LLMs' Weights by 10 Times via a Staged Mixed-Precision Quantization Method</h1>
 <p class="meta-line">arXiv / Qingcheng Zhu 等 · 2026-09-29 · 论文PDF</p>
 
-<p>【修订版】Deploying large language models (LLMs) is challenging due to their massive parameters and…</p>
-<blockquote><p>Deploying large language models (LLMs) is challenging due to their massive parameters and high computational costs. Ultra low-bit quantization can significantly reduce storage and accelerate inference, but extreme compression (i.e., mean bit-width &lt;= 2) often leads to severe performance degradation. To address this, we propose Squeeze10-LLM, effectively "squeezing" 16-bit LLMs' weights by 10 times. Specifically, Squeeze10-LLM is a staged mixed-precision post-training quantization (PTQ) framework and achieves an average of 1.6 bits per weight by quantizing 80% of the weights to 1 bit and 20% to 4 bits. We introduce Squeeze10LLM with two key innovations: Post-Binarization Activation Robustness (PBAR) and Full Information Activation Supervision (FIAS). PBAR is a refined weight significance metric that accounts for the impact of quantization on activations, improving accuracy in low-bit settings. FIAS is a strategy that preserves full activation information during quantization to mitigate cumulative error propagation across layers. Experiments on LLaMA and LLaMA2 show that Squeeze10-LLM achieves state-of-the-art performance for sub-2bit weight-only quantization, improving average accur…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 极端量化（平均比特数 ≤2）虽能大幅降低存储与推理开销，却会造成严重精度退化；如何把权重压到 1.6 比特仍可用？</p>
+<p><strong>方法</strong> Squeeze10-LLM 是分阶段的混合精度训练后量化（PTQ）框架：把 80% 权重压到 1 bit、20% 压到 4 bit，平均每权重 1.6 bit。两个关键设计是 PBAR——一种考虑量化对激活影响的精细化权重重要性度量，用于低比特场景提准；以及 FIAS——在量化过程中保留完整激活信息，抑制误差沿层累积传播。</p>
+<p><strong>关键数字</strong> 在 LLaMA 与 LLaMA2 上，sub-2bit weight-only 量化的 SOTA 表现，六个零样本分类任务的平均准确率从 43% 提升到 56%。</p>
+<p><strong>为什么值得看</strong> 把"权重压 10 倍"从口号变成可复现的 PTQ 流程，PBAR 与 FIAS 两个组件也可单独迁移到其他极低位宽量化工作。</p>
+<p><a href="https://arxiv.org/abs/2507.18073">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2507.18073">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>BASE: Batch-Aware Selection of Experts Using Predicted Removal Error for Efficient MoE Decoding</h1>
 <p class="meta-line">arXiv / Ali Abbasi 等 · 2026-09-30 · 论文PDF</p>
 
-<p>基于预测移除误差的批感知专家选择，加速 MoE 解码</p>
-<blockquote><p>Large language models are increasingly expensive to serve. In large-scale serving systems, autoregressive decoding is often bottlenecked by transferring model weights from accelerator high-bandwidth memory into on-chip SRAM. Mixture-of-experts (MoE) models reduce computation by activating only a small subset of experts per token, but this sparsity does not translate directly to batched decoding. Different requests select different experts; therefore, the combined active set across many concurrent requests can span a substantial fraction of the expert pool and require significantly more expert weights to be transferred. Most expert-reduction techniques make retention decisions independently for each token and therefore do not address this batch-level expansion. More recently, batch-aware methods have attempted to coordinate expert use across concurrent requests and reuse experts already fetched for the batch. Yet their selection criteria are based primarily on router rankings or expert statistics collected during calibration. Consequently, these criteria are not directly tied to the output error caused by dropping an expert, nor do they capture how an expert's contribution changes a…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> MoE 解码常受限于从 HBM 向 SRAM 搬权重的带宽，而稀疏激活在批量场景下失效：并发请求各自选不同专家，活跃专家并集可能覆盖大半个专家池——如何按批做专家取舍？</p>
+<p><strong>方法</strong> 现有专家精简方法多为逐 token 独立决策，batch-aware 方法虽协调并发请求复用已取专家，但选择标准停留在 router 排名或标定统计量，未直接关联"丢弃专家造成的输出误差"。BASE 改为按"移除该专家会改变 MoE 层输出的程度"排序，标定期训练一个轻量线性预测器估计每个 token 的专家移除代价，并开发自定义 GPU kernel 做代价预测与专家选择。</p>
+<p><strong>关键数字</strong> 三个 MoE 架构上无需重训即改善质量-效率权衡：Qwen3-30B-A3B 在紧专家预算下平均准确率比最强基线高 29.5 分；更高预算下比稠密推理快 60%，准确率仅差 0.4 分。</p>
+<p><strong>为什么值得看</strong> 把专家取舍从启发式升级为"预测移除误差"的可学习准则，附带 GPU kernel 实现，对 MoE 推理服务优化很实用。</p>
+<p><a href="https://arxiv.org/abs/2609.36222">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.36222">阅读原文 ↗</a></p>
 </body>
 </html>

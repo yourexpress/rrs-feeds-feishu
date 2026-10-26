@@ -22,9 +22,11 @@
 <h1>GeoFP8: Geometry-Aware FP8 Gradient Compression for Distributed LLM Training</h1>
 <p class="meta-line">arXiv / Jieying Wang 等 · 2026-09-30 · 论文PDF</p>
 
-<p>【修订版】Gradient communication is a primary scaling bottleneck in large language model (LLM) pret…</p>
-<blockquote><p>Gradient communication is a primary scaling bottleneck in large language model (LLM) pretraining. Communicating gradients in low-precision formats, such as FP8 and NVFP4, can significantly reduce the communication volume. Existing methods quantize gradients via linear or nonlinear mappings in Euclidean space, often degrading model performance because highly anisotropic gradients incur direction-dependent distortion. We present GeoFP8, a geometry-informed gradient scaling method that performs low-precision communication in geometry-aware coordinates. By transforming gradients into a near-isotropic space before quantization, GeoFP8 makes low-precision representations substantially more faithful to their high-precision counterparts. GeoFP8 only changes the coordinate system used for low-precision gradient communication and does not change the optimizer, training recipe, communication collective, or low-precision format. We also develop a simplified geometry-aware transformation algorithm with low-rank approximation and selective application to balance the computation overhead and communication reduction. We examine the empirical convergence of GeoFP8 using Llama-300M and Llama-600M mo…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 梯度通信是 LLM 预训练的主要扩展瓶颈，低精度（FP8/NVFP4）压缩可显著减通信量，但现有方法在欧氏空间做线性/非线性映射，各向异性梯度会受方向依赖失真——能否在几何感知坐标下压缩？</p>
+<p><strong>方法</strong> 提出 GeoFP8：量化前把梯度变换到近各向同性空间，使低精度表示对高精度对应更忠实。它只改变低精度梯度通信所用坐标系，不改优化器、训练配方、通信集合或低精度格式；并开发带低秩近似与选择性应用的简化几何感知变换算法，平衡计算开销与通信缩减。</p>
+<p><strong>关键数字</strong> Llama-300M/600M 实证收敛：Llama-600M 在 64 张 NVIDIA GH200 上端到端预训练时间减少 7.6%，且相同优化器与通信路径下，下游任务保持优于直接欧氏 FP8 通信。</p>
+<p><strong>为什么值得看</strong> 不动训练配方只换坐标系就拿到端到端提速，几何感知思路简洁有效，对大规模分布式训练梯度压缩有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2607.07494">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2607.07494">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>AdviSD: Learning to Advise Frontier LLMs via Targeted Multi-Turn Self-Distillation</h1>
 <p class="meta-line">arXiv / Rishabh Agrawal 等 · 2026-09-30 · 论文PDF</p>
 
-<p>目标多轮自蒸馏学会为前沿 LLM 提建议（跨类）</p>
-<blockquote><p>A small trainable advisor can steer a frozen language-model executor using natural-language advice. In addition to learning from task rewards, the advisor can use feedback from completed interactions to improve its advice. However, a plausible correction need not change execution, yet learning from such corrections can still affect the advisor's future decisions in other contexts. In a shared-parameter model, we prove that such corrections can limit learning if their targets favor useful advice less strongly than those of other corrections. Keeping them less often than the rest improves the model's eventual performance compared to learning from every correction. Motivated by this, our method, Advisor Self-Distillation (AdviSD), pairs outcome-based reinforcement learning with self-distillation from a feedback-conditioned copy of the advisor selectively. Reflection proposes corrections, and the advisor scores the same recorded executor response with and without its issued advice, using the magnitude of the difference to select decisions for supervision. This approach does not require executor likelihoods or additional executor rollouts. Experiments with Qwen3-8B advisors for Gemini a…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 小型可训练"顾问"（advisor）能用自然语言建议引导冻结的 LLM 执行者，但一条看似合理的纠错未必改变执行，却仍会影响顾问在其他场景的未来决策——该学哪些纠错、跳过哪些？</p>
+<p><strong>方法</strong> 作者证明：共享参数模型中，若某些纠错的目标对"有用建议"的偏好弱于其他纠错，学习它们会限制整体收益；有选择地少学它们反而提升最终性能。据此提出 AdviSD：将基于结果的强化学习与选择性自蒸馏结合——Reflection 提出纠错，顾问对同一段已记录执行"带/不带自己建议"分别打分，用差异幅度挑选监督样本；无需执行者似然或额外 rollout。</p>
+<p><strong>关键数字</strong> 以 Qwen3-8B 顾问指导 Gemini 与 Claude：AdviSD 在 BFCL-v3 上比 advisor-GRPO 高 4.2–6.4 个百分点，EnvScaler 上高 3.9–5.1 分；训练出的顾问可泛化到域外任务，并跨执行者版本与模型家族迁移。</p>
+<p><strong>为什么值得看</strong> 给出了"并非每条纠错都值得学"的理论依据与实用选择规则，是"小模型引导大模型"路线的精细化工作。</p>
+<p><a href="https://arxiv.org/abs/2609.38142">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.38142">阅读原文 ↗</a></p>
 </body>
 </html>

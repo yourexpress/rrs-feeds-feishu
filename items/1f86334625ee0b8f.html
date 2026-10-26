@@ -22,9 +22,11 @@
 <h1>Draft in Parallel, Condition Through Depth: Adjacent Causal Injection for Speculative Decoding</h1>
 <p class="meta-line">arXiv / Haohui Zhang 等 · 2026-09-30 · 论文PDF</p>
 
-<p>相邻因果注入实现并行草稿、深度条件的投机解码</p>
-<blockquote><p>Parallel speculative drafting generates multiple candidates in one backbone pass, but independent token selection can produce inconsistent continuations that shorten the accepted prefix. Existing methods mostly leave conditional decoding to a lightweight module after the backbone, which limits the flow of predecessor information to successors. Our analysis of DFlash shows that early positions already form recoverable predictions in shallow layers, and that accurate adjacent predecessors help successors more when they enter earlier. We therefore propose DSpine, a drafter with causal conditioning injection throughout the backbone: at every layer, gated adjacent injection writes each predecessor's predicted feature into its successor, so the causal conditioning chain unfolds over network depth while all positions update in parallel. A unified transfer space built from the target model's output embeddings unifies layer-wise injection with predecessor-conditioned decoding, and layer-wise output-embedding supervision promotes the formation of predicted features in shallow layers. Fused kernels and a transition cache execute both efficiently in parallel within SGLang. Across seven math, c…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 并行投机解码一次骨干前向生成多个候选，但独立 token 选择会产生不一致续写、缩短接受前缀——如何让前驱信息在深度上影响后继？</p>
+<p><strong>方法</strong> 对 DFlash 的分析显示：浅层已形成可恢复的预测，且准确的前驱越早进入越帮助后继。据此提出 DSpine：在骨干每一层做门控相邻注入（把每个前驱的预测特征写入其后继），因果条件链随网络深度展开、所有位置并行更新；用目标模型输出嵌入构建统一迁移空间，统一逐层注入与前驱条件解码；融合 kernel 与转移缓存使两者在 SGLang 中高效并行。</p>
+<p><strong>关键数字</strong> 七个数学/代码/对话基准上，Qwen3-4B 与 Qwen3-8B 两种温度下接受长度均最长；Qwen3-8B 零温下七基准均值从 DFlash 的 3.77 提至 4.82（+27.8%）；SGLang 服务测试平均吞吐比 DFlash 高 23.3%。</p>
+<p><strong>为什么值得看</strong> 把并行草稿的"条件化"从后置模块改为贯穿深度，接受长度与吞吐双提升，对投机解码与推理加速实现者价值直接。</p>
+<p><a href="https://arxiv.org/abs/2609.36173">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.36173">阅读原文 ↗</a></p>
 </body>
 </html>

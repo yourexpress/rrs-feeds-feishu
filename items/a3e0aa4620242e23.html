@@ -22,9 +22,11 @@
 <h1>Rethinking Soft Tokens for Parallel Decoding in Diffusion Language Models</h1>
 <p class="meta-line">arXiv / Kodai Kawamura 等 · 2026-09-29 · 论文PDF</p>
 
-<p>Diffusion language models (DLMs) enable parallel generation by predicting and committing …</p>
-<blockquote><p>Diffusion language models (DLMs) enable parallel generation by predicting and committing multiple tokens at each denoising step, yet they can generate individually plausible but mutually inconsistent tokens. Recent work shows that \emph{soft tokens} can mitigate this issue by representing uncertain positions with continuous embeddings built from the model's predictive distribution at the previous decoding step. However, although soft tokens are commonly understood as preserving predictive uncertainty, how soft-token feedback improves parallel decoding has not been systematically examined. In this paper, we investigate this question in frozen pretrained DLMs to examine soft-token feedback without the effects of additional training. To construct soft-token inputs in a training-free setting, we identify a geometric mismatch between conventional soft-token construction and the pretrained embedding space. Based on this observation, we propose a training-free, geometry-aware construction of soft tokens. Our analysis of soft-token feedback suggests that uncertainty preservation alone does not fully explain how it reshapes subsequent predictions. To better explain how soft-token feedback i…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 扩散语言模型并行生成会产出各自合理却彼此矛盾的 token；soft token 缓解了这一问题，但它究竟为何有效？</p>
+<p><strong>方法</strong> 在冻结的预训练 DLM 上研究以排除额外训练的干扰；发现常规 soft token 构造与预训练嵌入空间之间存在几何失配，据此提出免训练的几何感知 soft token 构造方法；对 soft token 反馈的分析表明，仅"保留预测不确定性"不足以解释它如何重塑后续预测，实验证据显示它更倾向于偏好连贯的 token 序列。</p>
+<p><strong>关键数字</strong> 在 4 个预训练 DLM、4 个数学与代码基准上，方法优于标准并行解码与免训练的欧氏距离 soft token 基线。</p>
+<p><strong>为什么值得看</strong> 纠正了"soft token 就是保留不确定性"的通行理解，给出可解释的替代说法；冻结模型上的对照设计也让它成为少见的干净因果证据。</p>
+<p><a href="https://arxiv.org/abs/2609.37391">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.37391">阅读原文 ↗</a></p>
 </body>
 </html>

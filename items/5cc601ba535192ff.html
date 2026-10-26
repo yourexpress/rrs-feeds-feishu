@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>llama.cpp b11875 hexagon: generic dims collapse/reshape for unary, binary and matmul ops (#31071)</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>llama.cpp b11875 hexagon: generic dims collapse/reshape for unary, binary and matmul ops (#31071)</h1>
+<p class="meta-line">llama.cpp（GitHub Releases） · 2026-10-25 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://opengraph.githubassets.com/490ba71f1955eda057e4d4463d3ec105859da073b761c91d7052501ce52ad0ed/ggml-org/llama.cpp/releases/tag/b11875" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong> 骁龙 DSP（Hexagon）后端算子如何处理多维张量，才能真正吃满端侧多核。</p>
+<p><strong>要点</strong> 该版本把 unary、binary 与 matmul 算子的维度折叠/reshape 统一为通用逻辑：全部折叠处理放到 host 侧完成并泛化，unary 的折叠策略在行数较少时补充拆分，移除残留的 unary 辅助函数；配套 hex-tools 的 profile.py 增加 --compare 选项。</p>
+<p><strong>关键数字</strong> 改动集中在 4 个提交：host 侧统一折叠与泛化、unary 小行数时拆分、profile.py 支持 --compare、清理 unary 辅助函数；发布 attestations 明确包含 Linux arm64（Snapdragon：CPU、Adreno GPU、Hexagon NPU）配置。</p>
+<p><strong>为什么值得看</strong> Hexagon 正是手机端 NPU 与 DSP 的落点，把维度折叠从算子内部特例变成 host 侧通用机制，后续所有端侧算子都能受益，比单个算子优化更基础。</p>
+<p><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b11875">阅读原文</a></p>
+<p><a class="origin" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11875">阅读原文 ↗</a></p>
+</body>
+</html>

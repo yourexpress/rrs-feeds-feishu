@@ -22,9 +22,11 @@
 <h1>CoEM: Empowering Long-Context Reasoning with Commit-on-Evidence Memory</h1>
 <p class="meta-line">arXiv / Jingguang Li 等 · 2026-09-30 · 论文PDF</p>
 
-<p>【修订版】Long-context reasoning is essential for complex and long-horizon tasks, yet the performan…</p>
-<blockquote><p>Long-context reasoning is essential for complex and long-horizon tasks, yet the performance of large language models (LLMs) degrades as context length increases. Recent approaches address this by processing input chunk by chunk while maintaining a bounded textual memory in model context. However, premature information compression can discard critical details essential for subsequent reasoning. In this paper, we introduce Commit-on-Evidence Memory (CoEM), which learns when to convert source evidence into compact memory facts. Specifically, under a fixed context-memory budget, CoEM preserves potentially useful source excerpts verbatim in a pending set, allowing subsequent context to clarify their relevance before irreversible compression. As new context arrives, a learned policy revisits each pending excerpt and decides whether to promote it to the committed memory, retain it for further consideration, or discard it. A frozen verifier ensures proposed facts are accepted only if supported by retained excerpts and current context. To further guide effective memory management, we train this policy using reinforcement learning by combining fine-grained, step-level evidence rewards with f…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 长上下文推理中 LLM 性能随上下文变长而下降，现有方案分块处理并维护有界文本记忆，但过早压缩会丢弃后续推理所需的关键细节——何时该把源证据压缩为记忆事实？</p>
+<p><strong>方法</strong> 提出 Commit-on-Evidence Memory（CoEM）：在固定上下文-记忆预算下，把可能有用的源摘录逐字保留在 pending 集中，等后续上下文澄清其相关性后再做不可逆压缩。学习策略随新上下文到达重审每条 pending 摘录，决定提升为 committed 记忆、继续保留或丢弃；冻结验证器确保提议事实仅在被保留摘录与当前上下文支持时接受。策略用强化学习训练，结合细粒度逐步证据奖励与最终答案奖励。</p>
+<p><strong>关键数字</strong> 在 6400 文档长上下文输入上，CoEM 在 Qwen3.5-9B 上比最强记忆基线高 10.4–11.4 个 F1 点。</p>
+<p><strong>为什么值得看</strong> "先保留、后决定"的延迟压缩策略直击长上下文记忆的不可逆信息损失问题，代码已开源，对长文档推理与 RAG 系统有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.36935">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.36935">阅读原文 ↗</a></p>
 </body>
 </html>

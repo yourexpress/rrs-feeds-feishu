@@ -22,9 +22,11 @@
 <h1>Quantization Error Is Spectrally Flat: A Single Random Probe Is a Calibrated, Data-Free Sensitivity Estimator, with Application to Budget-Targeted Mixed-Precision Quantization</h1>
 <p class="meta-line">arXiv / I Kennedy 等 · 2026-09-29 · 论文PDF</p>
 
-<p>【修订版】A single random Gaussian probe gives an unbiased estimate of the squared Frobenius norm o…</p>
-<blockquote><p>A single random Gaussian probe gives an unbiased estimate of the squared Frobenius norm of a layer's quantization error. The estimator is well-behaved because round-to-nearest error is spectrally flat. Across 1,683 tensors from a 35B MoE and a 9B dense model, effective dimensionality is 0.93 to 0.96 times the i.i.d. noise value of the same shape, and on the MoE the median is unchanged from 2-bit to 8-bit. The probe coefficient of variation is predictable from tensor shape. One probe measures per-tensor sensitivity to within 4 to 7%; twenty probes reach 1.3 to 1.4%.RAM applies the propagated form of this estimator to budget-targeted mixed-precision quantization with no calibration data. Gaussian probes carrying the network's own input statistics score every tensor at six bit-widths. A knapsack solver allocates bits under an exact byte budget, with guardrails against catastrophic 2-bit assignments. One probe pass serves any budget. Isolated and propagated scores rank tensors independently on Qwen3.5-35B-A3B (Spearman -0.01), yet the propagated probe rank-correlates 0.81 to 0.83 with the GPTQ layer objective from real activations, while the isolated estimator is uncorrelated with it. …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 混合精度量化要按预算分配比特，需要判断每个张量的敏感度；有无可用数据、校准成本又极低的估计器？</p>
+<p><strong>方法</strong> 核心观察是 round-to-nearest 量化误差在频谱上"平坦"，故单个随机高斯探针即可无偏估计某层量化误差的平方 Frobenius 范数。RAM 用其传播形式做预算定向混合精度量化：携带网络输入统计的探针对每个张量在 6 种比特宽度下打分，knapsack 求解器在精确字节预算下分配比特，并设护栏防止灾难性 2-bit 分配；一次扫描即可服务任意预算，无需校准数据。</p>
+<p><strong>关键数字</strong> 35B MoE 与 9B dense 的 1,683 个张量上，有效维度为同形状 i.i.d. 噪声值的 0.93–0.96 倍；单探针敏感度误差 4–7%，20 个探针降到 1.3%–1.4%。传播探针与真实激活下 GPTQ 层目标秩相关 0.81–0.83（孤立探针不相关）；等字节下 Qwen3.8-27B 优于厂商 IQ3_M 配比与基于真实激活目标的 oracle，Qwen3-8B 与 HAWQ-V2 打平；跨 7 种 8B–122B 架构，MoE 上 WikiText-2 中位困惑度比同规模均匀 4-bit 低 3.5%–13.6%。</p>
+<p><strong>为什么值得看</strong> 一次随机探针替代整个校准集，把量化部署前置成本几乎归零；论文还直接指出 GPTQ 层目标是错误的分配目标。</p>
+<p><a href="https://arxiv.org/abs/2609.33923">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.33923">阅读原文 ↗</a></p>
 </body>
 </html>

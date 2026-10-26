@@ -22,9 +22,11 @@
 <h1>Compress to Remember: Learning Compact Memory via On-Policy Distillation for Long Video Generation</h1>
 <p class="meta-line">arXiv / Xiaoyu Wu 等 · 2026-09-30 · 论文PDF</p>
 
-<p>在策略蒸馏学习紧凑记忆用于长视频生成（跨类）</p>
-<blockquote><p>Standard video generators do not natively compact historical context into reusable memory tokens. As generation continues, the growing history makes it increasingly difficult to retain information from earlier frames due to long-context degradation. Key-frame-based approaches address this challenge by retaining selected past frames, but can discard information needed for future generation. Rather than relying on frame selection alone, we study whether a frozen video generator can supply the supervision needed to learn a compact representation of the history. We propose Prediction-Aligned Context Compaction (PACC), which uses a learned compressor to aggregate information across past frames into compact memory tokens. We train the compressor through on-policy distillation, using the same frozen generator both as a student when conditioned on compressed memory and as a teacher when conditioned on the full history. The student generates continuations, while the teacher provides targets for the same noisy inputs at each denoising step. Only the compressor is updated to align the student's predictions with these targets. We evaluate PACC on MBench, which jointly measures memory-event cov…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 标准视频生成器不会把历史上下文压缩为可复用记忆 token，生成持续时早期帧信息因长上下文退化而丢失；关键帧方案会丢弃未来生成所需的信息——能否让冻结的视频生成器自己监督出紧凑历史表示？</p>
+<p><strong>方法</strong> 提出 Prediction-Aligned Context Compaction（PACC）：用学习到的压缩器把过去帧聚合为紧凑记忆 token。训练走在线策略蒸馏：同一冻结生成器既作学生（条件为压缩记忆）又作教师（条件为完整历史），学生生成续片、教师为相同噪声输入提供去噪目标，只更新压缩器对齐学生预测与目标。</p>
+<p><strong>关键数字</strong> MBench 上比最强基线高 6.63 分（Causal-rCM）与 3.19 分（Causal Forcing）；VBench-Long 的 MovieGen 提示评估中可生成分钟级视频，质量与基线相当。</p>
+<p><strong>为什么值得看</strong> "压缩器从冻结生成器中蒸馏"的免修改方案，为长视频生成的历史记忆问题提供了新路径，对视频生成与扩散模型压缩研究有启发。</p>
+<p><a href="https://arxiv.org/abs/2609.36364">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.36364">阅读原文 ↗</a></p>
 </body>
 </html>

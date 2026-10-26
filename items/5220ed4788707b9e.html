@@ -22,9 +22,11 @@
 <h1>Dr. OPD: Learning What to Follow for Optimal On-Policy Distillation of Large Language Models</h1>
 <p class="meta-line">arXiv / Zhenyu Wang 等 · 2026-09-30 · 论文PDF</p>
 
-<p>Dr. OPD：学习「该跟谁」的最优在策略蒸馏</p>
-<blockquote><p>On-policy distillation (OPD) trains a student on its own generated responses using dense, token-level supervision from a stronger teacher. Vanilla OPD treats all teacher signals equally, assuming that the teacher's supervision is equally important for every token. However, teacher signals at different tokens may have very different effects on the student's performance: some correct important reasoning errors, while others have little effect on the final answer. Motivated by this observation, we introduce Dr. OPD (OPD Done Right), which defines the optimal weighted OPD to maximize the student's performance. We formulate Dr. OPD as a bilevel optimization problem in which the student learns from weighted teacher supervision, while the weights are selected to maximize the expected reward of the resulting student. To solve Dr. OPD, we develop an efficient iterative solver that updates the token weights and student policy alternatively. At each round, it updates weights in closed form and then takes one gradient step on the resulting weighted OPD objective. Under regularity conditions, we show that this weighted update achieves a higher expected reward than a vanilla OPD update. Empirica…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 在线策略蒸馏（OPD）用强教师对学生自生成响应做密集 token 级监督，但 vanilla OPD 对一切教师信号一视同仁——不同 token 的教师信号对最终性能影响差异巨大，哪些更该学？</p>
+<p><strong>方法</strong> 提出 Dr. OPD：把加权 OPD 定义为双层优化——学生从加权教师监督学习，权重用于最大化所得学生的期望奖励。开发高效迭代求解器交替更新 token 权重与学生策略：每轮权重闭式更新，随后对加权 OPD 目标做一步梯度。正则性条件下证明该加权更新期望奖励高于 vanilla OPD 更新。</p>
+<p><strong>关键数字</strong> 强到弱与同规模蒸馏的数学与代码任务上全面优于所有对比基线；强到弱设置中，平均数学成绩比 vanilla OPD 高 9.7 分，且使较小学生反超其更大教师。</p>
+<p><strong>为什么值得看</strong> "该学哪些 token"从启发式升级为可优化目标，理论 + 实证兼备，对蒸馏训练管线的效率与上限有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.38025">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.38025">阅读原文 ↗</a></p>
 </body>
 </html>

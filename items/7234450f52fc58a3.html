@@ -22,9 +22,11 @@
 <h1>Exploring Heterogeneous Model Merging Approach for Complex Knowledge Transfer</h1>
 <p class="meta-line">arXiv / Jiahe Fan 等 · 2026-09-30 · 论文PDF</p>
 
-<p>Specialized models encode task-oriented behavior, but transferring that behavior to a gen…</p>
-<blockquote><p>Specialized models encode task-oriented behavior, but transferring that behavior to a general language model usually requires training, distillation, or representation alignment. We study whether such ability can instead be transferred directly at the parameter level. We apply two existing training-free heterogeneous merging methods, previously shown to transfer knowledge between general language models, to specialist-to-general transfer, projecting a specialist donor into the recipient's shape and interpolating backbone parameters without gradient updates or semantic alignment. Intersection-Merge (IM) injects a prefix-aligned donor slice matching the recipient shape, while Activate-Prune-Merge (APM) uses forward-pass activation statistics to select which donor dimensions to retain before injection. Across embedding, reranking, reward modeling, and MoE code-specialist transfer, both methods improve the general recipient, showing that simple heterogeneous merging can move capabilities across diverse specialist roles.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 专用模型编码了面向任务的行为，但把该行为迁移到通用语言模型通常需要训练、蒸馏或表示对齐——能否直接在参数层面迁移？</p>
+<p><strong>方法</strong> 应用两种已有的免训练异构合并方法（此前用于通用模型间知识迁移）做专家到通用的迁移：把专家捐赠者投影进接收者形状并插值骨干参数，无需梯度更新或语义对齐。Intersection-Merge（IM）注入与接收者形状匹配的前缀对齐捐赠切片；Activate-Prune-Merge（APM）用前向激活统计选择保留哪些捐赠维度再注入。</p>
+<p><strong>关键数字</strong> 在嵌入、重排序、奖励建模与 MoE 代码专家迁移四类任务上，两种方法均提升了通用接收者；摘要未给出单一量化指标。</p>
+<p><strong>为什么值得看</strong> 验证了"简单异构合并即可跨专家角色迁移能力"，无需训练即可把专项能力注入通用模型，对模型复用与能力组合研究有启发。</p>
+<p><a href="https://arxiv.org/abs/2609.39369">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.39369">阅读原文 ↗</a></p>
 </body>
 </html>

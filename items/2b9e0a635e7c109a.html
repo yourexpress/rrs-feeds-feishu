@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>llama.cpp b11870 model: DSV4.1 flash (#31086)</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>llama.cpp b11870 model: DSV4.1 flash (#31086)</h1>
+<p class="meta-line">llama.cpp（GitHub Releases） · 2026-10-25 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://opengraph.githubassets.com/126e3629a50b61fc7c317a53d349ee7f03f2b48f0765a4863c40820bd4dcb5c9/ggml-org/llama.cpp/releases/tag/b11870" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong> 端侧推理框架如何接入 DeepSeek-V4.1-Flash 这个新 MoE 架构。</p>
+<p><strong>要点</strong> 该版本新增 deepseek41 模型支持：移除 MXFP8、把 Engram 表格转成 BF16、在 cache 内一次算完压缩 KV 读取层、参照 qwen4exp 在图内 gather Engram 行以去掉 host 侧 gather、每个 Engram 层各存一份哈希常量，并删除 LLAMA_DSV41_KV_MIRROR 开关。</p>
+<p><strong>关键数字</strong> 本次共 10 个 deepseek41 相关提交（含 Engram 表格转 BF16、图内 gather、top-k 行排序后再做稀疏 gather），并把 deepseek41 纳入 Metal fusion 测试基线；发布携带 macOS/iOS、Linux、CUDA 12/13、ROCm 10.0、OpenVINO、SYCL、Vulkan 及 Snapdragon（CPU/Adreno/Hexagon NPU）等多平台 attestations。</p>
+<p><strong>为什么值得看</strong> 新一代旗舰 MoE 架构进入开源推理栈通常意味着几周内的适配跟进，这份改动清单本身就是端侧部署该模型的踩坑清单。</p>
+<p><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b11870">阅读原文</a></p>
+<p><a class="origin" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11870">阅读原文 ↗</a></p>
+</body>
+</html>

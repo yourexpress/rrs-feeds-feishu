@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>llama.cpp b11873 opencl: add initial q2_k support (#30999)</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>llama.cpp b11873 opencl: add initial q2_k support (#30999)</h1>
+<p class="meta-line">llama.cpp（GitHub Releases） · 2026-10-25 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://opengraph.githubassets.com/b57c01f676e52ed50787420394e65a46b9c66effd65ff8aef2d7ceeb5a20a171/ggml-org/llama.cpp/releases/tag/b11873" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong> 移动 GPU 上的极低比特（q2_k）推理路径此前缺失，本次补齐到什么程度。</p>
+<p><strong>要点</strong> OpenCL 后端新增 q2_k 的 mul_mv、SOA 向量乘与 tiled 矩阵乘，并实现面向 Adreno 的 noshuffle gemm/gemv 与 dp4a gemm，随后对 Adreno 做了 kernel 调优。代码由高通方面工程师共同提交。</p>
+<p><strong>关键数字</strong> 覆盖 4 条 kernel 路径（mul_mv_q2_k_f32、SOA mv、tiled mm、Adreno noshuffle/dp4a gemm）；发布随附的 attestations 包含 Windows arm64 OpenCL Adreno、Linux arm64 Snapdragon（CPU/Adreno GPU/Hexagon NPU）、CUDA 12/13、Vulkan、ROCm 10.0 等矩阵。</p>
+<p><strong>为什么值得看</strong> q2_k 是 2-bit 级部署的最后一档，它的 Adreno 专用路径决定了 2-bit 模型在手机 GPU 上是否真能跑得动，而不只是"能编译"。</p>
+<p><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b11873">阅读原文</a></p>
+<p><a class="origin" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11873">阅读原文 ↗</a></p>
+</body>
+</html>
