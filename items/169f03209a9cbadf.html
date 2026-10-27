@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decode Late, Multiply Once: Rethinking the Dot Product for Quantized Weights</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Decode Late, Multiply Once: Rethinking the Dot Product for Quantized Weights</h1>
+<p class="meta-line"> · 2026-10-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 1-4 bit 量化权重的神经网络推理中，点积仍按每元素一次乘法计算——能否把乘加（MAC）大幅压缩？</p>
+<p><strong>方法</strong> 提出"延迟解码、一次相乘"重构：长度为 n 的点积只需 n+2^k 次加法、至多 2^k 次解码与 2^k 次乘法；每个权重码直接作为地址偏移选择 2^k 个累加器之一，累加结果最后统一做融合的解码-相乘，解码后的权重向量从不显式成形。对整数算术精确成立，支持整数/浮点操作数与非线性解码器，可扩展到分组缩放与矩阵/张量积；配套设计 SA-PE 处理单元替换脉动阵列中的 MAC。</p>
+<p><strong>关键数字</strong> 乘法次数降为原来的 n/2^k 分之一；总算术能耗改善受成本模型量化的有界因子约束。</p>
+<p><strong>为什么值得看</strong> 从算法层面重构量化点积的运算结构，对低比特推理硬件设计有直接参考价值。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.31913">阅读原文 ↗</a></p>
+</body>
+</html>

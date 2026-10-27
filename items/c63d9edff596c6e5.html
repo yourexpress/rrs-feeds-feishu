@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reinforcement Learning with Multi-Step Transition Predictions: A Bellman Theory</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Reinforcement Learning with Multi-Step Transition Predictions: A Bellman Theory</h1>
+<p class="meta-line"> · 2026-10-23 · 论文PDF</p>
+
+<p>Multi-step predictions of future transition realizations can improve reinforcement learning, but their value remains difficult to quantify. Directly including these predictions in ...</p>
+<blockquote><p>Multi-step predictions of future transition realizations can improve reinforcement learning, but their value remains difficult to quantify. Directly including these predictions in the state can lead to exponential state-space growth, making direct dynamic programming computationally expensive. We study discounted finite MDPs under a block-feedback protocol: at the start of each K-period block, the decision maker observes $K$-step probabilistic transition predictions for a subset of actions and adapts decisions to observed states within the block. We show that the optimal value satisfies a Bayesian Bellman equation on the original state space. This representation reveals that predictive information creates value by recursively changing the local order of maximization and expectation in the Bellman expansion. We formalize this effect through a Bellman--Jensen analysis and quantify the effects of prediction horizon, error, action coverage, and within-block feedback. We propose block-feedback Bayesian offline learning with online adaptation (BF--BOLA), a model-based algorithm for learning near-optimal policies, and establish upper and lower sample-complexity bounds that match up to log…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.32887">阅读原文 ↗</a></p>
+</body>
+</html>

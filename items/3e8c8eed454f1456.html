@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PARIS: Parallel Arithmetic Reduction and Integrated Selection for MSDF Inner Products</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>PARIS: Parallel Arithmetic Reduction and Integrated Selection for MSDF Inner Products</h1>
+<p class="meta-line"> · 2026-10-23 · 论文PDF</p>
+
+<p>Existing most-significant-digit-first (MSDF) accelerators serialize input-term processing, causing inner-product latency to increase with fan-in. This paper presents PARIS, an MSDF...</p>
+<blockquote><p>Existing most-significant-digit-first (MSDF) accelerators serialize input-term processing, causing inner-product latency to increase with fan-in. This paper presents PARIS, an MSDF architecture that eliminates input-term serialization through parallel bit-plane reduction and shared carry-save residual selection. For $B$-bit operands, PARIS processes $B^2$ bit-position pairs, independent of fan-in within the supported tile, while generating exact MSDF outputs. Synthesized in 45\,nm at 100\,MHz, the 784-lane INT8 core occupies 0.008701\,mm$^2$ and completes an inner product in 88 cycles. Evaluation on two MNIST multilayer perceptrons demonstrates arithmetic-workload speedups of 240.44$\times$ and 180.47$\times$ over a matched reused-MSDF implementation, reducing arithmetic energy by 98.89\% and 98.58\%, respectively. A synthesized 16-engine accelerator occupies 0.90273\,mm$^2$ and meets the 100\,MHz timing constraint. Assuming immediate weight availability, it delivers a projected throughput of 24.33\,GOPS and an estimated energy efficiency of 1,581.14\,GOPS/W at unchanged mapped power. Bias-aware ReLU detection further reduces modeled arithmetic cycles by 5.52\% and 4.86\%. A separa…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.32410">阅读原文 ↗</a></p>
+</body>
+</html>

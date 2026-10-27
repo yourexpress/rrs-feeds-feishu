@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nested Sparsity for Scalable Pretraining and Continual Learning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Nested Sparsity for Scalable Pretraining and Continual Learning</h1>
+<p class="meta-line"> · 2026-10-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> MoE transformer 通过稀疏激活降低计算，但条件计算只发生在 MoE 算子中——能否在注意力算子侧也引入可与之嵌套的稀疏机制？</p>
+<p><strong>方法</strong> 提出 Nestor：一种类似 MoE 的注意力算子条件计算机制，其稀疏性与 MoE 算子的稀疏性自然嵌套（层级组合）；在同等计算量与稀疏度下与常规 MoE transformer 对比语言模型预训练，并评估持续预训练场景。</p>
+<p><strong>关键数字</strong> 摘要未给出具体数值；结果显示 Nestor 在等计算等稀疏度下优于常规 MoE，且更适合持续预训练：能更有效地扩展到长上下文、更快适应新领域并对旧领域遗忘更少。</p>
+<p><strong>为什么值得看</strong> 把"条件计算"从 MoE 推广到注意力，可扩展预训练与持续学习的新结构方向。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.31818">阅读原文 ↗</a></p>
+</body>
+</html>

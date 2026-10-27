@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Efficient Omni-modal Large Language Model Inference via Per-Query Modality Selection</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Efficient Omni-modal Large Language Model Inference via Per-Query Modality Selection</h1>
+<p class="meta-line"> · 2026-10-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> Omni 多模态大模型推理成本高，但不同查询对额外模态的收益不一——固定模态配置是否低效？</p>
+<p><strong>方法</strong> 研究查询级（query-wise）模态选择：保持底层 Omni-LLM 不变，为每个查询自适应选择提供哪些模态；将问题形式化为精度-成本优化，提出成本敏感的学习方法。在 WorldSense 上用 Qwen2.5-Omni 与 Qwen3-Omni 评估三种推理成本口径：输入 token、延迟与货币成本。</p>
+<p><strong>关键数字</strong> Qwen2.5-Omni 上成本敏感选择达到或超过全模态精度，输入 token 仅需约 41%。</p>
+<p><strong>为什么值得看</strong> 不做模型改动、仅按查询裁剪模态即可改善精度-成本权衡，多模态服务降本可借鉴。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.31768">阅读原文 ↗</a></p>
+</body>
+</html>

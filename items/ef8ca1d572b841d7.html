@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>On Latency-Optimal Implementations of the Timestamp Object</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>On Latency-Optimal Implementations of the Timestamp Object</h1>
+<p class="meta-line"> · 2026-10-23 · 论文PDF</p>
+
+<p>Timestamps are widely used in distributed algorithms to order operations. In this paper, we study the timestamp object (TS), which provides a single operation that returns strictly...</p>
+<blockquote><p>Timestamps are widely used in distributed algorithms to order operations. In this paper, we study the timestamp object (TS), which provides a single operation that returns strictly increasing integers. We ask two questions: What is the maximum resilience and the minimum latency of TS implementations in asynchronous message-passing systems, where latency is measured by worst-case message delay? We answer these questions under various types of failure: crash failures, and Byzantine failures with and without digital signatures. To do so, we give lower bounds and algorithms that determine (1) the optimal resilience of TS implementations under each type of failure, and (2) the optimal latency in all cases but one. Along the way, we introduce a new lower-bound proof technique called a cyclic chain argument, which constructs a cycle of indistinguishable schedules along which the returned timestamps must strictly increase, yielding a contradiction.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.32844">阅读原文 ↗</a></p>
+</body>
+</html>

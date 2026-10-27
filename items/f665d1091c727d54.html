@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quantum Cadence: Post-Quantum Consensus with Multiple Concurrent Proposers</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Quantum Cadence: Post-Quantum Consensus with Multiple Concurrent Proposers</h1>
+<p class="meta-line"> · 2026-10-23 · 论文PDF</p>
+
+<p>The consensus protocols of most high-performance blockchains use quorum certificates, which bundle the signatures of a quorum of validators. Signature schemes such as BLS can aggre...</p>
+<blockquote><p>The consensus protocols of most high-performance blockchains use quorum certificates, which bundle the signatures of a quorum of validators. Signature schemes such as BLS can aggregate the signatures of a whole quorum into a single short signature, which keeps these certificates small. A large-scale quantum computer would break these schemes, and no post-quantum scheme with comparable aggregate size and aggregation time is known. Without aggregation, a certificate holds one large post-quantum signature per member of the quorum, so it becomes infeasible for each validator to broadcast certificates, as modern consensus protocols often require. We present Quantum Cadence, a post-quantum consensus protocol with multiple concurrent proposers that avoids certificates altogether: every validator counts quorums among the messages it has received itself. Its safety and liveness do not even depend on signatures, although we add signatures to obtain accountability. Quantum Cadence builds on Cadence and replaces its slot consensus, Chorus, with Quantum Chorus, which keeps the optimal fast-path latency of Chorus: dissemination followed by two rounds of votes. When its fast path fails, Quantum C…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.32803">阅读原文 ↗</a></p>
+</body>
+</html>

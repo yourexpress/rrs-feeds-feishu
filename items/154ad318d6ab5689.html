@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GS-MoE: Training-Free MoE Compression via Groupwise Subspace Sharing and Pruning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>GS-MoE: Training-Free MoE Compression via Groupwise Subspace Sharing and Pruning</h1>
+<p class="meta-line"> · 2026-10-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> MoE 通过稀疏激活省计算，但专家参数存储仍是主要内存瓶颈——能否免训练地压缩 MoE？</p>
+<p><strong>方法</strong> 提出 GS-MoE，沿两个压缩轴处理专家间与专家内冗余：分组低秩表示捕获跨专家共享结构同时保留专家特定投影，Nyström 神经元压缩缩减专家内部宽度；用重建误差约简指导专家分组，用无梯度层重要性分数做层级预算分配，特征值与 leverage 再将其分布为组间非均匀秩与专家间宽度。</p>
+<p><strong>关键数字</strong> 摘要未给出具体数值；实验显示两轴压缩在细粒度场景的高压缩率下收益互补。</p>
+<p><strong>为什么值得看</strong> 免训练 MoE 压缩的"跨专家+专家内"双轴方案，专家存储优化可参考。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.32009">阅读原文 ↗</a></p>
+</body>
+</html>

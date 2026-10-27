@@ -5,7 +5,7 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>AI 机构与企业（DeepMind/OpenAI/Anthropic/Microsoft/Meta/xAI/Mistral/Qwen/Seed 等）最新论文与 PDF 技术报告（arXiv 等），正文含中文省流版。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 26 Oct 2026 23:27:39 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 11:00:37 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/ai-papers.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Fix for Softmax and Cross-Entropy</title>
@@ -1035,41 +1035,6 @@
 <p><strong>关键数字</strong> 摘要未给具体量化指标；作者评估了外部知识与工作流结构化对生成准确率的影响，称所提方法显著提升复杂工作流生成的正确率，同时降低 prompt 复杂度。</p>
 <p><strong>为什么值得看</strong> 「多智能体 + 结构化中间表示」在科学可视化这一高门槛垂直场景的落地案例，对做 AI for Science 工具链的人有参考意义。</p>
 <p><a href="https://arxiv.org/abs/2609.16598">阅读原文</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>FrogNano</title>
-      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/e57640db1f3a4c42.html</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2609.07925</guid>
-      <pubDate>Tue, 15 Sep 2026 12:00:00 +0800</pubDate>
-    <category>论文PDF</category>
-    <category>每日精选</category>
-      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：Microsoft　&lt;strong&gt;发布&lt;/strong&gt;：2026-09-15　&lt;strong&gt;分类&lt;/strong&gt;：论文PDF / 每日精选&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究问题&lt;/strong&gt;：资源受限环境下，能否不靠大模型蒸馏、训出有竞争力的软件工程（SWE）小模型？&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;方法&lt;/strong&gt;：FrogNano（4B 编码 agent）：纯 RL 后训练，仅用约 1,500 个 SWE 环境 + 合成任务；核心是"在线任务合成管线"——把任务动态校准到当前 checkpoint 的可学习性前沿（learnability frontier）。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;关键数字&lt;/strong&gt;：4B 参数；约 1,500 个 SWE 环境；不做大模型蒸馏。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;为什么值得看&lt;/strong&gt;：给出"合成任务 + RL 就够训小编码 agent"的证据，且"按可学习性前沿出题"的思路对 RL 训练课程设计有普适参考。&lt;/p&gt;
-&lt;p&gt;原文：&lt;a href="https://arxiv.org/abs/2609.07925"&gt;arXiv:2609.07925&lt;/a&gt;（Microsoft）&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p><strong>发表方</strong>：Microsoft　<strong>发布</strong>：2026-09-15　<strong>分类</strong>：论文PDF / 每日精选</p><p><strong>研究问题</strong>：资源受限环境下，能否不靠大模型蒸馏、训出有竞争力的软件工程（SWE）小模型？</p>
-<p><strong>方法</strong>：FrogNano（4B 编码 agent）：纯 RL 后训练，仅用约 1,500 个 SWE 环境 + 合成任务；核心是"在线任务合成管线"——把任务动态校准到当前 checkpoint 的可学习性前沿（learnability frontier）。</p>
-<p><strong>关键数字</strong>：4B 参数；约 1,500 个 SWE 环境；不做大模型蒸馏。</p>
-<p><strong>为什么值得看</strong>：给出"合成任务 + RL 就够训小编码 agent"的证据，且"按可学习性前沿出题"的思路对 RL 训练课程设计有普适参考。</p>
-<p>原文：<a href="https://arxiv.org/abs/2609.07925">arXiv:2609.07925</a>（Microsoft）</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Expert-Space Exploration in Mixture-of-Experts Reinforcement Learning</title>
-      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/9d6b78f78c6ca1e8.html</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2609.13058</guid>
-      <pubDate>Mon, 14 Sep 2026 12:00:00 +0800</pubDate>
-    <category>论文PDF</category>
-      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：Microsoft　&lt;strong&gt;发布&lt;/strong&gt;：2026-09-14　&lt;strong&gt;分类&lt;/strong&gt;：论文PDF&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究问题&lt;/strong&gt; MoE 模型的 RL 后训练普遍把专家路由当固定组件，但路由决定稀疏计算路径、可作为 rollout 多样性的额外来源——直接扰动路由又会激活不合适专家、劣化 rollout 质量。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;方法&lt;/strong&gt; ESRL（Expert-Space Exploration RL）：保留高置信专家作为锚点，随机路由限制在可信候选池内，并按 router 熵自适应扰动强度；rollout 时记录实际使用的专家路径，在策略优化阶段回放以消除路由失配。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;关键数字&lt;/strong&gt; Qwen3-30B-A3B 上平均 Pass@1 与 Pass@8 较 GRPO 分别提升 3.2 与 4.5 个百分点，为所有对比方法最优；在 top-K、top-1、shared-expert 路由及数学、科学、代码任务上均有效，且无额外采样或计算开销。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;为什么值得看&lt;/strong&gt; 把 MoE 结构本身变成 RL 探索维度的新思路，机制分析（专家利用率、训练动态）也做得充分。&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://arxiv.org/abs/2609.13058"&gt;阅读原文&lt;/a&gt;&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p><strong>发表方</strong>：Microsoft　<strong>发布</strong>：2026-09-14　<strong>分类</strong>：论文PDF</p><p><strong>研究问题</strong> MoE 模型的 RL 后训练普遍把专家路由当固定组件，但路由决定稀疏计算路径、可作为 rollout 多样性的额外来源——直接扰动路由又会激活不合适专家、劣化 rollout 质量。</p>
-<p><strong>方法</strong> ESRL（Expert-Space Exploration RL）：保留高置信专家作为锚点，随机路由限制在可信候选池内，并按 router 熵自适应扰动强度；rollout 时记录实际使用的专家路径，在策略优化阶段回放以消除路由失配。</p>
-<p><strong>关键数字</strong> Qwen3-30B-A3B 上平均 Pass@1 与 Pass@8 较 GRPO 分别提升 3.2 与 4.5 个百分点，为所有对比方法最优；在 top-K、top-1、shared-expert 路由及数学、科学、代码任务上均有效，且无额外采样或计算开销。</p>
-<p><strong>为什么值得看</strong> 把 MoE 结构本身变成 RL 探索维度的新思路，机制分析（专家利用率、训练动态）也做得充分。</p>
-<p><a href="https://arxiv.org/abs/2609.13058">阅读原文</a></p>]]></content:encoded>
     </item>
   </channel>
 </rss>

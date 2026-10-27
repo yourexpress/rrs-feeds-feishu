@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BiLoCo: Binary Low-Rank Corrections for Post-Training Quantization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>BiLoCo: Binary Low-Rank Corrections for Post-Training Quantization</h1>
+<p class="meta-line"> · 2026-10-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> FP4 后训练量化（PTQ）在 Blackwell 原生 FP4 张量核上降低 LLM 推理成本，但仍有明显精度差距；SVDQuant 用高精度低秩校正弥补，但每 rank 位宽高、且与 FP4 GEMM 争用同一张量核。</p>
+<p><strong>方法</strong> 提出 BiLoCo：低秩校正的左右因子以 {±1} 二值符号向量存储而非 BF16——每个 rank-one 分量存储减少 16×，校正变成纯加减、可在 CUDA 核上与 FP4 张量核 GEMM 并发执行；在 B300 上实现为融合单 kernel。</p>
+<p><strong>关键数字</strong> 在 4B–72B LLM 上匹配或超越同内存的 SVDQuant。</p>
+<p><strong>为什么值得看</strong> 二值低秩校正把精度补偿的硬件开销压到极低，Blackwell FP4 推理落地参考。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.32243">阅读原文 ↗</a></p>
+</body>
+</html>

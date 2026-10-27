@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Measuring the Energy Cost of Completing Tasks with Quantized Language-Model Agents</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Measuring the Energy Cost of Completing Tasks with Quantized Language-Model Agents</h1>
+<p class="meta-line"> · 2026-10-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 量化省内存与能耗，但现有研究要么在单请求上对比量化模型、要么在单一精度下测 agent——精度变化在完整 agent 任务上的能耗权衡从未被刻画。</p>
+<p><strong>方法</strong> 首次刻画本地部署 agent 的"任务级"量化能耗权衡：构建 29 个带自动 pass/fail 检查的 agent 任务（6 个家族，从单答案 SQL 分析到多步仓库 bug 修复），在裸金属 NVIDIA A100 节点上用 llama.cpp 测量两个开源模型 4-bit 与 8-bit 版本每输出 token 与每完成任务 的 CPU/GPU 能耗。</p>
+<p><strong>关键数字</strong> 29 个任务、2 个模型、4-bit/8-bit 两档精度、A100 裸金属实测；结果显示 4-bit 的能耗收益（摘要未给出完整数值结论）。</p>
+<p><strong>为什么值得看</strong> 量化收益的评估口径从逐 token 升级到任务级，agent 能耗评估方法论参考。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.32417">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TranSAGE: Automating Spatial Accelerator Generation for Large-Scale Transformer Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>TranSAGE: Automating Spatial Accelerator Generation for Large-Scale Transformer Models</h1>
+<p class="meta-line"> · 2026-10-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 大规模 Transformer 推理的计算与内存需求高，空间加速器在片上带宽与能效上有优势，但为大型模型设计加速器昂贵耗时；现有生成器通常只支持单算子，忽略多算子流水线收益。</p>
+<p><strong>方法</strong> 提出 TranSAGE，基于编译器的框架：在多算子流水线调度下联合优化大型 Transformer，并自动生成加速器实现；集成设计空间探索引擎、多算子数据流优化与基于动态规划的图划分算法，找出适合流水线的算子簇与最优数据流参数；提供空间架构原语与 lowering pass 自动生成 RTL 实现。</p>
+<p><strong>关键数字</strong> 摘要未给出具体性能数值；核心贡献是多算子流水线联合优化的自动加速器生成。</p>
+<p><strong>为什么值得看</strong> 编译器驱动+多算子流水线的 Transformer 空间加速器自动生成，芯片设计自动化方向可参考。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.32279">阅读原文 ↗</a></p>
+</body>
+</html>

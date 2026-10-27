@@ -22,9 +22,10 @@
 <h1>HeadGuard: Selective Head Protection for Low-Bit VLM KV-Cache Quantization</h1>
 <p class="meta-line">arXiv / Nenad Banfic 等 · 2026-09-30 · 论文PDF</p>
 
-<p>低比特 VLM KV 缓存量化中的选择性注意力头保护</p>
-<blockquote><p>Low-bit key-value (KV) cache quantization saves storage but can sharply degrade vision-language model (VLM) accuracy. We introduce HeadGuard, a composable head-protection method that augments a base KV-cache quantizer with a fixed high-precision mask. Image-sensitivity and output-sensitivity scores select physical KV heads offline, with approximately 1/8 protected in the main experiments; their image keys and optionally values remain in bfloat16 (BF16), while the base quantizes unprotected image entries. Across eight VLMs, three base quantizers, and eight benchmarks (six discriminative and two generative), HeadGuard recovers a substantial fraction of lost accuracy on weaker quantizers, with the strongest gains for Qwen and InternVL. At 2 bits, the six-task discriminative mean over eight models rises from 0.436 to 0.580 on the weakest base; protection can also improve generated answers and caption fidelity to BF16 outputs. Mean accuracy gains persist across all three quantizers with both tested calibration datasets. Keys-only protection retains substantial recovery at lower modeled storage cost. Evaluated through simulated quantization, HeadGuard offers a composable way to improve l…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 低比特 KV cache 量化省存储但会显著损伤 VLM 精度——能否只保护少量关键注意力头就挽回大部分精度损失？</p>
+<p><strong>方法</strong> 提出 HeadGuard，可组合的头保护方法：用图像敏感度与输出敏感度分数离线选出物理 KV 头（主实验约保护 1/8），其图像 key（可选 value）保持 BF16，其余图像条目仍由基础量化器量化；叠加在任何基础 KV 量化器上使用。</p>
+<p><strong>关键数字</strong> 覆盖 8 个 VLM、3 个基础量化器、8 个基准；2-bit 下最弱量化器上 8 模型六任务判别均值从 0.436 升至 0.580；对 Qwen 与 InternVL 增益最强；仅保护 key 在更低存储成本下仍保留大部分恢复效果。</p>
+<p><strong>为什么值得看</strong> 低比特 KV 量化精度补救的即插即用方案，VLM 推理压缩直接可用。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.35800">阅读原文 ↗</a></p>
 </body>
 </html>

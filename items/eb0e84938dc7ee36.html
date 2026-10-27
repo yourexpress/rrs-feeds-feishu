@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Energy-Aware Performance Characterization of Kokkos Kernels Across Precision Levels</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Energy-Aware Performance Characterization of Kokkos Kernels Across Precision Levels</h1>
+<p class="meta-line"> · 2026-10-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> GPU 加速 HPC 应用中，FP32/FP64/混合精度如何影响核的算术强度、吞吐与 GPU 能耗？</p>
+<p><strong>方法</strong> 对两个应用的 Kokkos 核做精度级刻画：引入能量感知 Roofline 模型把能耗纳入性能分析，提出热感知核间能量模型将能耗与时长、GPU 温度、执行顺序一并可视化；采用 Kokkos Performance Tools PAPI 连接器的应用级细粒度插桩，以及厂商电源管理组件的专用核基准粗粒度 PAPI 插桩两种方式。</p>
+<p><strong>关键数字</strong> 摘要未给出具体数值；结论是精度影响随应用、核与负载而异——混合 FP32/FP64 核通常达到接近 FP32 的算术强度、吞吐略降、多数情况能耗小幅增加；FP64 核能耗普遍最高。</p>
+<p><strong>为什么值得看</strong> 把能耗纳入 Roofline 分析框架，为 HPC 精度选型提供可复用的刻画方法论。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.31917">阅读原文 ↗</a></p>
+</body>
+</html>

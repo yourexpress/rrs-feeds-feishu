@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accordion: Elastic-Depth Inference via Fixed-Prefix Layer Looping</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Accordion: Elastic-Depth Inference via Fixed-Prefix Layer Looping</h1>
+<p class="meta-line"> · 2026-10-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 不同应用有不同推理预算，但为每个预算单独训练维护模型成本高昂——能否一个模型支持多种推理深度？</p>
+<p><strong>方法</strong> 提出 Accordion，基于 MoE 的固定前缀层循环模型，支持五种推理预算：每个预算走预定义执行路径，最小预算保留无循环原模型；联合预训练每个 micro-batch 采样一个预算并优化其 next-token 损失，无需额外跨预算一致性目标；通过参数组融合与预算匹配的多教师在线策略蒸馏把三个领域专家整合进一个模型。</p>
+<p><strong>关键数字</strong> 3.6T token 预训练后，增加推理深度使 Accordion-6B-A0.5B 在 37 个任务上五类宏平均提升（摘要未给完整数值）。</p>
+<p><strong>为什么值得看</strong> 弹性深度推理的完整训练流水线（预训练+微调+RL），服务多预算场景可参考。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.32492">阅读原文 ↗</a></p>
+</body>
+</html>

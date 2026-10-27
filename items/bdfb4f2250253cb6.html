@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where Rounding Happens Matters: Rounding-Location Alignment Stabilizes LLM Reinforcement Learning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Where Rounding Happens Matters: Rounding-Location Alignment Stabilizes LLM Reinforcement Learning</h1>
+<p class="meta-line"> · 2026-10-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LLM 强化学习常用独立推理与训练系统，即便权重与 BF16 张量一致，实现差异也会使本应在策略的更新偏离策略、训练不稳定——能否只对齐部分执行栈就稳定 BF16 RL？</p>
+<p><strong>方法</strong> 把训练侧舍入位置与推理对齐三个区域：RoPE、SwiGLU 与残差 RMSNorm，方法是在其 BF16 输出前将选定中间量保留为 FP32；推理引擎、矩阵乘/注意力 kernel 与学习目标均保持不变。</p>
+<p><strong>关键数字</strong> 在四个 Qwen 系列模型上，对齐全部三个区域防止了默认 BF16 基线下的训练崩溃；单对齐 RoPE 路径在实验中也已足够，尽管仍有数值差异残留。</p>
+<p><strong>为什么值得看</strong> "舍入位置对齐"而非全局精度升级来稳定 BF16 RL，代价极小，RL 训练工程可直接采用。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.32951">阅读原文 ↗</a></p>
+</body>
+</html>

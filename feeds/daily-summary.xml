@@ -5,8 +5,55 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>每天一条，汇总当日两个检索源（AI 技术报告 + 高效计算文献）的重点内容。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 26 Oct 2026 23:27:51 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 11:00:50 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/daily-summary.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日精选 · 2026-10-27</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-10-27.html</link>
+      <guid isPermaLink="false">urn:daily-summary:2026-10-27</guid>
+      <pubDate>Tue, 27 Oct 2026 23:05:00 +0800</pubDate>
+    <category>每日精选</category>
+      <description>&lt;h1&gt;2026-10-27 文献检索日报&lt;/h1&gt;
+&lt;h2&gt;当日检索概况&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;AI 技术报告库：检索 6 条，入选 4 条&lt;/li&gt;
+&lt;li&gt;高效计算文献检索：检索 60 条，入选 18 条&lt;/li&gt;
+&lt;li&gt;合计入选 22 条（selected 计数，含跨库去重前口径）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;重点推荐&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Introducing GPT-6.1 Terra（OpenAI）&lt;/strong&gt;：新模型主打视觉理解+电脑操作，标准 API 价格较 GPT-5.6 Terra / GPT-6.1 Sol 降 50%；错误率低推理 53.6%→16.7%、Terminal-Bench 4.0 完成率 50.3%。&lt;a href="https://openai.com/index/introducing-gpt-6-1-terra/"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Anthropic files S-1 with the SEC&lt;/strong&gt;：提交 335 页 S-1 招股书，拟纳斯达克以 ANT 代码上市，高盛/摩根士丹利牵头——AI 行业里程碑事件。&lt;a href="https://www.anthropic.com/news/s1-sec"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Decode Late, Multiply Once: Rethinking the Dot Product for Quantized Weights&lt;/strong&gt;：量化权重点积只需 n+2^k 次加法、至多 2^k 次解码与乘法（延迟解码融合），乘法数降为 n/2^k 分之一。&lt;a href="https://arxiv.org/abs/2610.31913"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;BiLoCo: Binary Low-Rank Corrections for Post-Training Quantization&lt;/strong&gt;：二值 {±1} 低秩校正替代 SVDQuant 的高精度校正，存储减 16×/rank，可在 CUDA 核上与 FP4 GEMM 并发，4B–72B LLM 匹配或超越同内存 SVDQuant。&lt;a href="https://arxiv.org/abs/2610.32243"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;KVStream: Adaptive Parallel Storage Management for KV Caching&lt;/strong&gt;：把前缀 KV 检索建模为跨存储层聚合带宽调度，批量读、延迟写、每层复制，128 GPU 上检索差距在 5% 以内。&lt;a href="https://arxiv.org/abs/2610.31827"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Accordion: Elastic-Depth Inference via Fixed-Prefix Layer Looping&lt;/strong&gt;：基于 MoE 与固定前缀层循环，一个模型支持五种推理预算；3.6T token 预训练后随深度提升宏平均持续改善。&lt;a href="https://arxiv.org/abs/2610.32492"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Measuring the Energy Cost of Completing Tasks with Quantized Language-Model Agents&lt;/strong&gt;：首次任务级刻画量化 agent 能耗——29 个带自动判分的 agent 任务、A100 裸金属上 4-bit/8-bit 两档实测。&lt;a href="https://arxiv.org/abs/2610.32417"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sustainability of TSFM Deployment and Pretraining&lt;/strong&gt;：时序基础模型全生命周期碳成本建模：Chronos-2 大/高频部署数月摊薄预训练成本；剪一个编码器块（7.9% 参数）一致降 6–9% FLOPs/CO2/延迟且零样本精度基本无损。&lt;a href="https://arxiv.org/abs/2610.32859"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;主题速览&lt;/h2&gt;
+&lt;p&gt;AI 侧是 OpenAI/Anthropic 双事件日：GPT-6.1 Terra 发布（性价比与电脑操作）+ Anthropic 提交 S-1 招股书，外加 OpenAI Signals v3.0 劳动力数据开放与 GPT-6.1 Terra 系统卡附录。EC 侧以低比特/低秩压缩（延迟解码点积、BiLoCo、GS-MoE、结构化稀疏）与 LLM 推理系统（KVStream 存储调度、Accordion 弹性深度、InferSlice 电信 WAN 架构、量化 agent 能耗）为主，间以 RISC-V HPC 横评与 TSFM 碳足迹分析。整体呈"模型经济性 + 推理系统效率"双主线。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h1>2026-10-27 文献检索日报</h1>
+<h2>当日检索概况</h2>
+<ul>
+<li>AI 技术报告库：检索 6 条，入选 4 条</li>
+<li>高效计算文献检索：检索 60 条，入选 18 条</li>
+<li>合计入选 22 条（selected 计数，含跨库去重前口径）</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>Introducing GPT-6.1 Terra（OpenAI）</strong>：新模型主打视觉理解+电脑操作，标准 API 价格较 GPT-5.6 Terra / GPT-6.1 Sol 降 50%；错误率低推理 53.6%→16.7%、Terminal-Bench 4.0 完成率 50.3%。<a href="https://openai.com/index/introducing-gpt-6-1-terra/">原文</a></li>
+<li><strong>Anthropic files S-1 with the SEC</strong>：提交 335 页 S-1 招股书，拟纳斯达克以 ANT 代码上市，高盛/摩根士丹利牵头——AI 行业里程碑事件。<a href="https://www.anthropic.com/news/s1-sec">原文</a></li>
+<li><strong>Decode Late, Multiply Once: Rethinking the Dot Product for Quantized Weights</strong>：量化权重点积只需 n+2^k 次加法、至多 2^k 次解码与乘法（延迟解码融合），乘法数降为 n/2^k 分之一。<a href="https://arxiv.org/abs/2610.31913">原文</a></li>
+<li><strong>BiLoCo: Binary Low-Rank Corrections for Post-Training Quantization</strong>：二值 {±1} 低秩校正替代 SVDQuant 的高精度校正，存储减 16×/rank，可在 CUDA 核上与 FP4 GEMM 并发，4B–72B LLM 匹配或超越同内存 SVDQuant。<a href="https://arxiv.org/abs/2610.32243">原文</a></li>
+<li><strong>KVStream: Adaptive Parallel Storage Management for KV Caching</strong>：把前缀 KV 检索建模为跨存储层聚合带宽调度，批量读、延迟写、每层复制，128 GPU 上检索差距在 5% 以内。<a href="https://arxiv.org/abs/2610.31827">原文</a></li>
+<li><strong>Accordion: Elastic-Depth Inference via Fixed-Prefix Layer Looping</strong>：基于 MoE 与固定前缀层循环，一个模型支持五种推理预算；3.6T token 预训练后随深度提升宏平均持续改善。<a href="https://arxiv.org/abs/2610.32492">原文</a></li>
+<li><strong>Measuring the Energy Cost of Completing Tasks with Quantized Language-Model Agents</strong>：首次任务级刻画量化 agent 能耗——29 个带自动判分的 agent 任务、A100 裸金属上 4-bit/8-bit 两档实测。<a href="https://arxiv.org/abs/2610.32417">原文</a></li>
+<li><strong>Sustainability of TSFM Deployment and Pretraining</strong>：时序基础模型全生命周期碳成本建模：Chronos-2 大/高频部署数月摊薄预训练成本；剪一个编码器块（7.9% 参数）一致降 6–9% FLOPs/CO2/延迟且零样本精度基本无损。<a href="https://arxiv.org/abs/2610.32859">原文</a></li>
+</ul>
+<h2>主题速览</h2>
+<p>AI 侧是 OpenAI/Anthropic 双事件日：GPT-6.1 Terra 发布（性价比与电脑操作）+ Anthropic 提交 S-1 招股书，外加 OpenAI Signals v3.0 劳动力数据开放与 GPT-6.1 Terra 系统卡附录。EC 侧以低比特/低秩压缩（延迟解码点积、BiLoCo、GS-MoE、结构化稀疏）与 LLM 推理系统（KVStream 存储调度、Accordion 弹性深度、InferSlice 电信 WAN 架构、量化 agent 能耗）为主，间以 RISC-V HPC 横评与 TSFM 碳足迹分析。整体呈"模型经济性 + 推理系统效率"双主线。</p>]]></content:encoded>
+    </item>
     <item>
       <title>每日精选 · 2026-10-26</title>
       <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-10-26.html</link>

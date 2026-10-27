@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sustainability of TSFM Deployment and Pretraining: From Carbon Footprint Analysis to Mitigation via Pruning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Sustainability of TSFM Deployment and Pretraining: From Carbon Footprint Analysis to Mitigation via Pruning</h1>
+<p class="meta-line"> · 2026-10-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 时序基础模型（TSFM）零样本预测强但预训练成本高——相比需周期性重训的监督单模型，前置投入在全生命周期内是否划算？</p>
+<p><strong>方法</strong> 建模不同方案在现实工业场景中的累计碳排放：对比 Chronos-2 与经典监督模型的部署生命周期碳成本；针对需要降低 TSFM 自身成本的情形，用无梯度剪枝准则移除单个编码器块，评估其对 FLOPs、CO2、延迟与零样本性能的影响。</p>
+<p><strong>关键数字</strong> 移除单编码器块（7.9% 参数）带来一致的 6–9% FLOPs/CO2/延迟下降，25 任务基准上零样本预测性能基本无损；大型或高频查询部署中 Chronos-2 数月内摊薄预训练成本，小型或低频场景经典模型长期更便宜。</p>
+<p><strong>为什么值得看</strong> 从全生命周期碳成本看 TSFM 值不值得用，可持续 AI 的成本核算样例。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.32859">阅读原文 ↗</a></p>
+</body>
+</html>
