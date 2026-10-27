@@ -22,9 +22,11 @@
 <h1>Joule-Profiler: Profiling the Energy Consumption of Build Automation Tools Made Easy</h1>
 <p class="meta-line">arXiv / Jérémy Woirhaye 等 · 2026-09-30 · 论文PDF</p>
 
-<p>构建自动化工具能耗剖析工具 Joule-Profiler（跨类）</p>
-<blockquote><p>Build pipelines are integral to modern software development, yet their energy footprint remains largely invisible to practitioners. Existing CI energy tools either rely on model-based estimation (due to hardware access restrictions in cloud runners) or report only total pipeline energy without decomposing it into meaningful phases. Joule-Profiler is an open-source command-line tool for Linux that measures hardware energy consumption via Intel RAPL (CPU), NVML (NVIDIA GPU), and attributes it to user-defined program phases by monitoring standard output. In this tool paper, we demonstrate Joule-Profiler in the context of Maven build pipelines using Google Gson as a case study. By applying a token pattern-matching Maven plugin invocations, we analyze builds across the 5 most recent Gson releases into per-phase energy profiles, comparing cold builds (empty local repository) and warm builds (cached dependencies).</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 构建流水线能耗对实践者几乎不可见；现有 CI 能耗工具要么因云运行器硬件限制依赖模型估算，要么只报总能耗不分解到阶段。</p>
+<p><strong>方法</strong> Joule-Profiler：开源 Linux 命令行工具，用 Intel RAPL（CPU）与 NVML（NVIDIA GPU）测硬件能耗，通过监控标准输出把能耗归属到用户定义的程序阶段。以 Maven 构建 Google Gson 为案例，用 token 模式匹配 Maven 插件调用。</p>
+<p><strong>关键数字</strong> 分析了 Gson 最近 5 个 release 的分阶段能耗画像，对比冷构建（空本地仓库）与热构建（缓存依赖）；摘要未给出具体能耗数值。</p>
+<p><strong>为什么值得看</strong> 简单可用的构建能耗剖析工具，冷热构建分阶段对比对节能优化有实用参考。</p>
+<p><a href="https://arxiv.org/abs/2609.31228">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.31228">阅读原文 ↗</a></p>
 </body>
 </html>

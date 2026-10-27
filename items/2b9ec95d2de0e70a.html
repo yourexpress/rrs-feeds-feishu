@@ -22,9 +22,11 @@
 <h1>MoEless: Efficient MoE LLM Serving with Serverless Experts</h1>
 <p class="meta-line">arXiv / Hanfei Yu 等 · 2026-09-30 · 论文PDF</p>
 
-<p>【修订版】Large Language Models (LLMs) increasingly adopt Mixture-of-Experts (MoE) architectures to…</p>
-<blockquote><p>Large Language Models (LLMs) increasingly adopt Mixture-of-Experts (MoE) architectures to scale efficiently under stringent resource constraints. However, MoE's sparse activation causes severe expert load imbalance, where a few experts become stragglers while others remain underutilized, leading to inflated inference latency and cost. Existing solutions assume static, serverful model deployments, limiting expert elasticity and often incurring costly expert swapping or degraded output quality. We present MoEless, an efficient serverless MoE serving framework that mitigates expert load imbalance via elastic expert execution. MoEless leverages lightweight, layer-aware predictors to estimate incoming expert load distributions and proactively identify stragglers. We design optimized scaling and placement strategies to improve function locality, GPU utilization, and cross-expert load balance. MoEless is prototyped on top of Megatron-LM and deployed on an eight-GPU testbed. Experiments with open-source MoE models and real-world workloads show that MoEless reduces inference latency by 43% and inference cost by 84% compared to state-of-the-art solutions.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> MoE 通过稀疏激活扩展规模，但造成严重专家负载失衡：少数专家成 straggler、其余利用不足，抬高推理延迟与成本；现有方案假设静态 serverful 部署，专家弹性受限，常付出昂贵交换代价或输出质量下降。</p>
+<p><strong>方法</strong> MoEless：无服务器 MoE serving 框架，通过弹性专家执行缓解负载失衡。用轻量层感知预测器估计入站专家负载分布、预判 straggler，设计优化扩缩容与放置策略提升函数局部性、GPU 利用率与跨专家负载均衡；基于 Megatron-LM 原型、八 GPU 测试床部署。</p>
+<p><strong>关键数字</strong> 开源 MoE 模型与真实负载下，相比 SOTA 方案推理延迟降低 43%、推理成本降低 84%。</p>
+<p><strong>为什么值得看</strong> 无服务器化 MoE 服务思路，延迟与成本双双大幅下降，工程价值明确。</p>
+<p><a href="https://arxiv.org/abs/2603.06350">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2603.06350">阅读原文 ↗</a></p>
 </body>
 </html>

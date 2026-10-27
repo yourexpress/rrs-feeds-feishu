@@ -22,9 +22,11 @@
 <h1>LatentHarness: Learning Latent Actions for Memory and Reasoning via Counterfactual Policy Distillation</h1>
 <p class="meta-line">arXiv / Xiaoqiang Wang 等 · 2026-09-30 · 论文PDF</p>
 
-<p>Long-context reasoning faces two complementary bottlenecks: retaining evidence across lon…</p>
-<blockquote><p>Long-context reasoning faces two complementary bottlenecks: retaining evidence across long inputs and sustaining computation across many reasoning steps. Existing approaches largely address them separately, with external memory extending access to distant evidence and latent reasoning compressing multi-step computation. We introduce LatentHarness, which unifies memory access and latent reasoning as sequential latent action selection. At each internal step, the model chooses THINK for further computation, RECALL from a fast-weight memory of input evidence and intermediate reasoning states, or EXIT to emit the next token. We train this policy with counterfactual policy distillation, which branches every action for one step and scores its effect on the emitted token. These gains teach the policy when memory is more useful than further reasoning, while gradients through counterfactual recall teach which intermediate states should be retained in memory for future use. Across six general and long-context reasoning benchmarks, LatentHarness at 1.4B improves on the strongest baselines by 2.8% and 10.0% relative, respectively, and runs 5.9x faster than the strongest long-context baseline.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 长上下文推理面临两个互补瓶颈：跨长输入保留证据、跨多步维持计算；现有方法分别用外部记忆与潜推理处理，未统一。</p>
+<p><strong>方法</strong> LatentHarness：把记忆访问与潜推理统一为顺序潜动作选择——每步在 THINK（继续计算）、RECALL（从快权重记忆召回证据与中间状态）、EXIT（输出下一 token）间决策。用反事实策略蒸馏训练：把每个动作分支一步、打分其对输出 token 的影响。</p>
+<p><strong>关键数字</strong> 1.4B 模型在六个通用与长上下文推理基准上相对最强基线提升 2.8% 与 10.0%，运行速度比最强长上下文基线快 5.9 倍。</p>
+<p><strong>为什么值得看</strong> 统一记忆与推理的潜动作框架，反事实训练信号让策略学会何时记忆优于继续推理。</p>
+<p><a href="https://arxiv.org/abs/2609.39740">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.39740">阅读原文 ↗</a></p>
 </body>
 </html>

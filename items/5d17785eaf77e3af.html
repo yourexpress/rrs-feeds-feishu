@@ -22,9 +22,11 @@
 <h1>Learning Functional Subspaces for Neural Network Compression</h1>
 <p class="meta-line">arXiv / Massimo Bini 等 · 2026-09-30 · 论文PDF</p>
 
-<p>Modern transformers pair impressive capabilities with substantial memory and compute dema…</p>
-<blockquote><p>Modern transformers pair impressive capabilities with substantial memory and compute demands. Low-rank weight factorization reduces both while keeping the matrices dense, and thus efficient on standard hardware. Existing methods, however, choose the subspace to remove from each weight matrix with local closed-form criteria: activation energy, layer-wise reconstruction error, or a quadratic approximation of the loss. These criteria ignore how errors propagate through the network, so at high compression the errors compound with depth and performance collapses. We introduce Learnable Subspace Projections (LSP), which instead learns the subspaces to discard end-to-end. Each linear layer, or tied group of layers that read the same activations, is assigned an orthogonal projector. All projectors are optimized jointly against a global objective--the KL divergence to the dense model's output distribution or the model's original training loss--while the pretrained weights remain frozen. Projectors are initialized from a whitened SVD truncation, and ranks are allocated by the output KL each projector induces per parameter saved. After training, the projectors merge into standard low-rank fac…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 现代 transformer 能力与内存/算力需求齐增；低秩权重分解可同时降低两者，但现有方法用局部闭式准则（激活能量、分层重构误差、损失二次近似）选删除子空间，忽略误差在网络中的传播，高压缩时误差随深度复合、性能崩塌。</p>
+<p><strong>方法</strong> Learnable Subspace Projections（LSP）：端到端学习要丢弃的子空间。每个线性层或绑定组配正交投影器，联合优化全局目标（对稠密模型输出分布的 KL 或原训练损失），预训练权重冻结；从白化 SVD 截断初始化，按每参数输出 KL 分配秩，训练后合并为标准低秩因子。</p>
+<p><strong>关键数字</strong> -70% 压缩时 Llama-2-7B 达 10.9 WikiText-2 perplexity 与 42.2% 零样本准确率（最强基线 13.3 / 36.0%）；小批量解码比稠密模型快至 1.6 倍；128k 上下文共享潜变量使权重+KV 缓存内存缩小 13.5 倍（未绑定基线至多 6.5 倍）。</p>
+<p><strong>为什么值得看</strong> 把压缩子空间选择从局部启发式升级为全局可学习，高压缩区间的优势显著。</p>
+<p><a href="https://arxiv.org/abs/2609.40127">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.40127">阅读原文 ↗</a></p>
 </body>
 </html>

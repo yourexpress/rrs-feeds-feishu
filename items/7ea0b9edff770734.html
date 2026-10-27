@@ -22,9 +22,11 @@
 <h1>Periodic Weak Spots: Phase Sensitivity from Chunked KV-Cache Compression</h1>
 <p class="meta-line">arXiv / Xingyu Zhu 等 · 2026-09-30 · 论文PDF</p>
 
-<p>分块 KV 缓存压缩引入的相位敏感性（周期性弱点）</p>
-<blockquote><p>Chunked KV-cache compression reduces the memory and attention costs of long-context inference by compressing windows of consecutive tokens into fewer cache entries at a fixed stride. Such compression also introduces a new positional coordinate: a token's phase, or its position relative to compression-window boundaries. We uncover a systematic asymmetry in models using such compression: the same information can be easy to retrieve at one phase and difficult at another. We call this periodic variation in retrieval performance phase sensitivity. In large open-weight models with such compression, long-context retrieval accuracy can differ by up to 40 percentage points across phases, revealing periodic weak spots that average benchmark scores can conceal. To investigate this behavior, we pretrain a family of transformers from scratch across multiple KV-compression designs, reproducing phase sensitivity across the variants. Mechanistic analysis using causal interventions in these models reveals phase specialization: different attention components contribute asymmetrically to retrieving information at different source phases. We further analyze idealized retrieval models, showing how grad…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 分块 KV 缓存压缩以固定步幅把连续 token 窗口压成更少缓存项，同时引入新位置坐标——token 相对压缩窗口边界的"相位"；同一信息可能在某相位易检索、另一相位难检索。</p>
+<p><strong>方法</strong> 揭示相位敏感性的系统性不对称，并从头预训练一族 transformer（覆盖多种 KV 压缩设计）复现该现象；用因果干预做机制分析揭示相位特化（不同注意力组件对不同源相位检索贡献不对称），并分析理想化检索模型的梯度流动力学。</p>
+<p><strong>关键数字</strong> 大型开源模型长上下文检索准确率跨相位差异最高达 40 个百分点，平均基准分可掩盖周期性弱点。</p>
+<p><strong>为什么值得看</strong> 提醒分块 KV 压缩评测必须跨相位测量，高平均分可与系统性位置失败并存。</p>
+<p><a href="https://arxiv.org/abs/2609.36322">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.36322">阅读原文 ↗</a></p>
 </body>
 </html>

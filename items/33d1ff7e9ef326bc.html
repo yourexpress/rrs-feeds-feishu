@@ -22,9 +22,11 @@
 <h1>PE-OPSD: Internalizing Prompt Enhancement into Flow-matching Models via On-Policy Self-Distillation</h1>
 <p class="meta-line">arXiv / Mingfeng Lin 等 · 2026-09-30 · 论文PDF</p>
 
-<p>在策略自蒸馏把提示增强内化进 flow-matching 模型</p>
-<blockquote><p>Text-to-image users often provide concise and underspecified prompts, whereas generative models benefit from detailed textual conditions for reliable instruction following. Existing systems bridge this gap with Prompt Enhancers (PEs) that rewrite raw prompts at inference time, introducing additional latency and leaving prompt elaboration external to the generator. We instead view enhanced prompts as privileged training information and ask whether their benefits can be internalized. We propose Prompt-Enhanced On-Policy Self-Distillation (PE-OPSD) for text-to-image flow-matching models. During training, a raw-prompt student follows its own generation trajectory, while an enhanced-prompt teacher provides vector-field targets at the states visited by the student. This on-policy supervision distills the behavior induced by enhanced prompts into the raw-prompt student without requiring additional text--image pairs. At inference, both the PE and teacher are removed, and the student generates directly from raw prompts. Across multiple model families, PEs, and benchmarks, PE-OPSD achieves the strongest aggregate prompt fidelity among the evaluated baselines, yields positive aggregate visual…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 文生图用户提示通常简略、欠指定，而生成模型受益于详细文本条件；现有 Prompt Enhancer（PE）在推理时重写提示，引入额外延迟且提示增强外置于生成器。</p>
+<p><strong>方法</strong> PE-OPSD：把增强提示视为特权训练信息并内化。训练时 raw-prompt 学生沿自身生成轨迹，enhanced-prompt 教师提供学生访问状态处的向量场目标；推理时 PE 与教师均移除，学生直接从原始提示生成，无需额外文图对。</p>
+<p><strong>关键数字</strong> 多模型家族、PE 与基准上取得最强聚合 prompt 保真度，视觉吸引力正向增益，推理效率与基线持平（具体数值摘要未给出）。</p>
+<p><strong>为什么值得看</strong> 把提示增强内化进生成器、推理零额外开销，思路可迁移到其它条件生成任务。</p>
+<p><a href="https://arxiv.org/abs/2609.36638">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.36638">阅读原文 ↗</a></p>
 </body>
 </html>

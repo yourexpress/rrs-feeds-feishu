@@ -22,9 +22,11 @@
 <h1>JustFit: Just-in-Time State Management for Local LLM Serving</h1>
 <p class="meta-line">arXiv / Yuhua Chen 等 · 2026-09-30 · 论文PDF</p>
 
-<p>【修订版】Local agents need memory for model execution and working history.</p>
-<blockquote><p>Capable open-weight models make local coding and reasoning attractive, but their context and execution state strain laptop memory. We present JustFit, an MLX-based inference runtime that combines KVExec for compressed KV execution, PhaseSwap for component residency, and StateTrans for state-preserving serving transitions. These mechanisms fuse reconstruction and coordinate just-in-time materialization and release, independently of model-weight quantization. In full-execution capacity tests on a 24 GiB M4 Pro MacBook running Qwen3.8-27B MXFP4, three independent runs complete 196,608 input and 16,384 output tokens, increasing completed single-request context from the mlx-vlm baseline's 30,720 positions to 212,992 (6.93x); a separate two-request run retains 229,376 positions in aggregate. In separate performance tests, a 32K-input, 64-output probe reaches 19.11 tokens/s, and a repeated 32K+6K workload has a median peak process footprint of 16,374 MiB. The integrated runtime answers 29 of 30 AIME 2026 problems correctly, showing how compact state and lifetime-aware execution expand local serving capacity while supporting extended generated reasoning.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 开源权重模型让本地编码与推理变得可行，但上下文与执行状态给笔记本内存带来压力，需要在不牺牲能力的前提下扩展本地服务容量。</p>
+<p><strong>方法</strong> JustFit：基于 MLX 的推理运行时，组合 KVExec（压缩 KV 执行）、PhaseSwap（组件驻留管理）与 StateTrans（保状态服务切换），通过融合重建与即时物化/释放扩展容量，独立于权重量化。</p>
+<p><strong>关键数字</strong> 24 GiB M4 Pro MacBook 上跑 Qwen3.8-27B MXFP4：三次独立运行各完成 196,608 输入 + 16,384 输出 token，单请求上下文从 mlx-vlm 基线 30,720 提升到 212,992（6.93 倍）；32K 输入探针达 19.11 tokens/s，中位峰值占用 16,374 MiB；AIME 2026 答对 29/30。</p>
+<p><strong>为什么值得看</strong> 面向本地 LLM 服务的工程化状态管理方案，容量扩展与性能数字具体扎实。</p>
+<p><a href="https://arxiv.org/abs/2609.17475">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.17475">阅读原文 ↗</a></p>
 </body>
 </html>

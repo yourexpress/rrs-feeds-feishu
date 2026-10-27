@@ -22,9 +22,11 @@
 <h1>Joint Effects of GPU Server Topology, Parallelism, and Congestion Control on MoE Inference: A Controlled Simulation Study</h1>
 <p class="meta-line">arXiv / Kaikai Yuan 等 · 2026-09-30 · 论文PDF</p>
 
-<p>GPU 服务器拓扑、并行策略与拥塞控制对 MoE 推理的联合影响受控仿真</p>
-<blockquote><p>Mixture-of-experts (MoE) models expand capacity via sparse activation, but inference across GPUs introduces tensor-parallel (TP) collectives and expert-parallel (EP) dispatch and combine operations. Completion time depends not just on communication volume but on how logical groups map onto intra-server interconnects, GPU--NIC connections, and the inter-node network. Using ASTRA-sim with the NS-3 discrete-event backend, we build a controlled matrix of 32 GPU ranks with data and pipeline parallelism fixed at one. Workloads are fixed-length 4096-token prefill-like synthetic Chakra traces from four MoE configurations. Experiments cover six server topologies, four TP/EP partitions, two TP collective algorithms, and four network/congestion-control modes, yielding 768 deterministic simulations. In the 144-configuration feedback-enabled subset per model, exposed communication accounts for 89.9%--95.8% of mean completion time. TP16EP2 requires 3.68--4.35x the mean completion time of TP2EP16. With fixed rank mapping, ASTRA-sim Double Binary Tree (DBT) incurs 28.3%--83.2% more time than Ring. InfiniBand-like High Precision Congestion Control (HPCC) is ~0.9% lower than HPCC over RDMA over Conv…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> MoE 推理的完成时间不仅取决于通信量，还取决于逻辑组如何映射到服务器内互联、GPU-NIC 连接与节点间网络；拓扑、并行与拥塞控制如何联合影响缺乏受控研究。</p>
+<p><strong>方法</strong> 用 ASTRA-sim + NS-3 搭建 32 GPU 秩的受控矩阵（数据/流水线并行固定为 1）：6 种服务器拓扑 × 4 种 TP/EP 划分 × 2 种 TP 集合算法 × 4 种网络/拥塞控制模式，共 768 次确定性仿真。</p>
+<p><strong>关键数字</strong> 暴露通信占平均完成时间 89.9%~95.8%；TP16EP2 耗时是 TP2EP16 的 3.68~4.35 倍；DBT 比 Ring 多 28.3%~83.2%；RoCE-DCQCN 比 RoCE-HPCC 慢 23.8%~35.7%。最大检查点分片约 48.75 GB/秩，均满足 64 GB/加速器驻留。</p>
+<p><strong>为什么值得看</strong> 首个把拓扑、并行、拥塞控制联合受控评估的 MoE 推理仿真，结论可直接指导部署选型。</p>
+<p><a href="https://arxiv.org/abs/2609.37828">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.37828">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Multi-Depth Temporal Fusion for Feedforward, Locally Trained Spiking Neural Networks</h1>
 <p class="meta-line">arXiv / Aidin Attar 等 · 2026-09-30 · 论文PDF</p>
 
-<p>前馈局部训练脉冲神经网络的多深度时间融合（跨类）</p>
-<blockquote><p>We propose a new spiking neural network (SNN) design to process static images and event streams using time-to-first-spike (TTFS) latencies. Our key research question is which architectural choices best accommodate local and online learning in multi-layer convolutional SNNs. This question is addressed via an original framework combining residual-like connections with multi-depth feature aggregation and consensus. The full SNN pipeline features an early-vision front end, to convert raw visual data into sparse spike latencies, a four-layer convolutional backbone trained layerwise with unsupervised spike-timing-dependent plasticity (STDP), a deterministic Multi-Depth Temporal Fusion (MDTF) and a final classifier trained with reward-modulated spike-timing-dependent plasticity (R-STDP). Rather than replacing early features in deeper layers, the proposed MDTF preserves early temporal evidence, adding sparse residual events from intermediate layers, and incorporating deeper features only when they agree in time with earlier representations. The resulting architecture is experimentally validated across MNIST, Fashion-MNIST, CIFAR-10, and N-MNIST, delivering strong classification performance…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 哪些架构选择最能适配多层卷积脉冲神经网络（SNN）的局部在线学习，是待回答的核心问题。</p>
+<p><strong>方法</strong> 用时间到首脉冲（TTFS）延迟处理静态图像与事件流：早期视觉前端转稀疏脉冲延迟，四层卷积骨干以无监督 STDP 逐层训练，多深度时间融合（MDTF）保留早期时间证据、仅在深层特征与早期表征时间一致时融入，分类器用 R-STDP 训练，全程局部学习。</p>
+<p><strong>关键数字</strong> MNIST、Fashion-MNIST、CIFAR-10、N-MNIST 上表现强；选择性融合比 STDP/R-STDP 基线在 Fashion-MNIST 高 18.2 pp、CIFAR-10 高 29.2 pp；移除大量晚期/弱脉冲事件仍保持高精度。</p>
+<p><strong>为什么值得看</strong> 局部学习 SNN 的融合设计收益清晰、数据效率高，代码已开源。</p>
+<p><a href="https://arxiv.org/abs/2609.37047">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.37047">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Interpolated Policy Distillation: A Controllable Continuum Between Off-Policy and On-Policy Distillation</h1>
 <p class="meta-line">arXiv / Youxu Shi 等 · 2026-09-30 · 论文PDF</p>
 
-<p>离策略与在策略蒸馏之间的可控插值连续谱</p>
-<blockquote><p>Off-policy and on-policy distillation have traditionally been formulated as separate paradigms, each favoring a different property of distillation trajectories. Teacher-generated (off-policy) traces are typically high-quality but lie far from the student's distribution, whereas student-generated (on-policy) rollouts are more learnable but often contain erroneous reasoning. We view these paradigms as the endpoints of a policy continuum and posit that a more effective rollout policy may lie in between. We introduce \textbf{Interpolated Policy Distillation (IPD)}, which defines the next-token distribution at every decoding step as an explicit linear interpolation between the student and teacher distributions. The interpolation operates at the distribution level, token by token, and its coefficient provides direct control over the balance between trajectory quality and student learnability. Naively sampling from this policy would require sequentially querying the teacher at every token and is thus expensive. To make IPD practical, we accelerate it with a new speculative-decoding rule while exactly preserving the interpolated next-token distribution.At the trajectory level, the resultin…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 离策略蒸馏的教师轨迹质量高但偏离学生分布，在策略蒸馏的学生轨迹更可学但常含错误推理；两者被当作互斥范式，中间可能存在更优的滚动策略。</p>
+<p><strong>方法</strong> 提出 Interpolated Policy Distillation（IPD）：在每一步解码把下一 token 分布定义为学生与教师分布的显式线性插值，系数直接控制轨迹质量与可学性的平衡；并用新的投机解码规则加速采样且精确保持插值分布，轨迹自然交错师生片段而非手工切换。</p>
+<p><strong>关键数字</strong> 摘要未给出量化指标；在文本与多模态推理基准上一致优于两个端点策略（SFT、OPD）、两阶段组合及启发式分段交错方法。</p>
+<p><strong>为什么值得看</strong> 为蒸馏轨迹设计提供一个可精确控制的插值旋钮，token 级插值优于启发式分段切换，对做蒸馏和推理优化的人有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2609.37170">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.37170">阅读原文 ↗</a></p>
 </body>
 </html>

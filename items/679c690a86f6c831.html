@@ -22,9 +22,11 @@
 <h1>MoRE: Scaling mixture of experts with hardware-aware low-rank routing</h1>
 <p class="meta-line">arXiv / Honam Wong 等 · 2026-09-30 · 论文PDF</p>
 
-<p>MoRE：硬件感知低秩路由扩展 MoE 规模</p>
-<blockquote><p>Mixture-of-Experts (MoE) layers are central to frontier language models, and recent architectures push toward more and smaller experts. In this regime, the standard linear router becomes a bottleneck: with $M$ experts and hidden dimension $h$, its per-token cost $Θ(Mh)$ dominates the MoE layer once $M$ is large. We introduce MoRE (Mixture of Rank-reduced-routed Experts), which factorizes the router weight matrix at rank $r$ and reduces the routing cost to $O((h + M)r)$. We prove that rank logarithmic in $M$ suffices for routing expressivity when the number of active experts is fixed, and is necessary up to precision factors. We also prove that logarithmic rank preserves load balance in a Gaussian memorization model, and training on a synthetic phonebook task shows that low rank does not hurt memorization. At matched active FLOPs, the factorization allows a factor of $Θ(h/r)$ more experts. To realize this gain in wall-clock time, we design a fused Triton kernel at inference that avoids expensive memory operations on HBM. Empirically, MoRE improves memorization on the phonebook task and performance on knowledge-intensive Q\&amp;A benchmarks after pretraining, while matching reasoning abi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> MoE 层是前沿语言模型核心，架构趋向更多更小专家；此时标准线性路由器成为瓶颈——M 个专家、隐藏维 h 时每 token 成本 Θ(Mh)，M 一大便主导 MoE 层开销。</p>
+<p><strong>方法</strong> MoRE（Mixture of Rank-reduced-routed Experts）：把路由器权重矩阵分解为秩 r，路由成本降至 O((h+M)r)。证明固定活跃专家数时秩对数于 M 即足以保证路由表达性（精确因子内必要），且对数秩在高斯记忆模型下保持负载均衡；推理用融合 Triton kernel 避免 HBM 昂贵内存操作。</p>
+<p><strong>关键数字</strong> 匹配活跃 FLOPs 下分解允许 Θ(h/r) 倍更多专家；phonebook 记忆任务与知识密集 QA 提升、推理能力持平（具体数值摘要未给出）。</p>
+<p><strong>为什么值得看</strong> 低秩路由有理论保证，为"更多更小专家"路线扫清路由瓶颈。</p>
+<p><a href="https://arxiv.org/abs/2609.36301">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.36301">阅读原文 ↗</a></p>
 </body>
 </html>

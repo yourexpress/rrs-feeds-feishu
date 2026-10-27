@@ -22,9 +22,11 @@
 <h1>LatencyLab: A DPDK-Based P4 Pipeline Latency Measurement Framework for FPGA SmartNICs</h1>
 <p class="meta-line">arXiv / Pavani Kuppili 等 · 2026-09-30 · 论文PDF</p>
 
-<p>P4-programmable FPGA SmartNICs place packet processing directly on the wire, but open FPG…</p>
-<blockquote><p>P4-programmable FPGA SmartNICs place packet processing directly on the wire, but open FPGA P4 toolflows do not expose timestamping at the pipeline boundary, so the latency a P4 program adds on the target FPGA is rarely measured. This paper presents LatencyLab, a DPDK-based measurement framework for FPGA P4 pipeline latency that needs neither PHC/PTP support on the datapath nor clock synchronization. The FPGA's two ports share a network segment, so the switch multicasts a copy of each probe packet to both: one copy passes through the VitisNetP4 pipeline, the other through a matched bypass path. A kernel-bypass DPDK receiver busy-polls both ports and timestamps every packet with the CPU timestamp counter (TSC) as it is retrieved from the NIC's receive circular buffer. The arrival-time difference of the two copies isolates the pipeline latency after calibration against a null bitstream carrying the same traffic; transmit time cancel in the subtraction. We evaluate four VitisNetP4 programs on an AMD Alveo U280, probing each with a 20,000-packet trace measured ten times per session over five independent sessions, all TSC-timestamped and reflected for hardware timestamping. The measured …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> P4 可编程 FPGA SmartNIC 把包处理放到线上，但开放 FPGA P4 工具链不暴露流水线边界的时间戳，P4 程序在目标 FPGA 上引入的延迟很少被真正测量。</p>
+<p><strong>方法</strong> LatencyLab：基于 DPDK 的 FPGA P4 流水线延迟测量框架，无需数据面 PHC/PTP 或时钟同步。交换机把每个探测包组播到两端口：一份过 VitisNetP4 流水线、一份过匹配旁路，DPDK 接收端忙轮询并用 CPU TSC 打时间戳，两副本到达时间差经空比特流校准后即隔离管线延迟。</p>
+<p><strong>关键数字</strong> AMD Alveo U280 上四个程序：99% 包落在中位数 ±20 ns 内，会话中位数重复性 1~2 ns（FiveTuple 107/137 ns、Forward 149 ns、RemoveHeader 177 ns、Checksum 364 ns @250 MHz）；独立反射核验逐分位吻合。</p>
+<p><strong>为什么值得看</strong> 无需专用时钟的 FPGA P4 延迟测量方案，结果紧密可复现且经独立校验。</p>
+<p><a href="https://arxiv.org/abs/2609.39978">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.39978">阅读原文 ↗</a></p>
 </body>
 </html>

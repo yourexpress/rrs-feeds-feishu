@@ -22,9 +22,11 @@
 <h1>Overcoming Scaling Limits in On-Policy Self-Distillation for LLM Reasoning</h1>
 <p class="meta-line">arXiv / Md. Ismail Hossain 等 · 2026-09-30 · 论文PDF</p>
 
-<p>突破 LLM 推理在策略自蒸馏的扩展极限</p>
-<blockquote><p>On-policy self-distillation (OPSD) trains a student to match a privileged teacher distribution along its own sampled trajectory. Standard OPSD applies this supervision to unverified student rollouts while conditioning the teacher on privileged context, typically a reference solution. We separate these roles in a factorial analysis and find that scaffold correctness has a stronger effect on downstream accuracy than context correctness. Unverified scaffolds create an imitation gap because the teacher can use information unavailable to the student. This gap shrinks with model scale, yet OPSD continues to supervise mostly unverified trajectories. In contrast, verified scaffolds remain effective even when the teacher is conditioned on the student's own unsuccessful rollout. Based on this finding, we introduce OASIS, which retains the OPSD objective but supervises mostly verified by label on-policy trajectories and replaces written solutions with unverified model-generated attempts as the teacher context. OASIS therefore requires only final-answer labels. Across Qwen3-1.7B, 4B, and 8B on AIME 2024, AIME 2025, and HMMT 2025, OASIS improves over the base model by 3.2--3.8 points on average…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 在策略自蒸馏（OPSD）让学生沿自身采样轨迹匹配特权教师分布，但标准做法把监督施加在未验证的学生轨迹上，教师还依赖特权上下文；其增益随模型规模扩大而衰减。</p>
+<p><strong>方法</strong> 析因分析发现 scaffold 正确性对下游准确率的影响强于上下文正确性；未验证 scaffold 造成模仿差距。据此提出 OASIS：保留 OPSD 目标，但主要监督带标签的已验证在策略轨迹，并用未验证的模型生成尝试替换书面解作为教师上下文，只需最终答案标签。</p>
+<p><strong>关键数字</strong> Qwen3-1.7B/4B/8B 在 AIME 2024、AIME 2025、HMMT 2025 上平均提升 3.2~3.8 分；OPSD 增益从 1.7B 的 3.05 分衰减到 8B 的 0.14；8B 时 OASIS 比 OPSD 高 3.05 分。</p>
+<p><strong>为什么值得看</strong> 定位了自蒸馏随规模失效的根因（未验证 scaffold），验证轨迹监督在更大模型上仍有效。</p>
+<p><a href="https://arxiv.org/abs/2609.37915">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.37915">阅读原文 ↗</a></p>
 </body>
 </html>

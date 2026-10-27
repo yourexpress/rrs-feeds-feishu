@@ -22,9 +22,11 @@
 <h1>MCD: Causal Distillation of Multimodal In-Context Learning in Large Vision-Language Models</h1>
 <p class="meta-line">arXiv / Yanshu Li 等 · 2026-09-30 · 论文PDF</p>
 
-<p>Large vision-language models (LVLMs) exhibit strong multimodal in-context learning (ICL) …</p>
-<blockquote><p>Large vision-language models (LVLMs) exhibit strong multimodal in-context learning (ICL) capabilities, yet this ability degrades substantially as model size decreases. Knowledge distillation offers a natural way to bridge this gap, but existing methods primarily align output distributions or hidden representations directly. Such alignment teaches the student what the teacher predicts without revealing which evidence in the complex context causally supports that prediction. Consequently, a student can imitate the teacher's answer while continuing to rely on language priors, prompt structure, or other spurious cues. To address this limitation, we introduce Multimodal Causal Distillation (MCD), a distillation framework that transfers how a strong teacher uses multimodal evidence during ICL. MCD uses structure-preserving token interventions to identify and verify causal evidence, then transfers how the teacher responds when that evidence is retained or removed. This design connects distillation to the causal patterns by which the model uses contextual evidence during multimodal ICL. Experiments across three LVLM families and seven benchmarks show that MCD improves student performance b…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 大视觉语言模型（LVLM）多模态上下文学习（ICL）能力随模型变小显著退化；现有蒸馏直接对齐输出分布或隐藏表征，只教"教师预测什么"，不揭示复杂上下文中哪些证据因果支撑预测，学生可能模仿答案却仍依赖语言先验与虚假线索。</p>
+<p><strong>方法</strong> Multimodal Causal Distillation（MCD）：用保结构 token 干预识别并验证因果证据，再迁移教师在证据保留或移除时的响应方式，把蒸馏与 ICL 使用上下文证据的因果模式连接起来。</p>
+<p><strong>关键数字</strong> 三个 LVLM 家族 × 七个基准：MCD 使学生平均提升 7.23 分，比普通蒸馏高 4.68 分，增益可泛化。</p>
+<p><strong>为什么值得看</strong> 把因果干预引入多模态 ICL 蒸馏，直击"模仿答案但不理解证据"的痛点。</p>
+<p><a href="https://arxiv.org/abs/2609.39920">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.39920">阅读原文 ↗</a></p>
 </body>
 </html>

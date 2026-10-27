@@ -22,9 +22,11 @@
 <h1>K2P: Label-Free Knowledge to Prompt Distillation</h1>
 <p class="meta-line">arXiv / Yingchuan Zhang 等 · 2026-09-30 · 论文PDF</p>
 
-<p>Knowledge distillation can transfer reasoning from stronger teachers to frozen students t…</p>
-<blockquote><p>Knowledge distillation can transfer reasoning from stronger teachers to frozen students through reusable prompts, but avoiding weight updates does not eliminate supervision. Without ground-truth answers, teacher solutions are unverified, and agreement with the teacher can reward shared mistakes. We introduce Knowledge-to-Prompt (K2P) for label-free knowledge distillation to prompts. K2P synthesizes reusable instructions from teacher solutions, refines them using paired teacher and student responses, and guides search and selection with answer agreement. It retains candidates that adaptive search may undervalue and selects on reserved questions. Deployment uses only the frozen student and selected prompt. Our theory separates generation and selection gaps and gives conditions under which agreement-guided construction yields accuracy guarantees despite imperfect teacher references. Across reasoning tasks and students, K2P outperforms label-free alternatives overall and remains competitive with supervised prompt optimization. Ablations and archive diagnostics assess the contributions of teacher solutions and refinement, while revealing the limits of agreement-guided selection.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 知识蒸馏可通过可复用 prompt 把推理从强教师迁移到冻结学生，但免权重更新不等于免监督：无标准答案时教师解未经验证，与教师一致可能奖励共同错误。</p>
+<p><strong>方法</strong> Knowledge-to-Prompt（K2P）：从教师解合成可复用指令，用配对师生响应精炼，以答案一致性引导搜索与选择；保留自适应搜索可能低估的候选、在保留问题上做最终选择，部署仅用冻结学生与所选 prompt。</p>
+<p><strong>关键数字</strong> 摘要未给出量化指标；理论上分离生成与选择差距，给出在教师参考不完美时一致性引导选择仍具精度保证的条件；总体优于免标签替代方案，与有监督 prompt 优化竞争力相当。</p>
+<p><strong>为什么值得看</strong> 免标签蒸馏到 prompt 的理论+实践完整框架，一致性引导的精度保证条件是亮点。</p>
+<p><a href="https://arxiv.org/abs/2609.38898">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.38898">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>PR-OPD: Privileged Representation On-policy Self-Distillation for Agentic Reinforcement Learning</h1>
 <p class="meta-line">arXiv / Muyang Li 等 · 2026-09-30 · 论文PDF</p>
 
-<p>特权表征在策略自蒸馏用于 Agentic RL</p>
-<blockquote><p>Language-model agents are usually trained by reinforcement learning from one reward per episode, and privileged self-distillation enriches it by letting the same policy, given a skill, teach its skill-free self through token probabilities. However, we identify two phenomena that question this channel. Invisible Advantage: a skill in context lifts WebShop success from 42.2% to 56.2%, yet changes the probabilities of fewer than a quarter of the sampled tokens. Much to Align: a skill changes the hidden states of over 80% of response tokens, in a way that linear probes can trace back to the specific skill. To exploit this, we propose Privileged Representation On-policy Self-Distillation (PR-OPD). After a GRPO warm start, the policy writes a hindsight skill for each trajectory, re-reads its own responses with that skill as a stop-gradient teacher, and aligns its projected hidden states to the teacher's at every layer alongside the reward objective, with no external skill library, separate teacher, or inference overhead. On ALFWorld and WebShop with two backbones, PR-OPD achieves the best overall results in every setting, improving over GRPO by up to 4.7 points in ALFWorld success and 14…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 特权自蒸馏让带技能策略通过 token 概率教无技能自我，但发现两个现象质疑该通道：Invisible Advantage——技能使 WebShop 成功率从 42.2% 升到 56.2%，却只改变不到四分之一采样 token 的概率；Much to Align——技能改变超 80% 响应 token 的隐藏状态，且线性探针可回溯到具体技能。</p>
+<p><strong>方法</strong> PR-OPD：GRPO 热启动后，策略为每条轨迹写下事后技能，以该技能作 stop-gradient 教师重读自身响应，在奖励目标之外逐层对齐投影隐藏状态；无外部技能库、独立教师或推理开销。</p>
+<p><strong>关键数字</strong> ALFWorld 与 WebShop 两骨干上全部设置取得最佳，比 GRPO 提升最高 4.7 分（ALFWorld 成功率）与 14.0 分（WebShop 准确率）。</p>
+<p><strong>为什么值得看</strong> 证明表征通道优于概率通道的特权自蒸馏，Agentic RL 收益显著，代码已开源。</p>
+<p><a href="https://arxiv.org/abs/2609.36642">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.36642">阅读原文 ↗</a></p>
 </body>
 </html>

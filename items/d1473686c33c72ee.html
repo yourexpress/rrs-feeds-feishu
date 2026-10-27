@@ -22,9 +22,11 @@
 <h1>Know Thyself, Teach Thyself: Internal Information Flow for Selective Self-Distillation</h1>
 <p class="meta-line">arXiv / Rui Wang 等 · 2026-09-30 · 论文PDF</p>
 
-<p>选择性自蒸馏中的内部信息流分析</p>
-<blockquote><p>Self-distillation turns knowledge distillation into a closed learning loop and offers a path toward recursive self-improvement. Without an external teacher, however, the model must determine both what information can improve its supervision and which induced changes should be learned. Existing methods typically improve teacher-generated data or select training examples in isolation, leaving the information transferred between these stages unmeasured. We introduce InFlow, a retrieval-guided on-policy self-distillation framework that models this process as potential-to-realized information flow. InFlow first retrieves potentially informative sources using certainty-calibrated hidden-state trajectories, then measures their realized effect through the Jensen--Shannon divergence between the teacher's initial and retrieval-conditioned answer beliefs. Examples with larger belief shifts are selected for on-policy distillation. Our analysis formalizes the information optimized by retrieval and selection and relates the answer-level shift to the teacher--student distillation gap. Across four open-weight language models and three knowledge domains, InFlow achieves the strongest cross-model av…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 自蒸馏形成闭环学习，但缺少外部教师时模型必须自行判断哪些信息能改进监督、哪些诱导变化该学；现有方法孤立处理数据改进与样本选择，两阶段间传递的信息未被测量。</p>
+<p><strong>方法</strong> InFlow：检索引导的在策略自蒸馏框架，把过程建模为潜在到实现的信息流。先用确定性校准的隐藏状态轨迹检索潜在信息源，再用教师初始答案信念与检索条件信念间的 JS 散度测量实现效应，选信念偏移大的样本蒸馏。</p>
+<p><strong>关键数字</strong> 4 个开源语言模型 × 3 个知识域上，InFlow 在对比的选择方法中取得最强跨模型平均；消融支持两阶段各自的贡献（具体数值摘要未给出）。</p>
+<p><strong>为什么值得看</strong> 显式建模并测量自蒸馏中的信息流，选择机制可量化、可消融，代码已开源。</p>
+<p><a href="https://arxiv.org/abs/2609.36695">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.36695">阅读原文 ↗</a></p>
 </body>
 </html>
