@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Speculative Decoding for Mixture-of-Experts Models: Expert Bytes, Kernel Bandwidth and the Best Draft Length</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Speculative Decoding for Mixture-of-Experts Models: Expert Bytes, Kernel Bandwidth and the Best Draft Length</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-25 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> MoE 投机解码中连续 token 常选同一批专家，去重引擎每 pass 每专家只读一次、请求字节更少，但它在什么条件下真的更快？</p>
+<p><strong>方法</strong> 把一步时间写成各 kernel 请求字节/有效带宽加固定时间，几何接受假设下推导投机快于普通解码的条件，最优草稿长度为接受率的单调阶梯；在 llama.cpp Metal、MLX-LM 与 llama.cpp CUDA 上实测（已改造支持去重）。</p>
+<p><strong>关键数字</strong> per-slot kernel 有效带宽更高（r=0.32 到 0.75），去重仅每 pass 5-8 token 或从不更快；实测节省落在误差界内：CUDA/MLX-LM 全部点、Metal 48 点中 36 点；DeepSeek-V2-Lite 上 CUDA 最优草稿长度在 22 个接受率上全部命中（±1 内）。</p>
+<p><strong>为什么值得看</strong> 把 MoE 投机解码的字节/带宽账算清楚，直接指导草稿长度与去重取舍。</p>
+<p><a href="https://arxiv.org/abs/2610.34440">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.34440">阅读原文 ↗</a></p>
+</body>
+</html>

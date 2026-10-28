@@ -22,9 +22,11 @@
 <h1>Preserving Provenance in Shared KV Caches for LLM Serving</h1>
 <p class="meta-line">arXiv / Wei Song 等 · 2026-09-30 · 论文PDF</p>
 
-<p>Production LLM serving stacks combine an inference engine's local prefix cache with a sha…</p>
-<blockquote><p>Production LLM serving stacks combine an inference engine's local prefix cache with a shared KV-cache tier for fleet-wide reuse. The local cache distinguishes requests by adapter, weight configuration and sharing domain, but the shared tier may key entries only by token content and coarse model metadata. This boundary erases provenance and lets identical tokens under incompatible computational or sharing contexts collide. We call this composition gap provenance-blind reuse and present its first systematic study. A source audit of three vLLM connectors confirms the structural omission, while runtime experiments reproduce it across vLLM and two SGLang releases, 12 models from 7 families (0.5 B-32 B), and over 160 configurations. Cross-adapter collisions reduce accuracy from 0.94 to 0.64, incompatible KV representations reduce reasoning accuracy to zero, and salt omission enables 93% prompt identification from timing. We formalize the missing guarantee as the KV provenance contract: for a declared dimension registry, shared keys must be injective over computational and sharing provenance, with identities stable across workers. Any dimension with a stable identity can therefore be adde…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 生产 LLM serving 把推理引擎本地前缀缓存与共享 KV 层结合，但共享层可能只按 token 内容与粗模型元数据键控，擦除 provenance 使不兼容上下文碰撞——这种"provenance-blind reuse"有多严重？</p>
+<p><strong>方法</strong> 首个系统研究：审计三个 vLLM connector 确认结构性缺失；形式化 KV provenance contract（共享键必须在计算与共享 provenance 上单射、跨 worker 身份稳定）；规范描述符把逐请求/逐 worker provenance 绑入查找与存储键，差分检查器检测改变 KV 状态却不改键的维度；在 vLLM 与 SGLang 0.5.20 三条缓存路径实现。</p>
+<p><strong>关键数字</strong> 跨 12 模型 7 家族（0.5B-32B）、160+ 配置复现：跨适配器碰撞精度 0.94→0.64、不兼容 KV 表示使推理精度归零、salt 缺失使 93% prompt 可从时序识别；命中路径延迟变化在 0.34 ms 内、低于 run-to-run 波动。</p>
+<p><strong>为什么值得看</strong> 共享 KV 缓存安全复用的第一个系统研究，provenance 契约可直接落地。</p>
+<p><a href="https://arxiv.org/abs/2609.38706">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.38706">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SRA: Selective Residual Adaptation for LLM Reasoning Enhancement</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SRA: Selective Residual Adaptation for LLM Reasoning Enhancement</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-25 · 论文PDF</p>
+
+<p>Knowledge distillation transfers reasoning capabilities from large language models to lightweight students.</p>
+<blockquote><p>Knowledge distillation transfers reasoning capabilities from large language models to lightweight students. However, distilled small models still struggle with multi-step reasoning. We observe that the distribution divergences between teacher and student models along reasoning paths are highly sparse, and target tokens almost always fall within the student top-$K$ candidate set. Based on this finding, unlike approaches updating student backbones or requiring runtime teacher computation, we propose Selective Residual Adaptation (SRA), a plug-and-play framework that internalizes localized corrections. Concretely, SRA employs a Discrepancy Gate to identify divergence positions alongside a Candidate Residual Adapter for top-$K$ logit calibration to correct the mismatch. Theoretically, we establish error bounds ensuring strict sequence level performance gains. Across mathematical benchmarks on Qwen3 models from 0.6B to 4B, SRA consistently enhances distilled student models, raising average Pass@16 by up to 4.37 percentage points while preserving general capabilities.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.34199">阅读原文 ↗</a></p>
+</body>
+</html>

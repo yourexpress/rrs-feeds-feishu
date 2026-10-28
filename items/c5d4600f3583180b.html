@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COPE: Composable Performance Emulation for Mixture-of-Experts Offloading Policies</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>COPE: Composable Performance Emulation for Mixture-of-Experts Offloading Policies</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-24 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> MoE 稀疏激活使专家权重可驻留 CPU 内存按需传输，但模型稀疏度、CPU/GPU 吞吐、VRAM 与带宽差异会改变卸载策略排序；逐策略实现评估成本过高，如何低成本选优？</p>
+<p><strong>方法</strong> COPE 在运行时集成前选出目标配置的最优卸载策略：Policy Matrix 把设计空间分解为专家驻留与 MoE 执行策略两个独立轴并暴露 4 个新候选；Virtual Heterogeneous Machine 刻画目标平台组合算子调度并结合离线路由迹估计性能。</p>
+<p><strong>关键数字</strong> 最优策略选择准确率提升 24%-100%，性能预测误差降 1.7x-6.8x；集成前定策使策略实现工作量最多降 74%。</p>
+<p><strong>为什么值得看</strong> MoE 卸载策略的系统化选择框架，省掉逐策略工程实现成本。</p>
+<p><a href="https://arxiv.org/abs/2610.33404">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.33404">阅读原文 ↗</a></p>
+</body>
+</html>

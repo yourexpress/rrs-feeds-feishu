@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Waypoint: Analytically Modeling GEMM for CPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Waypoint: Analytically Modeling GEMM for CPUs</h1>
+<p class="meta-line">arXiv(cs.DC) · 2026-10-26 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 高性能 GEMM 实现依赖精心挑选的 tile 尺寸达到峰值性能，如何对给定硬件与输入矩阵自动确定最优 tile？</p>
+<p><strong>方法</strong> Waypoint 是解析分析模型：刻画内存层级交互、指令级并行与多线程等全部架构效应，以估计性能为代理搜索 tile 空间；并用它构建 OPAM CPU GEMM 库自动分解 GEMM。</p>
+<p><strong>关键数字</strong> 性能匹配 SOTA GEMM 库；在 CPU 上加速 LLM 推理 1.36-1.98x。</p>
+<p><strong>为什么值得看</strong> CPU GEMM tile 选择的解析模型，还可帮硬件设计者估计实验性优化的现实性能。</p>
+<p><a href="https://arxiv.org/abs/2610.34914">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.34914">阅读原文 ↗</a></p>
+</body>
+</html>

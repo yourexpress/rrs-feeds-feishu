@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adapting DNNs to Embrace Voltage Scaling Induced Errors via Accumulation-Aware Quantization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Adapting DNNs to Embrace Voltage Scaling Induced Errors via Accumulation-Aware Quantization</h1>
+<p class="meta-line">arXiv(cs.AR) · 2026-10-24 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 电压缩放是强力的降功耗手段，但新一代工艺节点上吞吐退化严重且易受工艺变化影响，DNN 的能效-可靠性如何兼得？</p>
+<p><strong>方法</strong> 软硬件协同：累积感知训练把累加器时序鲁棒位区间作为一阶优化约束，混合精度量化+非结构化剪枝约束权重分布避开硬件敏感的高秩进位链；架构侧做选择性 MSB 掩蔽与细粒度门控时钟，并逐层动态频率缩放适配累加器动态范围。</p>
+<p><strong>关键数字</strong> 深度缩放的 2nm 节点低电压前沿下，协同优化 post-layout 架构较标称电压实现能耗降 39%、能量延迟积降 23%，精度退化在 1% 以内。</p>
+<p><strong>为什么值得看</strong> 面向电压缩放容错的完整软硬件协同方案，低功耗 DNN 能效收益量化清晰。</p>
+<p><a href="https://arxiv.org/abs/2610.33824">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.33824">阅读原文 ↗</a></p>
+</body>
+</html>

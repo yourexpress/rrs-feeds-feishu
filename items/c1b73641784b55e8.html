@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Steering the Teacher: Improving On-Policy Self-Distillation for Thinking Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Steering the Teacher: Improving On-Policy Self-Distillation for Thinking Models</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-25 · 论文PDF</p>
+
+<p>On-policy self-distillation (OPSD) trains a student on its own reasoning trajectories using token-level supervision from a reference-conditioned teacher init...</p>
+<blockquote><p>On-policy self-distillation (OPSD) trains a student on its own reasoning trajectories using token-level supervision from a reference-conditioned teacher initialized from the same model. However, access to the reference can induce teacher behaviors that undermine independent reasoning in thinking models, leading to reference hallucinations, where the student cites an unavailable reference to justify reasoning steps, and reconsideration suppression, where the teacher discourages verification and revision at uncertain steps. We introduce Steered-Teacher OPSD (ST-OPSD) to jointly address these failure modes through activation steering. ST-OPSD extracts two directions from model-generated reasoning trajectories and applies them to the teacher's hidden states during distillation target computation, suppressing reference-invoking behavior and encouraging reconsideration with marker-family calibration. The student learns from the resulting teacher distributions without being steered. Experiments on AIME and HMMT show that ST-OPSD improves accuracy over vanilla OPSD and other interventions while restoring reconsideration and reference-hallucination rates to base-model levels.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.34005">阅读原文 ↗</a></p>
+</body>
+</html>

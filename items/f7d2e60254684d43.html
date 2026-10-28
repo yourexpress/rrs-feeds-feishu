@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prefix Keys and Values Matter Late: RIPE Caching for Self-Speculative Decoding in Looped Language Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Prefix Keys and Values Matter Late: RIPE Caching for Self-Speculative Decoding in Looped Language Models</h1>
+<p class="meta-line">arXiv(cs.DC) · 2026-10-25 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 循环语言模型每 token 把一层块跑 R 次，KV 缓存每循环层有 R 个平面，自投机解码读全部平面；哪些平面更重要、能否只存最深平面？</p>
+<p><strong>方法</strong> 发现前缀 K/V 后期更敏感：等扰动下 loop 25-32 比 loop 2-9 敏感 e^15.0（Huginn-0125）/ e^12.8（Raven-Llama）倍，平面按 0.88/0.81 每循环几何逼近最后一层；RIPE 只在最近位置窗口保留全深度，其余位置只存最深平面。</p>
+<p><strong>关键数字</strong> Huginn 上 64 位置窗口以全缓存 11.9% 内存移除 89% 尾部位置；全缓存自投机加速 2.09x、仅最深平面 2.58x；单共享平面的固定内存吞吐增益 2.24x。</p>
+<p><strong>为什么值得看</strong> 循环模型"后期 KV 平面最敏感"的结构洞察+省约 88% 内存的缓存策略。</p>
+<p><a href="https://arxiv.org/abs/2610.34436">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.34436">阅读原文 ↗</a></p>
+</body>
+</html>

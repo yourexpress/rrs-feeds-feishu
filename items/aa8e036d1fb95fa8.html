@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DualPace: Decoupled Scheduling and Cooperative GPU--CPU Decoding for LLM Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DualPace: Decoupled Scheduling and Cooperative GPU--CPU Decoding for LLM Serving</h1>
+<p class="meta-line">arXiv(cs.DC) · 2026-10-24 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LLM serving 中 KV 缓存随序列增长限制 GPU 并发，CPU 卸载可扩展容量但现有系统仍 GPU-gated，主机内存与 CPU 算力无法作为独立服务资源。</p>
+<p><strong>方法</strong> DualPace 把主机变成独立调度的解码引擎：GPU 引擎执行 prefill 与 GPU 驻留解码，AMX 使能的 CPU 引擎独立批处理并推进 CPU 驻留解码；调度解耦、执行协作，CPU 可本地完成整轮解码迭代或选择性调用 GPU Dense Assist，离线 profile 指导硬件特定批处理与路由。</p>
+<p><strong>关键数字</strong> 解码场景吞吐较 NEO 提升 6.9-43.2%、较 vLLM 提升 11.5-90.6%，延迟同水平；保留 NEO 的 P99 TTFT 优势，同 P99 ITL 下请求率比 NEO 高 7.3-50.5%。</p>
+<p><strong>为什么值得看</strong> 把 CPU 侧变成真正独立解码资源的 serving 运行时，KV 卸载路线的重要升级。</p>
+<p><a href="https://arxiv.org/abs/2610.33501">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.33501">阅读原文 ↗</a></p>
+</body>
+</html>

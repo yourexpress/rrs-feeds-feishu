@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LooseLeaf: Enabling Serverless GPUs for Computational Notebooks</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LooseLeaf: Enabling Serverless GPUs for Computational Notebooks</h1>
+<p class="meta-line">arXiv(cs.DC) · 2026-10-23 · 论文PDF</p>
+
+<p>Computational notebooks reserve a GPU for the whole session, yet the GPU computes only while a cell executes and sits idle otherwise.</p>
+<blockquote><p>Computational notebooks reserve a GPU for the whole session, yet the GPU computes only while a cell executes and sits idle otherwise. Serverless execution would release the GPU between cells, but reconstructing the accumulated notebook state on a fresh worker imposes substantial cost on every GPU cell. This paper presents LooseLeaf, a serverless GPU platform for interactive notebooks. LooseLeaf derives the state and import closures of each cell, the minimal variables and packages that the cell needs. Our analysis on 5,000 real-world notebooks shows that these closures are small, and user-cell editing leaves seconds to prepare them. LooseLeaf prepares a GPU worker with these closures while the user edits the cell. After execution, the worker saves the updated state within seconds, so the GPU is reclaimable after every cell. LooseLeaf starts 95-98% of GPU cells with no visible delay, matches the interactivity of a pinned session, and provisions 32-55% fewer GPU-hours than state-of-the-art notebook platforms.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.33275">阅读原文 ↗</a></p>
+</body>
+</html>

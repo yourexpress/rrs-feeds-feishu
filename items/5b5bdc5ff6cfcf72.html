@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prior Predictive Matching for Bayesian LoRA</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Prior Predictive Matching for Bayesian LoRA</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-26 · 论文PDF</p>
+
+<p>Bayesian variants of Low-Rank Adaptation (LoRA) provide principled uncertainty estimation when fine-tuning large foundation models, but require specifying th...</p>
+<blockquote><p>Bayesian variants of Low-Rank Adaptation (LoRA) provide principled uncertainty estimation when fine-tuning large foundation models, but require specifying the prior over the low-rank weight updates. We address this hyperparameter selection problem by introducing a closed-form prior-predictive estimator that operates before fine-tuning. We analyze a second-order expansion of the network and quantify how the low-rank prior drives function-space deviations from the pretrained outputs. We also show that these prior-predictive quantities depend on the prior only through the product of the adaptation rank and the fourth power of the prior scale. Because the training targets share a single draw of the latent weight update, we can leverage the covariance between example residuals to derive a moment-matching estimator. Furthermore, our theoretical analysis establishes that the optimal prior precision scales as $r^{-1/2}$ with the rank $r$, allowing a single estimate to generalize across all ranks. Controlled experiments across regression and classification tasks validate our approximation and show that our estimator recovers the true prior scale. On RoBERTa-large, our approach improves pred…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.35457">阅读原文 ↗</a></p>
+</body>
+</html>

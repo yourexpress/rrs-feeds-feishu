@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Double KV Cache Optimization on Apple Silicon: Block-FP4, Radial Quantization, and Fused Metal Kernels</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Double KV Cache Optimization on Apple Silicon: Block-FP4, Radial Quantization, and Fused Metal Kernels</h1>
+<p class="meta-line">arXiv(cs.AR) · 2026-10-21 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 长上下文自回归推理中 KV 缓存容量与内存流量是主要瓶颈，统一内存硬件上低比特 KV 缓存到底值不值、何时有效？</p>
+<p><strong>方法</strong> 在 Apple Silicon M5 Max 上用 MLX 评估五条缓存路径：bf16 基线、块缩放 E2M1 FP4、Python 径向量化参考、FP4+Polar 顺序组合、融合 Metal Polar 核，对比压缩率与吞吐。</p>
+<p><strong>关键数字</strong> 融合 Metal PolarQuant 达 46.8 tok/s、3,456 B/token，较 bf16 基线 3.64x 压缩、比 Python Polar 参考快 1.84x（25.4 tok/s）；FP4+Polar 顺序组合无增益（4,241 B/token @ 15.1 tok/s）；32K 以上所有压缩变体崩到 1.5-14 tok/s；64K 时 33.5 GB 分配超 MLX 的 22.6 GB Metal buffer 上限。</p>
+<p><strong>为什么值得看</strong> 把表示级压缩与 kernel/分配器效应分开，明确低比特 KV 缓存奏效的条件；长上下文需融合 SDPA 直接消费压缩 KV 加分块预分配。</p>
+<p><a href="https://arxiv.org/abs/2610.33076">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.33076">阅读原文 ↗</a></p>
+</body>
+</html>

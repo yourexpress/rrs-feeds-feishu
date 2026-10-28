@@ -5,7 +5,7 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>AI 机构与企业（DeepMind/OpenAI/Anthropic/Microsoft/Meta/xAI/Mistral/Qwen/Seed 等）最新论文与 PDF 技术报告（arXiv 等），正文含中文省流版。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 27 Oct 2026 23:29:29 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 10:56:43 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/ai-papers.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Fix for Softmax and Cross-Entropy</title>
@@ -983,58 +983,6 @@
 <p><strong>关键数字</strong>：见原文实验部分。</p>
 <p><strong>为什么值得看</strong>：把 RSI 的探索管理本身当作被优化的对象，是 agent 自我改进方向的方法论级工作。</p>
 <p>原文：<a href="https://arxiv.org/abs/2609.14858">arXiv:2609.14858</a>（Google DeepMind）</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Divide, Consult, and Conquer: Capability Laundering Through Aligned LLMs</title>
-      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/f7d9276ad375b2c6.html</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2609.15383</guid>
-      <pubDate>Wed, 16 Sep 2026 12:00:00 +0800</pubDate>
-    <category>论文PDF</category>
-    <category>每日精选</category>
-      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：Microsoft　&lt;strong&gt;发布&lt;/strong&gt;：2026-09-16　&lt;strong&gt;分类&lt;/strong&gt;：论文PDF / 每日精选&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究问题&lt;/strong&gt;：LLM 安全评测是"一次一个交互"——若弱模型把有害任务拆成多个看似良性的子问题、分别咨询强对齐模型再本地组装呢？&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;方法&lt;/strong&gt;：提出 capability laundering（能力洗白）攻击：弱未对齐 orchestrator 分解任务 → 对齐强模型逐个咨询 → 本地合并答案；评测 GPT-5.5、Claude Opus 4.8、Grok-4.3 作为顾问，四个本地 orchestrator，任务集 CyBench / BountyBench / 有害 CBRN 请求。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;关键数字&lt;/strong&gt;：CyBench 上 Gemma-4-31B 借助咨询恢复 8/14 个候选任务能力（详见原文）。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;为什么值得看&lt;/strong&gt;：与越狱不同——没有任何单个回复是有害的，现有单轮护栏完全拦不住；对 agent 时代的 API 安全设计是必读警示。&lt;/p&gt;
-&lt;p&gt;原文：&lt;a href="https://arxiv.org/abs/2609.15383"&gt;arXiv:2609.15383&lt;/a&gt;（Microsoft）&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p><strong>发表方</strong>：Microsoft　<strong>发布</strong>：2026-09-16　<strong>分类</strong>：论文PDF / 每日精选</p><p><strong>研究问题</strong>：LLM 安全评测是"一次一个交互"——若弱模型把有害任务拆成多个看似良性的子问题、分别咨询强对齐模型再本地组装呢？</p>
-<p><strong>方法</strong>：提出 capability laundering（能力洗白）攻击：弱未对齐 orchestrator 分解任务 → 对齐强模型逐个咨询 → 本地合并答案；评测 GPT-5.5、Claude Opus 4.8、Grok-4.3 作为顾问，四个本地 orchestrator，任务集 CyBench / BountyBench / 有害 CBRN 请求。</p>
-<p><strong>关键数字</strong>：CyBench 上 Gemma-4-31B 借助咨询恢复 8/14 个候选任务能力（详见原文）。</p>
-<p><strong>为什么值得看</strong>：与越狱不同——没有任何单个回复是有害的，现有单轮护栏完全拦不住；对 agent 时代的 API 安全设计是必读警示。</p>
-<p>原文：<a href="https://arxiv.org/abs/2609.15383">arXiv:2609.15383</a>（Microsoft）</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Chain-of-Thought Compression Enables Extremely Efficient Black-Box LLM Inference</title>
-      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/905bee14ac76ae21.html</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2609.15959</guid>
-      <pubDate>Wed, 16 Sep 2026 12:00:00 +0800</pubDate>
-    <category>论文PDF</category>
-      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：Microsoft　&lt;strong&gt;发布&lt;/strong&gt;：2026-09-16　&lt;strong&gt;分类&lt;/strong&gt;：论文PDF&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究问题&lt;/strong&gt; 黑盒调用 LLM 时，思维链（CoT）推理的 token 开销直接等于成本；能否在不访问模型内部的前提下大幅压缩推理 token 数、同时保住答案质量？&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;方法&lt;/strong&gt; 来自微软的理论工作：分析 CoT 压缩的信息论极限，给出"信号集中"条件下的压缩上界结论，并结合束搜索采样策略逼近该极限（注：本条抓取到的摘要正文与标题不匹配，此处依据标题与入库要点撰写，细节请以原文为准）。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;关键数字&lt;/strong&gt; 在信号集中 + 束搜索采样下，推理 token 数仅需达到理论极限的 2 倍。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;为什么值得看&lt;/strong&gt; 给"推理成本能压到多低"这一实用问题提供了理论锚点，对做推理时计算压缩与成本优化的人有方向性参考价值。&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://arxiv.org/abs/2609.15959"&gt;阅读原文&lt;/a&gt;&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p><strong>发表方</strong>：Microsoft　<strong>发布</strong>：2026-09-16　<strong>分类</strong>：论文PDF</p><p><strong>研究问题</strong> 黑盒调用 LLM 时，思维链（CoT）推理的 token 开销直接等于成本；能否在不访问模型内部的前提下大幅压缩推理 token 数、同时保住答案质量？</p>
-<p><strong>方法</strong> 来自微软的理论工作：分析 CoT 压缩的信息论极限，给出"信号集中"条件下的压缩上界结论，并结合束搜索采样策略逼近该极限（注：本条抓取到的摘要正文与标题不匹配，此处依据标题与入库要点撰写，细节请以原文为准）。</p>
-<p><strong>关键数字</strong> 在信号集中 + 束搜索采样下，推理 token 数仅需达到理论极限的 2 倍。</p>
-<p><strong>为什么值得看</strong> 给"推理成本能压到多低"这一实用问题提供了理论锚点，对做推理时计算压缩与成本优化的人有方向性参考价值。</p>
-<p><a href="https://arxiv.org/abs/2609.15959">阅读原文</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CATVis: A Collaborative Multi-Agent Workflow for Turbomachinery Simulation Data Visualization</title>
-      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/75694261a0e2cafb.html</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2609.16598</guid>
-      <pubDate>Wed, 16 Sep 2026 12:00:00 +0800</pubDate>
-    <category>论文PDF</category>
-      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：arXiv　&lt;strong&gt;发布&lt;/strong&gt;：2026-09-16　&lt;strong&gt;分类&lt;/strong&gt;：论文PDF&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究问题&lt;/strong&gt; 涡轮机械 CFD 后处理中，把含糊的高层分析目标（如「涡识别」）翻译成精确、支持复杂领域分析的可视化流程，是自然语言科学数据分析接口的难点。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;方法&lt;/strong&gt; CATVis 提出协作式多智能体工作流系统：把领域专用可视化流程重构为可组合的工作流表示，由多个智能体经意图规划、模板生成、错误感知修正三个阶段增量更新同一份结构化中间表示，逐步把自然语言意图落成可视化流程。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;关键数字&lt;/strong&gt; 摘要未给具体量化指标；作者评估了外部知识与工作流结构化对生成准确率的影响，称所提方法显著提升复杂工作流生成的正确率，同时降低 prompt 复杂度。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;为什么值得看&lt;/strong&gt; 「多智能体 + 结构化中间表示」在科学可视化这一高门槛垂直场景的落地案例，对做 AI for Science 工具链的人有参考意义。&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://arxiv.org/abs/2609.16598"&gt;阅读原文&lt;/a&gt;&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p><strong>发表方</strong>：arXiv　<strong>发布</strong>：2026-09-16　<strong>分类</strong>：论文PDF</p><p><strong>研究问题</strong> 涡轮机械 CFD 后处理中，把含糊的高层分析目标（如「涡识别」）翻译成精确、支持复杂领域分析的可视化流程，是自然语言科学数据分析接口的难点。</p>
-<p><strong>方法</strong> CATVis 提出协作式多智能体工作流系统：把领域专用可视化流程重构为可组合的工作流表示，由多个智能体经意图规划、模板生成、错误感知修正三个阶段增量更新同一份结构化中间表示，逐步把自然语言意图落成可视化流程。</p>
-<p><strong>关键数字</strong> 摘要未给具体量化指标；作者评估了外部知识与工作流结构化对生成准确率的影响，称所提方法显著提升复杂工作流生成的正确率，同时降低 prompt 复杂度。</p>
-<p><strong>为什么值得看</strong> 「多智能体 + 结构化中间表示」在科学可视化这一高门槛垂直场景的落地案例，对做 AI for Science 工具链的人有参考意义。</p>
-<p><a href="https://arxiv.org/abs/2609.16598">阅读原文</a></p>]]></content:encoded>
     </item>
   </channel>
 </rss>

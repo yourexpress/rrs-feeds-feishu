@@ -22,9 +22,11 @@
 <h1>PrototypeNAS: Rapid Design of Deep Neural Networks for Microcontroller Units</h1>
 <p class="meta-line">arXiv / Mark Deutel 等 · 2026-09-30 · 论文PDF</p>
 
-<p>PrototypeNAS：面向 MCU 的 DNN 快速原型设计（跨类）</p>
-<blockquote><p>Enabling efficient deep neural network (DNN) inference on edge devices with different hardware constraints is a challenging task that typically requires DNN architectures to be specialized for each device separately. To avoid the huge manual effort, one can use neural architecture search (NAS). However, many existing NAS methods are resource-intensive and time-consuming because they require the training of many different DNNs from scratch. Furthermore, they do not take the resource constraints of the target system into account. To address these shortcomings, we propose PrototypeNAS, a zero-shot NAS method to accelerate and automate the selection, compression, and specialization of DNNs to different target microcontroller units (MCUs). We propose a novel three-step search method that decouples DNN design and specialization from DNN training for a given target platform. First, we present a novel search space that not only cuts out smaller DNNs from a single large architecture, but instead combines the structural optimization of multiple architecture types, as well as optimization of their pruning and quantization configurations. Second, we explore the use of an ensemble of zero-shot …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 边缘设备硬件约束各异，为每台设备专门设计 DNN 需要大量手工工作；现有 NAS 资源密集（需从零训练多个网络）且不纳入目标系统资源约束。</p>
+<p><strong>方法</strong> PrototypeNAS 零样本 NAS，三步搜索把 DNN 设计与特化从训练解耦：新搜索空间组合多架构类型的结构优化与剪枝/量化配置；用零样本代理集成替代单一代理；Hypervolume 子集选择从多目标 Pareto 前沿提炼精度-FLOPs 折中最有意义的架构。</p>
+<p><strong>关键数字</strong> 12 数据集三任务（图像分类、时序分类、目标检测）；数分钟内找到可在现成 MCU 上部署的小模型，精度可比大 DNN。</p>
+<p><strong>为什么值得看</strong> 零样本 NAS 快速生成 MCU 可部署 DNN，边缘硬件特化自动化。</p>
+<p><a href="https://arxiv.org/abs/2603.15106">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2603.15106">阅读原文 ↗</a></p>
 </body>
 </html>

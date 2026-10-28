@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One Megakernel is Not Enough: Predicting Where to Cut for Streaming Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>One Megakernel is Not Enough: Predicting Where to Cut for Streaming Inference</h1>
+<p class="meta-line">arXiv(cs.PF) · 2026-10-26 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 内核融合应延伸到多远、哪些边界值得保留？单一巨型 megakernel 是否总是最优？</p>
+<p><strong>方法</strong> 提出不端到端跑任何候选设计的框架：从常规图 profile 与独立 kernel 基准选择 megakernel 区域，模拟各候选 tile/事件图预测首输出时间；并引入四类模型分类（megakernel-stable/receding/advancing/averse）刻画最优组合随批大小的变化。</p>
+<p><strong>关键数字</strong> 13 个模型-批组合全部选出实测最优设计；NH-TTS/Qwen3-TTS/Llama-1B 上最优组合为 2-4 个 megakernel 到全常规图、无一为单一 megakernel；NH-TTS H100 NVL 批 32 下保留三个专用 megakernel：批 p95 TTFA 低 21.4%、吞吐高 28%；较 TensorRT 常规图引擎级批 TTFA p95 降 4.05x、吞吐升 19.7%。</p>
+<p><strong>为什么值得看</strong> 回答 megakernel 该不该"一个到底"的实证框架，流式推理内核设计直接参考。</p>
+<p><a href="https://arxiv.org/abs/2610.35336">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.35336">阅读原文 ↗</a></p>
+</body>
+</html>

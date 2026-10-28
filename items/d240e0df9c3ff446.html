@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Speeding up Log-Sum-Exp: Kernel Fusion at the Memory Wall, Integer Arithmetic at the Compute Wall</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Speeding up Log-Sum-Exp: Kernel Fusion at the Memory Wall, Integer Arithmetic at the Compute Wall</h1>
+<p class="meta-line">arXiv(cs.DC) · 2026-10-24 · 论文PDF</p>
+
+<p>While the Log-Sum-Exp (LSE) function is a foundational numerical primitive for stable log-domain computation in modern machine learning, its fast and efficie...</p>
+<blockquote><p>While the Log-Sum-Exp (LSE) function is a foundational numerical primitive for stable log-domain computation in modern machine learning, its fast and efficient computation on generic platforms (\ie, CPUs and GPUs) has been underexplored, potentially creating execution bottlenecks for large workloads. On GPU, the de facto implementation $\texttt{torch.logsumexp}$ dispatches a chain of nine sub-kernels per call, incurring redundant High Bandwidth Memory (HBM) traffic and launch overhead. On CPU, exp and log operations are hardware-hungry, limiting the computing efficiency. To address these bottlenecks, we propose two drop-in kernels to significantly accelerate LSE computation on both GPUs and CPUs: FuseLSE, a single-pass fused kernel that evaluates LSE's exp and log functions on the GPU's Special Function Unit (SFU); and IntLSE, which further replaces the LSE computation with approximated integer arithmetic for CPU computation. Our experiments, validated by benchmarks across workload sizes and hardware platforms, show that both kernels are ${\sim}10-11\times$ faster than PyTorch at small workloads and ${\sim}6\times$ faster on larger ones on GPUs, where the speed-up is attributed to …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.33647">阅读原文 ↗</a></p>
+</body>
+</html>

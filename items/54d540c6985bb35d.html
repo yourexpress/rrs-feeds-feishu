@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WorldPager: Zero-Stall Tiered Memory for Long-Horizon World Models on a Single Consumer GPU</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>WorldPager: Zero-Stall Tiered Memory for Long-Horizon World Models on a Single Consumer GPU</h1>
+<p class="meta-line">arXiv(cs.DC) · 2026-10-26 · 论文PDF</p>
+
+<p>Interactive world models keep the KV of past chunks as retrieval memory so that revisited places stay consistent.</p>
+<blockquote><p>Interactive world models keep the KV of past chunks as retrieval memory so that revisited places stay consistent. On a single consumer machine (one RTX 4090, 32 GiB of host memory, one NVMe SSD), long sessions with such memory hit two walls. The first is capacity: the KV of Matrix-Game 2.0 exhausts host memory after 45 seconds of video in bf16 and after 2.8 minutes in int4. The second is the model's positional horizon of 4.3 minutes. We show that this memory is capacity-bound rather than bandwidth-bound and that its access set is known before compute, because the camera pose is an input. An analytical model built on these observations predicts spill points to within one chunk and classifies zero versus non-zero stalls correctly on held-out configurations. Guided by it, WorldPager stores int4 KV in a GPU/DRAM/NVMe hierarchy instead of recomputing it, prefetches each chunk's memory from the extrapolated pose, never waits on a miss, and writes back in the background; to our knowledge, it is the first to place the KV memory of an interactive world model on an NVMe tier with zero-stall prefetching. With training-free position handling, it generates 37.5 minutes of video continuously wit…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.35529">阅读原文 ↗</a></p>
+</body>
+</html>

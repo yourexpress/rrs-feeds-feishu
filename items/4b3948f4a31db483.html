@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>INTRA: Interleaved Non-contiguous Token spaRse Attention</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>INTRA: Interleaved Non-contiguous Token spaRse Attention</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-25 · 论文PDF</p>
+
+<p>Transformers achieve strong performance across modalities but are bottlenecked by the quadratic cost of attention.</p>
+<blockquote><p>Transformers achieve strong performance across modalities but are bottlenecked by the quadratic cost of attention. Sparse attention can reduce this cost, but effective sparsity must preserve useful long-range communication and map well to GPU hardware. We introduce INTRA--Interleaved Non-contiguous Token spaRse Attention--a hardware-aware static sparse attention design based on a relay-communication view under Computational Query Set (CQS) constraints. Rather than directly covering all token-to-token interactions within each sparse layer, INTRA uses complementary sparse groups to provide short mediated communication paths across layers. Scatter forms relay groups that sample broadly across local neighborhoods, while Gather reconnects these groups in subsequent layers. Under a partition model, this structure guides CQS-compatible sparse patterns with global reachability. Our CQS-aware FlashAttention-style kernel computes structured indices at runtime, loads selected non-contiguous tokens, and packs them densely for computation. On an A100, INTRA achieves a $1.53\times$ speedup in $2K$ FLUX.1-dev generation, with better measured image quality than evaluated CLEAR configurations after…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.34056">阅读原文 ↗</a></p>
+</body>
+</html>

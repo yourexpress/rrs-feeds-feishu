@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NovaFabric: A Black-Box Recorder for AI Agents with Sealed, Replayable, Diffable and Auditable Runs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>NovaFabric: A Black-Box Recorder for AI Agents with Sealed, Replayable, Diffable and Auditable Runs</h1>
+<p class="meta-line">arXiv(cs.DC) · 2026-10-25 · 论文PDF</p>
+
+<p>An AI agent run is no longer a function call.</p>
+<blockquote><p>An AI agent run is no longer a function call. It is a cascade of prompts, model calls, tool invocations, file and network effects and sub-agents. When such a run misbehaves, or an auditor asks what happened, logs and traces answer poorly: they are mutable, partial and cannot be re-executed. This technical report describes NovaFabric, an open-source (Apache-2.0) black-box recorder for AI agents that turns a run into a sealed, replayable, diffable and auditable evidence capsule. The design rests on two formats only. The Run Capsule is a directory of flat files and the source of truth; every database is a rebuildable index over capsules. The Evidence Bundle is the signed export for an auditor. Everything else follows existing standards: OpenTelemetry GenAI, OpenLineage, W3C PROV, in-toto/DSSE, RFC 3161 and CycloneDX. A single-node run is the smallest case of a distributed one; the schema supports a capsule hierarchy for Slurm arrays and Kubernetes jobs, though automatic parent finalization is library-only today. The report covers the architecture and the engines behind the verb chain capture, seal, replay, diff and audit: fail-closed mocked replay; a diff gate with a stable exit-code …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.34594">阅读原文 ↗</a></p>
+</body>
+</html>

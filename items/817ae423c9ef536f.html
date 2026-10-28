@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DoubleFree:Exploiting Exploration History for Rollout-Free Multi-Task LLMs Training</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DoubleFree:Exploiting Exploration History for Rollout-Free Multi-Task LLMs Training</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-25 · 论文PDF</p>
+
+<p>Multi-task post-training can develop domain specialists through independent reinforcement learning (RL) and consolidate their capabilities through multi-teac...</p>
+<blockquote><p>Multi-task post-training can develop domain specialists through independent reinforcement learning (RL) and consolidate their capabilities through multi-teacher on-policy distillation (MOPD). However, standard MOPD generates on-policy student responses and keeps multiple teachers online throughout consolidation, introducing substantial system costs. We view this pipeline as domain-wise exploration followed by cross-domain exploitation. Domain RL produces not only the final specialists, but also the trajectories collected throughout their training. Existing methods primarily use the former while leaving the latter underutilized. We introduce DoubleFree, which reuses these historical trajectories for rollout-free consolidation and precomputes teacher supervision for online-teacher-free student training. To understand why this works, we analyze when updates from historical trajectories can approximate on-policy distillation updates and how combining trajectories across exploration stages can better support an evolving student. DoubleFree requires only minimal changes to existing post-training frameworks. Across math, code, and instruction following on Qwen3-4B, Qwen3-8B, and SmolLM3-3…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.34272">阅读原文 ↗</a></p>
+</body>
+</html>

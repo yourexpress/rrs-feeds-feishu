@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FastSAR: High-Throughput, High-Fidelity Open-Source SAR Image Formation on CPUs, GPUs and TPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>FastSAR: High-Throughput, High-Fidelity Open-Source SAR Image Formation on CPUs, GPUs and TPUs</h1>
+<p class="meta-line">arXiv(cs.PF) · 2026-10-24 · 论文PDF</p>
+
+<p>Exact backprojection of a spaceborne SAR collection needs one interpolated read per pixel for every pulse; for the 12,207 by 8,808 pixel Umbra image of the P...</p>
+<blockquote><p>Exact backprojection of a spaceborne SAR collection needs one interpolated read per pixel for every pulse; for the 12,207 by 8,808 pixel Umbra image of the Panama Canal this balloons to 1.6 trillion reads. FastSAR is an open-source library for SAR image formation on CPUs, NVIDIA GPUs and Google TPUs, with factorized backprojection, exact backprojection and polar format behind one Python interface and readers for the vendors' phase-history files. Its factorized kernels form the Panama image in 11.2 s on a 16-vCPU instance, 3.0 s on an NVIDIA L4, 0.6 s on an H100 and 2.9 s on a TPU v6e, with errors of -56 to -63 dB relative to a float64 exact backprojection in three regions over six cloud devices; the L4, a modest GPU, gives the lowest cost of the six at 0.59 US dollars per thousand images. At exact backprojection FastSAR is as fast as the MatX backprojection example, by far the fastest open-source implementation found (10.9 against 11.6 s at the same accuracy, with MatX's pixel coordinates in float64); its factorized algorithm is 3.8 times faster than MatX, and its polar format forms the image in 1.4 s on the L4 at -32 dB. On five Capella collections in three modes the worst-region …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.33932">阅读原文 ↗</a></p>
+</body>
+</html>

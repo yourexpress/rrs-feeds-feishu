@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Real-Time Recurrent Qubit-State Discrimination on a Heterogeneous AI-Engine-FPGA Accelerator</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Real-Time Recurrent Qubit-State Discrimination on a Heterogeneous AI-Engine-FPGA Accelerator</h1>
+<p class="meta-line">arXiv(cs.AR) · 2026-10-24 · 论文PDF</p>
+
+<p>Qubit readout, or qubit state discrimination, remains one of the slowest and most error-prone operations in superconducting quantum processors, making fast, ...</p>
+<blockquote><p>Qubit readout, or qubit state discrimination, remains one of the slowest and most error-prone operations in superconducting quantum processors, making fast, accurate, and hardware-efficient classification essential for scalable quantum computing. Conventional discriminators integrate the I/Q record into a single point, discarding evidence a relaxing qubit leaves behind; full-resolution feed-forward classifiers recover it but are too costly to deploy under this constraint. Recurrent classifiers retain full resolution far more cheaply, but their loop-carried hidden state cannot fit a single AI Engine (AIE) tile's register capacity and spills to data memory, adding latency that grows with sequence length. We present a hardware-aware LSTM accelerator for an AMD Versal device that resolves this by partitioning at the dependency boundary - independent input projections on the AIE array, the loop-carried update in programmable logic (PL) - keeping pace with a 64 ns input cadence under a 1,000 ns budget. On the qubit affected by mid-readout state transitions, our design matches a full-resolution feed-forward network's accuracy (96.59% vs. 96.37%) using 403x fewer parameters and roughly 103…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.33843">阅读原文 ↗</a></p>
+</body>
+</html>

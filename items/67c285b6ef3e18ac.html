@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CFL-aware edge design for graph neural solvers of hyperbolic transport</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CFL-aware edge design for graph neural solvers of hyperbolic transport</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-24 · 论文PDF</p>
+
+<p>Hyperbolic partial differential equations (PDEs) transport information at finite speed along characteristics, often producing shocks and discontinuities that...</p>
+<blockquote><p>Hyperbolic partial differential equations (PDEs) transport information at finite speed along characteristics, often producing shocks and discontinuities that are challenging to capture numerically. Graph neural networks (GNNs) offer learned update rules, but neighbor aggregation alone does not tell a GNN how far information must travel and along which edge. As a result, when a GNN model takes a time step larger than what was used in training, shock fronts smear and oscillations grow. In this work, we ask whether making the scale of transport explicit as an edge-local Courant-Friedrichs-Lewy (CFL) signal can enhance GNNs' ability to model hyperbolic PDEs. Holding the architecture fixed, we vary only the information given to each edge, from a raw edge form to forms that progressively expose the edge-local transport interaction through direction, length, and wave speed. Because all of these are computed from the same ingredients, what changes is not the amount of information but its form. The results show a consistent pattern, in which feature count is not the limiting factor, and appending CFL directly to a raw edge form produces almost no benefit. The CFL conditioning proves most ef…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.33769">阅读原文 ↗</a></p>
+</body>
+</html>

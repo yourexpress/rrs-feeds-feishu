@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Error Diffusion Replaces Latent Weights: Training Binary-Weight Language Models on a Few Bits of Dithered State</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Error Diffusion Replaces Latent Weights: Training Binary-Weight Language Models on a Few Bits of Dithered State</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-25 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 二值权重 LM 训练需为每权重保留全精度隐式副本与 Adam 状态约 96 额外 bit，部署后的二值模型无法在运行设备上继续适配。</p>
+<p><strong>方法</strong> 用 2-8 bit 残差缓冲（随机舍入量化）替换隐式权重，训练态从 97 bit/权重降到 3-9 bit；误差扩散优化器把图像半调处理的残差携带循环搬到权重更新路径，缓冲越阈值翻转权重。</p>
+<p><strong>关键数字</strong> 4-bit 缓冲在二值 MLP 基准上匹配 8-bit；字符级 Transformer（97% 参数二值）2,000 步预算内训练到隐式参考的 5-11%、收敛时 1.7% 内；六个规模上 latent-free 损失在参考的 -2.3% 到 +2.9% 内；设备端续训只需隐式训练态 1/10，融合 CPU kernel 在 275 MB 训练内存预算内完成。</p>
+<p><strong>为什么值得看</strong> 设备端可继续适配的二值模型训练法，省最多 19x 训练态，边缘持续学习路径。</p>
+<p><a href="https://arxiv.org/abs/2610.34566">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.34566">阅读原文 ↗</a></p>
+</body>
+</html>

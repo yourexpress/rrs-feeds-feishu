@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ScaleRLT: Exact Log-Probabilities and Fast Deferred Rollouts for Reinforcement Learning on Looped Transformers</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ScaleRLT: Exact Log-Probabilities and Fast Deferred Rollouts for Reinforcement Learning on Looped Transformers</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-25 · 论文PDF</p>
+
+<p>Looped language models such as Ouro reuse one block of layers several times per token.</p>
+<blockquote><p>Looped language models such as Ouro reuse one block of layers several times per token. A rollout engine can batch the deeper loops of several response positions and run them only when a deep readout is due. This deferred schedule is fast, but the learner of an on-policy RL algorithm recomputes the sampled tokens' log-probabilities with a dense pass, and the two computations differ in floating point: in FP32 at 4096 tokens about 18% of the sampled tokens miss a $10^{-5}$ same-weight gate, and with bf16 weights nearly every token does. We use a hybrid learner log-probability, $\ell=\ell_{\mathrm{dense}}+\mathrm{sg}(\ell_{\mathrm{sched}}-\ell_{\mathrm{dense}})$, where $\mathrm{sg}$ denotes stop-gradient. Its value is a no-grad replay through the rollout's own schedule, and its gradient is the dense learner's. The replay reproduces the rollout bit for bit in all 167 FP32 and 28 bf16 real-weight cells we ran on three platforms, including rollouts whose batch shrinks at stop tokens, and the gradient has the same FP32 error as other dense implementations in all 102 pre-registered comparisons from 96 to 4096 tokens; the full GRPO loss of a training step matches a float64 reference to $3.1\…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.34427">阅读原文 ↗</a></p>
+</body>
+</html>

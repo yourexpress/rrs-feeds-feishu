@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transporting Quantiles to Codebook: Scalable Vector Quantization without Codebook Collapse</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Transporting Quantiles to Codebook: Scalable Vector Quantization without Codebook Collapse</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-26 · 论文PDF</p>
+
+<p>Effective discrete representation learning with VQ-VAE serves as a fundamental component of modern autoregressive generative models.</p>
+<blockquote><p>Effective discrete representation learning with VQ-VAE serves as a fundamental component of modern autoregressive generative models. However, it is widely known to suffer from codebook collapse and inefficient code utilization. To address this issue, we propose FlowVQ, a simple yet effective alternative to standard vector quantization by formulating neural quantization as a joint modeling and clustering process. Specifically, we learn the latent space using a lightweight flow matching model alongside training, corresponding to a probability flow ODE that transports an often fixed well-behaved source distribution while preserving probability mass. Based on this, we define the codebook C_1 by transporting even-quantile partitioned prior codes C_0 from the source space through the learned flow, and obtaining the Voronoi centroids under the induced distribution, leading to a structured discretization. We evaluated on image tokenization and generation, as well as on two tasks requiring high-precision tokenization, demonstrating scalability and improved expressivity of the codebook with full utilization.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.34828">阅读原文 ↗</a></p>
+</body>
+</html>

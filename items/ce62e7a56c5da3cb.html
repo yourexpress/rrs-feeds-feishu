@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Context Is Not Free: Carbon-Aware LLM Routing for Multi-Turn LLM Web Services across Geo-Distributed Data Centers</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Context Is Not Free: Carbon-Aware LLM Routing for Multi-Turn LLM Web Services across Geo-Distributed Data Centers</h1>
+<p class="meta-line">arXiv(cs.DC) · 2026-10-26 · 论文PDF</p>
+
+<p>The sustainability of the Web has drawn growing attention, as large language model (LLM)-based web services leave a substantial carbon footprint.</p>
+<blockquote><p>The sustainability of the Web has drawn growing attention, as large language model (LLM)-based web services leave a substantial carbon footprint. These services typically run in geo-distributed data centers whose grid carbon intensity varies across regions and over time, so routing each query to a cleaner region or a smaller model can reduce emissions. A conversation, however, is a stateful web session: each turn reuses the key--value (KV) cache of its history, which resides only where earlier turns were served. Serving a turn on another deployment requires recomputing this history, whose carbon cost grows with the conversation and can outweigh the saving of the move. Existing carbon-aware LLM routers treat a conversation's queries as independent and ignore this cost. We present CarbonRouter, an online framework that jointly selects the model, GPU type, and region for each query to minimize carbon emissions. CarbonRouter introduces a cache-aware carbon cost model, which charges history recomputation to every candidate deployment using cached-token counts from the serving backends, and uses a lightweight gate that keeps a session on its cached deployment when it would likely move ba…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.35230">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shared Context, Separate Engines: Streaming Vision--Language Inference on Edge SoCs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Shared Context, Separate Engines: Streaming Vision--Language Inference on Edge SoCs</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-26 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 边缘 SoC 集成了 CPU/GPU/NPU 却让 VLM 生成只用一个引擎；流式 VLM 有新帧到达与旧查询未答的并行机会，但引擎间计算/内存差异与争用使单点放置失效。</p>
+<p><strong>方法</strong> 协调异构加速器并发执行有状态 VLM 推理：把流的版本化上下文与各引擎 KV 状态分离，任何引擎可复用/导入/重建状态继续该流；状态感知调度把请求派给预计最快完成的引擎，答案读取固定已发布版本历史以匹配串行参考。</p>
+<p><strong>关键数字</strong> Apple M4 Max、RK3588、QCS6490 上超过最强单引擎基线（含上下文复用）；RK3588 双视频流比最优单引擎+复用高 19.6% 吞吐、比无共享状态并行引擎高 27.2%；跨引擎 KV 导入使首 token 延迟比前缀重算降 4.6x；流式生成吞吐最高 2.48x；状态感知调度使查询完成时间最高降 72.7%。</p>
+<p><strong>为什么值得看</strong> 边缘 SoC 异构引擎协同跑 VLM 的完整运行时设计，多引擎并行收益实测。</p>
+<p><a href="https://arxiv.org/abs/2610.35309">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.35309">阅读原文 ↗</a></p>
+</body>
+</html>

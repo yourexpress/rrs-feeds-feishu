@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Queuing for Inference: Dynamic Memory Footprints and Costly Preemption</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Queuing for Inference: Dynamic Memory Footprints and Costly Preemption</h1>
+<p class="meta-line">arXiv(cs.PF) · 2026-10-24 · 论文PDF</p>
+
+<p>Modeling inference workloads for transformer-based neural networks poses unique challenges due to their dynamic memory footprints, head-of-line blocking caus...</p>
+<blockquote><p>Modeling inference workloads for transformer-based neural networks poses unique challenges due to their dynamic memory footprints, head-of-line blocking caused by heavy-tailed request distributions, and memory-dependent preemption overhead arising from the need to load/unload cache state. In this paper, we introduce a new queuing model that captures the impacts of these features on system stability and scheduling design. We show that the Gittins-index policy, which minimizes mean response time in the standard M/G/1 setting, can incur substantial preemption overhead in our model. Motivated by this limitation, we propose the Multi-Level-Priority-Threshold (MLPT) policy, that limits preemption while preserving priority for short jobs. We characterize the mean response time under MLPT and provide empirical rules-of-thumb to solve the resulting threshold-optimization problem. Our key observation is that optimal scheduling is a balance between reducing the response times of shorter jobs and limiting the overhead incurred when preemption occurs. These results provide a theoretical framework for understanding scheduling in memory constrained queuing systems for inference tasks.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.33923">阅读原文 ↗</a></p>
+</body>
+</html>

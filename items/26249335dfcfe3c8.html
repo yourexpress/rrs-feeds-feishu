@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>All-in-One: A Composable Attack on LLM Transformations</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>All-in-One: A Composable Attack on LLM Transformations</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-23 · 论文PDF</p>
+
+<p>Quantization, pruning, and model merging are popular transformations applied to deployment-ready LLMs to improve efficiency and downstream performance.</p>
+<blockquote><p>Quantization, pruning, and model merging are popular transformations applied to deployment-ready LLMs to improve efficiency and downstream performance. Recent work has shown that these transformations can introduce a security threat: an adversary can train a model that passes safety checks in its pre-transformed state, only turning malicious once it is transformed for deployment. However, prior attacks target one specific transformation (e.g., quantization) and generally rely on transformation-specific techniques, making them difficult to combine in practice. In this work, we introduce a simple, composable attack framework that targets multiple transformations simultaneously and triggers when any one of them is applied by a user. Our key insight is that the effect of each transformation can be approximated as a perturbation to the model weights, allowing us to jointly train the model with a benign loss on the original model and a malicious loss on each simulated transformed model. These perturbations are simple enough to simulate at every training iteration across diverse transformations, making them practically combinable within a single training objective, enabling a unified atta…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.33298">阅读原文 ↗</a></p>
+</body>
+</html>

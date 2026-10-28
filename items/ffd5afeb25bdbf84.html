@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZipFusion: Fusing Lossless KV Decompression with Attention for Efficient LLM Decoding</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ZipFusion: Fusing Lossless KV Decompression with Attention for Efficient LLM Decoding</h1>
+<p class="meta-line">arXiv(cs.AR) · 2026-10-24 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 无损 KV 压缩方法通常在 GPU 内存中还原后再做 attention，重复 KV 读取与解压开销仍在，解码仍受内存带宽限制。</p>
+<p><strong>方法</strong> ZipFusion 让 attention 直接消费无损压缩 KV：协同设计压缩格式与 attention kernel，kernel 用寄存器内简单位运算重建原值，免去单独解压 pass 并缓解带宽瓶颈；压缩释放的内存跨层重分配以存储更多 KV。</p>
+<p><strong>关键数字</strong> H100 上解码 attention 较 FlashInfer 约 1.25x 加速；8K 上下文、同 GPU 内存预算下模型解码吞吐最多提升 26.3%；各方法最大支持批下吞吐达最佳无损压缩基线的 2.76x。</p>
+<p><strong>为什么值得看</strong> 无损 KV 压缩与 attention 融合的工程路线，直接缓解解码带宽瓶颈。</p>
+<p><a href="https://arxiv.org/abs/2610.33719">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.33719">阅读原文 ↗</a></p>
+</body>
+</html>

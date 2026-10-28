@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When and Why to Use TMA: A Workload-Grounded Characterization of Tensor Memory Acceleration on NVIDIA Hopper GPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>When and Why to Use TMA: A Workload-Grounded Characterization of Tensor Memory Acceleration on NVIDIA Hopper GPUs</h1>
+<p class="meta-line">arXiv(cs.DC) · 2026-10-26 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> Hopper TMA 在生产 GPU kernel 中普遍但使用有选择性——同一 kernel 内有些张量用 TMA、有些退回 cp.async/直接全局加载/DSM，实践者面对"该不该用 TMA、用不用 cluster multicast"缺少依据。</p>
+<p><strong>方法</strong> H100 上工作负载驱动的刻画：编目 FlashAttention-3 forward 内 TMA/multicast/DSM/cp.async 选择，用定向微基准（传输大小交叉、multicast 缩放）隔离判别特征，产出 Hopper 加载机制选择的经验法则；对比 TMA multicast 与 DSM 竞争广播原语；并扩展到 Blackwell SM100（B200 CUTLASS GEMM）。</p>
+<p><strong>关键数字</strong> 摘要未给出单一汇总数值；给出 TMA 何时划算、multicast 何时有助/有害的可预测指导，定性分发规则跨代延续、绝对交叉点随张量核与带宽缩放移动。</p>
+<p><strong>为什么值得看</strong> 专家 kernel 里 TMA 选择的系统刻画，写 Hopper/Blackwell kernel 的选型手册。</p>
+<p><a href="https://arxiv.org/abs/2610.34907">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.34907">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Supervision Without Blocking: An Evidence-Driven Redesign of OTP-Style Fault Tolerance for Cooperative Runtimes</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Supervision Without Blocking: An Evidence-Driven Redesign of OTP-Style Fault Tolerance for Cooperative Runtimes</h1>
+<p class="meta-line">arXiv(cs.DC) · 2026-10-25 · 论文PDF</p>
+
+<p>Actor frameworks on mainstream runtimes advertise Erlang/OTP-style supervision, but OTP's consistency contracts assume a synchronous, single-threaded supervi...</p>
+<blockquote><p>Actor frameworks on mainstream runtimes advertise Erlang/OTP-style supervision, but OTP's consistency contracts assume a synchronous, single-threaded supervisor, and ports inherit that assumption's absence as unexamined risk. We evaluated every supervision guarantee against pinned OTP documentation and source read verbatim, against the source of three further Rust actor frameworks at fixed revisions, and against the actor-model literature, recording the evidence behind each design decision. Blind adversarial audits and the cross-framework study surfaced 24 defect classes, of which eight reduce to one root cause: reconstructing, by explicit mechanism, the atomicity a synchronous supervisor gets implicitly. We introduce a supervision runtime that closes all 24 cataloged classes through supervisor-owned completion values, per-incarnation identity, and a single lifecycle state machine, validated by 241 tests including reverted-fix reproductions. The result holds OTP's verbatim-verified contracts while adding two properties OTP does not offer: a supervisor that remains responsive throughout group restarts, and message handlers that are never cancelled mid-execution. We delimit the forci…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.34521">阅读原文 ↗</a></p>
+</body>
+</html>
