@@ -22,9 +22,11 @@
 <h1>RESCUE: Repairing Language Model Errors to Sparse Circuits via Reinforcement Learning</h1>
 <p class="meta-line">arXiv / Chuanpu Liu 等 · 2026-09-30 · 论文PDF</p>
 
-<p>用强化学习把语言模型错误修复为稀疏电路</p>
-<blockquote><p>Large language models (LLMs) exhibit strong general capabilities that mechanistic interpretability has attributed to sparse computational circuits. However, existing circuit studies emphasize preserving functionality or explaining safety, leaving the mechanisms underlying failures across a broader range of tasks largely unexplored. Extending circuit analysis from abilities to errors, we explore the perspective that such failures may likewise arise from erroneous internal computations and that targeted tuning of the corresponding parameters can correct such errors while largely preserving other capabilities. Motivated by this insight, we introduce RESCUE (Reasoning-Error Sparse-Circuit Uncovering and Editing), a framework that localizes error-associated circuits and surgically repairs them for performance enhancement. General tasks typically involve multi-step reasoning and long-form generation, where early deviations can cause prefixes to drift from supervised references, leading SFT-based mask optimization to overlook circuits involved in generation-time errors. RESCUE therefore refines these masks through reinforcement learning with multiple masked-model rollouts, improving their…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 机制可解释性把 LLM 能力归因于稀疏计算电路，但现有电路研究聚焦保持功能或解释安全，对广泛任务上失败的内在机制缺乏探索。</p>
+<p><strong>方法</strong> 提出 RESCUE 框架：先定位与错误关联的电路，再用强化学习（多次掩码模型 rollout）优化掩码以捕捉生成期错误，最后用剪枝技术对错误电路做精确微调，把错误定位转化为稀疏、定向的模型更新。</p>
+<p><strong>关键数字</strong> 在两个领域的异构修复集上验证有效；相比 SFT 掩码优化，RL 细化能覆盖生成期漂移导致的错误电路。</p>
+<p><strong>为什么值得看</strong> 把"修错"变成电路级外科手术，为 LLM 定向修复提供新范式。</p>
+<p><a href="https://arxiv.org/abs/2609.36813">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.36813">阅读原文 ↗</a></p>
 </body>
 </html>

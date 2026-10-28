@@ -22,9 +22,11 @@
 <h1>The Teacher Is a Direction, Not a Destination: Extrapolating RL-Induced Representation Residuals in On-Policy Distillation</h1>
 <p class="meta-line">arXiv / Hao Li 等 · 2026-09-30 · 论文PDF</p>
 
-<p>在策略蒸馏中对 RL 表征残差做外推加速</p>
-<blockquote><p>On-policy distillation (OPD) trains a student to match the teacher's next-token distributions on the student's own trajectories and has yielded substantial empirical gains. Generalized variants allow the student to surpass the teacher by extrapolating an implicit reward in output space. The language-model head, however, attenuates this change anisotropically: much of the change encoded in the teacher's hidden states reaches the logits at a small fraction of its weight, and the sampled-token log-probability ratios on which output-space extrapolation relies inject noise that the extrapolation amplifies, making training unstable. We observe that reinforcement learning (RL) shifts a model's internal representations relative to its base checkpoint, and that the direction of this shift can be measured at every layer. Motivated by this observation, we propose RIDE (RL-Induced Direction Extrapolation), which extrapolates the RL-induced change directly in representation space: at every layer and token position, RIDE computes the residual between the teacher and its pre-RL checkpoint and regresses the student's hidden states toward targets displaced beyond the teacher along this residual. Co…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 在策略蒸馏（OPD）让学生超越教师时，输出空间外推受语言模型头各向异性衰减：教师隐藏状态的变化传到 logits 只剩一小部分权重，且采样 token 的对数概率比引入噪声、外推放大后训练不稳定。</p>
+<p><strong>方法</strong> 观察到 RL 使模型内部表示相对基座检查点发生可逐层测量的方向偏移，据此提出 RIDE：在表征空间直接外推 RL 诱导变化——每层每 token 计算教师与其 RL 前检查点的残差，把学生隐藏状态回归到沿残差超出教师的目标。</p>
+<p><strong>关键数字</strong> 摘要未给出量化指标；等价于在二次惩罚约束下最大化残差定义的线性方向奖励。</p>
+<p><strong>为什么值得看</strong> 给出"让学生沿 RL 方向超越教师"的可控实现，避开输出空间噪声。</p>
+<p><a href="https://arxiv.org/abs/2609.36484">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.36484">阅读原文 ↗</a></p>
 </body>
 </html>

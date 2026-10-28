@@ -22,9 +22,11 @@
 <h1>Windowed and Quantized Group-Based ADMM for Distributed Optimization in Heterogeneous Edge Networks</h1>
 <p class="meta-line">arXiv / Gaiguo Wei 等 · 2026-09-30 · 论文PDF</p>
 
-<p>异构边缘网络上窗口化+量化的分组 ADMM 分布式优化</p>
-<blockquote><p>Distributed optimization in edge networks is constrained by heterogeneous client computing capabilities and limited communication resources. We propose the Windowed and Quantized Group-Based Alternating Direction Method of Multipliers (WQ-GADMM) to coordinate group updates under limited activation capacity and reduce communication costs. Clients are grouped by estimated computation time. Each window activates a limited number of groups per round, and the cloud updates the global model after all groups have updated once. The method quantizes both downlink and uplink model exchanges to reduce communication costs and allows bounded model staleness and inexact proximal local updates. For smooth nonconvex objectives, we establish an average squared Karush-Kuhn-Tucker residual bound under the stated assumptions and parameter conditions. The bound consists of a term that decreases with the iteration count and a quantization-dependent error term. Experiments on MNIST and CIFAR-10 show that 12-bit communication reduces communication volume and simulated wall-clock time while maintaining test accuracy comparable to full precision. The 12-bit configuration also maintains complete group covera…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 边缘网络分布式优化受异构客户端算力与有限通信资源双重约束，需要协调分组更新并降低通信成本。</p>
+<p><strong>方法</strong> 提出 WQ-GADMM：按估计计算时间对客户端分组，每轮窗口只激活有限组、各组更新一轮后云端聚合；对上下行模型交换做量化，并允许有界模型陈旧与不精确近端局部更新；对光滑非凸目标给出平均平方 KKT 残差界。</p>
+<p><strong>关键数字</strong> MNIST/CIFAR-10 上 12-bit 通信在保持与全精度可比测试精度的同时降低通信量与模拟墙钟时间，并保持完整组覆盖、组间完成间隔更短。</p>
+<p><strong>为什么值得看</strong> 异构边缘场景下兼顾通信效率与收敛保证的分布式优化方案。</p>
+<p><a href="https://arxiv.org/abs/2609.37069">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.37069">阅读原文 ↗</a></p>
 </body>
 </html>

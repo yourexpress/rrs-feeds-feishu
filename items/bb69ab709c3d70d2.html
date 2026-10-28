@@ -22,9 +22,11 @@
 <h1>Scale Sensitivity in Low-Bit Post-Training Quantization: Curvature of the Quantization Error Landscape</h1>
 <p class="meta-line">arXiv / Jonas von Berg 等 · 2026-09-30 · 论文PDF</p>
 
-<p>低比特训练后量化的尺度敏感性：量化误差景观曲率</p>
-<blockquote><p>Post-training quantization (PTQ) methods in the GPTQ family minimize a layer-wise reconstruction error on a uniform grid whose scale must be chosen; the common max-based choice degrades sharply at low bit-widths. We study how sensitive this objective is to the scale. For a layer with i.i.d. Gaussian weights and calibration activations of sufficiently large effective rank, we prove that, as the width grows, the normalized round-to-nearest loss converges with high probability, uniformly over all scales, to the mean-squared error of a uniform quantizer applied to a standard Gaussian; we verify the effective-rank condition for wide, randomly initialized MLPs with odd Lipschitz activations and isotropic Gaussian calibration data. The limiting objective has a unique nondegenerate minimizer, whose scale decreases strictly with the number of levels and whose curvature with respect to relative scale errors decays approximately exponentially with the bit-width. GPTQ experiments on five LLMs show the same trend: the scale rule changes perplexity substantially at 2--3 bits and negligibly from 6 bits on, and a local measure of GPTQ scale sensitivity decreases with bit-width in line with the Gau…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> GPTQ 系训练后量化在均匀网格上最小化逐层重建误差，但网格尺度必须人为选择，常用的 max 选择在低比特下严重退化。</p>
+<p><strong>方法</strong> 理论分析该目标对尺度的敏感性：证明在宽网络极限下（i.i.d. 高斯权重、有效秩足够大的校准激活），归一化舍入损失高概率收敛到标准高斯均匀量化 MSE，并刻画唯一最优尺度的曲率随比特数近似指数衰减；再以 5 个 LLM 的 GPTQ 实验验证。</p>
+<p><strong>关键数字</strong> 2-3 比特下尺度规则显著改变困惑度，6 比特起影响可忽略；Hadamard 处理后高斯最优尺度在 3 比特及以上无需搜索即匹配最优规则，2 比特仍明显更差。</p>
+<p><strong>为什么值得看</strong> 为低比特量化的尺度选择给出首个严格理论依据。</p>
+<p><a href="https://arxiv.org/abs/2609.37416">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.37416">阅读原文 ↗</a></p>
 </body>
 </html>

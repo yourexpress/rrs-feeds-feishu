@@ -22,9 +22,11 @@
 <h1>When Can Prefixes Compile LoRA? Exact Resource-Capped Tests for Frozen Attention</h1>
 <p class="meta-line">arXiv / Joyanta Jyoti Mondal 等 · 2026-09-30 · 论文PDF</p>
 
-<p>前缀何时能「编译」LoRA：冻结注意力的资源约束精确测试</p>
-<blockquote><p>Can a fixed continuous prefix replace a given low-rank adapter while the attention head stays frozen? In this research, we show that the answer depends on the adapter's target through three conditions. First, observability: at one causal readout, every independent key--value prefix sees the content only through the query, attention partition, and value numerator, so a target that differs on two inputs with equal summaries incurs an error floor at every prefix length; norm caps extend this floor to nearly equal summaries. Second, realizability: at a common query, any prefix reduces exactly to two aggregate variables, and the norm-capped optimum is an attained second-order-cone program, also after a fixed output projection; it places two equal-norm rank-one value updates on opposite sides of compilability. Third, implementation: under affine query exposure, $2r$ signed slots approximate a rank-$r$ value update, but their values grow as $O(ε^{-3/2})$, and the construction passes all 400 tolerance checks in float64 yet only 38 in bfloat16. A first-layer GPT-2 readout with fixed token and position meets the common-query condition without clamping activations; at three such heads, the ca…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 固定连续前缀能否在注意力头冻结时替代给定低秩适配器？答案取决于适配器目标，论文给出精确的资源约束测试。</p>
+<p><strong>方法</strong> 三个条件刻画可编译性：可观测性（内容经 query/注意力划分/值分子进入读数，相等摘要输入存在误差下界）、可实现性（公共 query 下前缀退化为两个聚合变量，范数受限最优为二阶锥规划）、实现（仿射 query 暴露下 2r 个有符号槽近似 rank-r 值更新）。</p>
+<p><strong>关键数字</strong> 槽值增长为 O(ε^-3/2)；400 次容差检查 float64 全过而 bfloat16 仅 38 过；GPT-2 三个头下受限最优留下 18.4%-74.2% 的投影适配器效应未编译。</p>
+<p><strong>为什么值得看</strong> 严格界定"前缀能否替代 LoRA"的边界，对上下文压缩与注意力编辑研究有理论价值。</p>
+<p><a href="https://arxiv.org/abs/2609.36766">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.36766">阅读原文 ↗</a></p>
 </body>
 </html>

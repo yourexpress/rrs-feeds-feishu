@@ -22,9 +22,11 @@
 <h1>Reshaping Rollout Workloads for Asynchronous RL Post-Training on Heterogeneous Accelerators</h1>
 <p class="meta-line">arXiv / Jiahui Li 等 · 2026-09-30 · 论文PDF</p>
 
-<p>异构加速卡上异步 RL 后训练的 rollout 负载重构</p>
-<blockquote><p>Reinforcement learning (RL) post-training increasingly relies on long-horizon, multi-turn rollouts. As post-training jobs outgrow a single cluster, rollout pools assembled across clusters introduce hardware heterogeneity. Rollout scheduling must serve two stakeholders: the hardware needs high aggregate decode throughput, while each trajectory needs to finish quickly. The tension arises from the memory-bandwidth-bound nature of autoregressive decoding. A large active batch amortizes weight reads for high throughput but leaves each trajectory a smaller bandwidth share and a longer completion time. The scheduling objective is therefore specialization, letting different workers serve different roles. Heterogeneous hardware further enables this specialization. High-bandwidth accelerators favor long-context work, while cost-efficient accelerators sustain large batches. Workload evolution makes this specialization difficult to sustain, and dynamic reassignment faces a circular dependency because a move's benefit depends on subsequent placement decisions. We present CadenceRL, which bypasses this dependency through structural workload reshaping rather than per-move benefit estimation. Paci…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> RL 后训练依赖长程多轮 rollout，跨集群组装 rollout 池引入硬件异构；调度需同时满足硬件高聚合解码吞吐与单条轨迹快速完成，而自回归解码受内存带宽约束使二者冲突。</p>
+<p><strong>方法</strong> 提出 CadenceRL，绕开"逐移动收益评估"的循环依赖，通过结构化负载重塑实现专业化分工：pacing 用短轨迹替代长上下文轨迹维持大活跃批次；concentration 在累积陈旧度升高时把残余长上下文尾部导向高亲和 worker。</p>
+<p><strong>关键数字</strong> 高带宽加速器适合长上下文任务、高性价比加速器适合大批次任务；具体加速倍数摘要未给出。</p>
+<p><strong>为什么值得看</strong> 异构加速器上异步 RL 后训练的调度新思路，适合大规模后训练基础设施。</p>
+<p><a href="https://arxiv.org/abs/2609.36899">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.36899">阅读原文 ↗</a></p>
 </body>
 </html>

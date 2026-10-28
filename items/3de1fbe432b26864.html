@@ -22,9 +22,11 @@
 <h1>Vosti: Specifying, Implementing, and Verifying Deterministic LLM Inference</h1>
 <p class="meta-line">arXiv / Jianxing Qin 等 · 2026-09-30 · 论文PDF</p>
 
-<p>LLM inference systems may vary batch composition, prompt chunking, prefill/decode executi…</p>
-<blockquote><p>LLM inference systems may vary batch composition, prompt chunking, prefill/decode execution, and KV-cache reuse, eviction, or recomputation. These optimizations should not affect system outputs. Production systems, including vLLM's batch-invariant mode and SGLang's deterministic mode, target this goal but lack a formal system-level specification. We formalize deterministic LLM inference: under a fixed model and deployment configuration, requests with the same prompt and initial sampler state produce bitwise-identical logits at corresponding output positions across executions. Our tests find that these production modes produce different logits under some execution variations. To address this limitation, we present Vosti, an inference engine designed and verified against this specification. Vosti chooses kernels independently of runtime engine state and ties cached KV values to their logical token prefixes. Its proof decomposes at the engine/GPU kernel boundary: a Verus inductive proof establishes that scheduling and the paged, prefix-sharing KV-cache preserve output logits, while a Triton analyzer proves bitwise-equal selected kernel outputs across batches, query lengths, and paged …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 推理系统的批组成、提示分块、prefill/decode 执行与 KV 缓存复用等优化不应改变输出，但 vLLM batch-invariant 模式与 SGLang deterministic 模式缺乏形式化规格，实测在部分执行变化下会产生不同 logits。</p>
+<p><strong>方法</strong> 形式化定义确定性推理（相同 prompt 与初始采样状态 → 对应输出位置位级相同 logits），实现并验证引擎 Vosti：内核选择与运行时状态解耦、缓存 KV 与逻辑 token 前缀绑定；Verus 归纳证明调度与分页共享 KV 缓存保持 logits，Triton 分析器证明内核输出跨批次/查询长度/缓存布局位级相等。</p>
+<p><strong>关键数字</strong> 所有测试执行变化下输出位级相同；decode 密集负载性能与 vLLM batch-invariant 模式相当。</p>
+<p><strong>为什么值得看</strong> 首个经形式化验证的确定性 LLM 推理引擎。</p>
+<p><a href="https://arxiv.org/abs/2609.38981">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.38981">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>STEPQuant: When and Where Errors Matter in Delta-Rule Recurrent State Quantization</h1>
 <p class="meta-line">arXiv / Bingchen Yao 等 · 2026-09-30 · 论文PDF</p>
 
-<p>STEPQuant：Delta-Rule 递归状态量化的误差定位（跨类）</p>
-<blockquote><p>Linear attention replaces growing KV caches with fixed-size recurrent states, yet these persistent states can become a substantial memory bottleneck under concurrent serving. Directly quantizing recurrent states to low precision often leads to severe accuracy degradation, as quantization errors propagate through successive state updates. We discover that the impact of these errors depends on two complementary dimensions: temporally, errors in long-lived memory can persist across many decoding steps; spatially, errors in different key rows affect model outputs differently, while state magnitudes vary substantially along both rows and columns. Motivated by these observations, we propose STEPQuant, a spatial-temporal post-training quantization framework for Delta-rule recurrent states. STEPQuant allocates precision according to error magnitude and memory lifetime, and jointly fits key-row and value-column scales based on state distributions and key-row impact on output error. Experiments on Qwen3.8-27B and Kimi-Linear-48B-A3B-Instruct across both long- and short-generation benchmarks show that STEPQuant closely matches FP32-state accuracy under a nominal 6-bit budget and outperforms u…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 线性注意力用固定大小递归状态替代 KV 缓存，但并发服务下递归状态本身成为内存瓶颈；直接低精度量化导致误差随状态更新传播、精度严重下降。</p>
+<p><strong>方法</strong> 提出 STEPQuant，时空训练后量化框架：时间维按错误在长寿命记忆中的持久性、空间维按不同 key 行对输出的影响分配精度，并联合拟合 key-row 与 value-column 尺度。</p>
+<p><strong>关键数字</strong> Qwen3.8-27B 与 Kimi-Linear-48B-A3B-Instruct 上，标称 6-bit 预算接近 FP32 状态精度，4-bit 配置优于均匀 INT8；集成 SGLang 后 6-bit 递归状态压缩超 5x，总服务内存最高降 68.7%。</p>
+<p><strong>为什么值得看</strong> 直击线性注意力状态内存瓶颈，量化方案可直接用于生产服务。</p>
+<p><a href="https://arxiv.org/abs/2609.38169">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.38169">阅读原文 ↗</a></p>
 </body>
 </html>

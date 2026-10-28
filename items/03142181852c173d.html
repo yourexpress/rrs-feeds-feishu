@@ -22,9 +22,11 @@
 <h1>RAZOR: Pruning Replaceable Experts in LLMs</h1>
 <p class="meta-line">arXiv / Mingyang Song 等 · 2026-09-30 · 论文PDF</p>
 
-<p>【修订版】Mixture-of-experts (MoE) models activate only a few experts per token but store the entir…</p>
-<blockquote><p>Mixture-of-experts (MoE) models activate only a few experts per token but store the entire expert pool. Pruning this pool requires identifying experts whose removal preserves model behavior. Routing frequency and output magnitude do not fully describe deletion damage, which also depends on how the surviving and replacement experts compensate for the removed output. We introduce RAZOR, a training-free pruning method based on consensus residuals, the deviations of expert outputs from their original weighted mixture. At a fixed layer input, these residuals give the exact output change for a single deletion under survivor renormalization and router refill. RAZOR aggregates this damage by conditional root mean square and selects experts under a layerwise budget using forward computation alone, without gradients, subset search, or recovery training. Against frequency, activation-norm, and REAP baselines on GLM-4.7-Flash and Qwen3.6-35B-A3B at 25% and 50% expert removal, it attains the highest macro average over nine reasoning-intensive tasks in all four model-budget settings, gaining 2.12-5.59 points over REAP and lowering reverse KL in all four. On DeepSeek-V4-Flash-0731 and Hy3, it als…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> MoE 模型每 token 只激活少数专家却存储整个专家池，剪枝需要识别"删除后仍保持模型行为"的专家；路由频率与输出幅值无法完整刻画删除损伤。</p>
+<p><strong>方法</strong> 提出免训练剪枝方法 RAZOR：基于共识残差（专家输出相对原始加权混合的偏差），用条件均方根聚合删除损伤，仅靠前向计算在层预算下选专家，无需梯度、子集搜索或恢复训练。</p>
+<p><strong>关键数字</strong> 在 GLM-4.7-Flash 与 Qwen3.6-35B-A3B 上以 25% 和 50% 剪枝率、4 个模型-预算组合下均取得 9 个推理任务最高宏平均，比 REAP 高 2.12-5.59 分，且四种设置均降低 reverse KL。</p>
+<p><strong>为什么值得看</strong> 免训练、免梯度的 MoE 剪枝方案，直接压缩推理成本。</p>
+<p><a href="https://arxiv.org/abs/2609.30465">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.30465">阅读原文 ↗</a></p>
 </body>
 </html>

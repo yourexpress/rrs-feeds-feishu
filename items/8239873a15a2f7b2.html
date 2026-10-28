@@ -22,9 +22,11 @@
 <h1>RA-MoE: Routing-Aligned Fine-Tuning for Multilingual Adaptation of Mixture-of-Experts Models</h1>
 <p class="meta-line">arXiv / Guanzhi Deng 等 · 2026-09-30 · 论文PDF</p>
 
-<p>【修订版】Mixture-of-Experts (MoE) models enable efficient LLM scaling, yet adapting them to non-En…</p>
-<blockquote><p>Mixture-of-Experts (MoE) models enable efficient LLM scaling, yet adapting them to non-English downstream tasks remains challenging. Standard multilingual fine-tuning largely ignores their heterogeneous routing structure. Across multiple MoE models and tasks, we find strong cross-lingual routing alignment in middle layers, with routing divergence associated with target-language performance gaps. Motivated by this observation, we propose RA-MoE (Routing-Aligned MoE Fine-Tuning), a three-stage framework for multilingual MoE adaptation. RA-MoE categorizes parallel examples into four correctness groups (cc/ci/ic/ii) and identifies task-relevant experts in middle layers. It then selectively aligns target-language routing on ci examples toward successful English routing patterns, jointly matching the total routing mass assigned to task experts and its relative allocation among them. Experiments across three MoE models, three downstream tasks, and six target languages show that RA-MoE consistently outperforms standard SFT and strong routing-aware baselines. Further analyses confirm the intended routing changes and reveal that middle-layer task routing is largely shared and transferable ac…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> MoE 模型适配非英语下游任务时，标准多语言微调基本忽略其异构的路由结构，跨语言表现受限。</p>
+<p><strong>方法</strong> 提出三阶段框架 RA-MoE：将平行样本按中英路由一致性分为四类（cc/ci/ic/ii），定位中间层任务相关专家，再在 ci 样本上把目标语言路由向成功的英语路由模式对齐（同时匹配任务专家总路由量与相对分配）。</p>
+<p><strong>关键数字</strong> 在 3 个 MoE 模型、3 个下游任务、6 种目标语言上一致优于标准 SFT 与强路由感知基线；分析显示中间层任务路由跨语言共享且可迁移。</p>
+<p><strong>为什么值得看</strong> 提供了"任务特定路由可跨语言迁移"的机制证据，对多语言 LLM 适配有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2605.28306">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2605.28306">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Transformers Stop Thinking Too Early, and a Tiny LoRA Fixes It</h1>
 <p class="meta-line">arXiv / Zehao Jin 等 · 2026-09-30 · 论文PDF</p>
 
-<p>小 LoRA 修复 Transformer「过早停止思考」（跨类）</p>
-<blockquote><p>Pretrained transformers use little of their depth to follow references in context. Thirteen base models reliably follow only 1.4-3.6 lines, and extra pretrained loops add little. A task-trained rank-8 LoRA at one early layer extends this computation with all model weights frozen. Qwen3-8B improves from 15.5% to 99% exact accuracy on 24-line chains; a longer-trained LoRA reaches 50 lines. Ouro-1.4B reaches 60 lines after four loops and at least 160 after eight. The LoRA starts a relay: program lines pass on their chain identity through a short range of middle layers. Frozen heads read progressively further up the chain, and removing parent-line attention stops the relay. A frozen-model measurement locates the last useful intervention layer within tolerance in three of four held-out models. Task-specific LoRAs also improve MuSiQue. Default answers therefore understate the computation accessible through a tiny edit. Code and an interactive demo are available at https://lunamos.github.io/stop-thinking-too-early/</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 预训练 transformer 只用极少深度来跟踪上下文中的引用链，深层计算未被利用。</p>
+<p><strong>方法</strong> 在早期一层插入任务训练的 rank-8 LoRA（其余权重全部冻结），启动"接力"：程序行把链身份经短范围中间层传递，冻结的注意力头逐步向链上更远处读取。</p>
+<p><strong>关键数字</strong> 13 个基础模型仅可靠跟踪 1.4-3.6 行；Qwen3-8B 从 15.5% 提升到 24 行链 99% 精确准确率，更长训练的 LoRA 达 50 行；Ouro-1.4B 四循环达 60 行、八循环至少 160 行；移除父行注意力即中断接力。</p>
+<p><strong>为什么值得看</strong> 微小参数编辑解锁深层计算，对上下文长度与推理效率研究均有启示。</p>
+<p><a href="https://arxiv.org/abs/2609.36585">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.36585">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Speculative Safety Honeypot: Toward Proactive Defense Against Multi-turn Agent Attacks</h1>
 <p class="meta-line">arXiv / Zezhong Wang 等 · 2026-09-30 · 论文PDF</p>
 
-<p>As Large Language Model (LLM) agents are increasingly deployed in complex environments, m…</p>
-<blockquote><p>As Large Language Model (LLM) agents are increasingly deployed in complex environments, multi-turn interaction attacks have become a significant security challenge. Existing detection methods typically rely on historical context. However, this retrospective logic struggles to identify deep malicious intents that are split across turns to hide future risks. Inspired by speculative decoding, we propose the Speculative Safety Honeypot (SSH) framework. SSH uses a multi-agent simulation system composed of small LLMs to build an action-level speculate-and-verify workflow. In the speculation stage, SSH predicts future behaviors of the target agent and asynchronously builds a trajectory tree to expose potential risks in advance. In the verification stage, the system uses the target agent's real actions to calibrate and prune the trajectory tree, effectively reducing false positives. As a plug-and-playable component, SSH provides existing detectors with rich decision redundancy beyond the current interaction slice. By judging risk based on the evolution of the entire trajectory tree rather than a single point in time, the system reduces the reliance on the absolute precision of individual d…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM agent 多轮交互攻击日益严重，现有检测依赖历史上下文，难以识别被拆分到多轮、隐藏未来风险的深层恶意意图。</p>
+<p><strong>方法</strong> 受投机解码启发提出 Speculative Safety Honeypot（SSH）：用小型 LLM 构建多 agent 模拟系统，先预测目标 agent 未来行为、异步构建轨迹树暴露潜在风险，再用真实动作校准剪枝轨迹树降低误报；风险判断基于整棵树演化而非单点时刻。</p>
+<p><strong>关键数字</strong> 摘要未给出量化指标；作为即插即用组件可为现有检测器提供超越当前交互切片的决策冗余。</p>
+<p><strong>为什么值得看</strong> 把 agent 防御从"回顾式检测"转向"前瞻式预警"。</p>
+<p><a href="https://arxiv.org/abs/2609.39549">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.39549">阅读原文 ↗</a></p>
 </body>
 </html>

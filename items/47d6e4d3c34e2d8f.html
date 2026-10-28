@@ -22,9 +22,11 @@
 <h1>Serverless gossip training of LSTM failure detectors: A matched-protocol comparison with federated, local and centralized learning on NASA C-MAPSS</h1>
 <p class="meta-line">arXiv / Yusuf Öztürk 等 · 2026-09-30 · 论文PDF</p>
 
-<p>Serverless gossip 训练 LSTM 故障检测器，与联邦/本地/集中式对比</p>
-<blockquote><p>Industrial predictive maintenance increasingly depends on learning from equipment spread across sites whose sensor data cannot easily be pooled. Federated averaging (FedAvg) solves this with a central aggregation server; gossip learning removes the server, but its behaviour for recurrent failure-detection models has not been measured under controlled conditions. We compare synchronous ring gossip with FedAvg, isolated local training and a centralized reference for a stacked LSTM that detects imminent failure on the NASA C-MAPSS turbofan benchmark. All methods share one open implementation, architecture, initialization, optimizer, data split and training budget, and the primary endpoint uses one terminal window per test engine to avoid the statistical dependence of overlapping windows. On FD001 (five seeds), gossip reached a terminal-window F1 of 89.6 +/- 1.3%, compared with 89.9 +/- 1.1% for FedAvg, 83.6 +/- 6.7% for local training and 93.5 +/- 2.1% for centralized training, while transmitting the same payload as FedAvg without a coordinator. Node models agreed closely but not exactly (1.8% pairwise decision disagreement versus 5.6% without communication). Across FD002-FD004, peer …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 工业预测性维护需跨站点学习，传感器数据难以汇集；gossip 学习去掉了联邦学习的中心聚合服务器，但其在递归故障检测模型上的行为从未在受控条件下测量。</p>
+<p><strong>方法</strong> 在 NASA C-MAPSS 涡扇基准上，用同一套开源实现、架构、初始化、优化器、数据划分与训练预算，对比同步环形 gossip、FedAvg、孤立本地训练与集中式参考（堆叠 LSTM 检测即将失效）。</p>
+<p><strong>关键数字</strong> FD001（5 种子）：gossip 终端窗口 F1 89.6±1.3%，FedAvg 89.9±1.1%、本地 83.6±6.7%、集中式 93.5±2.1%，且传输负载与 FedAvg 相同、无需协调器；FD002-FD004 上通信比本地提升 13-28 分，gossip 与 FedAvg 在 FD003/FD004 持平、FD002 低 4.3 分。</p>
+<p><strong>为什么值得看</strong> 无服务器去中心化学习在真实工业基准上对标联邦学习的一手数据。</p>
+<p><a href="https://arxiv.org/abs/2609.35792">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.35792">阅读原文 ↗</a></p>
 </body>
 </html>

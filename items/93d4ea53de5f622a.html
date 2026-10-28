@@ -22,9 +22,11 @@
 <h1>When Trees Are Not Enough: Learning Mixed-Topology Feature Graphs with Adaptive Graph Sparse Autoencoders</h1>
 <p class="meta-line">arXiv / Xiaozuo Shen 等 · 2026-09-30 · 论文PDF</p>
 
-<p>自适应图稀疏自编码器学习混合拓扑特征图</p>
-<blockquote><p>Sparse autoencoders (SAEs) expose interpretable features in large language model activations, yet existing structured SAEs impose single-parent trees or forests, while post-hoc graphs permit multiple parents but neither guide feature learning nor ensure reliable relation recovery. We introduce the Adaptive Graph Sparse Autoencoder (AG-SAE), a structure-guided training paradigm that treats each feature's complete parent set as an atomic structural hypothesis and lets evidence select zero, one, or multiple parents. By competing complete parent sets against null, subset, and alternative explanations, AG-SAE identifies jointly necessary multi-parent relations while rejecting redundant or spurious alternatives and verifying that each child contributes beyond its parents. The induced topology over SAE features then defines a differentiable structural loss that guides SAE training, while topology-guided refinement mitigates feature absorption and uses persistent reconstruction gaps exposed by the learned structure to initialize new features. The entire graph is then induced again from the revised dictionary by reassessing every feature's complete parent set, closing the dictionary-graph s…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 稀疏自编码器（SAE）揭示 LLM 激活中的可解释特征，但现有结构化 SAE 强制单父树/森林结构，事后图虽允许多父却不引导特征学习、也不保证关系恢复可靠。</p>
+<p><strong>方法</strong> 提出 Adaptive Graph Sparse Autoencoder（AG-SAE）：把每个特征的完整父集当作原子结构假设，让证据选择零/一/多父，通过与空、子集与替代解释竞争识别联合必要多父关系；诱导出的拓扑定义可微结构损失引导训练，并用重建缺口初始化新特征，闭环迭代字典-图自洽。</p>
+<p><strong>关键数字</strong> 控制玩具模型中精确恢复混合拓扑；真实 LLM 激活上关系可靠性与语义有效性优于结构化与事后基线，特征级因果干预强于常规 SAE 特征。</p>
+<p><strong>为什么值得看</strong> 把恢复的混合拓扑结构变成无监督训练信号，突破树的拓扑局限。</p>
+<p><a href="https://arxiv.org/abs/2609.36294">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.36294">阅读原文 ↗</a></p>
 </body>
 </html>

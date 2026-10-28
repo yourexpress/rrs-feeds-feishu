@@ -22,9 +22,11 @@
 <h1>Working Around the Compute Ceiling: Byte-Exact Memory in Galahad Makes LLM Reading a One-Time Cost LLM Reading a One-Time Cost</h1>
 <p class="meta-line">arXiv / Sietse Schelpe 等 · 2026-09-30 · 论文PDF</p>
 
-<p>A transformer language model performs a bounded amount of computation per token, and rece…</p>
-<blockquote><p>A transformer language model performs a bounded amount of computation per token, and recent work by Vishal Sikka, former CEO of Infosys, argues that this bound limits which tasks a model can carry out or verify (arXiv:2507.07505). We ask how much of the budget beneath that ceiling is spent on work the model has already done. Serving is stateless across requests: a model that answers a second question about a document recomputes the document's attention state from the first token. On seven real-world datasets, 98.7% of prompt tokens were text the model had already read. We present Galahad, a memory layer for vLLM, SGLang and llama.cpp that makes this reading a one-time cost. Taliesin saves the model's key-value (KV) state for a block of text and loads it on the next request that contains the same bytes, instead of recomputing it. Blaise keeps the documents themselves and passes the model only the section a question needs. On a recall test with 100 facts hidden in a 97,000-token corpus (Gemma 4 31B), Taliesin alone let the model attend to the whole corpus and answered 98 of 100 on llama.cpp at 3.0 s and 572 J per question, against 10 of 100, 9.3 s and 2,754 J for the same model witho…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> transformer 每 token 计算量有界，而服务是无状态的：回答关于同一文档的第二个问题时，模型会从头重算文档的注意力状态，浪费计算预算。</p>
+<p><strong>方法</strong> 提出 Galahad 内存层（适配 vLLM/SGLang/llama.cpp）：Taliesin 保存文本块的 KV 状态、下次遇到相同字节直接加载；Blaise 保留文档本体、只把问题所需章节喂给模型；恢复状态位级一致，加载校验不过则回退重算。</p>
+<p><strong>关键数字</strong> 7 个真实数据集上 98.7% 的 prompt token 是模型已读文本；97k token 语料 100 事实召回测试（Gemma 4 31B）：Taliesin 单独 98/100（3.0s、572J）对比无 Galahad 10/100（9.3s、2754J）；加 Blaise 后 100/100（0.59-0.64s、200-213J），而调优 RAGFlow 仅 77；262,144 个输出 logits 重启后全部位级匹配。</p>
+<p><strong>为什么值得看</strong> 把 LLM 服务从无状态推向有状态，同时给出能耗与延迟的实测收益。</p>
+<p><a href="https://arxiv.org/abs/2609.39358">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.39358">阅读原文 ↗</a></p>
 </body>
 </html>

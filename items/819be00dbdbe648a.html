@@ -22,9 +22,11 @@
 <h1>Understanding LLM Parameter Update Sparsity through the Lens of Fisher</h1>
 <p class="meta-line">arXiv / Yufan Zhang 等 · 2026-09-30 · 论文PDF</p>
 
-<p>从 Fisher 信息视角理解 LLM 参数更新的稀疏性</p>
-<blockquote><p>Recent studies have observed that parameter changes during language-model post-training can be concentrated in a small subset of coordinates. This phenomenon has been reported in reinforcement learning, on-policy distillation, and supervised fine-tuning on near-policy data. Its recurrence across different post-training paradigms suggests shared structure in training dynamics. In this paper, we examine this pattern through the diagonal model Fisher, which measures the sensitivity of the model's output distribution to individual parameters and is independent of any particular reward or teacher signal. Theoretically, we show that small diagonal Fisher leads to small expected gradients across a range of training objectives, providing a common explanation for sparse gradient updates. Empirically, we test this connection in RL and OPD. We find that Fisher identifies where gradients are concentrated, and fixed sparse masks selected from the initial Fisher retain a large proportion of the improvement from full training. Finally, we investigate the mechanisms underlying low Fisher in on-policy training. Our results show that high-probability next tokens tend to have similar parameter sensit…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 后训练（RL、在策略蒸馏、近策略 SFT）中参数变化集中在少数坐标，跨范式重现暗示训练动态存在共享结构。</p>
+<p><strong>方法</strong> 用对角模型 Fisher（度量输出分布对单个参数的敏感度，与具体奖励/教师信号无关）统一解释：理论上证明小对角 Fisher 导致小期望梯度，实证在 RL 与 OPD 中验证 Fisher 能定位梯度集中处，初始 Fisher 选出的固定稀疏掩码保留大部分训练收益。</p>
+<p><strong>关键数字</strong> 摘要未给出量化指标；高概率下一 token 具有相似参数敏感度是低 Fisher 的成因之一。</p>
+<p><strong>为什么值得看</strong> 为"更新稀疏性"给出统一理论视角，可指导稀疏训练与参数高效微调。</p>
+<p><a href="https://arxiv.org/abs/2609.36262">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2609.36262">阅读原文 ↗</a></p>
 </body>
 </html>
