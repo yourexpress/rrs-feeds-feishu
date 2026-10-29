@@ -22,9 +22,11 @@
 <h1>p-DCIM: A 28nm Probabilistic SRAM DCIM based Ising Machine for Near-Memory Context Selection in LLM-RAG Pipeline</h1>
 <p class="meta-line">arXiv(cs.AR) · 2026-10-27 · 论文PDF / 每日精选</p>
 
-<p>28nm 概率 SRAM DCIM Ising 机，将 LLM-RAG 证据选择建模为 QUBO 在存内计算宏上求解，降低 rerank 能耗</p>
-<blockquote><p>We present a fabricated SRAM DCIM Ising machine that performs set-level context selection for large language model (LLM) with retrieval-augmented generation (RAG). In RAG, the evidence-selection stage is increasingly delegated to repeated language-model reranking, which adds substantial energy to the inference pipeline. We reformulate evidence selection as a quadratic unconstrained binary optimization (QUBO) problem and solve it on a dual-mode digital compute-in-memory (DCIM) macro: the same multiply-and-accumulate datapath computes the embedding-similarity scores that populate the QUBO coefficients and evaluates the per-spin Hamiltonian differences that drive the anneal. The annealing temperature is set by a digital plane-count control along with the SRAM pseudo-read random bit flips, giving graded cooling entirely from on-chip digital configuration. The macro is taped-out in a 28 nm process [0.16 mm2, 0.41 mW] and is proposed to be integrated as part of the logic base-die in hybrid high-bandwidth memory (HBM) and high-bandwidth flash (HBF) stacks in a GPU package, where only the selected passage identifiers return to the host. Replacing the language-model selection pass with the …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> RAG 的证据选择阶段越来越多地交给反复的 LLM rerank，给推理管线带来可观能耗。</p>
+<p><strong>方法</strong> 将证据选择重构为 QUBO 问题，在双模数字存内计算宏上求解：同一 MAC 数据通路既计算嵌入相似度填充 QUBO 系数，又评估驱动退火的逐自旋哈密顿差；数字平面计数控制配合 SRAM 伪读随机位翻转实现片上分级冷却。</p>
+<p><strong>关键数字</strong> 28nm 流片 [0.16 mm²、0.41 mW]；宏归一化选择能耗估计比 LLM 基线低 6 个数量级以上，单查询总能耗降低 67%，token 级 F1 与基线相当。</p>
+<p><strong>为什么值得看</strong> 将 Ising 机作为近存求解器替换 LLM rerank 的完整流片验证，是存内计算在 LLM 管线落地的代表性工作。</p>
+<p><a href="https://arxiv.org/abs/2610.37033">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.37033">阅读原文 ↗</a></p>
 </body>
 </html>

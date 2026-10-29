@@ -22,9 +22,11 @@
 <h1>TAO: Tool-Aware Joint Scheduling for LLM-Based Agentic Serving</h1>
 <p class="meta-line">arXiv(cs.DC) · 2026-10-27 · 论文PDF / 每日精选</p>
 
-<p>工具感知的 LLM agentic 服务联合调度：价值接口融合工具就绪度/缓存信用/token 足迹，动态规划选择与放置会话</p>
-<blockquote><p>Agentic services alternate between model inference on clustered GPUs and external tools on distributed CPUs. In this scenario, existing systems (1) overlook tool-return readiness in service evaluation, wasting limited resources, and (2) use heuristic strategies to decide admission and placement on GPUs, resulting in suboptimal scheduling decisions. To bridge this gap, we present TAO, a tool-aware joint scheduling framework for LLM-based agentic serving. Its value interface combines near-term tool readiness, node-specific cache credit with time-aware decay, and token footprint; a dynamic program jointly selects and places waiting sessions under capacity constraints. Across the 12 reported model-workload-concurrency settings, TAO reduces latency by up to 26.8%, reduces mean time to first token (TTFT) by up to 36.3%, and increases decode throughput by up to 29.5% relative to the best evaluated state-of-the-art baseline for each metric.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Agentic 服务在 GPU 集群推理与分布式 CPU 外部工具间交替；现有系统忽略工具返回就绪度（浪费稀缺资源），并用启发式决定准入与 GPU 放置，调度次优。</p>
+<p><strong>方法</strong> TAO 工具感知联合调度框架：价值接口融合近期工具就绪度、带时间衰减的节点缓存信用与 token 足迹；动态规划在容量约束下联合选择并放置等待会话。</p>
+<p><strong>关键数字</strong> 12 组模型-负载-并发设置下，相对各指标最优 SOTA 基线：延迟最高降 26.8%、平均首 token 时间（TTFT）最高降 36.3%、解码吞吐最高增 29.5%。</p>
+<p><strong>为什么值得看</strong> 把工具执行状态纳入 LLM 服务调度决策，是 agent 场景推理基础设施的一项新思路。</p>
+<p><a href="https://arxiv.org/abs/2610.37230">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.37230">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>PipeLink: Contract-Guided Linking of GPU Kernel Components</h1>
 <p class="meta-line">arXiv(cs.DC) · 2026-10-27 · 论文PDF / 每日精选</p>
 
-<p>契约引导的 GPU kernel 组件链接器：组件以 LTO 对象独立编译、携带资源契约，可组合替换而不需手工 fork</p>
-<blockquote><p>The fastest machine-learning kernels are compositions of components, such as loaders, matrix-multiply mainloops, epilogues and communication stages, that run concurrently on one GPU streaming multiprocessor and share its on-chip memory, barriers, warps and registers. Because these components hard-code where they sit in this shared space, they cannot be compiled, shipped or replaced on their own: combining components from different sources means forking them by hand or keeping them in separate kernels. We present PipeLink, a contract-guided linker for GPU kernel components. Each component is compiled separately into an LTO object that carries a contract stating what it requires and what it promises; PipeLink checks the contracts against each other, relocates every component by solving one joint placement of the SM's resources, and generates the transfers between them, and the vendor LTO backend folds the result into constants. Across 51 configurations on Hopper and Blackwell GPUs, linked kernels run within 0.2% of the same sources compiled as one unit. Linking makes new compositions practical: a CuTe attention operator inside a ThunderKittens decode megakernel speeds up decoding by …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 最快的 ML kernel 是 loader、GEMM 主循环、epilogue、通信阶段等组件的组合，但组件硬编码其在共享 SM 空间中的位置，无法独立编译、分发或替换，跨来源组合只能手工 fork。</p>
+<p><strong>方法</strong> PipeLink 契约引导链接器：每个组件独立编译为携带资源契约（需求+承诺）的 LTO 对象；PipeLink 检查契约互容、联合求解 SM 资源的一次性放置、生成组件间传输，vendor LTO 后端将结果折为常量。</p>
+<p><strong>关键数字</strong> Hopper/Blackwell 上 51 组配置链接后的 kernel 与整体编译差距在 0.2% 以内；CuTe attention 算子嵌入 ThunderKittens decode megakernel 使解码提速 2.16×；GEMM+SwiGLU 组合在 Blackwell 上比 cuBLAS 快 1.2×。</p>
+<p><strong>为什么值得看</strong> 让 kernel 组件像软件一样可组合替换而不损失性能，对 kernel 库与推理系统开发者非常实用。</p>
+<p><a href="https://arxiv.org/abs/2610.37200">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.37200">阅读原文 ↗</a></p>
 </body>
 </html>

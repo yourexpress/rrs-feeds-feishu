@@ -22,9 +22,11 @@
 <h1>Distilling Directional Verification</h1>
 <p class="meta-line">arXiv / Jungseob Lee 等 · 2026-10-01 · 论文PDF</p>
 
-<p>Knowledge distillation aims to transfer the factual knowledge of large language models to…</p>
-<blockquote><p>Knowledge distillation aims to transfer the factual knowledge of large language models to smaller models for efficient deployment. Yet a teacher may recall a relation in one direction while failing to generate the answer in the reverse direction. Distillation from its generated answers can therefore propagate this directional limitation to the student. The same teacher can nevertheless recognize such an answer by scoring the relation in the direction it knows. We introduce directional label distillation, in which frozen teachers score candidate answers in that known direction and the best-scoring candidate becomes the student's training target. On facts about parents and their children, known-direction scoring yields more accurate labels than scoring the requested direction, even after tuned corrections for name priors. With prior-corrected scores, the better direction depends on the facts rather than the template, and reverses on mined facts whose notable entity is the parent rather than the child. With the evaluated children's forward facts withheld, students trained on known-direction labels improve open-ended accuracy on their trained queries by 13 to 15 points over students tr…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 知识蒸馏中，教师模型可能只记得某关系的一个方向而反向生成失败；从其生成答案蒸馏会把这种方向性局限传播给学生。</p>
+<p><strong>方法</strong> 提出方向性标签蒸馏：冻结教师在其已知方向上给候选答案打分，最高分候选作为学生训练目标；并用先验修正校正名字先验偏差。</p>
+<p><strong>关键数字</strong> 已知方向打分产生的标签比按请求方向打分更准（即使经先验修正）；在孩子前向事实被冻结的评估下，用已知方向标签训练的学生在训练查询上的开放精度比用先验修正反向标签训练的高 13~15 点；标签优势在未筛选查询与不插入正确答案的检索下仍保持。</p>
+<p><strong>为什么值得看</strong> 揭示了蒸馏标签质量的方向性维度，对 LLM 蒸馏管线有直接、可落地的改进价值。</p>
+<p><a href="http://arxiv.org/abs/2610.00997v1">阅读原文</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2610.00997v1">阅读原文 ↗</a></p>
 </body>
 </html>

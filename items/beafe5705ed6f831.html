@@ -22,9 +22,11 @@
 <h1>Mechanistic Failure Modes of Weight Pruning in Transformer Language Models</h1>
 <p class="meta-line">arXiv(cs.LG) · 2026-10-27 · 论文PDF / 每日精选</p>
 
-<p>GPT-2 上剪枝的机制性失效模式实证：幅值剪枝使 IOI 电路归零或孤立，输出行为保留不等于内部计算保留</p>
-<blockquote><p>Pruned language models are judged almost entirely by accuracy and perplexity, which assumes that preserved output behaviour implies preserved internal computation. We test this assumption with a factorial pruning study on GPT-2, crossing two importance criteria (magnitude, random), two component types (attention heads, MLP neurons) and three sparsity levels (3%, 50%, 70%). Using the fully characterised indirect object identification (IOI) circuit as ground truth, we measure circuit integrity with activation patching, path patching and direct logit attribution. We find two qualitatively distinct failure modes. Magnitude head pruning &gt;= zeroes the circuit: output-facing heads are removed, and the model falls to near-chance. Magnitude neuron pruning at 30% inverts it: all 26 circuit heads remain intact, but Name Mover contributions flip sign, and the model systematically prefers the wrong name (17.7% accuracy). Perplexity ranks it as less damaged than random head pruning (74.6 vs 140.1). A replication of the Greater-Than circuit shows that the critical component type depends on the circuit's architecture. These results show that output metrics and structural checks can both miss mecha…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 剪枝后的语言模型几乎只用准确率与困惑度评估，隐含假设"输出行为保留=内部计算保留"；该假设是否成立缺乏机制级检验。</p>
+<p><strong>方法</strong> 在 GPT-2 上做因子化剪枝研究：交叉 2 种重要性准则（幅值/随机）×2 类组件（注意力头/MLP 神经元）×3 档稀疏度（3%/50%/70%），以已完整刻画的 IOI 电路为 ground truth，用激活修补、路径修补与直接 logit 归因测量电路完整性。</p>
+<p><strong>关键数字</strong> 幅值头剪枝使电路归零、模型跌至接近随机；幅值神经元剪枝在 30% 时反转——26 个电路头全部完好但 Name Mover 贡献翻转符号，模型系统性选错名字（准确率 17.7%），而困惑度 74.6 反而显示损伤小于随机头剪枝（140.1）。</p>
+<p><strong>为什么值得看</strong> 实证表明输出指标与结构检查都可能漏掉机制性损伤，为压缩模型评估补充了电路级因果分析视角。</p>
+<p><a href="https://arxiv.org/abs/2610.37126">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.37126">阅读原文 ↗</a></p>
 </body>
 </html>

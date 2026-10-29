@@ -22,9 +22,11 @@
 <h1>SimplexLoRA: Dynamic Rank Updating via Alternating Minimization with Simplex Projection</h1>
 <p class="meta-line">arXiv(cs.LG) · 2026-10-27 · 论文PDF / 每日精选</p>
 
-<p>SimplexLoRA：交替最小化+单纯形投影的动态秩 LoRA，预热期学习各层重要性权重并按需分配容量</p>
-<blockquote><p>The success of large language models in real-world applications relies on parameter-efficient fine-tuning methods such as Low-Rank Adaptation (LoRA), which inserts compact, trainable adapters into selected layers. In this paper, we propose SimplexLoRA, a LoRA variant that adaptively adjusts adapter ranks during fine-tuning based on their learned importance. Unlike standard LoRA, which employs a fixed rank across all layers, SimplexLoRA optimizes per-adapter importance weights on the $n$-scaled simplex during a short warm-up and then freezes them, dynamically allocating capacity where it is most beneficial without increasing the overall parameter budget or inference cost. We evaluate SimplexLoRA across 12 language understanding, summarization, and reasoning tasks using DeBERTaV3, BART-large, Llama 3.1 8B, and Qwen3-8B. Our results show that SimplexLoRA consistently matches or outperforms standard LoRA and recent adaptive baselines, with the largest gains at low ranks. Our code is available at https://github.com/brain-lab-research/SimplexLoRA.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 标准 LoRA 对所有层使用固定秩，容量分配不随层重要性调整，低秩资源下尤显浪费。</p>
+<p><strong>方法</strong> SimplexLoRA：在短预热期内于 n-单纯形上优化每个适配器的重要性权重并冻结，据此动态分配各层秩，不增加总参数预算与推理成本。</p>
+<p><strong>关键数字</strong> 在 12 个语言理解、摘要与推理任务上，以 DeBERTaV3、BART-large、Llama 3.1 8B、Qwen3-8B 评估，一致匹配或超越标准 LoRA 与近期自适应基线，低秩时增益最大；代码已开源。</p>
+<p><strong>为什么值得看</strong> 动态秩分配的轻量实现，微调预算受限时收益明确，且代码可直接复用。</p>
+<p><a href="https://arxiv.org/abs/2610.37206">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.37206">阅读原文 ↗</a></p>
 </body>
 </html>

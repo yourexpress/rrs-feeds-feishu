@@ -22,9 +22,11 @@
 <h1>When is a large language model a good calibration agent? Physics-labeled prompting for budgeted engineering simulator calibration</h1>
 <p class="meta-line">arXiv · 2026-10-01 · 论文PDF</p>
 
-<p>Calibrating expensive engineering simulators requires tuning model parameters to match reference data, a process heavily constrained by computational costs.</p>
-<blockquote><p>Calibrating expensive engineering simulators requires tuning model parameters to match reference data, a process heavily constrained by computational costs. This study investigates whether Large Language Models (LLMs), conditioned on physical diagnostic descriptions of simulation errors, can propose informative parameter updates more efficiently than conventional derivative-free optimizers. We test this on a cylinder-wake Large-Eddy Simulation and a damped-oscillator inverse problem. Physics-labeled prompts are evaluated against four text ablations (removed, anonymized, padded, misdirected) and standard optimizers (Nelder-Mead, Bayesian optimization, CMA-ES, and random search). Results demonstrate a strong early semantic advantage: the first physics-informed LLM proposal improves the initial design in 23 of 25 trials. After five evaluations, the median calibration error is 21.9 times lower than physics-free controls. However, this advantage is transient - disappearing by fifteen evaluations - and inherent LLM decoder variability yields a 9.8-fold performance spread. To address this, we introduce a hybrid workflow that uses the LLM as a warm-start, passing accumulated evaluations to…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 昂贵工程仿真器的校准受计算预算严格约束：LLM 能否基于仿真误差的物理诊断描述，比传统无导数优化器更高效地提出参数更新？</p>
+<p><strong>方法</strong> 在圆柱尾流大涡模拟与阻尼振荡器反问题上，用物理标注提示对比 4 种文本消融（移除/匿名化/填充/误导）与标准优化器（Nelder-Mead、贝叶斯优化、CMA-ES、随机搜索）；并提出"LLM 预热+常规优化器续跑"的两阶段混合流程。</p>
+<p><strong>关键数字</strong> 首个物理提示在 23/25 次试验中改进初始设计；5 次评估后中位校准误差比物理无关对照低 21.9 倍，但 15 次后优势消失，且解码器变异性带来 9.8 倍性能离散；混合流程 9 次仿真达标（LLM 单独 12 次、Nelder-Mead 17 次、贝叶斯优化 &gt;60 次）。</p>
+<p><strong>为什么值得看</strong> 严谨刻画了 LLM 作为校准代理的早期优势与短暂性，混合"暖启动"思路可迁移到其他受限预算优化问题。</p>
+<p><a href="https://arxiv.org/abs/2610.22379">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.22379">阅读原文 ↗</a></p>
 </body>
 </html>

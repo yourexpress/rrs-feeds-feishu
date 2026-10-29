@@ -22,9 +22,11 @@
 <h1>GPU-Initiated Communication: Dissecting Down to the Bone</h1>
 <p class="meta-line">arXiv / Javid Baydamirli 等 · 2026-10-01 · 论文PDF</p>
 
-<p>GPU-initiated communication lets GPU threads post RDMA operations directly to the NIC.</p>
-<blockquote><p>GPU-initiated communication lets GPU threads post RDMA operations directly to the NIC. It underpins NVSHMEM, NCCL GIN, and DeepEP, which serve the fine-grained, latency-critical communication of Mixture-of-Experts (MoE) models, yet its performance characteristics and optimizations remain scarcely documented beyond source code, and library comparisons fail to separate the costs of the hardware mechanism from those of the library around it. This paper dissects GPU-initiated communication at the GPU-NIC boundary. We first detail the GPU-side network path: queue placement, work-request construction, doorbell ordering, and completion semantics. We then introduce mini-gda and mini-proxy, minimal transports for the GPU and CPU-proxy submission paths, and measure them alongside NVSHMEM IBGDA, NCCL GIN, DeepEP, UCCL-EP, MSCCL++, and fabric-lib on NVIDIA H100, H200, B200, and GB200 platforms. A minimal GPU path issues an operation in 0.7 $μ$s and completes in 4.0 $μ$s; libraries add up to 4.6 $μ$s of issue time through queue management, memory ordering, and completion scope, and issue time scales with the SM clock. A tuned CPU proxy matches or beats the GPU path at idle, at the cost of a ded…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> GPU 发起通信（GPU 线程直接向 NIC 提交 RDMA）支撑 NVSHMEM、NCCL GIN、DeepEP 等 MoE 通信，但其性能特性少有文档，库间对比又无法分离硬件机制与库自身开销。</p>
+<p><strong>方法</strong> 在 GPU-NIC 边界解剖：详述 GPU 侧网络路径（队列放置、工作请求构造、门铃排序、完成语义）；引入最小传输 mini-gda 与 mini-proxy，并在 H100/H200/B200/GB200 上与 NVSHMEM IBGDA、NCCL GIN、DeepEP、UCCL-EP、MSCCL++、fabric-lib 对比。</p>
+<p><strong>关键数字</strong> 最小 GPU 路径发起 0.7 μs、完成 4.0 μs；库增加至多 4.6 μs 发起时间；与批量流量共享队列使延迟升高 1~3 个数量级；达到 260 M msg/s 平台上限需门铃批处理+队列并行；约 3000 活跃连接时 all-to-all 损失 59% 的 NIC 消息率。</p>
+<p><strong>为什么值得看</strong> 首次把 GPU 发起通信的硬件机制与库开销分离测量，MoE 通信与 GPU 网络方向的重要一手数据。</p>
+<p><a href="http://arxiv.org/abs/2610.01380v1">阅读原文</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2610.01380v1">阅读原文 ↗</a></p>
 </body>
 </html>

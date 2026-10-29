@@ -22,9 +22,11 @@
 <h1>RapidMoE: Exploiting Cross-Asymmetry via Adaptive Residual Offloading for Large-Scale MoE Inference</h1>
 <p class="meta-line">arXiv / Wenxun Wang 等 · 2026-10-01 · 论文PDF</p>
 
-<p>The widespread adoption of Mixture-of-Experts (MoE) has created a growing need for deploy…</p>
-<blockquote><p>The widespread adoption of Mixture-of-Experts (MoE) has created a growing need for deployment on heterogeneous platforms. However, it exposes a fundamental mismatch between the algorithmic demands of large-scale MoE and the disparate characteristics of hardware.Existing CPU-GPU hybrid inference systems fail to resolve this as they either encounter PCIe bandwidth bottlenecks when loading experts to GPUs, or rely heavily on CPU computation. Consequently, this leads to low resource utilization and inevitable violations of fixed latency budgets as parameters scale. In this paper, we identify and exploit Cross-Asymmetry--a structural alignment between the algorithmic workload skew of MoE routing and the physical disparity of heterogeneous hardware. To this end, we introduce RapidMoE, a residual offloading system for efficient large-scale MoE inference. We propose how RapidMoE leverages a residual-split framework to enable offloading paradigm shift from expert-level to bit-level, which unfolds across three key dimensions: (1) data representation, enabling compact and decoupled storage; (2) routing strategy, partitioning computation into dual paths aligned with hardware capabilities; (3) …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 大规模 MoE 部署在异构平台上存在算法需求与硬件特性的根本错配；现有 CPU-GPU 混合系统要么受 PCIe 带宽瓶颈，要么过度依赖 CPU 计算，导致资源利用率低、延迟预算难守。</p>
+<p><strong>方法</strong> RapidMoE 残差卸载系统，利用"Cross-Asymmetry"（MoE 路由的算法负载偏斜与异构硬件物理差异之间的结构对齐），把卸载粒度从 expert 级降到 bit 级：数据表示紧凑解耦存储、路由拆分为与硬件能力对齐的双路径、执行按存储-计算均衡调度；另有统一多级重要性仲裁在运行时调整关键 expert 集。</p>
+<p><strong>关键数字</strong> 解码最高加速 3.5×、prefill 最高加速 2.1×（对比 SOTA 卸载系统）。</p>
+<p><strong>为什么值得看</strong> 把 MoE 卸载粒度推进到 bit 级的范式转变，对大规模 MoE 推理部署与异构推理系统有直接参考价值。</p>
+<p><a href="http://arxiv.org/abs/2610.01265v1">阅读原文</a></p>
 <p><a class="origin" href="http://arxiv.org/abs/2610.01265v1">阅读原文 ↗</a></p>
 </body>
 </html>

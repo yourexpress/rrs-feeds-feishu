@@ -22,9 +22,11 @@
 <h1>Taming Multi-Dimensional Skew in Sparse Matrix Multiplication with Contention-Aware Scheduling [Technical Report]</h1>
 <p class="meta-line">arXiv(cs.DC) · 2026-10-27 · 论文PDF / 每日精选</p>
 
-<p>面向 SpGEMM 多维偏斜的争用感知调度技术报告：揭示负载失衡+缓存争用双根因，按争用感知重排提升稀疏内核性能</p>
-<blockquote><p>Sparse general matrix-matrix multiplication (SpGEMM) is a key kernel in graph analytics, relational queries, and machine learning. Yet, its performance remains a significant challenge, due to the inherent sparsity and, more critically, the prevalent skew patterns often found in real-world workloads. This paper investigates this problem and demonstrates that an unbalanced workload distribution is the main culprit, harming performance through two co-existing root causes: first, multi-dimensional skew, where imbalance across computation cost, output density, and data locality cannot be captured by any single balancing metric; and second, cache contention, where dense substructures induce severe on-chip interference. To that end, we propose adaptive morsel scheduling (AMS), a dynamic scheduling framework that decouples skew dimensions via fixed-result-size morsels and integrates contention-aware load balancing (CALB) and data-conscious simultaneous multithreading activator (SMTact) to alleviate cache-level contention, alongside a hybrid accumulation mechanism (HYB) that adaptively selects the best accumulator per morsel. Evaluations across matrix squaring, relational queries, graph ana…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> SpGEMM（稀疏通用矩阵乘）在真实负载中普遍存在偏斜模式，性能受两类并存根因制约：多维偏斜（计算代价、输出密度、数据局部性失衡无法由单一平衡指标刻画）与缓存争用（稠密子结构引发片上干扰）。</p>
+<p><strong>方法</strong> 自适应 morsel 调度（AMS）：以固定结果尺寸的 morsel 解耦偏斜维度，集成争用感知负载均衡与数据感知 SMT 激活器缓解缓存争用，配合按 morsel 自适应选择最优累加器的混合累加机制。</p>
+<p><strong>关键数字</strong> 在矩阵平方、关系查询、图分析等任务上，偏斜负载显著超越 SOTA 方法，非偏斜负载保持可比性能；带宽利用率同步改善，效果跨负载与硬件系统稳定。</p>
+<p><strong>为什么值得看</strong> 对稀疏内核负载失衡根因做了清晰归因，调度方案对图计算与数据库内核开发者有直接借鉴价值。</p>
+<p><a href="https://arxiv.org/abs/2610.36822">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.36822">阅读原文 ↗</a></p>
 </body>
 </html>

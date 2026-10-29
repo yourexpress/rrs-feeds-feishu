@@ -22,9 +22,11 @@
 <h1>Request-Adaptive Execution for Efficient Hybrid LLM Inference</h1>
 <p class="meta-line">arXiv(cs.DC) · 2026-10-27 · 论文PDF / 每日精选</p>
 
-<p>Morph：请求自适应混合 LLM 推理 serving 系统，架构与运行时协同设计，按请求上下文需求动态执行 Attention/SSM 层</p>
-<blockquote><p>Hybrid large language models (LLMs) have emerged as a promising way to combine the modeling capability of the Attention mechanism with the efficiency of state space models (SSMs). However, most existing hybrid LLMs still inherit a static design philosophy: once the Attention-to-SSM layout is chosen, every request must follow the same hybrid execution. This one-layout-fits-all design is inefficient for real-world serving workloads, where different requests rely on contextual information in different ways. This paper presents Morph, a serving system that co-designs the model architecture and runtime for request-adaptive hybrid LLM inference. Its model architecture pairs Attention and SSM layers within each block and uses prefill-oriented gating to select a request-specific layout that remains fixed throughout decoding. Its serving runtime preserves batching efficiency under divergent layer choices through selective batching and enables correct prefix reuse through hybrid-aware context caching. Experiments on six datasets show that Morph achieves a better quality-efficiency trade-off than existing static hybrid baselines. System-level evaluation further shows that Morph improves the s…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 混合 LLM（Attention+SSM）多沿用静态设计：Attention 与 SSM 布局一旦确定，所有请求走同一执行方式，对真实 serving 负载中差异化上下文依赖低效。</p>
+<p><strong>方法</strong> Morph 服务系统，架构与运行时协同设计：块内配对 Attention/SSM 层，用 prefill 门控选出请求特定布局并在解码期固定；运行时以选择性批处理维持批效率，通过 hybrid-aware 上下文缓存实现正确前缀复用。</p>
+<p><strong>关键数字</strong> 6 个数据集上质量-效率权衡优于静态混合基线；系统级评测吞吐最高提升 3.87×，推理延迟显著降低。</p>
+<p><strong>为什么值得看</strong> 把"一布局适配所有请求"打破为请求自适应执行，对混合架构 LLM 的推理系统设计有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.37432">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.37432">阅读原文 ↗</a></p>
 </body>
 </html>
