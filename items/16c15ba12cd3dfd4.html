@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A State Augmented Approach to Paralle Modeling in High-Level Synthesis</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>A State Augmented Approach to Paralle Modeling in High-Level Synthesis</h1>
+<p class="meta-line">arXiv(cs.AR) · 2026-10-27 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> HLS 只能调度输入描述合法的并发；反馈耦合设计中顺序行为模型会掩盖架构状态边界与冒险消解——如何显式建模获得高效重叠？</p>
+<p><strong>方法</strong> 基于同步顺序进程的显式架构建模：持久状态、通信、反馈控制在 C++ 表示，HLS 在其内调度绑定；RV32I 五级流水线示例三个建模决策：消费者读值的哪个版本、何时消费、内存动作如何映射端口操作。</p>
+<p><strong>关键数字</strong> Kintex UltraScale+：CPI 优化配置 1.221 cycles/instruction @220MHz（算法 HLS 基线 4.000、Ibex 1.575@242MHz）；面积优化配置 LUT 减 65%、寄存器减 47%，基准周期 +9.7%、250MHz。</p>
+<p><strong>为什么值得看</strong> 把"设计者控制架构"与"工具控制调度"分离的 HLS 方法论。</p>
+<p><a href="https://arxiv.org/abs/2610.36481">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.36481">阅读原文 ↗</a></p>
+</body>
+</html>

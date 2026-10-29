@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Let the Gate Decide: Per-Lookup Precision for Quantized Conditional Memory in LLMs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Let the Gate Decide: Per-Lookup Precision for Quantized Conditional Memory in LLMs</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-26 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> Engram 等条件记忆层挂载大型哈希 n-gram 表，低比特量化先丢长尾事实；按访问频率给更多位的常见补救反而更差——量化误差由什么决定？</p>
+<p><strong>方法</strong> 发现门控按行缩放检索结果：查找的量化误差由门控加权，频繁 n-gram 门控小、稀有长尾门控大，且可从 1-bit 码算出。GateRQ 每行存为 1-bit 残差码阶梯，level 1 常驻 GPU 算门控，仅对门控排序最高的查找读更深层。</p>
+<p><strong>关键数字</strong> 免重训将 DeepSeek-V4.1-Flash GPU 表内存降 7.8x，vLLM 吞吐较 FP8 表 +11%–31%；每查找读 1.50 bits 时 PopQA 约损失 1 分、2.10 bits 时 0.2 分。</p>
+<p><strong>为什么值得看</strong> 用门控信号做逐查找精度分配，直击条件记忆量化长尾失真。</p>
+<p><a href="https://arxiv.org/abs/2610.35985">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.35985">阅读原文 ↗</a></p>
+</body>
+</html>

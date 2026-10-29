@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>INC-MoE: Overlapping In-Network Collectives and Expert Computation for Expert-Parallel Mixture-of-Experts Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>INC-MoE: Overlapping In-Network Collectives and Expert Computation for Expert-Parallel Mixture-of-Experts Inference</h1>
+<p class="meta-line">arXiv(cs.DC) · 2026-10-26 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 专家并行 MoE 服务中 dispatch/combine 在关键路径上，多节点部署中可主导层延迟——能否移出关键路径？</p>
+<p><strong>方法</strong> INC-MoE 把 dispatch/combine 卸载到网络交换机：网内 AllGather 与 ReduceScatter 与专家计算互相重叠；token 分 band 经 AllGather-FFN-ReduceScatter 流水线在单一持久 kernel 执行；可直接替换 vLLM 的 MoE 层。</p>
+<p><strong>关键数字</strong> 反向并发集合使带宽受限通信时间减 (N-2)/(2(N-1))：4 rank 降 33%、8 rank 降 43%；OLMoE prefill 四路专家并行下 TTFT 最高降 33%、吞吐最高 +50%，输出与 vLLM 一致。</p>
+<p><strong>为什么值得看</strong> 把集合通信搬进交换机的软硬协同，多节点 MoE 推理延迟优化直接方案。</p>
+<p><a href="https://arxiv.org/abs/2610.36339">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.36339">阅读原文 ↗</a></p>
+</body>
+</html>

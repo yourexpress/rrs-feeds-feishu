@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DuplexTune: Coupled-State Replay for Memory-Efficient Mixture-of-Experts Adaptation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DuplexTune: Coupled-State Replay for Memory-Efficient Mixture-of-Experts Adaptation</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-26 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> MoE 的稀疏专家执行并不消除适配时需存储的中间状态——如何在有限显存下高效适配 MoE 大模型？</p>
+<p><strong>方法</strong> DuplexTune：经预训练 attention 与专家模块重放耦合隐藏状态，可训练宽度桥连接两条残差流；桥预热先于主干适配，路由器权重冻结；分析隐式状态恢复方程给出重建的收敛与重放条件。</p>
+<p><strong>关键数字</strong> Qwen1.5-MoE-A2.7B 单 H800：峰值内存 38.8GB（SFT+checkpointing 为 64.8GB），吞吐 25.1 vs 19.9 samples/s；MMLU 67.2%、GSM8K 75.6%、MT-Bench 7.69，多语言分低于基线。</p>
+<p><strong>为什么值得看</strong> 把 MoE 适配的内存瓶颈量化清楚，展示状态存储-吞吐-质量的三角权衡。</p>
+<p><a href="https://arxiv.org/abs/2610.36009">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.36009">阅读原文 ↗</a></p>
+</body>
+</html>

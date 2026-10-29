@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ResCom: Activation Residual Compensation for Large Language Model Quantization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ResCom: Activation Residual Compensation for Large Language Model Quantization</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-25 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 低比特权重-激活量化部署中激活舍入仍损伤精度：从舍入后输入重建无法区分同一 bin 内不同激活——如何补偿层输出误差？</p>
+<p><strong>方法</strong> ResCom 低秩校正：用激活舍入残差补偿层输出误差；输出感知标定按残差方向对输出重建的贡献选方向，闭式求解，无需梯度训练、不改已标定权重。</p>
+<p><strong>关键数字</strong> Llama-3-8B 4bit 权重+激活：rank-32 注意力校正使 WikiText-2 困惑度 7.708→7.147，MMLU +2.89 个百分点，5-shot GSM8K 23.96%→36.16%；1B–70B 验证；FP32 实现 4K prefill +2.25%，紧凑存储较 FP16 保留 27.7% 峰值内存节省。</p>
+<p><strong>为什么值得看</strong> 免训练的激活量化误差补偿，数字扎实，直接服务 W4A4 部署。</p>
+<p><a href="https://arxiv.org/abs/2610.35955">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.35955">阅读原文 ↗</a></p>
+</body>
+</html>

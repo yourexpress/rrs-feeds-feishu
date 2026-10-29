@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CRISP: Co-designing Pruning and Scheduling for Efficient MoE Inference on Edge Servers</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CRISP: Co-designing Pruning and Scheduling for Efficient MoE Inference on Edge Servers</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-27 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 内存受限边缘平台 MoE 推理延迟由专家权重搬运主导而非计算；路由依赖输入使所有专家必须可访问——如何协同优化"保留哪些专家容量"与"如何调度执行"？</p>
+<p><strong>方法</strong> CRISP 组合感知框架：按重要性重排神经元使一个存储专家支持多种执行宽度；按频率与专家角色对 hot/warm/cold 组合差异化执行；用异构宽度把专家加载与计算重叠。</p>
+<p><strong>关键数字</strong> Mixtral-8x7B 与 DeepSeek-MoE-16B 上同内存预算吞吐最高 2.1x，相对全宽推理精度损失限 3.6%。</p>
+<p><strong>为什么值得看</strong> 剪枝与调度协同设计的完整框架，边缘 MoE 服务直接受益。</p>
+<p><a href="https://arxiv.org/abs/2610.37442">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.37442">阅读原文 ↗</a></p>
+</body>
+</html>

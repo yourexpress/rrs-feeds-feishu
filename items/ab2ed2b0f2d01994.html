@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DeepInfer-Mac: Running a 750B-Class MoE on a 24 GB Laptop</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DeepInfer-Mac: Running a 750B-Class MoE on a 24 GB Laptop</h1>
+<p class="meta-line">arXiv(cs.PF) · 2026-10-27 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 模型远大于内存时能否在本地笔记本运行？存储读等待成为每 token 生成的主要延迟——如何组织权重读入与缓存？</p>
+<p><strong>方法</strong> DeepInfer-Mac 在 24GB 统一内存 MacBook Air 上运行 750B 级 DeepSeek-V4.1-Flash：混合低比特转换占 SSD 338GiB，约 7.6GiB 权重常驻，路由专家与 Engram 行按需加载；专家权重按"直接填满可复用 GPU buffer"组织，缓存分配与 buffer 生命周期耦合。</p>
+<p><strong>关键数字</strong> 中英代码生成 0.21–0.72 tok/s，最大进程足迹 16.73GiB；下一层预取较仅常驻专家重叠吞吐 +21.0%；长 prompt 仍昂贵。</p>
+<p><strong>为什么值得看</strong> 把"750B 跑在 24GB 笔记本"的操作点边界讲透：可运行，但存储与 prefill 主导等待。</p>
+<p><a href="https://arxiv.org/abs/2610.36564">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.36564">阅读原文 ↗</a></p>
+</body>
+</html>

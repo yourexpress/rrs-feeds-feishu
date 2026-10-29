@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hardware-Matched Spiking Neural Networks for Real-Time Purkinje Cell Spike Classification</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Hardware-Matched Spiking Neural Networks for Real-Time Purkinje Cell Spike Classification</h1>
+<p class="meta-line">arXiv(cs.AR) · 2026-10-27 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 研究浦肯野细胞功能需区分简单/复杂 spike；无线头戴因功率预算无法连续传输原始记录——能否在受限硬件上实时完成 spike 分类？</p>
+<p><strong>方法</strong> 两个与硬件匹配的紧凑 SNN：ConvSNN 映射到 EFM32PG28 微控制器矩阵向量处理器（MVP），StreamSNN 用学习时间常数与固定突触延迟逐时间步处理波形（面向专用 SKY130 电路）。</p>
+<p><strong>关键数字</strong> 未见细胞上：ConvSNN CS F1=0.873（1018 参数）、StreamSNN 0.837（527 参数），均 8-bit；MVP 使 ConvSNN 延迟降 62.3%、50mAh 电池续航估 33.73 小时；SKY130 上 StreamSNN 0.173mm²、每事件 0.46μJ。</p>
+<p><strong>为什么值得看</strong> 从算法到 MCU/ASIC 全栈匹配的神经科学边缘计算案例，功耗数字具体。</p>
+<p><a href="https://arxiv.org/abs/2610.37104">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.37104">阅读原文 ↗</a></p>
+</body>
+</html>

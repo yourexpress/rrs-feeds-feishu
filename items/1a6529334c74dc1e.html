@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Efficient Quantization Training with Stochastic Rounding via Structured Subspace Randomness</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Efficient Quantization Training with Stochastic Rounding via Structured Subspace Randomness</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-27 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 低精度训练靠随机舍入（SR）保持梯度无偏；但向量单元吞吐远落后矩阵单元，逐元素独立随机阈值会饱和向量单元、使 INT8+SR 比 BF16 更慢——能否消除该开销？</p>
+<p><strong>方法</strong> S3R：每个上游梯度只量化一次供激活与权重梯度两个矩阵乘法共用，跨隐藏维每 token 共享单一阈值；S3R-EC 从两路梯度减去结构化平均舍入误差。关键：共享阈值引入的公共偏移主要经激活梯度向后层传播，须在起源层消除。</p>
+<p><strong>关键数字</strong> TPU v5p 上全 INT8 训练步比 BF16 快 1.24x–1.32x、比独立 SR 快 1.11x；验证损失与独立 SR 持平。</p>
+<p><strong>为什么值得看</strong> 把随机舍入成本从"逐元素"降到"每 token 一次"，INT8 训练实用化关键一步。</p>
+<p><a href="https://arxiv.org/abs/2610.36587">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.36587">阅读原文 ↗</a></p>
+</body>
+</html>

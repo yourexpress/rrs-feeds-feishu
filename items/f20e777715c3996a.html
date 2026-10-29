@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kernel Performance Engineering under Physical Non-Idealities</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Kernel Performance Engineering under Physical Non-Idealities</h1>
+<p class="meta-line">arXiv(cs.AR) · 2026-10-27 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> IC 设计与制造中的物理非理想性被传统硬件抽象掩盖，却可能限制 kernel 性能并遮蔽优化机会——如何量化并利用这些约束？</p>
+<p><strong>方法</strong> 以 NVIDIA H100 DSMEM 为案例：floorsweeping 限制集群执行可用资源，可能抵消 DSMEM 减少数据搬运的收益；据此提出波感知聚类策略；TDP 限制下数据搬运减少经 DVFS 允许更高 SM 频率。</p>
+<p><strong>关键数字</strong> 波感知聚类使 FlashAttention 4（Hopper）吞吐较基线最高 +5.30%；全局加载广播微基准与 GEMM 亦验证；功耗约束同样限制 Tenstorrent Wormhole 吞吐扩展。</p>
+<p><strong>为什么值得看</strong> 把"物理非理想性"纳入 kernel 性能分析，对 DSMEM 类新硬件优化有普适启发。</p>
+<p><a href="https://arxiv.org/abs/2610.37466">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.37466">阅读原文 ↗</a></p>
+</body>
+</html>

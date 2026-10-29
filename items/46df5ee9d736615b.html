@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EdgePace: Deadline- and Freshness-Aware LLM Scheduling on Unified-Memory Platforms</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>EdgePace: Deadline- and Freshness-Aware LLM Scheduling on Unified-Memory Platforms</h1>
+<p class="meta-line">arXiv(cs.PF) · 2026-10-27 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 边缘设备上 LLM 与传感器任务共享统一内存：即使计算空闲，LLM 推理也会经带宽争用延迟前台任务——如何既保护前台截止期又维持 LLM 反馈时效？</p>
+<p><strong>方法</strong> EdgePace 带宽感知运行时：在 prefill/decode 间建立安全挂起点，低成本监测前台内存需求与停顿，按争用风险/截止期松弛/输出新鲜度调度推理。</p>
+<p><strong>关键数字</strong> OnePlus 13 与三款 NVIDIA Jetson（多相机+机器人目标跟踪）：前台截止期错过率降 24.1%–96.1%，保留 64.9%–98.5% LLM 吞吐；全部输出落在新鲜度窗口；OnePlus 13 相机截止期错过降 91.3%、保留 90.4% 吞吐。</p>
+<p><strong>为什么值得看</strong> 带宽感知调度的完整运行时，实时边缘场景 LLM 与传感器共存的直接方案。</p>
+<p><a href="https://arxiv.org/abs/2610.37307">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.37307">阅读原文 ↗</a></p>
+</body>
+</html>

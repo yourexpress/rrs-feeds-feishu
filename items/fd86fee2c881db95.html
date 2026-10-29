@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DFIP: Decision-Focused Inference Path for System One Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DFIP: Decision-Focused Inference Path for System One Models</h1>
+<p class="meta-line">arXiv(cs.PF) · 2026-10-27 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> System One 决策模型返回小而结构化答案，但仍保留 host 分发、GPU 启动与全词表投影开销——既有推理技术在决策模型上值多少？</p>
+<p><strong>方法</strong> DFIP 实证研究：在 PPLX-Decider、Liquid d1-3B、Clef-Flash、GLiNER2.5-Decide 上施加选择性 CUDA graph 重放、候选 token 投影、长度感知批处理，与更强原生基线对比并审计输出。</p>
+<p><strong>关键数字</strong> 装 Qwen 原生 kernel 后：Decider 短布尔驻留请求加速 2.47x（五容器）、Clef 1.45x（四容器）；GLiNER 长度感知批处理比原生 FIFO 快 1.40x 但到达 p95 更差；审计保留全部 1,112 个选择。</p>
+<p><strong>为什么值得看</strong> 不宣称万能加速，老实给出各技术的适用边界与失效场景。</p>
+<p><a href="https://arxiv.org/abs/2610.36804">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.36804">阅读原文 ↗</a></p>
+</body>
+</html>

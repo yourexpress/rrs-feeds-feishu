@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日精选 · 2026-10-29</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.5em; border-bottom: 1px solid #e5e7eb; padding-bottom: 12px; }
+  h2 { font-size: 1.2em; margin-top: 1.8em; }
+  a { color: #0969da; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .meta { color: #6b7280; font-size: 0.85em; margin-top: 32px; }
+</style>
+</head>
+<body>
+<h1>每日精选 · 2026-10-29</h1>
+<h1>2026-10-29 文献检索日报</h1>
+<h2>当日检索概况</h2>
+<ul>
+<li>AI 技术报告库：检索 7 条，入选 3 条</li>
+<li>高效计算文献检索：检索 94 条，入选 31 条</li>
+<li>合计入选 34 条（pending_summary 的 selected 计数）</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>A 2^o(n) Time Algorithm for 3-SAT（Anthropic）</strong>：Claude 内部研究模型零人类输入发现 3-SAT 亚指数确定性算法并经 Lean 4 形式化，若成立将证伪指数时间假设 ETH，波及数百篇复杂度结论。<a href="https://hexagonmath.org/2610.00577v1">原文</a></li>
+<li><strong>Gemini 4 Carbon: our next frontier model（Google DeepMind）</strong>：谷歌新一代前沿模型，AA 智能指数 v5.0 登顶（59 分），网络安全全链路 SOTA，支持长时程 Agent 工作流，首发 $2/$10 每百万 token。<a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/">原文</a></li>
+<li><strong>Don't Forget What You Just Learned: Self-Directed Repair（Meta FAIR + 普林斯顿）</strong>：Agent 把纠错经验蒸馏为约 0.02% 参数的低秩适配器持久复用，GAIA/Claw-Eval/Terminal-Bench 2.1 成功率提升 8.9–17.0 个百分点。<a href="https://arxiv.org/abs/2610.31846">原文</a></li>
+<li><strong>DCKV: Learned Transform Coding of the Prompt KV Cache（arXiv cs.LG）</strong>：首个端到端训练的 KV 缓存可微编解码器，Qwen3.5-2B 上压缩 token 比 bf16 少 55 倍以上字节、损失 ≤1.8 分。<a href="https://arxiv.org/abs/2610.36950">原文</a></li>
+<li><strong>INC-MoE: Overlapping In-Network Collectives and Expert Computation（arXiv cs.DC）</strong>：把 MoE dispatch/combine 卸载到网络交换机并与专家计算重叠，OLMoE prefill 四路专家并行下 TTFT 最高降 33%、吞吐最高 +50%。<a href="https://arxiv.org/abs/2610.36339">原文</a></li>
+<li><strong>JustGoal: With Only a Goal, the AI Baseline Is Above the Expert Kernels（arXiv cs.DC）</strong>：仅给通用 agent 优化目标与约束即可超开源库（B200 上 10 算子中 8 个、几何平均 1.14x–2.34x），给 kernel 优化专门机制设了收益标尺。<a href="https://arxiv.org/abs/2610.36434">原文</a></li>
+<li><strong>DeepInfer-Mac: Running a 750B-Class MoE on a 24 GB Laptop（arXiv cs.PF）</strong>：24GB 统一内存 MacBook Air 上运行 750B 级 DeepSeek-V4.1-Flash，混合低比特+SSD 换载专家，0.21–0.72 tok/s，讲透存储与 prefill 主导等待的操作点边界。<a href="https://arxiv.org/abs/2610.36564">原文</a></li>
+<li><strong>EdgePace: Deadline- and Freshness-Aware LLM Scheduling（arXiv cs.PF）</strong>：统一内存平台带宽感知运行时，前台截止期错过率降 24.1%–96.1%、同时保留 64.9%–98.5% LLM 吞吐，边缘 LLM 与传感器任务共存的直接方案。<a href="https://arxiv.org/abs/2610.37307">原文</a></li>
+</ul>
+<h2>主题速览</h2>
+<p>AI 侧为"模型发布+AI 自主科研"日：Gemini 4 Carbon 发布登顶智能指数，Anthropic 公开 3-SAT 亚指数算法这一理论突破，Meta FAIR 提出 Agent 纠错蒸馏为持久教训的 Self-Direction。EC 侧高度集中在 LLM 推理与部署效率：KV 缓存压缩（DCKV 端到端可微 codec、GateRQ 门控感知量化、Attention Matching 偏置折叠）、MoE 系统优化（网内集合 INC-MoE、边缘剪枝调度 CRISP、免标定通道选择）、kernel 优化方法论（JustGoal 仅目标基线、AutoProfiler 自适应 profiling、物理非理想性感知）三线并进，辅以低比特量化训练（S3R 结构化随机舍入）与统一内存/边缘平台运行时（DeepInfer-Mac、EdgePace）。</p>
+<p class="meta">由 RSS 流水线自动生成 · 订阅每日精选 feed 可在阅读器内直接阅读</p>
+</body>
+</html>

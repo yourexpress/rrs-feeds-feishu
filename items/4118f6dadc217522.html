@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Channel Selection for Mixture-of-Experts Decoding Needs No Calibration Data</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Channel Selection for Mixture-of-Experts Decoding Needs No Calibration Data</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-27 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 小批量交互解码中 MoE 受路由专家权重加载瓶颈限制，通道选择器按阈值读权重、需离线标定——标定真的必要吗？</p>
+<p><strong>方法</strong> 证明无需标定：标定阈值不固定读取量（Prox 按 18% 预算标定实际平均只读 12.9%）；top-k 每 token 取分数最高 k 个通道、天然免标定；另提出纯权重构建的 reader（三元 sketch 筛查+低秩映射恢复）。</p>
+<p><strong>关键数字</strong> 同预算下 top-k 在 43 组对比中 40 组达到或超过阈值版（生成任务 23 组全中）；免标定 reader 以 17.8% 读取保留 98.1% 精度，Triton kernel batch 1 比优化 vLLM 快 1.60–1.90x。</p>
+<p><strong>为什么值得看</strong> 直接挑战"通道选择必须标定"的惯例，附带高效免标定实现。</p>
+<p><a href="https://arxiv.org/abs/2610.37386">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.37386">阅读原文 ↗</a></p>
+</body>
+</html>
