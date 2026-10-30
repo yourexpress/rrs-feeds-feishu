@@ -22,9 +22,11 @@
 <h1>Fault-Tolerant Budget Conservation in Distributed Multi-Agent Delegation</h1>
 <p class="meta-line">arXiv (cs.AI) · 2026-10-02 · 论文PDF</p>
 
-<p>分布式多智能体委派中容错预算守恒的形式化框架，防止消息丢失/重复下的预算超支</p>
-<blockquote><p>Resource limits are becoming an authorization boundary for AI agents that delegate work across concurrent and failure-prone workers. Parent-child allocation constraints, affine objects, and distributed escrow do not by themselves prevent overspend when replies are lost, effects complete after timeout, messages repeat, branches partition, or DAG joins alias one lineage. We formalize fault-tolerant budget conservation for distributed multi-agent delegation. Budgets are quantized resource vectors represented by exclusive escrow credits that move through a delegation DAG. Before dispatch, a branch converts credit into an operation reservation bound to lineage, epoch, normalized effect, maximum charge, receiver, and idempotency key. It persists a signed dispatch permit with quarantine; the gateway verifies that permit before first acceptance. Uncertain effects remain charged until authenticated settlement, a fenced authoritative no-effect proof, or permanent retirement. We prove ownership partition, ledger and effect conservation, descendant non-amplification, at-most-once settlement, late-completion safety, and partition confinement under explicit mediation, durability, authentication,…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 资源限额正成为 AI 智能体委派工作的授权边界，但子父分配约束、仿射对象与分布式托管本身无法防止超支——当回复丢失、效果超时后完成、消息重复、分支分区或 DAG 连接别名化时。</p>
+<p><strong>方法</strong> 形式化分布式多智能体委派的容错预算守恒：预算为量化资源向量，以排他托管凭证在委派 DAG 中流动；分支把凭证转为绑定血缘、epoch、规范化效果、最大收费、接收者与幂等键的操作预留，网关在首次接受前校验签名许可；不确定效果在认证结算前保持计费。</p>
+<p><strong>关键数字</strong> 有界 TLA+ 检查、独立 JS 探测器和注入崩溃的双进程 SQLite 实验，在崩溃/重试/重复/分区/连接/晚完成调度下均保持预算上界（摘要未给具体数值）。</p>
+<p><strong>为什么值得看</strong> 把"预算不超支"从工程经验提升为可证明的性质，对构建多智能体执行与授权系统的人有直接价值。</p>
+<p><a href="https://arxiv.org/abs/2610.00349">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.00349">阅读原文 ↗</a></p>
 </body>
 </html>

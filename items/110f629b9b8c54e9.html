@@ -22,9 +22,11 @@
 <h1>Faynt: Scaling and Optimizing Policies for Competitive Melee</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-02 · 论文PDF</p>
 
-<p>10M/75M 小参数 Transformer 策略在格斗游戏 Melee 全角色上的扩展与优化</p>
-<blockquote><p>We introduce Faynt, a family of 10M- and 75M-parameter Transformer policies for Super Smash Bros. Melee, each controlling all 26 characters with a single checkpoint. After reinforcement learning (RL), the 10M wins 240 of 244 same-character games (98.4%) against fourteen specialist and multi-character releases on their supported rosters, with a winning record against every release. These opponents retain 21- or 24-frame action delays; Faynt uses no added delay, and we have not isolated the effect of this difference. In a separate evaluation against a privately supplied zero-delay Slippi-AI model, the 10M wins all 68 games across two conditioning settings. We study architecture, optimization, scaling, and hyperparameter transfer to guide pretraining on approximately 840,000 human replays. Post-training combines rank- and outcome-based curricula, 75M-to-10M distillation, and RL restricted to Fox mirror matches. On the initial 152-game benchmark, the supervised 10M wins 69.7% of games, compared with 45.4% for the pretrained 75M, despite higher overall held-out controller-prediction loss. The weighted validation loss used for supervised checkpoint selection agrees with the win-rate orde…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 能否用强化学习与规模化策略在竞技格斗游戏（Super Smash Bros. Melee）中击败专精 AI？此前多角色统一策略尚属空白。</p>
+<p><strong>方法</strong> 提出 Faynt，10M/75M 参数 Transformer 策略，单一 checkpoint 控制全部 26 个角色；预训练约 84 万局人类回放，后训练结合排名与结果课程、75M→10M 蒸馏及限于 Fox 镜像战的 RL。</p>
+<p><strong>关键数字</strong> RL 后 10M 在同角色对战中赢 240/244（98.4%）；对私供零延迟 Slippi-AI 模型 68 局全胜；T4 上每决策推理平均 5.2ms（10M）与 8.7ms（75M）。监督 10M 胜率 69.7% 高于预训练 75M 的 45.4%。</p>
+<p><strong>为什么值得看</strong> 展示了预训练+课程+蒸馏的完整竞技策略训练流水线，权重与评测平台开源，做游戏 AI 与强化学习的人值得看。</p>
+<p><a href="https://arxiv.org/abs/2610.02144">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.02144">阅读原文 ↗</a></p>
 </body>
 </html>

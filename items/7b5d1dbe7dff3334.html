@@ -22,9 +22,11 @@
 <h1>From Gradients to Capabilities: Understanding Multi-Teacher On-Policy Distillation</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-02 · 论文PDF</p>
 
-<p>多教师在策略蒸馏中教师信号如何影响学生参数变化的实证分析</p>
-<blockquote><p>Multi-teacher on-policy distillation (MOPD) aims to combine the strengths of RL-trained teachers in a single student, but how teacher signals affect parameter changes remains underexplored. We study Qwen3-1.7B with four domain teachers trained with RL from the same initialization as the student, comparing gradients, optimizer updates, and task learning curves, with additional SmolLM3-3B diagnostics. We find that several factors influence teacher signals. First, loss averaging implicitly weights responses: token averaging favors longer responses, and equalizing domain contributions retains this weighting within domains. Second, Adam's first moment reduces differences in parameter updates: the cosine similarity is 0.83 between teachers and 0.96 between averaging rules, despite differences in raw gradients. Third, BF16 rounding hides small changes: about 97\% of FP32 master weights differ from initialization, but only 7--11\% of BF16 weights do. Finally, the top-64 intersection KL gradient closely matches Qwen's full-vocabulary gradient, but the effect on task performance depends on averaging: mathematics accuracy is 2.6 points higher than with sampled-token policy-gradient (PG) under…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 多教师在线蒸馏（MOPD）想在一个学生里融合多个 RL 教师的优势，但教师信号如何影响参数更新此前未被充分研究。</p>
+<p><strong>方法</strong> 用 Qwen3-1.7B 与四个同初始化 RL 领域教师，比较梯度、优化器更新与任务学习曲线，并用 SmolLM3-3B 做额外诊断；考察损失平均的隐式加权、Adam 一阶矩对更新差异的压缩、BF16 取整与 top-64 交集 KL 梯度的替代性。</p>
+<p><strong>关键数字</strong> 教师间余弦相似度 0.83、不同平均规则间 0.96；约 97% FP32 主权重偏离初始化但仅 7-11% BF16 权重如此；响应平均下数学准确率比采样 token PG 高 2.6 点、全局 token 平均下低 2.1 点。</p>
+<p><strong>为什么值得看</strong> 从梯度视角拆解多教师蒸馏中"信号如何被消化"的机制，对做蒸馏与训练策略的人很有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.02179">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.02179">阅读原文 ↗</a></p>
 </body>
 </html>

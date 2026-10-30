@@ -22,9 +22,11 @@
 <h1>Associativity and Commutativity in Equality Saturation</h1>
 <p class="meta-line">arXiv (cs.PL) · 2026-10-02 · 论文PDF</p>
 
-<p>原生支持结合律/交换律运算符的相等性饱和扩展，降低 e-graph 内存爆炸</p>
-<blockquote><p>Equality saturation is a promising technique for program optimization which sidesteps the phase ordering problem. However, current e-graph implementations grow exponentially large, even for simple examples. Many practical applications involve associative and commutative (AC) operators. We present an extension of relational e-matching that handles AC operators natively by storing terms as multisets. Preliminary results show that equality saturation modulo AC uses asymptotically less memory in certain cases.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 等式饱和（equality saturation）能规避程序优化的阶段排序问题，但现有 e-graph 实现即使对简单例子也会指数级膨胀；实际应用中大量算子具有结合律与交换律（AC）性质，需要原生支持。</p>
+<p><strong>方法</strong> 提出关系型 e-matching（relational e-matching）的扩展，将项存储为多重集合（multiset）以原生处理 AC 算子，避免为同一算子的不同排列重复建节点。</p>
+<p><strong>关键数字</strong> 初步结果显示，模 AC 的等式饱和在特定情形下渐近地使用更少内存（摘要未给出具体数值）。</p>
+<p><strong>为什么值得看</strong> 针对 e-graph 爆炸这一核心痛点给出 AC 原生方案，做编译器优化与程序综合的人可关注其后续评测。</p>
+<p><a href="https://arxiv.org/abs/2610.01198">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.01198">阅读原文 ↗</a></p>
 </body>
 </html>

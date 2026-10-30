@@ -22,9 +22,11 @@
 <h1>Ditto: Generalized Reconfigurable Linearizable Reads</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-10-02 · 论文PDF</p>
 
-<p>把多种线性一致读算法统一进广义空间并可按部署重构的分析框架</p>
-<blockquote><p>Linearizability gives developers the illusion that operations on a distributed datastore execute sequentially on a single machine. Providing it is expensive, so numerous specialized reads algo- rithms have been proposed to make reads significantly faster without sacrificing linearizability, which matters because most workloads are read-dominant by orders of magnitude. Yet, none of these algorithms is the best choice for every deployment. We show why with a framework that classifies these algorithms into a generalized space together with a mathematical analysis of their latencies as a function of this generalization. The analysis exposes two fundamental tradeoffs, one between read and write latency and one between read and write tolerance to network variance, which together leave the best algorithm dependent on network and workload conditions that vary over time. It also exposes a gap: there is a way to minimize the delay a read incurs when it overlaps a concurrent write, at no cost to writes, yet exist- ing algorithms can apply it only for a subset of the tradeoff space, forcing any deployment that needs the full space to settle for a strictly worse solution. We close this gap with…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 线性化（linearizability）读写昂贵，大量只读算法被提出以在保持线性化的前提下加速读操作，但没有一种算法在所有部署条件下都最优。</p>
+<p><strong>方法</strong> 给出把这些算法统一分类的框架与延迟的数学分析，暴露两个基本权衡（读写延迟之间、读写对网络波动的容忍之间），并指出一个空白：存在一种在读与并发写重叠时最小化读延迟且不损写性能的方式，但现有算法只能覆盖权衡空间的一部分。据此提出 Pairwise Quorums 与可在运行时按条件重构的 Ditto。</p>
+<p><strong>关键数字</strong> 论文称两者组合在模型下包含所有既有算法：对每个算法要么严格更优，要么在真实权衡处重构为与之匹配（未给出具体数值）。</p>
+<p><strong>为什么值得看</strong> 统一刻画只读线性化算法空间并补齐空白，做分布式存储与一致性协议的人值得精读。</p>
+<p><a href="https://arxiv.org/abs/2610.00702">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.00702">阅读原文 ↗</a></p>
 </body>
 </html>

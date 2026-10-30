@@ -22,9 +22,11 @@
 <h1>GridSMR: Causal Compression for Sharded Blockchains</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-10-02 · 论文PDF</p>
 
-<p>分片区块链中让依赖跨片操作单块内推进的因果压缩执行架构</p>
-<blockquote><p>We present GridSMR, a sharded blockchain that scales execution horizontally while allowing dependent cross-shard operations to progress within a single block. Existing sharded systems typically place coordination between dependent cross-shard steps, making latency grow with causal depth. GridSMR localizes atomicity to individual accounts and executes cross-account work asynchronously. Using an execute-before-agree architecture, dependent operations execute across shards as they become available, while consensus later validates and commits the resulting schedule. This enables Causal Compression: cross-shard latency need not grow with the causal depth of a computation. GridSMR scales single-validator execution to 1.07M requests/s and four-validator execution to 193K committed requests/s, while reducing 16-hop causal-chain latency by 8.2x versus deferred execution.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 分片区块链通常把依赖的跨片协调放在步骤之间，延迟随因果深度增长；能否让依赖的跨片操作在同一区块内推进？</p>
+<p><strong>方法</strong> 提出 GridSMR：把原子性局部化到单个账户，跨账户工作异步执行；采用 execute-before-agree 架构，依赖操作可用即跨片执行，共识随后验证并提交生成的调度，实现因果压缩——跨片延迟不必随计算因果深度增长。</p>
+<p><strong>关键数字</strong> 单验证者执行 107 万请求/秒，四验证者提交 19.3 万请求/秒；16 跳因果链延迟相对延迟执行降低 8.2 倍。</p>
+<p><strong>为什么值得看</strong> 用"先执行后共识"打破跨片延迟与因果深度的绑定，性能数字亮眼，做区块链系统的人值得读。</p>
+<p><a href="https://arxiv.org/abs/2610.01443">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.01443">阅读原文 ↗</a></p>
 </body>
 </html>

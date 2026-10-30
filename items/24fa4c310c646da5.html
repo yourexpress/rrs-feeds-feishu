@@ -22,9 +22,11 @@
 <h1>Learn the Directions, Normalize the Gains: Post-Training Normalization for LoRA</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-02 · 论文PDF</p>
 
-<p>保留 LoRA 学习方向、重平衡奇异增益的训练后归一化方法</p>
-<blockquote><p>While Low-Rank Adaptation (LoRA) enables efficient task specialization, its learned updates can compromise capabilities beyond the target task. We identify \textbf{adaptation imbalance}: a few singular directions dominate the trained update, leaving its performance sensitive to how gains are allocated. We argue that \textbf{learning where to adapt does not ensure that adaptation gains are well balanced}. This motivates \textbf{LoRA-Norm}, a post-training normalization method that retains learned directions while rebalancing their gains. LoRA-Norm combines spectral rebalancing, a fixed nonlinear transformation of singular values, with nuclear-norm restoration, which preserves the original total spectral mass. It requires no calibration data or additional training and introduces no inference overhead. Across two backbones and three adaptation tasks, LoRA-Norm improves average specialization and capability retention, outperforming the evaluated post-hoc spectral pruning and gradient-guided editing configurations on both measures. Stronger functional equalization brings no consistent additional gains, revealing that balancing adapter gains and equalizing their responses are distinct ob…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LoRA 能高效做任务特化，但学到的更新可能损害目标任务之外的能力；识别出"适应失衡"：少数奇异方向主导训练更新，性能对增益分配敏感。</p>
+<p><strong>方法</strong> 提出 LoRA-Norm，一种训练后归一化方法：保留已学方向同时重新平衡其增益，结合谱再平衡（奇异值的固定非线性变换）与核范数恢复（保留原始总谱质量）；无需校准数据、无额外训练、无推理开销。</p>
+<p><strong>关键数字</strong> 在两个骨干与三个适应任务上，LoRA-Norm 同时改善平均特化与能力保持，优于评测的谱剪枝与梯度引导编辑配置（摘要未给出具体数值）。</p>
+<p><strong>为什么值得看</strong> 直击 LoRA 迁移学习中的能力折损，零开销后处理即可用，做参数高效微调的人值得读。</p>
+<p><a href="https://arxiv.org/abs/2610.02067">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.02067">阅读原文 ↗</a></p>
 </body>
 </html>

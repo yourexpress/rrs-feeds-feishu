@@ -22,9 +22,11 @@
 <h1>Learnt Attacks on Quantum Key Distribution under Channel Noise and Device Drift</h1>
 <p class="meta-line">arXiv (quant-ph) · 2026-10-02 · 论文PDF</p>
 
-<p>信道噪声与设备漂移下量子密钥分发的学习型自适应窃听分析</p>
-<blockquote><p>Quantum key distribution (QKD) links are provisioned from security analyses of stationary channels, whereas the devices that determine the channel drift between recalibrations. Whether an eavesdropper who cannot alter the channel's own noise gains by following that drift has not been quantified. Adaptive eavesdropping is posed here as a constrained Markov decision process in which the attacker selects one circuit per round while the noise level follows an Ornstein--Uhlenbeck process and the abort condition is a budget over each block of rounds. The value of adaptation is bounded by the best fixed circuit and a dynamic-programming upper bound. The actions are learnt attacks. Whereas Decker et al. trained a parametrised circuit on a fixed gate template against a fixed channel, here the gate structure and rotation angles are searched jointly. This yields circuits compact enough to form a discrete action set, extending the construction to noise models lacking a known template, including the amplitude damping channel. On device-independent E91 under bilateral depolarising noise, a reinforcement-learning attacker raises her Holevo information from $0.135$ for the best fixed circuit to $0…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> QKD 链路按静态信道做安全分析，但决定信道漂移的设备在重校准间变化；能跟随该漂移的窃听者能获得多少优势此前未被量化。</p>
+<p><strong>方法</strong> 把自适应窃听建模为带约束的马尔可夫决策过程：攻击者每轮选一个电路，噪声水平遵循 Ornstein-Uhlenbeck 过程，中止条件是每块轮数的预算；门结构与旋转角联合搜索（此前只固定门模板），电路足够紧凑可构成离散动作集，扩展到无已知模板的噪声模型（如振幅阻尼信道）。</p>
+<p><strong>关键数字</strong> 设备无关 E91 双边去极化噪声下，RL 攻击者把 Holevo 信息从最优固定电路的 0.135 提升到零检测时的 0.348（上界的 98%）；漂移比特翻转信道 BB84 上超过保守噪声索引规则 0.024 保真度（上界的 99%）。</p>
+<p><strong>为什么值得看</strong> 量化了"信道漂移+自适应攻击"对 QKD 的实际威胁，方法可迁移到多种噪声模型，做量子密码安全的人值得读。</p>
+<p><a href="https://arxiv.org/abs/2610.01792">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.01792">阅读原文 ↗</a></p>
 </body>
 </html>

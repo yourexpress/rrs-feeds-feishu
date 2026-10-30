@@ -22,9 +22,11 @@
 <h1>Leto: Fast In-Place Recovery for LLM Training on Surviving Hardware</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-10-02 · 论文PDF</p>
 
-<p>利用幸存硬件原地保留/预备训练状态的 LLM 训练快速故障恢复系统</p>
-<blockquote><p>Hardware-operable failures (HOFs) interrupt large language model (LLM) training but permit recovery on the same hardware without reset, repair, or replacement. Existing recovery systems nevertheless reload checkpoints, recompute lost progress, and rebuild process state, idling GPUs that could otherwise continue training. We present Leto, a fault-tolerant training system that leverages surviving hardware to enable efficient in-place recovery. Our key insight is that the state needed to resume training can be retained or prepared outside the active training process while remaining on the same hardware. Leto retains the working model state and the reusable process state, and preinitializes the remaining state in a shadow trainer. We devise two-tier erasure protection and chunk-level transactional updates to keep the retained model state recoverable and consistent, and reclaim the shadow state when active training needs its GPU memory. Evaluation on 6- and 72-GPU NVIDIA A100 clusters shows that Leto recovers 3.6--6.5$\times$ faster than the best-performing checkpointing baselines and improves productive training time by up to 13.7 percentage points. Large-scale simulation shows over 95…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 硬件可操作故障（HOF）中断 LLM 训练但可在原硬件上无重置修复恢复；现有恢复系统仍要重载 checkpoint、重算丢失进度、重建进程状态，让本可继续训练的 GPU 空转。</p>
+<p><strong>方法</strong> 提出 Leto：利用幸存硬件做高效原地恢复。关键洞见是恢复所需状态可在活跃训练进程之外保留或预制备于同一硬件上——保留工作模型状态与可复用进程状态，在影子训练器中预初始化其余状态；双层纠删保护与块级事务更新保证可恢复性与一致性，活跃训练需要显存时回收影子状态。</p>
+<p><strong>关键数字</strong> 在 6 与 72 卡 A100 集群上，恢复比最优 checkpoint 基线快 3.6-6.5 倍，生产训练时间最多提升 13.7 个百分点；大规模模拟中 13.1 万卡集群上生产训练时间超 95%。</p>
+<p><strong>为什么值得看</strong> 针对 LLM 训练中断恢复的实用系统，收益显著且已做大集群模拟，做训练基础设施的人值得关注。</p>
+<p><a href="https://arxiv.org/abs/2610.00687">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.00687">阅读原文 ↗</a></p>
 </body>
 </html>

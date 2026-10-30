@@ -22,9 +22,11 @@
 <h1>CrossGMN: Graph Metanetworks for Cross-Architecture Weight-Space Transformations</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-02 · 论文PDF</p>
 
-<p>支持跨架构权重空间变换（含压缩/扩容）的图元网络</p>
-<blockquote><p>Weight-space networks operate directly on parameters of other neural networks, enabling tasks such as predicting model properties, editing trained models, and generating weights. Weight-space symmetries such as neuron permutations make equivariance a key design principle. However, existing equivariant weight-space architectures have primarily been studied for transformations that preserve the network architecture. In contrast, many practical transformations, including model compression and upscaling, map a trained source network into a target network with a different architecture. In this setting, the source and target permutation symmetries act on different parameter spaces, making equivariance less straightforward to formulate. Our key idea for addressing this mismatch is to reformulate cross-architecture operators with two inputs: a trained source network and an initialization of the target network. This lets us define equivariant cross-architecture operators that refine the initialization of the target network using information from the source network, while being invariant to source-network permutations and equivariant to target-network permutations. Based on this formulation,…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 权重空间网络此前主要研究保持架构不变的变换，而模型压缩、放大等实际变换要把源网络映射到不同架构的目标网络，两边置换对称性作用在不同参数空间，等变性难以表述。</p>
+<p><strong>方法</strong> 关键思路是把跨架构算子重定义为两个输入：已训练的源网络 + 目标网络初始化，从而定义对源置换不变、对目标置换等变的算子；据此提出 CrossGMN 图元网络，用保持对称性的跨网络消息传递联合处理两个网络，并证明其在紧集上的普适性。</p>
+<p><strong>关键数字</strong> 在 2D/3D INR 与 MLP/CNN/ViT 图像分类上，蒸馏加速最高 8.89 倍；跨数据集无需重训迁移 3.78 倍。</p>
+<p><strong>为什么值得看</strong> 首次系统处理跨架构权重变换的等变性问题，压缩-蒸馏流水线收益显著，做模型压缩与权重空间学习的人值得关注。</p>
+<p><a href="https://arxiv.org/abs/2610.01649">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.01649">阅读原文 ↗</a></p>
 </body>
 </html>

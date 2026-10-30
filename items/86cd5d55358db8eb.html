@@ -22,9 +22,11 @@
 <h1>FedSAP: Federated Learning with Structured Adaptive Partitioning for Multi-Domain Heterogeneous Edge Devices</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-02 · 论文PDF</p>
 
-<p>面向多域异构边缘设备的结构化自适应模型划分联邦学习框架</p>
-<blockquote><p>Federated learning (FL) on heterogeneous edge devices must jointly accommodate unequal resource budgets and domain-shifted local data. Existing resource-adaptive methods decide how much of a model each client trains but not where retained capacity should reside or how it should be shared, whereas federated domain-generalization methods usually assume a shared full architecture. Uniform compression can therefore discard high-utility channels, and a single aggregation path can mix transferable features with domain-sensitive updates. We propose FedSAP, a domain-aware heterogeneous FL framework that casts structured pruning as budget-constrained tri-state channel allocation. FedSAP converts each keep ratio into non-uniform layer budgets, assigns stable channels to a Global pool, useful domain-sensitive channels to pseudo-domain-specific Private pools, and low-utility channels to a Dropped state. This partition lets broadly useful features benefit from cross-client pooling while isolating domain-sensitive updates from incompatible clients. Domain-Guided Assignment infers pseudo-domains from shallow-gradient similarity, while Type-Matched Aggregation restricts each channel to its intende…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 异构边缘设备的联邦学习须同时适配资源预算不均与域偏移数据：资源自适应方法决定训练多少却不决定容量留在哪、如何共享；域泛化方法又通常假设共享完整架构，统一压缩会丢弃高价值通道。</p>
+<p><strong>方法</strong> 提出 FedSAP，把结构化剪枝建模为预算约束的三态通道分配：稳定通道入全局池、有用的域敏感通道入伪域私有池、低效用通道置 Dropped；域引导分配用浅层梯度相似度推断伪域，类型匹配聚合限制各通道的共享范围。</p>
+<p><strong>关键数字</strong> 三种子下 Digits 与 Office-Caltech 平均全局精度 76.00% 与 72.67%，超最强基线 1.70 与 4.92 个百分点；支持异构客户端剪枝率最高 80%。</p>
+<p><strong>为什么值得看</strong> 同时解决"在哪保留容量"与"如何共享"，域敏感与通用特征分离的设计对异构联邦学习很有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.01638">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.01638">阅读原文 ↗</a></p>
 </body>
 </html>

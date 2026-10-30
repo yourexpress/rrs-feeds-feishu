@@ -22,9 +22,11 @@
 <h1>Fixing the Fixpoint: A Formal Theory of Convergence Detection for Incremental Recursive Computation</h1>
 <p class="meta-line">arXiv (cs.PL) · 2026-10-02 · 论文PDF</p>
 
-<p>增量递归计算定点检测收敛性的形式化理论，证明常用 FirstZero 策略不可靠</p>
-<blockquote><p>Modern incremental computation theories like DBSP have enabled efficient incrementalization of general recursive computations. To do so, they require a runtime Fixpoint Detection (FPD) mechanism to detect whether an iterative computation has reached the fixpoint and thus should terminate. However, we show that the commonly suggested "FirstZero" strategy is unsound even in naturally arising cases, and that exact FPD is impossible for arbitrary DBSP circuits with expressive primitive nodes. This issue reveals a fundamental gap between the mathematical specification and implementations of such theories. To fill this gap, using DBSP as a core calculus, we develop a formal theory of convergence detection. Within this theory, we define internal convergence (IntConv) as a declarative criterion corresponding to the internal-state-stability strategy used by practical implementations, and prove that IntConv is a sufficient condition for external convergence. We then define the state fixpoint (StFP) predicate and a sound and complete StFP detector. Combining the StFP detector with fixed-input and zero-output checks yields a sound and complete IntConv detector. Moreover, for a large class of u…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 增量递归计算的运行时收敛检测（FPD）：DBSP 等理论依赖 FPD 判断迭代是否到达不动点，但常用的 "FirstZero" 策略在自然情形下不健全，任意含表达力原语节点的 DBSP 电路上精确 FPD 不可能。</p>
+<p><strong>方法</strong> 以 DBSP 为核心演算建立收敛检测形式理论：定义内部收敛（IntConv）对应实现常用的内部状态稳定策略并证明其是外部收敛的充分条件；定义状态不动点（StFP）谓词与健全完备的 StFP 检测器，结合固定输入与零输出检查得到健全完备的 IntConv 检测器。</p>
+<p><strong>关键数字</strong> 对 Datalog 查询、嵌套 while 查询及其增量优化版本，IntConv 不仅健全而且完备；全部结果在 Lean 中形式化验证。</p>
+<p><strong>为什么值得看</strong> 弥合增量计算数学规范与实现之间的根本鸿沟，带机器验证的证明，做增量编译与递归查询引擎的人值得读。</p>
+<p><a href="https://arxiv.org/abs/2610.00530">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.00530">阅读原文 ↗</a></p>
 </body>
 </html>

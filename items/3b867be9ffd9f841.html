@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Optimizing the MLIR-Based Torq NPU Compiler</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Optimizing the MLIR-Based Torq NPU Compiler</h1>
+<p class="meta-line">BLOG · 2026-10-28 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://www.edge-ai-vision.com/wp-content/uploads/2026/10/enerzai-torq-npu-compiler.png" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong> ENERZAi 为 Synaptics Astra SL2610 系列 Torq NPU 的开源 IREE/MLIR 编译器做后端实现与模型优化，重点排查 SLICE 并行带来的隐藏数据搬运（DMA）开销。</p>
+<p><strong>要点</strong> Torq NPU 含两个 SLICE 计算块，把算子一分为二并行看似自然，但切分在张量级 IR 阶段决定，下放后每个分片各自产生 load/store 与程序搬运，常量或输入可能被重复搬入 LRAM，开销抵消并行收益。团队在编译器各层消除多余 DMA：fuse-group 合并、SLICE 提取前置、暴露访存语义等。</p>
+<p><strong>关键数字</strong> 正文未给出量化加速指标，属工程经验分享。</p>
+<p><strong>为什么值得看</strong> NPU 编译器生态尚不成熟，此文展示了真实硬件上"并行切分 vs 数据移动"的权衡与编译器层解法，对做 NPU 后端与算子优化的人有直接参考价值。</p>
+<p><a href="https://www.edge-ai-vision.com/2026/10/optimizing-the-mlir-based-torq-npu-compiler/">阅读原文</a></p>
+<p><a class="origin" href="https://www.edge-ai-vision.com/2026/10/optimizing-the-mlir-based-torq-npu-compiler/">阅读原文 ↗</a></p>
+</body>
+</html>

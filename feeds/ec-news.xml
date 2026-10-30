@@ -5,8 +5,36 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>模型压缩 / ML 编译 / HPC / 边缘计算 / 低功耗计算方向最新技术博客与官方公告（网页类内容）。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 29 Oct 2026 23:27:49 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 11:24:31 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/ec-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AMD ROCm HRX Loom v0.1: Compiler &amp; IR Stack for AMD CPUs, GPUs &amp; NPUs</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/0e8110f9b66aeeac.html</link>
+      <guid isPermaLink="true">https://www.phoronix.com/news/AMD-Loom-v0.1</guid>
+      <pubDate>Thu, 29 Oct 2026 12:00:00 +0800</pubDate>
+    <category>技术博客</category>
+    <category>每日精选</category>
+      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：BLOG　&lt;strong&gt;发布&lt;/strong&gt;：2026-10-29　&lt;strong&gt;分类&lt;/strong&gt;：技术博客 / 每日精选&lt;/p&gt;&lt;p style="font-size:1.05em"&gt;AMD 发布 ROCm HRX Loom v0.1——面向 CPU/GPU/NPU 的统一编译器与 IR 栈首个正式版本，支持 AMDGPU HSA/SPIR-V-Vulkan 目标与 loom-fetch/loom-serve 工具链，pip 安装 hrx-loom&lt;/p&gt;&lt;p style="color:#6b7280;font-size:0.9em"&gt;本条为技术博客 / 每日精选，订阅源内提供主题摘要；完整内容请点击下方链接阅读原文。&lt;/p&gt;&lt;p style="color:#0969da;font-size:0.9em"&gt;★ 本条入选当日精选&lt;/p&gt;&lt;p style="margin-top:14px"&gt;&lt;a href="https://www.phoronix.com/news/AMD-Loom-v0.1"&gt;阅读原文 ↗&lt;/a&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p><strong>发表方</strong>：BLOG　<strong>发布</strong>：2026-10-29　<strong>分类</strong>：技术博客 / 每日精选</p><p style="font-size:1.05em">AMD 发布 ROCm HRX Loom v0.1——面向 CPU/GPU/NPU 的统一编译器与 IR 栈首个正式版本，支持 AMDGPU HSA/SPIR-V-Vulkan 目标与 loom-fetch/loom-serve 工具链，pip 安装 hrx-loom</p><p style="color:#6b7280;font-size:0.9em">本条为技术博客 / 每日精选，订阅源内提供主题摘要；完整内容请点击下方链接阅读原文。</p><p style="color:#0969da;font-size:0.9em">★ 本条入选当日精选</p><p style="margin-top:14px"><a href="https://www.phoronix.com/news/AMD-Loom-v0.1">阅读原文 ↗</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Optimizing the MLIR-Based Torq NPU Compiler</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/3b867be9ffd9f841.html</link>
+      <guid isPermaLink="true">https://www.edge-ai-vision.com/2026/10/optimizing-the-mlir-based-torq-npu-compiler/</guid>
+      <pubDate>Wed, 28 Oct 2026 12:00:00 +0800</pubDate>
+    <category>技术博客</category>
+    <category>每日精选</category>
+      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：BLOG　&lt;strong&gt;发布&lt;/strong&gt;：2026-10-28　&lt;strong&gt;分类&lt;/strong&gt;：技术博客 / 每日精选&lt;/p&gt;&lt;p&gt;&lt;img src="https://www.edge-ai-vision.com/wp-content/uploads/2026/10/enerzai-torq-npu-compiler.png" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;核心话题&lt;/strong&gt; ENERZAi 为 Synaptics Astra SL2610 系列 Torq NPU 的开源 IREE/MLIR 编译器做后端实现与模型优化，重点排查 SLICE 并行带来的隐藏数据搬运（DMA）开销。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;要点&lt;/strong&gt; Torq NPU 含两个 SLICE 计算块，把算子一分为二并行看似自然，但切分在张量级 IR 阶段决定，下放后每个分片各自产生 load/store 与程序搬运，常量或输入可能被重复搬入 LRAM，开销抵消并行收益。团队在编译器各层消除多余 DMA：fuse-group 合并、SLICE 提取前置、暴露访存语义等。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;关键数字&lt;/strong&gt; 正文未给出量化加速指标，属工程经验分享。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;为什么值得看&lt;/strong&gt; NPU 编译器生态尚不成熟，此文展示了真实硬件上"并行切分 vs 数据移动"的权衡与编译器层解法，对做 NPU 后端与算子优化的人有直接参考价值。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.edge-ai-vision.com/2026/10/optimizing-the-mlir-based-torq-npu-compiler/"&gt;阅读原文&lt;/a&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p><strong>发表方</strong>：BLOG　<strong>发布</strong>：2026-10-28　<strong>分类</strong>：技术博客 / 每日精选</p><p><img src="https://www.edge-ai-vision.com/wp-content/uploads/2026/10/enerzai-torq-npu-compiler.png" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"></p><p><strong>核心话题</strong> ENERZAi 为 Synaptics Astra SL2610 系列 Torq NPU 的开源 IREE/MLIR 编译器做后端实现与模型优化，重点排查 SLICE 并行带来的隐藏数据搬运（DMA）开销。</p>
+<p><strong>要点</strong> Torq NPU 含两个 SLICE 计算块，把算子一分为二并行看似自然，但切分在张量级 IR 阶段决定，下放后每个分片各自产生 load/store 与程序搬运，常量或输入可能被重复搬入 LRAM，开销抵消并行收益。团队在编译器各层消除多余 DMA：fuse-group 合并、SLICE 提取前置、暴露访存语义等。</p>
+<p><strong>关键数字</strong> 正文未给出量化加速指标，属工程经验分享。</p>
+<p><strong>为什么值得看</strong> NPU 编译器生态尚不成熟，此文展示了真实硬件上"并行切分 vs 数据移动"的权衡与编译器层解法，对做 NPU 后端与算子优化的人有直接参考价值。</p>
+<p><a href="https://www.edge-ai-vision.com/2026/10/optimizing-the-mlir-based-torq-npu-compiler/">阅读原文</a></p>]]></content:encoded>
+    </item>
     <item>
       <title>llama.cpp b11889 cuda: use std::string instead of VLA for archName (#30463)</title>
       <link>https://yourexpress.github.io/rrs-feeds-feishu/items/6d21507738d1c26c.html</link>

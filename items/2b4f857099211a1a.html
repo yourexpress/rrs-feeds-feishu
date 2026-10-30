@@ -22,9 +22,11 @@
 <h1>HakiCC: LLM-Driven Multi-Agent Design and Optimization of Concurrency Control Protocols</h1>
 <p class="meta-line">arXiv (cs.DB) · 2026-10-02 · 论文PDF</p>
 
-<p>LLM 多智能体自动设计与优化应用定制的事务并发控制协议</p>
-<blockquote><p>Large language models (LLMs) have recently been applied in systems research as a tool to reduce human-intensive engineering effort through cost-efficient automation. Decades of research have produced a rich landscape of concurrency control (CC) protocols, each encoding distinct trade-offs in correctness, throughput, and abort behavior. However, most applications in practice default to 2PL or OCC, because selecting and adapting a protocol to a specific application requires expert knowledge that is rarely available to application designers. This is a wasted opportunity, as an application-specific CC protocol can yield significant performance advantages over a generic baseline, but designing one requires deep expertise in CC protocol design. In this paper, we propose HakiCC, an LLM-driven multi-agent pipeline that automatically designs, verifies, and optimizes concurrency control protocols tailored to a given target application. HakiCC provides a two-stage pipeline. In Stage 1, a multi-agent system takes a workload description as input and generates an application-specific CC protocol implementation, which is iteratively repaired and verified for conflict-serializability. In Stage 2, …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 并发控制（CC）协议种类繁多、各有正确性/吞吐/中止权衡，但实践中大多默认 2PL 或 OCC，因为为特定应用设计与适配协议需要稀缺专家知识；应用定制 CC 协议可显著优于通用基线。</p>
+<p><strong>方法</strong> 提出 HakiCC，LLM 驱动的多智能体流水线：阶段 1 多智能体根据工作负载描述生成应用定制 CC 协议实现，迭代修复并验证冲突可串行化；阶段 2 用 LLM 驱动的进化循环针对正确性与吞吐优化。</p>
+<p><strong>关键数字</strong> 在 TPC-C 与 AuctionMark 上产出 10 个协议，阶段 1 后全部冲突可串行化；阶段 2 每个协议吞吐都提升，TPC-C 平均 +50.6%、AuctionMark 平均 +92.2%。</p>
+<p><strong>为什么值得看</strong> 用 LLM 自动设计+验证+优化数据库核心机制，收益显著，做数据库系统与 LLM 应用的人值得关注。</p>
+<p><a href="https://arxiv.org/abs/2610.00889">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.00889">阅读原文 ↗</a></p>
 </body>
 </html>
