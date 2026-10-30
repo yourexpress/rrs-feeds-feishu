@@ -22,9 +22,11 @@
 <h1>Trust but Verify: Designing Region-Inhomogeneous Forward Dynamics for Discrete Diffusion</h1>
 <p class="meta-line">arXiv · 2026-10-02 · 论文PDF</p>
 
-<p>Continuous diffusion treats the forward process as a design space; discrete language diffusion often uses absorbing corruption, leaving context fully trusted throughout generation.</p>
-<blockquote><p>Continuous diffusion treats the forward process as a design space; discrete language diffusion often uses absorbing corruption, leaving context fully trusted throughout generation. This makes trust binary: corrupted context is copied as ground truth, propagating errors into generated spans. We reopen this design space by combining absorbing and uniform-mixing kernels with region-dependent rates. Missing positions follow absorbing dynamics, while context undergoes low-rate random substitution, exposing the model to observed but uncertain tokens during training. At inference, a heuristic sampler re-injects noise into suspicious context under an annealed intensity and freezes context updates late in the trajectory. An 8,000-step finetune of a pretrained 170M-parameter masked diffusion model takes under five hours on a 6 GB laptop GPU. The base model assigns roughly 50% probability to observed tokens even when they are uniform-random garbage. For uniform-random corruption, finetuning detects corrupted context with 0.96 recall and 0.91 precision, improves infill token-F1 by 3.8 points at 10% corruption and 6.4 points at 20%, and removes the accuracy dip next to corruptions. Clean condit…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 离散语言扩散常用吸收式损坏，生成全程把上下文当真相复制，损坏会作为真值传播进生成片段。</p>
+<p><strong>方法：</strong> 重开前向过程设计空间：吸收与均匀混合核按区域不同速率组合——缺失位置吸收式、上下文低速率随机替换，让模型在训练中见到"观察到但不确定"的 token；推理时启发式采样器按退火强度向可疑上下文重注入噪声。</p>
+<p><strong>关键数字：</strong> 170M 参数掩码扩散模型 8000 步微调在 6 GB 笔记本 GPU 上 5 小时内完成；统一随机损坏检测召回 0.96、精度 0.91；10% 损坏下 infill token-F1 +3.8 点、20% 下 +6.4 点；干净条件假编辑率 &lt;0.4%。</p>
+<p><strong>为什么值得看：</strong> "信任轴"视角：上下文可信度连续化，可检测并缓解损坏传播。</p>
+<p><a href="https://arxiv.org/abs/2610.22380">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.22380">阅读原文 ↗</a></p>
 </body>
 </html>

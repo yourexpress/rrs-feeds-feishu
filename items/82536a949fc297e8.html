@@ -22,9 +22,11 @@
 <h1>MiLoop: Selective Memory Propagation for Neural Combinatorial Optimization</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-02 · 论文PDF</p>
 
-<p>神经组合优化中按步选择性传播记忆、免重建子问题表示的方法</p>
-<blockquote><p>Constructive neural combinatorial optimization (NCO) has emerged as a promising paradigm that learns to construct solutions to combinatorial optimization problems (COPs) step by step, which reduces reliance on handcrafted rules and enables fast inference. While many methods with dynamic embeddings generalize well, they typically rebuild subproblem representations from scratch at each step using deep attention stacks. Many high-performing methods in this category rely on solution labels or pseudo-labels for efficient training, or on aggressive search space pruning during reinforcement learning (RL). To address these limitations, we propose Memory-in-the-Loop (MiLoop), a purely RL-based constructive framework that leverages the multi-step computation already required by a rollout for selective memory propagation. Each rollout provides solution-quality feedback for learning while propagating historical representations, thereby enabling a shallow policy to learn effective dynamic embeddings without external solution labels or training-time search-space pruning. Specifically, MiLoop fuses current embeddings with historical memory before the attention layers and applies adaptive gated up…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 构造式神经组合优化（NCO）的动态嵌入方法每步用深层注意力从零重建子问题表示，且高性能方法多依赖解标签或训练时搜索空间剪枝。</p>
+<p><strong>方法：</strong> MiLoop 是纯 RL 构造式框架，复用 rollout 已有的多步计算做选择性记忆传播：注意力层前融合当前嵌入与历史记忆，之后用自适应门控更新，浅层策略即可学到有效动态嵌入，无需外部标签或训练时剪枝。</p>
+<p><strong>关键数字：</strong> 在 4 个组合优化问题上，实例规模从 100 到 1000 万节点均持续产出高质量解。</p>
+<p><strong>为什么值得看：</strong> 纯 RL、免标签免剪枝，展示记忆传播对 NCO 泛化能力的提升。</p>
+<p><a href="https://arxiv.org/abs/2610.01685">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.01685">阅读原文 ↗</a></p>
 </body>
 </html>

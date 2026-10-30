@@ -22,9 +22,11 @@
 <h1>Smoother Flow Matching via Contrastive Trajectory Repulsion</h1>
 <p class="meta-line">arXiv (cs.CV) · 2026-10-02 · 论文PDF</p>
 
-<p>通过对比轨迹排斥显式抑制轨迹交叉、平滑 Flow Matching 速度场学习</p>
-<blockquote><p>Trajectory crossing remains a critical bottleneck in Flow Matching (FM), and previous works typically view these crossings from a theoretical optimization perspective causing velocity averaging. They attempt to address it indirectly by post-hoc distillation or endpoint coupling, without explicitly regulating the intermediate trajectories. In this paper, we introduce a new network learning perspective: crossing points inherently induce large local Lipschitz constants in the target velocity field, leading to two drawbacks. First, high Lipschitz constants correspond to high-frequency signals in the velocity field that neural networks struggle to fit due to spectral bias. Second, they also imply drastic velocity variations, leading to severe numerical integration errors in few-step inference. To alleviate this, we propose CoFlow, a framework that introduces the contrastive learning paradigm into FM to explicitly repel trajectories during training, thereby lowering the local Lipschitz constants of the velocity field. Specifically, we formulate CoFlow from a Stochastic Differential Equation (SDE) perspective by injecting a repulsive drift term. This drift actively guides the forward proc…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> Flow Matching（FM）的轨迹交叉导致速度平均、目标速度场局部 Lipschitz 常数大，神经网络难拟合且少步推理数值积分误差严重。</p>
+<p><strong>方法：</strong> CoFlow 把对比学习引入 FM：从 SDE 视角注入排斥漂移项，训练中主动引导正样本前向过程远离负轨迹，降低速度场局部 Lipschitz 常数；并给出等价的随机插值形式以控制负样本影响。</p>
+<p><strong>关键数字：</strong> ImageNet 256×256 上少步推理（如 20 步）相对标准 FM 显著降低 FID，且无额外训练开销。</p>
+<p><strong>为什么值得看：</strong> 直击轨迹交叉瓶颈，少步生成质量提升且实现简洁。</p>
+<p><a href="https://arxiv.org/abs/2610.01408">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.01408">阅读原文 ↗</a></p>
 </body>
 </html>

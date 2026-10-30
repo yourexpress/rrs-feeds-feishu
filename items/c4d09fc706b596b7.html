@@ -22,9 +22,11 @@
 <h1>Towards Fast and Disentangled Counterfactuals for Visual Foundation Models</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-02 · 论文PDF</p>
 
-<p>冻结基础模型+条件扩散解码器实现视觉基础模型的快速解耦反事实解释</p>
-<blockquote><p>Foundation models remain vulnerable to spurious correlations and ``Clever Hans'' strategies. Explainable machine learning can find and remove such strategies for classifiers without metadata. For foundation models, no such option exists yet. We propose Disentangled Diffusion Autoencoders (DiDAE). DiDAE wraps a frozen foundation model in a conditional diffusion decoder. A counterfactual is one closed-form edit along a direction of a disentangled dictionary, followed by decoding. The dictionary can be supervised (Procrustes) or unsupervised (Singular Value Decomposition, Sparse Autoencoders). No gradients are needed, so DiDAE is up to 2000 times faster than the state of the art. We evaluate on six datasets, two synthetic and four real-world. In a desiderata-driven benchmark on three of them, its counterfactuals are on par with or better than the state of the art, and they repair downstream classifiers through Counterfactual Knowledge Distillation (CFKD), where they beat metadata-based correction. The same machinery can rank a pretrained dictionary against a trained classifier. It returns the few directions the classifier actually reads, each causally verified by a counterfactual that…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 基础模型易受虚假相关与"聪明汉斯"策略影响，而现有可解释 ML 修复手段对无元数据分类器可用、对基础模型却缺失。</p>
+<p><strong>方法：</strong> 解缠扩散自编码器（DiDAE）：冻结基础模型并外包条件扩散解码器；反事实即沿解缠字典方向的一次闭式编辑再解码，无需梯度；字典可监督（Procrustes）或非监督（SVD、稀疏自编码器）。</p>
+<p><strong>关键数字：</strong> 比 SOTA 快至 2000 倍；6 个数据集评估；CFKD 修复下游分类器时优于基于元数据的修正。</p>
+<p><strong>为什么值得看：</strong> 基础模型反事实解释与修复的即插即用方案，配套 Peal 库开源。</p>
+<p><a href="https://arxiv.org/abs/2610.00895">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.00895">阅读原文 ↗</a></p>
 </body>
 </html>

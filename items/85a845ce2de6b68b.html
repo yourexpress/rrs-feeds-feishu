@@ -22,9 +22,11 @@
 <h1>Serving a Revisable World: Versioned Execution for Interruptible Agents</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-10-02 · 论文PDF</p>
 
-<p>以版本化执行为核心重构 LLM 智能体服务控制面，支持任务中断与修订</p>
-<blockquote><p>LLM agents revise running tasks when users change instructions, tools fail, or new information changes a plan. Today's servers express a revision as aborting old requests and submitting replacements. Yet the old execution's buffered output and outstanding work must stop affecting the application, while completed KV state may still be useful to its replacement. Handling these obligations separately can leave obsolete effects publishable and force the successor to rebuild valid state. We present \retire, a serving control-plane redesign around \emph{versioned execution}. Requests own scheduling and memory resources; execution versions own \emph{authority}, the permission to publish output or install state for the current execution. \retire first revokes obsolete work, then bounds its remaining execution and certifies the completed prefix its successor can inherit. The successor runs from that state while isolated old resources are reclaimed asynchronously. This unifies fast invalidation and selective preservation in one version transition. We implement \retire in vLLM across output publication, GPU execution, KV handoff, tiered recovery, and distributed and multi-tenant serving. Corr…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> LLM agent 因指令变更、工具失败等修订运行任务时，旧请求的缓冲输出与未完成工作仍可能影响应用，而已完成 KV 状态对后继执行可能仍有价值。</p>
+<p><strong>方法：</strong> 围绕"版本化执行"重构服务控制面：执行版本拥有发布输出/安装状态的权威；先撤销过时工作、界定剩余执行、认证可继承前缀，后继从该状态运行，旧资源异步回收。在 vLLM 中实现。</p>
+<p><strong>关键数字：</strong> 受控配对实验中，修订到后继首 token 时间中位降低 17.1%；编码 agent 中断回放无过时输出、各最终版本持续推进。</p>
+<p><strong>为什么值得看：</strong> 把中止重发变为协调交接，兼顾快速失效与选择性保留。</p>
+<p><a href="https://arxiv.org/abs/2610.01160">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.01160">阅读原文 ↗</a></p>
 </body>
 </html>

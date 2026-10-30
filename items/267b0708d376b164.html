@@ -22,9 +22,11 @@
 <h1>Open-Source Multi-Wire SPI Readout for Wearable Ultrasound Probes</h1>
 <p class="meta-line">arXiv (cs.AR) · 2026-10-02 · 论文PDF</p>
 
-<p>可穿戴超声探头采集端开源多线 SPI 读出接口，突破无线传输瓶颈</p>
-<blockquote><p>Wearable ultrasound probes must transfer increasingly large acquisition payloads while maintaining compact, low-power electronics. In TinyProbe, the current bottleneck in data transfer occurs between the acquisition FPGA and the wireless system controller. This work presents an open-source, multi-wire SPI readout interface that uses serial command and address phases followed by a build-time-selectable dual- or quad-lane payload phase that is intended to address this bottleneck by increasing the potential bandwidth over the wifi limit while retaining compatibility with the Microcontroller-centric wearable US architecture. The interface emulates a serial flash memory, enabling compatibility with a broad range of microcontroller families and their existing peripheral interfaces. On the FPGA, the data path connects the existing acquisition FIFOs to the SPI interface through clock-domain crossing, sample reshaping, and packing into 32-bit words. Dual-SPI readout is integrated into the existing IGLOO2/SiWG917 TinyProbe architecture and verified at an SCLK frequency of 5 MHz. A separate Kria K26 testbed is used to characterize the FPGA SPI interface independently of the acquisition and wi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> TinyProbe 可穿戴超声探头的采集 FPGA 与无线系统控制器之间的数据传输成为带宽瓶颈。</p>
+<p><strong>方法：</strong> 开源多线 SPI 读出接口：串行命令/地址相位后接编译期可选的双/四通道载荷相位；模拟串行闪存以兼容多种 MCU 家族及其外设接口；FPGA 侧完成时钟域交叉、样本整形与 32 位字打包。</p>
+<p><strong>关键数字：</strong> Dual-SPI 在 IGLOO2/SiWG917 架构上以 5 MHz SCLK 验证；Kria K26 测试台在最高 66 MHz SCLK 下无误码传输。</p>
+<p><strong>为什么值得看：</strong> 开源 HDL 与 MCU 实现，定位并绕过可穿戴超声数据通路瓶颈，许可宽松。</p>
+<p><a href="https://arxiv.org/abs/2610.01623">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.01623">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Where-OPD: Spatially Guided On-Policy Self-Distillation of MLLMs with Synthetic Scenes</h1>
 <p class="meta-line">arXiv (cs.CV) · 2026-10-02 · 论文PDF</p>
 
-<p>用合成场景做空间引导特权信息的 MLLM 在策略自蒸馏</p>
-<blockquote><p>On-policy self-distillation has recently emerged as an effective approach for improving language-model reasoning by supervising students with a frozen or EMA version of themselves that receives privileged information. Its application to multimodal large language models (MLLMs), however, remains largely unexplored. Recent approaches use privileged visual information, such as image crops corresponding to a question, to improve fine-grained perception, but their gains are confined to tasks that benefit from such visual zooming and require either human-annotated grounding data or external teacher models. We introduce a different form of on-policy self-distillation for MLLMs that provides the teacher with textual, spatially grounded guidance identifying the visual elements relevant to a query. We use procedurally generated scenes with automatically available object identities and spatial coordinates, enabling scalable and annotation-free post-training. The teacher uses this spatial guidance to locate and integrate evidence from multiple relevant image regions, while the student learns to reproduce the resulting behavior from the image and question alone. Our approach consistently improv…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> on-policy 自蒸馏对语言模型推理有效，但在多模态大模型（MLLM）上探索不足；现有特权视觉方法依赖人工标注或外部教师模型。</p>
+<p><strong>方法：</strong> 给教师提供文本化、空间定位的引导——指出与查询相关的视觉元素位置；用程序化生成场景（自动带对象身份与坐标）做免标注后训练，学生仅凭图像与问题复现教师行为。</p>
+<p><strong>关键数字：</strong> 仅用合成场景训练后，CVBench、V*、ZoomBench、BLINK、HR-Bench、MME-RealWorld 六基准平均提升 3.23 点。</p>
+<p><strong>为什么值得看：</strong> 合成到真实的跨分布迁移，空间引导激发 MLLM 更广的感知能力。</p>
+<p><a href="https://arxiv.org/abs/2610.02117">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.02117">阅读原文 ↗</a></p>
 </body>
 </html>

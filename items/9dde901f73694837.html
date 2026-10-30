@@ -22,9 +22,11 @@
 <h1>MANTA: Machine Learning Augmented Tiering Advisor</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-10-02 · 论文PDF</p>
 
-<p>用离线最优参考指导在线策略的机器学习增强内存分层（DRAM+CXL）顾问</p>
-<blockquote><p>Memory tiering has been used to expand memory capacity, particularly in datacenters, by combining fast DRAM with slower tiers, including CXL-attached memory. Its effectiveness depends on keeping useful pages in the fast tier, but existing heuristic policies can lag behind changing hot sets in phased or bursty workloads. To explore these limitations, we introduce ChOMP, a scalable offline optimizer that minimizes placement and bandwidth-sensitive migration costs. We then develop a trace-driven simulator that uses this reference to identify performance opportunities for online policies. Motivated by these results, MANTA predicts future page usefulness from runtime access features and integrates a lightweight learned model into ARMS. Across eight workloads on emulated CXL, MANTA achieves geometric-mean speedups over ARMS of 1.12$\times$ and 1.08$\times$ at 4~GB of fast memory on Linux 6.2 and 6.18, respectively; across six Optane workloads, it achieves 1.69$\times$. On individual workloads, MANTA is up to 1.25$\times$ faster than ARMS with emulated CXL on Linux 6.2, 1.21$\times$ on Linux 6.18, and 5.6$\times$ with Optane.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 内存分层（DRAM 加 CXL 等慢速层）的有效性取决于热页能否留在快速层，而现有启发式策略在阶段式/突发负载下跟不上热集变化。</p>
+<p><strong>方法：</strong> 先提出 ChOMP 离线优化器与轨迹驱动模拟器量化性能机会，再让 MANTA 从运行时访问特征预测页面未来有用性，将轻量学习模型集成进 ARMS 在线策略。</p>
+<p><strong>关键数字：</strong> 8 个模拟 CXL 负载上相对 ARMS 的几何平均加速 1.12×（Linux 6.2）与 1.08×（Linux 6.18），6 个 Optane 负载达 1.69×；单负载最高 1.25×/1.21×/5.6×。</p>
+<p><strong>为什么值得看：</strong> 用学习模型替代启发式做内存分层决策，数据中心容量扩展场景直接受益。</p>
+<p><a href="https://arxiv.org/abs/2610.00714">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.00714">阅读原文 ↗</a></p>
 </body>
 </html>

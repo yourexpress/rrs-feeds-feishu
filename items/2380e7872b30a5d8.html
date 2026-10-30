@@ -22,9 +22,11 @@
 <h1>Vulnerability-Weighted Routing of Timing-Critical Nets for Configuration-Upset-Resilient SRAM-Based FPGAs</h1>
 <p class="meta-line">arXiv (eess.SY) · 2026-10-02 · 论文PDF</p>
 
-<p>将布线故障严重程度纳入目标的 SRAM FPGA 抗配置扰动漏洞加权布线方法</p>
-<blockquote><p>Conventional FPGA routing optimizes timing, congestion, and routability but does not distinguish routes with similar nominal performance and substantially different susceptibility to configuration-induced delay degradation. This paper presents a vulnerability-weighted routing methodology for SRAM-based field-programmable gate arrays (FPGAs) that incorporates predicted routing-fault severity directly into the routing objective. A continuous vulnerability cost relates delay perturbations caused by electrically attachable dormant routing resources to the available downstream timing slack, while a complementary configuration-concentration term discourages excessive localization of vulnerable resources. To limit implementation disruption, only the highest-risk nets are selectively ripped up and rerouted while unaffected routes remain fixed. The method is implemented on a Zynq UltraScale+ XCZU7EV using a Vivado/RapidWright-based flow and evaluated across four routed benchmarks against commercial timing-driven routing, vulnerability-agnostic rerouting, and binary vulnerable-resource avoidance. Controlled configuration-equivalent perturbations provide hardware-level validation. The propose…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 传统 FPGA 布线优化时序/拥塞/可布线性，却不区分名义性能相近、对配置诱导延迟退化敏感度迥异的路径。</p>
+<p><strong>方法：</strong> 脆弱性加权布线：连续脆弱性代价把可电气吸附的休眠布线资源引起的延迟扰动关联到可用下游时序裕量，另设配置集中项防止脆弱资源过度局部化；仅对最高风险网选择性拆线重布。</p>
+<p><strong>关键数字：</strong> 配置诱导时序脆弱性降低 41.7%，名义时序退化约 1.0%；只重布最高风险 5% 的合格网即捕获扩展布线预算下 85.8% 的脆弱性降低。</p>
+<p><strong>为什么值得看：</strong> SRAM FPGA 配置翻转韧性的新代价函数，带硬件级验证。</p>
+<p><a href="https://arxiv.org/abs/2610.00281">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.00281">阅读原文 ↗</a></p>
 </body>
 </html>

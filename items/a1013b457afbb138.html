@@ -22,9 +22,11 @@
 <h1>Open-Source Live-Reconfigurable Multi-Mode Wearable Ultrasound</h1>
 <p class="meta-line">arXiv (eess.SP) · 2026-10-02 · 论文PDF</p>
 
-<p>可穿戴超声探头低延迟会话内模式切换的开源实时可重构控制栈</p>
-<blockquote><p>Wearable ultrasound enables continuous deep-tissue monitoring, and a single programmable probe can operate in multiple complementary modes, such as structural A-mode and Doppler flow measurement. However, each operating mode requires dedicated measurement parameters and peripheral states, with no single configuration serving all modes on resource-constrained devices. Time multiplexing of operating modes introduces reconfiguration latency that lowers the effective mode repetition rate. To address this limitation, we present an open-source, transition-aware control stack for low-latency, in-session reconfiguration of the 32-channel TinyProbe wearable platform. Operating modes are described as hardware configurations, and host-side shadow registers track the peripheral states, enabling transition-specific register updates. Transition sequences are executed either by the host (over Wi-Fi 6) or by a firmware loop on the probe MCU. We validate the stack on a pulsatile-flow phantom by interleaving blocks of 25 to 100 pulsed-wave Doppler shots at 1.43 kHz PRF with single 16-channel A-mode acquisitions, changing channel configurations at every transition. Compared to full reconfiguration, t…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 可穿戴超声多模式（结构 A 模式与多普勒血流）切换需要逐模式重配置测量参数与外设状态，重配置延迟拉低有效模式重复率。</p>
+<p><strong>方法：</strong> 开源、转换感知的控制栈：操作模式建模为硬件配置，主机侧影子寄存器跟踪外设状态以执行转换专属更新；转换序列由主机（Wi-Fi 6）或探针 MCU 固件循环执行。</p>
+<p><strong>关键数字：</strong> 单次转换开销从 30.2 ms 降至 11.6 ms（主机调度）与 3.1 ms（MCU 调度）；75 次多普勒块下多模式重复率达 16.0 Hz，为理论最大值 17.7 Hz 的 90.1%。</p>
+<p><strong>为什么值得看：</strong> 开源可穿戴超声平台，实现在会话内低延迟多模式切换。</p>
+<p><a href="https://arxiv.org/abs/2610.01602">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.01602">阅读原文 ↗</a></p>
 </body>
 </html>

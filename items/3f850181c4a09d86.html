@@ -22,9 +22,11 @@
 <h1>Selection-Based Structured Reasoning: Toward Efficient Multimodal Search Agents</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-02 · 论文PDF</p>
 
-<p>把自由推理改为候选选择的多模态搜索智能体结构化推理，降低小模型推理成本</p>
-<blockquote><p>Multimodal agents commonly generate free-form reasoning before each action. For small models, limited model capacity can result in lengthy reasoning that provides little useful guidance for action generation while incurring substantial inference cost. To address this challenge, we introduce Selection-based Structured Reasoning (SSR), a framework that reformulates reasoning as selection instead of open-ended generation. SSR represents recurring high-level reasoning as pre-specified, reusable natural-language candidates. At each turn, the model selects from these reasoning candidates based on their likelihoods given the current context, without requiring an auxiliary task head. Using pre-specified reasoning traces enables parallel scoring, where teacher-forced prefilling computes token likelihoods concurrently within and across candidates using a shared context KV cache. We evaluate SSR on seven multimodal search benchmarks using 2B and 4B models. Across multiple reinforcement learning objectives and supervised fine-tuning, SSR delivers significant efficiency gains without sacrificing task performance. SSR achieves an average success rate competitive with leading search agents of the…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 多模态 agent 每步先做自由形式推理，小模型生成的冗长推理对动作指导有限，却带来可观的推理成本。</p>
+<p><strong>方法：</strong> SSR 把推理重构为选择而非开放式生成：高频高层推理用预定义自然语言候选表示，模型按当前上下文似然挑选；teacher-forced 预填充 + 共享上下文 KV cache 实现候选内与跨候选并行打分。</p>
+<p><strong>关键数字：</strong> 7 个多模态搜索基准、2B/4B 模型；每轮推理延迟降超 90%，每问总推理延迟降 28–54%，成功率与同规模领先 agent 相当。</p>
+<p><strong>为什么值得看：</strong> 小模型多模态搜索 agent 效率大幅提升而性能不损。</p>
+<p><a href="https://arxiv.org/abs/2610.01892">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.01892">阅读原文 ↗</a></p>
 </body>
 </html>
