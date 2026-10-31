@@ -22,9 +22,11 @@
 <h1>Turing LLM Post-Training: Calibrated Distillation and Efficient Dynamic-MoE Execution</h1>
 <p class="meta-line">arXiv(cs.LG) · 2026-10-29 · 论文PDF / 每日精选</p>
 
-<p>动态路由 MoE 后训练：校准多教师蒸馏（C-MOPD）+容量受限宽度分发/终局路由重放/异步 rollout 的高效合并执行路径</p>
-<blockquote><p>We study post-training for dynamically routed mixture-of-experts (MoE) models, focusing on integrating independently optimized specialists while keeping consolidation efficient. Our approach combines calibrated multi-teacher on-policy distillation (C-MOPD), which matches each selected teacher on a local Top-$K$ support with teacher-wise loss normalization and clipping, with an execution path that uses post-capacity bounded-width dispatch, final-route replay, and asynchronous rollout--training overlap. On Turing-20B-A2B, the selected model achieves a four-domain normalized integration score of 0.9988 and retains at least 90.16\% of the measured specialist gain in every domain. At matched $K=32$, the full calibration objective scores 0.9962, compared with 0.9724 without calibration and 0.9834 without clipping. At a matched 8K response cap, the model exceeds both shared SFT and Qwen3-8B on all four reasoning-enabled mathematics and code benchmarks (unweighted mean: 85.92, versus 80.33 for Qwen3-8B and 74.21 for SFT), and improves over SFT on ten of twelve broader evaluation metrics. In a PPU-based profile, the combined execution configuration reduces consolidation step time from 398.7…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 动态路由 MoE 后训练中如何整合各自独立优化的专家、同时保持整合高效。
+<strong>方法</strong> 校准多教师 on-policy 蒸馏（局部 Top-K 匹配、损失归一化+裁剪），配合有界宽度分发、路由回放与异步 rollout-训练重叠。
+<strong>关键数字</strong> Turing-20B-A2B 四域归一化整合分 0.9988、每域保留 ≥90.16% 专家增益；8K 上限下数学/代码均分 85.92（Qwen3-8B 80.33）；整合步骤耗时 398.7→139.3 秒（2.86x）。
+<strong>为什么值得看</strong> 专家整合与执行效率并重的完整后训练框架，数据扎实。
+<a href="https://arxiv.org/abs/2610.39876">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.39876">阅读原文 ↗</a></p>
 </body>
 </html>

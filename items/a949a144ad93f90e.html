@@ -22,9 +22,11 @@
 <h1>An Adaptive Heterogeneous Architecture for High-Ratio, High-Throughput Lossless Compression</h1>
 <p class="meta-line">arXiv (cs.AR) · 2026-10-05 · 论文PDF</p>
 
-<p>面向高压缩比、高吞吐无损压缩的自适应异构架构</p>
-<blockquote><p>Modern lossless data compression enforces an acute dichotomy: industrial streaming codecs (e.g., Zstandard) prioritize throughput (10 to 1000 MiB/s) at the expense of compression density, while context-mixing algorithms achieve superior ratios at unusable serial speeds (0.1 to 1 MiB/s). We present GPX, an adaptive heterogeneous compression architecture for structured data streams. While optimized for high-throughput enterprise and scientific large-block workloads (&gt;= 4 MiB), GPX operates transparently across arbitrary stream lengths down to sub-kilobyte inputs (N &gt;= 256 B). GPX combines a sub-15-microsecond native structural decision probe, GPU-native reversible domain transforms, AVX2 multi-hypothesis sequence optimization, and adaptive entropy boundaries. On the canonical Silesia benchmark (202.12 MiB) under a preregistered 7-repeat Median+IQR protocol (W = 6 workers), GPX Track A produces standard RFC 8878-compliant .zst streams that compress to 56.27 MiB at 235.41 MiB/s with native line-speed decompression (3074.27 MiB/s on unmodified libzstd), establishing non-domination among evaluated RFC 8878-compatible configurations. GPX Track B achieves 54.49 MiB at 259.76 MiB/s (CI [250…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 无损压缩二分尖锐：Zstandard 重吞吐轻密度，context-mixing 压缩比高但速度不可用。
+<strong>方法</strong> GPX 自适应异构架构：亚 15 微秒结构探测探针、GPU 原生可逆域变换、AVX2 多假设序列优化、自适应熵边界；兼容 ≥256 B 任意流。
+<strong>关键数字</strong> Silesia 基准 Track A 压到 56.27 MiB @ 235.41 MiB/s、libzstd 解压 3074.27 MiB/s；Track B 54.49 MiB 支配 Level 8-14；A+B 54.46 MiB 支配 Level 10-14；SHA-256 回环验证。
+<strong>为什么值得看</strong> 同时拿高压缩比与高吞吐，基准协议严谨。
+<a href="https://arxiv.org/abs/2610.02236">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.02236">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>PDScope: Breaking the Prefill-Decode Seesaw for Memory-Bound MoE Inference</h1>
 <p class="meta-line">arXiv(cs.DC) · 2026-10-29 · 论文PDF / 每日精选</p>
 
-<p>PDScope：打破内存受限 MoE 推理的 prefill-decode 跷跷板，本地 CPU-GPU 节点按阶段差异化 PCIe 传输</p>
-<blockquote><p>Local deployment of MoE-based LLMs on CPU-GPU nodes is attractive for cost and privacy reasons, yet limited GPU memory forces most experts into CPU memory. Prefill is then compute-bound and benefits from aggressive GPU loading, while decode is I/O-bound and requires conservative PCIe transfers. These demands cannot be amortized under low batching---typical of local assistants and document tools---forcing phase-agnostic schedulers into a seesaw: favoring prefill's aggressive loading injects unmaskable I/O that stalls decode, while favoring decode's conservative transfers starves prefill's GPU of work. We observe that expert routing is predictable in phase-specific ways, allowing us to decouple the two phases and optimize prediction, scheduling, and execution independently for each phase. PDScope predicts expert activations to guide placement and prefetching, adapts these policies to each phase's bottleneck via cross-layer cost modeling, and compiles decisions into overhead-free pipelines using a static computation graph, cache prefetching, and zero-copy asynchronous I/O. On mainstream MoE models, PDScope achieves 2.5-10.3x higher prefill throughput and 2.1-6.1x higher decode through…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> MoE 本地部署 GPU 显存不足、多数专家驻留 CPU；prefill 需激进 GPU 加载、decode 需保守 PCIe 传输，低 batching 下两相需求矛盾。
+<strong>方法</strong> 按阶段预测专家激活并解耦两相：预测激活指导放置与预取，跨层成本建模按各相瓶颈自适应，静态计算图+缓存预取+零拷贝异步 I/O 编成零开销流水线。
+<strong>关键数字</strong> 主流 MoE 上 prefill 吞吐高 2.5-10.3x、decode 吞吐高 2.1-6.1x，可扩展到多 batch。
+<strong>为什么值得看</strong> 显存受限 MoE 推理的实用方案，分相协同设计收益量化清晰。
+<a href="https://arxiv.org/abs/2610.39216">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.39216">阅读原文 ↗</a></p>
 </body>
 </html>

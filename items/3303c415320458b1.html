@@ -22,9 +22,11 @@
 <h1>A Compression Tree Generation Method for High Performance VLSI Datapaths</h1>
 <p class="meta-line">arXiv (cs.AR) · 2026-10-05 · 论文PDF</p>
 
-<p>基于加权比特堆的延迟感知压缩树生成方法，把压缩树从独立乘法器组件扩展到点积/多项式等和积结构</p>
-<blockquote><p>Compression trees have been historically a key component of several arithmetic units, most notably multipliers. The latter have been for the most part standalone units and in common situations synthesis tools can generate very close to optimal solutions. With large matrix multiply structures taking more of a central role in the compute industry, the need for a better understanding of these compression trees is apparent. Furthermore, the boundary of its usage needs to be redefined: dot products, polynomial fitting of non-linear operators, are all sums of products. And since products are sums of partial products, in the end, we are just adding many things together as bit heaps; i.e. the fundamental role of a compression tree. Therefore, we must see them as more than just a component of a multiplier. This paper presents a delay-aware compression-tree methodology based on a weighted bit heap. Each bit is described by its significance and relative arrival time, and the generator uses technology-independent normalized delay units to estimate Boolean logical pressure. By exploiting the commutativity of addition within each column, the method reorders bits across reduction stages and uses …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 压缩树历史上只是乘法器部件；矩阵乘、点积、多项式拟合兴起后其边界需重新定义——位堆加法才是根本。
+<strong>方法</strong> 加权位堆的延迟感知生成：每位记重要性与到达时间，技术无关归一化延迟单位估逻辑压力；利用列内加法交换性重排位，Dadda 风格最大带宽拓扑+灵活 CSA3:2。
+<strong>关键数字</strong> 11-64 位 Radix-4 Booth 乘法器上比 Wallace 风格最大压缩树延迟与逻辑体积更低；四路点积演示评估微架构约束代价。
+<strong>为什么值得看</strong> 把压缩树扩展为通用位堆处理，提供技术无关生成基础。
+<a href="https://arxiv.org/abs/2610.02228">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.02228">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>AvoKV-E: Payload-Aware KV Cache Eviction for Long Reasoning</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-05 · 论文PDF</p>
 
-<p>面向长推理链的载荷感知 KV 缓存逐出 AvoKV-E</p>
-<blockquote><p>Long-output reasoning shifts the KV-cache bottleneck from the fixed prompt to the generated trace. Existing reasoning-cache eviction methods largely treat cached entries as routing objects, estimating whether an old key will still be read, will recur, or can be replaced. This routing-only view overlooks two effects: low-attention entries can carry large value payloads whose removal changes future predictions, and newly generated states can appear stale before later queries have had a chance to read them. We introduce AvoKV-E, a training-free eviction policy that first delays eligibility for recent states and then ranks eligible entries using candidate-normalized read pressure, key redundancy, and value-payload potential. According to empirical evaluation across different models and datasets, AvoKV-E matches or exceeds redundancy-aware, recurrence-based, and thought-adaptive eviction baselines at matched active-KV budgets, with its largest gains in the tightest-cache regime. Component and counterfactual analyses further connect these gains to delayed observation, payload-aware scoring, redundancy, and scale-robust normalization. Together, the results show that long-reasoning KV evic…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 长输出推理把 KV 瓶颈移到生成轨迹；现有淘汰法多把条目当路由对象，忽略低注意力条目的 value 载荷与新状态"假过期"。
+<strong>方法</strong> AvoKV-E 免训练淘汰：先延迟近期状态淘汰资格，再用候选归一化读压力、key 冗余度、value 载荷潜力排序。
+<strong>关键数字</strong> 匹配 active-KV 预算下持平或超过冗余感知、复发基与 thought-adaptive 基线，最大增益在最紧缓存区间；组件分析确认各机制贡献。
+<strong>为什么值得看</strong> 长推理 KV 淘汰应同时保留可读 key 与支撑轨迹的 value 载荷。
+<a href="https://arxiv.org/abs/2610.03007">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.03007">阅读原文 ↗</a></p>
 </body>
 </html>

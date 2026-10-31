@@ -22,9 +22,11 @@
 <h1>AI-Assisted GPU optimization of the Stochastic Variational Method for Few-Body Boson System</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-10-05 · 论文PDF</p>
 
-<p>少体玻色子系统随机变分法的 AI 辅助 GPU 优化</p>
-<blockquote><p>The stochastic variational method (SVM) is one of the most powerful methods to solve quantum few-body systems precisely in various fields, such as nuclear and atomic physics. To the best of our knowledge, no SVM code optimized for GPUs has been reported. We developed a parallel SVM code for few-body clusters of $^4$He atoms and optimized it for two GPU architectures, NVIDIA GH200 and AMD Instinct MI300A, with the entire code written by an AI coding agent. On the algorithmic side, we introduce the secular-equation method with the Gu--Eisenstat prescription for solving the generalized eigenvalue problem within the SVM framework. The main part of the code tuning is to batch the many small matrices so that the GPUs are used efficiently, together with an array layout in memory optimized for coalesced addressing. For the five-body system with 4800 SVM basis states, the tuned SVM code runs 16.2 (14.7) times faster on the NVIDIA GH200 (AMD MI300A) than the same tuned code on the Intel Xeon Max CPU system, and 168 (153) times faster than the first working CPU implementation. The achieved performance brings 6-body and larger cluster systems within reach.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 随机变分法（SVM）是量子少体最精确方法之一，但此前无 GPU 优化实现。
+<strong>方法</strong> AI 编码代理全程编写、为 GH200 与 MI300A 优化的并行 SVM 代码（4He 团簇）；引入 secular-equation 与 Gu-Eisenstat 配方解广义特征值问题；批量小矩阵+合并寻址布局。
+<strong>关键数字</strong> 五体 4800 基态下 GH200（MI300A）比 Xeon Max CPU 快 16.2（14.7）倍、比首个 CPU 实现快 168（153）倍。
+<strong>为什么值得看</strong> AI 编写高性能科学计算的实证，GPU 量子少体门槛大降。
+<a href="https://arxiv.org/abs/2610.02745">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.02745">阅读原文 ↗</a></p>
 </body>
 </html>

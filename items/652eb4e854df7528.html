@@ -22,9 +22,11 @@
 <h1>PhOSv1: Efficient Scaling of Model Sleeping on a Single Server for Autoscaling with GPU-Context Deduplication</h1>
 <p class="meta-line">arXiv(cs.DC) · 2026-10-29 · 论文PDF / 每日精选</p>
 
-<p>PhOSv1：单服务器 model sleeping 自动扩缩容优化，GPU context 去重实现近瞬时扩容</p>
-<blockquote><p>Autoscaling is a key mechanism in model-as-a-service systems, where fast scale-up is essential because the scale-up time directly determines how long a model service remains overloaded, which in turn governs serving quality. The state-of-the-art approach, model sleeping, adopted by mainstream serving engines including vLLM and SGLang, achieves near-zero-cost scale-up by pausing pre-spawned engines on the GPU. However, sleeping is not a free lunch: each sleeping model must keep its GPU context resident, and this cost grows linearly with the number of models, degrading serving performance. Because providers must support many models, they face a dilemma between fast scale-up for all models and high service performance. In this paper, we show that a single server can keep many models asleep without paying this GPU context tax. The key observation is that the contexts of sleeping models are largely duplicated: the driver (CUDA) context can be shared across models, and their GPU kernel binaries overlap heavily due to common operators and libraries. PhOSv1 deduplicates this context by transparently delegating each engine's GPU context allocation to a central daemon through API remoting; t…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> model sleeping 靠暂停预启动引擎实现近零成本扩容，但每个睡眠模型须驻留 GPU context，成本随模型数线性增长。
+<strong>方法</strong> 观察到睡眠模型 context 大量重复：驱动 context 可共享、kernel 二进制因公共算子高度重叠；PhOSv1 用 API remoting 把各引擎 GPU context 分配委托给中心 daemon 去重。
+<strong>关键数字</strong> 扩容时间与 vLLM 原生 sleep 持平，GPU 内存占用显著下降，多模型端到端服务性能提升。
+<strong>为什么值得看</strong> 单服务器可承载远更多睡眠模型，缓解扩容与性能两难。
+<a href="https://arxiv.org/abs/2610.39999">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.39999">阅读原文 ↗</a></p>
 </body>
 </html>

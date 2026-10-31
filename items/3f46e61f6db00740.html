@@ -22,9 +22,11 @@
 <h1>Compiling Together: High-Throughput Distributed Quantum Computing via Multi-Compilation</h1>
 <p class="meta-line">arXiv (cs.AR) · 2026-10-05 · 论文PDF</p>
 
-<p>通过多重编译提升分布式量子计算吞吐</p>
-<blockquote><p>Quantum computing is a promising paradigm for problems that are challenging for classical machines, but realizing that promise requires far more qubits than a single processor can offer. Distributed quantum computing (DQC) scales out by connecting multiple quantum processing units (QPUs), at the cost of making entanglement the scarce resource: every remote gate consumes a Bell pair, and inter-QPU links generate Bell pairs at finite rates orders of magnitude slower than local gates. Since quantum programs are executed repeatedly, this rate bounds how fast shots complete and thus how fast results are obtained. Existing DQC compilers emit a single implementation per circuit, so throughput is capped by its busiest link while other links stay idle. We observe that alternative compilations of the same circuit are logically equivalent yet stress different links; executing them concurrently and pooling their samples converts idle Bell pairs into additional shots. We formulate the joint selection of compilations and allocation of shots under per-link Bell-pair capacities as Candidate-Constrained Max-Shot Allocation (CMA), prove it NP-hard, and solve it with a dynamic program and its approxi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 分布式量子计算中纠缠稀缺：每远程门耗一对 Bell 对、链路速率远慢于本地门；单编译方案吞吐被最忙链路卡住、其余闲置。
+<strong>方法</strong> 等价多编译并发执行汇聚样本，把空闲 Bell 对转成额外 shot；联合选编译+分配 shot 形式化为 CMA（NP-hard），用 MILP、动态规划与贪心 Effi 求解。
+<strong>关键数字</strong> 六 QPU 仿真吞吐 +2-4.5x；硬件保真度最高 +93%、达单编译保真度最快快 10x；36 QPU MILP 平均 +76.8%。
+<strong>为什么值得看</strong> 分布式量子计算吞吐优化，把空闲链路资源变现为采样。
+<a href="https://arxiv.org/abs/2610.03260">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.03260">阅读原文 ↗</a></p>
 </body>
 </html>

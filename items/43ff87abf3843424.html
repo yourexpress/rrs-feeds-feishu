@@ -22,9 +22,11 @@
 <h1>Coco: An Agentic Copilot for the Hardware--Software Co-Design Lifecycle</h1>
 <p class="meta-line">arXiv (cs.PL) · 2026-10-05 · 论文PDF</p>
 
-<p>软硬件协同设计全流程的智能体副驾 Coco</p>
-<blockquote><p>Co-designing ML models and the accelerators that run them is an unusual reasoning task: architects must draw confident, high-stakes conclusions about systems that do not yet exist, and the pace of both model evolution and hardware cadence means the analysis burden grows every quarter. The evidence behind each decision--hundreds of gigabytes of fresh simulation sweeps over novel design points--is by construction absent from any LLM's pretraining corpus, and there is no external literature to retrieve; naive "chat-with-your-data" approaches hallucinate exactly where correctness matters most. We present Coco (Copilot for Codesign), an agentic platform deployed with TPU architects that accelerates the co-design lifecycle of setting up experiments, sweeping simulators, and deriving insights. Coco is built as four layers: (i) a datastore that automatically registers every simulation sweep into a normalized relational schema, so agents ground every number in a SQL query rather than scraping heterogeneous files; (ii) a library of tools with typed APIs that agents compose without human orchestration; (iii) agents that encode recurring analysis workflows--most notably iso-execution analysis,…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> ML 模型与加速器协同设计需对尚不存在的系统做高置信结论；仿真数据不在 LLM 语料中、无文献可检索，naive chat-with-your-data 恰在关键处幻觉。
+<strong>方法</strong> Coco 代理平台：数据仓库自动注册仿真 sweep 进关系 schema（agent 以 SQL 取数）；类型化 API 工具库；UX 导航兼作 agent 上下文。
+<strong>关键数字</strong> 摘要仅报告早期部署，方向为缩短 time-to-simulation 与 time-to-insight，无具体数值。
+<strong>为什么值得看</strong> 把协同设计论证为独立 agentic 领域：数据须检索而非记忆。
+<a href="https://arxiv.org/abs/2610.02376">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.02376">阅读原文 ↗</a></p>
 </body>
 </html>

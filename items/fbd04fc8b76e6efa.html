@@ -22,9 +22,11 @@
 <h1>A Secure dToF LiDAR SoC with Dual-Domain Fingerprinting and Event-Driven AFE Circuit Achieving Sensor-Level Attack Resilience</h1>
 <p class="meta-line">arXiv (cs.AR) · 2026-10-05 · 论文PDF</p>
 
-<p>具双域指纹与事件驱动 AFE、可抗传感器级攻击的安全 dToF LiDAR SoC</p>
-<blockquote><p>Recent studies have shown that most commercial direct time-of-flight (dToF) LiDARs can be spoofed by injecting high-frequency laser pulses into the receiver, which can erase pedestrians from the point cloud. This paper presents the first dToF LiDAR system-on-chip (SoC) with integrated sensor-level hardware security against spoofing attacks. We propose Dual-Domain Fingerprinting (DDF), which emits laser pulse pairs whose time interval and amplitude ratio are both randomized and authenticates received echoes in this two-dimensional space, so that spoofed signals are rejected before they corrupt the ranging result. An Event-Driven AFE (ED-AFE) activates the ADC only around pulse peaks: it digitizes three samples around each peak with a triggered ADC at 1-GHz sampling and applies parabolic interpolation, achieving 1-cm distance resolution with a 99% reduction in ADC power. A time-modulated laser driver controls the laser amplitude from 10% to 100% by modulating the charge time of a laser capacitor, providing the microsecond-order amplitude modulation required by DDF. A LiDAR system with a 16-channel 65-nm CMOS prototype SoC demonstrates up to 120-m ranging and an AFE power of 3.1 mW pe…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 多数商用 dToF LiDAR 可被高频激光脉冲欺骗、抹掉行人，此前无传感器级硬件安全方案。
+<strong>方法</strong> 首款带片上抗欺骗的 dToF SoC：双域指纹随机化脉冲对时间间隔与幅度比并二维认证回波；事件驱动 AFE 仅峰值附近触发 ADC；激光驱动 10%-100% 幅度调制。
+<strong>关键数字</strong> 1cm 分辨率、ADC 功耗降 99%；16 通道 65nm 原型测距 120m、每通道 AFE 3.1mW；攻击下 73% 点云受保护（无 DDF 为 0%）。
+<strong>为什么值得看</strong> 首个传感器级抗欺骗 dToF 方案，自动驾驶安全直接受益。
+<a href="https://arxiv.org/abs/2610.03562">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.03562">阅读原文 ↗</a></p>
 </body>
 </html>

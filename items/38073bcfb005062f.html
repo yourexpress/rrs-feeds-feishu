@@ -22,9 +22,11 @@
 <h1>Coda: Exploiting Admission Flexibility for Coding-Agent Serving</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-10-05 · 论文PDF</p>
 
-<p>利用准入弹性优化编码智能体推理服务的系统 Coda</p>
-<blockquote><p>Coding agents powered by large language models (LLMs) repeatedly alternate between model inference and tool calls, creating long-lived sessions with reusable key-value (KV) states and asynchronous request resumptions. Logical readiness, however, does not ensure efficient admission in a shared serving system. Through direct trace analysis and trace-driven replay, we identify two mismatches: reusable KV states reside across storage tiers and incur unequal computational costs for state preparation, while requests with heterogeneous context lengths can decode inefficiently together. Our central insight is that exploiting admission flexibility can improve serving performance while preserving request progress. We present Coda, a coding-agent serving system that realizes this insight through a readiness-informed admission layer incorporating two mechanisms. Tiered-Aging state admission exploits bounded flexibility in admission order to improve admission efficiency and preserve request progress. Compatibility-Aware execution admission exploits flexibility in attention grouping within each model iteration to reduce mixed-context interference and improve shared decoding efficiency. For multi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 编码 agent 会话有可复用 KV 状态，但逻辑就绪≠高效接纳：KV 跨存储层级准备成本不等，异构上下文长度混合解码效率差。
+<strong>方法</strong> Coda 就绪感知接纳层：Tiered-Aging 利用接纳顺序灵活性；Compatibility-Aware 按注意力分组降混合干扰；多 worker 路由层综合 KV 驻留与长度兼容性。
+<strong>关键数字</strong> 单/多 worker 输出 token 吞吐平均 +20.3%、SLO 合规吞吐平均 +70.5%，峰值 29.3%/140.2%。
+<strong>为什么值得看</strong> 编码 agent 服务专项优化，接纳灵活性变现吞吐与 SLO。
+<a href="https://arxiv.org/abs/2610.03088">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.03088">阅读原文 ↗</a></p>
 </body>
 </html>

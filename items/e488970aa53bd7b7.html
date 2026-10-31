@@ -22,9 +22,11 @@
 <h1>Where Position Matters: Profiling-Guided Layer-Wise RoPE Allocation in Transformers</h1>
 <p class="meta-line">arXiv(cs.LG) · 2026-10-29 · 论文PDF / 每日精选</p>
 
-<p>profiling 引导的层间 RoPE 分配：固定预算下按层异构位置编码覆盖，相位干预揭示非均匀旋转相位依赖</p>
-<blockquote><p>Rotary Position Embedding (RoPE) typically uses uniform coverage across Transformer layers despite heterogeneous positional requirements. Phase-off interventions reveal non-uniform, model-specific rotary-phase dependence, while coverage interventions relate it to coverage-upgrade benefits. We propose profiling-guided layer-wise RoPE allocation, assigning high/low coverage under a fixed budget using early coverage-benefit profiles. The framework supports fixed-width query/key representations and physical rotary-dimension allocation in Multi-head Latent Attention (MLA). Normalized-depth mapping transfers profiles within model families, enabling small-model measurements to guide larger-model allocations before pretraining. A brief analysis relates selection and transfer to score calibration and inter-layer interactions. From-scratch experiments demonstrate validation-loss improvements over available budget-matched baselines, while analytical resource accounting identifies favorable quality--storage--compute trade-offs for physical MLA. These results connect positional demand to transferable, efficient architecture design.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> RoPE 在各层通常统一覆盖，但层间位置需求异构且模型特定；固定预算下如何按层分配。
+<strong>方法</strong> profiling 引导的层间 RoPE 分配：用早期覆盖收益 profile 在固定预算下分配高/低覆盖；支持 MLA 的固定宽度表示与物理旋转维度分配；归一化深度映射让小模型测量指导大模型预训练前分配。
+<strong>关键数字</strong> 从零训练实验在验证损失上优于匹配预算基线；解析核算表明物理 MLA 质量-存储-计算权衡更有利。
+<strong>为什么值得看</strong> 把位置需求与可迁移架构设计相连，为 MLA 提供新设计维度。
+<a href="https://arxiv.org/abs/2610.39223">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.39223">阅读原文 ↗</a></p>
 </body>
 </html>

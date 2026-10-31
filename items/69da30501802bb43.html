@@ -22,9 +22,11 @@
 <h1>Closing the Prediction Gap: Completing Machine Shape So That Predicted Time, Power, Energy, and Mapping Match What Real Hardware Does</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-10-05 · 论文PDF</p>
 
-<p>补全“机器形状”使预测的时延/功耗/能耗/映射与真实硬件一致的建模方法</p>
-<blockquote><p>A companion paper derives a weighted, communication free partition for heterogeneous, multi institution device ensembles from each device measured shape, rho_machine(d), validated on real hardware. Its experiments show rho_machine is incomplete: fp32 to fp16 speedup and power shifts are not fully indexed, and memory capacity predictions rely on an assumed, not measured, reservation overhead. This paper closes that gap, indexing five unmeasured fields in the psi selection vocabulary: memory capacity $M_i^{cap}$, power draw $P_i$, execution unit capability $X_d$, compiler directive configuration $C_d$, and memory reservation overhead $R_d$. We introduce reached(d), a Boolean for whether compiled code dispatches to specialized hardware, explaining the NVIDIA fp16 power shift that hardware availability alone cannot predict. MoA fixes a computation independently of its target, so compiler directives get a two part admissibility criterion: select a real hardware quantity without discretionary reordering, and be deterministic, not compiler overridable. Across Intel, AMD, NVIDIA, OpenMP, OpenACC, and Open MPI, this admits only cache placement controls, deterministic vector or tile widths, …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 配套论文的异构设备性能预测模型不完整：fp32→fp16 加速与功耗漂移未完全索引，内存容量预测靠假设预留开销。
+<strong>方法</strong> 补五个实测字段：内存容量、功耗、执行单元能力、编译器指令配置、内存预留开销；引入 reached(d) 判断编译是否派发专用硬件，解释 fp16 功耗漂移。
+<strong>关键数字</strong> A100/H100/V100/MI100/Max 1550 实测全部字段；预留开销约 0.004-0.030；Triton autotuner 残差 -9.8%。
+<strong>为什么值得看</strong> 把性能预测从假设推进到实测字段，闭合预测-实测差距。
+<a href="https://arxiv.org/abs/2610.03197">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.03197">阅读原文 ↗</a></p>
 </body>
 </html>
