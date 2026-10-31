@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learning to Formulate: Agentic Hardware-Software Co-Design of AI Infrastructure through Progressive Optimization and Verification</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Learning to Formulate: Agentic Hardware-Software Co-Design of AI Infrastructure through Progressive Optimization and Verification</h1>
+<p class="meta-line">arXiv(cs.AR) · 2026-10-29 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> AI 基础设施分层设计虽可管理，但固定了优化器能考虑的选择——需要芯片与软件协同改变才能获得的收益在优化开始前就被排除；LM agent 能否跨层制定优化问题？</p>
+<p><strong>方法</strong> Formulaic 流程分工：agent 写公式化（problem formulation），数学求解器在其内优化，验证与测量检查假设与结果；agent 从计算图逐步向芯片细化问题，每步是带正确性条件的程序模板族；Wall relaxation 通过给约束软件的关键硬件限制定价来搜索芯片空间。</p>
+<p><strong>关键数字</strong> NVIDIA GB10 上 agent 写的模板运行完整 Qwen3-8B 层较 SGLang 快 1.075×；模拟 Ventus GPU 上联合设计把 Qwen2.5-0.5B 最坏场景周期降至参考的 0.428（纯软件为 0.934）；五步 GEMM 精化链上复用证明使检查快 2.51×。</p>
+<p><strong>为什么值得看</strong> 把"跨层协同设计"从口号变成 agent+求解器+验证的分工流程，虽为分步研究，思路与数字都有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.39380">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.39380">阅读原文 ↗</a></p>
+</body>
+</html>

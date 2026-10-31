@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MCCL: Training Pytorch models across a fleet of Macs at Skywalker Sound</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MCCL: Training Pytorch models across a fleet of Macs at Skywalker Sound</h1>
+<p class="meta-line">arXiv(cs.DC) · 2026-10-28 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> Skywalker Sound 有 200+ 台 M4 Max Mac Studio（10GbE），艺术家不用时闲置大量统一内存与算力，但 PyTorch 缺少 Apple MPS 的加速分布式后端。</p>
+<p><strong>方法</strong> MCCL：首个开源多节点 PyTorch 训练 MPS 后端（Metal Communication Collective Library），在交换以太网上实现 all-reduce 等集合通信。</p>
+<p><strong>关键数字</strong> 24 节点上大 all-reduce 达 TCP goodput 的 98–99.7%；113.5M 参数 ViT 训练从 198 提到 4568 samples/s，并行效率 95.9%；单台 M4 Max 约为 A100 FP32 矩阵乘吞吐的 1.7×，5.5 台匹敌 A100 TF32；夜间 100 台闲置 Mac 跑 12 小时约抵每年 20 万美元云算力。</p>
+<p><strong>为什么值得看</strong> 把闲置 Mac 集群变成训练资源的完整工程方案，成本账清晰，对算力紧张团队有吸引力。</p>
+<p><a href="https://arxiv.org/abs/2610.39029">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.39029">阅读原文 ↗</a></p>
+</body>
+</html>

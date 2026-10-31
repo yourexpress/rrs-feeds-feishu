@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlatCake: A Flat KVCache Storage Architecture for LLM Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>FlatCake: A Flat KVCache Storage Architecture for LLM Serving</h1>
+<p class="meta-line">arXiv(cs.DC) · 2026-10-28 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> KV cache 复用加速 LLM serving，但现有 DRAM/SSD 分层层级假设被生产负载打破：双峰复用让 SSD 进入关键读路径，DRAM 暂存与驱逐排序又阻塞 SSD 恢复。</p>
+<p><strong>方法</strong> FlatCake 把 DRAM 与 NVMe SSD 视为统一 64 位地址空间中的对等介质；利用 KV 块一次性写入、不可变、会话级复用的特性，创建时按会话连续、层主序直接放置目标介质且永不迁移；经 GPUDirect Storage 合并流式读入 GPU 窗口，DRAM/SSD 请求队列解耦防队头阻塞。</p>
+<p><strong>关键数字</strong> Claude Code 生产 trace + DeepSeek-V4-Flash 上，负载升高时维持 94% cache 命中（Mooncake 为 64%），消除 Mooncake 6.5–6.7× SSD 读放大，峰值平均 TTFT 降 1.6×，总 token 吞吐提升 1.6×；Llama-3.1-70B 8K–128K 上下文平均 TTFT 较 Mooncake 最多降 2.4×。</p>
+<p><strong>为什么值得看</strong> 颠覆分层存储假设的扁平 KV 存储设计，实测数据扎实，对长会话 agent 场景价值大。</p>
+<p><a href="https://arxiv.org/abs/2610.38355">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.38355">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Unified Hessian-Guided Framework for Post-Training Quantization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>A Unified Hessian-Guided Framework for Post-Training Quantization</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-29 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 低比特量化部署 LLM 时，量化范围、线性变换、取整决策通常用局部重建目标独立优化，未考虑误差对下游预测的不同影响；任务级目标又因量化不连续而难以直接优化。</p>
+<p><strong>方法</strong> 推导联合权重+激活量化的输出变化 Hessian 引导近似，基于可解 Fisher 近似构建统一后训练量化框架，在共同输出敏感度目标下联合优化量化范围、线性变换与取整。</p>
+<p><strong>关键数字</strong> 摘要未给出统一数值；结论是在通道级与块级量化设置下一致优于 SOTA 变换与取整方法，且对现代 LLM 保持实用。</p>
+<p><strong>为什么值得看</strong> 把零散的后训练量化组件统一到单一敏感度目标，理论导出+实用兼顾，对低比特部署工具链有直接帮助。</p>
+<p><a href="https://arxiv.org/abs/2610.40345">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.40345">阅读原文 ↗</a></p>
+</body>
+</html>

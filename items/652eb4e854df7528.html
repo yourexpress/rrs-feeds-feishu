@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PhOSv1: Efficient Scaling of Model Sleeping on a Single Server for Autoscaling with GPU-Context Deduplication</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>PhOSv1: Efficient Scaling of Model Sleeping on a Single Server for Autoscaling with GPU-Context Deduplication</h1>
+<p class="meta-line">arXiv(cs.DC) · 2026-10-29 · 论文PDF / 每日精选</p>
+
+<p>PhOSv1：单服务器 model sleeping 自动扩缩容优化，GPU context 去重实现近瞬时扩容</p>
+<blockquote><p>Autoscaling is a key mechanism in model-as-a-service systems, where fast scale-up is essential because the scale-up time directly determines how long a model service remains overloaded, which in turn governs serving quality. The state-of-the-art approach, model sleeping, adopted by mainstream serving engines including vLLM and SGLang, achieves near-zero-cost scale-up by pausing pre-spawned engines on the GPU. However, sleeping is not a free lunch: each sleeping model must keep its GPU context resident, and this cost grows linearly with the number of models, degrading serving performance. Because providers must support many models, they face a dilemma between fast scale-up for all models and high service performance. In this paper, we show that a single server can keep many models asleep without paying this GPU context tax. The key observation is that the contexts of sleeping models are largely duplicated: the driver (CUDA) context can be shared across models, and their GPU kernel binaries overlap heavily due to common operators and libraries. PhOSv1 deduplicates this context by transparently delegating each engine's GPU context allocation to a central daemon through API remoting; t…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.39999">阅读原文 ↗</a></p>
+</body>
+</html>

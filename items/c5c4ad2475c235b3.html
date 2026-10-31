@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LLM Agent-Based Design of RISC-V CPUs with FPGA-in-the-Loop Evaluation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LLM Agent-Based Design of RISC-V CPUs with FPGA-in-the-Loop Evaluation</h1>
+<p class="meta-line">arXiv(cs.AR) · 2026-10-29 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LLM agent 设计 CPU 时，长程 RTL 仿真动辄数小时，短诊断运行又可能漏掉后期才出现的性能劣化——评估成本拖累设计决策。</p>
+<p><strong>方法</strong> 开发 FPGA-in-the-Loop 开发环境：LLM agent 直接在 FPGA 上实现 CPU 候选，用板上性能计数器实时测量引导设计决策；人工监督下把单周期 RV32I 核演进为三宽乱序 RV32IM 核。</p>
+<p><strong>关键数字</strong> 最终设计在 Artix-7 FPGA 上 130 MHz 达 5.61 CoreMark/MHz；同一候选跑 8000 次 CoreMark 时，FPGA 评估（含实现）比单线程 RTL 仿真快 9.6×；板测还发现一个短诊断运行表现提升、长程却劣化的候选，引导了根因分析与修复。</p>
+<p><strong>为什么值得看</strong> LLM 自动设计 CPU 的工程闭环范例，板上评估替代长仿真的思路对硬件自动化设计有直接价值。</p>
+<p><a href="https://arxiv.org/abs/2610.39570">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.39570">阅读原文 ↗</a></p>
+</body>
+</html>

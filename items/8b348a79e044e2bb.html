@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hardwired Distributed Processing Units at the Sensor: Truly Parallel Vision Pre-Processing that Frees the Host CPU</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Hardwired Distributed Processing Units at the Sensor: Truly Parallel Vision Pre-Processing that Frees the Host CPU</h1>
+<p class="meta-line">arXiv(cs.DC) · 2026-10-28 · 论文PDF</p>
+
+<p>Conventional vision pipelines route every pixel to a host processor, which must then wait for a complete frame before it can act and devote part of each frame period to routine pre-processing.</p>
+<blockquote><p>Conventional vision pipelines route every pixel to a host processor, which must then wait for a complete frame before it can act and devote part of each frame period to routine pre-processing. We examine an alternative organisation in which this work is distributed across hardwired distributed processing units (HDPUs): small, fixed datapaths attached directly to the sensor, each committed to a single always-on task, operating truly in parallel on the same pixel stream and delivering compact results to the host. From one library of 3x3 operators sharing a common two-clock latency, we construct three HDPUs (Canny edges, Harris corners, and a line tracker that issues a steering decision) and run them side by side on a single camera stream in a low-cost Artix-7 FPGA, at a cost of 2,568 LUTs and an estimated 0.318 W. Every stage of every unit is bit-exact with its software model. In a full-system simulation with a datasheet camera model, each decision leaves its HDPU within 11.03 camera lines of the pixel that produced it, 22-67x sooner than the earliest moment at which a frame-based program on the host could respond; the HDPU latency varies by no more than 17 ns, whereas the host's own…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.38752">阅读原文 ↗</a></p>
+</body>
+</html>

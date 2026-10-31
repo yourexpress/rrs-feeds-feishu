@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caerus: Prefetching by Thinking Globally and Acting Locally</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Caerus: Prefetching by Thinking Globally and Acting Locally</h1>
+<p class="meta-line">arXiv(cs.AR) · 2026-10-29 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 偏移预取器（offset prefetcher）在全局与局部偏移提取间两难：BOP 选单一全局偏移但缺乏上下文敏感精度跟踪，Berti 用 PC 局部提取却抓不住全局内存模式。</p>
+<p><strong>方法</strong> Caerus：在多个不重叠的全局派生偏移上做 PC 局部过滤——从全局内存 trace 提取多个偏移，仅用未被先前学习偏移覆盖的访问训练每个偏移，最大化联合覆盖；各偏移精度按 PC 跟踪。</p>
+<p><strong>关键数字</strong> SPECspeed 2017 上几何平均提速 8.3%，超过 Berti 2.0%，硬件与 DRAM 流量开销低。</p>
+<p><strong>为什么值得看</strong> 融合全局模式与 PC 局部精度的预取设计，简单思路显著胜出 SOTA，对存储层次优化有启发。</p>
+<p><a href="https://arxiv.org/abs/2610.39797">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.39797">阅读原文 ↗</a></p>
+</body>
+</html>

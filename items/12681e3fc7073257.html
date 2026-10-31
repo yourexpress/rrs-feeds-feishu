@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preserving Safety During Sequential Fine-Tuning: A Factorial and Geometric Analysis of Replay</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Preserving Safety During Sequential Fine-Tuning: A Factorial and Geometric Analysis of Replay</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-27 · 论文PDF</p>
+
+<p>Benign fine-tuning can erode safety alignment in large language models, and sequential adaptation substantially compounds this risk.</p>
+<blockquote><p>Benign fine-tuning can erode safety alignment in large language models, and sequential adaptation substantially compounds this risk. Prior work mitigates this erosion by replaying harmful-prompt refusals and benign-compliance examples, while other work instead matches base-model logits via distillation. However, the individual contributions of supervised exposure and distillation to safety behavior and refusal geometry during sequential adaptation remain unclear. We factor these two strategies apart and study their behavioral and geometric effects during sequential LoRA fine-tuning of Mistral-7B and Llama-3-8B across diverse task sequences (code generation, German-language summarization, and science question-answering). Behaviorally, supervised replay exposure yields the largest reduction in HarmBench attack success rate (ASR) on Mistral, averaging 51.1 points below base, but at a substantial over-refusal cost, averaging 53.4 points above base on OR-Bench-hard. Logit distillation, without any supervised replay loss, largely prevents safety erosion at a fraction of this cost: an average 5.4-point ASR reduction against only a 5.1-point rise in over-refusal. Llama shows the same asymm…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.38001">阅读原文 ↗</a></p>
+</body>
+</html>

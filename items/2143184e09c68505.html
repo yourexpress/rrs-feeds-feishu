@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dual DeltaNet: Value-Side Memory Reorganization for Linear Attention</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Dual DeltaNet: Value-Side Memory Reorganization for Linear Attention</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-28 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 线性注意力/SSM 靠固定大小循环状态保持历史关联，delta 规则能减少干扰，但不考虑相关 value 特征在状态中的分布——能否从值侧重组内存？</p>
+<p><strong>方法</strong> 把状态视为 d_k 个地址存储 d_v 维值的库；在 Kimi Delta Attention 基础上加"值侧 delta 规则"（用当前值特征重排其占据的地址），形成双面 delta 规则；推导 chunkwise 并行训练算法与 rank-2 递推提升推理算术强度。</p>
+<p><strong>关键数字</strong> 与 KDA、GDN-2、Mamba-3 相比，DDN 在语言建模、零样本下游任务与检索上整体最强，训练/推理开销相对 KDA 仅小幅增加。</p>
+<p><strong>为什么值得看</strong> 线性注意力内存管理的机理级改进，代码开源，对高效序列模型有直接价值。</p>
+<p><a href="https://arxiv.org/abs/2610.38578">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.38578">阅读原文 ↗</a></p>
+</body>
+</html>

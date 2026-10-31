@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Low-Bit GDN Recurrent-State Quantization: Global Gradient-aware Allocation and Pure-Write Sliding Windows</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Low-Bit GDN Recurrent-State Quantization: Global Gradient-aware Allocation and Pure-Write Sliding Windows</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-29 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 线性注意力把历史信息存在固定大小循环状态中，降低状态精度会减少每请求存储，但量化写回误差进入后续递归、损害长推理质量，还伴随重复生成与过长输出。</p>
+<p><strong>方法</strong> 提出全局梯度感知分配（GGA）与纯写滑窗（PW）：GGA 结合候选量化残差与对未来预测损失的梯度敏感度，在模型级混合精度预算下分配各头位宽；PW 以 FP8 向量对独立维护近期纯写、经完整 GDN 状态转移传播、离开窗口后才并入低比特历史状态。</p>
+<p><strong>关键数字</strong> Qwen3.5-4B/9B 七项评估上，GGA 单独较 STEPQuant@4 提升 19.48/29.84 个百分点；加 PW-S8 后七任务宏平均 69.83%/78.63%，较 STEPQuant@4 提升 38.39/41.21 个百分点；@6 时 GGA 把平均生成长度较 STEPQuant 降 10.45%/14.65%，GGA@4 加 PW-S8 再降 32.32%/36.77%。</p>
+<p><strong>为什么值得看</strong> 低比特循环状态量化的精度分配+近期信息维护双管齐下，长推理任务数据充分，对低比特线性注意力部署实用。</p>
+<p><a href="https://arxiv.org/abs/2610.39931">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.39931">阅读原文 ↗</a></p>
+</body>
+</html>

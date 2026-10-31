@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Endgame of FSDP Communication: Layout-Aware Collectives on Copy Engines, RDMA, and NVSwitch</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>The Endgame of FSDP Communication: Layout-Aware Collectives on Copy Engines, RDMA, and NVSwitch</h1>
+<p class="meta-line">arXiv(cs.DC) · 2026-10-28 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> FSDP2 按参数张量维护参数/梯度，但集合通信在扁平 rank-major 缓冲上进行，布局转换与通信 kernel 双重拖慢 step。</p>
+<p><strong>方法</strong> TIDE：基于公开 NCCL 2.31+ API 的零拷贝集合通信，把布局放置折叠进集合寻址；TIDE-AG 用 NVSwitch 组播+节拍式递归倍增 RDMA 直送参数存储；TIDE-RS 直接消费每参数 bf16 梯度、用 copy engine 与短生命周期 CTA 归约为 fp32 分片，两阶段流水分离梯度读取与网络推进。</p>
+<p><strong>关键数字</strong> Llama-3.1-70B 8K tokens/GPU 训练中布局转换占 step 时间 6.4%，默认 reduce-scatter 可使本应单波完成的并发 GEMM 慢 69%；64 GPU 上较 Stock FSDP2 step 时间降最多 27.1%，reduce-scatter SM 时间降 12.5–14.5×。</p>
+<p><strong>为什么值得看</strong> 通信与计算重叠的底层优化，零拷贝+混合精度归约设计对大模型训练栈很有价值。</p>
+<p><a href="https://arxiv.org/abs/2610.38228">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.38228">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Far Are We From On-Device VLM Inference? A Measurement Study on Edge NPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>How Far Are We From On-Device VLM Inference? A Measurement Study on Edge NPUs</h1>
+<p class="meta-line">arXiv(cs.PF) · 2026-10-29 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 端侧 VLM 在边缘 NPU 上部署的跨层协同（架构/runtime/硬件）仍少被探索——离端侧 VLM 推理落地还有多远？</p>
+<p><strong>方法</strong> 实证测量：6 个代表性 VLM × 3 个真实边缘平台 × 10 个多模态基准，从端到端应用延迟与热迹钻到低层 kernel 级执行行为。</p>
+<p><strong>关键数字</strong> 三个反直觉发现：① softmax 主导注意力开销，查表式优化也消除不了使 NPU 矩阵单元严重空转的流水气泡；② 线性注意力的理论加速在真实 NPU 上因张量重排开销消失；③ 无硬件后端在自回归解码上全面占优，注意力张量形状的并行度决定 NPU 效率并改变 CPU-NPU 性能平衡。</p>
+<p><strong>为什么值得看</strong> 系统量化端侧 VLM 推理的真实差距，对硬件架构师、runtime 开发与模型设计者都给出跨层建议。</p>
+<p><a href="https://arxiv.org/abs/2610.40039">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.40039">阅读原文 ↗</a></p>
+</body>
+</html>

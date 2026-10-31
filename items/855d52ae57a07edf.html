@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NORmal: Architecting 3D Ferroelectric NOR Flash as Main Memory -- From Co-Fabricated BEOL Arrays to 200B-Class Multi-Agent LLMs in a Smartphone</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>NORmal: Architecting 3D Ferroelectric NOR Flash as Main Memory -- From Co-Fabricated BEOL Arrays to 200B-Class Multi-Agent LLMs in a Smartphone</h1>
+<p class="meta-line">arXiv(cs.AR) · 2026-10-29 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 智能手机上的 agent 团队（大 planner 指挥并行 worker 长会话）需要 200B 级模型和远超手机 DRAM 的上下文；现有方案把 flash 当存储：UFS 饿死按 token 权重流式，移动 HBF 需重设计 SoC 且无法吸收持续 KV 写。</p>
+<p><strong>方法</strong> NORmal：首个面向 3D 铁电 NOR flash 的主存架构。共制造并实测 BEOL 3D FeNOR 阵列（密集 3-bit MLC + 快速高耐久 SLC，传感低于 7.5ns），经阵列下 DRAM 仿真桥接入未修改的 LPDDR6 总线成为字节可寻址 load/store rank；按可变性与寿命而非热度放置 agent 状态，动态跨 agent 阶段划分子通道。</p>
+<p><strong>关键数字</strong> 生产 agent trace 服务级仿真中，较 UFS 卸载快 8.9–28.0×，距无限 DRAM 理想仅差 0.4%；256K token 以上会话较 HBF 快 2.8–6.3×，每 token 内存能耗低 8.1–17.8×。</p>
+<p><strong>为什么值得看</strong> 用铁电 NOR 做主存支撑手机端 200B 级多 agent LLM，硬件实测+仿真数字惊艳，端侧大模型方向值得关注。</p>
+<p><a href="https://arxiv.org/abs/2610.40000">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.40000">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Case Study of a Multi-Agent Kernel-Optimization Loop That Learns a New AI Accelerator</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>A Case Study of a Multi-Agent Kernel-Optimization Loop That Learns a New AI Accelerator</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-28 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 前沿 LLM 能写对多数单算子 CUDA kernel，但在罕见架构（新加速器+冷门编程语言）上精度崩塌；稀缺设备时间下如何自动优化 kernel？</p>
+<p><strong>方法</strong> 面向 FuriosaAI RNGD NPU（Rust DSL）构建 LLM agent 优化循环：自建目标知识（总结 DSL 文档、微基准测芯片、记录编译器合法性规则并在工具链变化时复核）；按 kernel 维护 Design Tree 做角色化搜索；上机前用廉价检查筛选设计，后期仅在与最佳 kernel 反复对比后才采纳改动。</p>
+<p><strong>关键数字</strong> 12 天优化 Gemma-4-12B 三个 decode kernel，最终较官方基线几何平均提速 9.293×，每个 kernel 距离仅搬权重所需周期 1.25× 以内。</p>
+<p><strong>为什么值得看</strong> 稀缺设备+嘈杂测量约束下 agent 自动优化硬件的完整案例，代码已开源。</p>
+<p><a href="https://arxiv.org/abs/2610.38329">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.38329">阅读原文 ↗</a></p>
+</body>
+</html>

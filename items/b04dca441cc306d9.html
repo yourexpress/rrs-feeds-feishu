@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Depth through Recurrence: Towards Ultra-Efficient On-Device ASR</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Depth through Recurrence: Towards Ultra-Efficient On-Device ASR</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-27 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 手表、眼镜等端侧设备资源极度受限，深度 ASR 大模型无法部署——能否不扩大参数量就获得深度模型的表示能力？</p>
+<p><strong>方法</strong> 观察到多数层学到功能相似的变换，据此提出块循环（block-recurrent）ASR 架构：用少量权值共享的循环块替代参数化深度，配合表示引导分组与知识蒸馏压缩模型；再以轻量 MoE-LoRA 实现端侧个性化。</p>
+<p><strong>关键数字</strong> 仅两个共享块的模型平均恢复大模型 97.4% 的精度，参数量少一个数量级；权值复用降低访存开销与推理能耗。</p>
+<p><strong>为什么值得看</strong> 面向手表/眼镜等超受限设备的 ASR 压缩路线，循环深度+蒸馏+MoE-LoRA 组合，对端侧语音算法（含 KWS 相关方向）很有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.37833">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.37833">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ParaTTT: Parallelizing Test-Time Training Layers with Deep Memories</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ParaTTT: Parallelizing Test-Time Training Layers with Deep Memories</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-28 · 论文PDF</p>
+
+<p>Test-time training (TTT) layers replace the linear fast-weight memory of modern recurrent architectures with a small neural network trained online by gradient descent.</p>
+<blockquote><p>Test-time training (TTT) layers replace the linear fast-weight memory of modern recurrent architectures with a small neural network trained online by gradient descent. This nonlinear memory is more expressive than the linear memories of Gated DeltaNet and Mamba-2, but is difficult to parallelize: existing implementations such as TTT-MLP rely on sequential, block-wise weight updates that run several times slower than chunkwise-parallel linear recurrences. Moreover, their block-wise execution only approximates the token-by-token online recurrence, whereas linear recurrences admit an exact chunkwise-parallel evaluation. We introduce ParaTTT (PTTT), an algorithm for parallelizing arbitrarily deep nonlinear memories by iteratively refining estimates of the inner-loop gradient trajectory. Starting from a guess of the hidden-layer gradients, each refinement consists of three chunkwise-parallel passes: a forward pass that evaluates the resulting feature trajectory, an exact gated-delta-rule pass that computes the readout trajectory and its feature gradients, and a backward pass that propagates these gradients into a new estimate. The exact online gradient descent recurrence is a fixed poin…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.38255">阅读原文 ↗</a></p>
+</body>
+</html>

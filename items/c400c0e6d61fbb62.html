@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two-Stage Clipping: Linear-Time Approximate and Exact Mixed-Norm Projections for Transformers</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Two-Stage Clipping: Linear-Time Approximate and Exact Mixed-Norm Projections for Transformers</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-28 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> Transformer 结构化稀疏化中 ℓ1,∞ 投影能诱导列稀疏，但现有近端方法对 n×m 矩阵需 O(nm log(nm))，算力能效受限。</p>
+<p><strong>方法</strong> Two-Stage Clipping（TSC）：受双层优化启发但不严格求解，分解为两阶段——先投影组级量分配全局稀疏预算并识别活跃组，再以结果为矩阵系数的组级裁剪阈值；对 n×n 方阵注意力矩阵复杂度降至 O(n²)（对系数个数线性）。</p>
+<p><strong>关键数字</strong> 摘要未给出统一基准的具体数值；理论上界表明 TSC 与精确近端投影的偏差很小，合成数据上额外欧氏近似代价可忽略，基准测试显示显著优于近端基线。</p>
+<p><strong>为什么值得看</strong> 把稀疏投影做到线性时间，理论保证+实验验证兼备，对结构化稀疏化落地方向实用。</p>
+<p><a href="https://arxiv.org/abs/2610.38598">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.38598">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MulClip: A table-free activation function with monotonic and folding regimes for reservoir computing on microcontrollers</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MulClip: A table-free activation function with monotonic and folding regimes for reservoir computing on microcontrollers</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-29 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 微控制器（MCU）上环状储备池（ring reservoir）计算中，tanh 求值占状态更新时间高达 75%，需要更轻量的激活函数。</p>
+<p><strong>方法</strong> MulClip：仅用比较、绝对值、乘法与减法实现曲率的轻量激活；裁剪阈值不放在极值点而是放在响应过极值后回到零点处，使单一函数兼具单调区与可增加单单元表达力的非单调折叠区；工作区由常规超参搜索决定，无需任务特定调阈。</p>
+<p><strong>关键数字</strong> Cortex-M4 上实测状态更新时间为 tanh 的 0.34 倍，短于 11 种评估的 tanh 近似；PC 评估中三阶 MulClip 在 NARMA-20 上 NMSE 较 tanh 低 22%，8-bit parity 精度从单调裁剪变体的 0.76–0.78 提到 0.97–0.98；两类任务设备端推理与 PC 几乎一致。</p>
+<p><strong>为什么值得看</strong> 面向 MCU 储备池计算的无查表激活函数，硬件实测数字扎实，对超低功耗端侧 AI 有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.39343">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.39343">阅读原文 ↗</a></p>
+</body>
+</html>

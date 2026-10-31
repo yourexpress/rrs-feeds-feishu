@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>zkDuel: Characterizing SumCheck Prover Kernels across GPU Programming Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>zkDuel: Characterizing SumCheck Prover Kernels across GPU Programming Models</h1>
+<p class="meta-line">arXiv(cs.AR) · 2026-10-26 · 论文PDF</p>
+
+<p>SumCheck is a central prover primitive in zero-knowledge proofs, exposing table-parallel work that maps naturally to GPUs but becomes increasingly arithmetic-intensive as finite fields widen.</p>
+<blockquote><p>SumCheck is a central prover primitive in zero-knowledge proofs, exposing table-parallel work that maps naturally to GPUs but becomes increasingly arithmetic-intensive as finite fields widen. We study how this shift affects the cost of programming SumCheck in Triton rather than CUDA. Our benchmark, zkDuel, provides matched implementations of 25 zkPHIRE-derived constraints alongside diagnostic polynomials, covering 32-, 64-, 128-, and 256-bit prime fields, with independent CPU-reference validation and cross-backend checksum gating. Of 800 configurations attempted on an NVIDIA H100, 758 complete with matching checksums. CUDA's median advantage over Triton falls from 3.5x at 32 bits to 1.4x at 256 bits, and Triton is faster on 19 large-table configurations; the same convergence appears on an A100, where the gap falls from 4.4x to 1.6x. Profiling shows that the small-field gap largely reflects host launch overhead and redundant modular additions in Triton's original block reduction, whose relative costs diminish as multi-limb Montgomery work grows. Replacing that reduction with tl.reduce brings Triton's median kernel time within 8% of CUDA on both GPUs, while specialized point interpol…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.37710">阅读原文 ↗</a></p>
+</body>
+</html>

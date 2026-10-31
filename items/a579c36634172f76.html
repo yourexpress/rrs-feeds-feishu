@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Causal Attention on CPU: A Cache-Aware and Load-Balanced Scheduling Kernel for Prefill</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Causal Attention on CPU: A Cache-Aware and Load-Balanced Scheduling Kernel for Prefill</h1>
+<p class="meta-line">arXiv(cs.LG) · 2026-10-28 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 多 agent 并发长上下文 prefill 会占满 GPU，CPU 是可替代路径，但现有 CPU attention kernel 不适应多级缓存层次、线程调度不佳。</p>
+<p><strong>方法</strong> CACPU：分层缓存阻塞（tiered cache blocking）+ 核内任务分发（in-kernel task dispatching）的因果全序列 prefill 注意力 kernel。</p>
+<p><strong>关键数字</strong> 较 PyTorch SDPA、FlexAttention、SGLang 的注意力 kernel 最高提速 2.01×；集成进 SGLang 后 Llama-3.1-8B 的 TTFT 最高降低 1.74×，精度不变。</p>
+<p><strong>为什么值得看</strong> CPU 侧 prefill 卸载的实用 kernel 工程，缓存感知与负载均衡设计对异构调度有参考意义。</p>
+<p><a href="https://arxiv.org/abs/2610.38809">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.38809">阅读原文 ↗</a></p>
+</body>
+</html>

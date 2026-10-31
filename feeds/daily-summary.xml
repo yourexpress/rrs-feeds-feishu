@@ -5,8 +5,53 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>每天一条，汇总当日两个检索源（AI 技术报告 + 高效计算文献）的重点内容。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 30 Oct 2026 23:26:10 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 10:58:04 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/daily-summary.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日精选 · 2026-10-31</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-10-31.html</link>
+      <guid isPermaLink="false">urn:daily-summary:2026-10-31</guid>
+      <pubDate>Sat, 31 Oct 2026 23:05:00 +0800</pubDate>
+    <category>每日精选</category>
+      <description>&lt;h1&gt;2026-10-31 文献检索摘要&lt;/h1&gt;
+&lt;h2&gt;当日检索概况&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;AI 技术报告库&lt;/strong&gt;：检索 6 条，入选 6 条（模型发布与治理公告为主：GPT-6 Rosalind Research 向获批生命科学客户推出及 System Card 附录、Google Project Suncatcher 原型卫星回传、AI 训练偏好表达工具、青少年保护新规、fair use 立场说明）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;高效计算文献库&lt;/strong&gt;：检索 140 条，入选 25 条（arXiv cs.DC/cs.LG/cs.AR/cs.PF 等，聚焦推理系统、量化与端侧 AI）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;重点推荐&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Depth through Recurrence: Towards Ultra-Efficient On-Device ASR&lt;/strong&gt; — 面向手表/眼镜等超受限设备的 ASR，块循环架构仅两个共享块就恢复大模型 97.4% 精度、参数少一个数量级，与端侧语音方向高度相关。&lt;a href="https://arxiv.org/abs/2610.37833"&gt;arXiv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;How Far Are We From On-Device VLM Inference?&lt;/strong&gt; — 六种 VLM × 三平台 × 十基准的端侧实测，揭示 softmax 主导注意力开销、线性注意力理论加速在 NPU 上消失等反直觉结论。&lt;a href="https://arxiv.org/abs/2610.40039"&gt;arXiv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NORmal: 3D Ferroelectric NOR Flash as Main Memory&lt;/strong&gt; — 铁电 NOR 主存架构（传感 &amp;lt;7.5ns），服务级仿真较 UFS 卸载快 8.9–28.0×，指向手机端 200B 级多 agent LLM。&lt;a href="https://arxiv.org/abs/2610.40000"&gt;arXiv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ConfluxServe&lt;/strong&gt; — 同一 batch 内以不同并行度共执行 prefill/decode 的算子级异构并行，生产负载 goodput 提升 1.26–1.62×。&lt;a href="https://arxiv.org/abs/2610.37810"&gt;arXiv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;FlatCake: Flat KVCache Storage Architecture&lt;/strong&gt; — 打破 DRAM/SSD 分层假设，SSD 直接进统一地址空间，生产 trace 上 94% cache 命中、平均 TTFT 降 1.6×。&lt;a href="https://arxiv.org/abs/2610.38355"&gt;arXiv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dual DeltaNet&lt;/strong&gt; — 从值侧重组线性注意力内存的双面 delta 规则，语言建模/零样本/检索上整体强于 KDA、GDN-2、Mamba-3。&lt;a href="https://arxiv.org/abs/2610.38578"&gt;arXiv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Low-Bit GDN Recurrent-State Quantization&lt;/strong&gt; — 全局梯度感知比特分配+纯写滑窗，Qwen3.5-4B/9B 七任务宏平均较 STEPQuant@4 提升 38.39/41.21 个百分点。&lt;a href="https://arxiv.org/abs/2610.39931"&gt;arXiv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MCCL: Training across a fleet of Macs&lt;/strong&gt; — 200+ M4 Max Mac 集群的 PyTorch MPS 分布式训练后端，all-reduce 达 TCP goodput 98–99.7%，闲置算力年抵约 20 万美元云成本。&lt;a href="https://arxiv.org/abs/2610.39029"&gt;arXiv&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;主题速览&lt;/h2&gt;
+&lt;p&gt;当日高效计算库以 LLM 推理系统为主轴：prefill/decode 分离与路由（ConfluxServe、DolphinRouting、PDScope）、KV cache 与投机解码（FlatCake、能耗核算）、线性注意力/循环模型及其低比特量化（Dual DeltaNet、LinQuant、GDN 量化）构成最大板块；端侧与边缘 AI 是另一热点（ASR、VLM 实测、铁电 NOR 主存、MCU 储备池、边缘火灾监测）；此外 LLM agent 驱动硬件设计（kernel 优化循环、RISC-V CPU、软硬协同公式化）连续多日出现。AI 库当日以模型发布与内容治理公告为主。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h1>2026-10-31 文献检索摘要</h1>
+<h2>当日检索概况</h2>
+<ul>
+<li><strong>AI 技术报告库</strong>：检索 6 条，入选 6 条（模型发布与治理公告为主：GPT-6 Rosalind Research 向获批生命科学客户推出及 System Card 附录、Google Project Suncatcher 原型卫星回传、AI 训练偏好表达工具、青少年保护新规、fair use 立场说明）</li>
+<li><strong>高效计算文献库</strong>：检索 140 条，入选 25 条（arXiv cs.DC/cs.LG/cs.AR/cs.PF 等，聚焦推理系统、量化与端侧 AI）</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>Depth through Recurrence: Towards Ultra-Efficient On-Device ASR</strong> — 面向手表/眼镜等超受限设备的 ASR，块循环架构仅两个共享块就恢复大模型 97.4% 精度、参数少一个数量级，与端侧语音方向高度相关。<a href="https://arxiv.org/abs/2610.37833">arXiv</a></li>
+<li><strong>How Far Are We From On-Device VLM Inference?</strong> — 六种 VLM × 三平台 × 十基准的端侧实测，揭示 softmax 主导注意力开销、线性注意力理论加速在 NPU 上消失等反直觉结论。<a href="https://arxiv.org/abs/2610.40039">arXiv</a></li>
+<li><strong>NORmal: 3D Ferroelectric NOR Flash as Main Memory</strong> — 铁电 NOR 主存架构（传感 &lt;7.5ns），服务级仿真较 UFS 卸载快 8.9–28.0×，指向手机端 200B 级多 agent LLM。<a href="https://arxiv.org/abs/2610.40000">arXiv</a></li>
+<li><strong>ConfluxServe</strong> — 同一 batch 内以不同并行度共执行 prefill/decode 的算子级异构并行，生产负载 goodput 提升 1.26–1.62×。<a href="https://arxiv.org/abs/2610.37810">arXiv</a></li>
+<li><strong>FlatCake: Flat KVCache Storage Architecture</strong> — 打破 DRAM/SSD 分层假设，SSD 直接进统一地址空间，生产 trace 上 94% cache 命中、平均 TTFT 降 1.6×。<a href="https://arxiv.org/abs/2610.38355">arXiv</a></li>
+<li><strong>Dual DeltaNet</strong> — 从值侧重组线性注意力内存的双面 delta 规则，语言建模/零样本/检索上整体强于 KDA、GDN-2、Mamba-3。<a href="https://arxiv.org/abs/2610.38578">arXiv</a></li>
+<li><strong>Low-Bit GDN Recurrent-State Quantization</strong> — 全局梯度感知比特分配+纯写滑窗，Qwen3.5-4B/9B 七任务宏平均较 STEPQuant@4 提升 38.39/41.21 个百分点。<a href="https://arxiv.org/abs/2610.39931">arXiv</a></li>
+<li><strong>MCCL: Training across a fleet of Macs</strong> — 200+ M4 Max Mac 集群的 PyTorch MPS 分布式训练后端，all-reduce 达 TCP goodput 98–99.7%，闲置算力年抵约 20 万美元云成本。<a href="https://arxiv.org/abs/2610.39029">arXiv</a></li>
+</ul>
+<h2>主题速览</h2>
+<p>当日高效计算库以 LLM 推理系统为主轴：prefill/decode 分离与路由（ConfluxServe、DolphinRouting、PDScope）、KV cache 与投机解码（FlatCake、能耗核算）、线性注意力/循环模型及其低比特量化（Dual DeltaNet、LinQuant、GDN 量化）构成最大板块；端侧与边缘 AI 是另一热点（ASR、VLM 实测、铁电 NOR 主存、MCU 储备池、边缘火灾监测）；此外 LLM agent 驱动硬件设计（kernel 优化循环、RISC-V CPU、软硬协同公式化）连续多日出现。AI 库当日以模型发布与内容治理公告为主。</p>]]></content:encoded>
+    </item>
     <item>
       <title>每日精选 · 2026-10-30</title>
       <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-10-30.html</link>
