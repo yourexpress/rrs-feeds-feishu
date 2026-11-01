@@ -22,9 +22,11 @@
 <h1>From Mixing to Tearing: Graph Decomposition in Decentralized Optimization via Message Passing</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-05 · 论文PDF</p>
 
-<p>去中心化优化中“从混合到撕裂”的图分解与消息传递方法</p>
-<blockquote><p>We study the minimization of sums of smooth strongly convex functions over undirected graphs, with each function held by one agent and communication restricted to neighbors in the graph. Existing decentralized methods, whether based on gossip or on routing over spanning trees, typically use the network to mix or aggregate information to enable {\it prescribed} local optimization updates. What this communication-centered viewpoint lacks is a general framework that uses graph structure to {\it jointly} design the optimization subproblems and the cooperative computation and communication through which agents solve them cooperatively. We develop such a framework from first principles, jointly designing the linear representation of agreement constraints, the blocks of the resulting dual variables (jointly optimized), and connected cluster of agents that cooperatively solve each block subproblem over the assigned subgraph. GATE (Graph-Tearing message passing) is a first instance of this framework: one variable per edge and tree blocks. At each iteration, agents update their assigned edge variables by minimizing the sum of the two endpoint cost-to-go messages and relaxing the result. The …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：去中心化优化中，既有方法（gossip 或生成树路由）把网络用于混合/聚合信息以支持“规定的”局部更新，缺一个用图结构联合设计优化子问题与协作计算、通信的通用框架。</p>
+<p><strong>方法</strong>：从第一性原理构建：联合设计一致约束的线性表示、对偶变量分块与协作求解各块子问题的连通 agent 簇；GATE（Graph-Tearing 消息传递）为首个实例——每边一变量+树块，消息经树递归的局部最小化更新；GATE-S 用可处理局部模型与轻量消息参数化降低迭代开销。</p>
+<p><strong>关键数字</strong>：线性收敛，速率显式依赖函数正则性、网络拓扑与所选划分的相互作用；数值实验验证理论并评估效率。</p>
+<p><strong>为什么值得看</strong>：把图分解与消息传递统一进一个可证明收敛的框架，理论刻画清晰。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.03709">From Mixing to Tearing: Graph Decomposition in Decentralized Optimization via Message Passing</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.03709">阅读原文 ↗</a></p>
 </body>
 </html>

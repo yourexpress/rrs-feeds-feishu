@@ -22,9 +22,11 @@
 <h1>Execution-Path Qualification and Realized Costs in Speculative Decoding on Consumer Systems</h1>
 <p class="meta-line">arXiv (cs.PF) · 2026-10-05 · 论文PDF</p>
 
-<p>消费级系统上投机解码执行路径合格性与实际成本的实证分析</p>
-<blockquote><p>Numerical execution paths can change greedy output; a mismatch alone does not predict the remaining trajectory. On the tested B570 stack, we select a draft-free target-only micro-batch-one predictor using exposed discovery data, then freeze complete generated-ID predictions before reserved live speculation. It matches 72/72 capped sequences on 24 repeat-stable prompts, including all 12 runs of four reference-divergent prompts; the same-set reference matches 60/72. The predictor is sufficient for this path, but it neither restores qualification nor identifies a unique numerical cause. Separate B570 same-state forks test intervention effects; RTX proposal/replay programs test reproduction while sharing numerical routines. We assess cost separately. Newly direct-ID-qualified RTX serialization is slower within its instrumented post-prefill boundary ($0.646\times$ target/serialized latency). At fixed measured progress and target work, 358H remains below parity even with draft and residual costs removed. Qualified M4 Guard beats target-only but loses to fixed speculation. These results give testable diagnoses and engineering decisions about lossless compatibility and complete cost on the…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：数值执行路径可能改变贪心输出，而路径不匹配本身不能预测后续轨迹；消费级系统上投机解码的“无损兼容”应如何检验、真实成本是多少？</p>
+<p><strong>方法</strong>：B570 栈上先用暴露的发现数据选出无 draft 的 target-only 微批一预测器，冻结完整生成 ID 预测后再做保留的实时投机；RTX 上用共享数值例程的 proposal/replay 程序测试复现；成本单独评估。</p>
+<p><strong>关键数字</strong>：预测器匹配 24 个稳定提示的 72/72 截断序列（含 4 个参考发散提示的全部 12 次运行），同集参考仅匹配 60/72；RTX 序列化延迟为 0.646×；M4 Guard 优于 target-only 但输给固定投机；结论无便携解码或控制收益。</p>
+<p><strong>为什么值得看</strong>：消费级投机解码无损兼容性的实证诊断，给出可测试的诊断与工程决策而非营销式结论。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.03228">Execution-Path Qualification and Realized Costs in Speculative Decoding on Consumer Systems</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.03228">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Cross-Facility LLM Pre-training on HPC: Elastic Aggregation, Data Leasing, and Queue-Aware Placement</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-10-05 · 论文PDF</p>
 
-<p>跨三大洲三台超算预训练单一 LLM：弹性聚合、数据租约与队列感知放置的完整系统</p>
-<blockquote><p>Academic compute is fragmented: allocations are granted per facility, and facilities differ in accelerators and software stacks, schedule jobs independently, and share neither a network nor a filesystem. We present a system that pools such allocations to pre-train a single language model across three supercomputers on two continents, up to 7,400km apart: Snellius (NVIDIA H100), LUMI and Frontier (both AMD MI250X). It combines (i) DiLoCo-style two-loop training with an elastic, token-weighted Nesterov outer step for which zero, one or many live sites are all normal states; (ii) DARL, a data-leasing protocol whose heartbeat-backed leases guarantee that, within an epoch, no sample is trained twice or lost under crashes, late joins and work stealing; and (iii) queue-aware placement driven by unprivileged sbatch --test-only probes. Training Qwen3-0.6B on C4 for 20,000 optimizer steps, the three-site run reaches a held-out perplexity of 34.7, against 28.2 for a centralised baseline. Per-round overhead (weight exchange and checkpointing) stays near 110 s regardless of the number of local steps H, so its share of wall-clock time falls from 32% at H=100 to 5.7% at H=1,000 and 3.1% at H=2,00…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：学术算力碎片化——配额按设施发放，设施间加速器与软件栈异构、独立调度、无共享网络与文件系统。能否把碎片化配额拼成一次跨设施大模型预训练？</p>
+<p><strong>方法</strong>：在三大洲三台超算（Snellius H100、LUMI 与 Frontier MI250X，相距最远 7,400km）构建完整系统：DiLoCo 式两环训练+弹性 token 加权 Nesterov 外步、DARL 数据租约协议（保证样本不重训不丢失）、队列感知放置。</p>
+<p><strong>关键数字</strong>：Qwen3-0.6B 三站点困惑度 34.7 vs 集中式基线 28.2；轮次开销稳定约 110s，占墙钟比例从 H=100 的 32% 降至 H=2,000 的 3.1%；23.8h 运行 4 次站点退出仅 1.2% 数据块被回收、零重复零丢失；队列感知放置缩短 18–43% 达成时间。</p>
+<p><strong>为什么值得看</strong>：跨设施预训练从“竞争性”变为“可运营”，为算力碎片化机构提供可复制的工程路径。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.03457">Cross-Facility LLM Pre-training on HPC: Elastic Aggregation, Data Leasing, and Queue-Aware Placement</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.03457">阅读原文 ↗</a></p>
 </body>
 </html>

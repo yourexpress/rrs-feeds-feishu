@@ -22,9 +22,11 @@
 <h1>HyperThink: Text-to-Parameter Hypernetworks for Efficient Reasoning</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-05 · 论文PDF</p>
 
-<p>文本到参数超网络的高效推理方法 HyperThink</p>
-<blockquote><p>Long-form thinking traces can substantially improve the multi-step reasoning performance of large language models (LLMs), but they introduce high inference-time overhead, with latency dominated by sequential decoding. We propose HyperThink, a text-to-parameter approach that amortizes this reasoning computation into a single query-conditioned parameter update: a lightweight hypernetwork reads the question and predicts updates to a small subset of the base LLM's parameters, while a vector-quantized decoder constrains them to a finite set of reusable patterns to improve robustness and transfer. Trained end-to-end on outputs from the base model itself, HyperThink eliminates long thinking traces at test time: after one hypernetwork forward pass, the adapted model generates a concise step-by-step solution and final answer without an intermediate trace, using far fewer tokens while retaining strong reasoning performance. Empirically, HyperThink improves the low-latency region of the accuracy-latency trade-off on mathematical and general reasoning tasks, with its strongest gains in the near-non-thinking regime.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：长思维链显著提升 LLM 多步推理，但推理时开销大，延迟被顺序解码主导；能否把推理计算摊销为单次查询条件化的参数更新？</p>
+<p><strong>方法</strong>：HyperThink 文本到参数方法：轻量超网络读取问题并预测基 LLM 小子集参数的更新，向量量化解码器把更新约束到有限可复用模式提升鲁棒性与迁移；端到端在基模型自身输出上训练，测试时消除长思维链。</p>
+<p><strong>关键数字</strong>：一次超网络前向后，适配模型无需中间轨迹即生成简洁分步解答，token 大幅减少；在数学与通用推理的精度-延迟权衡低延迟区改善最强，近“无思维”区增益最大。</p>
+<p><strong>为什么值得看</strong>：把“思考”压缩进参数更新的新范式，推理延迟敏感场景（端侧、实时）直接受益。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.03039">HyperThink: Text-to-Parameter Hypernetworks for Efficient Reasoning</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.03039">阅读原文 ↗</a></p>
 </body>
 </html>

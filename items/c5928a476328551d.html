@@ -22,9 +22,11 @@
 <h1>Fisher-Guided Submodular Data Selection for Continual Pre-Training of Large Language Models</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-05 · 论文PDF</p>
 
-<p>Fisher 引导次模数据选择的 LLM 持续预训练数据效率方法</p>
-<blockquote><p>Data selection is already a central bottleneck in large-language-model training, where web-scale corpora are noisy and token budgets are finite. In continual pre-training (CPT), it becomes a forgetting-control problem: a poorly chosen target-domain corpus can overwrite capabilities encoded in the pretrained checkpoint. Existing CPT practice either scores candidates with parameter-agnostic scalars such as perplexity, or mitigates forgetting by spending many extra general-domain replay tokens. Neither strategy directly asks how training on a candidate will move the model parameters. We show that loss-based selection causes the post-CPT Fisher diagonal to drift downward on exactly the high-Fisher coordinates the pretrained model had committed to, while leaving low-Fisher coordinates largely untouched. This asymmetry exposes a parameter-space mechanism for catastrophic forgetting. Motivated by this observation, we propose a Fisher-aware CPT selector that decomposes each candidate's gradient into an anchor component, which measures perturbation along committed parameter directions, and a frontier component, which measures update capacity in unconstrained low-Fisher subspaces. We aggrega…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：持续预训练（CPT）中数据选择本质是遗忘控制问题：选错目标域语料会覆盖预训练检查点已编码的能力；既有做法要么用困惑度等与参数无关的标量打分，要么花大量通用域 replay token 缓解遗忘。</p>
+<p><strong>方法</strong>：Fisher 感知选择器：把候选梯度分解为 anchor 分量（沿已承诺参数方向的扰动）与 frontier 分量（低 Fisher 子空间的更新能力），用 log-行列式子模目标聚合，单遍流式选择管线优化。</p>
+<p><strong>关键数字</strong>：TinyLlama-1.1B 与 Llama-3.1-8B 医疗 CPT 上，1B 选中 token 在适应与遗忘双双胜过 10B token 的 replay 策略，即 10× token 效率优势。</p>
+<p><strong>为什么值得看</strong>：揭示灾难性遗忘的参数空间机制，并用 10× 数据效率证明 Fisher 引导选择优于 replay。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.02593">Fisher-Guided Submodular Data Selection for Continual Pre-Training of Large Language Models</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.02593">阅读原文 ↗</a></p>
 </body>
 </html>

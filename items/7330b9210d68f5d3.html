@@ -22,9 +22,11 @@
 <h1>Exact Memory-Time Optimization for Prefix-Cached Language Model Serving</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-05 · 论文PDF</p>
 
-<p>前缀缓存语言模型服务的精确内存-时间联合优化</p>
-<blockquote><p>Retaining language-model prefix states trades recomputation against storage time. Optimizing each cached block independently can overcount savings: a resident block is usable only when the required preceding prefix is also available. We introduce Prefix-Certificate Retention (PCR), an exact finite-trace formulation for static, grouped, reset-on-access timeouts. Usable-prefix rewards become nodes whose prerequisites are timeout thresholds and preceding hit certificates. The resulting maximum-weight closure reduces to one minimum cut, with graph size linear in the number of block lookups and timeout choices. A breakpoint theorem extends the construction to all nonnegative timeouts without discretization error. We also derive a linear-time-in-grid-size dynamic program for ordered timeouts and bounds that certify the cost of this restriction. Exhaustive small-instance checks and chronological replay of 39,632 public Mooncake requests validate the formulation. On the fixed grid, ordered timeouts attain the unrestricted training optimum in 118 of 120 trace-grouping-price cases. Heterogeneous retention improves several held-out memory-time tradeoffs, but finer training optimization does n…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 前缀缓存保留在重算与存储时间之间权衡；独立优化每个缓存块会高估节省——常驻块只有在所需前置前缀齐备时才可用。</p>
+<p><strong>方法</strong>：Prefix-Certificate Retention（PCR）：对静态、分组、重置访问超时的精确有限轨迹形式化，可用前缀奖励成为以超时阈值与前序命中证书为前提的节点，最大权闭包化为单次最小割；断点定理扩展到任意非负超时；有序超时另有网格规模线性的动态规划。</p>
+<p><strong>关键数字</strong>：39,632 条公开 Mooncake 请求的时序回放验证；固定网格上 118/120 个 trace 分组价格案例达到无约束训练最优。</p>
+<p><strong>为什么值得看</strong>：前缀缓存保留策略首次有可审计的优化模型与基准，直接关联 KV 缓存成本优化。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.02766">Exact Memory-Time Optimization for Prefix-Cached Language Model Serving</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.02766">阅读原文 ↗</a></p>
 </body>
 </html>

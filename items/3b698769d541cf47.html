@@ -22,9 +22,11 @@
 <h1>JOVE: Joint Execution and Verification for Resource-Aware LLM Task Graphs</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-05 · 论文PDF</p>
 
-<p>资源感知 LLM 任务图的联合执行与验证 JOVE</p>
-<blockquote><p>Complex reasoning queries can be decomposed into directed acyclic task graphs and distributed across heterogeneous LLMs, reducing latency through parallelism and enabling smaller models to solve complex tasks. In practice, however, the suitability of an LLM for a given subtask may be a priori unknown, and execution alone does not reveal output correctness. We propose JOVE, an online framework that jointly assigns executor LLMs and selects intermediate outputs for paid verification. Verification runs asynchronously and is used to improve future allocations, so the system must balance spending on execution now against learning for later. We study how to optimize this trade-off under a long-term budget and a per-query latency constraint, with stochastic, initially unknown LLM service quality, invocation costs, and execution times. JOVE makes execution and verification decisions by solving a sequence of per-query mixed-integer linear programs. Online learning updates task-dependent estimates of LLM quality based on verification feedback, while an information-gain bonus incorporates the value of learning into allocation decisions. Under a natural set of assumptions, we establish subline…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：复杂推理可分解为有向无环任务图并分布到异构 LLM，用并行降低延迟、让小模型也能解复杂任务；但 LLM 对子任务的适配性先验未知，执行本身也不揭示输出正确性。</p>
+<p><strong>方法</strong>：JOVE 在线框架：联合分配执行 LLM 并选择中间输出做付费验证；验证异步运行并反馈改进未来分配，在长期预算与逐查询延迟约束下平衡“现在执行”与“为将来学习”；逐查询混合整数线性规划决策 + 信息增益奖励。</p>
+<p><strong>关键数字</strong>：四个推理基准上与标准推理基线精度相当，平均成本与延迟降低至少 3.17 倍；在自然假设下建立次线性质量学习遗憾。</p>
+<p><strong>为什么值得看</strong>：资源感知任务图执行与验证的联合优化，成本-延迟大幅下降且有理论保证。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.03296">JOVE: Joint Execution and Verification for Resource-Aware LLM Task Graphs</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.03296">阅读原文 ↗</a></p>
 </body>
 </html>

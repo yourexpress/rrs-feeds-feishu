@@ -22,9 +22,11 @@
 <h1>DyRA: Dynamic Residual Approximation for Efficient Matrix Multiplication in DNNs</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-05 · 论文PDF</p>
 
-<p>DNN 矩阵乘的动态残差近似加速 DyRA</p>
-<blockquote><p>Large-scale foundation models achieve strong performance across diverse tasks, but their size makes inference costly, largely due to dense matrix multiplications. Prior work reduces this cost by replacing dense weight matrices with efficient structured forms such as low-rank factorizations. However, these methods approximate weights rather than the output activations that determine inference accuracy. Consequently, small weight-space errors can be amplified by input activations, producing large output errors. In this work, we propose DyRA, an input-adaptive method that improves structured matrix multiplication approximation by correcting residual output errors during inference. We show that matrix multiplication can be approximated more effectively by directly optimizing low-rank factors of the output. DyRA builds on this insight by dynamically approximating and correcting the output error introduced by structured weight approximations. This combines efficient structured computation with input-dependent correction, yielding a more faithful approximation of full matrix multiplication under the same computational budget. Across vision, speech, and language models, DyRA consistently i…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：用低秩分解等结构化形式替换稠密权重可降推理成本，但这类方法近似的是权重而非决定推理精度的输出激活——权重空间的小误差会被输入激活放大为大输出误差。</p>
+<p><strong>方法</strong>：DyRA 输入自适应方法：直接优化输出的低秩因子，推理时动态近似并校正结构化权重近似引入的残差输出误差，把高效结构化计算与输入相关校正结合。</p>
+<p><strong>关键数字</strong>：视觉、语音、语言模型上一致改善精度-效率权衡；DINOv3 端到端 GPU 加速 1.5×，精度退化比 weight-only 基线减少 3× 以上。</p>
+<p><strong>为什么值得看</strong>：把近似目标从权重空间转向输出激活空间，同一算力预算下更忠实地逼近全矩阵乘法。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.02882">DyRA: Dynamic Residual Approximation for Efficient Matrix Multiplication in DNNs</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.02882">阅读原文 ↗</a></p>
 </body>
 </html>

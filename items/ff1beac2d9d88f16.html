@@ -22,9 +22,11 @@
 <h1>Feature Freshness Budgets for Real-Time ML Inference Under Stream Lag</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-10-05 · 论文PDF</p>
 
-<p>流滞后约束下实时 ML 推理系统的特征新鲜度预算管理</p>
-<blockquote><p>Online feature stores decouple feature computation from model serving, materializing features from upstream event streams into a low-latency store that inference reads at request time. This decoupling introduces a freshness gap - the interval between an event occurring at the source and its effect becoming visible in the served feature vector - that is widely documented as a cause of training-serving skew but has no formal treatment as a bounded, cost-quantified quantity. We model the online feature store as a materialized view over an event stream and define a per-feature freshness budget: the difference between the decision window a feature is consumed within and the staleness the serving pipeline imposes on it. We prove two propositions - a per-feature staleness bound, and a closed-form threshold below which a feature can never be served within budget - and validate them in a seeded, reproducible discrete-event simulation and on a real Apache Kafka, Redis, and PostgreSQL pipeline. The predicted collapse threshold reproduces on real infrastructure, with the decision-error transition landing where the closed form predicts. Reconciling simulated and real drop rates surfaces a metho…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：在线特征存储把特征计算与模型服务解耦，引入 freshness gap（事件发生到其效果在服务特征向量中可见的间隔），被广泛指认为训练-服务偏差成因，却缺少有界、成本可量化的形式化处理。</p>
+<p><strong>方法</strong>：把在线特征存储建模为事件流上的物化视图，定义每特征 freshness budget（消费决策窗口与管线强加陈旧度之差）；证明逐特征陈旧上界与特征永不可能在预算内被服务的闭式阈值；在可复现离散事件模拟与真实 Kafka/Redis/PostgreSQL 管线上验证。</p>
+<p><strong>关键数字</strong>：预测的崩溃阈值在真实设施上复现；随机化请求与重算相位后，模拟与设施的单特征 drop rate 平均绝对误差收敛到 0.018（相位锁定会系统性低估陈旧度）。</p>
+<p><strong>为什么值得看</strong>：特征新鲜度首次有形式化预算框架，并揭示模拟-设施差距的主要来源是采样相位伪影而非延迟。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.02259">Feature Freshness Budgets for Real-Time ML Inference Under Stream Lag</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.02259">阅读原文 ↗</a></p>
 </body>
 </html>

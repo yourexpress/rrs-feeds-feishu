@@ -22,9 +22,11 @@
 <h1>Decoupling Memory from Context: Structured Memory for Token-Efficient Test-Time Continual Learning</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-05 · 论文PDF</p>
 
-<p>令牌高效的测试时持续学习结构化记忆机制</p>
-<blockquote><p>Large language models (LLMs) are increasingly deployed in enterprise, scientific, and medical applications, where agents must incorporate domain-specific knowledge and adapt from experience. Context engineering offers a practical alternative to weight updates by improving model behavior through instructions, strategies, and evidence supplied at inference time. However, adapting context online typically requires a costly trial-and-error process, while queries are often processed independently, preventing useful experience from carrying forward. Memory systems address this limitation by retaining information across interactions, but approaches that continually append information to a shared context face increasing token costs, context-window limits, and performance degradation as the context expands. We introduce a unified formulation of context optimization and show that an agent memory system update can be interpreted as an optimization update procedure over the model's context. This perspective attempts to provide a principled framework for studying memory design and its efficiency. We then propose GraphMemory, a lightweight graph-based memory that accumulates, refines, organizes,…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM agent 在线部署需不断吸收领域知识、从经验中适应，但持续向共享上下文追加信息会带来 token 成本膨胀、上下文窗口受限与性能随上下文扩张而下降。</p>
+<p><strong>方法</strong>：统一形式化“上下文优化”，把记忆系统更新解释为对模型上下文的优化更新过程；提出 GraphMemory 轻量图记忆，累积、精炼、组织并连接可复用策略，每次查询只检索相关子图。</p>
+<p><strong>关键数字</strong>：有界检索下检索量随处理样本数增长保持恒定；与基线相比记忆构建 token 减少约 81–85%，下游性能相当。</p>
+<p><strong>为什么值得看</strong>：测试时持续学习的记忆设计有了原则性框架，检索成本恒定，对企业级 agent 落地实用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.02687">Decoupling Memory from Context: Structured Memory for Token-Efficient Test-Time Continual Learning</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.02687">阅读原文 ↗</a></p>
 </body>
 </html>

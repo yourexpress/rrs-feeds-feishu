@@ -22,9 +22,11 @@
 <h1>Lightweight and Resource-Efficient Perception for Robotic Guide Dogs</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-10-05 · 论文PDF</p>
 
-<p>机器导盲犬的轻量、资源高效感知方案</p>
-<blockquote><p>Multi-camera streaming perception is increasingly deployed on heterogeneous edge platforms shared with co-resident workloads, yet accelerator placement is often evaluated using isolated single-stream experiments and mean streaming average precision (sAP). Using two end-to-end pipelines on a single GPU--NPU platform, we show that isolated evaluation can mis-rank deployment-time placement. Although the GPU pipeline is preferred in isolation, GPU-localized contention introduces deadline misses that make detections stale and can reverse the preferred placement before full GPU saturation. The NPU pipeline is less accurate than the GPU pipeline on small and medium objects in isolation, but nearly matches it on large objects. The largest absolute sAP losses in our latency and contention experiments occur for large objects. In our four-stream experiments, the preferred placement depends on which path becomes stale, and increasing GPU-side contention shifts the best placement from All-GPU to All-NPU. Under a GPU-saturating vision--language co-tenant, All-NPU achieves $5.2\times$ the worst-stream sAP of All-GPU. Because mean sAP can hide severe single-stream degradation, evaluation should re…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：多相机流式感知日益部署在与共存负载共享的异构边缘平台，但加速器放置常用隔离单流实验与平均流式平均精度（sAP）评估——这会误导部署选择。</p>
+<p><strong>方法</strong>：在单 GPU-NPU 平台上对比两条端到端管线，做延迟与争用扫描实验，报告截止期错过率、双路径与最差流 sAP。</p>
+<p><strong>关键数字</strong>：GPU 局部争用引入截止期错过使检测陈旧，可在 GPU 完全饱和前反转首选放置；GPU 饱和的视觉-语言共租下 All-NPU 的最差流 sAP 达 All-GPU 的 5.2×；大物体承受最大绝对 sAP 损失。</p>
+<p><strong>为什么值得看</strong>：边缘多流感知评估方法论的纠偏——平均 sAP 会掩盖严重单流退化，应报告争用扫描与最差流指标。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.03187">Lightweight and Resource-Efficient Perception for Robotic Guide Dogs</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.03187">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Coverage You Can Steer: Online Conformal Calibration for RL-Driven Hardware-Aware NAS</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-05 · 论文PDF</p>
 
-<p>RL 驱动硬件感知神经架构搜索的在线保形校准方法</p>
-<blockquote><p>Hardware-aware neural architecture search (NAS) is dominated by evaluation cost: every architecture must be trained before its reward is known. Conformal-prediction filters cut this cost by pruning candidates whose predicted-reward upper bound misses a threshold, with a distribution-free guarantee that at most a fraction $δ$ are wrongly discarded. That guarantee assumes exchangeability between calibration and test candidates, which the surrounding reinforcement-learning (RL) loop violates: the policy's proposals improve as search proceeds and, in layer-by-layer construction, shift within every episode. We replace one-shot quantile estimation with online feedback control (Adaptive Conformal Inference, with tuning-free, locally-adaptive, and group-conditional variants), restoring steerable coverage: dialing the target delivers it, monotonically and reproducibly, for arbitrary sequences. Across three neural-network architecture families and both single-step and sequential search (three seeds), it tracks every requested level to within ${\sim}10^{-3}$ while pruning 25-50% of evaluations at no measured accuracy cost, whereas static calibration loses control of its coverage and a Gaussia…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：硬件感知 NAS 受评测成本主导——每个架构须训练后才能知道奖励。保形预测过滤器可剪掉预测奖励上界未达阈值的候选，但其可交换性假设被周围 RL 环破坏（策略提案随搜索推进而改进、逐层构建中每幕内漂移）。</p>
+<p><strong>方法</strong>：用在线反馈控制（自适应保形推断 ACI 及其免调参、局部自适应、组条件变体）替代一次性分位数估计，恢复可引导的覆盖率；同一乐观上界还用作采集函数。</p>
+<p><strong>关键数字</strong>：三个神经网络架构族上可单调、可复现地追踪任意目标覆盖率，误差约 10⁻³；剪除 25–50% 的评测且无测得的精度损失，而静态校准失去覆盖率控制。</p>
+<p><strong>为什么值得看</strong>：把保形保证从静态交换性假设中解放出来，NAS 评测成本可大幅下降，代码已开源。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.03127">Coverage You Can Steer: Online Conformal Calibration for RL-Driven Hardware-Aware NAS</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.03127">阅读原文 ↗</a></p>
 </body>
 </html>
