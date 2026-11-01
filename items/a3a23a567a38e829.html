@@ -22,9 +22,11 @@
 <h1>PaNGEA: Parallel Node Generation and Exploration Algorithm on GPU</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-10-05 · 论文PDF</p>
 
-<p>GPU 上并行节点生成与探索的搜索算法 PaNGEA</p>
-<blockquote><p>Primal heuristics for finding high-quality feasible solutions are an important component in mixed-integer optimization (MIO) solvers. Recent advances in GPU-accelerated optimization algorithms show the potential of GPU acceleration for continuous optimization. In this paper, we introduce the Parallel Node Generation and Exploration Algorithm (PaNGEA), a GPU-friendly MIO primal heuristic. PaNGEA explores restricted subproblems by combining linear-relaxation solves with a local-search procedure designed for efficient batched execution on GPUs. In addition, instead of relying on a single heuristic for iterative variable fixing, we leverage GPU batching capabilities to generate and explore multiple subproblems in parallel. PaNGEA leverages GPU capabilities in two ways. First, on 283 MIPcc26 and MIPLIB instances, implementing a single-node primal heuristic on the GPU reduces the average gap integral by 8-18% relative to its CPU counterpart. Second, generating and exploring multiple nodes in parallel further reduces the average gap integral by 12-19%.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 寻找高质量可行解的 primal 启发式是混合整数优化（MIO）求解器的重要组件，GPU 加速在连续优化中已见潜力，但 MIO 的 primal 启发式如何高效上 GPU 仍待探索。</p>
+<p><strong>方法</strong> 提出 PaNGEA，一个 GPU 友好的 MIO primal 启发式：用线性松弛求解配合为 GPU 批量执行设计的局部搜索探索受限子问题；不依赖单一启发式逐步固定变量，而是利用 GPU 批处理并行生成并探索多个子问题。</p>
+<p><strong>关键数字</strong> 283 个 MIPcc26 与 MIPLIB 实例上，单节点 primal 启发式相对 CPU 版本平均 gap integral 降低 8-18%；并行生成探索多节点再进一步降低 12-19%。</p>
+<p><strong>为什么值得看</strong> GPU 批量并行打开 MIO primal 启发式新路径，加速效果在公开基准上得到验证。</p>
+<p><a href="https://arxiv.org/abs/2610.03090">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.03090">阅读原文 ↗</a></p>
 </body>
 </html>

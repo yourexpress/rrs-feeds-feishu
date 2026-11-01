@@ -22,9 +22,11 @@
 <h1>SlimKV: Joint Token-Feature KV Cache Compression with Reconstruction-Free Beacon Attention</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-05 · 论文PDF</p>
 
-<p>免重建信标注意力的 token-特征联合 KV 缓存压缩 SlimKV</p>
-<blockquote><p>Long-context LLM serving is increasingly bottlenecked by KV-cache memory, especially in resource-constrained scenarios. Among existing KV-cache compression strategies, token-wise methods reduce cached states but risk information loss through eviction or condensation, while feature-wise methods reduce per-token KV dimensions but can require full-dimensional reconstruction to apply positional embedding, limiting decoding speedups. We introduce SlimKV, a question-agnostic joint token-feature KV-cache compression method. SlimKV uses low-rank-aware training to compress long contexts into beacon memory states with latent KV representations, together with layer-adaptive rank allocation. We further uncover a positional asymmetry: removing key-side RoPE affects beacon and raw tokens differently, with much smaller degradation for beacon tokens. Exploiting this asymmetry, SlimKV trains beacon KV projections under a K-RoPE-free constraint and enables latent-space attention during decoding, mitigating reconstruction latency. On LongBench, SlimKV outperforms baselines at 16x/32x compression and remains leading at 4x/8x, where it retains over 96% of the uncompressed model's score. Needle-in-a-Hay…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 长上下文 LLM 服务越来越受 KV 缓存内存制约：token 级压缩（逐出/凝聚）有信息丢失风险，特征级压缩可减小每 token KV 维度但常需全维重建才能施加位置编码，限制解码加速。</p>
+<p><strong>方法</strong> 提出 SlimKV，与查询无关的 token-特征联合压缩：用低秩感知训练把长上下文压缩为带潜在 KV 表示的信标记忆态，配合层自适应秩分配；并利用"移除 key 侧 RoPE 对信标 token 影响远小于原始 token"的位置非对称性，在 K-RoPE-free 约束下训练信标 KV 投影，实现解码期潜在空间注意力、规避重建延迟。</p>
+<p><strong>关键数字</strong> LongBench 上 16x/32x 压缩优于基线，4x/8x 保留未压缩模型 96% 以上分数；128K 长度下注意力加速最高 7.34x、端到端解码 3.38x。</p>
+<p><strong>为什么值得看</strong> token 与特征双维度联合压缩且免重建，实测加速显著。</p>
+<p><a href="https://arxiv.org/abs/2610.02953">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.02953">阅读原文 ↗</a></p>
 </body>
 </html>

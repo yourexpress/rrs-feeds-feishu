@@ -22,9 +22,11 @@
 <h1>MuLoRA: Spectrally Balanced Low-Rank Adaptation for Continual Learning</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-05 · 论文PDF</p>
 
-<p>谱平衡的低秩适配持续学习方法 MuLoRA</p>
-<blockquote><p>Low-rank adaptation (LoRA) provides a parameter-efficient approach to continual learning, but its nominal rank can conceal a loss of effective adaptation capacity. We identify \emph{spectral plasticity collapse}: during sequential adaptation, update energy becomes concentrated in a small subset of singular modes, leaving much of the available low-rank space underutilized. This exposes a limitation of interference avoidance alone: protecting historical representations does not ensure that the remaining adaptation capacity is responsive to new tasks or effectively utilized. To address this problem, we propose \texttt{MuLoRA}, which jointly controls capacity allocation and utilization. First, historical whitening identifies input directions with strong current-task response relative to accumulated historical response, yielding a task-adaptive basis that remains fixed during training. Second, approximate polar orthogonalization of momentum updates reduces spectral concentration within theselected space. An orthonormal basis connects these mechanisms by transferring the factor-update spectrum exactly tothe induced weight update. We establish a max--min characterization of exact subspace…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LoRA 用于持续学习时，名义秩可能掩盖有效适配容量损失：顺序适配中更新能量集中到少数奇异模式（谱可塑性坍缩），说明仅靠干扰避免并不保证剩余适配容量被有效利用。</p>
+<p><strong>方法</strong> 提出 MuLoRA，联合控制容量分配与利用：① 历史白化识别对当前任务响应强、对历史响应弱的方向，构造任务自适应且训练期间固定的基；② 对动量更新做近似极正交化，降低所选空间内的谱集中；③ 用正交基连接两者，将因子更新谱精确转移到诱导权重更新。并给出精确子空间选择的 max-min 刻画与跨步各向异性下的累积谱界。</p>
+<p><strong>关键数字</strong> 5 个类增量基准、8 个增量设置，16 项报告指标中 15 项平均准确率最高。</p>
+<p><strong>为什么值得看</strong> 从谱视角诊断并修复 LoRA 持续学习的容量利用问题，理论刻画完整。</p>
+<p><a href="https://arxiv.org/abs/2610.02283">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.02283">阅读原文 ↗</a></p>
 </body>
 </html>

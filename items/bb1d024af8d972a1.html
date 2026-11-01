@@ -22,9 +22,11 @@
 <h1>Network-in-the-Loop at Scale: GPU-Batched 5G Simulation for Massively Parallel Robot Learning</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-10-05 · 论文PDF</p>
 
-<p>GPU 批量 5G 仿真支撑大规模并行机器人学习</p>
-<blockquote><p>Massively parallel GPU simulators train multi-robot policies in thousands of environments, and many fleets use private Fifth-Generation (5G) networks, where each robot's delay depends on its teammates' traffic. Network-in-the-loop training places a simulated 5G network inside this loop. However, GPU robot simulators reduce the network to an independent delay per message, while packet-level simulators run one scenario per CPU process and cannot keep pace with thousands of parallel environments. To bridge this gap, we present Isaac-Net, a GPU-batched 5G New Radio (NR) module that advances the uplink of thousands of environments in lockstep with Isaac Lab physics. Isaac-Net simulates every slot, the 0.5~ms interval in which the base station decides which robots transmit, for all environments at once. Extensive experiments confirm that its NR engine reproduces the median delay of ns-3 5G-LENA across loads, with a median delay 5--10\% low on an unseen carrier and 9\% high at 32 robots per environment in closed loop. The engine also reproduces the Age of Information (AoI), the age of each robot's newest delivered report, while an independent delay per message leaves the AoI tail about th…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> GPU 机器人模拟器可在数千环境中并行训练多机器人策略，但把 5G 网络简化为每条消息的独立延迟；包级网络模拟器一个 CPU 进程只能跑一个场景，跟不上数千并行环境，无法把真实网络放进训练环路。</p>
+<p><strong>方法</strong> 提出 Isaac-Net，一个 GPU 批量 5G NR 模块，与 Isaac Lab 物理引擎锁步推进数千环境的上行链路，对所有环境同时模拟基站决定哪些机器人传输的每个 0.5ms 时隙。</p>
+<p><strong>关键数字</strong> 复现 ns-3 5G-LENA 的中位延迟：未见载波低 5-10%，32 机器人/环境闭环高 9%；单 GPU 可让约 100 万机器人在网（Isaac Lab 速率的 83%）；开源。</p>
+<p><strong>为什么值得看</strong> 首次让千级并行机器人学习环境跑起真实的逐时隙 5G 仿真，还能复现信息年龄（AoI）等包级指标。</p>
+<p><a href="https://arxiv.org/abs/2610.02370">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.02370">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Zephon: Elastic Determinism for Online, Stateful Foundation Model Data Loading Pipelines</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-05 · 论文PDF</p>
 
-<p>在线有状态基础模型数据加载流水线的弹性确定性设计 Zephon</p>
-<blockquote><p>Deterministic data loading is important for foundation model development: model researchers need confidence that differences they observe across costly ablations are caused by the parameter they changed rather than non-determinism in the training data sequence. The data loader must provide elastic determinism, i.e., a deterministic sequence of global training data batches despite changes to the GPU topology across runs (e.g., due to GPU scarcity), frequent checkpoint-resume cycles, and different data processing execution backends. Achieving this is difficult because modern foundation model data pipelines tokenize, pack, and mix samples online, introducing stateful n-to-m transformations that break sample indexing. Existing data loaders largely assume indexable 1-to-1 pipelines, and the common workaround of offline materialization is expensive and, for some modalities such as video, infeasible. We present Zephon, a data loader for foundation models that supports online, stateful pipelines while providing elastic determinism and efficient resumption from checkpoints. It partitions the global stream into topology-independent lanes, serializes ordering decisions while parallelizing sta…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 确定性数据加载对基础模型研发很重要（保证消融差异来自改动参数而非数据序列不确定性），但现代流水线在线 tokenize、打包、混合样本，引入破坏样本索引的有状态 n-to-m 变换；现有加载器多假设可索引的 1-to-1 流水线，离线物化昂贵、对视频等模态不可行。</p>
+<p><strong>方法</strong> 提出 Zephon 数据加载器，支持在线有状态流水线同时提供弹性确定性（跨 GPU 拓扑变化、检查点恢复、后端差异保持全局训练数据批序列确定）与高效断点续跑：把全局流划分为拓扑无关的车道，串行化排序决策同时在可互换后端并行化无状态工作；仅检查点有界在途状态，恢复成本不随训练进度增长。</p>
+<p><strong>关键数字</strong> 摘要未给出量化指标；文本与视觉-语言工作负载上达到有竞争力吞吐，同时提供现有加载器没有的保证组合。</p>
+<p><strong>为什么值得看</strong> 直击"在线有状态流水线+确定性"这一基础模型训练基础设施痛点。</p>
+<p><a href="https://arxiv.org/abs/2610.03087">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.03087">阅读原文 ↗</a></p>
 </body>
 </html>

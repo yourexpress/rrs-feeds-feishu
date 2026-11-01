@@ -22,9 +22,11 @@
 <h1>Why Does Adaptive Batching Help LLM Pretraining? A Perspective from Unbounded Variance</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-05 · 论文PDF</p>
 
-<p>从无界方差视角解释自适应批大小为何有助 LLM 预训练</p>
-<blockquote><p>Increasing the batch size during training is a common practice in large language model (LLM) pretraining, yet the theoretical justification behind its success is not well understood. Analyses of stochastic optimization often assume uniformly bounded stochastic gradient variance, yet recent evidence suggests that this assumption fails in many practical nonconvex problems. The Blum--Gladyshev (BG-$0$) noise model relaxes this assumption by allowing the variance to grow quadratically with the distance from initialization, suggesting that batch size schedulers can help by controlling the variance growth during training. However, this growth can be overly conservative in practice. We empirically investigate variance growth in LLM pretraining and observe that a generalized BG model with a tunable growth exponent provides a tighter description of practical noise behavior. Motivated by this observation, we introduce the generalized BG-$a$ noise model, which interpolates between bounded variance ($a=0$) and BG-$0$ noise ($a=2$). Under $L$-smoothness, we derive an information-theoretic lower bound with growth-dependent oracle complexity $Ω(ε^{-(4+a)})$ and establish a matching upper bound in…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 预训练普遍采用增大批大小，但理论解释缺失：随机优化分析通常假设随机梯度方差一致有界，而近期证据表明该假设在非凸问题中常失效。</p>
+<p><strong>方法</strong> 实证考察 LLM 预训练的方差增长，提出广义 BG-a 噪声模型（在有界方差 a=0 与 BG-0 噪声 a=2 之间插值）；在 L-光滑性下导出依赖增长指数的信息论下界 Ω(ε^-(4+a)) 并建立 ε 依赖上的匹配上界（随迭代远离初始化增大批大小）；据此提出自适应批调度器，训练中动态调整批大小控制方差增长。</p>
+<p><strong>关键数字</strong> 在 C4 上预训练 OLMo2 至 1B 参数：匹配 token 预算下验证损失低于小批与大批训练，且迭代数不到小批训练的 10%。</p>
+<p><strong>为什么值得看</strong> 为"批大小调度为何有效"补上理论解释，并用 1B 级预训练实证支撑。</p>
+<p><a href="https://arxiv.org/abs/2610.02355">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.02355">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>WakeKV: Reactive, Reversible KV Residency for Heads That Change Their Minds</h1>
 <p class="meta-line">arXiv (cs.AR) · 2026-10-05 · 论文PDF</p>
 
-<p>让注意力头可回退“改主意”的响应式可逆 KV 驻留机制 WakeKV</p>
-<blockquote><p>Most KV-cache compression methods classify attention heads once, either offline or during prefill, and keep this classification fixed throughout generation. Across three models (1.5B-8B) and three regimes (needle retrieval, long chain-of-thought, and multi-turn recall), we measure head behavior on four model-regime combinations and find that most heads change their reading behavior at least once during generation. We introduce WakeKV, a reactive residency policy that moves cooling heads to a recoverable CPU reservoir rather than freezing or permanently evicting their state. At matched memory or budget, WakeKV consistently improves miss rate over frozen classification and destructive eviction, evaluated across five model-regime combinations and over three cited baselines (SnapKV, uniform R-KV, and ReasonAlloc) across four eligible combinations. A FlexiCache/vLLM implementation on Mistral-7B confirms the benefit on real hardware, improving throughput while retaining LongBench quality.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 多数 KV 缓存压缩方法在离线或预填充期对注意力头一次性分类并全程固定，但测量发现多数头在生成过程中至少改变一次阅读行为，冻结或永久逐出会伤害召回与长链推理。</p>
+<p><strong>方法</strong> 提出 WakeKV，一种响应式驻留策略：把"冷却"的头移入可恢复的 CPU 池，而不是冻结或永久逐出其状态，让改变主意的头能重新参与；在匹配内存/预算下与冻结分类和破坏性逐出对比。</p>
+<p><strong>关键数字</strong> 3 个模型（1.5B-8B）、3 种机制下评估 4 个模型-机制组合，多数头生成中至少改变一次阅读行为；在 5 个模型-机制组合上一致改善 miss rate，并在 4 个可组合设置上超过 SnapKV、uniform R-KV、ReasonAlloc 三个基线；Mistral-7B 的 FlexiCache/vLLM 实现确认实机收益——提升吞吐同时保持 LongBench 质量。</p>
+<p><strong>为什么值得看</strong> 直接挑战"头分类一次定终身"的默认假设，策略实现已落 vLLM 生态。</p>
+<p><a href="https://arxiv.org/abs/2610.02713">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.02713">阅读原文 ↗</a></p>
 </body>
 </html>

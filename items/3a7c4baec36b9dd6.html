@@ -22,9 +22,11 @@
 <h1>WAMpy: Efficient Synthesis of Prolog Programs in Python</h1>
 <p class="meta-line">arXiv (cs.PL) · 2026-10-05 · 论文PDF</p>
 
-<p>Python 中高效合成 Prolog 程序的 WAM 实现</p>
-<blockquote><p>We present WAMpy, a Python framework optimized for synthesizing Prolog programs. Unlike general-purpose Prolog systems, WAMpy targets workloads that repeatedly generate and evaluate small candidate programs. WAMpy compiles Prolog clauses into NumPy array-based WAM instructions and supports partial recompilation of hypotheses against fixed background knowledge. Performance-critical routines are accelerated using Numba just-in-time (JIT) compilation. In a benchmark of repeated compilation-and-evaluation workloads, WAMpy improves end-to-end performance compared with SWI-Prolog accessed from Python using Janus.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 程序合成工作负载需要反复生成并评估大量小候选程序，通用 Prolog 系统并非为此设计，Python 侧调用存在端到端开销。</p>
+<p><strong>方法</strong> 提出 WAMpy，面向 Prolog 程序合成的 Python 框架：把 Prolog 子句编译为基于 NumPy 数组的 WAM 指令，支持对固定背景知识做假设的部分重编译；性能关键路径用 Numba JIT 加速。</p>
+<p><strong>关键数字</strong> 摘要未给出量化指标；在重复编译-评估工作负载基准上，相对通过 Janus 从 Python 调用 SWI-Prolog，端到端性能提升。</p>
+<p><strong>为什么值得看</strong> 为"反复生成+评估小程序"这一合成场景专门优化的 Prolog 实现，思路对做程序合成基础设施的人有借鉴。</p>
+<p><a href="https://arxiv.org/abs/2610.03234">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.03234">阅读原文 ↗</a></p>
 </body>
 </html>

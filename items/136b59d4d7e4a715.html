@@ -22,9 +22,11 @@
 <h1>The Surprising Effectiveness of Shared Memory in Looped Transformers</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-05 · 论文PDF</p>
 
-<p>循环 Transformer 中跨层共享记忆的有效性研究</p>
-<blockquote><p>Looped Transformers apply the same layers several times per token, adding compute to improve quality without more parameters. Each recursion, however, writes its own key-value cache, so memory still grows with compute. Inference-time techniques can shrink this cache at a cost in quality. We pretrain looped language models to share memory: only the first recursion writes a cache, and later recursions read it while keeping a short window of their own. Surprisingly, we find that sharing memory does not cost quality and instead improves it. At 150M-1B parameters, our Looped Prediction Transformer (LPT) and its hybrid variant set a new quality-memory frontier for looped models: with five recursions, the hybrid lowers validation perplexity on FineWeb-Edu by 1.12-1.82 relative to a same-size standard Transformer while using 76-79% less context memory. Through an extensive analysis, we investigate why memory sharing helps. Shared and local memory develop different representations, and later recursions attend mostly to the shared memory, which also acts as a gradient highway to the first recursion.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 循环 Transformer 对每个 token 多次应用相同层，用增加计算换取质量而不加参数，但每轮递归各写自己的 KV 缓存，记忆随计算增长；推理期压缩缓存又会有质量损失。</p>
+<p><strong>方法</strong> 预训练循环语言模型共享记忆：只有第一次递归写缓存，后续递归读取共享缓存并保留自己的短窗口；训练 Looped Prediction Transformer（LPT）及其混合变体，并分析共享记忆为何有效——共享与局部记忆发展出不同表示，后续递归主要注意共享记忆，它还充当通向第一次递归的梯度高速路。</p>
+<p><strong>关键数字</strong> 150M-1B 参数规模；5 次递归时混合变体在 FineWeb-Edu 上验证困惑度比同尺寸标准 Transformer 低 1.12-1.82，同时少用 76-79% 上下文内存。</p>
+<p><strong>为什么值得看</strong> 共享记忆不降质反而提升质量的意外结果，刷新循环模型的质量-记忆前沿。</p>
+<p><a href="https://arxiv.org/abs/2610.02383">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.02383">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>VenusRL: A Fully Disaggregated Agentic RL System with Priority Scheduling and Scalable Interaction</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-10-05 · 论文PDF</p>
 
-<p>全分离式智能体 RL 系统统 VenusRL，支持优先级调度与可扩展交互</p>
-<blockquote><p>Agentic Reinforcement Learning (RL) trains LLM agents through multi-turn interactions with external tool environments. Its multi-turn nature exposes two system-level bottlenecks unaddressed by existing agentic RL frameworks. First, end-to-end training throughput is constrained by the slowest trajectories to complete, yet optimizing per-GPU utilization alone scatters rollout progress across many groups, delaying the completion of enough groups to unblock the next training step. Second, tool sandboxes are statically over-provisioned by their declared memory ceilings, leaving most physical memory stranded while replicating near-identical state across sandboxes launched from the same prompt. We present VenusRL, a fully disaggregated agentic RL system that addresses both bottlenecks. VenusRL's priority-aware action scheduler uses length-prediction heuristics to identify sample groups whose completion is most likely to unblock the next training step, and pushes them ahead of others across batch admission, KV Cache residency, and cross-worker request orchestration. VenusRL's environment resource manager combines a memory-aware admission threshold with a template-keyed page-sharing pool, p…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 智能体强化学习通过多轮与外部工具环境交互训练 LLM 智能体，存在两个系统级瓶颈：端到端吞吐受最慢轨迹完成制约、单纯优化单 GPU 利用率反而分散 rollout 进展；工具沙箱按声明内存上限静态过度配置，大量物理内存闲置且同提示词沙箱重复复制近相同状态。</p>
+<p><strong>方法</strong> 提出全分离式智能体 RL 系统 VenusRL：优先级感知动作调度器用长度预测启发式识别最可能解锁下一训练步的样本组，在批准入、KV 缓存驻留与跨 worker 请求编排中插队；环境资源管理器结合内存感知准入阈值与模板键控页共享池，通过写保护页表项别名与写时复制在保持严格内存隔离下提高每节点沙箱密度。</p>
+<p><strong>关键数字</strong> 代表性智能体 RL 工作负载上，端到端训练速度最高提升 4.24x，环境成本最高降低 89%。</p>
+<p><strong>为什么值得看</strong> 智能体 RL 训练系统的两个真瓶颈都有实测显著的解法，落地价值高。</p>
+<p><a href="https://arxiv.org/abs/2610.03286">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.03286">阅读原文 ↗</a></p>
 </body>
 </html>
