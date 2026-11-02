@@ -22,9 +22,11 @@
 <h1>Budget-Constrained Fault-Tolerant Mutual Visibility for Autonomous Robots under the Mobility Fault Model</h1>
 <p class="meta-line">arXiv cs.DC · 2026-10-06 · 论文PDF</p>
 
-<p>移动故障模型下预算约束的容错互视机器人编队</p>
-<blockquote><p>We investigate the mutual visibility problem for a swarm of $n\ge3$ autonomous mobile robots under the budget-constrained mobility fault model. The robots are opaque, so if three robots are collinear, the middle robot obstructs the visibility between the other two. Each robot is assigned a finite movement budget, reflecting its limited energy, that bounds the total distance it may traverse during the execution. Moreover, an arbitrary number of robots may become permanently immobile due to mobility faults. The objective is to design a distributed algorithm that enables the non-faulty robots to coordinate their movements so that, within a finite time, every non-faulty robot attains unobstructed visibility of all robots in the system, including the faulty ones, while respecting the prescribed movement budget. We consider luminous robots operating under the $\mathsf{SSYNC}$ model with non-rigid movements, without any agreement on their local coordinate systems, and equipped only with a {\it common fixed reference point}. We present a deterministic distributed algorithm that solves the problem despite an arbitrary number of mobility faults. The algorithm guarantees mutual visibility for…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 不透明移动机器人三点共线时中间者会遮挡视线，在"每个机器人有有限移动预算、任意数量机器人可能永久失灵"的移动故障模型下，如何让非故障机器人彼此互视。</p>
+<p><strong>方法</strong> 面向 SSYNC 模型、非刚性移动、无坐标系共识、仅共享固定参考点的发光机器人，设计确定性分布式算法：非故障机器人在有限时间内获得对全系统（含故障者）的无遮挡可见性，同时尊重每个机器人的移动预算。</p>
+<p><strong>关键数字</strong> 编队规模 n≥3；算法只用 12 种灯色；对任意数量的移动故障都保证收敛，且全程无碰撞。</p>
+<p><strong>为什么值得看</strong> 把能量预算这一现实约束引入容错分布式机器人理论，是少见的预算受限+容错双重约束下的确定性算法结果。</p>
+<p><a href="https://arxiv.org/abs/2610.04402">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04402">阅读原文 ↗</a></p>
 </body>
 </html>

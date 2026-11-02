@@ -22,9 +22,11 @@
 <h1>Cut Binary Cross Entropy: Efficient Large-Vocabulary Loss and Gradient Kernels for Sequential Recommendation</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>大词表序列推荐的显存高效 BCE 损失与梯度 kernel</p>
-<blockquote><p>Industrial sequential recommender systems operate over massive item catalogs (e.g., 10^5--10^7 items). Multi-label recommendation models are trained with Binary Cross-Entropy (BCE) loss over the full vocabulary, but standard BCE materializes a dense [B, N, V] logits tensor in High Bandwidth Memory (HBM), incurring prohibitive $O(BNV)$ memory and fatal Out-Of-Memory (OOM) errors. While chunked loss optimizations exist for Softmax Cross-Entropy in LLMs, large-scale multi-label BCE optimization remains unexplored across deep learning ecosystems. We propose CutBCE, an exact, hardware-accelerated BCE loss and gradient operator implemented in JAX and Pallas for large-vocabulary workloads. CutBCE introduces (1) an exact fused reformulation evaluating dense background loss and sparse target corrections; (2) a custom Vector-Jacobian Product (VJP) with a dedicated Pallas TPU backward kernel computing logit tiles on-chip in both passes so logits and their gradients never reside in HBM; (3) dynamic VMEM budgeting and sharding-aware collective hoisting for distributed meshes; and (4) count-based zero-overhead training metrics. On single-chip TPU v5e/v6e mini-benchmarks, CutBCE eliminates OOM er…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 工业序列推荐在 10^5~10^7 规模物品目录上用全词表二元交叉熵（BCE）训练，标准实现物化稠密 [B,N,V] logits 张量，产生 O(BNV) 内存开销并导致 OOM。</p>
+<p><strong>方法</strong> 提出 CutBCE，JAX/Pallas 实现的精确硬件加速 BCE 损失与梯度算子：融合重构稠密背景损失与稀疏目标修正；自定义 VJP 配合专用 TPU 反向核，logits 与梯度全程不落 HBM；动态 VMEM 预算与分片感知集体提升适配分布式；基于计数的零开销训练指标。</p>
+<p><strong>关键数字</strong> 单芯片 TPU v5e/v6e 上消除 OOM 且最高提速 91.9%；8 芯片 TPU 训练 87.6 万物品 SASRec 时峰值 HBM 降低 65.7%（每芯片省超 14 GiB）、训练提速 225.9% 且精度相当。</p>
+<p><strong>为什么值得看</strong> 首个面向大规模多标签 BCE 的系统级优化，直接解决工业推荐训练的内存瓶颈，已开源。</p>
+<p><a href="https://arxiv.org/abs/2610.05559">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05559">阅读原文 ↗</a></p>
 </body>
 </html>

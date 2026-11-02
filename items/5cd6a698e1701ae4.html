@@ -22,9 +22,11 @@
 <h1>BitIR: Cross-Architecture Fault Injection for Resilience Analysis of Heterogeneous GPU Applications</h1>
 <p class="meta-line">arXiv cs.DC · 2026-10-06 · 论文PDF</p>
 
-<p>跨架构故障注入框架分析异构 GPU 应用韧性</p>
-<blockquote><p>Modern GPU-based HPC systems rely on heterogeneous vendor stacks, yet resilience studies are largely limited to single architectures, leaving it unclear how faults behave across different GPU backends. We present \emph{BitIR}, a cross-architecture fault injection framework that injects deterministic single-bit faults at the LLVM IR level, ensuring semantically equivalent perturbations prior to backend lowering and enabling direct cross-vendor comparison across NVIDIA, Intel, and AMD GPUs. We evaluate BitIR on three production supercomputers -- Polaris (ALCF, NVIDIA A100), Aurora (ALCF, Intel GPU Max 1550), and Frontier (OLCF, AMD Instinct MI250X) -- representing the full spectrum of current leadership-class GPU architectures. Using representative heterogeneous benchmarks, we conduct large-scale injection campaigns across all three systems and classify outcomes into masked results, silent data corruptions (SDCs), and failures. Our results show that identical faults produce markedly different behaviors across vendors: Intel most often masks faults but exhibits more hangs when faults escape masking, NVIDIA exposes more detectable hard failures, and AMD alternates between SDC-dominant …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 现代 GPU 高性能计算依赖异构厂商栈，但韧性研究多限于单一架构，不清楚同一故障在不同 GPU 后端间如何表现。</p>
+<p><strong>方法</strong> 提出 BitIR 跨架构故障注入框架：在 LLVM IR 层注入确定性单比特故障，保证后端降级前语义等价，从而可在 NVIDIA、Intel、AMD GPU 间直接比较；在三台生产级超算上大规模注入，将结果分类为掩蔽、静默数据损坏（SDC）与失败。</p>
+<p><strong>关键数字</strong> 覆盖 Polaris（A100）、Aurora（Intel GPU Max 1550）、Frontier（AMD MI250X）三种领导级架构；Intel 最常掩蔽故障但逃逸时挂起更多，NVIDIA 暴露更多可检测硬失败，AMD 依基准与故障点呈现 SDC 主导或失败主导交替。</p>
+<p><strong>为什么值得看</strong> 首次给出跨厂商故障行为的系统性实证，说明韧性并非后端无关，对异构超算的容错设计有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.04037">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04037">阅读原文 ↗</a></p>
 </body>
 </html>

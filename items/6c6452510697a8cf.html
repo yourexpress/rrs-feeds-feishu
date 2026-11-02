@@ -22,9 +22,11 @@
 <h1>EDISCO: Equivariant DIScrete Diffusion for Euclidean Combinatorial Optimization</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>等变离散扩散求解欧氏组合优化</p>
-<blockquote><p>Euclidean combinatorial optimization problems (ECOPs), such as the Traveling Salesman Problem (TSP) and Capacitated Vehicle Routing Problem (CVRP), possess inherent symmetries under the two-dimensional Euclidean group E(2), including rotations, reflections, and translations. Existing learning-based methods, including recent diffusion-based methods, rely on data augmentation or regularization to approximate E(2)-equivariance. This paper presents EDISCO, the first discrete diffusion model for ECOPs with exact E(2)-invariant generative distributions over node-index solutions. EDISCO introduces an E(2)-equivariant edge-score network coupled with a categorical continuous-time Markov chain over discrete edge variables, and exact posterior sampling provides efficient multi-step inference. This design gives EDISCO a local geometric inductive bias: edge neighborhoods with the same relative geometry and combinatorial context are represented consistently regardless of absolute position or orientation, making learning more efficient and inference more robust than non-equivariant methods. EDISCO outperforms previous learning-based state-of-the-art solvers on synthetic TSP from 100 to 10000 node…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 欧氏组合优化问题（TSP、CVRP）天然具有二维欧氏群 E(2) 对称性，现有学习方法（含扩散方法）只能靠数据增广或正则化近似等变。</p>
+<p><strong>方法</strong> 提出 EDISCO，首个对欧氏组合优化具有精确 E(2) 不变生成分布的离散扩散模型：E(2) 等变边分数网络耦合离散边变量上的 categorical 连续时间马尔可夫链，精确后验采样提供高效多步推断，使相同相对几何与组合上下文的边邻域被一致表示。</p>
+<p><strong>关键数字</strong> 合成 TSP（100-10000 节点）与 CVRP（50-2000 客户）上超越此前学习式 SOTA，且只用 33-50% 的训练实例；仅用均匀合成数据训练，在空间分布偏移与 CVRP 约束紧度偏移下仍胜出。</p>
+<p><strong>为什么值得看</strong> 把精确对称性注入离散扩散解决组合优化，等变归纳偏置带来显著的样本效率与泛化优势。</p>
+<p><a href="https://arxiv.org/abs/2610.04953">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04953">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Dual-Scale Relational Graph Transformers for Ecosystem-Aware Fraud Detection</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>生态感知欺诈检测的双尺度关系图 Transformer</p>
-<blockquote><p>Account takeover (ATO) fraud is a growing threat to digital banking, requiring effective detection while minimizing friction for legitimate customers. Production systems predominantly rely on tabular models that score sessions in isolation, discarding the relational structure of the underlying interaction network. Although graph-based models exploit relationships among sessions and network entities, they primarily reason over local neighborhoods and therefore capture only part of the problem: fraud risk depends jointly on the local relational structure surrounding a session and the evolving global state of the fraud ecosystem. We present HERMES (HEterogeneous Relational Micro--macro graph transformer Encoder for high-risk Sessions), a dual-scale architecture that jointly models these complementary scales of information. Micro-GT captures local heterogeneous graph structure through structured, relation-aware attention over a temporally safe session neighborhood. Complementing this local representation, Macro-GT models ecosystem-level context using non-anticipative climate tokens that summarize fraud dynamics, platform shifts, and infrastructure reuse, together with adaptive class pr…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 账户接管（ATO）欺诈检测既依赖会话周围的局部关系结构，也依赖欺诈生态演化的全局状态；现有生产系统多为孤立打分，图模型又只做局部邻域推理。</p>
+<p><strong>方法</strong> 提出 HERMES 双尺度架构：Micro-GT 用时态安全的会话邻域做关系感知注意力捕局部结构；Macro-GT 用非预期性气候 token 总结欺诈动态、平台迁移与基础设施复用，并以自适应类原型跟踪欺诈/良性模式随时间的变化。</p>
+<p><strong>关键数字</strong> 在来自美国领先金融机构的超 1.3 亿高风险交易会话上，相对生产系统客户摩擦降低 44.44%、欺诈召回提升 24.66%；消融与时序稳定性分析证实双尺度互补。</p>
+<p><strong>为什么值得看</strong> 局部+生态双尺度建模在真实大规模金融数据上显著超越生产基线，落地价值直接。</p>
+<p><a href="https://arxiv.org/abs/2610.04138">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04138">阅读原文 ↗</a></p>
 </body>
 </html>

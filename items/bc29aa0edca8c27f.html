@@ -22,9 +22,11 @@
 <h1>Conditional Flow Matching for Single-Neuron Electrophysiology: Capturing Multimodal Responses Across Stimuli</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>单神经元电生理多模态响应的条件流匹配</p>
-<blockquote><p>Neurons of the brain exhibit a rich repertoire of electrophysiology dynamics with the same repeated stimulus eliciting very different voltage responses from the same cell. One common approach in biophysically detailed models is to capture this variability through ensembles of deterministic parametrizations, at a cost of hundreds of thousands of CPU hours. Existing machine learning surrogates inherit the same limitation, where a stimulus is mapped to a single voltage response. We address this challenge by learning a conditional generative model for single-neuron electrophysiology, using flow matching with a velocity field conditioned on the input current. On biophysically detailed models of two human cortical interneuron types, the generated responses closely reproduce the electrophysiological feature distributions, spike-time structure, and excitability profiles, even matching the experimental recordings from the corresponding human cortical neurons. Near the firing threshold, firing and non-firing responses coexist at the same stimulus amplitude, and at high amplitudes, ensembles may split into low- and high-firing modes near depolarization block. We show that our model recovers b…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 同一重复刺激下神经元电压响应高度多变，生物物理模型靠确定性参数化集成捕捉变异性，代价是数十万 CPU 小时；现有 ML 代理把刺激映射到单一响应，继承同样局限。</p>
+<p><strong>方法</strong> 学习单神经元电生理的条件生成模型：用流匹配训练一个以输入电流为条件的速度场，直接生成电压响应分布而非单点预测。</p>
+<p><strong>关键数字</strong> 两类人皮层中间神经元生物物理模型上，生成响应忠实再现电生理特征分布、尖峰时间结构与兴奋性剖面；近阈值处放电/不放电共存、高幅值处分裂为低/高频模态，模型均能恢复，而神经算子基线抑制阈值附近尖峰、模糊模态间隔。</p>
+<p><strong>为什么值得看</strong> 用生成式建模替代确定性集成，把电生理变异性建模成本大幅降低，是交叉领域方法迁移的示范。</p>
+<p><a href="https://arxiv.org/abs/2610.06520">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06520">阅读原文 ↗</a></p>
 </body>
 </html>

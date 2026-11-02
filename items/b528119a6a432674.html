@@ -22,9 +22,11 @@
 <h1>DiffGate: Difficulty-Gated Teacher Guidance for On-Policy Distillation</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>难度门控教师引导的同策略蒸馏</p>
-<blockquote><p>On-policy distillation (OPD) has emerged as a widely used paradigm for post-training large language models, reducing the train--test mismatch of conventional distillation by supervising the student on its own generated trajectories. However, existing OPD objectives remain largely token-local and outcome-agnostic, optimizing teacher--student agreement at each prefix despite reasoning quality being determined at the trajectory level. Reinforcement learning with verifiable rewards (RLVR), particularly Group Relative Policy Optimization (GRPO), provides complementary outcome-level supervision but suffers from sparse rewards and coarse credit assignment. We show that OPD and RLVR exhibit complementary blind spots: teacher signals provide dense local guidance but are weakly aligned with rollout correctness, whereas group-relative rewards capture task success but provide coarse token-level credit and vanish on all-failure groups. We introduce DiffGate, an outcome-gated objective that combines GRPO with selective, bounded teacher guidance. Teacher supervision is applied only to failed trajectories, scaled by group difficulty, and smoothly bounded to prevent extreme teacher--student discrep…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> on-policy 蒸馏（OPD）与带可验证奖励的强化学习（RLVR/GRPO）各有盲区：教师信号稠密但弱对齐 rollout 正确性，组相对奖励捕获任务成功但 token 级信用粗糙、全败组奖励消失。</p>
+<p><strong>方法</strong> 提出 DiffGate 结果门控目标，把 GRPO 与选择性有界教师指导结合：教师监督只施加于失败轨迹、按组难度缩放、平滑有界防止极端师生差异主导优化——验证器决定"哪些轨迹学"，教师提供轨迹内稠密更新方向。</p>
+<p><strong>关键数字</strong> Qwen3-0.6B/1.7B 上相对匹配 GRPO：代码 avg@8 +1.7/+1.8、pass@8 +1.6/+5.7；数学 avg@8 保持 0.5 点内、pass@8 +1.1/+3.9；四种模型-域设置 pass@8 全部提升。</p>
+<p><strong>为什么值得看</strong> 教师与验证器分工清晰（何时学由验证器定、怎么学由教师给），涨点稳定且实现简单。</p>
+<p><a href="https://arxiv.org/abs/2610.04596">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04596">阅读原文 ↗</a></p>
 </body>
 </html>

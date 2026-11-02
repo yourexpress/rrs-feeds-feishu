@@ -22,9 +22,11 @@
 <h1>ColdDDI: Evaluating Knowledge Utilization in Cold-Start Drug-Drug Interaction Prediction</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>冷启动药物相互作用预测的知识利用评估</p>
-<blockquote><p>Cold-start drug-drug interaction (DDI) prediction tests whether models can identify clinically significant interactions for drugs without training-time interaction history. Existing benchmarks mostly report aggregate edge-prediction scores, leaving a key evaluation question unanswered: when models receive molecular, textual, or knowledge-graph (KG) evidence, do they actually use the evidence that pharmacologically supports the interaction? We introduce ColdDDI, a reconstructible diagnostic benchmark built from DrugBank 5.1.13, with 1,900 approved small-molecule drugs and 565,731 positive DDI pairs. ColdDDI evaluates pairs with zero, one, or two unseen drugs. It also annotates each interaction by whether it changes drug exposure or drug effect, and by whether the biomedical knowledge graph contains shared enzymes, transporters, or targets that can plausibly mediate the interaction. These annotations separate evidence availability from predictive dependence. We evaluate eight conventional DDI methods and 13 LLMs; for open-weight LLMs, we test five prompt patterns and use masking, drug replacement, and channel-sensitivity metrics to probe knowledge utilization. ColdDDI exposes that, i…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 冷启动药物相互作用（DDI）预测要求模型在无训练交互历史时识别临床显著相互作用，但现有基准只报聚合分数，未回答模型是否真正使用了药理学上支持的证据。</p>
+<p><strong>方法</strong> 提出 ColdDDI 可重构诊断基准：评估零/一个/两个未见药物的组合，标注每个交互是改变暴露还是效应、知识图谱是否含可介导的共享酶/转运体/靶点；用掩蔽、药物替换、通道敏感性指标探测知识利用。评估 8 种传统方法与 13 个 LLM。</p>
+<p><strong>关键数字</strong> 基于 DrugBank 5.1.13 构建 1,900 个药物、565,731 个阳性对；最难分裂（两药均未见）下微调 1B LLM 有共享介导物时恢复 89-93%、无则仅 40-62%；多个 KG 增强基线在掩蔽共享介导物时几乎不变，而微调 LLM 反应强烈。</p>
+<p><strong>为什么值得看</strong> 区分"知识可及"与"知识利用"，暴露冷启动 DDI 模型何时真依赖机制证据、何时拿到也不用。</p>
+<p><a href="https://arxiv.org/abs/2610.05590">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05590">阅读原文 ↗</a></p>
 </body>
 </html>

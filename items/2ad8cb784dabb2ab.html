@@ -22,9 +22,11 @@
 <h1>Don't Judge an LLM Only by Its Activations: Discovering Suppressed Safety Features via Counterfactual Activation Potential</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>反事实激活发现被压制的安全特征</p>
-<blockquote><p>Mechanistic interpretability has emerged as the primary means to understand safety behavior of LLMs. However, existing tools primarily focus on the activating neurons or features of a model. The role of the remaining large set of inactive components is invisible to such methods. This work demonstrates that the inactive set contains safety-critical features that are causally relevant for refusal of harmful prompts. Suppressing such features could turn refusals into compliance, while passing undetected by prevalent interpretability tools. We introduce the Counterfactual Activation Potential (CAP), a metric that quantifies a suppressed feature's latent activation tendency as the product of its encoder alignment (how strongly the input drives it), suppression strength (how strongly active features inhibit it), and safety criticality (how much refusal depends on it). To find suppressed safety features at scale, we propose CAP-guided Safety Feature Discovery (CSFD), a two-stage filtering algorithm that identifies candidate safety features from hundreds of thousands of transcoder features without exhaustive ablation. A significant fraction of trials turn compliant with harmful prompts whe…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 机械可解释性工具只关注被激活的神经元/特征，那批大量"未激活"组件里是否藏着安全关键特征？</p>
+<p><strong>方法</strong> 提出反事实激活势（CAP），量化被抑制特征的潜在激活倾向（编码器对齐×抑制强度×安全关键性）；配套 CSFD 两阶段过滤，从数十万 transcoder 特征中定位候选安全特征而无需穷举消融。</p>
+<p><strong>关键数字</strong> 消融候选特征后，显著比例的试验对有害提示转为顺从；自然越狱下最高 CAP 特征所受抑制上升 2-4 倍、激活最多下降 80%；放大抑制器会降激活并提升相关有害提示的顺从性，随机特征无此效应；覆盖 Gemma、Qwen、Llama 五个不同规模模型。</p>
+<p><strong>为什么值得看</strong> 提出"被抑制特征"视角：越狱可能部分靠压制安全特征而非只激活有害特征，补足激活导向可解释性的盲区。</p>
+<p><a href="https://arxiv.org/abs/2610.05541">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05541">阅读原文 ↗</a></p>
 </body>
 </html>

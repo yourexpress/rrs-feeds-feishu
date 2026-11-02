@@ -22,9 +22,11 @@
 <h1>Cross-Time Directional Selection in Diffusion Sampling</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>扩散采样的跨时方向选择</p>
-<blockquote><p>How strongly do the remaining diffusion-sampling steps amplify a perturbation at a late latent state? Standard measurements answer this question with newly sampled isotropic noise, even though perturbations encountered during sampling have already been transformed by earlier steps. We compare these two cases directly. For each trajectory, we transport a centered perturbation from an earlier step to a late state, then replay its direction at the same magnitude as a newly sampled isotropic perturbation; both then undergo the same remaining updates. Across the samplers we study, median paired shaped-to-fresh angular-gain ratios range from $1.14$ to $2.35$. Shaped angular gain exceeds its matched fresh counterpart in every trajectory in the original main cohorts. The same pattern appears when endpoint change is measured by latent RMS. The effect also appears in perceptual feature representations: earlier-sampling directions cause larger feature changes at the endpoint, even when the corresponding pixel-space change is comparable. Permuting shaped directions across trajectories weakens the effect, including within class, indicating that the advantage depends on alignment with the receiv…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 扩散采样后期步骤会把早期潜状态的扰动放大多少？标准测量用新采样的各向同性噪声，忽略了采样过程中已被前序步骤变换过的真实扰动。</p>
+<p><strong>方法</strong> 对每条轨迹，把一个有中心的扰动从早期步骤输运到晚期状态，再以相同幅度重放其方向，与新采样的各向同性扰动经历完全相同的剩余更新，比较端点变化。</p>
+<p><strong>关键数字</strong> 各采样器配对 shaped-to-fresh 角度增益中位数在 1.14~2.35 之间；原始主队列中每条轨迹的 shaped 增益都超过 fresh 对照；潜空间 RMS 与感知特征表示上同样成立；置换方向会削弱效应。</p>
+<p><strong>为什么值得看</strong> 说明扰动方向与接收轨迹的对齐本身带来放大优势，对扩散采样的扰动分析与对抗鲁棒性研究有启发。</p>
+<p><a href="https://arxiv.org/abs/2610.05199">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05199">阅读原文 ↗</a></p>
 </body>
 </html>

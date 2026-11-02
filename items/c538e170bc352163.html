@@ -22,9 +22,11 @@
 <h1>Collaborative Personalized Preference Alignment for LLMs under Data Deficiency</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>数据不足下的协作个性化偏好对齐</p>
-<blockquote><p>Real-world users often exhibit highly heterogeneous preferences over multiple objectives for LLM responses. A lightweight aligner can tailor these responses to individual preferences, but scarce user-specific feedback makes personalized training difficult. Learning shared initializations across users can support few-shot adaptation. However, heterogeneous preferences and competing objectives cause gradient conflicts across users and within each user, hindering effective initialization learning. This raises a central question: \textbf{how can we collaboratively learn aligner initializations that support few-shot adaptation to diverse user preferences?} To answer this question, we propose \textbf{A}pproximate \textbf{P}areto \textbf{O}ptimality (APO). We first group users whose updates are compatible, so that their information can be combined with less interference. Within each group, we combine gradient descent with controlled ascent to coordinate competing objectives and move towards preference-specific points on the Pareto front. This produces an initialization that is close to the optima of the users in the group. We then iteratively refine it using updates from few-shot local ad…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 用户对 LLM 回答的多目标偏好高度异质，用户级反馈稀缺使个性化训练困难；跨用户共享初始化可支持 few-shot 适应，但偏好冲突导致梯度冲突、阻碍初始化学习。</p>
+<p><strong>方法</strong> 提出 APO（近似帕累托最优）：先把更新兼容的用户分组以减少干扰，组内用梯度下降与受控上升结合协调竞争目标、移向帕累托前沿上的偏好点；再用 few-shot 局部适应迭代精化初始化，并给出单步协作更新的条件次优界。</p>
+<p><strong>关键数字</strong> 在 Fed-ChatbotPA 与 UltraFeedback 上仅用 20 个本地样例即持续优于现有方法。</p>
+<p><strong>为什么值得看</strong> 用帕累托优化处理个性化偏好冲突，是数据稀缺场景下轻量 aligner 个性化的一条清晰可行路线。</p>
+<p><a href="https://arxiv.org/abs/2610.05898">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05898">阅读原文 ↗</a></p>
 </body>
 </html>

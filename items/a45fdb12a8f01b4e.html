@@ -22,9 +22,11 @@
 <h1>Distributed Subliminal Learning: Replacing Model Updates with Random-Carrier Outputs</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>分布式潜意识学习：随机载波输出替代模型更新</p>
-<blockquote><p>Collaborative learning typically exchanges model parameters: federated clients communicate updates, while independently adapted foundation models are combined by exchanging adapters or checkpoints. This makes communication scale with model size and requires local specializations to be reconciled in weight space, where interference is common. We ask whether knowledge can instead be shared through model behavior on task-unrelated inputs. We introduce Distributed Subliminal Learning (DSL), a collaborative learning primitive in which participants adapt a common model locally, probe it with task-unrelated inputs, and transmit only the resulting carrier outputs. A coordinator pools these outputs and distills them into a shared model. The primitive supports one-shot foundation-model composition through carrier completions and iterative federated learning through carrier logits, without transmitting model updates or requiring task-related proxy data. In LLM composition, compared with LoRA averaging, DSL achieves higher preference retention (94.56% vs. 87.76%) and a larger GSM8K gain over the base model (22.0 vs. 0.6 points), while reducing upload by 30.6-49.0$\times$. In federated classifi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 协作学习传统上交换模型参数或适配器，通信随模型规模增长，且局部特化需要在权重空间调和、易发生干扰——能否改为共享模型在任务无关输入上的行为？</p>
+<p><strong>方法</strong> 提出分布式潜意识学习（DSL）：参与方本地适配共享模型、用任务无关输入探测、只传输载体输出；协调方汇集输出并蒸馏进共享模型。支持一次性基础模型组合（载体补全）与迭代联邦学习（载体 logits），不传输模型更新、无需任务相关代理数据。</p>
+<p><strong>关键数字</strong> LLM 组合中相对 LoRA 平均：偏好保留 94.56% vs 87.76%，GSM8K 相对基模型增益 22.0 vs 0.6 点，上传减少 30.6-49.0 倍；联邦分类 MNIST 达 96.83%、上行比 FedAvg 少 8.9 倍。</p>
+<p><strong>为什么值得看</strong> 以行为而非权重共享知识，通信压缩一个数量级以上并规避权重空间冲突，思路新颖。</p>
+<p><a href="https://arxiv.org/abs/2610.05378">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05378">阅读原文 ↗</a></p>
 </body>
 </html>

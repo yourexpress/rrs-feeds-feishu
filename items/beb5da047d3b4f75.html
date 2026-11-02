@@ -22,9 +22,11 @@
 <h1>Diffusion Transformers are Provably Optimal In-context Generators</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>扩散 Transformer 是可证明最优的上下文生成器</p>
-<blockquote><p>Generative foundation models are attracting interest for their ability to produce desired outputs from demonstrations given at inference time, without updating parameters. However, since a few demonstrations cannot uniquely identify the intended task, the challenge is how to learn and sample from an output distribution that reflects this task uncertainty. In this work, we theoretically analyze how a Diffusion Transformer (DiT), pretrained across diverse tasks, learns and generates predictive distributions for a new query from demonstrations. We first show that the natural target to generate from finite demonstrations is not an output derived from estimating a single task, but rather a predictive distribution that captures the task uncertainty remaining after observing the demonstrations. We then prove that a DiT can learn this predictive distribution through score estimation, using attention to aggregate information from demonstrations and diffusion to generate samples. Owing to this property, with sufficient pretraining resources and diffusion sampling steps, the resulting DiT achieves the minimax optimal rate over a Hölder class of test-time tasks. These results imply that DiT ac…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 生成基础模型如何从推理时给出的少量演示中学习并采样，输出分布还要反映演示无法消除的任务不确定性。</p>
+<p><strong>方法</strong> 理论分析扩散 Transformer（DiT）：先证明有限演示下应生成的目标不是单任务估计，而是捕获演示后剩余任务不确定性的预测分布；再证明 DiT 能经分数估计学习该分布——注意力聚合演示信息、扩散生成样本。</p>
+<p><strong>关键数字</strong> 在充分预训练资源与扩散采样步数下，所得 DiT 在 Hölder 类测试任务上达到 minimax 最优收敛率。</p>
+<p><strong>为什么值得看</strong> 为 DiT 的上下文生成给出统计上严格的理论基础，把"上下文学习"纳入扩散生成框架。</p>
+<p><a href="https://arxiv.org/abs/2610.05333">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05333">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>E$^2$-OPSD: Taming Entropy Overshoot in On-Policy Self-Distillation</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>同策略自蒸馏的熵过冲驯服</p>
-<blockquote><p>On-policy self-distillation (OPSD) provides dense token-level supervision without a second model: one network acts as teacher with the reference solution and as student with only the problem. We identify a specific failure mode of this recipe. During training, student token entropy rises past the teacher's and remains elevated, a pattern we call entropy overshoot. We trace it to both sides of distillation. The reference-conditioned teacher is confident along its answer-directed reasoning path, but this confidence transfers poorly to student-generated prefixes, making its supervision overly tied to answer-specific cues rather than reusable reasoning patterns; meanwhile, the forward KL used by OPSD continually diffuses the student's predictive distribution without pulling it back. We introduce E$^2$-OPSD to address both causes. Exemplar-guided teaching replaces the current answer with a retrieved solved neighboring problem, providing transferable reasoning guidance without revealing the destination and better matching student-reachable states. Entropy-aware distillation uses the student-teacher entropy gap to determine the direction and strength of each token's correction. E$^2$-OPSD…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> on-policy 自蒸馏（OPSD）中，学生 token 熵在训练中超过教师并持续偏高（"熵超调"）；根因是参考条件化教师过度绑定答案特定线索、迁移性差，且正向 KL 持续扩散学生分布而不回拉。</p>
+<p><strong>方法</strong> E²-OPSD 双管齐下：示例引导教学用检索到的已解邻近问题替代当前答案，提供可迁移推理指导且更好匹配学生可达状态；熵感知蒸馏按师生熵差决定每个 token 修正的方向与强度。</p>
+<p><strong>关键数字</strong> 数学推理 mean@16 相对 OPSD 最高提升 4.3 点；域外评估相对对应基模型 mean@16 最高 +4.9、pass@8 最高 +5.5；无需额外前向或新增网络。</p>
+<p><strong>为什么值得看</strong> 定位并修复 OPSD 的具体失败机制，简单、不增开销且跨域稳定涨点。</p>
+<p><a href="https://arxiv.org/abs/2610.05048">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05048">阅读原文 ↗</a></p>
 </body>
 </html>

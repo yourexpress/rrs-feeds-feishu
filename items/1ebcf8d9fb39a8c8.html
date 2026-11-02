@@ -22,9 +22,11 @@
 <h1>Coupling Noisy Pairwise Knowledge to the DAG Posterior for Causal Discovery</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>噪声成对知识耦合 DAG 后验的因果发现</p>
-<blockquote><p>External causal reports can improve structure learning from limited observations, but their reliability varies across sources and variable pairs. We introduce HB-NoisyKG, a Bayesian framework that combines observational data with repeated causal reports from sources such as large language models. Each report is a noisy observation of a direct pair state implied by one DAG. A feature-conditioned Beta prior pools information about pair reliability, and a shared error matrix captures systematic mistakes. Alternating inference uses the graph posterior to refine reliability estimates, which determine how reports influence subsequent graph updates. The report likelihood uses only graph pair-state marginals, so the same observation layer supports discrete and continuous likelihoods in graph-only and joint inference. Against an 80-restart no-KG baseline, HB uses at most 80 total restarts and lowers mean SHD from 22.39 to 16.06 on five discrete benchmarks. On a physical light tunnel with random variable IDs and retained descriptions, HB lowers SHD from 39.00 for no-KG to 27.30. On continuous Sachs, graph-only BGe raises AUROC by 0.121 over no-KG Top-K. In a controlled synthetic study, conti…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 外部因果报告（如 LLM 提供的成对因果判断）能改善少观测下的结构学习，但来源与变量对之间的可靠性参差不齐。</p>
+<p><strong>方法</strong> 提出 HB-NoisyKG 贝叶斯框架：把观测数据与重复因果报告结合，每条报告视为某 DAG 直接对状态的带噪观测；用特征条件 Beta 先验汇集对级可靠性、共享误差矩阵捕获系统性错误，并交替推断——图后验精化可靠性估计，可靠性再决定报告对后续图更新的影响。</p>
+<p><strong>关键数字</strong> 5 个离散基准上相对 80 次重启的无 KG 基线，HB 至多 80 次重启把平均 SHD 从 22.39 降至 16.06；物理光隧道实验 SHD 从 39.00 降至 27.30；连续 Sachs 上 AUROC 提升 0.121。</p>
+<p><strong>为什么值得看</strong> 把不可靠外部知识以贝叶斯方式加权融入因果发现，并让可靠性估计随推断自校正。</p>
+<p><a href="https://arxiv.org/abs/2610.04559">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04559">阅读原文 ↗</a></p>
 </body>
 </html>

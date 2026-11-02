@@ -22,9 +22,11 @@
 <h1>Dynamic Minimax Regret Optimization for Robust LLM Post-Training</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>鲁棒 LLM 后训练的动态极小极大遗憾优化</p>
-<blockquote><p>Modern LLM training increasingly relies on heterogeneous data sources spanning different domains, tasks, preference distributions, and difficulty levels. We study dynamic minimax regret for group-distributionally robust LLM post-training under instantaneous mini-batch-only bandit feedback. The framework views the training as a two-player sampler-optimizer process: a sampler adaptively selects among data sources using bandit feedback, while an optimizer updates the model parameters using stochastic gradients from the selected source. We focus on the practically restrictive setting where source losses evolve with model training but historical data are not re-evaluated, requiring the sampler to track instantaneous worst-sources from stale partial feedback. We propose DUCB-OGD, a simple and scalable algorithm that couples a Discounted Upper-Confidence-Bound sampler with an Online Gradient Descent optimizer. The sampler maintains exponential moving average loss estimates and confidence radii based on discounted effective sample sizes, avoiding costly re-evaluation of past data or intrusive changes to standard training pipelines. For $K$ data sources and $T$ training steps, we prove that…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 异构数据源（跨领域、任务、偏好分布、难度）下如何做组分布鲁棒的 LLM 后训练，且仅提供瞬时 mini-batch bandit 反馈、历史数据不被复评。</p>
+<p><strong>方法</strong> 把训练视为采样器-优化器二人博弈，提出 DUCB-OGD：折扣 UCB 采样器维护指数移动平均损失估计与基于折扣有效样本量的置信半径，耦合在线梯度下降优化器，无需重估历史数据或改动标准训练管线。</p>
+<p><strong>关键数字</strong> K 个数据源、T 步训练下动态 minimax regret 为 O(K^{1/4}T^{3/4})，在无折扣目标下对数因子内最优；SFT、偏好优化与 RL 实验中无缝集成，最差组鲁棒性提升且计算开销可忽略。</p>
+<p><strong>为什么值得看</strong> 把鲁棒后训练形式化为 bandit 采样-优化博弈，理论最优性界与实用低开销兼备。</p>
+<p><a href="https://arxiv.org/abs/2610.06329">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06329">阅读原文 ↗</a></p>
 </body>
 </html>

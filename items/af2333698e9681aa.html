@@ -22,9 +22,11 @@
 <h1>D-Loop: Looped Diffusion Drafting for Speculative Decoding（arXiv 2610.06011）</h1>
 <p class="meta-line">arXiv（Kecheng Chen 等） · 2026-10-06 · 论文PDF</p>
 
-<p>循环扩散草稿模型用于投机解码，提升 LLM 推理吞吐。</p>
-<blockquote><p>Block diffusion accelerates speculative decoding by drafting multiple tokens in one forward pass. However, each position predicts a marginal distribution without observing earlier proposed tokens, limiting draft quality and acceptance length. We identify a concrete failure, the \emph{repetition trap}, in which neighboring positions produce redundant copies of the same token. We explain this tendency theoretically and empirically examine its association with shorter accepted drafts. Recent methods refine marginal predictions with an additional causal head or a separately trained drafter, increasing parameter storage and introducing separate training objectives. We instead propose D-Loop, which introduces \emph{intra-block causal conditioning} within the original diffusion drafter without additional model components. Inspired by semi-autoregressive generation and parameter sharing, D-Loop reuses the same backbone across looped passes. The first pass proposes a block, and the second conditions on a selected prefix to regenerate the suffix in parallel. A complementary prefix--suffix objective trains the shared drafter for both anchor-only prefix prediction and prefix-conditioned suffix…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 块扩散加速投机解码时，每个位置预测边缘分布、看不到先前提出的 token，草稿质量与接受长度受限；作者识别出具体失败模式"重复陷阱"——相邻位置产生冗余重复 token。</p>
+<p><strong>方法</strong> 提出 D-Loop，在原始扩散草稿器内引入块内因果条件化，不增加任何模型组件：第一遍提出一个块，第二遍以选中前缀为条件并行重生成后缀；配套前缀-后缀联合目标训练共享草稿器。</p>
+<p><strong>关键数字</strong> 在 8 个数学、代码、聊天基准上，Qwen3-4B 与 Qwen3-8B 上均超越 DFlash 与 DSpark，收益明显。</p>
+<p><strong>为什么值得看</strong> 不加参、不改结构，仅靠条件化设计提升扩散草稿质量，是投机解码的实用低成本改进。</p>
+<p><a href="https://arxiv.org/abs/2610.06011">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06011">阅读原文 ↗</a></p>
 </body>
 </html>
