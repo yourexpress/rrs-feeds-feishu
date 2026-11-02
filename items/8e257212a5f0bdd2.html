@@ -22,9 +22,11 @@
 <h1>ASCENT: Online Test-Time Training of Long-Horizon Agents via Self-Distillation of Verified Experience</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>长程智能体在线测试时训练：已验证经验自蒸馏</p>
-<blockquote><p>A large language model (LLM) agent solves long-horizon tasks through many reasoning-action turns, with one verification signal at termination. Deployed agents face streams of related tasks, making their trajectories a natural resource for improvement. In-context adaptation agents store reflections, memories, or skills as text, so reuse depends on retrieving the right experience and on a frozen policy executing it. We study Online Agentic Test-Time Training (OaTTT), which trains the LLM's weights on its own execution trajectories during deployment. The agent executes each task once, in one pass over the stream, and the executed trajectory with its verification result is the only learning signal for weight updates that persist across tasks. Directly imitating or reinforcing the generated tokens of this single attempt destabilizes the policy. We introduce ASCENT (Agentic Self-distillation for Cross-task EvolutioN at Test-time), which instead self-distills verified experience. A stable version of the LLM, its frozen initial copy, receives the verified trajectory as privileged information and predicts next-token distributions along it with this hindsight. Distilling them into persistent…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：部署中的 LLM agent 面对相关任务流，能否用自身执行轨迹在线训练权重跨任务改进——直接模仿单次尝试 token 会破坏策略稳定性。
+<strong>方法</strong>：ASCENT 用冻结初始模型副本作稳定版本，以带验证结果的轨迹为特权信息、用后见之明预测 next-token 分布并蒸馏进持久权重；任务流单遍执行，验证信号是唯一学习信号。
+<strong>关键数字</strong>：任务流单遍执行、权重跨任务持久；性能数值原文未给出。
+<strong>为什么值得看</strong>：把测试时训练推进到权重级在线适应，规避单样本不稳定性。
+<a href="https://arxiv.org/abs/2610.05303">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05303">阅读原文 ↗</a></p>
 </body>
 </html>

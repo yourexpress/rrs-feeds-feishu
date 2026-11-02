@@ -22,9 +22,11 @@
 <h1>Bayes-Sufficient Compression Is Not Enough: How Does Communication Help Multi-Agent Systems?</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>贝叶斯充分压缩之外：通信如何帮助多智能体系统</p>
-<blockquote><p>Multi-agent LLM systems pair a sender with broad context and an executor with a limited local view. We study when a short message improves the executor's next decision, when raw context is preferable, and when a stronger sender helps. Our framework, \emph{receiver-relative bounded coordination}, expresses message utility as receiver gain minus protocol tax. Compression beats raw context when tax savings exceed losses from omitted information and decoder mismatch. Even \emph{Bayes-sufficient} compression can fail when a bounded executor cannot use its surface form. A three-stage decomposition separates externalization, absorption, and \emph{action closure}, explaining how errors remain after the correct content reaches the receiver. Under a single-crossing condition, sender upgrades help above a receiver-burden threshold. Across six benchmarks, the same Qwen protocol raises ContextBench joint accuracy from $0.633$ to $0.775$ but lowers ToolSandbox from $0.889$ to $0.653$. Fixed-message replay reveals closure failures despite correct artifact recovery. These results guide an inference-time selector that improves the accuracy-cost frontier on the evaluated communication regimes.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：多 agent 系统中发送者持广上下文、执行者只有有限局部视图——短消息何时改善决策、何时原始上下文更好？
+<strong>方法</strong>：receiver-relative bounded coordination 框架，消息效用 = 接收者增益 - 协议税；三阶段分解（外部化、吸收、行动闭合）解释错误在内容到达后仍残留。
+<strong>关键数字</strong>：同一 Qwen 协议把 ContextBench 联合准确率从 0.633 提到 0.775，但 ToolSandbox 从 0.889 降至 0.653。
+<strong>为什么值得看</strong>：给多 agent 通信"压缩还是直传"量化判断依据。
+<a href="https://arxiv.org/abs/2610.03769">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.03769">阅读原文 ↗</a></p>
 </body>
 </html>

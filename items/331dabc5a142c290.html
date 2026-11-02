@@ -22,9 +22,11 @@
 <h1>Backward-Consistent Diffusion Sampling for Sparsely Observed PDE Inverse Problems</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>稀疏观测 PDE 逆问题的后向一致扩散采样</p>
-<blockquote><p>Recovering Partial Differential Equation (PDE) coefficient fields from extremely sparse observations is a severely ill-posed inverse problem for which generative machine learning methods (e.g., diffusion models) have become a leading way to encode the prior. Recent state-of-the-art diffusion solvers lift these priors to function spaces, finding a physics-consistent reconstruction in the output space of the diffusion denoiser. We prove that, in a discontinuous PDE setting, output space methods can result in failure to appropriately minimize the unobserved error with the correct coefficient field. Consequently, we propose Function space Backward-Consistent Sampling (FunBCS), an input space optimization approach for solving PDE problems which aims to find the best input such that the denoiser reconstruction is physics-consistent. We then prove that FunBCS appropriately minimizes the unobserved error, unlike output space optimization methods. Per our theoretical analysis, we also provide insights on how to dynamically allocate the number of input space optimization steps used throughout the sampling process. Our evaluations, across four PDE inverse problems (including the discontinuous…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：从极稀疏观测恢复 PDE 系数场是严重病态逆问题，扩散求解器在去噪器输出空间找物理一致重构——间断 PDE 设置下会失效吗？
+<strong>方法</strong>：FunBCS 改为输入空间优化，寻找使去噪器重构物理一致的最佳输入；证明其恰当最小化未观测误差而输出空间方法不能，并给出动态分配输入优化步数的策略。
+<strong>关键数字</strong>：在四个 PDE 逆问题（含间断设置）验证；具体误差数值此段未给出。
+<strong>为什么值得看</strong>：指出输出空间扩散反演的盲点并提供有证明的输入空间替代。
+<a href="https://arxiv.org/abs/2610.04624">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04624">阅读原文 ↗</a></p>
 </body>
 </html>

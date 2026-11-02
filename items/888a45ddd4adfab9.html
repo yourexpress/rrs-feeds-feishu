@@ -22,9 +22,11 @@
 <h1>A Fine-Grained Analysis of the LoRA Fine-Tuning Landscape with Implications for Data Selection</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>LoRA 微调景观细粒度分析及数据选择启示</p>
-<blockquote><p>Low-Rank Adaptation (LoRA) has become a standard approach for parameter-efficient fine-tuning, yet a fundamental practical question remains unresolved: how should the adapter rank be chosen? An overly small rank may lead to a poorly conditioned optimization landscape, whereas an unnecessarily large rank sacrifices the efficiency that motivates LoRA in the first place. Existing theoretical analyses provide only limited guidance on this trade-off, and their guarantees are typically established under restrictive theoretical settings. We address this gap by developing a substantially sharper landscape theory for LoRA, building on modern results from nonconvex low-rank matrix sensing. Our central insight is that the appropriate adapter rank should depend on the quality of the data-induced optimization geometry, rather than on the model alone. To formalize this connection, we introduce LoRA-RIP, a data-dependent restricted-isometry metric that characterizes the conditioning of the cross-entropy (CE) objective along LoRA-relevant low-rank directions. We prove that sufficient rank over-parameterization, with the required rank explicitly determined by the LoRA-RIP constant, eliminates spuri…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LoRA 微调的 adapter rank 如何选——rank 太小优化地形病态、太大牺牲参数效率，现有理论指导有限。
+<strong>方法</strong>：基于 nonconvex low-rank matrix sensing 构建更锐利的 landscape 理论；提出数据依赖的 LoRA-RIP 度量刻画交叉熵目标沿低秩方向的病态性，证明由 LoRA-RIP 常数决定的充分 rank 过参数化可消除伪临界点。
+<strong>关键数字</strong>：所需 rank 由 LoRA-RIP 常数显式确定，而非仅由模型决定。
+<strong>为什么值得看</strong>：把 rank 选择从经验调参推进到由数据几何决定的理论框架。
+<a href="https://arxiv.org/abs/2610.06542">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06542">阅读原文 ↗</a></p>
 </body>
 </html>

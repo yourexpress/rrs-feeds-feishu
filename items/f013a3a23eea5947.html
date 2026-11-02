@@ -22,9 +22,11 @@
 <h1>Adaptive Expert Guidance for Efficient On-Policy Reinforcement Learning</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>高效同策略强化学习的自适应专家引导</p>
-<blockquote><p>With massively parallel simulation, on-policy Reinforcement Learning methods such as PPO have become standard in many domains. However, learning from scratch is sample-inefficient and fails to exploit the potential existence of a suboptimal expert, such as a heuristic, a model-based controller, or a policy trained on a related task. Such an expert is often available and can guide early training, but its sub-optimality limits final performance. The challenge then becomes balancing expert guidance against learning from rewards. Existing methods set the expert's influence through a blending weight, a schedule, or an evaluation-driven curriculum. Alternatively, they adapt it with additional learned components such as critics over expert actions or auxiliary agents. However, none optimizes it using the same on-policy objective as the policy itself. We propose a method in which the learner and the expert alternate control within each training episode, and the expert's share of control is a single learnable parameter optimized jointly with the policy. The learner benefits from the expert early in training, but its share of control declines as the learner becomes more competent, until even…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：on-policy RL 从零训练样本效率低；现有次优专家能引导早期训练，但如何平衡专家引导与奖励学习、避免限制最终性能？
+<strong>方法</strong>：学习者在每个回合内与专家交替控制，专家控制份额设为单一可学习参数、与策略用同一 on-policy 目标联合优化；早期受益于专家，随能力提升份额自然下降。
+<strong>关键数字</strong>：专家份额由单个可学习参数决定并随训练下降；性能数值此段未给出。
+<strong>为什么值得看</strong>：把专家引导强度变成可学习参数而非人工调度，简洁且与策略目标一致。
+<a href="https://arxiv.org/abs/2610.06019">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06019">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>An ASIC Design Flow for High-Level Synthesis of Asynchronous Circuits</h1>
 <p class="meta-line">arXiv cs.AR · 2026-10-06 · 论文PDF</p>
 
-<p>异步电路高层次综合的 ASIC 设计流程</p>
-<blockquote><p>Asynchronous circuits have some benefits over their synchronous counterparts, such as lower idle power consumption, potentially lower latency, absence of clock distribution issues, among others. However, industry-scale electronic design automation (EDA) support, particularly for high-level synthesis (HLS) of asynchronous systems from imperative programs, remains limited. We present an approach to synthesize asynchronous circuits from imperative programs using the AHIR HLS framework. The framework models the control path in the form of a restricted form of Petri nets that are 1-safe and live by construction. In this work, we start with this representation in AHIR and generate asynchronous circuits with a delay insensitive controller, a single-rail data path with bundled-data interaction between the controller and the data path that resembles the micropipelines architecture. We formalize the timing constraints required for correct functioning of the generated circuit and show that those constraints are one sided (feasible), necessary and sufficient. We have also developed a static timing analyzer to check that the circuit meets these constraints. Our flow integrates seamlessly with o…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：异步电路低空闲功耗、潜在低延迟、无时钟分布问题，但从命令式程序做 HLS 的工业级 EDA 支持有限。
+<strong>方法</strong>：基于 AHIR HLS 框架综合异步电路：控制路径用构造上 1-safe 且 live 的受限 Petri 网建模，生成延迟不敏感控制器、单轨数据通路与 bundled-data 交互；形式化时序约束并证明其单向可行、必要且充分，配套静态时序分析器。
+<strong>关键数字</strong>：时序约束单侧可行且必要充分；性能数值此段未给出。
+<strong>为什么值得看</strong>：为异步电路 HLS 补上可验证的工业级流程缺口。
+<a href="https://arxiv.org/abs/2610.05112">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05112">阅读原文 ↗</a></p>
 </body>
 </html>

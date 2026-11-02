@@ -22,9 +22,11 @@
 <h1>A Physics-Guided Transformer Framework for Electromigration Analysis in Multi-Segment Interconnects</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>多段互连电迁移分析的物理引导 Transformer</p>
-<blockquote><p>As technology scales to smaller nodes, increasing current densities make electromigration (EM) one of the dominant reliability challenges in on-chip interconnects. Accurate transient stress analysis is needed to identify wires susceptible to EM degradation, but applying physics-based solvers across many interconnects remains computationally expensive. This paper proposes a physics-guided transformer framework for fast EM stress prediction in multi-segment interconnect lines. The framework converts each line into geometry- and DC-aware segment tokens and uses transformer attention to capture line-level context. A lightweight query decoder then predicts stress at selected locations and time instants. The model is trained with an objective that combines normalized supervised regression, linewise relative-$L_2$ loss, and physics-guided continuity and terminal-flux terms. Experiments on IBM power grid benchmarks show that the proposed model achieves relative-$L_2$ error below 8\% and reaches up to 2459.68$\times$ speedup compared with the matrix exponential~solver.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：先进制程下电迁移成片上互连主要可靠性挑战，物理求解器做瞬态应力分析代价过高。
+<strong>方法</strong>：物理引导 Transformer：互连线转几何与 DC 感知的 segment token，attention 捕捉线级上下文，轻量 query decoder 预测应力；训练组合回归、逐线相对 L2 与物理引导连续性/端部通量约束。
+<strong>关键数字</strong>：IBM 电源网格基准上相对 L2 误差低于 8%，比矩阵指数求解器最高加速 2459.68×。
+<strong>为什么值得看</strong>：物理约束注入 Transformer 做 EM 应力快速预测，加速比量级显著。
+<a href="https://arxiv.org/abs/2610.06464">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06464">阅读原文 ↗</a></p>
 </body>
 </html>

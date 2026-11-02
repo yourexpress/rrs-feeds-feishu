@@ -22,9 +22,11 @@
 <h1>AdaEva: Accelerating LLM-Driven Algorithm Design with Adaptive Partial Evaluation</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>自适应部分求值加速 LLM 驱动的算法设计</p>
-<blockquote><p>Large Language Models (LLMs) are increasingly used for automated algorithm design. However the computational cost of evaluating the generated algorithms can be excessive. We consider the common LLM-driven automated algorithm design (LLM4AD) setting in which a candidate algorithm is evaluated by aggregating its performance over a shared set of training instances. This instance-wise structure raises a natural question: must every candidate be evaluated on the entire instance set before deciding whether it remains competitive? Taking inspiration from algorithm configuration, we introduce AdaEva, a drop-in adaptive partial-evaluation framework that progressively evaluates candidates on larger subsets of the same instance pool and eliminates unpromising candidates as evidence accumulates. Importantly, AdaEva leaves the underlying LLM4AD procedure and per-instance evaluator unchanged and requires no prior knowledge about instance difficulty. We instantiate this idea using successive halving (AdaEva-S) and statistical racing (AdaEva-R), and evaluate both mechanisms across three representative LLM4AD frameworks, multiple LLM backbones, and optimization domains spanning combinatorial and co…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM4AD 中候选算法须在共享实例集上全量评估才知是否保留，计算代价过高。
+<strong>方法</strong>：AdaEva 自适应部分评估：在实例池更大子集上渐进评估，证据积累即淘汰无望候选；不改底层流程与逐实例评估器、无需难度先验。实例化为逐次减半（AdaEva-S）与统计竞速（AdaEva-R）。
+<strong>关键数字</strong>：在三个 LLM4AD 框架、多 backbone、组合与连续优化域评估；加速数值此段未给出。
+<strong>为什么值得看</strong>：把提前淘汰思想引入 LLM4AD，降低候选评估成本。
+<a href="https://arxiv.org/abs/2610.03896">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.03896">阅读原文 ↗</a></p>
 </body>
 </html>

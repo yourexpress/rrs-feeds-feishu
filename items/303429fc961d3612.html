@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Is your RKNN model secretly running on the CPU? I built a tool that tells you</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Is your RKNN model secretly running on the CPU? I built a tool that tells you</h1>
+<p class="meta-line">DEV Community (Anguo) · 2026-11-01 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxn0o1ru5e84qavy3ckph.png" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong>：RKNN 模型把不支持或量化差的层悄悄放到 CPU 执行，基准看不出来——如何识别？
+<strong>要点</strong>：RK Edge Doctor 新增 model 命令：直绑 librknnrt 读逐层账目，按 fallback 占比判定 NPU_ONLY/MIXED/CPU_HEAVY。
+<strong>关键数字</strong>：实测 YOLOv8n FP16 于 RK3588：均值 41096µs；108 层耗时 38.2ms，CPU 仅 203µs 且全为 staging。
+<strong>为什么值得看</strong>：一条命令识别"静默跑 CPU"的算子，部署调优可用。
+<a href="https://dev.to/anguoyang/is-your-rknn-model-secretly-running-on-the-cpu-i-built-a-tool-that-tells-you-3n6p">阅读原文</a></p>
+<p><a class="origin" href="https://dev.to/anguoyang/is-your-rknn-model-secretly-running-on-the-cpu-i-built-a-tool-that-tells-you-3n6p">阅读原文 ↗</a></p>
+</body>
+</html>

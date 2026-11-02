@@ -22,9 +22,11 @@
 <h1>Aligning Multimodal Patient Evidence with Biomedical Knowledge Graphs for Clinical LLMs</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>临床 LLM 的多模态患者证据与生物医学知识图谱对齐</p>
-<blockquote><p>Clinical questions often depend on linking a patient's multimodal evidence to external biomedical knowledge, yet existing predictive systems rarely represent such links explicitly, so they can neither be traced to their evidence sources nor removed to measure their contributions. We present MM-KG (Multimodal Knowledge Graph), which represents heterogeneous, multimodal patient observations and biomedical concepts as separate layers in one typed graph, joined by explicit alignment edges. First, modality-specific harmonizers convert EHR text, imaging, genomic, and biospecimen data into typed observations mapped to UMLS concepts, which a route-prioritized aligner links to a biomedical knowledge graph. Query-conditioned retrieval then selects a compact subgraph for downstream use by a large language model or a graph neural network. We build MM-KGs for MIMIC-IV and ADNI, and evaluate them with a 2x2 design that separates patient evidence, biomedical knowledge, and their interaction. On questions that require both sources, neither source alone performs far above chance, whereas their combination yields a drug-controlled AUROC interaction of +0.194 on MIMIC and +0.299 on ADNI. On held-out …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：临床预测系统很少显式表示患者多模态证据与生物医学知识的关联，无法溯源、无法评估各自贡献。
+<strong>方法</strong>：MM-KG 将多模态观察与生物医学概念组织为分层类型图、显式对齐边连接；harmonizer 把 EHR/影像/基因组/生物样本映射到 UMLS 概念，对齐器链接知识图谱，检索选出子图供 LLM/GNN 使用。
+<strong>关键数字</strong>：MIMIC-IV 药物控制 AUROC 交互项 +0.194、ADNI +0.299；单一来源在需双源问题上远低于随机以上。
+<strong>为什么值得看</strong>：显式建模证据-知识关联，可溯源且量化两源贡献。
+<a href="https://arxiv.org/abs/2610.06685">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06685">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10 RKNN models benchmarked on RK3588 — and the fastest one is cheating onto the CPU</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>10 RKNN models benchmarked on RK3588 — and the fastest one is cheating onto the CPU</h1>
+<p class="meta-line">DEV Community (Anguo) · 2026-11-02 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdg8eozxrj1myyjjl6223.png" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong>：RKNN 模型基准——10 个公开模型在 RK3588 实测。
+<strong>要点</strong>：rk-bench 用 NPU 计数器计延迟，逐层判 CPU fallback；全部官方 Zoo 转换。
+<strong>关键数字</strong>：最快的 RetinaFace Mobile320 是唯一 MIXED——5 个 Reshape 在 CPU，196µs、占 4.05%；其余 9 个 NPU_ONLY；首个进程测量慢约 15%（YOLO11n 51.4 vs 44.0ms）。
+<strong>为什么值得看</strong>：硬件计数器口径的公开基准 + 冷启动效应，可复现。
+<a href="https://dev.to/anguoyang/10-rknn-models-benchmarked-on-rk3588-and-the-fastest-one-is-cheating-onto-the-cpu-2pkh">阅读原文</a></p>
+<p><a class="origin" href="https://dev.to/anguoyang/10-rknn-models-benchmarked-on-rk3588-and-the-fastest-one-is-cheating-onto-the-cpu-2pkh">阅读原文 ↗</a></p>
+</body>
+</html>
