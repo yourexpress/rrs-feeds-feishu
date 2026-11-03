@@ -22,9 +22,11 @@
 <h1>Empirical Variational Autoencoder</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>经验变分自编码器</p>
-<blockquote><p>We present Empirical Variational Autoencoder, a general generative framework for continuous-valued (i.e., non-vector-quantized) sequences. EVA is based on the evidence lower bound of the Variational Autoencoder (VAE) but learns autoregressive latent priors empirically from training data, which can be implemented only by an additional single linear layer on top of VAEs. By replacing the conventional standard-Gaussian constraint with the self-predicted priors, EVA significantly alleviates the latent distribution gap between prior and posterior which is typically observed in conventional VAEs, and leads to high-fidelity ancestral sampling for sequential data generation. Extensive experiments on image and sound synthesis demonstrate that EVA achieves competitive generation quality with autoregressive diffusion baselines despite its much faster inference time.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 传统 VAE 用标准高斯约束先验，先验与后验分布差距导致连续序列生成质量受限。</p>
+<p><strong>方法</strong> EVA 从训练数据经验学习自回归潜先验，仅在 VAE 之上加一个线性层实现；用自预测先验替换标准高斯约束。</p>
+<p><strong>关键数字</strong> 图像与声音合成实验中生成质量与自回归扩散基线相当，推理时间显著更快。</p>
+<p><strong>为什么值得看</strong> 极简改动缓解 VAE 潜分布 gap，为连续序列高保真采样提供低成本路线。</p>
+<p><a href="https://arxiv.org/abs/2610.06545">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06545">阅读原文 ↗</a></p>
 </body>
 </html>

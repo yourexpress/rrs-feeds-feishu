@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What We Keep of What We Forget: Replacement Operators and Routing Semantics in Training-Free MoE Expert Pruning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>What We Keep of What We Forget: Replacement Operators and Routing Semantics in Training-Free MoE Expert Pruning</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 训练无关 MoE 专家剪枝涉及"删哪些专家"与"路由仍选中被删专家时层内怎么算"两个决策，公开方法同时改动两者无法归因。</p>
+<p><strong>方法</strong> 固定掩码，在 OLMoE、DeepSeek-V2-Lite、Moonlight（Granite 作第四路由）上配对多重校正检验三族替换算子；提出 tilted novice 闭式低秩映射。</p>
+<p><strong>关键数字</strong> 门控重归一化代价 0.8-8.5 分；tilted novice 在 50% 剪枝仅加 1.2-1.8% 参数，较 MoNE 常数多 3.45 与 1.37 分；25% 剪枝时 MoNE 常数 GSM8K 仅保 5-65%。</p>
+<p><strong>为什么值得看</strong> 解耦两个决策并识别被忽视的最大效应，附五项报告清单便于复现。</p>
+<p><a href="https://arxiv.org/abs/2610.41366">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.41366">阅读原文 ↗</a></p>
+</body>
+</html>

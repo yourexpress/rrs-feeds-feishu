@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where KV-Cache Error Lives in Looped Language Models: A Diagnostic Study of Ouro and Huginn</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Where KV-Cache Error Lives in Looped Language Models: A Diagnostic Study of Ouro and Huginn</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-10-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 循环语言模型每 token 重复应用一层块并保存多份 KV，存储误差如何改变 next-token 分布、共享权重误差如何累积？</p>
+<p><strong>方法</strong> Ouro-1.4B（4 循环）在 GSM8K/MATH、Huginn-0125（32 循环）在 GSM8K 派生链上，用稠密与模拟量化诊断单位误差的 Fisher 质量与实测 KL。</p>
+<p><strong>关键数字</strong> 单位误差下 values 承载 94% 对角 Fisher 质量，但实测 KL 由 keys 的大量化误差主导；共享权重二阶因子 32 循环从 INT8 的 1.65 到 INT4 的 4.09。</p>
+<p><strong>为什么值得看</strong> 区分理论敏感度与实测主导差异，为循环模型 KV 压缩预算分配提供诊断方法。</p>
+<p><a href="https://arxiv.org/abs/2610.41825">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.41825">阅读原文 ↗</a></p>
+</body>
+</html>

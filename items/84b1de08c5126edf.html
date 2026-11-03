@@ -22,9 +22,11 @@
 <h1>Efficient Graph Generation via Direct Prediction and Flow Matching</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>直接预测与流匹配的高效图生成</p>
-<blockquote><p>Generative modeling of graph-structured data is crucial for tasks ranging from drug discovery to social network simulation. Among these models, denoising diffusion models have achieved great success in graph generation by learning to progressively reverse a process that adds noise to the original graph. However, the standard noise-prediction approach of diffusion models is suboptimal for graph data. The goal for a graph generative model is to learn the clean graphs' topological properties, such as connectivity and degree distribution. Because a diffusion model that predicts noise does not explicitly learn these topological properties, it is challenging for the model to output graphs with the desired structural statistics. To address this challenge, we introduce Direct Graph Flow Matching (DiGFM), a novel graph transformer model guided by two goals: predict clean graphs and improve sampling efficiency. Distinct from the prevailing diffusion approach, DiGFM employs a continuous flow-matching paradigm and integrates direct graph prediction. Specifically, DiGFM maps the prior noise distribution to the clean graph distribution via a multi-step process: the model repeatedly predicts the …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 扩散图生成的噪声预测范式不显式学习图的拓扑性质（连通性、度分布），生成图结构统计偏离目标。</p>
+<p><strong>方法</strong> Direct Graph Flow Matching（DiGFM）图 Transformer：连续流匹配 + 直接图预测，多步重复预测干净图并转换为指向干净图分布的 velocity 向量。</p>
+<p><strong>关键数字</strong> 仅用扩散模型 2.5%-15.6% 的步数，墙钟推理快 5.3x-257x；通用图与分子基准上优于或持平 SOTA。</p>
+<p><strong>为什么值得看</strong> 图生成从噪声预测转为直接结构预测，大幅提速且结构统计更贴合真实。</p>
+<p><a href="https://arxiv.org/abs/2610.05397">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05397">阅读原文 ↗</a></p>
 </body>
 </html>

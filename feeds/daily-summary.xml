@@ -5,8 +5,53 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>每天一条，汇总当日两个检索源（AI 技术报告 + 高效计算文献）的重点内容。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 02 Nov 2026 23:26:12 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 11:10:27 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/daily-summary.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日精选 · 2026-11-03</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-11-03.html</link>
+      <guid isPermaLink="false">urn:daily-summary:2026-11-03</guid>
+      <pubDate>Tue, 03 Nov 2026 23:05:00 +0800</pubDate>
+    <category>每日精选</category>
+      <description>&lt;h1&gt;2026-11-03 文献检索摘要&lt;/h1&gt;
+&lt;h2&gt;当日检索概况&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;AI 技术报告库&lt;/strong&gt;：检索 5 条，入选 3 条（LifeVal 日常任务基准、Scaling Git at OpenAI、Weight-Space Programming；Grid Protectors Program 与 Mistral Large 4 量子化学演示未入选）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;高效计算文献库&lt;/strong&gt;：检索 66 条，入选 15 条（arXiv 新批次 2610.40732~2610.42133，发布 10-29/10-30；另含东北大学 STT-MRAM AI SoC 与边缘 AI 硬件选型两篇非 arXiv 来源）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;重点推荐&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;bf16 Rounding Silently Discards Most RL Policy Updates&lt;/strong&gt; — 揭示 RL 后训练中就近舍入的 bf16 副本会静默丢弃大部分策略更新（Qwen3-1.7B 每步仅 0.4-0.5% 权重变化、策略落后优化器 50-150 步），提出 Fair Cast 无偏一行修复，25 组种子 18 胜 6 平 1 负、平均增益 6.1 分。&lt;a href="https://arxiv.org/abs/2610.41073"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sparks of Weight-Space Programming&lt;/strong&gt; — MIT CSAIL 发现 GPT-6 Astra 能原生读写神经网络权重：编辑 0.016% 权重使 Qwen3.5-0.8B 的 MATH-500 从 7.9% 升至 48.1%，并可零样本写出超越 PPO 百万步训练的小型游戏网络。&lt;a href="https://rikiyat.github.io/blog/weight-space-programming/"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LLM Fine-Tuning Workloads for Serverless AI&lt;/strong&gt; — 基于 IBM LLMFineTuningBench（30,920 个实验）刻画微调负载：失败率随 batch 从 52% 升至 95%，RoCE 使跨节点效率 0.26→0.72，系统级优化（2.9x）超过应用级（1.7x）。&lt;a href="https://arxiv.org/abs/2610.40983"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Matching Workloads to Blackwell: B200 vs B300&lt;/strong&gt; — 功耗分辨基准揭示 B300 并非 B200 全面继任者：卷积推理落后 5.6x、3D ViT 训练 8x、70B 吞吐 24-27%，受影响负载仅用满 1100W 封装的 36-53%。&lt;a href="https://arxiv.org/abs/2610.41919"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;There Is No Free Loop&lt;/strong&gt; — 系统评估预训练后加循环是否值得：m/N 层循环使每 token 贵 (N+m)/N 倍，仅 0.8B 模型同时胜过等参数与等 FLOPs 两个基线，4B/9B 均不划算。&lt;a href="https://arxiv.org/abs/2610.42030"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Scaling Git at OpenAI&lt;/strong&gt; — OpenAI 自研 Git 后端 Pando 支撑 Codex 智能体规模并发：push 中位数延迟降低近 5 倍，每日交付近 1PB Git 数据，且保留 Git 协议兼容。&lt;a href="https://openai.com/index/scaling-git-at-openai/"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;世界初 32MB STT-MRAM 16nm AI SoC&lt;/strong&gt; — 东北大学 CIES 与爱信联合开发近内存计算 AI SoC：上电到 OS 启动 65.7ms（快 38.59x）、物体检测能耗 50.7 mJ/frame（约 1/50），无需外部 DRAM/SSD。&lt;a href="https://www.tohoku.ac.jp/japanese/2026/11/press20261102-03-emram.html"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;What We Keep of What We Forget&lt;/strong&gt; — 解耦训练无关 MoE 剪枝的两个决策：门控重归一化代价 0.8-8.5 分；新算子 tilted novice 在 50% 剪枝仅加 1.2-1.8% 参数即提升 3.45/1.37 分。&lt;a href="https://arxiv.org/abs/2610.41366"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;主题速览&lt;/h2&gt;
+&lt;p&gt;高效计算库本轮以 arXiv 新批次为主，主题集中在系统层优化：LLM 训练与服务（微调负载刻画、bf16 数值失配、混合架构前缀缓存、异构集群自动并行、推荐训练统一框架）、硬件基准与存内计算（B300 功耗分辨、STT-MRAM AI SoC）、以及模型压缩与循环架构（VQ 量化、MoE 剪枝、循环模型 KV 诊断）。AI 库三条均为产品级/研究机构动态：OpenAI 的日常任务基准与 Git 后端工程实践，加上 MIT 的权重空间编程——共同指向 agent 化与"LLM 直接操作权重"两条前沿。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h1>2026-11-03 文献检索摘要</h1>
+<h2>当日检索概况</h2>
+<ul>
+<li><strong>AI 技术报告库</strong>：检索 5 条，入选 3 条（LifeVal 日常任务基准、Scaling Git at OpenAI、Weight-Space Programming；Grid Protectors Program 与 Mistral Large 4 量子化学演示未入选）</li>
+<li><strong>高效计算文献库</strong>：检索 66 条，入选 15 条（arXiv 新批次 2610.40732~2610.42133，发布 10-29/10-30；另含东北大学 STT-MRAM AI SoC 与边缘 AI 硬件选型两篇非 arXiv 来源）</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>bf16 Rounding Silently Discards Most RL Policy Updates</strong> — 揭示 RL 后训练中就近舍入的 bf16 副本会静默丢弃大部分策略更新（Qwen3-1.7B 每步仅 0.4-0.5% 权重变化、策略落后优化器 50-150 步），提出 Fair Cast 无偏一行修复，25 组种子 18 胜 6 平 1 负、平均增益 6.1 分。<a href="https://arxiv.org/abs/2610.41073">原文</a></li>
+<li><strong>Sparks of Weight-Space Programming</strong> — MIT CSAIL 发现 GPT-6 Astra 能原生读写神经网络权重：编辑 0.016% 权重使 Qwen3.5-0.8B 的 MATH-500 从 7.9% 升至 48.1%，并可零样本写出超越 PPO 百万步训练的小型游戏网络。<a href="https://rikiyat.github.io/blog/weight-space-programming/">原文</a></li>
+<li><strong>LLM Fine-Tuning Workloads for Serverless AI</strong> — 基于 IBM LLMFineTuningBench（30,920 个实验）刻画微调负载：失败率随 batch 从 52% 升至 95%，RoCE 使跨节点效率 0.26→0.72，系统级优化（2.9x）超过应用级（1.7x）。<a href="https://arxiv.org/abs/2610.40983">原文</a></li>
+<li><strong>Matching Workloads to Blackwell: B200 vs B300</strong> — 功耗分辨基准揭示 B300 并非 B200 全面继任者：卷积推理落后 5.6x、3D ViT 训练 8x、70B 吞吐 24-27%，受影响负载仅用满 1100W 封装的 36-53%。<a href="https://arxiv.org/abs/2610.41919">原文</a></li>
+<li><strong>There Is No Free Loop</strong> — 系统评估预训练后加循环是否值得：m/N 层循环使每 token 贵 (N+m)/N 倍，仅 0.8B 模型同时胜过等参数与等 FLOPs 两个基线，4B/9B 均不划算。<a href="https://arxiv.org/abs/2610.42030">原文</a></li>
+<li><strong>Scaling Git at OpenAI</strong> — OpenAI 自研 Git 后端 Pando 支撑 Codex 智能体规模并发：push 中位数延迟降低近 5 倍，每日交付近 1PB Git 数据，且保留 Git 协议兼容。<a href="https://openai.com/index/scaling-git-at-openai/">原文</a></li>
+<li><strong>世界初 32MB STT-MRAM 16nm AI SoC</strong> — 东北大学 CIES 与爱信联合开发近内存计算 AI SoC：上电到 OS 启动 65.7ms（快 38.59x）、物体检测能耗 50.7 mJ/frame（约 1/50），无需外部 DRAM/SSD。<a href="https://www.tohoku.ac.jp/japanese/2026/11/press20261102-03-emram.html">原文</a></li>
+<li><strong>What We Keep of What We Forget</strong> — 解耦训练无关 MoE 剪枝的两个决策：门控重归一化代价 0.8-8.5 分；新算子 tilted novice 在 50% 剪枝仅加 1.2-1.8% 参数即提升 3.45/1.37 分。<a href="https://arxiv.org/abs/2610.41366">原文</a></li>
+</ul>
+<h2>主题速览</h2>
+<p>高效计算库本轮以 arXiv 新批次为主，主题集中在系统层优化：LLM 训练与服务（微调负载刻画、bf16 数值失配、混合架构前缀缓存、异构集群自动并行、推荐训练统一框架）、硬件基准与存内计算（B300 功耗分辨、STT-MRAM AI SoC）、以及模型压缩与循环架构（VQ 量化、MoE 剪枝、循环模型 KV 诊断）。AI 库三条均为产品级/研究机构动态：OpenAI 的日常任务基准与 Git 后端工程实践，加上 MIT 的权重空间编程——共同指向 agent 化与"LLM 直接操作权重"两条前沿。</p>]]></content:encoded>
+    </item>
     <item>
       <title>每日精选 · 2026-11-02</title>
       <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-11-02.html</link>

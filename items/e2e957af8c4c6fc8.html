@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>There Is No Free Loop: When Does Looping a Trained Model Pay for Its Inference Compute?</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>There Is No Free Loop: When Does Looping a Trained Model Pay for Its Inference Compute?</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 对已训练模型加循环不增加参数与训练成本，但每生成 token 都为循环付费，预训练后加循环是否值得？</p>
+<p><strong>方法</strong> 与两个基线比较：等参数的无循环同训练模型、等推理 FLOPs 的最佳无循环用法；覆盖 Qwen3/Qwen3.5 0.8B-9B。</p>
+<p><strong>关键数字</strong> m/N 层循环使每 token 贵 (N+m)/N 倍；仅 0.8B 循环模型同时胜过两基线；4B/9B 循环模型不敌同参数无循环模型。</p>
+<p><strong>为什么值得看</strong> 给出"循环何时值得"的清晰边界：只有小模型在固定参数预算下划算。</p>
+<p><a href="https://arxiv.org/abs/2610.42030">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.42030">阅读原文 ↗</a></p>
+</body>
+</html>

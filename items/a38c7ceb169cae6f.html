@@ -22,9 +22,11 @@
 <h1>EpicWorldModel: Exploration-driven Planning with Latent World Models</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>探索驱动规划的隐空间世界模型</p>
-<blockquote><p>Latent world models based on Joint-Embedding Predictive Architecture (JEPA) are deterministic by design. While successful in fully observable scenarios, this paradigm breaks down when past observations and actions lead to multiple plausible future possibilities, e.g., due to occlusion. We introduce EpicWorldModel, a framework to train stochastic JEPAs for environments and tasks with inherent uncertainty under partially observability. We jointly train the EpicWorldModel predictor with its latent representation space to directly predict multiple potential future states using a flow-matching objective, when the goal-relevant scene content is absent from the conditioning history. We show that flow predictive variance, motivated by its relation to an upper bound on predictive entropy, serves as a useful exploration guidance for planning. By incorporating this uncertainty signal into Cross-Entropy Method (CEM)-based planning, our approach balances goal-reaching with exploration of uncertain regions where occluded goals are most likely to be located. We demonstrate the effectiveness of EpicWorldModel through a series of latent planning experiments with the best or on-par performance acros…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 基于 JEPA 的隐空间世界模型设计上确定性，在遮挡等部分可观测场景存在多个合理未来时失效。</p>
+<p><strong>方法</strong> EpicWorldModel 训练随机 JEPA：流匹配目标联合训练预测器与潜表示空间，直接预测多个潜在未来状态；以流预测方差（预测熵上界）作为 CEM 规划探索指导。</p>
+<p><strong>关键数字</strong> 多数任务最佳或持平，成功率较 LeWorldModel 最高提升 22%。</p>
+<p><strong>为什么值得看</strong> 把不确定性显式引入 JEPA 世界模型，为探索-目标平衡的规划提供新框架。</p>
+<p><a href="https://arxiv.org/abs/2610.05996">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05996">阅读原文 ↗</a></p>
 </body>
 </html>

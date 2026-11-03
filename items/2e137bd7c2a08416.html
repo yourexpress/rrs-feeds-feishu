@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bf16 Rounding Silently Discards Most RL Policy Updates: A Hidden Training-Inference Mismatch and an Unbiased One-Line Fix</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>bf16 Rounding Silently Discards Most RL Policy Updates: A Hidden Training-Inference Mismatch and an Unbiased One-Line Fix</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-29 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> RL 后训练中优化器存 fp32 主权重、rollout 用就近舍入 bf16 副本，多数单步更新不足半个 bf16 间距被静默丢弃，造成训练-推理失配。</p>
+<p><strong>方法</strong> Fair Cast 导出主权重时改用无偏舍入，并在被服务副本上算训练损失；导出处一行改动、无新增超参。</p>
+<p><strong>关键数字</strong> Qwen3-1.7B 每步仅 0.4-0.5% 权重变化、策略落后优化器 50-150 步；25 组种子 18 胜 6 平 1 负、平均增益 6.1 分。</p>
+<p><strong>为什么值得看</strong> 一行修复消除 RL 隐藏数值失配，代价极小、收益显著。</p>
+<p><a href="https://arxiv.org/abs/2610.41073">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.41073">阅读原文 ↗</a></p>
+</body>
+</html>

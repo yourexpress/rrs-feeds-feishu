@@ -22,9 +22,11 @@
 <h1>Erased, Rerouted, or Rescaled? Post-Training and the Causal Quotient of a Language Model's Belief State</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>后训练对 LLM 信念态的擦除/改路/缩放因果分析</p>
-<blockquote><p>What happens to information a pretrained model already encodes when post-training no longer rewards using it? The common language of representation compression conflates three fates: information may be erased, rerouted away from the decision while still represented, or rescaled to occupy less variance while still represented and used. We make these fates identifiable in models whose pretraining recovers Bayesian belief states. A reward that reads only a coarse function of the hidden state defines an exact reward-null kernel. The kernel lets us separately measure whether the information remains recoverable, whether decisions causally depend on it, and how much activation variance it occupies. Theory says what is protected: KL-anchored reinforcement learning preserves the reference policy's log-odds among equally rewarded outputs, supervised and unanchored objectives carry no such constraint, and spectral compression implies neither erasure nor loss of use. In controlled worlds, post-training mostly reroutes or rescales reward-null information and leaves it decodable. Without an anchor decisions can stop using it although the representation survives, and with one they keep using it. …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 后训练不再奖励预训练已编码的信息时，这些信息是被擦除、改路（仍表示但不用于决策）还是缩放（仍表示仍使用）？</p>
+<p><strong>方法</strong> 在预训练恢复贝叶斯信念态的模型中，用奖励零化核分别测量信息可恢复性、决策因果依赖与激活方差占用；受控世界与开放语言模型双重验证。</p>
+<p><strong>关键数字</strong> 后训练多数"改路或缩放"而非擦除；无锚点时决策可停止使用而表示仍存活；擦除仅出现在长期权重衰减下。</p>
+<p><strong>为什么值得看</strong> 把"表征压缩"拆成三种可识别命运，为对齐与可解释性提供精确框架。</p>
+<p><a href="https://arxiv.org/abs/2610.05292">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05292">阅读原文 ↗</a></p>
 </body>
 </html>

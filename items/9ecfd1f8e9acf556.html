@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Understanding the Energy Cost of Quantized Agents on Shared GPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Understanding the Energy Cost of Quantized Agents on Shared GPUs</h1>
+<p class="meta-line">arXiv (cs.PF) · 2026-10-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 量化可降低单次 LLM 调用能耗并释放显存，但多 agent 共享 GPU 时按完成任务衡量的净收益受竞争与缓存干扰，尚不清楚。</p>
+<p><strong>方法</strong> A100 40/80GB 部署两个 agent 模型（编码与数据分析、独立验证），回放记录调用跨精度隔离能耗，封顶缓存测试释放显存的价值。</p>
+<p><strong>关键数字</strong> 缓存可容纳请求时 4-bit 权重+16-bit 激活较 8-bit 双激活能耗低 10-25%，但实况下每验证完成能耗反而高 49%。</p>
+<p><strong>为什么值得看</strong> 共享 GPU 下精度与准入限制的联合决策依据，结论与单请求视角相反。</p>
+<p><a href="https://arxiv.org/abs/2610.41672">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.41672">阅读原文 ↗</a></p>
+</body>
+</html>
