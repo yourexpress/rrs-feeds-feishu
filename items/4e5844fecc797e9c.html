@@ -22,9 +22,12 @@
 <h1>How Sparse Probability Maps Shape Mixture-of-Experts Routing</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>稀疏概率图如何塑造 MoE 路由</p>
-<blockquote><p>Mixture-of-experts (MoE) routers typically apply softmax to the router scores and keep the top-K experts, making every token use exactly K experts. Sparsity-inducing probability maps such as sparsemax, alpha-entmax and normmax can adaptively assign exact zeros to selected experts, and therefore appear to offer token-dependent expert participation, even when using the same top-K machinery. In this work, we study whether and how this sparsity survives training. We train matched 300M and 1B top-2 MoE language models with softmax, 1.5-entmax, sparsemax and 2-normmax, and find that the maps behave very differently once trained: at 1B, entmax discards 30% less probability mass than softmax while almost never dropping a selected expert, sparsemax retains the most mass, and normmax routes 21% of tokens to a single expert. These outcomes are not properties of the maps alone. Each map drops a selected expert only when the gap between the two largest scores reaches a fixed threshold, and the trained routers differ in the score distribution they learn: the entmax router learns scores with roughly half the spread of softmax's, which keeps its top-2 gaps below its threshold, while sparsemax and …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<h1>How Sparse Probability Maps Shape Mixture-of-Experts Routing</h1>
+<p><strong>研究问题</strong>：稀疏概率映射（sparsemax、alpha-entmax、normmax）能给 top-K 路由带来自适应的专家零参与，但这种稀疏性在训练后还能存活吗？</p>
+<p><strong>方法</strong>：训练匹配的 300M 与 1B top-2 MoE 语言模型，分别使用 softmax、1.5-entmax、sparsemax 与 2-normmax，比较各映射训练后的行为。</p>
+<p><strong>关键数字</strong>：1B 规模下 entmax 比 softmax 少丢弃 30% 概率质量且几乎从不丢弃已选专家，sparsemax 保留最多质量，normmax 把 21% 的 token 路由给单一专家；稀疏映射均未改善验证损失，但 sparsemax（K=2 训练）在 K=8 推理时仅损失 0.02 nats，softmax 损失 0.58。</p>
+<p><strong>为什么值得看</strong>：证明路由会与概率映射共同适应，自适应 MoE 路由必须围绕映射与学习分数的联合行为来设计。</p>
+<p>原文链接：<a href="https://arxiv.org/abs/2610.06677">https://arxiv.org/abs/2610.06677</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06677">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,12 @@
 <h1>Flash-OPD: Fast On-Policy Distillation</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>快速同策略蒸馏</p>
-<blockquote><p>On-policy distillation (OPD) provides dense teacher supervision on student-generated trajectories, but generating and evaluating long rollouts incurs substantial training cost. Existing acceleration methods reduce this cost through open-loop rollout schedules or closed-loop horizon adaptation. However, supervision compatibility can vary substantially across trajectories, making a single rollout horizon difficult to match their heterogeneous reliable lengths: an overly short horizon may truncate useful supervision, while an overly long one wastes computation beyond reliable regions. Our key insight is that the trajectory-specific reliability boundary need not be predicted before generation. By viewing reliability as the first-passage of accumulated low teacher--student compatibility events, the boundary is inherently unknown before sampling, yet whether it has been reached can be determined exactly from the observed prefix. Building on this insight, we propose *Flash-OPD*, which shifts from rollout-horizon control to adaptive trajectory-level boundary verification. *Flash-OPD* interleaves cached generation with teacher verification and independently stops each trajectory according t…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<h1>Flash-OPD: Fast On-Policy Distillation</h1>
+<p><strong>研究问题</strong>：On-policy 蒸馏（OPD）在 student 生成轨迹上提供密集教师监督，但生成与评估长 rollout 成本高；轨迹间可靠监督长度差异大，单一 rollout 长度难以匹配。</p>
+<p><strong>方法</strong>：核心洞察是轨迹级可靠性边界无需在生成前预测——将可靠性视为累计低师生兼容事件的首达，边界采样前未知但可从已观察前缀精确判定。Flash-OPD 从 rollout 长度控制转向自适应轨迹级边界验证：缓存生成与教师验证交错，各轨迹按自身兼容事件独立停止；近期事件率只用于调度下一次验证点，停止决策始终基于精确累计计数。</p>
+<p><strong>关键数字</strong>：相比标准 OPD 获得 2.2×–7.5× 加速，同时保持或提升精度。</p>
+<p><strong>为什么值得看</strong>：分离验证调度与停止决策，避免估计误差导致过早终止，兼顾验证效率。</p>
+<p>原文链接：<a href="https://arxiv.org/abs/2610.06105">https://arxiv.org/abs/2610.06105</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06105">阅读原文 ↗</a></p>
 </body>
 </html>

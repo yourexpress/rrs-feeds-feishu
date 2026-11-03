@@ -22,9 +22,12 @@
 <h1>Hidden in the Comments: A Context-Injection Attack Surface in Code LLMs</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>代码 LLM 注释中的上下文注入攻击面</p>
-<blockquote><p>Code large language model (Code LLM) assistants generate code from heterogeneous development contexts, including open files, imported modules, pasted snippets, and comments, much of which may originate from untrusted sources. We investigate whether insecure instructions embedded in such contexts can steer Code LLMs toward vulnerable code without access to model weights or training data. We evaluate ten open-weight Code LLMs spanning 3B--13B parameters, including four base and six instruction-tuned models, across ten web-application weakness classes. We compare completion tasks containing insecure instructions embedded as code comments with benign tasks without malicious instructions. Attack-condition completions contained a medium-or-higher weakness in {\bf 77.4--92.3}\% of cases, compared with {\bf 1.7--5.1}\% in the benign condition. Base and instruction-tuned models averaged 86.5\% and 84.5\% vulnerable outputs, respectively; equivalence testing and three matched model pairs indicated reductions of at most 8.1\% after instruction tuning. Susceptibility showed no clear association with model scale or specialization. Among vulnerable attack outputs, 86.2--91.0\% were rated high or…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<h1>Hidden in the Comments: A Context-Injection Attack Surface in Code LLMs</h1>
+<p><strong>研究问题</strong>：代码 LLM 助手从异构开发上下文（打开的文件、导入模块、粘贴片段、注释）生成代码，其中许多可能来自不可信来源；嵌入其中的不安全指令能否诱导模型写出漏洞代码？</p>
+<p><strong>方法</strong>：评估 10 个开源 Code LLM（3B–13B，含 4 基座与 6 指令微调模型），覆盖 10 类 Web 应用弱点；对比含恶意注释指令的补全任务与良性任务。</p>
+<p><strong>关键数字</strong>：攻击条件下 77.4–92.3% 的补全含中等级以上弱点（良性条件下仅 1.7–5.1%）；漏洞输出中 86.2–91.0% 被评为高危或严重；指令微调最多仅降低 8.1%；最强后置筛查仍漏掉约三分之一的攻击输出。</p>
+<p><strong>为什么值得看</strong>：识别出推理期上下文注入这一重大攻击面，且无需访问模型权重或训练数据，呼吁来源感知的训练目标。</p>
+<p>原文链接：<a href="https://arxiv.org/abs/2610.05139">https://arxiv.org/abs/2610.05139</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05139">阅读原文 ↗</a></p>
 </body>
 </html>

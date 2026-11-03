@@ -22,9 +22,12 @@
 <h1>FlashCart: Fast Cartesian Tensor Products for Equivariant Interatomic Potentials</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>等变原子间势的快速笛卡尔张量积</p>
-<blockquote><p>Machine-learned interatomic potentials extend atomistic simulations beyond the length- and timescales accessible to electronic-structure methods. However, the computational cost of equivariant architectures limits the local correlations they can represent in practice and therefore their achievable accuracy. Here we introduce FlashCart, which makes higher-order correlations affordable by combining generated GPU kernels with an architecture that recursively builds equivariant features and compresses them to a fixed width at each step. We express tensor products in independent Cartesian components and symbolically simplify them and their derivatives, producing fused kernels that often outperform optimized spherical counterparts. We then show that increasing correlation order improves accuracy more efficiently than increasing width, depth, or tensor rank. On SPICE-MACE-OFF, FlashCart models advance the measured accuracy-efficiency frontier: a model with $5.6$ million parameters achieves lower energy and force errors and $10\times$ faster inference than a transformer with $189$ million parameters.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<h1>FlashCart: Fast Cartesian Tensor Products for Equivariant Interatomic Potentials</h1>
+<p><strong>研究问题</strong>：机器学习原子间势能模型受等变架构计算成本限制，难以表示更高阶局部关联，制约精度。</p>
+<p><strong>方法</strong>：引入 FlashCart，将生成 GPU kernel 与递归构建等变特征并在每步压缩到固定宽度的架构结合；在独立笛卡尔分量中表达张量积并做符号化简（含导数），产出常优于优化球谐版本的融合 kernel。</p>
+<p><strong>关键数字</strong>：SPICE-MACE-OFF 上 560 万参数的 FlashCart 模型在能量与力误差上优于 1.89 亿参数 transformer，且推理快 10×；提升关联阶数比增加宽度、深度或张量秩更高效。</p>
+<p><strong>为什么值得看</strong>：以可负担成本提升相关阶数，推进等变势能模型的精度-效率前沿。</p>
+<p>原文链接：<a href="https://arxiv.org/abs/2610.06409">https://arxiv.org/abs/2610.06409</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06409">阅读原文 ↗</a></p>
 </body>
 </html>

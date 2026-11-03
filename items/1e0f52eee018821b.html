@@ -22,9 +22,12 @@
 <h1>HeuFouFT: Task-Guided Metaheuristic Coordinate Search for Fourier Fine-Tuning</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>任务引导元启发坐标搜索的傅里叶微调</p>
-<blockquote><p>We introduce Heuristic-Guided Fourier Fine-Tuning (HeuFouFT), a task-guided framework for selecting trainable frequency coordinates in Fourier fine-tuning. Existing uniform and Gaussian band-pass schemes allocate a limited spectral budget through fixed, task-agnostic rules. HeuFouFT instead searches for coordinates using downstream performance. A coarse intensity map from lightweight block-level probes initializes three metaheuristic optimizers: Genetic Algorithm with Simulated Annealing (GA-SA), Particle Swarm Optimization (PSO), and Cuckoo Search (CS). During search, a Random Forest filters each population so that only the top 30% of candidates proceed to proxy fine-tuning. On E2E with GPT-2-Medium, all three variants outperform random-uniform FourierFT, Gaussian band-pass FourierFT, and LoRA across five metrics. PSO further outperforms LoCA, the best-performing baseline, on four metrics while using 37.6% fewer trainable spectral coefficients. Once coordinates are selected, HeuFouFT requires only 15--18% FLOPs of Full FT. These results show that task-guided search allocates limited spectral capacity more effectively than fixed sampling. Our code is publicly available.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<h1>HeuFouFT: Task-Guided Metaheuristic Coordinate Search for Fourier Fine-Tuning</h1>
+<p><strong>研究问题</strong>：Fourier 微调中，现有均匀与高斯带通方案用固定、任务无关的规则分配有限频谱预算，可能浪费容量。</p>
+<p><strong>方法</strong>：提出 HeuFouFT，用下游性能引导搜索可训练频率坐标：轻量块级探针得到的粗强度图初始化三种元启发式优化器（遗传算法+模拟退火、粒子群、布谷鸟搜索），搜索中随机森林过滤种群、仅前 30% 候选进入代理微调。</p>
+<p><strong>关键数字</strong>：E2E/GPT-2-Medium 上三种变体在五项指标上均优于随机均匀、高斯带通 FourierFT 与 LoRA；PSO 还在四项指标上胜过最佳基线 LoCA，且可训练谱系数少 37.6%；坐标选定后仅需 Full FT 的 15–18% FLOPs。</p>
+<p><strong>为什么值得看</strong>：证明任务引导搜索比固定采样能更有效地分配有限频谱容量，代码已开源。</p>
+<p>原文链接：<a href="https://arxiv.org/abs/2610.06437">https://arxiv.org/abs/2610.06437</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06437">阅读原文 ↗</a></p>
 </body>
 </html>

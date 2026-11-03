@@ -22,9 +22,12 @@
 <h1>GPU-Initiated Discrete Simulated Bifurcation: Low-Latency Requests and Streaming Dense Couplings</h1>
 <p class="meta-line">arXiv cs.DC · 2026-10-06 · 论文PDF</p>
 
-<p>GPU 发起的离散模拟分岔：低延迟请求与流式稠密耦合</p>
-<blockquote><p>GPU-based optimization faces two communication bottlenecks: coordinating frequent requests and delivering dense models that exceed device memory. We present a discrete simulated bifurcation (dSB) architecture that addresses both through NVIDIA DOCA GPUNetIO. For resident models, a persistent service receives field updates, executes each solve within one GPU thread block, and returns the result. Exact integer coupling sums, GPU work queues, and batched transmission keep the receive--solve--reply path on the device without a dedicated CPU data-path core. In comparisons with socket-based servers using the same solver, the largest latency gains occur under concurrent load. As the offered load increases from 400 to 800 thousand requests per second, median round-trip latency rises by only 6\%. At the highest tested load, median and 99th-percentile latencies are 189 and 218~$μ$s, compared with 288 and 609~$μ$s for the tuned persistent CPU proxy across repeated runs. For models larger than device memory, a streaming solver retains dynamical state on the GPU and reuses incoming coupling tiles across replicas. It evaluates ten-million-variable dense binary matrices at approximately 307~Gb/s,…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<h1>GPU-Initiated Discrete Simulated Bifurcation: Low-Latency Requests and Streaming Dense Couplings</h1>
+<p><strong>研究问题</strong>：GPU 组合优化面临两个通信瓶颈：频繁请求的协调开销，以及超出设备内存的稠密耦合模型。</p>
+<p><strong>方法</strong>：基于 NVIDIA DOCA GPUNetIO 构建离散模拟分叉（dSB）架构：驻留模型用持续服务在单个 GPU 线程块内完成每次求解并返回结果，接收-求解-回复全程留在设备上；对超内存模型用流式求解器在 GPU 上保留动力学状态，跨副本复用输入的耦合瓦片。</p>
+<p><strong>关键数字</strong>：负载从 40 万增至 80 万请求/秒时中位往返延迟仅上升 6%；最高负载下中位与 99 分位延迟为 189/218μs（调优 CPU 代理为 288/609μs）；千万变量稠密二进制矩阵约以 307 Gb/s 评估，12.5TB 逻辑矩阵经 64MiB 包缓冲消费。</p>
+<p><strong>为什么值得看</strong>：同时解决低延迟并发与超内存稠密模型两条路径，是 GPU 原生优化的工程参考。</p>
+<p>原文链接：<a href="https://arxiv.org/abs/2610.06622">https://arxiv.org/abs/2610.06622</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06622">阅读原文 ↗</a></p>
 </body>
 </html>

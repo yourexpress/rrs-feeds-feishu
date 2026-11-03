@@ -22,9 +22,12 @@
 <h1>FTD-GNO: Memory-Efficient Graph Neural Operators through Functional Tensor Decomposition of the Kernel</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>函数张量分解核的显存高效图神经算子</p>
-<blockquote><p>Graph Neural Operators (GNOs) provide flexible surrogate models for learning solution operators of partial differential equations (PDEs). However, standard GNOs typically parameterize the integral kernel with a monolithic neural network and evaluate kernel interactions over graph edges, leading to substantial computational and memory overhead at high resolutions or with large neighborhoods. To address these limitations, we propose Functional Tensor Decomposition Graph Neural Operator (FTD-GNO), a memory-efficient GNO framework that decouples the high-dimensional continuous integral kernel into low-dimensional mode-wise functions. By instantiating the kernel with classical tensor decomposition formats, including CP, Tensor-Train, and Tucker decompositions, FTD-GNO enables algebraic reconstruction of the integral operator without explicitly materializing full edge-wise kernel tensors. This factorized formulation reduces the memory footprint of kernel evaluation and aggregation while retaining the continuous operator-learning structure of GNOs. Theoretical complexity analysis shows that FTD-GNO substantially lowers parameter and activation-memory costs associated with high-dimensional…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<h1>FTD-GNO: Memory-Efficient Graph Neural Operators through Functional Tensor Decomposition of the Kernel</h1>
+<p><strong>研究问题</strong>：标准图神经算子（GNO）用单体神经网络参数化积分核并在图边上评估核交互，高分辨率或大邻域下计算与内存开销巨大。</p>
+<p><strong>方法</strong>：提出 FTD-GNO，将高维连续积分核解耦为低维逐模态函数；用 CP、Tensor-Train、Tucker 等经典张量分解格式实例化核，无需显式物化完整边级核张量即可代数重构积分算子。</p>
+<p><strong>关键数字</strong>：理论复杂度分析表明参数与激活内存成本大幅下降；实验显示相比未分解的图积分基线峰值内存更低、训练时间更短；在傅里叶-图混合算子中 FTD 能提升图积分层效率并具备良好可扩展性。</p>
+<p><strong>为什么值得看</strong>：在保留 GNO 连续算子学习结构的同时显著降低内存占用，是高分辨率 PDE 算子学习的实用方案。</p>
+<p>原文链接：<a href="https://arxiv.org/abs/2610.04212">https://arxiv.org/abs/2610.04212</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04212">阅读原文 ↗</a></p>
 </body>
 </html>

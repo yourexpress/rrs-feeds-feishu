@@ -22,9 +22,12 @@
 <h1>KALEIDO: Input-Space Adaptation of a Vision Model for Time-Series Forecasting Through Gated Fold Geometries</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>门控折叠几何的时序预测视觉模型输入空间适配</p>
-<blockquote><p>Time-series foundation models buy zero-shot forecasting with large temporal corpora; a vision model needs none, since a natural image implicitly embeds the patterns a forecaster must model, and an ImageNet-pretrained masked autoencoder forecasts a series by inpainting a rendering of it. A rendered series is not a natural image, however, and closing that gap takes temporal-aware adaptation. We show that the rendering geometry - how the series is folded and drawn - is a controllable, mixable axis for it. Kaleido detects the dominant periods, renders a rule-generated set of fold geometries, combines the inpaintings with a convex per-position gate fit on validation only, and fuses the result with the zero-shot output at one fixed share, with no per-dataset hyperparameter beyond the baseline's published settings. Training only LayerNorm (0.05%), Kaleido lowers MSE by 13% against the published zero-shot baseline on LTSF and, frozen, by 6.6%; on GIFT-Eval it improves the baseline by 7.4% in MASE and 19.3% in CRPS.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<h1>KALEIDO: Input-Space Adaptation of a Vision Model for Time-Series Forecasting Through Gated Fold Geometries</h1>
+<p><strong>研究问题</strong>：时序基础模型靠大规模语料换取零样本预测，而视觉模型无需语料——自然图像隐含预测器所需的模式，ImageNet 预训练掩码自编码器通过补全序列的渲染图即可预测；但渲染序列不是自然图像，需要时序感知适配来弥合差距。</p>
+<p><strong>方法</strong>：Kaleido 把渲染几何（序列如何折叠与绘制）当作可控、可混合的适配轴：检测主导周期、渲染规则生成的折叠几何集合、用仅基于验证集拟合的凸逐位置门组合各补全结果，并与零样本输出按固定份额融合；除基线已发布设置外无逐数据集超参数。</p>
+<p><strong>关键数字</strong>：仅训练 LayerNorm（0.05% 参数），LTSF 上 MSE 比发布零样本基线降 13%（冻结时 6.6%）；GIFT-Eval 上 MASE 提升 7.4%、CRPS 提升 19.3%。</p>
+<p><strong>为什么值得看</strong>：以极小微调量在输入空间实现视觉模型到时序预测的适配。</p>
+<p>原文链接：<a href="https://arxiv.org/abs/2610.04786">https://arxiv.org/abs/2610.04786</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04786">阅读原文 ↗</a></p>
 </body>
 </html>

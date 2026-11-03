@@ -22,9 +22,12 @@
 <h1>KVE-KD: Key Visual Evidence-Guided Knowledge Distillation for Vision-Language Models</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>关键视觉证据引导的视觉语言模型知识蒸馏</p>
-<blockquote><p>Knowledge distillation is crucial for deploying vision-language models on resource-constrained devices. However, existing methods typically impose uniform supervision across visual tokens or rely on static token selection, which confuses task-relevant cues with background noise and degrades cross-modal reasoning. To address this limitation, we propose Key Visual Evidence-guided Knowledge Distillation (KVE-KD), a framework that dynamically focuses feature distillation on task-relevant visual tokens identified by the teacher model. Specifically, KVE-KD appoints the final pre-generation textual token as a unified semantic anchor and identifies the target cross-modal fusion layer by analyzing changes in the anchor representation through iterative visual-token contribution removal. Within this layer, KVE-KD ranks visual tokens via the anchor-conditioned attention distribution and selects the most informative visual tokens as key visual evidence with normalized entropy. The key visual evidence subsequently guides focused visual feature distillation, making the student align closely with the teacher's task-relevant visual representations while suppressing irrelevant background information…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<h1>KVE-KD: Key Visual Evidence-Guided Knowledge Distillation for Vision-Language Models</h1>
+<p><strong>研究问题</strong>：视觉-语言模型蒸馏中，现有方法对视觉 token 施加统一监督或依赖静态 token 选择，会把任务相关线索与背景噪声混淆，损害跨模态推理。</p>
+<p><strong>方法</strong>：提出 KVE-KD，由教师动态定位任务相关视觉 token 并聚焦特征蒸馏：以预生成前的最终文本 token 作为统一语义锚，通过迭代移除视觉 token 贡献分析锚表示变化来定位目标跨模态融合层；在该层用锚条件注意力分布对视觉 token 排序，以归一化熵选出关键视觉证据引导蒸馏。</p>
+<p><strong>关键数字</strong>：六个基准上超越 SOTA 跨模态蒸馏方法，复杂推理与细粒度视觉理解任务增益尤为明显，且不引入任何推理期开销。</p>
+<p><strong>为什么值得看</strong>：动态聚焦任务相关视觉证据、抑制背景噪声，是无推理开销的轻量蒸馏改进。</p>
+<p>原文链接：<a href="https://arxiv.org/abs/2610.03842">https://arxiv.org/abs/2610.03842</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.03842">阅读原文 ↗</a></p>
 </body>
 </html>

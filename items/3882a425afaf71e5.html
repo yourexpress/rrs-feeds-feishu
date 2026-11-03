@@ -22,9 +22,12 @@
 <h1>How Should Teachers Be Prepared? RL on Student-Induced States for On-Policy Distillation</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>同策略蒸馏中教师应如何准备：学生诱导状态上的 RL</p>
-<blockquote><p>On-policy distillation (OPD) improves the reasoning capabilities of small language models through token-level teacher supervision on student-generated trajectories. Yet can teachers that excel at solving problems independently also guide student reasoning effectively? Prior work shows that when student prefixes follow reasoning paths that differ from the teacher's own or contain errors, teachers can be less accurate when continuing from these prefixes than when solving problems independently. To this end, we propose Prep-OPD, which uses reinforcement learning (RL) before distillation to train the teacher to adapt to the student's existing reasoning state and correct course when errors arise. Training optimizes teacher continuations from fixed student prefixes using final-answer correctness as the reward. The prepared teacher then trains the student through trajectory guidance and token-level supervision. We evaluate Prep-OPD on eight mathematical reasoning benchmarks, using Qwen3-4B-Instruct-2507 as the teacher and Qwen3-0.6B and Qwen3-1.7B as students. With the 4B teacher and 1.7B student, Prep-OPD improves average accuracy over standard OPD and the strongest baseline, Relay-OPD, …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<h1>How Should Teachers Be Prepared? RL on Student-Induced States for On-Policy Distillation</h1>
+<p><strong>研究问题</strong>：能独立解题的教师，是否也能有效引导学生推理？此前研究表明，当学生前缀偏离教师自身推理路径或含错误时，教师继续续写的准确性会下降。</p>
+<p><strong>方法</strong>：提出 Prep-OPD，在蒸馏前先用 RL 训练教师：以最终答案正确性为奖励，优化教师从固定学生前缀出发的续写，使其适应学生的既有推理状态并在出错时纠偏；准备好的教师再经轨迹引导与 token 级监督训练学生。</p>
+<p><strong>关键数字</strong>：Qwen3-4B 教师 + Qwen3-1.7B 学生在 8 个数学推理基准上，平均精度比标准 OPD 高 8.28 个百分点、比最强基线 Relay-OPD 高 2.30 个百分点；同一教师复用于 0.6B 学生同样有效。</p>
+<p><strong>为什么值得看</strong>：直接针对 OPD 中教师-学生状态不匹配的核心短板，提升小模型推理蒸馏质量。</p>
+<p>原文链接：<a href="https://arxiv.org/abs/2610.04950">https://arxiv.org/abs/2610.04950</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04950">阅读原文 ↗</a></p>
 </body>
 </html>

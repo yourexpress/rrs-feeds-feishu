@@ -22,9 +22,12 @@
 <h1>ExpertMuon-Compass: Alignment-Guided Step Sizes for Mixture-of-Experts Training</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>MoE 训练的对齐引导步长</p>
-<blockquote><p>Mixture-of-experts (MoE) language models send each token to a few experts, so each expert is trained on a different part of the data, and this part changes during training. With a shared learning rate, Muon applies updates of roughly the same size to expert matrices of the same shape, even when an expert's update is poorly aligned with its current gradient. We here propose ExpertMuon-Compass (Compass), which multiplies the Muon step of each expert by two factors. A family factor compares the cosine between the expert's orthogonalized update and its gradient with the same cosine for the other experts in its layer. A scalar radius aggregates the alignment between corresponding rows of the update and gradient into one step-length multiplier. Compass keeps the update direction and the momentum buffer of Muon. In pretraining on FineWeb-Edu, Compass with Nesterov momentum on all matrices performs as well as or better than Muon, NorMuon, and other optimizers, with weight decay matched to NorMuon in the longer runs. Adding its factors to NorMuon gives the same or a lower loss than NorMuon. Compass is the most effective when the data seen by each expert varies during training, for example, …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<h1>ExpertMuon-Compass: Alignment-Guided Step Sizes for Mixture-of-Experts Training</h1>
+<p><strong>研究问题</strong>：MoE 语言模型中各专家见到的数据随训练动态变化，共享学习率下 Muon 优化器对专家矩阵施加近乎相同步长，未考虑更新与梯度的对齐程度。</p>
+<p><strong>方法</strong>：提出 ExpertMuon-Compass，用两个因子缩放每个专家的 Muon 步长：族因子比较该专家正交化更新与其梯度的余弦对齐度（相对同层其他专家），标量半径因子把更新与梯度对应行的对齐度聚合为单个步长乘子；保持 Muon 的更新方向与动量缓冲。</p>
+<p><strong>关键数字</strong>：FineWeb-Edu 预训练中 Compass 表现不逊于 Muon、NorMuon 等优化器；在多语言语料分块到达、各专家数据差异最大的场景下增益最明显。</p>
+<p><strong>为什么值得看</strong>：为 MoE 训练提供对齐引导的自适应步长方案，且对两个因子给出了扰动界证明。</p>
+<p>原文链接：<a href="https://arxiv.org/abs/2610.04140">https://arxiv.org/abs/2610.04140</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04140">阅读原文 ↗</a></p>
 </body>
 </html>

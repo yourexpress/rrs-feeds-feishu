@@ -22,9 +22,12 @@
 <h1>Greedy Local Learning for Language Model Pretraining: Gaps and Objective Design</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>语言模型预训练的贪心局部学习：差距与目标设计</p>
-<blockquote><p>Greedy block-wise local learning splits a network into gradient-isolated blocks trained by local auxiliary losses, deleting the backward pass between blocks: inter-stage communication becomes forward-only and every block can step its optimizer independently, properties directly relevant to decentralized model-parallel training. Local learning is competitive with end-to-end backpropagation on image classification, and on small Transformers it is known to trade a worse best loss for parallel speedup. How this loss gap behaves in autoregressive language model (LM) pretraining at larger scale, and which auxiliary designs reduce it, has not been measured. We present a token-budget-matched empirical study at 125M and 400M parameters with $K \in \{1,2,4\}$ blocks at Chinchilla-optimal budgets, factorizing the auxiliary design into network architecture and training objective. We observe: (i) the gap to end-to-end training more than doubles from $K=2$ to $K=4$, but at $K=4$ shrinks from 125M to 400M; (ii) replacing an MLP auxiliary with a Transformer-based one is a strong network-side intervention, recovering 22-41% of the gap; (iii) a multi-token-prediction (MTP) auxiliary objective helps …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<h1>Greedy Local Learning for Language Model Pretraining: Gaps and Objective Design</h1>
+<p><strong>研究问题</strong>：贪心分块局部学习（块间删除反向传播、仅前向通信）在图像分类上接近端到端，但在更大规模自回归语言模型预训练中损失差距多大、哪种辅助目标设计能缩小差距？此前未被测量。</p>
+<p><strong>方法</strong>：在 125M 与 400M 参数、K∈{1,2,4} 块、Chinchilla 最优预算下做 token 预算匹配研究，把辅助设计分解为网络架构与训练目标两个因子。</p>
+<p><strong>关键数字</strong>：K=2→4 时与端到端差距翻倍以上，但 K=4 时差距从 125M 到 400M 缩小；用 Transformer 替代 MLP 辅助恢复 22–41% 差距；多 token 预测（MTP）辅助只在首个块边界有益（400M 下 +0.062 vs +0.075 nats）；部署式逐块执行最多降低 2.2× 激活内存。</p>
+<p><strong>为什么值得看</strong>：给出局部学习目标设计的实证方向：预测性压力应跨边界选择性施加，同时避免走捷径。</p>
+<p>原文链接：<a href="https://arxiv.org/abs/2610.04867">https://arxiv.org/abs/2610.04867</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04867">阅读原文 ↗</a></p>
 </body>
 </html>
