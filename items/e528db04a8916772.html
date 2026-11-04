@@ -22,9 +22,11 @@
 <h1>Lossy Compression of PDE Training Inputs: Field Reconstruction Error Does Not Order the Cost to a Trained Operator</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>PDE 训练输入有损压缩对算子训练代价的重排序分析</p>
-<blockquote><p>Operator-learning benchmarks are stored at full precision and have grown to terabyte scale. Rate-distortion theory says how many bits the stored field needs, while a practitioner needs to know how accurate an operator trained on the compressed data will be. We show that the first does not determine the second, and measure why, compressing the input fields while targets and test inputs stay at full precision. A solution operator attenuates a perturbation of its input. Pushing a compressed field through a surrogate already trained at full precision measures how much of the perturbation that surrogate transmits. The fraction is consistent with the smoothing behaviour of the underlying equation, and it spans more than two orders of magnitude across PDE families. Field reconstruction error is computed before the attenuation and cannot see it. For operators trained with mean squared error it inverts 36 of 104 cost comparisons across datasets, where a probe built from the same forward passes inverts 12. Two families that PDEBench stores with identical initial conditions differ threefold downstream at identical field error. Under the relative-L2 objective of the reference recipe the separa…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 算子学习基准以全精度存储、已达 TB 级；率失真理论决定存储场需要多少比特，但从业者想知道的是压缩数据上训练的算子有多准——两者并不等价。</p>
+<p><strong>方法</strong> 压缩输入场而目标与测试输入保持全精度，用全精度预训练代理把压缩场推过，度量代理传递了多少扰动（该比例与方程平滑行为一致），论证重建误差在衰减前计算、看不到衰减，因此不能排序训练成本。</p>
+<p><strong>关键数字</strong> 跨 PDE 族该传递比例跨度超过两个数量级；摘要未给逐模型数值。</p>
+<p><strong>为什么值得看</strong> 厘清"存储压缩率"与"算子学习精度"的关系，对大规模科学数据存储与训练成本优化有直接指导。</p>
+<p><a href="https://arxiv.org/abs/2610.06095">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06095">阅读原文 ↗</a></p>
 </body>
 </html>

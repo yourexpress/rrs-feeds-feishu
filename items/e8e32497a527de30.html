@@ -22,9 +22,11 @@
 <h1>MemPilot: Orchestrating On-Demand Multimodal Memory Curation for LLM Agents（arXiv 2610.06830）</h1>
 <p class="meta-line">arXiv（Haozhen Zhang 等） · 2026-10-06 · 论文PDF</p>
 
-<p>面向 LLM Agent 的按需多模态记忆筛选与编排框架。</p>
-<blockquote><p>Memory has become integral to the LLM agent ecosystem, supporting information retention and reuse across interactions. However, most existing agent memory systems construct memory in a query-agnostic manner, which can incur unnecessary preprocessing cost and discard details that later prove essential. Recent studies have begun shifting memory processing toward runtime adaptation, but typically specialize in particular operations or fixed processing schemes, leaving flexible control over performance, cost, and latency largely underexplored. To address this challenge, we present \textbf{MemPilot}, a flexible framework that orchestrates on-demand memory curation under different performance--cost--latency preferences. Specifically, we optimize a multi-step LLM policy via reinforcement learning to iteratively choose between retrieving from query-agnostic memory and delegating query-specific curation of raw multimodal history to heterogeneous LLMs and VLMs. The policy jointly controls evidence amount, curation instructions, model selection, and visual access, enabling fine-grained allocation of runtime computation. To optimize this policy under competing objectives, we adapt objective-wi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM agent 记忆系统大多与查询无关地构建记忆，产生不必要预处理开销且丢弃后来关键细节；运行时自适应方案多局限于特定操作或固定处理流程。</p>
+<p><strong>方法</strong> 提出 MemPilot 灵活框架：用强化学习优化多步 LLM 策略，在"从查询无关记忆检索"与"委托查询特定 curation"之间迭代选择，按不同性能-成本-延迟偏好编排按需记忆整理。</p>
+<p><strong>关键数字</strong> 摘要未给具体数值；核心是可学习的检索/整理权衡策略与偏好调节。</p>
+<p><strong>为什么值得看</strong> 把记忆 curation 从固定流程变成可学习策略，对构建高效 agent 记忆系统（尤其多模态场景）有直接价值。</p>
+<p><a href="https://arxiv.org/abs/2610.06830">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06830">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>MemHarmBench: Evaluating Cross-Session Prompt Injection in Memory-Persistent AI Agents</h1>
 <p class="meta-line">arXiv (cs.AI) · 2026-11-03 · 论文PDF / 每日精选</p>
 
-<p>面向受害者的跨会话记忆投毒基准，覆盖用户/工作区/外部利益相关者三类受害者，发现跨会话攻击持续影响后续任务</p>
-<blockquote><p>AI agents often rely on persistent memory to retain user preferences and operational rules across sessions. However, this capability introduces a new safety risk: malicious instructions from messages, documents, or Web content can be retained in memory and influence future tasks even after the original attack content is removed. Existing attack success metrics, however, fail to capture who is affected and how attacks translate into downstream harm during otherwise normal task execution. We introduce MemHarmBench, a victim-centric benchmark for evaluating cross-session prompt injection in memory-persistent AI agents. MemHarmBench considers three categories of potential victims: users, workspace/project owners, and external stakeholders. Our evaluation first exposes an agent to malicious instructions and tests whether they are retained in memory. We then remove the attack content and initiate a new session with a legitimate task while preserving the agent's memory. We jointly evaluate whether the agent follows the attacker's intent, completes the legitimate task, and exhibits observable execution anomalies. Across multiple agent systems, we find that cross-session attacks can remain …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 记忆持久化的 AI 智能体存在跨会话提示注入风险：恶意指令可留在记忆里影响未来任务，即使原始攻击内容已被删除；现有成功率指标不反映受害者和下游危害。</p>
+<p><strong>方法</strong> 提出受害者中心基准 MemHarmBench，区分三类潜在受害者（用户、工作区/项目所有者、外部利益相关者），先让智能体暴露于恶意指令并测试其是否被记忆保留，再删除攻击内容、启动正常任务评估下游危害。</p>
+<p><strong>关键数字</strong> 摘要未给出量化结果；重点是评测协议的三个受害者类别与"先注入→再删除→测下游"的评估流程。</p>
+<p><strong>为什么值得看</strong> 把记忆持久化带来的安全风险系统化为可测基准，对构建带记忆的 agent 系统和做安全评估的人都值得一读。</p>
+<p><a href="https://arxiv.org/abs/2611.01700">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.01700">阅读原文 ↗</a></p>
 </body>
 </html>

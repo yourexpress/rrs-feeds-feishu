@@ -22,9 +22,11 @@
 <h1>Leap-VLA: High-Rate Robot Control from a Low-Rate VLM Backbone</h1>
 <p class="meta-line">arXiv (cs.AI) · 2026-11-03 · 论文PDF / 每日精选</p>
 
-<p>将 VLA 解耦为低频语义锚点+高频流匹配动作专家，LIBERO-Spatial 61.4%→95.5%，缓解控制频率与语义刷新失配</p>
-<blockquote><p>Vision-language-action (VLA) models re-encode the full observation through a multi-billion-parameter vision-language model (VLM) at every control step, even though scene semantics evolve at roughly 1 Hz while reactive control requires 20-50 Hz. We present a VLA that decouples the two: a VLM runs as a low-frequency semantic anchor whose cached context is reused across control steps, while a flow-matching action expert operates at high frequency, consuming the cached semantics with a fresh, low-latency visual stream from a compact encoder pretrained on robot video with masked reconstruction, optical flow, and depth. The measured age $τ$ of the cache conditions the expert through adaptive layer normalization. Reusing the cache makes the policy a function of its age, and training covers that function explicitly: cache ages sampled from real episode history, plus an age-ramped pixel corruption that erases the stale snapshot the way deployed staleness corrupts content. On the asynchronous deployment stack, the recipe closes most of the staleness gap: on LIBERO-Spatial, 61.4% to 95.5% at a 2 s semantic refresh (95.9% at 1 s, within 1.6 points of the frequency-matched anchor); averaged ove…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> VLA 模型每个控制步都用数十亿参数的 VLM 重编码全部观测，而场景语义约 1 Hz 变化、反应式控制需 20-50 Hz，计算严重浪费。</p>
+<p><strong>方法</strong> 提出解耦架构：VLM 作为低频语义锚（缓存上下文跨控制步复用），flow-matching 动作专家在高频运行，消费缓存语义 + 紧凑编码器（在机器人视频上用掩码重建、光流、深度预训练）的新鲜低延迟视觉流；用缓存年龄 τ 通过自适应层归一化条件化专家，并在训练中显式覆盖缓存年龄分布。</p>
+<p><strong>关键数字</strong> 场景语义 1 Hz vs 控制 20-50 Hz 的不匹配是设计出发点；缓存复用使策略成为其年龄的函数并显式训练覆盖。</p>
+<p><strong>为什么值得看</strong> 直击 VLA 高频控制的计算瓶颈，解耦语义锚与动作专家的思路对机器人学习与高效部署都很有价值。</p>
+<p><a href="https://arxiv.org/abs/2611.01011">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.01011">阅读原文 ↗</a></p>
 </body>
 </html>

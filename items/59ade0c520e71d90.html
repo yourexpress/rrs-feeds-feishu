@@ -22,9 +22,11 @@
 <h1>Large Stepsizes Federated Learning on Logistic Regression with Linearly Separable Data: The Case of Heterogeneous Devices</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>线性可分数据上逻辑回归联邦学习大步长分析</p>
-<blockquote><p>This paper revisits the distributed learning problem for training a multinomial logistic regression model with the Federated Averaging ($\texttt{FedAvg}$) algorithm. We concentrate on a scenario with arbitrarily large stepsizes and heterogeneous update rules where the devices may perform a different number of local updates in each round. We show that, with linearly separable data, $\texttt{FedAvg}$ is stable with any stepsizes and the objective values converge to zero at the rate of ${\cal O}(1/R)$, where $R$ is the number of communication rounds. Our result also demonstrates that the effects of device heterogeneity vanish asymptotically. For sufficiently large $R$, the objective values decrease monotonically and is bounded by ${\cal O}( 1 / (R T_{\rm avg}))$, where $T_{\rm avg}$ is the average number of local update steps per communication round across devices. Numerical experiments support our findings.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 用 FedAvg 训练多项逻辑回归，关注任意大步长 + 异构更新规则（各设备每轮本地更新次数不同）下的收敛行为。</p>
+<p><strong>方法</strong> 理论分析线性可分数据下大步长 FedAvg 的稳定性与收敛率，并给出目标值随通信轮数 R 的界；数值实验验证理论。</p>
+<p><strong>关键数字</strong> 任意步长下目标值以 O(1/R) 速率收敛到零（R 为通信轮数）；设备异构性影响渐近消失；R 足够大时目标值单调下降且有界 O(1/(R·T_avg))，T_avg 为每轮平均本地更新步数。</p>
+<p><strong>为什么值得看</strong> 为"大步长是否破坏联邦学习收敛"给出肯定答案与严格界，对联邦学习理论与调参实践都有用。</p>
+<p><a href="https://arxiv.org/abs/2610.05915">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05915">阅读原文 ↗</a></p>
 </body>
 </html>

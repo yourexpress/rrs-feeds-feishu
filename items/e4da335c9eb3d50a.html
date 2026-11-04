@@ -22,9 +22,11 @@
 <h1>Learning without Overwriting: A Theory of Self-Distillation and Supervised Fine-Tuning in Continual Reasoning</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>自蒸馏与 SFT 在持续推理中"学习不覆盖"的理论</p>
-<blockquote><p>On-policy self-distillation (OPSD) of large language models (LLMs) has demonstrated the ability to improve reasoning capabilities while preserving previously acquired knowledge. Despite substantial empirical success, the dynamics of OPSD in continual reasoning remain incompletely understood. Modeling LLM reasoning as search over a directed acyclic graph, we provide a unified theoretical analysis of both the dynamics of post-training---OPSD and supervised fine-tuning (SFT) in continual learning---and the impact of pre-training on subsequent performance. Our findings establish three key insights with an optimization guarantee: (i) OPSD with hints from correct outputs enables continual learning without forgetting by sparse yet effective gradient descent updates induced by the hint structure. (ii) SFT on correct reasoning paths can lead to catastrophic forgetting due to dense updates along the training paths, which overwrite the information previously acquired. (iii) Diversity in pre-training is crucial for enabling a post-trained model to reach a correct output when a rollout starts from an intermediate state. Our results, supported by theoretical analysis, show that reliable continua…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 在线策略自蒸馏（OPSD）能提升 LLM 推理能力且保留已有知识，但其在持续推理中的动力学机制尚不清晰；SFT 的灾难性遗忘也缺乏统一理解。</p>
+<p><strong>方法</strong> 把 LLM 推理建模为有向无环图上的搜索，统一分析 OPSD 与 SFT 在持续学习中的动力学及预训练对后续表现的影响，给出带优化保证的三条关键结论。</p>
+<p><strong>关键数字</strong> 摘要未给量化数值；核心结论：(i) OPSD 借助正确输出提示的稀疏梯度更新实现无遗忘持续学习；(ii) SFT 在正确推理路径上的稠密更新导致灾难性遗忘。</p>
+<p><strong>为什么值得看</strong> 用统一框架解释"自蒸馏为何能边学边不忘、SFT 为何会忘"，对后训练方法选择有理论指导意义。</p>
+<p><a href="https://arxiv.org/abs/2610.05200">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05200">阅读原文 ↗</a></p>
 </body>
 </html>

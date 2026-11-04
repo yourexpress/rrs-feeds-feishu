@@ -22,8 +22,11 @@
 <h1>Output-Aware Block Influence: Jacobian-Lens Weighting for Depth Pruning</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-30 · 论文PDF</p>
 
-<blockquote><p>Depth pruning removes entire transformer blocks and therefore depends on a reliable criterion for identifying which blocks can be removed. Block Influence (BI) ranks blocks by how minimally they rotate the hidden state. However, local redundancy does not necessarily imply downstream irrelevance. We address this limitation using the Jacobian Lens (J-Lens) neural artifact, a map transporting perturbations at a layer to the final residual stream. At a common sparsity level, pruning scores applying J-Lens transportation to $BI$, what we call $J-BI$, were found to improve post-pruning accuracy by up to 19 points over $BI$ while reducing damage to perplexity for Qwen3-8B, Llama-3.1-8B-IT, and Gemma-3-12B-IT. We also perform a single-block ablation study and use J-Lens probing to explain why the proposed scores improved performance.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 深度剪枝按 Block Influence（BI）给 transformer 块排序——按对隐藏状态旋转最小者优先删，但局部冗余不等于下游无关，排序标准可能错删关键块。</p>
+<p><strong>方法</strong> 用 Jacobian Lens（J-Lens）神经构件把某层的扰动映射到最终残差流，对 BI 做传输加权得到 J-BI 剪枝分数，在 Qwen3-8B、Llama-3.1-8B-IT、Gemma-3-12B-IT 上验证，并做单块消融与 J-Lens 探针解释。</p>
+<p><strong>关键数字</strong> 相同稀疏度下 J-BI 相对 BI 将剪枝后准确率最高提升 19 个点，同时降低对困惑度的损伤。</p>
+<p><strong>为什么值得看</strong> 给"哪些块可删"提供了更可靠的下游感知判据，做 LLM 结构化剪枝/推理加速可参考。</p>
+<p><a href="https://arxiv.org/abs/2611.00015">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.00015">阅读原文 ↗</a></p>
 </body>
 </html>

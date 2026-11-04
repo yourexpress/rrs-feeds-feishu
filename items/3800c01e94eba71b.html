@@ -22,9 +22,11 @@
 <h1>MercerFlow: Flow Matching in a Kernel-Induced Latent Space for Probabilistic Forecasting</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>核诱导潜空间流匹配的概率预测</p>
-<blockquote><p>Recent work has shown that probabilistic flow matching for time series forecasting benefits from a data-matched prior. The resulting prior introduces local correlations, which a sequential architecture usually absorbs: a recurrent neural network (RNN), a structured state-space model (S4), or a Transformer. However, such a backbone costs GPU memory and time per epoch. A cheaper alternative is MLP-based latent-space flow matching: embed the time series via an invertible map to a single latent vector and learn the flow there, so a tabular MLP can treat the series as a set of features. The relationship between the prior and the choice of linear latent map is understudied in conditional flow matching (CFM) forecasting, yet we found it strongly affects performance. Fixed transforms such as Fourier or discrete cosine (DCT) are only well-conditioned for Ornstein--Uhlenbeck priors, while a principal-component (PCA) map fit to the data is a strong but training-set-dependent reference sensitive to train--test shift. Instead, we propose to use the Mercer eigenbasis of the prior kernel: it diagonalises the centred covariance exactly, decouples from training data, and adapts to non-stationary an…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 概率流匹配做时序预测受益于数据匹配先验，但顺序骨干（RNN/S4/Transformer）每 epoch 消耗大量 GPU 内存与时间；先验与线性潜在映射的关系在条件流匹配预测中研究不足。</p>
+<p><strong>方法</strong> 提出 MercerFlow：用可逆映射把时间序列嵌入单个潜在向量并在其中学流，表格型 MLP 把序列当特征集处理；研究先验与核诱导线性潜在映射的匹配，替代仅对 Ornstein–Uhlenbeck 先验良态的固定变换（Fourier/DCT）。</p>
+<p><strong>关键数字</strong> 摘要未给具体数值；核心是核诱导潜在空间 + 数据匹配先验的流匹配组合。</p>
+<p><strong>为什么值得看</strong> 用 MLP 骨干替代顺序骨干做概率预测流匹配，兼顾先验适配与训练成本，对时序概率预测实用。</p>
+<p><a href="https://arxiv.org/abs/2610.06039">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06039">阅读原文 ↗</a></p>
 </body>
 </html>

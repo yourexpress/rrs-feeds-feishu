@@ -22,9 +22,11 @@
 <h1>Who Asks, Who Answers: Linear Attention Builds the Query in Hybrid Language Models</h1>
 <p class="meta-line">arXiv (cs.AI) · 2026-11-03 · 论文PDF / 每日精选</p>
 
-<p>揭示混合语言模型中线性注意力通过 Encode-Address 电路构造 softmax 查询，跨架构移植可恢复检索准确率 0.92-0.94</p>
-<blockquote><p>Hybrid language models interleave linear-attention layers with a small number of softmax-attention layers. Prior work largely attributes in-context retrieval to softmax attention, treating linear attention primarily as a mechanism for compressing past context. We revisit this division of labor and show that linear attention plays a direct role in retrieval by constructing the query used by softmax attention. Studying Qwen3.5 (Gated DeltaNet) and Granite4.0 (Mamba-2), we identify an Encode--Address circuit. An early Encode block preserves token identity, while an Address block constructs the final-position representation from which a softmax \emph{reader} forms its attention query. Transplanting this representation between prompts with different queried keys redirects retrieval in 0.97--0.99 of cases. The Address block's recurrent state carries the retrieval target, and its computation transfers across architectures: replacing Granite's Address block with Qwen's restores retrieval accuracy to 0.92--0.94 without updating either model's weights. Across six Qwen3.5 models, Address computation becomes distributed at larger scales over a chain of blocks, each guiding a successive reader,…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 混合语言模型中线性注意力层被普遍认为只负责压缩历史上下文，上下文检索归因于少量 softmax 注意力层；论文重新审视这一分工。</p>
+<p><strong>方法</strong> 在 Qwen3.5（Gated DeltaNet）与 Granite4.0（Mamba-2）上识别出 Encode–Address 电路：早期 Encode 块保留 token 身份，Address 块构造最终位置表示、softmax reader 从中形成注意力查询——即线性注意力通过构造查询直接参与检索；将该表示在查询键不同的提示间移植可重定向检索。</p>
+<p><strong>关键数字</strong> 移植表示后在 0.97–0.99 的案例中重定向了检索行为。</p>
+<p><strong>为什么值得看</strong> 修正了"线性注意力只压缩、softmax 才检索"的常见认知，对理解混合架构 LLM 的内部机制有直接价值。</p>
+<p><a href="https://arxiv.org/abs/2611.01909">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.01909">阅读原文 ↗</a></p>
 </body>
 </html>

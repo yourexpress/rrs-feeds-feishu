@@ -22,9 +22,11 @@
 <h1>LoRA's Second Descent Extends Beyond Parameter Parity</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>LoRA 二次下降超越参数持平现象</p>
-<blockquote><p>Double descent has sparked considerable interest, with recent work relating it to the data, the model and the learning configuration. Practical fine-tuning commonly involves training a small adapter on top of frozen pretrained weights, as in low-rank adaptation (LoRA). The adapter's rank is the hyperparameter that sets its capacity, yet how this rank relates to double descent has not been well explored. We quantify this relation under label noise on four vision backbones and a 7B language model with a module-matched rank sweep (MMRS), which extends past full rank and compares every rank with dense fine-tuning of the same modules, paired by seed. On DeiT-Tiny, risk is lowest at rank one and rises sharply as the adapter becomes able to fit the noisy labels, forming an interpolation cliff. Past the peak, risk falls again, but every tested post-peak rank that still saves parameters remains above dense risk. Rank-one LoRA outperforms dense fine-tuning on three of the four vision backbones, consistent with strong regularization at small rank. LoRA thus exhibits a second descent, but matches dense risk only after losing its parameter advantage, first on DeiT-Tiny at four times dense's pro…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 双重下降现象中，LoRA 适配器秩这个容量超参数与双重下降的关系未被充分探索。</p>
+<p><strong>方法</strong> 在标签噪声下，用模块匹配秩扫描（MMRS，超越全秩并与同模块稠密微调按种子配对）量化秩与风险关系，覆盖四个视觉骨干与一个 7B 语言模型。</p>
+<p><strong>关键数字</strong> DeiT-Tiny 上秩为 1 时风险最低，随适配器能拟合噪声标签而急剧上升形成插值悬崖；越过峰值后风险再次下降，但每个仍省参数的峰后秩仍是"省参数即次优"的权衡。</p>
+<p><strong>为什么值得看</strong> 给出 LoRA 秩与泛化非单调关系的系统度量，对微调时选秩有直接实践指导。</p>
+<p><a href="https://arxiv.org/abs/2610.04507">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04507">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>LogSig-SSM: Time-Series Modelling with Multi-Scale Log-Signature Compression for State-Space Models</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>多尺度对数-签名压缩的状态空间时序建模</p>
-<blockquote><p>Time-series data are often sampled irregularly at high frequencies and exhibit long-range dependencies, which makes long-horizon modelling difficult. Continuous-time models such as neural controlled differential equations (NCDEs) and neural rough differential equations (NRDEs) can handle irregular sampling, but they scale poorly to long sequences. Selective state-space models (SSMs) such as Mamba scale linearly with sequence length, but they provide limited recurrent mixing across hidden dimensions within a single block. We propose LogSig-SSM (Log-Signature Compression for State-Space Models), which first compresses long multivariate time series into a shorter sequence of tokens using multi-scale windowed log-signatures, and then processes these tokens with a selective SSM backbone. LogSig-SSM is scalable and robust to irregular sampling, combining log-signature tokens that capture higher-order cross-channel interactions with a selective SSM that models long-range dependencies. The model also admits a continuous-time interpretation as an NCDE/NRDE-style system driven by a log-signature-based input, in which selectivity induces an input-dependent rescaling of the latent dynamics. Ac…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 时间序列常不规则高频采样且长程相关，长时域建模困难：NCDE/NRDE 能处理不规则采样但难扩展长序列，Mamba 等选择性 SSM 线性扩展但在块内隐藏维度间混合有限。</p>
+<p><strong>方法</strong> 提出 LogSig-SSM：先用多尺度窗口 log-signature 把长多变量时间序列压缩成较短 token 序列，再用选择性 SSM 骨干处理，兼顾可扩展性与不规则采样鲁棒性。</p>
+<p><strong>关键数字</strong> 摘要未给具体数值；核心组合是"log-signature 压缩 + SSM 骨干"。</p>
+<p><strong>为什么值得看</strong> 结合 rough path 理论与 SSM 的高效序列建模，对长时域、不规则采样时间序列任务是有前景的方向。</p>
+<p><a href="https://arxiv.org/abs/2610.05051">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05051">阅读原文 ↗</a></p>
 </body>
 </html>

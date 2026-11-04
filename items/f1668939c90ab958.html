@@ -22,9 +22,11 @@
 <h1>Measuring and Reducing Cross-Vendor Mismatch in Language Models</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>语言模型跨厂商失配的测量与削减</p>
-<blockquote><p>Running the same language model on different graphics processing unit (GPU) vendors can produce different logits, even when the model weights and inputs are the same. We analyze cross-vendor mismatch in two dense and two mixture-of-experts (MoE) models with five metric families, namely bitwise equality, logit differences, top-K consistency, token agreement, and task accuracy. We trace one source of the mismatch to accumulation order inside vendors' matrix instructions. Upcasting to FP32 reduces the dense model's logit error by 43% at three times the runtime, yet keeping only the MLPs in BF16 retains 94% of this gain at 1.3 times the runtime, so most of the cost of full upcasting buys little. In the MoE models, FP32 and FP16 both lower the probability error but raise the logit error and change expert selection, and FP16 fails in the dense model. An output-head low-rank adapter (LoRA) does not help either, since the final hidden state does not predict the mismatch. The mismatch also carries into training. With every seed fixed, a student distilled from a teacher running on AMD answers 431 MMLU questions differently from one distilled from the same teacher on NVIDIA. Under FP32 upcast…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 同一语言模型在不同 GPU 厂商上运行会产生不同 logits（即使权重与输入相同），跨厂商不一致缺少系统度量与缓解。</p>
+<p><strong>方法</strong> 在两个稠密与两个 MoE 模型上用五类指标（逐位一致、logit 差、top-K 一致性、token 一致、任务准确率）分析；追溯不一致来源到厂商矩阵指令内的累加顺序，测试 FP32 提升与输出头 LoRA 等缓解。</p>
+<p><strong>关键数字</strong> FP32 上转使稠密模型 logit 误差降 43%（3 倍运行时）；仅保留 MLP 在 BF16 可保留 94% 收益且仅 1.3 倍运行时；MoE 中 FP32/FP16 均降低概率误差但提高 logit 误差并改变专家选择，FP16 在稠密模型失败。</p>
+<p><strong>为什么值得看</strong> 跨厂商一致性的系统量化与低成本缓解路径，对多平台部署与可复现推理很实用。</p>
+<p><a href="https://arxiv.org/abs/2610.05458">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05458">阅读原文 ↗</a></p>
 </body>
 </html>

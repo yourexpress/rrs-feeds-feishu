@@ -22,9 +22,11 @@
 <h1>LightMTP: Lightweight Latent Multi-Token Prediction（arXiv 2610.06031）</h1>
 <p class="meta-line">arXiv（Tamara Czinczoll 等） · 2026-10-06 · 论文PDF</p>
 
-<p>轻量级潜空间多 token 预测方法，降低 MTP 训练开销。</p>
-<blockquote><p>Next-token prediction (NTP) is the standard pretraining objective for large language models, yet it provides an explicit training signal only for the immediate next token, which can lead models to exploit local patterns instead of capturing longer-range structure and ideas. Multi-token prediction (MTP) addresses this by training models to predict several future tokens. However, existing MTP methods often introduce a large number of new parameters with limited improvements in downstream performance. Latent MTP approaches address this efficiency issue by encoding future tokens into a vector representation. However, these approaches usually rely on external helper models for future token encoding. We propose LightMTP, a lightweight, i.e., parameter-efficient, latent MTP approach that bootstraps the future token representations from the model's own hidden states. Our two LightMTP variants extend supervision to more future tokens without requiring the additional computational overhead of conventional MTP nor the external supervision latent MTP normally relies on. LightMTP adds at most 1% extra parameters, retains better performance on general language modeling benchmarks, and achieves s…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 多 token 预测（MTP）给 LLM 更丰富的训练信号，但现有方法常引入大量新参数且下游收益有限；潜在 MTP 依赖外部辅助模型编码未来 token。</p>
+<p><strong>方法</strong> 提出 LightMTP：从模型自身隐藏状态自举未来 token 表示，无需外部 helper，实现参数高效的潜在 MTP；给出两个变体并在实验中对齐下游表现。</p>
+<p><strong>关键数字</strong> 摘要未给具体数值；核心卖点是参数高效 + 免外部辅助模型的潜在 MTP 训练目标。</p>
+<p><strong>为什么值得看</strong> 用自举替代外部编码器、压低 MTP 参数成本，对追求预训练效率的 LLM 训练者有价值。</p>
+<p><a href="https://arxiv.org/abs/2610.06031">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06031">阅读原文 ↗</a></p>
 </body>
 </html>

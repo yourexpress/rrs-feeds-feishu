@@ -22,9 +22,11 @@
 <h1>LiFT: Loop Flow Transformers</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>循环流 Transformer</p>
-<blockquote><p>We introduce Loop Flow Transformers (LiFT), a family of looped generative models that scales computation by repeatedly applying a shared Diffusion Transformer (DiT) core, with only light changes to the standard architecture. Rather than asking every recurrent step for the final prediction, LiFT trains each step with a single regression target: a point on a straight path from the model's initial estimate to the flow-matching target. Because we index these targets by a continuous depth coordinate, a trained model can loop far beyond its training depth with no retraining, early exits, or other modifications. In our experiments, these longer rollouts improve generation, so inference computation can grow without adding parameters. On ImageNet at 256x256, LiFT-L/2 achieves an FID 3.34 points lower than our dense DiT-XL/2 baseline while using approximately 60% fewer parameters, 32% fewer training FLOPs, and 52% fewer inference FLOPs.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 生成模型能否通过重复应用共享骨干来扩展计算量，而不增加参数？循环生成模型常在训练深度外失效。</p>
+<p><strong>方法</strong> 提出 Loop Flow Transformers（LiFT）：循环应用共享 DiT 核心，每一步只回归一个目标——从初始估计到 flow-matching 目标直线路径上的一点；目标用连续深度坐标索引，训练后可超越训练深度无限循环，无需重训或提前退出。</p>
+<p><strong>关键数字</strong> ImageNet 256×256 上 LiFT-L/2 比稠密 DiT-XL/2 基线 FID 低 3.34，同时参数少约 60%、训练少 32%。</p>
+<p><strong>为什么值得看</strong> "推理计算可增长而参数不增"的循环生成范式，对扩散模型部署成本与生成质量权衡很有吸引力。</p>
+<p><a href="https://arxiv.org/abs/2610.05538">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05538">阅读原文 ↗</a></p>
 </body>
 </html>
