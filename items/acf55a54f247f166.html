@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AnchorKV: Lossless Key-Value Cache Reconstruction from Layer-Sparse Residual Anchors</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>AnchorKV: Lossless Key-Value Cache Reconstruction from Layer-Sparse Residual Anchors</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-10-28 · 论文PDF</p>
+
+<blockquote><p>Residual-stream caching can reconstruct transformer key-value (KV) caches losslessly, but its memory advantage depends on architecture. We present AnchorKV, a storage-replay spectrum connecting per-layer residual caching and full recomputation through configurable residual anchors. An architecture-dependent break-even rule identifies the first storage-saving spacing, while deployment selects an operating point from the spectrum and cascade replay reduces reconstruction from O(Ls) to O(L), with L the model depth and s the anchor spacing. For interleaved sliding-window architectures, exact dynamic programming places anchors under non-uniform reconstruction demand. Across CPU, CUDA, and Ascend NPU backends, six architecture families, and fp32/bf16 arithmetic, evaluations verify bit-exact KV reconstruction and unchanged continuation logits and tokens. At 4k context, cascade reconstruction is up to 16.3 times faster than naive replay; across eight applicable global-attention checkpoints at 32k context, deepest spacing yields 5.78-54.0 times full-KV reactivatable session capacity. Compared with seven external cache methods on a common model, AnchorKV preserves full-cache retrieval and qu…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.00117">阅读原文 ↗</a></p>
+</body>
+</html>

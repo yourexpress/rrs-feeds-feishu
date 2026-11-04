@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PagedMoE: Cross-Precision Expert Caching for Token-Level Dynamic Precision in SSD-Resident MoE Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>PagedMoE: Cross-Precision Expert Caching for Token-Level Dynamic Precision in SSD-Resident MoE Inference</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-11-02 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 大型 MoE 模型可本地推理，路由专家池驻留 SSD、DRAM 缓存近期专家；但实际缓存容量下 SSD I/O 仍在关键路径，token 级动态精度虽可减少数据需求，独立精度对象使缓存无法跨精度复用、重复取数。</p>
+<p><strong>方法</strong> 关键洞察：精度应表示同一专家状态的细化深度。PagedMoE 用前缀兼容树码本与 bitplane 布局把每个专家存一次，低精度表示是高精度表示的有效前缀，缓存数据可复用或只取缺失 bitplane 扩展；I/O 前用当前路由权重与离线误差剖面选所需前缀长度，直接执行缓存的 1–8 bit 前缀。</p>
+<p><strong>关键数字</strong> 平均路由专家精度 2.5 bits 时质量接近 GPTQ-INT4（Qwen3.5-397B-A17B）与 MXFP4（多数 GLM5.2 任务）；24 GiB 专家缓存下 Qwen3.5 达 8.89 tokens/s；吞吐为独立精度对象方案的 1.33 倍、均匀 4-bit 执行的 1.56 倍。</p>
+<p><strong>为什么值得看</strong> SSD 驻留超大 MoE 的跨精度缓存复用范式，显著缓解本地推理的存储带宽瓶颈。</p>
+<p><a href="https://arxiv.org/abs/2611.03173">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.03173">阅读原文 ↗</a></p>
+</body>
+</html>

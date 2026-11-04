@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SHq: Learnable Grids for LLM Weight Quantization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SHq: Learnable Grids for LLM Weight Quantization</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-02 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 块缩放查找表（LUT）量化格式以索引表示权重，grid 定义本应灵活；但现有实现依赖固定 grid（INT/FP/NF/BOF），且不存在普遍最优的单一固定 grid。</p>
+<p><strong>方法</strong> SHq 提出闭式 grid 家族，含两个自由度：压扩强度 α（在均匀与浮点式间距间插值）与偏移 c（引入不对称）；偏移让 FP8 块缩放中未用的符号位选择 grid 或其镜像，使每块可用不同值数量最多翻倍。SHq 只改查找表内容，可作任意此类格式的 drop-in 替换。</p>
+<p><strong>关键数字</strong> 五个模型（3B–35B，含 MoE）在 2–6 bits、RTN/GPTQ 下评估：3、4 bits 全部设置 KL 散度最低，多数 2、5、6 bits 设置亦最低；比最佳固定 grid 最高优 34%；4.5 bits 时相对 NVFP4 KL 降 41–67%。</p>
+<p><strong>为什么值得看</strong> 统一视角解释 LUT 格式 grid 设计的两自由度，即插即用且实测全面占优。</p>
+<p><a href="https://arxiv.org/abs/2611.02966">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.02966">阅读原文 ↗</a></p>
+</body>
+</html>

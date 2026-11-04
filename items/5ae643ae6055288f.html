@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scute: Exact Batched Serving for PEFT Adapters Beyond LoRA</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Scute: Exact Batched Serving for PEFT Adapters Beyond LoRA</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-31 · 论文PDF</p>
+
+<blockquote><p>Existing serving systems for large language models batch requests for many different LoRA adapters on one GPU. However, these systems reject adapters from other parameter-efficient fine-tuning (PEFT) methods such as DoRA, (IA), VeRA and OFT. One solution to this is to convert these adapters to LoRA, but this induces a significant memory and accuracy cost. Instead, we show that, under some modifications, a batched LoRA kernel can serve all of these methods exactly and efficiently. We achieve this by writing each method in one normal form, a LoRA computation with six slots for an adapter's own vectors and matrices. Some slots can merge into an adapter's weights at load time; the others remain live and induce a cost. We give ways to efficiently pay this cost and predict it from a zero-parameter byte model. We package this system, Scute, and build it on top of vLLM. Scute serves all five methods, coming as checkpoints from the Hugging Face PEFT library, in one batch, and it matches that library with a mean error of at most 1.5% of each adapter's effect. Under a burst of requests on an RTX A6000, a mix of these methods takes 5-17% more decode time than the same number of LoRA adapters. …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.01089">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When Shards Fly: Cross-Tensor In-Flight Conversion for Low-Latency, Low-Memory Weight Updates in Disaggregated RL</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>When Shards Fly: Cross-Tensor In-Flight Conversion for Low-Latency, Low-Memory Weight Updates in Disaggregated RL</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-10-31 · 论文PDF</p>
+
+<blockquote><p>Disaggregated LLM reinforcement learning (RL) repeatedly synchronizes policy weights between training and rollout GPU pools. Existing systems reduce communication through shard delivery and replica forwarding, yet separate conversion passes and staging buffers still add latency and GPU-memory overheads to synchronous updates. We present ShardFly, which coordinates reusable transfer planning with streaming GPU execution for synchronous, in-place weight updates. ShardFly introduces two components. The Planner compiles native shard mappings, quantization dependencies, and replica routes into cross-tensor schedules, reserving payload buffers only for scheduled transfers. The Executor runs each rank's schedule in one persistent transfer kernel, fusing memory-layout conversion, quantization, GPU-initiated communication, and destination writes while forwarding transformed bytes across replicas. Plans and communication state are reused under stable configurations and replaced between updates for coordinated rollout scaling. On up to 32 H20 GPUs, ShardFly achieves complete BF16 weight-update speedups of 1.26--27.92$\times$ across five models and four baselines: veRL NCCL, Awex, veRL NIXL, a…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.00646">阅读原文 ↗</a></p>
+</body>
+</html>

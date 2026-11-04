@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ascend-SpMM: Accelerating Sparse Matrix-Dense Matrix Multiplication on Ascend NPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Ascend-SpMM: Accelerating Sparse Matrix-Dense Matrix Multiplication on Ascend NPUs</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-11-01 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> SpMM 是图神经网络与科学计算的基础内核，但昇腾 NPU 上优化研究基本空白；Cube/Vector 物理解耦与单线程标量指令派发带来独特挑战。</p>
+<p><strong>方法</strong> Ascend-SpMM：内存中心成本模型量化硬件亲和性，指导冲突受限的密度感知任务映射——稠密区域走高吞吐 Cube 路径、稀疏残差走灵活 Vector 路径，并给出跨处理器冲突的理论上界；配套层级感知流水线与轮转环形缓冲隐式同步定制子内核。</p>
+<p><strong>关键数字</strong> 相对各矩阵最强 NPU 基线取得 12.70–20.55 倍几何平均加速；端到端 GNN 训练最高加速 6.8 倍；与最先进 GPU 实现性能竞争。源码已在 GitHub 开源。</p>
+<p><strong>为什么值得看</strong> 昇腾 NPU 上首个系统性 SpMM 框架，映射策略与同步机制对其他国产芯片有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2611.01936">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.01936">阅读原文 ↗</a></p>
+</body>
+</html>

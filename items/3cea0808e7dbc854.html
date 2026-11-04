@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M3Former: Fine-Grained Cross-Layer Mixing for Transformers</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>M3Former: Fine-Grained Cross-Layer Mixing for Transformers</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-02 · 论文PDF</p>
+
+<blockquote><p>Residual connections give each Transformer block access to all earlier layers only through one fixed sum, broadcast to all of the block's inputs. This broadcast bottleneck imposes three constraints: the query, key, value and residual inputs of a block, which we call its roles, read the same vector; all hidden dimensions within a role share one set of weights over earlier layers; and every earlier layer has the same fixed weight for every token. We propose the Multi-Role Multi-Group Mixing Residual (M3), which removes all three: every role, and every group of hidden dimensions within a role, reads its own token-dependent mixture of all earlier layers. M3 starts as an exact residual connection and adds as little as 1.4% parameters and 1.8% FLOPs. From 100M to 1.4B parameters, M3Former outperforms the Transformer and coarse-grained cross-layer connections at every size, matching a Transformer 1.19-1.34x the size of the one it modifies, trained with 1.4-1.8x the compute. Relaxing only some of the constraints recovers only part of this gain. M3Former also improves sparse mixture-of-experts models of up to 4.6B parameters and trains more stably in deeper networks. Code: https://github.co…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.02436">阅读原文 ↗</a></p>
+</body>
+</html>

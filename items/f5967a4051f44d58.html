@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inference First, Training Underneath: Layer-Granular LoRA Co-Serving with LayerLoom</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Inference First, Training Underneath: Layer-Granular LoRA Co-Serving with LayerLoom</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-31 · 论文PDF</p>
+
+<blockquote><p>Serving and fine-tuning a large language model on the same GPUs can turn the idle capacity between inference bursts into training progress, and low-rank adaptation (LoRA) makes this co-location cheap because both workloads read a single frozen copy of the base weights. The difficulty lies in the fine-tuning backward pass, which has no counterpart in inference. Current co-serving systems schedule backward work per serving iteration: each iteration carries a fixed backward budget, and requests that arrive in the meantime wait for it to finish, so fine-tuning dictates inference latency whenever load spikes. We observe that the backward pass of a LoRA microbatch decomposes into per-layer tasks over the same weights that the inference forward pass visits, which allows backward work to be scheduled at layer rather than iteration granularity. Building on this observation, LayerLoom attaches same-layer backward tasks to the inference forward pass and, at each layer, runs only as many of them as the latency slack of in-flight requests permits. To keep a ready task at every layer, LayerLoom maintains a wavefront of fine-tuning microbatches staggered across layers, and it bounds the wavefront…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.00652">阅读原文 ↗</a></p>
+</body>
+</html>

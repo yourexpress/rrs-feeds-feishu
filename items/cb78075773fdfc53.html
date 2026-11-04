@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When Cache Pressure Becomes a Trap: Metastability in Agent Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>When Cache Pressure Becomes a Trap: Metastability in Agent Serving</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-11-02 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LLM agent 反复发送不断增长的对话，前缀复用是高效服务的核心；但短暂负载突发可能破坏复用并触发 prefill-decode 分离引擎的亚稳态失效——负载回落、服务仍持续退化。</p>
+<p><strong>方法</strong> 实证 SGLang 上的突发影响，并用流体模型识别"群体-缓存反馈"机制（慢调用延长会话、扩大工作集、缓存缺失增加重算、进一步延迟离开）；据此构建 Basin 防护系统：每会话固定优先级、按预测峰值上下文预留自适应准入预算、用空闲解码内存扩展缓存、过载时弃流。</p>
+<p><strong>关键数字</strong> SGLang 上 10 分钟突发使随后 1 小时 goodput 下降约 88%，移除残余突发会话后数分钟内恢复；流体模型在 36 个模拟部署中识别出全部 17 个 cache-first 案例。</p>
+<p><strong>为什么值得看</strong> 揭示 agent serving 亚稳态失效的机制与防护系统，真实 H200 部署验证。</p>
+<p><a href="https://arxiv.org/abs/2611.02543">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.02543">阅读原文 ↗</a></p>
+</body>
+</html>

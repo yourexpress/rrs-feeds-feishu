@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Investigating ET-SoC-1 Vector and Parallel Performance with sGEMM</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Investigating ET-SoC-1 Vector and Parallel Performance with sGEMM</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-10-31 · 论文PDF</p>
+
+<blockquote><p>The Ainekko (formerly Esperanto) ET-SoC-1 is a massively parallel RISC-V accelerator. Its compute array comprises 1024 dual-threaded in-order ET-Minion cores (2048 harts) operating at 600 MHz, each core providing an eight-lane 256-bit packed-single (PS) SIMD datapath shared by its two harts, with access to LPDDR4X memory at a nominal 133 GiB/s. This paper presents a performance investigation using single-precision general matrix multiplication (sGEMM) as the benchmark kernel. Two device kernels are implemented and evaluated on the ET-SoC-1, these are a register-blocked PS SIMD baseline with two-step software pipelining, and a TensorFMA32 kernel that drives the same FMA datapath through the per-core tensor micro-operation sequencer, with double-buffered A scratchpad loading. Because both kernels are bounded by the same arithmetic peak, the comparison isolates the effect of operand delivery from that of arithmetic width. Performance is compared against CPU references (SpacemiT K3, Intel i5-11600, AMD Ryzen 9 9950X and the Arm Cortex-X925/A725 CPU of an NVIDIA DGX Spark) and two GPUs (NVIDIA GB10 Blackwell and AMD RDNA4 RX 9060 XT).</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.01045">阅读原文 ↗</a></p>
+</body>
+</html>

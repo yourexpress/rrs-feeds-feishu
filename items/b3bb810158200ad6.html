@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jet-QSparse: Accelerating Agentic LLM Inference with 4-Bit Sparse Attention</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Jet-QSparse: Accelerating Agentic LLM Inference with 4-Bit Sparse Attention</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-31 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 长程推理与 agentic 工作负载压垮 KV cache 容量与 decode attention 吞吐，需兼顾缓存压缩与计算加速。</p>
+<p><strong>方法</strong> Jet-QSparse：免训练方法，NVFP4 紧凑缓存存储 + Blackwell 张量核原生 FP4 Query-Key 计算；稠密扫描给全部 key 历史打分，选取 128-token 块做稀疏 FP16 value 聚合与 FP32 累加；校准的 key 居中与每序列每层至多两页 BF16 控制量化误差。</p>
+<p><strong>关键数字</strong> 每 KV 头 128 块预算下四个混合 LLM 在数学推理、代码与 agentic 基准上无可检测精度损失；Qwen3.8-27B 用 64 块时，128K 上下文、batch 16、单 GB300 上端到端 decode 比稠密 BF16 快 1.94 倍；实测 Qwen KV 池 token 容量为 BF16 的 2.58–2.76 倍。</p>
+<p><strong>为什么值得看</strong> 免训练兼顾精度、容量与吞吐的 4-bit 稀疏注意力，数据覆盖大上下文真实负载。</p>
+<p><a href="https://arxiv.org/abs/2611.01022">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.01022">阅读原文 ↗</a></p>
+</body>
+</html>

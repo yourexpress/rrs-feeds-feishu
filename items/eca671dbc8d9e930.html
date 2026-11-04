@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LARK: Lean-Assisted Reasoning for LLM-Generated GPU Kernels</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LARK: Lean-Assisted Reasoning for LLM-Generated GPU Kernels</h1>
+<p class="meta-line">arXiv (cs.AI) · 2026-11-03 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 高效 GPU 内核通常底层且硬件特定，LLM agent 生成速度已超过专家验证速度；现有测试方法只提供证据而非正确性保证。</p>
+<p><strong>方法</strong> LARK agentic 框架：先在 Lean 4 中为每种目标语言形式化 GPU 机器模型与算子语义（仅一次），后续内核的 Lean 语义由预构建定义派生；LLM agent 两步自动证明——先分解内核语义为小段并让 Lean 验证分段，再逐段写 Lean 证明与 PyTorch 对应部分等价，最终给出全程序等价；人类只需在生成前验证算子级语义。</p>
+<p><strong>关键数字</strong> KernelCraft 上 GLM 5.3 完全验证 12 个 Level-1 内核中的 10 个、Opus 5.5 验证全部 5 个 Level-2 内核；从主流开源 LLM 服务框架随机抽样的 10 个生产内核中验证 9 个，并在第 10 个中发现一个真实数据竞争 bug。</p>
+<p><strong>为什么值得看</strong> 把 kernel 生成验证的信任边界从逐行代码移到算子级语义，实测发现真实 bug。</p>
+<p><a href="https://arxiv.org/abs/2611.02028">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.02028">阅读原文 ↗</a></p>
+</body>
+</html>

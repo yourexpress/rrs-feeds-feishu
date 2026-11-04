@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CISA: Retrofitting Dense Attention Models with Chunk-Indexed Sparse Attention</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CISA: Retrofitting Dense Attention Models with Chunk-Indexed Sparse Attention</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-02 · 论文PDF</p>
+
+<blockquote><p>Long-context LLM inference is costly because attention repeatedly reads a growing key-value (KV) history. We introduce Chunk-Indexed Sparse Attention (CISA), which retrofits pretrained dense attention models without gradient updates. CISA selects fixed-size KV chunks using compact summaries of existing keys, avoiding token-level indexing and a separate full-length index cache. It uses one indexing query per KV group and shares selected chunks across queries in that group. During prefill, QShare reuses selections across adjacent queries to reduce indexing cost and improve KV reuse and GPU utilization. We evaluate CISA on NVIDIA Nemotron 3 Nano and Ultra, and Inkling-Small. In one-layer BF16 benchmarks at batch size 32 using Ultra's per-device attention dimensions, core attention is 11.7x faster for prefill queries near the end of a 1M-token prompt and 13.0x faster during decode. Including chunk scoring, selection, and all other measured GPU work, speedups are 8.6x and 3.0x. On Ultra NVFP4 with a 4,096-chunk budget, aggregate scores stay within 1.5 percentage points of dense attention on MRCR, LongBench v2, and GraphWalks. RULER sweeps on Nano and Ultra BF16 up to one million tokens …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.03200">阅读原文 ↗</a></p>
+</body>
+</html>

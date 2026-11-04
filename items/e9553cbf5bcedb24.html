@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MatMoE: Matryoshka Mixture-of-Experts with Dynamic Mixed-Precision Quantization for Efficient Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MatMoE: Matryoshka Mixture-of-Experts with Dynamic Mixed-Precision Quantization for Efficient Inference</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-01 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> MoE 模型参数规模庞大，阻碍资源受限边缘设备部署；现有混合精度量化是静态的，固定每个专家解码全程的位宽，忽视专家重要性的动态变化与系统负载波动带来的延迟约束。</p>
+<p><strong>方法</strong> MatMoE 动态混合精度量化框架：① Matryoshka MoE PTQ 算法，让专家在严格内存预算内以多种精度灵活运行；② floor-and-compensation 量化方法消除 Matryoshka 表示中的冗余内存访问；③ 基于路由分数的动态位宽分配，满足动态延迟需求。在 llama.cpp 上实现 CPU 与 GPU 版本。</p>
+<p><strong>关键数字</strong> 三个现代 MoE 模型上准确率比 SOTA 静态混合精度方法高 4.0%–18.3%；Raspberry Pi 5 上比 llama.cpp 快 1.3–3.7 倍，RTX 4090 与 Jetson AGX Orin 上快 1.2–1.3 倍。</p>
+<p><strong>为什么值得看</strong> 面向边缘 MoE 部署的动态精度方案，同时回应准确率与动态延迟两个约束。</p>
+<p><a href="https://arxiv.org/abs/2611.01704">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.01704">阅读原文 ↗</a></p>
+</body>
+</html>

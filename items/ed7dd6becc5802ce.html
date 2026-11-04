@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TinyML Hits the Memory Wall: A Benchmark of Ten Sub-Watt Edge Devices</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>TinyML Hits the Memory Wall: A Benchmark of Ten Sub-Watt Edge Devices</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-11-02 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 边缘神经网络推理受能量预算约束；现有基准设备少、能耗口径不统一，且遗漏带 NPU 的 MCU 与 1 GHz Cortex-M85；硬件感知设计以 MAC 数排名网络，但该代理是否成立未经检验。</p>
+<p><strong>方法</strong> 在 10 款亚瓦级商用设备上实测 4 个 CNN（MobileNetV3、MCUNetV1、EfficientNet、SqueezeNet）与 2 个小 transformer（MobileViT-XXS、DeiT-tiny），含 4 款带 NPU 的 MCU、传感器内 DSP 与 5 款无 NPU MCU，能耗按"高于空闲"统一口径。</p>
+<p><strong>关键数字</strong> IMX500 每模型 0.13–0.35 mJ，比 STM32N6（0.31–1.05 mJ）少 1.3–3 倍能耗；四款加速器比 STM32V8 少 6–34 倍能耗；加速器延迟随内存流量（r≥0.98）而非 MAC 缩放；NPU 相对 1 GHz Cortex-M85 的优势从 MCUNetV1 的 1.4 倍到 SqueezeNet 的 8.2 倍。</p>
+<p><strong>为什么值得看</strong> 首个统一能耗口径的亚瓦级多设备基准，实证 MAC 计数是误导性成本代理。</p>
+<p><a href="https://arxiv.org/abs/2611.03392">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.03392">阅读原文 ↗</a></p>
+</body>
+</html>

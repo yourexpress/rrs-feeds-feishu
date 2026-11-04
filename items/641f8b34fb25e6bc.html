@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Large Geometry Models Are Priors For Fast Physics Pretraining</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Large Geometry Models Are Priors For Fast Physics Pretraining</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-01 · 论文PDF</p>
+
+<blockquote><p>Language and vision models became data-efficient by pretraining on plentiful unlabelled data; physical field models have such data, over ten million 3D shapes, but geometry pretraining designs its targets rather than deriving them from the physics. Euler-Lagrange geometry pretraining derives them: for attached flow, a shape enters the flow's Euler-Lagrange equation only through coefficients that distance and normal line (the normal up to sign) fix to first order. Their reconstruction error therefore bounds what a representation loses about any field, and fine-tuning on costly simulations need only assemble the global field. We realise it in AREALS, a masked surface autoencoder whose areal tokens carry position, normal and area, pretrained self-supervised and sign-free on 61,822 raw meshes. Because the operating condition enters only through the far field, sensors can supply it: AREALS completes a hidden field in one forward pass without condition labels. It matches the accuracy of the same architecture trained from scratch with half the simulations on DrivAerML and DrivAerNet++ and about a quarter on WindsorML. On DoubleDelta wings, 20 sensors give $3.9\times$ and $4.0\times$ lower…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.02066">阅读原文 ↗</a></p>
+</body>
+</html>

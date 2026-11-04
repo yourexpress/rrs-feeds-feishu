@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sensitivity Inflation from Cross-Record Precision Routing in Private Quantized Fine-Tuning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Sensitivity Inflation from Cross-Record Precision Routing in Private Quantized Fine-Tuning</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-01 · 论文PDF</p>
+
+<blockquote><p>Private fine-tuning of large language models increasingly pairs DP-SGD with low-rank adapters on frozen, quantized backbones, and every such stack inherits one unstated premise: frozen layers keep each record's clipped gradient a function of that record alone. We show that LLM.int8 breaks this premise. It routes outlier activation columns to a higher-precision path using a union over the whole batch, so one record decides how every other record's activations are computed, even though the weights are frozen and the quantization scales are per row. We bound the resulting sensitivity inflation, state a record-isolation contract that restores the standard bound, and define record-owned precision dispatch that meets it with the same GEMMs as batched LLM.int8, so isolation needs no extra arithmetic. We then audit the native CUDA stack (bitsandbytes, PEFT, Opacus) against four matched controls. A constructed LoRA-Opacus witness reaches $15.0\times$ the add/remove bound. On pretrained OPT-125M with natural text, other records alter 20% of record-layer precision splits at batch size 16. An exploratory re-clipping analysis finds 10 of 64 candidate neighbors above the bound once every gradien…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.01411">阅读原文 ↗</a></p>
+</body>
+</html>

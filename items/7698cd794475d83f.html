@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autotuning GPU Thread Block Sizes for Large-Scale Stencil Applications Using the OPS DSL</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Autotuning GPU Thread Block Sizes for Large-Scale Stencil Applications Using the OPS DSL</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-10-31 · 论文PDF</p>
+
+<blockquote><p>Large-scale structured-mesh stencil applications can run for hours or days on modern HPC GPU platforms, making launch-configuration choices important. OPS enables high-level stencil codes to target multiple GPU architectures, but its GPU backends rely on a default or user-selected global block/workgroup shape, even though different kernels, problem geometries, and architectures may favor different configurations. This paper presents a transparent per-kernel block/workgroup-shape autotuning extension for OPS. The extension explores valid block/workgroup shapes during execution, records the fastest configuration for each kernel, and enables precomputed replay of the selected configurations in subsequent runs. We evaluate the approach on structured-mesh proxy and academic research applications, covering 459 unique kernels across 3 NVIDIA and 2 AMD GPUs. The evaluation reports speedup distributions, representative wall-time summaries, timing variability, and input problem shape effects. Replaying the best per-kernel launch shapes improves 923 of 995 measured application/input/GPU cases over the default OPS shape. Depending on the GPU, the median speedup ranges from 1.02x to 1.18x, with…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.00968">阅读原文 ↗</a></p>
+</body>
+</html>

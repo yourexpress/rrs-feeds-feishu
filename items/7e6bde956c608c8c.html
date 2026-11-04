@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who Should Score the Cache? Mid-Depth Layers Are the Best Judges of KV-Cache Eviction</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Who Should Score the Cache? Mid-Depth Layers Are the Best Judges of KV-Cache Eviction</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-01 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> KV cache 驱逐方法用注意力分数给 token 排名，且每层给自己的 cache 打分；但从未有工作回答"应该由哪一层打分"。</p>
+<p><strong>方法</strong> 在 21 个模型上发现打分层深度决定驱逐质量；将驱逐建模为 top-k 截断，从 prefill 注意力计算答案存活概率并复现实测曲线；用带已知答案的校准提示选择打分层，之后从该层对所有 cache 打分并跨头共享一组 token。</p>
+<p><strong>关键数字</strong> 0.5B–109B 模型中长上下文检索准确率在浅层崩塌、深度 0.4–0.75 处达峰、末层退化；18 个逐层缓存模型里 16 个优于自层默认；紧凑预算下 5 个 ≤14B 模型比 per-head SnapKV 高 18–43 分，且不增加前向开销。</p>
+<p><strong>为什么值得看</strong> 首次系统回答打分层选择问题，结论在 21 个模型上普适，直接改进现有驱逐方法。</p>
+<p><a href="https://arxiv.org/abs/2611.02230">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.02230">阅读原文 ↗</a></p>
+</body>
+</html>

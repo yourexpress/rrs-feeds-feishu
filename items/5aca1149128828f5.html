@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rethinking KV Cache Eviction for Agentic LLM Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Rethinking KV Cache Eviction for Agentic LLM Serving</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-10-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> KV cache 给大模型服务带来内存压力，容量不足时需驱逐；但 agent 工作负载会跨轮次反复复用长历史，从序列尾部驱逐会使尾部 token 因更长注意力历史而重算代价更高。</p>
+<p><strong>方法</strong> 提出 Penelope：保留共享前缀、从剩余历史开头驱逐而保留缓存后缀；协同设计驱逐策略、KV 重算与统一 GPU-CPU 两级缓存管理，返回请求复用已缓存部分、只重算缺失段。</p>
+<p><strong>关键数字</strong> 在 SGLang 中基于 Qwen3 三种规模与真实 agent 轨迹评测：相较 SGLang，平均 TTFT 最高降 60%、任务完成时间最高降 37%（仅 GPU 缓存）；两级 GPU-CPU 缓存下最高降 76% 与 60%。</p>
+<p><strong>为什么值得看</strong> 针对 agentic 场景反转传统驱逐方向，实测收益显著，是 KV 缓存管理的新视角。</p>
+<p><a href="https://arxiv.org/abs/2611.00391">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.00391">阅读原文 ↗</a></p>
+</body>
+</html>

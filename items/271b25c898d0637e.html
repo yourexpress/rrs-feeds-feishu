@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elastic Precision: Software-Hardware Co-Design of a Mixed-Precision Architecture for Long-Context LLM Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Elastic Precision: Software-Hardware Co-Design of a Mixed-Precision Architecture for Long-Context LLM Inference</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-10-31 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 低比特量化降低 LLM 推理的数据搬移与计算成本，但均匀位宽浪费精度；现有混合精度方法未考虑 GEMM 两个输入共同影响输出误差，常规硬件上引入估计与选择开销。</p>
+<p><strong>方法</strong> Coffee 运行时精度分配架构：固定平均位宽预算下，结合两个输入矩阵统计估计候选宽度的输出误差，为每个子阵列的两个输入分配位宽；混合精度硬件在数据访问与计算中支持所选宽度，并将误差估计与宽度选择与传输、计算重叠以抑制停顿。</p>
+<p><strong>关键数字</strong> 长上下文解码系统建模吞吐达 PLENA 基线的 2.55 倍、能效 2.61 倍；相对 B200 基线最高 4.96 倍与 12.56 倍；困惑度与零样本准确率优于对比量化基线。</p>
+<p><strong>为什么值得看</strong> 软硬件协同的双输入感知混合精度运行时分配，面向长上下文推理的完整系统。</p>
+<p><a href="https://arxiv.org/abs/2611.00915">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.00915">阅读原文 ↗</a></p>
+</body>
+</html>

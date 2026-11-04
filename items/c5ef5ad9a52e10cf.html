@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quantization of Large Models with Weight Outliers and Sparsity</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Quantization of Large Models with Weight Outliers and Sparsity</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 大模型部署用训练后量化（PTQ）降低内存负担，但量化误差会损害模型性能，需要补偿手段。</p>
+<p><strong>方法</strong> 将原始训练权重分解为量化矩阵、低秩分量和负责权重异常行的稀疏矩阵三部分；因分解具有离散结构且难以解析求解，用模拟退火搜索候选分解以避开局部最优。</p>
+<p><strong>关键数字</strong> 在 Llama 3.2 1B/3B、Llama 3.1 8B 与 Qwen2.5 7B 上以 4-bit NF4 与 FP4 量化器做自然语言生成评测；相对直接量化明显更优，且内存开销极小。</p>
+<p><strong>为什么值得看</strong> 用"低秩+稀疏"双补偿结构吸收量化误差的 PTQ 方案，在广泛模型套件上验证有效，适合部署侧低开销补偿场景。</p>
+<p><a href="https://arxiv.org/abs/2611.00286">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.00286">阅读原文 ↗</a></p>
+</body>
+</html>

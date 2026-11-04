@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zero-Gated Cross-Attention</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Zero-Gated Cross-Attention</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-31 · 论文PDF</p>
+
+<blockquote><p>Injecting non-text modalities into frozen language models often introduces early optimization instability, making it difficult to separate architectural gains from transient training dynamics. We introduce Inductively Gated Cross-Attention (IGCA), a zero-initialized cross-attention bridge that preserves pretrained model behavior at initialization while enabling gradual multimodal conditioning. Integrated across six decoder layers of frozen Falcon-40B, open_llama_30b, and Bloom-7b1 backbones (with 40,404,961,288 trainable adapter parameters used during training), IGCA acts as an exact algebraic no-op at initialization with a maximum output discrepancy of 0.00e+00. Over 59,500 training steps on Falcon-40B, the training loss decreases from 3.9403 to 0.0007 (with final ten step losses of [0.0001, 0.0003, 0.0005, 0.0002, 0.0005, 0.0011, 0.0005, 0.0006, 0.0005, 0.0007]). On held-out evaluation, the best gate-on checkpoint achieves a loss of 2.2201 compared to 4.3469 for the gate-off baseline -- a 48.9% reduction (2.1268 nats) -- while average held-out loss improves from 4.3423 to 2.2498 (1.9075 nats) with a mean gate magnitude of $\vert{}\tanh(α)\vert{} = 0.0713$.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.01116">阅读原文 ↗</a></p>
+</body>
+</html>

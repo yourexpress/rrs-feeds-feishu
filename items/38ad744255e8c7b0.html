@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quantizing Recurrent Language Models Is Easier Than You Think</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Quantizing Recurrent Language Models Is Easier Than You Think</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-01 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 现用量化栈围绕 softmax Transformer 开发，其数值特性与推理状态（递归隐藏态替代 KV cache）和递归模型不同，量化方法需针对性研究。</p>
+<p><strong>方法</strong> 区分两类目标：extra-state 量化（递归状态外的权重与激活）与 intra-state 量化（解码中递归状态本身）。据此提出 LoReS 管线：value 轴尺度分组匹配输出通道量级、基于衰减的混合精度保护慢衰减头/通道、随机舍入限制反复重量化下的误差累积。</p>
+<p><strong>关键数字</strong> Qwen-3.5 9B、Nemotron-H 8B、Kimi-Linear 48B-A3B 上支持稳健的 8-bit 状态量化；受控 1.3B 实验中衰减递归比 softmax 注意力发展出更弱的残差异常通道、更易量化；在 vLLM 中实现并获得端到端解码加速。</p>
+<p><strong>为什么值得看</strong> 首个系统划分递归模型两类量化目标的管线，直接服务于递归架构 LLM 部署。</p>
+<p><a href="https://arxiv.org/abs/2611.01864">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.01864">阅读原文 ↗</a></p>
+</body>
+</html>

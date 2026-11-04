@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Understanding GPU Megakernels: Why Residency Can Mislead</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Understanding GPU Megakernels: Why Residency Can Mislead</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-10-31 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> Megakernel 让一个持久 GPU 程序提前准备依赖算子并合并执行就绪任务；但 CTA 驻留率可能误导对重叠机会的判断。</p>
+<p><strong>方法</strong> 在 H100 上用原始算子代码把 ThunderKittens（TK）与 VDCores 两个 LLM megakernel 重建为独立 kernel 做对照实验，通过程序化依赖启动（PDL）重叠启动与操作数加载，并剖析预取、资源可用性与调度约束。</p>
+<p><strong>关键数字</strong> 重叠启动与加载使 TK 解码步延迟降 5.7%，VDCores 在强制内存序下性能相当；整算子依赖下 TK 持久执行仍从预取获益，但运行时与完成信号排序成本抵消该优势；保留 SM 做通信会引入 GEMM wave 抵消重叠收益。</p>
+<p><strong>为什么值得看</strong> 对 megakernel 收益与成本的系统剖析，纠正驻留率指标的两个方向误读，启发跨 kernel 资源细粒度共享。</p>
+<p><a href="https://arxiv.org/abs/2611.00495">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.00495">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TileWeave: Heterogeneous Tiling for Sparse Prefill on Mobile SoCs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>TileWeave: Heterogeneous Tiling for Sparse Prefill on Mobile SoCs</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-30 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 手机端大模型处理长上下文时 prefill 延迟高、内存需求大；块稀疏注意力虽减少计算与访存，但其不规则选择与移动 NPU 偏好大而规则的 tile 冲突。</p>
+<p><strong>方法</strong> TileWeave 按跨查询复用度划分稀疏注意力：高共享 key 块走粗粒度 NPU tile，低复用块只在选中它们的查询对应的 GPU 上执行；另设计 NPU 原生 pooled-key 选择器控制选择开销，运行时按 NPU 消费顺序发布 GPU 部分结果。</p>
+<p><strong>关键数字</strong> Snapdragon SM8750/SM8850 手机上，1k–16k token 下全模型 prefill 比 XAttention 快 1.35–3.23 倍，比稠密注意力最高快 1.58 倍；RULER/LongBench 精度与 XAttention 持平。</p>
+<p><strong>为什么值得看</strong> 移动 SoC 上 NPU+GPU 异构协同做稀疏注意力的系统设计，实测数据完整。</p>
+<p><a href="https://arxiv.org/abs/2611.00408">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.00408">阅读原文 ↗</a></p>
+</body>
+</html>

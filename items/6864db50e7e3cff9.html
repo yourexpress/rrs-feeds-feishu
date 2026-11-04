@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BitLLM: Efficient Low-Bit, Conversion-Hiding LLM Decoding on Mobile GPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>BitLLM: Efficient Low-Bit, Conversion-Hiding LLM Decoding on Mobile GPUs</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-10-31 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 低比特量化（4-bit 权重、8-bit 激活）可减小模型体积，但在移动 GPU 上实际效果有限，瓶颈待定位。</p>
+<p><strong>方法</strong> 识别出两大瓶颈：量化值与浮点值间的频繁类型转换，以及自回归解码中 KV cache 增长导致的动态低效访存。提出 BitLLM 移动推理引擎：对 KV cache 采用自适应布局与打包策略保证解码全程高效访存；整数原生执行管线把类型转换推迟并重叠出计算热路径，让关键 MatMul 阶段留在整数域。</p>
+<p><strong>关键数字</strong> 相对 LLAMA.CPP、MNN-LLM、LiteRT-LM、MLC-LLM 平均提速 1.78 倍、1.73 倍、1.58 倍、1.47 倍；长上下文生成下每 token 平均能耗最高降 88.9%。</p>
+<p><strong>为什么值得看</strong> 直击移动 GPU 低比特解码两个真实瓶颈（转换与访存），商用引擎对比数据扎实。</p>
+<p><a href="https://arxiv.org/abs/2611.00547">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.00547">阅读原文 ↗</a></p>
+</body>
+</html>

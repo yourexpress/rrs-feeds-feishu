@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Integer-Exact Microscaling: Running MXFP4 Language Models on INT8 Matrix Units</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Integer-Exact Microscaling: Running MXFP4 Language Models on INT8 Matrix Units</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-31 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 在最快矩阵数据通路为 INT8×INT8 的硬件（如 Apple M5 神经加速器）上，4-bit 权重必须变成 INT8 操作数；现有 MXFP4 内核把 32 元素块缩放放在归约内完成。</p>
+<p><strong>方法</strong> 证明当一行 MXFP4 权重的块指数跨度不超过 3 时，该行恰为一个 INT8 向量乘以 2 的幂缩放，线性层因此变成单次 INT8 GEMM + 每输出一次 rescale；提出 spread-constrained MXFP4（仍是标准 MXFP4）与整数精确格式（16 宽块、乘数 1..10、4.26 bits）。</p>
+<p><strong>关键数字</strong> 七个模型中 97.9–99.97% 的权重行天然满足条件，含 125B MoE（Qwen3.8-Flash-Next）95M 行中的 99.93%；M5 上 prefill 比 MLX 快 1.34–1.74 倍（稠密）、MoE 模型 1.10–1.57 倍；整数精确格式 GSM8K 求解 94.8% vs MLX MXFP4 的 91.0%。</p>
+<p><strong>为什么值得看</strong> 把 MXFP4 无缝映射到 INT8 矩阵单元的完整理论+实测，直接适用新一代移动/桌面加速器。</p>
+<p><a href="https://arxiv.org/abs/2611.00486">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.00486">阅读原文 ↗</a></p>
+</body>
+</html>

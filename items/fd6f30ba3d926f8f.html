@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memory Admission and Result-Retention Sizing in an RV32IMC FPGA Soft Processor</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Memory Admission and Result-Retention Sizing in an RV32IMC FPGA Soft Processor</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-11-02 · 论文PDF</p>
+
+<blockquote><p>In FPGA soft processors with shared backing block RAM, memory admission can stall a multiplication after its product has been prepared. We study how admission timing changes result retention in PaceRV, our board-tested five-stage RV32IMC core, using fixed binaries and matched dynamic instructions. Offering data requests one edge earlier reduces geometric-mean Embench cycles by 18.2% and retention opportunities from 375,063 to 4,373. Admission and retention cycle gains are conditional and non-additive. Under slower reads, a 99% capture target selects an 18-edge validity window with registered requests and 28 edges with early requests, although no multiplication matched within both measurement intervals waits longer. A predeclared sizing rule predicts opportunity recovery exactly in all finite tests, including kernels excluded from model development. Independent timing analysis closely estimates execution-cycle savings. The results support choosing admission first, then deciding whether to extend validity and sizing it against an explicit capture or missed-opportunity objective.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.02974">阅读原文 ↗</a></p>
+</body>
+</html>

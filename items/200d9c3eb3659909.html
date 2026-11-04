@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Layer-wise CPU-GPU Scheduling for LLM Inference on Memory-Limited Consumer GPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Layer-wise CPU-GPU Scheduling for LLM Inference on Memory-Limited Consumer GPUs</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-11-01 · 论文PDF</p>
+
+<blockquote><p>As large language model inference environments expand toward consumer devices, it remains challenging to efficiently run models that exceed GPU memory capacity in single-GPU settings. The latency of transferring weights that do not fit in GPU memory accounts for about 98\% of inference time and remains a major obstacle. In this paper, we focus on the fact that during the decode phase, layer computation time on the CPU can be shorter than weight transfer time, presenting an opportunity to hide weight transfers by utilizing this computation time. Therefore, we propose a method to hide transfer latency by executing certain layers on the CPU during the decode phase while asynchronously transferring the next layer's weights to the GPU in the background of that computation. To realize this scheduling, we formulate the placement of CPU/GPU computation and weight transfers as a latency minimization problem and perform optimization using an approximation model with relaxed temporal constraints. Evaluation results confirm that in a consumer desktop environment, our approach accelerates OPT-30B inference by 3.5x compared to HuggingFace Accelerate and 6.3x compared to DeepSpeed Zero-Inference.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.01393">阅读原文 ↗</a></p>
+</body>
+</html>

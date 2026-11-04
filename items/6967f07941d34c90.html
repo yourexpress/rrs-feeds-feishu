@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fairway: Load-Aware KV Cache Reuse for LLM Prefill Scheduling</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Fairway: Load-Aware KV Cache Reuse for LLM Prefill Scheduling</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-11-01 · 论文PDF</p>
+
+<blockquote><p>LLM-based applications often employ agentic workflows and retrieval-augmented generation (RAG), which build long prompts from shared context. When prefixes are shared across requests, serving engines reuse the key-value (KV) cache to skip parts of the prefill computation. Reuse is typically graded: the uncached work of requests in a queue can differ by up to 100x. In this setting, the order of scheduling determines the time-to-first-token (TTFT) for the queued requests. KV reuse-first scheduling, which prioritizes the requests with the longest KV cache hit, gives the lowest median TTFT but starves expensive requests under load spikes; first-come-first-served (FCFS) scheduling bounds the tail but raises the median TTFT. We present Fairway, a prefill scheduler built on adaptive reuse prioritization: it favors KV cache reuse while queues are short, and shifts toward fair allocation as requests wait longer relative to their own prefill time. Fairway employs a virtual dual lane model: a KV reuse-first Fast lane and a Fair lane atop the serving engine's waiting queue that enables speeding up of cheap reuse requests without starving expensive ones. This model automatically adapts to the w…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.02082">阅读原文 ↗</a></p>
+</body>
+</html>

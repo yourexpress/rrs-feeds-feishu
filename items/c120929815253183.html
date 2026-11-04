@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accelerating LLM Decoding with In-DRAM Parallelism</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Accelerating LLM Decoding with In-DRAM Parallelism</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-11-02 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 边缘设备上的 LLM 自回归解码由内存受限的 GeMV 主导；Processing-using-DRAM（PUD）可在 DRAM 内跨 65,536 列大规模并行计算，但单层权重矩阵（如 Llama3 8B 的 QKV 矩阵 6,144 行）太小，无法充分利用 PUD 并行度。</p>
+<p><strong>方法</strong> 算法-系统协同设计：算法层把后续投影重表述为"当前残差状态上的计算 + 残差更新修正"，从而与当前投影打包执行，修正用更少 bit-serial 步近似；系统层定制数据映射与执行以提升 DRAM 子阵列列（SIMD）或独立 bank（MIMD）内的利用率。</p>
+<p><strong>关键数字</strong> 端到端解码比 PUD 基线最高提速 1.41 倍，对应相对处理器执行的 2.45 倍加速。</p>
+<p><strong>为什么值得看</strong> 存内计算走向真实 LLM 推理的实用化协同方案，解决单层矩阵过小与 PUD 并行度错配。</p>
+<p><a href="https://arxiv.org/abs/2611.02401">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.02401">阅读原文 ↗</a></p>
+</body>
+</html>

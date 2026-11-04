@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Editing the Goal: Per-Token SAE Steering and Its Depth Limits in π0.5</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Editing the Goal: Per-Token SAE Steering and Its Depth Limits in π0.5</h1>
+<p class="meta-line">arXiv (cs.AI) · 2026-11-03 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 稀疏自编码器（SAE）在机器人基础模型（RFM）π0.5 中恢复了可解释、因果相关特征；但单个指令 token 的 SAE 特征是否可重定向机器人目标此前未经验证。</p>
+<p><strong>方法</strong> 在指令文本不变的前提下，把单个目标词的 SAE 特征替换为替代目标词的特征，在 π0.5-LIBERO 中测试；对比不同 SAE 架构（BatchTopK vs Matryoshka）、层深，并检验非 SAE 向量（固定差向量）与逐层激活 patching。</p>
+<p><strong>关键数字</strong> 层 0 的 BatchTopK 特征交换在特定场景最高 20/20 rollout 完成重定向（随机特征交换为 0）；两倍自然幅度的差向量重定向 8–10/10 rollout；目标词编辑在物体位置上有效到层 6、物体身份到层 2，覆盖 camera token 时可到层 13。</p>
+<p><strong>为什么值得看</strong> 机器人基础模型可解释编辑的首个实证，附重定向深度限制地图。</p>
+<p><a href="https://arxiv.org/abs/2611.00602">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.00602">阅读原文 ↗</a></p>
+</body>
+</html>

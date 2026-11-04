@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RankLane: Efficient MoE Prefill on Accelerators with Ranked Expert Capacities</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>RankLane: Efficient MoE Prefill on Accelerators with Ranked Expert Capacities</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-10-30 · 论文PDF</p>
+
+<blockquote><p>Mixture-of-experts (MoE) models expand model capacity by activating only a subset of experts for each token. On accelerators with static execution plans, expert capacities and placement are fixed before routing reveals each expert's load. Uniform worst-case capacities waste work on padding; smaller capacities tied to expert identities can overflow. We present RankLane, which ranks each device's experts by current load and assigns them to fixed-capacity lanes. Runtime indices select experts and token rows while tier populations, shapes and device placement remain fixed. An aggregation graph preserves device ownership and reduces each token's local contributions on one core. Routing calibration and measured execution costs guide tier selection; overflowing chunks rerun at full capacity. We evaluate full-model prefill of Qwen3-30B-A3B and Gemma 4 26B-A4B with MXFP6 weights on four Cloud AI 100 Ultra SoCs, using 128-2048-token chunks and including overflow detection and in-program recovery support. Against a dense baseline, RankLane achieves end-to-end prefill speedups of 1.27-4.18x on Qwen3 and 1.93-3.46x on Gemma.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.00421">阅读原文 ↗</a></p>
+</body>
+</html>
