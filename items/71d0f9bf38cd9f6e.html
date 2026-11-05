@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HyPAIC: Personal AI Computer with High Bandwidth Flash for High Performance Trillion-Parameter LLM Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>HyPAIC: Personal AI Computer with High Bandwidth Flash for High Performance Trillion-Parameter LLM Inference</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-11-03 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 万亿参数 MoE LLM 本地部署需求增长，但现有 PAIC（个人 AI 计算机）用 LPDDR 统一内存，容量受限：权重占满内存后 KV cache 空间所剩无几，支持上下文长度大打折扣。</p>
+<p><strong>方法</strong> 提出 HyPAIC 架构：把只读模型权重放 HBF（高带宽 Flash），可变运行时数据放 LPDDR。HBF 容量超 HBM 10 倍以上、带宽达 TB/s 级。针对 HBF 的访问延迟、有限写耐久与页级访问粒度，分别用预取、只读权重放置、粗粒度权重访问应对。</p>
+<p><strong>关键数字</strong> 模拟评估：单个 HyPAIC 在 1T 参数 MoE 推理中端到端吞吐最高提升 1.04x、TDP 归一化吞吐最高 3.59x（对比八个无 HBF 基线系统的合计）——一个 HyPAIC 接近八个基线的原始性能且能效远优；小模型推理下并发任务数（每任务保持 ≥50 decode TPS）最高提升 4x。功耗与散热仍是显著实现挑战。</p>
+<p><strong>为什么值得看</strong> 用 HBF 打破 PAIC 的内存容量天花板，一个人工智能电脑逼近八台设备的聚合性能，是本地万亿参数推理的硬件新路线。</p>
+<p><a href="https://arxiv.org/abs/2611.04144">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.04144">阅读原文 ↗</a></p>
+</body>
+</html>

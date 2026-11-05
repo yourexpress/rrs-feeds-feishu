@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Multi-layer Indexer: Overlapping Selection and Attention in DeepSeek Sparse Attention</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Multi-layer Indexer: Overlapping Selection and Attention in DeepSeek Sparse Attention</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-02 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> DeepSeek Sparse Attention（DSA，DeepSeek-V3.2 与 GLM-5 采用）中，每层前面的 lightning indexer 要扫描整个 cache 并保留 k=2048 最高分 token；长上下文下解码时间主要花在 indexer 扫描而非稀疏注意力本身。</p>
+<p><strong>方法</strong> 观察到相邻层选出的 token 几乎相同，让每层直接复用上一层 indexer 的选择，消除依赖后各层 indexer 可与本层注意力并发执行，即 Multi-layer Indexer（MLI）。无需重训、无新权重，默认实现不改任何内核，运行在 SGLang 生产解码图内；可选融合内核可进一步加速，且与 IndexCache（GLM-5.2 的跨层复用）可组合。</p>
+<p><strong>关键数字</strong> 在保留率 1/2~1/32、上下文 10K~195K 下：与 IndexCache 同保留率组合，DeepSeek-V3.2 解码快最多 14.5%、GLM-5 快 9.8%（保留率 1/2 时），1/2 保留率下 7.9% 起。</p>
+<p><strong>为什么值得看</strong> 不重训不动内核就把稀疏注意力中最贵的 indexer 扫描开销藏进并发，直接可落地到生产服务引擎。</p>
+<p><a href="https://arxiv.org/abs/2611.03768">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.03768">阅读原文 ↗</a></p>
+</body>
+</html>

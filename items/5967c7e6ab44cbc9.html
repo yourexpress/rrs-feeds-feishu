@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Packet-Based NPUs In The LLM Era: From Compute-Bound CNNs To Memory-Bound Edge And Automotive Workloads</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Packet-Based NPUs In The LLM Era: From Compute-Bound CNNs To Memory-Bound Edge And Automotive Workloads</h1>
+<p class="meta-line">Expedera（Edge AI and Vision Alliance 转载） · 2026-11-02 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://www.expedera.com/wp-content/uploads/2026/10/Inference-Event-Timeline-Comparison-800w.jpg" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong> 边缘 NPU 工作负载从纯计算密集的 CNN 转向带大 KV cache 的、内存密集的 LLM/VLM 推理（尤其在车规安全场景），NPU 设计如何随之改变。</p>
+<p><strong>要点</strong> 瓶颈反转：CNN 时代权重复用、推理近无状态、优化目标是限定面积功耗下的 MAC 吞吐；LLM/VLM 时代 decode 被 KV cache 访问、低复用大参数集主导，内存行为（cache 大小、访问模式、带宽）取代标称 TOPS 成为限制。Expedera 的 Origin NPU 用"包"代替"层"调度，把该抽象延伸到 transformer 块与 KV cache 访问，按网络结构与 prefill/decode 阶段路由包到前馈/注意力/向量处理块。</p>
+<p><strong>关键数字</strong> 单核可扩展至 128 TFLOPS、多核至 PetaFLOPS；对 Llama 3.2 1B 与 Qwen2 1.5B，基于包的处理可比替代方案减少 75% 以上的外部内存搬移；高内存受限场景可达"数千有效 TFLOPS"与"每平方毫米硅数十 token/s"。</p>
+<p><strong>为什么值得看</strong> 业界头部 NPU IP 厂商对"边缘从 CNN 转向 LLM"的第一手架构回应，量化了内存搬移在边缘 LLM 里的决定性地位。</p>
+<p><a href="https://www.expedera.com/blog/2026/08/13/packet-based-npus-in-the-llm-era-from-compute-bound-cnns-to-memory-bound-edge-and-automotive-workloads/">阅读原文</a></p>
+<p><a class="origin" href="https://www.expedera.com/blog/2026/08/13/packet-based-npus-in-the-llm-era-from-compute-bound-cnns-to-memory-bound-edge-and-automotive-workloads/">阅读原文 ↗</a></p>
+</body>
+</html>

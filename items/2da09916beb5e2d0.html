@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accelerating FastDEC Clustering Algorithm with GPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Accelerating FastDEC Clustering Algorithm with GPUs</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-02 · 论文PDF</p>
+
+<p>SymWarp-FastDEC：GPU 加速 FastDEC 聚类，对称三角 warp 优化 k-NN 与支配分量</p>
+<blockquote><p>Fast Dominance Estimation Clustering (FastDEC) is an efficient variant of Density Peak Clustering (DPC) that achieves high clustering quality through dominance-based density estimation, but remains constrained by the computational cost of exact k-nearest-neighbor (k-NN) construction and dominance component (DC) processing. We present SymWarp-FastDEC, a GPU-accelerated implementation of FastDEC. At its core is SymTrikNN, an exact self-k-NN kernel that exploits search symmetry using upper-triangular traversal and warp-cooperative top-k selection. We also introduce WP-DC, a warp-parallel DC reduction algorithm designed for modern GPUs. Combined with memory-adaptive execution planning and stream scheduling, WP-DC eliminates DC reduction as a runtime bottleneck. Experiments on synthetic and real-world datasets show that SymWarp-FastDEC produces clustering outputs identical to the original FastDEC on all evaluated equivalence benchmarks. Compared with a FastDEC variant using FAISS GpuIndexFlatL2 for exact k-NN search, our approach achieves approximately 1.7x to 4.9x higher end-to-end performance, with the advantage generally increasing with dimensionality. Compared with the original sing…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.03934">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GC-MoE: Overlapping Expert-Parallel Token Dispatch with FP8/FP4 Grouped GEMM via CUDA Green Contexts</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>GC-MoE: Overlapping Expert-Parallel Token Dispatch with FP8/FP4 Grouped GEMM via CUDA Green Contexts</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-11-03 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 专家并行（EP）下 MoE 每层都要做 all-to-all token dispatch、grouped GEMM 与 combine；decode 时每 rank 仅 1-256 token，dispatch 延迟与权重流量主导、张量核利用率天然很低。现有融合算子（如 DeepGEMM Mega MoE）让 dispatch 与计算共享每个 SM 的资源预算与同步域，互相争抢。</p>
+<p><strong>方法</strong> 提出开源 GC-MoE（NVIDIA Hopper/Blackwell 的 FP8/FP4 MoE 推理算子）：用 CUDA Green Contexts 把设备分成小的通信分区与大计算分区，各自拥有独立内核、资源预算与同步域；三节点 CUDA Graph（Hopper 上加融合共享专家为四节点）并发启动 dispatch 与 grouped-GEMM，token-ring 握手在首批 ring 块填满时即开始计算，双缓冲接收计数器去掉 replay 间尾部跨 rank barrier。</p>
+<p><strong>关键数字</strong> 8x H20 上 DeepSeek-V4.1-Flash decode 平均加速 1.188x（峰值 1.296x/1.353x）；8x B300 上 GLM-5.2 与 DeepSeek-V4.1-Flash 加速 1.106x（融合共享专家 1.123x，峰值 1.209x），54 个测量点全部超过 Mega MoE。</p>
+<p><strong>为什么值得看</strong> 用 Green Context 硬件机制从根上隔离 dispatch 与计算资源，公开开源，是 MoE decode 推理算子优化的新范式。</p>
+<p><a href="https://arxiv.org/abs/2611.04222">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.04222">阅读原文 ↗</a></p>
+</body>
+</html>

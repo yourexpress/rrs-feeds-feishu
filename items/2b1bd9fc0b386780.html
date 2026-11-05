@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LoopVQ: Sub 1-bit KV Cache Quantization for Looped Transformers</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LoopVQ: Sub 1-bit KV Cache Quantization for Looped Transformers</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-03 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 循环 Transformer 每 loop 步各存自己的 key/value，KV cache 随 loop 步数线性增长成为主要内存瓶颈；同时各 loop 步对量化的敏感度差异大。</p>
+<p><strong>方法</strong> 提出 LoopVQ：沿 loop 轴联合编码多个 loop 步的通道，并微调码本以匹配全精度模型输出。与现有面向标准 LLM 的 KV cache 向量量化方法正交，可组合使用。</p>
+<p><strong>关键数字</strong> 0.5 bits/元素时，在通用、长思维链推理、长上下文检索任务上（Ouro 与 Huginn 模型）超越现有 KV cache 向量量化方法；与 TaSQ 组合在 0.25 bits/元素仍保留大部分 BF16 精度。SGLang 实现中，32K token 上下文解码延迟近乎减半，1.4B 与 2.6B Ouro 模型峰值服务吞吐相对 BF16 基线最高提升 4.3x 与 6.1x。</p>
+<p><strong>为什么值得看</strong> 首次把子 1-bit KV 量化做到循环模型上，利用 loop 轴冗余实现近半解码延迟削减，吞吐提升显著。</p>
+<p><a href="https://arxiv.org/abs/2611.05304">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.05304">阅读原文 ↗</a></p>
+</body>
+</html>

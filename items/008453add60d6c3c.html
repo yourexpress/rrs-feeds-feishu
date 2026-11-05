@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EpiLoRA: Fusing Many LoRA Adapters into Low-Precision GEMMs for Serving and RL</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>EpiLoRA: Fusing Many LoRA Adapters into Low-Precision GEMMs for Serving and RL</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-11-02 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 多租户 LoRA 推理中，基座模型已降至 FP8/FP4 低精度，但 adapter 仍作为独立小 GPU 内核在 GEMM 旁执行，其延迟在每次解码中占比越来越大。</p>
+<p><strong>方法</strong> 提出 EpiLoRA（vLLM 插件）：观察到 GEMM 只需在 epilogue（写输出阶段）用到 down-projection，于是先启动 down-projection，再让低精度 GEMM 作为依赖内核并行流式加载权重，并在 epilogue 中叠加各租户的 up-projection。</p>
+<p><strong>关键数字</strong> 在 NVIDIA Hopper 上单 adapter 解码每 token 耗时比 vLLM 最快配置低 24%；多租户下 adapter 内核吞吐在多数 GPU-模型组合上超过 vLLM。利用引擎 FP8 权重训练 LoRA RL 无需 16 位副本，27B 模型可在单张 48GB GPU 上训练。</p>
+<p><strong>为什么值得看</strong> 把 adapter 融合进低精度 GEMM 内核本身，同时优化推理与服务端 RL 训练，对多租户 LLM 服务架构有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2611.03899">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.03899">阅读原文 ↗</a></p>
+</body>
+</html>

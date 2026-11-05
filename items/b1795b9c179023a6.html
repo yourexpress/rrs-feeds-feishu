@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EvoCache: Accelerating Browser Large Language Model Delivery with Public Cache Anchors</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>EvoCache: Accelerating Browser Large Language Model Delivery with Public Cache Anchors</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-11-03 · 论文PDF</p>
+
+<p>EvoCache：浏览器 LLM 交付加速，用公共缓存锚点无损重建各发布方模型文件，避免重复下载数百 MiB 权重</p>
+<blockquote><p>Large Language Models (LLMs) can run directly in a browser, but first use typically requires downloading model files that are hundreds of MiB or even several GiB in size. The same LLM is often repackaged by different publishers; these files share substantial content, yet byte differences prevent whole-file caches from reusing them. We propose EvoCache, a browser-managed LLM delivery system. EvoCache uses public cache anchors that are stored in advance by the browser and independent of browsing history to reconstruct losslessly the publisher version requested by a site. A site specifies only the target, while the browser selects the anchor and performs reconstruction, keeping both hidden from the site. An audit of 1,000 public repositories finds that 61 of the 100 most popular LLMs are offered by multiple publishers and that 98.1% of overlapping versions cannot be reused by whole-file caching. Across 23 cross-publisher model-package pairs, EvoCache achieves a median traffic reduction of 77.3% and outperforms every comparator. Across 240 real end-to-end browser experiments, EvoCache reduces network traffic by 78.9% and page-ready time by 64.2% relative to ordinary full downloads. For…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.04638">阅读原文 ↗</a></p>
+</body>
+</html>

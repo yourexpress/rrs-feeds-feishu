@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Training Specialist LLMs on Your Phone: Forward-Only Optimization via Block-Spectral Coordinates</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Training Specialist LLMs on Your Phone: Forward-Only Optimization via Block-Spectral Coordinates</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-03 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 个人设备上的 LLM 能保住数据本地性，但内存限制其通用能力；多数用户特定任务不需要前沿模型的广度，宜把共享端上模型适配成轻量专家。然而反向传播内存代价高、用户又很少提供标注数据。</p>
+<p><strong>方法</strong> 提出 MobileSpec：只用前向传播训练专家，并从自动检查的任务结果学习（即 RLVR）。核心算法 FuRA-S 仅训练预训练权重列块的奇异值（block-spectral coordinates），产生的扰动在理论上与经验上都近似 RLVR 的权重变化；该更新可改写为对层输入的变换，因此无需改权重即可适配 INT4 模型。</p>
+<p><strong>关键数字</strong> 专家仅 1-5 MB、只更新 0.015-0.05% 的参数；手机 agent 的成功率从 6-23% 提升到 89-100%（具体任务集未在摘要中完整展开）。</p>
+<p><strong>为什么值得看</strong> 用前向-仅优化把"端上训练专家"做到可行：1-5 MB 专家、INT4 兼容、成功率大幅提升，是隐私友好端侧个性化的新路径。</p>
+<p><a href="https://arxiv.org/abs/2611.04797">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.04797">阅读原文 ↗</a></p>
+</body>
+</html>

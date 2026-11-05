@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LoopKV: Loop-Aware KV Cache Compression for Serving Looped Transformers</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LoopKV: Loop-Aware KV Cache Compression for Serving Looped Transformers</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-03 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 循环（looped）Transformer 每 token 多次应用共享块，如 Ouro 每 loop 保留独立 KV cache，cache 内存限制批量大小；统一比特量化与固定规则无法按各层在各 loop 的敏感度分配精度。</p>
+<p><strong>方法</strong> 提出 LoopKV：一次性离线 profile 为每个 (loop, layer) 单元选择 4-bit 存储、2-bit 存储或复用最终 loop 的 KV；规划器在预测损伤与存储预算下最小化读取。解码时每个 loop 读 4-bit 值的高 2 位，仅在其注意力权重需要 4-bit 精度处取回低 2 位；vLLM 中单一融合内核执行该计划。</p>
+<p><strong>关键数字</strong> 单张 RTX PRO 6000 服务 Ouro-1.4B：内存优化版 LoopKV-M 比统一 4-bit 量化（KIVI-4）在同一融合内核与 CUDA graph 上少存 35% KV；16K token 上限、延迟 SLO 下 goodput 达 KIVI-4 的 1.7-2.2x；六个公开基准平均均未显著低于 BF16。</p>
+<p><strong>为什么值得看</strong> 把 KV 压缩从"全局统一"推进到"逐 loop 逐层定制"，直面循环模型特有的精度-内存权衡，并已集成 vLLM。</p>
+<p><a href="https://arxiv.org/abs/2611.04137">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.04137">阅读原文 ↗</a></p>
+</body>
+</html>

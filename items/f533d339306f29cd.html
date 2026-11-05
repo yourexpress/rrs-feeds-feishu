@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LiquidCP: Decoupling Attention Tasks from Communication and Kernel Boundaries in Context Parallelism</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LiquidCP: Decoupling Attention Tasks from Communication and Kernel Boundaries in Context Parallelism</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-11-03 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 上下文并行（CP）把长序列切分到多 GPU 做训练/推理：变长训练与全 prefill 下注意力均衡放置会致 token 负载不均，ring 执行在每个计算/通信步重复开销；stage 串行 decode CP（DCP）中长任务阻塞依赖工作、GPU 空闲。</p>
+<p><strong>方法</strong> 提出 LiquidCP，用统一的 Transfer/Compute/Reduction 任务模型（带 tile 级依赖）解耦注意力任务与通信、内核边界。训练与全 prefill 用 MegaRing：BuddyRing 放置均衡注意力与 token 负载，前向注意力中合并就绪 KV 区域摊薄开销；decode 与混合批次用 MegaDCP：联合建模注意力及其依赖归约的完成来选 history-KV 切分。共享持久 GPU 常驻引擎执行两种设计。</p>
+<p><strong>关键数字</strong> 8x H100 上相对各配置最快基线：MegaRing 核心注意力几何平均提速前向 1.23x、反向 1.18x，Transformer 层加速 1.08-1.16x；MegaDCP decode-only 1.20x、混合批次 1.35x；vLLM + KV prefix cache 下平均 TTFT 提速 1.22x。</p>
+<p><strong>为什么值得看</strong> 统一了训练与推理的 CP 执行模型，把注意力从通信与内核边界中解放出来，是序列并行执行的最新系统化方案。</p>
+<p><a href="https://arxiv.org/abs/2611.04401">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.04401">阅读原文 ↗</a></p>
+</body>
+</html>

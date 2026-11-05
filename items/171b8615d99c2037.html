@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ForgeKernel: Self-Evolving Kernels Catching and Surpassing Experts and Agents</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ForgeKernel: Self-Evolving Kernels Catching and Surpassing Experts and Agents</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-11-03 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 现有 GPU kernel 生成 agent 缺少跨运行知识积累与架构演化：每次从同一初始知识开始，后期迭代基本在搜索早期固定下来的架构内优化。</p>
+<p><strong>方法</strong> 提出 ForgeKernel：跨运行积累并复用知识，同时持续演化内核架构。它分析高性能参考实现的硬件行为，把经验证有效的架构决策蒸馏为"硬件机制"层面的可复用知识（而非模仿源码）；通过正确性与性能验证的内核被密封，作为下一轮优化的参考，使架构决策可被重访。</p>
+<p><strong>关键数字</strong> 在 NVIDIA Hopper/Blackwell 的 27 个算子、29 种输入配置上，25 个配置持平或超过专家参考，几何平均性能提升 10%；Ascend 910C 上在 CANN-Bench Season 1 终榜全部 8 个 level-4 算子超越逐算子公开最佳，几何平均提升 25.1%；截至 2026-10-30 其公开提交在三个 CANN-Bench 2.0 榜单与 SOL-ExecBench FlashInfer-Bench 全部排名第一。</p>
+<p><strong>为什么值得看</strong> 把内核生成从"单次搜索"升级为"自我进化的知识系统"，并跨 NVIDIA/Ascend 多硬件验证，代表 agentic 内核优化的重要进阶。</p>
+<p><a href="https://arxiv.org/abs/2611.04998">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.04998">阅读原文 ↗</a></p>
+</body>
+</html>

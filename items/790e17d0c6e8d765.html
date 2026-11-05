@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GSPIM: A Temporal-Locality-Aware 4DGS Accelerator for PIM-Enabled Edge Devices</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>GSPIM: A Temporal-Locality-Aware 4DGS Accelerator for PIM-Enabled Edge Devices</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-11-03 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 4D 高斯泼溅（4DGS）实现动态场景实时新视角合成，但显式分布、关键帧插值等方法的 GPU 数据搬移存在两个瓶颈：时间过滤发生在模型记录加载之后，浪费 LPDDR5 带宽；逐帧独立执行忽略相邻帧间高度重叠的活动集与深度关系，工作集超片上缓存时反复重载共享属性。</p>
+<p><strong>方法</strong> 提出 GSPIM，面向 PIM 边缘设备的时序局部性感知 4DGS 加速器：多态 PIM 用共享近存数据通路适配各表示的字段布局与选择流程，在 GPU 访问完整属性前过滤压缩有效数据；多帧渲染数据流在时间窗口内复用活动属性与稳定深度关系；混合数据流调度让近存数据准备与 GPU 渲染重叠。</p>
+<p><strong>关键数字</strong> 结合 Jetson AGX Orin 64GB 校准的 GPU-PIM 模型与 1z DRAM 物理实现：跨 3 种 4DGS 方法、6 个动态场景，相对逐帧 GPU 基线几何平均提速 4.15x、能效提升 4.99x；场景级 PSNR 最大差 0.011 dB，附加物理面积 18.7172 平方毫米（32 个 LPDDR5 die）。</p>
+<p><strong>为什么值得看</strong> 面向边缘 XR/自动驾驶的 4DGS 专用加速器，用近存处理解决动态场景渲染的数据搬移瓶颈，物理实现细节完整。</p>
+<p><a href="https://arxiv.org/abs/2611.04804">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.04804">阅读原文 ↗</a></p>
+</body>
+</html>

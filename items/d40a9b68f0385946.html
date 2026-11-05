@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aligning Training and Rollout Policies for End-to-End FP4 RL on Mixture-of-Experts LLMs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Aligning Training and Rollout Policies for End-to-End FP4 RL on Mixture-of-Experts LLMs</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-03 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> FP4 RL（强化学习后训练）低精度量化恢复配方在 dense 模型上有效，但在 MoE 大模型上照搬却对朴素 FP4 基线毫无改善，原因不明。</p>
+<p><strong>方法</strong> 深入分析定位到 MoE 特有的 router 机制：router 做离散专家选择，训练-推理策略对齐对"恢复技术是否在训练/推理两侧对称施加"高度敏感。不对称配方（含只修正 rollout 侧的 dense 方案）会导致训练与推理概率的 Pearson 相关系数、router 选择匹配率急剧恶化。据此提出 MoEResQ：强制训练侧与推理侧修正对称，恢复对齐并大幅缩小与全精度的精度差距。</p>
+<p><strong>关键数字</strong> 未给出具体量化指标；以训练/推理概率 Pearson 相关系数与 router 选择匹配率作为对齐度量，对称恢复显著缩小与全精度精度差距。</p>
+<p><strong>为什么值得看</strong> 首个指出 MoE 场景 FP4 RL 的关键原则是"对称恢复"，对低精度 RL 后训练管线设计有直接指导意义。</p>
+<p><a href="https://arxiv.org/abs/2611.04376">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.04376">阅读原文 ↗</a></p>
+</body>
+</html>

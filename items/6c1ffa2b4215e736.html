@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>te-comp: A Complete MLIR Compiler Generating Self-Contained C Inference Engines for MCUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>te-comp: A Complete MLIR Compiler Generating Self-Contained C Inference Engines for MCUs</h1>
+<p class="meta-line">arXiv (cs.PL) · 2026-10-31 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 在微控制器（MCU）上部署深度学习需把模型权重与运行时激活塞进几十到几百 KB 的 SRAM/Flash，现有方案要么依赖解释器+预写内核库，要么是 Python 代码生成器拼手写 C 内核，均无法产出零依赖、模型特化的纯 C 推理引擎。</p>
+<p><strong>方法</strong> 提出 te-comp，首个完整 MLIR 编译器：输入标准 .tflite/.safetensors 模型，直接产出部署所需的全部 C 源文件（推理内核、权重数组、内存布局）及 RTOS 集成层，零运行时依赖。</p>
+<p><strong>关键数字</strong> 在 10 个 MCUNet CNN 基准上比 MCUNet TinyEngine 少用 38% SRAM（最高 5.9x）、少用 15% Flash；将 8.3M 参数 GPT-Neo（TinyStories-v2）编译部署到单核 Cortex-M7 @160MHz，固件占 249KB/512KB SRAM、3.62MB/4MB Flash，Q4_0 量化下约 1 token/s 交互式文本生成。</p>
+<p><strong>为什么值得看</strong> 首个端到端 MLIR MCU 编译器，把此前"解释器或半手工"的部署范式推到全自动 C 代码生成，且支持现有框架无法支撑的生成式模型部署。</p>
+<p><a href="https://arxiv.org/abs/2611.03710">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.03710">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Unreported Variable:Collector Selectivity in Data Placement Evaluation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>The Unreported Variable:Collector Selectivity in Data Placement Evaluation</h1>
+<p class="meta-line">arXiv (cs.PF) · 2026-11-03 · 论文PDF</p>
+
+<p>未报告的变量：数据放置评估中的收集器选择性——块选择策略决定标签价值，模拟显示 20-75% 提升的敏感性</p>
+<blockquote><p>A solid-state drive cannot overwrite data in place, so it cleans full blocks by copying out still-valid data, costing speed and lifetime. Interfaces such as NVMe Flexible Data Placement (FDP) let the host label data by expected lifetime so data dying together is stored together, and published schemes report cutting these copies by 20--75%. Those studies rarely state which blocks the drive chooses to clean. Varying only this choice in simulation, we show it decides how much a label is worth: label value peaks when the drive searches moderately for blocks holding little valid data, falls when it always takes the block with the least, and turns negative when it ignores how much valid data blocks hold. This holds in 47 of 48 synthetic configurations, and one real mail-server trace shows the same shape at about half the magnitude. Priced as spare capacity, a two-class label is worth 65% more spare when each scheme runs at its best setting, but becomes a net loss at 20% label error, typical of learned classifiers. Labels stating which data die together keep most of their value at 16 FDP handles and gain as cleaning improves. Evaluations must report the drive's cleaning policy.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.04234">阅读原文 ↗</a></p>
+</body>
+</html>

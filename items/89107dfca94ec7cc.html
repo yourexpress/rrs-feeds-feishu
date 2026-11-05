@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deep Learning Compilers: Architecture, Optimization, and Empirical Characterization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Deep Learning Compilers: Architecture, Optimization, and Empirical Characterization</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-03 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 深度学习模型日益复杂、硬件愈发异构，DL 编译器如何架构、各优化手段实际效果如何？现有工作缺乏系统性的架构梳理与定量实证。</p>
+<p><strong>方法</strong> 将 DL 编译器架构组织为前端、中端、后端三阶段，突出中端连接高层模型表示与硬件特化优化的角色；梳理代表性编译器与各阶段优化技术，并在 PyTorch/TorchInductor + NVIDIA RTX A6000 上实证考察图优化有效性、编译开销与动态形状处理。</p>
+<p><strong>关键数字</strong> 编译收益高度依赖工作负载特征：对融合友好计算图最高提速 8.21x，其他负载提升有限；编译开销需数千次执行才能摊平；动态形状编译以适度稳态性能损失换取累计形状转换成本约 70% 的降低。</p>
+<p><strong>为什么值得看</strong> 架构综述+实证数据双管齐下，回答了"编译器优化到底值多少"这个工程上常被夸大或低估的问题。</p>
+<p><a href="https://arxiv.org/abs/2611.04273">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.04273">阅读原文 ↗</a></p>
+</body>
+</html>

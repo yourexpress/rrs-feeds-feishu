@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Sets the Serving Speed of Looped Language Models? Measurements and Optimizations Graded by Exactness</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>What Sets the Serving Speed of Looped Language Models? Measurements and Optimizations Graded by Exactness</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-11-03 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 循环语言模型每 token 多次应用同一层块，服务引擎要为每个 loop 支付每层开销；如何测量并系统优化 Ouro、Huginn-0125 这类模型的服务速度？</p>
+<p><strong>方法</strong> 在开源循环模型引擎中测量服务性能，把优化按"比特级一致"到"需精度检查"分级：融合所有 loop 提交、在舍入围栏后融合内核、避免死 KV 槽、复用 prefix-cache 页、打包 prefill、prefill-decode 分离（ExactLoop）等，逐项以精确性标尺验证。</p>
+<p><strong>关键数字</strong> 每 token 有 5689 个小内核是真实成本，舍入围栏融合使吞吐提升 1.11-1.59x 且 1014/1014 请求比特级一致；近似融合不更快且使 GSM8K 87 题丢一分（61/62 vs 64），故未采用。Huginn 默认配置比基础引擎快 1.77-3.16x，Ouro 1.65-2.15x、agent 会话 1.91-3.21x；prefill-decode 分离下 ExactLoop 最高达基础吞吐 3.3x，提交尾部从约 1 秒（基础 2.8s）降到 16ms。</p>
+<p><strong>为什么值得看</strong> 给循环模型服务优化建立了"精确性分级"的方法论——哪些优化无损可上、哪些要精度换速度，同类工作罕见。</p>
+<p><a href="https://arxiv.org/abs/2611.05150">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.05150">阅读原文 ↗</a></p>
+</body>
+</html>

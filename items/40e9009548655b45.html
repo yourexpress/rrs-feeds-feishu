@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Replica-Aware Split Inference for Edge IoT Systems</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Replica-Aware Split Inference for Edge IoT Systems</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-11-03 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 拆分推理（Split Inference）把 TinyML 模型段分布到多个 IoT 设备解决资源限制，但设备故障会中断推理流水线，如何在故障后快速恢复？</p>
+<p><strong>方法</strong> 提出 replica-aware 恢复方案：把原故障设备上的 TinyML 模型段副本部署到存活设备。将副本宿主选择与通信协议选择联合建模为混合整数线性规划（MILP），在 Flash 与运行时内存约束下最小化重配置后的推理延迟（含计算与传输延迟）。</p>
+<p><strong>关键数字</strong> 在 15 台 IoT 设备、最大链路速率下降 75% 的网络中（MobileNetV2）：MILP 方案的平均建模端到端推理延迟比 Computation Greedy 低 6.8%、比 Random 低 18.3%。</p>
+<p><strong>为什么值得看</strong> 面向 TinyML 边缘推理的故障容错专项工作，把"副本放哪、用哪种协议"做成可求解的联合优化问题，对 IoT 可靠推理系统有工程参考价值。</p>
+<p><a href="https://arxiv.org/abs/2611.04779">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.04779">阅读原文 ↗</a></p>
+</body>
+</html>

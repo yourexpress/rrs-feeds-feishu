@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Warpline: Binary-Level Tracing and Unified Evidence for Agentic GPU Kernel Optimization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Warpline: Binary-Level Tracing and Unified Evidence for Agentic GPU Kernel Optimization</h1>
+<p class="meta-line">arXiv (cs.PF) · 2026-11-03 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LLM agent 正成为 GPU 内核工程师，但调内核时看不到时间花在哪：硬件 profiler 只报各单元忙碌程度，不报每个 warp 的时间去向；核内 tracer 能显示但要手工放置探针并重编译，改变被测内核本身。</p>
+<p><strong>方法</strong> 提出 Warpline：分析二进制决定记录哪些事件，直接把探针插入二进制（无需重编译、无需手工步骤）；把 trace 与硬件 profiling 数据对齐到统一时间线。因只需二进制，可在 agent 每次修改内核（源码/IR/PTX 层）后自动为每个新版本重新生成证据，闭环优化无需人工介入。</p>
+<p><strong>关键数字</strong> NVIDIA B200 上跨 Triton、CuTe DSL、CUDA C++ 的 35 个内核：中位开销 1.2%，99.9% 执行指令保持不变（现有 tracer 中位开销 1.6%-13.2%、仅保留 4.6%-32.7% 不变）；还能 trace 闭源内核。10 个 SOL-ExecBench 问题上，用 Warpline 的 agent 比裸 coding agent 与 NVIDIA KDA 花更少时间与模型请求，几何平均提速 7.69x（KDA 为 6.94x）。</p>
+<p><strong>为什么值得看</strong> 二进制级、免重编译的 kernel 内追踪让 agent 获得"时间去哪了"的统一证据，且不干扰被测内核，是 agentic 内核优化的基础设施级工作。</p>
+<p><a href="https://arxiv.org/abs/2611.04331">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.04331">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日精选 · 2026-11-05</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.5em; border-bottom: 1px solid #e5e7eb; padding-bottom: 12px; }
+  h2 { font-size: 1.2em; margin-top: 1.8em; }
+  a { color: #0969da; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .meta { color: #6b7280; font-size: 0.85em; margin-top: 32px; }
+</style>
+</head>
+<body>
+<h1>每日精选 · 2026-11-05</h1>
+<h2>当日检索概况</h2>
+<ul>
+<li>AI 技术报告库：检索 10 条，入选 9 条</li>
+<li>高效计算文献库：检索 103 条，入选 26 条</li>
+<li>两库合计入选 35 条（其余见每日文件夹）</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>Investigating vault particles with Claude</strong>（Anthropic）：Claude 与粒子物理学家协作，在 ATLAS 实验数据中调查"vault particles"候选信号——AI 参与前沿高能物理数据分析的代表性案例。<a href="https://www.anthropic.com/research/investigating-vault-particles-with-claude">原文</a></li>
+<li><strong>You don't need long context: scaling long-context models and the limits of context compression</strong>（arXiv cs.AI）：质疑"越长越好"的长上下文路线，实证分析上下文压缩的极限，为长上下文模型扩展提供反向视角。<a href="https://arxiv.org/abs/2611.05306">原文</a></li>
+<li><strong>GC-MoE: Overlapping Expert-Parallel Token Dispatch with FP8/FP4 Grouped GEMM via CUDA Green Contexts</strong>（arXiv cs.DC）：用 CUDA Green Contexts 把设备分成通信/计算两个独立分区，dispatch 与 GEMM 各自独立调优，8x H20 上 DeepSeek-V4.1-Flash decode 平均加速 1.188x，54 个测量点全部超过 Mega MoE。<a href="https://arxiv.org/abs/2611.04222">原文</a></li>
+<li><strong>ForgeKernel: Self-Evolving Kernels Catching and Surpassing Experts and Agents</strong>（arXiv cs.DC）：跨运行积累知识、持续演化内核架构的 kernel 生成系统，CANN-Bench 2.0 三个榜单与 SOL-ExecBench FlashInfer-Bench 全部排名第一。<a href="https://arxiv.org/abs/2611.04998">原文</a></li>
+<li><strong>LoopVQ: Sub 1-bit KV Cache Quantization for Looped Transformers</strong>（arXiv cs.AR）：沿 loop 轴联合编码 KV cache，0.5 bits/元素即超越现有方法，SGLang 中 32K 上下文解码延迟近乎减半、峰值吞吐最高提升 4.3-6.1x。<a href="https://arxiv.org/abs/2611.05304">原文</a></li>
+<li><strong>Warpline: Binary-Level Tracing and Unified Evidence for Agentic GPU Kernel Optimization</strong>（arXiv cs.AR）：免重编译的二进制级内核追踪，中位开销仅 1.2%，让 kernel agent 拿到"时间去哪了"的统一证据，SOL-ExecBench 几何平均提速 7.69x。<a href="https://arxiv.org/abs/2611.04331">原文</a></li>
+<li><strong>HyPAIC: Personal AI Computer with High Bandwidth Flash</strong>（arXiv cs.AR）：HBF 存只读权重、LPDDR 存运行时数据，单台设备 1T 参数 MoE 推理 TDP 归一化吞吐最高为八台无 HBF 基线的 3.59x，逼近八设备聚合性能。<a href="https://arxiv.org/abs/2611.04144">原文</a></li>
+<li><strong>te-comp: A Complete MLIR Compiler Generating Self-Contained C Inference Engines for MCUs</strong>（arXiv cs.AR）：首个端到端 MLIR MCU 编译器，产出零依赖纯 C 推理引擎，8.3M 参数 GPT-Neo 部署到 Cortex-M7 实现约 1 token/s 文本生成。<a href="https://arxiv.org/abs/2611.03710">原文</a></li>
+</ul>
+<h2>主题速览</h2>
+<p>当日高效计算库以 LLM 推理系统优化为主轴：KV cache 压缩与稀疏注意力（LoopKV/LoopVQ/LeanSparse/FastKVComp/MLI/Coarse Semantic Blocks）、MoE 推理加速（GC-MoE、Bevy 调度、EpiLoRA 低精度融合、FP4 RL 对称恢复）、循环模型服务（ExactLoop 精确性分级优化）、agentic 内核生成与追踪（ForgeKernel、ModelBlaster、Warpline）以及边缘/嵌入式部署（te-comp、HyPAIC、GSPIM、RISC-V 向量化陷阱、NPU 内存瓶颈）；AI 库聚焦 AI for Science（vault particles）、长上下文局限、多 agent 合作涌现、FP4 RL 稳定性与 agent 金融基准。</p>
+<p class="meta">由 RSS 流水线自动生成 · 订阅每日精选 feed 可在阅读器内直接阅读</p>
+</body>
+</html>

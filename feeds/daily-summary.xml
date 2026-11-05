@@ -5,8 +5,53 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>每天一条，汇总当日两个检索源（AI 技术报告 + 高效计算文献）的重点内容。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 04 Nov 2026 23:25:51 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 11:23:35 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/daily-summary.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日精选 · 2026-11-05</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-11-05.html</link>
+      <guid isPermaLink="false">urn:daily-summary:2026-11-05</guid>
+      <pubDate>Thu, 05 Nov 2026 23:05:00 +0800</pubDate>
+    <category>每日精选</category>
+      <description>&lt;h2&gt;当日检索概况&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;AI 技术报告库：检索 10 条，入选 9 条&lt;/li&gt;
+&lt;li&gt;高效计算文献库：检索 103 条，入选 26 条&lt;/li&gt;
+&lt;li&gt;两库合计入选 35 条（其余见每日文件夹）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;重点推荐&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Investigating vault particles with Claude&lt;/strong&gt;（Anthropic）：Claude 与粒子物理学家协作，在 ATLAS 实验数据中调查"vault particles"候选信号——AI 参与前沿高能物理数据分析的代表性案例。&lt;a href="https://www.anthropic.com/research/investigating-vault-particles-with-claude"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;You don't need long context: scaling long-context models and the limits of context compression&lt;/strong&gt;（arXiv cs.AI）：质疑"越长越好"的长上下文路线，实证分析上下文压缩的极限，为长上下文模型扩展提供反向视角。&lt;a href="https://arxiv.org/abs/2611.05306"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GC-MoE: Overlapping Expert-Parallel Token Dispatch with FP8/FP4 Grouped GEMM via CUDA Green Contexts&lt;/strong&gt;（arXiv cs.DC）：用 CUDA Green Contexts 把设备分成通信/计算两个独立分区，dispatch 与 GEMM 各自独立调优，8x H20 上 DeepSeek-V4.1-Flash decode 平均加速 1.188x，54 个测量点全部超过 Mega MoE。&lt;a href="https://arxiv.org/abs/2611.04222"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ForgeKernel: Self-Evolving Kernels Catching and Surpassing Experts and Agents&lt;/strong&gt;（arXiv cs.DC）：跨运行积累知识、持续演化内核架构的 kernel 生成系统，CANN-Bench 2.0 三个榜单与 SOL-ExecBench FlashInfer-Bench 全部排名第一。&lt;a href="https://arxiv.org/abs/2611.04998"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LoopVQ: Sub 1-bit KV Cache Quantization for Looped Transformers&lt;/strong&gt;（arXiv cs.AR）：沿 loop 轴联合编码 KV cache，0.5 bits/元素即超越现有方法，SGLang 中 32K 上下文解码延迟近乎减半、峰值吞吐最高提升 4.3-6.1x。&lt;a href="https://arxiv.org/abs/2611.05304"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Warpline: Binary-Level Tracing and Unified Evidence for Agentic GPU Kernel Optimization&lt;/strong&gt;（arXiv cs.AR）：免重编译的二进制级内核追踪，中位开销仅 1.2%，让 kernel agent 拿到"时间去哪了"的统一证据，SOL-ExecBench 几何平均提速 7.69x。&lt;a href="https://arxiv.org/abs/2611.04331"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HyPAIC: Personal AI Computer with High Bandwidth Flash&lt;/strong&gt;（arXiv cs.AR）：HBF 存只读权重、LPDDR 存运行时数据，单台设备 1T 参数 MoE 推理 TDP 归一化吞吐最高为八台无 HBF 基线的 3.59x，逼近八设备聚合性能。&lt;a href="https://arxiv.org/abs/2611.04144"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;te-comp: A Complete MLIR Compiler Generating Self-Contained C Inference Engines for MCUs&lt;/strong&gt;（arXiv cs.AR）：首个端到端 MLIR MCU 编译器，产出零依赖纯 C 推理引擎，8.3M 参数 GPT-Neo 部署到 Cortex-M7 实现约 1 token/s 文本生成。&lt;a href="https://arxiv.org/abs/2611.03710"&gt;原文&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;主题速览&lt;/h2&gt;
+&lt;p&gt;当日高效计算库以 LLM 推理系统优化为主轴：KV cache 压缩与稀疏注意力（LoopKV/LoopVQ/LeanSparse/FastKVComp/MLI/Coarse Semantic Blocks）、MoE 推理加速（GC-MoE、Bevy 调度、EpiLoRA 低精度融合、FP4 RL 对称恢复）、循环模型服务（ExactLoop 精确性分级优化）、agentic 内核生成与追踪（ForgeKernel、ModelBlaster、Warpline）以及边缘/嵌入式部署（te-comp、HyPAIC、GSPIM、RISC-V 向量化陷阱、NPU 内存瓶颈）；AI 库聚焦 AI for Science（vault particles）、长上下文局限、多 agent 合作涌现、FP4 RL 稳定性与 agent 金融基准。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2>当日检索概况</h2>
+<ul>
+<li>AI 技术报告库：检索 10 条，入选 9 条</li>
+<li>高效计算文献库：检索 103 条，入选 26 条</li>
+<li>两库合计入选 35 条（其余见每日文件夹）</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>Investigating vault particles with Claude</strong>（Anthropic）：Claude 与粒子物理学家协作，在 ATLAS 实验数据中调查"vault particles"候选信号——AI 参与前沿高能物理数据分析的代表性案例。<a href="https://www.anthropic.com/research/investigating-vault-particles-with-claude">原文</a></li>
+<li><strong>You don't need long context: scaling long-context models and the limits of context compression</strong>（arXiv cs.AI）：质疑"越长越好"的长上下文路线，实证分析上下文压缩的极限，为长上下文模型扩展提供反向视角。<a href="https://arxiv.org/abs/2611.05306">原文</a></li>
+<li><strong>GC-MoE: Overlapping Expert-Parallel Token Dispatch with FP8/FP4 Grouped GEMM via CUDA Green Contexts</strong>（arXiv cs.DC）：用 CUDA Green Contexts 把设备分成通信/计算两个独立分区，dispatch 与 GEMM 各自独立调优，8x H20 上 DeepSeek-V4.1-Flash decode 平均加速 1.188x，54 个测量点全部超过 Mega MoE。<a href="https://arxiv.org/abs/2611.04222">原文</a></li>
+<li><strong>ForgeKernel: Self-Evolving Kernels Catching and Surpassing Experts and Agents</strong>（arXiv cs.DC）：跨运行积累知识、持续演化内核架构的 kernel 生成系统，CANN-Bench 2.0 三个榜单与 SOL-ExecBench FlashInfer-Bench 全部排名第一。<a href="https://arxiv.org/abs/2611.04998">原文</a></li>
+<li><strong>LoopVQ: Sub 1-bit KV Cache Quantization for Looped Transformers</strong>（arXiv cs.AR）：沿 loop 轴联合编码 KV cache，0.5 bits/元素即超越现有方法，SGLang 中 32K 上下文解码延迟近乎减半、峰值吞吐最高提升 4.3-6.1x。<a href="https://arxiv.org/abs/2611.05304">原文</a></li>
+<li><strong>Warpline: Binary-Level Tracing and Unified Evidence for Agentic GPU Kernel Optimization</strong>（arXiv cs.AR）：免重编译的二进制级内核追踪，中位开销仅 1.2%，让 kernel agent 拿到"时间去哪了"的统一证据，SOL-ExecBench 几何平均提速 7.69x。<a href="https://arxiv.org/abs/2611.04331">原文</a></li>
+<li><strong>HyPAIC: Personal AI Computer with High Bandwidth Flash</strong>（arXiv cs.AR）：HBF 存只读权重、LPDDR 存运行时数据，单台设备 1T 参数 MoE 推理 TDP 归一化吞吐最高为八台无 HBF 基线的 3.59x，逼近八设备聚合性能。<a href="https://arxiv.org/abs/2611.04144">原文</a></li>
+<li><strong>te-comp: A Complete MLIR Compiler Generating Self-Contained C Inference Engines for MCUs</strong>（arXiv cs.AR）：首个端到端 MLIR MCU 编译器，产出零依赖纯 C 推理引擎，8.3M 参数 GPT-Neo 部署到 Cortex-M7 实现约 1 token/s 文本生成。<a href="https://arxiv.org/abs/2611.03710">原文</a></li>
+</ul>
+<h2>主题速览</h2>
+<p>当日高效计算库以 LLM 推理系统优化为主轴：KV cache 压缩与稀疏注意力（LoopKV/LoopVQ/LeanSparse/FastKVComp/MLI/Coarse Semantic Blocks）、MoE 推理加速（GC-MoE、Bevy 调度、EpiLoRA 低精度融合、FP4 RL 对称恢复）、循环模型服务（ExactLoop 精确性分级优化）、agentic 内核生成与追踪（ForgeKernel、ModelBlaster、Warpline）以及边缘/嵌入式部署（te-comp、HyPAIC、GSPIM、RISC-V 向量化陷阱、NPU 内存瓶颈）；AI 库聚焦 AI for Science（vault particles）、长上下文局限、多 agent 合作涌现、FP4 RL 稳定性与 agent 金融基准。</p>]]></content:encoded>
+    </item>
     <item>
       <title>每日精选 · 2026-11-04</title>
       <link>https://yourexpress.github.io/rrs-feeds-feishu/summaries/2026-11-04.html</link>

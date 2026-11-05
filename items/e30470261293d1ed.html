@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Silent Degradation during Auto-Vectorization of bf16/fp16 on RISC-V Under LLVM</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Silent Degradation during Auto-Vectorization of bf16/fp16 on RISC-V Under LLVM</h1>
+<p class="meta-line">arXiv (cs.PL) · 2026-11-02 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LLVM 的 RISC-V 自动向量化（RVV）对低精度类型（int8/bf16/fp16）处理是否同样良好？以乘加循环为测试对象，检查在常见基线 target（-march=rv64gcv）下的向量化行为。</p>
+<p><strong>方法</strong> 对比 fp32、int8、bf16、fp16 四种类型的自动向量化结果，结合 QEMU 用户态模拟的动态指令计数、汇编级指令分析及 LLVM optimization remarks 诊断。</p>
+<p><strong>关键数字</strong> int8 与 fp32 干净向量化；bf16/fp16 退化为标量为主的回退代码，fp16 甚至回退到逐元素软件转换调用（除非启用 zvfbfmin/zvfbfwma、zvfhmin 扩展）。基线 bf16/fp16 内核的动态指令数分别是启用扩展版本的 17.0x 与 75.9x。编译器诊断虽报告退化，但措辞不区分"flag 可完全解决的限制"与"固有权转换成本"。</p>
+<p><strong>为什么值得看</strong> 揭示低精度 AI 推理在 RVV 上的"静默退化"陷阱：同样的代码在 int8/fp32 向量化良好，换 bf16/fp16 就悄悄变慢，且诊断信息不足以指导修复。</p>
+<p><a href="https://arxiv.org/abs/2611.03917">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.03917">阅读原文 ↗</a></p>
+</body>
+</html>

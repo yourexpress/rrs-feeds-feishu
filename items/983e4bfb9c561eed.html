@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coarse Semantic Blocks for Efficient Training-Free Sparse Attention</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Coarse Semantic Blocks for Efficient Training-Free Sparse Attention</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-03 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 免训练稀疏注意力通常依赖逐 token 细粒度选择，prefill 与 decode 提速有限、精度损失大。能否用更粗粒度的语义块同时加速两阶段并保持精度？</p>
+<p><strong>方法</strong> 提出基于 prompt 专属 key 索引的免训练稀疏注意力：把 key 聚成覆盖非连续位置的大语义块，每个 query 按质心打分选块，再在块内对原始 key/value 做注意力；选择同一块的 query 分组处理，保持 prefill 速度。大块使质心打分与分组处理廉价，同等时间可让每个 query 关注更多 token。</p>
+<p><strong>关键数字</strong> 在 Qwen3.5-4B 与 35B-A3B 上（NVIDIA H200）：512K token 下相对 dense attention 整模型 wall-clock 提速 prefill 2.3-2.4x、decode 1.7-2.0x，1M 下 prefill 2.9-3.0x；35B-A3B 在五个 RULER 任务（至 1M）、LongBench-v2 与 MRCR（至 256K）上保持接近 dense 的精度。</p>
+<p><strong>为什么值得看</strong> 用"大语义块+分组处理"的思路把免训练稀疏注意力的 prefill 提速做到 2.4x 且精度接近 dense，是可落地的长上下文加速方案。</p>
+<p><a href="https://arxiv.org/abs/2611.04313">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.04313">阅读原文 ↗</a></p>
+</body>
+</html>

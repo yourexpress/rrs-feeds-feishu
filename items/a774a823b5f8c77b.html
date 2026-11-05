@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linking as Evaluation: Correct Separate Compilation via First-Class Environments</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Linking as Evaluation: Correct Separate Compilation via First-Class Environments</h1>
+<p class="meta-line">arXiv (cs.PL) · 2026-11-03 · 论文PDF</p>
+
+<p>以链接作为求值：通过一等环境实现正确的分离编译（λ_SCE 演算）</p>
+<blockquote><p>Separate compilation is central to modular software: components are compiled independently and linked into an executable. Separate compilation is correct when a linked program behaves like the program formed by merging its sources. This property is less routine to prove than type soundness because it requires a formal account of linking. We present $λ_{\mathsf{SCE}}$, a simply typed calculus in which linking, modules, and environments are all first-class. Programmers control module linking through a link operator, which a type-directed elaboration translates into ordinary terms of a core calculus of first-class environments. The core calculus's existing evaluation rules then perform the linking: linking as evaluation. Linking independently compiled modules yields the same core term as elaborating their source link. Therefore, compilation and linking commute by construction. As a result, separate compilation correctness follows directly from the semantics preservation for both static and dynamic linking. All meta-theory is mechanized in Lean 4, and we implement a compiler to WebAssembly in OCaml.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.04993">阅读原文 ↗</a></p>
+</body>
+</html>
