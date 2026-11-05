@@ -22,9 +22,11 @@
 <h1>Mixture of Wide Experts: Sparse Routing for Interpretable Native Coordinates</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-08-26 · 论文PDF</p>
 
-<p>宽专家混合：稀疏路由到固定分散输出坐标的可解释原生坐标，MoWE 稀疏前馈层</p>
-<blockquote><p>Language models often spread a concept across many internal dimensions, making their features difficult to interpret. Sparse autoencoders (SAEs) recover clearer features after training. We ask whether models can instead learn interpretable output coordinates directly. We introduce Mixture of Wide Experts (MoWE), a sparse feed-forward layer in which selected experts read the full representation but write to fixed, disjoint output coordinates. On a controlled task with known hidden causes, this design preserves predictive performance while localizing causes more clearly than dense and standard mixture-of-experts (MoE) models. At approximately matched compute, we train two 19-layer runs of each architecture for 10 billion tokens. MoWE achieves evaluation cross-entropy 2.417 versus 2.452 for dense, while standard MoE reaches 2.22. We measure native-coordinate readability by asking a language-model judge to describe each coordinate from passages where it is strongly active and test that description on new passages. Correcting for descriptions that also fit other coordinates gives a specificity score of 0.523 for MoWE, 0.375 for dense, and 0.268 for standard MoE. TopK SAEs trained on the…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 语言模型的概念分散在众多内部维度上难以解释，能否让模型直接学到"可解释的原生坐标"？
+<strong>方法：</strong> 提出 Mixture of Wide Experts（MoWE）：稀疏前馈层中选中专家读全量表示、写入选定且互不重叠的输出坐标；约匹配算力下各训练两个 19 层模型、各 100 亿 token。
+<strong>关键数字：</strong> MoWE 评估交叉熵 2.417 vs dense 2.452（标准 MoE 2.22）；坐标特异性得分 MoWE 0.523 vs dense 0.375 vs 标准 MoE 0.268；因果干预可直接复制坐标值改变下一 token 预测（sides→degrees）。
+<strong>为什么值得看：</strong> 用原生可解释坐标替代事后 SAE 解码，且坐标可被识别、复用与因果干预，为可解释 MoE 打开新路。</p>
+<p><a href="https://arxiv.org/abs/2611.03655">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.03655">阅读原文 ↗</a></p>
 </body>
 </html>

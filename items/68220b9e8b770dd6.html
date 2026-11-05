@@ -22,9 +22,11 @@
 <h1>Latent Cluster Separation as a Regularizer for Lifelong Anomaly Detection</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-08-25 · 论文PDF</p>
 
-<p>潜在簇分离正则化用于终身异常检测：以概念质心重塑内部表示改善反向迁移</p>
-<blockquote><p>Lifelong (continual) anomaly detection systems must learn a sequence of tasks without forgetting how to recognize anomaly types seen earlier -- a property known as backward transfer. A common way to try to improve backward transfer is to reshape a model's internal representation around learnable concept centroids, typically coupled with a new way of scoring anomalies based on distance to those centroids. Because these two design choices are usually introduced together, it is unclear which one is actually responsible for any performance gain. In this paper, we unbundle the two mechanisms within a VAE-based lifelong anomaly detector and study them separately. We find that used purely as a training-time regularizer -- while leaving anomaly scoring unchanged -- latent cluster separation can improve detection quality and backward transfer, though whether it outperforms the alternative scoring approach depends on the dataset's underlying representation. Switching to distance-based scoring is instead where most of the instability commonly associated with this class of method actually originates; we identify and explain the underlying mechanism. This benefit depends on the dataset's underl…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 终身异常检测中，概念质心重塑表示与距离打分常捆绑引入，到底哪个机制真正改善反向迁移（backward transfer）？
+<strong>方法：</strong> 在 VAE 框架下拆解两种机制分别研究：潜在簇分离仅作训练期正则（异常打分不变），对比切换为基于质心距离的打分。
+<strong>关键数字：</strong> 潜在簇分离作为纯正则即可改善检测质量与反向迁移，但能否胜过距离打分取决于数据集底层表示；稳定性问题主要源于距离打分切换本身。
+<strong>为什么值得看：</strong> 厘清该类方法的因果归属，为"用正则还是换打分"给出可操作选型建议而非一串 caveat。</p>
+<p><a href="https://arxiv.org/abs/2611.03652">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.03652">阅读原文 ↗</a></p>
 </body>
 </html>

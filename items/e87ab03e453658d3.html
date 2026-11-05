@@ -22,9 +22,11 @@
 <h1>More Powerful Constant Value Checking with SMT Solving</h1>
 <p class="meta-line">arXiv cs.PL · 2026-10-06 · 论文PDF</p>
 
-<p>SMT 求解增强常量值检查</p>
-<blockquote><p>Pluggable type systems extend the basic type system of a programming language by introducing additional type hierarchies to specify more complex properties and dependencies between variables. We consider the Constant Value Checker, a pluggable type checker for Java implemented using the Checker Framework, which provides various pluggable type systems and corresponding checkers. The Constant Value Checker lets users specify restrictions on the values a primitive integer or boolean variable can hold using a set or range of constant values. However, the current implementation of the Value Checker makes use of a limited set of syntactic typing rules that, in practice, often fail to verify well-typedness of more complex code. In this paper, we introduce an extension to the Checker Framework using Satisfiability Modulo Theories (SMT) solvers to address these limitations by creating corresponding first-order logic formulas for expressions whose type checks fail with the current syntactic typing rules and determining their well-typedness based on the satisfiability of these formulas. Furthermore, we introduce new dependent types for specifying allowed values with expressions that can depen…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> Checker Framework 的 Constant Value Checker 靠有限语法类型规则，常无法验证复杂代码的类型良好性。
+<strong>方法：</strong> 引入 SMT 求解扩展：把语法规则检查失败的表达式转为一阶逻辑公式，用可满足性判定其良好性；并新增可依赖其他变量表达式的依赖类型。
+<strong>关键数字：</strong> 面向 Java 的 pluggable type system，基于 Checker Framework 实现。
+<strong>为什么值得看：</strong> 把形式验证工具（SMT）嵌入实用 Java 类型检查器，提升常量取值约束的验证能力，静态分析方向值得一读。</p>
+<p><a href="https://arxiv.org/abs/2610.05316">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05316">阅读原文 ↗</a></p>
 </body>
 </html>

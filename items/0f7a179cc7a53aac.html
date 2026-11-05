@@ -22,9 +22,11 @@
 <h1>ORCA: The Annealed Spectral Conditioning Optimizer for Faster, Better LLM Training</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>退火谱条件优化器加速 LLM 训练</p>
-<blockquote><p>Modern LLM optimizers such as Muon often produce weight matrices with higher effective rank than Adam, yet further spectral control has delivered only modest gains. We identify a tension behind this result: concentrated spectra can suppress gradient directions in coupled weight matrices and slow optimization, while constraints maintained throughout training can limit task-specific adaptation and raise the attainable loss floor. We introduce ORCA (Orthogonal Regularization, Cooled After), a minimal optimizer intervention that applies strong but temporary soft orthogonality regularization early in training, then removes it. This allows the weights to benefit from a broader spectrum early on and adapt freely afterward. Across LLaMA, Qwen3, and fine-grained mixture-of-experts models ranging from 130M to 8B parameters, ORCA achieves lower final validation loss than Muon. Its loss reduction relative to Muon matches or exceeds Muon's reduction relative to Adam. Ablations support the early-shaping, later-release design. Further, ORCA requires no architectural changes and adds minimal overhead.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> Muon 等优化器虽让权重矩阵有效秩更高，但持续谱约束会抑制梯度方向、抬高损失下限，能否"用一阵就撤"？
+<strong>方法：</strong> 提出 ORCA：训练早期施加强但临时的软正交正则，之后移除，让权重先受益于宽谱、随后自由适配；无需架构改动。
+<strong>关键数字：</strong> LLaMA、Qwen3 及细粒度 MoE（130M~8B 参数）上最终验证损失低于 Muon，相对 Muon 的降幅匹敌或超过 Muon 相对 Adam 的降幅。
+<strong>为什么值得看：</strong> 极小干预的优化器改进，消融支持"早期塑形、后期释放"设计，训练方直接可复现。</p>
+<p><a href="https://arxiv.org/abs/2610.06116">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06116">阅读原文 ↗</a></p>
 </body>
 </html>

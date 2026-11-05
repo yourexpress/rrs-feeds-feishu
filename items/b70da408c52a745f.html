@@ -22,9 +22,11 @@
 <h1>FourSight: Stable FP4 RL Post-Training via Robust Quantization Error Control</h1>
 <p class="meta-line">arXiv (cs.AI) · 2026-11-04 · 论文PDF / 每日精选</p>
 
-<p>提出 FourSight：通过稳健量化误差控制实现稳定的 FP4 强化学习后训练，缓解低比特量化下 RL 训练不稳定问题</p>
-<blockquote><p>Reinforcement learning (RL) post-training increasingly targets low-bit deployment, with NVFP4 weight-and activation quantization (W4A4) becoming the state-of-the-practice format. However, integrating NVFP4 into RL degrades rollout quality and amplifies cross-engine training-inference mismatch (TIM), destabilizing training. We show that these failures are concentrated rather than uniform - severely mismatched tail tokens concentrate in a few outlier sequences, while policy weights remain largely intact and quantization error concentrates in a few high-variance activation channels. Guided by this, we present FourSight, an algorithm-system co-design with two targeted solutions: TIM-aware sequence filtering that excludes drifted trajectories from policy updates, and sparse precision compensation that keeps only top-variance channels in BF16 while retaining native NVFP4 elsewhere. We further design a fused SpliceGEMM kernel with specialized prefill and decode datapaths to minimize overhead. FourSight sustains near-BF16 accuracy and strong FP4 deployment quality across models and engines, while improving step-to-accuracy by 1.76-2.60x and staying within 2.3% of FP4 step time up to 120B-s…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> NVFP4 W4A4 量化正成为 RL 后训练的落地格式，但把 FP4 引入 RL 会劣化 rollout 质量、放大训练-推理失配（TIM），导致训练不稳。
+<strong>方法：</strong> 观察到失败是"集中"而非"均匀"的（失配尾 token 集中在少量离群序列、误差集中在高方差激活通道）；提出 FourSight：TIM 感知序列过滤 + 稀疏精度补偿（仅高方差通道保持 BF16）+ 融合 SpliceGEMM 内核。
+<strong>关键数字：</strong> step-to-accuracy 提升 1.76~2.60x，保持接近 BF16 精度，120B 级模型下 FP4 步时开销控制在 2.3% 以内。
+<strong>为什么值得看：</strong> 算法-系统协同设计，直击低比特 RL 训练的稳定性痛点，跨模型跨引擎验证。</p>
+<p><a href="https://arxiv.org/abs/2611.04887">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.04887">阅读原文 ↗</a></p>
 </body>
 </html>

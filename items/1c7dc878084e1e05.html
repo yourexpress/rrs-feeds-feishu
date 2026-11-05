@@ -22,9 +22,11 @@
 <h1>OGAM: Connecting Systematic Testing to Runtime Assurance through Object-Grounded Attention Monitoring for VLA Policies</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>VLA 对象接地注意力监控连接系统测试与运行时保障</p>
-<blockquote><p>Benchmarks expose vision-language-action (VLA) policies to few canonical instructions, while exhaustive deployment testing is impossible. We introduce Object-Grounded Attention Monitoring (OGAM), connecting systematic testing to runtime assurance: testing reveals attention divergence between successful and failed executions, and OGAM uses this signal to stop failures beyond the finite suite. We generate scene-grounded instructions through pairwise combinations of action templates and objects, and separately test meaning-preserving paraphrases. All 87 out-of-benchmark cases reveal problematic behavior across OpenVLA, OpenVLA-OFT, UniVLA, and $π_{0.5}$: none completes any of the 24 feasible instructions, while infeasible or hazardous requests also trigger behavior substitution. At each action query, we project gradient-weighted visual attention through object masks and group it by instruction role for comparison across tasks and policies. Dynamic time warping aligns this course with a successful reference despite speed differences; conformal calibration on successful episodes sets the early-stopping threshold for sustained deviations, with a nominal false-stop target of $α=0.05$. Acr…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> VLA 策略测试集覆盖有限、穷尽部署测试不可能，能否用测试阶段信号做运行时安全保障？
+<strong>方法：</strong> 提出 OGAM：测试揭示成功/失败执行间的注意力发散，把该信号用于在线干预；按动作模板×物体生成场景接地指令，投影梯度加权视觉注意力并按指令角色分组，动态时间规整对齐成功参考轨迹，共形校准设早停阈值。
+<strong>关键数字：</strong> 87 个测试外案例在 OpenVLA/OpenVLA-OFT/UniVLA/π0.5 上全部暴露问题；OGAM 在 20s 预算内以中位 5~12s 停止 87~100% 失败片段，误停率 3~5%，无需失败标注训练。
+<strong>为什么值得看：</strong> 把系统测试与在线保障打通，用注意力模式实现"失败完全展开前"的干预。</p>
+<p><a href="https://arxiv.org/abs/2610.05878">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05878">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>No Concept Escapes the Audit: Auditing-Aware Unlearning for Verifiable Concept Erasure in Diffusion Models</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>审计感知的扩散模型概念擦除</p>
-<blockquote><p>Text-to-image diffusion models can generate prohibited content, which motivates concept erasure through machine unlearning. Most erasure methods intervene at the text interface, through prompt modification or localized updates to text-conditioning weights, and they are evaluated by what the model outputs for given prompts. Such evaluation cannot see what the network still encodes. Latent-space auditing, which bypasses text conditioning and probes the denoising network directly, shows that erased concepts remain recoverable from internal representations. We find that this also holds for methods built to be robust against adversarial prompts, and that the problem grows with the number of erased concepts. We propose Auditing-Aware Unlearning for Verifiable Concept Erasure in Diffusion Models (AVCE), a framework that grounds erasure in the model's latent representations. AVCE audits the embedding neighborhood of each concept and condenses the discovered vulnerable directions into an anchor at the weakest geometric point. It edits cross-attention and self-attention projections in closed form at this anchor, then fine-tunes the two pathways with pathway-level auditing losses, using ortho…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 扩散模型概念擦除的评测只看输出提示，看不到网络内部仍编码着什么——被擦概念从潜空间仍可恢复。
+<strong>方法：</strong> 提出 AVCE：审计每个概念的嵌入邻域、把易受攻击方向压缩到最弱几何点的 anchor，闭式编辑交叉/自注意力投影，再用通路级审计损失微调，正交梯度投影合并多概念。
+<strong>关键数字：</strong> SD v1.5、SDXL、Flux 1.0 上（物体/露骨内容/艺术风格擦除）攻击成功率较最强基线降 5.07x、审计分数提升 3.84x，生成质量保持。
+<strong>为什么值得看：</strong> 把"擦除"从文本接口下沉到潜表示层面并可审计验证，回应"概念擦除不彻底"的监管关切。</p>
+<p><a href="https://arxiv.org/abs/2610.05401">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05401">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Adversarial Speculative Reasoning: A New Adversarial Attack Method for LLMs</h1>
 <p class="meta-line">arXiv (cs.AI) · 2026-11-04 · 论文PDF / 每日精选</p>
 
-<p>提出针对 LLM 的新型对抗攻击方法「对抗性推测推理」，利用模型推测解码过程中的推理弱点实施攻击</p>
-<blockquote><p>Speculative decoding has been treated purely as a systems optimization that speeds up large language model decoding without changing the model behavior. Under this view, the growing effort to train better draft models has been focused solely on acceptance rate. We argue that this view does not hold true for long-horizon agent reasoning. Measuring frontier open-weight models on complex agentic tasks with different speculative decoding approaches, we found that numerical noise grows within verification windows, and the draft acceptance results of the thinking process can change the output distribution of the model after 30 steps, thus noticeably influencing the reasoning accuracy of long-horizon agents in random directions. In this work, we improve the reasoning capability of target models by controlling such noise. While we cannot change the overall token distribution verified by the target model, we can encode critical reasoning with highest precision by training the draft model to be rejected. We identify these points in agent traces and train the draft model to favor adversarial preference. At inference the trained draft and the target part ways precisely at these decision points…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 推测解码（speculative decoding）一直被当作纯系统优化，但它在长程智能体推理中是否悄悄改变了模型行为、甚至可被利用为攻击面？
+<strong>方法：</strong> 测量前沿开源模型在不同推测解码方案下的智能体任务表现，发现验证窗口内数值噪声累积、草稿接受结果会在 30 步后改变模型输出分布；据此训练草稿模型在关键推理点"被拒绝"，让目标模型在低噪声条件下重新采样关键思考 token。
+<strong>关键数字：</strong> 仅训练托管参数的 0.06%~0.28%，在复杂智能体编码基准上端到端成功率提升，目标模型与其输出分布不变。
+<strong>为什么值得看：</strong> 把推测解码从"纯加速器"重新定义为"上下文精度分配器"，既揭示长程智能体的新攻击面，也给出防御性改进手段。</p>
+<p><a href="https://arxiv.org/abs/2611.05345">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.05345">阅读原文 ↗</a></p>
 </body>
 </html>

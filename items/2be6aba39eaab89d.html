@@ -22,9 +22,11 @@
 <h1>You don't need long context: scaling long-context models and the limits of context compression</h1>
 <p class="meta-line">arXiv (cs.AI) · NVIDIA · 2026-11-04 · 论文PDF / 每日精选</p>
 
-<p>NVIDIA 技术报告：系统研究长上下文模型的上下文压缩极限，论证超长上下文并非必需，提出更高效的长上下文扩展路径</p>
-<blockquote><p>Later tokens are costlier to generate than earlier tokens. On frontier open weight models, the disparity in cost may rise to as much as 7x. Through frequent compaction, we show across a broad range of long-horizon and long-input tasks that frontier language models sacrifice little to no task accuracy when maintaining short contexts. We further demonstrate that LLM performance does not collapse on long-horizon software engineering tasks even when taking at most one action per context, and based on that we outline the concept of semantic state space models (SSSMs). Our findings question the need for long-context language models.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>核心话题：</strong> 长上下文模型是否被高估？NVIDIA 系统研究长上下文模型的上下文压缩极限。
+<strong>要点：</strong> 后续 token 的生成成本远高于早期 token；通过频繁压缩（compaction）把上下文维持在短窗口，前沿模型在广泛长程/长输入任务上几乎不损失精度；在此基础上提出语义状态空间模型（SSSM）概念。
+<strong>关键数字：</strong> 前沿开源模型上后续 vs 早期 token 成本差最高达 7x；长程软件工程任务即使每上下文至多执行一个动作，性能也不崩溃。
+<strong>为什么值得看：</strong> 直接挑战"上下文越长越好"的主流路线，为高效长程推理提供反直觉的新路径。</p>
+<p><a href="https://arxiv.org/abs/2611.05306">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.05306">阅读原文 ↗</a></p>
 </body>
 </html>

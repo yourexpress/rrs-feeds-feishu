@@ -22,9 +22,11 @@
 <h1>On the Trade-off Between Information Loss and Generalization in Sparse Attention</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>稀疏注意力信息损失与泛化的权衡</p>
-<blockquote><p>To mitigate the quadratic complexity bottleneck of the Transformer, sparse attention has emerged as a pivotal technology. Despite the extensive empirical success of sparse Transformers, the theoretical understanding of sparse attention remains fragmented. In particular, two fundamental questions remain unclear: (1) How does sparsification affect the information fidelity of attention mechanisms? (2) How does this information loss interact with the generalization behavior of the model? To bridge this gap, this paper proposes a systematic analysis of the Jensen-Shannon (JS) divergence and of the generalization gap of sparse attention mechanisms. Specifically, we first characterize the approximation error via the JS divergence. Through an order-statistics-based concentration analysis of the truncation mass alpha --- where the attention scores are assumed to be independent and identically distributed sub-Gaussian random variables with parameter sigma --- the JS divergence between the full attention distribution and the sparse attention distribution is shown to admit the closed form log 2 + ((1 - alpha)/2) log(1 - alpha) - ((2 - alpha)/2) log(2 - alpha). Subsequently, we derive a general…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 稀疏注意力如何影响注意力机制的信息保真度与模型泛化？两个基本问题此前缺乏系统理论刻画。
+<strong>方法：</strong> 用 JS 散度刻画稀疏近似误差（截断质量 α 的 order-statistics 集中分析），用 Rademacher 复杂度与互信息两种路线推导泛化界。
+<strong>关键数字：</strong> 全注意力与稀疏注意力分布的 JS 散度闭式解 log2 + ((1-α)/2)log(1-α) - ((2-α)/2)log(2-α)；泛化界 O(γ√(M/n)(√(log(3eL/M)) + √π/2)) 与稀疏依赖界 O(√((M/2n)(log(eL/M) + log(1+2/ε))))。
+<strong>为什么值得看：</strong> 首次给出稀疏注意"信息保真-泛化"权衡的系统理论，稀疏 Transformer 研究者的理论基准。</p>
+<p><a href="https://arxiv.org/abs/2610.04424">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04424">阅读原文 ↗</a></p>
 </body>
 </html>

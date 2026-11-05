@@ -22,9 +22,11 @@
 <h1>One Global Beam Across Many GPUs: High-Throughput Beam Search at Billion-Record Frontier Scale</h1>
 <p class="meta-line">arXiv cs.DC · 2026-10-06 · 论文PDF</p>
 
-<p>多 GPU 全局 beam search，十亿记录级前沿规模高吞吐</p>
-<blockquote><p>Beam search repeatedly makes many children, removes duplicates, and keeps the best $B$. We show how many GPUs can perform these steps as one search even when the retained set does not fit on one device. States and candidates stay on the GPUs; the CPU receives only small control and ancestry records. We prove that an abstract distributed pipeline returns the monolithic reduced-key top-$B$ for the same complete candidates, integer scores, Hash128 equivalence, and a fully specified physical-layout tie order, provided that its implementation performs one global reduction per key and race-free routing. A static audit of the historical one-T4 pin leaves cross-buffer uniqueness unresolved and identifies a separate multi-rank scatter risk; neither is a reproduced failure, and other revisions inherit neither defects nor correctness without comparison. On eight H200 GPUs, a Cube4 run completed saturated depth 8 at $B_{\rm eff}=2{,}900{,}361{,}216$ in $931.266$ s: $69{,}608{,}669{,}184$ nominal parent--generator pairs, or a derived $74.746$ million pairs/s. A separate two-T4 Megaminx run yielded a derived $30.274$ million nominal parent--generator pairs/s at $B_{\rm eff}=82{,}837{,}504$. Thos…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 当 beam search 保留集放不进单设备时，能否让多 GPU 作为一个整体做"全局 beam"？
+<strong>方法：</strong> 状态与候选留在 GPU，CPU 只收小控制/祖先记录；证明抽象分布式流水线在每次 key 全局归约 + 无竞态路由下可返回与单机等价的 top-B；静态审计一 T4 pin 遗留的跨缓冲唯一性问题与多 rank 分散风险。
+<strong>关键数字：</strong> 8×H200 上 Cube4 饱和深度 8、B_eff≈29 亿，931.266s 内 696 亿名义父子对（约 7474.6 万对/s）；单主机 8×RTX-3060 固定计数 8 GPU 加速 7.487（常见执行画像）/5.605（稳定画像）。
+<strong>为什么值得看：</strong> 把 beam search 扩展到十亿记录级多 GPU 规模，给出正确性证明与高吞吐实测，搜索/推荐场景可迁移。</p>
+<p><a href="https://arxiv.org/abs/2610.06718">原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06718">阅读原文 ↗</a></p>
 </body>
 </html>
