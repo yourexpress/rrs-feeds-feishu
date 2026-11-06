@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Routes of Reasoning: Reading and Reshaping Test-Time Compute in MoE Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Routes of Reasoning: Reading and Reshaping Test-Time Compute in MoE Models</h1>
+<p class="meta-line">arXiv · 2026-11-05 · 论文PDF / 每日精选</p>
+
+<p>MoE 模型测试时计算的读取与重塑（推理路由）</p>
+<blockquote><p>Reasoning models allocate test-time compute across distinct behaviors such as planning, deriving, and verifying. However, models frequently "overthink," continuing to verify and re-derive long after finding a correct answer. This wastes expensive compute and can even degrade performance. Existing interventions, such as token budgets or steering, primarily regulate reasoning duration rather than targeting specific behaviors. In this work, we demonstrate that Mixture-of-Experts (MoE) routers provide a natural, training-free interface for behavioral control. We first split reasoning traces into sentence-level segments and label each with one of six reasoning behaviors (planning, execution, restatement, fact, reflection, and conclusion), so that every token carries the behavior of its segment. Linear probes on router logits predict this label nearly as well as probes on the residual stream, the model's full hidden state and the standard target for probing, while using about half as many features. These signals generalize: experts associated with a reasoning behavior on one dataset predict the same behavior on the others, across six datasets spanning five domains (math, code, science, k…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.05919">阅读原文 ↗</a></p>
+</body>
+</html>

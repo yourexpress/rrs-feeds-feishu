@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ab Initio Accuracy Beyond the Cutoff: Distributed Message-Passing Equivariant Attention at Tens-of-Millions-of-Atom Scale</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Ab Initio Accuracy Beyond the Cutoff: Distributed Message-Passing Equivariant Attention at Tens-of-Millions-of-Atom Scale</h1>
+<p class="meta-line">arXiv · 2026-11-04 · 论文PDF</p>
+
+<p>Molecular dynamics predicts molecular motion from atomic forces and trajectory integration. Density functional theory (DFT) provides first-principles forces, but its $O(N^3)$ cost</p>
+<blockquote><p>Molecular dynamics predicts molecular motion from atomic forces and trajectory integration. Density functional theory (DFT) provides first-principles forces, but its $O(N^3)$ cost limits simulations to thousands of atoms; empirical force fields scale to millions but miss bond breaking and charge transfer. Equivariant message-passing Transformers learn the ab initio potential at linear cost. Stacked layers propagate information beyond a single cutoff, giving four layers a receptive field up to 23Å. At this frontier, scale is limited by communication: layers exchange boundary features across devices, force backpropagation repeats the exchange, and moving atoms change neighbor graphs and tensor shapes. We present Tessera, a distributed runtime that fixes workload shapes between rebuilds. It sorts atoms along a space-filling curve into equal-count shards, ensuring identical atom counts and tensor shapes per rank. Peer sets scale as $K^{0.5}$, not $K$. A conservative neighbor skin preserves topology across updates, enabling each rebuild interval to replay as one CUDA Graph. Fused kernels, three-level neighbor search, and overlapped All-to-All complete it. On 512 GPUs, Tessera sustains 3…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.06122">阅读原文 ↗</a></p>
+</body>
+</html>

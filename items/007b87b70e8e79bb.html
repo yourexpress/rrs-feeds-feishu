@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AtomicFaaS: Offloading Side-Effect Compensation to the Serverless Platform</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>AtomicFaaS: Offloading Side-Effect Compensation to the Serverless Platform</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-04 · 论文PDF</p>
+
+<p>Function-as-a-Service (FaaS) simplifies distributed application development by offloading operational concerns to the platform, but developers remain responsible for recovering fro</p>
+<blockquote><p>Function-as-a-Service (FaaS) simplifies distributed application development by offloading operational concerns to the platform, but developers remain responsible for recovering from failures. Retries require idempotent functions, which means that developers have to write complex, error-prone code that undoes or skips the already completed operations of a failed function. To address this, we propose AtomicFaaS, a platform extension that provides semantic atomicity for the external side effects of a function invocation, whether the function fails or its instance crashes, without developer-written compensation code. AtomicFaaS intercepts outbound calls and records their effects in a fault-tolerant log, from which the platform compensates leaked effects outside the failed instance. Compared with a manually implemented saga, AtomicFaaS eliminates compensation code and leaves no compensatable effects after any tested failure, while adding ~1 ms per intercepted call. Under load, it lowers the sustainable throughput of CPU-bound functions, while its latency overhead becomes negligible once calls to external services dominate the invocation time.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.06601">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Training-Free Socket for DNA in Frozen Language Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>A Training-Free Socket for DNA in Frozen Language Models</h1>
+<p class="meta-line">arXiv · 2026-11-05 · 论文PDF</p>
+
+<blockquote><p>Connecting a DNA foundation model to a large language model (LLM) usually requires training a connector, and often the LLM too. We show that a closed-form map is enough for gene-level questions. Our method, the socket, fits one ridge regression (the plug) from frozen Evo 2 features to the host LLM's own representation of the gene's symbol, name, and description at an early layer. The plug's output replaces the hidden state at placeholder positions, and no gradient passes through the host. We test it on GeneHop, a five-way multiple-choice benchmark split by homology. In a single run on the held-out test set, under a frozen analysis plan, real DNA beats shuffled DNA on all four hosts: by +22.2 points [19.8, 25.0] on Qwen3.5-4B, +26.1 [24.3, 27.9] on Qwen3.6-27B, +16.7 [14.2, 19.7] on Mistral-7B, and +18.4 [16.2, 21.0] on OLMo-2-7B. All four survive Holm correction, every null control stays within two points of the sham level, and the development results agree within 2.3 points. A layer rule that uses no task items was selected on three hosts; it predicted the working layer of the fourth before any DNA-plug scoring on it. A text-only linear map lets one plug feed any other host, at a …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.05401">阅读原文 ↗</a></p>
+</body>
+</html>

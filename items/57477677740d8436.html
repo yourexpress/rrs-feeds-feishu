@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Model Merging Does Not Require Uniform LoRA Ranks</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Model Merging Does Not Require Uniform LoRA Ranks</h1>
+<p class="meta-line">arXiv · 2026-11-04 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：模型合并把分别微调的专家合成单模型，惯例是所有专家用同一 LoRA rank——但每个领域各有最优 rank，这种耦合是合并方法的固有属性吗？</p>
+<p><strong>方法</strong>：在三个领域（数学、指令跟随、多语）上以四种 rank 和三种模型规模训练 36 个专家，用六种合并方法在统一 rank 与各领域自有最优 rank 下分别合并，并分析合并对谱分量的保留机制。</p>
+<p><strong>关键数字</strong>：异 rank 对 averaging 与 utility-based 选择零代价，多域准确率最高提升 1.8 pp；冲突消解方法不稳定、最高损失 4 pp；IFEval 因指令适配器奇异值最小被丢弃而下降 16~25 pp；按 loss 效应选分量后准确率在 8x rank 范围内几乎持平（0.7 pp，对比 TIES 在 4B 规模 6.7 pp）。</p>
+<p><strong>为什么值得看</strong>：证明 rank 耦合来自合并算子的选元方式而非合并本身，为按专家独立选 rank 提供依据。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.06486">Model Merging Does Not Require Uniform LoRA Ranks</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.06486">阅读原文 ↗</a></p>
+</body>
+</html>

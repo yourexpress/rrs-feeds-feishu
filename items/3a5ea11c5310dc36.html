@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nowcasting Future Performance for Population Pruning in Survival-of-the-Fittest Training</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Nowcasting Future Performance for Population Pruning in Survival-of-the-Fittest Training</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-04 · 论文PDF</p>
+
+<p>Training high-performing neural networks often involves evaluating populations of candidate models with varying hyperparameters, architectures, or random seeds. Training every cand</p>
+<blockquote><p>Training high-performing neural networks often involves evaluating populations of candidate models with varying hyperparameters, architectures, or random seeds. Training every candidate to completion is computationally expensive, yet stopping seemingly weaker runs early risks discarding models that would ultimately perform better, as learning curves can cross. To address this challenge, we investigate whether intermediate training checkpoints can predict future model accuracy and enable more informed pruning decisions. Our nowcasters predict test accuracy five epochs ahead or at the end of training. They are trained with accuracy and loss histories, weight statistics, and SANE representations as inputs. SANE is a transformer autoencoder that encodes a checkpoint as a sequence of latent tokens. We then use the nowcasters in Survival-of-the-Fittest (SOTF) training. SOTF repeatedly ranks runs during training by predicted accuracy and stops the lowest-ranked ones. Our results show that weight statistics work best for five-epoch forecasts, and SANE representations work best for final accuracy prediction. For evaluation, we compare SOTF with pruning the population by current accuracy. In…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.06512">阅读原文 ↗</a></p>
+</body>
+</html>

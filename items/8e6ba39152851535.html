@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Runway Characters: Serving a 57B Video Diffusion Transformer for Real-Time Conversation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Runway Characters: Serving a 57B Video Diffusion Transformer for Real-Time Conversation</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-03 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：会话式视频角色必须按播放速度生成视频（24fps 下单用户、batch size 1 时每四帧块需持续 166.7ms、仅几块缓冲）——Runway Characters 如何在四张 H100 上实时服务约 57B 参数的视频扩散 Transformer？</p>
+<p><strong>方法</strong>：把每块 240 次注意力调用中的整缓存重复工作移到写时完成（ring cache、RoPE 与 FP8 量化写一次、位置重置时 delta 旋转），把张量并行 all-reduce 融合进 FP8 GEMM（in-switch reduction），并给潜变量转视频帧的解码器独立 GPU。</p>
+<p><strong>关键数字</strong>：无融合 kernel 时扩散步从 240.9ms 降到 159.3ms（1.51x，稳定 24.5fps）；融合 kernel 达 147.4ms（1.63x，FP8 峰值 43%）；lip-sync 分数无退化。</p>
+<p><strong>为什么值得看</strong>：首个以 24fps 实时服务 57B 视频扩散模型的系统级方案，缓存写时化与通信融合思路可迁移到其他流式生成场景。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.05642">Runway Characters: Serving a 57B Video Diffusion Transformer for Real-Time Conversation</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.05642">阅读原文 ↗</a></p>
+</body>
+</html>

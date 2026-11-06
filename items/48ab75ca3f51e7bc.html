@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PEEK: One-Step-Look-Ahead Exposure Bias Correction for Diffusion Sampling</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>PEEK: One-Step-Look-Ahead Exposure Bias Correction for Diffusion Sampling</h1>
+<p class="meta-line">arXiv · 2026-11-05 · 论文PDF</p>
+
+<blockquote><p>Diffusion image generators are successful due to accurate denoising networks and strong numerical samplers. Yet the two components are not fully matched. During sampling, the denoiser predicts for the next step based on flawed input that differ much from the real data. This train-test gap, or exposure bias, caps image generation quality (i.e., blurry, lacking in details or awkward in shape). To mitigate the problem, we propose PEEK, a novel training-free deterministic sampler plugin. At each eligible denoising step, PEEK first performs a provisional one-step update, evaluates the denoiser once at the look-ahead state, and interpolates it with the one-step-later prediction to form the next noisy state. By taking the additional step, we obtain a generally more-image-like prediction from the higher-signal noisy state, mitigating the exposure bias. To optimize the interpolation positions, PEEK searches for an interpolation schedule search made efficient by the prefix and baseline noise-schedule-rebasing caches. On 8 pixel-space and latent-space diffusion models with unconditional, label-guided, and text-guided settings across various output resolutions, PEEK consistently improves over …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.05407">阅读原文 ↗</a></p>
+</body>
+</html>

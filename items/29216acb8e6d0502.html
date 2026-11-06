@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hallucination Is Linearly Decodable from Mid-Layer Hidden States in Quantized LLMs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Hallucination Is Linearly Decodable from Mid-Layer Hidden States in Quantized LLMs</h1>
+<p class="meta-line">arXiv · 2026-11-05 · 论文PDF</p>
+
+<blockquote><p>We investigate whether open-source LLMs encode a linearly separable truthfulness signal in their hidden states, and at which network depth this signal is strongest. Across three $7$B--$8$B instruction-tuned models (Llama-3.1-8B, Mistral-7B, Qwen2.5-7B) loaded in $4$-bit NF4 quantization, we extract per-layer hidden states on four hallucination benchmarks (TruthfulQA, HaluEval-QA, FEVER, and a controlled synthetic set) and compare four detection approaches: linear and MLP probes, INSIDE EigenScore, self-consistency, and attention entropy. A linear probe on a single mid-network layer achieves $0.904$--$1.000$ AUROC on held-out splits, while sampling-based detectors do not exceed $0.541$ AUROC under the same protocol. The truthfulness signal is approximately linear: MLP probes rarely surpass linear probes by more than $0.01$ AUROC. Peak probing layers fall in a consistent band across model families on natural-language benchmarks -- blocks~$13$--$18$ of~$32$ for Llama and Mistral, and blocks~$19$--$25$ of~$28$ for Qwen. First-block attention entropy provides a complementary signal in knowledge-grounded settings ($0.866$--$0.941$ AUROC on HaluEval-QA) at no additional inference cost. Th…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2606.02628">阅读原文 ↗</a></p>
+</body>
+</html>

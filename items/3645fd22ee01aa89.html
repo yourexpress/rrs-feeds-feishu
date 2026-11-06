@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>flash-comm: Self-Synchronizing Collective Communication for LLM Decoding</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>flash-comm: Self-Synchronizing Collective Communication for LLM Decoding</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-04 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：LLM 解码的集体通信中，就绪同步与数据搬运分离导致额外屏障开销——能否把两者融合，让数据块自带就绪证据、免去跨 GPU 屏障？</p>
+<p><strong>方法</strong>：提出 flash-comm：自同步传输让每个数据块携带就绪证据，接收方直接校验所需块；基于代价的协议选择器按消息大小与 GPU 数适配就绪编码；并把传输顺序与归约顺序解耦，保证异步到达下跨 GPU 结果一致。</p>
+<p><strong>关键数字</strong>：八卡 NVIDIA B300 上 all-reduce 延迟中位降 28.8%、最高 43.7%（对比 SOTA 的 custom AR v2）；端到端解码每输出 token 时间（TPOT）降 1.7%~6.8%；all-gather 延迟中位降 23.8%、最高 58.9%。</p>
+<p><strong>为什么值得看</strong>：all-reduce 占基线解码时间 11.4%，flash-comm 把该部分优化到接近理论上限，并给出独立 all-gather 收益，通信库设计值得借鉴。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.06634">flash-comm: Self-Synchronizing Collective Communication for LLM Decoding</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.06634">阅读原文 ↗</a></p>
+</body>
+</html>

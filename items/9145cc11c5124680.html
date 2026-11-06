@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MonoLaDN: Language-Guided DeNoising for Monocular 3D Object Detection</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MonoLaDN: Language-Guided DeNoising for Monocular 3D Object Detection</h1>
+<p class="meta-line">arXiv · 2026-11-05 · 论文PDF</p>
+
+<blockquote><p>Monocular 3D object detection offers a low-cost route to 3D perception, but it remains fundamentally ill-posed, since depth must be inferred from a single view. Recent transformer-based detectors learn geometry purely from image features and 3D box annotations, lacking the high-level semantic priors that vision-language models (VLMs) acquire from large-scale pretraining. VLMs offer such priors, but deploying one directly as a detector is impractical due to its heavy inference cost. We propose MonoLaDN, a language-guided denoising framework that transfers the geometric reasoning of a VLM into a monocular 3D detector while keeping the deployed model purely vision-based. During training, a frozen VLM produces structured reasoning about each object's occlusion, depth, dimension, and angle from the image and its ground-truth boxes. We encode this reasoning into queries, perturb them with noise, and train the detector to reconstruct the clean reasoning. Reconstructing the corrupted reasoning forces the detector's depth-guided features to internalize the VLM's geometric priors, so this knowledge remains available even after the reasoning path is discarded at inference, adding no latency o…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.06282">阅读原文 ↗</a></p>
+</body>
+</html>

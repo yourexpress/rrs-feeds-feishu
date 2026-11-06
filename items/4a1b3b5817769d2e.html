@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When File Ingestion Misleads Language Models: Measuring and Mitigating Divergences in Office Documents</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>When File Ingestion Misleads Language Models: Measuring and Mitigating Divergences in Office Documents</h1>
+<p class="meta-line">arXiv · 2026-11-05 · 论文PDF</p>
+
+<blockquote><p>Office documents are now routinely uploaded to large language models (LLMs) for processing. However, an LLM does not always see what a human sees, because it typically reads the text that an extractor produces from the document's underlying Office Open XML (OOXML) files. Depending on the implementation, extractors differ in which OOXML parts they read and how they interpret them, so their output can differ from what Office applications display. For example, by slightly shifting the positions of text boxes on a slide, an adversary can swap the order in which the model reads them while the slide looks unchanged. We show that this extraction divergence is an attack surface for LLM applications. In this work, we first measure what an adversary can exploit by analyzing the widely used extractors that LLM applications rely on. By combining static source code analysis with dynamic analysis, we identify 19 OOXML channels where extractors read content a human cannot see and 12 where they drop content a human can. We also find that widely used extractors ignore display formatting and reading order, so even visible content reaches the model in a different form. Building on these findings, we …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.05806">阅读原文 ↗</a></p>
+</body>
+</html>

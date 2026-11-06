@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CompressionBench: How can your coding agents compress LLMs?</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CompressionBench: How can your coding agents compress LLMs?</h1>
+<p class="meta-line">arXiv · 2026-11-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：递归自我改进要求 AI 系统改进后续系统所用的模型与基础设施，LLM 压缩是具体效率目标——编码 agent 能否自主完成「在更小存储预算内保留预训练模型行为」这一步？</p>
+<p><strong>方法</strong>：把压缩构造成终端任务：agent 拿到源 checkpoint、存储上限、推理环境与时间预算，自主构造压缩权重与可执行推理代码；困惑度反馈引导搜索，独立验证把关最终模型。</p>
+<p><strong>关键数字</strong>：六个 agent × 六种模型规模设置下，36 份提交中 29 份通过验证；按任务选最低困惑度设计，平均困惑度较 BF16 增 3.4%，下游准确率 77.33%（BF16 为 79.56%）；24 次修订中 21 次在存储几乎不变下降低 PPL；完整模型反馈逆转 79 项局部排序中的 17 项。</p>
+<p><strong>为什么值得看</strong>：首个系统评测编码 agent 自主压缩 LLM 的能力与失效点，把表征设计、实验判断与能力验证识别为核心环节。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.06858">CompressionBench: How can your coding agents compress LLMs?</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.06858">阅读原文 ↗</a></p>
+</body>
+</html>

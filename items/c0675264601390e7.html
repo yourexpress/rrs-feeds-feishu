@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unlocking Turing Tensor Cores: A Measured Throughput Account of From-Scratch Pre-training on a Single 22G RTX 2080 Ti</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Unlocking Turing Tensor Cores: A Measured Throughput Account of From-Scratch Pre-training on a Single 22G RTX 2080 Ti</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-02 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：RTX 2080 Ti（TU102）硬件上完整搭载第二代 Tensor Core，但驱动层限制 FP16 矩阵乘，可用张量吞吐远低于硬件峰值——解锁驱动限制能带来多少真实收益？</p>
+<p><strong>方法</strong>：turing-unlock 内核模块在 nvidia 驱动绑定设备前写入 FP16 速率选择器（SS0=0x88888888、SS1=0x8）并释放 ACR 互斥锁；在同一 22G 2080 Ti 上、同一套从零预训练协议下做解锁前后吞吐对照。</p>
+<p><strong>关键数字</strong>：cuBLAS FP16 matmul 从 55.7 提升到 91.4 TFLOPS（约 1.6x）；small tier（75.7M 参数）稳态吞吐从 6480 到 7246 tok/s（+11.8%），墙钟时间 1.77h 降到 1.61h（省 9.0%）；tiny tier +4.7%；pico-micro 三档最多 +0.3%；逐层峰值内存与最终质量指标逐位一致。</p>
+<p><strong>为什么值得看</strong>：解锁收益随矩阵规模单调上升，是纯吞吐收益、不扰动训练动态——为「驱动级限制掩盖硬件能力」提供了可复现的量化证据。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.05419">Unlocking Turing Tensor Cores: A Measured Throughput Account of From-Scratch Pre-training on a Single 22G RTX 2080 Ti</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.05419">阅读原文 ↗</a></p>
+</body>
+</html>

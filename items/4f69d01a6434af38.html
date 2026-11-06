@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Systolic Linear Attention: Co-Designing Tile-Grouped Gated Delta Attention for TPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Systolic Linear Attention: Co-Designing Tile-Grouped Gated Delta Attention for TPUs</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-04 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：Gated DeltaNet、Kimi Delta Attention 等门控 delta 线性注意力层为 GPU 调优（小 tensor-core tile + 快速向量寄存器），直接移植到 TPU 会让每个矩阵 tile 空一半、瓶颈卡在向量运算——如何围绕 TPU 的 256x256 脉动矩阵单元重构？</p>
+<p><strong>方法</strong>：提出 Systolic Linear Attention（SLA）：把 key 加宽到 256 配分组 value head、把衰减门分组为四个 64 通道 tile、用块矩阵乘积在单个融合 kernel 内完成 chunk solve，把整个层重塑到矩阵单元上。</p>
+<p><strong>关键数字</strong>：TPU v7x 上完整 SLA-R4 层比开源 Tokamax KDA kernel 快 1.6x~2.5x（精确 chunk 求逆时 1.4x~2.4x）；2048 芯片 v7x 预训练研究中 6.5B~63.1B 稀疏 MoE 模型训练快 11%~24%，困惑度相当或略低。</p>
+<p><strong>为什么值得看</strong>：为 TPU 定制线性注意力的软硬协同设计，直接给出训练侧提速证据，对 TPU 用户有实操价值。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.06828">Systolic Linear Attention: Co-Designing Tile-Grouped Gated Delta Attention for TPUs</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.06828">阅读原文 ↗</a></p>
+</body>
+</html>

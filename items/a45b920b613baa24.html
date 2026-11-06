@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phantom: Temporal Caching for Diffusion Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Phantom: Temporal Caching for Diffusion Models</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-04 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：扩散模型是高质量图像生成的主流范式，但跨数十时间步的迭代推理计算开销大；既有加速器靠差分量化或输出稀疏性，却带来内存足迹增加、设计复杂与图像退化——能否用时间缓存干净地加速？</p>
+<p><strong>方法</strong>：提出 Phantom 算法-架构协同设计：把时间相似性看作差分稀疏性，相邻时间步间只有少量异常 token 显著变化；Phantom 只重算这些异常 token，其余从时间缓存复用；在全局缓冲加轻量 Phantom Engine 检测异常并更新缓存，用浓缩流水线把稀疏更新映射到稠密脉动计算。</p>
+<p><strong>关键数字</strong>：在主流扩散模型上平均 4.0x 加速、5.5x 能耗节省（相对 GPU 与既有加速器），生成质量保持不变。</p>
+<p><strong>为什么值得看</strong>：用标准脉动阵列 + 轻量附加即可兑现时间冗余，是扩散推理加速里少见的保质量方案。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.06019">Phantom: Temporal Caching for Diffusion Models</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.06019">阅读原文 ↗</a></p>
+</body>
+</html>

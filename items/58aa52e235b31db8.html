@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Give the Drafter a Second Chance to Guess: Parallel Reconsideration for Speculative Decoding</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Give the Drafter a Second Chance to Guess: Parallel Reconsideration for Speculative Decoding</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-03 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：推测解码靠小 draft 模型加速 LLM 推理，但特征级 drafter 对每个 token 只做一次前向猜测，被目标模型拒绝的往往是 drafter 自己也没把握的 token——能否给这些犹豫的猜测二次机会？</p>
+<p><strong>方法</strong>：提出 Parallel Reconsideration：drafter 依据自身不确定性，用与单遍 draft 并行运行的额外前向来重新考虑犹豫的猜测，几乎不增加延迟；配合共同设计的训练配方与 serving 期草拟算法，把重估猜测作为精炼候选追加到原 draft 树。</p>
+<p><strong>关键数字</strong>：跨模型与基准平均，接受长度相对基线提升 5.3%~10.2%，加速比提升 3.5%~9.2%。</p>
+<p><strong>为什么值得看</strong>：用 drafter 的不确定性信号做并行二次猜测，零额外延迟换可观加速，是推测解码低垂果实的进一步挖掘。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.05724">Give the Drafter a Second Chance to Guess: Parallel Reconsideration for Speculative Decoding</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.05724">阅读原文 ↗</a></p>
+</body>
+</html>

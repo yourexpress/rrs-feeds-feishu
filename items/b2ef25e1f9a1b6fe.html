@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memory-Access Profiling for Early Multicore Interference Awareness in Embedded Systems</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Memory-Access Profiling for Early Multicore Interference Awareness in Embedded Systems</h1>
+<p class="meta-line">arXiv cs.PF · 2026-11-03 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：多核处理器上不同应用经共享资源相互干扰，导致执行时间波动；在硬件详尽测试之前，能否尽早感知这种缓存相关的多核干扰？</p>
+<p><strong>方法</strong>：提出早期多核干扰感知的剖析框架：以少量源码改动捕获 C 应用的源级内存操作轨迹，结合目标平台架构参数，把内存访问映射到 cache set 与内存块，生成缓存占用剖面与热图，并经粗筛、静态多核缓存剖析、时间足迹分析三阶段渐进评估成对干扰风险。</p>
+<p><strong>关键数字</strong>：双核平台上四组基准配对验证，与硬件计数器观测的高低风险情形一致；不同应用配对可使 L2 缓存缺失最多增加 213.09%。</p>
+<p><strong>为什么值得看</strong>：在穷尽式硬件测试前提供可解释的早期干扰指标，对嵌入式多核系统的集成与分区有实用价值。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.05704">Memory-Access Profiling for Early Multicore Interference Awareness in Embedded Systems</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.05704">阅读原文 ↗</a></p>
+</body>
+</html>

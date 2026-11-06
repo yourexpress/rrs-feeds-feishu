@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Energy-Efficient Reinforcement Learning for Large Language Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Energy-Efficient Reinforcement Learning for Large Language Models</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-03 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：LLM 强化学习的生成与训练阶段对 GPU 需求不同，存在降频省电空间；但响应长度多变、试频本身耗时耗能，在线选频很难——能否自动完成？</p>
+<p><strong>方法</strong>：提出 EE-RL 在线控制器，为 RL 执行中的生成与训练分别选择频率；与默认 GPU governor 在同一 token 负载上的预测比较候选设置，保留满足吞吐阈值的最省电配置，并随负载变化持续监控调整。</p>
+<p><strong>关键数字</strong>：H100 与 GB200 固定频率扫描显示每个有效训练 token 的 GPU 能耗最多省 28.2%；EE-RL 在线把收益兑现为最多 16.9% 的能耗下降，吞吐代价很小。</p>
+<p><strong>为什么值得看</strong>：把 RL 训练两阶段的硬件需求差异变成可在线利用的节能空间，是面向推理/训练一体节能调度的实用方案。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.05748">Energy-Efficient Reinforcement Learning for Large Language Models</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.05748">阅读原文 ↗</a></p>
+</body>
+</html>

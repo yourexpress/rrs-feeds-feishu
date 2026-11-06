@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weaver: Unlocking Blockchain Transaction Parallelism through State-Decoupled Symbolic Execution</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Weaver: Unlocking Blockchain Transaction Parallelism through State-Decoupled Symbolic Execution</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-04 · 论文PDF</p>
+
+<p>Transaction execution remains a major performance bottleneck in blockchains. Existing parallel execution engines are still blocked by slow state accesses on each transaction's crit</p>
+<blockquote><p>Transaction execution remains a major performance bottleneck in blockchains. Existing parallel execution engines are still blocked by slow state accesses on each transaction's critical path, creating a hidden loss of parallelism. This paper presents Weaver, a state-decoupled transaction processing paradigm that enables execution flow to proceed in the absence of concrete state values. Weaver represents states as lightweight symbolic references and records subsequent computation as symbolic expressions while concrete values are fetched on the fly. To handle state-dependent control flow, Weaver predicts the most likely branch direction through hierarchical symbolic pattern matching. Weaver further introduces expression-granular scheduling that evaluates each symbolic expression as soon as its state dependencies are resolved, rather than waiting for the transaction's entire read set, fully exploiting fine-grained intra-transaction parallelism. Evaluation on real Ethereum blocks and synthetic workloads spanning four representative dApps shows that Weaver delivers 41%-63% higher throughput than state-of-the-art parallel execution engines and up to 7.5 times the throughput of serial exec…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.06462">阅读原文 ↗</a></p>
+</body>
+</html>

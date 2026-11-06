@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Don't Replace, Complement: A Detector-Agnostic Subspace Signal for Near-OOD Detection</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Don't Replace, Complement: A Detector-Agnostic Subspace Signal for Near-OOD Detection</h1>
+<p class="meta-line">arXiv · 2026-11-05 · 论文PDF</p>
+
+<blockquote><p>Post-hoc out-of-distribution (OOD) detection is mature on far-OOD yet remains weak on near-OOD. These two settings differ in their use of class-characteristic feature directions: far-OOD inputs largely fail to activate those of their predicted class, whereas near-OOD inputs activate them much as in-distribution samples do. Because the axis separating far-OOD leaves near-OOD almost indistinguishable from ID, a score optimized for one setting is misaligned with the other; where a detector already saturates far-OOD, added near-OOD sensitivity is bought partly against it. This divergence motivates a targeted near-OOD signal designed to complement existing scores. We propose PLUS (Per-class Low-dimensional sUbspace Signal). For each class, PLUS selects the $m$ most class-active neurons from a sparse autoencoder, orthonormalizes the corresponding decoder directions to form a low-dimensional subspace, and scores an input by its per-class whitened squared Mahalanobis distance $z$ within the subspace of its predicted class. Designed as a dedicated complement rather than a standalone detector, the signal $z$ is fused additively with any calibrated base score at a single, fixed weight. This w…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.06688">阅读原文 ↗</a></p>
+</body>
+</html>

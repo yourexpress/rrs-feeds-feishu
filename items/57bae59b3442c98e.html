@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polymorphic Inference: Tuned for your model, your traffic, your chips</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Polymorphic Inference: Tuned for your model, your traffic, your chips</h1>
+<p class="meta-line">Together AI · 2026-11-04 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://cdn.prod.website-files.com/69654e88dce9154b5f1206dd/6aeb0daecbc82e3f3a102d8c_og-image-polymorphic-inference-1200x630.png" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong>：Together AI 提出 polymorphic inference 范式：模型、流量与硬件都在变，推理部署也应随之自动调优；静态推理只为一模型、一芯片、一类流量手工调优，需要数周专家时间，且配置随流量漂移失效。</p>
+<p><strong>要点</strong>：Together Compiler 是其在产线的第一步：一组 agent 提出 kernel 改动，持久引擎逐个对速度与正确性（对照 stock 引擎）测试，只有验证通过的改动上线，实现持续编译；优化按 Tiered Persistent Engine 热重载迭代，获胜 kernel 与推理进入共享注册表，下一个模型或芯片从先前经验起步而非从零开始。</p>
+<p><strong>关键数字</strong>：单模型 24 小时编译（每模型仅两节点）；相同每用户速度下每 GPU token 数最高 2.6x（B200 上）；GLM 5.3 在 AMD MI355X 最高 3.7x，MiniMax M3 在 Trainium2 最高 2.7x；H100/B200 上各输出长度均快于专家手写 megakernel 与 ML 编译器，最高 2.5x。</p>
+<p><strong>为什么值得看</strong>：把「agent 夜间调优 + 持久引擎校验」落成生产服务，是持续编译路线的代表性工业实践。</p>
+<p>原文：<a href="https://www.together.ai/polymorphic-inference">Polymorphic Inference: Tuned for your model, your traffic, your chips</a></p>
+<p><a class="origin" href="https://www.together.ai/polymorphic-inference">阅读原文 ↗</a></p>
+</body>
+</html>

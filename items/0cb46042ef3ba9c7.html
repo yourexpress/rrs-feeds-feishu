@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hardwired Distributed Processing Units for Inference: Neural Decisions at the Sensor that Free the Host</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Hardwired Distributed Processing Units for Inference: Neural Decisions at the Sensor that Free the Host</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-04 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：能否把神经网络决策直接做在传感器上，把推理从宿主 CPU 上完全移除——用硬连线分布式处理单元（HDPU）在低成本 FPGA 上完成端到端检测？</p>
+<p><strong>方法</strong>：为斑马线检测构建 HDPU：80x60 像素流水线接四层二值 CNN（93,408 个一位权重），在 Artix-7 FPGA 上逐帧决策，从 Python 模型经 RTL 仿真到板卡逐位验证；无处理器、无操作系统、无全分辨率帧存储。</p>
+<p><strong>关键数字</strong>：每帧固定 2,269,477 时钟周期（34.04ms），落在 37.49ms 帧周期内；全部 639 张测试图与位精确软件模型结果一致；整条检测路径仅 1,814 LUT；回答时正确率 95.7%，对比度级把行车记录仪类帧从 47.7% 提到 78.2%；宿主每帧只收 16 字节（原 614,400，少 38,400 倍）。</p>
+<p><strong>为什么值得看</strong>：把「决策本身」搬到传感器端而非仅预处理，为边缘推理的极低功耗形态提供完整参考。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.06436">Hardwired Distributed Processing Units for Inference: Neural Decisions at the Sensor that Free the Host</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.06436">阅读原文 ↗</a></p>
+</body>
+</html>

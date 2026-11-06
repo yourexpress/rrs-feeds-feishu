@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TauLang: A Language and Compiler for Space-Time Programming on Statically Scheduled Accelerators</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>TauLang: A Language and Compiler for Space-Time Programming on Statically Scheduled Accelerators</h1>
+<p class="meta-line">arXiv cs.PL · 2026-11-04 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：Groq TSP 这类静态调度加速器去掉了缓存、仲裁器与硬件调度器，编译器必须固定每个操作的精确 slice 与发射周期——「何时运行」成为正确性条件，现有 kernel 语言无法表达显式时间，如何编程这类机器？</p>
+<p><strong>方法</strong>：提出 TauLang，把时间作为程序的一等公民：程序员用参数化显式时间调度操作、循环与组合 kernel；在定时中间表示 TauIR 中代数校验显式时间，再用整数线性规划联合求解张量放置与周期调度，用显式时间把相连操作分组为 timing cluster 剪枝搜索空间。</p>
+<p><strong>关键数字</strong>：在 TSP 类机器的周期精确模型上，联合搜索对十个 kernel 相对空间优先流程取得 1.40x 延迟加速；少量显式时间钉住即可把延迟控制在无定时调度一个周期内，并把联合搜索扩展到 1,636 个 GEMM 块（无定时搜索在 32 块即无解）。</p>
+<p><strong>为什么值得看</strong>：把时间显式化进语言与编译器，为静态调度加速器提供了首个可编程路径，值得关注。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.06079">TauLang: A Language and Compiler for Space-Time Programming on Statically Scheduled Accelerators</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.06079">阅读原文 ↗</a></p>
+</body>
+</html>

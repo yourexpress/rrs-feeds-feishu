@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EchoKV: Self-Corrective KV Cache Eviction via Iterative Query Feedback</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>EchoKV: Self-Corrective KV Cache Eviction via Iterative Query Feedback</h1>
+<p class="meta-line">arXiv · 2026-11-05 · 论文PDF</p>
+
+<blockquote><p>KV cache eviction is not merely a token-ranking problem: the workspace retained for generating eviction queries also determines the quality of those queries. Consequently, an early workspace error can distort later query observations and reinforce an incorrect final eviction decision, particularly when evidence is dispersed across a long context. We present EchoKV, which discovers and addresses this failure mode with iterative correction. It initializes a feedback-compatible bootstrap workspace using proposals at future decode positions, then uses early decode-generated queries to recover the workspace before the remaining lookahead steps. It uses the same number of workspace forward passes as LAQ while adding a tensor re-scoring operation for workspace repair. On LongBench (16 tasks, Mistral-7B-Instruct-v0.2 and Qwen2.5-7B-Instruct), EchoKV shows notable improvements over LAQ on several tasks requiring dispersed evidence, including multi-hop cross-document QA and long single-document comprehension. Across budgets and backbones, EchoKV selectively improves evidence-intensive tasks while maintaining comparable performance on the remaining LongBench subsets. These results identify qu…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.05903">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Controlled Experimental Evaluation of Configuration and Cache Architecture in LLM Serving Engines</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>A Controlled Experimental Evaluation of Configuration and Cache Architecture in LLM Serving Engines</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-04 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：多 agent LLM 应用跨请求重复大部分 prompt token，vLLM 与 SGLang 以不同粒度复用共享前缀缓存，默认部署基准显示巨大性能差距（通常归因于缓存）——但其他配置差异是否被混淆了？</p>
+<p><strong>方法</strong>：在 Kubernetes 上搭建可复现测试台与种子化多 agent 负载生成器，分别在厂商默认配置与对齐 chunked prefill 两种条件下对比两引擎；SGLang 两臂配置相同，作为跨独立部署的内部对照。</p>
+<p><strong>关键数字</strong>：默认配置下 vLLM 的中位 TTFT 最高达 SGLang 的 64x；对齐单一设置（chunked prefill）消除最大处 78% 的容量差距与 30%~67% 的延迟差距；剩余尾延迟优势为 2.4~6.4x，与缓存感知的等待请求排序一致。</p>
+<p><strong>为什么值得看</strong>：用受控实验拆穿「差距全归缓存」的归因，给出六条引擎对比建议，评测方法论价值高。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.05991">A Controlled Experimental Evaluation of Configuration and Cache Architecture in LLM Serving Engines</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.05991">阅读原文 ↗</a></p>
+</body>
+</html>

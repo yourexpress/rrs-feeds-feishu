@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auditable Unlearning for LLMs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Auditable Unlearning for LLMs</h1>
+<p class="meta-line">arXiv · 2026-11-05 · 论文PDF</p>
+
+<blockquote><p>Machine unlearning aims to remove a user's data from a trained model after a deletion request. Existing methods are majorly evaluated on three axes - how well they forget, how much capability they retain, and how robust they are to membership inference attacks, but not on whether the provider can offer the user any evidence that the deletion occurred. To fill this gap, we introduce auditability as a fourth axis, defined as the separation between requested (forget set) and retained (retain set) data under a statistic the provider computes. We show that across eleven unlearning methods on TOFU, MUSE and RWKU no method satisfies all four axes, with different methods falling short on different axes. To address this, we propose a two stage method that can be used on top of any unlearning method, in the the first stage we propose ${GapWiden}$ which uses a hinge loss to increase the difference between audit statistics of forget set and retain set. In the second stage we propose ${GapVeil}$, an inference time rejection-sampler which uses the base model as the drafter and re-samples based on the audit statistics of the drafted response. We observe that using our method, auditability and lea…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.05866">阅读原文 ↗</a></p>
+</body>
+</html>
