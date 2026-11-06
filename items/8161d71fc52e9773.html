@@ -22,9 +22,11 @@
 <h1>Outcome-Guided On-Policy Self-Distillation</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>结果引导的同策略自蒸馏</p>
-<blockquote><p>On-policy self-distillation (OPSD) provides denser token-level supervision and better computational efficiency than Reinforcement Learning with Verifiable Rewards (RLVR). However, this denser supervision may introduce substantial noise and training instability. Existing improvements often rely on high-variance per-token statistics and introduce extra hyperparameters and trade-offs. Based on the advantage formulation in RLVR, we analyze the OPSD objective from the same perspective, incorporating outcome correctness signals. We find that vanilla OPSD imposes insufficient penalties and excessive rewards on incorrect trajectories because it applies a fixed divergence objective regardless of outcome correctness. Furthermore, the reliability of teacher supervision is associated with both trajectory outcome and the cumulative average teacher entropy along the rollout. Based on these observations, we propose Outcome-Guided On-Policy Self-Distillation (OG-OPSD), which dynamically adapts both the divergence objective and distillation position according to binary outcome rewards and the cumulative average teacher entropy. Extensive experiments show that OG-OPSD consistently improves the perfo…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 基于可验证奖励的强化学习（RLVR）相比，在线策略自蒸馏（OPSD）提供更密集的 token 级监督且计算效率更高，但密集监督引入噪声与训练不稳定，如何修正？</p>
+<p><strong>方法</strong> 从 RLVR 的优势函数视角分析 OPSD：发现 vanilla OPSD 对错误轨迹惩罚不足、奖励过多——它对所有轨迹套用固定散度目标、不区分结果正确性；且教师监督的可靠性同时取决于轨迹结果与 rollout 中累积平均教师熵。据此提出 OG-OPSD，按二元结果奖励与累积平均教师熵动态调整散度目标与蒸馏位置。</p>
+<p><strong>关键数字</strong> 在数学推理、多模态推理与分布外任务上一致优于 vanilla OPSD 与多个强基线；覆盖 Qwen3 1.7B/4B/8B 及 Qwen3-VL-2B。</p>
+<p><strong>为什么值得看</strong> 给出了"何时该信任教师、蒸馏到哪"的自适应原则，比固定启发式更可解释，对 RLVR/OPSD 类训练方法改进有直接参考。</p>
+<p><a href="https://arxiv.org/abs/2610.05070">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05070">阅读原文 ↗</a></p>
 </body>
 </html>

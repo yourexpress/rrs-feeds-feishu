@@ -22,9 +22,11 @@
 <h1>Routes of Reasoning: Reading and Reshaping Test-Time Compute in MoE Models</h1>
 <p class="meta-line">arXiv · 2026-11-05 · 论文PDF / 每日精选</p>
 
-<p>MoE 模型测试时计算的读取与重塑（推理路由）</p>
-<blockquote><p>Reasoning models allocate test-time compute across distinct behaviors such as planning, deriving, and verifying. However, models frequently "overthink," continuing to verify and re-derive long after finding a correct answer. This wastes expensive compute and can even degrade performance. Existing interventions, such as token budgets or steering, primarily regulate reasoning duration rather than targeting specific behaviors. In this work, we demonstrate that Mixture-of-Experts (MoE) routers provide a natural, training-free interface for behavioral control. We first split reasoning traces into sentence-level segments and label each with one of six reasoning behaviors (planning, execution, restatement, fact, reflection, and conclusion), so that every token carries the behavior of its segment. Linear probes on router logits predict this label nearly as well as probes on the residual stream, the model's full hidden state and the standard target for probing, while using about half as many features. These signals generalize: experts associated with a reasoning behavior on one dataset predict the same behavior on the others, across six datasets spanning five domains (math, code, science, k…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 推理模型常"过度思考"：已得出正确答案后仍继续验证、重推，浪费测试时计算甚至损害性能；现有 token 预算等干预只调节推理时长，不能针对具体推理行为。</p>
+<p><strong>方法</strong> 发现 MoE 路由器是天然的免训练行为控制接口：把推理轨迹切成句级片段并标注六类行为（规划、执行、复述、事实、反思、结论），用路由器 logits 上的线性探针即可预测行为标签（接近残差流探针效果、特征约少一半）；推理时选择性编辑专家路由分数以抑制过度思考。</p>
+<p><strong>关键数字</strong> 4 个模型 × 4 个基准上，生成 token 数中位数减少 30.4%（最高 63.3%）；准确率下降不超过 0.5 个百分点、且常略有提升；六数据集覆盖数学、代码、科学、知识、常识五领域。</p>
+<p><strong>为什么值得看</strong> 把"何时停止思考"变成可干预的机制，MoE 路由提供可解释视角 + 轻量推理优化，兼具研究与应用价值。</p>
+<p><a href="https://arxiv.org/abs/2611.05919">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.05919">阅读原文 ↗</a></p>
 </body>
 </html>

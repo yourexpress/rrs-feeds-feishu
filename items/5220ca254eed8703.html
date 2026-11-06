@@ -22,9 +22,11 @@
 <h1>Physics-Augmented Graph Transformers for Patch-Antenna Forward and Inverse Design</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>贴片天线正逆设计的物理增强图 Transformer</p>
-<blockquote><p>Full-wave electromagnetic (EM) simulation enables accurate patch-antenna analysis but is computationally expensive for large-scale forward prediction and inverse design. We present a mesh-native, physics-augmented graph-learning framework that treats radiation-pattern prediction as signal reconstruction on an irregular surface mesh. For the forward problem, a GPS graph transformer is trained with Physics-Augmented Intermediate Supervision (PAIS), an auxiliary node-level objective that predicts complex surface currents, the physical intermediate linking geometry to radiation. PAIS improves multiple GNN backbones at no inference-time cost, while shuffled-current and non-physical controls show the gain comes from physical correspondence. Direction-conditioned decoding and a differentiable radiation-integral consistency loss further exploit this structure. On an 80,000-sample CST benchmark, GPS+PAIS reaches MSE 0.17 / PSNR 19.67, generalizes to a PCA split, and transfers zero-shot to canonical patches. For inverse design, surrogate-filtered diffusion beats nearest-neighbor retrieval by 32% relative MSE.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 全波电磁仿真能精确分析贴片天线但计算昂贵，难以支撑大规模正向预测与逆向设计——如何用图学习加速？</p>
+<p><strong>方法</strong> 提出网格原生、物理增强的图学习框架，把辐射方向图预测视为不规则表面网格上的信号重建：GPS 图变换器用 Physics-Augmented Intermediate Supervision（PAIS）训练——辅助节点级目标预测表面复电流（连接几何与辐射的物理中间量）；方向条件解码与可微辐射积分一致性损失进一步利用该结构；逆向设计用代理过滤的扩散模型。</p>
+<p><strong>关键数字</strong> 8 万样本 CST 基准上 GPS+PAIS 达 MSE 0.17 / PSNR 19.67，可泛化到 PCA 划分、零样本迁移到标准贴片；乱序电流与非物理对照证明增益来自物理对应；逆向设计较最近邻检索相对 MSE 降低 32%。</p>
+<p><strong>为什么值得看</strong> 把电磁物理量作为中间监督注入图神经网络，"物理对应"有消融证据，正向与逆向设计双覆盖。</p>
+<p><a href="https://arxiv.org/abs/2610.05004">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05004">阅读原文 ↗</a></p>
 </body>
 </html>

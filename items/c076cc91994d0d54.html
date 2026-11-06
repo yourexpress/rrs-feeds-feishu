@@ -22,9 +22,11 @@
 <h1>Optimistic Reliable Broadcast in Three Steps</h1>
 <p class="meta-line">arXiv cs.DC · 2026-10-06 · 论文PDF</p>
 
-<p>三步乐观可靠广播协议</p>
-<blockquote><p>We study the latency tradeoffs of signature-free asynchronous reliable broadcast with optimistic two-step delivery. We consider $n$ parties, of which at most $f$ are Byzantine. An optimistic fault budget $b\le f$ guarantees two-step delivery with an honest broadcaster and at most $b$ faults, while correctness tolerates $f$ faults. We write $(d_o,d_s,d_t)$ for optimistic latency, honest-broadcaster latency with up to $f$ faults, and totality delay-the elapsed time from first to last honest delivery. For $3f+1\le n&lt;4f$, our first construction improves Opt-RBC's $(2,4,4)$ guarantees to $(2,3,4)$, preserving its maximal optimistic budget $b_*=\lfloor n/2\rfloor-f$. Thus maximal optimism is compatible with the optimal three-step good case. We prove a complementary lower bound: for $3f+1\le n&lt;4f$, every deterministic reliable broadcast protocol in our asynchronous model with two-step optimistic budget $b\ge n-3f$ has totality delay at least three, even when the broadcaster is honest. Our second construction achieves $(2,3,3)$, matching this lower bound at maximal optimism when $f\ge2$ and $\lceil(10f-3)/3\rceil\le n&lt;4f$. Both constructions use quadratic messages and tolerate adaptive cor…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 无签名异步可靠广播的乐观两步投递延迟权衡：能否在保持最大乐观容错预算的同时实现最优三步好情况延迟？</p>
+<p><strong>方法</strong> 研究 n 方、至多 f 个拜占庭节点的异步可靠广播，乐观预算 b≤f 保证诚实广播者在至多 b 故障时两步投递；构造两个协议并给出下界：(d_o, d_s, d_t) 分别表示乐观延迟、诚实广播者至多 f 故障延迟、总投递延迟。</p>
+<p><strong>关键数字</strong> 当 3f+1≤n&lt;4f：第一个构造把 Opt-RBC 的 (2,4,4) 改进为 (2,3,4)，保持最大乐观预算 b_*=⌊n/2⌋-f；并证明乐观预算 b≥n-3f 时总投递延迟至少为 3；第二个构造达到 (2,3,3)，匹配下界（f≥2 且 ⌈(10f-3)/3⌉≤n&lt;4f）；两构造均为二次消息复杂度、容忍自适应腐败；与 Bracha 的 (3,3,2) 相比，最大乐观仅多付一个总投递步。</p>
+<p><strong>为什么值得看</strong> 把可靠广播的乐观路径与最坏情况延迟同时推到最优，理论完整（构造+下界），对共识/广播协议设计者有直接价值。</p>
+<p><a href="https://arxiv.org/abs/2610.05445">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05445">阅读原文 ↗</a></p>
 </body>
 </html>

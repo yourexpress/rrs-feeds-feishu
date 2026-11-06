@@ -22,9 +22,11 @@
 <h1>Priced Guidance: Can Language Models Generate Future Research Ideas?</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>语言模型能否产生未来研究想法</p>
-<blockquote><p>We evaluate language models' capability to generate novel research ideas through the lens of compression. We aim to lower-bound the potentially tiny probability that a language model generates the essence of a future research idea without any hints. Rather than estimate this probability through expensive repeated sampling, our Priced Guidance framework measures the compression cost: how many additional bits of information are needed to guide the model to recover the target idea. We prove that if the model can recover the target idea with at most K bits of guidance in expectation, then it can generate the idea without any guidance with probability at least $2^{-K}$. In our framework, the language model, called the generator, can pose a sequence of multiple-choice questions and specify a probability distribution over possible answers. A guide, which is a language model with access to the target idea, selects answers. If a selected answer has prior probability p, the generator pays $-\log_2 p$ bits. The generator aims to produce an idea that matches the essence of the target idea with minimal cumulative cost. This cumulative cost equals, up to an additive constant, the number of bits …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 语言模型"无提示生成未来研究思想"的概率可能极小，直接反复采样估计不现实——如何低成本度量模型产生未来研究想法的能力？</p>
+<p><strong>方法</strong> 提出 Priced Guidance 框架：用压缩成本度量——引导模型恢复目标思想需要多少额外信息比特；证明若模型期望至多 K 比特引导即可恢复目标思想，则无引导生成该思想的概率至少为 2⁻ᴷ；生成器可依次提出多选题并指定答案概率分布，知晓目标思想的"引导者"选择答案，选中先验概率 p 的答案则支付 -log₂p 比特。</p>
+<p><strong>关键数字</strong> 5 个生成模型（Opus 5、Fable 5.1、GPT-6 Astra、GPT-5.6 Sol、GLM 5.3）在 87 篇近期高质量深度学习论文核心思想上评测：Fable 5.1 中位压缩成本最低 69.9 比特，远低于 gzip 无损压缩摘要的 5,712 比特；Fable 5.1 + Opus 5 + Astra 均匀集成把中位成本降至 55.8 比特，生成概率下界提升 18,000 倍。</p>
+<p><strong>为什么值得看</strong> 用信息论压缩视角为"AI 能否提出未来研究方向"给出可量化度量，方法新颖且结论出人意料（模型压缩成本远低于通用压缩器）。</p>
+<p><a href="https://arxiv.org/abs/2610.04976">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04976">阅读原文 ↗</a></p>
 </body>
 </html>

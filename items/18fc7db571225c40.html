@@ -22,9 +22,11 @@
 <h1>PaLoRA: Paced Low-Rank Adaptation for Continual Learning</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>持续学习的步调化低秩适配</p>
-<blockquote><p>LoRA-based continual learning methods mitigate catastrophic forgetting through various mechanisms, yet nearly all complement these with small learning rates as a heuristic to restrict gradient scaling magnitude. Such fixed heuristics lack theoretical guidance on how the strength of this restriction should evolve as tasks accumulate. We reveal that even under directional constraints such as nullspace projection, finite-precision updates inevitably leak into the subspace of accumulated prior knowledge along multiple directions. While small learning rates attenuate such leakage, they cannot prevent the accumulated forgetting from intensifying as the effective rank of historical knowledge grows. We show that the optimal magnitude restriction should adaptively increase with this effective rank to balance stability and plasticity, i.e., preservation of previous knowledge and acquisition of new task information. Under an anisotropic leakage model, we derive a pacing law $s^*=\sqrt{R/c}$ that characterizes the optimal scaling of gradient steps, i.e., the magnitude restriction itself, where $R$ is the effective rank of past updates. Based on this insight, we propose PaLoRA, which compresses…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 基于 LoRA 的持续学习方法普遍用小学习率作为限制梯度缩放幅度的启发式，但缺少理论指导：限制强度应随任务累积如何演化？</p>
+<p><strong>方法</strong> 揭示即便有空空间投影等方向约束，有限精度更新仍会沿多个方向泄漏进既有知识子空间；小学习率只能衰减泄漏、无法阻止随历史知识有效秩增长而加剧的遗忘。推导出最优幅度限制应随有效秩自适应增强的配速律 s*=√(R/c)（R 为过去更新的有效秩）；提出 PaLoRA：自适应 SVD 截断压缩历史知识、梯度投影到先前任务空空间、按秩感知自适应配速。</p>
+<p><strong>关键数字</strong> 在 50 任务 ImageNet-A 与 ImageNet-R 挑战性基准上取得 4% 准确率提升；长程设定下较此前方法提升尤为突出。</p>
+<p><strong>为什么值得看</strong> 把"学习率该多大"从启发式变成有理论依据的配速律，对持续学习/灾难性遗忘研究是少见的第一性原理进展。</p>
+<p><a href="https://arxiv.org/abs/2610.04226">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04226">阅读原文 ↗</a></p>
 </body>
 </html>

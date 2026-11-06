@@ -22,9 +22,11 @@
 <h1>Physics-Informed but Not Physics-Consistent: Error Geometry and Subspace Projection for Neural AC Power Flow</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>神经交流潮流的误差几何与子空间投影</p>
-<blockquote><p>Recent neural power-flow solvers, including emerging foundation models, achieve accurate voltage predictions, yet such accuracy does not necessarily imply physically consistent solutions. Even small complex voltage errors can yield large AC power-balance residuals. We study this accuracy-consistency gap across PIGNN-GC, GridSFM, gridfm-graphkit, and LUMINA on realistic 2224-bus Great Britain network (GBnetwork) scenarios, with cross-grid evaluation of GridSFM over 31 systems. Using a singular value decomposition (SVD) basis fitted to training AC power-flow solutions, we find that neural prediction errors contain substantial components outside the dominant solution subspace. To address this mismatch, calibrated solution-subspace projection (CSP) suppresses off-subspace prediction components after train-only bias calibration, reducing Mean PB by 67.0%, 37.8%, 40.5%, and 68.9% for PIGNN-GC, GridSFM, gridfm-graphkit, and LUMINA, respectively, relative to calibrated predictions, while improving voltage-magnitude accuracy in all four models. These results identify output-error geometry as an important factor in physics-consistent neural AC power flow. Code: https://github.com/Kimchangheo…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 神经潮流求解器（含新兴基础模型）电压预测准确，但准确未必物理一致：小的复电压误差可能造成大的交流功率平衡残差。</p>
+<p><strong>方法</strong> 在 PIGNN-GC、GridSFM、gridfm-graphkit、LUMINA 上研究准确-一致差距，用真实 2224 母线英国电网（GBnetwork）场景，GridSFM 跨 31 个系统交叉评估；对训练用 AC 潮流解拟合 SVD 基，发现神经预测误差含大量主解子空间外的成分；提出校准解子空间投影（CSP），在仅训练期偏置校准后压制子空间外预测分量。</p>
+<p><strong>关键数字</strong> Mean PB 相对校准预测分别降低 67.0%、37.8%、40.5%、68.9%（对应四个模型），且四模型电压幅值准确率均提升。</p>
+<p><strong>为什么值得看</strong> 首次把"输出误差几何"作为物理一致性神经潮流的分析视角，方案轻量（仅投影）且跨模型有效。</p>
+<p><a href="https://arxiv.org/abs/2610.05959">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05959">阅读原文 ↗</a></p>
 </body>
 </html>

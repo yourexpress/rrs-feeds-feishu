@@ -22,9 +22,11 @@
 <h1>Rules, Traces and Routing Statistics: Training and Calibration Data for Open Models on ARC-AGI-2</h1>
 <p class="meta-line">arXiv · 2026-11-05 · 论文PDF / 每日精选</p>
 
-<p>ARC-AGI-2 开放模型的训练/校准数据：规则、轨迹与路由统计</p>
-<blockquote><p>We study which training and calibration data help three open models solve ARC-AGI-2 tasks when the solver runs offline on four L4 GPUs for at most 12 hours. We compare data offline on public tasks and report 189 runs on the 120 hidden semi-private tasks. For the NVARC Qwen3-4B grid model, we built a corpus of 12,000 executable rules in a typed language and 95,993 tasks; a rule is admitted only if its behaviour on a fixed probe set differs from that of every admitted rule, and a task only if its pairs refute a shortlist of nearest competing rules and defeat 12 shortcut solvers. Continued fine-tuning on 1,920 real task records with revised four-GPU scheduling raised the semi-private score from 28.96 (mean of the released model) to 33.06 (mean of five runs, best 34.86); no checkpoint trained with synthetic tasks, even all 95,993 of them, improved on the real-task model. For the Qwen3.8-27B reasoning model, we fine-tuned on 1,036 of its own reasoning traces with correct final answers and compared sets that add traces of other models and synthetic tasks. With an inference procedure built around the model (a thinking cap enforced in the serving engine, a Python program checked on the dem…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 哪些训练与校准数据能帮助开放模型解决 ARC-AGI-2 任务？在离线、4 张 L4 GPU、至多 12 小时的求解约束下比较数据配方。</p>
+<p><strong>方法</strong> 对 NVARC Qwen3-4B 网格模型构建 12,000 条可执行规则与 95,993 个合成任务的语料（规则须在探针集上行为唯一、任务须击破 12 个捷径求解器）；对 Qwen3.8-27B 推理模型在 1,036 条自带正确答案的推理轨迹上微调；对 Qwen3.8-Flash-Next MoE 模型做专家剪枝、路由统计适配与索引缓存扩展。</p>
+<p><strong>关键数字</strong> 真实任务记录微调使半私有分数从 28.96 升至 33.06（五次均值，最佳 34.86），合成任务（含全部 95,993 个）无一超过真实任务模型；27B 模型分数从 26.81 升至 44.03（ARC Prize 测得无时限基线为 42.36）；MoE 模型 KV cache 从 0.55M 扩到 1.96M token 后得分 56.67，为全场最佳。</p>
+<p><strong>为什么值得看</strong> 罕见的 ARC-AGI-2 数据配方对照实验，结论"真实任务数据优于海量合成数据"对评测类数据集设计有参考意义。</p>
+<p><a href="https://arxiv.org/abs/2611.06827">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.06827">阅读原文 ↗</a></p>
 </body>
 </html>

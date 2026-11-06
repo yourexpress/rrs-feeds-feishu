@@ -22,9 +22,11 @@
 <h1>OrigaMIG: MIG-Aware VM Placement with a Neighborhood-Restricted BILP and Live Migration</h1>
 <p class="meta-line">arXiv cs.DC · 2026-10-06 · 论文PDF</p>
 
-<p>MIG 感知的 VM 放置：邻域受限 BILP 与热迁移</p>
-<blockquote><p>The extensive use of GPUs in cloud computing, accelerated by the spread of large language model (LLM) services, and the growing need for multitenancy have driven the development of innovative solutions for efficient GPU resource management. Multi-Instance GPU (MIG) technology from NVIDIA enables shared GPU usage in cloud data centers by providing isolated instances, which are offered as MIG-backed virtual GPUs (vGPUs). However, MIG placement rules often lead to fragmentation and suboptimal resource allocation. In this work, we formally model the MIG-aware virtual machine (VM) placement as a binary integer linear programming (BILP) problem aimed at maximizing request acceptance, consolidating resources, and reducing migration overhead. Building upon this formulation, we propose OrigaMIG, a MIG-aware placement optimizer. OrigaMIG places each arriving request at once with a lightweight greedy rule and calls the solver only when a request cannot be placed or the GPUs of a class become fragmented. Each call solves the BILP on a small neighborhood of physical machines (PMs), keeps the rest of the data center fixed, and executes the solution as live migrations. We compare OrigaMIG with th…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> NVIDIA MIG 使 GPU 可在云数据中心共享，但 MIG 放置规则常导致碎片化与次优资源分配，如何优化 MIG 感知的 VM 放置？</p>
+<p><strong>方法</strong> 把 MIG 感知 VM 放置建模为二进制整数线性规划（BILP），目标最大化请求接受率、整合资源、降低迁移开销；提出 OrigaMIG 优化器：每个请求先用轻量贪心规则就地放置，仅当无法放置或某类 GPU 碎片化时才调用求解器，求解限定在物理机的小邻域内、其余数据中心保持不变，并以实时迁移执行解。</p>
+<p><strong>关键数字</strong> 256 块 A100/A30 GPU、128 台 PM 上，29/30 组对比中 OrigaMIG 比更强基线保持更少活跃 PM，迁移 VM 数少 29%~49%，各负载下每 GPU 小时能耗最低；相比默认放置活跃 PM 最多少 12.5%、请求 GPU 内存接受率最多高 7.8 个百分点；小型数据中心距最优活跃 PM 数偏差在 4.1% 内。</p>
+<p><strong>为什么值得看</strong> 用"贪心 + 邻域受限求解 + 实时迁移"的组合把组合优化落地到 GPU 云资源管理，实验规模与覆盖面扎实。</p>
+<p><a href="https://arxiv.org/abs/2610.06646">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06646">阅读原文 ↗</a></p>
 </body>
 </html>

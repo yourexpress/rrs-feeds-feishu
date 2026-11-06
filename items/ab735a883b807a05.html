@@ -22,9 +22,11 @@
 <h1>Task-Efficient Agent Evaluation Using Cached Traces</h1>
 <p class="meta-line">arXiv · 2026-11-05 · 论文PDF / 每日精选</p>
 
-<p>利用缓存轨迹进行任务高效 agent 评估</p>
-<blockquote><p>Efficient benchmarking estimates a system's full benchmark performance from a small number of task executions. Standard approaches rely solely on the binary correctness of executions from a collection of already-evaluated reference systems. An agentic system, however, produces a rich trace for each execution that can reveal substantially more about its capabilities. Leveraging this information requires useful trace representations. We propose representing a trace by extracting a structured summary of it with an LLM and embedding the summary with a standard text encoder. These representations preserve correctness- and task-related signal while minimizing the presence of system identity-, model family- and harness-related signals that dominate raw trace embeddings. Given this representation for each task execution from all reference systems, we construct low-dimensional representations of the systems and predict a new system's score from its position among the reference systems. On SWE-bench Verified and Terminal-Bench 2.0, augmenting an item-response model with this geometry-based prediction reduces mean absolute error from 0.13 to 0.08 (Wilcoxon $p &lt; 10^{-4}$) and from 0.14 to 0.12…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 高效评测能否只执行少量任务就估计系统的完整基准表现？agentic 系统每次执行产生的丰富轨迹如何利用？</p>
+<p><strong>方法</strong> 用 LLM 抽取轨迹的结构化摘要并用标准文本编码器嵌入，得到保留正确性/任务信号、弱化系统身份/模型家族/评测框架信号的表示；基于所有参考系统各任务执行的表示构造低维系统表示，再按新系统在参考系统中的位置预测得分。</p>
+<p><strong>关键数字</strong> SWE-bench Verified 上单条随机执行任务即将平均绝对误差从 0.13 降到 0.08（Wilcoxon p&lt;10⁻⁴）；Terminal-Bench 2.0 上从 0.14 降到 0.12（p&lt;10⁻³）；给定全部参考系统时，在任意执行任务数量下均优于基线。</p>
+<p><strong>为什么值得看</strong> 用"轨迹摘要嵌入"替代纯正确率信号做少样本系统评估，显著省评测成本，对模型选型评测工程直接有用。</p>
+<p><a href="https://arxiv.org/abs/2611.06803">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.06803">阅读原文 ↗</a></p>
 </body>
 </html>

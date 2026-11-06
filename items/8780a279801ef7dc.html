@@ -22,9 +22,11 @@
 <h1>PonyTail: Profiling and Improving Service Tail Latency</h1>
 <p class="meta-line">arXiv cs.PF · 2026-10-06 · 论文PDF</p>
 
-<p>面向离散服务时间的数据中心尾延迟剖析与优化</p>
-<blockquote><p>Datacenter services must meet tight tail latency service-level objectives. Research on improving tail latency focuses on reducing queuing delay by approximating optimal request scheduling policies. As request scheduling nears optimality, the primary way to further improve tail latency is to reduce the service time of requests. Unfortunately, datacenter services lack obvious hotspots for general service time optimization. We point out a new optimization opportunity in targeting the tail service time of services with dispersive service times, which are common in datacenters. To show the feasibility and benefit of this approach, we present PonyTail, a performance analysis methodology and toolkit for analyzing service-level outlier behaviors associated with tail service time. PonyTail helps performance engineers identify control-flow and microarchitectural patterns responsible for service time outliers, as well as their root causes. We apply PonyTail to analyze five latency-critical services, including an in-memory database system and an online search engine. Based on PonyTail's analysis, we optimize some of the services, improving their 99th percentile service time and latency by 10.7…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 数据中心服务须满足严格尾部延迟目标；请求调度逼近最优后，进一步改善尾部延迟的主要途径是缩短服务时间，但服务缺少明显的全局热点可优化。</p>
+<p><strong>方法</strong> 指出新机会：针对服务时间呈分散分布（datacenter 常见）的服务的"尾部服务时间"做优化；提出 PonyTail——分析服务级离群行为的方法论与工具包，帮助性能工程师定位造成服务时间离群的控制流与微架构模式及其根因；在五个延迟关键服务（含内存数据库、在线搜索引擎）上应用并据此优化。</p>
+<p><strong>关键数字</strong> 优化后 99 分位服务时间提升 10.7%~46%，99 分位延迟提升 21%~5 倍。</p>
+<p><strong>为什么值得看</strong> 把尾部延迟优化从"调度"转向"服务时间本身"，方法论+工具+实测改进俱全，对性能工程实践者直接可用。</p>
+<p><a href="https://arxiv.org/abs/2610.04615">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04615">阅读原文 ↗</a></p>
 </body>
 </html>

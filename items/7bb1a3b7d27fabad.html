@@ -22,9 +22,11 @@
 <h1>ServerBench: How can your coding agents design specialized LLM serving systems?</h1>
 <p class="meta-line">arXiv · 2026-11-05 · 论文PDF / 每日精选</p>
 
-<p>编码 agent 设计 LLM 服务系统的新基准 ServerBench</p>
-<blockquote><p>Large language model (LLM) coding agents develop software through experimentation, offering an opportunity to design the serving systems supporting their own operation. Effective serving requires coordinating implementation and operating decisions under session dependencies, latency constraints, and correctness requirements. We introduce ServerBench, a benchmark for agentic design of complete, specialized LLM serving systems. Agents experiment against a common objective, dollars per dollar: latency-qualified token value per dollar of GPU cost. Stateful replay preserves session dependencies, and independent verification checks the submitted system. Across 11 coding-agent models and three deployments, Claude Sonnet 5.5 achieves 2.97 dollars per dollar on Gemma E4B, $4.87\times$ the vLLM reference; 22 of 33 runs yield verified systems, and 13 exceed the strongest baseline. Our analysis identifies three findings: high-value designs coordinate capacity improvements with load selection; agents interpret performance feedback through workload-relevant experiments; and reliable delivery requires verification of the execution paths introduced by optimization. Overall, ServerBench supports sy…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 编码 agent 能否自主设计"支撑自己运行的"专用 LLM 服务系统？现有基准未评测这一 agentic 系统设计能力。</p>
+<p><strong>方法</strong> 提出 ServerBench：agent 面向统一目标——"每美元收益"（延迟达标的每美元 GPU 成本可产出 token 价值），在会话依赖、延迟约束与正确性要求下协调实现与运维决策；用有状态回放保持会话依赖，独立验证器检查提交的系统；评测 11 个编码 agent 模型 × 3 种部署。</p>
+<p><strong>关键数字</strong> Claude Sonnet 5.5 在 Gemma E4B 上达到 2.97 美元/美元，为 vLLM 参考的 4.87 倍；33 次运行中 22 次产出通过验证的系统，13 次超过最强基线；三个发现：高价值设计协调容量提升与负载选择、agent 通过任务相关实验解读性能反馈、可靠交付需验证优化引入的执行路径。</p>
+<p><strong>为什么值得看</strong> 把"agent 写服务系统"变成可量化基准，且给出性能-成本权衡下什么样的设计决策真正有效。</p>
+<p><a href="https://arxiv.org/abs/2611.06841">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.06841">阅读原文 ↗</a></p>
 </body>
 </html>

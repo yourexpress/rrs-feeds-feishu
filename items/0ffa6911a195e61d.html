@@ -22,9 +22,11 @@
 <h1>On Turn-Level Best-of-N Sampling for Scaling LLM Agents</h1>
 <p class="meta-line">arXiv · 2026-11-05 · 论文PDF / 每日精选</p>
 
-<p>回合级 Best-of-N 采样：扩展 LLM agent 的新方法</p>
-<blockquote><p>In this work, we evaluate a simple inference-time scaling approach based on \textit{turn-level best-of-N sampling} (\method) for large language model (LLM) agents on complex, long-horizon tasks. We instantiate this using a \textit{generator-selector} framework with two LLMs; at each turn, a \emph{generator} model generates $N$ candidate actions and a \emph{selector} model selects one of them, which is then executed in the environment. This paper is closely related to the work of \cite{zainullina2025guided} who used critic models for guided search at inference time. Different from their work, we evaluate if off-the-shelf, open-weight LLMs can be effective at comparing different candidate actions directly. Experiments on long-horizon terminal tasks show that \method can lead to significant performance improvements, both in terms of accuracy (5--10\%) and consistency across repeated attempts. Analysis of agent trajectories reveal a shift in agent behaviour towards desirable patterns such as reduction in number of attempts to solve the task, improved task instruction following, debugging and testing.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 推理时缩放（test-time scaling）对长程任务 agent 是否有效？此前引导式搜索依赖专门训练的 critic，能否用现成开源模型直接比较候选动作？</p>
+<p><strong>方法</strong> 实现 turn-level best-of-N：每回合生成器产出 N 个候选动作，选择器从中挑一个执行（generator-selector 框架），不训练 critic、直接用现成开放权重 LLM 比较候选动作；在长程终端任务上评测准确率与多次尝试的一致性。</p>
+<p><strong>关键数字</strong> 相比基线在准确率上提升 5~10%，并提升多次重复尝试的一致性；轨迹分析显示 agent 行为转向更优模式——尝试次数减少、指令遵循与调试测试改善。</p>
+<p><strong>为什么值得看</strong> 验证了"无训练、纯推理时采样"也能显著增强长程 agent，且行为改进可解释，对推理成本优化有直接参考。</p>
+<p><a href="https://arxiv.org/abs/2611.06868">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.06868">阅读原文 ↗</a></p>
 </body>
 </html>
