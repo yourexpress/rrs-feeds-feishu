@@ -22,9 +22,11 @@
 <h1>Principled Top-$k$ Selection for Language Models with Hybrid Gradients</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>混合梯度的原则性 Top-k 选择</p>
-<blockquote><p>Selecting the best $k$ items out of $m$ candidates is a critical component of modern large language model systems, such as document selection in Retrieval-Augmented Generation (RAG) and expert routing in Mixture-of-Experts (MoEs). However, training these selection modules remains challenging due to weak gradient signals and suboptimal exploration-exploitation tradeoffs. Furthermore, prior works often rely on heuristics, lacking principled objectives and approaches that explicitly model and solve the top-$k$ selection problem. In this work, we propose a principled objective for training selection modules, whose gradient naturally provides richer training signals in a hybrid form---containing a supervised-gradient component and a policy-gradient component. We show that the selection problem becomes harder as $m$ increases, and our algorithm converges at rate $O(1/\sqrt{T})$, with the optimal upper bound achieved by balancing between bias and variance. Practically, we apply our method to a set of tasks involving top-$k$ selection, including synthetic regression problems, RAG, and MoE systems, showing that our method outperforms the baselines in next-token prediction perplexity and QA …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：从 m 个候选中选最优 k 个（RAG 文档选择、MoE 专家路由）训练难：梯度信号弱、探索-利用权衡差，此前方法多靠启发式——能否有原理化目标？</p>
+<p><strong>方法</strong>：提出 top-k 选择模块训练的原理化目标，梯度自然呈混合形式（监督梯度分量+策略梯度分量）；证明选择问题随 m 增大变难，算法以 O(1/√T) 收敛，通过偏差-方差平衡达到最优上界；在合成回归、RAG 与 MoE 任务上验证。</p>
+<p><strong>关键数字</strong>：收敛率 O(1/√T)；在 next-token 预测困惑度与 QA 准确率上超越基线。</p>
+<p><strong>为什么值得看</strong>：给 RAG/MoE 选择模块一个可证明的优化目标，替代启发式训练的实用升级。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.04162">Principled Top-$k$ Selection for Language Models with Hybrid Gradients</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04162">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Progressive Multi-Ancestor Bit-Depth Distillation</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>渐进多祖先位宽蒸馏：FP32 到 INT4 稳定联合压缩</p>
-<blockquote><p>Model compression strategies are widely employed to reduce memory footprint and network complexity, particularly for devices with constrained computational, memory, and energy resources. Prior works that rely on simultaneous conversion from floating-point high-precision (FP32) to integer low-precision (INT4) representations and distillation into smaller models suffer from unstable training and drastic degradation of prediction performance. To address these limitations, we propose a unified framework, known as \textbf{P}rogressive \textbf{M}ulti-\textbf{A}ncestor \textbf{B}it-depth \textbf{D}istillation (PMABD), that progressively compresses the network while transferring knowledge through a growing pool of higher-precision ancestor teachers. PMABD generates a sequence of intermediate teachers that each learn from all higher-precision ancestors and jointly supervise the final target student. This multi-ancestor, multi-stage design stabilizes ultra-low-bit quantization by lowering quantization noise profiles across training and ensuring stable quantization. Experiments on CIFAR-10/100 with ResNet-20/32/18, and Tiny-ImageNet with MobileNetV2 show that PMABD outperforms state-of-the-ar…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：同时做 FP32→INT4 低精度转换与蒸馏到小模型易训练不稳定、性能骤降——如何稳定超低位量化？</p>
+<p><strong>方法</strong>：提出 PMABD（Progressive Multi-Ancestor Bit-depth Distillation）统一框架：渐进压缩网络，同时从不断增长的更高精度祖先教师池转移知识；生成一串中间教师、各自学习所有更高精度祖先并联合监督最终学生；多祖先多阶段设计降低训练期量化噪声分布、稳定量化。</p>
+<p><strong>关键数字</strong>：CIFAR-10/100（ResNet-20/32/18）与 Tiny-ImageNet（MobileNetV2）上超越 SOTA 压缩框架；ResNet-18/CIFAR-100 的 W2A2 学生模型性能提升 1.06%；基于饱和的停止准则进一步改善最终学生。</p>
+<p><strong>为什么值得看</strong>：超低位量化+蒸馏稳定化的统一方案，资源受限设备部署直接受益。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.04100">Progressive Multi-Ancestor Bit-Depth Distillation</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04100">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>PlayGen2: Learning Real-Time Playable Worlds with Explicit 3D State</h1>
 <p class="meta-line">arXiv · 2026-11-06 · 论文PDF / 每日精选</p>
 
-<p>带显式 3D 状态的可玩游戏世界生成模型 PlayGen2</p>
-<blockquote><p>Building a playable world requires more than generating plausible video: it demands responsive control, persistent spatial structure, and coherent interactions with dynamic entities. Using generated frames as the sole recurrent world representation ties these requirements to view-dependent appearance synthesis, making it difficult to maintain long-term spatial and temporal consistency in generation and interaction. We present PlayGen2, a real-time interactive world model that separates learned 3D state evolution from neural rendering. PlayGen2 maintains a persistent world memory comprising static geometry represented by a volumetric occupancy grid and identity-indexed 3D states for the player and other entities. Within a fixed-size local region, its world-state model jointly learns action-conditioned entity dynamics, geometry completion, and entity discovery, committing updates to a persistent world memory. A separate neural renderer synthesizes first-person observations from depth and semantic projections of the world state, without feeding generated images back into state prediction. Using Doom as a testbed, we demonstrate that the model successfully learns world dynamics includi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：可玩游戏世界需要响应式控制、持久空间结构与动态实体交互——仅靠生成帧作为循环世界表示难以维持长期时空一致，如何建模？</p>
+<p><strong>方法</strong>：提出 PlayGen2，实时交互世界模型：把学习到的 3D 状态演化与神经渲染分离；持久世界记忆含体素占用网格静态几何与按身份索引的玩家/实体 3D 状态；世界状态模型联合学习动作条件实体动力学、几何补全与实体发现，独立神经渲染器从深度与语义投影合成第一人称观察，生成图像不回喂状态预测。</p>
+<p><strong>关键数字</strong>：以 Doom 为测试床，成功学习几何感知玩家运动与玩家-NPC 交互；完整模拟渲染管线在 M4 Pro MacBook Pro 上约 160ms 后端延迟。</p>
+<p><strong>为什么值得看</strong>：显式 3D 状态+神经渲染的实时世界模型路线，可玩性、一致性与端侧性能兼顾。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.07867">PlayGen2: Learning Real-Time Playable Worlds with Explicit 3D State</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.07867">阅读原文 ↗</a></p>
 </body>
 </html>

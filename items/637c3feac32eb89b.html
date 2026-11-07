@@ -22,9 +22,11 @@
 <h1>QRAE: Query-Relevant Attention Entropy for Context Compression in DeepSearch Agents</h1>
 <p class="meta-line">arXiv · 2026-11-05 · 论文PDF / 每日精选</p>
 
-<p>DeepSearch LLM agents repeatedly search and carry retrieved sources into subsequent reasoning steps. This expanding context increases token consumption and latency, although many results do not contribute to later reasoning. We propose Query-Relevant…</p>
-<blockquote><p>DeepSearch LLM agents repeatedly search and carry retrieved sources into subsequent reasoning steps. This expanding context increases token consumption and latency, although many results do not contribute to later reasoning. We propose Query-Relevant Attention Entropy (QRAE), an online context compression method that uses sparse evidence-assessment heads to decide which intact retrieved chunks should persist across reasoning steps. It scores bounded candidate batches through paired prefills: a query-free control suppresses shared attention responses, while normalized entropy measures the breadth of the positive response within each chunk. High-scoring chunks enter a persistent evidence whitelist and are included in the reasoning context. Uncertain chunks remain outside the reasoning context but are retained in a candidate cache, where they can be retrieved for later reevaluation. QRAE requires neither an additional generative compression pass nor modification of the attention operator. Across multiple DeepSearch benchmarks and reasoning models, QRAE improves task success by an average of 2.35 percentage points and reduces end-to-end latency and reported token usage by an average of…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：DeepSearch 智能体反复检索并把来源带入推理上下文，token 消耗与延迟膨胀——如何在线压缩上下文？</p>
+<p><strong>方法</strong>：提出 QRAE，用稀疏证据评估头决定哪些完整检索块跨推理步保留；paired prefills 打分，无查询对照抑制共享注意力响应，归一化熵度量块内正响应广度；高分块进证据白名单，不确定块留在候选缓存待重评，无需额外生成式压缩或改动注意力算子。</p>
+<p><strong>关键数字</strong>：多个 DeepSearch 基准与推理模型上任务成功率平均提高 2.35 个百分点，端到端延迟与 token 用量平均降 30% 与 45%；收益泛化到近 100B 参数模型。</p>
+<p><strong>为什么值得看</strong>：不碰注意力算子、免训练即可为搜索型智能体省近一半 token，部署友好。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.07976">QRAE: Query-Relevant Attention Entropy for Context Compression in DeepSearch Agents</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.07976">阅读原文 ↗</a></p>
 </body>
 </html>

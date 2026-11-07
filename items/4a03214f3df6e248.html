@@ -22,9 +22,11 @@
 <h1>Rule-Guided and Trajectory-Aware Repair for LLM-Based HLS Generation</h1>
 <p class="meta-line">arXiv cs.AR · 2026-11-05 · 论文PDF / 每日精选</p>
 
-<p>Large language models (LLMs) offer a promising path for directly generating functionally correct and synthesizable HLS-C from natural-language specifications. However, existing approaches often struggle to turn multi-round tool feedback and reusable …</p>
-<blockquote><p>Large language models (LLMs) offer a promising path for directly generating functionally correct and synthesizable HLS-C from natural-language specifications. However, existing approaches often struggle to turn multi-round tool feedback and reusable HLS knowledge into effective revisions, limiting end-to-end generation success. We propose MementoHLS, an agentic HLS generation framework built around executable and falsifiable dual-memory-guided repair. MementoHLS combines an Executable Repair Contract Library (ERCL), which converts cross-task HLS knowledge into evidence-gated repair actions, with a Reviewer-Grounded Falsification Ledger (RFL), which converts task-local repair history into trajectory evidence to suppress ineffective routes and preserve validated progress. To ensure reliable outcome attribution, a Same-Candidate Reviewer binds Parse, Compile, Testbench (TB), and Synthesis (Synth) outcomes to the corresponding candidate, while a Single-Commit Arbiter commits at most one candidate per round. Evaluated on 94 HLS-Eval and 170 Bench4HLS tasks, MementoHLS improves same-candidate TB$\wedge$Synth pass@1/pass@5 from 41.7%/57.4% to 58.9%/68.1% on HLS-Eval, and from 15.5%/32.9% …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 直接生成可综合 HLS-C 时，多轮工具反馈与可复用 HLS 知识难以转成有效修订——如何提升端到端生成成功率？</p>
+<p><strong>方法</strong>：提出 MementoHLS，可执行可证伪的双记忆引导修复框架：ERCL 把跨任务 HLS 知识转为证据门控修复动作，RFL 把任务内修复历史转为轨迹证据抑制无效路径；Same-Candidate Reviewer 把解析/编译/测试台/综合结果绑定到对应候选，Single-Commit Arbiter 每轮最多提交一个候选。</p>
+<p><strong>关键数字</strong>：94 个 HLS-Eval 与 170 个 Bench4HLS 任务上，TB∧Synth pass@1/pass@5 从 41.7%/57.4% 提升至 58.9%/68.1%（HLS-Eval），从 15.5%/32.9% 提升至 32.4%/50.6%（Bench4HLS）。</p>
+<p><strong>为什么值得看</strong>：HLS 生成端到端可靠性提升显著，证据绑定机制避免错误归因，工程价值直接。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.07324">Rule-Guided and Trajectory-Aware Repair for LLM-Based HLS Generation</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.07324">阅读原文 ↗</a></p>
 </body>
 </html>

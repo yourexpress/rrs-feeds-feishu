@@ -22,9 +22,11 @@
 <h1>When Bigger Becomes Brittle: Why Compression Hurts More as Language Models Scale</h1>
 <p class="meta-line">arXiv · 2026-11-06 · 论文PDF / 每日精选</p>
 
-<p>研究模型规模变大后量化/剪枝等压缩手段损伤更大的机制</p>
-<blockquote><p>Quantization and pruning reduce the cost of deploying language models, but their effects are usually reported as benchmark scores. Such scores record only the loss that remains at the output. Inside the model, compression damages some components more than others, and the rest of the network can partly compensate. The observed loss therefore reflects both the damage and this compensation, which benchmark scores cannot separate. How the two combine, and whether their balance changes with model size, remains unclear. We study this compensation for in-context retrieval, a capability carried by a small, identifiable set of attention heads. To separate the two, the expected loss from ablating these heads is decomposed exactly into the part restored by the rest of the network, attributed to the components responsible, and the part that reaches the output. This decomposition is then compared across model sizes. For damage of comparable size, smaller models restore most of the loss, whereas larger models retain most of it, because the compensating responses offset less of it as models grow. Compressing the heads produces the same pattern. Compression that is nearly harmless in small models …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：压缩（量化/剪枝）对模型内部组件的伤害与网络其余部分的补偿如何随模型规模变化？基准分数无法分开两者。</p>
+<p><strong>方法</strong>：研究上下文检索能力（由一小簇可识别的注意力头承载）：把消融这些头的期望损失精确分解为「其余网络恢复的部分」与「到达输出的部分」，跨模型规模比较；并对压缩这些头做同样分解。</p>
+<p><strong>关键数字</strong>：对相当规模的损伤，小模型恢复大部分损失、大模型保留大部分损失——补偿响应随模型增长抵消得越来越少；对小模型几乎无害的压缩在大模型上代价高昂。</p>
+<p><strong>为什么值得看</strong>：解释「越大越脆」的机理，为压缩方案按规模差异化评估提供可分解方法。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.07891">When Bigger Becomes Brittle: Why Compression Hurts More as Language Models Scale</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.07891">阅读原文 ↗</a></p>
 </body>
 </html>

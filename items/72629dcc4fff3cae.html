@@ -22,9 +22,11 @@
 <h1>Zuse: A Decision Model for European Languages</h1>
 <p class="meta-line">arXiv · 2026-11-06 · 论文PDF / 每日精选</p>
 
-<p>面向 27 种欧洲语言的决策模型 Zuse（4B/9B/27B）</p>
-<blockquote><p>Decision models read a document and return a probability for each of a fixed set of options instead of generating text. Several appeared in 2026, but none has published results outside English. We describe Zuse, three decision models (4B, 9B and 27B) that train a low-rank adapter and a pointer head on frozen open-weight bases, targeting 27 European languages, and use them to study how this design behaves across languages and tasks. On a broad European suite of 11 sources excluded from training, covering 9 task groups and 27 languages, a development set that also guided model selection, the 27B model reaches 87.5% accuracy with a pooled expected calibration error of 0.016, and 0.035 when weighted per source. Post-hoc analyses of these single-seed results give three findings. First, miscalibration is structured by task rather than language: on parallel reading and topic items in 26 languages the confidence gap varies about as much as sampling noise, while across sources it spans -0.07 to +0.09, with knowledge tasks overconfident and acceptability judgements underconfident at all three sizes, so one fitted temperature cannot correct both. Second, the share of decisions that can be aut…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：2026 年出现多款决策模型（读文档返回选项概率而非生成文本），但无一发布英语之外的结果——跨语言表现如何？</p>
+<p><strong>方法</strong>：提出 Zuse，三个决策模型（4B/9B/27B）：在冻结开源基座上训练低秩适配器+指针头，面向 27 种欧洲语言；在排除训练集的 11 个来源、9 个任务组、27 种语言的欧洲套件上评估。</p>
+<p><strong>关键数字</strong>：27B 模型达 87.5% 准确率、池化期望校准误差 0.016（按来源加权 0.035）；误校准按任务而非语言结构化（知识任务过度自信、可接受性判断欠自信，单一温度无法同时校正）；5% 误差预算下可自动化决策份额与机会校正技能相关性（Spearman 0.97）高于原始准确率（0.91）。</p>
+<p><strong>为什么值得看</strong>：多语言决策模型的首个系统研究，校准、自动化阈值与跨语言泛化结论可直接指导部署。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.06238">Zuse: A Decision Model for European Languages</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.06238">阅读原文 ↗</a></p>
 </body>
 </html>

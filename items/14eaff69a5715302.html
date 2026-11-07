@@ -22,9 +22,11 @@
 <h1>CST-Bench: Benchmarking Counterfactual Spatial Transition Reasoning with Causal Transition On-Policy Self-Distillation</h1>
 <p class="meta-line">arXiv · 2026-11-06 · 论文PDF / 每日精选</p>
 
-<p>反事实空间迁移推理基准，考察物体移动/交换后的场景状态推理</p>
-<blockquote><p>Spatial reasoning is a fundamental capability of multimodal large language models (MLLMs), yet existing benchmarks mainly focus on static scene understanding. When objects are moved or swapped, models must infer not only spatial relations but also how interventions change the scene state. To address this problem, we introduce CST-Bench, a benchmark for counterfactual spatial reasoning. CST-Bench contains 7,082 examples covering 6 intervention types and 12 transformation operators, with dense causal annotations including intervention sources, affected relations, expected effects, invariant relations, and metric changes. We benchmark general-purpose MLLMs on CST-Bench and further compare post-training strategies on CST-Bench and standard spatial benchmarks. Results show that methods effective for ordinary spatial reasoning can still fail under counterfactual interventions. We further formulate counterfactual spatial reasoning as causal state-transition modeling and propose CT-OPSD, which uses CST-Bench annotations to guide a teacher model in learning counterfactual state transitions and causal reasoning chains. These chains are then distilled into a student model that reasons only fr…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：多模态大模型的空间推理多停在静态场景理解——物体被移动或交换后，模型能否推断干预如何改变场景状态？</p>
+<p><strong>方法</strong>：提出 CST-Bench，反事实空间推理基准：7,082 个示例、6 种干预类型、12 种变换算子，带密集因果标注（干预源、受影响关系、预期效应、不变关系、度量变化）；并把反事实空间推理建模为因果状态转移建模，提出 CT-OPSD 用标注引导教师模型学习反事实转移，再蒸馏给只从真实观察推理的学生。</p>
+<p><strong>关键数字</strong>：普通空间推理有效的方法在反事实干预下仍会失败；CST-Bench 成为有挑战的基准与可复用监督资源。</p>
+<p><strong>为什么值得看</strong>：补上空间推理评测的「因果干预」盲区，并提供首个可复用的反事实监督方案。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.07541">CST-Bench: Benchmarking Counterfactual Spatial Transition Reasoning with Causal Transition On-Policy Self-Distillation</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.07541">阅读原文 ↗</a></p>
 </body>
 </html>

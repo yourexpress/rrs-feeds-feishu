@@ -22,9 +22,11 @@
 <h1>MCPHallu: Benchmarking Reasoning, Execution, and Memory Hallucinations in MCP Agents</h1>
 <p class="meta-line">arXiv · 2026-11-06 · 论文PDF / 每日精选</p>
 
-<p>MCP 智能体推理/执行/记忆幻觉基准</p>
-<blockquote><p>Large language model agents are increasingly deployed through the Model Context Protocol (MCP), which allows them to discover and invoke tools across multiple servers at runtime. Existing MCP benchmarks primarily measure task completion; where they diagnose failures, they do so after execution rather than building specific reasoning, execution, and memory failure risks into task construction. We introduce MCPHallu, a benchmark for diagnosing hallucination-prone agent failures in MCP environments along three axes: reasoning, execution, and memory. MCPHallu contains 358 tasks across five capability domains and runs on 36 production MCP servers in isolated containers. Each task is designed with a structural trigger that makes one of four subtypes the dominant failure risk: Branch Collapse, Unreachable Goal, Tool Misuse, or Context Forgetting. This design enables subtype-level analysis rather than aggregate task success alone. We evaluate fourteen frontier LLM agents from eight vendors on 5{,}012 trajectories. Current MCP agents remain vulnerable to hallucination-inducing tool environments, achieving an average score of 0.642 on a $[0,1]$ scale (higher is better). Failures concentrate …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：MCP 智能体在运行时发现并调用多服务器工具，现有基准只测任务完成度、事后诊断失败——能否把推理/执行/记忆幻觉风险结构化地构造进任务？</p>
+<p><strong>方法</strong>：提出 MCPHallu，沿推理、执行、记忆三个轴诊断幻觉易发的智能体失败，含 358 个任务、36 个生产 MCP 服务器（隔离容器），每个任务带结构触发器使四种子类型之一成为主导失败风险：分支坍缩、不可达目标、工具误用、上下文遗忘。</p>
+<p><strong>关键数字</strong>：14 个前沿智能体、8 家厂商、5,012 条轨迹上平均得分 0.642（[0,1] 越高越好）；不可达目标任务平均仅 0.458、23.2% 运行通过——智能体常继续发工具调用或宣称成功而非识别不可行目标；模型排名最多可移 6.9/13 位。</p>
+<p><strong>为什么值得看</strong>：MCP 智能体幻觉的首个亚型级诊断基准，暴露「不识别不可行目标」的系统性缺陷。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.07689">MCPHallu: Benchmarking Reasoning, Execution, and Memory Hallucinations in MCP Agents</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.07689">阅读原文 ↗</a></p>
 </body>
 </html>

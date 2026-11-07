@@ -22,9 +22,11 @@
 <h1>WeLM-Image: A Unified Image Generation Model towards Visual Intelligence</h1>
 <p class="meta-line">arXiv · 2026-11-06 · 论文PDF / 每日精选</p>
 
-<p>腾讯微信消费级单 GPU 部署的统一图像生成模型</p>
-<blockquote><p>We present \textbf{WeLM-Image}, a unified image foundation model that integrates multimodal understanding into text-to-image generation, instruction-guided editing, and multi-reference synthesis. Designed for single-GPU deployment in WeChat's large-scale consumer applications, the model processes text, reference images, and target latents as one interleaved sequence. A Mixture-of-Transformers (MoT) backbone combines shared attention with independent understanding and generation parameters to limit optimization interference. Equipping each path with Mixture-of-Experts (MoE) modules provides sparse capacity, with 31.7B stored parameters and approximately 5.4B generation parameters activated per target latent token. A generation-oriented data engine combines a knowledge-grounded visual vocabulary with large-scale visual clustering to balance semantic coverage and editing tasks, while training-time evaluation guides iterative data refinement. Bilingual annotations and verified editing supervision support progressive training up to native 1.5K resolution. We optimize generation and editing separately with rubric- and checklist-based rewards, then consolidate the specialized policies thr…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：微信大规模消费应用需单 GPU 部署的图像基础模型——如何统一文生图、指令编辑与多参考合成？</p>
+<p><strong>方法</strong>：提出 WeLM-Image，统一图像基础模型：文本、参考图与目标 latent 作为一个交错序列处理；Mixture-of-Transformers（MoT）骨干共享注意力、独立理解与生成参数；每路加 MoE 提供稀疏容量（31.7B 存储参数，每目标 latent token 激活约 5.4B 生成参数）；双语标注+验证编辑监督支持渐进训练至原生 1.5K 分辨率；rubric/checklist 奖励分别优化生成与编辑，再经噪声感知 on-policy 蒸馏整合。</p>
+<p><strong>关键数字</strong>：1536 分辨率模型在 PRISM-Bench、Qwen-Image-Bench、UnicBench 上排开源模型第一；MeanFlow 少步蒸馏出 WeLM-Image-Turbo。</p>
+<p><strong>为什么值得看</strong>：单 GPU 可部署的统一图像生成模型，理解-生成一体的 MoE 架构与数据引擎有借鉴价值。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.07392">WeLM-Image: A Unified Image Generation Model towards Visual Intelligence</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.07392">阅读原文 ↗</a></p>
 </body>
 </html>

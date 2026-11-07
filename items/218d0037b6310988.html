@@ -22,9 +22,11 @@
 <h1>Precision - Preserving Subtensor Inference for a 22B Joint Audio - Video Generator under a Fixed GPU Working Set</h1>
 <p class="meta-line">arXiv cs.DC · 2026-11-05 · 论文PDF / 每日精选</p>
 
-<p>Complete-block offloading reduces model residency but requires each transferred block to fit the GPU budget. We present Precision-Preserving Subtensor Inference (PSI), a fixed-arena runtime that combines sub-block weight streaming with separately man…</p>
-<blockquote><p>Complete-block offloading reduces model residency but requires each transferred block to fit the GPU budget. We present Precision-Preserving Subtensor Inference (PSI), a fixed-arena runtime that combines sub-block weight streaming with separately managed intermediate state for the BF16 LTX-2.5 22B joint audio-video transformer. The contribution is a construction whose managed GPU footprint is determined by reusable pages, live state, and bounded workspace, together with controls that separate resource use, transport correctness, and numerical fidelity. Its partitioned operators preserve the dense real-arithmetic construction under stated assumptions. Across nine matched full-prompt cases on RTX A6000, modified PSI reduces sampled transformer-process peak memory from 8,578 to 360 MiB relative to official MATH, while mean time for the eleven transformer invocations rises from 247.11 to 349.00 s. Its managed arena is 80 MiB. Complete native generation and a complete-block FLASH path both succeed under a fixed 3 GiB available-memory cap. The matched A6000 comparison and separate DGX Spark service suite both achieve 100% success in complete audiovisual decoding. FFN reuse lowers mean bl…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：整块 offloading 需要每个传输块塞进 GPU 预算，大模型在固定显存下如何保持精度地推理？</p>
+<p><strong>方法</strong>：提出 PSI（Precision-Preserving Subtensor Inference），固定 arena 运行时：子块权重流式传输 + 中间状态独立管理，针对 BF16 LTX-2.5 22B 音视频联合 transformer；分区算子保持稠密实算术构造，并分离资源占用、传输正确性与数值保真控制。</p>
+<p><strong>关键数字</strong>：RTX A6000 九个匹配 prompt 下峰值内存从 8,578 降至 360 MiB；十一次 transformer 调用平均耗时 247.11→349.00 s；托管 arena 仅 80 MiB；3 GiB 显存上限下原生生成与 FLASH 路径均成功；FFN 复用降低平均块耗时 4.0%。</p>
+<p><strong>为什么值得看</strong>：把大模型 offload 推理压到固定 3 GiB 显存仍保精度，边缘与受限环境直接受益。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.08023">Precision - Preserving Subtensor Inference for a 22B Joint Audio - Video Generator under a Fixed GPU Working Set</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.08023">阅读原文 ↗</a></p>
 </body>
 </html>

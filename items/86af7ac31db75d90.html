@@ -22,9 +22,11 @@
 <h1>TriAttention: Unified Sparse Mixed-Precision Attention for Long-Context LLM Inference</h1>
 <p class="meta-line">arXiv · 2026-11-05 · 论文PDF / 每日精选</p>
 
-<p>Sparsity and quantization reduce the cost of attention by skipping interactions and lowering the precision of those retained. However, useful interactions differ in their precision requirements: some tolerate low-precision scores while remaining sens…</p>
-<blockquote><p>Sparsity and quantization reduce the cost of attention by skipping interactions and lowering the precision of those retained. However, useful interactions differ in their precision requirements: some tolerate low-precision scores while remaining sensitive to removal. We therefore introduce TriAttention, which assigns query-key (QK) tiles to skipping, 4-bit, or 8-bit computation, using 4-bit to retain quantization-tolerant interactions at lower cost. To represent compactly, we encode each head's computation regions with two diagonal-distance boundaries, keeping policy storage independent of context length. Offline calibration then evaluates candidate boundary pairs using normalized projected-output errors and complete-tile execution costs. Using these measurements, a model-wide allocator selects each head's boundaries to minimize calibration error under a shared computation budget. During prefill, the selected boundaries generate precision-grouped traversals for a fused kernel that skips omitted tiles and combines contributions from both QK precisions into one normalized attention output. The quantized keys and values prepared during prefill are then reused in a compressed key-value…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：注意力中不同交互对精度需求各异——有的容忍低精度分数却对删除敏感，如何按需分配跳过/4-bit/8-bit？</p>
+<p><strong>方法</strong>：提出 TriAttention，把 QK tile 分配到跳过、4-bit 或 8-bit 计算；用两条对角距离边界紧凑编码每头计算区域，策略存储与上下文长度无关；离线校准评估候选边界对，模型级分配器在共享计算预算下最小化校准误差；prefill 阶段产出的量化 K/V 复用于压缩 KV cache 解码。</p>
+<p><strong>关键数字</strong>：端到端生成相对 Torch attention 提速最高 7.88×，相对 BF16 基线 2.65×，质量与原始模型相当。</p>
+<p><strong>为什么值得看</strong>：稀疏+混合精度注意力统一框架，长上下文推理延迟收益显著且质量不损。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.07256">TriAttention: Unified Sparse Mixed-Precision Attention for Long-Context LLM Inference</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.07256">阅读原文 ↗</a></p>
 </body>
 </html>

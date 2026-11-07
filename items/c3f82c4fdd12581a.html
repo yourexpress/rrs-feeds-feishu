@@ -22,9 +22,11 @@
 <h1>Should You Split Decode? Disaggregation Across Future Models and Accelerators</h1>
 <p class="meta-line">arXiv cs.AR · 2026-11-05 · 论文PDF / 每日精选</p>
 
-<p>For large language model (LLM) inference, prefill/decode disaggregation (P/D) is deployed in production to isolate phases with different resource demands. Attention/feed-forward network disaggregation (AFD) splits decode again, but adds communication…</p>
-<blockquote><p>For large language model (LLM) inference, prefill/decode disaggregation (P/D) is deployed in production to isolate phases with different resource demands. Attention/feed-forward network disaggregation (AFD) splits decode again, but adds communication, placement constraints, and another provisioned pool. We ask whether role-specific placement repays this cost as models and accelerator roadmaps change. Infrastructure is committed before future models and hardware can be benchmarked. We present SiliconForge, a calibrated model that varies the serving decomposition and hardware assignment independently. We compare P/D and P/D+AFD across four model directions, four accelerator classes anchored to current and announced parts, and two fabrics. We co-optimize each design using the same rules for pipeline overlap and the same power budget. Our main comparisons show no robust deployment-level AFD advantage in service-level objective (SLO) goodput per kW. Most nominal estimates favor P/D. The largest AFD lead comes from fitting one more prefill replica, not from a more efficient decode pool. AFD has a nominal lead in the KV-heavy (key-value) model direction when the co-located expert pool spa…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：prefill/decode 分离（P/D）之外，把 decode 再拆成 attention/FFN 分离（AFD）增加了通信与部署约束——未来模型与加速器路线下还值不值？</p>
+<p><strong>方法</strong>：提出 SiliconForge 校准模型，独立变化服务分解与硬件分配；在四个模型方向、四类加速器、两种互连上对比 P/D 与 P/D+AFD，用相同流水线重叠规则与功耗预算联合优化。</p>
+<p><strong>关键数字</strong>：主对比显示 AFD 在 SLO goodput/kW 上无稳健的部署级优势；最大 AFD 领先来自多容纳一个 prefill 副本而非更高效的 decode 池；KV-heavy 方向在专家池横跨多个小型 scale-up 域时 AFD 名义领先。</p>
+<p><strong>为什么值得看</strong>：用可复现的校准模型回答「是否拆分 decode」的基础设施决策，前瞻性规划直接可用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.08299">Should You Split Decode? Disaggregation Across Future Models and Accelerators</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.08299">阅读原文 ↗</a></p>
 </body>
 </html>

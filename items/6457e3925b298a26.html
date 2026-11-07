@@ -22,9 +22,11 @@
 <h1>Scaling Laws for SAE Training Data</h1>
 <p class="meta-line">arXiv · 2026-11-06 · 论文PDF / 每日精选</p>
 
-<p>稀疏自编码器(SAE)训练数据的规模定律</p>
-<blockquote><p>Activation storage is often a bottleneck in sparse autoencoder (SAE) training. We study how many unique activations an SAE needs when its total training budget is fixed. Quality improves rapidly as the buffer grows, then reaches a plateau where replaying the buffer is nearly as effective as using fresh activations throughout training. Beyond this point, additional unique activations bring little benefit to reconstruction or interpretability, so the buffer need not grow with the training budget. We describe this tradeoff between diversity and repetition with a scaling law for limited data. We validate it across dictionary sizes and token budgets, early, middle, and late layers of Llama-3.1, Qwen3 model sizes, and BatchTopK, TopK, and JumpReLU SAEs. Sweeps using mathematical text and Python code test the effect of changing the activation source. Evaluation covers explained variance (EV), reconstruction MSE, feature absorption, automated interpretability, and sparse probing. These results give a practical training rule: choose the smallest buffer that reaches the quality plateau and replay it for the remaining budget. In our experiments, this reduces activation storage by $8\text{--}6…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：激活存储常是稀疏自编码器（SAE）训练的瓶颈——总训练预算固定时，SAE 需要多少唯一激活？</p>
+<p><strong>方法</strong>：研究缓冲增长→质量提升→平台期的关系，用有限数据标度律描述多样性与重复的权衡；跨字典大小、token 预算、Llama-3.1 早中晚层、Qwen3 规模及 BatchTopK/TopK/JumpReLU 三种 SAE 验证，覆盖解释方差、重构 MSE、特征吸收、自动化可解释性与稀疏探针评估。</p>
+<p><strong>关键数字</strong>：质量随缓冲增长快速提升后进入平台期，之后重放缓冲几乎与全程用新激活等效；实验中最小的达平台缓冲可把激活存储降 8–64× 且质量损失可忽略。</p>
+<p><strong>为什么值得看</strong>：给出可直接执行的训练规则——选最小达平台缓冲并重放，显著省存储不损质量。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.07756">Scaling Laws for SAE Training Data</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.07756">阅读原文 ↗</a></p>
 </body>
 </html>
