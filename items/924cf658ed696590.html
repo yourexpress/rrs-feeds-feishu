@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond Quadratic Attention: Separable Gaussian Operators for ODE Vision Transformers</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Beyond Quadratic Attention: Separable Gaussian Operators for ODE Vision Transformers</h1>
+<p class="meta-line">arXiv · 2026-11-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：自注意力随 token 数平方增长，限制 ViT 按输入分辨率扩展；点积注意力的 Lipschitz 常数在紧致输入域外无界——能否用可分离算子替代？</p>
+<p><strong>方法</strong>：SSoG 可分离高斯和空间算子，用轴因子化高斯核学习混合替代稠密自注意力，每层成本从 O(N²) 降到次二次；固定核保证全局 Lipschitz 连续，经 Picard–Lindelöf 定理保证连续深度版本在全积分区间有唯一解。</p>
+<p><strong>关键数字</strong>：CIFAR-100@224 上匹配离散 Transformer 与连续设定下，三种宽度 Top-1 提高 2.2–4.1 点且参数少 8.8–16.6%；looped 设定 +5.4–8.1 点；1024² 下连续深度架构吞吐高 154%、峰值内存低 60% 以上。</p>
+<p><strong>为什么值得看</strong>：同时给理论保证（全局 Lipschitz、唯一解）与实测效率，是稠密注意力的务实替代。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.08236">Beyond Quadratic Attention: Separable Gaussian Operators for ODE Vision Transformers</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.08236">阅读原文 ↗</a></p>
+</body>
+</html>

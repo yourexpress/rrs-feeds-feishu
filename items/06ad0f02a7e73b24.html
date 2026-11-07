@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Measuring the Marginal Value of Verifier-Based RL Beyond Supervised Fine-Tuning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Measuring the Marginal Value of Verifier-Based RL Beyond Supervised Fine-Tuning</h1>
+<p class="meta-line">arXiv · 2026-11-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：可验证奖励 RL（RLVR）通常作为 SFT 的替代或后续阶段，隐含假设 RL 自带增益——直接度量这个贡献会怎样？</p>
+<p><strong>方法</strong>：受控设定两阶段都能跑完并精确比较：构建 gpu-train-debug，1,877 个合成 GPU/LLM 训练失败诊断任务、30 个原型、程序化 verifier 部分给分，校准中档模型在 0.60–0.75 带；预注册 60 步 GRPO、lr 1e-6。</p>
+<p><strong>关键数字</strong>：1,200 条金演示几乎解决基准（SFT 硬分 0.785）；15 步 GRPO 不移动（0.314 vs 0.311）；60 步时域内无检测到改善（+0.22，95% CI [-0.06,+0.51]），分布偏移下小幅可测改善（+0.33，CI [+0.02,+0.68]）；整个研究花费 8.69 美元计算。</p>
+<p><strong>为什么值得看</strong>：用预注册受控实验量化 RLVR 相对 SFT 的真实边际贡献——域内几乎为零、偏移下有限，方法论示范意义强。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.07639">Measuring the Marginal Value of Verifier-Based RL Beyond Supervised Fine-Tuning</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.07639">阅读原文 ↗</a></p>
+</body>
+</html>

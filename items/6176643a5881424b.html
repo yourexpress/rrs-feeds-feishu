@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Characterizing CUDA Locality Domains on Blackwell GPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Characterizing CUDA Locality Domains on Blackwell GPUs</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：Blackwell/Rubin 多 die 扩展下跨 die 通信与数据放置的延迟代价尚不清楚——CUDA 13.4 的 Locality Domain（LD）能否缓解？</p>
+<p><strong>方法</strong>：单节点 8 张 B300 上系统评测 LD 三方面：内存管理与访问、计算、通信；做 die 感知适配并集成常用库与工具。</p>
+<p><strong>关键数字</strong>：NCCL 2.32.3（AllGather）提速最高 43.5%、nvbandwidth（DtoD）111.3%、DeepGEMM（EP）37%；超过 32MB 分配有不可忽略的 LD 分配开销（barrier 与 TLB 失效），已向 NVIDIA 提交驱动修复，开销可降 7x–10x 且无需用户改代码。</p>
+<p><strong>为什么值得看</strong>：首份 Blackwell LD 特性实测报告，既给提速路径也指出分配开销与修复方案。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.07535">Characterizing CUDA Locality Domains on Blackwell GPUs</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.07535">阅读原文 ↗</a></p>
+</body>
+</html>

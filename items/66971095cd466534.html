@@ -20,10 +20,13 @@
 </head>
 <body>
 <h1>CHARM+: Cross-Hardware Attention with Re-Merge Multistream Mechanism</h1>
-<p class="meta-line">arXiv · 2026-11-05 · 论文PDF</p>
+<p class="meta-line">arXiv · 2026-11-04 · 论文PDF / 每日精选</p>
 
-<blockquote><p>As sequence lengths continue to grow, distributed attention based on sequence parallel (e.g., Ring-Attention) has become a mainstream solution for large language models (LLMs). Nevertheless, inherent communication dependencies limit computation-communication overlap, reducing GPU utilization. Moreover, in cross-hardware (NUMA or node) architectures, due to imbalanced communication bandwidth, frequent communication synchronization will limit overall performance. Based on these insights, we propose CHARM+, Cross-Hardware Attention with Re-Merge Multistream Mechanism. We reorganize sequential communications into several levels and achieve intra-level parallelism and computation overlap. Furthermore, we decouple cross-hardware communication from intra-hardware communication, eliminating synchronization overhead caused by bandwidth imbalance. Forward and backward algorithms were evaluated on multiple hardware architectures and consistently outperformed state-of-the-art methods. Compared to Ring-Attention, our forward and backward algorithms achieve average speedups of 1.3x and 1.7x on a dual-NUMA PCIe architecture, and 2.8x and 2.9x on a dual-node NVLink architecture, respectively.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：序列并行（Ring-Attention）注意力在长序列下通信依赖限制了计算-通信重叠；跨硬件（NUMA/节点）带宽不均时频繁通信同步更拖累性能——如何重排？</p>
+<p><strong>方法</strong>：提出 CHARM+，把顺序通信重组成多个层级，实现层内并行与计算重叠；解耦跨硬件通信与硬件内通信，消除带宽不均导致的同步开销。</p>
+<p><strong>关键数字</strong>：相对 Ring-Attention，双 NUMA PCIe 架构上前向/后向平均提速 1.3x/1.7x；双节点 NVLink 架构上 2.8x/2.9x。</p>
+<p><strong>为什么值得看</strong>：面向跨硬件长序列注意力的实用通信重排方案，在 NUMA 与多节点上都验证有效。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.05906">CHARM+: Cross-Hardware Attention with Re-Merge Multistream Mechanism</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.05906">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ACSeL: Adaptive Configuration Search for Hardware-Constrained LLM Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ACSeL: Adaptive Configuration Search for Hardware-Constrained LLM Inference</h1>
+<p class="meta-line">arXiv · 2026-11-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：内存与延迟 SLO 严格的资源受限部署（含边缘）要联合选模型大小、批大小、量化算法与混合精度配方，组合空间巨大穷举不可行——如何高效搜索？</p>
+<p><strong>方法</strong>：ACSeL 框架：RMQD 代理用候选与参考模型在小校准语料上的 next-token 分布散度估计质量；Few-shot Median Calibration（FMC）用少量端到端 profile 校准基于算子 profile 的延迟估计；BandPareto 结构化搜索层级混合精度配置。</p>
+<p><strong>关键数字</strong>：RTX A6000 工作站与 Jetson Thor 边缘平台验证，FMC 显著改善部署可行性；BandPareto+FMC 取得最高可行性与最低 RMQD 差距。</p>
+<p><strong>为什么值得看</strong>：面向「约束下最高质量」而非数据中心吞吐的资源受限 LLM 服务配置搜索，边缘部署直接适用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.07570">ACSeL: Adaptive Configuration Search for Hardware-Constrained LLM Inference</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.07570">阅读原文 ↗</a></p>
+</body>
+</html>

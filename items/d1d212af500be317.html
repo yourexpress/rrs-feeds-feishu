@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AutoCompress: Automated Hardware-Guided Model Compression</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>AutoCompress: Automated Hardware-Guided Model Compression</h1>
+<p class="meta-line">arXiv · 2026-11-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：LLM 剪枝要在满足延迟/吞吐/内存硬件约束下保质量，但现有流程常以参数数量为目标，而参数数并不预测这些指标——怎么办？</p>
+<p><strong>方法</strong>：AutoCompress 硬件引导压缩框架，把硬件与负载约束直接纳入可微架构搜索；联合优化全局与逐层结构产生异构架构，用经端到端延迟/吞吐/内存测量验证的 serving 引擎成本模型引导。</p>
+<p><strong>关键数字</strong>：相对 Minitron，八个基准平均精度在 RTX 5070/5080/H100 上分别 +6.57/+2.35/+0.57 个百分点；把 Nemotron 3.5 Super 从 120B 压到 74B 用于单 B200 BF16 128K 上下文，保留 95% 平均基准分。</p>
+<p><strong>为什么值得看</strong>：把「硬件指标」而非参数数作为剪枝目标，压缩结果直接对 serving 引擎可见，实用性强。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.08290">AutoCompress: Automated Hardware-Guided Model Compression</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.08290">阅读原文 ↗</a></p>
+</body>
+</html>

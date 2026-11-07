@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KOSMOS: Self-scheduling Persistent Kernels for Communication-Compute Overlap</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>KOSMOS: Self-scheduling Persistent Kernels for Communication-Compute Overlap</h1>
+<p class="meta-line">arXiv · 2026-11-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：TP+SP 与 EP 把集合通信放在 transformer 层关键路径上，SOTA 融合 kernel 用固定角色/调度留下大段空闲窗口；预定拆分跟不上数据就绪——能否自调度？</p>
+<p><strong>方法</strong>：KOSMOS 自调度持久 kernel 库：工作组用按消费者需求排序的队列在通信与计算角色间切换，无调度器、无每次调用成本模型、无调优拆分；把 transformer 层每个 TP+SP 集合通信与 GEMM 融合，专家层从 router 到 fold 一次启动一个方向。</p>
+<p><strong>关键数字</strong>：AMD MI350X/MI355X 上 Megatron-LM TP+SP 端到端训练 BF16 提速 1.10–1.28x、MXFP8 1.10–1.25x；DeepSeek-V3 与 Qwen3-235B 代理相对 DeepEP 提速 1.29–1.83x。</p>
+<p><strong>为什么值得看</strong>：数据就绪驱动的自调度消除固定拆分浪费，AMD 上大规模 MoE 训练显著加速。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.07477">KOSMOS: Self-scheduling Persistent Kernels for Communication-Compute Overlap</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.07477">阅读原文 ↗</a></p>
+</body>
+</html>

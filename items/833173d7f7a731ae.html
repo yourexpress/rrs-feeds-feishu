@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capability Gain from ISA to Shared Execution on AMD MI300A and MI250X</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Capability Gain from ISA to Shared Execution on AMD MI300A and MI250X</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-04 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：每代新 GPU 的宣传峰值指令速率，经过厂商库、应用与共享设备层层衰减后还剩多少？换新架构、上 FP8 或 2:4 稀疏值不值？</p>
+<p><strong>方法</strong>：定义 capability gain（特性在库/应用/共享设备层面保住的指令级加速比例），从 ISA 微基准经 hipBLASLt、hipSPARSELt 追到 LLM 推理与混合精度 HPL，再到最多 8 并发流共享设备，对比 MI300A（CDNA3）与 MI250X（CDNA2）。</p>
+<p><strong>关键数字</strong>：FP8 完成 8192³ GEMM 比 MI250X FP16 更快，但不融合的量化在 LLM 里变成逐层减速；2:4 稀疏在 hipSPARSELt 中最多保住约一半加速；队列共享下 FP8 的 GEMM capability gain 超过 1，但共享 LLM serving 从 FP8 毫无收益。</p>
+<p><strong>为什么值得看</strong>：用可复现指标量化「理论加速到真实收益」的损耗链路，给架构选型与精度采用提供依据。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.07198">Capability Gain from ISA to Shared Execution on AMD MI300A and MI250X</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.07198">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LowRAM: Low-Rank Keys and Amortised Values for Composable KV Cache Compression at Test-Time</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LowRAM: Low-Rank Keys and Amortised Values for Composable KV Cache Compression at Test-Time</h1>
+<p class="meta-line">arXiv · 2026-11-04 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：KV cache 随上下文线性增长、限制批大小与吞吐；已有方法利用 token/层/特征冗余与低精度，是否还有互补的压缩轴？</p>
+<p><strong>方法</strong>：观察到每个注意力头内 value 大体可由对应 key 预测——用测试时每头轻量预测器做 value cache 摊销，只存重建最差的 token 残差；配对跨层低秩 key 压缩构成 LowRAM 非对称管线，可再与量化、驱逐组合。</p>
+<p><strong>关键数字</strong>：4x 近无损 value 压缩；4x 压缩下峰值解码吞吐最高提升 5x；与量化和驱逐组合达 26.9x 压缩、长上下文上保持基线 94.5% 性能。</p>
+<p><strong>为什么值得看</strong>：把 key 与 value 结构性区分对待，给出可组合、可叠加的激进 KV 压缩，解码吞吐收益显著。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.07025">LowRAM: Low-Rank Keys and Amortised Values for Composable KV Cache Compression at Test-Time</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.07025">阅读原文 ↗</a></p>
+</body>
+</html>

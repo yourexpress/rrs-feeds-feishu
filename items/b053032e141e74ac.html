@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DMuon: Scaling Matrix Optimizers in Data Parallelism with Topology-Aware Matrix Ownership and Communication</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DMuon: Scaling Matrix Optimizers in Data Parallelism with Topology-Aware Matrix Ownership and Communication</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-04 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：Muon 这类矩阵优化器更新整块权重矩阵，与数据并行运行时按元素/行分片冲突——分片后矩阵优化器要么额外通信要么重复计算，如何扩展？</p>
+<p><strong>方法</strong>：DMuon 给每个矩阵分配唯一 owner 执行完整 Newton-Schulz 迭代与优化器更新，按计算成本均衡负载；HSDP 下所有权跨副本全局化，集群只保留一份梯度与优化器状态，参数就绪即跨节点发布并与后续计算重叠；集合通信稀疏变长、就绪即调度，沿两层网络路由。</p>
+<p><strong>关键数字</strong>：最多 256 张 H100、三个稠密 LLM 与两个 VLA 模型上，中位吞吐达 PyTorch FSDP2+AdamW 的 1.05x；相对 gather-then-replicate Muon 基线中位吞吐 2.1x。</p>
+<p><strong>为什么值得看</strong>：矩阵优化器在 FSDP/HSDP 上的首个规模化运行时，让 Muon 类优化器可用到大集群训练。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.07084">DMuon: Scaling Matrix Optimizers in Data Parallelism with Topology-Aware Matrix Ownership and Communication</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.07084">阅读原文 ↗</a></p>
+</body>
+</html>

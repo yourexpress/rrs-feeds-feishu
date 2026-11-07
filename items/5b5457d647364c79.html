@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hybrid Approach for Enhancing Lesion Segmentation in Fundus Images</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Hybrid Approach for Enhancing Lesion Segmentation in Fundus Images</h1>
+<p class="meta-line">arXiv · 2026-11-06 · 论文PDF</p>
+
+<blockquote><p>Choroidal nevi (CN) are common benign fundus lesions that require longitudinal monitoring because a small fraction transform into melanoma. Accurate delineation at native resolution is challenging: CN typically occupy &lt;2% of the image, boundaries are indistinct, and expert annotations are limited. We propose a hybrid pipeline in which an unmodified UNet trained on 128 * 128 images provides a coarse location prior, while a training-free superpixel method (SLIC) recovers the boundary at the full input resolution. The prior further drives automatic per-image selection of the superpixel count via an image-to-lesion ratio, eliminating manual tuning. On 25 held-out 1024 * 1024 images, the proposed method achieved a mean Dice of 90.9% (IoU 87.9%), outperforming nnU-Net (83.2%), Swin UNet (73.0%), and Attention UNet (60.6%) trained at the same resolution, with all paired differences significant after Holm correction. On 90 external images from a second centre, the advantage persisted (76.8% vs. 69.3% for nnU-Net). Ablation studies identify the automated superpixel count as the key component. Inference needs no GPU, requiring 1.6 s per 1024 * 1024 image and 15 s at 3900 * 3900 on a laptop.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2509.25549">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAMP: Context-Aware Mapping and Placement for LLMs on 3D-IMC Arrays</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CAMP: Context-Aware Mapping and Placement for LLMs on 3D-IMC Arrays</h1>
+<p class="meta-line">arXiv · 2026-11-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：3D-IMC 把内存阵列堆叠成垂直层增加容量，但权重放置决定哪些矩阵向量乘可并发执行，影响延迟与吞吐——如何上下文感知地放置权重？</p>
+<p><strong>方法</strong>：CAMP 面向 3D-IMC LLM 加速器的推理上下文感知权重映射算法：把架构、目标网络与运行时上下文导致的资源竞争捕获进冲突矩阵，实现吞吐优化映射；profile 驱动反馈循环高效剪枝搜索空间。</p>
+<p><strong>关键数字</strong>：3D-IMC 计算利用率从 42.4% 提到 60.3%；相对 SOTA 映射算法，3D-IMC 吞吐最高 2.0x、端到端吞吐 1.74x；纯离线软件方案、无需硬件改动。</p>
+<p><strong>为什么值得看</strong>：首个系统处理 3D-IMC 权重映射并发性，利用率提升显著且即插即用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.07707">CAMP: Context-Aware Mapping and Placement for LLMs on 3D-IMC Arrays</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.07707">阅读原文 ↗</a></p>
+</body>
+</html>

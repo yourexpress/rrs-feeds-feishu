@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TSBPO: Tree-Structured Branching for Policy Optimization in Interactive Language Agents</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>TSBPO: Tree-Structured Branching for Policy Optimization in Interactive Language Agents</h1>
+<p class="meta-line">arXiv · 2026-11-06 · 论文PDF</p>
+
+<blockquote><p>Terminal feedback in multi-turn agent training leaves both rollout allocation and local credit underdetermined. Dynamics-Predictive Sampling (DPS) [9] provides a task-level predictive sampling reference, but interactive agents also need to choose which visited states merit further continuations. We introduce TSBPO with two method components. A lightweight, fine-grained Root/Branch budget allocator distributes factual rollouts across tasks and additional suffixes across replayable states using likelihood-fitted estimates of terminal-outcome contrast. On the resulting physical rollout trees, a tree-aware step-level credit assignment algorithm compares immediate sibling segments and assigns their local outcome contrasts to the turns they contain. Exact task/observation groups provide a complementary step term. The allocator selects what to sample; observed outcomes determine the subsequent credit. With a Qwen2.5-1.5B actor, fixed checkpoints attain 97.79% seen and 96.64% unseen stochastic success on ALFWorld, and an 81.07% per-episode success rate over six stochastic episodes for each of the 500 WebShop test goals. At the WebShop update-100 checkpoint, removing the observation-group s…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.41697">阅读原文 ↗</a></p>
+</body>
+</html>

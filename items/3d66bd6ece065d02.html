@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Night at the LLM Zoo: Data Conditioned Flow Matching for Generating Pretrained LLM Weights</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>A Night at the LLM Zoo: Data Conditioned Flow Matching for Generating Pretrained LLM Weights</h1>
+<p class="meta-line">arXiv · 2026-11-04 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：Weight Space Learning 扩展到 LLM 时缺一个经过整理和分析的 LLM 权重种群——能否系统训练一个模型 zoo 并用于权重空间生成？</p>
+<p><strong>方法</strong>：在 51M/124M/355M 三档 GPT-2 模型上每档训练 N=100 个，系统变化 web 文本/书籍/数学/代码/法语的数据混合比例；用余弦相似度、功能多样性、留一混合建模与方差分解分析种群；把训练混合比例嵌入 Gram-PCA 压缩权重空间，训练 Flow Matching 模型生成完整预训练权重。</p>
+<p><strong>关键数字</strong>：零样本泛化到未见的混合比例；生成模型在 CRPS 技能上可测，下游测试集困惑度与通用能力基准分数变化极小。</p>
+<p><strong>为什么值得看</strong>：为 LLM 权重空间学习提供首个公开模型 zoo 与生成管线，代码与产物全开源，可支撑该方向继续扩展。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.07103">A Night at the LLM Zoo: Data Conditioned Flow Matching for Generating Pretrained LLM Weights</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.07103">阅读原文 ↗</a></p>
+</body>
+</html>

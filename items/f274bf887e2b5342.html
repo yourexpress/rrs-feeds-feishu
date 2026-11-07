@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AttnSR: Attention Step Reward for Long-Horizon Agentic RL</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>AttnSR: Attention Step Reward for Long-Horizon Agentic RL</h1>
+<p class="meta-line">arXiv · 2026-11-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：长程 LLM agent 多步决策，但仅结果奖励的 RL 对单步缺乏直接监督——能否不训练奖励模型、不额外 rollout 就给步骤级奖励？</p>
+<p><strong>方法</strong>：AttnSR 从训练回放中提取的策略注意力推导奖励分配：沿策略注意力图反向追踪前序步骤对最终响应的相关性；终态步骤相对运行基线决定这些奖励是强化还是惩罚所选步骤。</p>
+<p><strong>关键数字</strong>：Qwen2.5-7B-Instruct 受控实验，ALFWorld 最终保留成功率从 91.2% 升到 97.1%；ScienceWorld 每个 checkpoint 都提升且环境交互减 29.9%。</p>
+<p><strong>为什么值得看</strong>：用策略注意力当步骤级奖励先验，零额外 rollout 提升长程 agentic RL，方法轻量可复现。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.07932">AttnSR: Attention Step Reward for Long-Horizon Agentic RL</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.07932">阅读原文 ↗</a></p>
+</body>
+</html>

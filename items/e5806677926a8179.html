@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FastAFD: When Does Attention-FFN Disaggregation Pay on Rack-Scale NVLink?</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>FastAFD: When Does Attention-FFN Disaggregation Pay on Rack-Scale NVLink?</h1>
+<p class="meta-line">arXiv · 2026-11-04 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：Attention-FFN 分离（AFD）在机架级 NVLink 系统（如 GB200 NVL72）上是否仍优于同置服务？此前结果来自其他硬件或分析模型。</p>
+<p><strong>方法</strong>：构建 FastAFD——在 GB200 NVL72 上把一个 micro-batch 的 MoE 与另一个的 attention 重叠，与最佳 vLLM 宽专家并行（wide EP）配置对比；并推导解析模型预测 AFD 吞吐。</p>
+<p><strong>关键数字</strong>：对 Qwen3/Qwen3.5 吞吐优势最高 1.17x/1.16x，MiniMax-M2.5 持平；解析模型预测误差在 3% 内；加推测解码后优势再增 8%；展望 Groq LPX 类片上 SRAM 加速器时理想提速 2.48x。</p>
+<p><strong>为什么值得看</strong>：首个在 GB200 NVL72 上实测 AFD 的引擎，并给出部署前可用的预判模型，已开源。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.07149">FastAFD: When Does Attention-FFN Disaggregation Pay on Rack-Scale NVLink?</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.07149">阅读原文 ↗</a></p>
+</body>
+</html>

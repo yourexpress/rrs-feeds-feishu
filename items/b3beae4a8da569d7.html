@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where Prefill Expert Reduction Hurts MoE Models: A Few Prompt Tokens Carry Most of the Short-Answer F1 Loss</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Where Prefill Expert Reduction Hurts MoE Models: A Few Prompt Tokens Carry Most of the Short-Answer F1 Loss</h1>
+<p class="meta-line">arXiv · 2026-11-06 · 论文PDF</p>
+
+<blockquote><p>Running prompt tokens through fewer routed experts during prefill makes mixture-of-experts (MoE) serving cheaper, but what it damages has not been measured. We locate the damage with token-, layer- and attention-path interventions in four MoE families on short-answer question answering. At half the experts the F1 loss is mostly answer form: the model still finds the answer but no longer answers briefly. The loss is made at a few tokens: the two chat-template tokens before the answer in Qwen3-30B-A3B, and the first 8-32 tokens, where the instruction sits, in DeepSeek-V2-Lite. Keeping them at full experts removes most of the F1 loss and about half and a fifth of the increase in answer NLL. Reduction changes the first-token sink statistics by less than 4%, and restoring super experts or massive activations recovers at most a quarter of the loss. We then test placement on real prompts with about 4% of tokens at full experts. Putting them on the task interface keeps F1 within one point of the unmodified model, while the same budget scattered in the documents is about 3 points worse in both prespecified primary tests of this comparison. Time to first token falls about 14% on 11K-token pr…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.22454">阅读原文 ↗</a></p>
+</body>
+</html>

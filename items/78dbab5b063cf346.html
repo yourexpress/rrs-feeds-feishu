@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Empirical Study of Pop and Jazz Mix Ratios for Genre-Adaptive Chord Generation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Empirical Study of Pop and Jazz Mix Ratios for Genre-Adaptive Chord Generation</h1>
+<p class="meta-line">arXiv · 2026-11-06 · 论文PDF</p>
+
+<blockquote><p>This paper treats chord progression generation as a standalone task and asks how much old-domain data must be retained in fine-tuning to acquire a new genre without forgetting the old. I study jazz fine-tuning of a pop-pretrained 25M-parameter Music Transformer (84.21% top-1 next-token accuracy on a held-out pop test set). The jazz corpus is over two orders of magnitude smaller than the pop corpus, so every run uses all 1,513 jazz training sequences, and the swept variable is the volume of pop "rehearsal" data mixed alongside: 0, 1K, 2.5K, 5K, or 10K. At the tabulated best epochs every fine-tuned run gains 7 to 9 points of jazz top-1 (the released F1 checkpoint equals the Phase 0 baseline, as the paper's Correction explains), and pop top-1 falls by 2.11 points under jazz-only fine-tuning but by at most 1.19 with rehearsal. Top-1 also scores the three header tokens of each sequence, and two of them shift whole runs: the jazz-majority runs predict the jazz genre marker even for pop songs, and most test songs carry a placeholder C-major key that a checkpoint predicts for every such song or for none, as the best epochs of F1 and F3 happen to do. Scored without the header tokens, every …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2605.04998">阅读原文 ↗</a></p>
+</body>
+</html>

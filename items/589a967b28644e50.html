@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenRDMA: A GPU-Native Multi-Path Reliable RDMA Transport Architecture</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>OpenRDMA: A GPU-Native Multi-Path Reliable RDMA Transport Architecture</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：大集群算力密度上升，网络通信越来越限制系统性能；GPU 发起通信要低开销提交，但 GDR 控制面仍依赖 CPU、IBGDA 要 GPU 组装 WQE 消耗 SM 与带宽——怎么办？</p>
+<p><strong>方法</strong>：OpenRDMA 开源多路径可靠 RDMA 传输架构：最小 GPU doorbell（GPU 发 8 字节 token，FPGA NIC 从预配置上下文重建完整 WQE）；基于 MRC 支持逐包多路径与乱序到达，选择性重传、有序 DMA 放置与 GPU 可见标志轮询保证可靠交付；硬件-软件协同重传，NIC 管快速数据传输、CPU 管超时检测与恢复策略。</p>
+<p><strong>关键数字</strong>：正文给出架构与关键硬件组件描述，FPGA 原型实现进行中，尚无实测性能数字。</p>
+<p><strong>为什么值得看</strong>：把 WQE 装配移出 GPU、控制面留在 CPU，是 GPU 原生通信路径的务实新架构，开源可跟进。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.07559">OpenRDMA: A GPU-Native Multi-Path Reliable RDMA Transport Architecture</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.07559">阅读原文 ↗</a></p>
+</body>
+</html>

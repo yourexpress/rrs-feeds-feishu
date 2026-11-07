@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日精选 · 2026-11-07</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.5em; border-bottom: 1px solid #e5e7eb; padding-bottom: 12px; }
+  h2 { font-size: 1.2em; margin-top: 1.8em; }
+  a { color: #0969da; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .meta { color: #6b7280; font-size: 0.85em; margin-top: 32px; }
+</style>
+</head>
+<body>
+<h1>每日精选 · 2026-11-07</h1>
+<h2>当日检索概况</h2>
+<ul>
+<li>AI 技术报告库：检索 930 条，入选 18 条</li>
+<li>高效计算文献库：检索 15 条，入选 31 条</li>
+<li>两库合计入选 49 条（其余见每日文件夹）</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong>FastAFD: When Does Attention-FFN Disaggregation Pay on Rack-Scale NVLink?</strong>（arXiv）：在 GB200 NVL72 上实测 AFD 相对宽专家并行最高 1.17x 吞吐优势，并给出预测误差 3% 内的解析模型，部署前即可判断值不值得切换。<a href="https://arxiv.org/abs/2611.07149">原文</a></li>
+<li><strong>A Night at the LLM Zoo: Data Conditioned Flow Matching for Generating Pretrained LLM Weights</strong>（arXiv）：系统性训练 51M/124M/355M 三档 GPT-2 模型 zoo（每档 100 个），用 Flow Matching 在 Gram-PCA 压缩权重空间按数据混合比例生成完整预训练权重，零样本泛化到未见混合。<a href="https://arxiv.org/abs/2611.07103">原文</a></li>
+<li><strong>Measuring the Marginal Value of Verifier-Based RL Beyond Supervised Fine-Tuning</strong>（arXiv）：预注册受控实验直接度量验证器 RL 相对 SFT 的边际贡献——域内无检测到改善（+0.22，CI 含 0），分布偏移下小幅可测（+0.33），整个研究仅耗 8.69 美元计算。<a href="https://arxiv.org/abs/2611.07639">原文</a></li>
+<li><strong>LowRAM: Low-Rank Keys and Amortised Values for Composable KV Cache Compression at Test-Time</strong>（arXiv）：利用 value 可由 key 预测的特性做测试时摊销压缩，4x 压缩下解码吞吐最高提升 5x，与量化/驱逐组合达 26.9x 压缩。<a href="https://arxiv.org/abs/2611.07025">原文</a></li>
+<li><strong>TileQuant: Tile as the Precision-Allocation Unit for LLM Mixed-Precision Post-Training Quantization</strong>（arXiv）：把精度分配单元从列细化为硬件对齐的 2D tile，免训练即达原模型 2.66x 生成吞吐，多项任务质量超过量化与原始模型。<a href="https://arxiv.org/abs/2611.07217">原文</a></li>
+<li><strong>DMuon: Scaling Matrix Optimizers in Data Parallelism with Topology-Aware Matrix Ownership and Communication</strong>（arXiv）：给每个矩阵唯一 owner 跑完整 Newton-Schulz 迭代，256 张 H100 上中位吞吐达 FSDP2+AdamW 的 1.05x，相对 gather-then-replicate Muon 基线 2.1x。<a href="https://arxiv.org/abs/2611.07084">原文</a></li>
+<li><strong>CST-Bench: Benchmarking Counterfactual Spatial Transition Reasoning with Causal Transition Models</strong>（arXiv）：反事实空间迁移推理基准，考察物体移动/交换后的场景状态推理能力。<a href="https://arxiv.org/abs/2611.07541">原文</a></li>
+<li><strong>WeLM-Image: A Unified Image Generation Model towards Visual Intelligence</strong>（arXiv）：腾讯微信消费级单 GPU 可部署的统一图像生成模型。<a href="https://arxiv.org/abs/2611.07392">原文</a></li>
+</ul>
+<h2>主题速览</h2>
+<p>当日 AI 库以基准与评测为主轴：推理能力基准（CST-Bench、TCSExam、BabyTheorist、MCPHallu）、长程 agent 评测（Multi-step SWE、AttnSR、Test-Time Self-Play）与压缩/RL 机制研究（When Bigger Becomes Brittle、Marginal Value of Verifier RL、SAE Scaling Laws）并存，另有 WeLM-Image、PlayGen2 等生成模型与 OpenAI/Meta 产业动态；高效计算库聚焦 LLM 推理系统（FastAFD、LowRAM、TileQuant、TriAttention、StrataFlux、NUMA-Torch）与通信/硬件抽象（DMuon、KOSMOS、OpenRDMA、CHARM+、Locality Domains），AMD/Blackwell 平台实测与 3D-IMC/模拟 CIM 的映射优化成为新热点。</p>
+<p class="meta">由 RSS 流水线自动生成 · 订阅每日精选 feed 可在阅读器内直接阅读</p>
+</body>
+</html>

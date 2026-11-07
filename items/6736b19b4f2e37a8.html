@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Server-Side Sparse Assignment for Federated Mixture-of-Experts</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Server-Side Sparse Assignment for Federated Mixture-of-Experts</h1>
+<p class="meta-line">arXiv · 2026-11-04 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：边缘异构设备联邦微调 LLM 时客户端数据分布与资源约束多样；现有部分专家方法靠启发式全池观察或只求系统级负载均衡，无法保证从部分观察恢复客户端相关专家——怎么办？</p>
+<p><strong>方法</strong>：S³-MoE 服务器端稀疏专家分配框架，从部分观察估计客户端特定专家相关性，用 exploit-explore 机制细化分配；并给出相关性估计误差与精确 Top-K 恢复保证。</p>
+<p><strong>关键数字</strong>：CIFAR-100 上 CNN-MoE，相对每个客户端访问全部 20 专家的 Full-20 FedAvg，S³-MoE 只加载每客户端 5 个专家，平均最终精度高 1.31 个百分点。</p>
+<p><strong>为什么值得看</strong>：首个带恢复保证的服务器端稀疏专家分配，省 75% 专家加载还提精度，联邦 MoE 实用性强。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.07093">Server-Side Sparse Assignment for Federated Mixture-of-Experts</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.07093">阅读原文 ↗</a></p>
+</body>
+</html>

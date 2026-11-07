@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muir: Linear Attention with Sensitivity-Allocated Gating and Matched-Filter Readout</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Muir: Linear Attention with Sensitivity-Allocated Gating and Matched-Filter Readout</h1>
+<p class="meta-line">arXiv · 2026-11-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：线性注意力把上下文压缩进固定大小 KV 状态；门控 delta-rule 模型（GDN-2）用通道级衰减与解耦擦除/写入门，但状态更新对擦除远不如对写入敏感——能否据此简化门控并提升效果？</p>
+<p><strong>方法</strong>：Muir 把全部门融合进敏感度分配的低秩投影、用匹配滤波读出门重加权状态行、把省下的参数投入更宽前馈网络；为数值稳定设计并行更新支持大 chunk 训练。</p>
+<p><strong>关键数字</strong>：166M–1.34B 参数上困惑度较 GDN-2 降 1.8–2.0%、较 Transformer 降 2.5–3.6%；常识准确率最高 +1.9 点；1.34B 上从 4K 训练长度外推到 10M token 流无困惑度漂移（2560x），1M token 保持近 100% passkey 检索；100B-token 验证损失比 GDN-2 快 1.2x、比 Transformer 32K 训练快 2.7x。</p>
+<p><strong>为什么值得看</strong>：用敏感度分析指导门控结构精简，线性注意力在质量、外推与训练效率上全面超越基线。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.08376">Muir: Linear Attention with Sensitivity-Allocated Gating and Matched-Filter Readout</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.08376">阅读原文 ↗</a></p>
+</body>
+</html>
