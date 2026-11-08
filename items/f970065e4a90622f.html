@@ -22,9 +22,11 @@
 <h1>ResOPD: Tail Residualization for Sparse On-Policy Distillation</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>稀疏同策略蒸馏的尾部残差化</p>
-<blockquote><p>On-policy distillation (OPD) trains a student model on self-generated trajectories, but transmitting dense teacher distributions across long reasoning traces creates prohibitive communication and memory bottlenecks. Practical systems therefore rely on sparse teacher interfaces, typically transmitting either the sampled-token score or a small Top-$k$ distribution. However, this sparse setting faces a fundamental dilemma: sampled-token estimators are unbiased but suffer from severe gradient variance, whereas directly optimizing Top-$k$ objectives introduces systematic bias. To improve this trade-off, we propose ResOPD (On-Policy Distillation with Tail Residualization), which provides unbiased full-vocabulary reverse KL gradient estimation under on-policy sampling, with substantial variance reduction under the same sparse payload in the evaluated settings. ResOPD aggregates the unobserved vocabulary into an observable coarse tail event, computes its exact aggregate gradient, and samples only the fine-grained within-tail residual, which requires no additional teacher queries or forward passes. Extensive experiments demonstrate that ResOPD substantially reduces gradient variance, stabil…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：稀疏同策略蒸馏（OPD）中，采样 token 估计无偏但方差大、Top-k 目标有偏，如何兼顾。</p>
+<p><strong>方法</strong>：ResOPD 把未观测词表聚合成可观测的粗粒度尾部事件，精确计算其聚合梯度，只对尾部内部残差采样——无需额外 teacher 查询或前向传播，在相同稀疏载荷下给出无偏的全词表反向 KL 梯度估计。</p>
+<p><strong>关键数字</strong>：大幅降低梯度方差、稳定在线训练动态，并在评估设置上提升下游性能。</p>
+<p><strong>为什么值得看</strong>：即插即用的方差缩减原语，直接改善长推理轨迹蒸馏的通信/内存瓶颈。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.04882">ResOPD</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04882">阅读原文 ↗</a></p>
 </body>
 </html>

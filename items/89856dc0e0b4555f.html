@@ -22,9 +22,11 @@
 <h1>Prompt Dominance and Asymmetric Verifier Costs: Empirical Ablations of GRPO at 1B Scale on GSM8K</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>1B 规模 GRPO 消融：提示主导与验证器成本不对称</p>
-<blockquote><p>This paper studies GRPO at 1B scale from both directions: what estimator choices do to the learning signal, and what a degraded reward signal does to what is learned. We train OLMo-2-0425-1B on GSM8K with a from-scratch implementation and measure both sides in controlled sweeps, including a verifier-quality experiment that degrades the training reward and the test-time selector identically. Four results stand out. The prompt is the first-order decision: the zero-shot prompt leaves the base model at 0.08% (its outputs are degenerate continuations, not wrong answers), so almost no group carries a gradient, and training succeeds because the 3-shot prompt reaches 18.3%. At this scale the estimator variants sit within seed noise, with Dr. GRPO ahead on both seeds. In the off-policy regime, clipping is the whole story: training on data without a clipped ratio loses 4-6 points relative to the on-policy reference, while GRPO-style clipping and GSPO recover the loss entirely. Finally, the same weak verifier is far cheaper in RL than in test-time selection: a 10%-flip verifier leaves RL's attainable gain intact (91% and 106% retained across two seeds) where selection retains 57%, and a forma…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：1B 规模 GRPO 训练中，估计器选择与退化奖励信号分别带来什么影响。</p>
+<p><strong>方法</strong>：在 GSM8K 上用 OLMo-2-0425-1B 从头实现 GRPO 做受控扫描：提示格式、估计器变体、on/off-policy 裁剪、验证器质量（翻转噪声、仅格式）对训练与测试时选择的影响。</p>
+<p><strong>关键数字</strong>：0-shot 提示下基座仅 0.08%，3-shot 达 18.3%；无裁剪比 on-policy 参考损失 4–6 分；10% 翻转验证器下 RL 保留 91%/106% 收益而选择仅 57%；仅格式验证器 RL 剩 16–30%、选择几乎归零。</p>
+<p><strong>为什么值得看</strong>：提示与验证器成本的量化不对称结论，对低成本 RL 训练与评测器设计有直接指导。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.04928">Prompt Dominance and Asymmetric Verifier Costs</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04928">阅读原文 ↗</a></p>
 </body>
 </html>

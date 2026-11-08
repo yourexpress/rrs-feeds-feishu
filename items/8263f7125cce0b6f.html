@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Part 1: Introduction to Arm FP8 (8-bit floating-point) formats</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Part 1: Introduction to Arm FP8 (8-bit floating-point) formats</h1>
+<p class="meta-line">Arm Community Blog · 2026-11-02 · 技术博客 / 每日精选</p>
+
+<p><strong>核心话题</strong>：Arm FEAT_FP8 为什么引入 FP8 格式家族，以及硬件如何支持。</p>
+<p><strong>要点</strong>：FP8 不是单一格式而是家族：E4M3 偏精度，适合激活与权重；E5M2 偏动态范围，适合梯度。新增 FPMR 浮点模式寄存器，每个源操作数可独立选择 FP8 格式与缩放因子，且可被硬件 rename、接近普通寄存器写入而非串行化控制更新，便于性能关键代码频繁切换 per-tensor 格式。</p>
+<p><strong>关键数字</strong>：E4M3 为 1 符号位+4 指数位+3 尾数位、bias 7；E5M2 为 1+5+2、bias 15；FP8 规范（OCP OFP8）由 Arm、Intel、NVIDIA 联合发布，NVIDIA H100 已支持。</p>
+<p><strong>为什么值得看</strong>：理解端侧 FP8 落地的格式设计与寄存器机制，为指令级优化打底。</p>
+<p>原文：<a href="https://community.arm.com/arm-community-blogs/b/architectures-and-processors-blog/posts/part-1-introduction-to-arm-fp8-8-bit-floating-point-formats">Part 1: Introduction to Arm FP8 formats</a></p>
+<p><a class="origin" href="https://community.arm.com/arm-community-blogs/b/architectures-and-processors-blog/posts/part-1-introduction-to-arm-fp8-8-bit-floating-point-formats">阅读原文 ↗</a></p>
+</body>
+</html>

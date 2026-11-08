@@ -22,9 +22,11 @@
 <h1>Robust Parameter-Efficient LLM Adaptation on Analog Hardware</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>模拟硬件上鲁棒的参数高效 LLM 适配</p>
-<blockquote><p>Analog in-memory computing is a promising platform for on-device execution of large language models because it performs matrix--vector multiplications (MVMs) in memory and in parallel, reducing data movement. However, limited digital-to-analog converter precision, input noise, and finite conductance states can degrade model accuracy, while full-model retraining to address these effects can be costly. We develop an optimizer-agnostic, parameter-efficient adaptation method based on Low-Rank Adaptation (LoRA), keeping the pretrained weights stored on analog arrays fixed while training the LoRA weights to adapt to downstream tasks and hardware non-idealities. Reliable adaptation requires handling errors in both forward and backward MVMs and physical weight updates. We use input reshaping to reduce input-induced MVM errors and update accumulation to retain small updates before programming them to finite-state analog devices. Across Llama-3.2-1B-Instruct and Llama-3-8B with both Muon and AdamW, input reshaping improves analog LoRA fine-tuning under noisy MVM computation. Update accumulation separately preserves sub-threshold updates and substantially improves adaptation under finite-reso…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：模拟存内计算平台跑 LLM 时，DAC 精度有限、输入噪声与有限电导态会损害精度，如何低代价适配。</p>
+<p><strong>方法</strong>：优化器无关的 LoRA 适配：预训练权重固定在模拟阵列上，只训练 LoRA 权重以适配下游任务与硬件非理想性；用输入重塑减少输入引发的 MVM 误差、更新累积保留小幅更新后再编程到有限态器件。</p>
+<p><strong>关键数字</strong>：Llama-3.2-1B-Instruct 与 Llama-3-8B（Muon/AdamW）上，输入重塑改善噪声 MVM 下的 LoRA 微调；更新累积在低至 20 个电导态的有限分辨率编程下显著改善适配。</p>
+<p><strong>为什么值得看</strong>：参数高效适配是模拟推理落地的务实路径，硬件非理想性的软件补偿思路清晰。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.05318">Robust Parameter-Efficient LLM Adaptation on Analog Hardware</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05318">阅读原文 ↗</a></p>
 </body>
 </html>

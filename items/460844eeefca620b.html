@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Part 2: FP8 Instructions for Arm Advanced SIMD, SVE, and SME</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Part 2: FP8 Instructions for Arm Advanced SIMD, SVE, and SME</h1>
+<p class="meta-line">Arm Community Blog · 2026-11-02 · 技术博客 / 每日精选</p>
+
+<p><strong>核心话题</strong>：FP8 指令在 Arm Advanced SIMD、SVE、SME 上的具体形态。</p>
+<p><strong>要点</strong>：五类指令：转换（F1CVTL/F2CVTL 升宽、FCVTN 缩窄）、按指数缩放（FSCALE）、宽化乘加（FMLALL 系列，BB/BT/TB/TT 变体）、点积（SME FP8 DOT，32 位元素内打包 4 个 8 位值做融合 FP32 点积）、矩阵乘（SVE FMMLA）与外积（SME2 FMOPA 直接累加进 ZA tile）。计算指令均从 FPMR 读源格式、按 LSCALE/NSCALE 缩放，累加用 FP16/FP32 保持稳定。</p>
+<p><strong>关键数字</strong>：FMMLA 每 128-bit 段按 2×8 与 8×2 矩阵相乘得 2×2 结果（8-way 点积）；FMOPA 在 SME2 把 FP8 输入直接累加进 FP16/FP32 元素的 ZA tile。</p>
+<p><strong>为什么值得看</strong>：FP8 GEMM 内核编写者的指令选型手册，端侧推理优化直接可用。</p>
+<p>原文：<a href="https://community.arm.com/arm-community-blogs/b/architectures-and-processors-blog/posts/part-2-fp8-instructions-for-arm-advanced-simd-sve-and-sme">Part 2: FP8 Instructions for Arm Advanced SIMD, SVE, and SME</a></p>
+<p><a class="origin" href="https://community.arm.com/arm-community-blogs/b/architectures-and-processors-blog/posts/part-2-fp8-instructions-for-arm-advanced-simd-sve-and-sme">阅读原文 ↗</a></p>
+</body>
+</html>

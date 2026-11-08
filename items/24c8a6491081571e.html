@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generative AI Comes to Embedded: Powered by Arm Ethos-U NPU</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Generative AI Comes to Embedded: Powered by Arm Ethos-U NPU</h1>
+<p class="meta-line">Arm Community Blog · 2026-11-03 · 技术博客 / 每日精选</p>
+
+<p><strong>核心话题</strong>：生成式 AI（扩散模型）能否跑在 MCU 级硬件上。</p>
+<p><strong>要点</strong>：经 PyTorch→ExecuTorch→CMSIS 流程，把 pico-faces（约 1.7M 参数的 latent rectified-flow 扩散 transformer）部署到 Alif Ensemble E8：Ethos-U85 NPU 执行 transformer 与图像解码器，Cortex-M55 CPU 控制 4 步扩散采样与 classifier-free guidance；16×16×8 latent（2048 值）替代直接生成 49152 像素，量化按组件区分精度。</p>
+<p><strong>关键数字</strong>：参考运行约 78ms 生成一张 128×128 RGB 人脸（4 步扩散×CFG=8 次 transformer 调用+1 次解码）；对比 Pico 2 CPU 版约 8 秒/张。</p>
+<p><strong>为什么值得看</strong>：端侧生成式 AI 的完整落地方案与量化/内存/CPU-NPU 分工实践，MCU 级图像生成成为现实。</p>
+<p>原文：<a href="https://community.arm.com/arm-community-blogs/b/ai-blog/posts/generative-ai-comes-to-embedded-powered-by-arm-ethos-u-npu">Generative AI Comes to Embedded: Powered by Arm Ethos-U NPU</a></p>
+<p><a class="origin" href="https://community.arm.com/arm-community-blogs/b/ai-blog/posts/generative-ai-comes-to-embedded-powered-by-arm-ethos-u-npu">阅读原文 ↗</a></p>
+</body>
+</html>

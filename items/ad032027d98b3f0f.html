@@ -22,9 +22,11 @@
 <h1>Protecting Sensitive Data in Image Synthesis via PAC-Private Adaptation for Diffusion Models</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>扩散模型图像合成的 PAC 隐私适配</p>
-<blockquote><p>Synthetic data are increasingly used as an alternative to sharing sensitive records. However, synthetic data generation does not guarantee privacy, as diffusion models trained or adapted on sensitive data remain susceptible to reconstruction attacks. Moreover, while approaches that use differential privacy (DP), such as DP-SGD, achieve provably private diffusion model training, the repeated gradient clipping and noise injection they require result in significant utility loss. An important limitation of DP-based privacy is that, although it has a provable relationship to reconstruction privacy (RP), that relationship is indirect. RP is defined in terms of limiting how much an adversary's posterior distribution over sensitive data differs from the prior, whereas DP provides guarantees by bounding the sensitivity of outputs to changes in individual records. This indirection is an important source of the utility loss. To address this, we propose a PAC-private diffusion model adaptation to achieve reconstruction privacy. Since PAC-privacy is defined directly with respect to posterior advantage over the prior, it directly implicates RP. To obtain scalable PAC privatization in high dimens…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：扩散模型在敏感数据上微调易受重建攻击，DP 方案（如 DP-SGD）因反复裁剪加噪损失大量效用。</p>
+<p><strong>方法</strong>：提出 PAC 私有适配：先学紧凑的数据相关组件（LoRA/Textual Inversion），再从机制输出的协方差标定各向异性高斯噪声；优化完成后只扰动一次，避免跨梯度更新的隐私组合。</p>
+<p><strong>关键数字</strong>：在 few-shot 概念个性化与全数据集图像合成上，相比 DP 在相同重建隐私下更好地保持主体身份、生成质量与下游分类精度。</p>
+<p><strong>为什么值得看</strong>：直指重建隐私定义的 PAC 隐私路线，为合成数据隐私提供低效用损耗的替代方案。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.04038">PAC-Private Adaptation for Diffusion Models</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04038">阅读原文 ↗</a></p>
 </body>
 </html>

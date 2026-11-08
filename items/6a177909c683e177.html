@@ -22,9 +22,11 @@
 <h1>Round-Trip KNN Clustering: multiscale hierarchical cluster detection on directed nearest-neighbour graphs</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>有向近邻图上多尺度层次聚类检测</p>
-<blockquote><p>We introduce Round-Trip KNN Clustering (RTKNNC), a graph-based method for finding cluster structure at several neighbourhood scales without requiring the number of clusters in advance. Unlike approaches that first make a $k$-nearest-neighbour (KNN) graph undirected, RTKNNC keeps both directions of the neighbour relation: which points a given point selects and which points select it. Incoming selections are treated as weighted votes that help decide which local connections remain visible during a recursive forward-and-reverse traversal. Repeating the procedure for increasing $K$ reveals how groups persist or merge as the neighbourhood scale grows; for the reference inverse-square model before structural refinement, clusters can merge but do not split. Because graph connectivity can occasionally join distinct groups through a sparse bridge or a small region of overlap, we add an optional label-free refinement. It first tests whether an already formed component is better described by two or three Gaussian subpopulations, and accepts a subdivision only when the proposed groups are large enough and consistent with the visible KNN graph. Across eight synthetic datasets and $K=2,\ldots,16…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：无需预先指定簇数，如何在多个邻域尺度上发现层次聚类结构。</p>
+<p><strong>方法</strong>：Round-Trip KNN Clustering 保留近邻关系的双向信息：被谁选中作为加权投票，决定递归前向-反向遍历中哪些局部连接可见；随 K 增大观察簇的持续与合并；可选无标签细化用高斯子总体检验拆分稀疏桥接的大组件。</p>
+<p><strong>关键数字</strong>：8 个合成数据集、K=2..16 上，独立 C 与 Python 实现在全部 120 次参考运行产生相同划分；细化使 variable-density 基准 ARI 从 0.7817 升至 0.9627、sparse-bridge 基准从 0.8083 升至 0.9853。</p>
+<p><strong>为什么值得看</strong>：保持无标签构建流程的同时竞争力不输 7 个外部聚类方法，层次聚类的一个干净新思路。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.06795">Round-Trip KNN Clustering</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06795">阅读原文 ↗</a></p>
 </body>
 </html>

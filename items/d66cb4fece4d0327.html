@@ -22,9 +22,11 @@
 <h1>Reflections and Fragments: Securing LLMs Against Sequential Mosaic Attacks</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>序列化马赛克攻击下的 LLM 防护</p>
-<blockquote><p>Self-play red-teaming improves language-model safety by pitting attacker and defender roles against each other in a zero-sum game. However, real adversaries increasingly use mosaic attacks: multi-turn sequences whose individual fragments are innocuous in isolation yet assemble into a harmful payload. We develop a theory of mosaic defense that characterizes what is required to prevent such attacks without sacrificing helpfulness. We first show that no fixed bounded window of recent prompts is sufficient in general: safety-relevant information may occur arbitrarily far back in the interaction. We formalize a watchman, an online state mechanism that carries this information forward, and show that under explicit assumptions it enables zero-failure defense with positive benign helpfulness. Under stronger conditions, it is also optimal among zero-failure defenders. An exact watchman may nevertheless require exponentially many states, while exact maliciousness detection can require exponentially many queries in an unstructured black-box model. These state and query lower bounds do not by themselves imply hard learning: the construction underlying the state lower bound is efficiently learn…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：如何防御多轮「马赛克攻击」——单看无害、组合成有害载荷的序列片段。</p>
+<p><strong>方法</strong>：发展马赛克防御理论：证明固定有界窗口不够；形式化 watchman（在线状态机制）携带远距信息，显式假设下可实现零失败防御且保持良性帮助性；再用自博弈训练角色化 attacker/defender LoRA 适配器。</p>
+<p><strong>关键数字</strong>：精确 watchman 可能需要指数多状态、精确恶意检测在无结构黑盒下需指数多查询；但状态下界对应构造可从标注样本高效学习。训练后攻击者更易诱发有害回复、防御者更鲁棒，并泛化到未见攻击目标。</p>
+<p><strong>为什么值得看</strong>：首个系统的马赛克攻击防御理论，给 LLM 安全评测与护栏设计划出理论边界。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.05346">Reflections and Fragments</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05346">阅读原文 ↗</a></p>
 </body>
 </html>

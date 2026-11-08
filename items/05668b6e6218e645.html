@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cola2: Co-Adaptive Hierarchical Language Modeling with Continuous Semantic Compression</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Cola2: Co-Adaptive Hierarchical Language Modeling with Continuous Semantic Compression</h1>
+<p class="meta-line">ByteDance Seed · 2026-11-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：分层语言生成中，连续语义潜在空间该压缩什么、离散生成器如何使用它。</p>
+<p><strong>方法</strong>：Cola2 联合研究连续语义压缩、重建与生成平衡、连续-离散协同适配：动态切分语义 span、无辅助损失负反馈控制压缩率、block-causal masked diffusion decoder 在 clean/noisy/dropped 潜在条件下训练、CFG 调节重建与自主生成、token 预测梯度经 latent 回传编码器、Flow Matching 先验学习与表征学习 stop-gradient 解耦。</p>
+<p><strong>关键数字</strong>：约 2100 亿训练 token 上 5 个下游任务验证；346.03B 源 token 的未收敛 checkpoint 在 8 任务平均 60.10，HellaSwag/StoryCloze 超过 Llama-3-8B（其预训练预算大 43 倍以上）。</p>
+<p><strong>为什么值得看</strong>：连续潜在分层 LM 的规模化证据，压缩率与生成质量协同设计思路值得关注。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.31305">Cola2</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2610.31305">阅读原文 ↗</a></p>
+</body>
+</html>

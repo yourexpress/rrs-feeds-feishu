@@ -22,9 +22,11 @@
 <h1>Rethinking Self-Distillation for Multi-Teacher Capability Merging</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>多教师能力合并的自蒸馏再思考</p>
-<blockquote><p>Combining capabilities of multiple expert models trained starting from the same base checkpoint has become increasingly common in frontier language-model post-training. Recent trends suggest that multi-teacher on-policy distillation (MOPD) outperforms conventional off-policy methods. However, despite the higher inference and environment interaction costs incurred by MOPD, we find that much of its reported accuracy gain is due to certain training design choices and hyperparameter optimization, rather than the algorithm itself. We conduct a controlled self-distillation study across two multi-teacher settings, four models, and eleven benchmarks, comparing off-policy methods, namely supervised fine-tuning (SFT) and soft-label distillation, to hybrid teacher-prefix distillation and MOPD. We found that all four methods achieve \textit{nearly identical} accuracy. However, MOPD uses $14.8$--$23.1\times$ SFT's training GPU-hours. We also revisit four recently published comparisons between on-policy and off-policy distillation and find that the reported on-policy gains shrink substantially when SFT baselines are trained on rejection-sampled teacher trajectories and use independently tuned hy…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：多教师能力合并中，同策略蒸馏（MOPD）的精度优势是算法本身还是训练设定带来的。</p>
+<p><strong>方法</strong>：在两种多教师设置、4 个模型、11 个 benchmark 上做受控自蒸馏研究，对比 SFT、软标签蒸馏、混合 teacher-prefix 蒸馏与 MOPD；并重审 4 篇已发表的 on-policy vs off-policy 对比。</p>
+<p><strong>关键数字</strong>：四种方法精度几乎相同，但 MOPD 消耗 SFT 的 14.8–23.1× 训练 GPU 时；SFT 基线用拒绝采样轨迹+独立调超参后，报告的 on-policy 优势大幅缩水；简单权重合并用几分钟 CPU 时间即可恢复专家能力（模型越小、任务干扰越大精度下降越多）。</p>
+<p><strong>为什么值得看</strong>：对「MOPD 更优」的主流叙事提出反证，提醒论文比较中训练设定公平性的重要性。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.04272">Rethinking Self-Distillation for Multi-Teacher Capability Merging</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04272">阅读原文 ↗</a></p>
 </body>
 </html>

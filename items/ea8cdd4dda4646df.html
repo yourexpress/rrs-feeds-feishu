@@ -20,11 +20,13 @@
 </head>
 <body>
 <h1>SAE Interprets MoE: Sparse AutoEncoders Reveal That MoE Experts Exhibit Human-Interpretable Fine-Grained Specialization</h1>
-<p class="meta-line">arXiv · 2026-11-05 · 论文PDF</p>
+<p class="meta-line">arXiv · 2026-11-05 · 论文PDF / 每日精选</p>
 
-<p>Mixture-of-Experts (MoE) models route each token to a few of many experts, yet what an individual expert is responsible for remains unsettled. Existing analyses count how often an expert is selected on domain-labeled corpora, an instrument that fixes…</p>
-<blockquote><p>Mixture-of-Experts (MoE) models route each token to a few of many experts, yet what an individual expert is responsible for remains unsettled. Existing analyses count how often an expert is selected on domain-labeled corpora, an instrument that fixes the taxonomy in advance, stays coarse, and records selection rather than contribution. We instead study specialization in feature space by training a sparse autoencoder (SAE) on the output of an MoE layer. Since this output is a router-weighted sum of expert outputs and the SAE encoder is affine, the pre-activation of every latent decomposes exactly over the experts. Aggregated over a corpus, this gives each expert a dominant set of latents whose activation it principally drives. On layers 4, 30 and 46 of Qwen3-30B-A3B, contribution is far more concentrated than gating, most latents have only one or two dominators, and the overlap between dominant sets concentrates on a few expert pairs. Auto-interpreting these sets reveals a division of labor below coarse domains, with distinct experts for Java and front-end web code, or for geometry and for arithmetic and polynomials, while the coarse domains themselves take very unequal numbers of e…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：MoE 专家到底负责什么？现有按领域语料统计路由选择的方法粒度粗，且只记录「被选中」而非「贡献」。</p>
+<p><strong>方法</strong>：在 MoE 层输出上训练稀疏自编码器（SAE），利用 encoder 的仿射性把每个 latent 的 pre-activation 精确分解到各专家，聚合得到每专家主导的 latent 集合，再做自动解读。</p>
+<p><strong>关键数字</strong>：在 Qwen3-30B-A3B 的第 4、30、46 层上，贡献集中度远高于 gating，多数 latent 仅 1–2 个主导专家；发现 Java 与前端 web 代码、几何与算术/多项式等细分专家分工。代码已开源。</p>
+<p><strong>为什么值得看</strong>：把 MoE 可解释性从「领域计数」推进到「特征空间归因」，并给出可复现开源工具。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.08089">SAE Interprets MoE</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.08089">阅读原文 ↗</a></p>
 </body>
 </html>

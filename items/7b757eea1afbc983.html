@@ -22,9 +22,11 @@
 <h1>Reinforcement Learning-Based Optimization of Workload-Aware Power Delivery Networks</h1>
 <p class="meta-line">arXiv cs.AR · 2026-10-06 · 论文PDF</p>
 
-<p>强化学习优化负载感知片上供电网络</p>
-<blockquote><p>Power Delivery Networks (PDNs) are critical components of modern VLSI chips, providing stable voltage levels while satisfying electromigration (EM) and IR-drop constraints. Conventional PDN design methodologies typically rely on worst-case assumptions, often resulting in over-provisioned networks and inefficient use of resources. This paper presents a reinforcement learning-based framework for the optimization of workload-aware PDNs. The proposed methodology first generates workload-aware PDNs using architectural power traces obtained from system-level simulations. These power traces are mapped to spatial power density distributions, enabling adaptive allocation of PDN resources according to local current demand. A reinforcement learning agent then performs wire-width optimization to minimize PDN area while maintaining EM and voltage integrity constraints. Electrical and reliability metrics are obtained using SPICE-based circuit analysis and EM lifetime estimation. Experimental evaluation is performed on a dataset of workload-aware PDNs generated from 4-, 8-, and 16-core multiprocessor floorplans using PARSEC and SPLASH-2 benchmark workloads. Furthermore, the proposed Deep Q-Networ…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：芯片供电网络（PDN）设计依赖最坏情况假设导致过度设计，如何按工作负载自适应分配资源。</p>
+<p><strong>方法</strong>：从系统级仿真的架构功耗轨迹生成 workload-aware PDN，映射为空间功率密度分布；RL agent（DQN）做线宽优化，在满足电迁移（EM）与 IR-drop 约束下最小化 PDN 面积；用 SPICE 电路分析与 EM 寿命估计评估。</p>
+<p><strong>关键数字</strong>：在 4/8/16 核多处理器 floorplan（PARSEC/SPLASH-2 负载）数据集上平均归一化 PDN 面积减少 47% 且满足全部约束；相比模拟退火质量相当、优化快约 26×。</p>
+<p><strong>为什么值得看</strong>：把 RL 引入芯片供电网络设计，展示「按负载分配」相对最坏情况设计的显著收益。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.06148">RL-Based Optimization of Workload-Aware PDNs</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06148">阅读原文 ↗</a></p>
 </body>
 </html>

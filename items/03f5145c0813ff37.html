@@ -22,9 +22,11 @@
 <h1>Residual Visual Credit Optimization: Conserved Evidence Routing for Multimodal Reinforcement Learning</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>多模态强化学习的守恒证据路由</p>
-<blockquote><p>Reinforcement learning with verifiable rewards scales multimodal reasoning, but an outcome reward says how much a trajectory is worth, not how that value should be spread over the decisions that produced it. We introduce Residual Visual Credit Optimization (RVCO), which treats token credit as a conserved routing problem. A controlled visual intervention yields a per-token evidence response; robust within-trajectory coordinates remove incidental scale; and a budgeted entropic router distributes a fixed amount of sequence utility according to perceptual dependence. A residual support path guarantees positive credit at every valid position, and an analytic correction restores the prescribed credit mass exactly. The resulting field is selective, bounded, full-support, and invariant to response-local score shifts, and recovers hard token selection as a limiting case. Across four model families and seven reasoning benchmarks, RVCO improves accuracy over strong RLVR baselines while maintaining late-stage optimization stability, corruption robustness, and competitive training cost. Rewards, rollouts, and the group-relative advantage estimator are unchanged; only the geometry of token-level…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：可验证奖励 RL 中，轨迹级结果奖励如何按 token 分配信用（credit assignment）。</p>
+<p><strong>方法</strong>：RVCO 把 token 信用当作守恒路由问题：受控视觉干预得到 per-token 证据响应、轨迹内稳健坐标消除偶然尺度、带预算的熵路由按感知依赖分配固定效用；残差支撑路径保证处处正信用，解析校正精确恢复信用总量。</p>
+<p><strong>关键数字</strong>：4 个模型族、7 个推理 benchmark 上相对强 RLVR 基线提升准确率，同时保持后期优化稳定、对抗损坏鲁棒、训练成本相当。</p>
+<p><strong>为什么值得看</strong>：把多模态 RL 的信用分配几何化，只改信用路由不改奖励/rollout，即插即用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.04918">Residual Visual Credit Optimization</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04918">阅读原文 ↗</a></p>
 </body>
 </html>

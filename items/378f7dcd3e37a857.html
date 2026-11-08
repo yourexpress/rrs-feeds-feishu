@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vLLM Delivers Day-0 Support for Kimi K3.1 Pro</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>vLLM Delivers Day-0 Support for Kimi K3.1 Pro</h1>
+<p class="meta-line">vLLM Blog · 2026-11-04 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://vllm.ai/blog-assets/figures/2026-11-04-kimi-k31-pro/social-preview.png" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong>：vLLM 如何在 day-0 支撑 Kimi K3.1 Pro 的稀疏注意力。</p>
+<p><strong>要点</strong>：K3.1 Pro 是 2.8T 参数（104B active）多模态 MoE、1M token 上下文，全部 24 个 MLA 层加 DSA 稀疏注意力（indexer 每 token 打分、保留 top-2048 再做精确 MLA）。vLLM 用按块打包的单一 KV cache 容纳 MLA latent、indexer keys 与 KDA 状态；prefill 按 token 切分而非按 head；decode 上下文并行（DCP）配精确 top-k 合并。</p>
+<p><strong>关键数字</strong>：长上下文 decode 每层读约 23% 的 dense MLA 字节（132B index key vs 576B latent）；token-sharded prefill 在 340K tokens 上 TTFT 快 1.69×；DCP8 KV 容量 21.8M tokens vs TP8 3.04M；AgentX 最高 375.9 tok/s/用户（GB300）、815.6（Rubin）。</p>
+<p><strong>为什么值得看</strong>：稀疏注意力时代的 serving 系统设计范本，KV 缓存与并行策略均可迁移。</p>
+<p>原文：<a href="https://vllm.ai/blog/2026-11-04-kimi-k31-pro">vLLM Delivers Day-0 Support for Kimi K3.1 Pro</a></p>
+<p><a class="origin" href="https://vllm.ai/blog/2026-11-04-kimi-k31-pro">阅读原文 ↗</a></p>
+</body>
+</html>
