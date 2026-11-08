@@ -22,9 +22,11 @@
 <h1>Task Inference Beyond Least Squares in Behavioral Foundation Models</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>行为基础模型中超越最小二乘的任务推断</p>
-<blockquote><p>Behavioral Foundation Models (BFMs) aim to solve a wide range of downstream tasks without test-time policy learning by inferring a task vector from the reward function. While efficient, the retrieved policies are often suboptimal because of how this task vector is inferred, typically with ordinary least squares (OLS). OLS minimizes reward reconstruction error but leaves the ordering of rewards unconstrained, which can bias the successor measure of the retrieved zero-shot policy away from that of the optimal policy. In this work, we propose BLS, an efficient test-time inference method that balances minimizing reward reconstruction error with reducing successor-measure mismatch. Theoretically, we provide a suboptimality gap upper bound characterized by both successor-measure and reward-function residuals. Empirically, we evaluate BLS on top of state-of-the-art BFMs across benchmarks for locomotion, manipulation, and humanoid control. BLS outperforms existing task inference baselines with negligible computational overhead. Project page: https://embodiedai-ntu.github.io/BLS</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：行为基础模型（BFM）以普通最小二乘（OLS）从奖励函数推断任务向量，OLS 只最小化奖励重建误差、不约束奖励排序，导致零样本策略次优。</p>
+<p><strong>方法</strong>：提出 BLS 高效测试时推断方法，平衡最小化奖励重建误差与减少 successor-measure 失配；理论上给出由两者残差刻画的次优性 gap 上界。</p>
+<p><strong>关键数字</strong>：在 locomotion、manipulation、humanoid 控制基准上，叠加于 SOTA BFM 之上优于现有任务推断基线，计算开销可忽略。</p>
+<p><strong>为什么值得看</strong>：为 BFM 提供更优的零样本策略检索，理论有界且几乎零额外成本。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.05350">Task Inference Beyond Least Squares in Behavioral Foundation Models</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05350">阅读原文 ↗</a></p>
 </body>
 </html>

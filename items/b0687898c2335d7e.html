@@ -22,9 +22,11 @@
 <h1>TSAE: Structured Sparse Autoencoders for Interpreting Time-Series Forecasting Models</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>时序预测模型解释的结构化稀疏自编码器</p>
-<blockquote><p>Time-series forecasting informs critical decisions in energy dispatch, industrial operations, and environmental monitoring; understanding the patterns models rely on is essential for assessing reliability and identifying failures. Input attribution identifies important variables and time segments but offers limited insight into internal features, while standard sparse autoencoder (SAE) objectives do not directly constrain cross-variable structure or temporal continuity. We introduce TSAE, a structured sparse autoencoder for forecasting representations that decomposes hidden states into individually inspectable features. TSAE organizes cross-variable structure through shared and variable-routed private dictionaries, separates feature detection from magnitude estimation with gated encoding, and constrains neighboring sparse-code changes according to raw-segment similarity. These mechanisms support analysis of variable context, activation strength, and temporal evolution. Forecast-consistency fine-tuning further improves preservation of the frozen forecaster's outputs. The accompanying TSEVAL protocol separately audits fidelity, feature coherence, and physical calibration to ground fe…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：时序预测模型依赖哪些内部特征难以解释；标准稀疏自编码器目标不约束跨变量结构或时间连续性，输入归因只能定位变量与时段。</p>
+<p><strong>方法</strong>：提出结构化稀疏自编码器 TSAE——共享与变量路由私有字典组织跨变量结构、门控编码分离特征检测与幅度估计、按原始片段相似度约束相邻稀疏码变化；配 TSEVAL 协议分别审计保真度、特征连贯性与物理校准。</p>
+<p><strong>关键数字</strong>：冻结 PatchTST 下 ETTh1/ETTh2/ETTm1 三种子实验中，五个 SAE 里隐藏状态重建误差、归一化预测重建误差（NFRE）与特征迁移率最低；NFRE 相对次优均值降 4.3-26.4%。</p>
+<p><strong>为什么值得看</strong>：为能源调度等关键决策中的时序模型提供可检查的中间特征与审计协议。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.04925">TSAE: Structured Sparse Autoencoders for Interpreting Time-Series Forecasting Models</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04925">阅读原文 ↗</a></p>
 </body>
 </html>

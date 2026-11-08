@@ -22,9 +22,11 @@
 <h1>ThunderSyncRL: Lossless Acceleration of Agentic Reinforcement Learning</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>智能体强化学习的无损加速</p>
-<blockquote><p>Language models are moving beyond generating answers to pursuing long-horizon goals in interactive environments. Post-training these agents requires long, heterogeneous trajectories, and synchronous systems leave learner engines idle until rollout and verification finish. To squeeze out these pipeline bubbles, asynchronous training overlaps rollout and learning across updates, but comes at the cost of policy staleness. We introduce ThunderSyncRL, which starts gradient computation as soon as all required inputs are fixed, without policy staleness. For group relative policy optimization (GRPO), ThunderSyncRL computes each trajectory's score gradient as soon as the reward for that trajectory arrives, without waiting for the group. For on-policy distillation (OPD), it computes gradients for each completed agentic turn's teacher-scored actions while tool calls run in the sandbox. We prove that gradient streaming produces the same GRPO and OPD updates as batch-synchronous training, without changing either objective. On SWE-bench Verified and Terminal Bench 4.0, we train models to the same performance up to $1.9 \times$ faster than synchronous training. With zero policy staleness, Thunder…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：智能体强化学习后训练需要长且异构的轨迹，同步系统在 rollout 与验证期间让 learner 引擎空转，异步重叠又引入策略陈旧。</p>
+<p><strong>方法</strong>：ThunderSyncRL 在所需输入一确定即开始梯度计算、零策略陈旧——GRPO 中每条轨迹奖励到达即算该轨迹得分梯度；OPD 中每个完成回合的教师评分动作在工具调用期间算梯度；并证明梯度流与批同步训练产生相同更新。</p>
+<p><strong>关键数字</strong>：SWE-bench Verified 与 Terminal Bench 4.0 上训练到相同性能最快 1.9×；固定预算下比异步训练性能最多高 2.47 pp。</p>
+<p><strong>为什么值得看</strong>：无损加速 agentic RL 训练，消除流水线气泡又不牺牲策略新鲜度。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.05935">ThunderSyncRL: Lossless Acceleration of Agentic Reinforcement Learning</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05935">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Separators Make Carry Propagation Learnable:The Geometry of Latent Carry in a Multiplication Transformer</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>分隔符使进位传播可学：乘法 Transformer 的潜在进位几何</p>
-<blockquote><p>Transformers asked to multiply multi-digit numbers in a single forward pass often fail, and interpretability studies of pretrained language models find arithmetic solved by input-range heuristics rather than by an explicit carry. We train small Llama-style transformers from scratch on 4x4 multiplication without chain of thought and find that the input format is decisive: inserting a space token between digits raises exact-match accuracy from 1% to 89%. Output positions are learned in carry-chain order, with the middle digits, which have the longest-range dependencies, learned last. Inside the model, the separator token that predicts each digit (its prediction slot) encodes the carry-in as an angle on a ring in the residual stream; examples with more distinct carry values fill more of the ring. Activation patching between examples matched on the column sum shows that this state is causally used before the last layer: patching the prediction slot alone transfers the source carry in up to 84% of cases after block 4 for one middle column of our best model, while for other columns the carry is first assembled at the neighboring answer slot before reaching its own. Remaining errors are a…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：Transformer 单次前向完成多位乘法常失败，且预训练模型中的算术被解释为输入区间启发式而非显式进位传播。</p>
+<p><strong>方法</strong>：从头训练小规模 Llama 风格 Transformer 做 4×4 乘法（无思维链），发现输入格式起决定性作用——数字间插入空格 token；再用激活 patching 分析进位编码与因果使用。</p>
+<p><strong>关键数字</strong>：插入分隔符后精确匹配准确率从 1% 提升到 89%；block 4 之后对预测槽做 patching，在 84% 情形下可转移源进位（最佳模型中间列）；剩余错误几乎都是 off-by-one。</p>
+<p><strong>为什么值得看</strong>：证明输入格式决定算术可学习性，并把进位机制定位为残差流中环形编码的角度，是可解释性的漂亮案例。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.06605">Separators Make Carry Propagation Learnable: The Geometry of Latent Carry in a Multiplication Transformer</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06605">阅读原文 ↗</a></p>
 </body>
 </html>

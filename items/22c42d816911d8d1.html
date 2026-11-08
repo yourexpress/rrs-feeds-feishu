@@ -22,9 +22,11 @@
 <h1>Trajectory-Guided Tokenization of Complex CSI for Wi-Fi Sensing</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>Wi-Fi 感知复杂 CSI 的轨迹引导 token 化</p>
-<blockquote><p>Wi-Fi channel state information (CSI) enables contactless presence detection and gesture recognition. Its high-dimensional complex-valued time series require input representations that preserve informative temporal variations during compression. We propose Trajectory-Guided Tokenization (TGT), which combines complex trajectory decomposition with asymmetric attention to construct compact continuous tokens. For each antenna link and subcarrier, an orthonormal Helmert transform decomposes short, ordered temporal patches into local-center and centered-trajectory coordinates. Keys are learned from the centered-trajectory coordinates, while values retain both components. Learnable queries aggregate subcarriers into frequency slots, which are fused into temporal tokens. Trained jointly from scratch, TGT with TokenMLP achieves the highest mean accuracy of 92.83% among all evaluated frontend-backend combinations on the self-collected dataset. Experiments on EHUNAM and Widar further support the applicability of TGT to cross-domain presence detection and gesture recognition.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：Wi-Fi 信道状态信息（CSI）实现无接触存在检测与手势识别，其高维复值时序在压缩时如何保留信息性时间变化。</p>
+<p><strong>方法</strong>：轨迹引导 token 化（TGT）——复数轨迹分解 + 非对称注意力构造紧凑连续 token：每个天线链路/子载波用正交 Helmert 变换把短时序 patch 分解为局部中心与中心化轨迹坐标，键从中心化轨迹学习、值保留两分量，可学习 query 聚合子载波为频槽再融合为时间 token。</p>
+<p><strong>关键数字</strong>：TGT+TokenMLP 在自采数据集上所有前端-后端组合中平均准确率最高，达 92.83%；在 EHUNAM 与 Widar 上验证跨域存在检测与手势识别。</p>
+<p><strong>为什么值得看</strong>：为 Wi-Fi 感知提供紧凑且保留时变信息的输入表示，跨数据集迁移性好。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.06288">Trajectory-Guided Tokenization of Complex CSI for Wi-Fi Sensing</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06288">阅读原文 ↗</a></p>
 </body>
 </html>

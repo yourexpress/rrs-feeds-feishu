@@ -22,9 +22,11 @@
 <h1>Self-Reflection Fine-Tuning: Enhancing Agent Security against Prompt Injection Attacks from Failure Experience</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>自反思微调增强智能体抗提示注入</p>
-<blockquote><p>Large language model (LLM) agents are increasingly deployed in tool-augmented environments, but their reliance on external inputs makes them highly vulnerable to prompt injection attacks that can hijack task objectives. Existing safety alignment methods rely on static expert trajectories or preference optimization, limiting their ability to generalize to adaptive attack patterns. In this work, we propose Self-Reflection Fine-Tuning (SRFT), a training framework that enables agents to improve robustness by learning from their own failure experiences under adversarial conditions. Instead of passively imitating expert behaviors, SRFT exposes the agent to compromised trajectories constructed via injected attacks, and leverages an expert model to generate structured self-reflection reasoning that contrasts unsafe and optimal actions. This reflective supervision teaches the agent to identify malicious instructions, reason about their consequences, and maintain alignment with the original user intent. We instantiate this framework in SR-Agent, built on Llama-3.1-8B-Instruct and Qwen3-8B, and evaluate it on both static and adaptive prompt injection benchmarks. Experimental results show that…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 智能体在工具增强环境中高度依赖外部输入，易受提示注入攻击劫持任务目标；现有静态对齐难以泛化到自适应攻击。</p>
+<p><strong>方法</strong>：提出自反思微调（SRFT）——让智能体在被注入攻击破坏的轨迹上从自身失败经验学习，由专家模型生成对比"不安全 vs 最优"行动的结构化自反思推理；基于 Llama-3.1-8B-Instruct 与 Qwen3-8B 实例化为 SR-Agent。</p>
+<p><strong>关键数字</strong>：在静态与自适应提示注入基准上显著降低攻击成功率，同时保持任务性能，并展现对自适应攻击的强泛化。</p>
+<p><strong>为什么值得看</strong>：从失败经验中反思学习为构建安全鲁棒 LLM 智能体提供了新训练范式，代码已开源。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.04269">Self-Reflection Fine-Tuning: Enhancing Agent Security against Prompt Injection Attacks from Failure Experience</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04269">阅读原文 ↗</a></p>
 </body>
 </html>

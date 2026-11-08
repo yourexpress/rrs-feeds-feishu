@@ -22,9 +22,11 @@
 <h1>Serve Now or Improve Later? Scheduling Self-Evolution in Online Agent Systems</h1>
 <p class="meta-line">arXiv cs.DC · 2026-10-06 · 论文PDF</p>
 
-<p>在线智能体系统"先服务还是先进化"的自我进化调度</p>
-<blockquote><p>Online agents can improve future service by constructing reusable tools, guidance, or model states, but this work competes with current requests for the same GPUs. Exploiting idle compute for self-evolution faces a fundamental systems constraint: benefits arrive only after an artifact is published and used, while pausing evolution leaves service capacity waiting for memory release and runtime recovery. An investment worth completing may therefore be worth postponing. We present LearnSched, a state-aware scheduler that brings the reuse window of a capability and the timely return of compute into a common investment model. LearnSched incorporates candidate progress, checkpoint overhead, and the current recovery path into action values. Under the same information and capacity constraints, it uses one-step counterfactual rollout to choose progress, checkpointing, or waiting relative to a fully costed window policy. We characterize handoff costs through independent A100 component measurements and evaluate action selection in 1920 paired finite-model scenarios. When cold recovery is expensive, waiting for longer execution windows can improve net value by avoiding handoffs; in evaluated w…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：在线智能体系统可通过构建可复用工具、指南或模型状态改进未来服务，但这与当前请求争抢同一批 GPU——自我进化投入该何时做。</p>
+<p><strong>方法</strong>：提出 LearnSched 状态感知调度器，把能力的复用窗口与算力及时归还纳入统一投资模型，用一步反事实 rollout 选择推进、检查点或等待；用 A100 组件测量刻画切换成本，在 1920 个配对有限模型场景评估。</p>
+<p><strong>关键数字</strong>：1920 个配对场景中验证行动选择；冷恢复昂贵时，等待更长执行窗口可避免切换、提升净值；暖恢复场景下强窗口策略已能达到同等价值。</p>
+<p><strong>为什么值得看</strong>：首次把"先服务还是先进化"系统化为投资模型，为在线 agent 的自我进化调度提供可操作策略。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.06212">Serve Now or Improve Later? Scheduling Self-Evolution in Online Agent Systems</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06212">阅读原文 ↗</a></p>
 </body>
 </html>

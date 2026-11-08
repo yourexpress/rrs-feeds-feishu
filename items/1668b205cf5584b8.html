@@ -22,9 +22,11 @@
 <h1>Training-Free Transformer Merging via Sequential Local Operator Alignment</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>序贯局部算子对齐的免训练 Transformer 合并</p>
-<blockquote><p>Training-free model merging aims to combine multiple fine-tuned models into a single model without further optimization on labeled data. Yet, in transformers, independently merging individual layers can affect a shared attention computation because the query-key and value-output operators depend on composed matrices, overlooking the functional structure. Moreover, when merging earlier components, downstream components receive different activations than they do in the original model, thus, the merged and original execution paths no longer match. In this paper, we introduce Sequential Local Operator Alignment, a training-free method that merges transformers along the execution path of the partially merged model. Our method uses calibration data to estimate the local behavior of each functional component, aligns operators sequentially under the intermediate activation of the partially merged model, and subsequently factorizes the merged operators back into valid transformer parameters. We empirically show that this sequential step reduces error accumulation across layers. Furthermore, the proposed operator factorization step enables rank expansion, providing a principled mechanism for…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：免训练模型合并中，Transformer 独立合并各层会破坏共享注意力计算（QK/VO 算子依赖组合矩阵），且先合并的组件使下游组件收到不同激活。</p>
+<p><strong>方法</strong>：序贯局部算子对齐——沿部分合并模型的执行路径，用校准数据估计各功能组件局部行为，在部分合并模型的中间激活下序贯对齐算子，再分解回合法 Transformer 参数；分解步骤还支持秩扩展。</p>
+<p><strong>关键数字</strong>：从 CLIP、RoBERTa 到十亿参数 LLM 跨模态、规模与任务数泛化，并自然扩展到 LoRA 合并；序贯步骤减少层间误差累积。</p>
+<p><strong>为什么值得看</strong>：给出免训练合并 Transformer 的正确执行路径对齐方案，可选秩扩展提供精度-推理成本权衡。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.06415">Training-Free Transformer Merging via Sequential Local Operator Alignment</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06415">阅读原文 ↗</a></p>
 </body>
 </html>

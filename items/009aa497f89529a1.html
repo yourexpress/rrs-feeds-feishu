@@ -22,9 +22,11 @@
 <h1>Synthesizing Physics Formulae with Transformers</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>用 Transformer 合成物理公式</p>
-<blockquote><p>Finding a compact formula that fits a set of input-output pairs and predicts outputs on unseen inputs is a fundamental problem in science. Symbolic regression automates the search for such formulae: search-based methods explore the space of possible formulae directly, while transformers pre-trained on synthetic data produce formulae of comparable quality substantially faster. Existing transformers, however, are prone to overfitting --- they find formulae that fit the training data well but do not extrapolate to input ranges unseen during training. We address this by shaping the set of formulae used to train a transformer, and show that the resulting formulae extrapolate substantially better. Fine-tuning the transformer on data with noise-corrupted target values further makes the synthesized formulae robust to noise in the observations. On SRBench and LLM-SRBench our transformer synthesizes a formula in about ten seconds and extrapolates better than all evaluated methods at a comparable budget. Search-based methods surpass our accuracy only when given one to three orders of magnitude more time.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：符号回归寻找拟合输入输出对并能外推的紧凑公式；现有 transformer 方法易过拟合训练数据，不向未见输入范围外推。</p>
+<p><strong>方法</strong>：塑造训练 transformer 所用的公式集合以改善外推；再在噪声污染的目标值上微调，使合成公式对观测噪声鲁棒。</p>
+<p><strong>关键数字</strong>：在 SRBench 与 LLM-SRBench 上约 10 秒合成一个公式，外推优于同预算下所有被评估方法；搜索类方法只有给出一到三个数量级更多时间才超越其精度。</p>
+<p><strong>为什么值得看</strong>：把 transformer 符号回归从"拟合训练集"推向真正外推，速度快且抗噪。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.03947">Synthesizing Physics Formulae with Transformers</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.03947">阅读原文 ↗</a></p>
 </body>
 </html>

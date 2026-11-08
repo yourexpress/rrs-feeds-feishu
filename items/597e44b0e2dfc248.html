@@ -22,9 +22,11 @@
 <h1>Structured Representation Learning for Behavior Cloning: How can we learn to safely control a nuclear power plant?</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>行为克隆的结构化表示学习：核电站安全控制案例</p>
-<blockquote><p>Learned models for industrial control are usually judged by aggregate accuracy, but accuracy at the component level does not guarantee safety once it is embedded in the system it is meant to serve. We study this gap on a behavior-cloning task: imitating an expert Nonlinear Model Predictive Control (NMPC) policy for load-following of a Pressurized Water Reactor (PWR), an industrial system with tight safety constraints. We propose a structured architecture encoding variables from each timescale into separate latent spaces, reflecting the physical decomposition of the system, before training a controller to imitate the expert on the product latent space. On long-horizon rollouts, separated embeddings improve both accuracy and feasibility compared with a shared-embedding baseline. Sensitivity analysis further shows that our model yields interpretable representations aligned with the system's physics. However, standalone deployment still leaves several percent of trajectories infeasible regardless of the architecture. Using our method to warmstart the NMPC optimizer rather than acting standalone, we recover full feasibility and near-optimal cost while still cutting computation time by $…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：工业控制学习模型常以聚合精度评判，但组件级精度不保证嵌入系统后的安全性；核电站压水堆负荷跟踪这类紧安全约束任务上如何做安全行为克隆。</p>
+<p><strong>方法</strong>：提出结构化架构——按时间尺度把变量分别编码进独立潜空间，反映系统物理分解，再在乘积潜空间上模仿专家 NMPC 策略；评估长期 rollout 的准确性与可行性，并做敏感性分析。</p>
+<p><strong>关键数字</strong>：分离嵌入在长期 rollout 上同时改善准确性与可行性；单独部署仍留百分之几轨迹不可行；用本方法 warmstart NMPC 优化器可恢复完全可行性与近最优成本，同时比专家控制器省约 15% 计算时间。</p>
+<p><strong>为什么值得看</strong>：给出"表示对齐物理 + warmstart 专家控制器"的安全控制落地路径。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.06211">Structured Representation Learning for Behavior Cloning: How can we learn to safely control a nuclear power plant?</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06211">阅读原文 ↗</a></p>
 </body>
 </html>

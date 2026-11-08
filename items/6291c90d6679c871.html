@@ -22,9 +22,11 @@
 <h1>Slaying the Hydra: Interaction-Aware Circuit Discovery in Language Models</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>交互感知的语言模型回路发现</p>
-<blockquote><p>Localizing behavior to individual components of a language model is a central goal of mechanistic interpretability. However, scoring components one at a time misses context-dependent effects: a primary component can inhibit the activation of a backup, leading to issues with ranking components. Actual causality studies the structure of such interactions via witnesses: variables that provide contextual information to resolve interaction terms. However, estimation with witnesses typically requires combinatorial enumeration and is infeasible in practice. We introduce the witness-integrated set effect (WISE), a family of causal estimands that build on the witness mechanism while taking expectations over sets of causes and witnesses to remain computationally feasible. Building on this approach, we introduce JuntaLearner, a gradient-based circuit discovery method that learns to rank components by their causal impact across varying-sized sets of components and witnesses. Alongside faithfulness metrics, we introduce measures of necessity and task specificity, and the circuit recognition score (CRS) to summarize each metric across circuit sizes while emphasizing effects achieved by small cir…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：机制可解释性中逐组件打分会漏掉上下文依赖效应——主组件可能抑制备份组件的激活，如何以可行计算量刻画组件间的这种交互。</p>
+<p><strong>方法</strong>：引入 witness 整合集效应（WISE）因果估计量族，通过对原因集与 witness 集取期望保持可计算；据此提出 JuntaLearner 梯度式回路发现方法，按组件在不同规模集合下的因果影响排序，并给出回路识别分（CRS）。</p>
+<p><strong>关键数字</strong>：跨任务与模型规模，JuntaLearner 在全部指标上取得比归因基线更高的平均 CRS；成本不随候选组件数增长。</p>
+<p><strong>为什么值得看</strong>：把回路发现从一阶近似推进到集合级交互建模，且能扩展到大规模模型。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.04017">Slaying the Hydra: Interaction-Aware Circuit Discovery in Language Models</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04017">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>The Effect of Missingness-Pattern Mismatch on Method Selection for Time-Series Classification: A Controlled Empirical Study</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>缺失模式失配对时序分类方法选择影响的受控实证</p>
-<blockquote><p>Classifiers for time-series classification are commonly selected on validation data, but the temporal pattern of missing observations at deployment may differ from the pattern seen during validation. We examine whether such a mismatch affects validation-based classifier selection. In a controlled $2 \times 2$ design, validation and test sets of 64 univariate UCR datasets were masked with either random point missingness or circular block missingness at six rates from 5% to 30%, imputed by linear interpolation, and used to select among three prespecified candidates: 1NN-DTW, MiniRocket with a Ridge classifier, and a statistical-feature Random Forest. Training data remained complete, and selections made under matched and mismatched validation patterns were compared on the same masked test sets. Mismatched validation reduced the test balanced accuracy of the selected classifier by 1.14 percentage points on average (95% CI 0.79 to 1.51), with losses on 49 of the 64 datasets. The loss was negligible at 5% missingness and increased to 2.46 percentage points at 30%. It was concentrated in point-masked deployment (1.84 percentage points), where block-masked validation shifted selection away…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：时序分类器通常按验证集选型，但部署时的缺失观测时间模式可能异于验证期，这种失配是否影响基于验证的选型。</p>
+<p><strong>方法</strong>：受控 2×2 设计：64 个单变量 UCR 数据集的验证/测试集分别以随机点缺失或环形块缺失、6 种缺失率（5%-30%）掩码，线性插值填补，在 1NN-DTW、MiniRocket+Ridge、统计特征随机森林三个候选间选型。</p>
+<p><strong>关键数字</strong>：失配验证使所选分类器测试均衡准确率平均降 1.14 pp（95% CI 0.79-1.51），64 个数据集中 49 个受损；30% 缺失率时损失增至 2.46 pp，集中在点缺失部署（1.84 pp）；35.5% 配对比较改变了选型。</p>
+<p><strong>为什么值得看</strong>：给出简单防护——验证数据缺失模式对齐部署预期模式，尤其高缺失率场景。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.05368">The Effect of Missingness-Pattern Mismatch on Method Selection for Time-Series Classification: A Controlled Empirical Study</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05368">阅读原文 ↗</a></p>
 </body>
 </html>

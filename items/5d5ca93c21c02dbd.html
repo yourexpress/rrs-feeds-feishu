@@ -22,9 +22,11 @@
 <h1>Sharpen Without Search: On-Policy Distillation of Sequence-Level Power Distribution</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>序列级功率分布的同策略蒸馏：免搜索锐化</p>
-<blockquote><p>A language model can give a correct answer more probability than any single incorrect answer and still usually sample an incorrect one, because the incorrect answers together hold more probability. The power distribution raises each complete answer's probability to a power above one and renormalizes, shifting probability toward answers the model finds most likely (sharpening). Sampling from it improves reasoning without changing parameters, but needs many scored candidates per query. We show that a model can instead be trained to produce such answers in one generation. On-policy power distillation (OPPD) runs a sequential Monte Carlo sampler in which the model being trained generates candidates and a frozen teacher's power distribution weights them; the same probabilities weight each answer in a maximum-likelihood update. Training raises single-generation accuracy by up to 23.0 points on MATH500 and 27.3 on GSM8K over the untrained model at the same temperature, and one generation scores 2.4 and 3.5 points above published power sampling with 64 candidates, recovering 94 percent of the gain that 16 candidates give the untrained model. For context, against GRPO trained with verified …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：模型给正确回答的概率可能高于任一单个错误答案，但错误答案合计概率更大，采样仍常出错；幂分布锐化有效却需要每查询大量打分候选，如何免搜索获得该收益。</p>
+<p><strong>方法</strong>：同策略幂蒸馏（OPPD）——用顺序蒙特卡洛采样器，让被训练模型生成候选、冻结教师幂分布加权，并以相同概率权重做最大似然更新，训练模型单次生成即产出锐化答案。</p>
+<p><strong>关键数字</strong>：单次生成准确率在 MATH500 提升最高 23.0 点、GSM8K 27.3 点；单次生成比 64 候选的已发表幂采样高 2.4/3.5 点；对比 GRPO 在 MATH500/GSM8K/AIME 高 3.8/4.0/5.4 点，GRPO 后叠加最高 +9.3 点；HumanEval +5.3 点。</p>
+<p><strong>为什么值得看</strong>：免搜索复现幂采样收益，与 GRPO 互补且跨模型家族成立，代码已开源。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.06804">Sharpen Without Search: On-Policy Distillation of Sequence-Level Power Distribution</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.06804">阅读原文 ↗</a></p>
 </body>
 </html>

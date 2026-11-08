@@ -22,9 +22,11 @@
 <h1>Selecting Long-Horizon Trajectories for Reliable and Efficient Terminal-Agent Training</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>终端智能体训练的长程轨迹可靠高效筛选</p>
-<blockquote><p>Terminal agents are commonly trained by imitating long teacher trajectories, yet how much of each trajectory to supervise remains unexplored. We study the \emph{supervision horizon}, the number of trajectory tokens retained for training, and show that it is a key design axis for reliability and cost. Reliability improves with longer horizons but saturates: on Terminal-Bench, a 12K-token horizon solves more tasks than 16K ($29\pm0.7$ vs.\ $26\pm0.8$) while requiring 30\% less training time. The horizon also shapes agent behavior: short horizons cause premature termination, intermediate horizons yield productive error recovery, and long horizons induce over-persistence. We analyze this saturation through a bias--complexity bound, in which longer supervision reduces temporal supervision bias but increases finite-sample estimation error from more heterogeneous late-stage histories. Guided by this analysis, we propose \emph{selective long-horizon refinement}, which first trains on short prefixes and then refines only on continuations that are most likely under the warm-start model. It consistently outperforms full long-horizon training. At 16K, it raises successful attempts from $110\pm…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：终端智能体普遍通过模仿长教师轨迹训练，但每条轨迹应监督多少（监督视界）未被系统研究，直接影响可靠性与训练成本。</p>
+<p><strong>方法</strong>：系统分析监督视界对可靠性与行为的影响（短视界致过早终止、中视界有产错恢复、长视界过度坚持），提出选择性长视界精修：先用短前缀训练，再仅对 warm-start 模型下最可能的延续做精修。</p>
+<p><strong>关键数字</strong>：Terminal-Bench 上 12K token 视界比 16K 解决更多任务（29±0.7 vs 26±0.8）且省 30% 训练时间；16K 下精修把成功尝试从 110±2.7 提至 126±2.1；只用一半长视界数据仍达 122±2.4 且省 23% 训练时间；Terminal-Bench v2.0 从 64±2.6 到 73±2.1。</p>
+<p><strong>为什么值得看</strong>：证明"选对轨迹比全部训练更重要"，用更少数据训出更可靠的终端智能体。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.05831">Selecting Long-Horizon Trajectories for Reliable and Efficient Terminal-Agent Training</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05831">阅读原文 ↗</a></p>
 </body>
 </html>
