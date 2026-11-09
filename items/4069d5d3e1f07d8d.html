@@ -22,9 +22,11 @@
 <h1>Static Gradient Attribution Underperforms a Density-Matched Random Mask on Loss-Based Forgetting Within LoRA B-Matrix</h1>
 <p class="meta-line">arXiv · 2026-10-08 · 论文PDF</p>
 
-<p>静态梯度归因在基于损失的遗忘任务上不敌密度匹配随机掩码</p>
-<blockquote><p>Parameter-efficient continual learning updates a restricted subset of adapter parameters to incorporate sequential tasks while limiting catastrophic forgetting. Gradient attribution is a common rule for selecting that subset, but it requires an additional backward pass over calibration data. We identify a parameter-pool confound in comparisons between initialization-time gradient masks and unrestricted random masks under standard zero-initialized LoRA ($B=0$): the gradient with respect to $A$ is identically zero ($\partial\mathcal{L}/\partial A=0$), so gradient masks select strictly from the $B$ matrix whereas unrestricted random masks draw from both $A$ and $B$. Such a comparison changes both the selection rule and the candidate parameter pool. Isolating the selection criterion by restricting both approaches to the same parameter pool, we find a negative result: a uniform random mask consistently achieves lower loss-based backward transfer than gradient attribution across seven seeds on Qwen2.5-3B. The effect is concentrated on the medical task, which contributes 80\% of the aggregate; code and math move in the same direction, and legal shows no reliable difference. This advantage…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：参数高效持续学习中，梯度归因选择适配器参数子集是否优于随机掩码？现有比较存在参数池混淆。</p>
+<p><strong>方法</strong>：指出零初始化 LoRA（B=0）下 ∂L/∂A=0，梯度掩码只能从 B 矩阵选参数，而无限制随机掩码 A/B 都选——比较同时改变了选择准则与候选池；把两者限制到同一参数池后隔离选择准则。</p>
+<p><strong>关键数字</strong>：Qwen2.5-3B 七个种子下均匀随机掩码的损失后向迁移一致更低；效果集中在医学任务（贡献聚合的 80%），代码与数学同向，法律无可靠差异；两个离散选项任务上均值准确率-BWT 差异与零不可区分。</p>
+<p><strong>为什么值得看</strong>：暴露持续学习评估中的参数池混杂，给出一个反直觉但可复现的负结果。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.12744">Static Gradient Attribution Underperforms a Density-Matched Random Mask on Loss-Based Forgetting Within LoRA B-Matrix</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.12744">阅读原文 ↗</a></p>
 </body>
 </html>

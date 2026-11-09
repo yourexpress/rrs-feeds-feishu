@@ -22,9 +22,11 @@
 <h1>Spatial Context or Memory? Sizing the Inputs of Neural Surrogates for Partially Observed Fields</h1>
 <p class="meta-line">arXiv · 2026-10-08 · 论文PDF</p>
 
-<p>部分观测场神经代理的输入尺寸设计：空间上下文还是记忆</p>
-<blockquote><p>Neural surrogates that forecast a physical field from sparse, noisy sensors read a window of nearby sensors and a history of past snapshots. Practitioners choose both by comparing fitted models with each other. Such comparisons cannot tell a model's shortfall from missing information. We measure the trade-off between window and history against the Bayes-optimal error of the same readings. An exact Gaussian analysis shows that noisy or sparse observation of a field with local dynamics makes the optimal forecast read distant sensors only through spatial correlation. On a forced linear field with a known optimum, trained models that read only the window come within 1% of it. We then train such models on viscous Burgers flow and the chaotic Kuramoto-Sivashinsky (KS) equation, with every deciding comparison fixed before any test evaluation. In every field except KS, eight snapshots remove a smaller fraction of the one-snapshot error as the lead time, the number of steps to the forecast target, grows. In KS, for windows up to one correlation length, they remove a larger fraction. This lead-time inversion persists across sensor densities, three architectures and a two-dimensional domain. …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：从稀疏噪声传感器预测物理场的神经代理要读「邻近传感器窗口 + 历史快照」，两者如何权衡？模型间比较无法区分「模型短板」与「信息缺失」。</p>
+<p><strong>方法</strong>：以同一读数的贝叶斯最优误差为基准（精确高斯分析）；在强制线性场、粘性 Burgers 流与混沌 Kuramoto-Sivashinsky（KS）方程上训练，所有决定性比较在测试前固定。</p>
+<p><strong>关键数字</strong>：仅读窗口的模型在线性场距最优 1% 以内；除 KS 外，8 张快照随 lead time 增长移除单快照误差的份额变小；Burgers 流中按 lead time 1 选的分割在 lead time 8 时误差为最优的 13.5 倍。</p>
+<p><strong>为什么值得看</strong>：给出代理设计两条规则——窗口按场的相关长度定尺寸、按 lead time 在窗口与历史间分配输入预算。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.12723">Spatial Context or Memory? Sizing the Inputs of Neural Surrogates for Partially Observed Fields</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.12723">阅读原文 ↗</a></p>
 </body>
 </html>

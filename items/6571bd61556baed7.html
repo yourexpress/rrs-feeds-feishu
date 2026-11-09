@@ -22,9 +22,11 @@
 <h1>Kernelized Parameter Sensitivity Atlases for Amortized Conditional Interpretability</h1>
 <p class="meta-line">arXiv · 2026-10-08 · 论文PDF</p>
 
-<p>摊销条件可解释性的核化参数敏感度图</p>
-<blockquote><p>Gradient-based attribution provides input-specific information about model parameters, but computing it via backpropagation for many samples is expensive, while static importance scores discard input dependence. We derive KPSA (Kernelized Parameter Sensitivity Atlas) from a block decomposition of the empirical neural tangent kernel. It measures normalized parameter-group sensitivity, embeds those sources in an explicit query space, and uses a lightweight kernel to estimate sensitivities for unseen inputs. We derive bounds that separate finite-source from irreducible representation error and give margin-based top-$k$ recovery. This paper studies two interpretability applications. Firstly, KPSA identifies parameter groups with high susceptibility to perturbations across vision, forecasting, and protein-modeling setups. Across a fivefold range of parameter budgets ($0.02$-$0.1\%$), its selected groups attain $39$-$85\%$ of the perturbation susceptibility of a first-order backpropagation oracle. In vision and forecasting, these parameter groups form sparse sensitivity circuits that extend across depth and vary systematically with the input. Secondly, we use KPSA on an activation-attrib…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：梯度归因提供输入相关的参数信息但逐样本反向传播昂贵，静态重要性分数又丢弃输入依赖；能否用轻量核近似并摊销敏感度估计？</p>
+<p><strong>方法</strong>：KPSA（核化参数敏感度图谱）从经验神经正切核的块分解推导，测度归一化参数组敏感度、嵌入显式查询空间、用轻量核估计未见输入敏感度；给出有限源与不可约表示误差的分离界和 margin-based top-k 恢复。</p>
+<p><strong>关键数字</strong>：参数预算 0.02%–0.1% 五倍范围内选组达到一阶反向传播 oracle 扰动敏感度的 39%–85%；激活归因任务保留视觉 81%、蛋白质建模 68% 的 gap，批量查询吞吐 551→2041 img/s，峰值 GPU 内存 4.55→0.44GB。</p>
+<p><strong>为什么值得看</strong>：把重复梯度归因成本降到可摊销水平，规模化条件可解释性的实用路径。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.12737">Kernelized Parameter Sensitivity Atlases for Amortized Conditional Interpretability</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.12737">阅读原文 ↗</a></p>
 </body>
 </html>

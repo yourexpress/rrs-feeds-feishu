@@ -22,9 +22,11 @@
 <h1>ATLAS: Adaptive TDA-guided Landscape-Aware Transistor Sizing</h1>
 <p class="meta-line">arXiv (cs.AR) · 2026-10-09 · 论文PDF</p>
 
-<p>自适应 TDA 引导地形感知的晶体管尺寸优化</p>
-<blockquote><p>Analog transistor sizing, finding design parameters that simultaneously satisfy multiple performance specifications, is a labor-intensive bottleneck in circuit design. To support analog circuit experts, various automation methods have been proposed, including Bayesian optimization (BO), reinforcement learning (RL), and others. Yet existing methods are oblivious to the topological structure of a feasible design space, which can fragment into disconnected regions due to operating-regime transitions, conflicting specification trade-offs, and nonconvex device physics. This topological blindness causes the optimizer to converge within a single feasible region while missing others that may contain superior designs. To address this limitation, we propose ATLAS. a BO framework utilizing Topological Data Analysis (TDA). At each iteration, a Mapper graph is constructed over a surrogate-predicted feasible region to estimate connected regions, enabling topology-aware exploration from the very first iteration without any observed feasible points. A topological sensitivity score classifies candidates as bridge, frontier, or interior points, injecting a targeted exploration bonus into the acquisi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：模拟晶体管尺寸优化中，可行设计空间会因工作区转变、规格权衡冲突与非凸器件物理碎片化为不连通区域，优化器常困在单一可行区而错过更优设计，如何拓扑感知地探索？</p>
+<p><strong>方法</strong>：ATLAS——基于贝叶斯优化的拓扑数据分析（TDA）框架：每轮在代理预测的可行区上构建 Mapper 图估计连通区域，从第一轮起即可拓扑感知探索（无需已观测可行点）；拓扑敏感度分数把候选分为 bridge/frontier/interior 点，向采集函数注入定向探索奖励。</p>
+<p><strong>关键数字</strong>：GF180 与 SKY130 四个模拟电路基准上，以显著少于基线（含 RL 与 BO）的仿真次数找到可行设计；首个把 TDA 用于模拟电路设计自动化。</p>
+<p><strong>为什么值得看</strong>：用拓扑结构解决可行域碎片化问题，模拟电路自动化新方向。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.10985">ATLAS: Adaptive TDA-guided Landscape-Aware Transistor Sizing</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10985">阅读原文 ↗</a></p>
 </body>
 </html>

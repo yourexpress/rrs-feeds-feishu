@@ -22,9 +22,11 @@
 <h1>Transformer-Based Masked Diffusion Models Provably Learn Distributions with Latent Structure</h1>
 <p class="meta-line">arXiv · 2026-10-08 · 论文PDF</p>
 
-<p>基于transformer的掩码扩散模型可证明学习带潜结构的分布</p>
-<blockquote><p>Masked diffusion models (MDMs) generate discrete data by iteratively unmasking multiple tokens in parallel using a learned mask predictor. Their output carries two errors: parallelization error due to parallel sampling, and estimation error from the mask predictor learned with finite samples. Existing theory treats these errors separately, and the available statistical bounds typically scale with the number $V^L$ of length-$L$ sequences over a vocabulary of size $V$, suffering from the curse of dimensionality. In this work, we establish end-to-end statistical guarantees showing that transformer-based MDMs learn structured distributions with a sample complexity governed by their latent structure. Specifically, we model this structure through mixtures of hidden Markov trees, which capture latent dependencies within components and heterogeneity across components. When the data distribution is well approximated by such a mixture, a transformer-based MDM with parallel unmasking schedules achieves $\varepsilon$-accurate sampling in KL divergence with $\widetilde{O}(LK_{\mathrm{par}}/\varepsilon)$ training samples, where $K_{\mathrm{par}}$ is polynomial in $L$, $V$, the number of hidden s…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：掩码扩散模型（MDM）并行反掩码带来并行化误差，有限样本又带来估计误差，能否统一得到端到端统计保证、摆脱 V^L 维数灾难？</p>
+<p><strong>方法</strong>：用隐马尔可夫树混合建模潜在结构（捕获组件内潜在依赖与组件间异质性），证明 transformer 架构 MDM 在并行反掩码调度下的样本复杂度由潜在结构决定。</p>
+<p><strong>关键数字</strong>：数据分布被混合良好近似时，ε 精确采样（KL 散度）只需 Õ(LK_par/ε) 训练样本，K_par 对 L、V、隐状态数与混合分量数多项式；网络与采样过程无需知道树拓扑或分量参数。</p>
+<p><strong>为什么值得看</strong>：首个 MDM 端到端统计保证，为掩码扩散模型的经验有效性提供理论依据。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.12544">Transformer-Based Masked Diffusion Models Provably Learn Distributions with Latent Structure</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.12544">阅读原文 ↗</a></p>
 </body>
 </html>

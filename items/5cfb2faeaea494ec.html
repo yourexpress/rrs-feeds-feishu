@@ -22,9 +22,11 @@
 <h1>KITE: A Knowledge-Injected Temporal Encoder for Time-Series Event Forecasting</h1>
 <p class="meta-line">arXiv · 2026-10-08 · 论文PDF</p>
 
-<p>时序事件预测的知识注入时间编码器（KITE）</p>
-<blockquote><p>Forecasting rare, high-cost events in multivariate time-series systems is hard because their precursors are seldom observed, so a purely data-driven model has little to learn from. The engineers who run these systems, however, hold knowledge that precedes such events, information absent from the scarce labels. We call this a semantic prior and inject it into a self-supervised event forecaster through two switchable mechanisms, a covariate mechanism and an attention-bias mechanism, each the identity at its null, so one architecture serves every prior type with no per-dataset architecture search. A prior helps when it supplies information the observed window does not already contain: in a short context an informative prior beats no prior in-domain (pooled h-AUROC over the no-prior baseline: a periodicity clock +14%, p&lt;0.001; a conservation residual +47% at a 0.25 label fraction), and a working prior transfers out-of-domain (+53%), substituting for feature transfer, while priors the window already recovers stay inert and the attention-bias mechanism shows no measurable gain. KITE is a switchable, attributable route to contextual conditioning, and a substrate for scaling toward cross-d…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：罕见高成本事件的前兆观测稀少，纯数据驱动模型难学；工程师持有的先验知识（语义先验）能否注入自监督事件预测器？</p>
+<p><strong>方法</strong>：KITE 通过两个可切换机制注入先验——协变量机制与注意力偏置机制，各自在 null 时取恒等，一个架构服务所有先验类型、无需逐数据集架构搜索。</p>
+<p><strong>关键数字</strong>：短上下文下有效先验优于无先验——周期时钟池化 h-AUROC +14%（p&lt;0.001）、守恒残差在 0.25 标签比例下 +47%；有效先验跨域迁移 +53%，可替代特征迁移；窗口已能恢复的先验保持惰性。</p>
+<p><strong>为什么值得看</strong>：可切换、可归因的上下文条件化路径，为跨域预训练时序基础世界模型铺路。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.12738">KITE: A Knowledge-Injected Temporal Encoder for Time-Series Event Forecasting</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.12738">阅读原文 ↗</a></p>
 </body>
 </html>

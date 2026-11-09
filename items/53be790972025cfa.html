@@ -22,9 +22,11 @@
 <h1>Efficient Learning of Survival Analysis Models Under Outcome-Dependent Truncation and Censoring</h1>
 <p class="meta-line">arXiv · 2026-10-08 · 论文PDF</p>
 
-<p>结局依赖删失/截断下高效学习生存分析模型</p>
-<blockquote><p>Modern machine learning models are typically trained on data assumed to be representative of the predictive tasks the model will face in the future, but practical datasets violate this assumption. We focus on outcome-dependent truncation in which an observation appears in the training data depending on its label. Our work connects two largely distinct literatures: efficient learning under truncation and survival analysis. Existing methods for truncated survival analysis do not characterize the optimization landscape and instead rely on iterative procedures such as expectation maximization. We address this gap and prove that Cox regression can be efficiently learned under truncated and right-censored data using first-order optimization when the baseline hazard is known (despite nonconvexity). In contrast, when the baseline hazard is learned jointly, we construct identifiable and correctly specified models whose negative log-likelihood contains strict suboptimal local minima. On experiments with four survival datasets, we show that accounting for truncation reduces the prediction bias induced by naive Cox regression and extends to neural networks. We also show orders of magnitude spe…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：观测是否进入训练数据取决于标签（结果依赖截断）时，生存分析模型如何高效学习？现有方法未刻画优化景观，依赖 EM 类迭代。</p>
+<p><strong>方法</strong>：连接「截断下高效学习」与「生存分析」两个文献：证明基线风险已知时（尽管非凸），Cox 回归在截断与右删失数据下可用一阶优化高效学习；基线风险联合学习时，构造可辨识且正确设定的模型，其负对数似然含严格次优局部极小。</p>
+<p><strong>关键数字</strong>：4 个生存数据集实验表明，考虑截断可降低朴素 Cox 回归的预测偏差并扩展到神经网络；相比标准 EM 提速多个数量级。</p>
+<p><strong>为什么值得看</strong>：首次刻画截断生存分析的优化景观，给出可证明的一阶优化路径。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.12538">Efficient Learning of Survival Analysis Models Under Outcome-Dependent Truncation and Censoring</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.12538">阅读原文 ↗</a></p>
 </body>
 </html>

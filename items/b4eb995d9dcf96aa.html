@@ -22,9 +22,11 @@
 <h1>GlucoPRISM: Protocol-Supervised Pretraining for Cross-Cohort Glucose Transfer</h1>
 <p class="meta-line">arXiv · 2026-10-08 · 论文PDF</p>
 
-<p>协议监督预训练做跨队列血糖预测迁移（GlucoPRISM）</p>
-<blockquote><p>Continuous glucose monitoring (CGM) foundation models encode each day as one vector that mixes who the person is, what happened that day and how the sensor measured it, so measurement differences travel with the representation into new cohorts. We ask whether pretraining can place the measurement component that harms transfer in known coordinates, so that deployment drops them with a fixed projection and no target data. GlucoPRISM supervises a GlucoFM backbone with response contracts, rules for how each part of the representation should change when only the day or only the sensor changes: a 64-dimensional Trait band should change with neither, a 48-dimensional State band only across days, and a 16-dimensional Sensor band should track the device. Synthetic sensor views calibrated on paired Dexcom and Libre recordings, different-day pairs and glucose-summary targets supply this supervision without clinical labels. Across twelve cross-cohort directions, dropping the Sensor band from the same frozen encoder raises mean transfer AUROC from 68.75 to 73.57, against 69.3 for GlucoFM. The gain has two parts. Into CGMacros, the one target cohort recorded with two sensor types, filtering adds…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：CGM 基础模型把「测量方式差异」混进表示并随迁移进入新队列，能否在预训练时把测量分量放到已知坐标、部署时用固定投影丢弃而无需目标数据？</p>
+<p><strong>方法</strong>：GlucoPRISM 用响应契约监督 GlucoFM 骨干——64 维 Trait 带（两天都不变）、48 维 State 带（只随天变）、16 维 Sensor 带（跟踪设备）；合成传感器视图校准于 Dexcom/Libre 成对记录。</p>
+<p><strong>关键数字</strong>：12 个跨队列方向上去掉 Sensor 带后平均迁移 AUROC 从 68.75 升至 73.57（GlucoFM 为 69.3）；CGMacros 上过滤增益 11–19 点；外部 9303 人队列 14/15 个临床终点相关性更佳。</p>
+<p><strong>为什么值得看</strong>：首次让「测量分量」可拆卸，免目标数据即可改善跨队列血糖迁移。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.12528">GlucoPRISM: Protocol-Supervised Pretraining for Cross-Cohort Glucose Transfer</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.12528">阅读原文 ↗</a></p>
 </body>
 </html>
