@@ -22,9 +22,11 @@
 <h1>Factorization-Guided Training and Inference for Diffusion-Drafted Speculative Decoding</h1>
 <p class="meta-line">arXiv/cs.LG · 2026-10-07 · 论文PDF</p>
 
-<p>Speculative decoding accelerates large language model inference through parallel verification of tokens proposed by a drafter. Diffusion drafters further parallelize proposal generation, but</p>
-<blockquote><p>Speculative decoding accelerates large language model inference through parallel verification of tokens proposed by a drafter. Diffusion drafters further parallelize proposal generation, but greater proposal capacity or higher mean accepted tokens (MAT) need not yield higher throughput. Because verification accepts only a consecutive prefix, early rejections can render later correct predictions ineffective, limiting MAT gains, while even higher MAT may not improve throughput if per-round latency increases. We introduce DScout, which uses two complementary factorizations to guide diffusion drafter training and inference for higher throughput. For training, DScout factorizes position-wise loss into inclusion, weighting, and prediction loss. This guides the design and combination of mixed-horizon training, intra-block unmasking, and acceptance-weighted loss to align supervision with prefix acceptance and improve MAT. For inference, DScout factorizes throughput as the ratio of MAT to per-round latency, guiding target-conditioning depth, drafter depth, and inference block size selection to identify a high-throughput configuration for each workload. Across six benchmarks, DScout achieves…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：扩散草稿者的推测解码中，更高提案容量或更高平均接受 token（MAT）不必然带来更高吞吐（验证只接受连续前缀、每轮延迟上升），如何引导训练与推理？</p>
+<p><strong>方法</strong>：DScout 用两种互补分解：训练端把逐位置损失分解为包含/加权/预测损失，指导混合视界训练、块内去掩码与接受加权损失的设计组合；推理端把吞吐分解为 MAT/每轮延迟，指导目标条件深度、草稿深度与推理块大小选择。</p>
+<p><strong>关键数字</strong>：6 个基准上 Qwen3-4B/8B 相对自回归解码平均加速 3.84×/4.14×，比 SOTA 基线平均提速提升 9.1%/7.1%；推理配置策略在模型与并发设置上额外提供最高 9.75% 平均提速。</p>
+<p><strong>为什么值得看</strong>：从「接受率」转向「吞吐」目标化，扩散草稿推测解码的端到端提速范式。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.23935">Factorization-Guided Training and Inference for Diffusion-Drafted Speculative Decoding</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.23935">阅读原文 ↗</a></p>
 </body>
 </html>

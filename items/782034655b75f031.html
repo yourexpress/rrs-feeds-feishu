@@ -22,9 +22,11 @@
 <h1>TurboPairFormer: Fast and Stable Protein Folding Model Training with an Optimized Triangle Attention Kernel</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>蛋白质折叠模型三角注意力 kernel 优化（Hopper）</p>
-<blockquote><p>Triangular attention is a core computation in AlphaFold3-style biomolecular models, with cubic cost in token count. Its shared pair bias adds a gradient reduction across attention slices to the usual reductions over queries and keys. The open-source backends we examine handle these reductions through repeated probability recomputation, floating-point atomics, or full score-gradient storage. Separately, computing the softmax backward correction from BF16-rounded forward outputs loses numerical precision. We present TurboPairFormer, a triangular attention implementation for NVIDIA Hopper GPUs that addresses both issues. Our key-tile-parallel backward algorithm recomputes each probability tile once for the query, key, value, and pair-bias gradients, using ordered partial reductions for deterministic accumulation without floating-point atomics or full score-gradient storage. Output-residual compensation retains a BF16 approximation of the output-rounding residual to compute the backward correction more accurately in FP32, without changing the BF16 output. With BF16 inputs at crop sizes 384, 640, and 768 and head dimensions 16 and 32, TurboPairFormer achieves the lowest mean query, key,…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：AlphaFold3 式三角注意力是核心计算（token 数三次方），其共享 pair bias 的梯度归约与 BF16 softmax 反向精度损失如何一并解决？</p>
+<p><strong>方法</strong>：面向 NVIDIA Hopper 的三角注意力实现：key-tile 并行反向算法对 q/k/v/pair-bias 梯度各重算一次概率 tile，用有序部分归约做确定性累加；输出残差补偿保留 BF16 输出舍入残差近似，在 FP32 下更准计算反向修正。</p>
+<p><strong>关键数字</strong>：BF16 输入、crop 384/640/768、head 16/32 下，相对 FP64 参考取得最低平均 q/k/pair-bias 梯度 RMSE；残差补偿降低 RMSE 28–47%；600 个输入案例 5 次重复下 4 个梯度逐位一致；集成 OpenFold3 后 crop 768 时比 Triton 后端快 1.73×、比 cuEquivariance 快 1.13×（16×H100）。</p>
+<p><strong>为什么值得看</strong>：可复现、确定性的三角注意力 kernel，AlphaFold3 式模型训练直接受益。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.05854">TurboPairFormer: Fast and Stable Protein Folding Model Training with an Optimized Triangle Attention Kernel</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05854">阅读原文 ↗</a></p>
 </body>
 </html>

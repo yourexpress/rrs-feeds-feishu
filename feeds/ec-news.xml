@@ -5,8 +5,46 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>模型压缩 / ML 编译 / HPC / 边缘计算 / 低功耗计算方向最新技术博客与官方公告（网页类内容）。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 08 Nov 2026 23:26:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 11:01:47 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/ec-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zero Mismatch, Simple Async RL: REINFORCE Zero, DeepSeek-V4.1 and Kimi K3.1</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/079a15b9e63f58a7.html</link>
+      <guid isPermaLink="true">https://blog.vllm.ai/2026/11/06/zero-mismatch-simple-async-rl-reinforce-zero-deepseek-v4.1-and-kimi-k3.1.html</guid>
+      <pubDate>Fri, 06 Nov 2026 12:00:00 +0800</pubDate>
+    <category>技术博客</category>
+    <category>每日精选</category>
+      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：vLLM Blog　&lt;strong&gt;发布&lt;/strong&gt;：2026-11-06　&lt;strong&gt;分类&lt;/strong&gt;：技术博客 / 每日精选&lt;/p&gt;&lt;p style="font-size:1.05em"&gt;REINFORCE Zero 异步 RL 方案：kernel alignment 消除策略/训练 kernel 失配 + 无截断重要性采样，lag 64 下稳定训练，相比同步基线 2.40x 吞吐&lt;/p&gt;&lt;p style="color:#6b7280;font-size:0.9em"&gt;本条为技术博客 / 每日精选，订阅源内提供主题摘要；完整内容请点击下方链接阅读原文。&lt;/p&gt;&lt;p style="color:#0969da;font-size:0.9em"&gt;★ 本条入选当日精选&lt;/p&gt;&lt;p style="margin-top:14px"&gt;&lt;a href="https://blog.vllm.ai/2026/11/06/zero-mismatch-simple-async-rl-reinforce-zero-deepseek-v4.1-and-kimi-k3.1.html"&gt;阅读原文 ↗&lt;/a&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p><strong>发表方</strong>：vLLM Blog　<strong>发布</strong>：2026-11-06　<strong>分类</strong>：技术博客 / 每日精选</p><p style="font-size:1.05em">REINFORCE Zero 异步 RL 方案：kernel alignment 消除策略/训练 kernel 失配 + 无截断重要性采样，lag 64 下稳定训练，相比同步基线 2.40x 吞吐</p><p style="color:#6b7280;font-size:0.9em">本条为技术博客 / 每日精选，订阅源内提供主题摘要；完整内容请点击下方链接阅读原文。</p><p style="color:#0969da;font-size:0.9em">★ 本条入选当日精选</p><p style="margin-top:14px"><a href="https://blog.vllm.ai/2026/11/06/zero-mismatch-simple-async-rl-reinforce-zero-deepseek-v4.1-and-kimi-k3.1.html">阅读原文 ↗</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Speed Up Image Generation with FLUX 3 Image Klein on NVIDIA Blackwell GPUs</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/6ce9fe52db65d87a.html</link>
+      <guid isPermaLink="true">https://developer.nvidia.com/blog/speed-up-image-generation-with-flux-3-image-klein-on-nvidia-blackwell-gpus/</guid>
+      <pubDate>Fri, 06 Nov 2026 12:00:00 +0800</pubDate>
+    <category>技术博客</category>
+    <category>每日精选</category>
+      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：NVIDIA Technical Blog　&lt;strong&gt;发布&lt;/strong&gt;：2026-11-06　&lt;strong&gt;分类&lt;/strong&gt;：技术博客 / 每日精选&lt;/p&gt;&lt;p&gt;&lt;img src="https://developer-blogs.nvidia.com/wp-content/uploads/2026/11/techblog-5893-article-kix-ulkeecvizi09-660x370.png" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;核心话题&lt;/strong&gt;：扩散模型图像生成的推理延迟是设计工具/编辑器的部署瓶颈，如何在 Blackwell 上加速 FLUX 3 Image Klein。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;要点&lt;/strong&gt;：TensorRT LLM VisualGen 运行时组合优化：FlashInfer PrimsTS FP8/NVFP4 GEMM kernel、epilogue 融合、低精度与稀疏注意力、缓存、多 GPU 并行；支持 BFL 预量化 NVFP4 checkpoint；2048×2048 单 B200 基准，附部署说明与 YAML 配置。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;关键数字&lt;/strong&gt;：NVFP4 相比 BF16 的 T2I 提速 1.62×、I2I 1.58×；组合优化后 Base 模型 T2I 最高 3.46×、I2I 4.45×（对比未编译 BF16）；Base 为 50 步去噪 + CFG 3.5，distilled 版 16 步无 CFG。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;为什么值得看&lt;/strong&gt;：官方发布的端到端加速配置可直接复现，Blackwell 上图像生成部署的实用参考。&lt;/p&gt;
+&lt;p&gt;原文：&lt;a href="https://developer.nvidia.com/blog/speed-up-image-generation-with-flux-3-image-klein-on-nvidia-blackwell-gpus/"&gt;Speed Up Image Generation with FLUX 3 Image Klein on NVIDIA Blackwell GPUs&lt;/a&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p><strong>发表方</strong>：NVIDIA Technical Blog　<strong>发布</strong>：2026-11-06　<strong>分类</strong>：技术博客 / 每日精选</p><p><img src="https://developer-blogs.nvidia.com/wp-content/uploads/2026/11/techblog-5893-article-kix-ulkeecvizi09-660x370.png" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"></p><p><strong>核心话题</strong>：扩散模型图像生成的推理延迟是设计工具/编辑器的部署瓶颈，如何在 Blackwell 上加速 FLUX 3 Image Klein。</p>
+<p><strong>要点</strong>：TensorRT LLM VisualGen 运行时组合优化：FlashInfer PrimsTS FP8/NVFP4 GEMM kernel、epilogue 融合、低精度与稀疏注意力、缓存、多 GPU 并行；支持 BFL 预量化 NVFP4 checkpoint；2048×2048 单 B200 基准，附部署说明与 YAML 配置。</p>
+<p><strong>关键数字</strong>：NVFP4 相比 BF16 的 T2I 提速 1.62×、I2I 1.58×；组合优化后 Base 模型 T2I 最高 3.46×、I2I 4.45×（对比未编译 BF16）；Base 为 50 步去噪 + CFG 3.5，distilled 版 16 步无 CFG。</p>
+<p><strong>为什么值得看</strong>：官方发布的端到端加速配置可直接复现，Blackwell 上图像生成部署的实用参考。</p>
+<p>原文：<a href="https://developer.nvidia.com/blog/speed-up-image-generation-with-flux-3-image-klein-on-nvidia-blackwell-gpus/">Speed Up Image Generation with FLUX 3 Image Klein on NVIDIA Blackwell GPUs</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Migrating vLLM to the LibTorch Stable ABI</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/55d9fa36e85de840.html</link>
+      <guid isPermaLink="true">https://blog.vllm.ai/2026/11/06/migrating-vllm-to-the-libtorch-stable-abi.html</guid>
+      <pubDate>Fri, 06 Nov 2026 12:00:00 +0800</pubDate>
+    <category>技术博客</category>
+    <category>每日精选</category>
+      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：vLLM Blog　&lt;strong&gt;发布&lt;/strong&gt;：2026-11-06　&lt;strong&gt;分类&lt;/strong&gt;：技术博客 / 每日精选&lt;/p&gt;&lt;p style="font-size:1.05em"&gt;vLLM 迁移到 LibTorch 稳定 ABI：v0.33.0 起发布 ABI 稳定 CUDA wheels，切断对具体 PyTorch 小版本的重编译依赖，DeepGEMM 等算子库不再被 torch 版本绑架&lt;/p&gt;&lt;p style="color:#6b7280;font-size:0.9em"&gt;本条为技术博客 / 每日精选，订阅源内提供主题摘要；完整内容请点击下方链接阅读原文。&lt;/p&gt;&lt;p style="color:#0969da;font-size:0.9em"&gt;★ 本条入选当日精选&lt;/p&gt;&lt;p style="margin-top:14px"&gt;&lt;a href="https://blog.vllm.ai/2026/11/06/migrating-vllm-to-the-libtorch-stable-abi.html"&gt;阅读原文 ↗&lt;/a&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p><strong>发表方</strong>：vLLM Blog　<strong>发布</strong>：2026-11-06　<strong>分类</strong>：技术博客 / 每日精选</p><p style="font-size:1.05em">vLLM 迁移到 LibTorch 稳定 ABI：v0.33.0 起发布 ABI 稳定 CUDA wheels，切断对具体 PyTorch 小版本的重编译依赖，DeepGEMM 等算子库不再被 torch 版本绑架</p><p style="color:#6b7280;font-size:0.9em">本条为技术博客 / 每日精选，订阅源内提供主题摘要；完整内容请点击下方链接阅读原文。</p><p style="color:#0969da;font-size:0.9em">★ 本条入选当日精选</p><p style="margin-top:14px"><a href="https://blog.vllm.ai/2026/11/06/migrating-vllm-to-the-libtorch-stable-abi.html">阅读原文 ↗</a></p>]]></content:encoded>
+    </item>
     <item>
       <title>More Performance From Every Byte: How Full-Stack Codesign Solves AI's Memory Challenge</title>
       <link>https://yourexpress.github.io/rrs-feeds-feishu/items/3df4d68063a5a1b4.html</link>
@@ -96,6 +134,44 @@
 <p><strong>关键数字</strong>：单模型 24 小时编译（每模型仅两节点）；相同每用户速度下每 GPU token 数最高 2.6x（B200 上）；GLM 5.3 在 AMD MI355X 最高 3.7x，MiniMax M3 在 Trainium2 最高 2.7x；H100/B200 上各输出长度均快于专家手写 megakernel 与 ML 编译器，最高 2.5x。</p>
 <p><strong>为什么值得看</strong>：把「agent 夜间调优 + 持久引擎校验」落成生产服务，是持续编译路线的代表性工业实践。</p>
 <p>原文：<a href="https://www.together.ai/polymorphic-inference">Polymorphic Inference: Tuned for your model, your traffic, your chips</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Introducing Kinference: An Open Source Inference Control Plane for vLLM and Kubernetes</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/0df112b3303370b4.html</link>
+      <guid isPermaLink="true">https://blog.vllm.ai/2026/11/04/introducing-kinference-an-open-source-inference-control-plane-for-vllm-and-kubernetes.html</guid>
+      <pubDate>Wed, 04 Nov 2026 12:00:00 +0800</pubDate>
+    <category>技术博客</category>
+    <category>每日精选</category>
+      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：vLLM Blog　&lt;strong&gt;发布&lt;/strong&gt;：2026-11-04　&lt;strong&gt;分类&lt;/strong&gt;：技术博客 / 每日精选&lt;/p&gt;&lt;p style="font-size:1.05em"&gt;开源推理控制平面 Kinference：KV-cache 感知的负载均衡与自动扩缩，面向推理的 SLO 指标，实测 TTFT p99 降低约 95%&lt;/p&gt;&lt;p style="color:#6b7280;font-size:0.9em"&gt;本条为技术博客 / 每日精选，订阅源内提供主题摘要；完整内容请点击下方链接阅读原文。&lt;/p&gt;&lt;p style="color:#0969da;font-size:0.9em"&gt;★ 本条入选当日精选&lt;/p&gt;&lt;p style="margin-top:14px"&gt;&lt;a href="https://blog.vllm.ai/2026/11/04/introducing-kinference-an-open-source-inference-control-plane-for-vllm-and-kubernetes.html"&gt;阅读原文 ↗&lt;/a&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p><strong>发表方</strong>：vLLM Blog　<strong>发布</strong>：2026-11-04　<strong>分类</strong>：技术博客 / 每日精选</p><p style="font-size:1.05em">开源推理控制平面 Kinference：KV-cache 感知的负载均衡与自动扩缩，面向推理的 SLO 指标，实测 TTFT p99 降低约 95%</p><p style="color:#6b7280;font-size:0.9em">本条为技术博客 / 每日精选，订阅源内提供主题摘要；完整内容请点击下方链接阅读原文。</p><p style="color:#0969da;font-size:0.9em">★ 本条入选当日精选</p><p style="margin-top:14px"><a href="https://blog.vllm.ai/2026/11/04/introducing-kinference-an-open-source-inference-control-plane-for-vllm-and-kubernetes.html">阅读原文 ↗</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Howto: Bringing up IREE on a Bare Metal Microcontroller (Part 4)</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/dae5f071238977f7.html</link>
+      <guid isPermaLink="true">https://embecosm.com/2026/11/04/howto-bringing-up-iree-on-a-bare-metal-microcontroller-part-4/</guid>
+      <pubDate>Wed, 04 Nov 2026 12:00:00 +0800</pubDate>
+    <category>技术博客</category>
+    <category>每日精选</category>
+      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：Embecosm Blog　&lt;strong&gt;发布&lt;/strong&gt;：2026-11-04　&lt;strong&gt;分类&lt;/strong&gt;：技术博客 / 每日精选&lt;/p&gt;&lt;p style="font-size:1.05em"&gt;IREE 裸机四核 CV32E40Pv2 集群并行化：基于单一 barrier 实现 dispatch 机制（单次约 1192 周期），实测 2 核约 1.33-1.4x、4 核不再加速——指令/数据路径共享成瓶颈&lt;/p&gt;&lt;p style="color:#6b7280;font-size:0.9em"&gt;本条为技术博客 / 每日精选，订阅源内提供主题摘要；完整内容请点击下方链接阅读原文。&lt;/p&gt;&lt;p style="color:#0969da;font-size:0.9em"&gt;★ 本条入选当日精选&lt;/p&gt;&lt;p style="margin-top:14px"&gt;&lt;a href="https://embecosm.com/2026/11/04/howto-bringing-up-iree-on-a-bare-metal-microcontroller-part-4/"&gt;阅读原文 ↗&lt;/a&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p><strong>发表方</strong>：Embecosm Blog　<strong>发布</strong>：2026-11-04　<strong>分类</strong>：技术博客 / 每日精选</p><p style="font-size:1.05em">IREE 裸机四核 CV32E40Pv2 集群并行化：基于单一 barrier 实现 dispatch 机制（单次约 1192 周期），实测 2 核约 1.33-1.4x、4 核不再加速——指令/数据路径共享成瓶颈</p><p style="color:#6b7280;font-size:0.9em">本条为技术博客 / 每日精选，订阅源内提供主题摘要；完整内容请点击下方链接阅读原文。</p><p style="color:#0969da;font-size:0.9em">★ 本条入选当日精选</p><p style="margin-top:14px"><a href="https://embecosm.com/2026/11/04/howto-bringing-up-iree-on-a-bare-metal-microcontroller-part-4/">阅读原文 ↗</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Bringing Bobium Brawlers to Android with Arm SME2</title>
+      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/f4c154dbdc7e58a9.html</link>
+      <guid isPermaLink="true">https://community.arm.com/arm-community-blogs/b/ai-blog/posts/bringing-bobium-brawlers-to-android-with-arm-sme2</guid>
+      <pubDate>Wed, 04 Nov 2026 12:00:00 +0800</pubDate>
+    <category>技术博客</category>
+    <category>每日精选</category>
+      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：Arm Community Blog　&lt;strong&gt;发布&lt;/strong&gt;：2026-11-04　&lt;strong&gt;分类&lt;/strong&gt;：技术博客 / 每日精选&lt;/p&gt;&lt;p&gt;&lt;strong&gt;核心话题&lt;/strong&gt;：生成式 AI 从云端 API 走进游戏内运行时，端侧推理如何与游戏循环共存。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;要点&lt;/strong&gt;：Arm SME2 让部分 AI 负载在 CPU 本地运行；三类任务分工——小语言模型生成卡牌/卡组数据、图像模型生成生物立绘、embedding 分类器做内容审核；小模型走 SME2 CPU 优于 Vulkan GPU，大模型 GPU 做 prefill + CPU 逐 token 生成；从 Rust 直接调用 SME2 微内核、权重加载时打包一次、整层融合减少小 kernel 调度开销。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;关键数字&lt;/strong&gt;：内容审核须在交互中响应，目标小于 200 毫秒；整层融合带来 2–5 倍提速（视模型大小）；INT4 用于量化语言模型、BF16 用于图像模型。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;为什么值得看&lt;/strong&gt;：端侧生成式 AI 游戏的真实工程实践，CPU/GPU 协作与工作负载放置的完整案例。&lt;/p&gt;
+&lt;p&gt;原文：&lt;a href="https://community.arm.com/arm-community-blogs/b/ai-blog/posts/bringing-bobium-brawlers-to-android-with-arm-sme2"&gt;Bringing Bobium Brawlers to Android with Arm SME2&lt;/a&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p><strong>发表方</strong>：Arm Community Blog　<strong>发布</strong>：2026-11-04　<strong>分类</strong>：技术博客 / 每日精选</p><p><strong>核心话题</strong>：生成式 AI 从云端 API 走进游戏内运行时，端侧推理如何与游戏循环共存。</p>
+<p><strong>要点</strong>：Arm SME2 让部分 AI 负载在 CPU 本地运行；三类任务分工——小语言模型生成卡牌/卡组数据、图像模型生成生物立绘、embedding 分类器做内容审核；小模型走 SME2 CPU 优于 Vulkan GPU，大模型 GPU 做 prefill + CPU 逐 token 生成；从 Rust 直接调用 SME2 微内核、权重加载时打包一次、整层融合减少小 kernel 调度开销。</p>
+<p><strong>关键数字</strong>：内容审核须在交互中响应，目标小于 200 毫秒；整层融合带来 2–5 倍提速（视模型大小）；INT4 用于量化语言模型、BF16 用于图像模型。</p>
+<p><strong>为什么值得看</strong>：端侧生成式 AI 游戏的真实工程实践，CPU/GPU 协作与工作负载放置的完整案例。</p>
+<p>原文：<a href="https://community.arm.com/arm-community-blogs/b/ai-blog/posts/bringing-bobium-brawlers-to-android-with-arm-sme2">Bringing Bobium Brawlers to Android with Arm SME2</a></p>]]></content:encoded>
     </item>
     <item>
       <title>When do lookups beat multiplies? Choosing GEMM paths for ultra-low-bit LLMs</title>
@@ -332,24 +408,6 @@
 <strong>关键数字</strong>：最快的 RetinaFace Mobile320 是唯一 MIXED——5 个 Reshape 在 CPU，196µs、占 4.05%；其余 9 个 NPU_ONLY；首个进程测量慢约 15%（YOLO11n 51.4 vs 44.0ms）。
 <strong>为什么值得看</strong>：硬件计数器口径的公开基准 + 冷启动效应，可复现。
 <a href="https://dev.to/anguoyang/10-rknn-models-benchmarked-on-rk3588-and-the-fastest-one-is-cheating-onto-the-cpu-2pkh">阅读原文</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Is your RKNN model secretly running on the CPU? I built a tool that tells you</title>
-      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/303429fc961d3612.html</link>
-      <guid isPermaLink="true">https://dev.to/anguoyang/is-your-rknn-model-secretly-running-on-the-cpu-i-built-a-tool-that-tells-you-3n6p</guid>
-      <pubDate>Sun, 01 Nov 2026 12:00:00 +0800</pubDate>
-    <category>技术博客</category>
-    <category>每日精选</category>
-      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：DEV Community (Anguo)　&lt;strong&gt;发布&lt;/strong&gt;：2026-11-01　&lt;strong&gt;分类&lt;/strong&gt;：技术博客 / 每日精选&lt;/p&gt;&lt;p&gt;&lt;img src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxn0o1ru5e84qavy3ckph.png" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;核心话题&lt;/strong&gt;：RKNN 模型把不支持或量化差的层悄悄放到 CPU 执行，基准看不出来——如何识别？
-&lt;strong&gt;要点&lt;/strong&gt;：RK Edge Doctor 新增 model 命令：直绑 librknnrt 读逐层账目，按 fallback 占比判定 NPU_ONLY/MIXED/CPU_HEAVY。
-&lt;strong&gt;关键数字&lt;/strong&gt;：实测 YOLOv8n FP16 于 RK3588：均值 41096µs；108 层耗时 38.2ms，CPU 仅 203µs 且全为 staging。
-&lt;strong&gt;为什么值得看&lt;/strong&gt;：一条命令识别"静默跑 CPU"的算子，部署调优可用。
-&lt;a href="https://dev.to/anguoyang/is-your-rknn-model-secretly-running-on-the-cpu-i-built-a-tool-that-tells-you-3n6p"&gt;阅读原文&lt;/a&gt;&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p><strong>发表方</strong>：DEV Community (Anguo)　<strong>发布</strong>：2026-11-01　<strong>分类</strong>：技术博客 / 每日精选</p><p><img src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxn0o1ru5e84qavy3ckph.png" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"></p><p><strong>核心话题</strong>：RKNN 模型把不支持或量化差的层悄悄放到 CPU 执行，基准看不出来——如何识别？
-<strong>要点</strong>：RK Edge Doctor 新增 model 命令：直绑 librknnrt 读逐层账目，按 fallback 占比判定 NPU_ONLY/MIXED/CPU_HEAVY。
-<strong>关键数字</strong>：实测 YOLOv8n FP16 于 RK3588：均值 41096µs；108 层耗时 38.2ms，CPU 仅 203µs 且全为 staging。
-<strong>为什么值得看</strong>：一条命令识别"静默跑 CPU"的算子，部署调优可用。
-<a href="https://dev.to/anguoyang/is-your-rknn-model-secretly-running-on-the-cpu-i-built-a-tool-that-tells-you-3n6p">阅读原文</a></p>]]></content:encoded>
     </item>
   </channel>
 </rss>

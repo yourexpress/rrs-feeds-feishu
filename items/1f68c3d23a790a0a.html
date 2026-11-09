@@ -22,9 +22,11 @@
 <h1>An all-transistor physical-learning transformer can be trained to perform in-context learning</h1>
 <p class="meta-line">arXiv · 2026-10-08 · 论文PDF</p>
 
-<p>全晶体管物理学习transformer经训练可执行in-context learning（亚阈值MOSFET注意力）</p>
-<blockquote><p>Most systems trained by equilibrium propagation or coupled learning are in the same class as multi-layer perceptrons: while they may be universal function approximators, they struggle to learn associative tasks which are easy for transformers. Equilibrium propagation relies on a bidirectional flow of information through the physical system between input and output. The reverse flow is broken by more complex nonlinear systems, such as those performing multiplication which is needed to express dot-product attention. Here we explicitly restore this bidirectional flow by introducing extra circuit elements for this purpose into a double or dyadic circuit. We then use these ideas to construct an attention mechanism exploiting the exponential current law of sub-threshold MOSFET devices. We show that in simulations this circuit can be trained to perform a simple in-context learning task, despite using realistic reverse components which transmit only an approximate gradient. For this training to succeed we need cross-entropy loss (not mean squared error). We generate nudges appropriate for this loss using a novel floating circuit element, based on the same MOSFET sub-circuit used for softma…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：平衡传播/耦合学习训练的系统与 MLP 同类，难以学习 transformer 擅长的联想任务——反向信息流被乘法等复杂非线性破坏，如何构造可训练的物理学习 transformer？</p>
+<p><strong>方法</strong>：在双（dyadic）电路中引入额外电路元件显式恢复双向信息流；利用亚阈值 MOSFET 的指数电流律构建注意力机制；模拟中采用仅传递近似梯度的真实反向元件；训练需交叉熵损失（非 MSE），用新型浮空电路元件生成相应 nudge，Lion 优化器训练电阻。</p>
+<p><strong>关键数字</strong>：模拟中该电路可训练完成简单上下文学习任务，尽管反向元件只传近似梯度；Lion 优化器每参数仅需一个电容存储历史梯度估计。</p>
+<p><strong>为什么值得看</strong>：把 transformer 注意力落到全晶体管物理学习电路，物理计算与神经网络交叉的前沿探索。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.12571">An all-transistor physical-learning transformer can be trained to perform in-context learning</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.12571">阅读原文 ↗</a></p>
 </body>
 </html>

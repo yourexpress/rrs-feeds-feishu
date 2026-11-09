@@ -22,9 +22,11 @@
 <h1>When Does a Diffusion Model Decide What to Draw ?</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>扩散模型何时决定画什么</p>
-<blockquote><p>A diffusion model starts from pure noise and removes it step by step. Somewhere along the way it stops being able to become "anything" and becomes committed to, say, a horse rather than a truck. We measure when this happens, and what a trained model gets wrong about it, on CIFAR-10. The most direct measurement is to freeze a half-finished image, restart the generation from that point many times, and count how often each class comes out. We call this probability the committor. Measured this way, the model settles coarse questions (vehicle or animal?) at roughly twice the noise level of fine ones (which animal?). A much cheaper measurement, the noise level at which a classifier's opinion about two classes splits into two distinct groups, gets the order of these decisions right (rank correlation 0.73-0.88) but not their exact timing. We then compare pretrained models with their</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：扩散模型从纯噪声到确定内容（马 vs 卡车）的「承诺」发生在哪一步？训练模型对此的估计错在哪里？</p>
+<p><strong>方法</strong>：CIFAR-10 上测量 committor——冻结半成品图、多次重启生成、统计各类别出现概率；另用「分类器对两类意见分裂」的噪声水平做更廉价的近似测量并对比。</p>
+<p><strong>关键数字</strong>：模型在约两倍于细粒度问题（哪种动物）的噪声水平上解决粗粒度问题（车辆还是动物）；廉价测量对决策顺序的排序正确（秩相关 0.73–0.88），但时间不精确。</p>
+<p><strong>为什么值得看</strong>：首次定量刻画扩散模型「何时决定画什么」，对采样调度与生成加速有直接启示。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.05645">When Does a Diffusion Model Decide What to Draw ?</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05645">阅读原文 ↗</a></p>
 </body>
 </html>

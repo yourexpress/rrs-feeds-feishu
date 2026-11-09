@@ -22,9 +22,11 @@
 <h1>Usefulness of Quantile-Aware Diffusion Modeling for Highly Imbalanced Tabular Data</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>分位感知扩散建模处理高不平衡表格数据</p>
-<blockquote><p>Classification problem in the context of highly imbalanced data is a major challenge in many real-world applications (e.g., FinTech, healthcare, etc.). In these cases, the vast majority of instances belong to a single class and a small fraction represent the minority class (often the most critical class). Recently, diffusion models have emerged as powerful approaches to reduce the degree of ``imbalanced-ness'' in the dataset; they work by generating synthetic data by capturing complex data distributions using iterative transformations. However, standard diffusion models are not inherently suited to highly skewed or heavy-tailed data, due to inbuilt quadratic error loss, which lacks the structural sensitivity to capture rare, extreme values, and minority-class nuances. We propose a novel approach, namely, Quantile-TabDDPM, based on a quantile-regularized denoising objective that combines the standard quadratic error loss with a quantile loss term to explicitly capture rare events while preserving the theoretical grounding of the original denoising objective. We extensively evaluated our approach on a real-world credit card transaction dataset characterized by extreme class imbalance…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：高度不平衡表格数据（FinTech、医疗等）分类中，标准扩散模型的二次误差损失缺乏结构敏感性，难以捕捉稀有极端值与少数类细节，如何改进？</p>
+<p><strong>方法</strong>：提出 Quantile-TabDDPM：分位数正则化去噪目标，在标准二次误差损失上叠加分位数损失项，显式捕捉罕见事件，同时保留原去噪目标的理论基础；在极端不平衡的真实信用卡交易数据集上评估。</p>
+<p><strong>关键数字</strong>：在极端类别不平衡的真实信用卡交易数据集上，扩散合成数据 + 分位数正则化去噪目标构成鲁棒有效的欺诈检测框架（原文未给出量化指标）。</p>
+<p><strong>为什么值得看</strong>：为不平衡表格数据合成提供分位数感知方案，欺诈检测等少数类场景实用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.05825">Usefulness of Quantile-Aware Diffusion Modeling for Highly Imbalanced Tabular Data</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05825">阅读原文 ↗</a></p>
 </body>
 </html>

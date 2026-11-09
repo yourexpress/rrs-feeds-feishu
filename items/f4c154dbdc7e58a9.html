@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bringing Bobium Brawlers to Android with Arm SME2</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Bringing Bobium Brawlers to Android with Arm SME2</h1>
+<p class="meta-line">Arm Community Blog · 2026-11-04 · 技术博客 / 每日精选</p>
+
+<p><strong>核心话题</strong>：生成式 AI 从云端 API 走进游戏内运行时，端侧推理如何与游戏循环共存。</p>
+<p><strong>要点</strong>：Arm SME2 让部分 AI 负载在 CPU 本地运行；三类任务分工——小语言模型生成卡牌/卡组数据、图像模型生成生物立绘、embedding 分类器做内容审核；小模型走 SME2 CPU 优于 Vulkan GPU，大模型 GPU 做 prefill + CPU 逐 token 生成；从 Rust 直接调用 SME2 微内核、权重加载时打包一次、整层融合减少小 kernel 调度开销。</p>
+<p><strong>关键数字</strong>：内容审核须在交互中响应，目标小于 200 毫秒；整层融合带来 2–5 倍提速（视模型大小）；INT4 用于量化语言模型、BF16 用于图像模型。</p>
+<p><strong>为什么值得看</strong>：端侧生成式 AI 游戏的真实工程实践，CPU/GPU 协作与工作负载放置的完整案例。</p>
+<p>原文：<a href="https://community.arm.com/arm-community-blogs/b/ai-blog/posts/bringing-bobium-brawlers-to-android-with-arm-sme2">Bringing Bobium Brawlers to Android with Arm SME2</a></p>
+<p><a class="origin" href="https://community.arm.com/arm-community-blogs/b/ai-blog/posts/bringing-bobium-brawlers-to-android-with-arm-sme2">阅读原文 ↗</a></p>
+</body>
+</html>

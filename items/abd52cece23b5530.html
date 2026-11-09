@@ -22,9 +22,11 @@
 <h1>Why Subliminal Learning Needs So Much Data: A Noisy Inverse View through Steering Vector Recovery</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>潜意识学习为何需要海量数据：转向向量恢复的噪声逆视角</p>
-<blockquote><p>Subliminal learning lets a student inherit a teacher's behavioral trait from semantically unrelated data, yet published demonstrations typically require tens of thousands of carrier examples. We ask where this data requirement comes from. Our testbed is subliminal steering: the teacher trait is a known residual-stream vector $Δ_T$, so transfer can be measured directly as parameter recovery. On identical carrier prefixes, we compare token-level (hard) NLL supervision with full-distribution (soft) KL supervision. At initialization the two objectives give nearly collinear gradients, and both align poorly with $Δ_T$. Under iterative optimization, however, they diverge: soft supervision recovers $Δ_T$ almost exactly from a few hundred carriers, while hard supervision stays well below it even with tens of thousands. We explain this gap by casting steering-vector distillation as a noisy linear inverse problem. Locally, the carrier task maps the trait through its Fisher matrix $F$, so gradients point toward $FΔ_T$ rather than $Δ_T$. Gradient descent then acts as a progressively less-damped inverse of $F$. With soft targets, this inverse restores low-curvature directions. With hard labels, …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：潜意识学习（学生从语义无关数据继承教师行为特征）为何需要数万条载体样本？</p>
+<p><strong>方法</strong>：把转向向量蒸馏建模为噪声线性逆问题；在相同载体前缀上对比 token 级（hard NLL）与全分布（soft KL）监督；梯度下降被解释为逐步减阻尼的 Fisher 逆。</p>
+<p><strong>关键数字</strong>：soft 监督从几百条载体几乎精确恢复转向向量，hard 监督即使数万条仍差得远；Qwen2.5-7B 与 Gemma-2-9B 上验证四个预测（初始梯度 Fisher 扭曲、恢复按陡峭到平坦方向排序、最优深度随数据规模移动、固定 prompt 池重采样等价于新增 prompt）。</p>
+<p><strong>为什么值得看</strong>：给出潜意识学习数据需求的机制解释——大数据集抑制的是 Fisher 逆放大的标签噪声，而非揭示特征本身。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.04907">Why Subliminal Learning Needs So Much Data: A Noisy Inverse View through Steering Vector Recovery</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.04907">阅读原文 ↗</a></p>
 </body>
 </html>

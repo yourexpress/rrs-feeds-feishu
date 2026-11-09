@@ -22,9 +22,11 @@
 <h1>Zero-Shot Tabular Learning via Hypergraph Reasoning with LLMs</h1>
 <p class="meta-line">arXiv/cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>Tabular data are prevalent across diverse domains such as healthcare and finance. Zero-shot tabular learning aims to make predictions without labeled data.</p>
-<blockquote><p>Tabular data are prevalent across diverse domains such as healthcare and finance. Zero-shot tabular learning aims to make predictions without labeled data. However, existing LLM-based approaches rely on row-wise prompting, resulting in high inference cost and limited use of inter-row dependencies. In this work, we propose TABHGR+, an efficient relation-aware zero-shot framework for tabular data that leverages LLM-generated rules to label and group rows. Specifically, based on column and task descriptions, we use LLMs to generate rules that assign weak labels to all rows. To refine these noisy weak labels, we construct a hypergraph by grouping semantically related rows using LLM-generated rules and perform hypergraph-based label propagation. Lastly, we further enhance the LLM-generated hypergraph for propagation, which is potentially sub-optimal, by assigning label-adaptive weights to hyperedges. By requiring only a constant number of LLM calls independent of dataset size, TABHGR+ substantially reduces inference cost while achieving higher classification accuracy than zero-shot and strong few-shot baselines.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：零样本表格学习（无标签做预测）中，现有 LLM 方法逐行 prompting 推理成本高且未利用行间依赖，如何高效建模行间关系？</p>
+<p><strong>方法</strong>：TABHGR+：基于列与任务描述用 LLM 生成规则给所有行打弱标签；构建超图（语义相近行成组）做标签传播以细化噪声弱标签；对超边赋标签自适应权重，增强次优 LLM 生成超图的传播；LLM 调用次数为常数、与数据集大小无关。</p>
+<p><strong>关键数字</strong>：LLM 调用数常数级（与数据集规模无关）；分类准确率超过零样本与强 few-shot 基线。</p>
+<p><strong>为什么值得看</strong>：把零样本表格学习从逐行成本解放为常数次调用，医疗/金融等表格密集场景高效可用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.23923">Zero-Shot Tabular Learning via Hypergraph Reasoning with LLMs</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.23923">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Amortised Inference through One-Step Implicit Sampling</h1>
 <p class="meta-line">arXiv · 2026-10-08 · 论文PDF</p>
 
-<p>一步隐式采样实现摊销推理</p>
-<blockquote><p>Efficient sampling from Bayesian posterior distributions in high dimensions remains a hard problem, despite advances in theory and algorithms. Multiple steps are usually required to draw unbiased samples, for example, iterations of an MCMC algorithm or integration steps in a diffusion-based amortised sampler. However, scalable one-step amortised inference remains a challenging open problem. In this work, we build upon recent progress in data-driven generative modelling to offer a possible solution for one-step amortised sampling. Our one-step implicit sampler (OSIS) uses short-time MCMC dynamics to define a local target for the evolution of an implicitly modelled distribution. In the asymptotic limit, the modelled distribution is a fixed point of the MCMC kernel and thus samples from the target. We analyse the convergence properties of OSIS and show connections with other generative modelling and sampling algorithms. We study various design choices and show that OSIS performs well compared to multi-step amortised samplers and non-amortised MCMC baselines while being far more efficient at sampling time.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：高维贝叶斯后验采样的单步摊销推理长期是开放问题（MCMC 需多步、扩散摊销采样器需积分步），能否一步实现？</p>
+<p><strong>方法</strong>：OSIS 单步隐式采样器：用短时 MCMC 动力学为隐式建模分布的演化定义局部目标；渐近极限下建模分布成为 MCMC kernel 的不动点，从而从目标采样；分析收敛性质并建立与现有生成建模/采样算法的联系。</p>
+<p><strong>关键数字</strong>：多种设计选择下 OSIS 表现优于多步摊销采样器与非摊销 MCMC 基线，且采样时效率高得多（原文未给出量化指标）。</p>
+<p><strong>为什么值得看</strong>：单步摊销后验采样的可行方案，贝叶斯推理在采样时延敏感场景的实用化。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.12679">Amortised Inference through One-Step Implicit Sampling</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.12679">阅读原文 ↗</a></p>
 </body>
 </html>

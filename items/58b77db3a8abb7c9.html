@@ -22,9 +22,11 @@
 <h1>Organizing LLM Inference for Aggregate Predictions from Behavioral Data</h1>
 <p class="meta-line">arXiv/cs.LG · 2026-10-07 · 论文PDF</p>
 
-<p>When using a large language model (LLM) to simulate a user population, how should we combine individual behavioral histories to predict the fraction of users who take a particular action? We</p>
-<blockquote><p>When using a large language model (LLM) to simulate a user population, how should we combine individual behavioral histories to predict the fraction of users who take a particular action? We study this question in e-commerce, predicting observed product-level conversion rates from browsing sessions without task-specific model training. We vary two design choices, each involving a bias-variance tradeoff. Summarizing a product's sessions before inference reduces cost but can discard predictive detail, adding bias, whereas predicting outcomes for individual sessions and averaging afterward preserves that detail but requires many calls to reduce variance. Evaluating products together in one prompt can help the model infer what is typical in the setting, reducing bias, but also makes each prediction depend on which other products appear alongside it, adding noise. We evaluate both choices across five LLMs and two datasets. Our main finding is that predictions from individual sessions outperform predictions from summaries when products are evaluated separately, but summaries lead when products are evaluated together. Comparative summaries achieve the highest Spearman correlation with obs…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：用 LLM 模拟用户群体时，如何组合个体行为历史以预测采取某行为的用户比例（如电商产品级转化率）？</p>
+<p><strong>方法</strong>：变化两个设计维度（各有偏差-方差权衡）：推理前汇总产品会话（省钱但丢细节）vs 逐会话预测后平均（保细节但需多次调用）；产品同批评估（帮模型推断典型性但引入相互依赖噪声）；5 个 LLM、2 个数据集，无需任务特定训练。</p>
+<p><strong>关键数字</strong>：对比摘要（comparative summaries）在 15 个设置中 12 个取得与观测率最高 Spearman 相关，无替代显著更优；最优模型组合达到监督基准（数千标签产品训练）相关性的 66–89%，推理成本仅为会话方法一小部分。</p>
+<p><strong>为什么值得看</strong>：LLM 聚合预测的推理组织方式实证，偏差-方差权衡清晰可操作。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.23934">Organizing LLM Inference for Aggregate Predictions from Behavioral Data</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.23934">阅读原文 ↗</a></p>
 </body>
 </html>

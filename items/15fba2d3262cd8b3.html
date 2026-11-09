@@ -22,9 +22,11 @@
 <h1>TreeWalker: Partial Evaluation for Grouped Tree-Ensemble Inference</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>分组树集成推理的部分求值加速</p>
-<blockquote><p>Many inference workloads evaluate a trained tree ensemble on row groups that share feature values: discrete-time survival models expand each patient into $G$ time steps, click-through-rate models score every item in a search session, and scenario analyses vary a few inputs while holding the rest fixed. Standard inference treats each row independently and repeats the shared work $G$ times. We present TreeWalker, which applies partial evaluation to grouped inference: constant features are static, varying features dynamic. It walks each tree once per group, partitions a row bitmask at varying splits, and skips empty subtrees. Training is unchanged: TreeWalker reads standard LightGBM and XGBoost models. We prove a structural work decomposition: per-tree work splits into the constant-projected subtree size $|T_c|$, $G$ leaf writes, and a predicate-mask provisioning cost $Q$. For the trace evaluator, per-row work approaches a $(d_v+1)/(d+1)$ fraction of a row-independent walk as $G \to \infty$. On Intel, TreeWalker is 2.5-3.2$\times$ faster than a row-independent traversal at the reference configuration ($T=500$, $L=8$) and 6.8-7.8$\times$ faster at $G=128$ on the survival datasets, with…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：树集成推理在共享特征值的行组上重复计算共享工作（生存模型每病人 G 个时间步、CTR 每会话逐项打分），如何利用分组结构加速？</p>
+<p><strong>方法</strong>：TreeWalker 对分组推理做部分求值——常量特征静态、变化特征动态；每组每棵树只走一次，在变化分裂处划分行 bitmask，跳过空子树；训练不变，直接读标准 LightGBM/XGBoost 模型。</p>
+<p><strong>关键数字</strong>：Intel 上参考配置（T=500, L=8）比逐行遍历快 2.5–3.2×，生存数据集 G=128 时快 6.8–7.8×，Arm 增益更大；场景分析基准 16 个配置在两架构全部更快；f32 模型 f64 累加在 99.98% 行上比原生 f32 更接近 Kahan 补偿参考。</p>
+<p><strong>为什么值得看</strong>：把部分求值引入树集成推理，生存分析/CTR/场景分析等分组负载直接受益。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.03939">TreeWalker: Partial Evaluation for Grouped Tree-Ensemble Inference</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.03939">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>VERA: Verdict-Conditioned Reliability for Adaptive LLM Judges</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-06 · 论文PDF</p>
 
-<p>裁决条件化可靠性的自适应 LLM 评审</p>
-<blockquote><p>Accurately estimating judgment reliability is a central challenge in adapting LLM judges to newly verified feedback while preserving previously learned behavior. However, existing approaches often rely on output-level confidence, which can be overconfident and poorly aligned with judgment correctness. We propose VERA, a VErdict-conditioned Reliability Axis that estimates reliability from hidden activations by distinguishing correct from incorrect judgments within each predicted-verdict group. Using VERA as a control signal, we develop a VERA-guided periodic adaptation framework that integrates reliability-ranked corrective updates, reliability-residual replay, and periodic refresh of the reliability directions. After VERA-guided adaptation on Chatbot Arena, 8B- and 14B-parameter judges outperform the strongest baseline on each of four held-out public benchmarks, with relative gains of up to 23.01%. The framework also improves focal-class recall by up to 16.1% relative to the strongest adaptive baselines on a separate proprietary temporal auditing task.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 裁判在吸收新验证反馈时如何准确估计自身判断可靠性，同时保留已学行为？</p>
+<p><strong>方法</strong>：VERA 从隐藏激活区分每个预测判决组内的正确/错误判断，估计判决条件可靠性轴；以 VERA 为控制信号构建周期性适配框架：可靠性排序的修正更新、可靠性残差重放、周期性刷新可靠性方向。</p>
+<p><strong>关键数字</strong>：Chatbot Arena 上适配后，8B/14B 裁判在 4 个留出公共基准全部超过最强基线，相对增益最高 23.01%；专有时序审计任务上焦点类召回相对最强自适应基线提升最高 16.1%。</p>
+<p><strong>为什么值得看</strong>：用隐藏激活而非输出置信度估计判断可靠性，自适应 LLM 裁判的实用升级。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.05452">VERA: Verdict-Conditioned Reliability for Adaptive LLM Judges</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.05452">阅读原文 ↗</a></p>
 </body>
 </html>
