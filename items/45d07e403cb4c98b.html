@@ -22,8 +22,11 @@
 <h1>FasterRW: An Efficient Prior-Assisted Random Walk Solver for Thermal Analysis</h1>
 <p class="meta-line">arXiv cs.LG · 2026-06-26 · 论文PDF</p>
 
-<blockquote><p>Thermal simulation is becoming increasingly critical in modern IC design and manufacturing. Feynman--Kac random walk methods can estimate localized temperatures without solving the global field, but in practical settings without Dirichlet boundaries they require very long paths to control the truncation residual. This paper presents FasterRW, a continuation-value framework for accelerating Feynman--Kac thermal random walks. We prove a stopping-time residual identity showing that the expected tail after truncation equals the current attenuation weight multiplied by the temperature at the stopping location. This identity enables a prior-corrected single-point estimator: a cheap, noisy prior replaces the unknown continuation value, making the truncation bias scale with prior error rather than absolute temperature and yielding an error-controlled threshold-selection rule. For multi-point queries, FasterRW further converts cross-query pass-through tails into pseudo-samples and refines the resulting observations in prior-error coordinates through kriging. Compared with prior state-of-the-art methods, FasterRW achieves up to $28\times$ acceleration while maintaining accuracy. Our code is …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 现代 IC 设计与制造中热仿真日益关键，Feynman–Kac 随机游走方法可无需求解全局温度场即可估计局部温度，但在无 Dirichlet 边界时路径很长、截断残差难控。</p>
+<p><strong>方法</strong> FasterRW 提出 continuation-value 框架：证明停时残差恒等式，用廉价有噪先验替代未知延续值，使截断偏差随先验误差而非绝对温度缩放，得到误差可控的阈值选择规则；多点查询时把跨查询尾段转为伪样本，用克里金在先验误差坐标下精化。</p>
+<p><strong>关键数字</strong> 相比此前最优方法最高加速 28×，同时保持精度；代码开源。</p>
+<p><strong>为什么值得看</strong> 热仿真随机游走的加速方案，先验校正 + 克里金组合的思路对同类无界域求解问题有迁移价值。</p>
+<p><a href="https://arxiv.org/abs/2611.08490">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.08490">阅读原文 ↗</a></p>
 </body>
 </html>

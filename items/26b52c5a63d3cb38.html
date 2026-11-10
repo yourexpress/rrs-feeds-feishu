@@ -22,8 +22,11 @@
 <h1>pfoqcompiler: Efficient Compilation of Quantum Control in Recursive First-Order Quantum Programs</h1>
 <p class="meta-line">arXiv cs.PL · 2026-09-08 · 论文PDF</p>
 
-<blockquote><p>Recursive quantum control allows for simple and concise descriptions of algorithms. However, a naive circuit compilation sequentializes the different branches of the quantum if-statement and results in an exponential increase in circuit depth. Existing techniques can parallelize these branches, but do so at the cost of an exponential number of ancillary qubits. We present pfoqcompiler, a compiler targeting Qiskit for the first-order quantum programming language FOQ that exploits program structure to merge compatible recursive procedure calls across quantum branches. We introduce weaker syntactically-checkable conditions for well-foundedness, recursive halving, and uniformity, while preserving previously demonstrated complexity characterizations. For weakly well-founded bounded-width programs, the compiler produces polynomial-size circuits; weakly recursively halving programs additionally yield polylogarithmic depth, while weak uniformity removes the asymptotic overhead of branch sequentialization.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 递归量子控制能简洁描述算法，但朴素电路编译会把量子 if 语句各分支串行化，导致电路深度指数增长；现有并行化技术又需指数数量的辅助量子比特。</p>
+<p><strong>方法</strong> pfoqcompiler 面向一阶量子编程语言 FOQ、以 Qiskit 为目标：利用程序结构跨量子分支合并兼容的递归过程调用，并引入更弱、可语法检查的良基性/递归减半/一致性条件，同时保留此前的复杂度刻画。</p>
+<p><strong>关键数字</strong> 弱良基有界宽度程序编译出多项式规模电路；弱递归减半程序额外得到多对数深度；弱一致性消除分支串行化的渐近开销。</p>
+<p><strong>为什么值得看</strong> 量子编译中"并行分支 vs 辅助比特"权衡的新解法，以可检查的弱条件换取多项式规模与多对数深度。</p>
+<p><a href="https://arxiv.org/abs/2611.08503">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.08503">阅读原文 ↗</a></p>
 </body>
 </html>

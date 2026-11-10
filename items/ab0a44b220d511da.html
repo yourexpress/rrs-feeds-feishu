@@ -22,9 +22,11 @@
 <h1>Amortized Off-Policy Evaluation for LLMs</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>面向大语言模型的摊销式离策略评估</p>
-<blockquote><p>Accurate evaluation is central to selecting which LLM to deploy, yet testing a candidate on live traffic exposes real users to an unvetted model. Teams therefore evaluate candidates offline, on data produced by already-deployed models. This is off-policy evaluation (OPE), and it faces two distribution shifts: as a model is updated in post-training, its responses diverge from the logged ones (policy shift), and the reward definition under which it is judged changes with business requirements (reward shift). Classical OPE methods are ill-suited to this continual-deployment setting because they are defined per task and require fitting from scratch on every new logged dataset or reward definition. To address this, we propose PFN-OPE, a prior-data fitted network that amortizes OPE across a distribution of contextual-bandit tasks. We pretrain it once on tasks constructed from a pool of LLM responses scored by several reward functions, in which both shifts occur. At test-time it maps a logged dataset and one sampled target response per prompt to a value estimate in a single forward pass, with no per-task fitting. On HelpSteer2 and UltraFeedback with Qwen, Llama, and Gemma policies, PFN-OP…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 选择部署哪个 LLM 依赖准确评估，但把候选模型放到线上流量测试会让真实用户接触未经验证的模型；离线评估（off-policy evaluation）面临双重分布偏移：策略更新导致的响应偏移和奖励定义变更导致的奖励偏移，经典 OPE 方法需每个任务从头拟合。</p>
+<p><strong>方法</strong> PFN-OPE：prior-data fitted network，把 OPE 摊销到一组上下文赌博机任务分布上，用多奖励函数打分的 LLM 响应池预训练一次；测试时单次前向把日志数据集映射为价值估计，无需按任务拟合。</p>
+<p><strong>关键数字</strong> HelpSteer2 与 UltraFeedback 上配合 Qwen/Llama/Gemma 策略，在奖励偏移设置的所有配置中误差比最优基线低 2.0~9.3 倍。</p>
+<p><strong>为什么值得看</strong> 把持续部署场景的 OPE 从"逐任务重拟合"变为"一次预训练、单前向推断"，误差还显著更低。</p>
+<p><a href="https://arxiv.org/abs/2610.10848">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10848">阅读原文 ↗</a></p>
 </body>
 </html>

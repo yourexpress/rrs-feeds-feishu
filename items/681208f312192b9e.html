@@ -22,9 +22,11 @@
 <h1>AdaptLSTM: Efficient Adaptive Online Learning for Cloud Workload Forecasting under Distribution Drift</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>分布漂移下云负载预测的高效自适应在线学习</p>
-<blockquote><p>Accurate workload forecasting is critical for elastic resource provisioning in web-scale cloud services, where distribution shifts driven by viral content, product launches, and user behavior degrade offline-trained models rapidly. Naive online learning recovers accuracy but incurs prohibitive per-step compute cost. We propose AdaptLSTM, an adaptive online framework that detects drift via validation-calibrated thresholds and applies selective, targeted updates. On the Alibaba Machine Trace, AdaptLSTM recovers 54\% of Naive Online's improvement at 20\% cost ($2.7\times$ efficiency, $p=0.002$ over 10 seeds). On the more volatile Container Trace, it achieves 96\% at 20\% cost ($4.8\times$ efficiency, $+75\%$ MAE reduction over Static). Unlike classical drift detectors (ADWIN, DDM, Page-Hinkley) which fail to trigger on regression-scale error streams, AdaptLSTM fires 42 times over 301 steps and outperforms matched-budget baselines. Wall-clock profiling shows $1.33\times$ throughput gain and 45\% update-time reduction. The framework is model-agnostic: identical Pareto patterns hold for LSTM, GRU, and Transformer backbones.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 云服务负载预测中，病毒式内容、产品发布等引发的分布漂移会让离线训练模型快速退化；朴素在线学习虽恢复精度但每步计算成本高昂。</p>
+<p><strong>方法</strong> AdaptLSTM 自适应在线框架：用验证校准阈值检测漂移，只做选择性、定向的模型更新；框架与模型无关，可套用 LSTM、GRU、Transformer 骨干。</p>
+<p><strong>关键数字</strong> Alibaba Machine Trace 上以 20% 成本恢复 Naive Online 改善的 54%（2.7× 效率，p=0.002，10 seeds）；Container Trace 上以 20% 成本实现 96%（4.8× 效率，MAE 较 Static 降 75%）；在 301 步中触发 42 次，胜过同等预算基线；墙钟吞吐提升 1.33×、更新耗时降 45%。</p>
+<p><strong>为什么值得看</strong> 用漂移检测 + 选择性更新把在线学习的成本压到两成、收益保留大半，且不依赖具体骨干。</p>
+<p><a href="https://arxiv.org/abs/2610.12265">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.12265">阅读原文 ↗</a></p>
 </body>
 </html>

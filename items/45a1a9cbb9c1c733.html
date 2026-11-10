@@ -22,9 +22,11 @@
 <h1>BLOKS: Scaling Kernel Solvers with Sketched Block Preconditioning</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>草图块预条件缩放核求解器（BLOKS）</p>
-<blockquote><p>Kernel Ridge Regression (KRR) is a theoretically sound algorithm for nonparametric learning, which is also often used to investigate properties of deep learning. However, the exact KRR formulation incurs time and memory costs preventing applicability to large datasets, motivating the development of approximate solvers. These algorithms rely on (i) iterative methods, to avoid the computational burden of direct solutions; (ii) sketching or batching, to reduce the problem size; and (iii) preconditioning, to accelerate convergence. While crucial for fast convergence, preconditioning incurs memory costs that can be managed by lowering the number of free parameters of the model, potentially at the expense of expressivity and hence accuracy. To address this challenge, we propose BLOKS, a Conjugate Gradient-based solver for Nyström-sketched KRR built around a novel preconditioner that combines a block Jacobi approximation with sketching. The BLOKS preconditioner has memory cost independent of both the dataset size and the number of parameters, allowing scaling to large models. We provide a memory-efficient, GPU-accelerated implementation and show that BLOKS achieves excellent accuracy whil…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 核岭回归（KRR）理论健全但精确形式的时间和内存成本阻碍大数据集应用，近似求解器依赖迭代方法、草图/批处理与预条件；预条件虽加速收敛，但内存成本需通过降低模型自由参数来管理，可能牺牲表达力与精度。</p>
+<p><strong>方法</strong> BLOKS：面向 Nyström 草绘 KRR 的共轭梯度求解器，核心是结合块 Jacobi 近似与草绘的新型预条件子；预条件子内存成本与数据集规模和参数数量无关，可扩展到大模型；提供内存高效、GPU 加速实现。</p>
+<p><strong>关键数字</strong> 在核求解器基准的大型数据集上取得与 SOTA 相当或更好的性能，同时保持有利的时间/内存复杂度。</p>
+<p><strong>为什么值得看</strong> 预条件内存与数据规模解耦的设计让 KRR 可扩展到大模型，做核方法规模化的人值得一看。</p>
+<p><a href="https://arxiv.org/abs/2610.13382">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13382">阅读原文 ↗</a></p>
 </body>
 </html>

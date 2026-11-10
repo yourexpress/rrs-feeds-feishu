@@ -22,9 +22,11 @@
 <h1>BoT-GRPO: Efficient Process-Reward RL for Reasoning via Bag-of-Token Aggregation</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>BoT-GRPO：token 级奖励的长度不变 bag-of-tokens 聚合，免 critic 的过程奖励 RL</p>
-<blockquote><p>Reinforcement learning is now central to eliciting reasoning in large language models, while in the popular algorithm Group Relative Policy Optimization (GRPO) every token in a rollout receives the same advantage. We ask how to make process supervision efficient: accelerating convergence and improving final quality without the cost of value networks. We propose Bag-of-Tokens Group Relative Policy Optimization (BoT-GRPO), which extends GRPO to token-level reward models through a length-invariant "bag of tokens" aggregation: it collects all token-level rewards across rollouts, weights each by the inverse of its source sequence length, and computes per-token advantages relative to weighted group statistics. BoT-GRPO is critic-free, and is a drop-in replacement wherever GRPO is used when token-level reward is available. On React front-end code generation, BoT-GRPO reaches $80\%$ compile rate up to $1.9\times$ faster than GRPO and converges faster than modern GRPO variants (GSPO, DAPO, PURE) while reaching higher final compile and VLM-judged win rates. On a second task, AIME mathematical reasoning, BoT-GRPO delivers absolute Pass@$k$ gains up to $8.1\%$ over GRPO in half the steps. For …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 强化学习已成为激发 LLM 推理的核心，但流行算法 GRPO 中 rollout 的每个 token 获得相同 advantage；如何在无价值网络成本下让过程监督更高效——加速收敛并提升最终质量？</p>
+<p><strong>方法</strong> BoT-GRPO：把 GRPO 扩展到 token 级奖励模型，用长度不变（length-invariant）的"token 袋"聚合：收集 rollout 中所有 token 级奖励，按来源序列长度倒数加权，相对加权组统计计算逐 token advantage；critic-free，有 token 级奖励时可在 GRPO 处即插即用。</p>
+<p><strong>关键数字</strong> React 前端代码生成上编译率达 80%、比 GRPO 快至多 1.9×，收敛快于 GSPO/DAPO/PURE 等变体且最终编译率与 VLM 判定胜率更高；AIME 数学推理上 Pass@k 绝对增益最高 8.1%、步数减半。另得奖励模型配方：信号稳定性比丰富性更重要。</p>
+<p><strong>为什么值得看</strong> 无 critic 的 token 级过程奖励方案，两个任务上收敛与最终质量双赢，奖励设计经验可直接复用。</p>
+<p><a href="https://arxiv.org/abs/2610.09804">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09804">阅读原文 ↗</a></p>
 </body>
 </html>

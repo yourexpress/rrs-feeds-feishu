@@ -22,9 +22,11 @@
 <h1>An Interleaved Parallel Dependent Quantization Hardware Architecture for H.266/VVC</h1>
 <p class="meta-line">arXiv cs.AR · 2026-10-09 · 论文PDF</p>
 
-<p>H.266/VVC 依赖量化的交错并行硬件架构，时分复用实现四通道并行、BDBR 损失仅 0.42%</p>
-<blockquote><p>While dependent quantization in H.266/VVC delivers a high compression ratio, its strong serial nature and high complexity result in poor real-time performance, making it difficult to deploy in practical scenarios. To improve the real-time performance of dependent quantization with minimal degradation to its compression performance, we propose a interleaved parallel dependent quantization hardware architecture with low BDBR loss, which achieves four-channel parallel dependent quantization by time-division multiplexing most combinational logic. This architecture adopts the proposed intra-CG context simplification scheme and the encoding scheme that skips decAbslevel during rate estimation. The proposed design incurs a BDBR loss of only 0.42% under the All Intra configuration and 0.38% under the Random Access configuration, respectively. Implemented in Verilog HDL, the dependent quantization hardware architecture achieves quantization speeds of 4K@33.2, 91.4, 331.2, and 454.1 fps at QP = 22, 27, 32, and 37, respectively, when implemented on the Xilinx XCZU19 FPGA. When implemented on ASIC using the TSMC 28nm process standard cell library, the corresponding quantization speeds reach 4K…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> H.266/VVC 的依赖量化（dependent quantization）压缩率高，但强串行性和高复杂度导致实时性差、难部署。</p>
+<p><strong>方法</strong> 提出交错并行依赖量化硬件架构：通过时分复用大部分组合逻辑实现四通道并行依赖量化；采用所提 intra-CG 上下文简化方案与率估计时跳过 decAbslevel 的编码方案，以最小化压缩性能损失换取实时性。</p>
+<p><strong>关键数字</strong> BDBR 损失仅 All Intra 配置 0.42%、Random Access 配置 0.38%；Verilog 实现于 Xilinx XCZU19 FPGA 上在 QP=22/27/32/37 达 4K@33.2/91.4/331.2/454.1 fps；TSMC 28nm ASIC 上对应 4K@84.0/231.0/837.0/1147.7 fps。</p>
+<p><strong>为什么值得看</strong> 视频编码依赖量化的硬件并行化落地，FPGA/ASIC 双端数据完整，适合做编码硬件的人参考。</p>
+<p><a href="https://arxiv.org/abs/2610.09292">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09292">阅读原文 ↗</a></p>
 </body>
 </html>

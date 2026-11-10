@@ -22,9 +22,11 @@
 <h1>Bernoulli Flow Models: Self-Consistent Generative Modeling for Binary Data</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>二值数据的自洽生成式伯努利流模型</p>
-<blockquote><p>Binary diffusion models typically require a large number of function evaluations (NFEs) to generate high-quality samples, making practical inference computationally expensive. Reducing NFEs while preserving sample quality without distillation or additional training remains a significant challenge. Existing binary diffusion models define a discrete one-step forward path and then derive the reverse posterior. In low-NFE settings requiring cross-step sampling, they approximate the true multi-step likelihood with a single-step likelihood transition, which severely degrades sample quality. To address this fundamental limitation and decouple the generative dynamics from fixed discrete time steps, we propose Bernoulli Flow Models (BFM). Rather than relying on sequential one-step Markov diffusion chains, BFM defines a unified continuous global Bernoulli probability flow path between data distributions and pure noise, from which we derive analytical closed-form posterior transitions over arbitrary time intervals. Consequently, reducing the inference NFE is no longer an approximation based on skipping discrete steps; it only requires re-evaluating the analytical posterior over a new time gri…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 二值扩散模型通常需大量函数评估（NFE）才能生成高质量样本；低 NFE 下保持质量而不依赖蒸馏或额外训练是显著挑战——现有方法用单步似然转移近似多步似然，严重损害样本质量。</p>
+<p><strong>方法</strong> Bernoulli Flow Models（BFM）：不再依赖顺序单步 Markov 扩散链，而是定义数据分布与纯噪声间统一的连续全局 Bernoulli 概率流路径，推导任意时间间隔上的解析闭式后验转移；降低 NFE 只需在新时间网格上重估解析后验，消除离散链固有的训练-推理失配。</p>
+<p><strong>关键数字</strong> LSUN Churches 256×256 上，256 步训练的 BFM 仅用 16 采样步达 FID 9.22，而 SOTA 离散基线劣化到 204.10；标准全步推理下与连续/离散基线保持竞争力。</p>
+<p><strong>为什么值得看</strong> 把二值生成的 NFE 压缩从"跳步近似"变成"解析重估"，训练-推理自洽，16 步即达可用 FID。</p>
+<p><a href="https://arxiv.org/abs/2610.11362">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.11362">阅读原文 ↗</a></p>
 </body>
 </html>

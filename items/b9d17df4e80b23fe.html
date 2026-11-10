@@ -22,9 +22,11 @@
 <h1>Amortized Counterfactual Prediction with Graph Neural Networks</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>图神经网络摊销反事实预测</p>
-<blockquote><p>Counterfactual inference asks how an observed outcome might have differed under different circumstances, such as whether a patient would have recovered had they received a different treatment. Such questions arise whenever decisions depend on the outcomes of alternatives that were not observed. Answering counterfactual queries generally requires knowledge of the underlying causal structure, which is often unavailable in practice. A common approach is therefore to first estimate the causal graph from observational data and then perform counterfactual inference. However, errors in the estimated causal graph can propagate to downstream counterfactual predictions. To address this challenge, we introduce the Counterfactual Graph Neural Process (CFGNP), an end-to-end approach that answers counterfactual queries directly from observational data without first estimating a causal graph. CFGNP uses Graph Neural Networks (GNNs) to exploit the dual-graph structure by restricting cross-world message passing to corresponding factual--counterfactual variables. Across synthetic and image-based benchmarks, CFGNP achieves stronger predictive performance than existing approaches, including on the Ger…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 反事实推断询问"若情境不同结果会怎样"（如换用治疗患者能否康复），通常需先估计因果图再推断，但因果图估计误差会向下游反事实预测传播。</p>
+<p><strong>方法</strong> Counterfactual Graph Neural Process（CFGNP）：端到端直接从观测数据回答反事实查询，无需先估计因果图；用 GNN 利用双图结构，将跨世界消息传递限制在对应的事实–反事实变量之间。</p>
+<p><strong>关键数字</strong> 合成与图像基准上优于现有方法；German Loan 基准 MSE 从 4.51×10⁻² 降至 0.19×10⁻²；仅用 10 节点图训练的模型在最高 30 节点图上无需重训仍保持强预测性能。</p>
+<p><strong>为什么值得看</strong> 绕过"先估图再推断"的两段式误差累积，图神经过程的摊销设计还带来规模泛化。</p>
+<p><a href="https://arxiv.org/abs/2610.13724">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13724">阅读原文 ↗</a></p>
 </body>
 </html>

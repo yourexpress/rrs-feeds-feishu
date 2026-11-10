@@ -22,9 +22,11 @@
 <h1>Ambient Discrete Diffusion: Using the Wrong Data at the Right Time for Data Efficient Learning</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>用错数据但用对时机的环境离散扩散数据高效学习</p>
-<blockquote><p>We introduce RefineMix, a framework for training discrete diffusion models under severe data scarcity, a common constraint in scientific applications. RefineMix uses out-of-distribution data at selected diffusion times to improve generalization without biasing the sampling distribution. Although this strategy has been explored in continuous diffusion, discrete diffusion presents a distinct challenge: unlike Gaussian noise, masking preserves domain information in surviving tokens, limiting the use of related data at high noise levels. At low noise levels, however, the domains effectively disjoint supports become an advantage, allowing the model to learn from both in-domain and out-of-distribution data without biasing the sampler. We formalize these intuitions and provide a theoretical analysis for the proposed method. Experimentally, across five domain-shift settings, RefineMix matches or outperforms in-domain finetuning and data mixing. For protein sequence generation, finetuning with just 197 in-domain examples nearly doubles the fraction of generated proteins that are simultaneously novel, foldable, and in-family compared to standard finetuning.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 科学应用中数据严重稀缺是离散扩散模型训练的常见约束，如何在数据匮乏下提升泛化而不偏置采样分布？</p>
+<p><strong>方法</strong> RefineMix 框架：在选定扩散时刻使用分布外数据改善泛化，同时不偏置采样分布。核心洞察是离散扩散与连续不同——masking 保留存活 token 的域信息，高噪声水平下不宜用相关数据，而低噪声水平下域间不相交支撑反而成为优势。提供理论分析。</p>
+<p><strong>关键数字</strong> 五个域偏移设置中与域内微调/数据混合相当或更优；蛋白质序列生成中，仅用 197 条域内样本微调，生成的同时新颖、可折叠且同族蛋白比例相比标准微调近乎翻倍。</p>
+<p><strong>为什么值得看</strong> 给"离散扩散何时该用错域数据"给出形式化回答，蛋白质等低数据场景收益显著。</p>
+<p><a href="https://arxiv.org/abs/2610.12340">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.12340">阅读原文 ↗</a></p>
 </body>
 </html>

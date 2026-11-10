@@ -22,9 +22,11 @@
 <h1>An extended deep energy method for thermo-mechanical crack propagation</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>热-力耦合裂纹扩展的扩展深度能量法（锐利裂纹嵌入）</p>
-<blockquote><p>Thermo-mechanical fracture couples transient heat conduction on a cracked domain with a crack that grows as the temperature and the displacement evolve. Neural energy solvers have been proposed for phase-field fracture and later extended to represent a sharp crack through the network input, but heat conduction on the cracked domain and crack propagation under the resulting thermal stresses have not yet been treated together in these solvers. We present an extended deep energy method for thermo-mechanical crack propagation in which the crack remains a sharp polyline. Two networks represent the temperature and the displacement and receive the crack through a scalar embedding function, discontinuous across the crack and smooth elsewhere, so that both fields can jump across it without a regularization length, and the displacement is enriched near the tip by the Williams expansion with trainable amplitudes. The two fields are obtained by minimizing an incremental conduction functional and the thermoelastic potential energy in a staggered sequence, with Monte Carlo integration on points stratified over background elements, densified near the tip and redrawn during training. The stress in…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 热-力耦合断裂耦合裂纹域上的瞬态热传导与随温度/位移演化的裂纹扩展；现有神经能量求解器尚未同时处理裂纹域热传导与热应力驱动下的裂纹扩展。</p>
+<p><strong>方法</strong> 扩展深度能量法：裂纹保持尖锐折线，温度与位移由两个网络表示，通过跨裂纹不连续、其余光滑的标量嵌入函数接收裂纹，两场无需正则化长度即可跳跃；位移在尖端用可训练振幅的 Williams 展开富集；应力强度因子由 interaction integral 提取并校验。</p>
+<p><strong>关键数字</strong> 静止热边缘裂纹的应力强度因子与发表值吻合至 0.11%；功能梯度剪切测试中起裂与独立有限元解在一个载荷步内一致。</p>
+<p><strong>为什么值得看</strong> 深度能量法处理热-力断裂的完整方案，尖锐裂纹 + Williams 富集，精度有定量验证。</p>
+<p><a href="https://arxiv.org/abs/2610.09433">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09433">阅读原文 ↗</a></p>
 </body>
 </html>

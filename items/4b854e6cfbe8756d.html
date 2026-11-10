@@ -22,8 +22,11 @@
 <h1>Adaptive Depth Aggregation in Graph Transformers for Long-Range Graph Reasoning</h1>
 <p class="meta-line">arXiv cs.LG · 2026-08-23 · 论文PDF</p>
 
-<blockquote><p>Graph Transformers improve long-range node-to-node communication through global or structure-aware interactions. However, improving cross-node communication does not determine how computations produced at different depths should be combined. Standard residual streams accumulate successive computations with fixed unit coefficients shared across nodes. This fixed aggregation is a residual-interface constraint: once intermediate contributions have been produced, the interface cannot explicitly reweight them by node. We hypothesize that this constraint can create a depth-wise aggregation mismatch when the relative utility of these intermediate contributions varies across nodes and structural contexts. To study this hypothesis, we formalize Graph Transformer residual computation as a causal node-wise history of graph-propagation and feed-forward network (FFN) contributions, making depth aggregation an explicit interface choice. We realize node-adaptive aggregation over this history with Attention Residuals (AttnRes) while preserving the backbone's graph-propagation and auxiliary-state machinery. Block AttnRes reduces the routing cost of long histories relative to Full AttnRes by pooling…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 图 Transformer 通过全局/结构感知交互改善长程节点通信，但不同深度产生的计算如何聚合仍不明确：标准残差流用固定的单位系数跨节点共享，无法按节点显式重加权中间贡献，可能造成深度聚合失配。</p>
+<p><strong>方法</strong> 将图 Transformer 残差计算形式化为节点级因果历史，提出节点自适应聚合 Attention Residuals（AttnRes），Block AttnRes 通过池化连续贡献降低长历史路由成本；在 GPS 与 GRIT 骨干上实例化，用 ECHO 五项任务评估。</p>
+<p><strong>关键数字</strong> 两种变体在每项 ECHO 任务上 MAE 均低于各自独立调优的骨干；至少一种在每项任务上取得所有对比方法中最低均值。路由 donor-swap 干预支持失配假设。</p>
+<p><strong>为什么值得看</strong> 把"深度聚合接口"显式化为可学习组件，是对图 Transformer 残差结构的少见的系统研究，结果全面优于骨干。</p>
+<p><a href="https://arxiv.org/abs/2611.08500">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.08500">阅读原文 ↗</a></p>
 </body>
 </html>

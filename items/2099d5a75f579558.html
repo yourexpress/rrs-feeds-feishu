@@ -22,9 +22,11 @@
 <h1>Anechoic: Onsager-Corrected Parallel Annealing for Sub-0.1 ms Dense Max-Cut on an FPGA</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>FPGA上Onsager校正并行退火，稠密Max-Cut亚0.1ms求解</p>
-<blockquote><p>Ising machines solve combinatorial optimization problems by annealing a network of spins. On dense problems, the least expensive hardware step updates all spins at once: stochastic cellular automata (SCA) decide every spin in parallel and read couplings only for the spins that flip. Such synchronous updates create an echo: the previous state of each spin returns to it through its neighbors. On K2000, a Max-Cut benchmark on a 2,000-node complete graph, two-thirds of all flips undo the same spin's flip one step earlier. This paper presents Anechoic, an FPGA Ising machine that subtracts this echo from every decision. Dynamical mean-field theory identifies the echo as an Onsager reaction; its one-step strength is the number of spins whose flip probability is strictly between 0 and 1, divided by twice the temperature. The decision logic already flags these spins, so the correction costs one population count per step; a temperature-scaled form needs none. An RTL engine executes a dense 2,000-spin step in 18.1 cycles plus 0.14 per flip, so every saved step and flip saves time. Both forms find better K2000 cuts at every step budget than five published binary-spin algorithms at their papers…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Ising 机通过退火自旋网络求解组合优化；稠密问题上最廉价的硬件步骤是同步更新全部自旋（SCA），但同步更新产生"回声"：每个自旋的旧状态经邻居回到自身。</p>
+<p><strong>方法</strong> Anechoic FPGA Ising 机从每次决策中减去该回声：动力学平均场理论将回声识别为 Onsager 反应，一步强度为翻转概率严格在 0 与 1 之间的自旋数除以两倍温度；校正仅需每步一次总体计数。RTL 引擎 18.1 周期执行一步稠密 2000 自旋更新。</p>
+<p><strong>关键数字</strong> K2000 上三分之二翻转在撤销上一步；12 引擎 250MHz AMD Alveo V80 以 99% 概率在 0.05 ms 内达到至少 33000 的 cut，比最快已发表硬件快 5.2 倍，每解 5.4 mJ。</p>
+<p><strong>为什么值得看</strong> 把同步退火的系统偏差识别为 Onsager 反应并用一次计数消除，K2000 上提速 5.2×，理论与硬件实现都很完整。</p>
+<p><a href="https://arxiv.org/abs/2610.13368">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13368">阅读原文 ↗</a></p>
 </body>
 </html>
