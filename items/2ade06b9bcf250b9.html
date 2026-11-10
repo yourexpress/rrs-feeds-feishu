@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ResQAdam: Residual-Preserving Adaptive Optimization for Memory-Efficient Quantization Aware Training</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ResQAdam: Residual-Preserving Adaptive Optimization for Memory-Efficient Quantization Aware Training</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：量化感知训练（QAT）是获得低比特 LLM 的最可靠途径，但 AdamW 为每个权重矩阵保留两个稠密 FP32 状态；低秩内存高效优化器（GaLore、LDAdam）在 QAT 中明显退化——如何保留被投影丢弃的动量残差？</p>
+<p><strong>方法</strong>：ResQAdam：只保留单个 BF16 momentum，仅对主子空间的 r×r 坐标应用 Adam，对残差施加归一化符号更新（观察到残差仅保留符号仍有用）。</p>
+<p><strong>关键数字</strong>：两个从零 QAT 方法与三个 QAT 微调流水线（权重量化到 2 bit）上，相对 AdamW 优化器状态内存降低 71–74%，多数设置精度保持接近 AdamW，训练吞吐下降小于 2%。</p>
+<p><strong>为什么值得看</strong>：QAT 场景下"内存高效优化器精度不崩"的新解，低比特训练直接受益。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.08924">阅读原文 ↗</a></p>
+</body>
+</html>

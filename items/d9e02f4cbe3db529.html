@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transformer-FSQ: Discrete Latents for Extreme KV-Cache Compression</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Transformer-FSQ: Discrete Latents for Extreme KV-Cache Compression</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：本地消费设备上 KV cache 随上下文线性增长、迅速超过模型本身——现有压缩方法在中等压缩比之外失效，如何实现极端 KV cache 压缩？</p>
+<p><strong>方法</strong>：Transformer-FSQ：用有限标量量化（FSQ）瓶颈替换标准 key/value 投影，每 token 存打包的离散整数码向量、无逐 token 量化元数据；转换预训练模型只需训练这些投影（每原始参数 0.25 token）；融合 Triton kernel 直接从整数码解码。</p>
+<p><strong>关键数字</strong>：Qwen3-1.7B-Base 保留 20 万条目需 21 GiB（模型权重的 6.6 倍）；RULER 长上下文检索上 12×–97.5× 压缩为评估中最准方法；Qwen3-8B-Base 在 32× 压缩时解码吞吐为原生 SDPA 的 1.01×、97.5× 时 1.54×。</p>
+<p><strong>为什么值得看</strong>：极端 KV 压缩让固定设备可容纳的上下文大幅延长，端侧个性化模型直接受益。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.09598">阅读原文 ↗</a></p>
+</body>
+</html>

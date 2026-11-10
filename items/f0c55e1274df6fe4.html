@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inside the Trap: A Renewal Law for Prefix-Cache Collapse in LLM Agent Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Inside the Trap: A Renewal Law for Prefix-Cache Collapse in LLM Agent Serving</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：前缀缓存让 LLM agent 后续轮次复用 KV，但突发流量可能使引擎陷入"每轮 miss、积压不排空"的陷阱——机理是什么、如何防止？</p>
+<p><strong>方法</strong>：注册配对实验 + 对陷阱态的理想化精确分析：对每轮都 miss 的流体 FIFO 服务，证明沿 FIFO 轨道各循环满足线性更新递归；并对比两种退出机制（拒绝到达 vs session cap）。</p>
+<p><strong>关键数字</strong>：两引擎/两 GPU/两模型配对测试（9/10 比率通过），200-session 突发让引擎在 30 次运行中全部零命中到底，无突发对照全部保持良好，session cap 在 30 次封顶运行中全部防住陷阱；理论在未拟合陷阱数据的条件下匹配 57 个卡死运行（50 次平均 served prompt 误差 3% 内）。</p>
+<p><strong>为什么值得看</strong>：LLM agent serving 前缀缓存崩溃的首次理论刻画与可落地对策（session cap）。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.08902">阅读原文 ↗</a></p>
+</body>
+</html>

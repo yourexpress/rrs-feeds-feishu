@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AutoParallel: Composable, PyTorch-Native Automatic Parallelism for Production Training</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>AutoParallel: Composable, PyTorch-Native Automatic Parallelism for Production Training</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：生产 PyTorch 训练依赖手写并行方案，模型架构、负载与硬件拓扑多样时难以适配——能否自动联合搜索并行化选择？</p>
+<p><strong>方法</strong>：AutoParallel，PyTorch 原生的分布式训练规划器：跨训练计算联合搜索并行化选择，输出普通 PyTorch 程序（无需独立执行运行时），可与模型特定分布式代码组合，计划可检查、可重放。</p>
+<p><strong>关键数字</strong>：在最高 4 维 mesh、128 张 NVIDIA H100 上的 dense/混合/MoE 模型中，多数配置匹配或超过专家手写 TorchTitan 方案，吞吐最高提升 18.3%，并能发现统一专家方案无法表达的并行计划。</p>
+<p><strong>为什么值得看</strong>：训练并行策略自动化的生产级落地，直接对接 PyTorch 编译与训练栈。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.08660">阅读原文 ↗</a></p>
+</body>
+</html>

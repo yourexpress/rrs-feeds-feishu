@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accelerating Reinforcement Learning Weight Refit with the Reshard Collective</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Accelerating Reinforcement Learning Weight Refit with the Reshard Collective</h1>
+<p class="meta-line">NVIDIA Technical Blog · 2026-11-06 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://developer-blogs.nvidia.com/wp-content/uploads/2026/11/green-cube.webp" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong>：RL 后训练中训练与推理 GPU 分离部署，需周期性把最新权重从训练端刷新到推理端（refit）；现有 gather-and-broadcast 方式通信量约为模型权重的两倍，随模型规模急剧膨胀。</p>
+<p><strong>要点</strong>：NCCL M2N Reshard——专为加速 RL 权重 refit 设计的新型集合通信原语：把 refit 重构为 DTensor-to-DTensor 传输问题，避免"先重建完整张量再广播"的中间表示，消除 gather 与 broadcast 两阶段的冗余通信；参考实现已在 NVIDIA/nccl-extensions 开源。</p>
+<p><strong>关键数字</strong>：Kimi K3 含 2.8 万亿参数、Qwen 3.8 2.4T A95B 含 2.4 万亿参数，BF16（每参数 2 字节）下权重约 5.6 TB 与 4.8 TB；gather+broadcast 两段合计逻辑载荷约模型权重两倍，当前最大开源模型单次 refit 通信已约 10 TB。</p>
+<p><strong>为什么值得看</strong>：RL 训练规模化中权重同步瓶颈的系统级解法，训练框架团队可直接采用。</p>
+<p><a class="origin" href="https://developer.nvidia.com/blog/accelerating-reinforcement-learning-weight-refit-with-the-reshard-collective/">阅读原文 ↗</a></p>
+</body>
+</html>

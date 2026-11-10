@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Know What You Need: Efficient Activation Checkpointing</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Know What You Need: Efficient Activation Checkpointing</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：大模型训练受内存容量约束，激活检查点通过前向不存激活、反向再物化省内存，但再物化开销大（尤其 Transformer 线性层）——能否用近似计算降本且保持梯度无偏？</p>
+<p><strong>方法</strong>：利用前向过程收集的信息，只选择性重算最重要的层组件（贪心选择或随机 sketching），得到无偏梯度估计；消融显示所得梯度与精确梯度高度接近。</p>
+<p><strong>关键数字</strong>：Llama-488M 上仅需重算三分之二的层组件：只作用于 FFN 时 perplexity 增 1.7%，只作用于 attention 时增 1.2%，两者都作用时增 2.5%。</p>
+<p><strong>为什么值得看</strong>：内存受限大模型训练的新检查点策略，用很小的精度代价换大量重算开销。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.09614">阅读原文 ↗</a></p>
+</body>
+</html>

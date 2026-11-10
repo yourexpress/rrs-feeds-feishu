@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MINE: Entropy-coded Memory-efficient Inference for Large Language Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MINE: Entropy-coded Memory-efficient Inference for Large Language Models</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：单流 LLM 推理强内存受限（每生成一个 token 每个权重都要从内存流一遍，本地/低延迟部署无法批处理）——无损熵编码能否加速？</p>
+<p><strong>方法</strong>：MINE：核心是 dtANS-LLM，一个为 LLM 推理改造的 GPU 熵编码方案，利用量化后仍存在的权重非均匀分布；暴露压缩率与解码成本的超参数，按 tensor 与 GPU 自动调参得到模型大小与解码延迟的 Pareto 前沿；以 vLLM 插件集成并按内存预算选择最佳 kernel 配置。</p>
+<p><strong>关键数字</strong>：Llama-3.1-8B-Instruct + 2.1-bit EntQuant checkpoint 上，相对最快基线 RTX 4060 Ti 加速 2.52×、RTX 5090 加速 1.48×，有效比特率 2.24 与 3.43 bits/weight。</p>
+<p><strong>为什么值得看</strong>：无损熵编码攻内存瓶颈的新方案，开源且直接集成 vLLM。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.09424">阅读原文 ↗</a></p>
+</body>
+</html>

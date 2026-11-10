@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RoadBlock: Rethinking GPU Tensor Core Microarchitecture for Emerging Microscaling Format Support</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>RoadBlock: Rethinking GPU Tensor Core Microarchitecture for Emerging Microscaling Format Support</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-04 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：自定义 Microscaling（MX）格式的硬件评估局限于独立 MAC 单元原型，忽略真实 GPU Tensor Core 内的系统级集成开销——如何在流片前端到端评估？</p>
+<p><strong>方法</strong>：RoadBlock，基于 RISC-V Vortex GPGPU 的开源框架，在可编程 Tensor Core 中精确建模自定义 MX 格式；数据大小、scale-factor 大小与 block 大小均为可配置参数，自动为任意格式推导 per-thread 元数据 tiling。</p>
+<p><strong>关键数字</strong>：原文为框架与方法描述，未给出量化性能数字。</p>
+<p><strong>为什么值得看</strong>：可在投入硅片前评估格式特定的 Perplexity-PPA 权衡，芯片/硬件评估团队直接可用。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.08526">阅读原文 ↗</a></p>
+</body>
+</html>

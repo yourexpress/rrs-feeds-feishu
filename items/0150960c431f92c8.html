@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The GPU Needs an Operating System</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>The GPU Needs an Operating System</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：AI 芯片服务模型时大量空闲——回复必须快、每步都在等内存，数学单元利用率极低——GPU 是否需要操作系统？</p>
+<p><strong>方法</strong>：论证 GPU 需要一个 OS：调度紧急工作、用其他有用工作填满空闲算力；给出已发布特性与更激进的研究系统方案，并说明扩展到多模型所需的编译器与新芯片特性。</p>
+<p><strong>关键数字</strong>：两个大型开放模型上数学单元仅忙碌约 6–11%；已发布特性以共享设计的工作可回收 1/4 GPU、真实任务回收 1/10，decode 仅慢 5%；研究系统中单个常驻 kernel 跑完整模型快于 vLLM 单请求最优，共享 GPU 时减速低于 2%。</p>
+<p><strong>为什么值得看</strong>：从利用率视角重构 GPU 软件栈的纲领性观点，推理系统设计值得参考。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.08720">阅读原文 ↗</a></p>
+</body>
+</html>

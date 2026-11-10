@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ResServe: Accurate and Efficient FP4 LLM Inference with Residue Compensation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ResServe: Accurate and Efficient FP4 LLM Inference with Residue Compensation</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：FP4 量化降低 LLM 推理成本但损害任务质量，提高精度计算又吃掉效率收益——能否利用解码阶段空闲算力低成本恢复精度？</p>
+<p><strong>方法</strong>：ResServe 在 FP4 激活基座之上叠加 FP4 量化的残差（表示量化丢失的信息），利用解码常见窄矩阵计算留下的空闲硬件容量计算残差贡献，片内合并结果、避免额外传输；对线性层与 decode attention 应用，输入 prompt 处理用选择性补偿控制额外开销。</p>
+<p><strong>关键数字</strong>：NVIDIA B200 上，补偿后的 NVFP4 线性核在少行操作下保持接近未补偿执行的延迟；相对 W4A4 请求延迟最多增加 3.4%，相对 W4A8 请求延迟降低 22.4–53.3%；五个模型上代码生成准确率相对同格式未补偿推理平均提升 15.04%（NVFP4）与 53.57%（MXFP4）。</p>
+<p><strong>为什么值得看</strong>：FP4 推理"精度-效率"两全的新机制，量化推理部署可直接采用。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.08713">阅读原文 ↗</a></p>
+</body>
+</html>

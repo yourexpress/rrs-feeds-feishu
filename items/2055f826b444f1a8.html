@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Topology as a Design Variable: Joint Architecture-Sizing Optimization for SRAM</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Topology as a Design Variable: Joint Architecture-Sizing Optimization for SRAM</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：SRAM 的功耗-性能-面积-稳定性权衡取决于 bitcell topology 这一离散架构选择，且与连续晶体管尺寸不可分离地交互——但开源 SRAM 工具都不把 topology 当作可优化变量。</p>
+<p><strong>方法</strong>：OpenYieldV2 三项贡献：全参数化编译器生成完整的 6T/10T SRAM 宏（含外围电路与 replica-bitline 自定时，保证同条件下可比）；few-shot TabPFN 代理模型用少量全宏 SPICE 样本学习 topology 相关 PPA 响应；粗到细多目标优化器联合探索离散拓扑选择与连续尺寸微调。</p>
+<p><strong>关键数字</strong>：实验显示拓扑决策边界随工作条件约束移动而非固定设计规则；跨该边界联合优化相对最强单拓扑基线 hypervolume 最高提升 17.3%。</p>
+<p><strong>为什么值得看</strong>：SRAM 设计自动化把 topology 提升为一等设计变量的开源工具链。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.09248">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UniExit: A Unified Latency-Aware Early-Exit Runtime for Heterogeneous Edge AI</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>UniExit: A Unified Latency-Aware Early-Exit Runtime for Heterogeneous Edge AI</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：边缘应用日益把 CNN 感知与可边缘部署的 Transformer 语言模型结合，但推理延迟随输入难度与运行时硬件状态变化，静态早退策略在动态边缘条件下过时——如何统一且延迟感知地控制？</p>
+<p><strong>方法</strong>：UniExit：把 CNN 块与 Transformer 层抽象为有序 stage，施加统一的延迟感知路由策略（保留模型特定质量机制）；结合运行时状态感知延迟预测、缓存化预测复用、趋势感知回退与 CNN 特定退出稳定化，做预算感知的 continue-or-exit 决策。</p>
+<p><strong>关键数字</strong>：在多个边缘与边缘-云平台实现并评估；单工作负载、并发异构与边缘-云场景下均持续改善 deadline 满足率与延迟-准确率权衡（原文未给出统一量化数值）。</p>
+<p><strong>为什么值得看</strong>：异构边缘 AI 在线自适应早退运行时，兼顾低开销、鲁棒与节能。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.09159">阅读原文 ↗</a></p>
+</body>
+</html>

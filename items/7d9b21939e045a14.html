@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enabling Retraining-Free Accurate Inference in Analog Compute in Memory Accelerators</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Enabling Retraining-Free Accurate Inference in Analog Compute in Memory Accelerators</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-05 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：模拟存内计算（CIM）加速器的转换器/器件误差使预训练模型无法直接使用，硬件感知重训练成本高——能否免重训练实现精确推理？</p>
+<p><strong>方法</strong>：低成本的共享校准实现免重训练的精确推理：核心观察是模拟误差取决于每层在阵列上的表示，且该表示可在离线改变而不改变计算——中心化输入并施加为模拟阵列设计的 Hadamard 旋转，保持共享参考误差分散并把输入混合限制在阵列内。</p>
+<p><strong>关键数字</strong>：跨 CNN、ViT 与最大 14B 的 LLM（PCM 与 ReRAM）上，视觉模型与更大 LLM 逼近浮点精度几个点以内；ReRAM 6-bit ADC 下 ViT-B/16 从 37.4% 恢复到 82.9%，Phi-4 从 27.0% 恢复到 72.2%，均在浮点精度 2.2 点以内。</p>
+<p><strong>为什么值得看</strong>：存算一体推理免重训练的实用路径，大幅降低模拟阵列部署成本。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.08693">阅读原文 ↗</a></p>
+</body>
+</html>
