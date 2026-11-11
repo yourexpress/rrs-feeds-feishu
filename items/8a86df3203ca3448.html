@@ -22,9 +22,11 @@
 <h1>Breaking Adversarial Transferability in Fine-Tuned Speech Recognition</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>TransferBreaker：抑制公开 ASR 基座到微调目标模型对抗迁移的统一微调框架</p>
-<blockquote><p>Many organizations fine-tune publicly available pretrained Automatic Speech Recognition (ASR) models and deploy them in black-box settings, assuming limited access provides protection. We show this assumption is fragile: adversarial perturbations crafted on the public base model transfer effectively to fine-tuned target models, severely degrading performance and posing concerns for safety-critical applications. We propose TransferBreaker, a unified fine-tuning framework that suppresses adversarial transfer by integrating Base Adversarial Fine-Tuning, which restricts adversarial training to base-effective perturbations; Latent Jacobian Regularization, which enforces latent-space invariance by suppressing adversarially sensitive directions; and HybridGrad-AFT, which improves robustness against adaptive attacks by interpolating transferable perturbations from base and target gradients. We theoretically justify all components and evaluate TransferBreaker across three languages and four large ASR models, reducing adversarial WER from 92.6 to 27.8. Our code is publicly available at https://github.com/rohban-lab/TransferBreaker.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 许多组织微调公开预训练 ASR 模型后黑盒部署，假设有限访问即受保护。论文证明该假设脆弱：在公开基座上构造的对抗扰动可有效迁移到微调目标模型。</p>
+<p><strong>方法</strong> 提出 TransferBreaker 统一微调框架：Base Adversarial Fine-Tuning（仅对基座有效扰动做对抗训练）、Latent Jacobian Regularization（抑制对抗敏感方向的潜空间不变性）、HybridGrad-AFT（插值基座与目标梯度提升对自适应攻击的鲁棒性）。</p>
+<p><strong>关键数字</strong> 在三种语言、四个大型 ASR 模型上评估，对抗 WER 从 92.6 降至 27.8。</p>
+<p><strong>为什么值得看</strong> 语音识别安全与对抗迁移的实证方案，安全关键场景部署者值得关注。</p>
+<p><a href="https://arxiv.org/abs/2610.09109">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09109">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>CB-Orchestrator: Adaptive Workflow Optimization for LLM Agents via Contextual Bandits</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>上下文bandit做LLM agent工作流自适应优化</p>
-<blockquote><p>Large Language Model (LLM) agents have demonstrated remarkable capabilities in tackling complex tasks through agentic workflows. However, manually designing these workflows is labor-intensive and lacks flexibility to adapt to diverse queries. While automated workflow optimization is a promising direction, existing methods often incur expensive API costs during training-phase feedback collection. Furthermore, they fail to adaptively reuse high-quality workflows, which creates a bottleneck for both performance and cost-effectiveness. To address these limitations, we propose CB-Orchestrator, an adaptive framework that decouples workflow generation from selection. In the first stage, we construct a diverse pool of candidate workflows via evolutionary search. In the second stage, we formulate workflow selection as a Contextual Bandit problem, which enables sample-efficient learning by balancing exploration and exploitation, thereby significantly reducing the feedback required for training. During inference, the model adaptively selects the optimal workflow tailored to each query. Evaluations across five diverse benchmarks demonstrate that CB-Orchestrator consistently outperforms all bas…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM agent 通过 agentic 工作流完成复杂任务，但手工设计工作流费力且难以适配多样查询，现有自动化优化方法在训练阶段反馈收集上 API 成本高昂。</p>
+<p><strong>方法</strong> 提出 CB-Orchestrator，把工作流生成与选择解耦：第一阶段用进化搜索构建多样候选工作流池；第二阶段把选择建模为上下文 Bandit 问题，通过探索-利用平衡实现样本高效学习；推理时按查询自适应选择最优工作流。</p>
+<p><strong>关键数字</strong> 在 5 个多样化基准上一致超越全部基线；MATH 上训练阶段 API token 开销至少降低 40.55%，端到端（含工作流池生成）token 开销至少降低 29.73%。</p>
+<p><strong>为什么值得看</strong> 用上下文 Bandit 把工作流选择做成自适应，成本数字显著。</p>
+<p><a href="https://arxiv.org/abs/2610.13064">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13064">阅读原文 ↗</a></p>
 </body>
 </html>

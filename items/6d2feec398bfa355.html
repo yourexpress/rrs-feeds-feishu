@@ -22,9 +22,11 @@
 <h1>Coexponential Exploration in the Clef Programming Language</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>Clef编程语言中的上指数探索</p>
-<blockquote><p>Clef was created as a concurrent programming language whose compiler tracks state ownership, waiting computations and request dependencies. We develop a coexponential account of stateful services and their client pools within this design. Delimited continuations retain the computation and resources needed to complete each interaction. These structures give our compiler premises for verifying service composition and preserving it through native lowering to multiple hardware targets. We connect finite actor state transitions to the initial, service and final rules of a coexponential server. A separate operational account relates actor dispatch to single-use continuation frames. We prove state-ownership and reply preservation for that translation, give a finite communication-summary analysis, and circular-wait exclusion from the conditions needed. A further result identifies when changing service order preserves both state and replies. Our Program Semantic Graph retains these facts through compilation. We are researching reusable proofs to confirm the ownership and communication interfaces, while our BAREWire implementation connects message meaning to its unboxed representation across…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Clef 是编译器追踪状态所有权、等待计算与请求依赖的并发编程语言，如何在其设计中给出状态服务与客户端池的上指数（coexponential）刻画？</p>
+<p><strong>方法</strong> 用受限续延（delimited continuations）保留完成每次交互所需计算与资源，为编译器的服务组合验证与多硬件原生降级提供前提；把有限 actor 状态转移连接到上指数服务器的初/服务/终规则，给出翻译的状态所有权与回复保持证明、有限通信摘要分析与循环等待排除。</p>
+<p><strong>关键数字</strong> 摘要未给出具体量化指标；BAREWire 实现把消息含义连接到各端点的无装箱表示，分布式 worker 示例在挂起、重排回复与边界转换间保持请求身份。</p>
+<p><strong>为什么值得看</strong> 类型论（上指数）与并发系统编译验证的交叉设计，面向语言实现者与形式化方法研究者。</p>
+<p><a href="https://arxiv.org/abs/2610.12911">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.12911">阅读原文 ↗</a></p>
 </body>
 </html>

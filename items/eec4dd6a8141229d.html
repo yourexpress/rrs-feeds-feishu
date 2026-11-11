@@ -22,9 +22,11 @@
 <h1>CAFE+FNO: Fourier Kernel Generation via Multiplicative Feature Composition</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>CAFE+FNO：乘性特征组合生成 Fourier 神经算子核</p>
-<blockquote><p>The Fourier Neural Operator (FNO) learns solution operators of partial differential equations (PDEs) through Fourier-space kernel parameterization, but frequency truncation can limit the learning of high-frequency variations. AM-FNO and SirenFNO generate kernels for all grid modes from spectral coordinates using shared networks, making coordinate encoding and generator design important. Recent work on implicit neural representations (INRs) has proposed constructing frequency interactions through explicit feature composition rather than relying on subsequent MLPs to form them implicitly. Building on this approach, we propose CAFE+FNO, which incorporates Content-Aware Frequency Encoding+ (CAFE+) into Fourier kernel generation. CAFE+ combines Fourier--Chebyshev features through parallel affine branches and a Hadamard product, forming interactions within and across the two feature families. A kernel MLP maps the resulting representation of each normalized spectral coordinate to a complex channel-mixing matrix. Each layer shares its generator across all stored modes, making the number of trainable parameters independent of the number of modes for a fixed architecture. We compare CAFE+FN…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Fourier 神经算子（FNO）通过傅里叶空间核参数化学习 PDE 解算子，但频率截断会限制高频变化的学习，核生成器的坐标编码设计成为关键。</p>
+<p><strong>方法</strong> 提出 CAFE+FNO：在傅里叶核生成中引入内容感知频率编码（CAFE+），通过并行仿射分支与 Hadamard 积组合 Fourier 与 Chebyshev 特征，再由核 MLP 映射为复通道混合矩阵；每层生成器对所有模式共享，可训练参数与模式数无关。</p>
+<p><strong>关键数字</strong> 在 5 个 PDE 基准上与现有 FNO 变体对比，并完成基配置、乘性组合与带宽可学习性的消融实验；摘要未给出具体数值。</p>
+<p><strong>为什么值得看</strong> 神经算子核生成的新设计，参数效率与高频学习能力是亮点。</p>
+<p><a href="https://arxiv.org/abs/2610.10105">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10105">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>CARE: A Lightweight Plug-in Gated Correction and Uncertainty-aware Module for Long-term Time Series Forecasting</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>长期时序预测的轻量即插门控修正与不确定性感知模块</p>
-<blockquote><p>Multivariate long-horizon forecasting is critical to electricity load scheduling and traffic flow management, and to financial risk control. Existing deterministic backbones output a single trajectory, masking heterogeneous prediction difficulty across horizons and channels and providing no localized reliability signal. We present CARE (Corrective branch with Aligned context and Relative-error Estimation), a lightweight plug-in that enhances any deterministic forecaster without architectural redesign. Operating in parallel with the base model, CARE resamples historical context to match the forecast horizon, learns residual correction patterns from this aligned history, and applies scale-aware bounded updates modulated by per-coordinate sigmoid risk gates. A multi-objective loss jointly optimizes forecast accuracy, residual tracking, risk alignment, and base-model anchoring. Across eight benchmarks with three representative backbones, CARE improves accuracy with marginal parameter and latency overhead. Its risk gates reliably identify high-error regions: on Weather, the highest-gate tertile exhibits nearly four times the error of the lowest-gate tertile, offering planners an interpr…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 多变量长期预测（电力调度、交通流、金融风控）中，现有确定性 backbone 只输出单一轨迹，无法表达不同视界与通道的预测难度差异，也没有局部可信度信号。</p>
+<p><strong>方法</strong> 提出 CARE（带对齐上下文与相对误差估计的修正分支）：轻量即插即用模块，与基模型并行，重采样历史上下文对齐预测视界，学习残差修正模式，并用逐坐标 sigmoid 风险门做尺度感知的有界更新；多目标损失联合优化精度、残差跟踪、风险对齐与基模型锚定。</p>
+<p><strong>关键数字</strong> 在 8 个基准、3 种代表性 backbone 上提升精度且参数与延迟开销极小；Weather 上最高风险门三分位误差约为最低门三分位的近 4 倍。</p>
+<p><strong>为什么值得看</strong> 不改造架构即可为任意确定性预测器附加可解释的逐步信任信号。</p>
+<p><a href="https://arxiv.org/abs/2610.11165">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.11165">阅读原文 ↗</a></p>
 </body>
 </html>
