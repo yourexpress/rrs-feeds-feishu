@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coordinated Mixed-Precision KV Cache Quantization for Efficient LLM-based Multi-agent Systems</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Coordinated Mixed-Precision KV Cache Quantization for Efficient LLM-based Multi-agent Systems</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LLM 多智能体系统中多个 agent 的 KV cache 同时驻留内存成为瓶颈，各模型独立做量化会忽略不同 agent 的精度需求差异，损害集体推理。</p>
+<p><strong>方法</strong> 提出 CoMixKV 协同混合精度 KV 量化框架：在线敏感度估计（基于近期 query/key/value 的局部注意力误差界，无需校准数据、试量化或额外模型前向）+ 共享内存预算下的跨 agent 联合位宽分配；分配随 agent 启停与新观测动态刷新，只作用于新量化块。</p>
+<p><strong>关键数字</strong> 平均 3-bit 下 Gemma-4-31B-it 上准确率 68.35%，超过最强量化基线 0.59%；Qwen3-32B 上峰值 KV cache 内存降 32.08%，相对 FullKV 推理加速 1.38x。</p>
+<p><strong>为什么值得看</strong> 首个在共享内存预算下跨同时驻留 agent cache 联合分配精度的混合精度 KV 量化框架，多智能体推理优化的新维度。</p>
+<p><a href="https://arxiv.org/abs/2611.10096">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.10096">阅读原文 ↗</a></p>
+</body>
+</html>

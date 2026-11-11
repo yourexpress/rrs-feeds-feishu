@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Representing Tensors as Compositions for Efficient Computation on Sparse and Structured Data</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Representing Tensors as Compositions for Efficient Computation on Sparse and Structured Data</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-07 · 论文PDF</p>
+
+<blockquote><p>We propose a new mathematical formalism in which all kinds of tensors and of operations on those tensors are represented as simple function compositions. Tensors are functions from indices to values. An element-wise operation (e.g. an activation function) is a composition with a function applied to values; re-indexing (e.g. reshape, transposition) is a composition with a function applied to indices; and a reduction is a composition with both an index function, mapping each index to several indices, and a reduction operation (e.g. product, sum, max). Combined with tensor stacking, these compositions can represent most interesting kinds of tensors (e.g. dense, jagged, all kinds of sparsity patterns, matrix factorizations), as well as lazy versions of almost every operation available in modern tensor computation frameworks, including einsums between tensors of any kind. Identities between compositions can then be used to rewrite such expressions into equivalent ones, without evaluating them. For instance, the product of two sparse matrices can be rewritten so that only products between non-zero values are computed, turning a sparse problem into a dense one. Using this algebra as the i…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.10855">阅读原文 ↗</a></p>
+</body>
+</html>

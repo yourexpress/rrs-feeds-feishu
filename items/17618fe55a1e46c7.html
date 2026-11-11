@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NCCL-BOT: Closing the Loop on NCCL's Cost Model with Online Bandits</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>NCCL-BOT: Closing the Loop on NCCL's Cost Model with Online Bandits</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-08 · 论文PDF</p>
+
+<blockquote><p>NCCL picks an algorithm-protocol pair for every collective from an analytic cost model (AUTO) that never sees a measured latency. The model is a strong prior but a brittle final decision: priced on forced-arm runs, its choice is exact on most contexts and badly wrong in a few. We built NCCL-BOT, a tuner plugin that closes the loop: a per-context bandit, warm-started from the model, learns from measured latencies. We replay a forced-arm H100 sweep, tuned at 4-8 nodes and scored at 16-32, and price the model's choice on the same forced arms; that sweep has no stock-NCCL run. The bandit cuts the contexts where the model's choice loses more than 10% from 19 to 1 (p99 103% to 9.9%, mean 6.1% to 1.6%; p=0.047 over nine scenarios after Holm correction). The prior and continued learning both matter: cold-started bandits, and committing after one probe of each arm, lose more on the mean in every scenario. Supervised selectors fit once on the same data and tuned with the same budget match the mean, and their heavier tail is not significant (7 against 1 contexts above 10%, p=0.06); at seen scales they match or beat online selection. With hyperparameters frozen from H100, UCB1 cuts AUTO's p99 …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.11303">阅读原文 ↗</a></p>
+</body>
+</html>

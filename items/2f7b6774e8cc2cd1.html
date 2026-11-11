@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coverage-Verified Sparse Attention: Closed-Loop Quality Control for Long-Context LLM Decoding</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Coverage-Verified Sparse Attention: Closed-Loop Quality Control for Long-Context LLM Decoding</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-07 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 稀疏注意力加速长上下文解码，但现有方法是开环的：内核选定子集后没有任何信号表明注意力质量是否保留，也没有失败恢复路径。</p>
+<p><strong>方法</strong> 提出 CVSA（Coverage-Verified Sparse Attention）：利用被选 token 上的 softmax 质量占比（coverage）与每步输出误差的精确代数等式，把 coverage 同时用作接受判据与恢复插值权重，形成免训练、闭环的「验证-修正」解码循环，无需采样、草稿模型或投机解码设施。</p>
+<p><strong>关键数字</strong> 质量随阈值扫描仅波动 0.14 分；LongBench 7B/70B 上距密集注意力仅 1.13 分（70B 统计上持平），RULER 仅损 0.8 分；128K 上下文下中位解码步加速 6.21x。</p>
+<p><strong>为什么值得看</strong> 用内核内已存在的 coverage 信号把稀疏注意力从开环变成闭环，方法简洁且训练无关。</p>
+<p><a href="https://arxiv.org/abs/2611.10634">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.10634">阅读原文 ↗</a></p>
+</body>
+</html>

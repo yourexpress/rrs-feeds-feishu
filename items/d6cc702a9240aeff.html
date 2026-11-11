@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PACE: Keeping the Right Tokens in the KV Cache Is Not Enough for Long-Horizon LLM Agents</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>PACE: Keeping the Right Tokens in the KV Cache Is Not Enough for Long-Horizon LLM Agents</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 长程 LLM agent 会话可达百万 token 级 KV cache，远超单 GPU 容量；现有驱逐方法只保证「需要的 token 还在缓存里」，但 token 在位不等于可取回。</p>
+<p><strong>方法</strong> 提出 PACE（Planner-Aware Context Engine）：① 计划感知保留——由 agent 的 planner 告知缓存未来步骤将读取哪些上下文；② 有界位置重编号——重排保留 token 使其旋转位置距离在任意会话长度下低于 8K。</p>
+<p><strong>关键数字</strong> 100K token 会话、2,048 token 预算下，保留 99%+ 所需 token 的策略准确率仍从 93% 跌至 64%；PACE 通过 97% 隐藏单元测试（H2O 42%、SnapKV 3%）；1M/2M token 会话在单张 24GB GPU 上通过 99%/100% 检查，KV 占用 &lt;0.7GB（全量需 147–295GB），仅增 9% 墙钟时间。</p>
+<p><strong>为什么值得看</strong> 指出「保留正确 token」之外的第二个瓶颈——位置距离可取回性，并给出无需重读历史的工程解法。</p>
+<p><a href="https://arxiv.org/abs/2611.10240">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.10240">阅读原文 ↗</a></p>
+</body>
+</html>

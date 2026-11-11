@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ShiftCache: Fast and Exact Indel Effect Prediction by Reusing Shifted Reference Encodings</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ShiftCache: Fast and Exact Indel Effect Prediction by Reusing Shifted Reference Encodings</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-09 · 论文PDF</p>
+
+<blockquote><p>Sequence-to-function models such as AlphaGenome and Borzoi read up to a megabase of DNA and score a genetic variant by comparing their predictions for the reference and alternate sequences. Insertions and deletions (indels) are costly to score, because an indel usually shifts the unchanged DNA after it onto a different pooling grid, which prevents direct reuse of the reference's encoder activations. The AlphaGenome Atlas scored more than 100 million indels with three full model passes each, although the DNA after an indel matches the reference shifted by the indel's length. We present ShiftCache, an exact reuse system that encodes each shifted reference once and shares it among all variants scored in the same window with the same shift. ShiftCache copies every encoder output a variant can reuse and recomputes the rest in batched tiles. On held-out AlphaGenome windows shared by many indels, in strict fp32 on one A6000, ShiftCache is 3.5 to 6.5$\times$ faster than deduplicated dense execution and 1.6 to 2.7$\times$ faster than our adaptation of layer-by-layer reuse to indels. It is 3.5 to 4.1$\times$ faster than dense reimplementations of two published analyses with Borzoi and AlphaG…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.11976">阅读原文 ↗</a></p>
+</body>
+</html>

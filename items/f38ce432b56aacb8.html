@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exploiting Native Hardware Heterogeneity: Custom GPSIMD Operators for Accelerating Emerging LLM Memory on AWS Trainium</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Exploiting Native Hardware Heterogeneity: Custom GPSIMD Operators for Accelerating Emerging LLM Memory on AWS Trainium</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LLM 新兴内存模块（如 DeepSeek-V4.1-Flash 的 Engram）混合不规则整数工作（64-bit n-gram 哈希、稀疏表查找）与稠密计算（GEMM 与 gate）；GPU-FPGA 系统可拆分到不同设备加速 5.9x，但 AWS Trainium 的 GPSIMD 引擎只能通过固定内置指令调用，官方自定义算子工具链不支持 Trainium 2/3 且不能与 NKI 同用。</p>
+<p><strong>方法</strong> 构建工具链：为 GPSIMD 核编译 C++ 自定义算子，注入到 Trainium 3 上 NKI 内核编译出的 NEFF 中，在当前软件栈内扩展 GPSIMD 可定制性。</p>
+<p><strong>关键数字</strong> 相对手调 NKI 基线：两个 GPSIMD 算子在 decode 阶段把 n-gram 哈希加速 1.79x、表检索最高 4.95x、整个 Engram 计算最高 1.14x。</p>
+<p><strong>为什么值得看</strong> 在 Trainium 上绕过官方工具链限制、把自定义算子注入 NEFF 的方法，对利用该平台原生异构算力有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2611.11820">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.11820">阅读原文 ↗</a></p>
+</body>
+</html>

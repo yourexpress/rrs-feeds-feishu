@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When Calibration Data Matter in Sub-4-Bit Language Model Quantization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>When Calibration Data Matter in Sub-4-Bit Language Model Quantization</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 低位训练后量化大幅降低 LLM 内存但可能严重损害下游任务精度；校准通常用通用文本，但任务知情数据何时能恢复精度、哪些量化器受益，此前不明确。</p>
+<p><strong>方法</strong> 提出 FragCal-DC：用「在 2-bit 扫描中全精度精度保留低」的任务族训练文档补充通用文本；用 2–4 bit 扫描定位功能区间，四次种子校准对比，在六个密集模型（1.7B–8B）与十个任务上评估六种数据相关方法。</p>
+<p><strong>关键数字</strong> 2-bit 下 SignRound V2 跨六模型十任务平均精度比通用文本校准高 1.83pp，GPTQ 与 OmniQuant 在 2-bit 也提升；恢复集中在校准包含的任务族，错误答案指定保留约 90% 平均精度增益；70B 规模 GPTQ 与 SignRound V2 的 2-bit 同样受益。</p>
+<p><strong>为什么值得看</strong> 给出任务知情校准作为低位量化保精度的设计原则，并澄清哪些方法在哪些位宽真正受益。</p>
+<p><a href="https://arxiv.org/abs/2611.11079">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.11079">阅读原文 ↗</a></p>
+</body>
+</html>

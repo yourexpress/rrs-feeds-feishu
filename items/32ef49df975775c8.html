@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HeteroTask: Multi-Variant Task Scheduling and Execution on Distributed Heterogeneous Clusters</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>HeteroTask: Multi-Variant Task Scheduling and Execution on Distributed Heterogeneous Clusters</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-05 · 论文PDF</p>
+
+<blockquote><p>Heterogeneous systems that combine CPUs and GPUs across multiple servers offer substantial compute capability but complicate scheduling. For DAG-based applications with multiple task implementations, effective execution requires coordinating variant selection, device placement, and data movement. Offline planning can exploit global dependency information, yet plans derived from isolated kernel profiles may diverge from execution because of runtime overheads. We introduce HeteroTask, a framework integrating kernel-wise profiling, PEFT-based multi-variant planning, host-buffer lifetime modeling, and schedule-driven MPI execution. A Bayesian-optimization loop calibrates empirical overhead corrections for repeated, fixed-DAG workflows on exclusively allocated nodes. We evaluate five benchmark and workflow-derived applications on up to six 8-GPU nodes. On two 8-GPU nodes, HeteroTask reduces application-level completion time by 19.7-72.1% relative to the compared StarPU implementations. For Canny Edge Detection, calibration reduces task-window makespan by 25.0% relative to planning without overhead corrections. Combined with CPU/GPU variant selection, calibration reduces it by 58.9% rela…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.10055">阅读原文 ↗</a></p>
+</body>
+</html>

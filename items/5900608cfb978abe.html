@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Detent: Batch-Invariant LLM Serving and RL Rollouts at Near-Stock Speed</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Detent: Batch-Invariant LLM Serving and RL Rollouts at Near-Stock Speed</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-07 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 可复现评测、可验证推理与 on-policy RL 要求 LLM 引擎对同一请求无论与谁同批都给出相同输出比特；引擎的确定性模式靠每算子保留一个保守内核来消除选择，但付出延迟代价。</p>
+<p><strong>方法</strong> Detent 把内核选择表达为引擎可执行的程序，找出该程序中必须固定的最少批相关值，并在部署前按负载调优——多数快速内核本身即批无关，只需修少数几个选择读取的值。</p>
+<p><strong>关键数字</strong> Llama-3.1-70B 与 Qwen3-30B-A3B 在 vLLM/SGLang 多 GPU 部署下完全批无关；按负载调优后每输出 token 延迟为 Stock 的 1.04–1.17x（确定性模式为 1.67–10.3x）；训练器在 Detent 内核上逐 bit 复现 rollout logprob，为 Stock 的 1.03x 耗时；BF16 GRPO 在 Stock 崩溃时保持稳定。</p>
+<p><strong>为什么值得看</strong> 用最小固定集换取批不变性，摆脱确定性模式的高延迟惩罚，直接服务于可复现 RL 训练。</p>
+<p><a href="https://arxiv.org/abs/2611.10611">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.10611">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AscSpMM: Efficient SpMM on Ascend NPUs via Pipelined Vector-Cube Collaboration</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>AscSpMM: Efficient SpMM on Ascend NPUs via Pipelined Vector-Cube Collaboration</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> NPU 矩阵引擎与软件管理片上内存偏好稠密计算，而 SpMM（图分析、稀疏神经网络、科学计算关键内核）需要索引驱动操作数选择、间接寻址、分散访存与负载均衡，与 NPU 固定形状/连续布局冲突；GPU Tensor Core 方法无法直接迁移到向量/矩阵引擎解耦的 NPU。</p>
+<p><strong>方法</strong> 提出 AscSpMM：用参数化 Vector-CSR 表示把不规则操作数准备与规则矩阵计算分离——向量引擎解码索引、收集重排稠密操作数，Cube 引擎做矩阵乘累加；双槽环形缓冲实现依赖感知异步流水，操作数复用与运行时自适应分块减少跨引擎停顿。</p>
+<p><strong>关键数字</strong> Ascend 910B3 上相对 GEMM 几何平均加速 2.36x、相对既有 SpMM 实现 19.92x、相对 A100 上 cuSPARSE 5.82x；矩阵输入存储与峰值 HBM 占用平均降 48.24% 与 22.98%，与专用 GPU Tensor Core SpMM 内核竞争力相当。</p>
+<p><strong>为什么值得看</strong> NPU 上 SpMM 的向量-矩阵引擎协同设计范式，含异步流水与访存优化细节，代码已开源。</p>
+<p><a href="https://arxiv.org/abs/2611.11823">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.11823">阅读原文 ↗</a></p>
+</body>
+</html>

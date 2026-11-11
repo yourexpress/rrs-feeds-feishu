@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Translating KV Caches Between Hybrid-Attention Language Models: MLA Latents, Linear-Attention States and Sparse-Attention Indexers</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Translating KV Caches Between Hybrid-Attention Language Models: MLA Latents, Linear-Attention States and Sparse-Attention Indexers</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 一个模型接管另一模型的对话通常须重读全部历史；KV cache 翻译把源 cache 映射成目标自身格式，使目标从完整上下文继续而无需重读——对 GQA 已可行，但开源前沿模型如今缓存压缩潜变量（MLA）、稀疏注意力索引器 key 与定长线性注意力状态。</p>
+<p><strong>方法</strong> 复现 KV-Lingo 于 GQA 对，再为每类对象给出捕获/注入位置与达到原生质量的机制：MLA 潜变量用逐 token 线性映射翻译；循环状态用闭式校正复制或用目标自身循环重放合成；研究 16–48B 规模两个混合对的双向翻译（Kimi-VL-A3B ↔ Kimi-Linear-48B、Qwen3.5-27B ↔ Qwen3.8-27B）加稀疏注意力目标。</p>
+<p><strong>关键数字</strong> 从源层 0 MLA 潜变量解码 token id 使 needle 召回从 0.09 升至 2–32K 的 0.99、64K 的 0.83–1.00（最长训练 prompt 的 8 倍）；混合全 MLA 方向每个任务指标都在原生质量配对置信区间内；64K token 时首 token 时间比重读短 18.7x 与 46.8x。</p>
+<p><strong>为什么值得看</strong> 把 KV 翻译从 GQA 推进到 MLA/线性注意力/稀疏索引器混合架构，为模型间无缝交接对话提供完整配方。</p>
+<p><a href="https://arxiv.org/abs/2611.12062">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.12062">阅读原文 ↗</a></p>
+</body>
+</html>

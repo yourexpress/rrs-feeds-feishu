@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PENSA: A Spatial Accelerator for BitNet b1.58 Inference on an HBM-equipped AMD Alveo FPGA</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>PENSA: A Spatial Accelerator for BitNet b1.58 Inference on an HBM-equipped AMD Alveo FPGA</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-07 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 三元大模型（tLLM）把线性层中的通用乘法换成符号控制累加，硬件瓶颈转向打包权重输送、归约与算子占用；端到端 FPGA 推理方案缺乏。</p>
+<p><strong>方法</strong> PENSA：面向 BitNet b1.58 2B4T 模型的 FPGA 加速器，搭载 AMD Alveo U50；两个行分区三元矩阵引擎从 8 个 HBM 伪通道消费打包 TQ1_0 权重，每周期经符号选择与整数归约处理 1,280 个三元权重；序列器、注意力与词汇投影单元常驻 FPGA，双流交错调度组成 Penta-Unit 流水线。</p>
+<p><strong>关键数字</strong> 104.1MHz 下 context 128 达 58.09 tok/s、context 2048 达 24.60 tok/s，为同模型 Xeon E-2356G 基线的 2.14–3.14x 吞吐；不改模型结构完成 2B 级 BitNet 拓扑端到端 FPGA 执行。</p>
+<p><strong>为什么值得看</strong> 完整跑通三元 LLM 的 FPGA 端到端推理，含 HBM 多通道权重供给与常驻单元设计。</p>
+<p><a href="https://arxiv.org/abs/2611.10648">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.10648">阅读原文 ↗</a></p>
+</body>
+</html>

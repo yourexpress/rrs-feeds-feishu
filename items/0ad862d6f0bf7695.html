@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SGA-Sparse: Training Native SwiGLU Gates for Activation-Sparse and Low-Bit LLMs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SGA-Sparse: Training Native SwiGLU Gates for Activation-Sparse and Low-Bit LLMs</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 激活稀疏可降低单用户 LLM 解码的 FFN 权重搬运，但活跃通道必须足够早被识别以免取来无用权重；预训练 SwiGLU 模型中免训练路由在高稀疏度下远差于用 up 激活路由。</p>
+<p><strong>方法</strong> 提出 SGA-Sparse：把预训练 SwiGLU LLM 的现有 gate 投影直接训练为 top-k 路由器，端到端更新全部参数、保留原 SwiGLU 激活、不引入辅助路由器参数，把模型转成固定预算激活稀疏模型。</p>
+<p><strong>关键数字</strong> 约 30B 训练 token 后，1B–8B LLaMA 达成每 token 75–85% FFN 通道稀疏，平均零样本准确率距原密集 checkpoint 仅 0.2–2.7pp；按统一权重搬运口径，2.5-bit 等效模型追平密集 3-bit QAT 准确率，1.5-bit 等效模型优于密集三元模型 1.3pp。</p>
+<p><strong>为什么值得看</strong> 原生 gate 训练让「高 FFN 稀疏 + 低位权重」同时成立，并给出与低比特量化的统一比较口径。</p>
+<p><a href="https://arxiv.org/abs/2611.11223">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.11223">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>To SIMD or Not to SIMD: Comparing RVV vs. CGRA SoCs for Non-Linear Functions in AI</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>To SIMD or Not to SIMD: Comparing RVV vs. CGRA SoCs for Non-Linear Functions in AI</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 非线性函数是 LLM 中的重要操作类别，但芯片厂商一直用传统向量/标量单元处理，其性能跟不上几乎所有厂商都配备的矩阵乘单元（MMU）；FPGA/CGRA 等可重构单元缺乏与 MMU 搭配的传统单元的系统比较。</p>
+<p><strong>方法</strong> 构建两个 SoC：RVV 向量处理器 SoC 与延迟不敏感（elastic）CGRA SoC，均配 MMU 与单核 CPU 驱动；为常见前馈网络提出映射，系统对比两类方案。</p>
+<p><strong>关键数字</strong> CGRA 在简单逐点非线性（如 SiLU）激活阶段相对 RVV 最高快 7.12x 时钟周期；RVV 在复杂非线性（如 softmax）上相对 CGRA 最高快 9.8x；在完整前馈块上对应最大值分别为 3.16x 与 4.24x。</p>
+<p><strong>为什么值得看</strong> 首次系统对比 RVV 与 CGRA 处理非线性函数的差异，结论「简单函数 CGRA、复杂函数 SIMD」对 AI SoC 单元选型有直接参考。</p>
+<p><a href="https://arxiv.org/abs/2611.12435">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.12435">阅读原文 ↗</a></p>
+</body>
+</html>

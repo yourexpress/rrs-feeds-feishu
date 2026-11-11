@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MACaQ: Fast, Model Agnostic Calibrated Quantization for Low-Precision Weights and Activations</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MACaQ: Fast, Model Agnostic Calibrated Quantization for Low-Precision Weights and Activations</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-07 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 权重-激活量化能降低推理内存与计算成本，但近期方法常需昂贵优化与跨层基础变换传播，架构相关性强。</p>
+<p><strong>方法</strong> 提出 MACaQ，MXFP4 W4A4 训练后量化方法，逐线性层独立处理：在线对每层激活做逐通道 scale 与块 Hadamard 变换，相应逆变换吸收进权重；另引入 Flip-Refinement，基于 Hessian 的坐标下降贪心把单个 FP4 码移到相邻可表示值。</p>
+<p><strong>关键数字</strong> Qwen3-32B 在 vLLM 上相比纯 MXFP4 仅增 2.3% 端到端开销；比 DuQuant++ 与 MR-GPTQ 更低困惑度，Llama-3-8B 上以 11 倍更短的量化时间达到其最佳困惑度；122B 模型量化仅 64 分钟、32.5GB GPU 显存；无需架构改造即可用于图像扩散模型。</p>
+<p><strong>为什么值得看</strong> 逐层独立 + 流式实现的 W4A4 量化，速度快、内存省、模型无关。</p>
+<p><a href="https://arxiv.org/abs/2611.10649">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.10649">阅读原文 ↗</a></p>
+</body>
+</html>

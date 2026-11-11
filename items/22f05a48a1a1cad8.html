@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reproducible LoRA Inference Through Deterministic Split-K Reduction</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Reproducible LoRA Inference Through Deterministic Split-K Reduction</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-07 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LoRA 适配模型用于重复评测、审计与决策时，Split-K 内核用浮点原子加法合并部分结果会引入数值不确定性。</p>
+<p><strong>方法</strong> 在 vLLM 中调查 GSM8K 数学推理、MBPP 代码生成与 Civil Comments 结构化毒性决策上的不确定性问题，提出确定性的 Triton Split-K 实现（确定性归约替代浮点原子加法）。</p>
+<p><strong>关键数字</strong> 相同输入重放下 Atomic Split-K=8 在 97.61% 比较中产生不同 FP32 shrink 输出，确定性 Split-K=8 零变化；原子推理在 17.30% GSM8K、14.96% MBPP 比较中改变生成输出，81.47% 结构化决策概率变化出现决策翻转；确定性 Split-K=8 相对非拆分归约获 16.8–21.1% 延迟加速，相对原子版仅增 1.02–2.62% 延迟。</p>
+<p><strong>为什么值得看</strong> 量化了 Split-K 非确定性如何经 KV cache 传播改变最终答案，并给出保留并行性的确定性修复。</p>
+<p><a href="https://arxiv.org/abs/2611.10334">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.10334">阅读原文 ↗</a></p>
+</body>
+</html>

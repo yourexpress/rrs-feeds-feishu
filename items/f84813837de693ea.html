@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Running AV Reasoning Models Within Onboard Compute and Latency Limits</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Running AV Reasoning Models Within Onboard Compute and Latency Limits</h1>
+<p class="meta-line">NVIDIA Technical Blog · 2026-11-10 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://developer-blogs.nvidia.com/wp-content/uploads/2026/11/auto-alpamayo-2-edge-tech-blog-promo-600x338_r2-1.gif" alt="" referrerpolicy="no-referrer">
+<p>Alpamayo 2 Edge 2B VLA 上车：DRIVE AGX Thor 平台 160-190ms 端到端推理，AlpaJudge 边缘评测基准 + DFlash2 量化与 TensorRT-Edge-LLM 部署栈，把『会推理的驾驶』压进车载算力与延迟预算</p>
+<blockquote><p>Autonomous vehicle (AV) developers need reasoning models that can operate within the compute and latency constraints of an onboard system. Larger models provide a foundation for developing these capabilities, but moving them into a vehicle requires additional work to reduce model size, preserve useful reasoning, and validate performance on the target hardware.</p><p>NVIDIA Alpamayo 2 Edge addresses this need with an adaptive reasoning vision-language-action (VLA) model designed for real-time operation on NVIDIA DRIVE AGX Thor. Built on the 2B Nemotron-based reasoning backbone of NVIDIA Cosmos 3 Edge and paired with a diffusion action expert, it leverages surround-camera observations, temporal context, and navigation inputs to generate Chain-of-Causation (CoC) reasoning and future driving trajectories. It reasons adaptively, generating reasoning only when needed, reducing unnecessary token generation and conserving inference compute during routine driving.</p><p>Alpamayo 2 Edge is post-trained with closed-loop reinforcement learning (RL) in NVIDIA AlpaGym, improving closed-loop driving performance by 48.9% on top of the best-performing checkpoint without closed-loop RL. Together, these capabilities give developers a strong, edge-ready foundation for bringing reasoning-based driving into an onboard stack.</p><p>Making a reasoning model compact enough for onboard deployment introduces a key challenge: preserving the quality of its reasoning and driving behavior as model size is reduced. This requires a way to measure reasoning quality and use that feedback to improve the model. NVIDIA AlpaJudge is the human-calibrated evaluation and reward model used in Alpamayo 2 Edge development to evaluate reasoning traces, select higher-value training data, and provide RL rewards.</p><p>This post introduces Alpamayo 2 Edge, explains its inference optimization on DRIVE AGX Thor, and explores three ways to use AlpaJudge in AV development workflows:</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://developer.nvidia.com/blog/running-av-reasoning-models-within-onboard-compute-and-latency-limits/">阅读原文 ↗</a></p>
+</body>
+</html>

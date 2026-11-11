@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When Is High-Bandwidth Flash Cost-Effective for LLM Inference?</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>When Is High-Bandwidth Flash Cost-Effective for LLM Inference?</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 高带宽闪存（HBF）能否让 LLM 推理比加 GPU 更便宜？把权重放在比 SSD 更靠近 GPU 处可减少容量所需 GPU 数，但只有在满足服务目标且成本可回收时才合理。</p>
+<p><strong>方法</strong> 用公开组件数据模拟：九个密集与 MoE 模型、五个负载、两个 GPU 平台、1–100 GPU 规模，评估固定需求下最小 GPU 数与固定 GPU 数下的吞吐。</p>
+<p><strong>关键数字</strong> 固定需求下 HBF 在 468 组比较的 98 组中降低满足服务目标所需最小 GPU 数，多数为暂停与短会话场景，63 组在「每 HBF 栈半块 GPU 价格」下仍划算；单短聊用户场景 HBF 让 DeepSeek V3、Kimi K2 等大 MoE 在单张 RTX 4090 满足宽松服务目标（传统 serving 做不到）；100 张 RTX 4090 规模下级联 HBF 把三个大 MoE 离线吞吐提升 16.4–26.5x。</p>
+<p><strong>为什么值得看</strong> 用系统化模拟回答「什么时候 HBF 值」：省钱与提吞吐出现在不同场景，决策依据清晰。</p>
+<p><a href="https://arxiv.org/abs/2611.11036">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.11036">阅读原文 ↗</a></p>
+</body>
+</html>

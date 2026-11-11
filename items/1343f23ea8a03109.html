@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keel: A Verified In-Kernel Proof Checker for Proof Carrying BPF</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Keel: A Verified In-Kernel Proof Checker for Proof Carrying BPF</h1>
+<p class="meta-line">arXiv cs.PL · 2026-11-08 · 论文PDF</p>
+
+<blockquote><p>Recent systems such as the eBPF Certificate Framework (BCF) and Proof-Carrying BPF address the imprecision in the Linux eBPF verifier with proof-carrying code. When the verifier's abstract domains cannot prove a safety condition, an in-kernel proof checker checks an untrusted user-space refutation proof. A single bug in this checker can compromise the security of the entire kernel. While formalizing BCF's in-kernel checker, we discovered 13 bugs such as unsound rewrite rules, silently unchecked proof steps, and memory safety errors. We demonstrate that forged certificates can trick the kernel to accept arbitrary unsafe eBPF programs. To address this problem, we propose Keel, a formally verified in-kernel proof checker for the Linux eBPF verifier. First, we specify the checker as a pure functional program in Lean and prove its soundness against bit-vector semantics. We decouple the steps of the proof certificate checker from the mathematical rewrite rules, which enables us to extend the rewrite rules without the need to change the checker. Second, we implement the checker in EmbC, a deeply embedded C fragment, and prove that our C implementation refines the functional specification …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.11117">阅读原文 ↗</a></p>
+</body>
+</html>

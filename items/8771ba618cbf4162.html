@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OneReel: Efficient Multi-Scene Video Generation with Scene-Structured Attention</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>OneReel: Efficient Multi-Scene Video Generation with Scene-Structured Attention</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-07 · 论文PDF</p>
+
+<blockquote><p>Multi-scene video generation must follow scene-specific prompts while preserving consistency across scenes. Dense joint generation enables cross-scene information exchange but incurs quadratic attention cost, whereas separate generation avoids this cost at the expense of cross-scene consistency. We present OneReel, a training-free system that exploits scene structure to enable efficient multi-scene generation. Our key insight is that multi-scene generation can preserve complete intra-scene attention while restricting cross-scene information exchange to a bounded shared memory. OneReel uses scene prompts and durations to establish scene-specific attention scopes and dynamically selects a bounded set of representative latent frames for cross-scene sharing. This reduces video attention complexity from quadratic to linear in the number of scenes. To translate these savings into execution speedups, OneReel packs scene-local and shared K/V into dense variable-length attention and employs work-balanced multi-GPU partitioning with communication-aware selection between K/V gathering and Ulysses-style parallelism. Our evaluations across four video generation models show that OneReel achieves…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.10594">阅读原文 ↗</a></p>
+</body>
+</html>

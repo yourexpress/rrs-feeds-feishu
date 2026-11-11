@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NearFormer: Linear-Size Sparse Attention via Randomized Near Neighbors</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>NearFormer: Linear-Size Sparse Attention via Randomized Near Neighbors</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 图 transformer 能捕捉长程交互，但二次方注意力成本限制其在大图上的应用。</p>
+<p><strong>方法</strong> 提出 NearFormer：全局注意力被限制在随机近邻（NN）图上——用高效随机化构造把每个节点连接到由标签无关特征或谱几何定义的更广邻域中的少数近邻；固定保留预算 k 下注意力支撑规模为线性 O(|E|+nk)；NN 图经桶内搜索构建一次后固定，边用作稀疏全局注意力支撑（可选学习注意力偏置），原图保留用于局部消息传递。</p>
+<p><strong>关键数字</strong> 长程图基准与合成结构任务上，相对局部消息传递、密集与稀疏注意力呈现有利的准确率-可扩展性权衡（摘要未给具体量化数字）。</p>
+<p><strong>为什么值得看</strong> 用随机近邻把图 transformer 注意力降到线性规模，兼顾长程建模与可扩展性。</p>
+<p><a href="https://arxiv.org/abs/2611.12186">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.12186">阅读原文 ↗</a></p>
+</body>
+</html>

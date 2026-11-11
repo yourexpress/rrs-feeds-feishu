@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CALFA-KV: Joint Calibration and Fisher-Guided Anchors for 1-Bit KV Cache Compression</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CALFA-KV: Joint Calibration and Fisher-Guided Anchors for 1-Bit KV Cache Compression</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-07 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 1-bit KV cache 压缩误差大，如何把量化器校准与选择性高精度存储结合以降低重建误差。</p>
+<p><strong>方法</strong> 提出 CALFA-KV：离线联合拟合 key 中心、径向归一化参数与 K/V 向量码本以匹配冻结模型的投影注意力输出，并用参考 next-token 交叉熵损失的平方梯度估计逐通道 Fisher 型敏感度；在线用敏感度加权各 KV 状态的重建误差，在每层每 KV 头预算下保留高分状态为高精度 anchor。</p>
+<p><strong>关键数字</strong> 每层每 KV 头 56 个额外 FP16 anchor 时，CALFA-KV (d8b8) 在三个模型的七个基准平均分上超过所有 1-bit 基线；d8b10 名义索引率 1.25 bit/通道，与 BF16 差距收窄至 0.90–2.01 分。</p>
+<p><strong>为什么值得看</strong> 把校准与 Fisher 敏感度 anchor 结合进 1-bit KV 压缩，并给出 anchor 选择相对最优的 excess risk 理论界。</p>
+<p><a href="https://arxiv.org/abs/2611.10511">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.10511">阅读原文 ↗</a></p>
+</body>
+</html>

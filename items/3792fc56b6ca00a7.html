@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Efficient VLA Inference via Retrieval-Based Speculation and Hardware Acceleration</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Efficient VLA Inference via Retrieval-Based Speculation and Hardware Acceleration</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> VLA 模型让机器人理解并执行复杂指令，但其自回归动作生成在资源受限的机器人平台引入显著延迟；现有投机解码依赖昂贵的草稿模型，边缘端不划算。</p>
+<p><strong>方法</strong> 提出 Zora 软硬件协同框架：① 轻量 RAG 检索增强草稿模型，利用机器人动力学、无需额外神经草稿模型；② 运动学引导的动作接受策略 + KV cache 共享注意力降低批量验证开销；③ 专用硬件 Zora core 处理 RAG 草稿的内存不规则性。</p>
+<p><strong>关键数字</strong> 在 LIBERO 基准、四个 VLA 模型上保持相当精度：纯软件优化最高 3.4x 加速，加硬件支持相对 GPU 最高 7.6x 加速。</p>
+<p><strong>为什么值得看</strong> 用检索而非额外模型做 VLA 投机草稿，软硬件协同把端侧机器人推理延迟压下来的完整方案。</p>
+<p><a href="https://arxiv.org/abs/2611.11098">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.11098">阅读原文 ↗</a></p>
+</body>
+</html>

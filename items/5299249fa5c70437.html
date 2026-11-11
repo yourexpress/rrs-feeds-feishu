@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MG-Cache: Multi-Granularity Caching for Accelerating Diffusion Transformer Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MG-Cache: Multi-Granularity Caching for Accelerating Diffusion Transformer Inference</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> DiT 扩散模型生成高分辨率图像推理成本高；现有扩散缓存策略难以识别不同计算模块的重要性差异，且很少跨 timestep 与层两个粒度协调缓存复用，误差累积难控。</p>
+<p><strong>方法</strong> 提出 MG-Cache 多粒度缓存（完全免训练）：两阶段策略——离线 timestep 画像分析识别可缓存复用冗余 timestep，再自适应逐层缓存，结合输入稳定性与各 Transformer 层重要性，选择性缓存稳定的 Attention 与 MLP 子模块。</p>
+<p><strong>关键数字</strong> 在主流开源 DiT 模型上验证有效：HunyuanVideo 最高 4.18x 加速，同时保持与未缓存输出高度一致。</p>
+<p><strong>为什么值得看</strong> 把缓存复用从单一粒度扩展到 timestep + 层双粒度协调，免训练、直接可落地。</p>
+<p><a href="https://arxiv.org/abs/2611.11365">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.11365">阅读原文 ↗</a></p>
+</body>
+</html>

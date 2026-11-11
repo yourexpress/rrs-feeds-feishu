@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ConvLUT: Rethinking Convolutional Architectures for Ultra-Low-Latency LUT-Based Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ConvLUT: Rethinking Convolutional Architectures for Ultra-Low-Latency LUT-Based Inference</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-08 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> LUT 神经网络是 FPGA 超低延迟推理的可行路径，但现有工作多限于 MLP 拓扑，结构化视觉与音频任务未被探索。</p>
+<p><strong>方法</strong> 提出 ConvLUT 系列：面向 MLPerf Tiny 基准的完全展开 LUT 可映射卷积架构——标准卷积模型（LUT 层级树）+ 类 MobileNet 深度可分离模型；四项贡献：统一 LUT 卷积框架（标准/深度/逐点，显式扇入约束）、解决 k²c 感受野维度瓶颈的 LUT 树、替代空间池化的通道分区 LUT 池化层、硬件感知迭代剪枝。</p>
+<p><strong>关键数字</strong> CIFAR-10、Visual Wake Words 与关键词唤醒上，全展开推理延迟低于约 50ns；CIFAR-10 相对非逻辑实现至少 8844x 延迟降低，测试准确率超过既有 MLP 式 LUT 模型至少 20 个百分点。</p>
+<p><strong>为什么值得看</strong> 把 LUT 推理从 MLP 推广到卷积视觉/音频任务，给出 ns 级延迟的完整架构配方。</p>
+<p><a href="https://arxiv.org/abs/2611.11507">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.11507">阅读原文 ↗</a></p>
+</body>
+</html>

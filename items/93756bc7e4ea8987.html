@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phase-Conditioned Reward Shaping for Token-Efficient LLM Reasoning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Phase-Conditioned Reward Shaping for Token-Efficient LLM Reasoning</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-07 · 论文PDF</p>
+
+<blockquote><p>Extended reasoning can help language models solve complex problems, but long responses often contain both useful computations and redundant checks. Conventional length penalties encourage shorter responses without distinguishing the functions of intermediate steps. We propose Phase-Conditioned Reward Shaping (PCRS), a framework that combines phase identification with training-time reward allocation. We investigate two classification routes: PCRS-H with a hidden-state classifier and PCRS-T with a frozen text classifier. Our main text classifier implementation assigns overlapping reasoning, execution, and revision labels to native chunks, then uses these labels and exact repetition to adjust existing token penalties. We compare the completed configurations on six mathematical and scientific reasoning benchmarks and examine four reward-weight settings with the text classifier. Compared with a baseline using token-level length penalties, the default text classifier configuration reduces mean response length by 3.13%; sampled Pass@1 is approximately 62.07% for both methods, while oracle Pass@16 rises from 86.08% to 87.67%. These results show how phase-informed penalty allocation can red…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.11024">阅读原文 ↗</a></p>
+</body>
+</html>
