@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Priority-Aware Deficit Round Robin for AXI4 Bandwidth Fairness in ASAP-7nm Process</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Priority-Aware Deficit Round Robin for AXI4 Bandwidth Fairness in ASAP-7nm Process</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-08 · 论文PDF</p>
+
+<blockquote><p>Modern systems-on-chip place real-time clients, processor cores and bulk data engines on the same AXI4 interconnect, where they contend for shared slaves. AXI4 fixes the ordering rules and carries a 4-bit quality of service (QoS) field, but leaves the service policy to the implementer, and that policy determines how long each master waits and how much bandwidth it receives once a slave saturates. We propose a QoS-aware deficit round robin (DRR) architecture that charges each grant in beats, and benchmark it against two architectures built behind the same port list: round robin, and QoS priority with anti-starvation aging. Charging in beats recovers bandwidth fairness while leaving every burst whole, so the address phase is issued once and locality for memory access is preserved. All three are driven by the same deterministic traffic generator and taken from RTL to GDSII on the ASAP7 7-nm predictive PDK. Under a 1:16 burst-length mismatch, the round robin and QoS architectures both hold the beat ratio between the two competing masters at 1:16, while our design brings it to 1:1 at full load. Mean read latency for the priority master falls from 95 cycles under round robin to 67 with Q…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.12979">阅读原文 ↗</a></p>
+</body>
+</html>

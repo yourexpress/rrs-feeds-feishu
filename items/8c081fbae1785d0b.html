@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Placing LLM Lookup Tables by Per-Layer Prefetch Deadlines</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Placing LLM Lookup Tables by Per-Layer Prefetch Deadlines</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-10 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：DeepSeek-V4.1 的 203GB Engram n-gram 查表目前驻留宿主 DRAM（4-GPU 服务进程 223GiB 中占 190）——能否按各层预取截止时间把表放到更便宜的存储层级？</p>
+<p><strong>方法</strong>：观察行索引只依赖输入 token，读操作可与更早层重叠；V4.1 两个 Engram 层窗口相差 30×（0.3 vs 9.3ms），该截止时间连同会话复用与共享设备争用决定每张表可用层级。构建 SlackTier（SGLang 表层级）：step 起始发起全部查找，先读短窗口层，GPU 行缓存跨层拆分，路径在 decode CUDA graph 内且与原始 gather 比特精确。</p>
+<p><strong>关键数字</strong>：Layer 14 的表可无缓存放 NVMe 且无可测解码开销；两张表放四块 NVMe 盘时，agent/chat 回放平均每输出 token 时间最多升 1.4%，宿主内存从 212 降到 34 GiB；经 RDMA 从别节点内存读表则两张表都不需缓存、一份副本服务两个实例；把释放内存用作宿主 KV 缓存（同预算）使 KV 受限 agent 负载中位吞吐升 36%、p90 TTFT 从 38 秒降到 24 秒。</p>
+<p><strong>为什么值得看</strong>：用"截止时间"而非经验法则决定查表存储层级，实测把 203GB 表从 DRAM 挪走几乎无代价。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.13413">Placing LLM Lookup Tables by Per-Layer Prefetch Deadlines</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.13413">阅读原文 ↗</a></p>
+</body>
+</html>

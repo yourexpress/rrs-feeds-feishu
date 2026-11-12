@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SHADOWPREFILL: Keeping Your Next Model Warm for Per-Step Model Routing in Agentic LLM Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SHADOWPREFILL: Keeping Your Next Model Warm for Per-Step Model Routing in Agentic LLM Serving</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：per-step 模型路由器为 agent 的每次 LLM 调用动态选最优模型，但每次切换都丢弃前缀缓存复用（KV 缓存按模型隔离，新模型须重新 prefill）——如何让切换不再付全量 prefill 代价？</p>
+<p><strong>方法</strong>：SHADOWPREFILL 在路由器未选中的模型上预填会话上下文，利用正常流量实例的空闲容量，使下次切换时前缀已缓存。它收割在途请求的每迭代 SLO 余量、保护被路由调用、把影子 KV 溢写到宿主内存，影子不完整时回退冷切换。</p>
+<p><strong>关键数字</strong>：生产 coding-agent 轨迹（平均上下文 63K token）下，切换后前缀命中率从 80-89% 掉到 44-65%、切换调用慢 1.5-3.2×；SHADOWPREFILL 用 LLMRouter 路由 24 对模型，切换调用延迟降 8.5-21.4%、LLM 调用延迟降 3.7-17.7%、路由 token 成本降 22.5-46.1%，正常流量 SLO 与每请求能耗基本不变（+0.4%）。</p>
+<p><strong>为什么值得看</strong>：agentic 服务里模型路由的隐藏成本被系统化解决，复用空闲算力换缓存命中，收益明确。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.13176">SHADOWPREFILL: Keeping Your Next Model Warm for Per-Step Model Routing in Agentic LLM Serving</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.13176">阅读原文 ↗</a></p>
+</body>
+</html>

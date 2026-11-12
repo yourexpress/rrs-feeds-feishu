@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plumbline: When the Loss Lies, Validating LLM Training Correctly</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Plumbline: When the Loss Lies, Validating LLM Training Correctly</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-10 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：大规模 LLM 训练正确性难以保证——故障可潜伏在运行任一部分，且表现随框架与依赖库不同；响亮与静默故障都耗时难查，单个故障可毁掉长训练（晚崩溃或只在最终评估分数偏低）。如何系统验证训练正确性？</p>
+<p><strong>方法</strong>：Plumbline（Amazon 生产系统）检查训练生命周期每一环：从训练数据、运行、到服务的模型、各模型新增层乃至整个运行；诊断复用这些检查做故障根因追踪。支持两个 agentic 用例：Day-0 onboarding（新模型训练后先验证再依赖）与训练故障根因追踪。方法论设计为跨模型与框架可迁移。</p>
+<p><strong>关键数字</strong>：3 个框架 × 5 个模型上发现 61 个问题、其中 32 个为静默故障；42 个已修复或上报上游（8 个由作者首先提出）；61 个问题归为 7 类故障模式。</p>
+<p><strong>为什么值得看</strong>：生产级训练正确性验证的实战样本，静默故障占比过半，对训练基础设施团队有直接借鉴价值。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.13393">Plumbline: When the Loss Lies, Validating LLM Training Correctly</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.13393">阅读原文 ↗</a></p>
+</body>
+</html>

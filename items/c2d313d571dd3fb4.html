@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Can KV Cache Be Reused Across Model Updates? A DeepSeek-V4-Flash Case Study</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Can KV Cache Be Reused Across Model Updates? A DeepSeek-V4-Flash Case Study</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-10 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：LLM 更新后能否直接复用旧模型的 KV 缓存避免重复计算共享上下文？权重变化后缓存究竟保留了什么？</p>
+<p><strong>方法</strong>：研究四次模型更新间的直接缓存复用，重点案例 DeepSeek-V4-Flash→Flash-0731；提出 Functional Cache Divergence（比较复用与原生缓存下的 next-token 分布）刻画行为差异；用 answer-margin 分析解释正确检索决策如何在内部状态大变下存活。</p>
+<p><strong>关键数字</strong>：检索准确率跨更新差异很大（近原生到大损失不一）；已有源缓存时，三个长前缀 QA benchmark 上复用达到中位 TTFT 加速 2.10-5.08×；自然文本续写下复用更忠实原生行为，而单 token 检索任务中兼容性随前缀长度增长下降；首 token 一致也不保证答案内容或停止行为一致。</p>
+<p><strong>为什么值得看</strong>：首次区分"任务效用"与"原生推理保真度"两个判据，为跨版本 KV 缓存复用策略提供实证依据。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.14051">Can KV Cache Be Reused Across Model Updates? A DeepSeek-V4-Flash Case Study</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.14051">阅读原文 ↗</a></p>
+</body>
+</html>

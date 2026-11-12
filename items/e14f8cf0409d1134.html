@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SinkState: On-the-Fly SVD of Recurrent States for Efficient Hybrid LLM Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SinkState: On-the-Fly SVD of Recurrent States for Efficient Hybrid LLM Serving</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-10 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：混合模型用线性注意力把历史压缩进定长循环状态，但现有服务系统对这些冗余状态稠密读写——发现 QKV 集中在稳定低维子空间（linear attention sink），状态有效低秩且秩跨状态变化，却每步全量读写，内存流量随批大小增长并主导解码成本。如何压缩？</p>
+<p><strong>方法</strong>：SinkState 在整个推理中把每个循环状态存为自适应低秩形式：带缓冲更新、限制在顶部子空间的局部 SVD；其余分量异步在 CPU 上整合。</p>
+<p><strong>关键数字</strong>：四个混合模型（Mamba-2 与 Gated DeltaNet 层，4B 到 120B 参数）上，相对 Mamba-SSM 与 FLA，循环状态峰值内存最高降 2.6×（平均 1.9×），解码最高加速 1.58×（平均 1.25×），精度保持。</p>
+<p><strong>为什么值得看</strong>：用"注意力 sink"现象把线性注意力状态压缩做到服务级，混合模型解码成本的关键优化。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.14246">SinkState: On-the-Fly SVD of Recurrent States for Efficient Hybrid LLM Serving</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.14246">阅读原文 ↗</a></p>
+</body>
+</html>

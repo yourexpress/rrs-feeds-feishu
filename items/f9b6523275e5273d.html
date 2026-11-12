@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decode Token Parallelism: Memory-Efficient Distributed Attention Parallelism for Scalable LLM Decoding</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Decode Token Parallelism: Memory-Efficient Distributed Attention Parallelism for Scalable LLM Decoding</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：高并发长上下文 LLM 服务需要随 decode 池增长的 KV 容量与注意力带宽，但现有并行策略各有权衡——数据并行复制权重限制 KV 容量，张量并行在 KV-head 数处停止扩展，DCP 分片序列却增加跨节点部分注意力聚合。如何同时扩展容量与带宽？</p>
+<p><strong>方法</strong>：提出 Decode Token Parallelism（TKNP）decode 池架构，解耦权重放置与注意力归属：单份模型按平衡层块分布到各节点，持有块的活动节点用节点内张量并行执行全批次投影与 MLP，每个节点对自己请求的本地 KV 计算注意力。仅当前 token 激活跨网络，稠密 all-reduce 留在 NVLink 内，注意力无需跨节点合并部分结果。</p>
+<p><strong>关键数字</strong>：vLLM 实现，Llama 3.1 405B 与 Nemotron-4 340B 在最多 64 张 H100 上，长上下文高并发吞吐比 DCP 最高提升 1.7×、比数据并行最高 2.06×（相同 GPU 数）。</p>
+<p><strong>为什么值得看</strong>：不复制权重也不跨节点聚合注意力的新并行维度，直接缓解长上下文 decode 的 KV 扩展瓶颈。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.13293">Decode Token Parallelism: Memory-Efficient Distributed Attention Parallelism for Scalable LLM Decoding</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.13293">阅读原文 ↗</a></p>
+</body>
+</html>

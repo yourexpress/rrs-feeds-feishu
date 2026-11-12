@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retargetable Compilation for Tensor Kernels via a Unified Layout Abstraction</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Retargetable Compilation for Tensor Kernels via a Unified Layout Abstraction</h1>
+<p class="meta-line">arXiv cs.PL · 2026-11-10 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：现代硬件加速器靠专用指令 + 紧管内存层次达到高性能，指令对操作数强加严格布局要求（张量片段位置、组织、并行单元访问方式）——但现有编译器要么把布局要求散落在手工程序与局部调度规则里，要么只支持单一目标类。如何跨后端统一建模指令布局？</p>
+<p><strong>方法</strong>：Arknife 可重定向编译器，把指令可见布局作为一等指令语义。核心是约束式布局代数：张量布局把逻辑轴映射到跨并行层级与内存空间的硬件轴；指令操作数声明布局要求，目标提供的修复解决冲突；布局跨程序全局求解。ISA 特定布局事实由目标侧指令描述提供而非硬编码进编译器，重定向复用布局代数与求解器、只定义新目标指令。</p>
+<p><strong>关键数字</strong>：x86 CPU、Hexagon NPU 与 NVIDIA A100 GPU 三目标评估：A100 上匹配 cuBLAS；x86 与 Hexagon 上比厂商优化库快 2.17× 与 3.78×，比可重定向编译器 MISAAL 快 5.08× 与 4.53×。</p>
+<p><strong>为什么值得看</strong>：把指令布局从"隐式约定"提为一等语义的约束代数，一次抽象跨三类硬件，重定向成本大幅下降。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.13741">Retargetable Compilation for Tensor Kernels via a Unified Layout Abstraction</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.13741">阅读原文 ↗</a></p>
+</body>
+</html>

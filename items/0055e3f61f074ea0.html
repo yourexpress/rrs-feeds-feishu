@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sanity Checks for Attention Surgery: Null Models and Matched Interventions for Representation-Motivated Design</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Sanity Checks for Attention Surgery: Null Models and Matched Interventions for Representation-Motivated Design</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-10 · 论文PDF</p>
+
+<blockquote><p>Transformer architectural modifications frequently measure a statistic on internal representations, observe that it is large, remove it architecturally, and report an improvement. Interpreting that sequence requires evaluating whether the statistic exceeds its noise floor, whether it survives a geometric null, and whether the training gain requires the specific direction removed. We formulate these requirements as three reusable checks and apply them to self-attention removal, which deletes the component of an attention head's output aligned with its own value vector. Across nine multi-head pretrained models (5,408 heads, 124M to 6.9B parameters), an earlier-position causal null accounts for 48% to 63% of the head-value cosine alignment, with no monotone scale trend. Under grouped-query attention, this alignment is specific to each head's own key-value group and reverses across groups (+0.24 to +0.27 within-group, -0.11 to -0.19 across-group). Split-half reliability demonstrates that the per-head intervention effect is resolvable in GPT-2 ($r_Δ= 0.80$) but attenuated in Pythia-160M (0.42) and Pythia-410M (0.53), whereas structural self-cosine reliability is near-perfect in all thre…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.13543">阅读原文 ↗</a></p>
+</body>
+</html>

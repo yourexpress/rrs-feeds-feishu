@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>REAL Loss: Optimizing Real Expected Acceptance Length for Speculative Decoding</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>REAL Loss: Optimizing Real Expected Acceptance Length for Speculative Decoding</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-10 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：投机解码加速由期望接受长度（EAL）决定，但标准训练目标（交叉熵、KL、TV）只做分布匹配，近期的 block-level 目标也只是 EAL 的代理而非精确形式——有的在目标分布续写上平均后期接受率而非被接受 token 选择的验证分支，引入可反转梯度方向的协方差 gap。能否直接优化真实 EAL？</p>
+<p><strong>方法</strong>：推导 REAL loss——用路径权重做无偏估计、Rao-Blackwellization 降方差，端到端优化真实期望接受长度。受控 loss 级对比：Qwen3.6-35B-A3B 目标 + Domino drafter。</p>
+<p><strong>关键数字</strong>：REAL 在 9 个任务子集、5 个评估种子上的概率服务接受长度全面胜过 WTV、VSD、DBLast 与静态 LK 基线；仅改训练 loss，drafter 架构与推理过程零改动。参考实现已在 GitHub 开源。</p>
+<p><strong>为什么值得看</strong>：把投机解码训练目标从"代理"精确化为"真实 EAL"，只换 loss 即可提升，落地成本极低。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.14399">REAL Loss: Optimizing Real Expected Acceptance Length for Speculative Decoding</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.14399">阅读原文 ↗</a></p>
+</body>
+</html>

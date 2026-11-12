@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>An Open Implementation Flow for the Xilinx Spartan-3E and Spartan-6 that Runs in the Browser, Checked Byte for Byte Against ISE</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>An Open Implementation Flow for the Xilinx Spartan-3E and Spartan-6 that Runs in the Browser, Checked Byte for Byte Against ISE</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-09 · 论文PDF</p>
+
+<blockquote><p>The author describes an open implementation flow, from HDL to a programmable bitstream, for the Xilinx Spartan-3E (XC3S100E to XC3S1200E) and Spartan-6 (XC6SLX16, XC6SLX45), devices that only the discontinued ISE 14.7 supports. The flow runs unchanged in a web browser or in Node.js: Yosys and nextpnr compiled to WebAssembly, with nextpnr's Himbaechel framework given Spartan-3E and Spartan-6 architectures generated from Silinx's own device descriptions, bit database and timing model, and Silinx's own bitstream writer. The bit database was built by black-box observation of ISE's documented XDL and bitgen tools, using codeword-batched experiments; the router is given only switches whose bits were measured, and the writer refuses a feature it has not measured. ISE is the oracle: for the same placed and routed design, the bitstream is byte-identical to the one bitgen writes and ISE's DRC is clean. Placement and routing were first done by an in-house annealer and PathFinder router, which nextpnr replaced once it matched them. On 67 open-source designs for the XC3S1200E, compared with ISE at the same optimisation goal (45 designs built by both), the flow uses 15% fewer slices and has 14% …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.13008">阅读原文 ↗</a></p>
+</body>
+</html>

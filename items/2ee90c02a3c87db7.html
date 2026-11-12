@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metamorphic testing of learned AC optimal power flow surrogates reveals representation dependence</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Metamorphic testing of learned AC optimal power flow surrogates reveals representation dependence</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-10 · 论文PDF</p>
+
+<blockquote><p>Evaluating a learned AC optimal power flow (AC-OPF) surrogate on one grid serialization cannot show whether its accuracy depends on that encoding. We test this dependence with thirteen metamorphic relations, each specifying when a transformation is valid and how to compare its outputs. Our audit covers 17 model and pipeline configurations: two released trained checkpoints and 15 random-weight architecture or mechanism controls. Every configuration violates at least six relations, even at reporting tolerances ten times tighter or looser. For GridSFM-Open v1.1, source inspection and intermediate-tensor interventions point to an indexing bug and three noncanonical or numerically unstable preprocessing choices; a repaired checkpoint remains untested. In a separate case500 training experiment, augmentation lowers transformed-view error in three of four models and median discrepancy and constraint-violation P95 in all four. These benefits depend on the training protocol: some relations worsen, and every evaluated prediction remains AC infeasible. A GPU/CPU eigensolver mismatch accounts for most of the large raw-Laplacian-baseline gain. We recommend reporting representation consistency al…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.13566">阅读原文 ↗</a></p>
+</body>
+</html>

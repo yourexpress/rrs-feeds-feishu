@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Margin Perspective on LoRA: Robustness to Catastrophic Forgetting and Adapter Merging (MaLoRA)</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>A Margin Perspective on LoRA: Robustness to Catastrophic Forgetting and Adapter Merging (MaLoRA)</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-10 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：LoRA 除参数高效外，实践中还表现出对灾难性遗忘的鲁棒性和独立 adapter 可合并性——这两个对持续学习与多任务学习至关重要的性质，理论上一直缺乏解释。</p>
+<p><strong>方法</strong>：在近正交任务区间 + ℓ2 正则的多类线性分类下，用统一"边际视角"分析 LoRA：刻画各正则区间的最优 adapter；证明中间正则区间下最优 adapter 对齐微调数据的最大边际解；由此导出预训练/微调数据上的边际闭式表达式，揭示正则参数控制保留-适应平衡；并分析 adapter 合并，证明合并模型在每个任务上获得正边际、导出最优混合系数，给出免训练的合并规则。</p>
+<p><strong>关键数字</strong>：理论推导给出合并模型每任务正边际与跨任务边际最大化的最优混合系数闭式解。</p>
+<p><strong>为什么值得看</strong>：首次给 LoRA 两大经验性质以统一理论解释，附带免训练合并规则，直接服务多任务 adapter 组合。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.14397">A Margin Perspective on LoRA: Robustness to Catastrophic Forgetting and Adapter Merging</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.14397">阅读原文 ↗</a></p>
+</body>
+</html>

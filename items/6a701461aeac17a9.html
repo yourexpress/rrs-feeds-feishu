@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Validating GPU Platforms with Runtime AI Inventory via the NVIDIA DSX AI Factory</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Validating GPU Platforms with Runtime AI Inventory via the NVIDIA DSX AI Factory</h1>
+<p class="meta-line">NVIDIA Technical Blog · 2026-11-11 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://developer-blogs.nvidia.com/wp-content/uploads/2026/11/image1-7-660x370.jpg" alt="" referrerpolicy="no-referrer">
+<p>NVIDIA DSX AI Factory：AICR v1.2.0 + Kubernetes AIBOM（application bill-of-materials）实现运行时 AI 库存验证——启动前用 SBOM 工件校验驱动/固件/库版本匹配 GPU 平台，fail-fast 快速定位不兼容，面向 AI 数据中心规模化部署验证</p>
+<blockquote><p>As teams deploy and scale AI workloads using NVIDIA Dynamo, Kubeflow, or Slurm, tracking what actually runs requires visibility beyond the platform configuration captured in a recipe. Application teams define and update these workloads independently of the platform recipe, so a reproducible deployment bundle alone cannot establish which workload artifacts are running on each node. Mutable image tags like :latest</p><p>add another layer of complexity. Two nodes can end up running different code under identical tags, and a node that pulls next week may retrieve an image that was not covered by an earlier security review.</p><p>NVIDIA AI Cluster Runtime (AICR), an open source modular component of the NVIDIA DSX AI Factory Platform, now includes a qualified AI bill of materials (AIBOM) component to close that gap. An open source project created by Google, k8s-aibom tracks AI workloads running on Kubernetes. Two stock recipes select k8s-aibom by default: h100-gke-cos-inference</p><p>and h100-gke-cos-inference-dynamo</p><p>. Other GKE recipes can opt in during generation with --runtime-inventory</p><p>enabled. Recipes selecting it can opt out with --runtime-inventory</p><p>disabled.</p><p>AICR turns known-good GPU platform configurations into version-locked recipes and reproducible deployment bundles. Each recipe records the desired configuration for one hardware, cloud, OS, and intent combination: its components, version pins, values, constraints, deployment ordering, and validation expectations. AICR generates reproducible deployment artifacts from fixed recipe, catalog, and bundle inputs. Bundles include checksums; signing is optional through aicr bundle --attest</p><p>.</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://developer.nvidia.com/blog/validating-gpu-platforms-with-runtime-ai-inventory-via-the-nvidia-dsx-ai-factory/">阅读原文 ↗</a></p>
+</body>
+</html>

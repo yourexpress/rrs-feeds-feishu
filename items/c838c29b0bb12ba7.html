@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learning to Live: A Step Toward Lifelong Embodied Intelligence (LIFE)</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Learning to Live: A Step Toward Lifelong Embodied Intelligence (LIFE)</h1>
+<p class="meta-line">Agibot（智元） · 2026-11-11 · 技术博客 / 每日精选</p>
+
+<p>终身具身智能框架：RoboBeats 轻量流式感知门控（0.8B/2B/4B 开源，单卡 75ms/帧）+ Plastic Memory 可塑性记忆 + EDM 能力复用，24h 真机测试 6 问 29.5/30 分，FindingDory 任务成功率 37.5%→65.8%</p>
+<blockquote><p>RoboBeats</p><p>基于 Qwen3.5 的 0.8B、2B 和 4B LoRA 适配器。以 1 fps 因果视频流发现事件，筛选值得写入记忆的观察。</p><p>推理与 Python API ↗LIFE / RESEARCH RESULTS从观察到记忆，检验每一步。</p><p>查看完整评测设置与对比 ↓</p><p>THE IDEA</p><p>我们希望机器人能够在开放世界中长期生活，自主观察、理解变化，在与环境和人的交互中积累经验，形成对世界的认识，并获得解决新问题的能力。</p><p>LIFE 探索通向终身具身智能的一条路径：通过主动感知获取经验，通过长期记忆连接过去与当下，通过能力积累将探索所得转化为可复用的方法，让每一次交互都可能成为未来成长的基础。</p><p>推理与决策贯穿其中：调用已有经验，在证据不足时引导新的观察与探索。</p><p>01 PROACTIVE PERCEPTION</p><p>电梯门打开、访客到来、对话被打断——重要的时刻，往往发生在下一条指令之前。</p><p>RoboBeats 是基于 Qwen3.5 的轻量流式感知门控。它按时间顺序读取画面，结合当前帧和此前观察，判断指定条件是否成立、是否有新事件发生，并据此更新门控状态，将需要处理的观察传给下游模块。用户可以设置关注条件，环境事件也能在没有新请求时启动处理。</p><p>CONDITION TRACKING关注一个条件</p><p>「电梯门是否打开？」</p><p>持续判断指定条件，提供触发时机。</p><p>EVENT DISCOVERY发现一件新事</p><p>「是否发生了新的事件？」</p><p>在未知后续问题时，保留有价值的观察。</p><p>模型直接读取 true / false token 的分数，不为每帧生成长文本；多条件共享图像与有限的观察历史，各条件独立预测。训练结合逐帧判断与正例时间区间的监督，并提高区间边界附近的权重。在线推理默认以 1 Hz 处理输入，复用 KV 与循环状态缓存，通过不同的激活和退出阈值减少状态反复切换。连续激活的观察组成区间，供下游响应或记忆写入使用。</p><p>02 PERSISTENT MEMORY</p><p>今天经过的一张桌子，可能留下明天寻找水杯时需要的线索。</p><p>LIFE 的 Plastic Memory 以平坦文件结构保存选中的原始画面和关联 JSON 记录，继承 ReSight 的观察式记忆设计。每条观察保留时间、可用位姿，以及由证据提取的描述、人物、物体和事件字段；原始画面始终可回看，支持核实和补充最初未记录的细节。</p><p>来自不同来源的帧按位置与观察方向归入同一视角，把「这里是什么样」与「这里发生过什么」联系起来。地点检索返回相关的空间画面、最新观察及匹配的事件证据。Agent 也能查找指定时间附近的画面，或按时间顺序回看该视角保留的历史。</p><p>后来的问题</p><p>「我的水杯在哪里？」</p><p>找相关记录→回看历史画面→核实现场状态</p><p>当已有字段不足以支持新问题，Agent 可以重新分析保留的画面，补充字段和索引。例如，过去保存的门口画面，可以在提取房间号后变成新的检索入口。同一份经历由此能够服务于采集时尚未预见的问题。</p><p>回扫能够提取保留画面中尚未记录的细节；历史记录反映过去的观察，确认当前状态仍需要新的证据。</p><p>03 LEARN &amp; REUSE</p><p>有时，信息已经在记忆里，缺少的是把它找出来、关联起来的方法。</p><p>LIFE 使用 ReSight 的 Explore–Distill–Mount（EDM）机制应对这类能力缺口。编码智能体探索新的处理程序，将有效过程整理为工具、技能与记忆构建器；经过验证后，执行智能体可以在后续问题中调用它们。</p><p>01Explore</p><p>检查证据，编写程序，探索可执行的解决方法。</p><p>02Distill</p><p>去除特定场景的硬编码，明确接口，并用执行反馈改进方法。</p><p>03Mount</p><p>将验证后的工具、技能和构建器接入后续任务。</p><p>新的方法可以重新处理过去的经历，也可以进入未来任务。记忆积累与能力积累由此连接起来。</p><p>A DAY OF EXPERIENCE</p><p>我们用 A3 Ultra 在办公室采集的 24 小时录像离线构建记忆，再提出关于人物、物体、时间与地点的问题。</p><p>从凌晨的访客，到会议中的水杯，再到跨时段的物品交接：问题在观察之后出现。Agent 需要找到相关记录，连接不同时刻的线索，并在必要时回到原始画面。</p><p>A3 Ultra · 24 小时录像 · 6 个案例</p><p>三组使用相同回答模型，每题各运行 3 次。分数为人工评分标准下的累计得分，允许部分分；时间仅统计回答阶段，不包含离线记忆构建。该案例研究不代表长期在线自主学习已获验证。</p><p>EVIDENCE &amp; EVALUATION</p><p>报告分别评测感知门控、历史记忆问答与能力复用。这里给出两组基准实验：相同写入预算下的观察选择（SSS-Bench），以及构建后能力的复用（FindingDory）。真实机器人的记忆问答结果见上一节。</p><p>01相同写入预算下，保留更有用的观察</p><p>SSS-Bench · RoboBeats-2B</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://agibotgeneral.github.io/life-site/">阅读原文 ↗</a></p>
+</body>
+</html>

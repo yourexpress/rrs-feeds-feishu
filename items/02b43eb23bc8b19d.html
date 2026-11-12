@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tri-Stack-PIM: A Heterogeneous Multi-Die 3D-Integrated Processing-in-Memory Architecture for Efficient LLM Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Tri-Stack-PIM: A Heterogeneous Multi-Die 3D-Integrated Processing-in-Memory Architecture for Efficient LLM Inference</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-10 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：LLM 自回归解码内存带宽受限，现有 3D 堆叠 PIM 架构仍受多重约束：PHY/控制器/DMA 与算力争先进节点基片面积、hybrid-bonding 保护区碎片化基片布局、DRAM 工艺计算 tile 逻辑密度低限制吞吐、非线性操作卸载到宿主重引通信瓶颈。如何一体化解决？</p>
+<p><strong>方法</strong>：Tri-Stack-PIM 异构三 die 架构：顶部 DRAM die 专职存储、中间成熟工艺缓冲 die 放 PHY/DMA 引擎/近存计算单元、底部先进节点基片 die 专放 SIMD 乘累加阵列。另提出 UBAR 统一缓冲感知 ready 硬件乱序微操作调度器：运行时强制跨 die 依赖正确性、多term 优先级最大化发射槽利用。</p>
+<p><strong>关键数字</strong>：UBAR 恢复顺序策略可能浪费的多达 90% 周期；架构-数据流联合探索找出的 Pareto 最优配置相对朴素参数选择 EDP 降 33-66×；MHA/GQA/MQA 三种注意力、批大小 1-32 上，几何平均加速相对 GPU 基线 4.95×、相对 AttAcc 2.57×、相对 H2-LLM 1.68×。</p>
+<p><strong>为什么值得看</strong>：以"三 die 分工"系统化解 3D-PIM 的面积/工艺/调度耦合难题，含乱序调度器与联合探索方法。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.13644">Tri-Stack-PIM: A Heterogeneous Multi-Die 3D-Integrated Processing-in-Memory Architecture for Efficient LLM Inference</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.13644">阅读原文 ↗</a></p>
+</body>
+</html>

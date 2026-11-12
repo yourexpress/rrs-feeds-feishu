@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One-Sided Expert-Parallel All-to-All for Mixture-of-Experts Inference over NVLink</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>One-Sided Expert-Parallel All-to-All for Mixture-of-Experts Inference over NVLink</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-09 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：MoE 推理每层需要两次 all-to-all（dispatch 与 combine），推理时每 GPU 处理 token 少，小批量下不随 token 数增长的固定开销主导延迟——如何消除这些固定成本？</p>
+<p><strong>方法</strong>：提出 NVLinkOneSided 单边 EP all-to-all（限单 NVLink 域内 GPU）：源 rank 不先交换元数据即把 token 推入目标 GPU 的 rank-major 缓冲区，grouped GEMM 原地读取而非逐专家拷贝。提供 Fence 与 Sentinel 两种同步协议，分别面向高吞吐与低延迟场景；模块化接口，与量化格式无关、与计算后端解耦。</p>
+<p><strong>关键数字</strong>：Blackwell GPU 上 dispatch+combine 比 DeepEP 快 1.2-3.0×（小批量下增益最大）；MoE 层整体比 DeepEP+DeepGEMM 快 2.4×；每 GPU 128 token 内甚至超过融合版 DeepGEMM MegaMoE，解码场景仍具竞争力。</p>
+<p><strong>为什么值得看</strong>：小批量 MoE 推理的通信范式改进，直接降低解码延迟，接口设计易于集成进推理框架。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.13188">One-Sided Expert-Parallel All-to-All for Mixture-of-Experts Inference over NVLink</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.13188">阅读原文 ↗</a></p>
+</body>
+</html>

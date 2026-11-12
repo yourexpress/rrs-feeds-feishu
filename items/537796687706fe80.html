@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deterministic, Reproducible Inference in Exact Integer Arithmetic, and Verifiable Distributed Inference as Its Consequence</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Deterministic, Reproducible Inference in Exact Integer Arithmetic, and Verifiable Distributed Inference as Its Consequence</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-10 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：优化后的浮点推理在不同硬件/编译器/线程数下会产生不同比特——跨环境不可复现。能否让真实模型的推理在精确整数算术下运行？</p>
+<p><strong>方法</strong>：开源 tritify 运行时，让真实模型（decoder-only LM、MoE decoder、Segment Anything 2.1 图像/视频栈）整个运行时前向路径走精确整数算术，浮点仅限离线量化与验证参考。三项主张逐一验证：① 跨硬件可复现（跨 CPU 指令集、跨 CPU/GPU 输出比特一致，附输出 SHA-256）；② 决策保真（整数路径复现浮点参考在测试模型与输入上的决策，OLMoE-1B-7B 与 1060 亿参数 MoE 十六层逐层保真无悬崖）；③ 位置无关（计算可跨指令集、CPU/GPU、联网机器拆分，输出比特零影响）。</p>
+<p><strong>关键数字</strong>：GLM-4.5-Air（106,852,251,264 参数、427GB 整数码）跨三台机器生成答案，与单主机参考比特一致——没有任何一台能单独在 RAM 中容纳其整数码。</p>
+<p><strong>为什么值得看</strong>：整数算术推理把"可复现"变成可验证的硬保证，支撑不信任服务器/设备群上的可验证分布式推理。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.13730">Deterministic, Reproducible Inference in Exact Integer Arithmetic, and Verifiable Distributed Inference</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.13730">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkipLane: Write-Once, Conflict-Free Accumulation for Zero-Skipping CNN Engines on FPGAs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SkipLane: Write-Once, Conflict-Free Accumulation for Zero-Skipping CNN Engines on FPGAs</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-10 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：CNN 加速器跳过零激活省乘法，但压缩输入窗口的乘积属于不同输出列、必须合并——此前用 read-modify-write（RMW）合并，使稀疏输入比稠密还慢（87% 稀疏度亦然）。如何让累加路径无冲突？</p>
+<p><strong>方法</strong>：SkipLane 让整个累加路径 write-once：每条 kernel row 在独立 lane 处理，lane 用三个寄存器持部分和、每周期最多退休三个已完成列到不会冲突的内存 bank；lane 与输入通道只在读出时求和，任何部分和都不回读；零权重闲置的乘法器同趟计算第二个滤波器。</p>
+<p><strong>关键数字</strong>：RTL 仿真中引擎在 70% 稀疏度内保持在前端界 0.5% 以内，50-80% 稀疏度下比 18-bank 理想 RMW 的 SCNN 式散射累加器快 1.10-1.26×；六个引擎在 PYNQ-Z2 上达 140MHz、用 21.1k LUT，板上跑 LeNet-5 比特精确；conv1 比稠密引擎少 1.94× 周期（端到端快 1.26×），conv2（行仅 13 像素宽）达到稠密速度的 0.87×。</p>
+<p><strong>为什么值得看</strong>：彻底移除稀疏累加的 RMW 与 bank 冲突，稀疏输入不再慢于稠密，FPGA 零跳过引擎的实用进展。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.14495">SkipLane: Write-Once, Conflict-Free Accumulation for Zero-Skipping CNN Engines on FPGAs</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.14495">阅读原文 ↗</a></p>
+</body>
+</html>

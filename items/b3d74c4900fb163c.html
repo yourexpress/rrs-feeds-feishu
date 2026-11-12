@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audited Gradients, Anchored Policies: Model-Based Reinforcement Learning for Efficient Flow Control</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Audited Gradients, Anchored Policies: Model-Based Reinforcement Learning for Efficient Flow Control</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-09 · 论文PDF</p>
+
+<blockquote><p>Feedback controllers for flows are expensive to design, since each candidate must be evaluated with a high-fidelity solver. Differentiable surrogates reduce that cost, but they also introduce a failure mode that prediction error cannot detect. Policy optimization uses the derivative of the objective with respect to the action, which we call the action gradient and which can be computed either through the surrogate or through the high-fidelity solver. Optimization through the surrogate uses only its action gradient, and a surrogate can follow the flow trajectory closely while misestimating this derivative. The surrogate action gradient is compared against a central finite-difference estimate from the high-fidelity solver on held-out states, under acceptance criteria fixed before the comparison, and we call that comparison an audit. A low-dimensional feedback law is then fitted to the surrogate action gradient when the surrogate passes the audit, and to the solver estimate when it does not. This law initializes a neural policy, and a quadratic penalty holds the policy near it during optimization. The proposed approach is validated on four test cases. The resulting controllers outperf…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.13203">阅读原文 ↗</a></p>
+</body>
+</html>

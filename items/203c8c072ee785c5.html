@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bursts That Outlast Themselves: Persistent Degradation in Prefix-Cached Agent Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Bursts That Outlast Themselves: Persistent Degradation in Prefix-Cached Agent Serving</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-10 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：prefix-cached agent 服务在相同基础负载下，几分钟的额外到达就可能导致服务器进入持续降级区（命中率暴跌、吞吐减半、backlog 持续增长）——这种亚稳态是否真实存在、能否预测与恢复？</p>
+<p><strong>方法</strong>：对 vLLM 做对照实验：相同基础负载 + 短突发 vs 无突发孪生服务器；提出一阶工作负载平衡条件刻画降级区可排空边界；测试准入节流、挂起已准入会话（基于容量上限）、CPU offload 与预算器四种恢复/预防策略。</p>
+<p><strong>关键数字</strong>：突发后 vLLM 进入约 10% 命中率、约一半吞吐、backlog 增长 70 分钟的降级区，9/12 对中无突发孪生保持健康、无反向案例；Qwen3-32B 与 SGLang 上也复现（后者容忍更大触发）；准入节流仅恢复 7 个塌陷运行中的 1 个，容量上限挂起准入则几分钟内全部恢复；预算器在所有测试运行中阻止了故障。</p>
+<p><strong>为什么值得看</strong>：揭示 agent 服务缓存经济性的隐藏脆弱点——"缓存一旦崩塌会自我强化"，恢复策略实证可操作。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.13412">Bursts That Outlast Themselves: Persistent Degradation in Prefix-Cached Agent Serving</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.13412">阅读原文 ↗</a></p>
+</body>
+</html>

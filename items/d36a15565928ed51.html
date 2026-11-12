@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPMW: A Grid-Based Programming Model for Scalable Accelerator Design</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SPMW: A Grid-Based Programming Model for Scalable Accelerator Design</h1>
+<p class="meta-line">arXiv cs.PL · 2026-11-06 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：现代加速器靠规律性硬件结构复现计算获得高性能，但设计工具常用顺序程序或扁平化模块表达，遮蔽共享模式、导致重复编译——如何让网格规律性贯穿整个编译过程？</p>
+<p><strong>方法</strong>：提出 SPMW（Single Program, Multiple Connected Work Units）网格化编程模型，把网格规律性作为一等抽象，解耦局部工作单元行为与网格连接、数据投递。Python 前端 + MLIR 编译器，每种 kernel 配置只综合一次供多个硬件实例复用；支持并行编译与函数仿真加速设计迭代。</p>
+<p><strong>关键数字</strong>：32×32 脉动阵列的 GEMM 延迟相对 AutoSA 降 4.36×，kernel 到 RTL 并行编译快 619×；FFT 延迟比 HP-FFT 低 2.65×；mini-TPU 上并行函数仿真比 Vitis HLS C 仿真快 18.4×；五个编码 agent 用 SPMW 比 SystemVerilog 少用 7.51× token。</p>
+<p><strong>为什么值得看</strong>：首个在编译全流程保留规律性的加速器编程模型，同时利好硬件设计迭代与 agent 生成。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.12944">SPMW: A Grid-Based Programming Model for Scalable Accelerator Design</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.12944">阅读原文 ↗</a></p>
+</body>
+</html>

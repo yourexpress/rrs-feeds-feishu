@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exploiting What NVIDIA Profilers Hide: Fast and Accurate Analytical GPU Performance Modeling</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Exploiting What NVIDIA Profilers Hide: Fast and Accurate Analytical GPU Performance Modeling</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-10 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：GPU 硬件配置设计空间越来越大，cycle-level 模拟器太慢，而现有解析模型需在目标配置上重估或缩放每个 warp stall，跨配置预测不准——如何快速且准确地跨配置预测性能？</p>
+<p><strong>方法</strong>：关键观察——固定延迟 stall 跨配置不变，排队 stall 才随各硬件单元压力变化。据此提出 ForeSight 排队解析模型：复用硬件上测得的固定延迟 stall，按单元压力重算排队 stall；配套 UnitSight profiler 恢复 NVIDIA 官方 profiler 聚合隐藏的各单元计数器。</p>
+<p><strong>关键数字</strong>：九款 NVIDIA GPU 硬件配置上，内核执行时间 MAPE 8.3%（最佳基线 14.1%）；vLLM LLM 推理端到端时间 MAPE 2.0%；比 cycle 级模拟器 Accel-Sim 快 49×；用 ForeSight 探索 H20 衍生配置找到 1.78× 的 LLM 推理配置。</p>
+<p><strong>为什么值得看</strong>：不再为每个新配置重跑模拟，基于实测 stall 复用做解析预测，误差与速度兼得。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.13762">Exploiting What NVIDIA Profilers Hide: Fast and Accurate Analytical GPU Performance Modeling</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.13762">阅读原文 ↗</a></p>
+</body>
+</html>
