@@ -22,9 +22,11 @@
 <h1>Data-Adaptive Mahalanobis Metric Learning for Cross-Head Attention in Transformers</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>transformer跨头注意力的数据自适应Mahalanobis度量学习</p>
-<blockquote><p>In this paper, we propose Data-Adaptive Mahalanobis Cross-Head Attention (DAMCHA), a simple and effective attention mechanism that generalizes Multi-Head Attention (MHA) through the lens of metric learning. Standard MHA implicitly learns a static, head-wise Euclidean similarity corresponding to the diagonal blocks of a unified cross-head metric matrix, discarding all off-diagonal interactions across heads. DAMCHA addresses this limitation via two key innovations. First, it learns the full cross-head metric matrix, inducing a Mahalanobis-like similarity that explicitly captures inter-head interactions beyond the restricted block-diagonal structure of MHA. Second, it parameterizes the metric matrix as an input-dependent function, enabling the attention geometry to dynamically adapt to the intrinsic manifold structure of the data rather than remaining fixed after training. We further introduce principled regularization strategies, most notably stack-wise parameter sharing, to ensure computational efficiency and stable optimization. DAMCHA serves as a drop-in replacement for MHA and its variants in various Transformer architectures, delivering superior expressive power and learning per…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 标准多头注意力（MHA）隐式学习静态的逐头欧氏相似度，对应统一跨头度量矩阵的对角块，丢弃了跨头非对角交互。</p>
+<p><strong>方法</strong> 提出 DAMCHA：①学习完整跨头度量矩阵，诱导 Mahalanobis 式相似度，显式捕捉 MHA 块对角结构之外的头间交互；②把度量矩阵参数化为输入相关函数，让注意力几何随数据内在流形动态适配而非训练后固定；并用栈级参数共享等正则策略保证计算效率与稳定优化，可直接替换 MHA 及其变体。</p>
+<p><strong>关键数字</strong> 在多种 Transformer 架构与基准任务上优于对比基线，计算开销相当或更低（摘要未给出具体数值）。</p>
+<p><strong>为什么值得看</strong> 从度量学习视角统一理解注意力，动态几何适配数据流形，即插即用价值高。</p>
+<p><a href="https://arxiv.org/abs/2610.13261">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13261">阅读原文 ↗</a></p>
 </body>
 </html>

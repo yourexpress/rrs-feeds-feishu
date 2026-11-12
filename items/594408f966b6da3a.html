@@ -22,9 +22,11 @@
 <h1>Double-Take: Improving Capacity, Binding, and Selectivity In Long-Context Within Bidirectional Memory</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>双向记忆架构提升长上下文容量、绑定与选择性（Double-Take）</p>
-<blockquote><p>Processing a long sequence does not guarantee that distant information remains usable. As context grows, a fixed-size memory must retain many associations, connect information across positions, and preserve relevant structure without being overwhelmed by everything it observes. These are distinct requirements: a memory may store more information without representing the relationships needed for retrieval, and it may transport those relationships without preserving the ones that matter. Thus, the challenge is not simply extending context length, but constructing a memory that remains usable as context grows. We study this problem in large-chunk test-time training (TTT) and identify two basic failures: single-step writes accumulate interference, limiting capacity, while self-associative writes cannot form cross-position bindings. We introduce Double-Take (DT), which repairs these failures with multi-step unpinned updates and cross-position mixing, and adds bidirectional change-sensitive writes for selective retention. Capacity alone leaves end-to-end recall at the $0.10$ chance floor; adding binding raises it to $0.92$. Trained only on $32\,\mathrm{kb}$ genomic contexts, DT reaches $…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 处理长序列不等于远端信息可用：上下文增长时，固定大小记忆必须同时满足容量（存下更多关联）、绑定（跨位置连接信息）与选择性（不被无关观察淹没），三个要求相互独立。</p>
+<p><strong>方法</strong> 在大块 test-time training（TTT）中识别两个基本失败：单步写入积累干扰限制容量，自关联写入无法形成跨位置绑定；提出 Double-Take（DT）以多步无固定更新与跨位置混合修复，并加入双向变化敏感写入实现选择性保留。</p>
+<p><strong>关键数字</strong> 仅容量时端到端召回停在 0.10 机会底线；加入绑定提升到 0.92；仅在 32kb 基因组上下文训练，131kb 上 AUROC 达 0.927、近 1Mb 达 0.856，且人→小鼠零样本迁移。</p>
+<p><strong>为什么值得看</strong> 把容量/绑定/选择性确立为可用长程记忆三要素，超长基因组上下文的实证很有说服力。</p>
+<p><a href="https://arxiv.org/abs/2610.13073">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13073">阅读原文 ↗</a></p>
 </body>
 </html>

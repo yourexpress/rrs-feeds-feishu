@@ -22,9 +22,11 @@
 <h1>Conditional Accuracy Profiles: Diagnosing LLM Judges across Deployment Conditions</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>条件准确率画像 CAP：八维条件分解诊断 LLM 评委在何种部署条件下失效</p>
-<blockquote><p>LLM-as-judge is now a standard tool for scalable evaluation, but judge performance is still often summarized by a single accuracy number. This aggregate view hides the deployment conditions under which a judge succeeds or fails. We introduce \textbf{Conditional Accuracy Profiling} (CAP), a post-hoc diagnostic framework that decomposes pairwise LLM-judge accuracy into eight conditions organized into content sensitivity, robustness, and rationale quality. CAP is benchmark-agnostic: it can be applied directly when a benchmark provides the required annotations, approximately through task-subset proxies, or through controlled augmentation when perturbation pairs can be generated. We instantiate CAP on seven LLM judges across six pairwise judging benchmarks, including \textsc{judgerEva-Standard}, a controlled testbed we created to support all eight conditions. CAP exposes profile differences hidden by aggregate accuracy: on \textsc{judgerEva}'s judge-independent Hard-Constructed subset, the two judges most sensitive to omitted qualifications rank in the bottom three of seven by overall accuracy, so omission sensitivity is not predicted by aggregate accuracy. Across benchmarks, Position R…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM-as-judge 已成为规模化评测标配，但性能常被一个聚合准确率数字概括，掩盖了 judge 在哪些部署条件下成功或失败。</p>
+<p><strong>方法</strong> 提出 Conditional Accuracy Profiling（CAP）事后诊断框架：把成对 LLM-judge 准确率分解为 8 个条件，组织为内容敏感性、鲁棒性与理由质量三个维度；框架与基准无关，可用现成注解、任务子集代理或受控增强实例化；在 6 个 pairwise 评测基准上对 7 个 LLM judge 实例化验证。</p>
+<p><strong>关键数字</strong> Position Robustness 排名稳定性最强（平均 Spearman ρ=0.87），但在 JudgeBench-Pro 对抗压力下平均准确率下降最大；judgerEva Hard-Constructed 子集上，两个对省略限定最敏感的 judge 总准确率排在 7 个中的后三名——省略敏感性无法由聚合准确率预测。</p>
+<p><strong>为什么值得看</strong> 为 LLM judge 选择提供比单一准确率更可操作的依据，诊断框架可直接复用。</p>
+<p><a href="https://arxiv.org/abs/2610.09229">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09229">阅读原文 ↗</a></p>
 </body>
 </html>

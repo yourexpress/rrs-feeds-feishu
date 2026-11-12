@@ -22,9 +22,11 @@
 <h1>Diffusion Precipitation Generation with Medium-range Weather Forecasting</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>结合中期天气预报的扩散降水生成</p>
-<blockquote><p>Accurate daily precipitation forecasts are important for weather-sensitive decisions. Although recent Weather Foundation Models (WFMs) have achieved significant progress, they are trained on reanalysis data, which exhibit regional and intensity-dependent biases. Since retraining WFMs on observation-based targets is costly, we study Dynamics-Precipitation Decoupling, a plug-and-play framework that uses a separately trained generator to map non-precipitation forecasts from a frozen weather model to observation-aligned daily precipitation. Its key challenges are to capture heterogeneous rainfall distributions and align daily accumulations with atmospheric signals that evolve across space and time. To address them, we train a diffusion generator conditional on atmospheric states and satellite-gauge estimates of precipitation. A multi-scale recurrent encoder summarizes atmospheric evolution, while cross-attention aligns atmospheric and precipitation features during denoising. Extensive evaluation of various backbones, including Pangu-Weather, GraphCast, and HRES, on global and regional forecasting shows improved daily precipitation accuracy and event detection, with better representatio…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 天气基础模型（WFM）在再分析数据上训练，存在区域与强度依赖偏差；而基于观测目标重训成本高昂。</p>
+<p><strong>方法</strong> 提出 Dynamics-Precipitation Decoupling 即插即用框架：用独立训练的扩散生成器，把冻结天气模型的非降水预报映射为与观测对齐的逐日降水；生成以大气状态与卫星-雨量计降水估计为条件，多尺度循环编码器总结大气演化，去噪时用 cross-attention 对齐大气与降水特征。</p>
+<p><strong>关键数字</strong> 在 Pangu-Weather、GraphCast、HRES 等骨干上，全球与区域日降水精度与事件检测均提升；全球集合 Brier 分数在所有报告 lead time 低于 ENS 与从零训练 GenCast；中国 2288 站点强降雨案例验证改善。</p>
+<p><strong>为什么值得看</strong> 不改基础模型即校准降水的低成本方案，强降雨事件检测有实地数据支撑。</p>
+<p><a href="https://arxiv.org/abs/2610.12976">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.12976">阅读原文 ↗</a></p>
 </body>
 </html>

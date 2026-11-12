@@ -22,9 +22,11 @@
 <h1>Decoupling Exploration from Optimization in RLVR</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>ExpDis：把探索与优化解耦、先过滤再蒸馏的 RLVR 新策略发现框架</p>
-<blockquote><p>Modern language models undergo reinforcement learning with verifiable rewards (RLVR) on top of already-trained checkpoints. A key promise of RLVR is the discovery of new reasoning strategies. In principle, a model can sample novel ideas absent from its prior training data. In practice, however, augmenting RLVR with strong novelty incentives has seen limited success and can degrade model quality. Because verifiable rewards supervise only a narrow slice of the model's knowledge and behavior, such degradations are difficult to recover from. Instead, we decouple exploration from optimization in a framework we call Exploration-Distillation (ExpDis). We train one or more explorer policies with a novelty bonus in the reward, filter their trajectories for correctness and quality, and distill them into a separate student policy. The student policy is then trained without a novelty bonus. We repeat the above procedure for several rounds, alternating between exploration and optimization. This decoupling allows us to aggressively scale exploration without degrading the student policy. Across seven mathematical reasoning benchmarks and two model families, ExpDis outperforms DAPO at the same wal…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> RLVR 的核心承诺是发现新推理策略，但给 RLVR 加强新奇激励成效有限且可能降低模型质量——可验证奖励只监督模型知识与行为的窄切片，劣化难以恢复。</p>
+<p><strong>方法</strong> 提出 Exploration-Distillation（ExpDis）把探索与优化解耦：一个或多个探索者策略带新奇奖励训练，轨迹经正确性与质量过滤后蒸馏进独立的学生策略（学生不带新奇奖励训练），多轮交替探索与优化，从而可激进扩大探索而不劣化学生。</p>
+<p><strong>关键数字</strong> 7 个数学推理基准、2 个模型家族上，相同 wall-clock 预算下 ExpDis 优于 DAPO；pass@k 扩展改善，表明产出更多样化的正确解。</p>
+<p><strong>为什么值得看</strong> 探索-优化解耦提供了可扩展的 RLVR 改进路径，对推理能力挖掘有实证支撑。</p>
+<p><a href="https://arxiv.org/abs/2610.10536">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10536">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Conversational Task Disambiguation over Tabular Data: Leakage-Aware Formulation, Benchmark Suite, and Training</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>表格数据会话式任务消歧的防泄漏公式化与基准套件</p>
-<blockquote><p>Conversational task disambiguation over tabular data uses dialogue to resolve missing information about a user's intended task before producing a solution over tables or databases. Existing evaluation and training lack a leakage-aware foundation. Task success mixes the agent's disambiguation and solution-generation capabilities and can also reflect oracle leakage, that is, information that a user simulator reveals beyond what a real user would. Existing datasets also lack a shared representation of ambiguities and access boundaries. We introduce the notion of an ambiguous verifiable task, which formalizes ambiguities and resolutions, decomposing the agent into an asking policy and a solution policy, and the environment into an oracle and verifier. This framework provides baselines and metrics for evaluating task disambiguation separately from solution generation, formal definitions of oracle leakage, judge-free leakage diagnostics, and a training objective for the asking policy. We instantiate the framework in text-to-SQL with AmbiTab, a benchmark suite that unifies six ambiguous datasets under a common representation specifying what the agent, oracle, and verifier may access. We e…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 表格数据上的对话式任务消歧，现有评测与训练缺乏 leakage-aware 基础：任务成功混杂了消歧与解题能力，还可能包含用户模拟器泄漏的 oracle 信息。</p>
+<p><strong>方法</strong> 引入"模糊可验证任务"形式化：把 agent 分解为提问策略与解题策略、环境分解为 oracle 与 verifier，提供把消歧与解题分开评测的基线与指标、oracle leakage 的形式定义与无 judge 诊断；据此构建 AmbiTab 基准套件，统一 6 个歧义数据集，并用强化学习训练提问策略。</p>
+<p><strong>关键数字</strong> 训练后的 asker 在全部 6 个数据集上提升消歧指标、5 个数据集上提升任务成功；leakage 诊断量化了训练对 oracle leakage 的影响。</p>
+<p><strong>为什么值得看</strong> 首个系统解耦"消歧评估"与"解题评估"的框架，text-to-SQL 场景下可直接套用。</p>
+<p><a href="https://arxiv.org/abs/2610.10740">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10740">阅读原文 ↗</a></p>
 </body>
 </html>

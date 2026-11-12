@@ -22,9 +22,11 @@
 <h1>Compile the Table: Query-Calibrated Operator Compression for Tabular In-Context Learning</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>表格上下文学习的查询校准算子压缩</p>
-<blockquote><p>Tabular in-context learning (ICL) has emerged as a training-free and accurate paradigm for tabular prediction, but current approaches to compressing its in-context examples face an accuracy-throughput tradeoff: fixed subsets can sacrifice accuracy, while query-specific retrieval limits cache reuse and batching across queries, reducing throughput. We propose QCOC (Query-Calibrated Operator Compression), which exploits the exchangeability and repeated use of in-context examples by compiling their full KV cache once into compact memory shared across subsequent queries. Instead of retaining raw examples, QCOC clusters their states into joint-KV prototypes, preserves per-cluster multiplicities and the original example count, and calibrates prototype values against attention query vectors produced by the in-context examples through an anchored closed-form solution. Prototype compression drives the speedup, while value fitting helps preserve accuracy. On 64 held-out OpenML-CC18 datasets, QCOC achieves the highest mean accuracy among the compared compression and retrieval methods at both retained counts. Across 12 configurations on seven long tables, it ranks first among compressed methods…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 表格上下文学习（ICL）的示例压缩面临精度-吞吐权衡：固定子集牺牲精度，查询特定检索又限制缓存复用与批处理、降低吞吐。</p>
+<p><strong>方法</strong> 提出 QCOC：利用示例的可交换性与重复使用，把完整 KV 缓存一次性编译为跨查询共享的紧凑内存；将示例状态聚类为 joint-KV 原型、保留簇多重性，并用锚定闭式解按查询向量校准原型值——原型压缩提速、值拟合保精度。</p>
+<p><strong>关键数字</strong> 64 个 OpenML-CC18 数据集上取得最高平均精度；8192 示例压到 512 槽实现 10.5 倍缓存压缩比；单核 CPU 千次查询比动态检索最多快 508 倍、比全上下文快 1.98 倍。</p>
+<p><strong>为什么值得看</strong> 让表格 ICL 在不损精度的前提下实现跨查询紧凑内存复用，部署吞吐收益显著。</p>
+<p><a href="https://arxiv.org/abs/2610.11784">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.11784">阅读原文 ↗</a></p>
 </body>
 </html>

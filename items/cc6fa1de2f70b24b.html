@@ -22,9 +22,11 @@
 <h1>DISCERN: Identifiable Disease Evidence for Generalizable Medical Multimodal Learning</h1>
 <p class="meta-line">arXiv/cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>Clinical multimodal models can learn enrollment shortcuts shared across modalities and fail on new cohorts. We model these data through a latent structural causal model: disease state and ba</p>
-<blockquote><p>Clinical multimodal models can learn enrollment shortcuts shared across modalities and fail on new cohorts. We model these data through a latent structural causal model: disease state and background factors generate physiology through shared mechanisms, while cohorts differ in selection and measurement. Holding acquisition fixed, we identify conditional disease evidence without observing disease-state labels or recovering the full causal model. In common Gaussian coordinates, cross-cohort state alignment and natural-parameter changes identify a minimal selection statistic; conditioning on it removes enrollment-dependent evidence and yields an identifiable reference posterior within the specified shift family. State-dependent interactions can carry evidence invisible to individual-modality posteriors, motivating joint, information-preserving representations. DISCERN combines an information-lattice encoder, a latent-state model, and an outcome head through joint training. Under reversed synthetic enrollment on known latent coordinates, conditioning raises state AUROC from 0.043 to 0.883 and from 0.265 to 0.825, while random conditioning does not. Exploratory cross-database mortality …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 临床多模态模型可能学习到跨模态共享的入组捷径，在新队列上失效；问题源于队列在筛选与测量上的差异。</p>
+<p><strong>方法</strong> 用潜在结构因果模型建模数据：疾病状态与背景因素经共享机制产生生理信号，队列间差异在筛选与测量。固定采集方式下，无需观测疾病标签或恢复完整因果模型即可识别条件疾病证据；DISCERN 组合信息格编码器、潜在状态模型与结果头联合训练，并做跨队列状态对齐。</p>
+<p><strong>关键数字</strong> 反向合成入组下，条件化使状态 AUROC 从 0.043 提升到 0.883、0.265 提升到 0.825（随机条件化无效）；eICU 与 MIMIC-IV 跨库死亡率实验比匹配的 ERM 提升 0.036 与 0.035。</p>
+<p><strong>为什么值得看</strong> 给医学多模态泛化提供了可识别性理论+实践框架，跨数据库验证增强了可信度。</p>
+<p><a href="https://arxiv.org/abs/2610.23952">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.23952">阅读原文 ↗</a></p>
 </body>
 </html>

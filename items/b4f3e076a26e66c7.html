@@ -22,9 +22,11 @@
 <h1>CopRoute: Dependence-Aware Conformal Routing for Language Models</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>语言模型的依赖感知共形路由（CopRoute）</p>
-<blockquote><p>Set-based language model routing aims to increase the coverage of the event where at least one model answers a query correctly while controlling the number of inference calls made. Existing risk-controlled routing policies bound the all-miss risk (the probability that every model in the selected set fails) by calibrating a single conformal threshold and applying it to a nested family of model sets. Because each model is scored in isolation, these policies ignore the dependence structure of model failures. Models that share training data or architecture tend to fail on the same queries, so two individually strong models can be jointly redundant while a weaker but complementary model covers the queries that the others miss. To account for this dependence, which existing risk-controlled policies ignore, we propose CopRoute, which orders models by how many new queries each one answers correctly beyond those already selected, decides per query how far down that order to go, and then picks the smallest cutoff that still meets the target risk. We show that CopRoute's ordering attains, on the design data, the best guarantee any efficient fixed-ordering algorithm can give for the average nu…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 基于集合的语言模型路由忽略模型失败间的相关性结构：共享训练数据或架构的模型常在相同查询上共同失败，两个单独都很强的模型可能联合冗余，而互补的弱模型反而覆盖遗漏查询。</p>
+<p><strong>方法</strong> 提出 CopRoute：按每个模型在已选集合之外新答对的查询数排序，逐查询决定沿该顺序推进多远，再选满足目标风险的最小截断；单独的校准步骤认证部署集合的 all-miss 风险。</p>
+<p><strong>关键数字</strong> RouterBench 与 RouterEval 上，目标风险 0.05 时 10 个数据集中的 9 个、0.10 时 8 个取得最少认证调用；相比 SOTA 风险控制策略，同等认证风险下最多减少 79% 调用（中位 24%）。</p>
+<p><strong>为什么值得看</strong> 把模型失败相关性纳入路由决策并保持可证明风险控制，推理成本收益显著。</p>
+<p><a href="https://arxiv.org/abs/2610.13276">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13276">阅读原文 ↗</a></p>
 </body>
 </html>

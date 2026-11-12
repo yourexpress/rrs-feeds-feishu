@@ -22,9 +22,11 @@
 <h1>Cross-Domain Pretraining for Steady-State Neural CFD Surrogates</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>跨几何/边界条件/保真度预训练提升神经 CFD 代理的零样本与少样本泛化</p>
-<blockquote><p>Neural surrogates for computational fluid dynamics (CFD) have the potential to greatly enhance engineering innovation through accelerating simulation. However, the primary limitation for neural surrogates is the lack of generalization to geometries and applications beyond the training set, which is significant given the diversity of engineering scenarios. Currently, this is addressed by generating a new dataset for a specific application; however, this requires running costly numerical solvers. In this work, we take a step toward addressing this by studying neural surrogates trained across different geometries, boundary conditions, and fidelities. We find that cross-domain pretraining improves zero- and few-shot performance on held-out datasets relative to both training from scratch and transferring from domain-specific experts. In particular, finetuning a pretrained, cross-domain model can achieve 2-3x lower errors at the same sample size and use 8x fewer samples to achieve the same error, compared to training from scratch. This benefit is architecture agnostic and improves with model size and pretraining dataset diversity. Furthermore, we study how and why cross-domain pretrainin…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 神经 CFD 代理的最大瓶颈是难以泛化到训练集之外的几何与场景，而为特定应用生成新数据集需要运行昂贵的数值求解器。</p>
+<p><strong>方法</strong> 研究跨不同几何、边界条件与保真度训练的神经代理，检验 cross-domain pretraining 对留出数据的零样本与少样本表现；并分析其生效机制，发现简单池化稳态数据集既充分又有效。</p>
+<p><strong>关键数字</strong> 微调预训练跨域模型在相同样本量下误差低 2~3 倍，达到同等误差所需样本少 8 倍（对比从零训练）；收益与架构无关，随模型规模与预训练数据多样性提升。</p>
+<p><strong>为什么值得看</strong> 用存量 CFD 数据做预训练的高性价比策略，直击神经代理数据稀缺痛点。</p>
+<p><a href="https://arxiv.org/abs/2610.10398">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10398">阅读原文 ↗</a></p>
 </body>
 </html>

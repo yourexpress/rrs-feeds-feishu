@@ -22,9 +22,11 @@
 <h1>Uncovering the Memory Hierarchy of Modern NVIDIA GPUs for Accurate Simulation</h1>
 <p class="meta-line">arXiv cs.AR · 2026-11-10 · 论文PDF / 每日精选</p>
 
-<p>GemAtlas：现代 NVIDIA GPU 内存层次首次系统性逆向工程——揭示过时层次模型的保真度缺口，为 LLM 负载模拟与优化提供准确内存系统模型</p>
-<blockquote><p>Emerging artificial intelligence workloads, particularly Large Language Models (LLMs), place unprecedented demands on GPU memory systems. Consequently, architectural innovations increasingly target the memory system to alleviate these bottlenecks. However, existing works still rely on outdated memory hierarchy models that fail to capture the complexities of modern hardware. This fidelity gap leads to inaccurate characterization and could misguide optimization strategies. To bridge this gap, we present GemAtlas, the first systematic reverse engineering of the memory hierarchy in modern NVIDIA GPUs. By developing fine-grained SASS-level benchmarking, we expose critical, previously undocumented micro-architectural details across different cache levels, including cache set associativity, slice-routing and set-indexing hash functions, replacement policies, coherence behavior, and interconnect topologies. We integrate these discovered micro-architecture details into the state-of-the-art GPU simulation framework. The final results demonstrate that GemAtlas reduces the mean absolute percentage error (MAPE) from 31.69% to 22.24% on average across four GPUs. Specifically, GemAtlas reduces th…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 等 AI 负载对 GPU 显存系统提出空前要求，但现有工作仍依赖过时的显存层次模型，无法刻画现代硬件的复杂度，导致性能刻画失真、优化策略被误导。</p>
+<p><strong>方法</strong> 提出 GemAtlas，首个对现代 NVIDIA GPU 显存层次做系统性逆向工程的工作：通过细粒度 SASS 级基准，揭露多级 cache 的 set 关联度、slice 路由与 set-indexing 哈希函数、替换策略、一致性行为与互联拓扑等未记录的微架构细节，并将其集成进 SOTA GPU 模拟框架。</p>
+<p><strong>关键数字</strong> 平均绝对百分比误差（MAPE）在 4 块 GPU 上从 31.69% 降至 22.24%；真实 LLM 算子的 MAPE 从 34.04% 降至 23.98%。</p>
+<p><strong>为什么值得看</strong> 把模拟精度差距归因到具体微架构细节的系统性工作，对 GPU 性能建模与架构优化研究者直接有用。</p>
+<p><a href="https://arxiv.org/abs/2611.13860">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.13860">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Do LLMs Learn from Rewards in Context? : Rethinking the role of reward in In-Context Reinforcement Learning</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>重新思考奖励在上下文强化学习中的作用</p>
-<blockquote><p>LLM agents increasingly improve at inference time by accumulating experience in context rather than by updating parameters. This process is often described as in-context reinforcement learning (ICRL). Whether in-context learning (ICL) can actually play the role of RL, however, has not been tested. We study this question in its simplest form, direct ICRL, where the model conditions directly on raw trajectory-reward pairs, and ask whether the reward acts as a learning signal. Through controlled experiments on four benchmarks across six models, we find that the reward is read, but its effect is small: flipping, randomizing, or removing the reward leaves the improvement curve almost unchanged, and this holds even under meta-prompts that explicitly instruct the model to explore, exploit, or reason over rewards. Trajectories drive improvement, but not through their semantic content: shuffled or corrupted trajectories work as well as real ones. These patterns closely mirror those known in ICL, suggesting that direct ICRL is better understood as a special case of ICL than as inference-time RL. This reframing has implications for agent memory design: ICL factors such as input distribution a…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM agent 越来越多地在推理时通过上下文积累经验而非更新参数，这常被描述为上下文强化学习（ICRL）；但奖励是否真的作为学习信号起作用，从未被检验。</p>
+<p><strong>方法</strong> 在最小设定"直接 ICRL"中做受控实验：模型直接条件于原始 trajectory-reward 对，翻转、随机化或移除奖励观察改善曲线变化；并在显式元提示（要求探索/利用/推理奖励）下复测，还检验轨迹语义内容的作用。</p>
+<p><strong>关键数字</strong> 4 个基准、6 个模型：翻转/随机化/移除奖励几乎不改变改善曲线；打乱或损坏的轨迹与真实轨迹效果相当。</p>
+<p><strong>为什么值得看</strong> 对"上下文即 RL"的流行叙事提出重要祛魅：agent 记忆设计应更关注 ICL 因素（输入分布、示例），而非奖励塑形与探索。</p>
+<p><a href="https://arxiv.org/abs/2610.11152">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.11152">阅读原文 ↗</a></p>
 </body>
 </html>
