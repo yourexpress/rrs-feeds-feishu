@@ -22,9 +22,11 @@
 <h1>How Hackable Is Your Speech Quality Metric? A Corrected Protocol, a Benchmark, and What Patching Buys</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>语音质量度量可被黑掉：修正协议与基准及补丁收益</p>
-<blockquote><p>Speech quality predictors are increasingly used as rewards, yet no agreed measure of their hackability exists. The usual measurement has two flaws. First, the perturbation reaches the predictor through a processing chain -- here a neural codec -- that shifts the score on its own, which scoring against the raw input charges to the attack. Referencing the unperturbed round trip instead changes measured hackability by up to a factor of four (0.31 to 0.08 for one defence). Second, one trained attacker is a sample, not a measurement: five attackers differing only in random seed reach success rates from 0.00 to 0.38 against one fixed predictor, so a defence claim needs the worst case over several. Under this protocol, four published predictors differ widely: NISQA is hacked on 90% of utterances, SSL-MOS on 21%, DNSMOS on 14% and UTMOS on 6%. We then audit a closed attack-detect-patch loop. It hardens the predictor only in its own attack space, by less than the spread between attackers; a random-perturbation baseline matches it; and it costs up to 0.30 system SRCC out of domain. Enhancers post-trained against patched predictors hack them far less (PESQ -0.03 versus -0.23). Code, preregist…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 语音质量预测器被用作奖励，但缺乏公认可攻击性度量：编解码链偏移被算作攻击、单一攻击者只是样本。</p>
+<p><strong>方法</strong> 修正协议（参照未扰动往返、多个攻击者取最坏情形），评测四个公开预测器并审计闭环攻击-检测-修补。</p>
+<p><strong>关键数字</strong> 修正使可攻击性改变最多 4 倍（某防御 0.31→0.08）；五个仅种子不同的攻击者成功率 0.00 到 0.38；NISQA 90% 话语被攻破、SSL-MOS 21%、DNSMOS 14%、UTMOS 6%。</p>
+<p><strong>为什么值得看</strong> 为语音质量指标可攻击性给出可复现测量协议。</p>
+<p><a href="https://arxiv.org/abs/2610.10899">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10899">阅读原文 ↗</a></p>
 </body>
 </html>

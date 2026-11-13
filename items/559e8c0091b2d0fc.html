@@ -22,9 +22,11 @@
 <h1>HART: Hybrid Attention-RWKV Time series Foundation Model</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>混合Attention-RWKV时序基础模型，定位RWKV-7长程预测的状态衰减机制</p>
-<blockquote><p>Non-autoregressive multi-step forecasting (NAF) enables time series foundation models to predict an entire future horizon in a single forward pass. Despite its strong sequence modeling capabilities, RWKV-7 exhibits long-horizon degradation in our NAF experiments. In this setup, future patches are represented as missing inputs, requiring the recurrent state to evolve across the prediction horizon without new observations. Our analysis of RWKV-7's generalized delta rule suggests a mechanism we term Placeholder Idling Decay (PID): repeated state transitions can attenuate historical information when placeholder-driven writes provide insufficient compensation. Layer-wise analysis reveals reduced state-injection norms in most layers, while transition-matrix norms remain similar between historical and prediction regions, consistent with PID. Motivated by this analysis, we propose HART, a Hybrid Attention-RWKV Time-series Foundation Model that alternates attention and RWKV blocks, combining direct access to historical tokens with recurrent temporal modeling. Controlled experiments on GIFT-Eval and TIME-Benchmark show that HART improves over pure RWKV at medium and long horizons while maint…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> RWKV-7 在非自回归多步预测（NAF）的长时程上退化：未来 patch 作为缺失输入，循环状态需跨预测时域演化但缺少新观测。</p>
+<p><strong>方法</strong> 识别"占位空闲衰减（PID）"机制，提出 HART：交替 attention 与 RWKV 块，结合对历史 token 的直接访问与循环时序建模。</p>
+<p><strong>关键数字</strong> 36M 参数在 GIFT-Eval 长时程 MASE 0.752，接近 Toto-2.0-1B 的 0.754，仅用其约 1/28 参数；中长时程优于纯 RWKV，总体优于同等规模纯 Transformer。</p>
+<p><strong>为什么值得看</strong> 诊断并缓解 RWKV 长时程退化，给出高效时序基础模型新架构。</p>
+<p><a href="https://arxiv.org/abs/2610.12883">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.12883">阅读原文 ↗</a></p>
 </body>
 </html>

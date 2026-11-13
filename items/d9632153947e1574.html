@@ -22,9 +22,11 @@
 <h1>FinVector-Market-4B: A Controlled Study of LoRA Adaptation for Structured Financial Tasks</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>LoRA 适配 Qwen3.5-4B 的金融结构化任务受控研究：schema 显式化与基线复审计</p>
-<blockquote><p>FinVector-Market-4B adapts Qwen/Qwen3.5-4B with rank-16 LoRA on a 22,000-example corpus for structured financial tasks. We evaluate the base and adapted models on the same 600-example benchmark under implicit and explicit JSON-schema contracts. Supplying the schema alone raises base-model JSON validity from 0% to 91.3%. Under matched explicit prompting, the frozen scores improve from 14.7% to 40.0% for FinQA answer exact match, from 48.0% to 82.7% for calculator-expression correctness, from 20.1% to 89.5% for scenario branch-label agreement, and from 52.4% to 87.2% for implication-direction agreement. A post-hoc policy-scoring audit shows that the reported macro-F1 decline reflects a changing label set; using the same three target classes gives 77.4% for the base and 83.1% for the adapter. Filing overlap and calculator-target inconsistencies qualify the benchmark's generalization claims. The results show that compact financial domain adaptation can produce substantial task-specific gains beyond output-format learning under matched prompting, with gains bounded by the evaluated task distribution and prompt contract.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LoRA 适配金融任务的增益有多少来自格式学习、多少来自真实能力，缺乏受控对比。</p>
+<p><strong>方法</strong> rank-16 LoRA 在 22,000 条语料上适配 Qwen3.5-4B，同一 600 条基准上分别以隐式与显式 JSON-schema 提示评估，并做事后策略打分审计。</p>
+<p><strong>关键数字</strong> 仅提供 schema 使基座 JSON 有效性从 0% 升至 91.3%；显式提示下 FinQA 精确匹配 14.7%→40.0%、计算器表达式正确率 48.0%→82.7%；同一三类目标下基座 77.4% vs 适配器 83.1%。</p>
+<p><strong>为什么值得看</strong> 区分格式学习与任务增益的受控评估，对金融 LLM 评测有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.08882">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.08882">阅读原文 ↗</a></p>
 </body>
 </html>

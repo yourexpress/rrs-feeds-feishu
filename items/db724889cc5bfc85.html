@@ -22,9 +22,11 @@
 <h1>IAPRepair: In-Network Aggregation Enhanced Proactive Repair for Erasure-Coded Storage System</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-10-09 · 论文PDF</p>
 
-<p>纠删码存储系统中利用网内聚合增强的主动修复机制</p>
-<blockquote><p>Erasure-coded storage provides fault tolerance with substantially lower storage overhead than full replication, but repairing lost or at-risk blocks requires intensive cross-node data transfer. Existing reactive repair schemes start only after a failure, while proactive schemes can move data before failure but commonly treat migration, reconstruction, and network aggregation as loosely coupled operations. As a result, receiver?side bottlenecks, heterogeneous available bandwidth, and limited programmable-switch state continue to constrain repair paral?lelism. This paper presents IAPRepair, an in-network aggre?gation enhanced proactive repair framework for erasure-coded storage. IAPRepair jointly constructs each repair batch, assigns reconstruction providers and replacement nodes according to normalized transmission loads, schedules migration around the remaining receive capacity, and selectively enables in-network aggregation for reconstruction blocks that would otherwise over?load healthy nodes. The selective design reduces receiver-side traffic while retaining migration parallelism and respecting a configurable switch-resource budget. We implement IAPRepair with a Tofino programma…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 纠删码存储修复需大量跨节点传输，现有反应式方案故障后才启动，主动式方案把迁移、重建与网络聚合松散耦合，受接收端瓶颈、带宽异构与交换机状态限制。</p>
+<p><strong>方法</strong> IAPRepair：联合构建修复批次、按归一化传输负载分配重建提供者与替换节点、围绕剩余接收容量调度迁移，并选择性启用网内聚合避免过载健康节点。</p>
+<p><strong>关键数字</strong> Tofino 可编程交换机 + 16 存储节点实现；跨编码参数、块大小、节点规模与多 STF 节点场景，修复时间比评估的 SOTA 方法至少降低 47.83%。</p>
+<p><strong>为什么值得看</strong> 把主动修复决策与网内处理协同的框架，对带宽异构存储系统有实际意义。</p>
+<p><a href="https://arxiv.org/abs/2610.11114">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.11114">阅读原文 ↗</a></p>
 </body>
 </html>

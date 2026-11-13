@@ -22,9 +22,11 @@
 <h1>LOCAA: An Agentic System for Automated Lossy Compressor Tuning</h1>
 <p class="meta-line">arXiv cs.DC · 2026-10-09 · 论文PDF</p>
 
-<p>LOCAA：LLM 智能体在压缩回路中自动调优科学有损压缩器误差界，支持自定义目标与约束</p>
-<blockquote><p>Large-scale scientific simulations generate substantial data volumes, making lossy compression essential for reducing storage and data movement costs. However, users configure compressors through numerical error bounds (EBs) while often evaluating results using quality metrics and end-to-end performance. Because the relationship between an EB and these outcomes varies across datasets and compressors, identifying a suitable configuration typically requires exhaustive search, which can be time-consuming and computationally demanding. We present LOCAA, an Large language model-based scientific lossy compression auto-tuning agent that performs compression-in-the-loop search using tool-integrated execution, compressor-aware guidance, and persistent memory. LOCAA supports user-defined objectives and constraints without requiring a specialized search strategy. We evaluate LOCAA across three scientific applications, five compressors, and three use cases: fixed-ratio compression, compression tuning under multiple quality constraints, and compression tuning under quality and time constraints. For fixed-ratio search across twelve fields from two applications, LOCAA requires 1.98x fewer evaluat…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 用户用数值误差界配置有损压缩器但用质量指标评估，二者关系随数据集与压缩器变化，配置搜索常需穷举。</p>
+<p><strong>方法</strong> LOCAA：基于 LLM 的压缩自动调参 agent，压缩回路内搜索（工具集成执行、压缩器感知引导、持久记忆），支持自定义目标与约束。</p>
+<p><strong>关键数字</strong> 固定比率搜索平均比二分搜索少 1.98 倍、比 FRaZ 少 5.03 倍试验；联合 PSNR 与 SSIM 约束下平均试验 61.5→17（-72.4%）；持久记忆再省 27.9%。</p>
+<p><strong>为什么值得看</strong> 工具增强 LLM agent 高效调压缩参数的实例，跨三个应用五个压缩器验证。</p>
+<p><a href="https://arxiv.org/abs/2610.10487">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10487">阅读原文 ↗</a></p>
 </body>
 </html>

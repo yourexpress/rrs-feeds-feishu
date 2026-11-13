@@ -22,9 +22,11 @@
 <h1>HPC-MQBench: Qualification-First Benchmarking on Slurm with a Single-Broker Kafka Evaluation</h1>
 <p class="meta-line">arXiv cs.DC · 2026-10-09 · 论文PDF</p>
 
-<p>HPC-MQBench：Slurm 编排的 HPC 消息队列基准，先资格审查再速率排名的单 broker Kafka 评测</p>
-<blockquote><p>Messaging experiments on high-performance computing clusters must coordinate services, clients, and measurement within scheduler allocations. We present HPC-MQBench, a Slurm-orchestrated benchmark that links resumable experiment control to record checks, delivery accounting, and qualification before rate ranking. Its Kafka evaluation placed producers/controller, one broker, consumers, and monitoring on four nodes. With memory-backed logs, 120 workload configurations yielded 99 qualified observations, 14 outside the producer-delivery policy, and seven with invalid evidence. Two validation stages each repeated ten workloads in five blocks. In the final stage, the selected workload qualified in all five observations, with medians of 2,927 mebibytes per second balanced endpoint rate, 1.24 percent pending deliveries, and 2.56 seconds for the 99th-percentile latency. It qualified in only two observations in the earlier stage, where qualification improved after an allocation boundary without establishing a causal allocation effect. Selection is conditional on the stage and delivery policy. Resource measurements did not isolate a unique bottleneck. The contribution is a framework for distr…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> HPC 集群上的消息中间件实验需在调度分配内协调服务与测量，缺乏可审计、可恢复的基准框架。</p>
+<p><strong>方法</strong> HPC-MQBench：Slurm 编排，把可恢复实验控制与记录校验、投递核算、资格判定相连；Kafka 评测用内存日志、四节点部署。</p>
+<p><strong>关键数字</strong> 120 个负载配置产出 99 个合格观测；最终阶段选中负载五次全合格，平衡端点速率中位 2,927 MiB/s、待投递 1.24%、99 分位延迟 2.56 秒。</p>
+<p><strong>为什么值得看</strong> "先资格后排名"的分布式消息基准方法论，多 broker 扩展留待未来。</p>
+<p><a href="https://arxiv.org/abs/2610.09786">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09786">阅读原文 ↗</a></p>
 </body>
 </html>

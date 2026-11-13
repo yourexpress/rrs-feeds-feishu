@@ -22,9 +22,11 @@
 <h1>Fully Interpretable Minimal Transformers: From Geometry to Algorithm</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>完全可解释的极简 Transformer：2 维嵌入直接可视化内部算法</p>
-<blockquote><p>We present a framework for building and interpreting minimal transformer models. By constraining a transformer's embedding dimension and head size to 2, we enable full two-dimensional visualization of its internal representations. Embeddings, query/key/value transforms, attention outputs, residual streams, and decision boundaries can all be seen directly. Our central claim is that the learned geometry implies an algorithm; the arrangement of points and boundaries in R^2 can be read as a step-by-step procedure. We train a transformer on a simple task where it must produce the most recently observed even number whenever the '+' operator appears in a sequence of digits. Once trained, we visually walk through every step of the transformer's computation. We show how the model embeds the tokens and their respective positions in the sequence, transforms them via the Q, K, and V matrices, uses the dot product between the Q and K representations to form the attention matrix, and uses the attention matrix to select values that move the representation of each input token to the region of the domain of the output layer that will correctly predict the next token. We introduce a suite of interpr…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Transformer 内部表示难以可视化，能否构建完全可解释的最小模型并直接读出其运行算法。</p>
+<p><strong>方法</strong> 把嵌入维度与注意力头大小约束为 2，使表示落在二维平面可完整可视化；在"遇到 + 运算符输出最近出现的偶数"任务上训练，并逐步走读每一步计算。</p>
+<p><strong>关键数字</strong> 摘要未给出量化指标；框架展示 token 嵌入、Q/K/V 变换、注意力矩阵形成与输出层决策边界的完整几何走读。</p>
+<p><strong>为什么值得看</strong> 教学与实验两用的可解释性试验台，直观展示 next-token prediction 的信息几何实现。</p>
+<p><a href="https://arxiv.org/abs/2610.09838">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09838">阅读原文 ↗</a></p>
 </body>
 </html>

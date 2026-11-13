@@ -22,9 +22,11 @@
 <h1>Kernel Autoresearch for Open-Ended Model Discovery</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>Kernaut：构造契约保证有效性 + 质量多样性档案的开放式核函数自动发现</p>
-<blockquote><p>Kernels encode the inductive bias of a wide range of machine learning models, yet automated kernel design faces a fundamental dilemma. A fixed grammar of base kernels and operators guarantees validity but limits the search to structures expressible by those building blocks. Conversely, unrestricted programs remove this limitation but no longer guarantee validity. In our stress tests, 22-58% of LLM-generated kernels that pass numerical checks on random inputs fail when evaluated at different scales or dimensions. We propose Kernel Autoresearch (Kernaut), which treats kernel design as open-ended model discovery. Coding agents write kernels as programs, while construction contracts ensure that every accepted kernel is valid. A quality-diversity archive retains high-performing kernels with distinct behaviors, and novelty screening steers agents toward functionally new candidates. Our experiments demonstrate that the discovered kernels encode reusable inductive biases that generalize to unseen tasks. On held-out black-box optimization families, a discovered kernel outperforms a meta-learned deep kernel trained on the same episodes. Furthermore, kernels discovered from ten enzyme-kinetic…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 自动核设计两难：固定语法保证有效性但限制搜索空间，无限制程序则不再保证有效性。</p>
+<p><strong>方法</strong> Kernel Autoresearch：编码 agent 以程序写核，构造合约保证有效性，质量-多样性档案保留高表现核，新颖性筛选引导探索。</p>
+<p><strong>关键数字</strong> 压力测试中 22-58% 通过数值检查的 LLM 生成核在别的尺度/维度下失败；从十个酶速率律发现的核在五个未见机制上误差低于调优 ARD 与深度核；人工精化再降 5.7% 预测误差、7.8% 优化遗憾。</p>
+<p><strong>为什么值得看</strong> 开放式核发现的 agent 化框架，产出可解释、可复用的归纳偏置。</p>
+<p><a href="https://arxiv.org/abs/2610.10394">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10394">阅读原文 ↗</a></p>
 </body>
 </html>

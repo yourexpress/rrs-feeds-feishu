@@ -22,9 +22,11 @@
 <h1>From a Prompt to Repertoires: Evolving Functional REpertoires Enable LLM Continual Learning</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>演化功能曲目实现 LLM 持续学习</p>
-<blockquote><p>Continual learning remains challenging for large language models, which must enable models to acquire new skills and knowledge without degrading existing capabilities. Existing approaches typically address this challenge by carefully designing how model parameters are updated. In contrast, prompt optimization avoids costly parameter updates while achieving competitive or even superior performance to reinforcement learning methods such as GRPO on individual knowledge-intensive and reasoning tasks. This raises a natural question: \textit{Can prompt optimization, as an efficient adaptation approach, be directly applied to continual learning?} Our analysis shows that, under sequential task adaptation, it suffers from catastrophic forgetting, while optimized prompts accumulate rules that overfit to local task distributions. To address these limitations, we propose \emph{Evolving Functional REpertoires} (EFRE), which replaces a single prompt with a repertoire of functions that evolves as new tasks arrive: compatible updates refine existing functions, while conflicting updates trigger the emergence of new ones. On a three-task continual-learning stream, EFRE achieves a final average perfo…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 提示优化在单个任务上可媲美甚至超越 GRPO，但顺序任务适配下会灾难性遗忘，且优化出的提示会过拟合局部任务分布。</p>
+<p><strong>方法</strong> Evolving Functional REpertoires（EFRE）：用随新任务演化的函数库替代单一提示——兼容更新精化现有函数，冲突更新触发新函数涌现。</p>
+<p><strong>关键数字</strong> 三任务持续学习流上终平均性能比 GRPO 高 7.50 个百分点；适配 Bio 任务后 FinQA 仅降 1.56 个百分点，而基线提示优化降 25.10 个百分点。</p>
+<p><strong>为什么值得看</strong> 把提示优化扩展为持续学习机制，对 agent 系统的技能积累有直接启发。</p>
+<p><a href="https://arxiv.org/abs/2610.11373">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.11373">阅读原文 ↗</a></p>
 </body>
 </html>

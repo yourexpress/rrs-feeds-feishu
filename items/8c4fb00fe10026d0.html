@@ -22,9 +22,11 @@
 <h1>Just for FUNS: LLM-Guided Spatio-Temporal Graph Node Generation for Forecasting Unobserved Node States</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>LLM 语义桥接的时空图节点生成框架 GenST，预测未部署传感器节点的状态</p>
-<blockquote><p>Spatio-temporal forecasting is a cornerstone of logistics, urban planning, and intelligent transportation systems. However, constrained by deployment costs and maintenance resources, sensor networks often lack comprehensive spatial coverage, rendering Forecast Unobserved Node States (FUNS) a critical yet formidable challenge. Conventional models rely on historical observations and typically falter when encountering nodes without prior records. To address this, we redefine the problem as a conditional generation task on spatio-temporal graphs and propose GenST, a framework that introduces Large Language Models (LLMs) as a semantic bridge, leveraging a pre-trained LLM fine-tuned to extract rich semantic features from node descriptions, such as functional zones and road network structures, to compensate for missing spatio-temporal signals. Specifically, we design a two-stage generative architecture: a Spatio-Temporal VAE first compresses spatio-temporal dynamics into a latent space, followed by a Generative Transformer (GenT) that reconstructs the future states of unobserved nodes from noise, guided by multi-modal conditions including semantics, geographic coordinates, and neighborhoo…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 传感器网络覆盖不全导致大量未观测节点，传统模型缺历史记录时难以预报其状态（FUNS）。</p>
+<p><strong>方法</strong> 把问题重构为时空图条件生成任务：GenST 用微调 LLM 从节点描述（功能区、路网结构）提取语义特征补偿缺失时空信号，经时空 VAE 压缩 + 生成 Transformer 从噪声重建未观测节点未来状态。</p>
+<p><strong>关键数字</strong> 六个交通与两个非交通数据集上零样本预测显著优于现有基线（摘要未给出具体数值）。</p>
+<p><strong>为什么值得看</strong> 用语义信息补偿时空信号缺失的思路，为缓解时空数据稀疏性提供新路径。</p>
+<p><a href="https://arxiv.org/abs/2610.08818">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.08818">阅读原文 ↗</a></p>
 </body>
 </html>

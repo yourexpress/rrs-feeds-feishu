@@ -22,9 +22,11 @@
 <h1>Generalized Proximal Policy Optimization: Unifying LLM RL Algorithms from the Perspective of Divergence</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>从散度视角统一LLM RL算法（广义近端策略优化）</p>
-<blockquote><p>Reinforcement learning has become the foundational paradigm for enhancing the reasoning capabilities of LLMs. Yet the dominant approach, Proximal Policy Optimization (PPO), relies on a geometrically degenerate clipping proxy that cannot adapt its resistance to policy shifts, leading to premature clipping and degraded exploration. Subsequent variants alleviate these issues through fragmented and heuristic modifications. We propose Generalized Proximal Policy Optimization (GPPO), a principled and unified framework for understanding and designing LLM RL algorithms through the lens of divergence. We establish a generalized $f$-divergence trust-region theory with a monotonic performance improvement guarantee, and show that different $f$-divergences induce distinct geometries and policy update dynamics. We further introduce novel estimator topologies that provide more faithful divergence estimates than the conventional single-sample Monte Carlo estimation. Under this framework, PPO and recent variants such as DAPO, DPPO, and RIPO emerge as special cases, establishing a principled two-dimensional design space of {Divergence $\times$ Estimator}. Extensive experiments on eight competition-l…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> PPO 依赖几何退化的裁剪代理，无法自适应抵抗策略偏移，导致过早裁剪与探索退化；后续变体靠碎片化启发式修补。</p>
+<p><strong>方法</strong> GPPO：建立广义 f-散度置信域理论并引入新估计器拓扑，使 PPO 及 DAPO、DPPO、RIPO 成为特例，构成 {Divergence × Estimator} 二维设计空间。</p>
+<p><strong>关键数字</strong> 八项竞赛级数学与编码基准上两维度都关键；最优实例比标准 GRPO 数学最高 +50%、编码 +14%。</p>
+<p><strong>为什么值得看</strong> 给 LLM RL 算法一个统一设计框架，做 RL 训练算法的人值得关注。</p>
+<p><a href="https://arxiv.org/abs/2610.13015">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13015">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>In-Context Learning for System Identification: Probabilistic Formulation, Long-Sequence Handling, and Benchmark Validation</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>系统辨识in-context学习的概率化表述与长序列处理</p>
-<blockquote><p>Traditional system identification typically involves two steps: initially, training data is processed to estimate a model of the system of interest; then, the model is used to predict outputs for new input queries. In contrast, recent in-context learning approaches learn a meta model that maps directly from training data and query inputs to outputs in a zero-shot fashion, bypassing explicit model estimation. This approach leverages a meta model trained offline, on large sets of synthetically generated data, to emulate the behavior of a system identification algorithm. In this work, we advance this meta-learning framework for system identification in three directions. First, we develop a unified probabilistic meta-identification architecture that combines a Transformer-based encoder-decoder with tailored mechanisms for handling long training sequences, enabling calibrated predictions over long horizons. Second, we show how a pre-trained meta model can act as an uncertainty-aware synthetic data generator for classical system identification, providing task-specific data that regularize parametric models when real data are scarce. Third, we systematically evaluate the framework on stan…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 传统系统辨识分两步（先估模型再预测），而上下文学习元模型可零样本直接从训练数据映射到输出，如何推进这一框架。</p>
+<p><strong>方法</strong> 统一概率元辨识架构（Transformer encoder-decoder + 长训练序列处理机制，支持长时程校准预测）；预训练元模型兼作不确定性感知的合成数据生成器；在标准非线性基准与挑战性 OOD 场景系统评估。</p>
+<p><strong>关键数字</strong> 摘要未给出具体量化指标；与 SOTA 方法竞争性精度与强泛化，仅输入侧适配即可处理显著分布偏移。</p>
+<p><strong>为什么值得看</strong> 把上下文学习系统化引入系统辨识，含校准长时程预测与稀缺数据正则化两条实用路径。</p>
+<p><a href="https://arxiv.org/abs/2610.13411">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13411">阅读原文 ↗</a></p>
 </body>
 </html>

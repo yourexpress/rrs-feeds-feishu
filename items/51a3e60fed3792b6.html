@@ -22,9 +22,11 @@
 <h1>KL Before and After Mixing: A Round-Complexity Separation in Parallel Sampling</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>混合前后KL的并行采样轮复杂度分离</p>
-<blockquote><p>A parallel sampler can choose at random which coordinates to generate together. For a target $p$ and the output law $q_U$ of a schedule $U$ drawn afresh for each output, we compare the schedule-averaged divergence $\mathbb{E}_U D_{\mathrm{KL}}(p\|q_U)$ with the output-law divergence $D_{\mathrm{KL}}(p\|\mathbb{E}_U q_U)$, in nats. Rounds commit independent draws from exact conditional marginals frozen at the round's start, each output's schedule is drawn before sampling from a finite mixture of schedules, and every scheduled round is charged. For the uniform distribution on binary strings of even length $n$ with $n/2$ ones, the least expected number of rounds at a fixed tolerance $\varepsilon&gt;0$ is $Θ_\varepsilon((\log n)^2)$ under the first criterion but $(e^{-\varepsilon}+o(1))\log_2\ln n$ under the second, and the double-logarithmic order is attainable with the same round count on every run. For this target, a count-state recursion gives the exact least output divergence at every round cap over all causal randomized policies. The separation extends to weighted fixed-count targets with bounded weight ratios and quota fractions bounded away from zero and one, without permutation s…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 并行采样器随机选择一起生成的坐标，调度平均散度与输出律散度两个判据下达到容差所需最少轮数有何差异。</p>
+<p><strong>方法</strong> 对比 E_U KL(p||q_U) 与 KL(p||E_U q_U)（nats），针对平衡二进制串目标推导精确最小期望轮数。</p>
+<p><strong>关键数字</strong> 固定容差 ε 下前者需 Θε((log n)^2) 轮，后者仅 (e^-ε+o(1))log2 ln n 轮；Beta(1,1)-Bernoulli 目标期望成本 (e^-ε/2+o(1))log2 log2 n。</p>
+<p><strong>为什么值得看</strong> 给出并行采样轮复杂度的精确分离，对采样调度理论有价值。</p>
+<p><a href="https://arxiv.org/abs/2610.13924">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13924">阅读原文 ↗</a></p>
 </body>
 </html>

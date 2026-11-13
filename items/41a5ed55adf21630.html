@@ -22,9 +22,11 @@
 <h1>GraphOPD: Graph-Augmented On-Policy Distillation for LLM Agents</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>GraphOPD：图增强的智能体在线策略蒸馏，修正多轮场景下按步分歧选择失效的问题</p>
-<blockquote><p>On-policy distillation post-trains large language model agents by supplying dense, step-level guidance from a teacher policy when the reinforcement-learning reward is sparse and arrives only once per trajectory. Existing instantiations allocate this guidance by the size of the teacher-student divergence at each step, on the single-turn intuition that a large disagreement marks a mistake worth correcting. Once decisions chain over many turns, that rule misfires, since an early drift enters every later context both policies condition on, leaving the teacher consistent with the drifted trajectory instead of flagging its cause, while interchangeable steps register large but outcome-irrelevant divergences. We demonstrate this on an agentic benchmark, where distilling the highest-divergence steps brings no consistent benefit over random selection. To this end, we introduce GraphOPD, the first method to bring graph-based structural augmentation into on-policy distillation for agent capabilities. It reads which steps enabled which later ones from the environment's own record of state changes, immune to the drift that corrupts the teacher-student gap, organizes them into a dependency graph,…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> on-policy 蒸馏按师生分歧分配逐步指导，但多轮决策中早期漂移进入后续上下文，导致分歧信号错位、无关步骤被高估。</p>
+<p><strong>方法</strong> GraphOPD 从环境状态变更记录构建依赖图，用随机游走平稳分布给步骤打分，与分歧信号融合成轨迹内掩码，聚焦每轮最高价值步骤。</p>
+<p><strong>关键数字</strong> 三个模型规模、三个基准上对比 11 个基线，比最强基线最高 +5.8 pp；审计确认结构信用分数显著追踪真实因果影响。</p>
+<p><strong>为什么值得看</strong> 首个把图结构增强引入 agent on-policy 蒸馏的方法。</p>
+<p><a href="https://arxiv.org/abs/2610.08959">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.08959">阅读原文 ↗</a></p>
 </body>
 </html>
