@@ -22,9 +22,10 @@
 <h1>EDiS: Edge Disjoint Subgraph Sparsification Framework for Graph Neural Networks</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>EDiS：一次结构提取+逐 epoch 重组的 GNN 边不相交子图稀疏化框架</p>
-<blockquote><p>Sparse GNN training reduces computation, but deciding which edges to keep can be costly. Reusing one sparse graph is cheap, but locks training to a fixed topology, while varying it across epochs can require repeated sampling or recomputation. We introduce EDiS (Edge-Disjoint Subgraph sparsification framework), which separates one-time structural extraction from per-epoch graph composition. EDiS decomposes the graph once into cacheable edge-disjoint subgraphs, then recombines them into graphs with edge-budget constraints across epochs and retention ratios without re-extracting structure. Our default construction uses feature-based scores and successive maximum score covering forests, while the same composition mechanism also supports alternative edge selection rules. We provide a combinatorial analysis of the per-epoch sampler, the composition step that draws a training graph from the cached decomposition. We show that, under the default covering-forest selector, the stored decomposition deterministically preserves high-score cut edges, and we derive a selector-agnostic conditional bound on high-score cut survival in composed training graphs. Across 19 homophilic, heterophilic, and …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 稀疏 GNN 训练中"选哪些边保留"开销大：复用一张固定稀疏图廉价但拓扑锁死，逐 epoch 变化又需反复采样重算。</p>
+<p><strong>方法</strong> EDiS 框架把一次性结构提取与逐 epoch 图组合分离：先一次性把图分解为可缓存的边不相交子图，再按边预算与保留率重组训练图，无需重新提取结构；默认用基于特征的打分与最大分覆盖森林，组合机制也兼容其他选边规则，并给出采样器的组合学分析。</p>
+<p><strong>关键数字</strong> 在 19 个同质/异质/大规模节点分类基准上对比 17 个基线（同边预算），取得最高平均分（accuracy/ROC-AUC）与最低平均排名；消融显示紧边预算下结构分解与 epoch 变化的收益最明显。</p>
+<p><strong>为什么值得看</strong> 把稀疏化"提取"与"组合"解耦的框架，对 GNN 高效训练与图结构复用设计有直接参考价值。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09059">阅读原文 ↗</a></p>
 </body>
 </html>

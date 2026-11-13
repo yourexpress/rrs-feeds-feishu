@@ -22,9 +22,10 @@
 <h1>Exact SO(3)-Equivariant Isotropic Kernels for Rotation-Robust Neural Dynamics</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>旋转鲁棒神经动力学的精确 SO(3) 等变各向同性核</p>
-<blockquote><p>Neural surrogates for vector-valued partial differential equations can fit training data yet change their predictions when the same physical state is expressed in a rotated coordinate frame. We study this failure on three-dimensional Navier--Stokes dynamics observed at irregularly placed points. We introduce the Invariant-Conditioned Isotropic Kernel Neural Operator (IKNO), a compact graph model that builds local interactions from scalar quantities unchanged by rotation and vector directions that rotate with the data. Consequently, rotating the positions and velocities rotates the predicted velocity change in exactly the same way. On a held-out test set fixed after model design, training unconstrained graph models on randomly rotated examples reduces but does not eliminate their coordinate dependence. In contrast, IKNO is consistent to numerical precision, matches the forecasting accuracy of a general rotation-aware Tensor Field Network with $5.6$ times fewer parameters, and outperforms a parameter-matched graph simulator. These results show that a compact, PDE-specialized model can remove coordinate dependence without sacrificing forecasting accuracy.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 向量值 PDE 的神经代理能拟合训练数据，但同一物理状态换旋转坐标系后预测会变，坐标依赖是三维不规则点观测的纳维-斯托克斯动力学的现实痛点。</p>
+<p><strong>方法</strong> 提出 Invariant-Conditioned Isotropic Kernel Neural Operator（IKNO）：从旋转不变的标量构建局部交互、让随数据旋转的向量方向参与，使坐标旋转时预测速度变化精确同步旋转；用留出测试集评估。</p>
+<p><strong>关键数字</strong> 一致性达数值精度；以 5.6 倍更少参数达到通用旋转感知 Tensor Field Network 的预测精度，并胜过参数匹配的图模拟器；随机旋转训练的普通图模型能减轻但不能消除坐标依赖。</p>
+<p><strong>为什么值得看</strong> 紧凑 PDE 专用模型在不牺牲精度前提下消除坐标依赖，对物理仿真代理建模有参考价值。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10626">阅读原文 ↗</a></p>
 </body>
 </html>

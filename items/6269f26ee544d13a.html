@@ -22,9 +22,10 @@
 <h1>Exploiting Gradients in Bayesian Inference of Expensive Simulators</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>昂贵模拟器贝叶斯推断中的梯度利用</p>
-<blockquote><p>Simulators based on differential equations are ubiquitous in science and engineering. They are often used in simulation-based inference to evaluate the posterior distribution of the input parameters based on real-world observations of the simulator outputs. However, inference becomes challenging when individual simulator evaluations are computationally expensive. In such cases, a Bayesian optimization-based active learning approach with Gaussian process surrogate models has been used to maximize the information obtained from a limited simulation budget. Recently, gradients of simulator outputs with respect to input parameters have become increasingly available, yet they are rarely exploited for inference. Even though we only need to learn the simulator input-output relationship, gradient information can provide an additional valuable signal to guide the active learning procedure. This is of particular interest in the case of expensive simulators, when sample efficiency is crucial. In this paper, we demonstrate how incorporating gradient information into the Gaussian process surrogate accelerates Bayesian optimization-based inference under a limited simulation budget. Our results sh…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 微分方程模拟器常被用于仿真推断（SBI），但单次评估昂贵时推断困难；梯度信息日益可得却很少被用于推断。</p>
+<p><strong>方法</strong> 在高斯过程代理的贝叶斯优化主动学习中引入模拟器输出对输入参数的梯度，作为引导主动学习的额外信号，在有限仿真预算下提升样本效率。</p>
+<p><strong>关键数字</strong> 梯度信息显著加快收敛；计入额外计算成本后，反向模式微分的推断效率增益保持，前向模式微分的加速无法抵消计算成本；结论是梯度增强代理在参数数超过输出维度、反向模式高效的问题上收益最大。</p>
+<p><strong>为什么值得看</strong> 对昂贵模拟器推断给出"何时值得用梯度"的清晰判据，做仿真推断与主动学习的人实用。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.12076">阅读原文 ↗</a></p>
 </body>
 </html>

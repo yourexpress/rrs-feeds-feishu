@@ -22,9 +22,10 @@
 <h1>Evidential Multimodal Transformers with Dempster-Shafer Fusion for Emotion Recognition</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>Dempster-Shafer融合的循证多模态transformer情感识别</p>
-<blockquote><p>Softmax-based multimodal emotion recognition methods often assign high confidence even when sensor data are corrupted or contradictory, for example when facial expressions suggest positive valence while vocal prosody indicates negative arousal. We present an Evidential Multimodal Transformer with Dempster-Shafer Fusion (EMT-DS) that addresses this problem through formal uncertainty quantification. EMT-DS models predictions as Subjective Opinions (Dirichlet distributions), separating epistemic uncertainty (lack of evidence) from aleatoric uncertainty (sensor noise). Modality-specific transformer encoders produce belief mass distributions that are fused with Dempster's Rule of Combination, which normalizes the joint belief mass by a conflict coefficient 1/(1-c), so that contradictory evidence is explicitly quantified as conflict and the fused prediction becomes diffuse rather than being forced into an unjustified consensus. Under subject-independent and speaker-independent evaluation on four benchmarks, EMT-DS achieves 84.3% accuracy on IEMOCAP versus 81.7% for the best baseline (p &lt; 0.01), 82.4% on DEAP under leave-one-subject-out evaluation versus 78.1%, and 96.8% on the highly imb…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> softmax 多模态情感识别在传感器损坏或矛盾时仍给高置信度（如面部表情正向但语音韵律负向），缺乏不确定性量化。</p>
+<p><strong>方法</strong> EMT-DS：用主观意见（Dirichlet 分布）建模预测，分离认知不确定性（缺证据）与偶然不确定性（传感器噪声）；各模态 transformer 编码器产出信念质量分布，经 Dempster 组合规则融合，矛盾证据被显式量化为冲突、融合预测变扩散而非强行共识。</p>
+<p><strong>关键数字</strong> IEMOCAP 84.3% vs 最佳基线 81.7%（p&lt;0.01）；DEAP 留一被试 82.4% vs 78.1%；KEMDy20 96.8%；CMU-MOSEI 比最强循证基线 +2.4 点；ECE 从 0.153 降至 0.042；强高斯噪声（σ=1.0）下音频 71.2% vs 注意力基线 45.3%；融合复杂度 O(MK²) vs 交叉注意力 O(M²d²)。</p>
+<p><strong>为什么值得看</strong> 把 Dempster-Shafer 融合与不确定性量化落到多模态情感识别，临床/安全关键场景的选择性预测价值明显。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13013">阅读原文 ↗</a></p>
 </body>
 </html>

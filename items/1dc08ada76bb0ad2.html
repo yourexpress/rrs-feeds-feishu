@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent Substrate: Advancing Kubernetes for Agents at Scale</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Agent Substrate: Advancing Kubernetes for Agents at Scale</h1>
+<p class="meta-line">NVIDIA Technical Blog · 2026-11-10 · 技术博客</p>
+<img class="hero" src="https://developer-blogs.nvidia.com/wp-content/uploads/2026/11/image2-5-660x370.jpg" alt="" referrerpolicy="no-referrer">
+<p>面向 agent 负载的 Kubernetes 调度改造（agent 大部分时间空闲等待），超出 24h 检索窗口且偏数据中心调度，不入选</p>
+<blockquote><p>AI agents spend most of their time idle, waiting on a human prompt, a tool result or a model response. Kubernetes wasn’t built for that. Running one Pod per session holds memory for sessions that aren’t doing anything, and deleting Pods between turns pays a multi-second cold start every time and loses the agent’s state. RL post-training hits the same wall.</p><p>Agent Substrate, now donated to the Cloud Native Computing Foundation (CNCF) Sandbox, is an open-source, security-hardened, zero-trust runtime for sandboxed agents, engineered to safely run millions of agents and tools with 10x higher density than standard containers. It multiplexes many sessions over a small pool of worker Pods. Idle sessions are checkpointed, memory and filesystem included, and restored onto whichever worker is free when the next request arrives. As agentic infrastructure fragments into proprietary runtimes that bypass Kubernetes, NVIDIA is contributing upstream to keep this work open.</p><p>This post covers which workloads suit Agent Substrate, what is being built upstream, and how the project works with KAI Scheduler and NVIDIA Dynamo components in the DSX AI Factory Platform.</p><p>The shape of an agent workload</p><p>Traditional web services run as a relatively small number of long-lived instances. Agents follow a different pattern: they wake up and take one step, running a shell command, editing a file, calling a test suite or calling an LLM. Then they wait, sometimes for milliseconds and sometimes for minutes, before the next step. The agent’s state (its filesystem, its processes, its working directory) has to continue between steps.</p><p>Kubernetes struggles because spinning up a compute Pod for an agent means a trip through the API server, admission, etcd, the scheduler, the kubelet, image pulls and network setup. That takes seconds, which is fine for a service that runs for weeks. It’s far too slow for a sandbox that must appear, run a 10 ms bash command and get out of the way, hundreds of times per second.</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://developer.nvidia.com/blog/agent-substrate-advancing-kubernetes-for-agents-at-scale/">阅读原文 ↗</a></p>
+</body>
+</html>

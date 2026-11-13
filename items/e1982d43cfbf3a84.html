@@ -22,9 +22,10 @@
 <h1>Efficient Patch-Based Anomaly Detection Fused with Diffusion Driven Generative Modeling for Semiconductor Wafer Bin Map Open Set Anomaly Detection</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>EfficientAD 与 DDPM 分数融合的晶圆 bin 图开集异常检测</p>
-<blockquote><p>Spatial defect signatures on wafer bin maps (WBMs) trace yield loss to specific process faults, yet supervised classifiers recognize only the defect types seen during training, and one-class detectors built on a single mechanism tend to capture either local structural deviations or global distributional violations, but rarely both. This work proposes a hybrid one-class framework that couples a patch-based student-teacher detector (EfficientAD) with a denoising diffusion probabilistic model (DDPM) used for partial-diffusion reconstruction, and fuses their percentile-calibrated scores through a fixed convex combination. Trained on only 700 normal wafers from the WM-38K mixed-type dataset and evaluated on 18,658 held-out wafers, the fused detector reached an AUROC of 0.9985 and reduced misclassifications from 852 (DDPM) and 1,412 (EfficientAD) to 618, with all pairwise differences significant at p &lt; 0.001. Beyond aggregate accuracy, the analysis shows that the gain arises from weakly overlapping errors between the two modules, yet fixed-weight fusion recovers only 40-70% of the correction available to an oracle selector. Under the benchmark's inverted class balance, average precision …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 晶圆 bin 图（WBM）缺陷检测中，监督分类器只能识别训练见过的缺陷类型，单机制一类检测器又难同时捕获局部结构与全局分布偏差。</p>
+<p><strong>方法</strong> 提出混合一类框架：patch 级师生检测器 EfficientAD 与 DDPM 部分扩散重建结合，两者分位数校准得分经固定凸组合融合；训练仅用 WM-38K 中 700 片正常晶圆，评估 18,658 片留出晶圆。</p>
+<p><strong>关键数字</strong> 融合检测器 AUROC 达 0.9985；误分类从 DDPM 的 852、EfficientAD 的 1,412 降至 618（差异均 p&lt;0.001）；固定权重融合仅恢复 oracle 选择器可用修正的 40-70%；像素级图显示强图像级可分性不保证空间定位。</p>
+<p><strong>为什么值得看</strong> 对混合检测器的错误互补与融合局限做了细致分析，做晶圆缺陷检测或异常检测融合的人值得看。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09993">阅读原文 ↗</a></p>
 </body>
 </html>

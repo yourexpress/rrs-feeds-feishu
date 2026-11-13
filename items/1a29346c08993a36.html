@@ -22,9 +22,10 @@
 <h1>Executing Causal Structure Learning with Linear-Attention Transformers</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>固定权重线性注意力 Transformer 精确执行因果结构学习迭代</p>
-<blockquote><p>Transformers can execute algorithms on data given in their input. We ask whether they can do the same for causal discovery. We study a standard continuous method that repeatedly updates a candidate causal graph while enforcing acyclicity. We explicitly construct a fixed-weight transformer whose forward pass exactly reproduces one update of this method, so repeated blocks reproduce its optimization trajectory. The transformer carries the current graph and the algorithm's multiplier between updates. We show that retaining the multiplier is essential for exact execution, since different multiplier values can lead to different next updates. We also give conditions under which, within a fixed stage, the number of updates needed to reach a target accuracy can be computed in advance and rounding errors stay bounded as depth grows. Experiments show that the constructed block agrees with a reference update to floating-point precision, while arithmetic replay on synthetic data and seven published benchmark network topologies inherits the reference solver's successes and failures. This separates accurate algorithm execution from accurate causal recovery. In contrast, the ordinary attention mo…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Transformer 能在输入数据上执行算法，但能否执行因果发现？本文研究标准连续方法（迭代更新候选因果图并强制无环性）。</p>
+<p><strong>方法</strong> 显式构造固定权重 transformer，其前向传播精确复现该方法的一次更新，重复块即复现优化轨迹；证明保留乘子对精确执行至关重要；给出固定阶段内达到目标精度所需更新次数的可预测条件与深度增长下的舍入误差界。</p>
+<p><strong>关键数字</strong> 构造块与参考更新的结果一致到浮点精度；合成数据与 7 个已发表基准网络拓扑上，算术重放继承了参考求解器的成败；普通注意力模型在训练预算下无法可靠执行更新或迁移到更大图。</p>
+<p><strong>为什么值得看</strong> 把"算法执行"与"因果恢复"分离的构造性工作，对可解释执行与因果发现自动化有启发。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10395">阅读原文 ↗</a></p>
 </body>
 </html>

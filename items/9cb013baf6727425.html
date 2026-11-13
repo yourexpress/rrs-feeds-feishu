@@ -22,9 +22,10 @@
 <h1>Efficient Heuristics and Machine Learning Approach for Fault Characterization in Distributed Self-Stabilizing Programs</h1>
 <p class="meta-line">arXiv cs.DC · 2026-10-09 · 论文PDF</p>
 
-<p>分布式自稳定程序一致性违例故障（cvf）的启发式与机器学习特征化方法</p>
-<blockquote><p>Modern large-scale systems rely on distributed protocols to maximize efficiency while preserving the correctness guarantees of single-process execution. However, designing such protocols is non-trivial: adding resources to a system inherently increases its complexity, which in turn introduces faults that must be addressed during design. One such fault class, arising in systems that use distributed shared memory (e.g., replicated databases), is consistency violating fault (cvf), a fault in which a process accessing shared memory reads stale data previously written by another process. Cvfs are inherent to systems that prioritize availability over strict consistency. Prior work has shown that self-stabilizing programs remain correct under high availability, provided such faults stay within a tolerable bound. Characterizing the behavior of self-stabilizing programs in the presence of cvfs can therefore help system designers build systems that are both correct and efficient. In this paper, we study self-stabilizing programs under cvfs to understand when and where such faults occur, enabling runtime measures that improve computational efficiency. Since exhaustive state-space exploration …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 分布式共享内存系统（如复制数据库）中的一致性违例故障（cvf）——进程读到他人先前写入的旧数据——如何刻画其对自稳定程序的影响。</p>
+<p><strong>方法</strong> 因穷举状态空间不可扩展，采用两条互补路线：对单调稳定的 (Δ+1)-Graph Coloring 程序提出基于冲突边的状态空间探索算法；对 Maximal Independent Set 程序构建经严格验证的机器学习模型，在分布外数据集上用已知图不变量做结构一致性校验。</p>
+<p><strong>关键数字</strong> 摘要未给出具体量化指标；方法面向容忍 cvf 有界的前提，帮助设计既正确又高效的系统。</p>
+<p><strong>为什么值得看</strong> 用启发式+ML 缓解状态爆炸的思路，对分布式协议验证与容错分析有参考价值。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10386">阅读原文 ↗</a></p>
 </body>
 </html>

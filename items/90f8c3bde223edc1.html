@@ -22,9 +22,10 @@
 <h1>Early Signatures of Memorization in Diffusion Models via Basin Geometry and Cyclic Denoising</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>从盆几何与循环去噪看扩散模型记忆的早期特征</p>
-<blockquote><p>Diffusion models generalize early in training and later reproduce individual training samples. Standard tests detect memorization only once one-shot generation produces near-copies, leaving a released model unaudited until its outputs fail. We show that memorization is encoded in the geometry of the learned energy landscape before it appears in generated samples, a state we call latent memorization. Using score divergence and basin volume, we find that localized basins form around training samples and separate them from held-out samples before the first memorized sample appears, with an onset that follows the same $O(n)$ scaling as the memorization time. We probe these basins with cyclic denoising, which repeatedly applies partial noising and denoising. Under the exact empirical score, we prove that cycling started near an isolated training sample recovers it and returns to it over any finite number of cycles with high probability. In trained models, cycling recovers training images from CelebA and CIFAR-10 checkpoints whose one-shot samples contain no copies, and at a CelebA checkpoint with 0.1% one-shot copies, 500 cycles raise the memorized fraction above 30%. Cycling also revea…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 扩散模型的记忆（memorization）在生成样本尚未出现近拷贝前无法被标准测试检出，模型可能在"潜伏"状态下被发布。</p>
+<p><strong>方法</strong> 提出"潜伏记忆"概念：用得分散度与盆体积刻画能量景观几何，发现训练样本周围先形成局部盆并与留出样本分离；再用循环去噪（反复部分加噪/去噪）探测这些盆，并从理论上证明精确经验得分下循环会高概率恢复孤立训练样本。</p>
+<p><strong>关键数字</strong> CelebA/CIFAR-10 检查点上循环去噪可恢复单次生成无拷贝的训练图像；某 CelebA 检查点单次拷贝率 0.1% 时，500 次循环将记忆占比提升至 30% 以上；Stable Diffusion v1.4 上条件-无条件散度差区分记忆/非记忆提示的 AUC 0.944、1% FPR 时 TPR 0.866。</p>
+<p><strong>为什么值得看</strong> 把"模型记住了什么"落到学习分布的几何与稳定性上，为发布前记忆审计提供不依赖输出拷检测的新思路。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.11670">阅读原文 ↗</a></p>
 </body>
 </html>

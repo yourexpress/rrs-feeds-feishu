@@ -22,9 +22,10 @@
 <h1>Evaluating Trajectory Features for Routing Final-Layer Attention</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>终层注意力路由的轨迹特征评估：六个预设比较经族校正后均无正收益</p>
-<blockquote><p>Attention routing requires a signal that predicts the value of attention on the current prefix. We evaluate whether hidden-state extrapolation error, curvature and error change improve this prediction beyond uncertainty, one-step displacement, position and state projections. Paired executions of the final attention layer supply signed next-token loss differences in frozen SmolLM3-3B-Base and Qwen3.5-4B-Base checkpoints. Utility-supervised routers are tested on 100 held-out PG-19 books at an identical causal 20 percent invocation quota. None of six prespecified comparisons shows a positive gain after familywise correction. In Qwen3.5, a parameter-matched fixed-projection control lowers NLL by 0.00356 nats/token relative to the trajectory router (95 percent interval 0.00218 to 0.00487). Secondary results depend on the operation removed, feature location and scoring horizon; frozen thresholds also drift substantially at longer horizons. Actual selected-query execution yields small long-sequence latency reductions with increased NLL, while learned routers remain slower during cached continuation. The study identifies limits on the incremental value of these trajectory summaries and sep…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 注意力路由需要能预测当前前缀上注意力价值的信号，本文评估隐藏状态外推误差、曲率、误差变化是否比不确定性、一步位移等现有特征更有效。</p>
+<p><strong>方法</strong> 在冻结的 SmolLM3-3B-Base 与 Qwen3.5-4B-Base 检查点上用终层注意力的成对执行提供带符号的下一 token 损失差；用效用监督训练路由器，在 100 本留出 PG-19 书籍上以相同 20% 调用配额测试。</p>
+<p><strong>关键数字</strong> 六个预设比较经族校正后均无正收益；Qwen3.5 中参数匹配的固定投影控制比轨迹路由器每 token 低 0.00356 nats NLL（95% 区间 0.00218-0.00487）；实际选中查询执行仅带来小幅长序列延迟降低但 NLL 上升。</p>
+<p><strong>为什么值得看</strong> 一个少见的"负结果"研究：系统说明轨迹特征对注意力路由的增量价值有限，避免后人重复踩坑。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09272">阅读原文 ↗</a></p>
 </body>
 </html>

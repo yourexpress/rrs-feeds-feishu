@@ -22,9 +22,10 @@
 <h1>Edge Accuracy Is Not Enough: Why Dynamics-Learned Structure Fails to Transfer to Inverse Problems</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>动力学预测学到的图结构迁移到逆问题系统性失效的实证与理论分析</p>
-<blockquote><p>A natural strategy for inverse problems with scarce labelled data is to transfer relational structure learned from abundant forward-simulation data. We show this strategy fails systematically, even when it satisfies the standard theoretical justification for why structure should help. We prove that approximate structure provides estimation-error benefits whenever the edge error satisfies $Δ&lt; n^2 - kn$, reducing sample complexity from $O(n^2)$ to $O(kn+Δ)$. Structure learned via Neural Relational Inference (NRI) from dynamics prediction satisfies this condition, yet on a source-localisation task across 180 CFD-simulated hydrogen-leak scenarios and 180 acoustic scenarios, it degrades performance by 116% and 201% relative to a flexible, task-optimised attention baseline, while a physics-based prior (Green's function) degrades by only 69-72%. Four independent lines of evidence show this is not a tuning failure: NRI improves only 0.5% when given 18x more training data (versus 16.6% for the task-optimised baseline, $p&lt;0.001$); performance is insensitive to the NRI edge threshold across a wide range; the dynamics-learned graph overlaps the task-optimal graph on only 6% of edges; and two f…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 逆问题标注数据稀缺时，常见的策略是从大量前向仿真数据中迁移学到的关系结构——本文证明该策略会系统性失败，即使满足标准的理论条件。</p>
+<p><strong>方法</strong> 证明边误差满足 Δ&lt;n²-kn 时近似结构能降低估计误差（样本复杂度从 O(n²) 降到 O(kn+Δ)）；用四路独立证据定位失败根源，并给出轻量可迁移性测试（与部分观测目标图求 Jaccard 相似度）。</p>
+<p><strong>关键数字</strong> 在 180 个 CFD 氢泄漏与 180 个声学场景上，NRI 学到的结构比任务优化注意力基线差 116%/201%，物理先验（格林函数）仅差 69-72%；NRI 数据增 18 倍仅提升 0.5%；动力学图与任务最优图仅 6% 边重叠；测试用时不足 1 小时、仅需目标域 15-20% 数据。</p>
+<p><strong>为什么值得看</strong> 对"结构迁移帮助逆问题"的通行直觉给出反例与可操作测试，做跨域结构学习的人值得一读。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10213">阅读原文 ↗</a></p>
 </body>
 </html>

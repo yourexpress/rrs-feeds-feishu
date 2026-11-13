@@ -22,9 +22,10 @@
 <h1>Efficient Provably Private Classification with a Tabular Foundation Model</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>PrivTab：架构内嵌差分隐私机制、免每数据集优化的表格基础模型</p>
-<blockquote><p>Tabular data underpin prediction and decision-making in medicine, finance, government and science, but often contain sensitive individual-level information, creating a need for accurate prediction while preserving privacy. Traditional private learning provides formal privacy guarantees, but requires slow dataset-specific optimisation, suffers substantial utility loss under strong privacy, and is often difficult to apply correctly. Tabular foundation models adapt rapidly to new datasets, but existing models lack formal privacy guarantees, and are highly vulnerable to membership-inference attacks, limiting their use on sensitive data. Here we introduce PrivTab, an easy to use tabular foundation model for differentially private classification that embeds a privacy mechanism within its architecture. Pretrained on simulated datasets, PrivTab uses in-context learning to transform sensitive rows into compact, provably private summaries---effectively learning how to learn under privacy. PrivTab outperforms private linear and neural-network baselines under moderate-to-strong privacy, shows negligible membership leakage, maintains well-calibrated predictions under strong privacy, and reduces…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 表格数据预测常涉敏感个体信息：传统私有学习需逐数据集慢优化且强隐私下效用损失大，表格基础模型则缺形式化隐私保证、易受成员推断攻击。</p>
+<p><strong>方法</strong> 提出 PrivTab：在架构内嵌差分隐私机制的表格基础模型，在模拟数据上预训练，用上下文学习把敏感行变换为紧凑、可证明私有的摘要——即在隐私约束下"学会如何学习"。</p>
+<p><strong>关键数字</strong> 中强隐私下优于私有线性与神经网络基线；成员泄漏可忽略；强隐私下预测校准良好；数据集拟合时间降低 10,000 倍，仅需单次前向传播。</p>
+<p><strong>为什么值得看</strong> 把形式化隐私、速度与易用性结合的表格基础模型，对医疗/金融等敏感表格场景实用。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10068">阅读原文 ↗</a></p>
 </body>
 </html>

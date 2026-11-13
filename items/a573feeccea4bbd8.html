@@ -22,9 +22,10 @@
 <h1>EvoSignal: LLM-Guided Evolutionary Design of Modular Traffic Signal Control Programs</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>EvoSignal：LLM 引导进化设计模块化交通信号控制程序</p>
-<blockquote><p>Effective traffic signal control (TSC) requires policies that respond to changing traffic demand and network conditions while meeting different control objectives. However, adapting existing strategies often involves repeated manual design and adjustment, making it difficult to systematically explore better control rules for a target network. Large language models (LLMs) can automate this process, but directly using them to select signal phases leaves decision rules embedded in black-box models and incurs recurring inference costs and latency. This paper formulates TSC as a modular program design problem and proposes EvoSignal, an LLM-guided evolutionary framework using traffic knowledge and performance feedback. The modular representation separates traffic feature extraction, local phase prioritization, and optional network-based priority adjustment. Starting from several established strategies, EvoSignal improves programs through feedback on congestion and signal operation, retaining strategies with different performance trade-offs. The resulting programs operate without online LLM inference. Simulation experiments across five scenarios on two real-world road networks show that t…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 交通信号控制需要随需求与目标调整的策略，但人工设计与调整难以系统探索；直接让 LLM 选相位又使决策规则黑盒化并产生持续推理成本。</p>
+<p><strong>方法</strong> EvoSignal：把 TSC 表述为模块化程序设计问题，LLM 引导进化，用交通知识与性能反馈改进程序；模块化表示分离交通特征提取、局部相位优先与可选的网络级优先级调整，最终程序无需在线 LLM 推理。</p>
+<p><strong>关键数字</strong> 两个真实路网五个场景的仿真中，默认程序比各场景 20 个基线（传统/强化学习/LLM 式）的最低等待时间再降 16.8-49.2%；优先通行时间与队列长度的程序在搜索场景三项指标全部胜过 20 个基线，迁移到其余四场景仍保持各指标前三。</p>
+<p><strong>为什么值得看</strong> 让 LLM 辅助设计可检查、可迁移的控制程序且运行期零推理成本，对自动化控制设计有借鉴意义。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09563">阅读原文 ↗</a></p>
 </body>
 </html>

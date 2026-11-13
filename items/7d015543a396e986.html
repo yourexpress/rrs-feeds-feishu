@@ -22,9 +22,10 @@
 <h1>FedRSPO+: A Heterogeneity-aware Algorithm for Decision-focused Federated Learning</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>FedRSPO+：异构下游目标感知的决策聚焦联邦学习算法</p>
-<blockquote><p>Decision-focused learning (DFL) trains predictive models for downstream optimization, but existing methods largely assume centralized data. In cross-silo settings, federated learning offers a natural alternative, yet standard federated methods optimize prediction over decision quality and do not address heterogeneity in downstream objectives or feasible sets. This heterogeneity is especially challenging for DFL because small perturbations in polyhedral problems can cause discontinuous changes in optimal decisions, destabilizing client updates and aggregation. We propose FedRSPO+, a heterogeneity-aware framework for decision-focused federated learning, built on RSPO+, a regularized predict-then-optimize surrogate that smooths the decision map through projection. We show that RSPO+ upper bounds decision error and regret for the regularized decision and, under exact regularization and consistent LP solution selection, for the original LP decision. We further derive cross-client heterogeneity bounds that depend on both objective and feasible-set heterogeneity, vanish at homogeneity, and require no strong convexity. FedRSPO+ uses an annealed, modular training procedure compatible with s…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 决策聚焦学习（DFL）训练预测模型服务于下游优化，但现有方法假设集中式数据；跨孤岛联邦场景中，标准联邦方法不针对决策质量优化，也忽视下游目标与可行集异构。</p>
+<p><strong>方法</strong> FedRSPO+：基于 RSPO+（带投影平滑决策映射的正则化 predict-then-optimize 代理）的异构感知框架；证明 RSPO+ 对正则化决策给出决策误差与遗憾上界，精确正则化与一致 LP 解选择下对原 LP 决策同样成立；推导随目标与可行集异构变化、齐性时消失且不需强凸的跨客户端异构界。</p>
+<p><strong>关键数字</strong> 摘要未给出具体量化指标；实验覆盖合成背包、最短路径与真实能源定价任务，在不同异构度与通信预算下对比仅预测联邦学习与 DFL 基线。</p>
+<p><strong>为什么值得看</strong> 为联邦 DFL 提供平滑化与异构感知的基础，做跨孤岛决策学习的人值得关注。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09091">阅读原文 ↗</a></p>
 </body>
 </html>

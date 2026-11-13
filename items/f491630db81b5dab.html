@@ -22,9 +22,10 @@
 <h1>Explaining the Saliency Map Sparsity of Adversarially-Trained Neural Networks</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>解释对抗训练网络显著性图稀疏性的来源</p>
-<blockquote><p>Understanding why deep neural networks make a given prediction is of great importance for their safe deployment. In computer vision, saliency maps, which highlight the image region most influential for a prediction, remain a widely-used form of explanation. An empirical observation is the apparent sparsity of gradient saliency maps of adversarially-trained neural networks. In this paper, we propose a theoretical explanation of this phenomenon for two-layer ReLU networks. We build on the established equivalence of adversarial training to the minimization of the empirical risk with weight-decay penalization and an added adversarial total variation term -- valid for certain loss functions. As the number of data points and neurons grows and the regularization parameters are sent to zero at appropriate rates, we prove that minimizers converge to a Bayes classifier with minimal gradient and Barron norm. Sparsity appears since for adversarial training with $\ell_\infty$-attacks the gradient norm is anisotropic and favors axis-aligned / sparse gradients. We illustrate our theoretical findings experimentally by evaluating the gradient $\ell_1$-norm and thresholded sparsity of naturally vers…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 对抗训练神经网络的经验现象——梯度显著性图明显稀疏——缺少理论解释，而这关系模型安全部署中的可解释性。</p>
+<p><strong>方法</strong> 针对两层 ReLU 网络给出理论证明：基于对抗训练等价于带权重衰减罚与对抗全变差项的 ERM 最小化；数据点与神经元数量增长、正则参数以合适速率趋于零时，极小化子收敛到具有最小梯度与 Barron 范数的贝叶斯分类器；稀疏性源于 ℓ∞ 攻击下梯度范数各向异性、偏好轴对齐/稀疏梯度。</p>
+<p><strong>关键数字</strong> 摘要未给出具体量化指标；实验对比自然训练与对抗训练模型的梯度 ℓ1 范数与阈值稀疏度。</p>
+<p><strong>为什么值得看</strong> 把对抗训练的稀疏显著性从经验观察提升为理论结论，对理解对抗鲁棒性与可解释性有帮助。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10666">阅读原文 ↗</a></p>
 </body>
 </html>

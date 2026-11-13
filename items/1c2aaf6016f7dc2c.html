@@ -22,9 +22,10 @@
 <h1>Emergent Inverse-Depth Scaling From Nonlinearity In Attention</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>注意力非线性中涌现的逆深度缩放现象</p>
-<blockquote><p>Scaling laws describe power-law improvements in model performance with dataset size and parameter count, yet their underlying mechanisms are not fully understood. To explain the parameter count scaling, existing theory posits power-law scaling with model depth. In linear-attention models, this scaling is tied to a power-law data spectrum: unable to selectively attend to relevant tokens, these models learn according to global spectral strength, with stronger directions learned before weaker ones. Large language models, however, can be strongly nonlinear. Here, we show that nonlinear attention yields inverse-depth decay of loss across all tested data spectra. Nonlinearity enables attention to focus selectively on relevant tokens, allowing strong and weak spectral directions to be learned in parallel. Similar focusing across layers motivates a connection to the central limit theorem: shared error across layers sets the loss plateau, while aggregation turns layer-specific differences into continued gains with depth. Our findings suggest that depth scaling may arise from nonlinearity in attention, which allows large language models to focus locally and may make the global covariance str…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 缩放律描述模型性能随数据量与参数量幂律提升，但其机制未明；现有理论把参数缩放归因于深度，与线性注意力模型绑定于数据谱的幂律假设。</p>
+<p><strong>方法</strong> 理论分析非线性注意力的作用：非线性使注意力能选择性地聚焦相关 token，强弱谱方向可并行学习，从而在全部测试数据谱上产生随深度逆衰减的损失；跨层聚焦启发与中心极限定理的联系——层间共享误差设定损失平台，聚合把层间差异转为随深度的持续增益。</p>
+<p><strong>关键数字</strong> 摘要未给出具体量化指标；结论为深度缩放可能源于注意力非线性，使 LLM 局部聚焦、全局协方差结构相关性降低。</p>
+<p><strong>为什么值得看</strong> 为"为什么更深的模型更有效"提供机制解释，对理解缩放律与注意力设计有理论价值。</p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.11063">阅读原文 ↗</a></p>
 </body>
 </html>
