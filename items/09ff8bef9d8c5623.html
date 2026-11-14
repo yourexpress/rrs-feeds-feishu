@@ -22,9 +22,11 @@
 <h1>Leaner Transformers Can Easily Learn to Cluster</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>更瘦的 Transformer 可精确执行 Lloyd 聚类：嵌入维度从 d+k 压到 d+log k</p>
-<blockquote><p>Transformers have in-context learning capabilities, where some known learning algorithms can be executed in the forward pass through the model. Recent work shows that transformers can exactly perform Lloyd's algorithm for $k$-means clustering with $n$ points in $d$ dimensions with an embedding size $d_{\textsf{emb}} = d+k$ (thus, requiring attention projection matrices of size $(d+k)^2$). In this work, we build upon this result in the following ways: First, we present an equally expressive but smaller transformer that executes Lloyd's algorithm with embedding size $d_{\textsf{emb}} = (d + \lceil \log_2 k \rceil)$. Next, we train these transformers to learn the clustering algorithms given a distribution of clustering tasks, and theoretically characterize and empirically validate the factors affecting the convergence and in-distribution generalization of learning algorithms based on stochastic gradients. Finally, we probe the general clustering abilities of these learned algorithms (in the form of transformers), and try to understand situations where they succeed and fail.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：Transformer 前向传播能精确执行 k-means 的 Lloyd 算法，但已有构造需要嵌入维度 d+k，能否做到同样表达力却更小的模型？</p>
+<p><strong>方法</strong>：给出嵌入维度 d+⌈log2 k⌉ 的等价 Transformer（原为 d+k，注意力投影矩阵相应缩小）；在聚类任务分布上训练这些 Transformer 学习算法，理论刻画并用实验验证随机梯度学习算法的收敛与分布内泛化；最后探测其一般聚类能力及成败情形。</p>
+<p><strong>关键数字</strong>：嵌入维度从 d+k 压到 d+⌈log2 k⌉。</p>
+<p><strong>为什么值得看</strong>：把 ICL 精确聚类实现的理论下界与实证学习行为联系起来，缩小了「能表达」与「能学会」之间的差距。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.09760">Leaner Transformers Can Easily Learn to Cluster</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09760">阅读原文 ↗</a></p>
 </body>
 </html>

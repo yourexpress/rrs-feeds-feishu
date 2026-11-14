@@ -22,9 +22,11 @@
 <h1>Matched-Context Group Policy Optimization for LLM Agent Training</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>上下文匹配组策略优化训练LLM agent</p>
-<blockquote><p>Training long-horizon language model agents requires assigning credit to intermediate decisions from sparse terminal feedback. Within a finite group of sibling rollouts, useful action comparisons depend on their context, evidence for both alternatives, and how that evidence enters learning. We propose Matched-Context Group Policy Optimization (MCGPO), a procedure for constructing weighted action preferences from already collected trajectories. MCGPO defines comparison contexts with pre-action state summaries and observed rubric progress, annotated by task rules. Two-action support selects among ordered exact and coarse matching rules. Fixed folds separate candidate decisions from the terminal outcomes used to orient their preferences, and support-dependent evidence weights scale an auxiliary pairwise objective alongside shared GraphGPO task learning. MCGPO reuses rollout data and each response's original history, preserving critic-free training. Across six environment-backbone settings with three training seeds each, MCGPO improves mean success over matched GraphGPO: by 0.47-1.46 percentage points on ALFWorld and WebShop with Qwen2.5-1.5B and 7B, and by 3.96 and 5.16 points on WebS…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：长程 LLM agent 训练需要把稀疏的终端反馈信用分配到中间决策，如何从已收集的轨迹里构造有效的动作偏好？</p>
+<p><strong>方法</strong>：MCGPO 用动作前状态摘要 + 观测到的 rubric 进展（任务规则标注）定义比较上下文，在有序的精确/粗匹配规则中选择双动作支持；固定折分离候选决策与用于定向偏好的终端结果，支持相关证据权重扩展成对目标，与共享 GraphGPO 任务学习并行；完全复用 rollout 数据与原始历史，保持免 critic 训练。</p>
+<p><strong>关键数字</strong>：Qwen2.5-1.5B/7B 上 ALFWorld 与 WebShop 平均成功率较 GraphGPO 提升 0.47–1.46 个百分点；Qwen3-4B/8B 的 WebShop 提升 3.96/5.16 点；ALFWorld 基线已高于 92%。</p>
+<p><strong>为什么值得看</strong>：免 critic、零额外采样的偏好构造方法，六环境两骨干设置下一致增益，工程复用价值高。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.13755">Matched-Context Group Policy Optimization for LLM Agent Training</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13755">阅读原文 ↗</a></p>
 </body>
 </html>

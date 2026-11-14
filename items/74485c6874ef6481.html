@@ -22,9 +22,11 @@
 <h1>MC-TRCM: Observation-Aware Recursive Fusion for Incomplete Mobile and Wearable Mental-Health Feature Views</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>不完整移动可穿戴心理健康特征视图的观测感知递归融合</p>
-<blockquote><p>Public mobile and wearable mental-health datasets often provide summarized feature tables rather than synchronized raw sensor streams. In these releases, each anchor corresponds to a survey or label time and may combine phone or wearable summaries, prior symptom scores, demographics, clinical variables, and source-availability indicators. We propose the Modality-Conditioned Temporal Recursive Context Model (MC-TRCM), which preserves each feature source as a separate token and incorporates missingness as part of the input context. Observed sources are encoded with values and missingness summaries, absent sources use learned absence tokens, dataset and task embeddings condition fusion, and a recursive prediction head refines each output over validation-selected steps. We evaluated MC-TRCM on six predefined endpoints from DepreST-CAT and Prediction of Severity Change-Depression (PSYCHE-D) using participant-level splits and validation-only model selection. MC-TRCM achieved the lowest mean absolute error on DepreST-CAT Patient Health Questionnaire-9 (PHQ-9) and Generalized Anxiety Disorder-7 (GAD-7) severity, improving over the best tabular reference by 0.181 and 0.217 scale points. Cla…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：公开的移动/可穿戴心理健康数据集多为汇总特征表而非同步原始流，各模态缺失普遍，如何在这种不完整视图上做预测？</p>
+<p><strong>方法</strong>：MC-TRCM 把每个特征源保留为独立 token、把缺失性作为输入上下文的一部分：观测源编码值 + 缺失摘要，缺失源用学习到的缺失 token，数据集与任务嵌入条件化融合，递归预测头在验证选定步数上精炼输出。</p>
+<p><strong>关键数字</strong>：DepreST-CAT 的 PHQ-9/GAD-7 严重度 MAE 较最佳表格参考降 0.181/0.217 分；PSYCHE-D 多分类数值最高 +0.002 平衡准确率；消融支持各组件（FiLM、缺失 token、缺失投影、递归精炼）贡献。</p>
+<p><strong>为什么值得看</strong>：显式把缺失性建模进上下文的统一多源方案，代码开源，对真实不完整心理健康数据有直接适用性。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.11408">MC-TRCM: Observation-Aware Recursive Fusion for Incomplete Mobile and Wearable Mental-Health Feature Views</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.11408">阅读原文 ↗</a></p>
 </body>
 </html>

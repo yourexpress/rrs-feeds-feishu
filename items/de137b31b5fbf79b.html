@@ -22,9 +22,11 @@
 <h1>Multimodal Graph Retrieval-Augmented Sequential Recommendation via Collaborative Filtering Paths</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>协同过滤路径的多模态图检索增强序列推荐</p>
-<blockquote><p>Multimodal Large Language Models (MLLMs) have demonstrated strong potential for sequential recommendation through their ability to reason over complex multimodal data. However, existing approaches either rely solely on the target user's own interaction history, neglecting collaborative signals from neighboring users, or incur substantial computational overhead through repeated MLLM inference over long interaction histories. To address these challenges, we propose MGRASRec, a multimodal graph retrieval-augmented framework for sequential recommendation. MGRASRec injects collaborative filtering signals conditioned on the candidate item directly into the MLLM prompt by retrieving structured paths from a user-item interaction graph, extended via multimodal similarity to increase coverage beyond exact co-interaction overlap. This retrieval also surfaces the history items most relevant to the candidate at no additional cost, removing the need for recurrent summarization and keeping inference to a single forward pass per candidate. All components are unified into an augmented prompt for parameter-efficient fine-tuning of an MLLM. Extensive evaluations across three publicly available datase…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：MLLM 序列推荐要么只用目标用户自身交互历史、忽略邻域协同信号，要么对长历史反复做 MLLM 推理、计算开销巨大。</p>
+<p><strong>方法</strong>：MGRASRec 从用户-物品交互图检索结构化路径，把候选物品条件下的协同过滤信号直接注入 MLLM 提示；用多模态相似度扩展覆盖超出精确共现重叠的范围；检索同时以零额外成本浮出与候选最相关的历史物品，免去重复摘要，每个候选仅一次前向推理；所有组件统一进增强提示做参数高效微调。</p>
+<p><strong>关键数字</strong>：三个公开数据集上所有指标均取得最优，排名质量增益尤为突出（论文未报告具体数值）。</p>
+<p><strong>为什么值得看</strong>：以图检索把邻域协同信号并入 MLLM 提示，单前向完成推荐，兼顾效果与推理开销。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.11228">Multimodal Graph Retrieval-Augmented Sequential Recommendation via Collaborative Filtering Paths</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.11228">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>LatLM: Line-Parallel Language Models with Deferred Commitment</h1>
 <p class="meta-line">arXiv/cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>Line-parallel language models advance multiple lines concurrently for substantial speedups. However, frameworks like the Line-Coupled Language Model (LCLM) enforce a fixed commitment schedul</p>
-<blockquote><p>Line-parallel language models advance multiple lines concurrently for substantial speedups. However, frameworks like the Line-Coupled Language Model (LCLM) enforce a fixed commitment schedule across lines. Because dependencies vary within text, a fixed schedule cannot hold back a line whose prerequisites remain uncomputed, forcing premature commitments and cascading reasoning errors. To address this limitation, we introduce the Lattice Language Model (LatLM), making commitment schedules an adaptive decoding-time choice. Text occupies a 2D lattice where eligible frontier tokens are scored each round; a policy commits confident candidates while deferring unready ones for extended context. One forward pass supervises entire sampled trajectories via 2D causal masking, while an append-only cache retains exact states. At 482M parameters, we establish two findings. (1) LatLM matches a data- and capacity-matched autoregressive model on held-out text when decoded sequentially, while its adaptive parallel decoder achieves near-autoregressive accuracy on independent-line tasks using 25--41% as many decoding rounds. (2) When cross-line dependencies cause LCLM's fixed schedule to fail, deferred…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：行并行语言模型（如 LCLM）采用固定提交调度，文本内依赖多变时无法压住前置条件未算完的行，导致过早提交与级联推理错误。</p>
+<p><strong>方法</strong>：LatLM 把提交调度变成解码期的自适应选择——文本占据 2D 网格，每轮对可提交的前沿 token 打分，策略提交高置信候选、延后未就绪者；单次前向用 2D 因果掩码监督整条采样轨迹，append-only 缓存保留精确状态。</p>
+<p><strong>关键数字</strong>：482M 参数；独立行任务用 25–41% 的解码轮次达到近自回归精度；混合依赖链上准确率 96.5% vs LCLM 的 78.5%，解码轮次少于自回归基线一半。</p>
+<p><strong>为什么值得看</strong>：把「何时提交」从固定调度改为解码期自适应决策，是行并行解码在真实依赖结构下保住精度的关键一步。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.23951">LatLM: Line-Parallel Language Models with Deferred Commitment</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.23951">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Multi-Agent Coordination via Support-Preserving Distillation</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>支撑保持蒸馏消除流教师多模态耦合误差（离线 MARL）</p>
-<blockquote><p>Offline MARL increasingly relies on generative policies to model multimodal joint behavior, typically by distilling a centralized teacher into decentralized one-step actors under the CTDE. We identify a failure mode at the teacher training stage: standard flow-based teachers pair noise with replay targets independently, so nearby noise samples can be routed toward conflicting coordination modes. The teacher then produces samples between valid modes, and because the distillation loss regresses each local actor onto the conditional mean of the teacher's output given local input, this error is not absorbed but propagated to the student. To remove this teacher-side artifact, we propose Mode-Support Semi-Discrete Optimal Transport (MoSDOT), which summarizes multimodal replay into a finite mode support with prescribed capacities and uses conditional semi-discrete optimal transport to assign each noise sample to a single mode before teacher training. We additionally study a shared-randomness variant that uses a shared noise component at execution to expose the residual gap intrinsic to strict-product execution. On controlled diagnostics and offline MARL benchmarks, MoSDOT improves endpoin…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：离线 MARL 蒸馏（CTDE 下把集中式教师蒸馏为分散单步 actor）中，标准流式教师把噪声与回放目标独立配对，邻近噪声样本可能被引向冲突的协调模式，教师产出模式之间的样本，且蒸馏损失会把该误差传播给学生。</p>
+<p><strong>方法</strong>：MoSDOT（模式支撑半离散最优传输）把多模态回放总结为带规定容量的有限模式支撑，在教师训练前用条件半离散最优传输把每个噪声样本分配到单一模式；另研究共享随机数变体，用执行期共享噪声成分暴露严格乘积执行的固有残差。</p>
+<p><strong>关键数字</strong>：受控诊断与离线 MARL 基准上提升端点质量与路由一致性，尤其在多模态联合行为数据集上（论文未报告具体数值）。</p>
+<p><strong>为什么值得看</strong>：把失败定位到教师训练阶段并从源头消除，而非在蒸馏后再修补，对生成式离线 MARL 有清晰指导。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.10087">Multi-Agent Coordination via Support-Preserving Distillation</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10087">阅读原文 ↗</a></p>
 </body>
 </html>

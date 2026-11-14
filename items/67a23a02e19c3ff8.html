@@ -22,9 +22,11 @@
 <h1>Machine Unlearning for Federated Socially Fair k-Means Clustering</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>联邦社会公平k-means的机器遗忘</p>
-<blockquote><p>Federated clustering can support applications such as patient stratification across hospitals and customer segmentation across distributed financial datasets. Responsible AI calls for fair representation of demographic groups and support for data deletion, motivated in part by rights such as the GDPR's right to erasure. These goals interact: deleting records can change the balance between groups and alter the clustering of the remaining population. We study exact machine unlearning for federated socially fair $k$-means, whose objective is to minimize the largest group-average squared distance to the nearest center. Our approach keeps separate local summaries for each group, so summaries at unaffected institutions remain valid as global fairness weights change. For two groups, we prove an initialization approximation guarantee independent of client group proportions under ideal sampling, and we show that same-seed replay reproduces retraining exactly. Reuse pays off most when a whole client withdraws: across three datasets, replay is $35.8\times$ faster than retraining for the initialization-only model and remains $2.4\times$ and $1.7\times$ faster with one and two fair-refinement r…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：联邦聚类需同时满足公平（群体公平表示）与数据删除（如 GDPR 擦除权），而删除记录会改变群体平衡并扰动剩余人群的聚类——两者如何协调？</p>
+<p><strong>方法</strong>：研究联邦社会公平 k-means（目标：最小化最大群体平均平方距离）的精确机器遗忘：每个群体维护独立本地摘要，不受影响机构的摘要在全球公平权重变化时依然有效；两群体情形证明初始化近似保证与样本比例无关，同种子重放可精确复现重训。</p>
+<p><strong>关键数字</strong>：整客户端退出时重放较重训快 35.8x（仅初始化模型），1/2 轮公平精化后仍快 2.4x/1.7x；单条记录删除增益约 1.06x（有限）；跨三个数据集验证。</p>
+<p><strong>为什么值得看</strong>：精确画出「遗忘可盈利复用计算」的边界——整客户端退出收益最大，单记录删除则不值得，为负责任联邦聚类提供务实指引。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.13717">Machine Unlearning for Federated Socially Fair k-Means Clustering</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13717">阅读原文 ↗</a></p>
 </body>
 </html>

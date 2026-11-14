@@ -22,9 +22,11 @@
 <h1>Long Text to Predictive Features: LLM-Guided Blockwise Feature Engineering via Executable Program Search</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>LLM 引导的分块特征工程可执行程序搜索</p>
-<blockquote><p>Industrial risk-control systems typically rely on structured-data models for efficient prediction, yet substantial valuable information remains embedded in unstructured long text. Extracting this information through manual feature engineering is labor-intensive, while requiring a large language model (LLM) to process every real-time input may not meet practical deployment requirements. To address this challenge, we propose LLM-BlockFE, an LLM-guided offline feature construction framework that converts long text into executable feature programs, thereby avoiding LLM calls during online inference. LLM-BlockFE constructs feature programs by incrementally appending immutable code blocks and evaluates candidate features using a downstream model. To address the tendency of conventional greedy search to become trapped in suboptimal solutions, our method introduces a block-level rollback mechanism based on depth-calibrated credit allocation and advances multiple independent search trajectories in an interleaved manner, reducing redundant exploration by sharing fixed descriptions of each trajectory's exploration direction. After the search, the resulting programs are frozen and deployed to …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：工业风控系统依赖结构化数据模型，长文本中大量有价值信息难以利用——人工特征工程费力，而让 LLM 处理每个实时输入又不满足部署要求。</p>
+<p><strong>方法</strong>：LLM-BlockFE 离线把长文本转换为可执行特征程序，在线推理零 LLM 调用；程序由不可变代码块增量追加构建、用下游模型评估候选特征；针对贪心搜索易陷次优，引入基于深度校准信用分配的块级回滚，并交错推进多条独立搜索轨迹减少冗余探索。</p>
+<p><strong>关键数字</strong>：两个公开 + 两个私有数据集上，较各集最强基线 AUC 绝对提升 0.0069–0.0358；5 个已部署金融风控应用上 KS 绝对提升 0.02–1.56 个百分点。</p>
+<p><strong>为什么值得看</strong>：离线构造可执行特征程序兼顾长文本信息与在线延迟约束，且有生产部署的实测收益背书。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.12390">Long Text to Predictive Features: LLM-Guided Blockwise Feature Engineering via Executable Program Search</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.12390">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Multi-Label Topic Assignment via LLM Distillation: A Comparative Analysis of Generative vs. Discriminative Student Models</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>生成式 vs 判别式学生模型的多标签话题分配 LLM 蒸馏对比研究</p>
-<blockquote><p>Multi-label topic assignment for user-generated content (UGC) -- including product reviews and buyer-seller conversations -- poses unique scalability challenges in large-scale e-commerce due to informal language, extreme label sparsity, and rapidly evolving taxonomies. While utilizing Large Language Models (LLMs) as labeling oracles to distill ground-truth data has emerged as an industry standard to bypass prohibitive manual annotation costs, determining the optimal, low-latency architecture for the resulting student models remains an open challenge. To address this, we conduct a comprehensive evaluation across Small Language Model (SLM) parameter scales (1B, 4B, and 8B) and architectural paradigms (causal generative versus bidirectional discriminative). Comparing generative text-to-label classifiers against discriminative baselines (DeBERTa-V3 and ModernBERT), our analysis reveals a crucial data-dependent trade-off: while discriminative models outperform ultra-lightweight generative models on structured product reviews, even the smallest 1B generative model surpasses discriminative baselines on complex, multi-turn conversational data. Furthermore, generative models maintain robust…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：大规模电商 UGC（商品评论、买卖对话）多标签话题分配面临非正式语言、标签极稀疏与 taxonomy 快速演进；LLM 作标注 oracle 蒸馏已成业界标准，但最优低延迟学生架构仍未定。</p>
+<p><strong>方法</strong>：跨 SLM 参数规模（1B/4B/8B）与架构范式（因果生成 vs 双向判别）全面对比，生成式文本-标签分类器对阵判别式基线 DeBERTa-V3 与 ModernBERT。</p>
+<p><strong>关键数字</strong>：结构化商品评论上判别式更优；复杂多轮对话上最小 1B 生成式模型反超判别式基线；标签扩展至 112 主题时判别式 Macro-F1 下降 35% 而生成式保持稳健；两种域均已在生产中部署并满足延迟要求。</p>
+<p><strong>为什么值得看</strong>：给出数据依赖的架构权衡结论与大规模标签集下的鲁棒性证据，含真实生产部署背书。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.09063">Multi-Label Topic Assignment via LLM Distillation: A Comparative Analysis of Generative vs. Discriminative Student Models</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09063">阅读原文 ↗</a></p>
 </body>
 </html>

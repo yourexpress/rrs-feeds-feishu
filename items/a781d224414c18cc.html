@@ -22,9 +22,11 @@
 <h1>MaRK: Markov-adapted Recurrent Kernels for Dynamic Operator Conditioning in State Space Models</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>MaRK：把上下文向量映射进冻结 SSM 递归参数的动态算子条件化框架</p>
-<blockquote><p>State Space Models (SSMs) offer an efficient alternative to Transformers for sequence modeling, yet conditioning pre-trained SSMs for iterative generation typically operates outside the recurrent operator, through input injection or activation modulation. While such mechanisms expose the model to conditioning information, they leave the underlying temporal dynamics fixed. We introduce MaRK (Markov-adapted Recurrent Kernels), a dynamic operator-conditioning framework that maps context vectors directly into bounded modulations of a frozen SSM's recurrence ($A$), read-in ($B$), read-out ($C$), skip ($D$), and discretization ($Δ$) parameters. Viewed through the lens of LPV-SSM systems, MaRK induces a context-indexed family of Markov parameter sequences, allowing each diffusion timestep to reshape the model's input-output memory kernel. We instantiate MaRK on a frozen 111M-parameter Hydra SSM backbone and study three adapter geometries: Hypernet, Chebyshev polynomial, and Discrete Cosine Transform kernels. Since these adapters modify the Markov parameter sequence through low-rank auxiliary maps on the frozen backbone, parameter-efficient fine-tuning arises as a structural consequence of…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：SSM 的迭代生成条件化通常通过输入注入或激活调制，绕开了循环算子本身，底层时序动态保持固定。</p>
+<p><strong>方法</strong>：MaRK 把上下文向量直接映射为冻结 SSM 循环算子 A/B/C/D/Δ 参数的有界调制（LPV-SSM 视角下即上下文索引的 Markov 参数序列族）；在冻结 111M Hydra SSM 上实例化，对比 Hypernet、Chebyshev 多项式与 DCT 三种适配器几何；有界参数化给出仿射二次稳定性解析证书。</p>
+<p><strong>关键数字</strong>：仅需 6.3–11M 可训练辅助参数即可从双向目标切到迭代扩散机制；Chebyshev 平均验证损失 2.55，DCT 2.59，Hypernet 3.77。</p>
+<p><strong>为什么值得看</strong>：把条件信息直接注入循环算子内部，参数高效微调成为机制的结构性结果而非外加技巧。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.09092">MaRK: Markov-adapted Recurrent Kernels for Dynamic Operator Conditioning in State Space Models</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09092">阅读原文 ↗</a></p>
 </body>
 </html>

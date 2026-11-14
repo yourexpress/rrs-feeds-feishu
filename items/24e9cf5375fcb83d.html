@@ -22,9 +22,11 @@
 <h1>Monarch-MoE: Structured Experts for Multimodal Continual Instruction Tuning</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>Monarch结构专家做多模态持续指令微调（Monarch-MoE）</p>
-<blockquote><p>Learning new tasks in multimodal continual instruction tuning can cause catastrophic forgetting of previously acquired knowledge. Although multi-expert LoRA distributes learning across experts, updates to a dense low-rank expert can still affect many output features. We introduce Monarch-MoE, which replaces the dense factors in LoRA experts with block-diagonal factors connected by a fixed permutation. This structure provides blockwise gradient isolation: individual block-pair updates affect only one output block, while connections between all input and output blocks are maintained. To make these compact experts practical on memory-limited hardware, we combine batched computation, fused forward operators, and an optimized backward pass. Across three continual-learning methods evaluated on MLLM-DCL and UCIT with LLaVA-1.5-7B, Monarch-MoE improves first-task retention while reducing adapter parameters by approximately 75% and 50%, respectively. In the main comparison, first-task forgetting is as low as 0.52 percentage points on MLLM-DCL and 0.10 on UCIT, with method-dependent trade-offs in final performance. Our implementation supports fine-tuning and inference on a single 24 GB RTX 4…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：多模态持续指令微调会灾难性遗忘旧知识；多专家 LoRA 虽分散学习，但稠密低秩专家的更新仍可能影响大量输出特征。</p>
+<p><strong>方法</strong>：Monarch-MoE 用块对角因子 + 固定置换替代 LoRA 专家的稠密因子，实现块级梯度隔离——单个块对更新只影响一个输出块，同时保持所有输入-输出块的连通；配合批量计算、融合前向算子与优化反向传播适配内存受限硬件。</p>
+<p><strong>关键数字</strong>：LLaVA-1.5-7B 上 MLLM-DCL/UCIT 适配器参数减少约 75%/50%；首任务遗忘最低 0.52/0.10 个百分点；单张 24GB RTX 4090 即可微调与推理。</p>
+<p><strong>为什么值得看</strong>：结构化专家让多模态持续适应在内存受限硬件上真正实用，遗忘指标与参数效率双优。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.13215">Monarch-MoE: Structured Experts for Multimodal Continual Instruction Tuning</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13215">阅读原文 ↗</a></p>
 </body>
 </html>

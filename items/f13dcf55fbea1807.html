@@ -22,9 +22,11 @@
 <h1>Marformer: A Transformer for Predicting Missing Data Distributions</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>预测缺失数据分布的 Transformer Marformer</p>
-<blockquote><p>Real decisions are made under incomplete information. If we observe only some of the random variables we need, we can predict the others. The \textbf{conditional marginals} over the missing variables are the key ingredient for computing Bayes risk and Value of Information (VOI), the expected gain from acquiring one more observation before deciding. We present the Marformer, a Transformer trained to directly predict conditional marginals given any set of observed values. Like BERT, which is trained to predict missing words from context, the Marformer constructs a hidden-vector representation for each distribution $p(X_i)$ and iteratively refines it through attention to other distributions $p(X_j)$. Unlike generative approaches, the Marformer does not model the full joint distribution, requires no domain knowledge of the data-generating process, and makes all predictions in a single forward pass. We evaluate across three synthetic domains with missing data---Bayesian networks, discretized multivariate Gaussians, and structured annotation data. The Marformer can match or outperform classical missing-data methods, even when those methods are given the true model family and prior that g…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：现实决策常在不完整信息下进行，条件边际分布是计算 Bayes 风险与信息价值（VOI）的关键，但现有方法需建模完整联合分布。</p>
+<p><strong>方法</strong>：Marformer 直接预测给定任意观测值集合下的条件边际：像 BERT 预测缺失词一样，为每个分布 p(Xi) 构建隐向量表示，通过与其他分布 p(Xj) 的注意力迭代精化；不建模联合分布、无需数据生成过程领域知识，单次前向完成所有预测。</p>
+<p><strong>关键数字</strong>：三个合成域（贝叶斯网络、离散化多元高斯、结构化标注数据）匹配或超越经典缺失数据方法——即便后者被给予真实模型族与先验；真实标注数据最大训练规模下超越基线；显著快于生成式基线。</p>
+<p><strong>为什么值得看</strong>：不建模联合分布的单次前向条件边际预测器，为基于 VOI 的决策提供快速实用的工具。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.12379">Marformer: A Transformer for Predicting Missing Data Distributions</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.12379">阅读原文 ↗</a></p>
 </body>
 </html>
