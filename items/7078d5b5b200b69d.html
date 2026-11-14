@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reconstructing Fine-grained Memory Reuse Structure in GPU Kernels</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Reconstructing Fine-grained Memory Reuse Structure in GPU Kernels</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-10 · 论文PDF</p>
+
+<blockquote><p>Optimizing GPU data movement requires knowing which instructions access the same data and across which execution scopes reuse occurs. Existing profilers can attribute memory behavior to individual instructions but do not expose the reuse relations among them, while aliasing, dynamic indexing, and runtime parameters prevent static analysis from establishing these relations in general. Cycle-level simulation can reconstruct such relations, but at costs prohibitive for production workloads. We introduce two abstractions for representing this structure: Topological Distance, which labels each dynamic memory access with the smallest execution scope (thread, warp, block, or grid) containing its most recent reuse, and PCDepGraph, which organizes these labels into a PC-level graph of the kernel's memory reuse structure. Defined over logical execution scopes rather than transient hardware state, the representation remains stable across runs and GPU targets while directly indicating the sharing scope that candidate optimization mechanisms must cover. Our tool, cuVein, reconstructs PCDepGraph directly from optimized binaries, without sampling, at generally under 10x overhead. Across HPC and A…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.14741">阅读原文 ↗</a></p>
+</body>
+</html>

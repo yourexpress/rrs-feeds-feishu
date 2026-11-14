@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TQIR: Trellis Quantization with Integer Reconstruction for Bandwidth-Efficient Edge LLM Acceleration</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>TQIR: Trellis Quantization with Integer Reconstruction for Bandwidth-Efficient Edge LLM Acceleration</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-11 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：自回归 LLM 推理受外存带宽限制，现有超低位 trellis 量化把权重重构为浮点，运行时 Hadamard 变换与解码器成本未解决。</p>
+<p><strong>方法</strong>：TQIR 算法-硬件协同设计，解耦存储精度 S 与解码权重 W/激活 A 计算精度；离线 trellis 匹配限制为 INT8/INT4 codeword 可精确复现整数 GEMM；逆 Hadamard 变换移到激活侧 + H128 Subspace Hadamard Transform + 128×2 trellis tile。</p>
+<p><strong>关键数字</strong>：TSMC 16nm 解码器 307.2 Gweights/s @ 0.0509mm²；归一化解码器面积效率为 Ecco 的 13.93x、Codeword Decomposition 的 1.52x。</p>
+<p><strong>为什么值得看</strong>：固定速率 trellis 压缩 + 整数 GEMM 通路，带宽受限边缘推理的硬件方案。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.15231">TQIR: Trellis Quantization with Integer Reconstruction for Bandwidth-Efficient Edge LLM Acceleration</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.15231">阅读原文 ↗</a></p>
+</body>
+</html>

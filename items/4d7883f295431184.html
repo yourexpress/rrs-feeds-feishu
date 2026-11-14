@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Noise Floor of a Quantization Comparison: Engine, restart, batch and kernel drift, measured against 8-bit and 4-bit effects in two decision models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>The Noise Floor of a Quantization Comparison: Engine, restart, batch and kernel drift, measured against 8-bit and 4-bit effects in two decision models</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-11 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：量化模型通常与 BF16 原版对比，但该对比同时改变了引擎、服务器实例、批处理与 kernel 选择——非量化因素的决策漂移有多大？</p>
+<p><strong>方法</strong>：Cloudflare Clef-flash (9B)/Clef (27B) 两决策模型、2,400 条公开决策、NVIDIA GB10，逐一测量各噪声源并把量化效应表述为其超额。</p>
+<p><strong>关键数字</strong>：非量化来源移动 0-0.92% 决策；llama.cpp 重启逐记录比特一致；vLLM 重启翻转 0-22；引擎变更 6-16、批大小 8-15；单引擎内量化移动更多（Q8_0 0.88%/1.04%、FP8 2.12%/1.62%、NVFP4 5.79%/5.67%）；完整 31,275 问题上 Clef Q4_K_M 准确率净变 6 题；5 个预注册预测 2 个失败。</p>
+<p><strong>为什么值得看</strong>：量化对比方法学基准，量化评估的「噪声底」实测，避免误把非量化漂移当量化收益。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.15671">The Noise Floor of a Quantization Comparison</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.15671">阅读原文 ↗</a></p>
+</body>
+</html>

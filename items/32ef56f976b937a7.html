@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MegaOps: A Kernel Overlapping Framework with PyTorch-like Modularity and Megakernel Performance</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MegaOps: A Kernel Overlapping Framework with PyTorch-like Modularity and Megakernel Performance</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-12 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：kernel-per-operator 范式的整核依赖屏障使 SM 空闲、计算通信串行化、无法跨 kernel 预取；megakernel 融合消除屏障但牺牲模块化——能否兼得？</p>
+<p><strong>方法</strong>：MegaOps 把依赖 kernel 放到独立 CUDA streams，按生产者写入/消费者读取的中间张量 tile 粒度强制依赖；采用相同数据 tiling 的任何两 kernel 无需修改即可组合。</p>
+<p><strong>关键数字</strong>：Llama3/Qwen3 在单 H100/A100/L40 与 4xA100/8xH100 多卡评估；匹配手调 ThunderKittens megakernel 吞吐，decode 吞吐 1.09-1.10x、prefill 0.98-1.10x 对比最佳基线，且复用现成 Triton/cuBLAS/cuDNN kernel。</p>
+<p><strong>为什么值得看</strong>：模块化与 megakernel 性能兼得的框架设计，工程落地价值高。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.16248">MegaOps: A Kernel Overlapping Framework with PyTorch-like Modularity and Megakernel Performance</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.16248">阅读原文 ↗</a></p>
+</body>
+</html>

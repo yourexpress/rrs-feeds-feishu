@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Towards Runtime-Aware Observability for Java Virtual Threads</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Towards Runtime-Aware Observability for Java Virtual Threads</h1>
+<p class="meta-line">arXiv cs.PF · 2026-11-11 · 论文PDF</p>
+
+<blockquote><p>OS-level observability tools join application requests to kernel events through the OS thread ID, assuming that a unit of work occupies one OS thread until it completes. Java virtual threads break this assumption: many virtual threads are multiplexed onto a few carrier threads, so a stable thread ID hides a changing unit of work, and the join fails silently. Existing virtual-thread-aware channels republish context or identity on every mount and unmount, and the JVMTI-based one pays this cost for the lifetime of the JVM, whether or not an observer is attached. We bind a 64-byte off-heap trace buffer to each virtual thread, at a fixed address for its lifetime, and publish the address to eBPF consumers through four USDT probes in a patched OpenJDK; a re-implemented JVMTI channel over the same buffer serves as a controlled comparison. The four-probe design attributed all 768 test markers correctly on both the content and the identity plane, while the naive two-probe design silently misattributes trace context. With no consumer attached, publication costs at most about 33 ns per transition; the remaining dormant cost is buffer allocation, about 0.37 microseconds per virtual thread, whic…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.14999">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Broadcast, Don't Replicate: Eliminating Weight HBM in Datacenter LLM Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Broadcast, Don't Replicate: Eliminating Weight HBM in Datacenter LLM Serving</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-12 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：数据中心 LLM serving 把只读且相同的权重复制到数万加速器本地 DRAM，资本开支、静态功耗与冗余取数能耗巨大；光环路延迟线内存方案须容纳整个模型、slack 固定且不适配 MoE。</p>
+<p><strong>方法</strong>：Optical Broadcast Memory (OBM)——开放式分层 Tap-and-Amplify 光纤架构：中央内存服务器持续广播权重，分布式推理节点用只收光收发器被动 tap 数据流直达计算单元；动态大小 slack 支持大/可变上下文，可高效服务 MoE。</p>
+<p><strong>关键数字</strong>：80,000 加速器规模评估，消除 PB 级 HBM，吞吐与每 token 能耗与 HBM 系统相当或更优。</p>
+<p><strong>为什么值得看</strong>：数据中心内存架构的大胆替代，光纤广播替代权重复制。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.17097">Broadcast, Don't Replicate: Eliminating Weight HBM in Datacenter LLM Serving</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.17097">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recompute or Restore? Host-Tier KV for Multi-Model Agent Workflows on a Static-Graph NPU Serving Stack</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Recompute or Restore? Host-Tier KV for Multi-Model Agent Workflows on a Static-Graph NPU Serving Stack</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-11 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：agent 工作流的依赖模型调用共享长上下文前缀，静态图 NPU 上设备 KV 预算固定，逐出前缀应重算还是从主机内存恢复？</p>
+<p><strong>方法</strong>：Rebellions ATOM+ / vllm-rbln 0.10.2 上 Qwen3-8B planner（2 卡）+ Qwen3-0.6B executor（1 卡）；构建同步 host-DRAM tier + 冻结预测的调度感知事件模型。</p>
+<p><strong>关键数字</strong>：默认服务崩溃时 89.5% 执行的 planner prompt token 已物化过；host tier 把 SLO 达成率从 22.8%→100%、9.4%→99.8%；保守负载增益 11.8%（chain）/18.2%（fork）；24 个 common-load 条件中位与 P99 预测均在 15% 容差内。</p>
+<p><strong>为什么值得看</strong>：静态图 NPU 栈 KV 分层实测，agent 工作负载 serving 策略的量化依据。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.15126">Recompute or Restore? Host-Tier KV for Multi-Model Agent Workflows on a Static-Graph NPU Serving Stack</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.15126">阅读原文 ↗</a></p>
+</body>
+</html>

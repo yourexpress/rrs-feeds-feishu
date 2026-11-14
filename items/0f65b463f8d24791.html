@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MoE Pretraining:Parallelism Layout Changes the Model, Not Quality</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MoE Pretraining:Parallelism Layout Changes the Model, Not Quality</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-11 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：MoE 训练中并行布局（DP/EP）常因恢复、集群调整而变化；实数算术下求和顺序变化、负载均衡等规则按机计算，布局是否改变训练出的模型？</p>
+<p><strong>方法</strong>：同种子/数据/超参，9 种 DP/EP 布局在 fp32 CPU 与 fp16 GPU 预训练 25M-117M MoE（20M FineWeb-Edu token），80 次运行与新随机种子效应对比。</p>
+<p><strong>关键数字</strong>：布局不改质量但改模型——最终预测差异约为新种子效应的 80%，&gt;90% 路由决策不同；8 专家近并列 2.7%、64 专家 23%；84% 处切换几乎不影响、10% 处切换显著改变模型。</p>
+<p><strong>为什么值得看</strong>：量化 MoE 训练可复现性问题，根因定位到路由器近并列决策。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.15271">MoE Pretraining: Parallelism Layout Changes the Model, Not Quality</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.15271">阅读原文 ↗</a></p>
+</body>
+</html>

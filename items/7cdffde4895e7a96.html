@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LazyWeights: Decode-on-Demand Edge LLMs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LazyWeights: Decode-on-Demand Edge LLMs</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-12 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：边缘设备内存决定能跑什么 LLM 与多快（4GB Nano 容量受限、8GB Orin Nano Super 带宽受限）；GPTQ/AWQ/K-/I-quants 对矩阵每个整数码花费等量比特，但码并不均匀。</p>
+<p><strong>方法</strong>：LazyWeights 保留现有格式但调整 GPTQ 使码可压缩，Huffman 无损编码交错 lane，DRAM 与 L2 间小单元按需解码；GPU kernel 不变，DRAM 只移动编码字节。</p>
+<p><strong>关键数字</strong>：1%/3.5% perplexity 预算下 Phi-3-mini/Mistral-7B/SmolLM-1.7B 比最佳 llama.cpp 格式小 5.7-31.4%；0.21mm² ASIC 解码器（1GHz, 7nm）削减 Orin 每 token 延迟/能耗最多 36%/38%（prompt-lookup 投机下 54%/44%）；Nano 上比 CPU llama.cpp 每 token 少 58-64% 时间、53-57% 能耗，流式 Mistral-7B 快 6.6x @ 3.89 bits/weight。</p>
+<p><strong>为什么值得看</strong>：边缘 LLM 内存优化的端到端方案，格式兼容 + 专用解码硬件。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.17108">LazyWeights: Decode-on-Demand Edge LLMs</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.17108">阅读原文 ↗</a></p>
+</body>
+</html>

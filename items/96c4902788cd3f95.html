@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Challenges of building machine learning compilers across varying hardware architecture</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Challenges of building machine learning compilers across varying hardware architecture</h1>
+<p class="meta-line">Microsoft DirectX Developer Blog · 2026-11-13 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://devblogs.microsoft.com/directx/wp-content/uploads/sites/42/2026/11/compiler_challenge-scaled.webp" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong>：构建跨硬件架构 ML 编译器的挑战——如何同时做到可扩展与高性能。</p>
+<p><strong>要点</strong>：现有方案（IHV 专有框架、torch.compile、MLIR/Glow/EON 等）各有侧重，但很少独立于硬件厂商与框架同时高性能；图→kernel 映射直观但难以跨演进硬件扩展；MMA 等核心算子需要多级 IR 渐进 lowering，叠加设备无关/设备感知优化、融合/分解、调度与内存管理；兼顾模块化与设备特化的代码生成是主要难点。</p>
+<p><strong>关键数字</strong>：正文未给量化数字（工程挑战综述）。</p>
+<p><strong>为什么值得看</strong>：微软官方梳理 ML 编译器设计空间，并预告 Ignite 2026 BRK388——多级 IR 对 Windows 本地 AI 的意义。</p>
+<p>原文：<a href="https://devblogs.microsoft.com/directx/machine-learning-compilers-challenges-hardware/">Challenges of building machine learning compilers across varying hardware architectures</a></p>
+<p><a class="origin" href="https://devblogs.microsoft.com/directx/machine-learning-compilers-challenges-hardware/">阅读原文 ↗</a></p>
+</body>
+</html>

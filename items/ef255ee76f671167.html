@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unbundling Multimodal Vision Encoding</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Unbundling Multimodal Vision Encoding</h1>
+<p class="meta-line">Meta FAIR / NYU · 2026-11-12 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：多模态语言模型应如何编码视觉输入？视觉编码器捆绑三个设计选择：上游预训练的视觉先验、专用视觉容量、融合前放置——公开模型在数据/架构/计算上各异，无法隔离各选择效应。</p>
+<p><strong>方法</strong>：受控框架从零预训练所有模型于公共数据，匹配生命周期计算，在视觉问答与语言基准上比较，逐一解耦三种选择。</p>
+<p><strong>关键数字</strong>：视觉先验非必要——联合从零训练的编码器与预训练编码器持平；encoder-free 模型即便扩大 backbone 参数仍落后视觉理解；in-fusion 视觉模块与 pre-fusion 编码器表现相当且可降低首个 token 时间。</p>
+<p><strong>为什么值得看</strong>：视觉编码设计解耦的受控实验，为多模态架构选择提供证据。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.17334">Unbundling Multimodal Vision Encoding</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.17334">阅读原文 ↗</a></p>
+</body>
+</html>

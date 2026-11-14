@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metal Sandbox: Isolated Execution and Command Scheduling for GPU Coding Agents on Apple Silicon</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Metal Sandbox: Isolated Execution and Command Scheduling for GPU Coding Agents on Apple Silicon</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-12 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：Apple Silicon 上训练/评估生成 Metal kernel 的模型需原生 macOS 工具与并发 agent 会话，但会话在模型请求、开发命令与 GPU 执行间交替，GPU 大量空闲。</p>
+<p><strong>方法</strong>：Metal Sandbox 提供受限 per-instance 文件访问、原生命令执行与跨 Mac 命令级调度：并行命令并发，串行命令共享每节点执行槽，等待命令可迁移到可用 Mac 并把结果返回原 agent；集成 Harbor 支持任务执行与自动验证。</p>
+<p><strong>关键数字</strong>：四台 Mac mini M4 集中负载下命令吞吐 1.68x-2.05x；16 条静态 agent 轨迹估计 4 会话/节点持续吞吐增益 2.14x；动态调度降低平均工具等待 18.8%、批处理耗时 22.3%；开源。</p>
+<p><strong>为什么值得看</strong>：GPU coding agent 的调度基础设施，Apple Silicon 生态直接可用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.17294">Metal Sandbox: Isolated Execution and Command Scheduling for GPU Coding Agents on Apple Silicon</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.17294">阅读原文 ↗</a></p>
+</body>
+</html>

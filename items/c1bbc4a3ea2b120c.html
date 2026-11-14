@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>llama.cpp v1.0.0：语义化版本契约 + ggml 1.0.0（本地 AI 推理栈里程碑）</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>llama.cpp v1.0.0：语义化版本契约 + ggml 1.0.0（本地 AI 推理栈里程碑）</h1>
+<p class="meta-line">ggml-org（Hugging Face Blog / GitHub Releases） · 2026-11-13 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://opengraph.githubassets.com/4e4cf25f46f7a65e0337da90f500ac9e36ecea64b31712d343cdf5f1265a7415/ggml-org/llama.cpp/releases/tag/v1.0.0" alt="" referrerpolicy="no-referrer">
+<p>本地 LLM 推理栈 3.5 年后首次稳定发布：MAJOR=公开 C API 破坏性变更；移除 35 个废弃函数与 llama_set_warmup、--defrag-thold，NextN/投机解码 API 提升进 llama.h；新增 OCP FP8 KV cache、主机内存 MoE expert cache（可配置 CPU share）、外部 PLE shard 加载、/v1/audio/speech 端点；llama-server 安全 fail-closed（SSRF/CORS/DNS rebinding/MCP 工具取消）；支持 150+ 模型架构</p>
+<blockquote><p>Repository navigation</p><p>Blog post: https://huggingface.co/blog/ggml-org/llama-cpp-v1</p><p>Overview</p><p>llama.cpp v1.0.0 removes the deprecated public API and promotes the NextN/speculative API to llama.h</p><p>, adds OCP FP8 KV caches, a host-memory MoE expert cache with a configurable CPU share, and loading of external PLE shards. It adds three text architectures (Kimi-K3.1-Pro, Ripple and xing4_0), drama-3 TTS, and MageVL-Cowork and Kimi-K3.1 vision, hardens llama-server</p><p>(SSRF, CORS, DNS rebinding, MCP tool cancellation) and adds a /v1/audio/speech</p><p>endpoint, ships a redesigned web UI with chat groups and a markdown editor, and updates ggml</p><p>to v1.0.0.</p><p>API changes</p><p>- llama.h: remove</p><p>llama_set_warmup</p><p>, 35 deprecated functions,defrag_thold</p><p>and--defrag-thold</p><p>(#30565) - llama.h: promote the NextN API from</p><p>llama-ext.h</p><p>and renamellama_set_embd_state_src</p><p>tollama_set_ctx_state_src</p><p>(#30565) - llama.h: add</p><p>moe_cache_size</p><p>andmoe_cache_cpu_share</p><p>tollama_context_params</p><p>(#30966) - mtmd.h: add</p><p>MTMD_GEN_AUDIO_TYPE_DRAMA3</p><p>andtemp</p><p>inmtmd_helper_gen_audio_inp</p><p>(#31613, #31655) - mtmd-helper.h: add</p><p>mtmd_helper_resampler</p><p>for streaming raw PCM at the model sample rate (#31964) - server: add the OpenAI-compatible</p><p>/v1/audio/speech</p><p>endpoint and atemperature</p><p>option for/tts</p><p>(#31763, #31655)</p><p>New models</p><p>- Kimi-K3.1-Pro: K3 with the full-attention MLA layers replaced by DSA (#31779)</p><p>- Ripple-65B-Preview (</p><p>ricursive</p><p>): new dense 65B architecture, no new ops (#31692) - xing4_0: mHC, MLA, MoE and MTP (#31589)</p><p>- drama-3 TTS (fishaudio) (#31613)</p><p>Core changes</p><p>- FP8 KV caches (</p><p>-ctk/-ctv f8_e4m3</p><p>) with optional static per-tensor scales (#28392) - MoE cache: CPU share for misses, LRFU/ClassLRU replacement, no CPU wait on cached experts (#30966, #31233, #31888)</p><p>- external PLE/engram loading from separate GGUF shards via</p><p>--shard</p><p>/--ple</p><p>(#31185) - Windows unbuffered model load, mirroring the Linux DirectIO path (#26014)</p><p>- reuse the backend scheduler and graph results across reserves, and skip unused graph metadata pages (#32009, #32089, #32043)</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0">阅读原文 ↗</a></p>
+</body>
+</html>

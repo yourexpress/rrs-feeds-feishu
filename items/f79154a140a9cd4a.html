@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SlipStream: Enabling HBF for GPU Systems by Mitigating the Latency and SRAM Overheads</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SlipStream: Enabling HBF for GPU Systems by Mitigating the Latency and SRAM Overheads</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-10 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：HBF（High-Bandwidth Flash）以 NAND 替代 HBM DRAM 提供最高 16x 容量，但读延迟近 20μs（HBM 的 20x），按需访问使 LLM 推理最多慢 12.8x，如何缓解？</p>
+<p><strong>方法</strong>：SlipStream 软硬件协同预取器，把预取转为需求驱动的生产者-消费者流水线：软件剖析可重复的权重页需求顺序并插入 staging warp；硬件侧 staging warp 为生产者、工作 warp 为消费者，跟踪 4KB 页而非 cache line。</p>
+<p><strong>关键数字</strong>：40MB staging buffer 达理想 HBF 性能的 92.4%（H3 仅 43.1%，即便 320MB）；16MB buffer（比 H3 小 20x）与 40MB 相差 4% 内；MoE 模型达 91.2%。</p>
+<p><strong>为什么值得看</strong>：HBF 是 HBM 的高容量替代方向，其预取机制直接决定推理性能，设计可落地。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.14776">SlipStream: Enabling HBF for GPU Systems by Mitigating the Latency and SRAM Overheads</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.14776">阅读原文 ↗</a></p>
+</body>
+</html>

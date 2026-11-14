@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SoScale: Second-Order Scale Search for FP4 Quantization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SoScale: Second-Order Scale Search for FP4 Quantization</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-12 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：FP4 量化（MXFP4/NVFP4/HiF4）精度高度依赖局部分布如何缩放；默认 max-abs scaling 把稀缺 FP4 电平花在罕见离群区，密集张量值解析不足；现有 scale-search 优化张量保真而非层输出保真。</p>
+<p><strong>方法</strong>：SoScale 二阶权重 scale-code 搜索：在 Hessian-aware 层重构目标下搜索硬件有效 scale code，并与 GPTQ 风格误差恢复耦合，按对层输出的影响选择 scale。</p>
+<p><strong>关键数字</strong>：Qwen3 系列上 MXFP4/NVFP4/HiF4 三种格式一致降低下游量化退化（abstract 未给具体数值）。</p>
+<p><strong>为什么值得看</strong>：FP4 量化 scale 选择的目标函数改进，直接提升低比特推理精度。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.16426">SoScale: Second-Order Scale Search for FP4 Quantization</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.16426">阅读原文 ↗</a></p>
+</body>
+</html>

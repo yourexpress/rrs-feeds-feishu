@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SubGPU Pipelining: Intra-GPU Fine-Grained Spatial Parallelism for LLM Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SubGPU Pipelining: Intra-GPU Fine-Grained Spatial Parallelism for LLM Inference</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-11 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：LLM decode 由短、内存受限 kernel 主导，突发占用片上执行资源与带宽，如何实现 GPU 内细粒度空间并行？</p>
+<p><strong>方法</strong>：SubGPU Pipelining 把算子图切成有序连续段，绑定到不相交 SM 池作为空间级流水线，流式 microbatches；用共享资源模拟器搜索 Pareto 前沿 + 单 B200 硅片实验模拟 32-GPU 部署。</p>
+<p><strong>关键数字</strong>：匹配 per-GPU 吞吐下 per-user 吞吐最高 2.2x；匹配 per-user 吞吐下 per-GPU 吞吐最高 1.9x；硅片实验 DRAM 读写吞吐从峰值 71.8% 提至 83.6%，36 层 decoder 迭代时间降 10.33%。</p>
+<p><strong>为什么值得看</strong>：GPU 内空间流水新模型，直接缓解 decode 内存瓶颈。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.14904">SubGPU Pipelining: Intra-GPU Fine-Grained Spatial Parallelism for LLM Inference</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.14904">阅读原文 ↗</a></p>
+</body>
+</html>

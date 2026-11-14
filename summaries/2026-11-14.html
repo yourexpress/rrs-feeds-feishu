@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日精选 · 2026-11-14</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.5em; border-bottom: 1px solid #e5e7eb; padding-bottom: 12px; }
+  h2 { font-size: 1.2em; margin-top: 1.8em; }
+  a { color: #0969da; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .meta { color: #6b7280; font-size: 0.85em; margin-top: 32px; }
+</style>
+</head>
+<body>
+<h1>每日精选 · 2026-11-14</h1>
+<h2>当日检索概况</h2>
+<ul>
+<li><strong>AI 技术报告库</strong>：检索 10 条，入选 7 条</li>
+<li><strong>高效计算文献库</strong>：检索 131 条，入选 23 条</li>
+<li>合计检索 141 条，入选 30 条</li>
+</ul>
+<h2>重点推荐</h2>
+<ul>
+<li><strong><a href="https://openai.com/index/introducing-chatgpt-wallet/">Introducing ChatGPT Wallet</a></strong>：OpenAI 推出首个 agent 支付钱包——agent 支付不接触用户真实卡号、每笔需安全确认，与美国运通/万事达/Visa 合作，1.2B 周活用户基础上把 ChatGPT 变成购买入口。</li>
+<li><strong><a href="https://openai.com/index/daybreak-red-team-and-defense-factory/">Daybreak: AI Agents That Pen-Test Your Apps and Draft the Fix</a></strong>：OpenAI 红队/防御工厂 agent 自动渗透测试应用并直接起草修复补丁，配套发布 GPT-6 Cyber 基准。</li>
+<li><strong><a href="https://www.anthropic.com/research/building-strong-safety-evaluations">Building strong safety evaluations</a></strong>：Anthropic 给出构建强安全评估的方法论：评估易被游戏、不总测声称测的东西、难复现；借鉴心理学预注册改革，跨学科团队 + 安全环境运行，用系统卡实例支撑。</li>
+<li><strong><a href="https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0">llama.cpp v1.0.0：语义化版本契约 + ggml 1.0.0</a></strong>：本地 LLM 推理栈 3.5 年来的首个稳定版：MAJOR=公开 C API 破坏性变更，移除 35 个废弃函数，新增 OCP FP8 KV cache、主机内存 MoE expert cache。</li>
+<li><strong><a href="https://arxiv.org/abs/2611.14904">SubGPU Pipelining: Intra-GPU Fine-Grained Spatial Parallelism for LLM Inference</a></strong>：把算子图切成有序段绑到不相交 SM 池做空间级流水线，缓解 decode 短内核的突发资源占用；匹配吞吐下 per-user 吞吐最高 2.2x，硅片实测 DRAM 吞吐 71.8%→83.6%。</li>
+<li><strong><a href="https://arxiv.org/abs/2611.14776">SlipStream: Enabling HBF for GPU Systems</a></strong>：针对 HBF（容量达 HBM 16x 但读延迟 20μs）的软硬件协同预取器，需求驱动流水线 + 4KB 页跟踪；40MB buffer 达理想性能 92.4%（H3 仅 43.1%）。</li>
+<li><strong><a href="https://arxiv.org/abs/2611.17108">LazyWeights: Decode-on-Demand Edge LLMs</a></strong>：边缘 LLM 权重按需解码——Huffman 无损编码 + DRAM/L2 间小解码单元，模型比最佳 llama.cpp 格式小 5.7-31.4%，Orin 每 token 延迟/能耗降最多 36%/38%。</li>
+</ul>
+<h2>主题速览</h2>
+<p>当日 AI 库以 agent 商业化为主线：OpenAI 的 ChatGPT Wallet（agent 支付）与 Daybreak（渗透测试 agent）双发布，Anthropic 的强安全评估方法论与 Claude Meetings beta 构成安全与协作两条支线，另有微软 Aion Instruct 扩至 GPU、AutoArk 开源 Edge0-145B 端侧大模型与 Meta/UMass 视觉编码解耦论文。高效计算库以量化与 kernel 工程为大主题：SlipStream/TQIR/SoScale/LazyWeights/The Noise Floor 五篇覆盖 HBF 预取、trellis 量化、FP4 scale 搜索、按需解码与量化对比方法学；推理系统侧 SubGPU Pipelining、MegaOps、GC-MoE on SM120、Cairn 冷启动、Metal Sandbox 从 GPU 内并行、kernel 重叠、消费级 Blackwell 到 serverless 与调度基础设施；硬件评测与编译器侧有 NVIDIA Vera 微架构对比、Starscream（AMD 分区）、KernelMosaic/MLIRBench（LLM 生成与理解 CUDA/MLIR）与微软 ML 编译器挑战综述。</p>
+<p class="meta">由 RSS 流水线自动生成 · 订阅每日精选 feed 可在阅读器内直接阅读</p>
+</body>
+</html>

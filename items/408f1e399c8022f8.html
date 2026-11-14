@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Run Native DLA Inference in Python on NVIDIA Jetson AGX Orin Using cuDLA</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Run Native DLA Inference in Python on NVIDIA Jetson AGX Orin Using cuDLA</h1>
+<p class="meta-line">NVIDIA Technical Blog · 2026-11-13 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://developer-blogs.nvidia.com/wp-content/uploads/2026/08/dla-inference-660x370.jpg" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong>：在 NVIDIA Jetson AGX Orin 上用 cuDLA 以纯 Python 跑原生 DLA 推理的完整生命周期。</p>
+<p><strong>要点</strong>：DLA 是固定功能加速器，高效执行卷积/池化等固定操作，层支持少于 GPU；cuDLA 运行时 API 负责创建设备、加载编译网络、注册内存缓冲与提交推理；cuda.bindings.cudla（cuda-bindings 13.3.0，CUDA Python 项目）是 cuDLA C++ API 的薄封装；混合模式工作流中 CUDA 流协调 DLA 与 GPU 预处理/后处理；JetPack 自带 libcudla.so 无需额外运行时；RTX Spark 把同一 API 带到 Windows AI 笔记本。</p>
+<p><strong>关键数字</strong>：暴露 13 个函数、9 个数据类型、8 个枚举；要求 Python ≥3.10。</p>
+<p><strong>为什么值得看</strong>：DLA 推理首次纯 Python 可用，嵌入式与 Windows AI 双平台同一 API。</p>
+<p>原文：<a href="https://developer.nvidia.com/blog/run-native-dla-inference-in-python-on-nvidia-jetson-agx-orin-using-cudla/">Run Native DLA Inference in Python on NVIDIA Jetson AGX Orin Using cuDLA</a></p>
+<p><a class="origin" href="https://developer.nvidia.com/blog/run-native-dla-inference-in-python-on-nvidia-jetson-agx-orin-using-cudla/">阅读原文 ↗</a></p>
+</body>
+</html>

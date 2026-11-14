@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HARE: Fast Read Disturbance Threshold Profiling in Modern DRAM Chips via Reduced Timing Constraints</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>HARE: Fast Read Disturbance Threshold Profiling in Modern DRAM Chips via Reduced Timing Constraints</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-11 · 论文PDF</p>
+
+<blockquote><p>Modern DRAM chips are vulnerable to read disturbance, which manifests as bitflips in a victim row physically near an aggressor row that is repeatedly activated. State-of-the-art mitigations rely on accurate and exhaustive profiling of the read disturbance threshold (RDT), i.e., the minimum number of aggressor row activations needed to induce the first bitflip. However, RDT changes significantly and unpredictably over time, motivating online profilers that dynamically adjust a mitigation's RDT configuration. RDT profiling is costly for online profilers (e.g., hundreds of seconds for a 16-bank DDR4 module) because 1) measuring a single DRAM row's RDT requires many activations and 2) each DRAM row can have a different RDT, requiring many rows to be profiled. We introduce HARE, an online RDT profiling technique that intentionally exacerbates read disturbance to quickly profile a DRAM module. HARE's key idea is to reduce the timing constraints between consecutive DRAM commands during profiling. Doing so significantly reduces profiling time by 1) directly reducing the execution time of the profiling command sequence and 2) exacerbating read disturbance such that the first bitflip occurs …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.15469">阅读原文 ↗</a></p>
+</body>
+</html>

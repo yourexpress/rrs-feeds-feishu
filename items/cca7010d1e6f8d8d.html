@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instruction-Aware Transfer of GPU Implementation Crossovers: a Tensor-Product Discontinuous Galerkin Operator on GB200, H100, and A100</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Instruction-Aware Transfer of GPU Implementation Crossovers: a Tensor-Product Discontinuous Galerkin Operator on GB200, H100, and A100</h1>
+<p class="meta-line">arXiv cs.PF · 2026-11-11 · 论文PDF</p>
+
+<blockquote><p>We compare up to six implementations of an FP64 tensor-product discontinuous Galerkin operator at p = 7-1023 on GB200, H100, and A100 with fixed numerics, input, and code. The fastest path is machine dependent: at p = 511, a fused-epilogue GEMM path is 5.0% faster than a fused Tensor Core kernel on GB200 and 6.9% slower on A100. Nominal-peak scaling reproduces the A100 ranking but fails on H100, where the cost of FP64 arithmetic in the profiler-defined FP64 budget depends on the instruction. We therefore price each issued instruction at its architecture-dependent cost in that budget, using a calibration-side counter profile and one derived calibration factor per kernel, with no fit to the target. A retrospective leave-one-GPU-out evaluation, holding out target timings and counters but not the model form, transfers the p &gt;= 511 path times with 1.9% median error at the common MMA shape, and the direction of the crossover at the H100 shape. Restricting the streaming multiprocessors of one A100, with nothing fitted, reproduces the A100-to-GB200 reversal. At roduction-relevant orders the model does not resolve the fastest fused path; the result identifies the crossover mechanism.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.15032">阅读原文 ↗</a></p>
+</body>
+</html>

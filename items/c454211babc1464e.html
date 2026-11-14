@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sub-100KB On-Device CNN Training via Dynamic Sparse Updates and Hardware--Software Co-Design</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Sub-100KB On-Device CNN Training via Dynamic Sparse Updates and Hardware--Software Co-Design</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-11 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：端侧设备训练受内存与计算成本限制，如何把 CNN 训练压进 sub-100KB 片上 SRAM？</p>
+<p><strong>方法</strong>：动态稀疏更新机制（随机通道策略免评估地选择性更新重要参数）+ 激活剪枝；融合前向数据流并发处理组归一化与卷积，配合计算重排与零跳过。</p>
+<p><strong>关键数字</strong>：激活存储降至原 3.4%；TSMC 28nm FP8 @ 800MHz，8 TOPS 峰值、31.13 TOPS/W、14.8 TOPS/mm²；功耗 257-272mW；训练时间减 45%；片上 SRAM 95KB。</p>
+<p><strong>为什么值得看</strong>：端侧训练硬件极限压缩的完整案例，稀疏更新 + 软硬件协同设计。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.15236">Sub-100KB On-Device CNN Training via Dynamic Sparse Updates and Hardware-Software Co-Design</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.15236">阅读原文 ↗</a></p>
+</body>
+</html>
