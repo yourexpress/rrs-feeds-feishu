@@ -22,9 +22,11 @@
 <h1>SUSpMV: A High Frequency Sparse Matrix Vector Multiplier on HBM Enabled FPGA written in SUS</h1>
 <p class="meta-line">arXiv cs.AR · 2026-10-09 · 论文PDF</p>
 
-<p>SUS HDL 编写的 HBM FPGA SpMV 加速器 SUSpMV，U280 上 32 通道 400MHz 深流水</p>
-<blockquote><p>SUSpMV is a Sparse Matrix Vector multiplication (SpMV) accelerator written in the upcoming HDL SUS. By leveraging SUS's unique latency counting and inference mechanism, SUSpMV could be designed with very deep pipelines yet small design complexity overhead. This enables an efficient implementation which employs all 32 HBM channels on the Alveo U280 FPGA at 400MHz for streaming matrix data into 32 Compute Units (CUs). Input and output vectors are stored in DDR memory, which allows zero-overhead chaining of multiplications and increases overall system memory bandwidth by not sharing HBM bandwidth with the CUs. A CU processes the SpMV in tiles of width 1024 and a dynamically chosen height, up to 32768. Each CU is capable of accumulating the multiplications with up to 6 separate matrix entries per cycle, resulting in the combined theoretical peak computational throughput of 153.6 GFLOPs. The matrix storage format is designed to exploit density variation within a given matrix by dynamically switching between one representation optimized for denser regions, and a second optimized for sparser regions, allowing jumps of up to 255 rows between each entry. Evaluation demonstrates a 79% geomet…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 如何用新型硬件描述语言 SUS 在 HBM FPGA 上实现高吞吐稀疏矩阵向量乘（SpMV）。
+<strong>方法：</strong> SUSpMV 借助 SUS 的延迟计数/推断机制设计超深流水线；启用 Alveo U280 全部 32 个 HBM 通道，400MHz 流式喂给 32 个计算单元（CU）；按矩阵密度动态切换稠密/稀疏两种存储表示，tile 宽 1024、高动态至 32768。
+<strong>关键数字：</strong> 理论峰值 153.6 GFLOPs，实测峰值 144.9 GFLOPs（达理论 94%）；较同平台先前工作（峰值 98 GFLOPs）几何平均提升 79%。
+<strong>为什么值得看：</strong> 展示 SUS 以低设计复杂度逼近理论极限的 SpMV 吞吐，是新型 HDL 的实证。</p>
+<p><a href="https://arxiv.org/abs/2610.10403">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10403">阅读原文 ↗</a></p>
 </body>
 </html>

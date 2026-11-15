@@ -22,9 +22,11 @@
 <h1>Recurrent Self-Improvement: Dynamic Cross-Loop On-Policy Distillation for Looped Language Models</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>循环语言模型的跨环策略内蒸馏自我改进</p>
-<blockquote><p>Looped Language Models (LoopLMs) offer a parameter efficient approach to scaling reasoning by reusing shared parameters across recurrent computation steps. Despite their promise, effective post-training of LoopLMs remains challenging. Existing approaches either provide reward based supervision that is sparse or costly to extend across loops, or rely on external teachers or privileged information, leading to limited teacher availability or teacher-student context mismatch. To address these limitations, we introduce LoopOPD, a cross-loop on-policy distillation framework that uses additional recurrent computation within a LoopLM as its own source of supervision. LoopOPD uses a frozen terminal loop policy as a compute privileged teacher for an intermediate loop student on student generated rollouts, providing dense supervision without an external teacher or privileged information. We further propose Dynamic LoopOPD (D-LoopOPD), which continually refreshes the terminal loop teacher as the shared model parameters are updated, enabling recurrent self-improvement. We characterize how distillation updates propagate across loop depths and derive sufficient conditions under which a single upd…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 循环语言模型（LoopLM）以共享参数复用扩展推理，但后训练困难：奖励监督稀疏或难以跨环扩展，外部教师稀缺且上下文不匹配。
+<strong>方法：</strong> LoopOPD 跨环 on-policy 蒸馏，用冻结的终端环策略作计算特权教师，对学生中间环的自生成 rollouts 提供稠密监督；D-LoopOPD 随共享参数更新持续刷新教师，实现循环自改进。
+<strong>关键数字：</strong> Ouro-Thinking 模型上 LoopOPD 提升数学推理，D-LoopOPD 通过动态教师更新进一步增益；仅用数学数据训练，在通用推理与代码生成基准上同样改善。
+<strong>为什么值得看：</strong> 证明循环计算本身可作为 LoopLM 的有效监督源，无需外部教师或特权信息。</p>
+<p><a href="https://arxiv.org/abs/2610.10623">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10623">阅读原文 ↗</a></p>
 </body>
 </html>

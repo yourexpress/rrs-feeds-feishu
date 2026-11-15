@@ -22,9 +22,11 @@
 <h1>QTestBench: A Test Framework for Evaluating LLM-Generated Quantum Code</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>LLM生成量子代码的测试框架（QTestBench）</p>
-<blockquote><p>Large language models (LLMs) have shown strong results in classical code generation and are increasingly used to write the unit tests that safeguard that code. Whether they can do the same for quantum software is less clear, because quantum programs are probabilistic, depend on numerical tolerances, and are judged by domain-specific checkers, so a well-formed test can still disagree with the benchmark's verdict. Existing quantum benchmarks measure whether a model produces a correct solution, but not whether its tests can distinguish correct implementations from faulty ones. We introduce QTestBench, a framework that evaluates LLM-generated quantum test suites against independent benchmark checkers, never treating the tests themselves as ground truth. For each task, QTestBench prompts models to produce syntactic, semantic, and behavioral tests, injects candidate solutions at runtime, and compares each test verdict with the checker's label under three validation cohorts, each answering a distinct diagnostic question. We benchmark five LLMs on eight PennyLane QHack challenges and ten Qiskit HumanEval tasks. Generated suites almost always execute, but discrimination lags behind: the bes…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> LLM 已能写经典代码测试，但量子程序具概率性、依赖数值容差，LLM 生成的测试能否区分正确与错误实现尚不清楚。
+<strong>方法：</strong> QTestBench 让模型生成语法/语义/行为三类测试，运行时注入候选解并与独立 checker 判定比对；用 5 个 LLM 评测 8 个 PennyLane QHack 与 10 个 Qiskit HumanEval 任务。
+<strong>关键数字：</strong> 最佳生成器测试质量 QHack 为 0.71、Qiskit HumanEval 仅 0.34——套件几乎都能执行但判别力不足，可执行性高估了测试质量；10 个 Qiskit 任务中 3 个无天然错误解，需 oracle 合成变异体稳定估计。
+<strong>为什么值得看：</strong> 首个跨框架、可复现的 LLM 生成量子测试可信度基准。</p>
+<p><a href="https://arxiv.org/abs/2610.13811">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13811">阅读原文 ↗</a></p>
 </body>
 </html>

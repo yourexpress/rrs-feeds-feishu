@@ -22,9 +22,11 @@
 <h1>RH-Detect: A Unified Benchmark for Reward Hacking Detection</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>奖励作弊检测的统一基准 RH-Detect</p>
-<blockquote><p>Reward hacking, where a model exploits an evaluation signal without completing the intended task, threatens the reliability of deployed language model systems. Existing datasets use different labels, response formats, and metadata conventions, making detector results difficult to compare. We present RH-Detect, a benchmark that combines reward-hacking-relevant subsets from eleven public datasets, comprising 92,761 rows and six behavior categories, into a common schema. On 5,021 open-ended evaluation units, each comprising a task prompt and a free-form model continuation, including multi-turn tool-use trajectories, we evaluate six off-the-shelf language models from five families as reward hacking detectors without additional training. The best model achieves a pooled AUROC of 0.962, with accuracy above 93%. For the four strongest models, however, accuracy on the two multi-turn tool-use datasets, MALT and TRACE, is 10.7-15.9 percentage points lower than on the other sources at a common decision threshold, highlighting a key gap for deployment-time monitoring. We find that different input formats have different effects across models. Removing thinking raises Qwen3.5-4B AUROC from 0.779…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 奖励作弊（模型利用评估信号而非完成任务）威胁部署系统可靠性，但现有数据集标签/格式/元数据各异，检测器结果难以横向比较。
+<strong>方法：</strong> RH-Detect 将 11 个公开数据集的奖励作弊相关子集合并为统一 schema；用 6 个现成 LLM（5 个家族）零训练充当检测器。
+<strong>关键数字：</strong> 共 92,761 行、6 个行为类别；5,021 个开放式评估单元上最佳模型 pooled AUROC 达 0.962、准确率超 93%；四个最强模型在 MALT/TRACE 两个多轮工具数据集上准确率比其他来源低 10.7–15.9 个百分点。
+<strong>为什么值得看：</strong> 揭示单一汇总分数掩盖数据源、输入格式与训练过程的差异，服务部署期监控。</p>
+<p><a href="https://arxiv.org/abs/2610.10947">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10947">阅读原文 ↗</a></p>
 </body>
 </html>

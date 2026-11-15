@@ -22,9 +22,11 @@
 <h1>Rethinking the Tradeoff Between Temporal Encoding and Nonlinear Computation in Spiking Language Models</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>重新思考脉冲语言模型时序编码与非线性计算的权衡</p>
-<blockquote><p>Spiking language models face a tradeoff between representing continuous semantic features over short temporal windows and retaining costly nonlinear attention operations. We introduce Spora, which jointly designs spike encodings and attention operators. Binary temporal weights let $T$ spikes represent compositional values with up to $T$ bits of capacity, compared with $O(\log_2 T)$ bits for spike-count readout. Unipolar Binary Spiking (UBS) uses thresholds and spike-triggered residual decay to produce non-negative integer codes; Bipolar Binary Spiking (BBS) separates sign and magnitude and learns a scale for signed activations. These representations support accumulation-and-shift dot products and integer-exponent mappings in attention. With four time steps, Spora achieves 76.6 average GLUE score and 44.1 CoLA MCC, improving over SpikeLM by 1.2 and 6.2 points, respectively. Extending BBS to six steps raises these scores to 78.2 and 47.4. Conditional-decay analysis, matched-budget activation-quantization comparisons, event-workload statistics, and fixed-point evaluation further characterize the connection between encoding fidelity and computational cost.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 脉冲语言模型面临权衡：短时间窗内表征连续语义特征 vs 保留代价高昂的非线性注意力运算。
+<strong>方法：</strong> Spora 联合设计脉冲编码与注意力算子：二进制时间权重让 T 个脉冲表征至多 T 位容量（对比 spike-count 读出的 O(log2 T) 位）；UBS/BBS 两种编码配合累加移位点积与整数指数映射注意力。
+<strong>关键数字：</strong> 4 时间步时平均 GLUE 76.6、CoLA MCC 44.1，较 SpikeLM 分别 +1.2 与 +6.2；BBS 扩展至 6 步升至 78.2 与 47.4。
+<strong>为什么值得看：</strong> 显著提升脉冲语言模型的任务表现，并量化编码保真度与计算成本的关系。</p>
+<p><a href="https://arxiv.org/abs/2610.10933">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10933">阅读原文 ↗</a></p>
 </body>
 </html>

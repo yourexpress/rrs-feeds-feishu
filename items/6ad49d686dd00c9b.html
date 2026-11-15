@@ -22,9 +22,11 @@
 <h1>Private and Distributionally Robust Federated Multiclass Classification</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>私有且分布鲁棒的联邦多类分类</p>
-<blockquote><p>Fault diagnosis in asset-intensive industries requires multiclass models trained on noisy, sensitive data collected across geographically distributed client sites. Federated learning enables collaborative training without centralizing data, but most approaches do not provide formal privacy guarantees for individual records stored at client sites and can degrade under label noise. To address these limitations, we develop a differentially private, distributionally robust framework for federated multiclass classification that provides sample-level privacy for records stored at each client. We build on a federated Wasserstein distributionally robust multiclass objective with the Crammer-Singer loss, solved using an Alternating Direction Method of Multipliers (ADMM)-based algorithm. To protect the released client updates, our method injects calibrated Gaussian noise into the proximal linearized client updates of both the local model and the local distributionally robust variable before aggregation at the central server, and we quantify the cumulative privacy loss using the moments accountant. We provide per-round sample-level $(ε,δ)$-differential privacy guarantees and an overall compos…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 资产密集型行业故障诊断需要多分类模型，但数据跨站点敏感且有标签噪声，联邦学习缺少对客户端单条记录的正式隐私保证。
+<strong>方法：</strong> 差分隐私 + Wasserstein 分布鲁棒的联邦多分类框架（Crammer-Singer 损失 + ADMM），对客户端近端线性化更新注入校准高斯噪声，用 moments accountant 累计隐私损失。
+<strong>关键数字：</strong> 提供逐轮样本级 (ε,δ)-DP 与跨轮组合保证、收敛结果与显式隐私-效用权衡；在工业故障模拟数据与 UCI 基准上多数设置优于 DP-FERM 与 SGD 基线，强隐私噪声下增益最大。
+<strong>为什么值得看：</strong> 同时兼顾样本级隐私与标签噪声鲁棒性的联邦多分类方案，贴合工业场景。</p>
+<p><a href="https://arxiv.org/abs/2610.13631">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13631">阅读原文 ↗</a></p>
 </body>
 </html>

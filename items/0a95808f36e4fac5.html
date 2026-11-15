@@ -22,9 +22,11 @@
 <h1>Probabilistic Ship Trajectory Forecasting using Transformer Models on AIS Data</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>AIS数据上transformer概率船迹预测</p>
-<blockquote><p>Anticipation of vessel trajectories is an essential task when navigating at sea. This applies to both human navigators and autonomous surface vessels. Trajectory forecasting enables sub-routines such as collision avoidance to assess the situation and react accordingly in time. This paper investigates Transformer and Performer models for trajectory prediction of surface vessels in confined waters. Using widely available position data from the Automatic Identification System (AIS), candidate models are trained and evaluated. Historical information on how other vessels have moved in the local area surrounding each agent is conveyed using positional heat maps. The heat maps are generated using Kernel Density Estimation (KDE) and encoded with a Convolutional Neural Network (CNN) before entering the Transformer models. The models are trained with quantile loss to efficiently obtain a model-aware prediction interval, as this is crucial for timely collision avoidance. The proposed model architectures are shown to greatly outperform previous work while the inclusion of local heat maps enables the prediction of vessel movement that is not otherwise indicated from the previous positions.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 受限水域水面船舶轨迹预测对避碰至关重要，如何利用 AIS 数据及周边船只历史移动信息提升预测质量。
+<strong>方法：</strong> Transformer/Performer 模型 + 位置热图（KDE 核密度估计 + CNN 编码）注入局部环境信息，以 quantile loss 训练获得模型感知的预测区间。
+<strong>关键数字：</strong> 论文未给出具体数值，报告所提架构大幅优于以往工作；引入局部热图后能预测出仅凭该船历史位置无法体现的机动行为。
+<strong>为什么值得看：</strong> 把局部环境历史整合进概率轨迹预测，直接服务于及时避碰决策。</p>
+<p><a href="https://arxiv.org/abs/2610.13557">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13557">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>SNR-Gated LSTM-Conditioned Diffusion Model for MIMO Channel Estimation</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>SNR 门控 LSTM 条件扩散模型做 MIMO 信道估计</p>
-<blockquote><p>Accurate and low latency channel estimation is critical for modern MIMO systems, particularly under mobility, where channels exhibit structured sparsity and strong temporal correlation. This paper proposes a time-series conditioned diffusion framework for channel estimation that performs denoising in the angular domain. Starting from least squares (LS) observations, we train a diffusion denoiser whose conditioning information is encoded by a long short-term memory (LSTM) network over a short observation sequence, enabling the model to exploit temporal dynamics beyond per-snapshot estimation. To robustly balance observation fidelity and learned generative priors across a wide signal-to-noise ratio (SNR) range, we introduce a learnable SNR-gated late-fusion shortcut that injects the network input into the final decoding stage through a sigmoid gate with trainable center and scale. To reduce inference latency, we adopt deterministic denoising diffusion implicit model (DDIM) style reverse updates with SNR-adaptive truncation and step allocation, which significantly reduces the number of reverse diffusion steps at high SNR while maintaining strong performance in low SNR regimes. Simulat…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 移动场景下 MIMO 信道估计需同时满足高精度与低延迟，信道呈现结构化稀疏与强时间相关。
+<strong>方法：</strong> 角域去噪的时序条件扩散框架：从 LS 观测出发，LSTM 编码短观测序列作扩散条件；可学习 SNR 门控 late-fusion 捷径平衡观测保真度与生成先验；DDIM 风格反向更新配 SNR 自适应截断与步数分配。
+<strong>关键数字：</strong> 高 SNR 下显著减少反向扩散步数，低 SNR 保持强性能；在标准时变信道模型仿真上一致优于现有扩散信道估计基线。
+<strong>为什么值得看：</strong> 把 SNR 自适应引入扩散信道估计，兼顾精度与低延迟，适配移动场景。</p>
+<p><a href="https://arxiv.org/abs/2610.08977">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.08977">阅读原文 ↗</a></p>
 </body>
 </html>

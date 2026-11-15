@@ -22,9 +22,11 @@
 <h1>RAGenome: Scaling Retrieval-Based Genomic Language Models to Long Contexts</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>检索增强基因组语言模型扩展到长上下文</p>
-<blockquote><p>The genome holds the blueprint that governs the biological properties of the cell. Consequently, advancing our knowledge of genomic function is crucial both for a broader understanding of biology and for continued biomedical advances. The success of large language models on natural language and protein sequences has motivated similar efforts on genomic data. However, standard genomic language models (gLMs) often require extremely large computational resources and still fall behind traditional methods on some downstream tasks. Recently, MSA-based pretraining has been proposed as an efficient alternative, but existing models are limited to short input contexts, restricting their use to short-range tasks, such as variant effect prediction. In this work, we present RAGenome, the first retrieval-based gLM that scales pretraining to longer contexts (100$\times$ longer than existing MSA-based gLMs), allowing it to capture both across-species evolutionary relationships and within-species longer-range interactions. Trained on whole-genome alignments from 100 vertebrates, RAGenome substantially improves the long-range capabilities of MSA-based gLMs, raising gene finding performance from 0.45…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 基因组语言模型（gLM）计算开销大，MSA 式预训练模型上下文受限，只能处理变异效应预测等短程任务。
+<strong>方法：</strong> RAGenome 是首个检索式 gLM，将预训练扩展到比现有 MSA 式 gLM 长 100 倍的上下文，在 100 个脊椎动物全基因组比对数据上训练。
+<strong>关键数字：</strong> 基因发现性能从 0.45 提升至 0.60；在致病变异优先级排序等纯进化任务上与现有方法持平；训练成本仅为标准 gLM 的一小部分。
+<strong>为什么值得看：</strong> 首次把进化建模与长程建模能力统一进单一可扩展框架，代码已开源。</p>
+<p><a href="https://arxiv.org/abs/2610.11761">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.11761">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>SPD-MetaFormer is what you need for small-data brain decoding</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>小数据脑解码用 SPD-MetaFormer 就够了</p>
-<blockquote><p>Brain signal decoding is challenging because neural recordings are noisy and vary across individuals, while labeled data are often limited. Recent attention-based models on the symmetric positive definite (SPD) manifold have nevertheless achieved strong performance using covariance and connectivity representations, yet the contribution of learned token weighting remains unclear. We examine two representative architectures, MAtt (based on log-Euclidean geometry) and GBWAtt (based on generalized Bures--Wasserstein geometry), and find that their learned attention weights remain close to uniform after training. We relate this behavior to bounded similarity parameterizations that, under the original softmax scaling, limit attention-weight contrast. Moreover, replacing learned weights with uniform weights, throughout training and evaluation, has little effect on mean predictive performance while preserving each model's original aggregation geometry. Motivated by these findings, we introduce SPD-MetaFormer, an attention-free architecture built on uniformly weighted Fréchet aggregation under log-Euclidean geometry. Its backbone uses a geodesic residual to update a summary token and a share…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 脑信号解码中神经记录噪声大、个体差异大、标注有限；SPD 流形上的注意力模型表现强，但其学习到的注意力权重接近均匀，贡献不明。
+<strong>方法：</strong> SPD-MetaFormer 无注意力架构：log-Euclidean 几何下均匀加权 Fréchet 聚合 + 测地残差更新 summary token + 共享谱前馈变换 + 学习加权读出，token 保持 SPD 值直至切线空间分类。
+<strong>关键数字：</strong> 三个 EEG 基准上相对已发表欧氏/流形基线取得有竞争力结果；配对复现显示学习权重替换为均匀权重几乎不影响平均预测性能。
+<strong>为什么值得看：</strong> 短序列、小样本场景下精心设计的 SPD 架构可替代自适应流形注意力，更简单有效。</p>
+<p><a href="https://arxiv.org/abs/2610.10952">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10952">阅读原文 ↗</a></p>
 </body>
 </html>

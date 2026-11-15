@@ -22,9 +22,11 @@
 <h1>Rethinking Relative Policy Differences Transfer of On-Policy Distillation</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>重思on-policy蒸馏中相对策略差的迁移</p>
-<blockquote><p>On-policy distillation (OPD) trains a target policy on its own rollouts using token-level supervision from a stronger teacher, but typically relies on the teacher being substantially more capable than the target. Recent work relaxes this requirement by transferring the relative policy difference between an expert and a reference policy rather than the expert's absolute distribution. Yet it remains unclear which differences provide useful supervision and which targets can benefit from them. We develop a unified view in which the log-probability ratio between a proxy expert and a proxy reference defines an implicit reward for KL-regularized policy optimization. This formulation induces an on-policy update for the target, recovers conventional OPD as a special case, and enables any-to-any transfer across models that differ in scale, training stage or generation. Our systematic experiments yield three findings. First, a stronger expert is not necessarily a better source of supervision: differences induced by task-specific training, including reinforcement learning and supervised fine-tuning, transfer consistently, whereas those arising from model scale alone transfer weakly or not at a…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> on-policy 蒸馏（OPD）通常要求教师远强于学生；近期做法改为迁移专家与参考策略间的相对差而非绝对分布，但哪种差异有用、哪些目标受益仍不清楚。
+<strong>方法：</strong> 统一视角：专家/参考的对数概率比定义 KL 正则策略优化的隐式奖励，推导出目标策略的 on-policy 更新，支持跨规模/训练阶段/生成方式的任意迁移。
+<strong>关键数字：</strong> 三个发现：任务特定训练（RL、SFT）产生的差异稳定迁移，纯模型规模差异弱迁移或不迁移；专家提供能力、参考过滤共享行为；有用差异也非迁移到所有目标，原始策略距离不预测可迁移性。
+<strong>为什么值得看：</strong> 刻画相对策略差何时构成有效 OPD 监督，纠正"教师越强越好"的直觉。</p>
+<p><a href="https://arxiv.org/abs/2610.13205">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13205">阅读原文 ↗</a></p>
 </body>
 </html>

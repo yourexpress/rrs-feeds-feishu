@@ -22,9 +22,11 @@
 <h1>ReSAFT: An Efficient Stuck-at Fault-Tolerant Scheme for ReRAM-based Process-in-Memory Accelerators</h1>
 <p class="meta-line">arXiv cs.AR · 2026-10-09 · 论文PDF</p>
 
-<p>ReSAFT：ReRAM PIM 推理加速器 stuck-at 故障的低冗余容错映射与冗余硬件方案</p>
-<blockquote><p>Analog ReRAM-based process-in-memory (PIM) accelerators provide high parallelism and energy efficiency for deep convolutional neural networks (CNNs) inference. However, their susceptibility to permanent faults, such as stuck-at high (SaH) and stuck-at low (SaL) resistance states, poses a major challenge by permanently corrupting the CNN weights mapped to conductance values of ReRAM cells and degrading inference accuracy, which leads to system unreliability in safety-critical applications. In this paper, we propose a fault-tolerant scheme for analog ReRAM-based PIM accelerators to tackle stuck-at faults (SAFs) with minimal redundancy overhead to recover classification accuracy degradation. The proposed scheme contains a redundancy-based hardware solution alongside fault-aware mapping method for ensuring reliable analog computation in ReRAM crossbar. We analyze the impact of varying number of redundant rows and columns on accuracy and design metrics. Subsequently, a multi-objective optimization (MOO) problem is formulated and solved to efficiently determine the number of redundant rows and columns, considering trade-offs among various design metrics. Furthermore, a fault-aware weight…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 模拟 ReRAM PIM 加速器易受 stuck-at 高/低电阻永久故障影响，损坏映射到电导的 CNN 权重，危及安全关键应用的推理精度。
+<strong>方法：</strong> 冗余硬件 + 故障感知映射的容错方案；以多目标优化（MOO）确定冗余行/列数，并对双交叉结构做故障感知权重映射补偿。
+<strong>关键数字：</strong> MNIST/SimpleNet 上四组最优配置平均恢复推理精度约 22.39%；MTTF 平均提升约 61 倍；相比仅行/仅列配置，平均降低 32% 能量与面积开销。
+<strong>为什么值得看：</strong> 以最小冗余开销恢复安全关键场景精度，给出可靠性、面积、能耗、延迟的多目标取舍。</p>
+<p><a href="https://arxiv.org/abs/2610.09999">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09999">阅读原文 ↗</a></p>
 </body>
 </html>
