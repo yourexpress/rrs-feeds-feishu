@@ -22,9 +22,11 @@
 <h1>Physics-Aware Self-Supervised Pretraining on Multi-Domain Raman Spectra</h1>
 <p class="meta-line">arXiv/cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>Raman spectroscopy generates large volumes of unlabeled data that are difficult to exploit with conventional supervised learning. This work introduces a multi-domain self-supervised learning</p>
-<blockquote><p>Raman spectroscopy generates large volumes of unlabeled data that are difficult to exploit with conventional supervised learning. This work introduces a multi-domain self-supervised learning framework based on a masked autoencoder (MAE) for learning transferable Raman spectral representations from heterogeneous biological, chemical, forensic, and materials datasets. The proposed pretraining strategy incorporates physics-aware objectives by combining masked intensity reconstruction with a sparse Voigt-profile decoder that models spectral peak structure through differentiable peak centers, widths, and amplitudes. A denoising objective is further included to improve robustness to spectral corruption. The learned encoder is evaluated on substance classification, component identification, concentration estimation, and spectral denoising under linear probing, attention-based probing, end-to-end fine-tuning, and training from scratch. Experimental results show that self-supervised pretraining is most beneficial for challenging tasks with limited labeled data. Attention-based probing also reveals substantially more useful information in the frozen representation than linear probing, indica…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：拉曼光谱产生大量无标注数据，常规监督学习难以利用——能否用物理感知的自监督预训练学习可迁移表征？</p>
+<p><strong>方法</strong>：提出基于掩码自编码器（MAE）的多域自监督框架，在生物、化学、法医、材料四类数据上预训练。物理感知目标 = 掩码强度重建 + 稀疏 Voigt 谱线解码器（可微峰参数建模峰结构）+ 去噪目标。下游评估覆盖物质分类、成分识别、浓度估计与光谱去噪。</p>
+<p><strong>关键数字</strong>：预训练在标注稀缺的困难任务上收益最大；注意力探针比线性探针揭示更多冻结表征信息，说明线性评估低估表征质量；收益随编码器容量增大更显著。</p>
+<p><strong>为什么值得看</strong>：把物理结构嵌入自监督目标，多域拉曼表征的标签效率与鲁棒性提升路线清晰。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.23955">Physics-Aware Self-Supervised Pretraining on Multi-Domain Raman Spectra</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.23955">阅读原文 ↗</a></p>
 </body>
 </html>

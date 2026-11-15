@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When One GPU Isn't Enough: Serving GLM-5.3 Across Two NVIDIA DGX Stations with vLLM</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>When One GPU Isn't Enough: Serving GLM-5.3 Across Two NVIDIA DGX Stations with vLLM</h1>
+<p class="meta-line">NVIDIA Technical Blog · 2026-11-13 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://developer-blogs.nvidia.com/wp-content/uploads/2026/11/image3-3-660x370.png" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong>：单机装不下一枚前沿模型时，如何用两台 DGX Station 通过 RDMA 互联、以张量并行服务 GLM-5.3。</p>
+<p><strong>要点</strong>：GLM-5.3 NVFP4 是 Z.ai 的 MoE 模型量化版，稀疏激活只算 40B 专家，但全部权重必须常驻显存。教程用 ConnectX-8 RDMA 连接两台 DGX Station，以 TP=2 把张量拆到两块 GB300 上，每请求两台都参与计算，由 Station A 暴露一个 OpenAI 兼容 API；关掉 CPU 权重卸载。文章含完整前置条件（RDMA 验证、磁盘空间、Hugging Face 门控数据集授权）与分步配置。</p>
+<p><strong>关键数字</strong>：模型 7530 亿参数、每 token 激活 400 亿；checkpoint 约 464GB，超过单张 GB300 的 252GB HBM3e；每台 Station 需至少 464GB 空闲磁盘存副本。</p>
+<p><strong>为什么值得看</strong>：本地跑前沿级模型的"两机一模型"完整实操，vLLM 多机张量并行的一手部署参考。</p>
+<p>原文：<a href="https://developer.nvidia.com/blog/when-one-gpu-isnt-enough-serving-glm-5-3-across-two-nvidia-dgx-stations-with-vllm/">When One GPU Isn't Enough: Serving GLM-5.3 Across Two NVIDIA DGX Stations with vLLM</a></p>
+<p><a class="origin" href="https://developer.nvidia.com/blog/when-one-gpu-isnt-enough-serving-glm-5-3-across-two-nvidia-dgx-stations-with-vllm/">阅读原文 ↗</a></p>
+</body>
+</html>

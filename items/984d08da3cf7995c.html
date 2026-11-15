@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building always-on agents</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Building always-on agents</h1>
+<p class="meta-line">Anthropic · 2026-11-13 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://claude.com/resources/articles/building-always-on-agents/opengraph-image/og" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong>：Always-on agent（常驻代理）的架构原语——它如何被事件唤醒、跨会话保持状态、主动行动。</p>
+<p><strong>要点</strong>：常驻代理并非真的"永不停机"，而是大部分时间休眠、周期性被唤醒执行 run；每个 run 在 session 内完成一次工作并保存状态。外围架构由五个原语构成：事件收件箱（inbox，事件先入持久队列再由 worker 取走，避免并发竞争与崩溃丢事件）、定时器、记忆、权限、发件箱（outbox）。官方建议一个用户一个 inbox，事件按来源唯一 ID 去重。</p>
+<p><strong>关键数字</strong>：在长视野编码基准上，Opus 5.5 每解决一个任务的成本比 Opus 5 低 78%，而典型负载只低 40%——模型智能变便宜是常驻代理复兴的主因。</p>
+<p><strong>为什么值得看</strong>：Anthropic 官方工程指南，把"常驻代理"从概念拆成可直接落地的五件套架构，做主动型产品可直接照抄。</p>
+<p>原文：<a href="https://claude.com/resources/articles/building-always-on-agents">Building always-on agents</a></p>
+<p><a class="origin" href="https://claude.com/resources/articles/building-always-on-agents">阅读原文 ↗</a></p>
+</body>
+</html>

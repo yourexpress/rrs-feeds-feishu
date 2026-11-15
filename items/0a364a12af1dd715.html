@@ -22,9 +22,11 @@
 <h1>Nullify: Null-Space Activation Steering for Training-Free LLM Unlearning</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>零空间激活引导的无训练 LLM 遗忘方法</p>
-<blockquote><p>Large Language Models (LLMs) inevitably internalize substantial amounts of sensitive or private information during pre-training, while LLM unlearning aims to selectively erase specific knowledge to prevent privacy leakage with minimal loss of model utility. However, existing methods struggle to balance forget quality with utility, and typically incur substantial computational costs due to parameter fine-tuning. To address this, we propose Nullify, a training-free, non-destructive activation steering method for LLM unlearning. Nullify employs steering vectors during inference to redirect privacy-related activations away from their memorized answers, while satisfying a null-space constraint that leaves retained-query activations essentially unaffected to maintain utility. Evaluations on TOFU and MUSE show that Nullify matches or surpasses established baselines in forget quality while achieving near-lossless preservation of model utility. By avoiding weight updates entirely, Nullify serves as an efficient, plug-and-play inference-time intervention framework.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 反学习（unlearning）要在遗忘质量与模型效用间平衡，现有方法常依赖昂贵微调——能否免训练实现？</p>
+<p><strong>方法</strong>：提出 Nullify：推理期激活引导，用引导向量把隐私相关激活推离其记忆答案，同时满足零空间约束使保留查询的激活基本不受影响，从而保持效用；完全不做权重更新，即插即用。</p>
+<p><strong>关键数字</strong>：在 TOFU 与 MUSE 上，遗忘质量匹配或超越既有基线，同时模型效用近无损保留。</p>
+<p><strong>为什么值得看</strong>：免训练、非破坏性的推理期反学习方案，隐私擦除的成本与部署门槛大幅降低。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.10655">Nullify: Null-Space Activation Steering for Training-Free LLM Unlearning</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10655">阅读原文 ↗</a></p>
 </body>
 </html>

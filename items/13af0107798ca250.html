@@ -22,9 +22,11 @@
 <h1>NeuralBES: A Differentiable, Control-Aware Emulator for Scalable Building Energy Modeling</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>NeuralBES：RC 热模型+共享神经编码器的可微建筑能耗仿真器</p>
-<blockquote><p>Demand-side flexibility i.e. forecasting, shifting, and curtailing residential energy loads, depends on thermal models trusted across millions of heterogeneous buildings. Existing tools force a hard tradeoff: high-fidelity physics simulators such as EnergyPlus are accurate but sequential and require per-building calibration, while purely data-driven sequence models scale but abandon the physical structure that makes their predictions trustworthy. We introduce NeuralBES (Building Energy Simulation), a differentiable emulator that resolves this tradeoff by parameterizing a resistance--capacitance (RC) based thermal model with a shared neural encoder: static building metadata such as floor area, vintage, and HVAC type is mapped to physically bounded capacitances, conductances, and equipment coefficients, which become the coefficients of a scalar linear recurrence solved via a log-space parallel scan, and a predictor--corrector loop closes the thermostat--temperature nonlinearity while preserving full-horizon gradient flow. Trained on the ResStock dataset across three climate zones, NeuralBES handles heterogeneous building archetypes, vintages, and climate zones within a single trained…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：楼宇能耗建模要在高保真物理仿真与可扩展数据驱动之间二选一，能否兼得？</p>
+<p><strong>方法</strong>：提出 NeuralBES 可微仿真器——用共享神经编码器参数化 RC 热模型：楼宇静态元数据映射为物理有界的电容、电导与设备系数，构成标量线性递推，经 log-space 并行扫描求解；预测-校正环闭合温控-温度非线性并保留全时域梯度流。在 ResStock 三个气候区训练。</p>
+<p><strong>关键数字</strong>：全年 rollout 中是唯一同时物理有效且精度距最强原始误差基线 4 个 MAPE 点以内的数据条件模型；参数量约为 transformer/循环基线的一个数量级以内；参数持平下 MAPE 比灰盒 RC 减半以上。</p>
+<p><strong>为什么值得看</strong>：把物理结构嵌入可微仿真、用共享编码器覆盖异质楼宇，是规模化需求侧灵活性建模的实用路线。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.10459">NeuralBES: A Differentiable, Control-Aware Emulator for Scalable Building Energy Modeling</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10459">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>NosRacer: Dynamic Detection of Race Conditions in On-Device Network Operating Systems</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-10-09 · 论文PDF</p>
 
-<p>端侧网络操作系统中竞态条件的动态检测工具</p>
-<blockquote><p>Commercial on-device network operating systems (NOSes) run complex control planes in production routers and switches, where configuration update tasks are executed by multiple loosely coupled components through asynchronous message passing. Such executions are prone to race conditions: the same ordered input commands may produce different outcomes when messages are delivered in different orders. The race conditions are difficult to expose because they often manifest only as subtle, delayed malfunctions. Existing static analysis techniques lack scalability and precision for large-scale industrial NOSes, while dynamic ones incur substantial system-execution cost when attempting to cover the space of asynchronous message interleavings. To address the challenges above, we present NosRacer, a dynamic analysis framework for race condition detection in industrial-grade on-device NOSes. NosRacer uses a two-phase design. The concentration phase reduces analysis scope by leveraging the locality of configuration update tasks. Race condition detection is then limited to a small subset of involved components and crucial state variables, thereby reducing the detection cost. The perturbation phas…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：商用端侧网络操作系统（NOS）控制面经异步消息传递执行配置更新，竞态条件难暴露且静态分析不具扩展性——如何高效动态检测？</p>
+<p><strong>方法</strong>：提出 NosRacer 两阶段动态分析：聚焦阶段利用配置更新任务局部性把检测范围缩到少量组件与关键状态变量；扰动阶段主动扰动消息异步性以增加暴露竞态的交错执行概率，并通过兼容扰动分组并行与自适应加强保持开销可控。已在商用 NOS 测试工厂落地。</p>
+<p><strong>关键数字</strong>：覆盖 5 个关键控制面组件，精度 66%，检出 21 个被开发者确认为严重 bug 的竞态，检测开销低于 10%。</p>
+<p><strong>为什么值得看</strong>：工业级 NOS 竞态检测的真实落地案例，两阶段设计对大型异步系统有普适借鉴。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.11875">NosRacer: Dynamic Detection of Race Conditions in On-Device Network Operating Systems</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.11875">阅读原文 ↗</a></p>
 </body>
 </html>

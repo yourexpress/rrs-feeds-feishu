@@ -22,9 +22,11 @@
 <h1>New Contraction Bounds for Multidimensional Asymptotic Consensus in Dynamic Networks</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-10-09 · 论文PDF</p>
 
-<p>动态网络中多维渐近共识的新收缩界（纯理论）</p>
-<blockquote><p>This work studies the multidimensional asymptotic agreement problem in dynamic networks. We assume that nodes have $d$-dimensional inputs and need to converge arbitrarily close to each other's inputs while their vectors stay inside the convex hull of all inputs. We present a new upper bound of $\sqrt{2d/(3d+1)}$ on the contraction rate of asymptotic agreement in the non-split network model, where $d$ is the dimension of the input and $\sqrt{2d/(3d+1)}\rightarrow \sqrt{2/3}\approx 0.816$ for $d\rightarrow\infty$. To this end, we adapt the BallMidpoint algorithm (Melnyk, 2026) recently introduced for the all-to-all communication model. This algorithm lets the nodes choose the midpoint of the smallest enclosing ball of the received vectors. This bound is strictly worse than the $\sqrt{1/2}\approx 0.707$ contraction rate for fault-tolerant approximate agreement in all-to-all communication networks because the convex hulls of the nodes do not have a common intersection, and only intersect pairwise. Our bound improves over the previously best-known contraction rate of $\sqrt{7/8}\approx 0.935$ for dynamic networks via the MidExtremes algorithm (Függer and Nowak, 2018). We present the fir…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：动态网络中多维渐近一致（节点向量收敛到彼此输入附近且保持在凸包内）的收缩率上界与下界？</p>
+<p><strong>方法</strong>：把全连通模型下的 BallMidpoint 算法（节点取接收向量最小外接球的中点）适配到 non-split 动态网络模型，给出新的收缩率上界；并首次给出多维坐标无关、无记忆、匿名的确定性算法收缩下界。</p>
+<p><strong>关键数字</strong>：新上界 √(2d/(3d+1))，d→∞ 时趋近 √(2/3)≈0.816，优于此前 MidExtremes 的 √(7/8)≈0.935；因凸包仅两两相交而非公共相交，严格劣于容错近似一致性的 √(1/2)≈0.707。首个多维下界 2/3（d≥8），说明一维下界 1/2 在高维不紧；单轮收缩至少 √((2d−2)/(3d+7))，渐近最优。</p>
+<p><strong>为什么值得看</strong>：把 BallMidpoint 从全连通推广到动态网络并给出紧界，推进分布式一致性理论。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.11805">New Contraction Bounds for Multidimensional Asymptotic Consensus in Dynamic Networks</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.11805">阅读原文 ↗</a></p>
 </body>
 </html>

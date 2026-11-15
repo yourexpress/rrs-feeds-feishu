@@ -22,9 +22,11 @@
 <h1>PIVOT: Perplexity-Informed KD-to-RL Transition Scheduling for Vertical-Domain Few-Shot Distillation</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>垂直域少样本蒸馏中困惑度引导的 KD 到 RL 转换调度</p>
-<blockquote><p>Vertical-domain few-shot classification remains challenging for small language models, as limited supervision makes it difficult to acquire domain-specific decision knowledge. On-Policy Distillation (OPD) can improve teacher-guided adaptation by supervising student-generated rollouts, while GRPO-based reinforcement learning can further refine downstream predictions. However, existing KD-to-RL pipelines typically rely on globally fixed transition schedules, ignoring that different samples may require different amounts of teacher-guided acquisition before reward-driven refinement. We propose PIVOT (Perplexity-Informed Transition Optimization), a dynamic transition framework that routes samples between OPD and GRPO according to teacher-evaluated sequence perplexity. PIVOT moves low-perplexity samples to GRPO for reward-driven refinement while keeping high-perplexity samples under OPD for continued domain knowledge acquisition. Experiments on Banking77 and HWU64 show that PIVOT consistently outperforms continued OPD and globally synchronized OPD$\rightarrow$GRPO baselines under the same number of post-warm-up student optimization steps, achieving stronger downstream performance and mor…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：垂直领域少样本分类中，小模型在 KD 与 RL 之间的切换时机全局固定——不同样本是否需要不同的教师引导时长？</p>
+<p><strong>方法</strong>：提出 PIVOT（困惑度引导的过渡优化）：按教师评估的序列困惑度在 On-Policy Distillation（OPD）与 GRPO 间路由样本——低困惑度样本转 GRPO 做奖励驱动精炼，高困惑度样本留在 OPD 继续获取领域知识。在 Banking77 与 HWU64 上与持续 OPD 及全局同步 OPD→GRPO 基线对比。</p>
+<p><strong>关键数字</strong>：在相同的预热后学生优化步数下，PIVOT 一致优于两种基线，取得更强下游性能与更稳定训练动态（摘要未给具体数值）。</p>
+<p><strong>为什么值得看</strong>：把"何时转 RL"从全局常量变成逐样本决策，垂直领域蒸馏的精细化调度新思路。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.11167">PIVOT: Perplexity-Informed KD-to-RL Transition Scheduling for Vertical-Domain Few-Shot Distillation</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.11167">阅读原文 ↗</a></p>
 </body>
 </html>

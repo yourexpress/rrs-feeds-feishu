@@ -22,9 +22,11 @@
 <h1>Noise Your Prompt: Noising Conditioning Tokens in Continuous Diffusion Language Models</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>连续扩散语言模型训练时对条件 prompt token 加噪，Sudoku Hard 解决率 3.73%→24.65%</p>
-<blockquote><p>We revisit a standard accepted practice in the continuous diffusion language model literature of fixing conditioning prompt tokens clean during training. We make a very simple modification: also noise the conditioning prompt tokens during training. We demonstrate that under this modified training objective, we achieve better generalization in combinatorial reasoning tasks such as Sudoku and N-Queens, with the largest gains on harder variants ($3.73\% \to 24.65\%$ solve rate on Sudoku Hard), and increased diversity of generated solutions ($50.60\% \to 73.79\%$ coverage on 10x10 N-Queens). We also show measurable improvements to natural language generation quality in modest dataset regimes with Gigaword summarization, but notably demonstrate that gains do not transfer to all natural language tasks (e.g open ended dialogue generation). Our method is a single line change to the training objective, requires no additional inference costs by default, and provides the flexibility of classifier-free guidance inspired guided sampling. Our \href{https://github.com/LateralIntelligence/noise-your-prompt}{code} is publicly available.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：连续扩散语言模型训练中"条件 prompt token 保持干净"是通行做法——加噪条件 token 是否更好？</p>
+<p><strong>方法</strong>：对训练目标做一行改动：训练时也给条件 prompt token 加噪。在组合推理（数独、N 皇后）与自然语言生成任务上验证，支持 classifier-free guidance 式采样且默认无额外推理成本，代码开源。</p>
+<p><strong>关键数字</strong>：Sudoku Hard 求解率从 3.73% 升至 24.65%；10×10 N 皇后解覆盖从 50.60% 升至 73.79%；Gigaword 摘要有小幅提升，但开放式对话等任务增益不迁移。</p>
+<p><strong>为什么值得看</strong>：一行改动换来组合推理大幅提升，对扩散语言模型训练范式是低成本高回报的修正。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.09145">Noise Your Prompt: Noising Conditioning Tokens in Continuous Diffusion Language Models</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09145">阅读原文 ↗</a></p>
 </body>
 </html>

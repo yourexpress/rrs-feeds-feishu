@@ -22,9 +22,11 @@
 <h1>ORDERS: An Empirical Study of Norm-Rank Aggregation for Personalized Federated Learning</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>ORDERS：范数秩聚合个性化联邦学习的 80 次受控实验评估</p>
-<blockquote><p>Personalized federated learning combines shared representations with client-specific predictors, but the contribution of a server weighting rule can be obscured by local training and evaluation choices. We study ORDERS, a configuration that combines a shared backbone, a private residual adapter and classifier, geometric weights assigned by descending update norm, feature alignment, and private-parameter perturbations. The server computes a weighted sum of updates obtained from the same broadcast model; it does not obtain an additional optimization effect from sequential addition. A fully specified evaluation comprises 80 final runs: eight configurations, two datasets, and five training seeds on one fixed partition per dataset. On two-class-per-client CIFAR-10, ORDERS achieves $80.51 \pm 0.79\%$ native mean client accuracy, compared with $79.02 \pm 1.42\%$ for FedPer-R1 and $80.27 \pm 0.73\%$ for the matched uniform-weight control. After common local fine-tuning, the difference from FedPer-R1 narrows to 0.32 percentage points. On Sent140, ORDERS reaches $74.71 \pm 0.49\%$, only 0.69 points above a post hoc client training-majority diagnostic. Ablations provide limited, endpoint-depe…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：个性化联邦学习中，服务器端加权规则（按更新范数排名聚合）到底贡献多少，常被本地训练与评估选择掩盖——如何严谨量化？</p>
+<p><strong>方法</strong>：系统性研究 ORDERS 配置：共享骨干 + 私有残差适配器与分类头 + 按更新范数降序的几何权重 + 特征对齐 + 私有参数扰动。完整评估含 80 次最终运行：8 配置 × 2 数据集 × 5 训练种子，并设匹配的统一权重对照与 FedPer-R1 基线。</p>
+<p><strong>关键数字</strong>：CIFAR-10 每客户端两类任务上，ORDERS 原生平均客户端准确率 80.51%±0.79%，对照 FedPer-R1 79.02%±1.42%、统一权重对照 80.27%±0.73%；本地微调后与 FedPer-R1 差距收窄至 0.32 个百分点。Sent140 达 74.71%±0.49%。参数载荷分别省 5.47% 与 0.78%。</p>
+<p><strong>为什么值得看</strong>：用严格消融回答"norm-rank 聚合是否真有用"——结论是收益有限且依赖端点，给个性化联邦学习降温式证据。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.10361">ORDERS: An Empirical Study of Norm-Rank Aggregation for Personalized Federated Learning</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10361">阅读原文 ↗</a></p>
 </body>
 </html>

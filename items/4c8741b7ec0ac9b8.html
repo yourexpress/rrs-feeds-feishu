@@ -22,9 +22,11 @@
 <h1>Noise, Denoise, Correct: MCMC Posterior Sampling with Diffusion Priors in Three Steps</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>扩散先验 MCMC 后验采样：噪声-去噪-校正三步法处理非线性不可微前向模型</p>
-<blockquote><p>Pretrained diffusion models are powerful priors for inverse problems, but posterior sampling under nonlinear, non-differentiable forward models remain hard. We introduce diffusion waltz, an MCMC method using SDEdit-style noising-denoising as a proposal, corrected via Metropolis-Hastings for exact posterior sampling without prior evaluation. We further propose injecting observations into the proposal while preserving exactness, using a gradient-free ensemble Kalman update. On a non-differentiable Navier-Stokes initial condition recovery task, diffusion waltz outperforms existing baselines across different noise and nonlinearity regimes.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：非线性、不可微前向模型下，如何用预训练扩散模型做精确的后验采样？</p>
+<p><strong>方法</strong>：提出 diffusion waltz：以 SDEdit 式加噪-去噪作为 MCMC 提议，经 Metropolis-Hastings 校正实现无需先验评估的精确后验采样；再用梯度无关的集合卡尔曼更新把观测注入提议且保持精确性。</p>
+<p><strong>关键数字</strong>：在不可微的 Navier-Stokes 初值恢复任务上，diffusion waltz 在不同噪声与非线性度设定下均优于现有基线。</p>
+<p><strong>为什么值得看</strong>：把扩散先验与 MCMC 结合、支持不可微前向模型，是逆问题后验采样的实用新方法。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.09407">Noise, Denoise, Correct: MCMC Posterior Sampling with Diffusion Priors in Three Steps</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09407">阅读原文 ↗</a></p>
 </body>
 </html>

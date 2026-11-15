@@ -22,9 +22,11 @@
 <h1>PPG-Bench: A Unified Benchmark for PPG Foundation Models</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>PPG基础模型统一基准（PPG-Bench）</p>
-<blockquote><p>Photoplethysmography (PPG) is increasingly recorded by wearable and clinical devices at enormous scale, and a growing number of PPG foundation models (FMs) have been developed to compute reusable representations for various downstream tasks. These models are difficult to compare: different evaluations use different datasets, task definitions, preprocessing, downstream heads, hyperparameter tuning, and baselines. We present PPG-Bench, a unifying open-source benchmark evaluating five public PPG FMs across nine open-access datasets and 26 tasks spanning cardiovascular state estimation, activity, sleep, screening, and identification. We evaluate models under four downstream regimes of increasing adaptability (linear probing, random forests, frozen MLP probes, and end-to-end finetuning), with model-specific hyperparameter optimization and subject-disjoint cross-validation. We also evaluate against three controls: random/constant baseline, a deterministic pulse-rate-variability (PRV) feature set, and a generic time-series FM (MOMENT). Across all 68 task-regime combinations, 35.3% show no meaningful FM advantage over the random/constant baseline, and in 83.8% no PPG-specific FM outperform…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：PPG 基础模型越来越多，但评估各用各的数据集/任务/预处理，无法横向比较——统一基准是否站得住？</p>
+<p><strong>方法</strong>：提出开源基准 PPG-Bench：评估 5 个公开 PPG 基础模型 × 9 个开放数据集 × 26 项任务（心血管状态估计、活动、睡眠、筛查、识别），4 种适配度递增的下游机制，带模型专属超参优化与按受试者不相交的交叉验证；对照随机/常数基线、PRV 特征集与通用时序基础模型 MOMENT。</p>
+<p><strong>关键数字</strong>：68 个任务-机制组合中 35.3% 相对随机/常数基线无有意义优势；83.8% 中没有任何 PPG 专属模型同时胜过 PRV 与 MOMENT；下游头容量提升通常有帮助，但模型处于随机水平时会显著劣化。</p>
+<p><strong>为什么值得看</strong>：给 PPG 基础模型热潮泼冷水——现状难称"通用可迁移表征"，并给出对照简单非学习基线的评估规范。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.13435">PPG-Bench: A Unified Benchmark for PPG Foundation Models</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13435">阅读原文 ↗</a></p>
 </body>
 </html>

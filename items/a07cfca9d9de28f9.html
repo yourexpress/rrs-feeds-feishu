@@ -22,9 +22,11 @@
 <h1>On the Design Space of Continuous Diffusion Language Models</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>连续扩散语言模型的设计空间研究</p>
-<blockquote><p>Continuous diffusion language models (CDLMs) promise to bring the benefits of continuous flow modelling to language, including accelerated sampling and controllable generation. The field has grown rapidly, and the capabilities of CDLMs have begun to rival those of discrete diffusion. Yet, unlike for continuous modalities such as images or videos, our grasp of the levers that matter when training CDLMs remains limited. In this work, we focus on two of these levers, namely self-conditioning and embedding geometry, and shed light on some of the mechanisms behind them, which in turn suggest cheaper and more effective designs. We begin by showing that self-conditioning corrects a train/inference mismatch by exposing the model to inference-like states that are otherwise rare during training. These gains can be recovered without an extra forward pass by a two-level interpolant, coined $\mathrm{DoubleCat}$, which improves TinyGSM accuracy more than threefold. Self-conditioning also aids in recognising tokens dominated by large-norm Gaussians$\unicode{x2013}$an issue known as token identifiability. To address it directly, we introduce discrete reveals to $\mathrm{DoubleCat}$, yielding $\mat…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：连续扩散语言模型（CDLM）训练中，哪些旋钮真正重要？自条件化与嵌入几何背后的机制是什么？</p>
+<p><strong>方法</strong>：聚焦两个杠杆。其一，自条件化修正训练/推理失配；其二，嵌入几何受交叉熵驱动。提出两段式插值 DoubleCat 在不增加前向传播的情况下恢复自条件化收益；针对 token 可辨识性问题引入离散揭示得到 SemiCat；并探索混合损坏过程与异步噪声调度。</p>
+<p><strong>关键数字</strong>：DoubleCat 使 TinyGSM 准确率提升三倍以上；SemiCat 在标准训练超参与调优采样器下达 49.94%；1.7B 规模下 SemiCat 在六项基于似然的评估中四项优于离散扩散，无条件生成超过 one-hot flow。</p>
+<p><strong>为什么值得看</strong>：系统梳理 CDLM 设计空间并给出两个立即可用的更省更优设计，扩散语言模型训练指南级工作。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.13834">On the Design Space of Continuous Diffusion Language Models</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13834">阅读原文 ↗</a></p>
 </body>
 </html>

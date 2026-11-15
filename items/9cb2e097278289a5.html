@@ -22,9 +22,11 @@
 <h1>PANDA: Prior-guided Attentional Dual-path Architecture</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>先验引导注意力双路架构（PANDA）</p>
-<blockquote><p>Hypergraph Neural Networks (HNNs), designed to model higher-order relations beyond pairwise interactions, typically rely either on fixed structural weights or on normalised attention. Fixed weights can propagate misleading information in heterophilic settings, while normalisation makes attention coefficients competitive, in the sense that, in a message-passing framework, increasing the weight of one sender must reduce the weight of others in the same aggregation set. Our main contribution is the introduction of PANDA (Prior-guided AttentioNal Dual-path Architecture), a plug-in for two-stage message passing HNNs applicable to both undirected and directed settings. The main path interpolates between learned receiver-normalised attention and structural incidence priors, while a non-competitive (not normalised) auxiliary path lets each sender contribute its own transformed information. We also show that, with fixed structural coefficients, PANDA recovers a certain complex-valued convolution operator adopted in previous works. Across four HNNs spanning spatial and spectral methods in both directed and undirected settings, plugging PANDA in yields an average improvement of 5.18 percentag…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：超图神经网络（HNN）要么用固定结构权重（异质性场景下会传播误导信息）、要么用归一化注意力（使注意力系数互相竞争）——能否两者兼得？</p>
+<p><strong>方法</strong>：提出 PANDA（先验引导的注意力双路径架构），作为两阶段消息传递 HNN 的即插即用组件，适用于有向与无向设定：主路径在学习的接收方归一化注意力与结构入射先验间插值；非竞争（不归一化）辅助路径让每个发送方贡献各自的变换信息。还证明固定结构系数下 PANDA 可还原某类复值卷积算子。</p>
+<p><strong>关键数字</strong>：在 4 个 HNN（覆盖空间与谱方法、有向与无向）上接入 PANDA，8 个真实基准数据集平均提升 5.18 个百分点。</p>
+<p><strong>为什么值得看</strong>：用双路径设计同时解决注意力竞争与结构先验问题，HNN 性能提升立竿见影。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.13635">PANDA: Prior-guided Attentional Dual-path Architecture</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13635">阅读原文 ↗</a></p>
 </body>
 </html>
