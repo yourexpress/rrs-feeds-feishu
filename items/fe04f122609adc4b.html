@@ -22,9 +22,11 @@
 <h1>Trajectory-Aware Policy Optimization: Closing the State Distribution Gap in Long-Horizon LLM RL</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>轨迹感知策略优化：闭合长程LLM RL的状态分布差</p>
-<blockquote><p>Reinforcement learning (RL) has become a dominant paradigm for enhancing LLMs' reasoning capabilities. Yet long-horizon autoregressive rollouts introduce a fundamental limitation: local policy mismatch can compound into severe state distribution shift over trajectories. Existing LLM RL methods, such as GRPO and GSPO, control policy mismatch at the token or sequence level, but overlook this trajectory-induced shift, causing training instability and eventual collapse as the horizon grows. To close the state distribution gap, we propose Trajectory-Aware Policy Optimization (TAPO), a principled framework that theoretically derives the state-distribution correction from the off-policy policy gradient and incorporates it into the RL objective. TAPO further employs a geometric-mean estimator for variance reduction, together with a length-aware dynamic clipping that prevents overly deviated updates across the trajectory. Extensive experiments demonstrate that TAPO significantly surpasses existing LLM RL algorithms across eight competition-level benchmarks, achieving up to 48% and 12% improvement over GRPO on mathematical reasoning and algorithmic coding, with substantially enhanced trainin…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 长程自回归 rollout 中，局地策略失配会沿轨迹复利放大为严重状态分布偏移，现有 GRPO/GSPO 只控制 token 或序列级失配，导致训练不稳定乃至坍缩。</p>
+<p><strong>方法</strong> 提出 TAPO：从 off-policy 策略梯度理论导出状态分布修正并并入 RL 目标；用几何均值估计器降方差，配合长度感知的动态裁剪防止跨轨迹的过度更新。</p>
+<p><strong>关键数字</strong> 在 8 个竞赛级基准上显著超越现有 LLM RL 算法：数学推理较 GRPO 提升最高 48%、算法编码提升 12%，训练稳定性大幅增强。</p>
+<p><strong>为什么值得看</strong> 直击长程 LLM RL 的状态分布偏移这一根本限制，理论推导+工程手段结合，是强化学习训练 LLM 的重要进展。</p>
+<p><a href="https://arxiv.org/abs/2610.13020">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13020">阅读原文 ↗</a></p>
 </body>
 </html>

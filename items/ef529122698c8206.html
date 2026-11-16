@@ -22,9 +22,11 @@
 <h1>TreeHCA: Hindsight-Guided Exploration and Credit Assignment for Multi-Turn LLM Agents</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>多轮LLM agent的事后引导探索与信用分配（TreeHCA）</p>
-<blockquote><p>Outcome-supervised group-relative policy optimization (GRPO) assigns the same advantage to every token in an LLM agent trajectory, leaving useful and unhelpful decisions undifferentiated. Hindsight credit assignment (HCA) can refine this feedback, but its estimates rely on trajectories containing informative alternatives at consequential histories. We introduce TreeHCA, which couples hindsight-guided exploration with hindsight credit assignment. TreeHCA uses changes in reference-answer likelihood to revisit intermediate histories and sample alternative continuations, forming a tree of reasoning and tool interactions. Because this exploration changes the distribution of sampled continuations, we derive the corresponding inverse-hindsight importance correction, including an exact finite-pool identity. We use this structure in a normalized tree backup that propagates terminal outcomes into turn-level advantages. This shared hindsight structure is TreeHCA's central design principle, linking informative exploration with hindsight-guided credit assignment. Across seven question-answering benchmarks and three Qwen backbones, TreeHCA outperforms all baselines in aggregate exact match, vali…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 结果监督的 GRPO 给 LLM agent 轨迹中每个 token 相同优势，有用与无用的决策未被区分；事后信用分配（HCA）依赖轨迹在关键历史处含有信息量足够的替代分支。</p>
+<p><strong>方法</strong> TreeHCA 把事后引导的探索与信用分配耦合：用参考答案似然变化回访中间历史、采样替代续写形成推理与工具交互树，并导出逆事后重要性修正（含精确有限池恒等式），用归一化树备份把终局结果传播为回合级优势。</p>
+<p><strong>关键数字</strong> 在 7 个问答基准、3 个 Qwen 主干上，TreeHCA 的聚合精确匹配超过所有基线。</p>
+<p><strong>为什么值得看</strong> 首次把"信息性探索"与"事后信用分配"在共享事后结构下统一设计，代码开源，对多轮 agent 训练有直接实用价值。</p>
+<p><a href="https://arxiv.org/abs/2610.12828">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.12828">阅读原文 ↗</a></p>
 </body>
 </html>

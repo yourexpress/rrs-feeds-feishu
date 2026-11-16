@@ -22,9 +22,11 @@
 <h1>When Edge Independence Fails: Joint Graph Diffusion with Latent Sociability Priors</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>边独立失效时的潜在社会性先验联合图扩散</p>
-<blockquote><p>Discrete graph diffusion models corrupt graph structure through independent edge updates with a Markovian noise model. Combined with the exchangeability requirement on the output distribution, the terminal prior is necessarily an Erdős--Rényi (E-R) random graph. This has a fundamental consequence for unconditional graph generation without node features: in the large graph limit, any GNN denoiser applied to an E-R graph approximately outputs an E-R graph, making effective denoising difficult. In practice, generated graphs fail to recover meaningful node heterogeneity and higher-order structure. Previous models introduced specialized node features to compensate, framing this as an expressivity problem, while the role of the prior remained unexamined. We instead address the root cause by introducing the Latent Sociability Prior (LSP) and a join} diffusion process that co-evolves latent node sociability variables and graph structure, removing edge independence while preserving exchangeability. Unlike existing latent graph diffusion methods, the sociability mechanism requires no complex encoder: its sole role is to guide edge updates and preserve node heterogeneity throughout the trajec…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 离散图扩散模型以马尔可夫噪声模型做独立边更新，配合可交换性要求，终态先验必然是 Erdős–Rényi 随机图——无节点特征时大图极限下任何 GNN 去噪器输出仍近似 E-R 图，去噪失效，生成图丢失节点异质性与高阶结构。</p>
+<p><strong>方法</strong> 引入潜在社会性先验（LSP）与联合扩散过程：潜在节点社会性变量与图结构共同演化，去除边独立性同时保持可交换性；该机制无需复杂编码器，仅引导边更新并沿轨迹保持节点异质性。</p>
+<p><strong>关键数字</strong> 在多个图生成数据集上验证，所提框架比无节点特征的基线更准确捕获图分布。</p>
+<p><strong>为什么值得看</strong> 直接处理先验设计的根因而非用特殊节点特征补偿，对无条件图生成给出了更本质的解决方案。</p>
+<p><a href="https://arxiv.org/abs/2610.13765">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13765">阅读原文 ↗</a></p>
 </body>
 </html>

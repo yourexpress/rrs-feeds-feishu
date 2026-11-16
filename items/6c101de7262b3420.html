@@ -22,9 +22,11 @@
 <h1>The Missing Fourth Term for the Emulation Tensor Memory Equilibrium (TME) Model: The Residue Deconstruction Cost</h1>
 <p class="meta-line">arXiv (cs.AR) · 2026-10-09 · 论文PDF</p>
 
-<p>张量内存均衡（TME）模型缺失的第四项：残差解构成本</p>
-<blockquote><p>The Tensor-Memory Equilibrium (TME) model of "FP8 is All You Need (Part 1)" calculates the execution time of Ozaki Scheme II emulation of fp64 as the maximum of a tensor-core term and a High-Bandwidth Memory (HBM) traffic term, plus a per-output reconstruction term. However, it omits the per-input deconstruction cost: every streamed fp64 operand must be scaled, rounded, and reduced modulo each of the $r$ moduli on SIMT pipes before any matrix multiply can issue. In this note we add this fourth term, calibrate its constant from the cuBLAS emulation path, and derive a closed-form operational-intensity threshold $\mathrm{OI}^{*} = c_q r P_{\mathrm{fp64}}/(8P_{\mathrm{int}})$ below which emulation cannot match native fp64 regardless of tensor-core throughput. On the NVIDIA B300 GPU the threshold is $\mathrm{OI}^{*}\approx 0.56$ FLOP/B. As a result, GEMV, SpMV, and low-batch GEMV, which are the memory-bound kernels the original paper claims to accelerate, are limited to 0.3-0.9x of native performance, and the 7-point stencil to 1.8x rather than the claimed 3.1x. Dense GEMM is unaffected as expected. We also show that precomputing and storing the residues moves the same cost into the ban…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> "FP8 is All You Need (Part 1)" 的张量内存均衡（TME）模型计算 fp64 模拟执行时间时漏了一项：每个流入的 fp64 操作数在 SIMT 管道上都必须按 r 个模数做缩放、舍入与模约简，即逐输入的解构成本。</p>
+<p><strong>方法</strong> 在原有张量核项、HBM 带宽项与逐输出重构项之外补上第四项，用 cuBLAS 模拟路径校准常数，导出闭合形式运算强度阈值。</p>
+<p><strong>关键数字</strong> 阈值 OI<em> = c_q·r·P_fp64/(8·P_int)；在 NVIDIA B300 上 OI</em>≈0.56 FLOP/B。原文声称加速的 GEMV、SpMV、低批次 GEMV 实际仅达原生性能 0.3–0.9x，7 点 stencil 为 1.8x 而非声称的 3.1x；稠密 GEMM 不受影响。</p>
+<p><strong>为什么值得看</strong> 对"FP8 模拟 fp64"性能模型的关键修正，直接影响内存受限算子在模拟路径上的可行性判断。</p>
+<p><a href="https://arxiv.org/abs/2610.10924">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10924">阅读原文 ↗</a></p>
 </body>
 </html>

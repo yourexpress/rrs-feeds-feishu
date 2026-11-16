@@ -22,9 +22,11 @@
 <h1>Transformer-based In-Context Score Operator Learning for Diffusion Models</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>扩散模型的transformer in-context score算子学习</p>
-<blockquote><p>Diffusion models typically learn the generative dynamics of a single target distribution or a family of distributions indexed by conditioning variables fixed during training. This limits their ability to adapt to a previously unseen distribution from only a small set of examples. We introduce an in-context solution operator learning framework for diffusion models, in which each target distribution is treated as a task drawn from a meta-distribution and is specified at inference time by an empirical context set. Our method learns an in-context score operator that maps the context samples, a noisy query point, and the diffusion time to the task-dependent score, enabling reverse-diffusion sampling on unseen tasks without retraining or parameter updates. A key observation is that the task-dependent score admits a Gaussian-kernel conditional-mean representation. Its empirical Nadaraya--Watson approximation can be represented exactly by a model in our constructed transformer class, providing a principled foundation for the proposed query-dependent attention architecture. The operator is trained through amortized denoising score matching across task distributions. We establish generalizat…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 扩散模型通常只学单一目标分布或训练时固定的条件分布族，无法仅凭少量样本适配前所未见的新分布。</p>
+<p><strong>方法</strong> 提出 in-context score 算子学习框架：把每个目标分布视为元分布中的一个任务，推理时由经验上下文集合指定；学一个把上下文样本、带噪 query 点与扩散时间映射到任务相关 score 的算子，无需重训练。关键观察是任务相关 score 有 Gaussian 核条件均值表示，其 Nadaraya–Watson 近似可被构造的 transformer 类精确表示。</p>
+<p><strong>关键数字</strong> 给出泛化误差界，刻画上下文规模、训练任务数、模型复杂度与内在/环境维度的影响；在 Navier-Stokes、ERA5、QuickDraw、Food-101 上简单任务族表现好，任务复杂度上升则性能下降。</p>
+<p><strong>为什么值得看</strong> 系统刻画了扩散模型 in-context 学习的潜力与局限，理论+多数据集实证完整。</p>
+<p><a href="https://arxiv.org/abs/2610.13690">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13690">阅读原文 ↗</a></p>
 </body>
 </html>

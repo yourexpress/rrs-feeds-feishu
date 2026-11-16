@@ -22,9 +22,11 @@
 <h1>When Routing Reveals Membership: Privacy Leakage from MoE Router Telemetry</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>MoE 路由遥测泄露训练成员身份隐私的实证研究</p>
-<blockquote><p>Mixture-of-Experts (MoE) language models produce routing information during inference that may be logged or exposed for monitoring, debugging, load analysis, and safety auditing. Unlike ordinary model outputs, this telemetry reveals a view of the model's internal computation, raising a privacy question: can it reveal whether an example was used to fine-tune the deployed model? We introduce a router-augmented membership inference attack that combines conventional output-side signals with aggregated routing features and applies a membership classifier learned from independently fine-tuned shadow models to the target model. Across three MoE architectures and three data domains, router telemetry consistently improves membership inference over a strong output-signal ensemble, increasing TPR at 1\% FPR by 2.7--9.4 percentage points across all nine settings. The leakage persists across full fine-tuning, frozen-router training, LoRA, and instruction tuning, and remains observable with only discrete expert selections, restricted telemetry, or a single shadow model. Mechanistic analysis further shows that the leakage does not require router-specific memorization: fine-tuning introduces membe…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> MoE 语言模型推理时产生的路由信息可能被记录或暴露（监控、调试、负载分析、安全审计），这类遥测能否泄露某样本是否用于微调部署模型？</p>
+<p><strong>方法</strong> 提出路由增强的成员推理攻击：把常规输出侧信号与聚合路由特征结合，用独立微调的影子模型学到的成员分类器攻击目标模型。</p>
+<p><strong>关键数字</strong> 跨 3 种 MoE 架构、3 个数据域，路由遥测在全部 9 个设置中把 1% FPR 下的 TPR 提升 2.7–9.4 个百分点；泄露在 full fine-tuning、冻结路由、LoRA、指令微调下均持续，仅离散专家选择、受限遥测或单个影子模型也可观测。</p>
+<p><strong>为什么值得看</strong> 首次系统证明 MoE 路由遥测把运维信号变成额外隐私面，机制分析显示泄露源于隐藏表示而非路由专属记忆。</p>
+<p><a href="https://arxiv.org/abs/2610.10616">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10616">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Thinking in Depth: Retrospective Inference for Tabular Foundation Models</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>Retro：后期显式回访重组早期中间表示的表格基础模型</p>
-<blockquote><p>Tabular foundation models (TFMs) are pretrained across diverse tabular tasks and make predictions on a new table at inference time using its labeled examples as context. Most recent TFMs perform such in-context prediction with stacked Transformer layers, repeatedly transforming how examples are represented and compared. By tracing individual queries through several strong TFMs, we find that predictive refinement is highly uneven across depth and is often concentrated in later layers. This uneven refinement motivates us to reconsider how intermediate representations are constructed and reused throughout the network. We introduce Retro, a tabular foundation model based on retrospective inference, where later stages can explicitly revisit and recombine intermediate information produced earlier in the network. Retro organizes this process around two complementary operations: which intermediate information to revisit, and how the resulting contextual update should be shaped for each query. Attention Residuals address the former by adaptively reweighting contributions from different depths, while query-conditioned Gated Attention addresses the latter by modulating the attention output el…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 表格基础模型（TFM）用堆叠 Transformer 做上下文预测，但预测精修在不同深度间分布极不均匀，往往集中在后几层——中间表示的价值被浪费。</p>
+<p><strong>方法</strong> 提出 Retro：后期阶段显式回访并重组早期产生的中间信息。Attention Residuals 自适应重加权不同深度的贡献，query 条件化的 Gated Attention 沿表示维度逐元素调制注意力输出，把精修更早、更广地分布到各层。</p>
+<p><strong>关键数字</strong> 在 TabArena、TALENT、RelArena 上 Retro 均位列前三并处于 Pareto 前沿；不同阶段修正不同 query 子集，呈现多视角精修模式。</p>
+<p><strong>为什么值得看</strong> 直接复用中间表示来更好利用 TFM 深度，思路简洁且实证强，对做表格学习与深度利用的人有借鉴意义。</p>
+<p><a href="https://arxiv.org/abs/2610.10317">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10317">阅读原文 ↗</a></p>
 </body>
 </html>

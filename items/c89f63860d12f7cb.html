@@ -22,9 +22,11 @@
 <h1>When Rank Rises as LLMs Degrade</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>谱监控不可靠：LLM 后训练退化时 RankMe 秩反而上升的受控研究</p>
-<blockquote><p>Post-training adapts language models in non-stationary environments. Practitioners monitor representation health with RankMe and related spectral statistics, often assuming that rank falls when representations degrade. We show that this assumption is unsafe for LLM post-training. In a controlled study of Qwen3-0.6B with four degradation modes and three seeds, data duplication worsens held-out loss by 75% relative to healthy while increasing both original and centred RankMe; the latter changes by 13.5 pooled standard deviations. Covariance effective rank rises to nearly twice its healthy value. This failure is spectral dispersion rather than collapse, so a one-sided monitor rates the worst checkpoint as the healthiest. By contrast, a learning-rate misconfiguration lowers centred RankMe and k95, while uncentred RankMe is inconsistent across seeds. Direction is therefore a property of the regime-statistic pair and cannot be fixed by recalibration alone. We also distinguish two often-conflated statistics: RankMe normalises singular values, whereas covariance effective rank normalises eigenvalues. On raw intermediate-layer states in the pretrained model, massive activations pin the latt…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 后训练在非平稳环境中适配语言模型，从业者常用 RankMe 等谱统计监控表示健康度，普遍假设"表示退化时秩下降"——该假设对 LLM 后训练是否安全？</p>
+<p><strong>方法</strong> 在 Qwen3-0.6B 上做四类退化模式、三种子代的受控研究，检验原始与中心化 RankMe、协方差有效秩等统计量在各类损伤下的方向。</p>
+<p><strong>关键数字</strong> 数据重复使留出损失恶化 75%，却让原始与中心化 RankMe 都上升（后者变化 13.5 个合并标准差），协方差有效秩升至健康值近两倍；而学习率错配使中心化 RankMe 与 k95 下降。预注册的共享前缀留一子代评估在分叉后 10–60 步检出全部三种损伤，但从不早于留出损失。</p>
+<p><strong>为什么值得看</strong> 证明"谱监控可诊断但不会比留出损失更早预警"，并厘清 RankMe 与协方差有效秩的统计区别，纠正一个危险的监控误区。</p>
+<p><a href="https://arxiv.org/abs/2610.09647">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09647">阅读原文 ↗</a></p>
 </body>
 </html>

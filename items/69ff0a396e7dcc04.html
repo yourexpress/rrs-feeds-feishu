@@ -22,9 +22,11 @@
 <h1>Work While They Sleep: Exploiting Evaluation Latency for Fully Bayesian Optimization</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>ELF-BO：利用目标函数评估延迟窗口并行做全贝叶斯优化</p>
-<blockquote><p>Black-box optimization problems are ubiquitous across science and engineering, often dealing with expensive objective functions. This objective latency has two consequences during optimization: (i) the objective evaluation dominates execution time, and (ii) sample-efficient algorithms are crucial to accelerate development and avoid wasting resources. Bayesian optimization (BO) methods are the \textit{de facto} choice of planners for suggesting the next point to try. Standard BO fits the surrogate model's hyperparameters with a point estimate. Alternatively, a fully Bayesian approach uses model averaging to account for uncertainty over the hyperparameters, leading to better uncertainty estimates---useful in the low-data regime that is pervasive in BO. However, it is often prohibitively expensive and thus rarely used. In this work, we propose ELF-BO, an algorithm that uses the objective evaluation latency to headstart the computation of the next suggestion, allowing for fully Bayesian optimization without incurring substantial decision-time costs. This is done by sampling from the hyperparameter posterior \emph{while} the objective is being evaluated, only requiring reweighting of th…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 黑盒优化的目标函数评估耗时巨大，标准 BO 用点估计拟合代理超参，全贝叶斯方法虽在低数据区更准却常因决策成本过高而不可用。</p>
+<p><strong>方法</strong> ELF-BO 利用目标评估的延迟窗口"提前开工"：在目标被评估的同时从超参后验采样，观测值返回后仅需对样本重加权，从而在不增加实质决策时间的前提下实现全贝叶斯优化。</p>
+<p><strong>关键数字</strong> 在合成函数与真实应用上，ELF-BO 性能匹配全贝叶斯方法，决策延迟与标准 BO 持平或更低。</p>
+<p><strong>为什么值得看</strong> 把"等待评估"这一被动时间变成计算资源，让全贝叶斯优化首次在真实场景实用化，思路巧妙且通用。</p>
+<p><a href="https://arxiv.org/abs/2610.08969">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.08969">阅读原文 ↗</a></p>
 </body>
 </html>

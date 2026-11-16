@@ -22,9 +22,11 @@
 <h1>Why On-Policy Distillation Sometimes Fails: Vanishing Learning Signals</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>策略内蒸馏为何有时失效：学习信号消失问题</p>
-<blockquote><p>On-policy distillation (OPD) enables effective capability transfer between language models, yet the mechanisms underlying its failures are not fully understood. Across code generation and mathematical reasoning, OPD with larger-scale teachers exhibits early loss plateaus, with an average final loss reduction of 25.1% after 200 updates, compared with 96.2% for self-RL teachers, obtained by further reinforcement learning (RL) training of the initial student. To understand this difference, we analyze OPD as an idealized continuous-time dynamical system in the small-learning-rate limit. Our training-log diagnostics associate these plateaus with an early decline in a gradient-based learning-signal proxy while substantial loss remains; these measurements do not establish why the underlying gradient weakens. We further prove a local recovery guarantee for teachers sufficiently close to the initial student in a shared parameterization under regularity conditions, offering a conditional explanation for the success of self-RL teachers in our experiments. Across runs with and without loss plateaus, we observe small relative parameter changes (0.025-0.098%) and high similarity between the stud…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 策略内蒸馏（OPD）在代码生成与数学推理中有时出现早期损失平台期，机制未被充分理解。</p>
+<p><strong>方法</strong> 把 OPD 建模为小学习率极限下的理想化连续时间动力系统，用训练日志诊断把平台期与梯度型学习信号代理的早期衰减关联；对与初始学生足够接近的教师证明局地恢复保证，并观察学生表示变化。</p>
+<p><strong>关键数字</strong> 大规模教师 OPD 在 200 次更新后平均最终损失降低 25.1%，而 self-RL 教师为 96.2%；有/无平台期运行的相对参数变化仅 0.025–0.098%，线性 CKA 全部 &gt;0.98。</p>
+<p><strong>为什么值得看</strong> 用理论+诊断解释 OPD 失效机制，指出"表示适应受限或致学习信号坍缩"这一待验证假设，对蒸馏训练调参有指导。</p>
+<p><a href="https://arxiv.org/abs/2610.11247">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.11247">阅读原文 ↗</a></p>
 </body>
 </html>
