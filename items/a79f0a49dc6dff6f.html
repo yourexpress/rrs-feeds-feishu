@@ -22,9 +22,11 @@
 <h1>Teaching PPG How not Who: Fixed-Effects Distillation from ECG</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>从 ECG 固定效应蒸馏教 PPG 学信号而非身份</p>
-<blockquote><p>ECG is widely used to teach PPG-only models, yet what it teaches is unexamined. Wearables are valued for tracking how a person's cardiovascular state changes, but ECG-to-PPG distillation mostly learns who the person is. A per-recording mean, the trait, holds 40-59% of a frozen ECG teacher's target, and pooled students memorise it without carrying it to new recordings. The raw alignment cosine misses this, since a constant predictor scores 0.793. Across 34 runs, the more identity a student memorises, the less state it learns. Fixed-effects distillation subtracts each recording's mean from prediction and target, so the trait cancels exactly, while a pooled anchor keeps it. State agreement more than doubles, within-person labels improve while age and sex do not, and the gain holds on two backbones and two further databases. Conditioning on the recording turns distillation toward the within-person changes that wearables monitor.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> ECG 常被用来教 PPG-only 模型，但教的内容未被审视：可穿戴设备应跟踪心血管状态变化，而 ECG→PPG 蒸馏大多学到的是"这个人是谁"。</p>
+<p><strong>方法</strong> 固定效应蒸馏：从预测与目标中减去每条录音的均值，使个体特质精确抵消，同时用池化锚点保留特质；将蒸馏导向可穿戴设备真正关心的个体内变化。</p>
+<p><strong>关键数字</strong> 每条录音均值（特质）占冻结 ECG 教师目标的 40-59%，池化学生记住它却无法带到新录音；常数预测器的原始对齐余弦达 0.793；34 次运行中记忆身份越多、学到的状态越少；状态一致性翻倍以上，个体内标签改善而年龄与性别不改善，收益在两个骨干与两个额外数据库上成立。</p>
+<p><strong>为什么值得看</strong> 揭示 ECG→PPG 蒸馏中的"身份泄漏"机制并给出简单有效的修正。</p>
+<p><a href="https://arxiv.org/abs/2610.10662">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10662">阅读原文 ↗</a></p>
 </body>
 </html>

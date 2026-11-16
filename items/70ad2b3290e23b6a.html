@@ -22,9 +22,11 @@
 <h1>Stream-Based Active Learning with Cooperative Neural Networks for Data-Efficient Partial Inverse Design: An Automotive Glass Run Channel Case Study</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>流式主动学习+协作神经网络的少样本部分逆设计（汽车玻璃导槽案例）</p>
-<blockquote><p>Inverse design in engineering often runs into a simple problem. Each labeled training sample must be produced through expensive simulation, so building a large dataset is slow and costly. This study addresses that problem for partial inverse design, where only some design variables are specified and the rest must be inferred to reach a target performance value. We propose CoNN-AL, a framework for data-efficient partial inverse design that adds stream-based active learning to the Cooperative Neural Network with Denoising Autoencoder (CoNN-DAE). The model estimates predictive uncertainty through Monte Carlo dropout and uses it to decide, in real time, which incoming candidate samples are worth labeling, so the limited labeling budget is spent on the most informative designs. We validate the framework on a real-world automotive glass run channel dataset of more than 900,000 unique simulated designs. With only 20,000 actively selected labels, about 2.3% of the training pool, CoNN-AL reaches R-squared values of 0.967 to 0.982 across all missing-variable levels, approaching the upper-bound models trained on far more data. It reaches R-squared of at least 0.95 with 30 to 40% fewer labels …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 工程逆向设计中每个标注样本都要经昂贵仿真产生，构建大数据集缓慢且成本高；部分逆向设计（只指定部分设计变量、其余需推断以达到目标性能）尤甚。</p>
+<p><strong>方法</strong> CoNN-AL：在协作神经网络+去噪自编码器（CoNN-DAE）上叠加流式主动学习；用蒙特卡洛 dropout 估计预测不确定性，实时决定哪些候选样本值得标注，把有限标注预算花在最信息量的设计上；数据集公开。</p>
+<p><strong>关键数字</strong> 真实汽车玻璃导槽数据集含 90 万余唯一仿真设计；仅用 2 万条主动选择标签（约训练池 2.3%）即在各缺失变量层级达 R² 0.967-0.982；较难层级用比随机采样少 30-40% 标签达 R²≥0.95；最具挑战层级是唯一达 R² 0.98 的策略。</p>
+<p><strong>为什么值得看</strong> 数据高效逆向设计的主动学习框架，附真实工业数据集与量化收益。</p>
+<p><a href="https://arxiv.org/abs/2610.09848">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09848">阅读原文 ↗</a></p>
 </body>
 </html>

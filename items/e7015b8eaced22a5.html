@@ -22,9 +22,11 @@
 <h1>SnapShare: Isolation-Preserving Deduplication for Serverless Snapshots</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>面向serverless快照的保持隔离性去重</p>
-<blockquote><p>The efficiency of serverless computing fundamentally depends on rapid function startup, a challenge increasingly addressed by restoring from virtual machine snapshots. However, because content deduplication techniques can open timing-channel attacks that leak sensitive tenant data, production platforms like AWS Lambda instead enforce strict, zero-sharing isolation between snapshots of different tenants. While secure, this isolation precludes the deduplication of common infrastructure components, wasting per-worker cache capacity and exacerbating cold-start latency through inefficient remote fetching. Our characterization reveals that non-sensitive, shareable infrastructure accounts for roughly 70% of a typical snapshot's contents and, on average, about 50% of its working set. We present SnapShare, a cluster-wide snapshot management system that co-designs storage and caching to exploit this commonality without compromising sensitive data isolation. SnapShare classifies a snapshot page as shareable only when its full content matches that of a page from a provider-approved source; any non-matching content is treated as isolated private content. Common infrastructure components are sel…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Serverless 快速启动依赖 VM 快照恢复，但内容去重会打开泄漏租户敏感数据的时序信道；生产平台（如 AWS Lambda）因此强制快照零共享隔离，牺牲公共基础设施的去重收益。</p>
+<p><strong>方法</strong> SnapShare 集群级快照管理系统：仅当页面完整内容与供应商批准来源的页面匹配时才标记为可共享，其余按隔离私有内容处理；公共组件选择性去重并跨工作节点固定，私有数据严格隔离并按追踪工作集急切获取，工作集外页面才回退按需获取；作为 Knative 扩展实现。</p>
+<p><strong>关键数字</strong> 非敏感可共享基础设施约占典型快照内容 70%、工作集约 50%；端到端尾部请求延迟降低 10-29%；远程存储需求减少 39%、本地缓存占用减少 38%，最坏取回延迟约束 10 倍。</p>
+<p><strong>为什么值得看</strong> 在不牺牲租户隔离的前提下恢复快照去重收益，serverless 冷启动优化的务实工程方案。</p>
+<p><a href="https://arxiv.org/abs/2610.13318">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13318">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Self-Supervised Speech Representations for Cross-Speaker Dysarthria Detection During Awake Craniotomy</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>术中跨说话人构音障碍检测的自监督语音表征</p>
-<blockquote><p>Detecting intra-operative speech impairment during awake craniotomy is essential for preserving language function. However, automated detection remains challenging because operating-room recordings contain substantial acoustic interference, clinically relevant speech events are rare, and available cohorts are small and heterogeneous across speakers. This study presents a systematic component-wise evaluation of a pipeline for distinguishing dysarthric from no-trouble speech in the DATABRASE corpus of awake-craniotomy recordings. The pipeline incorporates speaker diarization to isolate patient speech, a multi-view representation combining handcrafted acoustic descriptors with multilayer wav2vec 2.0 embeddings, speaker-conditional normalization and transferability-based feature selection to improve cross-speaker robustness, and a cascaded classifier comprising a gradient-boosted first stage and a neural second stage. Evaluation was conducted under strict speaker-independent conditions using leave-one-speaker-out cross-validation. The results show that cross-speaker performance is influenced more strongly by the speech representation than by classifier choice. The AUCs of three classif…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 清醒开颅手术中自动检测语言损伤对保护语言功能至关重要，但手术室录音声学干扰大、临床相关语音事件稀少、队列小且跨说话人异质。</p>
+<p><strong>方法</strong> 对 DATABRASE 语料做逐组件系统评估：说话人分割隔离患者语音；手工声学描述符与多层 wav2vec 2.0 嵌入构成多视角表征；说话人条件归一化与可迁移性特征选择提升跨说话人稳健性；级联分类器（梯度提升第一级 + 神经第二级），留一说话人交叉验证。</p>
+<p><strong>关键数字</strong> 三个分类器 AUC 差异不超过 4.7%；用多层自监督表征替代传统声学描述符带来 AUC 提升 18.2%-26.1%。</p>
+<p><strong>为什么值得看</strong> 低资源术中场景下证明表征质量比分类器复杂度更重要，并量化了患者特定术前校准的潜在增益。</p>
+<p><a href="https://arxiv.org/abs/2610.11825">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.11825">阅读原文 ↗</a></p>
 </body>
 </html>

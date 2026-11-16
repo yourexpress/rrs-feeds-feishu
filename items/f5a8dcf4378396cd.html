@@ -22,9 +22,11 @@
 <h1>State-OPD: State-Grounded On-Policy Distillation for Multi-Turn Agents</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>状态锚定的多轮agent on-policy蒸馏（State-OPD）</p>
-<blockquote><p>On-Policy Distillation (OPD) has emerged as a powerful paradigm for transferring reasoning capabilities from frontier models to smaller models, while extending its success to multi-turn agentic environments remains challenging. We study agentic OPD through interaction states, distinguishing the objective task and executed action-observation record from the internal semantic trajectory of student reasoning. Through this lens, we identify two roles of student reasoning in multi-turn OPD: prior reasoning distorts teacher supervision, while current reasoning shapes the action alternatives sampled at the same state. Specifically, at matched interaction states, removing prior student reasoning improves teacher continuation success and changes the teacher's token-level targets, with larger continuation gains at later turns. Meanwhile, resampling complete reasoning-action responses yields greater action diversity at the same state than resampling actions under a fixed reasoning trace. We introduce State-Grounded On-Policy Distillation, a framework that grounds teacher supervision in interaction states and reallocates the sampling budget to generate multiple complete reasoning-action respon…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 在线策略蒸馏（OPD）把前沿模型推理能力迁移到小模型成效显著，但扩展到多轮 agentic 环境仍具挑战。</p>
+<p><strong>方法</strong> 通过交互状态研究 agentic OPD，区分目标任务与已执行的动作-观测记录、学生推理的内部语义轨迹；识别学生推理的双重角色（先前推理扭曲教师监督、当前推理塑造同状态下的动作备选）；提出 State-OPD：教师监督锚定于交互状态，在高响应熵状态重分配采样预算生成多条完整推理-动作响应。</p>
+<p><strong>关键数字</strong> ALFWorld、ScienceWorld、WebShop 上，Qwen3-1.7B 与 Qwen3-4B 学生宏平均成功率均为各方法最高；Qwen3-4B 从最强基线 26.07% 提升到 31.74%，并在 ALFWorld Seen 上超过其 Qwen3-32B 教师。</p>
+<p><strong>为什么值得看</strong> 多轮 agent 蒸馏的新框架，用更少的监督轮次达成更高成功率并减少失败动作重复。</p>
+<p><a href="https://arxiv.org/abs/2610.13238">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13238">阅读原文 ↗</a></p>
 </body>
 </html>

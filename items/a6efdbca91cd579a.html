@@ -22,9 +22,11 @@
 <h1>Spanning Diffusion and Flow-based Posterior Sampling via Exact Gaussian Conditioning</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>经精确高斯条件统一扩散与流后验采样</p>
-<blockquote><p>Flow-matching and diffusion models are increasingly used as priors for linear inverse problems, however, most methods are bespoke to one class of trajectory prior. Plug-and-play methods have been proposed, however these implicitly decorrelate the guided trajectory, resulting in broad priors that can struggle when data is sparse. This work proposes $β$-Flow: a general plug-and-play method indexed by a correlation parameter $β$ that generalises over flow, diffusion, and decorrelated priors, and a confidence parameter $κ$ that controls how strongly the path distribution is enforced. Each step requires only one forward evaluation of a denoising network, followed by a Gaussian conditioning step. This step is an exact Kalman update that is not dependent on network gradients. We show that many existing guided samplers can be interpreted as instances or approximations of our method, each implicitly using a different trajectory prior and operator in place of the Kalman gain. From this viewpoint, we provide a qualitative comparison of methods in terms of their implicit biases and assumptions. We demonstrate consistently state-of-the-art level performance across 7 inverse problems over 4 data…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 流匹配与扩散模型作为线性逆问题先验，现有方法大多针对单类轨迹先验；即插即用方法会隐式去相关引导轨迹，形成过宽先验，数据稀疏时表现不佳。</p>
+<p><strong>方法</strong> β-Flow：由相关性参数 β 索引的通用即插即用方法，统一覆盖流、扩散与去相关先验，另有置信参数 κ 控制路径分布被强制的程度；每步只需一次去噪网络前向求值加精确高斯条件化（Kalman 更新，不依赖网络梯度）。</p>
+<p><strong>关键数字</strong> 在 4 个数据集、7 个逆问题上 PSNR 与 SSIM 达当前最优水平；观测信息少时高相关严格先验最好，观测信息多时低相关更优。</p>
+<p><strong>为什么值得看</strong> 把众多现有引导采样器统一为同一框架的实例/近似，并揭示先验与似然的互补角色。</p>
+<p><a href="https://arxiv.org/abs/2610.13812">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13812">阅读原文 ↗</a></p>
 </body>
 </html>

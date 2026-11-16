@@ -22,9 +22,11 @@
 <h1>Sparse Planning in Visual World Models via Cost Gradients</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>COSTGRAD：按规划成本梯度选择空间 token，50% 稀疏下世界模型规划 2.6 倍墙钟加速</p>
-<blockquote><p>Token-based world models enable fine-grained latent planning, but repeatedly processing large spatial token grids makes action search expensive. We introduce COSTGRAD, a training-free, goal-conditioned selector that ranks spatial tokens by the gradient norm of the planning cost with respect to each input token. By deriving importance from the downstream control objective, COSTGRAD targets tokens that matter for planning rather than merely for prediction. On AdaLN-conditioned predictors at $50\%$ sparsity, COSTGRAD matches or exceeds full-token planning on three of four continuous-control benchmarks, while giving a measured $2.6\times$ wall-clock speedup per environment planning step. Combining token sparsity with reduced CEM search increases this to a $\sim 5\times$ total speedup while still exceeding the full-token baseline. We also identify an architecture-dependent failure mode: in a matched AdaLN-vs-concat comparison, concat maintains comparable full-token performance but pure COSTGRAD loses its advantage over random selection. This difference tracks action-pathway drift: gradient-selected removal produces less drift than random removal on AdaLN, but more on concat. These resul…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 基于 token 的世界模型支持细粒度潜空间规划，但反复处理大空间 token 网格使动作搜索昂贵。</p>
+<p><strong>方法</strong> COSTGRAD：免训练、目标条件的空间 token 选择器，按规划代价对每个输入 token 的梯度范数排序；重要性直接来自下游控制目标而非单纯预测，并可与 CEM 搜索缩减结合。</p>
+<p><strong>关键数字</strong> AdaLN 条件预测器在 50% 稀疏度下，四个连续控制基准中三个匹配或超越全 token 规划，每个环境规划步实测加速 2.6 倍；结合 CEM 缩减总加速约 5 倍；但在 concat 架构上纯 COSTGRAD 优势消失（梯度选择在 concat 上产生更多动作路径漂移）。</p>
+<p><strong>为什么值得看</strong> 揭示稀疏世界模型规划中"选择器-架构兼容性"这一设计轴。</p>
+<p><a href="https://arxiv.org/abs/2610.10274">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10274">阅读原文 ↗</a></p>
 </body>
 </html>

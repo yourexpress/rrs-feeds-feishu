@@ -22,9 +22,11 @@
 <h1>Task-Oriented Key-Layer KV Communication for Efficient Latent Multi-Agent Collaboration</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>KITE：任务导向关键层 KV 潜空间通信，训练免费地降低多智能体协作通信与计算开销</p>
-<blockquote><p>Large language model-based multi-agent systems improve complex problem solving through collaboration, while latent communication directly transmits model internal states to avoid the high inference costs of natural language. However, existing KV-based latent communication methods prioritize sender-side state fidelity, leading to substantial communication and computation overhead and potentially introducing redundant information. To address these limitations, we revisit latent communication from a task-oriented perspective, shifting its objective from sender-side state fidelity to receiver-side task sufficiency. Under this formulation, we propose KITE, a training-free framework for task-oriented key-layer KV communication. KITE identifies a task-effective key layer using a receiver trajectory distortion criterion, transmits only the latent working memory associated with the key layer, and further uses the same layer as the entry point for autoregressive latent reasoning. Experiments on seven benchmarks across two model families and three model scales show that, compared with full-layer KV communication, KITE reduces communication volume by 28-36$\times$, achieves up to 3$\times$ end…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 多智能体系统通过潜通信直接传输模型内部状态以规避自然语言推理的高开销，但现有 KV 潜通信以发送方状态保真为目标，通信与计算开销大且可能引入冗余。</p>
+<p><strong>方法</strong> KITE：任务导向的免训练框架，把潜通信目标从发送方保真改为接收方任务充分性；用接收方轨迹失真准则识别任务有效关键层，只传输与关键层关联的潜工作记忆，并以同一层作为自回归潜推理入口。</p>
+<p><strong>关键数字</strong> 7 个基准、2 个模型家族、3 个模型规模上：相比全层 KV 通信，通信量减少 28-36 倍；端到端推理最高提速 3 倍；精度最高提升 23.3 个百分点。</p>
+<p><strong>为什么值得看</strong> 重新定义潜通信目标后大幅降低多智能体协作的通信与计算成本。</p>
+<p><a href="https://arxiv.org/abs/2610.08820">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.08820">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Seq-Flow: Efficient Probabilistic Forecasting with Self-Rollout Error Control</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>Seq-Flow：自 rollout 误差控制的高效概率预测条件流模型</p>
-<blockquote><p>Many scientific forecasting tasks require updating a distribution over future trajectories as new observations arrive. Conventional diffusion and flow models generate each forecast from Gaussian noise, often at the cost of many sampling steps. Warm-start methods reuse earlier predictions to reduce this cost, but their models are not trained to perform the forecast update itself, which can compromise quality under few-step sampling. In this work, we introduce Seq-Flow, a conditional flow model whose ODE transports samples from the previous forecast distribution to the updated one. Because successive forecasts often differ only modestly, this transport starts from an informative distribution and can produce accurate updates with few flow evaluations. Recursive reuse also creates a challenge: errors in one forecast become errors in the initial states of subsequent flows. We address this with self-rollout training, in which a moving average copy of the model generates forecasts that initialize later training updates. Unlike self-forcing methods, which reuse generated outputs as conditioning context, Seq-Flow reuses them as the source of the next flow. Experiments On particle-accelerato…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 科学预测任务需随新观测到达不断更新未来轨迹分布；常规扩散/流模型每次从高斯噪声生成、采样成本高，暖启动方法又未针对"更新预测"本身训练。</p>
+<p><strong>方法</strong> Seq-Flow 条件流模型，其 ODE 把样本从前一预测分布输运到更新分布；自展开（self-rollout）训练用模型移动平均副本生成预测来初始化后续更新，并把重用输出作为下一流的源而非条件上下文。</p>
+<p><strong>关键数字</strong> 粒子加速器束流溢出预测中，少 NFE 采样预算下 CRPS 降低 65%；尽管训练时自展开不超过 4 次更新，模型在超过 400 次连续更新后仍保持准确；代码开源。</p>
+<p><strong>为什么值得看</strong> 用"分布间输运"替代"从噪声重生成"的概率预测更新范式，兼顾效率与长程稳定性。</p>
+<p><a href="https://arxiv.org/abs/2610.10440">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.10440">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>SpatialOPSD: Self-Distilling Spatial Intelligence from Verified Coding Agent Traces</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-10-09 · 论文PDF</p>
 
-<p>从已验证编码智能体轨迹自蒸馏空间智能</p>
-<blockquote><p>Spatial coding agents significantly improve spatial reasoning in Multimodal Large Language Models (MLLMs) by using external tools to generate verified execution traces. However, this paradigm inherently suffers from prohibitive inference-time overhead and external dependencies. In this paper, we explore whether an MLLM can internalize this agentic capability to operate entirely tool-free. We begin with a simple observation: prompting an MLLM with summarized execution traces of a spatial coding agent naturally unlocks the model's internal spatial Chain-of-Thought (CoT). Motivated by this, we introduce SpatialOPSD, an on-policy self-distillation framework that internalizes spatial reasoning into a standalone MLLM by formulating verified agent traces as privileged information. To mitigate privileged-information leakage during distillation, we introduce Repetition-Aware Distillation, which combines repetition masking with unlikelihood regularization. Experiments across multiple benchmarks demonstrate that self-distilling SpatialOPSD achieves higher average accuracy than SFT and GRPO on both spatial and OOD datasets, exhibiting superior performance and generalization.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 空间编码代理借助外部工具生成已验证执行轨迹，能显著提升多模态大模型（MLLM）的空间推理，但推理开销大且依赖外部依赖；能否让 MLLM 完全无工具地内化这一能力？</p>
+<p><strong>方法</strong> SpatialOPSD：在线策略自蒸馏框架，把已验证代理轨迹作为特权信息蒸馏进独立 MLLM；发现用摘要轨迹提示 MLLM 可自然解锁内部空间思维链；引入重复感知蒸馏（重复掩码 + unlikelihood 正则）缓解蒸馏中的特权信息泄漏。</p>
+<p><strong>关键数字</strong> 多个基准上自蒸馏 SpatialOPSD 的平均精度高于 SFT 与 GRPO，且在空间与 OOD 数据集上表现与泛化更优。</p>
+<p><strong>为什么值得看</strong> 把"带工具的代理能力"内化为无工具模型能力的自蒸馏路径。</p>
+<p><a href="https://arxiv.org/abs/2610.11366">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.11366">阅读原文 ↗</a></p>
 </body>
 </html>

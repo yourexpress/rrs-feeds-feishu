@@ -22,9 +22,11 @@
 <h1>TPCS: A Cycle-Level Simulation Paradigm with Native Execution Semantics for RTL Modeling and Generation</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>带原生执行语义的RTL建模与生成分支的周期级仿真范式（TPCS）</p>
-<blockquote><p>The growing diversity of domain-specific architectures and microarchitectural designs demands fast and accurate evaluation methods during early design stages. However, existing approaches suffer from a fundamental trade-off: high-level simulators offer speed but lack fidelity, while RTL-based tools provide accuracy at the cost of significant simulation overhead. This gap limits efficient pre-RTL microarchitecture exploration. Therefore, we propose Transaction-Pruned Cycle Simulation (TPCS), a novel modeling and simulation framework. It serves as a unified intermediate abstraction spanning microarchitecture modeling, cycle-accurate simulation, and synthesizable RTL implementation. TPCS organizes combinational logic as transaction-based function invocations and leverages host CPU control flow to naturally prune inactive logic, eliminating the need for explicit event scheduling or signal tracking. This enables cycle-accurate simulation with significantly improved performance. TPCS preserves structural correspondence with RTL and supports automatic generation of synthesizable designs. TPCS achieves 36$\times$-42$\times$ speedups over parallel Verilator on SMP systems and 3.4$\times$-7.…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 领域专用架构早期设计需要快速且准确的评估：高层模拟器快但保真度低，RTL 工具准确但仿真开销大，两者缺口阻碍 pre-RTL 微架构探索。</p>
+<p><strong>方法</strong> TPCS（事务剪枝周期仿真）：统一中间抽象，覆盖微架构建模、周期精确仿真与可综合 RTL 实现；把组合逻辑组织为基于事务的函数调用，借助宿主 CPU 控制流自然剪枝非活动逻辑，免去显式事件调度与信号追踪。</p>
+<p><strong>关键数字</strong> SMP 系统上比并行 Verilator 快 36-42 倍，加速器上比单线程 Verilator 快 3.4-7.2 倍，且轨迹周期级波形一致；生成 RTL 与手写实现相当，时钟周期相对变化 -4.7% 至 +2.6%、标准单元面积 -3.3% 至 +4.0%。</p>
+<p><strong>为什么值得看</strong> 弥合高层建模与 RTL 之间抽象鸿沟的敏捷 pre-RTL 工作流。</p>
+<p><a href="https://arxiv.org/abs/2610.13067">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13067">阅读原文 ↗</a></p>
 </body>
 </html>

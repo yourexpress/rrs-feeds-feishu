@@ -22,9 +22,11 @@
 <h1>ShoreKeeper: Accelerating Iterative Data Analytics in the Cloud via Distributed Recovery-Cost-Aware Caching</h1>
 <p class="meta-line">arXiv · 2026-10-09 · 论文PDF</p>
 
-<p>云端迭代数据分析的分布式恢复成本感知加速（ShoreKeeper）</p>
-<blockquote><p>Large-scale data-intensive workloads powered by iterative graph or machine learning processing have an insatiable demand for memory due to the continuous generation of new intermediate data. Although existing caching strategies strive to keep performance-critical data in memory, they often fail in practice because they are limited to node-local memory management and assume high node availability. In this paper, we introduce ShoreKeeper, a framework that maximizes execution efficiency by treating cluster-wide memory as a unified, elastic pool. ShoreKeeper employs a global optimization model that maps distributed dataflows into a single graph abstraction to minimize the recovery cost of data evicted from cache across the cluster. To handle memory working sets and cluster capacities that fluctuate over time, ShoreKeeper employs a graph-pruning technique that permits the fast refinement of the caching plan. These optimizations allow ShoreKeeper to work seamlessly whether deployed on highly available VMs or cost-effective preemptible instances in the cloud. Our experiments show that ShoreKeeper consistently outperforms state-of-the-art systems.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 迭代图处理与机器学习等数据密集负载持续生成中间数据，内存需求巨大；现有缓存策略限于节点本地内存管理且假设节点高可用，实际中常失效。</p>
+<p><strong>方法</strong> ShoreKeeper 把集群内存视为统一弹性池；全局优化模型将分布式数据流映射为单一图抽象，最小化缓存逐出数据的恢复成本；图剪枝技术支持随工作集与集群容量波动快速细化缓存方案；可无缝部署于高可用 VM 与低成本可抢占实例。</p>
+<p><strong>关键数字</strong> 原文摘要未给出具体量化；实验表明一致优于现有 SOTA 系统。</p>
+<p><strong>为什么值得看</strong> 面向云上迭代数据分析的分布式恢复成本感知缓存，兼顾成本敏感的可抢占实例场景。</p>
+<p><a href="https://arxiv.org/abs/2610.13396">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13396">阅读原文 ↗</a></p>
 </body>
 </html>

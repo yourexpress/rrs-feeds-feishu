@@ -22,9 +22,11 @@
 <h1>Sequential Pretraining Favors Large Models</h1>
 <p class="meta-line">arXiv cs.LG · 2026-10-09 · 论文PDF</p>
 
-<p>顺序预训练偏向大模型：先验性偏差使小模型学习晚期数据分布低效</p>
-<blockquote><p>Large neural networks often acquire capabilities that small models fail to learn. Does this stem from large models learning more representative features, or from being more robust to unaccounted-for adverse effects introduced during training? We define and quantify one such adverse effect, primacy bias, as the extent to which exposure to early data distributions impairs later learning. We show that small models can allocate learning capacity inefficiently toward early distributions, whereas sufficiently overparameterized models are robust to this effect. This inefficiency is particularly consequential in pretraining, where foundation models often encounter heterogeneous data distributions sequentially rather than jointly. As a result, small foundation models can struggle to learn distributions encountered late in training, which is particularly harmful when later data emphasizes desirable capabilities such as code, mathematics, and reasoning. Motivated by these findings, we introduce Exposure Therapy (ET), a simple regularization that promotes more efficient allocation of learning capacity during sequential pretraining. We demonstrate that ET improves foundation models' performance…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 大模型常获得小模型学不到的能力：这源于大模型学到更具代表性的特征，还是对训练中未计及的不良效应更稳健？</p>
+<p><strong>方法</strong> 定义并量化"首因偏差"——早期数据分布暴露对后期学习的损害；证明小模型会把学习容量低效分配给早期分布，而过参数化模型对此稳健；提出 Exposure Therapy（ET）正则化促进顺序预训练中学习容量的高效分配。</p>
+<p><strong>关键数字</strong> ET 在十亿参数规模内提升模型在后期数据分布（代码、数学、推理）及整体能力的表现；结论指向大模型的部分优势来自对不良训练效应的稳健性而非特征代表性。</p>
+<p><strong>为什么值得看</strong> 为"大模型为何强"提供新解释，并给出小模型可复用的训练算法改进。</p>
+<p><a href="https://arxiv.org/abs/2610.09611">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.09611">阅读原文 ↗</a></p>
 </body>
 </html>
