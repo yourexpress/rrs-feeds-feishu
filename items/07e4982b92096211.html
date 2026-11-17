@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RL$^{\mathrm{RT}}$: On-Device Reinforcement Learning Runtime</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>RL$^{\mathrm{RT}}$: On-Device Reinforcement Learning Runtime</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-13 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：端上强化学习在共享嵌入式 GPU 上周期运行 actor 与 learner，learner 产出 actor 权重，现有设计要么 stall actor、要么让策略漂移，如何把耦合变成可调？</p>
+<p><strong>方法</strong>：RL^RT 端上运行时——refresh bound 限制两次刷新间的 actor 发布次数；带 slack-aware 准入的 GPU permit 优先服务 actor，并用空闲时间在任意基础调度器之上填充训练。</p>
+<p><strong>关键数字</strong>：两块 Jetson 板上真实刷新成本下，16.8M 参数策略的 deadline miss 保持在 1% 以下（无该机制时为 85–100%）。</p>
+<p><strong>为什么值得看</strong>：端侧 RL 推理/训练共享调度的实用运行时，嵌入式与机器人场景直接相关。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.18035">RL$^{\mathrm{RT}}$: On-Device Reinforcement Learning Runtime</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.18035">阅读原文 ↗</a></p>
+</body>
+</html>

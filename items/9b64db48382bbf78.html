@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User-Schedulable Approximations for Quantized Tensor Programs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>User-Schedulable Approximations for Quantized Tensor Programs</h1>
+<p class="meta-line">arXiv cs.PF · 2026-11-12 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：量化让 LLM 能跑在边缘设备，但每种权重格式×激活格式×指令集都要配对 kernel，GGML 手工维护成本爆炸——54 个权重-激活配对里只有 8 个有 tiled 矩阵乘 kernel。</p>
+<p><strong>方法</strong>：把 Halide 的 algorithm/schedule 分离扩展到数值表示：每个近似是一个 codec（encoder+decoder），由量化器、整数表示、位打包与布局等可复用单元组合；新指令 approximate_by 把 codec 应用到一个程序阶段，encoder/decoder 变成可调度的普通阶段并与矩阵乘的寄存器 tile 融合；round-trip law 等契约用属性测试检查。</p>
+<p><strong>关键数字</strong>：一套算法+调度库生成 347 个 kernel，覆盖 31 种格式、38 个 GGML 无 kernel 的配对，代码量仅为 GGML+KleidiAI 的 1/3.7；Apple M3 Max 上 91.0% 的有对应 kernel 场景达到 GGML 至少 95% 速度，中位加速 1.13×；x86 AMX 移植仅 793 行、83.5% 场景匹配 GGML。</p>
+<p><strong>为什么值得看</strong>：量化推理 kernel 覆盖率的系统级解法，llama.cpp 生态直接受益。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.17526">User-Schedulable Approximations for Quantized Tensor Programs</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.17526">阅读原文 ↗</a></p>
+</body>
+</html>

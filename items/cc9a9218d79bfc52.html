@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doubao Seedance 2.5 系列教程</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Doubao Seedance 2.5 系列教程</h1>
+<p class="meta-line">字节跳动 · 2026-11-16 · 技术博客</p>
+<img class="hero" src="https://res.gcloudcache.com/volc-fe/console-ark/ark-new-main/static/image/volc-180.png" alt="" referrerpolicy="no-referrer">
+<p>Seedance 2.5 系列官方教程：30 秒直出、参考素材上限提升、视频编辑/延长能力与 API 调用示例</p>
+<blockquote><p>Doubao Seedance 2.5 系列（下文简称 Seedance 2.5 系列）包含 Seedance 2.5 和 Seedance 2.5 flash，是新一代视频创作模型，在长叙事能力、全模态参考能力和编辑能力上全面提升。单次生成时长提升至 30 秒并支持多轮延长，单次参考多模态素材上限大幅提升，提供基于时间戳的精准编辑控制。画面质感全面优化，成片更接近实拍的影视质感。本文介绍 Seedance 2.5 系列模型的特色能力与使用方法，帮助您快速实现 创建视频生成任务 API 调用。</p><p>使用前必读#</p><p>任务类型与限制#</p><p>Seedance 2.5 系列模型会根据输入素材和提示词意图判断任务类型。任务类型包括文生视频、首帧/首尾帧生视频，以及全模态参考生视频任务；其中全模态参考生视频任务根据提示词意图进一步分为参考生视频、视频编辑和视频延长 3 类子任务。</p><p>配置方法#</p><p>全模态参考生视频（不区分子任务）#</p><p>对于全模态参考生视频任务，如果您没有明确区分具体的子任务类型，推荐按以下方式配置参数：</p><p>omni_reference_task_type</p><p>设置为auto</p><p>。content.role</p><p>设置为reference_image</p><p>、reference_video</p><p>或reference_audio</p><p>。- 推荐将</p><p>ratio</p><p>设置为adaptive</p><p>、duration</p><p>设置为-1</p><p>。如果传入参考视频，建议单个参考视频时长为 4–30 秒。</p><p>视频编辑#</p><p>对原视频的画面或音频进行编辑操作，如替换视频主体、增删视频中对象、局部画面重绘或修复等</p><p>对于明确的视频编辑类任务，推荐以下配置方法:</p><p>omni_reference_task_type</p><p>设置为edit</p><p>。content</p><p>中至少包含一个role</p><p>为reference_video</p><p>的参考视频。ratio</p><p>必须为adaptive</p><p>；duration</p><p>必须为-1</p><p>；参考视频时长必须为 4–30 秒。- 提示词中需包含至少一个关键词：编辑视频、增加/加上、删除/去掉、修改/替换/改成。</p><p>提示词示例：@video1 中加一些小动物；把 @video1 的人物修改为 @image1；删掉 @video1 的背景音乐</p><p>视频延长#</p><p>对原视频进行向前或向后延长</p><p>对于明确的视频延长类任务，推荐以下配置方法:</p><p>omni_reference_task_type</p><p>设置为extend</p><p>。content</p><p>中至少包含一个role</p><p>为reference_video</p><p>的参考视频。ratio</p><p>必须为adaptive</p><p>。- 提示词中需包含至少一个关键词：向前/向后延长、延续、续写。</p><p>提示词示例：向后延长 @video1，@image1 的角色从天而降...；续写 @video1 前 5s，@video2 女人入画说...</p><p>首帧/首尾帧生视频#</p><p>输入 1 张图作为首帧生成视频，或输入 2 张图分别作为首帧和尾帧生成视频</p><p>content</p><p>中需包含role</p><p>为first_frame</p><p>的图片；首尾帧生视频还需包含role</p><p>为last_frame</p><p>的图片。ratio</p><p>必须为adaptive</p><p>。</p><p>报错机制#</p><p>Seedance 2.5 系列模型存在以下两种参数校验与报错机制。</p><p>同步报错（提交任务时）#</p><p>- 对于全模态参考生视频任务，显式指定</p><p>omni_reference_task_type</p><p>为edit</p><p>或extend</p><p>时，接口将前置校验特殊参数限制，若不符合要求，接口立即返回错误。</p><p>异步报错（任务启动后）#</p><p>-</p><p>对于全模态参考生视频任务，未传入</p><p>omni_reference_task_type</p><p>或将其设置为auto</p><p>时，模型先根据输入素材和提示词判断实际任务类型，再校验该类型的特殊参数限制。不符合要求时，任务异步报错。 -</p><p>对于首帧/首尾帧生视频，参数配置不符合任务特殊限制时，任务异步报错</p><p>新手入门#</p><p>本入门教程专为 API 新手用户 设计，帮助您一键搭建 Python 开发环境、完成虚拟环境创建和方舟 SDK 安装，并提供直接可运行的 Seedance 2.5 系列调用代码，您只需修改对应的输入素材，即可开始您的视频生成创作。</p><p>1. 准备工作</p><p>在开始之前，请确保您已经完成以下准备：</p><p>-</p><p>注册账号：确保您拥有火山引擎账号并已 登录。</p><p>-</p><p>获取 API Key：访问 API Key 管理页面，点击 创建 API Key，并复制保存您的 API Key。注意请妥善保管您的 API Key，不要泄露给他人。</p><p>-</p><p>下载并解压文件：点击下载下方附件，将其解压到您的本地目录（如桌面或“下载”文件夹）。</p><p>2.操作步骤</p><p>-</p><p>进入</p><p>scripts/init_dev_env</p><p>目录。 -</p><p>双击运行</p><p>setup_windows.bat</p><p>。 -</p><p>脚本会自动执行以下操作：</p><p>-</p><p>下载 uv 工具。</p><p>-</p><p>自动下载 Python 3.12（如果不干扰您的系统 Python）。</p><p>-</p><p>创建虚拟环境 .</p><p>venv</p><p>。 -</p><p>安装方舟 SDK。</p><p>-</p><p>-</p><p>完成后，在项目根目录会生成一个</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://ark.volcengine.com/region:cn-beijing/docs/seedance-2-5">阅读原文 ↗</a></p>
+</body>
+</html>

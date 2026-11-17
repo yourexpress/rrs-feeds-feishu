@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIMTurn: Lightweight Divergent Subgroup Scheduling for Intra-Warp Synchronization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>SIMTurn: Lightweight Divergent Subgroup Scheduling for Intra-Warp Synchronization</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-13 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：基于栈的重汇合 SIMT 执行对发散路径固定串行化，会死锁依赖 warp 内同步的程序——自旋子组可能挡住持资源的兄弟子组；ITS 可解但硬件开销大，能否轻量实现？</p>
+<p><strong>方法</strong>：SIMTurn 轻量编译器-硬件机制——编译器在潜在阻塞循环插入 yield 指令，配一个有界的可恢复子组池；调度器让等待的子组让位给可进展的兄弟，无需每线程独立程序计数器；在开源 Vortex GPGPU 的编译器、模拟器与 RTL 上实现并评估。</p>
+<p><strong>关键数字</strong>：相对 IPDOM 仅 17–24% 的调度器面积开销（ITS 为 39–91%）；无跨子组进展需求的负载离 IPDOM 8% 以内；有真实跨子组并行时紧跟 ITS，比软件串行化 IPDOM 基线最快 2.7×。</p>
+<p><strong>为什么值得看</strong>：warp 内同步死锁的轻量硬件解法，SIMT 前沿且开源可复现。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.17827">SIMTurn: Lightweight Divergent Subgroup Scheduling for Intra-Warp Synchronization</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.17827">阅读原文 ↗</a></p>
+</body>
+</html>

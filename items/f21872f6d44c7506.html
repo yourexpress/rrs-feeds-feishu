@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Superfluid: Local AI Server for Distributed LLM Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Superfluid: Local AI Server for Distributed LLM Inference</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-13 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：本地 LLM 服务面临两种新压力——单设备上多 agent 共享一个交互式模型；跨设备上开发者拥有多台不同厂商机器但各自只服务单运行时、大部分时间闲置，如何统一？</p>
+<p><strong>方法</strong>：Superfluid 开源本地 LLM server——单设备用隔离 worker 进程驱动 llama.cpp/MLX/BaseRT，一个调度器把交互请求排在 agent 工作之前、公共 prompt 只计算一次、每个 token 先写持久日志再达客户端；跨设备把机器群变成单一 API 端点，异构硬件按实测速度分活，可随时加入/失败而不丢请求。</p>
+<p><strong>关键数字</strong>：Apple M5 Pro 上 Qwen3.8-27B，8 个 agent 工作时聊天首 token 1.5s（llama-server/Ollama/mlx_lm.server 为 291–612s）；6 台三厂商机器 64 模拟用户 1 小时服务 5,041 请求全部完成，吞吐 112→534 tok/s、中位首 token 99→12s；12 台 Mac Studio M3 Ultra 上 384 agent 的 38,563 请求以 10,656 tok/s 零失败完成。</p>
+<p><strong>为什么值得看</strong>：本地多机 LLM 服务的开源方案，边缘/私有部署团队可直接使用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.17753">Superfluid: Local AI Server for Distributed LLM Inference</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.17753">阅读原文 ↗</a></p>
+</body>
+</html>

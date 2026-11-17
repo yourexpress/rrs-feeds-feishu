@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CHARMING: Parallel Edge AI Acceleration Across Tensor Processing and In-Memory Computation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CHARMING: Parallel Edge AI Acceleration Across Tensor Processing and In-Memory Computation</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-13 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：边缘 AI 加速器效率受数据搬运限制，前期 CHARM 用计算与搬运重叠缓解，能否进一步用存内计算作为并行加速器、彻底消除部分数据搬运？</p>
+<p><strong>方法</strong>：CHARMING 异构边缘 AI 架构——基于精度与量化感知的划分，把注意力头分配到 AIE 阵列与 in-DRAM 计算单元上并发执行；按模型结构、序列长度与精度平衡负载并挑选头以最小化精度损失；把量化集成进 AIE 投影阶段进一步减少数据搬运。</p>
+<p><strong>关键数字</strong>：AMD Versal VCK5000 与 Alveo U200 硬件端到端验证；prefill 性能最高提升 23.6%、decode 最高 44%；int4×int4 定点存内计算下每层能耗最高降 7.6%、能耗延迟积改善最多 24.7%，精度接近 FP32 基线。</p>
+<p><strong>为什么值得看</strong>：AIE+存内计算并行加速的硬件实测方案，边缘 LLM/视频生成推理的新架构思路。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.17785">CHARMING: Parallel Edge AI Acceleration Across Tensor Processing and In-Memory Computation</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.17785">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DiffusionSSD: Achieving Extreme Visual Compression with Dual-stage Diffusion and Cross-level Near-Data Processing</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DiffusionSSD: Achieving Extreme Visual Compression with Dual-stage Diffusion and Cross-level Near-Data Processing</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-13 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：边缘设备视觉数据爆炸需要极致压缩，扩散编解码器质量好但计算重、占用 NPU 且 I/O 路径长，如何软硬协同解决？</p>
+<p><strong>方法</strong>：DiffusionSSD 跨层近数据处理框架——算法层 Dual-stage Diffusion（patchification + 单步扩散）降低计算成本；架构层提出 cUFS（计算通用闪存）+ LPDDR-PIM，把编解码完全卸载到数据侧、减少视觉数据搬运且无需重设计 SoC；系统层 Patch-Workload 协同感知调度。</p>
+<p><strong>关键数字</strong>：Dual-stage Diffusion 保持相近感知质量同时计算成本最高降 92.7%；相比 NPU+DRAM，cUFS+PIM 编码吞吐平均提升 2.32×；相比 SmartSSD 平均提升 2.91×。</p>
+<p><strong>为什么值得看</strong>：闪存+存内计算承载神经编解码的软硬协同设计，边缘视觉压缩的新路线。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.17908">DiffusionSSD: Achieving Extreme Visual Compression with Dual-stage Diffusion and Cross-level Near-Data Processing</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.17908">阅读原文 ↗</a></p>
+</body>
+</html>

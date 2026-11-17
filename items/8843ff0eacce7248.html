@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fuse-All MoE Inference Kernel with Load Balancing on TPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Fuse-All MoE Inference Kernel with Load Balancing on TPUs</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-13 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：TPU 上 MoE 推理受中间数据搬运与专家负载不均限制，如何联合优化专家计算、输出通信与负载均衡？</p>
+<p><strong>方法</strong>：Fuse-All MoE TPU kernel——融合 token 收集、专家投影、门控激活与输出写，专家计算中间量保留在片上；固定 token-slot 目标让调度与专家放置可变化而不破坏路由语义；PD 分离场景下用调度与专家重分配均衡 EP16 prefill，decode 用对称 EP8TP2 共享每芯片两 TensorCore 的活动专家计算。</p>
+<p><strong>关键数字</strong>：偏斜 EP16 prefill 负载的 kernel 运行时间从均衡参考的 2.3× 降至 1.09×；32–512 decode token 下对称 EP8TP2 相对融合 EP16 延迟最高降 21.3%；集成系统相对 Megablox EP16 基线吞吐最高提升 34.5%。</p>
+<p><strong>为什么值得看</strong>：TPU MoE 推理 kernel 的系统级优化，PD 分离部署可直接受益。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.17857">Fuse-All MoE Inference Kernel with Load Balancing on TPUs</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.17857">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EventSpikeSeg: Memory-Aware Mixed-Signal Architecture for Event-Camera Spiking Segmentation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>EventSpikeSeg: Memory-Aware Mixed-Signal Architecture for Event-Camera Spiking Segmentation</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-13 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：事件相机分割需要持久神经状态但输入稀疏，嵌入式实现中内存组织是核心约束，如何设计混合信号架构？</p>
+<p><strong>方法</strong>：EventSpikeSeg——GF180MCU 180nm CMOS 混合信号架构，常驻电容内存 + 共享模拟处理；25 种群脉冲编码-解码器含 143,824 个突触权重，但 440×640 分辨率下需 30,976,000 个膜状态；规定 5ms 时间步模型更新、数字事件/地址服务与 64 态电容组；表征覆盖 22 个模块族、74 个工作点。</p>
+<p><strong>关键数字</strong>：标称结果：神经元核心功率 41.711 微瓦、1.4 微秒单元读的正端能量 3.338 pJ、5ms 保持期选中态漂移 0.531 mV；软件 checkpoint 在 DSEC 六类 held-out 上平均 IoU 27.976%（非硬件精度）；单帧 SPICE 校准仿真 24.26% vs PyTorch 参考 26.22%。全网络物理运行、系统能耗与失配鲁棒性未验证。</p>
+<p><strong>为什么值得看</strong>：存算一体的端到端事件分割芯片设计，边界数据详实、未验证项如实标注。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.18524">EventSpikeSeg: Memory-Aware Mixed-Signal Architecture for Event-Camera Spiking Segmentation</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.18524">阅读原文 ↗</a></p>
+</body>
+</html>

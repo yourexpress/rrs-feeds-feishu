@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The State Is Not the Bottleneck: A Paged-State Gated-DeltaNet Tile on a Tri-Mode Multicast Mesh, Bit-Exact from RTL to Silicon</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>The State Is Not the Bottleneck: A Paged-State Gated-DeltaNet Tile on a Tri-Mode Multicast Mesh, Bit-Exact from RTL to Silicon</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-13 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：线性注意力 LLM 用固定大小循环状态替代增长的 KV cache，边缘 FPGA 上状态可能超过片上内存而必须分页到外部内存——分页是否主导解码成本？</p>
+<p><strong>方法</strong>：在 Agilex 5 FPGA 上构建计算一个完整层的硬件 tile（3.69 亿参数混合 Gated DeltaNet 模型）并分页其循环状态；tile 是三模多播网格中的一个节点；对照浮点测量定点算术误差，并检查硬件与定点参考逐位一致。</p>
+<p><strong>关键数字</strong>：模型状态需 6.2 MiB，器件块内存仅 0.87 MiB；分页每解码 token 增加 26.0 MB 内存流量、至多占总量的 11.2%；75 MHz 板上该层单 token 11.15 ms，权重矩阵-向量积约占 62%、状态阶段（含分页）占 13%；仿真 18 个循环层全部一致，板上 6 个 build 通过全部 30 次 64-token 与 2 次 1,024-token 运行。</p>
+<p><strong>为什么值得看</strong>：用 RTL 到硅的硬证据回答「状态分页是否瓶颈」——答案是否定的，权重搬运才是限制。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.18422">The State Is Not the Bottleneck: A Paged-State Gated-DeltaNet Tile on a Tri-Mode Multicast Mesh, Bit-Exact from RTL to Silicon</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.18422">阅读原文 ↗</a></p>
+</body>
+</html>

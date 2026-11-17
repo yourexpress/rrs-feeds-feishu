@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mutable Inference: Architecting LLM Accelerators for Inference-Time Learning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Mutable Inference: Architecting LLM Accelerators for Inference-Time Learning</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-13 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：长上下文 LLM 的全注意力成本随 token 增长，推理期学习（ITL）可在权重中保留所学、只需看近期固定窗口，但推理加速器假设权重固定，如何让加速器支持「边服务边学习」？</p>
+<p><strong>方法</strong>：Learning While Serving (LWS) 架构——Prediction（前向）与 Learning（反向+权重更新）共享计算硬件；利用注意力非矩阵操作留下的空闲矩阵容量；硬件级每层权重版本化让 Learning 发布更新、进行中的计算读旧版本；可恢复归约块让 Learning 内核跨碎片化空闲窗口运行并让位给 Prediction。</p>
+<p><strong>关键数字</strong>：TTT-E2E 3B 128K token 下保持 Prediction-only 吞吐，同时保留全新鲜 Learning 质量的 99.3%；9 个模型平均吞吐为串行执行的 1.6×、为此前最优共执行架构的 1.3×；RTL 综合显示 NPU 核心面积仅增 1.5%、无需额外 MAC 阵列。</p>
+<p><strong>为什么值得看</strong>：把推理期学习变成 LLM 加速器一等负载，架构思路清晰且有 RTL 验证。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.18523">Mutable Inference: Architecting LLM Accelerators for Inference-Time Learning</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.18523">阅读原文 ↗</a></p>
+</body>
+</html>

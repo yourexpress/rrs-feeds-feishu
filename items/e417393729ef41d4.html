@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PerfArena: Ranking LLMs by Code Performance</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>PerfArena: Ranking LLMs by Code Performance</h1>
+<p class="meta-line">arXiv cs.PF · 2026-11-13 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：LLM 生成的生产代码正确性不足以判断是否适合反复使用——还取决于时间、内存与能耗成本，但现有代码生成基准几乎只评正确性，性能基准覆盖语言少、很少测能耗。</p>
+<p><strong>方法</strong>：PERFARENA 开源可复现竞技场——按生成代码的性能跨多语言多竞赛排名 LLM；在 Unix 主机执行各 LLM 的解，同时报告正确性、延迟、峰值内存与能耗；正确性/性能 oracle、profiler 与代码生成流程均可插拔。</p>
+<p><strong>关键数字</strong>：两个竞赛：CLBGComp 10 个计算密集基准、LeetCodeComp 99 个可测延迟差异的 LeetCode 题；现有 13 个 SOTA LLM 的 9,455 个正确且已测解、7 种语言；got-6-astra 是唯一在延迟/能耗/峰值内存上无其他模型显著胜出的模型，解出 LeetCodeComp 99.7%、CLBGComp 100%。</p>
+<p><strong>为什么值得看</strong>：首个按代码性能而非正确性排名的公开竞技场，选模型多了一个量化维度。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.18030">PerfArena: Ranking LLMs by Code Performance</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.18030">阅读原文 ↗</a></p>
+</body>
+</html>

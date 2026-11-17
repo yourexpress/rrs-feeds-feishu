@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compiling Specialized GPU-Initiated Networking</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Compiling Specialized GPU-Initiated Networking</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-13 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：ML 系统为负载与硬件定制计算，但通信仍停留在通用库——其设备代码与传输决策对高层编译器不可见，无法协同优化。</p>
+<p><strong>方法</strong>：Obaleth 编译器把 GPU 发起的通信变成 kernel 中间表示的一部分，与计算协同优化并降级为专用传输代码；围绕 buffer 生命周期规划完成时机，跨 NVIDIA/AMD GPU 优化内存序、同步与批处理。</p>
+<p><strong>关键数字</strong>：H100 上小消息发送最快 3.3×；256 GPU 上 all-to-all 比 NVSHMEM 快 1.25×、比 NCCL GIN 快 2.3×，内存与寄存器占用更小；vLLM 中为 16 块 B200 上的 Qwen3-235B 服务，比 DeepEP 快 1.29×。</p>
+<p><strong>为什么值得看</strong>：把 GPU 通信纳入编译器优化视野，大模型分布式推理的通信开销有新解法。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.18145">Compiling Specialized GPU-Initiated Networking</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.18145">阅读原文 ↗</a></p>
+</body>
+</html>

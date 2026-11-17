@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DeCompCert: A Verified Decompiler for CompCert-Generated AArch64</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DeCompCert: A Verified Decompiler for CompCert-Generated AArch64</h1>
+<p class="meta-line">arXiv cs.PL · 2026-11-13 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：能否对 CompCert 生成的 AArch64 汇编做形式化验证的反编译，可靠还原出语义等价的 C 代码？</p>
+<p><strong>方法</strong>：DeCompCert 是 Rocq 验证的反编译器——通过 9 个逆向过程重构 CompCert C，结合演绎验证的变换与翻译验证；不可信的 OCaml/Datalog 分析提出候选重建，验证器只接受满足语义对应的候选；组合正确性定理保证：被接受 C 重建的每个已定义安全行为都被输入汇编匹配。</p>
+<p><strong>关键数字</strong>：约 216 万行 C 上评估；有精确函数与调用签名时，3,173 个合格上下文在未优化与优化流水线下全部重建重编译成功；无签名时累计推理组合验证 3,164 个中的 2,606 个（82.4%），平台+IDA 配置验证 2,407 个（76.1%）。</p>
+<p><strong>为什么值得看</strong>：反编译器形式化验证的里程碑，逆向工程与编译器验证交叉领域的重要进展。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.18055">DeCompCert: A Verified Decompiler for CompCert-Generated AArch64</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.18055">阅读原文 ↗</a></p>
+</body>
+</html>

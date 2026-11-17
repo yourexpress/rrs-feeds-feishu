@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TokenEconomizer: Learning from Experience to Make AI Coding Agents More Efficient</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>TokenEconomizer: Learning from Experience to Make AI Coding Agents More Efficient</h1>
+<p class="meta-line">Microsoft · 2026-11-16 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://www.microsoft.com/en-us/research/wp-content/uploads/2026/11/TokenEconomizer-TWLIFB-1200x627-1.jpg" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong>：AI 编程 agent 每天在同一代码库工作却每次从零开始——重复发现事实、加载从不用的工具、反复踩同一错误，能否用仓库历史经验降低 token 成本？</p>
+<p><strong>要点</strong>：TokenEconomizer 是 UC Berkeley、微软研究院与微软安全联合开源的插件，从会话日志学习仓库知识，不改 agent 或底层模型；三个机制：micro-skills（一行式仓库知识笔记，多会话确认后才进入初始上下文、被矛盾证据推翻即退役）、tool pruning（按仓库历史剪掉不用的工具、保留核心工具）、failure-loop intervention（监视反复失败循环）；profile 显示三类浪费：仓库积累 ≥5 个任务后 30% 工具调用重复早前动作、每轮收到 23 个工具描述但 16 个从未调用、17% 失败任务吃掉 32% 花费。</p>
+<p><strong>关键数字</strong>：277 个真实 bug 修复任务上成本降 18.4–30.9%、覆盖多个 AI 编码 agent；每个被测仓库成本都下降，任务成功率基本保持稳定。</p>
+<p><strong>为什么值得看</strong>：不改模型不改 agent 的纯插件式 token 省钱方案，可直接插进现有编码 agent 工作流。</p>
+<p>原文：<a href="https://www.microsoft.com/en-us/research/blog/tokeneconomizer-learning-from-experience-to-make-ai-coding-agents-more-efficient/">TokenEconomizer: Learning from Experience to Make AI Coding Agents More Efficient</a></p>
+<p><a class="origin" href="https://www.microsoft.com/en-us/research/blog/tokeneconomizer-learning-from-experience-to-make-ai-coding-agents-more-efficient/">阅读原文 ↗</a></p>
+</body>
+</html>

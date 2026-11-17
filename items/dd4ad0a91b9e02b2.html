@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zero-SM NCCL: A Systematic Guide to Designing and Deploying SM-Free GPU Communication</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Zero-SM NCCL: A Systematic Guide to Designing and Deploying SM-Free GPU Communication</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-13 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：NCCL 等 GPU 通信库用 SM 做数据搬运与同步，拖慢重叠计算且代价随互连带宽增长，能否完全不占 SM 完成通信？</p>
+<p><strong>方法</strong>：Zero-SM NCCL——不启动任何 SM kernel 完成 scale-up 域内外的通信：用 CUDA stream 内存操作同步、copy engine 在域内异步搬数、流序 CPU proxy 驱动网络 RDMA；支持 AllGather/AlltoAll 等数据搬运集合以及单边 ncclPutSignal/ncclWaitSignal API。</p>
+<p><strong>关键数字</strong>：GB200 NVL72 与 B200 NVL8 上 AllGather 带宽最高比 NCCL 传统 SM kernel 高 1.36×，重叠 GEMM 的中位减速从 33% 降到 4%（每操作延迟更高）；Megatron-LM 训练中 FSDP 加速最多 3.5%、单边 put 加速流水并行最多 15%；但小消息与 host 受限负载反而吃亏。</p>
+<p><strong>为什么值得看</strong>：SM-free 通信的系统指南、含明确适用边界，NVL72 时代训练栈值得一读。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.18075">Zero-SM NCCL: A Systematic Guide to Designing and Deploying SM-Free GPU Communication</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.18075">阅读原文 ↗</a></p>
+</body>
+</html>
