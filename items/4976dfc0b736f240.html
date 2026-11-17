@@ -22,9 +22,11 @@
 <h1>A Distributed View from a Single GPU: RankLens for Distributed Training</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Modern distributed training is costly to debug, tune, and analyze because faithful analysis often requires repeated target-scale executions.</p>
-<blockquote><p>Modern distributed training is costly to debug, tune, and analyze because faithful analysis often requires repeated target-scale executions. We observe that many analysis tasks depend on the original distributed execution path, but not on full all-rank execution. We present RankLens, a single-rank emulation system that runs one survivor rank on a single GPU while preserving the target job's distributed semantics. The survivor rank executes the original training program and performs real local computation. At communication boundaries, the system replaces real multi-rank communication with task-dependent semantics, selectively restoring recorded communication results and recorded or estimated completion timing while preserving the asynchronous dependencies required for analysis. This enables replay from real executions and supports analysis, debugging, and tuning with existing debuggers and performance analysis tools. We evaluate the system on DeepSpeed and Megatron-LM across 8-64-GPU target configurations. RankLens achieves 100% training-tensor communication-structure match, keeps emulation timing error below 5%, supports local anomaly reproduction and execution analysis, and reduce…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 分布式训练的分析、调试与调优必须重复目标规模执行，成本高昂。
+<strong>方法：</strong> RankLens 单 rank 仿真系统——只在单 GPU 上运行一个 survivor rank，保留目标作业的分布式语义；通信边界用任务相关语义替换真实多 rank 通信，选择性恢复记录的结果与完成时序，保留异步依赖；兼容现有调试器与性能分析工具。
+<strong>关键数字：</strong> DeepSpeed 与 Megatron-LM 在 8-64 GPU 配置下：100% 训练张量通信结构匹配；仿真时序误差 &lt;5%；分析资源需求从目标规模集群降至单 GPU。
+<strong>为什么值得看：</strong> 单卡复现分布式语义，让分布式训练分析成本降低一个量级。
+<a href="https://arxiv.org/abs/2610.18009">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.18009">阅读原文 ↗</a></p>
 </body>
 </html>

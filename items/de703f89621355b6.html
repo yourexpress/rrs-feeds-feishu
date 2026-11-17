@@ -22,9 +22,11 @@
 <h1>A Self-Defining Operator for Distributed Applications</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>To operate distributed applications with high availability, operators must rapidly diagnose and mitigate any incident.</p>
-<blockquote><p>To operate distributed applications with high availability, operators must rapidly diagnose and mitigate any incident. LLM-based agents can help, but unlike experienced human operators they do not improve as they handle more incidents. Each investigation starts from scratch, re-deriving likely causes and re-testing hypotheses even when a similar fault was resolved in the past. We present a self-defining operator (SDO) that improves with time by updating its operational behavior and memory. When SDO resolves an incident, it distills that experience into playbooks, which describe reusable diagnostic instructions for future incidents with similar faults, and detectors, scripts that take application telemetry as input and output relevant playbook(s). SDO continuously runs the detectors and invokes LLMs only when one fires, so its token cost scales with incident count rather than with operational time. Across 11 open-source microservice applications, SDO cuts resolution time by 52% on recurring faults while keeping per-incident cost low. SDO is open source at https://github.com/self-defining-systems/sdo.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> LLM 运维 agent 处理事故后不会成长，每次调查从零开始。
+<strong>方法：</strong> 自进化运维器（SDO）：解决事故后将经验蒸馏为 playbook（可复用诊断指令）与 detector（以遥测为输入、输出相关 playbook 的脚本）；detector 持续运行、仅在触发时才调用 LLM，使 token 成本随事故数而非运行时长增长。
+<strong>关键数字：</strong> 11 个开源微服务应用上，重复故障解决时间降低 52%，单事故成本保持低位；代码开源（github.com/self-defining-systems/sdo）。
+<strong>为什么值得看：</strong> 让运维 agent"越用越强"，成本结构从时间驱动转为事件驱动。
+<a href="https://arxiv.org/abs/2610.14547">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14547">阅读原文 ↗</a></p>
 </body>
 </html>

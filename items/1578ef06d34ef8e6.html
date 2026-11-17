@@ -22,9 +22,11 @@
 <h1>A Dependency-Aware Multi-GPU Training Framework for Temporal Graph Neural Networks</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Temporal graph neural networks (TGNNs) achieve superior performance in many dynamic graph learning tasks.</p>
-<blockquote><p>Temporal graph neural networks (TGNNs) achieve superior performance in many dynamic graph learning tasks. These models use node state vectors (i.e., memories) to capture and record graph changes (i.e., events), and then exploit these memories to assist prediction. However, this memory-centric design makes multi-GPU training challenging because predictions for later events often depend on memory updates from earlier events. To maintain model quality, existing multi-GPU TGNN training schemes strictly preserve all event dependencies, which limits parallelism and causes expensive cross-GPU memory synchronization. In this work, we observe that many of these dependencies can be handled more flexibly without harming training quality. Specifically, (a) dependencies in TGNN training have high locality in both time and graph topology, (b) the short-range dependencies missed within a large batch can often be recovered cheaply, and (c) many memory updates are not immediately needed. Based on these observations, we propose DepBloom to accelerate multi-GPU TGNN training with three techniques: (1) temporally bounded spatial partitioning to reduce unnecessary cross-GPU synchronization and improve …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 时序图神经网络（TGNN）的记忆中心设计使多 GPU 训练并行度受限、跨 GPU 同步昂贵。
+<strong>方法：</strong> 观察到依赖在时间与拓扑上高度局部、大 batch 内错过的短程依赖可廉价恢复、多数记忆更新不必即时。据此提出 DepBloom：时间有界空间划分减少跨卡同步；批内记忆精化恢复放大 batch 缺失的短程时序依赖；关键路径优化优先紧急记忆更新。
+<strong>关键数字：</strong> 跨代表模型与数据集平均加速 2.84x、最高 5.16x（对比 SOTA 方法），精度保持相当或更优。
+<strong>为什么值得看：</strong> 以"依赖可灵活处理"替代"严格保序"，突破 TGNN 多卡训练瓶颈。
+<a href="https://arxiv.org/abs/2610.15730">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15730">阅读原文 ↗</a></p>
 </body>
 </html>

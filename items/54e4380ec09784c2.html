@@ -22,9 +22,11 @@
 <h1>ATTUNE: Agentic Throughput Tuning for LLM Training</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Training recipes are tuned by hand for one model, cluster and workload, and every new model, accelerator, framework version or dataset means tuning again.</p>
-<blockquote><p>Training recipes are tuned by hand for one model, cluster and workload, and every new model, accelerator, framework version or dataset means tuning again. Automated tuners search a fixed space of knobs and check only that a job runs, yet a configuration can run to completion while it silently changes training. ATTUNE is a single coding agent that tunes any working recipe for the workload and stack at hand, unattended, within a GPU-hour budget the user sets. It diagnoses each run and changes one lever at a time, guided by a catalog of lessons from past campaigns, and ships a recipe only if it passes a correctness gate: a configuration check against objective-changing settings and known stack defects, and a convergence check of its loss curve against the baseline's. On four held-out models at 64-128 GPUs, ATTUNE raises mean throughput over the strongest public recipe run on our stack by 6.7% on Llama-3.1-405B (best campaign 11.9%) and 33.9% on GLM-4.5 (54.7%), whose public recipe was written for H100. It keeps Mixtral-8x22B's recipe, where nothing it finds clears the noise band. Under a common GPU-hour budget it beats OptiCo, Bayesian optimization and random search on GLM-4.5 and Min…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 训练配方按模型、集群、工作负载手工调优，换任何一环都要重调。
+<strong>方法：</strong> ATTUNE 是单一 coding agent：在用户设定的 GPU 小时预算内无人值守调优任意可用配方；每次诊断一次运行、只改一个杠杆，参考过往战役教训目录；只有通过正确性门禁（配置检查 + 与基线 loss 曲线对比的收敛检查）才交付配方。
+<strong>关键数字：</strong> 64-128 GPU 四个 held-out 模型上：Llama-3.1-405B 吞吐 +6.7%（最佳战役 11.9%）、GLM-4.5 +33.9%（54.7%）；门禁拦截 24 个故障运行中的 16 个；GLM-4.5 上调优一天内回本；随附 TrainingThroughputBench 覆盖最高 744B 参数 MoE/256 GPU。
+<strong>为什么值得看：</strong> Agent 化自动调优 + 可验证门禁，收益明确且随附公开排行榜。
+<a href="https://arxiv.org/abs/2610.17528">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17528">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>A Production-Grade, High-Efficiency Agentic RL Framework for Frontier LLMs with Validated Recipes</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Reinforcement learning (RL) has emerged as a critical phase in the post-training pipeline of large language models (LLMs).</p>
-<blockquote><p>Reinforcement learning (RL) has emerged as a critical phase in the post-training pipeline of large language models (LLMs). As the frontier of LLM capabilities shifts from static reasoning to agentic tasks--characterized by external tool invocation, multi-turn interactions, and long-horizon decision-making--existing mainstream RL frameworks have grown increasingly unwieldy, raising the overhead of adoption, usage, and debugging. To address these challenges, we present LoongSage, an agent-native, fully asynchronous RL framework with a lightweight core of roughly 14K lines of code. Built upon Megatron for distributed training and SGLang for high-throughput inference, LoongSage centralizes orchestration within a single controller process and encapsulates all GPU-resident components as Ray actors. It introduces AgentFlow, a unified execution paradigm that orchestrates both white-box and black-box agents. For asynchronous execution, it integrates sliding-window strategies that bound trajectory staleness, and employs TransferMesh, a topology-aware synchronization mechanism that routes weights after each step over the fastest transport available to each receiver. Beyond agentic RL, LoongSa…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 主流 RL 框架在前沿 LLM 的 agentic 任务（工具调用、多轮交互、长程决策）后训练中日益笨重。
+<strong>方法：</strong> 提出 LoongSage：agent 原生全异步 RL 框架，核心仅约 14K 行；基于 Megatron（分布式训练）与 SGLang（高吞吐推理），单一控制器进程编排、GPU 组件封装为 Ray actor；AgentFlow 统一白盒/黑盒 agent 执行，滑动窗口约束轨迹陈旧度，TransferMesh 按最快可用传输路由权重；Teacher Manager 支持多教师在线蒸馏且不占 GPU 内存。
+<strong>关键数字：</strong> 核心约 14K 行代码；经四次完整训练运行验证，任务奖励稳步提升、训练-推理差距受控，异步管线消除同步空闲气泡。
+<strong>为什么值得看：</strong> 轻量生产级 agentic RL 框架，直击采纳、调试与部署开销痛点。
+<a href="https://arxiv.org/abs/2610.16352">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16352">阅读原文 ↗</a></p>
 </body>
 </html>

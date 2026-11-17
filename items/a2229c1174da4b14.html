@@ -22,9 +22,11 @@
 <h1>A Refresh Interval Does Not Fully Specify a Refresh Schedule: Learning-Rate-Dependent Placement in Kronecker-Preconditioned Language Model Training</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Kronecker-preconditioned optimizers recompute a cached curvature eigendecomposition only periodically, and implementations and adaptive methods control this through the refresh frequency.</p>
-<blockquote><p>Kronecker-preconditioned optimizers recompute a cached curvature eigendecomposition only periodically, and implementations and adaptive methods control this through the refresh frequency. We show that frequency leaves part of a schedule free: at a fixed number of refreshes, when they occur changes held-out loss at the same compute. Training GPT-style models with the Mousse optimizer across model sizes, we move the middle refreshes of a four-refresh schedule while fixing the first and last. On FineWeb the two placements exchanged rank as the learning rate rose (later placement was better at low rates, earlier placement at high ones), so a single-learning-rate comparison can report either ranking. The reversal held under controls including the published optimizer internals, and placement still mattered at the published refresh density. The learning rate at which the preference flips fell with model size, consistent with a held-out smaller model, and shifted with training length. A spectral-width staleness score predicted the same ranking at every learning rate and missed the reversal. Refresh schedules should be reported in full and compared across the learning rates at which they wi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> Kronecker 预条件优化器的"刷新频率"是否足以刻画刷新排程？
+<strong>方法：</strong> 证明固定刷新次数下，刷新发生时刻仍会改变相同算力下的 held-out loss；用 Mousse 优化器跨模型规模训练 GPT 风格模型，固定首尾、移动四次刷新排程的中间两次。
+<strong>关键数字：</strong> FineWeb 上两种排程的排名随学习率升高而互换（低学习率后期刷新更优、高学习率早期更优）；偏好翻转的学习率随模型规模增大而下降；谱宽陈旧度分数在所有学习率下都预测同一排名、错失翻转。
+<strong>为什么值得看：</strong> 提示超参研究报告应给出完整刷新排程，并在实际使用的学习率区间比较。
+<a href="https://arxiv.org/abs/2610.18695">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.18695">阅读原文 ↗</a></p>
 </body>
 </html>

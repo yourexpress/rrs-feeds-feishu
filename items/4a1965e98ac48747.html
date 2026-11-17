@@ -22,9 +22,11 @@
 <h1>Accelerating MoE Training through Expert Placement and Replica Coordination</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Distributed training of sparsely activated mixture-of-experts (MoE) models is often bottlenecked by workload imbalance and all-to-all (A2A) communication induced by dynamic token routing.</p>
-<blockquote><p>Distributed training of sparsely activated mixture-of-experts (MoE) models is often bottlenecked by workload imbalance and all-to-all (A2A) communication induced by dynamic token routing. Existing token deduplication, expert placement, and replication techniques alleviate these bottlenecks but do not jointly capture their distinct load semantics. Under hierarchical token deduplication, communication counts each token once per destination group at each hierarchy level, whereas expert computation processes every token-expert assignment. With replication, both costs depend jointly on physical layout and token-to-copy mapping, making separate optimization suboptimal. We present PlaceMoE to address this coupling. First, we formulate the joint optimization of expert layout and source-aware token-to-copy mapping for E experts distributed across P devices, accounting for both hierarchical communication traffic and expert-compute load. Second, we develop a solver that combines co-selection-aware expert grouping, bounded dynamic programming for replica allocation, and alternating refinement of layout and mapping. Third, PlaceMoE overlaps replica-gradient synchronization with attention backwa…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 稀疏 MoE 分布式训练被动态 token 路由导致的工作负载不均与 all-to-all（A2A）通信拖累。
+<strong>方法：</strong> 观察到层次化 token 去重下通信按"每层次每目标组一次"计数、复制成本同时依赖物理布局与映射，单独优化均非最优；提出 PlaceMoE 联合优化专家布局与源感知 token-to-copy 映射，求解器组合协同选择专家分组、有界动态规划复制分配与交替精化，并将复制梯度同步与 attention 反向重叠。
+<strong>关键数字：</strong> 32-GPU 与 64-NPU 集群、Qwen3-VL 与 DeepSeek-V3 上：A2A 通信最高加速 6.94x，端到端训练较 SOTA 框架 VeOmni 加速 1.74-2.33x。
+<strong>为什么值得看：</strong> 把去重、放置、复制的负载语义联合建模，直接转化为端到端训练加速。
+<a href="https://arxiv.org/abs/2610.14798">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14798">阅读原文 ↗</a></p>
 </body>
 </html>
