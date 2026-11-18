@@ -22,9 +22,11 @@
 <h1>Attention-Graph Curvature for the Verification of Mathematical Reasoning</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Language models have recently solved open Erdős problems and achieved gold-medal level performance on International Mathematical Olympiad problems.</p>
-<blockquote><p>Language models have recently solved open Erdős problems and achieved gold-medal level performance on International Mathematical Olympiad problems. But their solutions, written in natural language, cannot yet be verified by proof assistants. An erroneous reasoning step can invalidate every step that comes after, so it is advantageous to detect errors early. Several methods have been proposed to detect erroneous reasoning quickly based on the features of the forward pass of the language model that performs reasoning. In this work, we study whether the directed Forman curvature of that model's attention graph, a local quantity computed at an edge from the attention weights around it, carries information about a step's correctness. To do so, we evaluate four per-step verifiers on ProcessBench with and without the curvature appended to their input. Appending curvature values improves the overall mean performance of all four verifiers. ReProbe, the verifier that takes every token of a step as input, shows the largest improvement. Adding the curvature increases the time of the language model's forward pass by 18% on average.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong>LLM 数学推理解无法被证明助手验证，错误步骤会污染后续所有步骤，能否用注意力图的局部几何量早期检测错误。
+<strong>方法：</strong>研究注意力图上定向 Forman 曲率（由边附近注意力权重计算的局部量）是否携带步骤正确性信息；在 ProcessBench 上给 4 个逐步骤验证器拼接曲率值前后对比。
+<strong>关键数字：</strong>拼接曲率后 4 个验证器平均表现全部提升；逐 token 输入的 ReProbe 提升最大；增加曲率使 LLM 前向平均耗时增加 18%。
+<strong>为什么值得看：</strong>用注意力图曲率做早期错误检测，成本低、即插即用，可作数学推理验证器的通用增强件。
+<a href="https://arxiv.org/abs/2610.16709">Attention-Graph Curvature for the Verification of Mathematical Reasoning</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16709">阅读原文 ↗</a></p>
 </body>
 </html>

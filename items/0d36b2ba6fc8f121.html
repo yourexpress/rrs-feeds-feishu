@@ -22,9 +22,11 @@
 <h1>Memory-Efficient Speculative Decoding with Quantized Draft KV Cache</h1>
 <p class="meta-line">arXiv cs.LG · 2026-11-16 · 论文PDF / 每日精选</p>
 
-<p>量化草稿KV缓存的内存高效投机解码</p>
-<blockquote><p>Speculative decoding reduces generation cost, but it stores two KV caches: one for the target model and one for the draft model. We reduce this extra memory by quantizing the draft cache. The target cache and verifier remain in BF16, so that compression cannot change the target model's final correction rule. We first study how to divide precision between keys and values. A naive per-token quantizer makes keys appear much more sensitive: splitting a 12-bit budget, K8V4 beats K4V8 in acceptance by 10.87pp. However, with grouped per-channel keys, the gap becomes -0.25pp. A controlled Qwen test confirms that changing only the key quantizer can erase or reverse the preferred bit split. Hence, following KIVI, we propose K4V4 quantization with per-channel keys and per-token values. Across six model pairs, our method reduces draft cache memory by 66.20%, and combined memory across both caches by 23.95%. Mean acceptance drops from 57.93% to 57.14%, only 1.36% relative. Overall, quantized draft caches can make speculative decoding more memory efficient; as a predictive principle for efficient AI design, key and value precision must be co-designed with the quantizer layout.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong>投机解码需同时存目标模型与草稿模型两份 KV 缓存，额外内存开销大，如何压缩草稿缓存。
+<strong>方法：</strong>将草稿 KV 缓存量化（目标缓存与验证器保持 BF16，不改变目标模型最终修正规则）；对比键/值精度分配方案，发现按 token 朴素量化会高估键的敏感性，改用按通道分组键，提出 K4V4 量化（per-channel keys + per-token values，沿用 KIVI 思路）。
+<strong>关键数字：</strong>草稿缓存内存减少 66.20%，双缓存合计减少 23.95%；平均接受率从 57.93% 降至 57.14%（相对仅 1.36%）；12-bit 预算下 K8V4 比 K4V8 接受率高 10.87pp，分组 per-channel 键后差距缩至 -0.25pp。
+<strong>为什么值得看：</strong>给出"键值精度必须与量化器布局协同设计"的可复用原则，对推理内存优化直接有用。
+<a href="https://arxiv.org/abs/2611.20565">Memory-Efficient Speculative Decoding with Quantized Draft KV Cache</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.20565">阅读原文 ↗</a></p>
 </body>
 </html>

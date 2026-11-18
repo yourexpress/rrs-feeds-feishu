@@ -22,9 +22,11 @@
 <h1>RoShift: Lazy Shift and Weight-aware Rotation for Activation Sparsity in LLM Inference</h1>
 <p class="meta-line">arXiv cs.LG · 2026-11-16 · 论文PDF / 每日精选</p>
 
-<p>RoShift：LLM推理激活稀疏的惰性移位与权重感知旋转</p>
-<blockquote><p>Activation sparsity accelerates LLM decoding by skipping unnecessary weight reads and computation. However, SiLU-based LLMs exhibit little natural sparsity, and imposing high sparsity can substantially degrade accuracy. We propose RoShift, a training-free method that transforms activations into sparsity-friendly representations. RoShift introduces lazy shift, which recenters SiLU activation distributions around zero and defers correction to the end of the FFN to obtain additional sparsity. It also reduces sparsification-induced output error through rotation that jointly accounts for activation and weight information. By fusing the corrections required for shifting and rotation, RoShift translates these gains into decoding speedup. At 50% and 60% sparsity, RoShift improves average accuracy over TEAL by 1.60 and 3.29 percentage points, respectively, across five models. It achieves up to $1.72\times$ decoding speedup over the dense model on an RTX 5090 at 50% sparsity and yields a better accuracy-speedup Pareto frontier than TEAL. Code is available at https://github.com/hulahula3247/RoShift</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong>激活稀疏可加速 LLM 解码，但基于 SiLU 的 LLM 天然稀疏度低，强加高稀疏会显著掉精度。
+<strong>方法：</strong>RoShift 免训练改造激活表示：惰性移位把 SiLU 激活分布重新居中到零附近、修正推迟到 FFN 末端以获取更高稀疏度；权重感知旋转降低稀疏化输出误差；融合两类修正后转化为解码加速。
+<strong>关键数字：</strong>50%/60% 稀疏度下平均精度比 TEAL 高 1.60/3.29 个百分点（5 个模型）；RTX 5090 上 50% 稀疏时较稠密模型最快 1.72× 解码加速。
+<strong>为什么值得看：</strong>免训练、直接得到稀疏友好表示，精度-加速 Pareto 优于 TEAL，工程可落地。
+<a href="https://arxiv.org/abs/2611.20549">RoShift: Lazy Shift and Weight-aware Rotation for Activation Sparsity in LLM Inference</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.20549">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>MiSTiQ: MicroScaling Trellis Quantization for Extreme KV Cache Compression</h1>
 <p class="meta-line">arXiv cs.LG · 2026-11-16 · 论文PDF / 每日精选</p>
 
-<p>MiSTiQ：极端KV缓存压缩的微缩放网格量化</p>
-<blockquote><p>Modern large language models (LLMs) increasingly support longer contexts and serve more concurrent requests, increasing both sequence lengths and batch sizes. Both trends increase KV-cache size and memory traffic during inference. KV-cache quantization reduces these costs, with recent approaches using codebook-based vector quantization to achieve extremely low bit widths. However, hardware constraints limit codebook size, and most methods reconstruct the cache in higher-precision floating-point formats for attention, limiting the computational benefits of quantization. To address these limitations, we introduce MiSTiQ, a drop-in replacement for codebook-based vector quantizers that combines trellis-coded storage with microscaling (MX) formats for low-precision computation. We combine trellis quantization with beam search to encode the KV cache over large reconstruction spaces without large codebooks. To support MX computation, we derive MX-Hash functions that generate reconstruction values directly in the target MX element format. These functions use the scale-conditioned marginal distribution of block-normalized Gaussian inputs. On Llama3 and Qwen3, MiSTiQ achieves lower WikiText …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong>KV 缓存量化追求极低比特率，但码本量化受硬件码本大小限制，且多数方法在注意力计算前把缓存恢复成高精度浮点，损失量化的计算收益。
+<strong>方法：</strong>MiSTiQ 用网格编码（trellis-coded）存储 + 微缩放（MX）格式低精度计算，替代码本向量量化器；结合束搜索在大型重建空间编码 KV 缓存，并推导 MX-Hash 函数直接生成目标 MX 元素格式的重建值。
+<strong>关键数字：</strong>约 1.25 有效比特/元素下，在 Llama3/Qwen3 上 WikiText 困惑度更低、GSM8K 精度高于所测基线；配合 NVFP4 时两模型 LongBench 平均分最高。
+<strong>为什么值得看：</strong>同时压缩存储与计算精度，比码本方案更贴合硬件约束，是 KV 缓存极端压缩的新方向。
+<a href="https://arxiv.org/abs/2611.21216">MiSTiQ: MicroScaling Trellis Quantization for Extreme KV Cache Compression</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.21216">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Check Token: Real-Time Self-Verification and Precise Truncation in LLM Reasoning</h1>
 <p class="meta-line">arXiv cs.LG · 2026-05-23 · 论文PDF</p>
 
-<p>实时自验证与精确截断的LLM推理check token机制</p>
-<blockquote><p>ECC memory embeds 8 parity bits for every 64 data bits and automatically detects and corrects errors on each read. The parity bits carry no data and only safeguard integrity, at ~12.5% overhead. Yet the reasoning chains of large language models lack such built-in self-verification: once an error occurs it propagates along the chain, and existing methods can only verify externally after generation completes. We propose the check token, establishing built-in self-verification for language model generation streams for the first time: a functional marker &lt;CHECK&gt; is added to the vocabulary, and the model triggers self-checking (analysis, localization, truncation, rewriting) by outputting it at any position. The check token carries no reasoning content (discarded after triggering) and only safeguards reasoning correctness, directly corresponding to the role of ECC parity bits, also at only ~13% overhead. Speculative forking further eliminates false-positive latency, and segmented reward makes trigger timing end-to-end learnable. Experiments (Qwen3-32B / Qwen3-Next) show that the check token achieves +10.8 pp improvement on HMMT25 at 1.13x overhead, with token efficiency 88x that of Best-…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong>LLM 推理链一旦出错会沿链传播，现有方法只能在生成结束后外部验证，如何建立生成流内建的自验证机制。
+<strong>方法：</strong>类比 ECC 内存奇偶校验位，在词表加入功能标记 <CHECK>，模型输出它即可在任意位置触发自检（分析/定位/截断/重写）；投机分叉消除假阳性延迟，分段奖励使触发时机端到端可学习。
+<strong>关键数字：</strong>Qwen3-32B/Qwen3-Next 上 HMMT25 提升 +10.8pp、开销仅 1.13×；token 效率为 Best-of-8 的 88 倍；精确截断优势随推理链长度单调增加。
+<strong>为什么值得看：</strong>首次把"内建自验证"引入生成流，为长推理链可靠性提供轻量方案。
+<a href="https://arxiv.org/abs/2611.18564">Check Token: Real-Time Self-Verification and Precise Truncation in LLM Reasoning</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.18564">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Anchors Enhance Controllability and Reasoning of Diffusion Language Models</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Diffusion language models (DLMs) offer new opportunities for controllable text generation.</p>
-<blockquote><p>Diffusion language models (DLMs) offer new opportunities for controllable text generation. However, their controllability, defined as the ability to satisfy task constraints while preserving their original capabilities, remains underexplored. DLMs' bidirectional attention allows control tokens to guide generation from arbitrary positions in the output sequence, but effective guidance depends on the compatibility between their content and placement. To this end, we propose AnchorDLM, a framework in which an anchor generator produces an anchor consisting of a short output fragment and its position for each query. The anchor is placed as control tokens at the specified position to initialize the output sequence of a frozen DLM and guide subsequent denoising. We train the anchor generator with reinforcement learning (RL) to jointly optimize anchor content and placement, using rewards computed from the DLM's generated outputs based on answer correctness and constraint satisfaction. Moreover, through the lens of discrete flow matching (DFM), we interpret anchor placement as helping to reshape the initial velocity field that guides generation. Experiments on code generation and mathematic…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong>扩散语言模型（DLM）的可控生成能力未被充分探索；双向注意力允许控制 token 从任意位置引导生成，但效果取决于其内容与放置位置的兼容性。
+<strong>方法：</strong>AnchorDLM：anchor 生成器为每个查询产出"短输出片段 + 位置"的锚，作为控制 token 在指定位置初始化冻结 DLM 的输出序列并引导去噪；用 RL 联合优化锚内容与位置，奖励基于答案正确性与约束满足；用离散流匹配（DFM）视角解释锚放置重塑初始速度场。
+<strong>关键数字：</strong>5 个 DLM 骨干上的代码生成与数学推理基准中，可控性提升且推理性能同步获益（论文未给统一数值）。
+<strong>为什么值得看：</strong>为 DLM 可控生成提供轻量、可解释的引导机制，且不牺牲推理能力。
+<a href="https://arxiv.org/abs/2610.15097">Anchors Enhance Controllability and Reasoning of Diffusion Language Models</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15097">阅读原文 ↗</a></p>
 </body>
 </html>

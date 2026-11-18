@@ -22,9 +22,11 @@
 <h1>BARTER: Compact Dynamic Sparse Training with Standard Dense Kernels</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Dynamic sparse training (DST) aims to reduce training costs while maintaining accuracy.</p>
-<blockquote><p>Dynamic sparse training (DST) aims to reduce training costs while maintaining accuracy. Existing DST methods mask out parameters but keep matrix dimensions unchanged. Training speedups therefore depend on specialized support, such as sparse kernels. We introduce BARTER, a structured DST framework that reduces training cost using standard dense kernels by keeping training tensors physically compact while dynamically reallocating capacity across layers. Unlike existing works that require computing gradients for all parameters, BARTER instead uses statistics collected only from active units during ordinary backpropagation to prune and clone attention heads and feed-forward channels under separate fixed global budgets. At each topology update, it resizes the affected parameter tensors and remaps their optimizer states, so subsequent training steps operate directly on the compact model. Training and fine-tuning experiments with Transformer-based vision models on two image classification benchmarks at densities from $0.1$ to $0.7$ show competitive Top-1 accuracy relative to full-tensor DST baselines. On an NVIDIA L40, BARTER achieves speedups of up to $6.29\times$ in measured training se…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong>动态稀疏训练（DST）靠掩码保持矩阵维度不变，训练加速依赖稀疏内核等专门支持，能否用标准稠密内核直接降低训练成本。
+<strong>方法：</strong>BARTER 结构化 DST：训练张量物理紧凑化 + 跨层动态重分配容量；仅用普通反向传播中活跃单元收集的统计量来剪枝/克隆注意力头与前馈通道（分离的固定全局预算）；每次拓扑更新调整张量尺寸并重映射优化器状态。
+<strong>关键数字：</strong>Transformer 视觉模型、密度 0.1–0.7 下 Top-1 精度与全张量 DST 基线相当；NVIDIA L40 上训练段加速最高 6.29×、峰值分配 GPU 内存最高降 81.3%；iPhone 13 Pro Max 训练基准 2.78× 加速。
+<strong>为什么值得看：</strong>摆脱对稀疏内核的依赖，让 DST 在通用硬件直接受益，移动端训练有实测数据。
+<a href="https://arxiv.org/abs/2610.16147">BARTER: Compact Dynamic Sparse Training with Standard Dense Kernels</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16147">阅读原文 ↗</a></p>
 </body>
 </html>

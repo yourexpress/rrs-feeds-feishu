@@ -22,9 +22,11 @@
 <h1>Autoregressive Decoding as a Martingale: Characterizing the Stochastic Dynamics of LLM Generation</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Large language models (LLMs) have achieved remarkable success across a wide range of language tasks.</p>
-<blockquote><p>Large language models (LLMs) have achieved remarkable success across a wide range of language tasks. At their core, autoregressive LLMs are conditional probability models that learn to approximate the next-token distribution given the preceding context. Despite this probabilistic nature, the stochastic dynamics of autoregressive decoding have rarely been investigated from a rigorous probabilistic perspective. In this work, we define the per-step prediction error as the difference between the sampled token indicator and the model's conditional predictive distribution, and prove that the cumulative error process is a martingale with respect to the decoding filtration, implying that its conditional first-order moment is identically zero. Beyond this first-order property, we derive a closed-form expression for the second-order behavior of the martingale sequence: its predictable quadratic variation reduces to $\sum_t\left(1-p(y_t\mid y_{&lt;t})\right)$, computable from realized token probabilities alone. This identity establishes a direct theoretical connection between sequence fluctuations and predictive uncertainty during autoregressive decoding. White-box experiments on Llama-3.x and Q…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong>自回归 LLM 解码的随机动力学缺乏严格概率视角，如何刻画逐 token 预测误差的累积过程。
+<strong>方法：</strong>定义每步预测误差为采样 token 指示与条件预测分布之差，证明累积误差过程相对解码滤算是鞅（条件一阶矩恒为零）；导出二阶行为闭式：可预测二次变差为 Σ_t(1-p(y_t|y_{&lt;t}))，仅由实际 token 概率即可计算。
+<strong>关键数字：</strong>Llama-3.x 与 Qwen2.5 家族（1B–72B）白盒实验证实，经验二阶矩与理论预测密切吻合。
+<strong>为什么值得看：</strong>为 LLM 文本检测与不确定性量化建立数学基础，把序列波动与预测不确定性直接联系起来。
+<a href="https://arxiv.org/abs/2610.16041">Autoregressive Decoding as a Martingale</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16041">阅读原文 ↗</a></p>
 </body>
 </html>

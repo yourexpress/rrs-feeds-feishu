@@ -22,9 +22,11 @@
 <h1>Auditing LLM Program Search for Bermudan Stopping with Primal--Dual Certificates</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>LLM program-search agents are usually judged by the score that drives their search.</p>
-<blockquote><p>LLM program-search agents are usually judged by the score that drives their search. We study LLM-driven search over Python exercise policies for Bermudan options, an optimal stopping problem where a trusted evaluator owns the simulation and a dual upper bound~$U$. For any policy, $0 \le V^\star - L_π\le U - L_π$; we report Monte Carlo estimates of both bounds with their sampling error. We audit 24 generation attempts from two pipelines, a six-pair feedback-representation ablation, and a holdout evaluated after selection was frozen. No selected generated program improves on Ridge LSMC consistently or by more than Monte Carlo uncertainty; holdout gap scores lie within $0.002$ of it. On six one-dimensional puts, a high-precision binomial reference places Ridge within Monte Carlo noise of optimal and attributes 99\% of the estimated gap to dual-bound looseness, so this dual audits validity but cannot certify progress at the search's scale. Structured memory showed no benefit over score-only memory in this ablation. Whether search ``worked'' depends on reporting rules: retaining the initial reference, freezing selection before holdout, and counting failures.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong>LLM 程序搜索 agent 通常以驱动搜索的分数被评判，其真实进展需要可信审计方法。
+<strong>方法：</strong>原始-对偶证书审计：可信评估器持有模拟与对偶上界 U，对任意策略 0≤V<em>-L_π≤U-L_π，报告两边 Monte Carlo 估计与抽样误差；审计 24 次生成尝试、两个流水线、六对反馈表示消融，以及冻结选择后的留出集。
+</em><em>关键数字：</em><em>无选中的生成程序一致优于 Ridge LSMC 或超出 Monte Carlo 不确定性；留出差距分数在其 0.002 内；6 个一维 put 上高精度二项参考显示 Ridge 在 MC 噪声内接近最优，99% 的估计差距归因于对偶界松。
+</em><em>为什么值得看：</em>*示范"审计而非信任分数"的评估方法，是量化 LLM 搜索真实增益的严谨模板。
+<a href="https://arxiv.org/abs/2610.14063">Auditing LLM Program Search for Bermudan Stopping with Primal–Dual Certificates</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14063">阅读原文 ↗</a></p>
 </body>
 </html>

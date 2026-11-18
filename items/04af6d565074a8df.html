@@ -22,9 +22,11 @@
 <h1>Anchor-and-Harvest Curriculum: A Fully Unmasked Non-LLM Curriculum for Craftax</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>We introduce Anchor-and-Harvest Curriculum (AHC), a domain-informed, rule-based training system for Craftax-Full.</p>
-<blockquote><p>We introduce Anchor-and-Harvest Curriculum (AHC), a domain-informed, rule-based training system for Craftax-Full. AHC combines achievement-oriented tasks, harvested initial-state progress, difficulty adaptation, bounded selection, and original-task practice. It uses no LLM inference and keeps all 43 actions available. At 2,005,401,600 PPO rollout transitions, three primary AHC runs obtain native-task return $46.70\pm0.57$ (sample SD), compared with $41.91\pm1.01$ for fresh native PPO-GTrXL with the same student architecture and evaluation protocol. Evaluation uses ten stochastic rollouts on each of 1024 fixed worlds per model. An additional cohort of three AHC runs reaches $46.08\pm1.23$. Two single-component ablations retain similar mean returns, while jointly freezing difficulty and removing inherited progress gives $45.14\pm2.79$. All-67-achievement profiles show that most of the return difference comes from Intermediate achievements, while the deepest-floor achievements remain unsolved. A Skill-Preflight diagnosis with a 14B teacher shows how prerequisite and floor-access constraints restrict practice. AHC and three 14B diagnostic configurations reach aggregate returns near the…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong>Craftax-Full 这类复杂环境是否需要 LLM 生成的课程，无 LLM 的显式规则课程能否达到相近回报。
+<strong>方法：</strong>Anchor-and-Harvest Curriculum（AHC）：成就导向任务、收获初始状态进度、难度自适应、有界选择、原始任务练习；不使用任何 LLM 推理，保留全部 43 个动作；学生架构为 PPO-GTrXL。
+<strong>关键数字：</strong>2,005,401,600 PPO rollout 步下原生任务回报 46.70±0.57，对比新鲜原生 PPO-GTrXL 41.91±1.01；与报告的 80B DiCode 均值 45.88 相当；评估为每模型 1024 个固定世界 × 10 次随机 rollout。
+<strong>为什么值得看：</strong>证明显式课程无需 LLM 推理即可达到 LLM 生成课程相当水平，降低课程学习成本。
+<a href="https://arxiv.org/abs/2610.15328">Anchor-and-Harvest Curriculum: A Fully Unmasked Non-LLM Curriculum for Craftax</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15328">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>AlignPred: Error-Controlled KV Cache Compression via Alignment and Predictive Coding</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Long-running agents retain KV caches across turns and sessions for hours or days.</p>
-<blockquote><p>Long-running agents retain KV caches across turns and sessions for hours or days. Compressing these persistent caches requires reducing storage while controlling reconstruction error. We present AlignPred, a codec that combines local alignment with predictive coding under a configurable KV reconstruction-error budget. Local orthogonal transforms align related heads or layers into a common coordinate frame, allowing AlignPred to combine token-wise prediction with same-token prediction across heads or layers. Residuals are quantized on an error-bounded lattice and entropy-coded, without learned predictors, encoder-side mode search, or large joint transforms. Across three attention mechanisms, AlignPred requires less storage than the evaluated baselines at comparable measured reconstruction error. Against the evaluated CPU codec implementations, it decodes at least 1.6 times faster while matching or improving encode time. AlignPred achieves near-native task scores at substantially compressed operating points on LongBench-Pro at 128K context. AlignPred's SGLang HiCache integration reduces persistent target-KV storage by 42-72% relative to native HiCache, with comparable latency.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong>长时运行 agent 的 KV 缓存跨轮次/会话保留数小时至数天，压缩持久缓存需在可控重建误差下减少存储。
+<strong>方法：</strong>AlignPred 编解码器：局部正交变换把相关 head/层对齐到公共坐标帧，结合 token 间预测与跨 head/层同 token 预测；残差在误差有界格上量化并熵编码，无需学习型预测器、编码端模式搜索或大型联合变换。
+<strong>关键数字：</strong>三种注意力机制下，同重建误差所需存储少于所测基线；对比 CPU 编解码实现解码快至少 1.6×；LongBench-Pro 128K 上下文近原生任务分数；SGLang HiCache 集成使持久目标 KV 存储减少 42–72%。
+<strong>为什么值得看：</strong>面向"持久 KV 缓存"场景的误差可控压缩，长会话 agent 推理的实用组件。
+<a href="https://arxiv.org/abs/2610.17970">AlignPred: Error-Controlled KV Cache Compression via Alignment and Predictive Coding</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17970">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>AgentWeave: Efficient Distributed Agent Serving via Flow Decomposition</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Agent applications are evolving into workflows composed of large language model (LLM) calls and tool invocations, termed modules.</p>
-<blockquote><p>Agent applications are evolving into workflows composed of large language model (LLM) calls and tool invocations, termed modules. Existing distributed agent systems typically adopt a disaggregated architecture, deploying different modules on separate devices. While this enables pipeline parallelism, imbalanced module latencies introduce severe pipeline bubbles that limit throughput. A natural alternative is an aggregated architecture that co-deploys all modules across all devices, eliminating bubbles by keeping every device continuously active. However, this introduces request blocking: short requests are forced to progress in lockstep with longer ones in the same batch, and newly arriving requests must wait until the entire ongoing batch completes the full workflow. To address this, we propose AgentWeave, an efficient distributed serving system for agent applications built on the aggregated architecture. Its core mechanism, flow decomposition, decomposes long agent requests into fine-grained execution units while preserving agent semantics, allowing short and newly arriving requests to proceed without being stalled by long-running ones. Complementing this, a flow-adaptive schedule…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong>分布式 agent 系统的分离式架构因模块延迟不均产生流水线气泡；聚合架构虽消除气泡但引入请求阻塞（短请求与长请求锁步、新请求需等整批完成）。
+<strong>方法：</strong>AgentWeave 聚合架构 + 流分解：把长 agent 请求分解为细粒度执行单元并保持 agent 语义，短请求与新请求无需被长任务拖住；流自适应调度器平衡分解的吞吐收益与调度开销。
+<strong>关键数字：</strong>4 个代表性 agent 应用上，吞吐提升 1.81×、平均延迟降低 2.45×、P90 延迟降低 2.04×（对比 SOTA 基线）。
+<strong>为什么值得看：</strong>直接针对 agent 工作流的分布式 serving 瓶颈，聚合架构路线的收益有实测支撑。
+<a href="https://arxiv.org/abs/2610.14804">AgentWeave: Efficient Distributed Agent Serving via Flow Decomposition</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14804">阅读原文 ↗</a></p>
 </body>
 </html>

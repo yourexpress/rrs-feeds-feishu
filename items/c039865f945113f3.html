@@ -22,9 +22,11 @@
 <h1>Agentic-MatriBO: Capability-Compiled Agentic Bayesian Optimization for Materials and Chemical Design</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Materials and chemical optimization must choose the next synthesis, characterization, or high-fidelity simulation from sequential observations under a limited budget.</p>
-<blockquote><p>Materials and chemical optimization must choose the next synthesis, characterization, or high-fidelity simulation from sequential observations under a limited budget. Large language models can use task knowledge to propose adjustments, but composing surrogates, acquisition functions, and search strategies is constrained by compatibility, parameter dependencies, and evidence requirements. We present Agentic-MatriBO, a capability-compiled agentic Bayesian optimization (BO) framework that represents BO components and selection conditions as composable capabilities. A language policy proposes BO recipes and candidate plans; a compiler checks proposals against the registered capability catalog; and a deterministic execution layer validates and commits candidates. Oracle observations are stored in research memory and inform later rounds. We compare Agentic-MatriBO with eight baselines on four offline finite candidate pools---COF, PCE10, Buchwald--Hartwig (BH), and Suzuki--Miyaura---using five seeds per condition; results are reported descriptively. Across the four tasks, Agentic-MatriBO has the best mean endpoint quality after orienting each objective so that higher is better. On COF, it…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong>材料/化学优化需在有限预算下选择下一次合成/表征/仿真，LLM 可提建议，但组合代理模型、采集函数与搜索策略受兼容性、参数依赖与证据约束限制。
+<strong>方法：</strong>Agentic-MatriBO 能力编译式 agentic BO：BO 组件与选择条件表示为可组合能力；语言策略提配方与候选计划，编译器对照能力目录校验，确定性执行层验证并提交候选；观测存入研究记忆供后续轮次。
+<strong>关键数字：</strong>4 个离线候选池（COF、PCE10、Buchwald–Hartwig、Suzuki–Miyaura）对比 8 个基线、每条件 5 seed；COF 上 5 个 seed 均达表列最优，nAUC-BO 显著更高；消融显示移除能力编译器或证据门会降低累计质量与精确最优命中。
+<strong>为什么值得看：</strong>把"证据门控"显式编进 BO 循环，配方可检查、可追溯、可增量积累。
+<a href="https://arxiv.org/abs/2610.17832">Agentic-MatriBO: Capability-Compiled Agentic Bayesian Optimization for Materials and Chemical Design</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17832">阅读原文 ↗</a></p>
 </body>
 </html>
