@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LoopSkim: Lossless Multi-Depth Speculative Decoding for Looped Language Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LoopSkim: Lossless Multi-Depth Speculative Decoding for Looped Language Models</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：循环语言模型（Ouro/Raven）每 token 多次应用同一权重共享块，自回归解码需逐 loop 顺序执行，延迟高。</p>
+<p><strong>方法</strong>：LoopSkim 让流水线深度本身充当验证器：草稿 token 从上下文复制（类似 prompt lookup）在头几个 loop 后进入，任何后续 readout 与其矛盾就在该深度替换，只有全深度 readout 提交 token；同时固定每次的随机抽取。</p>
+<p><strong>关键数字</strong>：论文未给出摘要级量化数字（摘要截断）。</p>
+<p><strong>为什么值得看</strong>：无损多深度投机解码，免去额外验证 pass 的结构性设计精巧。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.19896">LoopSkim: Lossless Multi-Depth Speculative Decoding for Looped Language Models</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.19896">阅读原文 ↗</a></p>
+</body>
+</html>

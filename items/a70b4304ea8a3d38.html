@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GraphPass: A Study of Graph Neural Networks for Compiler Pass Selection</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>GraphPass: A Study of Graph Neural Networks for Compiler Pass Selection</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：编译器 pass 选择通常靠固定流水线（-O2/-O3）或手写启发式——能否用 GNN 单次前向选择 pass 序列？</p>
+<p><strong>方法</strong>：GraphPass 用图注意力（GAT）或图卷积（GCN）编码程序 CFG，分类到五种 pass 序列之一；在 5,000 个合成 CFG、五个程序族上评估，并做边消融实验。</p>
+<p><strong>关键数字</strong>：两种编码器对 held-out 程序约 92% 与参考标签一致；手写规则启发式仅 68.4%、flat MLP 85%；消融表明增益来自逐块处理而非 CFG 边。</p>
+<p><strong>为什么值得看</strong>：编译器 pass 选择的 GNN 实证，并厘清「图结构 vs 逐块特征」的贡献来源。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.19821">GraphPass: A Study of Graph Neural Networks for Compiler Pass Selection</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.19821">阅读原文 ↗</a></p>
+</body>
+</html>

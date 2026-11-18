@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hybrid Compression for Memory-Efficient Matrix-Vector Multiplication</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Hybrid Compression for Memory-Efficient Matrix-Vector Multiplication</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-13 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：迭代式机器学习反复对大实数矩阵做矩阵-向量乘，性能受内存带宽而非算术吞吐限制。</p>
+<p><strong>方法</strong>：在 mm-RePair 框架（RePair 语法压缩 CSR/CSRV 表示、直接在压缩数据上做乘法）基础上提出混合策略，语法压缩与熵编码结合，针对稠密或含大量不同值的矩阵上效果退化的问题。</p>
+<p><strong>关键数字</strong>：论文未给出摘要级量化数字（摘要截断）；核心主张是同时降低数据搬运量与内存占用。</p>
+<p><strong>为什么值得看</strong>：无损压缩数据上直接计算的路线，对带宽受限的迭代算法工作负载直接受益。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.18792">Hybrid Compression for Memory-Efficient Matrix-Vector Multiplication</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.18792">阅读原文 ↗</a></p>
+</body>
+</html>

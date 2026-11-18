@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bilateral Log-Linear Attention</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Bilateral Log-Linear Attention</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-13 · 论文PDF</p>
+
+<p>双边对数线性注意力</p>
+<blockquote><p>Sequence models represent past context at different resolutions, using token-level keys and values, fixed-size recurrent states, or hierarchies of compressed summaries. Full attention supports strong associative recall but requires quadratic work during training and prefill and a linearly growing key-value cache during inference. Linear attention and state-space models reduce these costs through fixed-size recurrent memory, but this compression can limit recall. Log-linear attention offers a middle ground by maintaining logarithmically many state matrices. However, its hierarchy favors finer resolution near the current query while compressing earlier context into coarser summaries. To complement this allocation of resolution, we introduce bilateral log-linear attention, which pairs the existing hierarchy with a second hierarchy anchored at the sequence origin. By combining their reads, the two branches provide finer access to both early and recent context while remaining causal. We derive recurrent and chunkwise parallel formulations for the added branch, preserving log-linear training and prefill work, logarithmic decoding work per token, and logarithmic persistent state storage a…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.18974">阅读原文 ↗</a></p>
+</body>
+</html>

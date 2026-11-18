@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MeltKV: Memory-Aligned KV Cache Compression via Variable-Bit Packed Vector Quantization for Long-Context LLMs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MeltKV: Memory-Aligned KV Cache Compression via Variable-Bit Packed Vector Quantization for Long-Context LLMs</h1>
+<p class="meta-line">arXiv cs.LG · 2026-10-16 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：长上下文 LLM 中 KV 缓存主导内存与推理延迟；现有向量量化可压到 sub-4-bit，但忽视内存对齐与解码速度。</p>
+<p><strong>方法</strong>：MeltKV 内存-延迟协同优化的 KV 缓存量化框架：内存对齐的可变比特索引打包，按分组 key 通道自适应位宽并在标准数据类型内紧凑存索引；head-wise 码本共享降低码本总量。</p>
+<p><strong>关键数字</strong>：KV 压缩至 sub-4-bit 级别；具体压缩率与加速数据见论文（摘要截断未给出）。</p>
+<p><strong>为什么值得看</strong>：长上下文服务的 KV 缓存压缩新路线，内存对齐与解码速度并重。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.18652">MeltKV: Memory-Aligned KV Cache Compression via Variable-Bit Packed Vector Quantization for Long-Context LLMs</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.18652">阅读原文 ↗</a></p>
+</body>
+</html>

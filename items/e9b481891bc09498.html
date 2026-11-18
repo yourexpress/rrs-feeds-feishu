@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Does synthetic pre-training pay off on a microcontroller? Accuracy, latency and energy across two MCUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Does synthetic pre-training pay off on a microcontroller? Accuracy, latency and energy across two MCUs</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-15 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：渲染图像标注便宜，但 MCU 分类器必须过 INT8 量化并在芯片上正确运行——合成预训练到底值不值？</p>
+<p><strong>方法</strong>：5 个模型（MobileNetV2@224px 到 61K 参数 CNN）在六类场景数据集上，带/不带合成阶段微调，部署到 ESP32-S3 与 RP2040 实测。</p>
+<p><strong>关键数字</strong>：全量真实数据下合成阶段无可检测增益；主部署模型 INT8 差 +0.312pp，区间低于源研究重算的 +1.6pp；10% 真实数据时 CNN 获益 +3.438pp（单 seed）、三 seed 平均 +2.715pp。</p>
+<p><strong>为什么值得看</strong>：MCU 场景合成数据的严谨端到端实证，量化与部署全链路验证。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.19931">Does synthetic pre-training pay off on a microcontroller? Accuracy, latency and energy across two MCUs</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.19931">阅读原文 ↗</a></p>
+</body>
+</html>

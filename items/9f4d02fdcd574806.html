@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quantize, Qualify, Rerank: A Recipe for Compressing LLMs Without Losing Quality</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Quantize, Qualify, Rerank: A Recipe for Compressing LLMs Without Losing Quality</h1>
+<p class="meta-line">arXiv cs.LG · 2026-08-12 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：LLM 压缩后单一自动指标可能漏掉质量损失——如何在 WMT26 压缩赛道做到压缩不损质量？</p>
+<p><strong>方法</strong>：压缩 google/gemma-3-12b-it（bf16 为 24.4GB），用 paired bootstrap 分析 4-bit 量化的指标分歧；以 MetricX24-XXL 为主、CometKiwi-XXL 交叉验证；移除未用视觉栈与非任务词表；int8 权重或 fp8 激活；QLoRA 修复；最后用 Cometoid best-of-4 reranker。</p>
+<p><strong>关键数字</strong>：int8/fp8 无可检测损失，int4 留小残差；reranker 在 T=0.3 下同时改善 8-bit 与 4-bit 系统（WMT25 测试集）。</p>
+<p><strong>为什么值得看</strong>：WMT26 官方赛道的完整实操配方，「量化-质检-重排」流程可直接复用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.18587">Quantize, Qualify, Rerank: A Recipe for Compressing LLMs Without Losing Quality</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.18587">阅读原文 ↗</a></p>
+</body>
+</html>

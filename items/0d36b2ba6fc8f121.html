@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memory-Efficient Speculative Decoding with Quantized Draft KV Cache</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Memory-Efficient Speculative Decoding with Quantized Draft KV Cache</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-16 · 论文PDF / 每日精选</p>
+
+<p>量化草稿KV缓存的内存高效投机解码</p>
+<blockquote><p>Speculative decoding reduces generation cost, but it stores two KV caches: one for the target model and one for the draft model. We reduce this extra memory by quantizing the draft cache. The target cache and verifier remain in BF16, so that compression cannot change the target model's final correction rule. We first study how to divide precision between keys and values. A naive per-token quantizer makes keys appear much more sensitive: splitting a 12-bit budget, K8V4 beats K4V8 in acceptance by 10.87pp. However, with grouped per-channel keys, the gap becomes -0.25pp. A controlled Qwen test confirms that changing only the key quantizer can erase or reverse the preferred bit split. Hence, following KIVI, we propose K4V4 quantization with per-channel keys and per-token values. Across six model pairs, our method reduces draft cache memory by 66.20%, and combined memory across both caches by 23.95%. Mean acceptance drops from 57.93% to 57.14%, only 1.36% relative. Overall, quantized draft caches can make speculative decoding more memory efficient; as a predictive principle for efficient AI design, key and value precision must be co-designed with the quantizer layout.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.20565">阅读原文 ↗</a></p>
+</body>
+</html>

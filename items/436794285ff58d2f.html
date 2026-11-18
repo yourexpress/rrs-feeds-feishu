@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Price of Not Planning: Parallel Sampling Depth Peaks at the Reconstruction Threshold</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>The Price of Not Planning: Parallel Sampling Depth Peaks at the Reconstruction Threshold</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-16 · 论文PDF</p>
+
+<p>不规划的代价：并行采样深度在重建阈值处达峰</p>
+<blockquote><p>Masked diffusion models sample the tokens of one round independently. Planned decoders first generate a coarse plan, then fill in the tokens in parallel. We ask when a plan saves rounds, how many it saves, and how fine it must be. We study this on broadcast trees: the leaves are the tokens, the internal nodes are the plan, and the edge correlation $θ$ sets how strongly tokens depend on the plan. Errors are measured by the forward Kullback-Leibler divergence $\varepsilon$, and the lower bounds hold for every deterministic value-adaptive rule, also with learned conditionals. We show that a decoder without the plan needs of order $\min\{n,(n/\varepsilon)^α\}$ rounds below the reconstruction threshold, where $α=\log b/(4\log(1/θ))$ rises to $1/2$ at the threshold, and that the exponent stays below $1/2$ above it (binary channel: $0.02\leθ\le0.98$). With the plan, $\log_b n+1$ rounds suffice. In the binary model below the threshold, a plan with units of $m$ tokens needs of order $\log_b(n/m)+\min\{m,(n/\varepsilon)^α\}$ rounds, so it gives logarithmic depth exactly when $m$ is logarithmic. A plan therefore helps most near the threshold, and only if its units are small. Exact divergence …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.21285">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LENS: Replacing LayerNorm and Softmax in Transformers with Learnable Normalization States</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LENS: Replacing LayerNorm and Softmax in Transformers with Learnable Normalization States</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-15 · 论文PDF</p>
+
+<p>LENS：用可学习归一化状态替换Transformer的LayerNorm与Softmax</p>
+<blockquote><p>LayerNorm and attention Softmax are critical operations in Transformers. However, they cannot be efficiently mapped to General Matrix Multiplication (GEMM) computations on hardware. Therefore, modern hardware accelerator designs, such as NPUs on ASIC/FPGA, consume a large amount of hardware resources or chip area to implement their specific arithmetic units. Building on previous work about LayerNorm, Softmax, and their alternatives, we introduce Learnable Normalization States (LENS), a framework that reformulates LayerNorm as tiny MLPs by abstracting a common structure from related methods and extends this method to Softmax, which moves more of the computation in Transformers to GEMM as a hardware-friendly architecture. We evaluate LENS on image classification with Vision Transformers (ViT) and autoregressive language modeling with Pythia models, including generalization tests on WikiText and LAMBADA. Across these tasks, LENS matches or exceeds baseline performance in several vision settings and retains most of the baseline performance in the remaining vision and language experiments. These findings may suggest that hand-designed normalization and attention functions are not the on…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.20331">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gradient-Guided Hardware-Native MIXFP4</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Gradient-Guided Hardware-Native MIXFP4</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-12 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：Blackwell 张量核支持 W4A4 原生推理，但 NVFP4 与 BF16 存在困惑度差距；按 16 元素块选格式更准，现有 MMA 指令却无法执行这么细的粒度。</p>
+<p><strong>方法</strong>：FlipQuant 为每个 MMA 权重 tile 选择 E2M1 或 E0M3：两个量化候选保持固定，从 bucketed KL loss 到 BF16 teacher 的端到端梯度学习二进制格式图，每步更新后重估；原生 kernel 执行 16×64（SM120）与 256×64（SM100）tile。</p>
+<p><strong>关键数字</strong>：SM120 与 SM100 中位 GEMM 开销分别仅 1.9% 与 1.7%；在六个语言模型、两个语料上验证。</p>
+<p><strong>为什么值得看</strong>：把混合 FP4 格式选择下探到 MMA tile 粒度，硬件原生且开销极小。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.18769">Gradient-Guided Hardware-Native MIXFP4</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.18769">阅读原文 ↗</a></p>
+</body>
+</html>

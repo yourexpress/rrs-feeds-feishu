@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Do Apple M-Series Processors Enforce the Compound Memory Model? Sequential and Parallel Composition of Arm and TSO</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Do Apple M-Series Processors Enforce the Compound Memory Model? Sequential and Parallel Composition of Arm and TSO</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-16 · 论文PDF</p>
+
+<p>Apple M系列处理器是否执行复合内存模型的顺序/并行组合验证</p>
+<blockquote><p>Apple's M-series processors can run each thread under the Arm memory model or under a TSO model, and threads of both kinds can share memory. This raises two questions of composition that Apple has not answered. Across threads, how does the machine behave as a whole? Within a thread, which Arm instructions play the roles of TSO's loads, stores and atomic read-modify-writes, and how are they ordered between themselves and across other Arm instructions? We propose that both answers are compositions of preserved program order. Across threads, each thread keeps the preserved program order of its own model: a parallel composition. Within a TSO thread, every Arm instruction keeps TSO's order and adds Arm's, and every atomic memory operation (AMO) is locked, as x86's read-modify-writes are: a sequential composition. We test both on an Apple M1 and an Apple M2 running Linux, with 936 litmus tests chosen from the two models' preserved program order, each run 6x10^8 times on each machine. Arm-mode threads follow Arm's official model, TSO-mode threads follow x86-TSO and the sequential composition, and programs that mix the two modes follow the compound model: neither machine shows an outcome t…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.21406">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Integrated GPU Core for Mamba-3</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Integrated GPU Core for Mamba-3</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-16 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：Mamba-3 的 MIMO 计算、指数梯形离散化与 RoPE 引入密集/逐元素/顺序操作，融合后仍执行低效——kernel 启动多、数据移动大、寄存器压力降低 warp 占用与延迟隐藏。</p>
+<p><strong>方法</strong>：RescuCore 专用 GPU 执行单元：集成进每个 SM 子分区，与 CUDA/Tensor Core 共享寄存器文件、共享内存与 warp 调度器；稠密投影留常规资源，RescuCore 流水化离散化、归一化、RoPE、MIMO、循环状态更新与输出门控。</p>
+<p><strong>关键数字</strong>：论文未给出摘要级量化数字（摘要截断）。</p>
+<p><strong>为什么值得看</strong>：为 SSM 特化的 GPU 核，直击 Mamba-3 混合模型的 kernel 碎片化与数据移动。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.20409">Integrated GPU Core for Mamba-3</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.20409">阅读原文 ↗</a></p>
+</body>
+</html>

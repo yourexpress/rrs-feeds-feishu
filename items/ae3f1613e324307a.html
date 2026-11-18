@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reasoning Again with a Quarter of the Experts: Retry First, Then Train</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Reasoning Again with a Quarter of the Experts: Retry First, Then Train</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-16 · 论文PDF</p>
+
+<p>先用四分之一专家重试再训练：推理阶段专家缩减</p>
+<blockquote><p>Removing three quarters of the routed experts from a 122B-parameter reasoning mixture-of-experts model makes it fit in a 12 GiB file, and breaks it in a specific way: on LiveCodeBench it enters verbatim reasoning loops that run to the token limit on 44 of 120 development problems, where the unpruned model at the same 2-bit quantization loops on none. We study how much of that loss can be recovered without changing the kept experts' quantized bytes, in three steps of increasing cost. On development problems, a sampling penalty recovers part of it. Stopping a reply when it starts to loop and drawing again recovers more on top of it, with no weight change. Our method, B, adds rank-8 trained corrections to the kept experts, loaded as an adapter, and restores two experts per layer; it is fitted layer by layer to the unpruned model's expert block on the pruned model's own activations. In a pre-registered comparison on 130 easy and medium LiveCodeBench problems that no part of the study had touched, with both arms given the same sampling penalty and the same stop-and-redraw policy, B solves 116 problems against 104 (+9.2 pp, 95% CI [+3.1, +15.4]; 15 problems gained, 3 lost). A training-fr…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.20419">阅读原文 ↗</a></p>
+</body>
+</html>

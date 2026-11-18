@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ParGLU: Partial Gating Improves Language Modeling in MoE Transformers</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ParGLU: Partial Gating Improves Language Modeling in MoE Transformers</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-16 · 论文PDF</p>
+
+<p>ParGLU：部分门控改进MoE Transformer语言建模</p>
+<blockquote><p>Multiplicative gating improves Transformer feed-forward networks (FFNs), but it reduces intermediate representation width under a fixed parameter budget. This trade-off is particularly relevant to Mixture-of-Experts (MoE) models, where individual experts have limited capacity. We introduce ParGLU, a partially gated FFN that combines SwiGLU and ReLU$^2$ in two parallel branches. ParGLU matches the parameter count and principal matrix computation budget of conventional SwiGLU. We evaluate ParGLU in 30M, 75M, and 152M MoE language models using three random seeds per scale. ParGLU outperforms SwiGLU across all three seeds at 75M and 152M, reducing mean validation NLL by 0.0200 and 0.0249, respectively. Results at 30M are mixed. Controlled ablations show that increasing backbone width or expert width strengthens ParGLU's relative performance. Ablation studies further show that combining SwiGLU and ReLU$^2$ improves performance over either architecture alone. Token-frequency analysis reveals larger improvements on low-frequency tokens. These findings show that fully gated FFNs are not always the most effective use of an MoE expert's parameter budget. Partial gating can improve language m…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.20663">阅读原文 ↗</a></p>
+</body>
+</html>

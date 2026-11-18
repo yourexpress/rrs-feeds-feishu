@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Understanding the Role of Reasoning Data in Pretraining</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Understanding the Role of Reasoning Data in Pretraining</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-14 · 论文PDF</p>
+
+<p>理解预训练中推理数据的作用</p>
+<blockquote><p>Reasoning data expose models to multi-step reasoning, but reasoning traces may cover only a subset of the available facts. How should pretraining balance atomic facts with reasoning traces? We study this question by constructing a setting in which every fact provides an atomic training signal, while only a subset appears in reasoning supervision, enabling us to measure generalization to transitions observed atomically but never used in training traces. For a linear transformer, we derive the weight assigned to atomic training signals that minimizes held-transition squared error and show that its leading-order optimum increases with reasoning-chain length and decreases with the fraction of facts held out from reasoning traces. These trends persist in a full transformer layer with an MLP, softmax attention, and cross-entropy loss. We further validate the role of reasoning complexity and data coverage in two natural-language settings: controlled multi-hop reasoning and mathematical pretraining. Together, our results provide a principled view of how reasoning-chain structure and data coverage should shape the allocation of training data during pretraining.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.19042">阅读原文 ↗</a></p>
+</body>
+</html>

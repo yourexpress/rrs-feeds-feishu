@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NVFP4-MLA: Unified FP4 KV-Cache Storage and Attention Computation for Multi-Head Latent Attention</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>NVFP4-MLA: Unified FP4 KV-Cache Storage and Attention Computation for Multi-Head Latent Attention</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-13 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：长上下文与 agentic 负载下，KV 缓存容量与注意力计算成为服务前沿 LLM 的主导成本。</p>
+<p><strong>方法</strong>：NVFP4-MLA 首个把 MLA 的 KV 缓存存储与注意力计算都压到 FP4：量化算法与注意力 kernel、缓存系统协同设计；选择性残差补偿只加在量化敏感通道；二维量化块让共享潜在缓存兼容两种注意力 BMM 的不同归约方向，消除中间重量化。</p>
+<p><strong>关键数字</strong>：在 DeepSeek-R1 与 Kimi-K3 上匹配 BF16 MLA 精度（具体加速数字摘要截断未给出）。</p>
+<p><strong>为什么值得看</strong>：MLA 场景 FP4 全栈统一落地，KV 缓存与注意力计算同时降精度减开销。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.18972">NVFP4-MLA: Unified FP4 KV-Cache Storage and Attention Computation for Multi-Head Latent Attention</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.18972">阅读原文 ↗</a></p>
+</body>
+</html>
