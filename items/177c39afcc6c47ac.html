@@ -22,9 +22,11 @@
 <h1>Byzantine-linearizable Single-Writer Multi-Reader Register in the GPU-Inspired Shared Memory Model</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>The construction of fault-tolerant atomic registers is a fundamental problem in distributed computing.</p>
-<blockquote><p>The construction of fault-tolerant atomic registers is a fundamental problem in distributed computing. GPUs, widely used in scientific computing and machine learning, face Byzantine thread behaviour, while their shared memory lacks access control, allowing any thread to modify shared objects. This raises the question of whether atomic register semantics can be maintained when any thread, including the designated writer, may behave Byzantine. We study this problem in the GPU-inspired shared-memory model of Georgiou et al. and present implementations of a Byzantine-linearizable single-writer multi-reader (SWMR) register. CAReg uses constant memory with a quantifiable probability of invalid reads, while SnapObject maintains a bounded window of authenticated writes, eliminating invalid reads and tolerating up to \(n-1\) Byzantine processes through lock-free and wait-free variants. Our results demonstrate how GPU phase-based, lock-step execution can partially compensate for the absence of access control.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：GPU 共享内存缺乏访问控制、任意线程（含指定 writer）可能 Byzantine 行为——原子寄存器语义能否维持？</p>
+<p><strong>方法</strong>：在 GPU 启发的共享内存模型中构造 Byzantine-linearizable 单写多读（SWMR）寄存器：CAReg 用常量内存、以可量化的概率容忍无效读；SnapObject 维护有界窗口的认证写、消除无效读，通过 lock-free 与 wait-free 变体容忍至多 n-1 个 Byzantine 进程。</p>
+<p><strong>关键数字</strong>：SnapObject 容忍至多 n-1 个 Byzantine 进程，提供无无效读的变体。</p>
+<p><strong>为什么值得看</strong>：把容错寄存器理论落到 GPU 无访问控制的现实约束下，分布式计算基础原语新解。</p>
+<p><a href="https://arxiv.org/abs/2610.14543">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14543">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Compositional Average Velocity Modeling for Efficient Diffusion Offline Reinforcement Learning</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Diffusion-based policies have recently emerged as a powerful paradigm for offline reinforcement learning, but their reliance on multi-step denoising introduces substantial computational overhead and requires backpropagation through time during training, limiting scalability and practical deployment.</p>
-<blockquote><p>Diffusion-based policies have recently emerged as a powerful paradigm for offline reinforcement learning, but their reliance on multi-step denoising introduces substantial computational overhead and requires backpropagation through time during training, limiting scalability and practical deployment. In this work, we propose \textbf{Instant Flow Q-Learning (InsQL)}, a single-step generative policy learning framework that retains the expressive capacity of diffusion models while eliminating iterative sampling and BPTT. InsQL builds on the flow-matching perspective of diffusion policies, but replaces marginal velocity parameterization with \emph{average-velocity} modeling and introduces a principled compositional mechanism, yielding a theoretically grounded objective that learns average velocity consistently across scales. This formulation provides a direct noise-to-action mapping and enables single-step action generation. InsQL further unifies compositional average-velocity modeling with behavior-regularized actor--critic optimization in a single framework, requiring only a single policy network and avoiding distillation, multi-stage procedures, and Jacobian computations during train…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：基于扩散的离线强化学习策略能力强，但多步去噪带来高计算开销、训练需时间反向传播（BPTT），限制扩展与部署。</p>
+<p><strong>方法</strong>：InsQL 单步生成策略学习框架——从扩散策略的 flow-matching 视角出发，用平均速度建模替代边缘速度参数化，引入组合机制得到跨尺度一致的理论目标；直接噪声到动作映射、单次前向生成动作，可用价值引导候选选择精炼；单策略网络，无需蒸馏、多阶段流程或 Jacobian 计算。</p>
+<p><strong>关键数字</strong>：标准离线 RL 基准与真实机器人操作任务上匹配或超越 SOTA 扩散方法，同时大幅降低训练与推理时间。</p>
+<p><strong>为什么值得看</strong>：单步生成保留扩散表达能力，为离线 RL 部署提供可扩展替代路线。</p>
+<p><a href="https://arxiv.org/abs/2610.14941">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14941">阅读原文 ↗</a></p>
 </body>
 </html>

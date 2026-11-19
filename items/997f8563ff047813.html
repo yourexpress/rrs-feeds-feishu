@@ -22,9 +22,11 @@
 <h1>ChampionKV: Head-Wise Adaptive Budget Allocation for KV Cache Compression</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Some observation-window-based KV cache compressors use prompt attention to identify important tokens but allocate uniform or predefined budgets across heads, overlooking input-dependent differences in budget demand.</p>
-<blockquote><p>Some observation-window-based KV cache compressors use prompt attention to identify important tokens but allocate uniform or predefined budgets across heads, overlooking input-dependent differences in budget demand. We propose ChampionKV, an input-adaptive head-wise budget allocator for long-context KV cache compression. It uses the maximum aggregated observation-window attention score as a lightweight empirical proxy for attention concentration, assigning larger budgets to heads with dispersed attention and smaller budgets to concentrated heads. An abnormal-head mask and a floor-budget mechanism improve robustness under weak attention responses. ChampionKV plugs into compressors such as SnapKV and PyramidKV without changing their token-selection procedures. On LongBench and RULER, both Champion variants consistently improve over their SnapKV and PyramidKV base compressors; the improvements are largest and statistically significant on Llama3.1-70B-Instruct, especially under tight budgets, whereas results on the tested 7B/8B models remain competitive but mixed. ChampionKV does not uniformly outperform Ada-KV, whose global cross-head Top-K selection retains an advantage in several se…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：基于观察窗口的 KV cache 压缩器用 prompt attention 找重要 token，却在各头间统一或预设分配预算，忽视输入相关的预算需求差异。</p>
+<p><strong>方法</strong>：ChampionKV 是输入自适应的头级预算分配器——用最大聚合观察窗口注意力分数作为注意力集中度的轻量代理，给注意力分散的头更大预算、集中头更小预算；异常头掩码与地板预算机制提升弱注意力响应下的鲁棒性；可无改动地插入 SnapKV、PyramidKV。</p>
+<p><strong>关键数字</strong>：LongBench 与 RULER 上两个变体相对基础压缩器持续提升，Llama3.1-70B-Instruct 上提升最大且在紧预算下统计显著；7B/8B 模型上结果有竞争力但好坏参半；不统一优于保留跨头全局 Top-K 优势的 Ada-KV。</p>
+<p><strong>为什么值得看</strong>：长上下文 KV 压缩的头级自适应分配，插拔式低成本收益。</p>
+<p><a href="https://arxiv.org/abs/2610.18026">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.18026">阅读原文 ↗</a></p>
 </body>
 </html>

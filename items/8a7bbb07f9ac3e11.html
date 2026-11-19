@@ -22,9 +22,11 @@
 <h1>Bayesian Test-Time Inference of Task-Aligned Similarity from Weak Interactive Feedback</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Language model systems repeatedly make test-time decisions by comparing similarity: they retrieve exemplars, rank candidates, and revise responses.</p>
-<blockquote><p>Language model systems repeatedly make test-time decisions by comparing similarity: they retrieve exemplars, rank candidates, and revise responses. Yet similarity is not unique: lexical, semantic, structural, and stylistic resemblance can point to different candidates, and the task-aligned notion can change across instances. We introduce BASIS (Bayesian Axis Selection via Interactive Signals), a training-free Bayesian method that uses weak test-time feedback to infer which criterion in a supplied, task-specific library governs the current decision. It maintains a joint posterior over candidate targets and criteria, updates it from scalar scores, pairwise preferences, or verifier outputs, and selects probes by expected information gain. In a finite noisy model, we characterize when the target-criterion pair is recoverable and show why fixed-criterion and fixed-mixture rules can fail under criterion shift. Across concept recovery, reasoning exemplar selection, and response refinement, BASIS improves six-probe concept-recovery Success@1 from 56.0% to 68.1%, reasoning accuracy from 72.3% to 73.1%, and refinement win rate from 61.4% to 63.8% over tuned static mixtures. It also exceeds c…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 测试时频繁做相似性决策（检索样例、候选排序、修订回答），但词法/语义/结构/风格相似性指向不同结果，任务对齐的标准还会随实例变化。</p>
+<p><strong>方法</strong>：BASIS 是一种训练-free 贝叶斯方法，用弱测试时反馈（标量分数、成对偏好或 verifier 输出）推断当前决策该用任务库中哪个准则；维护目标与准则的联合后验，按期望信息增益选探针；只从给定准则库中选择、不发现新准则。</p>
+<p><strong>关键数字</strong>：六探针概念恢复 Success@1 从 56.0% 提至 68.1%；推理准确率 72.3%→73.1%；响应精炼胜率 61.4%→63.8%；超过算力匹配的 best-of-N（推理 72.1%、精炼 61.2%）；准则错配与候选池更大时增益最大。</p>
+<p><strong>为什么值得看</strong>：训练-free 的测试时自适应相似性推断，解决准则漂移问题的低成本方案。</p>
+<p><a href="https://arxiv.org/abs/2610.18656">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.18656">阅读原文 ↗</a></p>
 </body>
 </html>

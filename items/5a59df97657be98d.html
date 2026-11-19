@@ -22,9 +22,11 @@
 <h1>Beyond Adjacent Layers: Graph-Guided Layer Fusion for Compressing Large Language Models</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Existing depth-compression methods for large language models (LLMs) score layers individually or group only adjacent or contiguous layers, implicitly assuming that functional redundancy is local.</p>
-<blockquote><p>Existing depth-compression methods for large language models (LLMs) score layers individually or group only adjacent or contiguous layers, implicitly assuming that functional redundancy is local. We test this assumption by computing full pairwise Centered Kernel Alignment (CKA) similarity matrices for thirteen LLMs from six architecture families (1.6B-14B parameters). Non-adjacent layers have 3.6-15.9x more high-similarity pairs than adjacent ones, a structure that prior similarity-based layer merging has not systematically exploited. We propose Fusion via Community Mining (FCM), which builds the full L x L similarity graph, uses spectral community detection to find clusters of functionally equivalent layers, keeps the highest-Block-Influence layer in each cluster, and applies LoRA recovery; a pre-specified rule computed only on calibration data chooses between cosine and CKA similarity. At 2x compression, FCM lowers mean perplexity below ShortGPT on twelve of thirteen models, significantly on ten (Welch's t-test with Holm-Bonferroni correction; up to 50% on Qwen3-4B), with Mistral-7B the only loss (+13.4%). Against FlattenGPT, SWM, and DeltaLLM under matched calibration and recove…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：现有 LLM 深度压缩方法要么逐层打分、要么只合并相邻/连续层——"功能冗余是局部的"这一隐含假设是否成立？</p>
+<p><strong>方法</strong>：FCM 构建全 L×L CKA 相似度图，用谱社区检测找出功能等价层簇，每簇保留 Block-Influence 最高层并做 LoRA 恢复；相似度度量（cosine vs CKA）由只在校准数据上计算的预设规则选择。</p>
+<p><strong>关键数字</strong>：13 个模型（1.6B–14B）中非相邻层的高相似对是相邻层的 3.6–15.9×；2× 压缩下 12/13 模型困惑度低于 ShortGPT（Qwen3-4B 最多降 50%），仅 Mistral-7B 变差（+13.4%）；2× 压缩的 Qwen2.5-7B 参数少 46%、峰值 VRAM 低 42%、单卡 A100 解码吞吐高 84%；谱分组比 Fisher 连续分割好 41%、比均匀划分好 51%。</p>
+<p><strong>为什么值得看</strong>：用图社区发现非相邻层的功能冗余，压缩收益显著且可推广到 3×。</p>
+<p><a href="https://arxiv.org/abs/2610.15159">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15159">阅读原文 ↗</a></p>
 </body>
 </html>

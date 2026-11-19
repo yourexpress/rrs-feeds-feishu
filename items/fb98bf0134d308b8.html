@@ -22,9 +22,11 @@
 <h1>Beyond Policy Rollouts: Embedding-Space Directional Exploration with Anchored Noise for LLM RLVR</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Reinforcement learning with verifiable rewards (RLVR) typically uses small rollout groups per prompt, where repeated sampling from the same policy can yield highly similar trajectories, reducing within-group reward variation and weakening group-relative advantage signals.</p>
-<blockquote><p>Reinforcement learning with verifiable rewards (RLVR) typically uses small rollout groups per prompt, where repeated sampling from the same policy can yield highly similar trajectories, reducing within-group reward variation and weakening group-relative advantage signals. Existing remedies such as higher sampling temperature, entropy bonuses, asymmetric clipping, and larger rollout budgets broaden sampling or modify policy updates but leave rollout conditioning unchanged. In this paper, we propose EDEN (Embedding-space Directional Exploration via anchored Noise), which intervenes at the rollout source through anchored input perturbations. EDEN explores beyond the policy's own rollouts. Within the same rollout budget, it replaces a small fraction of standard rollouts in each group with rollouts that the same policy generates from the prompt plus a single appended, perturbed embedding position, rather than from the prompt alone. Gaussian noise drives variation, while a shared anchor provides a common conditioning direction within each prompt group. Selected perturbed rollouts contribute to GRPO updates with downweighted advantages, and the model architecture, discrete decoding, and t…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：RLVR 通常每 prompt 用小组 rollout，同策略重复采样轨迹高度相似，组内奖励变化小、组相对优势信号弱。</p>
+<p><strong>方法</strong>：EDEN 在 rollout 源头介入——同预算下把每组少量标准 rollout 换成"prompt + 一个附加的扰动嵌入位置"生成的 rollout；高斯噪声驱动变化、共享锚提供组内一致条件方向，选中扰动 rollout 以降权优势参与 GRPO 更新，模型架构与测试时推理不变。</p>
+<p><strong>关键数字</strong>：跨模型规模与数学推理基准全面优于同流水线内的 GRPO 与各探索对照，最大增益体现在采样解覆盖上；更多 prompt 组获得非零组相对学习信号，噪声与锚定互补。</p>
+<p><strong>为什么值得看</strong>：不改架构、不动解码，仅从 rollout 源做定向探索即可提升 RLVR，工程代价小。</p>
+<p><a href="https://arxiv.org/abs/2610.16105">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16105">阅读原文 ↗</a></p>
 </body>
 </html>

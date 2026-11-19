@@ -22,9 +22,11 @@
 <h1>Beyond the Boundary: Optimal Grid Dispersion by Spread, Reverse, and Collect</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>\emph{Dispersion} requires a set of mobile agents to occupy distinct nodes of a graph such that each node contains at most one agent.</p>
-<blockquote><p>\emph{Dispersion} requires a set of mobile agents to occupy distinct nodes of a graph such that each node contains at most one agent. We study deterministic dispersion of $k\le n$ agents on an $n$-node oriented square grid, where each node has globally consistent North, East, South, and West port labels, from arbitrary initial configurations. This includes both \emph{rooted} configurations, where all agents are co-located initially, and \emph{general} configurations, where agents are initially distributed arbitrarily across the nodes. On oriented square grids, Kshemkalyani, Molla, and Sharma~\cite{KMS20} gave an $O(\min(k,\Side))$-round algorithm in the local-communication model, where only agents on the same node can exchange information, and an $O(\sqrt{k})$-round algorithm in the global-communication model, where any two agents can communicate regardless of position, both using $O(\log k)$ bits per agent. The bound in the local communication model is optimal when $k=Θ(n)$, but it remains open whether local communication alone can match the $Ω(\sqrt{k})$ time lower bound when $k=o(n)$. We solve this by presenting \textsc{Spread--Reverse--Collect} (SRC), a deterministic algorithm …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：网格图上的确定性 dispersion——k≤n 个 agent 从任意初始配置（同点或任意分布）分散到不同节点，本地通信模型能否匹配 Ω(√k) 时间下界（k=o(n) 时此前的开放问题）。</p>
+<p><strong>方法</strong>：Spread-Reverse-Collect（SRC）算法基于几何原语——S 形并行扫描 + 简单优先级规则；与旧算法"先聚到边界再散开"不同，每次扫描从 agent 当前位置出发，碰到边界就反向折回继续，无需知道网格大小、在无限定向网格上原样运行。</p>
+<p><strong>关键数字</strong>：任意 k≤n 在 O(√k) 同步轮内完成分散，每 agent 用 O(log k) 位持久内存，同时匹配时间与内存下界。</p>
+<p><strong>为什么值得看</strong>：解决本地通信模型下的开放复杂度问题，几何构造简洁优雅。</p>
+<p><a href="https://arxiv.org/abs/2610.16935">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16935">阅读原文 ↗</a></p>
 </body>
 </html>

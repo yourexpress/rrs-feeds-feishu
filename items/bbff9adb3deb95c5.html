@@ -22,9 +22,11 @@
 <h1>CacheLink: Functional KV Transport for Zero-Prefill Cross-Model Context Handoff</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>KV caches make long-context serving efficient by reusing past computation, but model switching breaks this reuse and forces the receiver to prefill the context again.</p>
-<blockquote><p>KV caches make long-context serving efficient by reusing past computation, but model switching breaks this reuse and forces the receiver to prefill the context again. We study \emph{zero-prefill cross-model context handoff}: translating a sender cache into a receiver-compatible state so that the receiver can continue directly without prefilling same context. Existing affine transport methods show that receiver KV states can be substantially reconstructed from sender caches. However, through extensive analyses, we find that reconstruction fidelity is a poor proxy for receiver utility. Similar K/V reconstruction errors can lead to substantially different attention patterns, predictive distributions, and downstream accuracy, because conventional reconstruction objectives overlook the query-dependent functional importance of K and V in receiver attention. We thus introduce CACHELINK, which learns a coupled K/V correction through the receiver behavior directly. Across four independently trained sender--receiver pairs and seven evaluation panels, CACHELINK improves the equal-weight mean over all methods for every pair. In matched diagnostics, CACHELINK changes K/V squared error by less t…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：KV cache 复用长上下文计算，但模型切换会破坏复用、迫使接收方重新 prefill 相同上下文——零 prefill 跨模型上下文移交如何实现？</p>
+<p><strong>方法</strong>：CacheLink 学习耦合的 K/V 校正，直接以接收方行为为目标优化（而非仅重建保真度）；发现传统重建目标忽略 K/V 在接收方注意力中依赖 query 的功能重要性，重建误差小不代表接收方效用高。</p>
+<p><strong>关键数字</strong>：4 对独立训练的 sender-receiver 对、7 个评估面板上，CacheLink 的等权均值全面优于所有方法；K/V 平方误差变化 &lt;0.4% 却显著改变接收方注意力与 next-token 行为；32K 上下文下手off延迟相对接收方重 prefill 最高降 7.27×。</p>
+<p><strong>为什么值得看</strong>：从"重建缓存"转向"保留接收方计算"，跨模型 KV 传输的新思路与显著延迟收益。</p>
+<p><a href="https://arxiv.org/abs/2610.15509">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15509">阅读原文 ↗</a></p>
 </body>
 </html>

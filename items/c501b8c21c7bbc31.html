@@ -22,9 +22,11 @@
 <h1>Coarse-Graining Recursive Expert Computation: Continuation-Relative Interfaces and Failure Modes</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Computational coarse-graining aims to replace a sequence of updates with a cheaper module while preserving task performance.</p>
-<blockquote><p>Computational coarse-graining aims to replace a sequence of updates with a cheaper module while preserving task performance. We present a continuation-relative evaluation framework that assesses replacements through the computation that follows them, using downstream task quality and total execution cost as joint criteria. The framework distinguishes boundary representations, summaries of skipped computation, executed operations, and downstream loss. It makes interfaces and permitted deployment information explicit, combines fine-path references with directly trained controls using the same shortened architecture, and accounts for selection overhead. An exact loss decomposition separates replacement effects at a fixed downstream action from effects of changing that action. A finite construction shows how retained information can reduce the stipulated cost of zero-error prediction under fixed information and controller restrictions. Experiments in two frozen pretrained language models show that representation fidelity and task loss can favor different fitting objectives. In a prespecified comparison on a 1.7-billion-parameter model, next-token-loss training lowers in-distribution ne…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：计算粗粒度化旨在用更便宜的模块替换一序列更新并保持任务性能——如何可靠判断替换是"真正的计算替代"还是"局部逼近收益"？</p>
+<p><strong>方法</strong>：提出 continuation-relative 评估框架，用下游任务质量与总执行成本做联合标准；区分边界表示、被跳过计算的摘要、执行操作与下游损失；做精确损失分解，分离固定下游动作下的替换效应与动作改变效应；混合细路径参考与直接训练的同架构对照。</p>
+<p><strong>关键数字</strong>：1.7B 参数模型的预设对比中，next-token-loss 训练使分布内负对数似然比重建跳过块输出低 0.1901 nats/标记；但 9 对分布漂移对比全部反转；递归专家原型中联合适应候选低于直接训练对照，输入-only 选择器不满足联合质量-成本标准。</p>
+<p><strong>为什么值得看</strong>：给"模块替换"提供显式判别准则与诊断，防止把近似收益误当架构进步。</p>
+<p><a href="https://arxiv.org/abs/2610.14413">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14413">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>BSIPipe: Bidirectional Sequence-Level Interleaved Pipeline Parallelism for Long-Sequence Large Language Model Training</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Pipeline parallelism has become a critical technique for training large language models.</p>
-<blockquote><p>Pipeline parallelism has become a critical technique for training large language models. To address the throughput limitation of existing sequence-level methods that schedule subsequences unidirectionally, we propose bidirectional sequence-level interleaved pipeline parallelism (BSIPipe), which co-schedules two opposing V-shaped interleaved pipelines at the subsequence level. To bound the activation accumulation from subsequence scaling, BSIPipe introduces a basic-unit concatenation mechanism that keeps activation memory invariant to the subsequence count. To eliminate communication deadlock risk from bidirectional scheduling, BSIPipe employs a communication optimization strategy that combines topology-aware device mapping with communication-computation overlap. In addition, BSIPipe composes with tensor parallelism to overcome the memory limitation of single-dimensional parallelism, neutralizing its bidirectional memory overhead while maintaining throughput. Experiments on GPT and LLaMA3 demonstrate that BSIPipe achieves average speedups of 1.11$\times$ to 1.13$\times$ in long-sequence training over SOTA sequence-level baselines.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：长序列 LLM 训练中，现有 sequence-level pipeline parallelism 单向调度子序列，吞吐受限。</p>
+<p><strong>方法</strong>：BSIPipe 在子序列层级双向协同调度两条相对的 V 形交错流水线；basic-unit 拼接机制使激活内存不随子序列数量增长；拓扑感知设备映射与通信-计算重叠消除双向调度的死锁风险，并可与 tensor parallelism 组合以突破单一维度内存限制。</p>
+<p><strong>关键数字</strong>：GPT 与 LLaMA3 上长序列训练相对 SOTA sequence-level 基线平均提速 1.11×–1.13×。</p>
+<p><strong>为什么值得看</strong>：长序列训练流水线的新调度范式，直接对应超长上下文模型训练痛点。</p>
+<p><a href="https://arxiv.org/abs/2610.14935">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14935">阅读原文 ↗</a></p>
 </body>
 </html>

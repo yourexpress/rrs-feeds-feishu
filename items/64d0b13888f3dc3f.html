@@ -22,9 +22,11 @@
 <h1>CodeWalk: Generating Coding Benchmarks by Walking a Problem Graph</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>High-quality coding problems are expensive to collect.</p>
-<blockquote><p>High-quality coding problems are expensive to collect. Benchmarks such as SWE-bench rely on substantial human curation, while synthetic alternatives typically rely on costly model generation and validation. In this work, we show that new coding problems can be created at almost no cost by composing existing ones. We formulate problem generation as code composition: verified atomic problems are combined into level-$N$ tasks, and a task is kept only if every atomic problem remains unsolved and a joint reference solution passes the same check used at evaluation time. The entire task-construction process is programmatic and requires no language-model generation or validation. We instantiate this approach in four coding settings: multi-bug repair, proof completion, complexity analysis, and clone equivalence. The generated tasks are challenging for frontier models, which all degrade as compositional depth increases. The generated tasks are also useful as training data: rejection-sampling fine-tuning on them improves Qwen3.5-9B at every composition level.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：高质量编程问题收集昂贵——SWE-bench 类基准依赖大量人工整理，合成方案又依赖昂贵的模型生成与验证。</p>
+<p><strong>方法</strong>：CodeWalk 把问题生成建模为代码组合：已验证的原子问题组合成 level-N 任务，仅当每个原子问题仍未解决且联合参考解通过评测时同款检查才保留；全程程序化，无需任何 LLM 生成或验证。</p>
+<p><strong>关键数字</strong>：四个编码场景实例化（多 bug 修复、证明补全、复杂度分析、克隆等价）；生成任务对前沿模型有挑战性，所有模型随组合深度增加性能下降；作为训练数据，拒绝采样微调使 Qwen3.5-9B 在每个组合层级都有提升。</p>
+<p><strong>为什么值得看</strong>：几乎零成本、纯程序化生成编程基准，兼具评测与训练数据双重用途。</p>
+<p><a href="https://arxiv.org/abs/2610.15345">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15345">阅读原文 ↗</a></p>
 </body>
 </html>
