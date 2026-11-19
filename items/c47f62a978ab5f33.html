@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RTLReviewBench: LLM Hardware Reviewers Rarely Miss Bugs but Routinely Reject Correct RTL</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>RTLReviewBench: LLM Hardware Reviewers Rarely Miss Bugs but Routinely Reject Correct RTL</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-14 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：硬件团队越来越多让 LLM 审阅 RTL 代码，但模型能否不仿真就区分正确模块与有 bug 的模块？</p>
+<p><strong>方法</strong>：RTLReviewBench 基准含 114 对 buggy/correct Verilog 模块，每对共享同一规格，多数 buggy 模块是 LLM 代码生成器的真实失败，所有标签经仿真确认；评测 12 个商业与开源模型，并做推理前置、抽样投票等消融。</p>
+<p><strong>关键数字</strong>：审查存在一致不对称——每漏掉 1 个 bug 就产生超过 5 次误拒；合成变异体掩盖问题（对注入 bug 的漏检远少于真实 bug）；推理前置显著减少弱审查者的误拒，而抽样与多数投票无帮助；盲审发现部分"buggy"判定基于错误技术主张。</p>
+<p><strong>为什么值得看</strong>：首个真实失败驱动的 RTL 审查基准，揭示 LLM 硬件审查"几乎不漏 bug 但惯常误拒正确代码"的现状。</p>
+<p><a href="https://arxiv.org/abs/2611.21678">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.21678">阅读原文 ↗</a></p>
+</body>
+</html>

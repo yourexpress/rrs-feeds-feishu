@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>blaris: Windowless Random-Access LZSS for Constrained Microcontrollers</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>blaris: Windowless Random-Access LZSS for Constrained Microcontrollers</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：嵌入式 LZ77 解压器（heatshrink、tamp）需要 RAM 滑动窗口，内存占用与压缩率耦合，且随机访问读延迟高。</p>
+<p><strong>方法</strong>：blaris 轻量无窗口 LZSS 解压器，面向受限微控制器的 XIP 随机访问：把 token 划分为双向可遍历流并设 2 的幂检查点，直接在压缩载荷内解析反向引用，不分配 RAM 窗口；面向 compress-on-host/decompress-on-device 工作流，假设可信构建期载荷，省略运行时错误与边界检查。</p>
+<p><strong>关键数字</strong>：压缩率与高窗口 heatshrink/tamp 配置相当；RV32IMC 上仅需 548-784 B Flash、104-112 B 总 RAM；小片随机读比比例匹配的块索引 heatshrink/tamp 快数量级。</p>
+<p><strong>为什么值得看</strong>：把解压器的内存占用与压缩率解耦，为闪存直接执行场景提供极低资源开销的随机访问解压。</p>
+<p><a href="https://arxiv.org/abs/2611.22900">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.22900">阅读原文 ↗</a></p>
+</body>
+</html>

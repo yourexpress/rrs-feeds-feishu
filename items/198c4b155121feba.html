@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fine-Tuning Gemma 4 Edge Models for MATLAB Signal-Processing Code with SFT and QLoRA on a Laptop iGPU</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Fine-Tuning Gemma 4 Edge Models for MATLAB Signal-Processing Code with SFT and QLoRA on a Laptop iGPU</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：笔记本上跑的小模型适合离线写信号处理代码，但在 DSP 约定上系统性出错。</p>
+<p><strong>方法</strong>：用 66 个覆盖 11 个 MATLAB 信号处理子任务的检查示例，对 Gemma 4 edge 模型 E2B/E4B 做监督微调（SFT），LoRA/QLoRA 直接在笔记本 iGPU 上训练，int8 模型 + 适配器经 OpenVINO 部署。</p>
+<p><strong>关键数字</strong>：held-out 变体由确定性检查器打分，E2B 通过率 18/66 → 37/66（LoRA 与 QLoRA 相同）、E4B 32/66 → 47/66（QLoRA）；通读全部 159 个失败程序发现适配器消除了多数约定错误（滞后符号、单位、数组形状），但构建信号与噪声的错误基本仍在；运行时适配器开销为生成速度的 17-19%。</p>
+<p><strong>为什么值得看</strong>：端侧小模型 + 笔记本 iGPU 微调的完整落地闭环，量化了"约定错误可修、信号构建难修"的边界。</p>
+<p><a href="https://arxiv.org/abs/2611.23205">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.23205">阅读原文 ↗</a></p>
+</body>
+</html>

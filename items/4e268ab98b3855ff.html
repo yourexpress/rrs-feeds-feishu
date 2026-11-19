@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ResoLUT: Distilling Residual Networks into Lookup-Table Networks</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ResoLUT: Distilling Residual Networks into Lookup-Table Networks</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：布尔门/LUT 逻辑网络承诺高效硬件推理，但在深度上训练、学习其连接结构一直困难。</p>
+<p><strong>方法</strong>：ResoLUT 不把逻辑当逻辑训练——逐层把训练好的 ResNet 蒸馏成 LUT 树，保留多位残差流与 BatchNorm，连接结构从 teacher 提取而非学习；训练与推理全程硬 LUT 决策，避免逻辑中的离散化鸿沟。</p>
+<p><strong>关键数字</strong>：ResoLUT-20 CIFAR-10 达 95.66%（双倍树）；ResoLUT-56 CIFAR-100 78.87%、ImageNet 64px 53.69%，为逻辑与 LUT 网络在 CIFAR-10/100 上的最佳结果；最优 ResoLUT-8（1/8 树）可上 FPGA，90.04% 精度下 189k 图像/秒，是 &gt;85% 精度对比模型中吞吐最高。</p>
+<p><strong>为什么值得看</strong>：首个在视觉领域保留 ResNet 式多位残差流的卷积逻辑网络，证明 LUT 网络可以规模化到深度。</p>
+<p><a href="https://arxiv.org/abs/2611.22955">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.22955">阅读原文 ↗</a></p>
+</body>
+</html>

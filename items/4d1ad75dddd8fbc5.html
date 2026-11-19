@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chimera: A Configurable LLM Decode Accelerator Architecture with Compute-Memory-Floorplan Co-Design for HBM-Equipped Multi-Die FPGAs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Chimera: A Configurable LLM Decode Accelerator Architecture with Compute-Memory-Floorplan Co-Design for HBM-Equipped Multi-Die FPGAs</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-14 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：GPU 做 LLM 推理时单请求解码是内存受限，算力闲置且功耗高；HBM FPGA 更节能，但高内存带宽并不直接保证高解码性能——并行计算与内存接口的资源成本与布局会限制吞吐。</p>
+<p><strong>方法</strong>：Chimera 可配置 LLM 解码加速器，协同设计计算、内存访问与 floorplan：HBM Proxy Ports 把 HBM 访问扩展到每个 SLR die 的计算通道；分层专家存储把 MoE 权重放到 HBM 容量之外；统一配置分析估计每 token 延迟与每 SLR 资源占用，在资源预算内指导设计。</p>
+<p><strong>关键数字</strong>：AMD Alveo U280 上构建 10 个设计，覆盖 8 个 dense/MoE/hybrid/ternary LLM，最大 80B MoE 模型四层存储；token 吞吐为先前 SOTA FPGA 实现的几何平均 1.6×；能效为 RTX 3090 的 3.0×、A100 的 1.5×。</p>
+<p><strong>为什么值得看</strong>：HBM 多裸片 FPGA 做 LLM 解码的新基准，计算-内存-布局三层协同设计思路可复用。</p>
+<p><a href="https://arxiv.org/abs/2611.21677">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.21677">阅读原文 ↗</a></p>
+</body>
+</html>

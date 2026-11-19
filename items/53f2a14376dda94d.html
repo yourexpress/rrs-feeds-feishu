@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inside the Codex sandbox</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Inside the Codex sandbox</h1>
+<p class="meta-line">OpenAI · 2026-11-18 · 官方公告 / 每日精选</p>
+<img class="hero" src="https://images.ctfassets.net/kftzwdyauwt9/1PnylD7lJwgUw7jYNP8wLh/7fa5553001136f3982e8d4db44146de3/inside-the-codex-sandbox-social.png?w=1600&amp;h=900&amp;fit=fill" alt="" referrerpolicy="no-referrer">
+<p><strong>核心话题</strong>：OpenAI Codex 沙箱的设计与实现——如何在用户现有环境中以文件系统与网络限制约束 agent 命令，而非把计算搬进独立容器。</p>
+<p><strong>要点</strong>：以权限配置文件定义限制，默认 :workspace 配置（工作区内可写、.git/.codex 只读、广泛读取、禁用网络）；macOS 用 Seatbelt/sandbox-exec、Linux 用 bubblewrap + seccomp-bpf、Windows 迁移到微软 MXC，三平台共享同一沙箱 API；codex-network-proxy 按域规则放行请求，未匹配域可转人工或自动审查；codex sandbox 命令可把沙箱能力复用到自建工具。</p>
+<p><strong>关键数字</strong>：:workspace 默认禁用网络；域规则支持精确名与通配符、deny 优先于 allow；每子进程继承父进程沙箱约束，覆盖整个进程树。</p>
+<p><strong>为什么值得看</strong>：防御纵深式 agent 沙箱的工程细节与平台落地差异，对自建 agent 工具链直接可复用。</p>
+<p><a href="https://openai.com/index/inside-the-codex-sandbox/">阅读原文</a></p>
+<p><a class="origin" href="https://openai.com/index/inside-the-codex-sandbox/">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TempQuant: Learning Adaptive Temperatures for Quantized Language Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>TempQuant: Learning Adaptive Temperatures for Quantized Language Models</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：LLM 越来越常以低精度部署，但量化会损害性能；量化如何与采样温度、top-p 等解码设置相互作用？</p>
+<p><strong>方法</strong>：测量生成熵发现量化平均"加热"模型，且温度对量化模型的影响远大于全精度模型；TempQuant 学习量化模型的温度与 top-p，使其 next-token 概率更接近全精度模型；分两粒度——每请求温度一个全局设置（无需标签即找到接近标签调优的温度），以及逐 token 设置（排名翻转的 token 需加热、排名保持的需冷却）。</p>
+<p><strong>关键数字</strong>：3-bit Qwen3-4B 上，全局 TempQuant 把 MATH 精度从量化官方推荐配置下的 34% 提升到 51%。</p>
+<p><strong>为什么值得看</strong>：挑战"量化模型应与全精度模型用相同采样设置"的默认做法，给出无需标签的解码设置校准方法。</p>
+<p><a href="https://arxiv.org/abs/2611.22128">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.22128">阅读原文 ↗</a></p>
+</body>
+</html>

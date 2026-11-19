@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BQ-LoRA: Binary-Quantized Low-Rank Adapters as Implicit Regularizers for Parameter-Efficient Fine-Tuning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>BQ-LoRA: Binary-Quantized Low-Rank Adapters as Implicit Regularizers for Parameter-Efficient Fine-Tuning</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：QLoRA 用 4-bit 权重 + FP16 低秩适配器做参数高效微调，FP16 适配器精度是否必要？</p>
+<p><strong>方法</strong>：BQ-LoRA 把每个适配器参数二值化（单 bit）+ 每层学习缩放 s + Scaled STE；含 NormScale（范数保持缩放 + 裁剪 STE）与 LearnThresh（可学习二值化阈值）两变体；理论上给出假设类刻画：有界逐元素范数、典型集谱范数界比最坏情形锐 Θ(r) 倍、满秩近各向同性更新与显式 Rademacher 复杂度泛化界；并把存储节省落地为 BQ-SGMV 部署研究。</p>
+<p><strong>关键数字</strong>：适配器存储降 13-16×；Qwen2.5（1.5B-72B）各规模超 QLoRA 基准平均 0.8-3.5 分；Qwen2.5-7B 二值适配器保持 4-bit 基座 WikiText-2 PPL 在 0.06 内（9.86 vs 9.80），而 QLoRA 恶化 0.59；A100-80GB 单卡 HBM 可容纳 15.6× 更多适配器，训练步时间上升 &lt;4%。</p>
+<p><strong>为什么值得看</strong>：适配器存储数量级压缩且带理论保证，直接利好多租户推理服务的适配器容量。</p>
+<p><a href="https://arxiv.org/abs/2611.22334">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.22334">阅读原文 ↗</a></p>
+</body>
+</html>

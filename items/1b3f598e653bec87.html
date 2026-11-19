@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HADVQ: Hessian Aware Directional Vector Quantization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>HADVQ: Hessian Aware Directional Vector Quantization</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：LLM 超低位量化会严重扭曲模型参数，且不成比例地伤害极少数高敏感通道。</p>
+<p><strong>方法</strong>：HADVQ 向量量化方法：随机预条件正则化权重空间使其更易量化；极坐标表示解耦方向与幅度的量化；利用随机预条件诱导的结构，基于 E_8 格设计结构化码本量化方向；用代理 Hessian 检测极重要通道并以仅 0.16 bits 的额外成本保留它们。</p>
+<p><strong>关键数字</strong>：关键通道保留成本仅 0.16 bits；结合几何结构、格码本与选择性通道保留，实验精度在极低比特区间显著提升。</p>
+<p><strong>为什么值得看</strong>：把"方向/幅度解耦 + 格码本 + Hessian 通道保护"组合进同一条极低比特量化流水线，针对敏感通道问题对症下药。</p>
+<p><a href="https://arxiv.org/abs/2611.22721">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.22721">阅读原文 ↗</a></p>
+</body>
+</html>

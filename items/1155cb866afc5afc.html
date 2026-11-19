@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LoopPrune: Recurrent Pruning for Looped Diffusion Transformers</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LoopPrune: Recurrent Pruning for Looped Diffusion Transformers</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：循环扩散 Transformer 复用共享块加深计算、以更少参数匹配更大模型，但重复的 attention/MLP 计算仍昂贵；训练无关剪枝难以解析循环贡献，训练式方法又缺乏对位置特定误差的显式约束。</p>
+<p><strong>方法</strong>：LoopPrune 剪枝与恢复框架：循环重要性估计结合共享移除效应与位置变化来选择共享结构；共享重建池化循环输入统计补偿权重；循环位置恢复在相同学生状态比较完整去噪预测并匹配文本引导，对固定 dense teacher 更新全部学生参数。</p>
+<p><strong>关键数字</strong>：30% 结构化参数剪枝下 Looped-DiT B/16 保持 dense 六基准平均精度 93.14%，超最佳基线 9.49%；剪枝的 SDXSv3 峰值 GPU 内存降 34.36-44.64%、去噪加速 1.46-1.74×（PyTorch/vLLM-Omni/SGLang Diffusion 三栈验证）。</p>
+<p><strong>为什么值得看</strong>：首个兼顾共享结构选择与位置误差恢复的循环扩散 Transformer 剪枝方案，内存与延迟收益量化完整。</p>
+<p><a href="https://arxiv.org/abs/2611.22757">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.22757">阅读原文 ↗</a></p>
+</body>
+</html>

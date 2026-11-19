@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Communicate the Change: Efficient Expert Parallelism via Activation Compression</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Communicate the Change: Efficient Expert Parallelism via Activation Compression</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：大规模 MoE 靠专家并行跨设备分布专家，每层推理需两次同步集合通信（dispatch 隐状态、combine 专家输出）；计算吞吐超过互联带宽后，这些同步通信成为 MoE 扩展与效率的主要瓶颈。</p>
+<p><strong>方法</strong>：EchoMoE 轻量架构修改，可回填既有 MoE 模型：利用 transformer 块增量更新残差流的特点，用更早层的隐状态作参考，只同步通信当前状态与参考之间的压缩差值；周期性刷新参考状态。</p>
+<p><strong>关键数字</strong>：比全预训练少约 8,500× 训练 token；节点间通信量降 58%、吞吐提升 22.6%，18 个基准平均性能保持在 3.8 个百分点内；带宽受限以太网下推理吞吐最高提升 2.38×；通信表示的量化无质量损失；已提供 vLLM 集成实现。</p>
+<p><strong>为什么值得看</strong>：以"只传变化"化解 MoE 专家并行通信瓶颈，训练成本极低且直接可用。</p>
+<p><a href="https://arxiv.org/abs/2611.22215">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.22215">阅读原文 ↗</a></p>
+</body>
+</html>

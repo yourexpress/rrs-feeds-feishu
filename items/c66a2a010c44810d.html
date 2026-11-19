@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KVUse: Reusable-KV User Memory for Efficient LLM Recommenders</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>KVUse: Reusable-KV User Memory for Efficient LLM Recommenders</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-16 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：基于 LLM 的记忆增强推荐系统把用户画像存为文本，每次 ranking 调用都要拼接画像并在 prefill 阶段重算其 KV cache；这类调用 prefill 重、反复发生，重复 prefill 主导服务开销，且前缀缓存因前缀文本不同而无法消除。</p>
+<p><strong>方法</strong>：KVUse 把用户画像存为可复用 KV cache 而非文本：自蒸馏训练轻量 LoRA writer，使画像更新调用在解码时直接产出可复用 KV；LLM 可在新位置、新上下文后读取这些 KV 而无需重算；定制 KV 调度器在当前 batch 计算时上传下一 batch 的 KV，把主机内存传输藏在 GPU 计算后。</p>
+<p><strong>关键数字</strong>：4 个 InstructRec 数据集 + Llama-3.1-8B-Instruct，排序质量与完整 prefill 无统计显著差异；饱和负载下打分路径吞吐提升 4.0-4.5×、画像更新路径提升 1.4-1.9×。</p>
+<p><strong>为什么值得看</strong>：直击推荐场景 prefill 重负载的根源——把"画像文本"换成"可复用 KV"，顺带给出 KV 传输隐藏的调度设计。</p>
+<p><a href="https://arxiv.org/abs/2611.21920">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.21920">阅读原文 ↗</a></p>
+</body>
+</html>

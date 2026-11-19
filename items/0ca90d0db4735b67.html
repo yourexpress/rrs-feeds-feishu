@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Hidden Cost of MoE Diffusion Decoding: Profiling and Fixing the Sampler</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>The Hidden Cost of MoE Diffusion Decoding: Profiling and Fixing the Sampler</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-16 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：掩码扩散语言模型解码时每步 forward 都要对整幅 canvas×vocabulary logits 张量跑逐 token 采样与停止流水线；量化后该 logits 流水线竟成为解码最大耗时项，而非专家 GEMM。</p>
+<p><strong>方法</strong>：剖析 26B 扩散 MoE 在 GB10 上的单用户解码；以两级无损方式移除该流水线：bit-exact 级输出与参考解码器逐字节一致，accuracy-parity 级用融合单遍熵核 + Gumbel-max 采样；叠加 W4A16 专家核。</p>
+<p><strong>关键数字</strong>：GSM8K/HumanEval/MATH 精度不变下端到端加速 2.4-2.7×（对比 bf16）；独立实现的 LLaDA2.0-mini 上确认该问题（流水线占解码 28.8%，融合 W4A16 达 3.3×）；dense 扩散模型仅 3.6%，问题专属 MoE 扩散。</p>
+<p><strong>为什么值得看</strong>：指出量化后扩散 MoE 解码的真正瓶颈在采样流水线而非专家 GEMM，且给出无损消除方案。</p>
+<p><a href="https://arxiv.org/abs/2611.21852">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.21852">阅读原文 ↗</a></p>
+</body>
+</html>

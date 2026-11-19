@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manufacturing Differential Sparsity: Planner-Hardware Co-Design for Efficient World Model Planning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Manufacturing Differential Sparsity: Planner-Hardware Co-Design for Efficient World Model Planning</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：JEPA 潜在世界模型以 MPC 做具身规划，采样式 MPC 每次规划重复数万次预测器推断，高端 GPU 上一步规划仍需数十秒，无法用于真实具身控制。</p>
+<p><strong>方法</strong>：利用重复推断负载的潜在局部性——量化预测器内相近动作映射为相近潜在、呈差分位级稀疏；由于规划器自己决定候选组合，可用参考森林采样让每组动作序列耦合到共享根以"制造"更多稀疏；将规划器与位级稀疏加速器紧耦合协同设计，硬件按规划器暴露的结构调度。</p>
+<p><strong>关键数字</strong>：3 个 JEPA 世界模型上比 dense 加速器快 1.28-1.80×、能耗低 38-52%；比先前位稀疏设计快 1.22-1.58×、能耗低 16-36%，面积相同。</p>
+<p><strong>为什么值得看</strong>：首个规划器主动"制造"位级稀疏、并与硬件协同设计的 JEPA 世界模型规划加速方案。</p>
+<p><a href="https://arxiv.org/abs/2611.22483">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.22483">阅读原文 ↗</a></p>
+</body>
+</html>

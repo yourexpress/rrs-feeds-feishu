@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XM-Sparse: High-Throughput Sparse-Attention LLM Serving over Scale-up Memory Pools</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>XM-Sparse: High-Throughput Sparse-Attention LLM Serving over Scale-up Memory Pools</h1>
+<p class="meta-line">arXiv cs.DC · 2026-11-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：生产 LLM 长上下文用稀疏注意力，但 serving 仍须保留完整 KV 历史，GPU HBM 容量限制并发；现有 KV offload 到 host 内存受 PCIe 带宽与 host 容量双重限制。</p>
+<p><strong>方法</strong>：分析发现即便有 scale-up 内存池，解码吞吐仍被 HBM 容量钳制——热 KV 缓冲与常驻索引器 key 缓存（K-index）占用大量 HBM 且访问模式不同；XM-Sparse 首个基于 scale-up 内存扩展的稀疏注意力 offload 系统：动态 KV 条目用 TMA 检索与注意力做 tile 级流水线融合隐藏延迟，可预测 K-index 访问用 SM 高效 GPU-initiated DMA 预取并避开解码关键路径。</p>
+<p><strong>关键数字</strong>：DeepSeek-V3.2 与 GLM-5.3 + 模拟 scale-up 内存池：解码吞吐比 PCIe 的 ECHO 高 4.98×、比 HiSparse 高 4.52×，同平台比 naive 集成高 1.34×，覆盖 16K-1M 上下文。</p>
+<p><strong>为什么值得看</strong>：首个面向 scale-up 内存池的稀疏注意力 offload 系统，按两类缓存的访问模式分别定制 I/O 机制。</p>
+<p><a href="https://arxiv.org/abs/2611.22280">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.22280">阅读原文 ↗</a></p>
+</body>
+</html>

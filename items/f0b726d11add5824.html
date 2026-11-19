@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Kernel Reality Check: Benchmarking and Distilling Efficient Attention at Scale</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>The Kernel Reality Check: Benchmarking and Distilling Efficient Attention at Scale</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：核化注意力方法宣称用 O(N) 替代 softmax 的 O(N²)，但五年研究缺乏跨方法、跨规模的系统评估与公平比较。</p>
+<p><strong>方法</strong>：分效率与质量两半剖析：效率侧对比 FlashAttention 与 SOTA 核化方法（训练与视觉 transformer）；质量侧用统一蒸馏协议评测；提出 LARA++，通过重要性采样 + 自适应提议分布逼近 softmax。</p>
+<p><strong>关键数字</strong>：FlashAttention 在训练与视觉 transformer 的大多数序列长度上内存更低、墙钟更快（因果 LM 推理内存是唯一明确例外），且核化方法的效率收益常无法在现代基线上复现；统一蒸馏协议下核化方法相对 softmax 有 2-10 分差距，模型规模本身不闭合差距；LARA++ 恢复 softmax 精度最高 99%，但计算开销仍大，效率墙未破。</p>
+<p><strong>为什么值得看</strong>：核化注意力的系统化"现实核查"，证明差距可闭合但代价未消除，是该方向少见的公允横评。</p>
+<p><a href="https://arxiv.org/abs/2611.22947">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.22947">阅读原文 ↗</a></p>
+</body>
+</html>

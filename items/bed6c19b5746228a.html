@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How well does graph superoptimization transfer? Adapting tensor-graph superoptimizer to a Triton-based NPU</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>How well does graph superoptimization transfer? Adapting tensor-graph superoptimizer to a Triton-based NPU</h1>
+<p class="meta-line">arXiv cs.PF · 2026-11-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：自动优化系统在日益多样的 AI 加速器间性能可移植性仍是难题，图级超优化能否跨架构移植？</p>
+<p><strong>方法</strong>：把面向 CUDA 的张量图超优化器 Mirage 适配到华为 Ascend 910B3（走 Triton 编译栈），在矩阵乘、softmax、RMSNorm+MatMul、gated MLP、FNN、attention 等 transformer 负载上评估。</p>
+<p><strong>关键数字</strong>：图级优化可成功移植，融合负载最高超参考实现 87.0%；但性能高度依赖张量形状与负载结构，其他配置出现显著回退；定位到目标特定张量划分、执行资源建模、后端 lowering 与融合、搜索与验证成本等关键局限。</p>
+<p><strong>为什么值得看</strong>：用实证回答"可移植的图表示 ≠ 可移植的优化空间"，为可复用编译器基础设施的模块化目标特定机制提供依据。</p>
+<p><a href="https://arxiv.org/abs/2611.22844">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.22844">阅读原文 ↗</a></p>
+</body>
+</html>

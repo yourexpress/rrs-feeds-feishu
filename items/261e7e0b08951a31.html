@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accelerating 3D Gaussian Splatting Training through Selective Freezing and Computation Caching</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Accelerating 3D Gaussian Splatting Training through Selective Freezing and Computation Caching</h1>
+<p class="meta-line">arXiv cs.AR · 2026-11-17 · 论文PDF</p>
+
+<p>3DGS 训练加速：选择性冻结与计算缓存（算法-硬件协同）</p>
+<blockquote><p>3D Gaussian Splatting (3DGS) becomes a key primitive for immersive 3D experiences. However, its applicability is limited by its long training overhead. Although prior work has shown that gradient accumulation is the dominant bottleneck in training, existing works either have limited speedup or degrade reconstruction quality. To address this issue, we present ElsaGS, an algorithm-hardware co-designed framework that accelerates 3DGS training with negligible accuracy degradation. Our key observation is that most Gaussians converge early, while later iterations only refine a small subset of Gaussians. Thus, we propose a technique, progressive Gaussian freezing, which dynamically freezes well-converged Gaussians and caches their cumulative contributions, thereby reducing computations in both forward rasterization and backward gradient accumulation. To make caching efficient, we further propose an architecture, ElsaGS core, which integrates a pixel-parallel rasterization array with a set-associative frozen Gaussian cache, FGcache. Across three 3DGS datasets, ElsaGS freezes up to 90% of Gaussians with negligible quality loss and achieves up to 20.6x end-to-end speedup and 99.4% energy red…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.22059">阅读原文 ↗</a></p>
+</body>
+</html>

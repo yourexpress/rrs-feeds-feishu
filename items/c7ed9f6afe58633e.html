@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VisHead-Spec: Head-Routed Visual Attention for Multimodal Speculative Decoding</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>VisHead-Spec: Head-Routed Visual Attention for Multimodal Speculative Decoding</h1>
+<p class="meta-line">arXiv cs.LG · 2026-11-16 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：多模态投机解码在高并发下加速比衰减（系统趋于计算受限），图像 token 长程注意力抬高 draft 预测成本；block-diffusion drafters 高并发下对 VLM 的加速仍有限（&lt;9%）。</p>
+<p><strong>方法</strong>：分析目标模型到 draft 模型的模态信息流，发现视觉注意力稀疏模式——draft 只需少量 KV head 直接关注图像特征、且只关注目标模型顶层图像特征；VisHead-Spec 据此选固定小集合 KV head 读全部图像特征，其余 head 只读文本。</p>
+<p><strong>关键数字</strong>：Qwen3-VL-8B + MMSpec 上，VisHead-Spec-8 让 draft 的 40 个 KV head 中 8 个读图，接受长度保持在 DSpark 基线 0.3% 内；batch 64 时吞吐增益 16.0%（DSpark 为 9.5%）；batch 1 时与 DSpark 相当。</p>
+<p><strong>为什么值得看</strong>：用"头部路由"而非更多计算解决多模态投机解码的高并发瓶颈，思路轻量且效果显著。</p>
+<p><a href="https://arxiv.org/abs/2611.21839">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.21839">阅读原文 ↗</a></p>
+</body>
+</html>
