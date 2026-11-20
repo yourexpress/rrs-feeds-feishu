@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Measuring and Charging for Retained Context in Long-Context LLM Services</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Measuring and Charging for Retained Context in Long-Context LLM Services</h1>
+<p class="meta-line">arXiv · 2026-11-18 · 论文PDF</p>
+
+<p>长上下文 LLM 服务的保留上下文计量与计费框架（三层分离）</p>
+<blockquote><p>Long-context large language model (LLM) services charge for repeated context, yet billing weights need not reflect its contribution to answer quality. We present a three-layer framework separating content relevance, observable proxies and auditable positional weights. Context-ablation experiments show that relevance dominates position and that distance-decay families do not outperform a relevance-only baseline. A measured serving stack shows that cache hits reduce repeated-prefix compute cost by over two orders of magnitude at 65,536 tokens, while cold resends constrain sustainable discounts. Cross-provider measurements separate cache value from tokenisation and list-price differences. Calibrated simulations reduce the 99th percentile of session charges by 31-42%, although revenue-matched nonlinear tariffs achieve similar reductions and median charges increase. The framework provides a bounded per-token accounting rule and measured deployment constraints, rather than a validated utility estimator.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.24071">阅读原文 ↗</a></p>
+</body>
+</html>

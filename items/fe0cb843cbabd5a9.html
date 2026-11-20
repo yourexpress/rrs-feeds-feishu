@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Locality-Aware Scheduling for Stream Processing Applications in Serverless Environments</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Locality-Aware Scheduling for Stream Processing Applications in Serverless Environments</h1>
+<p class="meta-line">arXiv · 2026-11-18 · 论文PDF</p>
+
+<p>Serverless 流处理的局部性感知调度，面向有状态 FaaS 流水线</p>
+<blockquote><p>Stateful Serverless (Function-as-a-Service) environment are increasingly used for stream processing applications. These applications are often structured as pipelines where data flows through a sequence of distinct processing operators. Many operators are stateful and require access to the processing state during execution. To address this, stateful serverless platforms introduce state servers on worker nodes, co-locating state with computation to dramatically reduce access latency. In serverless, these data pipelines are realized by chaining function invocations, passing the processed data from one function to the next. To reduce network overhead, state-of-the-art scheduling approaches employ a distributed worker-level scheduling model, routing locally generated chained requests directly to destination workers, bypassing centralized schedulers. However, these approaches always co-locate state and execution for the same operator in the same worker, which forces most invocations to the next operator to be transferred across workers, thereby increasing both latency and I/O overhead. As a result, this paper proposes LcSched, a novel distributed scheduling strategy tailored for stream …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.23879">阅读原文 ↗</a></p>
+</body>
+</html>

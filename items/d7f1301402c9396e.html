@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FACT: Fixed-Budget Allocation and Cross-Step Training for Speculative Decoding</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>FACT: Fixed-Budget Allocation and Cross-Step Training for Speculative Decoding</h1>
+<p class="meta-line">arXiv · 2026-11-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 投机解码中更好的 draft 预测与更长的接受续写并不必然带来更快生成——训练、候选分配与执行条件如何共同影响接受率与延迟，缺少系统研究。</p>
+<p><strong>方法</strong> FACT 实验框架：轻量特征预测 drafter + 冻结 Llama-3-8B-Instruct 目标，控制变量对比训练加权、候选分配策略与执行条件对接受率和延迟的影响。</p>
+<p><strong>关键数字</strong> 早步加权回传使接受率提升 15–24%；固定 256 节点预算下，置信度引导分配把相对自回归的速度提升从 1.46× 提到 2.02×（HumanEval）、1.31× 到 1.75×（MT-Bench）；仅改 host-thread 设置可几乎消除加速。</p>
+<p><strong>为什么值得看</strong> 证明训练与分配必须联合评估、执行条件能吞掉理论收益——做投机解码落地的人值得一读。</p>
+<p><a href="https://arxiv.org/abs/2611.23463">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.23463">阅读原文 ↗</a></p>
+</body>
+</html>

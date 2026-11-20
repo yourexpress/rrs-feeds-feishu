@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Runtime System for Mitigating Crossbar Port Contention on SM-Partitioned GPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>A Runtime System for Mitigating Crossbar Port Contention on SM-Partitioned GPUs</h1>
+<p class="meta-line">arXiv · 2026-11-18 · 论文PDF</p>
+
+<p>SM 分区 GPU 上缓解 crossbar 端口争用的运行时系统</p>
+<blockquote><p>To avoid scheduling delays when running concurrent workloads on a GPU, Streaming Multiprocessor (SM) partitioning mechanisms such as CUDA Green Contexts restrict each workload to separate SMs. Despite this partitioning, concurrent workloads still significantly slow down latency-critical workloads, which recent studies attribute to shared L2 cache and memory contention. However, contention also occurs at the crossbar ports connecting each Graphics Processing Cluster (GPC) of SMs to the L2 cache, as all SMs in a GPC share one port. Green Contexts spread workloads across GPCs, placing concurrent workloads in the same GPCs and forcing latency-critical memory requests to queue behind background requests. Packing workloads into separate GPCs avoids this contention, but forces latency-critical memory requests through fewer ports, limiting memory bandwidth. Consequently, neither spreading nor packing is always faster across workloads and GPUs. Based on these observations, we present GPCPlace, a runtime system that dynamically selects between spreading and packing by profiling workloads on the target GPU to estimate both slowdowns, and hooks kernel launches in the CUDA driver to set SM mask…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.24458">阅读原文 ↗</a></p>
+</body>
+</html>

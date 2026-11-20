@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DexAttention: Distributed Sparse Attention through Rapid Online Planning and Persistent GPU Execution</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DexAttention: Distributed Sparse Attention through Rapid Online Planning and Persistent GPU Execution</h1>
+<p class="meta-line">arXiv · 2026-11-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 稀疏注意力能减少计算，但分布式执行仍会传输不必要数据、产生高单操作开销；动态 mask 的重新规划必须比省下的执行时间更便宜。</p>
+<p><strong>方法</strong> DexAttention 把快速在线规划与持久执行协同设计：GPU 加速、拓扑感知聚类的分配器平衡负载、减少通信；轻量贪心调度器排列粗粒度通信/计算操作；每 GPU 持久 kernel 强制细粒度依赖并派发就绪任务，把同步细节挡在规划之外。</p>
+<p><strong>关键数字</strong> 4 节点 16-GPU 集群上，11 种配置相对最快基线端到端训练几何平均提速 1.39×；动态视频注意力相对 Ring Attention（含规划）提速 2.11–2.37×。</p>
+<p><strong>为什么值得看</strong> 把"规划成本必须低于省时"的工程权衡落到实处，对长序列/视频稀疏注意力训练有直接参考价值。</p>
+<p><a href="https://arxiv.org/abs/2611.23512">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.23512">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hardware Acceleration of Vision-Language-Action Models with Weight Precision Rising over the Flow Steps</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Hardware Acceleration of Vision-Language-Action Models with Weight Precision Rising over the Flow Steps</h1>
+<p class="meta-line">arXiv · 2026-11-18 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> VLA 模型动作头推理受内存带宽限制——每步从 DRAM 重读全部权重，却只应用于约五十个 token，延迟与能耗由传输的权重比特数决定。</p>
+<p><strong>方法</strong> 观察到后续 flow step 会衰减前面步骤的量化误差，提出动作头权重精度随步数递增（2→4 bit）；并设计可编程加速器：DRAM 速率解码熵编码权重的 bit-serial 子阵列，运行时分配器在 linear 层与 attention 间分配，bank 端 requantizer+熵编码器让一份 8-bit 副本替代所有宽度副本。</p>
+<p><strong>关键数字</strong> 递增宽度比每步 4-bit 少传 25% 比特且保持闭环成功率；RTL 实现跑 GR00T N1.6 动作头单次推理 8.02 ms，比 Thor NVFP4 快 1.7×、能耗低 9.1×。</p>
+<p><strong>为什么值得看</strong> 把"精度随流步递增"的洞察落到硬件，无校准无训练保成功率，对端侧 VLA 加速很实用。</p>
+<p><a href="https://arxiv.org/abs/2611.24234">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.24234">阅读原文 ↗</a></p>
+</body>
+</html>

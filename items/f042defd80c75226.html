@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zonotopic Analysis of Quantization Error in Neural Networks</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Zonotopic Analysis of Quantization Error in Neural Networks</h1>
+<p class="meta-line">arXiv · 2026-11-18 · 论文PDF</p>
+
+<p>神经网络量化误差的 zonotope 抽象解释</p>
+<blockquote><p>Quantized neural networks achieve computational efficiency by reducing precision, but bounding their quantization error remains a challenge due to discrete rounding and clamping operations. We present a zonotope-based abstract interpretation framework for quantized ReLU feed-forward network verification, introducing a unified round-clamp abstract transformer that jointly handles both operations. We extend this framework to constrained zonotopes, which add linear constraints to tighten bounds, and derive sound quantization error representations. We establish soundness and affine-strip optimality of the round-clamp abstract transformer, as well as convex-hull optimality of its complete constrained formulation. On the ACAS Xu benchmarks, our constrained zonotope method reduces average error-bound widths by approximately 70-85% and runtimes by 65-80% compared to QEBVerif's symbolic DRA propagation at the two smallest tested perturbation radii (r=3 and r=6). These improvements are not uniform across bitwidths, and symbolic DRA achieves tighter bounds at larger radii. Our plain zonotope method delivers competitive sound bounds nearly 300 times faster on average.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.24648">阅读原文 ↗</a></p>
+</body>
+</html>

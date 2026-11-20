@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learning through Discernment: when a small language model learns from user feedback on the job, and when it decays</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Learning through Discernment: when a small language model learns from user feedback on the job, and when it decays</h1>
+<p class="meta-line">arXiv · 2026-11-18 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 端侧小模型想靠"每晚从白天工作中学"持续改进，但缺乏真实结果时，谁来决定哪些尝试值得学——模型自判和用户反应都可能错。</p>
+<p><strong>方法</strong> Qwen3 0.6B/1.7B + LoRA，每晚用 judge 接受的尝试微调，在 WebShop 与 τ²-bench 上跑 127 条"生命"（最长一年）；对比真实结果、用户口头判定、模型自判与一个冻结的"反馈感知"（读用户反应，三个版本）。</p>
+<p><strong>关键数字</strong> 自判模型先提升后衰减；把礼貌放弃当成功的感知崩了 3/5 条生命；会分辨的感知两周内 4/5 接近 oracle，第 60 天回落到自判水平；97 条生命中失败尝试占比预测学习效果（Spearman ρ=-0.81）。</p>
+<p><strong>为什么值得看</strong> 对"设备端从反馈自学"做系统长程实验，结论反直觉——反馈质量与结果可见性是生死线。</p>
+<p><a href="https://arxiv.org/abs/2611.23716">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.23716">阅读原文 ↗</a></p>
+</body>
+</html>

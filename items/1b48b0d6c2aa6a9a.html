@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Fast, Programmable GPU-to-CPU Invocation Layer for GPU-Initiated Communication</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>A Fast, Programmable GPU-to-CPU Invocation Layer for GPU-Initiated Communication</h1>
+<p class="meta-line">arXiv · 2026-11-18 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> GPU 设备发起通信的主流做法（GPUDirect Async）把传输控制放 GPU 线程，反向 offload 到 host 代理线程被视为慢速回退路径。</p>
+<p><strong>方法</strong> KIWI 论证反向 offload 可超越 GDA、应成为一等通信路径，并把它暴露为可编程接口，让用户定义负载特定的通信操作；KIWI-P2P（SHMEM 类库）与 KIWI-EP（MoE 分发/合并内核重构）基于它构建。</p>
+<p><strong>关键数字</strong> 亚微秒级单程 device-to-host 延迟、每秒数亿次操作；AMD GPU 上专家并行通信延迟最多降 2.3×，vLLM 每 token 输出时间最多降 29%。</p>
+<p><strong>为什么值得看</strong> 扭转"反向 offload 是次选"的既有认知，可编程接口对 MoE 等负载友好，源码已开源。</p>
+<p><a href="https://arxiv.org/abs/2611.23848">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.23848">阅读原文 ↗</a></p>
+</body>
+</html>

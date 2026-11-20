@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QDA: Closed-Loop LLM Quantization Design with Agents</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>QDA: Closed-Loop LLM Quantization Design with Agents</h1>
+<p class="meta-line">arXiv · 2026-11-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 后训练量化（PTQ）的最佳配方因模型和精度而异，专家需为每个新模型重新设计，耗时且常非最优。</p>
+<p><strong>方法</strong> QDA 让 LLM agent 闭环设计量化配方：用输出 KL 散度在几分钟内给候选打分、长生成校验失败模式（如重复循环）；提供跨架构兼容的公开 PTQ 方法库加速构建。</p>
+<p><strong>关键数字</strong> 四个推理模型上 W4A16/W4A8/W3A16 平均超最强公开配方 0.9/1.4/2.2 个百分点，每次搜索约 64 GPU 小时；GLM-5.3-Flash（320B MoE）在 NVFP4 W4A4 恢复 FP8 模型 98.3% 准确率，最强厂商 checkpoint 为 96.9%。</p>
+<p><strong>为什么值得看</strong> agent 驱动的量化配方自动设计，直接解决"每模型重做 PTQ"的工程痛点，产物可跑现有 serving kernel。</p>
+<p><a href="https://arxiv.org/abs/2611.23388">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.23388">阅读原文 ↗</a></p>
+</body>
+</html>

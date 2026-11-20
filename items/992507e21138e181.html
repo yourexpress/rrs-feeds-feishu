@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dissecting an Unexplored SASS Control-Code Field: Barrier Exemption and Programmable Warp Priority</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Dissecting an Unexplored SASS Control-Code Field: Barrier Exemption and Programmable Warp Priority</h1>
+<p class="meta-line">arXiv · 2026-11-18 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> NVIDIA SASS 指令里一个控制码字段在 cuBLAS/cuDNN 等闭源库中出现超 50 万次，但 nvcc 编译用户程序从不发出，其作用一直未知。</p>
+<p><strong>方法</strong> 首个跨 Volta 到 Blackwell 的系统性研究：指令级微基准揭示该字段控制两个独立硬件机制——屏障豁免（EXEMPT，允许被屏障阻塞的指令提前发出）与可编程 warp 优先级（START/TILE/END 三级）；并实现后编译二进制优化器，不改源码与编译器直接改写二进制。</p>
+<p><strong>关键数字</strong> 6 张 GPU（4 代架构）上代表性 kernel 提速最高 31.9%；llama.cpp 和 vLLM 生产 kernel 提速最高 5.4%，端到端 LLM 推理提速最高 3.6%。</p>
+<p><strong>为什么值得看</strong> 挖出 NVIDIA 隐藏硬件机制且可无侵入优化二进制，对 GPU kernel 极致优化很有价值。</p>
+<p><a href="https://arxiv.org/abs/2611.24437">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.24437">阅读原文 ↗</a></p>
+</body>
+</html>

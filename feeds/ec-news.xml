@@ -5,7 +5,7 @@
     <link>https://github.com/yourexpress/rrs-feeds-feishu</link>
     <description>模型压缩 / ML 编译 / HPC / 边缘计算 / 低功耗计算方向最新技术博客与官方公告（网页类内容）。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 19 Nov 2026 23:26:49 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 10:55:13 +0800</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/yourexpress/rrs-feeds-feishu/main/feeds/ec-news.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>llama.cpp v1.0.0：语义化版本契约 + ggml 1.0.0（本地 AI 推理栈里程碑）</title>
@@ -24,76 +24,6 @@
 <p><strong>关键数字</strong>：移除 35 个废弃函数；3.5 年首个稳定版；支持 150+ 模型架构。</p>
 <p><strong>为什么值得看</strong>：本地推理栈里程碑——API 收敛形成稳定契约，直接影响所有基于 llama.cpp 的上层工具生态。</p>
 <p>原文：<a href="https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0">llama.cpp v1.0.0：语义化版本契约 + ggml 1.0.0（本地 AI 推理栈里程碑）</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>When One GPU Isn't Enough: Serving GLM-5.3 Across Two NVIDIA DGX Stations with vLLM</title>
-      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/8f2daa11c5051ada.html</link>
-      <guid isPermaLink="true">https://developer.nvidia.com/blog/when-one-gpu-isnt-enough-serving-glm-5-3-across-two-nvidia-dgx-stations-with-vllm/</guid>
-      <pubDate>Fri, 13 Nov 2026 12:00:00 +0800</pubDate>
-    <category>技术博客</category>
-    <category>每日精选</category>
-      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：NVIDIA Technical Blog　&lt;strong&gt;发布&lt;/strong&gt;：2026-11-13　&lt;strong&gt;分类&lt;/strong&gt;：技术博客 / 每日精选&lt;/p&gt;&lt;p&gt;&lt;img src="https://developer-blogs.nvidia.com/wp-content/uploads/2026/11/image3-3-660x370.png" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;核心话题&lt;/strong&gt;：单机装不下一枚前沿模型时，如何用两台 DGX Station 通过 RDMA 互联、以张量并行服务 GLM-5.3。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;要点&lt;/strong&gt;：GLM-5.3 NVFP4 是 Z.ai 的 MoE 模型量化版，稀疏激活只算 40B 专家，但全部权重必须常驻显存。教程用 ConnectX-8 RDMA 连接两台 DGX Station，以 TP=2 把张量拆到两块 GB300 上，每请求两台都参与计算，由 Station A 暴露一个 OpenAI 兼容 API；关掉 CPU 权重卸载。文章含完整前置条件（RDMA 验证、磁盘空间、Hugging Face 门控数据集授权）与分步配置。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;关键数字&lt;/strong&gt;：模型 7530 亿参数、每 token 激活 400 亿；checkpoint 约 464GB，超过单张 GB300 的 252GB HBM3e；每台 Station 需至少 464GB 空闲磁盘存副本。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;为什么值得看&lt;/strong&gt;：本地跑前沿级模型的"两机一模型"完整实操，vLLM 多机张量并行的一手部署参考。&lt;/p&gt;
-&lt;p&gt;原文：&lt;a href="https://developer.nvidia.com/blog/when-one-gpu-isnt-enough-serving-glm-5-3-across-two-nvidia-dgx-stations-with-vllm/"&gt;When One GPU Isn't Enough: Serving GLM-5.3 Across Two NVIDIA DGX Stations with vLLM&lt;/a&gt;&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p><strong>发表方</strong>：NVIDIA Technical Blog　<strong>发布</strong>：2026-11-13　<strong>分类</strong>：技术博客 / 每日精选</p><p><img src="https://developer-blogs.nvidia.com/wp-content/uploads/2026/11/image3-3-660x370.png" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"></p><p><strong>核心话题</strong>：单机装不下一枚前沿模型时，如何用两台 DGX Station 通过 RDMA 互联、以张量并行服务 GLM-5.3。</p>
-<p><strong>要点</strong>：GLM-5.3 NVFP4 是 Z.ai 的 MoE 模型量化版，稀疏激活只算 40B 专家，但全部权重必须常驻显存。教程用 ConnectX-8 RDMA 连接两台 DGX Station，以 TP=2 把张量拆到两块 GB300 上，每请求两台都参与计算，由 Station A 暴露一个 OpenAI 兼容 API；关掉 CPU 权重卸载。文章含完整前置条件（RDMA 验证、磁盘空间、Hugging Face 门控数据集授权）与分步配置。</p>
-<p><strong>关键数字</strong>：模型 7530 亿参数、每 token 激活 400 亿；checkpoint 约 464GB，超过单张 GB300 的 252GB HBM3e；每台 Station 需至少 464GB 空闲磁盘存副本。</p>
-<p><strong>为什么值得看</strong>：本地跑前沿级模型的"两机一模型"完整实操，vLLM 多机张量并行的一手部署参考。</p>
-<p>原文：<a href="https://developer.nvidia.com/blog/when-one-gpu-isnt-enough-serving-glm-5-3-across-two-nvidia-dgx-stations-with-vllm/">When One GPU Isn't Enough: Serving GLM-5.3 Across Two NVIDIA DGX Stations with vLLM</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Run Native DLA Inference in Python on NVIDIA Jetson AGX Orin Using cuDLA</title>
-      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/408f1e399c8022f8.html</link>
-      <guid isPermaLink="true">https://developer.nvidia.com/blog/run-native-dla-inference-in-python-on-nvidia-jetson-agx-orin-using-cudla/</guid>
-      <pubDate>Fri, 13 Nov 2026 12:00:00 +0800</pubDate>
-    <category>技术博客</category>
-    <category>每日精选</category>
-      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：NVIDIA Technical Blog　&lt;strong&gt;发布&lt;/strong&gt;：2026-11-13　&lt;strong&gt;分类&lt;/strong&gt;：技术博客 / 每日精选&lt;/p&gt;&lt;p&gt;&lt;img src="https://developer-blogs.nvidia.com/wp-content/uploads/2026/08/dla-inference-660x370.jpg" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;核心话题&lt;/strong&gt;：在 NVIDIA Jetson AGX Orin 上用 cuDLA 以纯 Python 跑原生 DLA 推理的完整生命周期。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;要点&lt;/strong&gt;：DLA 是固定功能加速器，高效执行卷积/池化等固定操作，层支持少于 GPU；cuDLA 运行时 API 负责创建设备、加载编译网络、注册内存缓冲与提交推理；cuda.bindings.cudla（cuda-bindings 13.3.0，CUDA Python 项目）是 cuDLA C++ API 的薄封装；混合模式工作流中 CUDA 流协调 DLA 与 GPU 预处理/后处理；JetPack 自带 libcudla.so 无需额外运行时；RTX Spark 把同一 API 带到 Windows AI 笔记本。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;关键数字&lt;/strong&gt;：暴露 13 个函数、9 个数据类型、8 个枚举；要求 Python ≥3.10。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;为什么值得看&lt;/strong&gt;：DLA 推理首次纯 Python 可用，嵌入式与 Windows AI 双平台同一 API。&lt;/p&gt;
-&lt;p&gt;原文：&lt;a href="https://developer.nvidia.com/blog/run-native-dla-inference-in-python-on-nvidia-jetson-agx-orin-using-cudla/"&gt;Run Native DLA Inference in Python on NVIDIA Jetson AGX Orin Using cuDLA&lt;/a&gt;&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p><strong>发表方</strong>：NVIDIA Technical Blog　<strong>发布</strong>：2026-11-13　<strong>分类</strong>：技术博客 / 每日精选</p><p><img src="https://developer-blogs.nvidia.com/wp-content/uploads/2026/08/dla-inference-660x370.jpg" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"></p><p><strong>核心话题</strong>：在 NVIDIA Jetson AGX Orin 上用 cuDLA 以纯 Python 跑原生 DLA 推理的完整生命周期。</p>
-<p><strong>要点</strong>：DLA 是固定功能加速器，高效执行卷积/池化等固定操作，层支持少于 GPU；cuDLA 运行时 API 负责创建设备、加载编译网络、注册内存缓冲与提交推理；cuda.bindings.cudla（cuda-bindings 13.3.0，CUDA Python 项目）是 cuDLA C++ API 的薄封装；混合模式工作流中 CUDA 流协调 DLA 与 GPU 预处理/后处理；JetPack 自带 libcudla.so 无需额外运行时；RTX Spark 把同一 API 带到 Windows AI 笔记本。</p>
-<p><strong>关键数字</strong>：暴露 13 个函数、9 个数据类型、8 个枚举；要求 Python ≥3.10。</p>
-<p><strong>为什么值得看</strong>：DLA 推理首次纯 Python 可用，嵌入式与 Windows AI 双平台同一 API。</p>
-<p>原文：<a href="https://developer.nvidia.com/blog/run-native-dla-inference-in-python-on-nvidia-jetson-agx-orin-using-cudla/">Run Native DLA Inference in Python on NVIDIA Jetson AGX Orin Using cuDLA</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Challenges of building machine learning compilers across varying hardware architecture</title>
-      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/96c4902788cd3f95.html</link>
-      <guid isPermaLink="true">https://devblogs.microsoft.com/directx/machine-learning-compilers-challenges-hardware/</guid>
-      <pubDate>Fri, 13 Nov 2026 12:00:00 +0800</pubDate>
-    <category>技术博客</category>
-    <category>每日精选</category>
-      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：Microsoft DirectX Developer Blog　&lt;strong&gt;发布&lt;/strong&gt;：2026-11-13　&lt;strong&gt;分类&lt;/strong&gt;：技术博客 / 每日精选&lt;/p&gt;&lt;p&gt;&lt;img src="https://devblogs.microsoft.com/directx/wp-content/uploads/sites/42/2026/11/compiler_challenge-scaled.webp" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;核心话题&lt;/strong&gt;：构建跨硬件架构 ML 编译器的挑战——如何同时做到可扩展与高性能。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;要点&lt;/strong&gt;：现有方案（IHV 专有框架、torch.compile、MLIR/Glow/EON 等）各有侧重，但很少独立于硬件厂商与框架同时高性能；图→kernel 映射直观但难以跨演进硬件扩展；MMA 等核心算子需要多级 IR 渐进 lowering，叠加设备无关/设备感知优化、融合/分解、调度与内存管理；兼顾模块化与设备特化的代码生成是主要难点。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;关键数字&lt;/strong&gt;：正文未给量化数字（工程挑战综述）。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;为什么值得看&lt;/strong&gt;：微软官方梳理 ML 编译器设计空间，并预告 Ignite 2026 BRK388——多级 IR 对 Windows 本地 AI 的意义。&lt;/p&gt;
-&lt;p&gt;原文：&lt;a href="https://devblogs.microsoft.com/directx/machine-learning-compilers-challenges-hardware/"&gt;Challenges of building machine learning compilers across varying hardware architectures&lt;/a&gt;&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p><strong>发表方</strong>：Microsoft DirectX Developer Blog　<strong>发布</strong>：2026-11-13　<strong>分类</strong>：技术博客 / 每日精选</p><p><img src="https://devblogs.microsoft.com/directx/wp-content/uploads/sites/42/2026/11/compiler_challenge-scaled.webp" style="max-width:100%;border-radius:8px" referrerpolicy="no-referrer"></p><p><strong>核心话题</strong>：构建跨硬件架构 ML 编译器的挑战——如何同时做到可扩展与高性能。</p>
-<p><strong>要点</strong>：现有方案（IHV 专有框架、torch.compile、MLIR/Glow/EON 等）各有侧重，但很少独立于硬件厂商与框架同时高性能；图→kernel 映射直观但难以跨演进硬件扩展；MMA 等核心算子需要多级 IR 渐进 lowering，叠加设备无关/设备感知优化、融合/分解、调度与内存管理；兼顾模块化与设备特化的代码生成是主要难点。</p>
-<p><strong>关键数字</strong>：正文未给量化数字（工程挑战综述）。</p>
-<p><strong>为什么值得看</strong>：微软官方梳理 ML 编译器设计空间，并预告 Ignite 2026 BRK388——多级 IR 对 Windows 本地 AI 的意义。</p>
-<p>原文：<a href="https://devblogs.microsoft.com/directx/machine-learning-compilers-challenges-hardware/">Challenges of building machine learning compilers across varying hardware architectures</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>上海海思推出 CS6286 图像传感器：感算存一体，车载哨兵续航延长至 7 天以上</title>
-      <link>https://yourexpress.github.io/rrs-feeds-feishu/items/f16ce1222f27330d.html</link>
-      <guid isPermaLink="true">https://www.ithome.com/1/026/479.htm</guid>
-      <pubDate>Thu, 12 Nov 2026 12:00:00 +0800</pubDate>
-    <category>技术博客</category>
-    <category>每日精选</category>
-      <description>&lt;p&gt;&lt;strong&gt;发表方&lt;/strong&gt;：上海海思（IT之家报道）　&lt;strong&gt;发布&lt;/strong&gt;：2026-11-12　&lt;strong&gt;分类&lt;/strong&gt;：技术博客 / 每日精选&lt;/p&gt;&lt;p&gt;&lt;strong&gt;核心话题&lt;/strong&gt; 上海海思推出 CS6286 图像传感器：800 万像素"感算存一体"车规 CIS，面向车载哨兵等低功耗视觉场景。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;要点&lt;/strong&gt; 芯片集成等效 50GOPS@int8 的感侧 AI 引擎，可在传感器端完成检测识别；两级智能唤醒 + 预录节能机制降低持续监控功耗；随芯片交付退化/重训/编译的 AI 训练套件。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;关键数字&lt;/strong&gt; 800 万像素；感侧 AI 引擎等效 50GOPS@int8；哨兵模式续航从 24-48 小时延至 7 天以上；待机功耗 &amp;lt;50mW。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;为什么值得看&lt;/strong&gt; 感算存一体的端侧 AI 传感器方案，对车载、安防等低功耗视觉产品选型有参考价值。&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p><strong>发表方</strong>：上海海思（IT之家报道）　<strong>发布</strong>：2026-11-12　<strong>分类</strong>：技术博客 / 每日精选</p><p><strong>核心话题</strong> 上海海思推出 CS6286 图像传感器：800 万像素"感算存一体"车规 CIS，面向车载哨兵等低功耗视觉场景。</p>
-<p><strong>要点</strong> 芯片集成等效 50GOPS@int8 的感侧 AI 引擎，可在传感器端完成检测识别；两级智能唤醒 + 预录节能机制降低持续监控功耗；随芯片交付退化/重训/编译的 AI 训练套件。</p>
-<p><strong>关键数字</strong> 800 万像素；感侧 AI 引擎等效 50GOPS@int8；哨兵模式续航从 24-48 小时延至 7 天以上；待机功耗 &lt;50mW。</p>
-<p><strong>为什么值得看</strong> 感算存一体的端侧 AI 传感器方案，对车载、安防等低功耗视觉产品选型有参考价值。</p>]]></content:encoded>
     </item>
   </channel>
 </rss>

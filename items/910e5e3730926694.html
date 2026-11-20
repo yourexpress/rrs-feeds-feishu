@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stephen: Verifying Sequencer-Aided Coordination Systems with Cross-View Prophecy</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Stephen: Verifying Sequencer-Aided Coordination Systems with Cross-View Prophecy</h1>
+<p class="meta-line">arXiv · 2026-11-18 · 论文PDF</p>
+
+<p>验证 sequencer 辅助协调系统：跨视图 prophecy 方法验证 SMR/分布式事务</p>
+<blockquote><p>Many distributed systems achieve high performance by relying on dedicated sequencers to order requests, leaving replicas to commit them in that order. Despite more than a decade of such sequencer-aided coordination (SAC) systems, from Corfu and NOPaxos to LazyLog and SwitchBFT, their correctness has been argued only with pen-and-paper proofs or bounded model checking at the protocol level. In this paper, we formally verify implementations of SAC protocols. The sequencer seems to make this easy: it decides the order of all requests, so the proof can place each request's linearization point at the sequencer using a well-known technique, prophecy variables. Yet a linearization point placed at the sequencer is not durable, because the sequencer orders a request before any replica commits it. Crashes and other rare events may trigger a view change that discards the request, nullifying the earlier decision and the proof that rests on it. Our framework, Stephen, extends prophecy variables to handle view changes, and we make three contributions. (1) We develop cross-view prophecy peek, which lets the proof follow a request across view changes until it is either committed or permanently dis…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.23811">阅读原文 ↗</a></p>
+</body>
+</html>

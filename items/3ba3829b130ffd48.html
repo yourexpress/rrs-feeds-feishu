@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EEG2MCU: Sensing-to-Execution Co-Design for Wearable EEG Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>EEG2MCU: Sensing-to-Execution Co-Design for Wearable EEG Inference</h1>
+<p class="meta-line">arXiv · 2026-11-17 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 可穿戴 EEG 推理不只受模型大小约束，还受通道相关的感知前端制约——高维输入要先处理，下游紧凑计算才能开始。</p>
+<p><strong>方法</strong> EEG2MCU 把电极数当作硬件设计变量做任务感知 montage 选择；保留紧凑时频表示、只为每个首层 tile 生成所需 INT8 区域，避免整输入物化；用 Halo 复用与跨 Flash/SRAM/紧耦合内存的访问感知放置，减少冗余生成与数据搬运。</p>
+<p><strong>关键数字</strong> Cortex-M7 上峰值 SRAM 较基线降 11.38×（62→19 电极 montage 贡献 1.71×），延迟降 2.57×、能耗降 2.48×，保持全 montage 准确率的 94–96%。</p>
+<p><strong>为什么值得看</strong> 把传感器前端纳入硬件协同设计，端侧多通道生物信号推理可迁移这套思路。</p>
+<p><a href="https://arxiv.org/abs/2611.23619">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.23619">阅读原文 ↗</a></p>
+</body>
+</html>

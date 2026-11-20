@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neural Memory Orchestration</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Neural Memory Orchestration</h1>
+<p class="meta-line">arXiv · 2026-11-18 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> HPC 工作负载越来越卡在内存层次而非计算，mmap 文件/swap/分层内存的缺页占墙钟时间越来越大；内核启发式预取对不规则、数据相关的访问流退化严重。</p>
+<p><strong>方法</strong> Overseer 端到端学习式页预取系统：eBPF 采集器观察缺页，transformer 预测器 OverNet 在网附推理硬件上发出未来页地址，内核驻留执行器提前物化页面；OverNet 用 per-instance 序数秩编码增量，单模型即可服务任意目标进程、无需重训。</p>
+<p><strong>关键数字</strong> 两个缺页重型负载上运行时间约降 35%（Hilbert 曲线遍历）与约一个数量级（稠密矩阵乘法），major-fault 计数相应减少。</p>
+<p><strong>为什么值得看</strong> 学习式预取首次走到真实硬件部署管线，eBPF+网附推理架构对 HPC 内存瓶颈有直接价值。</p>
+<p><a href="https://arxiv.org/abs/2611.23857">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.23857">阅读原文 ↗</a></p>
+</body>
+</html>

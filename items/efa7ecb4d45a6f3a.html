@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HETEROVLM: Edge Multi-Request Vision-Language Model Serving on a Heterogeneous Versal SoC with AI Engines and Programmable Logic</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>HETEROVLM: Edge Multi-Request Vision-Language Model Serving on a Heterogeneous Versal SoC with AI Engines and Programmable Logic</h1>
+<p class="meta-line">arXiv · 2026-11-18 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 边缘自动驾驶/机器人需并发服务 deadline 各异的 VLM 请求，GPU 数据中心式 host 调度会让紧急请求久等、小 batch decode 单位 token 能耗高；Versal AIE SoC 既有加速器只映射单模型单输入流、无 decode/请求调度。</p>
+<p><strong>方法</strong> HETEROVLM 在异构 Versal SoC 上做多请求 VLM serving：AIE 数组跑 encoder/prefill/attention，可编程逻辑（PL）实现 GEMV 引擎与小 decode 步调度器（按类别和 deadline 排序）；并发请求共享一次读权重的 decode 步，紧急请求在工作单元边界抢占。</p>
+<p><strong>关键数字</strong> VC1902 上文本/相机问题首 token 140/303 ms；单请求 decode 比 Tesla T4、Jetson Orin Nano Super 快 1.3×/4.0×，每 token 能耗为其 61%/73%（RTX 3090 Ti 的 51%）。</p>
+<p><strong>为什么值得看</strong> 边缘多请求 VLM serving 的完整系统方案，AIE+PL 异构分工与抢占调度思路清晰。</p>
+<p><a href="https://arxiv.org/abs/2611.23878">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.23878">阅读原文 ↗</a></p>
+</body>
+</html>
