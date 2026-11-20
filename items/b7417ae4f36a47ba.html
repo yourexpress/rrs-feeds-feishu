@@ -22,9 +22,11 @@
 <h1>DiffNash: Finding Nash Equilibrium in High-Dimensional Continuous Action Spaces with Diffusion Policies</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Computing equilibria in high-dimensional continuous games requires learning and representing rich, multi-modal strategy distributions, something conventional neural policies struggle to achieve.</p>
-<blockquote><p>Computing equilibria in high-dimensional continuous games requires learning and representing rich, multi-modal strategy distributions, something conventional neural policies struggle to achieve. Diffusion models offer a natural solution, but standard diffusion training requires direct samples from a fixed target distribution, which are generally unavailable under iterative game-solving updates. We propose a diffusion-based framework for equilibrium computation that enables diffusion-based variants of Online Mirror Descent (OMD) and Fictitious Play (FP). Our approach derives a reweighted score-matching objective that trains diffusion policies without requiring direct samples from each updated policy. Our main method, DiffNash, combines the fast convergence of OMD with the sample efficiency of FP by reusing past actions through a replay buffer. To correct the resulting distribution shift from sample reuse, we derive an unbiased estimator of the difference between current and past policies' Evidence Lower Bounds, whose exponential provides a tractable proxy for the corresponding importance weight without evaluating diffusion likelihoods. We evaluate our approach on forest protection g…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 高维连续博弈中计算纳什均衡需要表示丰富、多模态的策略分布，传统神经策略难以胜任。</p>
+<p><strong>方法</strong> 提出基于扩散策略的均衡计算框架，支持 Online Mirror Descent（OMD）与 Fictitious Play（FP）的扩散变体：用重加权分数匹配目标训练扩散策略（无需每个更新策略的直接样本）；DiffNash 通过重放缓冲结合 OMD 的快速收敛与 FP 的样本效率，并导出当前/过去策略 ELBO 差的无偏估计修正分布偏移。</p>
+<p><strong>关键数字</strong> 森林保护博弈与连续 Colonel Blotto 博弈上，相对最强基线的纳什间隙分别降低 35.6% 与 24.7%。</p>
+<p><strong>为什么值得看</strong> 将扩散生成模型引入均衡计算，解决高维连续动作空间的策略分布表示难题。</p>
+<p><a href="https://arxiv.org/abs/2610.15932">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15932">阅读原文 ↗</a></p>
 </body>
 </html>

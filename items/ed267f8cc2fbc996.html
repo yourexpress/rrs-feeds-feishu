@@ -22,9 +22,11 @@
 <h1>DTA-GT: Direction- and Topology-Aware Graph Transformer for Neural Network Representation Learning</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Architecture attribute predictors reduce the cost of neural architecture search by estimating accuracy or latency from a small set of evaluated candidates.</p>
-<blockquote><p>Architecture attribute predictors reduce the cost of neural architecture search by estimating accuracy or latency from a small set of evaluated candidates. The key difficulty is that neural architectures are operation-labeled DAGs: edge direction defines computational flow, but existing predictors often treat direction as a local structural cue. We propose DTA-GT, a Direction- and Topology-Aware Graph Transformer based on encoder-wide directional consistency, which preserves directed computational semantics across node initialization, global spectral encoding, pairwise interaction, and feature update. DTA-GT realizes this principle with direction- and topology-aware node initialization, Magnetic Laplacian spectral encoding, direction-dual structural attention, and a Direction-Sensitive MoE-FFN. Across accuracy and latency prediction on NAS-Bench-101 and NAS-Bench-201, DTA-GT consistently outperforms representative sequence-, GNN-, Transformer-, and hybrid predictors under limited-budget settings. Ablations and Magnetic spectral controls show that the improvements come from coordinated direction-aware stages and edge-orientation-sensitive spectral information, while mechanistic diag…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 神经架构是操作标注的 DAG，边方向定义计算流，但现有架构属性预测器常把方向仅当作局部结构线索。</p>
+<p><strong>方法</strong> 提出 DTA-GT，基于"编码器级方向一致性"的图 Transformer：方向/拓扑感知节点初始化、Magnetic Laplacian 谱编码、方向双结构注意力与方向敏感 MoE-FFN，在节点初始化到特征更新的全流程保留有向计算语义。</p>
+<p><strong>关键数字</strong> 在 NAS-Bench-101 与 NAS-Bench-201 的精度与延迟预测上，限预算设置下一致优于代表性序列、GNN、Transformer 与混合预测器。摘要未给出具体百分比。</p>
+<p><strong>为什么值得看</strong> 验证编码器级方向一致性作为架构 DAG 表示的有效设计原则，并有消融与机制诊断支撑。</p>
+<p><a href="https://arxiv.org/abs/2610.16822">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16822">阅读原文 ↗</a></p>
 </body>
 </html>

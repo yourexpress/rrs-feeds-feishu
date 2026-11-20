@@ -22,9 +22,11 @@
 <h1>Dissecting the Carbon-SLO Tension in Geo-Distributed LLM Serving</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Large Language Model (LLM) inference is driving a growing share of datacenter carbon emissions.</p>
-<blockquote><p>Large Language Model (LLM) inference is driving a growing share of datacenter carbon emissions. Although carbon-aware scheduling can reduce these emissions in geo-distributed datacenters by exploiting the spatiotemporal variations in grid carbon intensity, the latency-sensitive nature of LLM serving constrains this design space. While prior studies investigate the carbon savings achievable through spatial scheduling, they oversimplify the dynamics of modern inference engines, such as queueing and continuous batching, which strongly shape inference latency. We address this issue by designing and evaluating a latency-centric, geo-distributed inference simulator, calibrated with hardware-grounded latency and power measurements, that reproduces these dynamics and enables the study of carbon savings under strict service-level objectives (SLOs). We then formulate a series of SLO- and carbon-aware schedulers of increasing sophistication, from per-request heuristics to batch-level optimization: (i) a greedy heuristic, (ii) an integer linear programming (ILP)-based scheduler jointly assigning batches of requests, (iii) an iterative ILP-based solution projecting its own assignments back into…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 推理碳排放占数据中心排放比重渐增，碳感知调度与延迟敏感服务（SLO）之间存在张力。</p>
+<p><strong>方法</strong> 构建硬件校准的延迟中心地理分布式推理模拟器，再现排队与连续批处理等真实推理引擎动态；设计四档碳/SLO 感知调度器：逐请求贪心、ILP 批级调度、迭代 ILP（回投影负载估计）、设施级 MILP（对批量请求联合定价）。</p>
+<p><strong>关键数字</strong> 3 个 LLM 在 MLPerf SLO 与不同负载下，MILP 方案相对轮询最多减排 60%，平均 SLO 违例率 3%。</p>
+<p><strong>为什么值得看</strong> 首个刻画现代推理引擎动态下碳-SLO 权衡的系统研究，指出节省随碳强度分布扩大、随负载升高收窄。</p>
+<p><a href="https://arxiv.org/abs/2610.14571">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14571">阅读原文 ↗</a></p>
 </body>
 </html>

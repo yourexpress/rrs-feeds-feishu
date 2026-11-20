@@ -22,9 +22,11 @@
 <h1>Confine to the Task, Anchor the Rest: Concept-Guided Retention Regularizer for Parameter-Efficient Fine-Tuning</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Parameter-efficient fine-tuning (PEFT) has been widely used, yet the adapted model suffers catastrophic forgetting of pre-trained knowledge.</p>
-<blockquote><p>Parameter-efficient fine-tuning (PEFT) has been widely used, yet the adapted model suffers catastrophic forgetting of pre-trained knowledge. While most existing work hardens the adapter by constraining where the weight update may lie, we note that constraining this weight channel does not constrain the activation channel. In this paper, we propose Concept-Guided Retention (CGR), a plug-and-play regularizer that constrains both for any PEFT base. CGR reads a frozen sparse autoencoder (SAE) and treats two disjoint concept sets differently. It softly confines the update to the task-concept subspace (via weight channel), and anchors a selected set of general-purpose concepts to the frozen model (via activation channel). We also provide anchor value bounds based on weight updates to understand how they interact, and show that both terms are necessary. On a CLIP vision panel, CGR significantly improves retention at comparable accuracy for every base, and the same pattern holds for world-knowledge retention under Llama-3.1-8B instruction tuning. Because the protected directions are named SAE concepts, CGR remains inspectable and controllable.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 参数高效微调（PEFT）适配后模型会灾难性遗忘预训练知识，而现有工作只约束权重更新通道、不约束激活通道。</p>
+<p><strong>方法</strong> 提出 Concept-Guided Retention（CGR），即插即用正则器，同时约束权重与激活两个通道：读取冻结的稀疏自编码器（SAE），将更新软约束到任务概念子空间（权重通道），并把选定的通用概念锚定到冻结模型（激活通道）。给出锚定值界分析两通道的交互。</p>
+<p><strong>关键数字</strong> 在 CLIP 视觉面板上，每个基座模型在精度相当的前提下保留率显著提升；Llama-3.1-8B 指令微调的世界知识保留呈同样模式。摘要未给出具体百分比。</p>
+<p><strong>为什么值得看</strong> 因受保护方向是具名 SAE 概念，保留过程可检查、可控制，且不依赖具体 PEFT 基座。</p>
+<p><a href="https://arxiv.org/abs/2610.17713">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17713">阅读原文 ↗</a></p>
 </body>
 </html>

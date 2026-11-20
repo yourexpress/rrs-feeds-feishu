@@ -22,9 +22,11 @@
 <h1>DisaggKD: Efficient Knowledge Distillation through Teacher-Student Disaggregation and a Fused Loss</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Knowledge distillation (KD) frameworks place teacher and student on the same GPUs, so per-GPU memory limits the teachers that fit.</p>
-<blockquote><p>Knowledge distillation (KD) frameworks place teacher and student on the same GPUs, so per-GPU memory limits the teachers that fit. DisaggKD separates them across nodes: teacher replicas stream hidden states to the student, a KD loss over row windows and vocabulary shards equals the full-vocabulary loss in exact arithmetic without forming the full-vocabulary logits, and a prefetch ring paces producer and trainer. Closed-form memory and traffic models locate the memory limits of each layout. On the Qwen3.5-35B-A3B to 9B pair, the disaggregated layout matches the LM loss of the colocated run with the same loss and is faster than that run; our fused loss also lets a colocated run train on as few nodes at faster speed, while the split is memory efficient when the student spans several nodes. On the larger pairs, colocated runs with a fused loss still run OOM where the split trains, because teacher weights and student states fill the budget.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 知识蒸馏（KD）中教师与学生同卡部署，单卡显存限制了可用的教师规模。</p>
+<p><strong>方法</strong> DisaggKD 将师生跨节点分离：教师副本流式传输隐藏状态给学生；基于行窗口与词表分片的 KD 损失在精确算术下等价于全词表损失（无需构建全词表 logits）；预取环协调生产者与训练者节奏，并给出闭式内存/流量模型定位各布局的显存边界。</p>
+<p><strong>关键数字</strong> Qwen3.5-35B-A3B→9B 对上，分离布局在相同损失下匹配共置运行的 LM loss 且更快；更大模型对上共置运行 OOM 时分离布局仍可训练。摘要未给出百分比。</p>
+<p><strong>为什么值得看</strong> 为大模型蒸馏突破单卡显存上限提供系统方案，含精确的损失等价性与内存建模。</p>
+<p><a href="https://arxiv.org/abs/2610.17644">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17644">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Counting with Attention and LayerNorm: Norm Scaling and Representation Geometry</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Counting is a simple task on which transformers can nevertheless fail at long sequence lengths.</p>
-<blockquote><p>Counting is a simple task on which transformers can nevertheless fail at long sequence lengths. We study the cost of counting in a single attention layer, up to a maximum length $L$, focusing on how softmax attention and layer normalization shape the representation from which the count is recovered. We mainly focus on regression read-out but also consider classification read-out. For regression, we show unnormalized linear attention counts exactly at parameter norms independent of $L$. For softmax attention, regression cannot count exactly with finite parameters; it recovers the count after rounding, but only when the vector parameter norms grow with $L$. We measure this cost by $B_{\min}$, the smallest bound that can be placed on every trainable vector to ensure exact counting after rounding, and derive tight rates. At fixed model dimension, $B_{\min}$ grows as $L$ without normalization, as $L^{3/2}$ under bare post-normalization, and as $L^{3/4}$ with learned post-normalization. The last rate is unexpected: post-normalization discards the magnitude that carries the count and might be expected to make counting harder, yet with a learnable gain it counts at a smaller norm than soft…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 计数是简单任务但 transformer 在长序列上会失败，需要弄清单注意力层计数的代价。</p>
+<p><strong>方法</strong> 研究最大长度 L 下 softmax attention 与 layer normalization 如何塑造计数可恢复的表征，分别考察回归与分类读出，用 B_min（保证取整后精确计数所需的最小参数范数界）度量代价。</p>
+<p><strong>关键数字</strong> 无归一化时 B_min 随 L 增长；裸后归一化下按 L^3/2 增长；学习型后归一化下按 L^3/4 增长（反直觉：后归一化丢弃幅度却以更小范数计数）；裸前归一化超过有限长度后任何参数范数都不够。分类读出保持范数有界但每个计数需一个输出向量。</p>
+<p><strong>为什么值得看</strong> 精确刻画自注意力、LN 放置与读出选择如何共同决定计数任务的表征几何与参数成本。</p>
+<p><a href="https://arxiv.org/abs/2610.16653">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16653">阅读原文 ↗</a></p>
 </body>
 </html>

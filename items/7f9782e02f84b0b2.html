@@ -22,9 +22,11 @@
 <h1>CrossMean: Model Merging by Pairing Merged and Expert Activations</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Model merging combines fine-tuned experts into one network without retraining, and closed-form methods compute each merged layer from statistics of its input activations.</p>
-<blockquote><p>Model merging combines fine-tuned experts into one network without retraining, and closed-form methods compute each merged layer from statistics of its input activations. However, these statistics are measured on a single expert, while in the merged model, each layer receives activations from the merged layers that precede it. Recent work re-measures these statistics in the merged model but still forms them from a single network. We formulate closed-form methods as a linear system and show that they use the same matrix on both sides. We then introduce CrossMean, which replaces this matrix on one side with a bilinear statistic that pairs merged and expert activations. From the same statistics, we also derive a label-free criterion that indicates the task sets in which accounting for the merged activations improves the merge more. Empirically, task sets with a lower criterion value show a larger improvement. On the eight-task benchmark of each vision backbone that we tested and on BERT encoders, CrossMean improves on merging with statistics measured on the experts, and with all linear layers merged, it also improves on re-measuring these statistics in the merged model. These results …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 模型合并的闭式方法用单一专家的输入激活统计计算合并层，但合并后每层实际接收的是前序合并层的激活。</p>
+<p><strong>方法</strong> 将闭式合并方法形式化为线性系统，指出其两侧使用同一矩阵；提出 CrossMean，一侧改用配对合并与专家激活的双线性统计，并从同一统计导出无标签准则，指示哪些任务集下考虑合并激活能带来更大改进。</p>
+<p><strong>关键数字</strong> 8 任务基准上各视觉骨干及 BERT 编码器均优于基于专家统计的合并；全线性层合并时也优于在合并模型中重新测量统计的方法。摘要未给出具体百分比。</p>
+<p><strong>为什么值得看</strong> 为闭式模型合并提供理论化的修正思路，并给出无需标签的改进判定准则。</p>
+<p><a href="https://arxiv.org/abs/2610.14762">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14762">阅读原文 ↗</a></p>
 </body>
 </html>

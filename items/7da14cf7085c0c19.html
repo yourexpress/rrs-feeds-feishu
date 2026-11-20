@@ -22,9 +22,11 @@
 <h1>DoSA: Dots Sparse Attention</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Sparse attention visits few keys, yet finding them can still require scoring every key with every indexer head.</p>
-<blockquote><p>Sparse attention visits few keys, yet finding them can still require scoring every key with every indexer head. We introduce DoSA (Dots Sparse Attention), a lossless method for making this computation conditional while preserving exact token selection. Its central observation is that Top-K selection requires sufficient evidence to reject a candidate, not necessarily its full score. A seed set supplies a lower bound on the winning threshold. Nonnegative head projections and joint residual bounds upper-bound positive contributions, while activation-informed aggregation bounds the magnitude subtracted by negative heads. The certificate directs full scoring toward candidates that remain eligible; exact-score filtering further reduces writeback and selection work. We establish the certificate and its exact-selection conditions, and analyze how geometry and selection margins govern its effectiveness. Our GPU implementation accelerates the complete Indexer by up to 2.74 times over SGLang and 1.69 times over LiteTopK across English, Chinese, and code workloads. End-to-end evaluation on GLM-5.2 and DeepSeek-V3.2 achieves up to 1.94 times and 1.50 times time-to-first-token speedups over the …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 稀疏注意力虽只访问少数 key，但定位它们仍需每个索引头给所有 key 打分，代价高昂。</p>
+<p><strong>方法</strong> 提出 DoSA（Dots Sparse Attention），无损地让该计算条件化并保持精确 token 选择：种子集给出获胜阈值下界，非负头投影与联合残差界约束正贡献上界，激活信息聚合界定负头减去的量，证书把全量打分导向仍具资格的候选，精确分数过滤再减写回与选择开销。</p>
+<p><strong>关键数字</strong> GPU 实现中完整 Indexer 相对 SGLang 加速最高 2.74x、相对 LiteTopK 1.69x；GLM-5.2 与 DeepSeek-V3.2 端到端首 token 时延（TTFT）分别最高加速 1.94x 与 1.50x。</p>
+<p><strong>为什么值得看</strong> 在保持精确选择的前提下显著加速稀疏注意力，已在主流开源模型实测。</p>
+<p><a href="https://arxiv.org/abs/2610.13990">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.13990">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>DEFT: Disentanglement-Enhanced Fine-Tuning for EEG Foundation Models</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>EEG foundation models (EFMs) have improved EEG representation learning by transferring knowledge from large-scale multi-subject pretraining to downstream tasks.</p>
-<blockquote><p>EEG foundation models (EFMs) have improved EEG representation learning by transferring knowledge from large-scale multi-subject pretraining to downstream tasks. However, their pretrained embeddings often retain substantial subject-related variation, placing an additional burden on the downstream classifier, especially in cross-subject settings. To address this issue, we propose Disentangled EFM Fine-Tuning (DEFT), a plug-and-play adapter for EFM fine-tuning. DEFT encourages branch disentanglement of pretrained tokens into task-oriented content and subject-consistent style, then performs downstream prediction from the content branch. It instantiates this factorize-before-classify design with recursive Gaussian refinement, temporal-variance regularization, subject-aware contrastive learning, and reconstruction. Experiments across multiple EEG datasets and four EFM backbones show that DEFT improves matched fine-tuning baselines. Further ablations and analyses support the intended content/style branch organization.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> EEG 基础模型（EFM）的预训练嵌入保留大量被试相关变异，加重下游分类器负担，尤其在跨被试场景。</p>
+<p><strong>方法</strong> 提出 DEFT，即插即用微调适配器：将预训练 token 解缠为任务导向的内容分支与被试一致的风格分支，仅从内容分支做下游预测；用递归高斯细化、时间方差正则、被试感知对比学习与重建实现"先分解再分类"。</p>
+<p><strong>关键数字</strong> 在多个 EEG 数据集与 4 个 EFM 骨干上，DEFT 一致优于匹配的微调基线。摘要未给出具体百分比。</p>
+<p><strong>为什么值得看</strong> 为 EEG 基础模型微调提供内容/风格解缠范式，直击跨被试泛化这一脑电应用核心痛点。</p>
+<p><a href="https://arxiv.org/abs/2610.14497">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14497">阅读原文 ↗</a></p>
 </body>
 </html>

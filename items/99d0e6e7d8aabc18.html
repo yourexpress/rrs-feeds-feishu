@@ -22,9 +22,11 @@
 <h1>Cross-View Time-Frequency Diffusion for Extreme-Aware Time-Series Generation</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Generating realistic time-series requires faithfully reproducing rare but high-impact extreme events.</p>
-<blockquote><p>Generating realistic time-series requires faithfully reproducing rare but high-impact extreme events. Existing approaches often rely on specialized representations or extreme-focused training objectives, which may restrict the diversity of captured extremes or compromise overall distributional fidelity. We propose Cross-View Time-Frequency Diffusion (CrossTF), a framework that exploits discrepancies between time- and frequency-view denoisers for extreme-aware time-series generation. Our key empirical finding is extreme-sensitive cross-view asymmetry: moving along the direction connecting the two views' clean-sample estimates substantially changes extreme fidelity while having limited effects on overall generation quality. We further identify a late-stage cross-view window in which this discrepancy stabilizes and cross-view adjustments have a particularly strong effect on extreme fidelity. These findings motivate a staged optimization strategy in CrossTF: after training and freezing both denoisers, it only needs to learn step-specific fusion parameters within this window using an Extreme Value Theory-based objective under an energy-distance constraint. This formulation supports inte…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 生成真实时间序列必须忠实复现罕见但高影响的极端事件，现有方法常牺牲整体分布保真度。</p>
+<p><strong>方法</strong> 提出 Cross-View Time-Frequency Diffusion（CrossTF）：利用时域/频域两个去噪器估计间的跨视图不对称性；冻结双去噪器后，仅在晚期跨视图窗口学习逐步骤融合参数，用基于极值理论的目标配合能量距离约束，支持在视图估计间插值/外推。</p>
+<p><strong>关键数字</strong> 7 个真实数据集、11 个基线对比：极端保真度相对最强基线提升 26.1%，整体性能提升 7.4%。</p>
+<p><strong>为什么值得看</strong> 把跨视图差异作为低维优化基础，在不损害整体质量的前提下显著改善极端事件生成。</p>
+<p><a href="https://arxiv.org/abs/2610.17407">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17407">阅读原文 ↗</a></p>
 </body>
 </html>
