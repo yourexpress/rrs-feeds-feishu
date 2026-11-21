@@ -22,9 +22,11 @@
 <h1>Tenon: A Unified Programming Framework for Retargetable PIM Compilation</h1>
 <p class="meta-line">arXiv · 2026-11-19 · 论文PDF / 每日精选</p>
 
-<p>Tenon：可重定向 PIM 编译的统一编程框架</p>
-<blockquote><p>Processing-in-memory (PIM) is emerging as a building block of heterogeneous systems for memory-bound workloads, and commercial prototypes now span near-bank SIMD engines, bank-level GDDR accelerators, programmable DRAM cores, and bit-level in-SRAM processors. Their programming stacks are fragmented: no abstraction or compiler is shared across vendors, and per-device models range from instruction sequences to C-like languages. Data layout further complicates the problem: tight compute-memory integration makes data layout a first-order optimization, yet existing PIM compilers lack a unified way to represent and optimize it. A key observation is that PIM compilation targets can be modeled as nested grids of compute and storage units connected by legal data-transfer paths. We present Tenon, a unified programming framework for retargetable PIM compilation. It decouples workload, compilation target, and cost specifications, so a workload is expressed once and compiled through a unified programming framework. Tenon generalizes the $\mathbb{F}_2$ linear layout algebra from GPU compilers to map logical work and data onto these compute and storage grids. It automatically constructs a minimum…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：各类 PIM 器件编程栈碎片化（指令序列到类 C 语言不一），且紧耦合的计算-存储使数据布局成为一等优化目标，现有 PIM 编译器缺乏统一表示。</p>
+<p><strong>方法</strong>：Tenon 把 PIM 编译目标建模为计算/存储单元嵌套网格加合法数据传输路径；将 GPU 编译器的 F2 线性布局代数推广到 PIM，按负载与目标规格自动构造最小移动数据布局。</p>
+<p><strong>关键数字</strong>：6 个 PIM 后端（5 个商用 + AttAcc），商用后端匹配或超越厂商/专家/编译器基线，几何平均提速最高 1.20×、单项最高 3.65×；GPT-13B 解码在 AttAcc 上比 SOTA PIM 编译器 DCC 快 1.2–1.3%。</p>
+<p><strong>为什么值得看</strong>：负载一次表达、跨 PIM 目标族可移植编译，性能可移植性好。</p>
+<p><a href="https://arxiv.org/abs/2611.25636">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.25636">阅读原文 ↗</a></p>
 </body>
 </html>

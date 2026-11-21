@@ -22,9 +22,11 @@
 <h1>TideCache: Efficient Hybrid LLM Serving with Transparent Cache Management and Layer-Wise Streaming</h1>
 <p class="meta-line">arXiv · 2026-11-19 · 论文PDF / 每日精选</p>
 
-<p>透明缓存管理与分层流式传输的混合 LLM 服务系统 TideCache</p>
-<blockquote><p>Hybrid architectures have become mainstream among open-weight language models. Their global-attention and bounded-state layers maintain heterogeneous caches whose demands vary with context length and concurrency. We present TideCache, a serving system on CPU--GPU superchips with three components for allocating GPU memory among caches and managing their residency across GPU and host memory. The Transparent Cache Pool redistributes physical pages among cache components behind fixed virtual addresses, preserving cache layouts and backend interfaces. The Cache Streamer uses computation intervals provided by bounded-state layers to prefetch the next global-attention layer's prefix into GPU slots shared across global-attention layers, reducing GPU residency while overlapping layer-wise transfers with computation. Generated KV remains resident. The Request Scheduler selects resident or streamed execution and triggers capacity adjustments according to request size and queue state. Together, they let HBM released by streaming accommodate other cache components and additional requests. Implemented in SGLang and evaluated on GB300 and GH200 across seven model/platform configurations, TideCach…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：混合架构开源模型（全局注意力层+有界状态层）缓存异构，需求随上下文长度与并发变化，GPU 显存分配与驻留管理困难。</p>
+<p><strong>方法</strong>：TideCache 三组件：Transparent Cache Pool 在固定虚拟地址后重分布物理页、保持缓存布局与后端接口；Cache Streamer 利用有界状态层计算间隔预取下一全局注意力层前缀；Request Scheduler 按请求大小与队列状态选择驻留或流式执行并触发容量调整。</p>
+<p><strong>关键数字</strong>：GB300/GH200 七种模型/平台配置上，相对 SGLang+HiCache 完成的 agent turns 最多 2.04×，P50 per-token 延迟降 20–59%，agent P50 TTFT 改善 1.40–3.05×。</p>
+<p><strong>为什么值得看</strong>：层间流式重叠把释放的 HBM 用于更多请求，混合架构 serving 的实用方案。</p>
+<p><a href="https://arxiv.org/abs/2611.26619">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.26619">阅读原文 ↗</a></p>
 </body>
 </html>

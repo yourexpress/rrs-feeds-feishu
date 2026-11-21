@@ -22,9 +22,11 @@
 <h1>Splice-Core: Low-Order-Bit-Splicing GEMM for Highly Energy-Efficient AI Inference Accelerators</h1>
 <p class="meta-line">arXiv · 2026-11-19 · 论文PDF / 每日精选</p>
 
-<p>低比特位拼接 GEMM 的高能效 AI 推理加速器 Splice-Core</p>
-<blockquote><p>Splice-Core is a temporal-unary/binary (tub) hybrid general matrix multiplication (GEMM) unit that minimizes low-order accumulation latency, while retaining value-dependent execution for high-order activation bits. We present two novel processing element (PE) variants: (i) Splice-BP utilizing bit planes, and (ii) Splice-LUT, which selects a shared weight multiple in a single cycle. Compared to a binary systolic array, Splice-BP/Splice-LUT achieve 77.4%/76.4% geometric-mean tile energy reductions, respectively, across 26 INT4 convolutional neural network (CNN) and large language model (LLM) workloads in 45nm. Splice-LUT further increases geometric-mean tile throughput by 44.4% and reduces geometric-mean energy-delay product (EDP) by 6.13x across the 26 configurations. Across the evaluated W8A8 convolution and expert-projection workloads, Splice-BP and Splice-LUT reduce tile energy by 77.3-88.1%. Post-place-and-route INT4 yields 14%/9% smaller area for Splice-BP/Splice-LUT, compared to the systolic array.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：AI 推理加速器中低阶位累加延迟大，且高阶激活位适合值依赖执行，二者难以兼得。</p>
+<p><strong>方法</strong>：Splice-Core 是 temporal-unary/binary（tub）混合 GEMM 单元，最小化低阶位累加延迟、保留高阶位值依赖执行；含 Splice-BP（位平面）与 Splice-LUT（单周期选择共享权重倍数）两种 PE。</p>
+<p><strong>关键数字</strong>：45nm 下 26 个 INT4 CNN/LLM 负载，Splice-BP/Splice-LUT 相对二值脉动阵列 tile 能耗几何平均降 77.4%/76.4%；Splice-LUT 吞吐提升 44.4%、EDP 降 6.13×；W8A8 负载 tile 能耗降 77.3–88.1%；布局布线后面积小 14%/9%。</p>
+<p><strong>为什么值得看</strong>：低阶位拼接策略兼顾能耗与吞吐，INT4/W8A8 场景收益显著。</p>
+<p><a href="https://arxiv.org/abs/2611.25617">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.25617">阅读原文 ↗</a></p>
 </body>
 </html>

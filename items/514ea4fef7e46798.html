@@ -22,9 +22,11 @@
 <h1>Fairness under Prediction Error in Predict-then-Optimize Pipelines</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Fairness constraints in predict-then-optimize pipelines are necessarily enforced on predicted outcomes $\hat{y}$, since true outcomes $y$ are unobserved at decision time.</p>
-<blockquote><p>Fairness constraints in predict-then-optimize pipelines are necessarily enforced on predicted outcomes $\hat{y}$, since true outcomes $y$ are unobserved at decision time. We study whether a demographic parity constraint enforced this way continues to hold against $y$, and how the resulting violation scales with prediction error. Using a budget-constrained allocation problem solved as a linear program, we show empirically that the true-outcome fairness gap grows with prediction error $σ$ and saturates, well fit by $c(1 - e^{-σ/τ})$ with $c = 0.1545 \pm 0.0103$ and $τ= 3.9045 \pm 0.3745$; its mean is invariant to sample size while its variance decays at the standard $O(1/\sqrt{n})$ rate. We derive a two-part theoretical bound: a closed-form local sensitivity result showing the gap's first-order response to prediction error depends on only two individuals per group, validated against the solver to within three significant figures; and a universal, error-independent ceiling following from the boundedness of the decision variable, confirmed consistent with but looser than the empirical saturation level. On US Census income data, enforcing demographic parity on a trained predictor's outp…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：predict-then-optimize 管线中公平约束只能施加于预测值 ŷ（真实 y 决策时不可见），该约束对真实 y 是否仍成立、违规如何随预测误差变化？</p>
+<p><strong>方法</strong>：预算约束分配 LP 上实证建模公平差距随预测误差 σ 的演化；导出两部分理论界：闭式局部敏感性（gap 对误差的一阶响应只依赖每组两个个体，与求解器验证到三位有效数字）+ 由决策变量有界性推出的误差无关通用上界；US Census 数据验证。</p>
+<p><strong>关键数字</strong>：真实结果公平差距随 σ 增长并饱和，拟合 c(1−e^(−σ/τ))，c=0.1545±0.0103、τ=3.9045±0.3745；均值与样本量无关、方差按 O(1/√n) 衰减；加州/德州分别残留 34.4%±3.3%/35.7%±1.8% 的差距且仅凭预测不可检测。</p>
+<p><strong>为什么值得看</strong>：决策时点看似满足的公平约束可能掩盖系统性违规，警示意义强。</p>
+<p><a href="https://arxiv.org/abs/2610.18593">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.18593">阅读原文 ↗</a></p>
 </body>
 </html>

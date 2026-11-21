@@ -22,9 +22,11 @@
 <h1>ECHO: Correcting Time Series Foundation Model Forecasts with Historical Analogues and Errors</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Time Series Foundation Models (TSFMs) provide general-purpose forecasting capabilities, yet their forecasts can remain misaligned with the temporal characteristics of a target domain.</p>
-<blockquote><p>Time Series Foundation Models (TSFMs) provide general-purpose forecasting capabilities, yet their forecasts can remain misaligned with the temporal characteristics of a target domain. This motivates lightweight forecast correction even when only black-box access to the TSFM is available. Our key observation is that two forms of historical information provide complementary correction signals: historical analogues reveal how similar contexts evolved, while past forecast errors reveal a TSFM's characteristic deviations in the target domain. Based on this observation, we propose ECHO, a black-box forecast correction framework that learns from both sources. ECHO uses AnalogE to assess retrieved historical analogues together with the current context and base forecast, learning transferable corrections through cross-domain pretraining. In parallel, RecentE learns target-specific residual corrections from past forecast errors and refines them as causally available feedback accumulates. ECHO dynamically combines the two corrections according to their observed forecasting performance. Across 5 representative TSFMs and 9 real-world datasets, ECHO reduces MSE in all 45 backbone--dataset settin…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：时间序列基础模型（TSFM）预测可能与目标域时间特征错位，需要在仅黑盒访问下做轻量预测校正。</p>
+<p><strong>方法</strong>：ECHO 利用两类互补历史信息：历史类比揭示相似上下文如何演化，历史预测误差揭示 TSFM 在目标域的典型偏差；AnalogE 结合类比与当前上下文/基础预测做跨域预训练学可迁移校正，RecentE 从误差学目标特异残差校正并随反馈累积精化，按实际表现动态组合。</p>
+<p><strong>关键数字</strong>：5 个代表性 TSFM × 9 个真实数据集，45 个 backbone–dataset 设置全部 MSE 下降，macro-average MSE 平均相对降 9.26%，长程预测同样受益。</p>
+<p><strong>为什么值得看</strong>：纯黑盒的通用校正框架，不碰模型内部即可系统性修正基础模型偏差。</p>
+<p><a href="https://arxiv.org/abs/2610.16433">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16433">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>RE-CAM: Readout-Enhanced Content-Addressable Memory for Quantitative Similarity Search</h1>
 <p class="meta-line">arXiv · 2026-11-19 · 论文PDF / 每日精选</p>
 
-<p>面向定量相似性搜索的读增强内容寻址存储器 RE-CAM</p>
-<blockquote><p>Similarity search is essential to many applications but incurs massive data movement when executed on conventional architectures. Content-addressable memory (CAM) is a promising hardware substrate, as it allows similarity search directly in the CAM array, minimizing data movement and offering both low latency and high energy efficiency. However, conventional CAM array readout produces only binary match results, discarding quantitative similarity information that could be further exploited. Extracting this information requires interpreting the CAM array output voltage that evolves during a CAM search, making the sensing timestamp a crucial design variable alongside the reference voltage and decoding parameter. In this work, we propose RE-CAM, a readout enhancement framework for CAM that is agnostic to memory technology and application, enabling CAM array readout to approximate linear and nonlinear functions with one CAM search. By reusing the comparators to sense the time-varying output voltage multiple times, jointly optimizing the three design variables under system constraints and hardware nonidealities, and co-designing the optimization algorithm and reconfigurable hardware, RE-…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：CAM 阵列可直接在存储内做相似性搜索，但传统读出只产生二值匹配结果，丢弃可进一步利用的定量相似度信息。</p>
+<p><strong>方法</strong>：RE-CAM 读出增强框架：复用比较器多次感知时变输出电压，联合优化参考电压、感知时间戳与解码参数，用一次 CAM 搜索近似线性和非线性函数。</p>
+<p><strong>关键数字</strong>：相对共享统一参考 ADC 基线，线性/分段线性/sigmoid/指数函数近似 NRMSE 降 10.89–24.34%（一般）、29.43–46.73%（利用数据分布）；搜索吞吐 8×、每次搜索能耗降 47%、面积降 39%。</p>
+<p><strong>为什么值得看</strong>：技术无关、应用无关的 CAM 定量搜索读出方案，低开销高吞吐。</p>
+<p><a href="https://arxiv.org/abs/2611.25326">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.25326">阅读原文 ↗</a></p>
 </body>
 </html>

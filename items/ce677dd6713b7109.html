@@ -22,9 +22,11 @@
 <h1>FENAS: A Few-Shot Meta-Ensembling Framework for Efficient Neural Architecture Search with Synergized Zero-Cost Proxies</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Efficient neural architecture search (NAS) requires accurate performance estimation under limited evaluation budgets.</p>
-<blockquote><p>Efficient neural architecture search (NAS) requires accurate performance estimation under limited evaluation budgets. Existing zero-cost proxies (ZCPs) provide fast training-free signals, but each proxy usually captures only a partial property of an architecture, leading to unstable rankings across datasets and search spaces. In contrast, GNN-based predictors can improve accuracy, but often depend on labeled architectures, graph encoders, and costly representation learning, which makes them less suitable for extreme few-shot settings. We propose FENAS, a topology-agnostic few-shot prediction framework that turns complementary initialization priors into robust ranking signals. Its core component, CAST, is a feature pipeline that combines copula alignment and synergy transformation. CAST maps heterogeneous ZCPs into a compact feature manifold, enabling lightweight meta-learners to produce reliable rankings from scarce supervision. On NAS-Bench-201, with only 0.5% labeled samples, FENAS achieves a Kendall's Tau ($τ$) of 0.70, outperforming representative topology-based few-shot predictors in this low-label regime. In closed-domain search, FENAS evaluates the NAS-Bench-201 space in app…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：零成本代理（ZCP）各只捕捉架构的部分属性、跨数据集排序不稳定；GNN 预测器依赖标注架构、图编码器与昂贵表示学习，不适合极少量样本场景。</p>
+<p><strong>方法</strong>：FENAS 是拓扑无关的少样本预测框架：核心组件 CAST 特征管线结合 copula 对齐与协同变换，把异构 ZCP 映射到紧凑特征流形，让轻量元学习器从稀缺监督产出可靠排序。</p>
+<p><strong>关键数字</strong>：NAS-Bench-201 仅 0.5% 标注样本下 Kendall's Tau 达 0.70，优于代表性拓扑型少样本预测器；封闭域搜索约 1138 秒完成评估并获得有竞争力的测试精度。</p>
+<p><strong>为什么值得看</strong>：极低标注预算下的快速可靠 NAS 性能估计，结构简单。</p>
+<p><a href="https://arxiv.org/abs/2610.15307">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15307">阅读原文 ↗</a></p>
 </body>
 </html>

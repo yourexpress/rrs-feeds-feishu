@@ -22,9 +22,11 @@
 <h1>Mitigating Row Buffer Contention Through Multiple Row Buffer (MRB) DRAM</h1>
 <p class="meta-line">arXiv · 2026-11-19 · 论文PDF / 每日精选</p>
 
-<p>通过多行缓冲(MRB)DRAM 缓解行缓冲竞争</p>
-<blockquote><p>DRAM chips contain multiple banks to handle sev- eral memory requests in parallel. However, requests to different rows of the same bank (e.g., from different cores or workload access patterns) interfere with each other by contending for a single shared row buffer. This introduces row buffer conflicts, which incur performance and energy overheads. In this work, we reduce row buffer conflicts caused by interference by introducing multiple row buffers in each bank. We propose multiple row buffer (MRB) DRAM, which employs a primary global row buffer along with multiple secondary SRAM row buffers in the DRAM chip. These secondary SRAM row buffers act as a cache that enables each bank to serve requests to multiple rows in parallel, thereby improving performance and reducing row buffer conflicts. Our evaluation shows that MRB-DRAM with four SRBs per bank improves performance by an average of 29.7%, 24% in singlecore, multicore systems, respectively, compared to a conventional DDR4 baseline with a modest area overhead of 2%.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：DRAM bank 内只有单个共享行缓冲，不同核或访问模式对同一 bank 不同行的请求相互争用，造成行缓冲冲突的性能与能耗开销。</p>
+<p><strong>方法</strong>：提出多行缓冲（MRB）DRAM：每 bank 设一个主全局行缓冲外加多个二级 SRAM 行缓冲，作为缓存让 bank 并行服务多行请求。</p>
+<p><strong>关键数字</strong>：每 bank 4 个 SRB 时，相对传统 DDR4 基线单核系统性能平均提升 29.7%、多核系统 24%，面积开销仅约 2%。</p>
+<p><strong>为什么值得看</strong>：低面积开销缓解行缓冲争用，直接改善多核访存性能。</p>
+<p><a href="https://arxiv.org/abs/2611.25714">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.25714">阅读原文 ↗</a></p>
 </body>
 </html>

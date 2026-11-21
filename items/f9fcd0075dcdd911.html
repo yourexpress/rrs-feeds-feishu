@@ -22,9 +22,11 @@
 <h1>Exact power indices for plurality-voting ensembles</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Plurality-voting ensembles aggregate the predictions of multiple base classifiers and output the most voted class, with ties typically broken at random.</p>
-<blockquote><p>Plurality-voting ensembles aggregate the predictions of multiple base classifiers and output the most voted class, with ties typically broken at random. Despite the simple aggregation rule, attributing the impact of each base classifier to the ensemble's predictions is far from straightforward. That is, a single base classifier's impact depends on how it interacts with the votes of all other classifiers in the ensemble, for example, in resolving ties, and not only on its own predictions. We address the attribution problem using established tools from cooperative game theory, studying the Banzhaf and Shapley power indices for new games modeling plurality voting and random tie-breaking, for binary and multiclass classification settings. Computing power indices is, in general, intractable. Surprisingly, our methods, collectively named ENPOWER, enable the exact computation of Banzhaf and Shapley values in linear time for the binary classification setting and in low-degree polynomial time for the multiclass setting. The algorithms in ENPOWER rely on new combinatorial formulations of the Banzhaf and Shapley indices, yielding closed-form solutions for the binary case and ordinary generati…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：多数投票集成输出得票最多的类（平局随机打破），单个基分类器的影响取决于它与其他分类器投票的交互（如平局裁决），归因困难。</p>
+<p><strong>方法</strong>：ENPOWER 用合作博弈论工具为多数投票+随机平局建模（二分类与多分类），给出 Banzhaf 与 Shapley power indices 的新组合表述：二分类闭式解、多分类普通生成函数表示，实现精确计算。</p>
+<p><strong>关键数字</strong>：二分类设置线性时间精确计算 Banzhaf/Shapley 值，多分类低阶多项式时间；应用到集成剪枝与视觉-语言模型 prompt 集成，给出既有方法未捕捉的归因值。</p>
+<p><strong>为什么值得看</strong>：集成分量归因从难解变为精确可算，实用性强。</p>
+<p><a href="https://arxiv.org/abs/2610.17980">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17980">阅读原文 ↗</a></p>
 </body>
 </html>

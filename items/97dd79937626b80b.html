@@ -22,9 +22,11 @@
 <h1>StarMPI-SVD: Distributed-Memory Parallel Star-M Tensor SVD</h1>
 <p class="meta-line">arXiv · 2026-11-19 · 论文PDF / 每日精选</p>
 
-<p>StarMPI-SVD：分布式内存并行 Star-M 张量奇异值分解</p>
-<blockquote><p>The star-M tensor algebra generalizes the optimal compression guarantees of the matrix singular value decomposition (SVD) to higher-order tensors. The t-SVDM-I decomposition is computed using a set of invertible transformations and slice-wise truncated SVDs with a prescribed rank, and its adaptive, multirank variant t-SVDM-II can determine slice-wise ranks to satisfy a prescribed error tolerance. Existing implementations of these algorithms are limited to shared-memory environments, restricting their applicability to modern large-scale datasets. In this work, we present the first distributed-memory implementations of t-SVDM-I and t-SVDM-II, which are generalized to N-way tensors. To address computational and communication bottlenecks, we design asynchronous, non-blocking communication strategies for efficient data redistribution to obtain highly efficient key computational kernels. Strong-scaling experiments demonstrate the efficiency and scalability of our approach (at least 70% parallel efficiency on up to 128 nodes, or 6144 cores), and we apply the star-M compression techniques to a set of application datasets of size up to 768 GB.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：star-M 张量代数把矩阵 SVD 的最优压缩保证推广到高阶张量，但 t-SVDM-I/II 仅有共享内存实现，无法处理现代大规模数据集。</p>
+<p><strong>方法</strong>：首个分布式内存 t-SVDM-I 与 t-SVDM-II 实现，推广到 N 维张量；针对计算与通信瓶颈设计异步、非阻塞通信策略做高效数据重分布。</p>
+<p><strong>关键数字</strong>：强扩展实验最多 128 节点（6144 核）并行效率不低于 70%；对最大 768GB 的应用数据集应用 star-M 压缩。</p>
+<p><strong>为什么值得看</strong>：把张量 SVD 压缩能力带到分布式内存规模。</p>
+<p><a href="https://arxiv.org/abs/2611.26451">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.26451">阅读原文 ↗</a></p>
 </body>
 </html>

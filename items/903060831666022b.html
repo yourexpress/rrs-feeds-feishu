@@ -22,9 +22,11 @@
 <h1>EvolvAttack: Backdooring self Evolving VLM Agents</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Self-evolving mechanisms let vision-language model (VLM) agents continually adapt through evolving memory, but they also allow malicious behavior to emerge only after deployment.</p>
-<blockquote><p>Self-evolving mechanisms let vision-language model (VLM) agents continually adapt through evolving memory, but they also allow malicious behavior to emerge only after deployment. We introduce a new attack surface, the self-evolving backdoor, whose payload stays dormant in the initial agent and is progressively activated as the agent evolves. Unlike conventional backdoors, which can be exposed by testing triggered inputs on a static model, our attack requires both a visual trigger and a sufficiently evolved memory state; static scanning with clean memory thus yields near-zero attack success and may deem the agent benign. We realize this through memory-aware backdoor training, which couples trigger activation with the agent's evolving memory while preserving benign behavior unless the trigger co-occurs with payload-related memory. Across three VLM backbones, four agent pipelines, and recency-, semantic-, and reward-based memory evolution, the attack preserves normal functionality and stays nearly inactive before evolution (0.5% attack success rate), yet exceeds 95% attack success within 100 interactions, revealing a stealthy threat unique to self-evolving agents.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：自进化机制让 VLM agent 通过进化记忆持续适应，但也可能让恶意行为只在部署后浮现——静态触发测试无法暴露。</p>
+<p><strong>方法</strong>：提出自进化后门攻击面：payload 在初始 agent 中休眠、随 agent 进化逐步激活；memory-aware 后门训练把触发器激活与进化记忆状态耦合，触发器不共存于 payload 相关记忆时保持良性行为。</p>
+<p><strong>关键数字</strong>：3 个 VLM 骨干、4 个 agent 流水线、三种记忆进化方式下，进化前攻击成功率仅 0.5%、100 次交互内超过 95%，静态扫描可能判定 agent 良性。</p>
+<p><strong>为什么值得看</strong>：揭示自进化 agent 独有、静态扫描检测不到的隐蔽威胁。</p>
+<p><a href="https://arxiv.org/abs/2610.15244">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15244">阅读原文 ↗</a></p>
 </body>
 </html>

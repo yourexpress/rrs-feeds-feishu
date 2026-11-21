@@ -22,9 +22,11 @@
 <h1>Thinflow: Organizing HPC Benchmarking Campaigns as Rerunnable Directory Trees</h1>
 <p class="meta-line">arXiv · 2026-11-19 · 论文PDF / 每日精选</p>
 
-<p>Thinflow：将 HPC 基准测试活动组织为可重运行的目录树</p>
-<blockquote><p>A benchmarking campaign provides the measurements behind an HPC performance study: code variants are built, swept over core or node counts, and measured repeatedly. Moving such a campaign to another supercomputer or rerunning it months later requires work that is not part of the study itself. Job scripts are adapted to each supercomputer, and what exactly ran is often reconstructed afterwards. We present Thinflow, a small Bash engine for organizing HPC benchmarking campaigns as rerunnable directory trees of tasks and runs. A task is a directory with a short shell script next to the code. For each sweep, one command builds the code, runs the benchmarks, and plots the results. Thinflow derives the execution order from declared dependencies and writes it to a plain-text manifest. Per-supercomputer profiles submit the runs to a workload manager such as Slurm. Each run writes a provenance record of its environment, hardware, and parameters. The engine ships inside the campaign directory, so a campaign stays rerunnable without installing a separate tool and, once completed, may serve as a paper artifact. In a case study, we ran one campaign with identical task files on three Slurm partit…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：HPC 基准测试活动迁移到另一台超算或数月后重跑，需要大量非研究本身的适配工作（作业脚本、重建"当时到底跑了什么"）。</p>
+<p><strong>方法</strong>：Thinflow 是小型 Bash 引擎，把测试活动组织成可重跑的目录树：任务=目录+短 shell 脚本；从声明依赖推导执行顺序写入明文 manifest；每超算 profile 提交；每次运行记录环境/硬件/参数 provenance；引擎随活动目录分发。</p>
+<p><strong>关键数字</strong>：案例研究在 2 台超算 3 个 Slurm 分区最多 16 节点运行同一套任务文件：37 个任务文件共 217 行非注释代码、455 次基准运行。</p>
+<p><strong>为什么值得看</strong>：极简结构让 HPC 基准活动可重跑、可作论文 artifact。</p>
+<p><a href="https://arxiv.org/abs/2611.26526">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.26526">阅读原文 ↗</a></p>
 </body>
 </html>

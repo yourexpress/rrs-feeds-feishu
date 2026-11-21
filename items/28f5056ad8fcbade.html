@@ -22,9 +22,11 @@
 <h1>Efficient Preconditioned Optimization Methods with Frequent Directions</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Adaptive optimization methods have received considerable attention in recent years due to their strong empirical performance.</p>
-<blockquote><p>Adaptive optimization methods have received considerable attention in recent years due to their strong empirical performance. However, they generally require maintaining a preconditioning matrix, which incurs prohibitive computational overhead in large-scale applications. To address these limitations, we investigate the acceleration of preconditioned optimization methods through frequent directions (FD), a widely used matrix sketching technique. We first propose FTSL by integrating FD with adaptive subgradient methods under the primal-dual framework and adding back the cumulative information discarded by FD. FTSL obtains a tighter regret bound than existing state-of-the-art results. We then apply a doubling trick that further reduces the time complexity of FTSL, while maintaining the same regret guarantee. We also consider optimization over matrix-valued decision variables and exploit their structural properties to construct sketched preconditioners. We develop FTSL-Shampoo by adapting FD to Shampoo and give a novel analysis under the primal-dual framework. To further mitigate its computational complexity, we design one-sided variants of FTSL-Shampoo under both mirror descent and p…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：自适应优化方法需维护预条件矩阵，在大规模应用中计算开销过高。</p>
+<p><strong>方法</strong>：用 frequent directions（FD）矩阵素描加速预条件优化：FTSL 在原对偶框架下集成 FD 并补回被丢弃的累积信息；doubling trick 进一步降时间复杂度；对矩阵值决策变量构造素描预条件器得 FTSL-Shampoo，并设计 mirror descent 与原对偶两种 one-sided 变体；扩展到离线随机凸优化利用光滑性加快收敛。</p>
+<p><strong>关键数字</strong>：论文未给出单一基准数字——FTSL 获得比现有 SOTA 更紧的 regret 界，变体在保持界的同时显著降低计算成本，并在广泛任务上实证有效。</p>
+<p><strong>为什么值得看</strong>：用素描技术系统性削减预条件优化开销，理论与实证兼顾。</p>
+<p><a href="https://arxiv.org/abs/2610.16792">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16792">阅读原文 ↗</a></p>
 </body>
 </html>
