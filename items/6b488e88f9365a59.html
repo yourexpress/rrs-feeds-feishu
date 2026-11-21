@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FoldSim: Scaling Cycle-Exact RTL Simulation with Hierarchical Folding and Static Scheduling</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>FoldSim: Scaling Cycle-Exact RTL Simulation with Hierarchical Folding and Static Scheduling</h1>
+<p class="meta-line">arXiv · 2026-11-19 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：RTL 仿真时间随设计规模快速增长；CPU/GPU 仿真吞吐受限，FPGA 仿真吞吐高但可扩展性受资源容量约束。</p>
+<p><strong>方法</strong>：FoldSim 自动框架在单块 FPGA 上做 cycle-exact 仿真：层级折叠把设计层次中的实例映射到共享逻辑、保持独立状态；编译器对可折叠模块类构造静态调度，降低动态同步开销、状态访问可预测；超容量状态放外部内存按需取回；可配置 DRAM 模型分离目标内存时序与 host 延迟。</p>
+<p><strong>关键数字</strong>：单块 AMD Alveo V80 跑 8-SM GPU 与 1024 节点 Rocket 数据中心（4096 核）；非折叠实现分别需约 16×/200× LUT；数据中心约 1.9GB 状态驻留 HBM；4-SM GPU 完成 1024×1024 GEMM 仅 4.24 秒（软件 RTL 仿真 26 小时）。</p>
+<p><strong>为什么值得看</strong>：把超大设计的 cycle-exact 仿真压进单块 FPGA，吞吐跨数量级提升。</p>
+<p><a href="https://arxiv.org/abs/2611.26472">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.26472">阅读原文 ↗</a></p>
+</body>
+</html>

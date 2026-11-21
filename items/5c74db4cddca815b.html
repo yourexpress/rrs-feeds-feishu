@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kameleo: In-Situ Activation-Precision Selection for Bit-Serial LLM Accelerators</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Kameleo: In-Situ Activation-Precision Selection for Bit-Serial LLM Accelerators</h1>
+<p class="meta-line">arXiv · 2026-11-19 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：weight-only 量化把激活保持高精度，片上推理成本转移到激活算术；bit-serial 可变长度加速器按层选 mantissa 长度，但当前靠离线校准——每个模型/负载重复搜索，且在其他数据上静默退化。</p>
+<p><strong>方法</strong>：Kameleo 在加速器上运行时从处理中的数据选择激活精度：用局部代理比较每个 GEMM 在降精度与全精度下的输出；bit-serial 数据通路使降精度结果恰是全精度计算的中间态、几乎免费得到；对负载前若干 token 跑两遍即设定所有 GEMM 精度。</p>
+<p><strong>关键数字</strong>：4 个 LLM × 7 个数据集，1% 困惑度预算内 MXU prefill cycles 减少 2.11–2.34×，接近在评估数据上离线校准的配置；而校准配置迁移到其他数据常违反预算；选择硬件仅占加速器面积 3.7%。</p>
+<p><strong>为什么值得看</strong>：让可变长度 mantissa 在真实部署中可行，摆脱逐模型离线校准。</p>
+<p><a href="https://arxiv.org/abs/2611.25971">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.25971">阅读原文 ↗</a></p>
+</body>
+</html>

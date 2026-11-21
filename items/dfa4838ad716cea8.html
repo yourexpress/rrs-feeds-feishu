@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Serve open models in production with Foundry Managed Compute</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Serve open models in production with Foundry Managed Compute</h1>
+<p class="meta-line">Microsoft · 2026-11-20 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://devblogs.microsoft.com/foundry/wp-content/uploads/sites/89/2026/11/managed-compute-ga-banner.webp" alt="" referrerpolicy="no-referrer">
+<p>微软 Foundry Managed Compute 正式 GA：面向开源模型托管 GPU 推理，目录 150+ 模型，支持 NVIDIA A100/H100/H200 与 AMD MI300X、US/EU Data Zone、安全供应链与 speculative decoding，并预告 LoRA 适配器与 BYOW 自定义权重预览</p>
+<blockquote><p>We are excited to announce the general availability of Managed Compute in Microsoft Foundry. When we introduced Managed Compute in preview at Microsoft Build in June, we set out to make serving open models as approachable as calling a managed model API. You choose the model that fits your application; we provision the GPUs, maintain the containers, and operate the serving runtime.</p><p>Since Build, we’ve scaled serving capacity, improved prompt reuse, and expanded GPU and deployment options, including US and EU Data Zones. Customer feedback helped us refine the experience and give teams a clearer view of how their deployments are running. We’ve also strengthened the software supply chain and added more open models to the catalog. The result is a managed platform for serving open models on dedicated GPUs in the Foundry experience you already use.</p><p>Getting started with open models on Foundry Managed Compute</p><p>Sign into the Foundry portal, navigate to the model catalog and filter by “Managed Compute” under “Deployment options” to discover the 150+ open models available. Select a model, then choose a deployment template that fits your workload. The template defines the context length, serving runtime, and GPU configuration. Depending on the model, you can choose NVIDIA GPUs (A100, H100, or H200) or AMD MI300X GPUs. Start with one instance, review the hourly cost in the deployment wizard, and test a few prompts in the Playground once the deployment is ready.</p><p>Watch the Ignite breakout session From open weights to workload: Operationalizing at enterprise scale (BRK246) from the 8 minute mark to see a demo of how to get started with Foundry Managed Compute.</p><p>Here’s how to deploy DeepSeek V4.1 Flash (1017) from Python. The example creates one billable instance on four MI300X GPUs. You’ll need a Foundry project, permission to deploy and call models, and enough Managed Compute GPU quota.</p><p>from azure.identity import DefaultAzureCredential</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://devblogs.microsoft.com/foundry/managed-compute-ga/">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Native FPGA Hard-Block Implementation from High-Level Synthesis</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Native FPGA Hard-Block Implementation from High-Level Synthesis</h1>
+<p class="meta-line">arXiv · 2026-11-18 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：HLS 映射到 FPGA 硬块时常闲置其算术模式、内部寄存器与级联链路，又在 fabric 里重建，浪费面积与时序。</p>
+<p><strong>方法</strong>：C++ 模板库不改 HLS 编译器即达到原生硬块实现：模板固定源码模式，自动流程挑选调度设置与经验证的 RTL 补丁。</p>
+<p><strong>关键数字</strong>：AMD Versal 上矩阵乘法比 AutoSA 脉动阵列少用 2.4–4.5× LUT、吞吐相当或更高；INT8 矩阵-向量单元达到手写 FINN RTL 的每 DSP 3 MAC（HLS 库至多 1.29）；在 hls4ml、Allo、Stream-HLS 中 LUT 最多减 2.7×、DSP 最多减 2×。</p>
+<p><strong>为什么值得看</strong>：不侵入编译器即可吃满 FPGA 硬块，提升 HLS 生成质量的上限。</p>
+<p><a href="https://arxiv.org/abs/2611.25281">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.25281">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HiSA: Sparsifying the Hidden Dimension of RoPE Attention in LLMs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>HiSA: Sparsifying the Hidden Dimension of RoPE Attention in LLMs</h1>
+<p class="meta-line">arXiv · 2026-11-19 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：LLM 注意力用完整点积给每个 query 对每个 key 打分——这个点积必须算完吗？</p>
+<p><strong>方法</strong>：HiSA（Hidden Sparse Attention）保持 query/key 投影完整、只计算部分点积，按 token 位置确定的静态免参数规则在 hidden（特征）维度上做稀疏——比 token 稀疏更少被探索的轴；基于 RoPE 结构把 key/query 分解出可省略部分；从头训练 LLM，并扩展到 FlashAttention-3 内核。</p>
+<p><strong>关键数字</strong>：只计算约 1/3 的 query-key 乘积，性能不降反升；推理解码速度提升、内存占用缩小；代码开源。</p>
+<p><strong>为什么值得看</strong>：开辟 hidden 维度稀疏新轴，训练与推理双受益且无需学习参数。</p>
+<p><a href="https://arxiv.org/abs/2611.26363">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.26363">阅读原文 ↗</a></p>
+</body>
+</html>

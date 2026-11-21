@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StarMPI-SVD: Distributed-Memory Parallel Star-M Tensor SVD</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>StarMPI-SVD: Distributed-Memory Parallel Star-M Tensor SVD</h1>
+<p class="meta-line">arXiv · 2026-11-19 · 论文PDF / 每日精选</p>
+
+<p>StarMPI-SVD：分布式内存并行 Star-M 张量奇异值分解</p>
+<blockquote><p>The star-M tensor algebra generalizes the optimal compression guarantees of the matrix singular value decomposition (SVD) to higher-order tensors. The t-SVDM-I decomposition is computed using a set of invertible transformations and slice-wise truncated SVDs with a prescribed rank, and its adaptive, multirank variant t-SVDM-II can determine slice-wise ranks to satisfy a prescribed error tolerance. Existing implementations of these algorithms are limited to shared-memory environments, restricting their applicability to modern large-scale datasets. In this work, we present the first distributed-memory implementations of t-SVDM-I and t-SVDM-II, which are generalized to N-way tensors. To address computational and communication bottlenecks, we design asynchronous, non-blocking communication strategies for efficient data redistribution to obtain highly efficient key computational kernels. Strong-scaling experiments demonstrate the efficiency and scalability of our approach (at least 70% parallel efficiency on up to 128 nodes, or 6144 cores), and we apply the star-M compression techniques to a set of application datasets of size up to 768 GB.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.26451">阅读原文 ↗</a></p>
+</body>
+</html>

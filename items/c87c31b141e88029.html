@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DTS: Delta-Based Tile Scoring for Efficient Long-Context Sparse Attention</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DTS: Delta-Based Tile Scoring for Efficient Long-Context Sparse Attention</h1>
+<p class="meta-line">arXiv · 2026-11-19 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：LLM 处理长文档/代码库使长上下文注意力成为 prefill 主要瓶颈；块稀疏注意力跳过不重要的注意力块，但准确给块打分本身很贵。</p>
+<p><strong>方法</strong>：DTS 训练-free、内容自适应的 tile 打分：按局部向量变化选 query/key anchor，冗余区域用更少代表、异构区域保留更多细节；并行 delta packing 把序列切成 tile 对齐块做有界局部扫描加速 anchor 选择；选中 tile 用原始 query/key/value 计算。</p>
+<p><strong>关键数字</strong>：LLaMA-3.1-8B-Instruct 上平均 RULER/LongBench 与全注意力相差 0.10 个百分点内（RULER 到 128K）；128K 打分流水线延迟比 XAttention 低 38%；4×H100 上 512K tokens prefill 相对 PyTorch+FlashAttention-2 全注意力快 3.3×。</p>
+<p><strong>为什么值得看</strong>：免训练内容自适应打分，长上下文 prefill 提速显著且精度几乎无损。</p>
+<p><a href="https://arxiv.org/abs/2611.25938">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.25938">阅读原文 ↗</a></p>
+</body>
+</html>

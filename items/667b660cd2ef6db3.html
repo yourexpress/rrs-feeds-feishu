@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FPGA-GEN: Target-Aware RTL Generation via HLS</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>FPGA-GEN: Target-Aware RTL Generation via HLS</h1>
+<p class="meta-line">arXiv · 2026-11-19 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：C/C++ 编译成功不代表 HLS 后 FPGA 硬件正确或高效。</p>
+<p><strong>方法</strong>：FPGA-GEN 是 agentic HLS-C 生成工作流，把规范、就绪、选择、修复、准入规则编码进显式任务契约与有界工具反馈循环，逐候选做决策。</p>
+<p><strong>关键数字</strong>：HLS-Eval 上每任务 5 个共享上下文输出，407/425（95.8%）公开 testbench 通过；累计转换中 104/107（97.2%）HLS-LeVeri 设计通过 held-out 协同仿真、Vivado 综合/适配与 same-RTL 证据；聚焦 TensorCore 筛选中候选 3 比生成/组合的 C0 少 73.7% CSynth cycles、14.6% LUT，多 26.7% DSP。</p>
+<p><strong>为什么值得看</strong>：把 HLS 代码生成做成受控 agentic 流程，正确率与硬件效率双高。</p>
+<p><a href="https://arxiv.org/abs/2611.25351">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.25351">阅读原文 ↗</a></p>
+</body>
+</html>

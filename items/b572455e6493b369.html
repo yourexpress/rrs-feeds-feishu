@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Complete-SVD: A Functional Norm Approach to Low-Rank LLM Compression</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Complete-SVD: A Functional Norm Approach to Low-Rank LLM Compression</h1>
+<p class="meta-line">arXiv · 2026-11-19 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：训练后低秩压缩既要近似权重、更要保持模型输入-输出行为；现有 output-aware 方法按观测 next token 或模型预测概率加权 logit 变化，权重有偏。</p>
+<p><strong>方法</strong>：Complete-SVD 最小化原始与压缩模型 logits 的 L2 距离、所有 logit 变化等权；线性化 + Kronecker 近似把目标化为带闭式解的加权 SVD；输出侧因子不可解，用随机探针无偏估计（每条序列 K 次反向传播，与词表大小和序列长度无关）；另评估 KL 变体（KL-SVD）。</p>
+<p><strong>关键数字</strong>：均匀秩 + WikiText-2 校准下 C4/PTB 困惑度全部设置最低，ratio 0.7 LEMS 分配下同样最低；KL-SVD 多数设置校准困惑度更低、下游准确率更高但跨语料困惑度升高；IFEval 指令跟随准确率全程优于最强 prior output-aware 方法。</p>
+<p><strong>为什么值得看</strong>：对压缩误差度量的重新思考，闭式解 + 无偏估计兼顾理论与实用。</p>
+<p><a href="https://arxiv.org/abs/2611.26059">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.26059">阅读原文 ↗</a></p>
+</body>
+</html>

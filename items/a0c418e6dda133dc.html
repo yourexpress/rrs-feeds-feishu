@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accelerating Mixture of Block Attention via Dynamic Routing, KV-Centric Execution and Runtime Pipelining</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Accelerating Mixture of Block Attention via Dynamic Routing, KV-Centric Execution and Runtime Pipelining</h1>
+<p class="meta-line">arXiv · 2026-11-19 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：MoBA（Mixture of Block Attention）按查询选 KV 块降长上下文算量，但 FlashMoBA 固定 Top-k 预算与 query-centric 调度：一个预算套不同分数分布、query-range 所有权碎片化 K/V 复用。</p>
+<p><strong>方法</strong>：LightningMoBA 协同设计选择与执行：动态路由阈值化每查询块分数、直接产出可变基数稀疏元数据；KV-centric ownership 按 (query head, KV block) 列分组、拆分高扇出列为有界任务并复用已加载 KV tile；Hopper 上运行时流水线重叠 K/V 传输与 Tensor Core 计算。</p>
+<p><strong>关键数字</strong>：匹配 Top-16 保留下五个 checkpoint 端到端生成加速 1.20–1.60×，平均 RULER 分数从 74.42 升至 75.28。</p>
+<p><strong>为什么值得看</strong>：MoBA 从路由到执行的系统级协同优化，保留率不降反升。</p>
+<p><a href="https://arxiv.org/abs/2611.26268">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.26268">阅读原文 ↗</a></p>
+</body>
+</html>

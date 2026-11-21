@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mitigating Row Buffer Contention Through Multiple Row Buffer (MRB) DRAM</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Mitigating Row Buffer Contention Through Multiple Row Buffer (MRB) DRAM</h1>
+<p class="meta-line">arXiv · 2026-11-19 · 论文PDF / 每日精选</p>
+
+<p>通过多行缓冲(MRB)DRAM 缓解行缓冲竞争</p>
+<blockquote><p>DRAM chips contain multiple banks to handle sev- eral memory requests in parallel. However, requests to different rows of the same bank (e.g., from different cores or workload access patterns) interfere with each other by contending for a single shared row buffer. This introduces row buffer conflicts, which incur performance and energy overheads. In this work, we reduce row buffer conflicts caused by interference by introducing multiple row buffers in each bank. We propose multiple row buffer (MRB) DRAM, which employs a primary global row buffer along with multiple secondary SRAM row buffers in the DRAM chip. These secondary SRAM row buffers act as a cache that enables each bank to serve requests to multiple rows in parallel, thereby improving performance and reducing row buffer conflicts. Our evaluation shows that MRB-DRAM with four SRBs per bank improves performance by an average of 29.7%, 24% in singlecore, multicore systems, respectively, compared to a conventional DDR4 baseline with a modest area overhead of 2%.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.25714">阅读原文 ↗</a></p>
+</body>
+</html>

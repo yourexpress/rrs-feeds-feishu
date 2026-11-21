@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FrontierReplay: Split-Free Exact Prefix Caching for Hybrid Language Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>FrontierReplay: Split-Free Exact Prefix Caching for Hybrid Language Models</h1>
+<p class="meta-line">arXiv · 2026-11-19 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：混合 LM 的循环层 in-place 状态更新把前缀复用限制在精确保存位置；粗网格保存浪费可复用前缀，细粒度精确缓存又须在中间 checkpoint 切断 prefill、增加调度开销。</p>
+<p><strong>方法</strong>：观察到多轮对话、agent 循环、文档问答与树搜索中前缀复用几乎总在可预测的结构边界（轮次结束、已知分支点）结束；FrontierReplay 在这些边界物化精确 checkpoint 而不切断 prefill——前向不截断时记录短窗口循环层输入，跨层 state-only replay 内核构建目标状态。</p>
+<p><strong>关键数字</strong>：replay 每 token 比完整重算便宜 6–37× 且无 host 同步；中位 TTFT 降 16–89%（最高 8.9×），80% SLO 容量最高提升 1.73×，goodput 最高提升 4.26×（大规模 3.67×）；相对近似 replay 方法 goodput 高至 1.54× 且保持精确任务准确率（近似方法长上下文最多掉 17% 准确率）。</p>
+<p><strong>为什么值得看</strong>：混合 LM 精确前缀缓存的优雅解法，免切断 prefill 且收益显著。</p>
+<p><a href="https://arxiv.org/abs/2611.26020">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.26020">阅读原文 ↗</a></p>
+</body>
+</html>

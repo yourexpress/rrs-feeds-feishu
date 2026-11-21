@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GRODE-RTL: Source-Mapped Dependency Views for LLM-Based RTL Repair</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>GRODE-RTL: Source-Mapped Dependency Views for LLM-Based RTL Repair</h1>
+<p class="meta-line">arXiv · 2026-11-19 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：LLM 自动 RTL 修复在非局部故障（根因与失败输出在源码中相距很远）上表现挣扎；把 RTL 当扁平 token 序列会遮蔽硬件数据流，暴露完整综合图又让模型淹没在细粒度元数据里。</p>
+<p><strong>方法</strong>：GRODE-RTL 是 anchor-centric 表示：从网表提取嫌疑寄存器的单时钟级 fan-in cone，把网表节点映射回可编辑源码行，组织成紧凑的 hop 分区依赖视图；优先直接驱动、折叠远跳，引导标准 tool-using agent。</p>
+<p><strong>关键数字</strong>：30 个经正式验证的非局部故障 × 3 个 LLM，pass@1 相对源码级探索提升 DeepSeek 16.7%、GLM-5.2 26.7%、MiniMax-M3 20.0%；远距离与间接 anchor 子集一致增益；消融证明选择性依赖组织而非全图暴露是关键。</p>
+<p><strong>为什么值得看</strong>：给 LLM RTL 修复一个信息密度恰当的表示，非局部故障修复显著变好。</p>
+<p><a href="https://arxiv.org/abs/2611.25661">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.25661">阅读原文 ↗</a></p>
+</body>
+</html>

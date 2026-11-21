@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pack Light, Walk Fast: Compact Page-Table Residency in Shared Caches</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Pack Light, Walk Fast: Compact Page-Table Residency in Shared Caches</h1>
+<p class="meta-line">arXiv · 2026-11-18 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：硬件页表 walker 经缓存层次取描述符，页表 walk 与应用数据争用共享缓存；保留叶子行避免 DRAM 读，但映射足迹增大时又挤占应用数据。</p>
+<p><strong>方法</strong>：LeafPack 在标准缓存路内原地压缩架构页表叶子行——利用相邻描述符物理帧号与属性的规律性，最多 16 条 64B 叶子行打包进含元数据的 80B 槽；增量打包、按需重建、不规则行不压缩；运行时 set-dueling 控制器在压缩/非压缩路上限间自适应。</p>
+<p><strong>关键数字</strong>：Arm gem5 全系统模拟（1–8 核），9 个翻译密集负载几何平均加速 28.7%/28.4%（小核/服务器核，相对基线共享缓存）、18.7%/17.7%（相对 SRRIP）；20 个冻结控制器后的未见混合负载全部提速，几何平均 21.4%/18.5%。</p>
+<p><strong>为什么值得看</strong>：页表缓存压缩兼顾翻译覆盖与应用数据容量，多核翻译密集负载一致受益。</p>
+<p><a href="https://arxiv.org/abs/2611.24992">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.24992">阅读原文 ↗</a></p>
+</body>
+</html>

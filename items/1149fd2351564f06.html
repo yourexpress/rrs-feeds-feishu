@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thinflow: Organizing HPC Benchmarking Campaigns as Rerunnable Directory Trees</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Thinflow: Organizing HPC Benchmarking Campaigns as Rerunnable Directory Trees</h1>
+<p class="meta-line">arXiv · 2026-11-19 · 论文PDF / 每日精选</p>
+
+<p>Thinflow：将 HPC 基准测试活动组织为可重运行的目录树</p>
+<blockquote><p>A benchmarking campaign provides the measurements behind an HPC performance study: code variants are built, swept over core or node counts, and measured repeatedly. Moving such a campaign to another supercomputer or rerunning it months later requires work that is not part of the study itself. Job scripts are adapted to each supercomputer, and what exactly ran is often reconstructed afterwards. We present Thinflow, a small Bash engine for organizing HPC benchmarking campaigns as rerunnable directory trees of tasks and runs. A task is a directory with a short shell script next to the code. For each sweep, one command builds the code, runs the benchmarks, and plots the results. Thinflow derives the execution order from declared dependencies and writes it to a plain-text manifest. Per-supercomputer profiles submit the runs to a workload manager such as Slurm. Each run writes a provenance record of its environment, hardware, and parameters. The engine ships inside the campaign directory, so a campaign stays rerunnable without installing a separate tool and, once completed, may serve as a paper artifact. In a case study, we ran one campaign with identical task files on three Slurm partit…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.26526">阅读原文 ↗</a></p>
+</body>
+</html>

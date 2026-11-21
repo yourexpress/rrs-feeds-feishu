@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bottom-Up FPGA Reconfigurable Accelerator Overlay Generation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Bottom-Up FPGA Reconfigurable Accelerator Overlay Generation</h1>
+<p class="meta-line">arXiv · 2026-11-18 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：可编程 FPGA overlay 免重综合运行新负载，但模板化生成浪费开关与链路、时钟频率低。</p>
+<p><strong>方法</strong>：从负载数据流图自底向上生长 overlay：按结构相似度聚类负载、用谱描述符排序共享槽，只添加负载缺失的单元与链路；全部构建在原生硬块上（流水寄存器、双口存储、double-pumped DSP），超宽数据类型用固定功能引擎。</p>
+<p><strong>关键数字</strong>：AMD VCK5000 上 17 个负载运行于 250–400 MHz（OverGen 仅 35–50 MHz）；几何平均快 9.52–10.33×（最高 36.97×），FPGA 用量少 19.4–22.1×，板级能耗估计少 9.67–10.51×。</p>
+<p><strong>为什么值得看</strong>：overlay 生成范式转向负载驱动，频率与资源效率数量级提升。</p>
+<p><a href="https://arxiv.org/abs/2611.25293">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.25293">阅读原文 ↗</a></p>
+</body>
+</html>

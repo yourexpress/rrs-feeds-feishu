@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twindex: Index Cache Offloading with Coarse-to-Fine Selection for Long-Context Sparse-Attention Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Twindex: Index Cache Offloading with Coarse-to-Fine Selection for Long-Context Sparse-Attention Serving</h1>
+<p class="meta-line">arXiv · 2026-11-18 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：长上下文解码中主 KV 移到 host 内存后，indexer cache 成为 HBM 瓶颈——在 Qwen 上占单请求 HBM 的 63%、DeepSeek V4.1 上 75%（1M tokens）。</p>
+<p><strong>方法</strong>：Twindex 在 HBM 只保留紧凑的 indexer cache 副本、完整 cache 放 host；每步副本先选更大候选集，模型自己的 indexer 再从 host 原始行中取 top-k；副本=共享成分+压缩残差（离线学一次），不改模型权重、运行在 CUDA graphs 内。</p>
+<p><strong>关键数字</strong>：1M tokens 现代 GPU 上比仅 KV offloading 多容纳 1.78×/1.62×/3.03× 请求（Qwen/V4.1/GLM-5.2）；host 不限制批大小时 decode 吞吐达 1.44×/1.25×/2.54×；平均基准分数最多低 3.1%。</p>
+<p><strong>为什么值得看</strong>：把长上下文稀疏注意力服务的 indexer 瓶颈用粗到细两级选择解开。</p>
+<p><a href="https://arxiv.org/abs/2611.25078">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.25078">阅读原文 ↗</a></p>
+</body>
+</html>

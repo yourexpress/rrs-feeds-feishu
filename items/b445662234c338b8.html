@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Live Migration of Gated DeltaNet Requests: Exact Catch-Up and the Cost of Log Backlog</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Live Migration of Gated DeltaNet Requests: Exact Catch-Up and the Cost of Log Backlog</h1>
+<p class="meta-line">arXiv · 2026-11-19 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：流式 Gated DeltaNet（GDN）请求的实时迁移，需要在相同权重的工作节点上于正确 token 边界恢复循环状态。</p>
+<p><strong>方法</strong>：适配快照、批量重放与 token catch-up，并设计紧凑 update-log 迁移路径；exact catch-up 保持原生单 token 解码、在测试输入上逐位匹配参考实现；用 prior-based 与 probe-calibrated 选择器按用户中断、源释放或输出率选择路径。</p>
+<p><strong>关键数字</strong>：1,350 次纯 GDN 试验 × 两个 GPU 部署：紧凑日志在全部 90 个配置中 handoff gap 最短；80 个完整配置里 exact catch-up 总是最早释放源；10 MB/s 时 32-step replay 把中位 gap 从 445–464ms 降至约 81ms；40 个历史 KV 对齐 Qwen 配置回顾性选择使平均 gap 降 13.9%。</p>
+<p><strong>为什么值得看</strong>：混合状态模型实时迁移的系统研究，量化精确追赶与日志积压的权衡。</p>
+<p><a href="https://arxiv.org/abs/2611.26153">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.26153">阅读原文 ↗</a></p>
+</body>
+</html>

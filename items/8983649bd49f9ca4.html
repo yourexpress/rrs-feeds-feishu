@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Held While Waiting: What LLM Agent Sessions Reserve on Serverless and Agent Runtimes</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Held While Waiting: What LLM Agent Sessions Reserve on Serverless and Agent Runtimes</h1>
+<p class="meta-line">arXiv · 2026-11-19 · 论文PDF</p>
+
+<p>Held While Waiting: What LLM Agent Sessions Reserve on Serverless and Agent Runtimes</p>
+<blockquote><p>LLM agents spend nearly all their time waiting for the model. On Amazon Bedrock AgentCore, our agents waited a median of 2.7 seconds for each model reply, then computed for an estimated 5 to 40 milliseconds. AgentCore does not charge for CPU during the wait. But it reserves a separate environment, a virtual machine with its own memory, for every conversation, and keeps it reserved until the conversation is closed. So 1,000 conversations reserve 1,000 environments to do the work of 2 to 15 processor cores. A service runs out of environments long before it runs out of processing power. The shortage has two causes, and each has a fix. An environment stays reserved after its conversation ends: in the customer-service benchmark we ran, a conversation lasts 33 seconds on average, but its environment is held for 15 minutes more unless the client closes it. And an environment serves only one conversation, which is mostly waiting: in our simulation, 64 conversations sharing one environment need 59 times fewer environments, and 99 of every 100 replies are delayed by at most 40 milliseconds. The milliseconds are an estimate because they are hard to measure: a stubbed model, a timer around the…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.26480">阅读原文 ↗</a></p>
+</body>
+</html>

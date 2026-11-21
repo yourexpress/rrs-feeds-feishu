@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TripleKV: Predict, Prefetch, Protect -- KV Cache Management for AI Agents</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>TripleKV: Predict, Prefetch, Protect -- KV Cache Management for AI Agents</h1>
+<p class="meta-line">arXiv · 2026-11-18 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：LLM agent 在推理与工具执行间切换、反复复用增长中的上下文，高并发下 KV cache 工作集可达数百 GiB，被逐出的块在 agent 返回时触发昂贵的重取、阻塞推理。</p>
+<p><strong>方法</strong>：TripleKV 三层 KV 缓存管理：工具感知延迟预测器预估工具调用完成时间、提前把所需 KV 块从 SSD 预取到 host DRAM（避开稀缺 GPU 内存）；消除 DRAM 中 GPU 驻留块的重复；victim-cache 在块被逐出 GPU 时从 SSD 回填。</p>
+<p><strong>关键数字</strong>：数据/web/编码 agent 上关键路径 SSD 读取占比从 45–76% 降至 10% 以下；P95 TTFT 相对带 DRAM/SSD 分层的 vLLM 最高降 49%，比近期 agent-aware 系统低 1.5–7×。</p>
+<p><strong>为什么值得看</strong>：利用 agent 工具执行间隙做预取，把重取延迟藏进空闲窗口。</p>
+<p><a href="https://arxiv.org/abs/2611.25112">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.25112">阅读原文 ↗</a></p>
+</body>
+</html>

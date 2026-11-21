@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intelligent Embedding Pruning for Large-Scale Recommendation Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Intelligent Embedding Pruning for Large-Scale Recommendation Models</h1>
+<p class="meta-line">arXiv · 2026-11-18 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：推荐系统的稀疏 embedding 层内存压力大，训练中剪枝（ITEP）按大小启发式设每表剪枝率，可能损害精度。</p>
+<p><strong>方法</strong>：用特征重要性（FI）指导剪枝率（FI-ITEP），对低重要特征关联的表分配更高剪枝比例；FI 信号计算成本极低。</p>
+<p><strong>关键数字</strong>：三个大规模推荐模型总内存减少 20–40%，精度不降或提升；同样的模型 GPU trainer 从 112 台减至 80 台、单卡吞吐更高，每次模型启动省 1,000+ GPU 小时；开源 DLRM（Criteo 1TB）上复现趋势。</p>
+<p><strong>为什么值得看</strong>：低成本特征重要性把 embedding 剪枝的内存收益转化为真实训练成本节省。</p>
+<p><a href="https://arxiv.org/abs/2611.25288">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.25288">阅读原文 ↗</a></p>
+</body>
+</html>
