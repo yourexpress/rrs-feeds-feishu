@@ -22,9 +22,11 @@
 <h1>KNN Implementation Details Can Dramatically Change Performance: An Example from Cover Trees</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Nearest neighbor search algorithms are widely used and have a long history, but we find that key implementation details are seldom reviewed in articles about them.</p>
-<blockquote><p>Nearest neighbor search algorithms are widely used and have a long history, but we find that key implementation details are seldom reviewed in articles about them. These details can materially impact performance, and thus change the conclusions one makes about a given algorithm's superiority. In this article, we highlight these impacts by reviewing the Cover Tree as an example, producing RustKNN, a unified Rust implementation of three construction variants of the Cover Tree with three query modes. Our analysis reveals: (1) the optimal query strategy depends on $k$ and on the dataset (single-tree search is fastest at $k{=}1$ on three of our four largest datasets, while dual-tree search is fastest at $k{\ge}5$ on the three largest), and choosing the wrong query mode can cost up to a $7.5\times$ factor in runtime; (2) the cover tree base parameter, set to 2 in theory and 1.3 in practice, is not a safe default for dual-tree search: 1.3 is optimal on only one of seven datasets, and on covtype it is $1.6\times$ slower than the optimum; (3) among five micro-optimizations, only early-exit distance computation has a consistent effect, and that effect grows with dimension (none at $d{=}32$, …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 最近邻搜索算法的文章很少审查实现细节，而这些细节可能显著改变性能结论。</p>
+<p><strong>方法：</strong> 以 Cover Tree 为例，产出 RustKNN——三种构造变体与三种查询模式的统一 Rust 实现，系统分析查询策略、基参数与微优化的影响。</p>
+<p><strong>关键数字：</strong> 选错查询模式最高代价 7.5× 运行时间；理论值 2、实践值 1.3 的基参数对双树搜索并非安全默认——1.3 仅在 7 个数据集中的 1 个最优，在 covtype 上比最优慢 1.6×；五类微优化中仅 early-exit 距离计算效果一致且随维度增强（d=32 时无效果）。</p>
+<p><strong>为什么值得看：</strong> 提醒算法比较需控制实现细节，避免结论失真。</p>
+<p><a href="https://arxiv.org/abs/2610.16940">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16940">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>GuidanceNFT: NFT-Based Reward Fine-Tuning of Guided Diffusion Models</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>DiffusionNFT (NFT) fine-tunes diffusion models toward task-specific rewards, but optimizing these rewards does not guarantee fidelity to the full prompt.</p>
-<blockquote><p>DiffusionNFT (NFT) fine-tunes diffusion models toward task-specific rewards, but optimizing these rewards does not guarantee fidelity to the full prompt. Although classifier-free guidance (CFG) strengthens prompt alignment, NFT is formulated as a CFG-free method, and applying CFG to the fine-tuned velocity field can reduce the optimized reward. This motivates optimizing rewards over the guided output distribution while seeking to retain its prompt alignment. However, applying standard NFT directly to guided samples can cause reward degradation or training collapse. We trace this failure to a mismatch between the reference velocity used in the NFT loss and the score of the guided sample distribution, which biases the improvement direction. We propose GuidanceNFT, which estimates the matching reference velocity through online flow matching on guided samples and uses it to correct both regression terms. With an exact reference, the corrected objective recovers NFT's intended update. In our experiments, the learned correction sustains reward improvement under both explicit and built-in guidance. On SD3.5-M, GuidanceNFT achieves higher optimized rewards than NFT with and without CFG acr…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> NFT 奖励微调扩散模型时，优化奖励不保证忠于完整提示；而把 CFG 应用到微调后的速度场会反过来降低优化奖励，如何兼顾？</p>
+<p><strong>方法：</strong> 提出 GuidanceNFT：在引导样本上通过在线 flow matching 估计匹配的参考速度，并用其修正两个回归项；标准 NFT 直接用于引导样本会导致奖励退化或训练崩溃，根源是参考速度与引导样本分布分数不匹配。</p>
+<p><strong>关键数字：</strong> 在 SD3.5-M 上，GuidanceNFT 相比带/不带 CFG 的 NFT 都获得更高优化奖励。</p>
+<p><strong>为什么值得看：</strong> 解决奖励微调与提示对齐冲突的实用方案。</p>
+<p><a href="https://arxiv.org/abs/2610.15856">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15856">阅读原文 ↗</a></p>
 </body>
 </html>

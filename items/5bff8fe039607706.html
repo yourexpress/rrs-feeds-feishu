@@ -22,9 +22,11 @@
 <h1>Improved Massively Parallel Shortest Path Computation</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>We present new algorithms for approximate shortest path computation in weighted undirected graphs within the Massively Parallel Computation (MPC) model.</p>
-<blockquote><p>We present new algorithms for approximate shortest path computation in weighted undirected graphs within the Massively Parallel Computation (MPC) model. Specifically, we construct an $a$-approximate Single-Source Shortest Path (SSSP) oracle: Given a query consisting of a source vertex $u \in V$, the oracle returns $a$-approximate distances $δ(u,v)$ for all $v \in V$. Fix an $n$-vertex weighted undirected graph. We consider two regimes of the MPC model: the near-linear regime, where each machine has $\tildeΘ(n)$ memory, and the heterogeneous regime, where all machines have $Θ(n^γ)$ memory for some constant $γ\in (0,1]$, except for a single machine with $\tildeΘ(n)$ memory. We develop randomised algorithms that construct $O(1)$-approximate SSSP oracles in $O(\log\log n)$ rounds in the near-linear regime and in $O(\log^2\log n)$ rounds in the heterogeneous regime. These oracles answer distance queries in $O(1)$ rounds. Our results improve upon the recent work of Dory and Matar (SPAA 2024) which, for the same total memory, requires $\left(\log\log n\right)^{2+O(1/γ)}$ rounds and applies only to unweighted graphs in the heterogeneous setting. We say that $\tilde N_k(u)$ is the approxima…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 大规模并行计算（MPC）模型下如何高效构建近似最短路径 oracle？</p>
+<p><strong>方法：</strong> 提出加权无向图的 a-近似单源最短路径（SSSP）oracle 随机化构造算法，覆盖近线性内存（每机 Θ̃(n)）与异构内存（一机 Θ̃(n)、其余 Θ(n^γ)）两种 MPC 设置；查询 O(1) 轮返回所有顶点近似距离。</p>
+<p><strong>关键数字：</strong> 近线性设置 O(log log n) 轮、异构设置 O(log² log n) 轮构造 O(1)-近似 oracle；改进 Dory 与 Matar（SPAA 2024）需 (log log n)^(2+O(1/γ)) 轮且仅适用于无权重图的结果。</p>
+<p><strong>为什么值得看：</strong> 同时提升两种主流 MPC 设置下的最短路径算法复杂度。</p>
+<p><a href="https://arxiv.org/abs/2610.16787">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16787">阅读原文 ↗</a></p>
 </body>
 </html>

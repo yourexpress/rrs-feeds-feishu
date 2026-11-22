@@ -22,9 +22,11 @@
 <h1>Harnessing VLM in Embodied RL: From Reward Regressor to Success Detector via Exploration-Augmented Key-Observation Gating</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>VLMs provide promising solutions to embodied reward design.</p>
-<blockquote><p>VLMs provide promising solutions to embodied reward design. Most current methods that train VLMs as reward regressors not only require extensive annotations but are also primarily designed for finetuning pretrained policies, and perform less well in the more challenging from-scratch RL setting. This issue stems from a fundamental mismatch: regressing precise rewards is misaligned with what VLMs naturally excel at. We posit that it is more aligned with VLMs' inherent multi-modal VQA capabilities for the models to function as success detectors, and propose VLM success reward via Exploration-Augmented Key-Observation Gating (VLMeg) to well harness VLM for embodied reward design. As the core of VLMeg, the proposed exploration-augmented key-observation gating first determines whether the current RL episode is judgment-worthy based on its similarity to a generated success trajectory. Then, the key observation with the lowest confusion from the judgment-worthy episode will be selected for VLM evaluation as episodic reward. This gating mechanism not only avoids redundant calls but also enables higher detection accuracy of VLM. Considering the sparsity of judgment-worthy episodes, the advan…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 用 VLM 做具身 RL 奖励回归器既需大量标注，又难以胜任从零开始的 RL 训练，根源在于回归精确奖励与 VLM 天然擅长的多模态 VQA 能力不匹配。</p>
+<p><strong>方法：</strong> 提出 VLMeg，让 VLM 充当成功检测器而非奖励回归器：先根据与生成成功轨迹的相似度判断当前 episode 是否值得评判，再从值得评判的 episode 中选出困惑度最低的关键观察交给 VLM 做情节奖励。</p>
+<p><strong>关键数字：</strong> 门控机制避免冗余调用并提升 VLM 检测精度。</p>
+<p><strong>为什么值得看：</strong> 把 VLM 奖励设计从回归范式转向更对齐其能力的检测范式。</p>
+<p><a href="https://arxiv.org/abs/2610.15401">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15401">阅读原文 ↗</a></p>
 </body>
 </html>

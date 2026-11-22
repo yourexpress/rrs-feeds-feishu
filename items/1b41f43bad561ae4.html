@@ -22,9 +22,11 @@
 <h1>Kwai Summary Attention V2 Technical Report</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Summary-token architectures such as Kwai Summary Attention (KSA) compress distant context into learnable Summary token per chunk, and hybrid variants interleave these layers with full attention to retain exact access to the original text.</p>
-<blockquote><p>Summary-token architectures such as Kwai Summary Attention (KSA) compress distant context into learnable Summary token per chunk, and hybrid variants interleave these layers with full attention to retain exact access to the original text. In such hybrid KSA-Full architecture, the interleaving inserted summary tokens are served as a streaming flow role across different layers. Although effective, however, it also introduce some bottlenecks: (1) the different layers summary compression chunk must be same, therefore hard to reach a flexible KV Cache compression, e.g., different layer set different summary compression chunk window. (2) in the full-attention layers, the summary token introduced additional computation cost, but such layer ignore them and still pay quadratic prefilling, therefore unfriendly to the computation side. Motivated by them, we developed the KSA V2, which not only achieves a more flexible KV cache memory compression but also reduces the computation cost in Full attention layer. Specifically, we found that the summary tokens can serve two roles: the KV memory and sparse indexer.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 混合 KSA-Full 架构中摘要 token 带来两个瓶颈：各层摘要压缩块大小必须一致、难以灵活压缩 KV cache；full attention 层忽略摘要 token 仍付出二次预填充计算成本。</p>
+<p><strong>方法：</strong> KSA V2 让摘要 token 承担双重角色——既是 KV 内存又是稀疏索引器，从而在不损失精度的前提下实现更灵活的 KV cache 压缩并降低 full attention 层计算开销。</p>
+<p><strong>关键数字：</strong> 实现更灵活的 KV 缓存内存压缩，同时减少 full attention 层计算成本。</p>
+<p><strong>为什么值得看：</strong> 快手摘要注意力架构的第二代技术报告，指向长上下文推理效率优化。</p>
+<p><a href="https://arxiv.org/abs/2610.18654">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.18654">阅读原文 ↗</a></p>
 </body>
 </html>

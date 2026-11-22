@@ -22,9 +22,11 @@
 <h1>Imperfect Is Perfect: Learned Column Prefilling for Branch-Price-and-Cut</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Column generation folklore warns that initial columns hurt: a warm start may bias the dual and slow the root of branch-price-and-cut.</p>
-<blockquote><p>Column generation folklore warns that initial columns hurt: a warm start may bias the dual and slow the root of branch-price-and-cut. We show the opposite once the columns are imperfect in the right way. Preloading the support of the optimal root LP, the best columns one could know in advance, fails to finish on half of our hardest instances; a pool of ordinary routes that need not belong to any optimal solution, held outside the master and priced at the current smoothed dual, speeds the root up. Because the columns need not be optimal, producing them becomes a learning task: a neural edge scorer guides a constructive generator that builds the pool in seconds. A second network predicts the initial center of Wentges smoothing from the instance file, and with it the direction of the smoothed pricing queries; the solver's own updates run unchanged. With prefill and center in place, exact pricing dominates root pricing time, so we rebuild bucket-graph labeling around its dominance test for the GPU and certify on the CPU. Inside RouteOpt, the state-of-the-art exact solver for capacitated vehicle routing, the pipeline reaches the same certified root bound in 13.2% of vanilla RouteOpt's r…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 列生成传统观点认为初始列有害（热启动会偏置对偶、拖慢根节点），是否成立？</p>
+<p><strong>方法：</strong> 论证"以正确方式不完美"的列反而有益：在 master 之外持有无需属于任何最优解的普通路径池，按当前平滑对偶定价；神经边打分器指导构造生成器秒级建池；另一网络从实例文件预测 Wentges 平滑初始中心，求解器自身更新不变。</p>
+<p><strong>关键数字：</strong> 在 CVRP 最先进精确求解器 RouteOpt 内，该流水线达到相同认证根界仅用 vanilla RouteOpt 运行时间的 13.2%。</p>
+<p><strong>为什么值得看：</strong> 颠覆列生成初始化直觉，并给出 GPU 加速的完整工程方案。</p>
+<p><a href="https://arxiv.org/abs/2610.21001">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.21001">阅读原文 ↗</a></p>
 </body>
 </html>

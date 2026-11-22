@@ -22,9 +22,11 @@
 <h1>Imperfect Verifiers, Exact Targets: Inference-Time Scaling for Continuous Generation</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Verifier-guided inference-time scaling uses additional computation to score intermediate states and steer generation toward better outputs.</p>
-<blockquote><p>Verifier-guided inference-time scaling uses additional computation to score intermediate states and steer generation toward better outputs. However, imperfect intermediate verifiers can distort sampling, and repeated refinement alone does not ensure recovery of the desired reward-tilted distribution. We introduce Continuous-State Verifier-Guided Backtracking (CS-VGB), an inference-time scaling method for sampling from reward-tilted distributions with continuous generative models through repeated denoising and renoising. With correctly paired denoising and renoising transitions, the stationary distribution of CS-VGB at the clean checkpoint equals the desired reward-tilted target, even when intermediate verifiers are inaccurate. Under stated regularity conditions, CS-VGB converges exponentially to the target despite verifier error, and the expected number of updates needed to reach a clean sample grows only linearly with the number of checkpoints. In analytically tractable settings, we empirically demonstrate that CS-VGB recovers the desired reward-tilted distribution despite verifier error, whereas the compared verifier-based sampling methods fail to recover the target under the sam…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 验证器引导的推理时缩放中，不完美的中间验证器会扭曲采样，反复精炼也不保证恢复到目标奖励倾斜分布，如何保证？</p>
+<p><strong>方法：</strong> 提出 Continuous-State Verifier-Guided Backtracking（CS-VGB）：对连续生成模型通过重复去噪与再噪化从奖励倾斜分布采样；只要去噪/再噪转换正确配对，干净检查点的平稳分布即等于目标分布。</p>
+<p><strong>关键数字：</strong> 在给定正则条件下指数收敛到目标（即使中间验证器不准确）；到达干净样本的期望更新次数随检查点数量线性增长；可解析场景中 CS-VGB 恢复目标分布而对比方法失败。</p>
+<p><strong>为什么值得看：</strong> 为推理时缩放提供带理论保证的采样方法。</p>
+<p><a href="https://arxiv.org/abs/2610.15281">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15281">阅读原文 ↗</a></p>
 </body>
 </html>
