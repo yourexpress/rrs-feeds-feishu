@@ -22,9 +22,11 @@
 <h1>Fast and Accurate: Improving Personalized LLM Performance by Semantic Concentration Inspired Workload Split between RAG and Fine-Tuning</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>With ever increasing personalized large language model (LLM) services, the next question to answer is how to improve the quality of services/users' experiences, which is indicated by personalized LLM generation accuracy/quality and inference latency.</p>
-<blockquote><p>With ever increasing personalized large language model (LLM) services, the next question to answer is how to improve the quality of services/users' experiences, which is indicated by personalized LLM generation accuracy/quality and inference latency. Although state-of-the-art designs, e.g., parameter-efficient fine-tuning (PEFT), retrieval-augmented generation (RAG) or Full PEFT+RAG, can help, they largely ignore the heterogeneous semantic concentrations of users' historical data and cannot fully unleash the potential of personal data for personalized LLM performance enhancement. In this paper, we propose PEFT Union RAG (PUR), a novel ``fast and accurate'' approach that exploits the semantic concentration of users' personal historical data to split workload between PEFT and RAG, aiming to improve personalized LLM performance in terms of better generation accuracy/quality and lower inference latency. Briefly, PUR partitions user's personal historical data and assigns semantic concentrated ``core'' information to PEFT for offline parametric fine-tuning, while retaining dispersed information for RAG. During the online LLM inference, PUR directly generates responses for ``core'' querie…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 个性化 LLM 服务如何同时提升生成质量与推理延迟？现有 PEFT、RAG 或两者叠加都忽略了用户历史数据的语义集中性。
+<strong>方法：</strong> 提出 PUR（PEFT Union RAG）：按语义集中度切分用户数据，集中"核心"信息交给 PEFT 离线微调，分散信息留给 RAG；在线推理时核心查询直接生成，零散外围查询才调用 RAG。
+<strong>关键数字：</strong> 相比最优基线方法，推理延迟降低 14.4%–46.6%，同时在多个任务上保持最佳生成质量。
+<strong>为什么值得看：</strong> 用数据本身的语义结构指导 PEFT/RAG 分工，兼顾准确率与延迟。
+<a href="https://arxiv.org/abs/2610.15921">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15921">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>FunDM: Cheap &amp; Label-Free Decision Models from Frozen Language Models</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Decision models such as Jev score candidate answers or actions.</p>
-<blockquote><p>Decision models such as Jev score candidate answers or actions. A small decision head trained label-free can recover about 99% of a frozen language model's multiple-choice accuracy while using only two-thirds of its transformer layers. It learns the full model's answer probabilities with KL divergence, without correct-answer labels for training. One backbone pass reads the question and all options together; the head returns probabilities for every option. We call this model FunDM (Fun Decision Model). Using 24 of Qwen3-8B's 36 layers and skipping the LM head, its +1T variant reaches 75.0% mean accuracy over eight benchmarks, versus 75.7% for the full model. On MMLU-Pro, both heads achieve 1.56 to 1.57 times batched vLLM throughput with about one-third lower peak GPU allocator memory. Both heads score higher than released Contrastive Language Models (CLM), fine-tuned CLM, and CLM-shaped heads trained from scratch on the eight multiple-choice benchmarks and coding-agent selection. Separately trained agent heads learn judge probabilities without pass/fail labels and select passing runs for 74.4 to 74.6 of 100 held-out tasks on average, versus 74 for the full-model judge and 52.0 for a…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 决策模型（如 Jev）为候选答案/动作打分；能否从冻结语言模型中廉价、免标签地获得？
+<strong>方法：</strong> FunDM：只取骨干 2/3 层、跳过 LM head，用小决策头以 KL 散度学习完整模型的答案概率，无需正确答案标签；一次骨干前向同时读入问题与全部选项。
+<strong>关键数字：</strong> 恢复冻结 LM 约 99% 的多选准确率；用 Qwen3-8B 的 24/36 层时 8 基准平均 75.0% vs 完整模型 75.7%；MMLU-Pro 上批量吞吐达 1.56–1.57×，峰值 GPU 内存低约 1/3；agent 头选出 74.4–74.6/100 个通过任务（完整 judge 74、CLM 形 52.0）。
+<strong>为什么值得看：</strong> 冻结大模型可回收近全部决策能力且大幅节省算力。
+<a href="https://arxiv.org/abs/2610.17175">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17175">阅读原文 ↗</a></p>
 </body>
 </html>

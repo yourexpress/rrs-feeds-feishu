@@ -22,9 +22,11 @@
 <h1>Formal-Verification-Guided Bayesian Optimization for Non-Intrusive Last-Mile Coverage Closure</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Last-mile functional coverage closure for modern chip designs remains costly because a mature UVM environment exposes many controls while direct hits on the remaining bins are sparse.</p>
-<blockquote><p>Last-mile functional coverage closure for modern chip designs remains costly because a mature UVM environment exposes many controls while direct hits on the remaining bins are sparse. We present a non-intrusive workflow that closes pre-defined bins in an existing, human-authored functional coverage model; it does not synthesize verification objectives from the design specification. The workflow first uses abstract-syntax-tree (AST) parsing and cone-of-influence (COI) tracing to map each residual target to existing testbench knobs. Under a matched 20-simulation budget, Bayesian optimization (BO) is compared with continued constrained-random verification (CRV) and random search over the same AST/COI-reduced space. Formal reachability then removes only targets supported by complete unreachability proofs, after which retained targets are grouped by formal difficulty and processed by group-specific BO under a second matched 20-simulation budget. Cleanup and grouping never add numerator bins; only simulator coverage artifacts do. On OpenTitan AES, first-pass reduced-space BO reaches 241/271 bins; formal cleanup removes two denominator bins; the integrated post-cleanup stage - difficulty …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 芯片设计最后一英里功能覆盖闭合成本高昂：成熟 UVM 环境控制面大而残余 bin 命中稀疏，且不能从设计规格合成验证目标。
+<strong>方法：</strong> 非侵入式工作流：AST 解析与 COI 追踪把残余目标映射到 testbench 旋钮；匹配 20-simulation 预算下对比 BO、继续 CRV 与随机搜索；形式可达性只移除有完整不可达证明的目标，其余按难度分组跑 BO。
+<strong>关键数字：</strong> OpenTitan AES 上首轮 BO 达 241/271 bin，集成阶段再添 20 命中，最终 raw 覆盖 96.31%（261/271）、有效覆盖 97.03%；Entropy Source 达 97.06%（2210/2277 raw）。
+<strong>为什么值得看：</strong> 不侵入既有验证环境，用诊断+搜索组合显著闭合残余覆盖。
+<a href="https://arxiv.org/abs/2610.17449">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17449">阅读原文 ↗</a></p>
 </body>
 </html>

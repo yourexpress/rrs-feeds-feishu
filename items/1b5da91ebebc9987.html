@@ -22,9 +22,11 @@
 <h1>Graph Metanetworks for Transformer Based Language Models</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Weight-space learning treats the weights of neural networks as data, processed by other models called metanetworks.</p>
-<blockquote><p>Weight-space learning treats the weights of neural networks as data, processed by other models called metanetworks. A key challenge is that different weights can realize the same function, related by a group of symmetries the metanetwork should respect. While symmetry-aware metanetworks for simple architectures such as MLPs are well developed, a comprehensive treatment of transformers, and in particular transformer-based language models, is still missing. Importantly, their weight space has a richer symmetry group: beyond neuron permutations, attention introduces continuous general-linear symmetries of the attention matrices and permutations of entire heads. Existing methods for transformer weights either capture only part of these symmetries or are restricted to a single, fixed architecture, and none accounts for language-model-specific components such as the token embeddings. Building on graph metanetworks, we propose a graph-based approach that is both symmetry-aware and applicable across depths and widths. We formalize a weight-space symmetry group of complete decoder-only language models and provide a graph construction that is invariant to it. We further introduce two new tra…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 权重空间学习（metanetwork）需尊重权重对称群；transformer 权重空间对称群更丰富（注意力矩阵的连续一般线性对称、整 head 置换、token embedding），现有方法只捕获部分或限单一架构。
+<strong>方法：</strong> 基于图 metanetwork 提出对称感知、跨深度与宽度适用的方法：形式化完整 decoder-only 语言模型的权重空间对称群，给出对其不变的图构造；引入两个 transformer 群体数据集与新任务。
+<strong>关键数字：</strong> 在训练语料预测、微调检测等新任务上显著优于现有基线。
+<strong>为什么值得看：</strong> 首次系统处理 transformer 语言模型权重空间对称性（含 token embedding）。
+<a href="https://arxiv.org/abs/2610.18471">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.18471">阅读原文 ↗</a></p>
 </body>
 </html>

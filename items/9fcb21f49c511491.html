@@ -22,9 +22,11 @@
 <h1>GeoNIRS: Geometry-Aware Pretraining for Heterogeneous fNIRS Representation Learning</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Functional near-infrared spectroscopy (fNIRS) provides portable and spatially localized measurements of cortical hemodynamics, but differences in channel count, probe layout, signal distribution, and task type hinder joint pretraining across datasets.</p>
-<blockquote><p>Functional near-infrared spectroscopy (fNIRS) provides portable and spatially localized measurements of cortical hemodynamics, but differences in channel count, probe layout, signal distribution, and task type hinder joint pretraining across datasets. We introduce GeoNIRS, a geometry-aware framework that uses source-detector locations as a shared spatial reference across heterogeneous probe layouts. GeoNIRS compresses variable-size channel sets into a fixed-size latent representation and employs bidirectional HbO/HbR cross-reconstruction with contiguous temporal masking. GeoNIRS-base is pretrained on eight heterogeneous datasets, while GeoNIRS-large scales to 22 datasets. Neither downstream data nor labels are used during pretraining, enabling evaluation under a strict cross-task setting. To our knowledge, GeoNIRS is the first fNIRS framework to explicitly model physical channel geometry during joint pretraining across heterogeneous channel configurations, and the first to provide complete source code and downloadable pretrained checkpoints. We evaluate GeoNIRS on eight held-out tasks spanning clinical and auditory assessment, pain and affective processing, semantic decoding, and m…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> fNIRS 数据因通道数、探头布局、信号分布与任务类型差异，难以跨数据集联合预训练。
+<strong>方法：</strong> 提出 GeoNIRS 几何感知框架：以源-探测器位置为跨异质布局的共享空间参考，把变长通道集压缩为定长潜表征，并用双向 HbO/HbR 交叉重构 + 连续时间掩码预训练。
+<strong>关键数字：</strong> base 在 8 个数据集、large 在 22 个数据集预训练，8 个 held-out 任务评估；预训练相比随机初始化使线性探测平均平衡准确率 +4.12 pp、全微调 +3.30 pp；首个提供完整源码与预训练检查点的 fNIRS 框架。
+<strong>为什么值得看：</strong> 首次显式建模物理通道几何的跨异质配置联合预训练，标签稀缺时收益更大。
+<a href="https://arxiv.org/abs/2610.17845">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17845">阅读原文 ↗</a></p>
 </body>
 </html>

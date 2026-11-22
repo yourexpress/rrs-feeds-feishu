@@ -22,9 +22,11 @@
 <h1>From Transfer Probes to Expert Grouping: Evidence from LoRA Post-Training</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>A platform that post-trains one base model for many business lines often has more lines than experts it can maintain, so lines must share experts, yet lines seldom come with a taxonomy saying which should share.</p>
-<blockquote><p>A platform that post-trains one base model for many business lines often has more lines than experts it can maintain, so lines must share experts, yet lines seldom come with a taxonomy saying which should share. We ask whether transfer probes (train on one source, measure paired changes on all sources) can discover a grouping when the standard one is unknown. To test probes against a reference, we use seven public sources that do have a label tree (five mathematics subfields and two kinds of programming, standing in for business lines) and treat the tree's grouping as a label reference that the evaluator holds and the method does not. With four LoRA experts under fixed per-source exposure and per-expert budgets, we compare a purely probe-derived grouping and an uninformed uniform default (whose tied routing serves every line from one expert) against this reference. Trained once for one interval from a shared warm-up state and routed by a rule fixed by each allocation, neither reached the prespecified practical gain of 2 percentage points, and both had lower overall utility than the reference ($-2.43$ and $-2.54$ pp; 95\% intervals below zero). In a post hoc comparison, the probe-de…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题：</strong> 一个基础模型服务多条业务线、专家数不足需共享，但业务线缺乏现成分组 taxonomy；迁移探针（训练一个源、测所有源的配对变化）能否发现正确分组？
+<strong>方法：</strong> 用 7 个带标签树的公开源（5 个数学子领域 + 2 类编程）作参考，在 4 个 LoRA 专家、固定预算下对比纯探针推导分组与无信息均匀默认。
+<strong>关键数字：</strong> 两者均未达到预设的 2 个百分点实用增益，相对参考整体效用为 -2.43 与 -2.54 pp（95% 区间低于零）；事后比较探针分组与均匀默认无差异（+0.11 pp，[-1.25,+1.54]）。
+<strong>为什么值得看：</strong> 严谨的负面结果：初始态单源探针推导的分组在有限预算 LoRA 后训练中未兑现预测优势。
+<a href="https://arxiv.org/abs/2610.14437">原文链接</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14437">阅读原文 ↗</a></p>
 </body>
 </html>
