@@ -22,9 +22,11 @@
 <h1>Learning to Sync at the Edge: Client-Side Adaptive Synchronization for Federated Learning</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>The scalability and performance of edge federated learning are fundamentally constrained by synchronization bottlenecks.</p>
-<blockquote><p>The scalability and performance of edge federated learning are fundamentally constrained by synchronization bottlenecks. Clients operate under heterogeneous compute, time-varying communication conditions, and, in some settings, privacy constraints, yet synchronization is often still handled with fixed schedules. However, synchronization decisions are often made outside the client, even though the client directly observes local progress, resource state, and communication conditions. We present a client-side reinforcement learning synchronization framework in which each client decides during training whether to upload, download, synchronize bidirectionally, or defer communication. The framework places a lightweight scheduler alongside the local model and formulates synchronization as a resource-aware control problem driven by local learning and system state. We study this framework on two representative edge workloads, spatiotemporal traffic forecasting and image classification. Across both settings, adaptive client-side synchronization improves the accuracy-cost trade-off, reducing system cost in traffic forecasting while maintaining competitive cost and improving final accuracy in …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 边缘联邦学习的可扩展性与性能受同步瓶颈制约：客户端计算异构、通信条件时变，还有隐私约束，但同步常按固定调度、且决策在客户端之外做出，尽管客户端直接观察本地进度、资源与通信状态。</p>
+<p><strong>方法</strong> 提出客户端侧强化学习同步框架：训练中每个客户端自行决定上传、下载、双向同步或延迟通信，在本地模型旁放一个轻量调度器，把同步建模为资源感知的控制问题，由本地学习与系统状态驱动；在时空流量预测与图像分类两个边缘负载上验证，并考虑隐私受限设定。</p>
+<p><strong>关键数字</strong> 摘要未给出具体量化数字；自适应客户端同步改善了准确率-成本权衡，流量预测中降低系统成本，图像分类中保持成本竞争力并提升最终准确率。</p>
+<p><strong>为什么值得看</strong> 把同步决策从服务器端搬到客户端、用 RL 自适应控制，视角新颖，对边缘 FL 系统设计有实用价值。</p>
+<p><a href="https://arxiv.org/abs/2610.14268">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14268">阅读原文 ↗</a></p>
 </body>
 </html>

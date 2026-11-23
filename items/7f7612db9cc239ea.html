@@ -22,9 +22,11 @@
 <h1>Learning to Extrapolate in Depth with Looped Transformers</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Looped transformers reuse a single block across iterations, raising a natural question: how far can a block trained at one depth be safely extrapolated to greater depths?</p>
-<blockquote><p>Looped transformers reuse a single block across iterations, raising a natural question: how far can a block trained at one depth be safely extrapolated to greater depths? We study this question for all-pairs graph connectivity, where harder graphs require longer-range information propagation. We show that under exchangeability and symmetric positive initialization, population training at depth K converges to an update rule governed by a single effective parameter that balances graph propagation against fitting structure unresolved at training depth. This trade-off creates a finite extrapolation window: too few test-time loops provide insufficient propagation, while too many eventually create false connections. We derive explicit endpoints for this window and bound the graph hardness solvable beyond training as a function of training depth and hardness. In particular, a test depth chosen solely from the training distribution can guarantee recovery on substantially harder graphs, with a certified depth gain that grows exponentially as training depth outpaces training hardness. Experiments validate the predicted windows and show how compute budget and initialization affect the optimal…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 循环 transformer 跨迭代复用同一模块：在某一深度训练的模块，能安全外推到多大深度？论文以全对图连通性为研究对象（更难图需更长程信息传播）。</p>
+<p><strong>方法</strong> 证明在可交换性与对称正初始化下，深度 K 的种群训练收敛到由单一有效参数控制的更新规则，该参数权衡图传播与训练深度未解析结构的拟合；此权衡产生有限外推窗口——测试时循环太少传播不足、太多则产生虚假连接；推导窗口端点，并以训练深度与难度为函数界定可解图的难度上界。</p>
+<p><strong>关键数字</strong> 仅从训练分布选定的测试深度即可保证在显著更难图上恢复，且认证深度增益随「训练深度超出训练难度」指数增长。</p>
+<p><strong>为什么值得看</strong> 为「循环/深度外推到底能走多远」给出严格理论刻画，对深度可扩展 transformer 架构设计有指导意义。</p>
+<p><a href="https://arxiv.org/abs/2610.14456">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14456">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>MODAIC: Coordinated Asynchrony for Decentralized Multimodal Learning</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Multimodal decentralized learning enables collaboration across heterogeneous edge devices without sharing raw data, but differing modality sets create coupled computation and communication bottlenecks.</p>
-<blockquote><p>Multimodal decentralized learning enables collaboration across heterogeneous edge devices without sharing raw data, but differing modality sets create coupled computation and communication bottlenecks. Multimodal agents support cross-modal alignment while training more model components and sharing bandwidth across multiple modality overlays. Under bandwidth limits, these agents can become hot spots: transfers miss aggregation windows, and their updates become stale or underrepresented, degrading worst-agent accuracy. Asynchrony removes global blocking but does not by itself coordinate local cross-modal interaction with timely peer-update exchange. We present MODAIC (Modality-Decoupled Asynchrony with Interleaved Coordination), a wait-free system that coordinates local modality progress, peer-to-peer update delivery, and aggregation under heterogeneous compute and bandwidth. Hierarchical asynchrony lets modalities progress independently while enforcing reciprocal feature exchange; load-aware update fetching overlaps training with communication, limits concurrent serving load, and reuses late arrivals; and consensus-aware peer selection uses lightweight metadata to account for update…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 多模态去中心化学习让异构边缘设备在不共享原始数据下协作，但模态集不同造成耦合的计算与通信瓶颈；带宽受限下多模态 agent 成为热点，更新错过聚合窗口、变陈旧或被低估，损害最差 agent 准确率。异步消除全局阻塞却不协调跨模态交互与及时更新交换。</p>
+<p><strong>方法</strong> 提出 MODAIC（Modality-Decoupled Asynchrony with Interleaved Coordination）：无等待系统，协调局部模态进度、点对点更新投递与异构计算带宽下的聚合——层次化异步让模态独立推进同时强制互惠特征交换；负载感知更新获取重叠训练与通信、限制并发服务负载、复用迟到更新；共识感知对等选择用轻量元数据考虑更新可用性、参与度与损失相似度。</p>
+<p><strong>关键数字</strong> AVE 上 200 Mbps/agent 时 1000 秒内多模态最差 agent 准确率比最强基线提升 11.0 个百分点；云测试床 time-to-accuracy 最多降低 30%。</p>
+<p><strong>为什么值得看</strong> 系统化解决多模态联邦/去中心化学习的同步瓶颈，实测增益显著，对边缘多模态协作训练落地很有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.16987">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16987">阅读原文 ↗</a></p>
 </body>
 </html>

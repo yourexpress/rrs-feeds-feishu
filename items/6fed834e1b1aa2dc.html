@@ -22,9 +22,11 @@
 <h1>Learning Deployable Causal Action Geometry under Temporal Non-Stationarity</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Learning a response law for continuous decisions from observational time series is central to many real-world decision systems, yet temporal non-stationarity poses a fundamental challenge: as outcomes drift over time, naively pooled models can conflate action effects with shifting baselines and even</p>
-<blockquote><p>Learning a response law for continuous decisions from observational time series is central to many real-world decision systems, yet temporal non-stationarity poses a fundamental challenge: as outcomes drift over time, naively pooled models can conflate action effects with shifting baselines and even reverse action rankings. Even when the one-step response is identifiable, unrestricted cross-time generalization remains fundamentally ill-posed. We therefore seek the part of the response that remains stable for decisions even when outcome levels do not. We propose deployable causal action geometry: the action-response shape that remains after anchoring away action-independent level shifts on a selected link scale and profiling out positive amplitude variation. Building on this target, we develop a two-stage orthogonal estimator that first obtains cross-fitted pilot estimates of anchored responses and then performs honest profiled selection over link, representation, and shape classes. The resulting estimator admits oracle guarantees for the restricted target and, under approximate persistence, produces decision rules that remain near optimal in future periods. Experiments on synthetic…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 从观测时序学习连续决策的响应法则面临时间非平稳性：结果随时间漂移时，朴素合并模型会混淆动作效应与基线漂移，甚至反转动作排序；一步响应可识别时，无约束的跨时间泛化仍本质不适定。目标是找到「结果水平变化时依然稳定」的那部分响应。</p>
+<p><strong>方法</strong> 提出可部署因果动作几何（deployable causal action geometry）：在选定链接尺度上锚定掉与动作无关的水平漂移、剖除正振幅变化后保留的动作-响应形状；构建两阶段正交估计器——先交叉拟合得到锚定响应的 pilot 估计，再对链接、表示与形状类做诚实剖除选择，并给出受限目标的 oracle 保证。</p>
+<p><strong>关键数字</strong> 合成数据与 Dominick's 数据集验证目标与迁移行为；淘宝随机 A/B 实验中部署系统 GMV 提升 1.16%、购买数提升 1.70%。</p>
+<p><strong>为什么值得看</strong> 把「时变环境下的稳定因果效应」做成可部署系统并给出真实线上增益，对推荐、定价等连续决策场景很有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.16644">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16644">阅读原文 ↗</a></p>
 </body>
 </html>

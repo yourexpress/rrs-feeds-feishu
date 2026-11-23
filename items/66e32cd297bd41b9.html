@@ -22,9 +22,11 @@
 <h1>MAGNET: Manifold-Aware Graph Diffusion Network for Connectome Generation</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Functional brain connectome represents neural connectivity as a matrix of pairwise interactions between brain regions.</p>
-<blockquote><p>Functional brain connectome represents neural connectivity as a matrix of pairwise interactions between brain regions. Generation of functional connectomes is not only a question of validity; rather, having satisfied the constraints on the correlation matrix, the next step is to recover the class-conditional geometry buried under coarse labels. We propose MAGNET, a Manifold-Aware Graph Diffusion Network which uses a normalized-Cholesky representation of the manifold of correlation matrices that guarantees validity. MAGNET lifts noisy latent states into ROI-level region tokens and performs denoising with a relational inductive bias over brain atlas regions. To deal with structural problems induced by coarse labels, MAGNET employs class-anchored conditioning, amortized structural bridge, and relevance-preserving corruption. Across ABIDE, ADNI, and OASIS-3, MAGNET consistently achieves favorable results compared to previous manifold-aware approaches, demonstrating improvements of 7-21% in class-conditional fidelity ($α,β$-F1) across three cohorts and better sampling efficiency. Moreover, while training only with strict binary labels, MAGNET is capable of maintaining clinical heterogen…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 功能性脑连接组把神经连接表示为脑区间两两交互矩阵。生成连接组不仅要求有效性（满足相关矩阵约束），还要从粗标签下恢复类条件几何结构。</p>
+<p><strong>方法</strong> 提出 MAGNET（Manifold-Aware Graph Diffusion Network）：用相关矩阵流形的归一化 Cholesky 表示保证有效性；把噪声潜在状态提升为 ROI 级区域 token，在脑图谱区域上以关系归纳偏置去噪；针对粗标签的结构问题采用类锚定条件、摊销结构桥与保相关性破坏。</p>
+<p><strong>关键数字</strong> 在 ABIDE、ADNI、OASIS-3 上类条件保真度（α,β-F1）比先前流形感知方法提升 7–21%；仅用严格二值标签训练，零样本下子类协方差对齐（λ-MSE）提升超 30%。</p>
+<p><strong>为什么值得看</strong> 同时处理几何有效性、类条件生成与临床异质性保留，且代码开源，对脑影像分析与流形感知生成模型都有价值。</p>
+<p><a href="https://arxiv.org/abs/2610.17014">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17014">阅读原文 ↗</a></p>
 </body>
 </html>

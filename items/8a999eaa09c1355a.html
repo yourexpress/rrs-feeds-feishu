@@ -22,9 +22,11 @@
 <h1>LLM Evaluation is a Forecasting Problem</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Standard procedure in machine learning is to randomly split train and test data, emulating IID draws from one underlying data distribution.</p>
-<blockquote><p>Standard procedure in machine learning is to randomly split train and test data, emulating IID draws from one underlying data distribution. In practice, models are trained on past data and deployed in the future, which may come from distinct distributions. In this paper, we find that web text is indeed highly non-stationary, as text distributions shift over time. We further observe that model performance changes continuously over time across diverse benchmarks. Consequently, future model performance is better predicted by measurements made on recent evaluation data, and is best predicted by time series forecasters applied to historic performance rather than by historic performance itself. Choosing which model to deploy based on forecasted accuracy enables more reliable selection of performant models, thus improving downstream accuracy in the regime practitioners care about: deployment. Taken together, our experiments suggest that time should be treated as a fundamental variable in LLM evaluation. We release our code and data.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 标准 ML 流程随机划分训练/测试集、假设独立同分布，但模型实际在历史数据上训练、在未来数据上部署，分布会漂移。论文探讨 LLM 评估是否应把时间作为基本变量：网络文本是否非平稳、模型性能如何随时间变化、以及如何更可靠地选择部署模型。</p>
+<p><strong>方法</strong> 作者发现网络文本高度非平稳、文本分布随时间迁移，模型在多个基准上的性能也随时间连续变化；据此提出用近期评测数据上的时序预测器（time series forecaster）预测未来性能，而非直接使用历史性能本身，并据此选择部署模型。</p>
+<p><strong>关键数字</strong> 摘要未给出具体量化指标；核心结论是近期评测数据比历史性能更能预测未来表现，时序预测优于直接采用历史性能。</p>
+<p><strong>为什么值得看</strong> 直击「训练分布 vs 部署分布」这一根本错配，把评测从静态打分类推向动态预测类，对模型选型、基准设计和部署决策都有方法论价值。</p>
+<p><a href="https://arxiv.org/abs/2610.17018">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17018">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>MERIT: Scaling KG Foundation Models with Relation Transformers</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Knowledge graph (KG) foundation models (KGFMs) predict links on unseen graphs zero-shot.</p>
-<blockquote><p>Knowledge graph (KG) foundation models (KGFMs) predict links on unseen graphs zero-shot. KGFMs have been pioneered by ULTRA which builds a relation graph from co-occurrences that match motif templates, and passes messages over it to obtain relation representations. More recent KGFMs such as MOTIF and TRIX increase the size of this relation graph, and FLOCK replaces message-passing with probabilistic random-walk ensembles. However, larger relation graphs mean more messages, and more walks mean more sequences to encode, so they improve performance at higher training and inference cost. This cost hinders their use in more complex reasoning tasks, such as complex query answering. To reverse this trend, we design MERIT, the first KGFM with a transformer relation encoder: every relation name attends to every other, and the motifs enter as a soft prior rather than as edges. Over 56 benchmarks, MERIT matches the zero-shot MRR of SoTA KGFMs while being 6x faster than TRIX and over 100x faster than FLOCK at inference. Fine-tuned for complex query answering like UltraQuery, MERITQuery improves over it at matched cost.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 知识图谱基础模型（KGFM）零样本预测未见图上的链接，但 ULTRA 系方法的关系图随规模增大而消息更多、随机游走系方法序列更多，性能提升伴随训练与推理成本上升，阻碍复杂查询回答等任务使用。</p>
+<p><strong>方法</strong> 设计 MERIT，首个带 transformer 关系编码器的 KGFM：每个关系名相互注意，motif 作为软先验而非边；面向复杂查询回答微调出 MERITQuery。</p>
+<p><strong>关键数字</strong> 在 56 个基准上与 SOTA KGFM 的零样本 MRR 持平，推理比 TRIX 快 6 倍、比 FLOCK 快 100 倍以上；MERITQuery 在匹配成本下优于 UltraQuery。</p>
+<p><strong>为什么值得看</strong> 用 transformer 编码器一举扭转 KGFM「更大更贵」的趋势，显著降本同时保持精度，对知识图谱与复杂推理方向很实用。</p>
+<p><a href="https://arxiv.org/abs/2610.15638">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15638">阅读原文 ↗</a></p>
 </body>
 </html>

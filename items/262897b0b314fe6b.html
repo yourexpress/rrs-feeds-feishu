@@ -22,9 +22,11 @@
 <h1>Learning based Scalable Multi-Objective Scheduling of Workflows across UD-IaaS-FaaS Systems</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Workflow scheduling in user device-centric edge-cloud computing has emerged as a challenging problem due to the need to jointly optimize execution performance, energy consumption, and monetary cost.</p>
-<blockquote><p>Workflow scheduling in user device-centric edge-cloud computing has emerged as a challenging problem due to the need to jointly optimize execution performance, energy consumption, and monetary cost. Modern workflows consist of heterogeneous tasks, where compute-intensive components are well-suited for Infrastructure-as-a-Service (IaaS) resources, while fine-grained, event-driven tasks are more efficiently executed using the Function-as-a-Service (FaaS) model. We formulate this scheduling problem for application workflows over a hybrid User Device (UD)-IaaS-FaaS computing continuum as a multi-objective Mixed-Integer Linear Program (MILP). The formulation models the workflow execution mechanism by incorporating cumulative capacity constraints for IaaS resources and elastic resource provisioning for FaaS. To overcome the intractability of MILP, we propose a learning-based framework that combines graph neural networks, surrogate performance modeling, and a multi-sample REINFORCE approach. The proposed approach is workflow-aware, leveraging task pairing to improve data locality and structured task placement decisions. Agent training is organized into three stages: small-scale learning o…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 用户设备为中心的边缘云工作流调度需联合优化执行性能、能耗与货币成本；现代工作流任务异构，计算密集部分适合 IaaS，细粒度事件驱动任务适合 FaaS。</p>
+<p><strong>方法</strong> 将混合 UD-IaaS-FaaS 计算连续体上的工作流调度建模为多目标混合整数线性规划（MILP），含 IaaS 累计容量约束与 FaaS 弹性供给；为克服 MILP 难解性，提出基于图神经网络、代理性能建模与多样本 REINFORCE 的学习框架，利用任务配对提升数据局部性，三阶段训练（小规模 UD-IaaS 权衡、中间局部性共置、大规模并行与聚合瓶颈）。</p>
+<p><strong>关键数字</strong> 相比遗传算法与贪心调度，makespan 降低 10–17.5%、能耗降低 3–9%、成本降低 4–10%，同时保持在 MILP 最优的 3.5–5.6% 以内；真实 Pegasus Montage 工作流测试床验证。</p>
+<p><strong>为什么值得看</strong> 把混合 IaaS-FaaS 调度做成可学习方案且给出多目标权衡数据，对边缘计算与云资源编排方向很实用。</p>
+<p><a href="https://arxiv.org/abs/2610.15886">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15886">阅读原文 ↗</a></p>
 </body>
 </html>

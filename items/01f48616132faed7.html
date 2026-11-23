@@ -22,9 +22,11 @@
 <h1>LLM-to-Flow Distillation: Teaching Natural Language Goals to Scientific Generators</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Generative discovery in science requires coupling high-level scientific reasoning with the ability to generate samples respecting the structure of a design space.</p>
-<blockquote><p>Generative discovery in science requires coupling high-level scientific reasoning with the ability to generate samples respecting the structure of a design space. Yet these capabilities remain largely separated: foundation LLMs encode broad chemical and biological knowledge, while domain-specific flow- and diffusion-based generators capture the priors needed to produce valid sequences and geometries. We study how to align such scientific generators to high-level natural-language discovery goals without requiring an explicit proxy reward, which is often unavailable or poorly captured by learned predictors in experimental sciences. We introduce LLM-to-Flow Distillation (LFD), where a frozen LLM acts as an adaptive teacher for a domain-specific generator. Given a goal such as 'generate peptides with promising anticancer activity', the teacher constructs a curriculum of intermediate sub-goals aware of the flow's current capabilities, and progressively directs them toward the original discovery goal. At each round, the LLM judges sampled candidates under the current objective. These judgments induce preferences that are iteratively distilled into the generator through DPO. This procedur…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 科学生成式发现需要把高层科学推理与「尊重设计空间结构的样本生成」耦合，但两者长期分离：基础 LLM 编码化学/生物知识，领域专用 flow/diffusion 生成器掌握生成合法序列与几何的先验，且实验科学中常缺乏可用的代理奖励。</p>
+<p><strong>方法</strong> 提出 LLM-to-Flow Distillation（LFD）：冻结 LLM 作为领域生成器的自适应教师，针对「生成有抗癌活性的肽」等自然语言目标构建子目标课程，按 flow 当前能力渐进引导；每轮 LLM 评判采样候选，判断偏好通过 DPO 迭代蒸馏进生成器，提供密集学习信号，即使初始模型对目标设计概率极低也能适应分布外区域。</p>
+<p><strong>关键数字</strong> 摘要未给出具体量化数字；实验覆盖治疗性肽与小分子结构设计两类任务。</p>
+<p><strong>为什么值得看</strong> 用自然语言目标直接控制科学生成器、无需显式奖励，是生成模型可控性研究的新范式，对药物设计、材料设计等方向有参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.17246">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17246">阅读原文 ↗</a></p>
 </body>
 </html>

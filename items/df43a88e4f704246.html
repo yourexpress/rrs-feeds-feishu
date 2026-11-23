@@ -22,9 +22,11 @@
 <h1>Learning Incompressible 3D Flows from Sparse Samples: A Set Transformer Approach to Divergence-Free Kernel Fitting</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Recovering divergence-free velocity fields from sparse and corrupted observations requires reconciling physical consistency, expressive representations, and robustness to missing data.</p>
-<blockquote><p>Recovering divergence-free velocity fields from sparse and corrupted observations requires reconciling physical consistency, expressive representations, and robustness to missing data. We introduce DFK-Former, a set-to-field transformer that reconstructs divergence-free velocity fields from sparse, noisy, and irregularly sampled 3D observations. The model is inherently invariant to the number and ordering of input samples and predicts the parameters of a divergence-free kernel representation, producing continuous, mesh-free velocity fields that satisfy incompressibility exactly by construction rather than approximately through soft constraints or projection operators. Unlike existing divergence-free kernel approaches, which estimate kernel coefficients via a separate optimization for each field, DFK-Former predicts these coefficients directly in a single forward pass. This eliminates costly iterative fitting while providing a learned prior that enables accurate reconstruction even when observations are insufficient to uniquely determine the field. To enhance representational power, we introduce adaptive and anisotropic divergence-free kernels that preserve exact incompressibility g…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 从稀疏且受损的观测重建无散度速度场，需兼顾物理一致性、表达力与对缺失数据的鲁棒性；现有无散度核方法需为每个场单独优化核系数，迭代拟合昂贵。</p>
+<p><strong>方法</strong> 提出 DFK-Former：集合到场的 transformer，从稀疏、噪声、不规则采样的 3D 观测直接预测无散度核表示参数，单次前向得到连续、无网格、构造上精确满足不可压缩性的速度场；引入自适应各向异性无散度核增强表达力，并迁移到真实 DNS 湍流数据验证。</p>
+<p><strong>关键数字</strong> 相比逐场无散度核优化，端点误差最多降低 4.6 倍；单场重建从 9.8 秒降至 7.5 毫秒，提速三个数量级以上。</p>
+<p><strong>为什么值得看</strong> 用前馈预测替代逐场迭代优化，兼顾物理约束与效率，对流体模拟、稀疏观测重建方向有实际参考价值。</p>
+<p><a href="https://arxiv.org/abs/2610.16645">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16645">阅读原文 ↗</a></p>
 </body>
 </html>

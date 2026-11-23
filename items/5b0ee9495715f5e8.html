@@ -22,9 +22,11 @@
 <h1>LLM Value Functions for Credit Assignment in Agentic RL</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Reinforcement learning (RL) for large language model (LLM) agents remains challenging in long-horizon tasks with sparse outcome rewards, where assigning credit to individual actions is difficult.</p>
-<blockquote><p>Reinforcement learning (RL) for large language model (LLM) agents remains challenging in long-horizon tasks with sparse outcome rewards, where assigning credit to individual actions is difficult. Methods such as GRPO assign the same trajectory-level advantage to all actions, while critic-based methods require learning an additional value function that can be costly and unstable. We introduce LLM Value Function RL (LVRL), which uses the pretrained knowledge and in-context learning ability of an LLM to estimate policy-aware state values without finetuning a separate critic. LVRL conditions the value model on group context and calibrates its predictions using known values at the initial and terminal states, enabling step-level credit assignment from estimated value differences. We further extend this idea to learning from an expert policy through on-policy distillation (OPD), introducing LLM Value Function OPD (LVOPD), which focuses teacher supervision on actions associated with decreases in estimated value. We evaluate our approach across diverse agentic benchmarks: AppWorld, BabyAI, and SWE-bench Verified. Across policy scales (4B to 32B), LVRL consistently and substantially outperf…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM agent 在长 horizon、稀疏结果奖励的强化学习任务中难以给单个动作分配信用：GRPO 给同一轨迹所有动作相同的优势，critic 类方法又要额外学习可能昂贵且不稳定的价值函数。</p>
+<p><strong>方法</strong> 提出 LLM Value Function RL（LVRL）：利用预训练 LLM 的上下文学习能力估计策略感知的状态价值，无需微调独立 critic；价值模型以组上下文为条件，并用初始/终止状态已知值校准预测，通过估计价值差实现 step 级信用分配。进一步扩展出 on-policy 蒸馏变体 LVOPD，聚焦教师监督到估计价值下降的动作。</p>
+<p><strong>关键数字</strong> 在 AppWorld 和 SWE-bench Verified 上比 GRPO 绝对提升最高 13.6 和 8.6 个百分点；BabyAI 上从完全失败提升到 75.0% 成功率；策略规模 4B 到 32B 均一致优于 GRPO 与 PPO。</p>
+<p><strong>为什么值得看</strong> 不训 critic 的价值函数方案为 agentic RL 的信用分配提供了轻量新思路，跨三个基准的稳定增益说明其通用性，对做 LLM agent 训练的人很相关。</p>
+<p><a href="https://arxiv.org/abs/2610.15840">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15840">阅读原文 ↗</a></p>
 </body>
 </html>

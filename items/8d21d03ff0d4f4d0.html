@@ -22,9 +22,11 @@
 <h1>Learnable Low-Rank Polynomial Sketch for Effective Linear Attention</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Softmax attention in Transformers suffers from quadratic complexity in sequence length, making it impractical for long-context applications.</p>
-<blockquote><p>Softmax attention in Transformers suffers from quadratic complexity in sequence length, making it impractical for long-context applications. Linear attention alleviates this issue by replacing the exponential kernel with alternative functions that enable linear-time computation. Among existing linear attention approaches, recent studies have shown that polynomial kernels are particularly effective, as they exhibit sparse and spiky behavior similar to softmax attention, which emphasizes large dot products while suppressing irrelevant interactions. However, the exact computation of high-degree polynomial kernels is infeasible for high-dimensional representations. As a result, prior work relies on approximate polynomial kernels. This introduces a non-negligible approximation error. In this paper, we show that, from the perspective of polynomial kernel approximation, existing linear attention methods are still suboptimal. We propose \textbf{L}earnable \textbf{Lo}w-Rank \textbf{P}olynomial \textbf{S}ketch (LLoPS), a principled and flexible framework for approximating polynomial kernels with linear attention. Our method learns a low-rank polynomial sketch that provably achieves a strictl…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Softmax 注意力随序列长度呈二次复杂度，线性注意力用替代核函数实现线性时间计算；多项式核因表现出接近 softmax 的稀疏尖锐行为而有效，但高维表示下精确计算高阶多项式核不可行，现有近似方案引入不可忽略的近似误差。</p>
+<p><strong>方法</strong> 提出 Learnable Low-Rank Polynomial Sketch（LLoPS）：可学习低秩多项式 sketch 框架，证明其近似误差严格小于现有方法；在广泛基准上与多种线性注意力基线对比。</p>
+<p><strong>关键数字</strong> 摘要未给出具体量化数字；实验表明 LLoPS 在大量基准上取得最高性能。</p>
+<p><strong>为什么值得看</strong> 长上下文场景下线性注意力的核心痛点就是核近似质量，LLoPS 给出原则性框架与严格误差保证，对做高效注意力/长序列建模的人值得关注。</p>
+<p><a href="https://arxiv.org/abs/2610.14219">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14219">阅读原文 ↗</a></p>
 </body>
 </html>

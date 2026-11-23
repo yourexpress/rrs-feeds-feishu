@@ -22,9 +22,11 @@
 <h1>Long-Context Drafting Does Not Require Long-Context Drafters</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Speculative decoding pairs a cheap drafter with parallel verification against the target.</p>
-<blockquote><p>Speculative decoding pairs a cheap drafter with parallel verification against the target. At ultra-long context it stops paying, because a drafter that attends over the full prefix inherits the target's context-dependent cost, so the speedup it was meant to provide first erodes and then reverses. The standard response is to build a long-context drafter, by training or fine-tuning one, or by using a multi-token-prediction head shipped inside the target checkpoint. We argue this is unnecessary, because the drafters in use are target-conditioned, reading hidden states the target computed over the entire prefix, so distant context already reaches them without their own attention, and verification corrects what they miss. We therefore freeze released short-context drafters and run them far past their training length under two inference-time mechanisms, one bounding the attention cache they see, which fixes their cost, and one re-basing their rotary position indices into the trained range. No weight is touched and the only tunable saturates early, so one vLLM-side configuration spans 4k to two million tokens, costing at most 0.16x of speedup at short length. We prove when a common index …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 推测解码用廉价 drafter 并行验证加速，但超长上下文下 drafter 若注意全前缀会继承目标模型的上下文成本，提速先侵蚀后反转；标准回应是训练长上下文 drafter。论文主张这没必要。</p>
+<p><strong>方法</strong> 现有 drafter 是目标条件化的——读取目标在整个前缀上算出的隐藏状态，远距上下文无需自身注意力即可到达，验证又纠正遗漏；因此冻结已发布短上下文 drafter，让其远超训练长度运行：一个机制限制其注意力缓存（固定成本），一个把旋转位置索引重基到训练范围内；权重不动，单个 vLLM 侧配置覆盖 4k 到两百万 token。</p>
+<p><strong>关键数字</strong> 短长度下成本至多 0.16 倍加速；冻结 drafter 在短上下文的加速可保持到两百万 token，跨三对目标-drafter 与五个语料验证。</p>
+<p><strong>为什么值得看</strong> 挑战「长上下文必须配长上下文 drafter」的常识，给出理论证明与大规模实证，对推理优化与长上下文部署很实用。</p>
+<p><a href="https://arxiv.org/abs/2610.20865">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.20865">阅读原文 ↗</a></p>
 </body>
 </html>

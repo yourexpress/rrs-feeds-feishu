@@ -22,9 +22,11 @@
 <h1>LoOPSD: On-Policy Self-Distillation with Looped Teachers</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>On-policy self-distillation improves a model using guidance from the model itself, but it still requires a teacher that provides more useful predictions than the student.</p>
-<blockquote><p>On-policy self-distillation improves a model using guidance from the model itself, but it still requires a teacher that provides more useful predictions than the student. Existing approaches obtain such guidance by giving the teacher additional context or instructions. We ask whether it can instead come from changing how the same model uses its own layers. To address this, we introduce LoOPSD, which searches over a model's layer execution order to construct a stronger teacher and distills its advantage into the student. Specifically, we keep the model weights unchanged while searching for layers to repeat, and use the resulting teacher's predictions on student-generated prefixes to guide learning. We then alternate search and distillation, rebuilding the teacher from the updated student in each round so that the student progressively absorbs the gains from alternative layer execution. Experiments on mathematical and logical reasoning tasks show improvements across models. On GSM8K with a 400-token thinking budget, LoOPSD raises Qwen3-1.7B accuracy from 42.30% to 79.61%; subsequent distillation rounds yield further gains beyond the first round. Together, these findings show that by …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> On-policy 自蒸馏用模型自身指导提升自己，但仍需一个比学生预测更有用的教师；现有方法靠给教师额外上下文或指令。能否改为改变同一模型对自身层的使用方式？</p>
+<p><strong>方法</strong> 提出 LoOPSD：搜索模型层执行顺序构造更强教师，并把其优势蒸馏进学生——权重不变，只搜索要重复的层，用所得教师在学生生成前缀上的预测指导学习；交替搜索与蒸馏，每轮从更新后的学生重建教师。</p>
+<p><strong>关键数字</strong> GSM8K 上 400 token 思考预算下，LoOPSD 把 Qwen3-1.7B 准确率从 42.30% 提升到 79.61%；后续蒸馏轮次继续带来增益。</p>
+<p><strong>为什么值得看</strong> 不动权重、只改层执行顺序就能造出更强教师，开辟了自蒸馏获取监督的新路径，对推理时计算利用与模型自提升很有启发。</p>
+<p><a href="https://arxiv.org/abs/2610.18162">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.18162">阅读原文 ↗</a></p>
 </body>
 </html>
