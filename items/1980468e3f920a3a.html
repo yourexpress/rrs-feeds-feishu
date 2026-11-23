@@ -22,9 +22,11 @@
 <h1>MoSAIC: Learning DAG Scheduling Heuristics from Optimal Schedules through Motif-Aware Recovery and LLM-Guided Reasoning</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Efficient task scheduling in heterogeneous computing systems remains a fundamental challenge in embedded and high-level synthesis flows.</p>
-<blockquote><p>Efficient task scheduling in heterogeneous computing systems remains a fundamental challenge in embedded and high-level synthesis flows. This paper presents MoSAIC (Motif-aware Scheduling with AI-driven Cognition), a learning-based framework that bridges the gap between exact and heuristic scheduling approaches for DAG-based applications. The system uses the reasoning capabilities of large language models (LLMs) to learn the relationships between DAG structures and scheduling priority functions. The framework first leverages the OR-Tools CP-SAT solver [4] to generate optimal schedules, which are then used to supervise the learning of compact priority-based scheduling functions through Bayesian Optimization. These learned heuristics capture relationships between scheduling decisions and structural graph features such as rank, depth, and fanout, enabling the construction of a reusable knowledge base across diverse DAG instances. Experimental results across synthetic graph families and real-world benchmarks, including PolyBench and MachSuite, show that the learned heuristics consistently improve over classical approaches such as HEFT [2], while maintaining low runtime overhead. The re…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：异构计算系统的 DAG 任务调度在精确求解与启发式之间差距明显，如何学习可泛化的调度策略？</p>
+<p><strong>方法</strong>：MoSAIC（Motif-aware Scheduling with AI-driven Cognition）用 LLM 的推理能力学习 DAG 结构与调度优先级函数的关系：先以 OR-Tools CP-SAT 生成最优调度作为监督，再通过贝叶斯优化学习紧凑的优先级函数，捕捉调度决策与 rank、depth、fanout 等结构特征的关联，构建跨 DAG 实例可复用的知识库。</p>
+<p><strong>关键数字</strong>：在合成图族与 PolyBench、MachSuite 等真实基准上持续优于 HEFT 等经典方法，且保持低运行时开销。</p>
+<p><strong>为什么值得看</strong>：精确监督 + 学习泛化的组合路线，嵌入式/高层次综合流程可落地的调度改进。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.15205">MoSAIC: Learning DAG Scheduling Heuristics from Optimal Schedules through Motif-Aware Recovery and Learning</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15205">阅读原文 ↗</a></p>
 </body>
 </html>

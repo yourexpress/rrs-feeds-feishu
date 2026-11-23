@@ -22,9 +22,11 @@
 <h1>ObsSpec: Accelerating Agentic Reinforcement Learning with Observation Speculation</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Tool-using agents alternate between model generation and tool execution, waiting for each tool call to complete before starting the next generation.</p>
-<blockquote><p>Tool-using agents alternate between model generation and tool execution, waiting for each tool call to complete before starting the next generation. This sequential execution is costly during agentic reinforcement learning (RL), which requires large batches of multi-turn rollouts. We introduce ObsSpec, an observation speculation pipeline for agentic RL that uses a small world model to predict tool outputs while the environment executes, allowing the policy to begin its next generation early. ObsSpec retains speculative work only when the predicted and actual observations match exactly, making rollout collection lossless, while co-training keeps the world model up to date as the policy learns. On terminal-use tasks, predictions from a 0.6B world model exactly match actual observations in 66.4% of attempts and arrive roughly 16 times faster. Using these predictions, ObsSpec reduces agent latency by 9.3% and 14.2% for 8B and 32B policies. Across controlled experiments, we characterize the regimes in which ObsSpec reduces agent latency under shared policy resources. Finally, because ObsSpec overlaps policy generation with tool execution, it is architecturally compatible with existing t…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：tool-using agent 生成与工具执行串行交替，agentic RL 需要大量多轮 rollout，等待成本极高——能否并行化？</p>
+<p><strong>方法</strong>：ObsSpec 观测推测管线：用小型世界模型在环境执行期间预测工具输出，让策略提前开始下一次生成；仅当预测与真实观测完全匹配才保留投机工作（rollout 无损），共训练保持世界模型随策略同步更新。</p>
+<p><strong>关键数字</strong>：终端任务上 0.6B 世界模型的预测 66.4% 与真实观测完全一致、约快 16 倍；8B 与 32B 策略的 agent 延迟分别降 9.3% 与 14.2%。</p>
+<p><strong>为什么值得看</strong>：agentic RL 训练加速的通用组件，与既有加速技术架构兼容。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.15246">ObsSpec: Accelerating Agentic Reinforcement Learning with Observation Speculation</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15246">阅读原文 ↗</a></p>
 </body>
 </html>

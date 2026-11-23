@@ -22,9 +22,11 @@
 <h1>One-Way Coupling via Patchwise Adaptive Normalization in Transformer Surrogates</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Many physical systems exhibit one-way coupling: exogenous fields such as medium density or obstacle geometry influence the dynamics without being affected by them.</p>
-<blockquote><p>Many physical systems exhibit one-way coupling: exogenous fields such as medium density or obstacle geometry influence the dynamics without being affected by them. We investigate how explicitly representing these fields can improve the accuracy and computational efficiency of transformer-based PDE surrogates. Building on spatially adaptive normalization, we introduce Patchwise Adaptive Normalization (PAdaNorm), which partitions exogenous fields into patches aligned with the state tokenization. We evaluate PAdaNorm on datasets from three different domains, using a Walrus-inspired transformer architecture. Across the three PDE families, PAdaNorm is on par with or up to 16% better than parameter-matched baselines in mean long-horizon variance-scaled RMSE on 60-step autoregressive rollouts. We also find that PAdaNorm better maintains hard physical constraints over long rollouts, such as preventing flow into impenetrable solid regions in porous media. When the conditioning is static, PAdaNorm caches the conditioning embeddings once and reuses them across the entire rollout, reducing inference FLOPs per step by up to 36% compared with parameter-matched baselines. An ablation over eight c…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：许多物理系统是单向耦合的（外场如介质密度、障碍几何影响动力学但不被反作用）——显式表示这些外场能否提升 transformer PDE 代理的精度与效率？</p>
+<p><strong>方法</strong>：提出 Patchwise Adaptive Normalization（PAdaNorm）：把外场按与状态 tokenization 对齐的方式分区，基于空间自适应归一化做逐块调制；采用 Walrus 启发的 transformer 架构在三个域的数据集上评估。</p>
+<p><strong>关键数字</strong>：三个 PDE 族上 60 步自回归长程方差缩放 RMSE 与参数匹配基线相当或最高好 16%；静态条件时缓存条件嵌入并在整个 rollout 复用，推理 FLOPs 每步最高降 36%；8 种条件变体消融显示调制单个注意力轴即可、共享轻量 MLP 与逐块投影相当。</p>
+<p><strong>为什么值得看</strong>：物理条件显式建模的通用手段，精度与推理成本双赢，孔隙介质等硬约束保持更好。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.14687">One-Way Coupling via Patchwise Adaptive Normalization in Transformer Surrogates</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14687">阅读原文 ↗</a></p>
 </body>
 </html>

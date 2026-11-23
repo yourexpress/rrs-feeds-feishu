@@ -22,9 +22,11 @@
 <h1>Not All Drift Is a Mechanism: Tracing Prompt Adaptation in LLMs</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Prompt-based adaptation offers several ways to specialize a frozen language model, ranging from natural-language prompt optimization to learned continuous prompts.</p>
-<blockquote><p>Prompt-based adaptation offers several ways to specialize a frozen language model, ranging from natural-language prompt optimization to learned continuous prompts. These methods are usually compared through downstream performance, although similar outputs need not arise from similar internal computations. We study how discrete prompt optimization, prompt tuning, and prefix tuning alter the processing of dense and mixture-of-experts language models. Our analysis shows that the location of the adaptation predicts how task information is carried to the output: optimized text primarily changes response construction, input-level prompts write their influence into content representations, and layer-wise prefixes maintain direct control through attention. In MoE models, these differences further induce distinct expert-routing patterns. At the same time, common representation-level measurements respond strongly to generic context changes and do not reliably distinguish useful adaptations from matched placebos. We argue that understanding prompt adaptation requires separating representation drift from the part of that drift that is aligned with, and causally used by, the model's task comput…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：离散提示优化、prompt tuning、prefix tuning 都能让冻结模型适配下游任务，相似输出未必来自相似内部计算——提示适应到底改变了什么？</p>
+<p><strong>方法</strong>：系统分析三种适应方式对稠密与 MoE 语言模型处理路径的影响，并检验常见表征层测量能否区分「有用适应」与「匹配安慰剂」。</p>
+<p><strong>关键数字</strong>：适应位置预测任务信息的携带方式——优化文本主要改变响应构建、输入级提示把影响写入内容表征、层级 prefix 通过注意力维持直接控制；MoE 中三者还诱导不同专家路由模式；而常见表征测量对通用上下文变化敏感，无法可靠区分有效适应与安慰剂。</p>
+<p><strong>为什么值得看</strong>：把「表征漂移」与「任务计算因果使用的漂移」分开，为提示适应方法的选择与评估提供实操准则。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.18412">Not All Drift Is a Mechanism: Tracing Prompt Adaptation in LLMs</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.18412">阅读原文 ↗</a></p>
 </body>
 </html>

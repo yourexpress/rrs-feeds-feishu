@@ -22,9 +22,11 @@
 <h1>Multi-GPU Communication Schemes for Iterative Solvers: When CPUs are Not in Charge</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>This paper proposes a fully autonomous execution model for multi-GPU applications that completely excludes the involvement of the CPU beyond the initial kernel launch.</p>
-<blockquote><p>This paper proposes a fully autonomous execution model for multi-GPU applications that completely excludes the involvement of the CPU beyond the initial kernel launch. In a typical multi-GPU application, the host serves as the orchestrator of execution by directly launching kernels, issuing communication calls, and acting as a synchronizer for devices. We argue that this orchestration, or control flow path, causes undue overhead and can be delegated entirely to devices to improve performance in applications that require communication among peers. For the proposed CPU-free execution model, we leverage existing techniques such as persistent kernels, thread block specialization, device-side barriers, and device-initiated communication routines to write fully autonomous multi-GPU code and achieve significantly reduced communication overheads. We demonstrate our proposed model on two broadly used iterative solvers, 2D/3D Jacobi stencil and Conjugate Gradient(CG). Compared to the CPU-controlled baselines, the CPU-free model can improve 3D stencil communication latency by 58.8% and provide a 1.63x speedup for CG on 8 NVIDIA A100 GPUs. The project code is available at https://github.com/Pa…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：多 GPU 应用中 CPU 作为编排者（启动 kernel、发起通信、同步设备）带来控制流开销——能否完全由设备自治执行？</p>
+<p><strong>方法</strong>：提出 CPU-free 执行模型：初始 kernel 启动后 CPU 全程不参与，组合 persistent kernels、线程块特化、设备侧 barrier 与设备发起通信例程，写出完全自主的多 GPU 代码；在 2D/3D Jacobi 模板与共轭梯度（CG）两类迭代求解器上验证。</p>
+<p><strong>关键数字</strong>：相对 CPU 控制基线，3D 模板通信延迟改善 58.8%；8 张 NVIDIA A100 上 CG 获得 1.63× 加速。</p>
+<p><strong>为什么值得看</strong>：多 GPU 通信范式的一次彻底重构，迭代求解类应用收益明确，代码已开源。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.15878">Multi-GPU Communication Schemes for Iterative Solvers: When CPUs are Not in Charge</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15878">阅读原文 ↗</a></p>
 </body>
 </html>

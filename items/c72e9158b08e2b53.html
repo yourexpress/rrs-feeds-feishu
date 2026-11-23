@@ -22,9 +22,11 @@
 <h1>One-Layer Transformers Provably Learn In-Context K-Nearest Neighbor Prediction with Chain-of-Thought</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Chain-of-Thought (CoT) enables transformers to solve complex reasoning tasks by generating intermediate reasoning steps.</p>
-<blockquote><p>Chain-of-Thought (CoT) enables transformers to solve complex reasoning tasks by generating intermediate reasoning steps. Despite strong empirical success, the mechanisms by which such reasoning abilities emerge during training remain poorly understood, particularly from a theoretical perspective. In this work, we study this question in a stylized yet fully analyzable setting: in-context $\mathrm{K}$-nearest-neighbor ($\mathrm{K}$-NN) prediction with a one-layer transformer. Earlier work has demonstrated that one-layer transformers can be trained to perform $1$-NN without CoT (Li et al., 2024a) by having the softmax attention attend to the nearest neighbor in context. However, this result on $1$-NN cannot be extended to $\mathrm{K}$-NN for $K&gt;1$, as softmax attention is much less naturally suited to attending to the 2nd through $K$-th nearest neighbors. We first give a rigorous negative result showing that this limitation already appears on a well-separated class of binary classification tasks for odd $K&gt;1$. We then give an explicit construction of a one-layer transformer, and show that it can solve $\mathrm{K}$-NN via CoT reasoning. We further prove that, under a stylized training …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：CoT 推理能力如何在训练中涌现？此前只证明单层 Transformer 能做 1-NN，K&gt;1 时 softmax 注意力难以同时关注第 2 到第 K 个近邻——CoT 能否补齐？</p>
+<p><strong>方法</strong>：先给出严格否定结果（奇数 K&gt;1 的一类 well-separated 二分类任务上局限确实存在），再显式构造一个单层 Transformer 用 CoT 解决 K-NN；并证明在风格化训练设置下梯度下降能恢复该构造。</p>
+<p><strong>关键数字</strong>：构造的模型可通过 CoT 推理解决 K-NN；训练得到的模型还泛化到比训练分析假设更广的测试类。</p>
+<p><strong>为什么值得看</strong>：CoT 能力涌现的严格理论样本——证明推理步骤如何扩展 Transformer 的可学任务类。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.16798">One-Layer Transformers Provably Learn In-Context K-Nearest Neighbor Prediction with Chain-of-Thought</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16798">阅读原文 ↗</a></p>
 </body>
 </html>

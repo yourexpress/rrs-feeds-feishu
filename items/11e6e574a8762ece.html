@@ -22,9 +22,11 @@
 <h1>Match the Canvas, Not Just the Answer: Predictability-Aware SFT for Diffusion Language Models</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Diffusion language models (DLMs) enable flexible parallel generation by resolving tokens according to the model's evolving predictability rather than a fixed left-to-right order.</p>
-<blockquote><p>Diffusion language models (DLMs) enable flexible parallel generation by resolving tokens according to the model's evolving predictability rather than a fixed left-to-right order. This flexibility, however, introduces training choices absent from standard autoregressive teacher forcing: which reference tokens are visible when a target is supervised and how much generation space is allocated. Standard supervised fine-tuning (SFT) typically makes these choices through random masking, independently of inference. Our analysis shows how this training-inference mismatch can misdirect supervision. Random masking can conceal prediction errors or penalize uncertainty that decoding would otherwise resolve, while the attention-visible input length can change which response formulations the model favors, even when the underlying solution is unchanged. Motivated by these findings, we propose Predictability-Aware Canvas Selection and Supervision (PACS), an SFT method. PACS uses the model's own predictability to select each example's attention-visible input length and supervises reference tokens immediately before their confidence-guided revelation. Across reasoning and code-generation benchmarks,…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：扩散语言模型（DLM）并行生成带来标准自回归 SFT 没有的训练选择——监督时哪些参考 token 可见、分配多少生成空间；随机掩码与推理脱节会误导监督，如何对齐？</p>
+<p><strong>方法</strong>：提出 Predictability-Aware Canvas Selection and Supervision（PACS）：用模型自身可预测性选择每条样本的 attention-visible 输入长度，并在置信度引导揭示之前监督参考 token。</p>
+<p><strong>关键数字</strong>：在推理与代码生成基准上，PACS 在对比的 SFT 方法中平均准确率最高，单个基准上比 vanilla SFT 最高提升 12.84 个百分点。</p>
+<p><strong>为什么值得看</strong>：DLM 训练-推理对齐的系统性改进，直接提升推理/代码两类任务。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.18001">Match the Canvas, Not Just the Answer: Predictability-Aware SFT for Diffusion Language Models</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.18001">阅读原文 ↗</a></p>
 </body>
 </html>

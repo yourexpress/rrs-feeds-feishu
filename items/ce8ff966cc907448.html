@@ -22,9 +22,11 @@
 <h1>Monarch-Muon: Structure-Aware Muon for Fast and Memory-Efficient Pretraining</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Training large language models is constrained by both wall-clock time and memory footprint, and recent matrix-aware optimizers sharpen this tradeoff: Muon can improve optimization but its dense polar update remains expensive.</p>
-<blockquote><p>Training large language models is constrained by both wall-clock time and memory footprint, and recent matrix-aware optimizers sharpen this tradeoff: Muon can improve optimization but its dense polar update remains expensive. We propose Monarch-Muon, a structured matrix-aware optimizer for weights parameterized by Monarch factors. The resulting structure reduces weights, gradients, and optimizer state, and exposes small independent update subproblems in place of a single dense orthogonalization; we formalize this through a blockwise trust-region interpretation. In quality runs, Monarch-Muon improves over Monarch-AdamW at fixed structure: 3.06 vs. 3.09 in the dense 257M model and 2.68 vs. 2.77 in the 1B MoE model; the two-block MoE variant also matches dense AdamW while using 15% fewer active and 25.4% fewer total parameters. In 6.89B-parameter systems measurements, Monarch-Muon reduces peak memory from 68.9 to 52.9 GB, Muon optimizer state from 14.60 to 6.77 GB, and the Muon optimizer step from 1288 to 304 ms.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：大模型预训练受墙钟时间与内存双重约束；Muon 类矩阵感知优化器效果好，但密集极分解更新昂贵——如何结构化？</p>
+<p><strong>方法</strong>：Monarch-Muon 针对 Monarch 因子参数化的权重做结构化矩阵感知优化：结构本身减少权重/梯度/优化器状态，把单个密集正交化拆成多个小且独立的更新子问题，并以块状 trust-region 解释形式化。</p>
+<p><strong>关键数字</strong>：固定结构下优于 Monarch-AdamW（257M 稠密 3.06 vs 3.09；1B MoE 2.68 vs 2.77）；双块 MoE 变体匹配稠密 AdamW 同时少用 15% 激活参数、25.4% 总参数；6.89B 系统测量中峰值内存 68.9→52.9 GB、Muon 状态 14.60→6.77 GB、优化步 1288→304 ms。</p>
+<p><strong>为什么值得看</strong>：预训练内存与速度双收的优化器设计，数据非常具体。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.17429">Monarch-Muon: Structure-Aware Muon for Fast and Memory-Efficient Pretraining</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17429">阅读原文 ↗</a></p>
 </body>
 </html>

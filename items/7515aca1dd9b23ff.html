@@ -22,9 +22,11 @@
 <h1>Online LLM Personalization from Pairwise Preferences Across Users</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Large language models can answer the same question in different styles, but users' preferred styles are hidden and vary across users and questions.</p>
-<blockquote><p>Large language models can answer the same question in different styles, but users' preferred styles are hidden and vary across users and questions. We study inference-time personalization through online selection from a fixed set of prompts, each representing a persona. Users arrive sequentially, each asks a short sequence of questions, and the system displays two responses per question and observes one pairwise choice. We formulate this interaction as a variant of the contextual dueling bandit problem in which the learner starts without preference data, adapts within each session, and exploits information shared across users. The objective is to minimize cumulative strong regret, summing the utility gaps of both displayed responses relative to the user's best response among the available options. We make two contributions. First, we introduce the problem and release a reproducible preference benchmark and dataset built around a tutoring case study, containing educational questions, LLM-generated answers in six teaching styles, and pairwise judgments from LLM-simulated students with hidden preference profiles. We fit Bradley-Terry models to these judgments to obtain reference utili…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 同一问题可有不同风格，但用户偏好风格隐藏且因人因问题而异——推理时能否在线个性化？</p>
+<p><strong>方法</strong>：把在线个性化建模为 contextual dueling bandit 变体：用户顺序到达、各问短问题序列，系统每题展示两个回答并观察一个成对选择；学习者无偏好数据起步、会话内自适应、跨用户共享信息；另发布以家教为案例的可复现偏好基准（6 种教学风格 + LLM 模拟学生成对判断）。</p>
+<p><strong>关键数字</strong>：基线从完成会话学习用户混合先验并在会话内适配；对开发中未见的学生与主题，去除随机对 44-48% 的超额遗憾，达到事后 per-user 线性 oracle 一半以上性能。</p>
+<p><strong>为什么值得看</strong>：把个性化变成可评测的在线学习问题，基准与代码开源，离线可复现。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.17203">Online LLM Personalization from Pairwise Preferences Across Users</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17203">阅读原文 ↗</a></p>
 </body>
 </html>

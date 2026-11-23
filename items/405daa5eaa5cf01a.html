@@ -22,9 +22,11 @@
 <h1>Making LoRA Identifiable: Orthogonal Alignment for Continual Learning</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>There is growing interest in applying Parameter-Efficient Fine-Tuning (PEFT) to Continual Learning, as it enables faster training, mitigates catastrophic forgetting, and facilitates better adaptation to new tasks.</p>
-<blockquote><p>There is growing interest in applying Parameter-Efficient Fine-Tuning (PEFT) to Continual Learning, as it enables faster training, mitigates catastrophic forgetting, and facilitates better adaptation to new tasks. Prior approaches have explored a range of strategies, including extending new LoRA branches for each incoming task, training under orthogonal loss objectives across all task-specific LoRA modules, and employing gating mechanisms to integrate new and existing LoRA modules. However, these methods incur memory costs that grow linearly with the number of tasks, limiting their scalability. More recent approaches investigate training a single LoRA by leveraging asymmetries in its parameterization; however, they often suffer from insufficient representational alignment across the LoRA parameter space. To address these limitations, we propose Stiefel Optimization and Aligned Rotation (SOAR), a two-stage framework for continual LoRA learning. First, we constrain the A matrix to lie on the Stiefel manifold, thereby reducing coordinate misalignment to the space of orthogonal rotation matrices. Second, we introduce an Orthogonal Procrustes alignment procedure for the B matrix to esti…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：PEFT 用于持续学习可加速训练、缓解灾难性遗忘，但逐任务扩 LoRA 分支的内存随任务数线性增长，如何用单一 LoRA 做到可扩展且表征对齐？</p>
+<p><strong>方法</strong>：提出两阶段框架 SOAR（Stiefel Optimization and Aligned Rotation）：先把 A 矩阵约束在 Stiefel 流形上，把坐标错位问题归约到正交旋转空间；再对 B 矩阵做 Orthogonal Procrustes 对齐估计最优旋转，配合按秩保留的合并策略量化新旧任务表征的方向一致性。</p>
+<p><strong>关键数字</strong>：在多个模型与基准上取得强持续学习性能，且不引入额外内存开销（与任务数无关）。</p>
+<p><strong>为什么值得看</strong>：单 LoRA 持续学习的内存可扩展方案，参数化不对称性的系统利用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.16664">Making LoRA Identifiable: Orthogonal Alignment for Continual Learning</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16664">阅读原文 ↗</a></p>
 </body>
 </html>

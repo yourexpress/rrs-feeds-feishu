@@ -22,9 +22,11 @@
 <h1>One Model, Multiple Compute Budgets: Multi-Ratio ConceptMoE for Flexible Compute Across Turns</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Large language models typically support different inference budgets through separate model sizes or fixed compute configurations.</p>
-<blockquote><p>Large language models typically support different inference budgets through separate model sizes or fixed compute configurations. In multi-turn interactions, however, compute demand can vary substantially across turns. Using a high-compute model for every turn wastes computation, while routing among independent models may require rebuilding model-specific history states after switches. We therefore ask whether a single shared model can support multiple compute budgets that can be flexibly assigned across turns. We introduce Multi-Ratio ConceptMoE, which jointly supports token-to-concept compression ratios of 2, 4, and 8 (CR2/CR4/CR8) within a shared backbone. Lightweight full-token modules reduce compression-independent cost, ratio-specific boundary routers support distinct compression levels, and cross-ratio training enables mixed-ratio processing within the same context. Across PTBench and SFTBench, the three fixed modes outperform their compute-matched MoE baselines in all 6 comparisons while remaining competitive with independently trained fixed-ratio specialists. On CodeChat and CoSQL, mixed-ratio inference improves the accuracy--compute trade-off, outperforming the Large MoE …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：多轮交互中每轮计算需求差异大——每轮都用高算力模型浪费计算，独立模型间切换又需重建历史状态；能否一个共享模型支持多档计算预算？</p>
+<p><strong>方法</strong>：Multi-Ratio ConceptMoE 在共享骨干内同时支持 token-to-concept 压缩比 2/4/8（CR2/CR4/CR8）：轻量 full-token 模块降低与压缩无关成本，比例专属边界路由器支撑不同压缩档位，跨比例训练允许同上下文混合比例处理。</p>
+<p><strong>关键数字</strong>：PTBench 与 SFTBench 上三种固定档位在全部 6 个对比中胜过算力匹配的 MoE 基线；CodeChat/CoSQL 混合比例推理比 Large MoE 高 5.87/2.68 个百分点，同时 FLOPs 降 41.1%/12.3%；同档位预算调度下比独立模型路由少 78.4%/46.9% FLOPs。</p>
+<p><strong>为什么值得看</strong>：多轮服务的计算弹性设计，压缩比切换无需重建历史状态。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.14074">One Model, Multiple Compute Budgets: Multi-Ratio ConceptMoE for Flexible Compute Across Turns</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14074">阅读原文 ↗</a></p>
 </body>
 </html>

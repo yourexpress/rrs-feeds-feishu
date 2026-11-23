@@ -22,9 +22,11 @@
 <h1>Multi-Stream Residual Computation in Diffusion Language Models</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Diffusion language models reconstruct masked tokens in parallel, offering an alternative to autoregressive generation.</p>
-<blockquote><p>Diffusion language models reconstruct masked tokens in parallel, offering an alternative to autoregressive generation. Yet their Transformer backbones typically carry visible evidence and evolving masked predictions through a single residual stream. We equip masked diffusion models with multiple residual streams that persist through depth and adaptive routing between them, then investigate how they support these complementary roles. On the pretraining task, two streams reduce reconstruction perplexity by 5.71% on validation data and 5.13% on average across external corpora compared with standard residual connections. We observe that, without predefined roles, visible and masked positions learn distinct routing patterns. Causal interventions show that this distinction organizes read and write routing, while token-specific write strength remains important within each role. Guided by these findings, a model trained with role-conditioned routing recovers half the validation gain from adding a second stream. State interventions explain the benefit of the additional stream: it preserves early token representations for later reuse while evidence accumulates at masked positions. This mecha…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：扩散语言模型用单条残差流同时承载可见证据与逐步演化的掩码预测——把两种角色分开会更好吗？</p>
+<p><strong>方法</strong>：为掩码扩散模型配备多条跨深度持久化的残差流与自适应路由，研究它们如何支持互补角色；再用角色条件路由与状态干预分析收益机制。</p>
+<p><strong>关键数字</strong>：预训练任务上双流比标准残差连接在验证集重建困惑度低 5.71%、外部语料平均低 5.13%；可见与掩码位置学到不同路由模式；角色条件路由模型恢复双流验证收益的一半；状态干预显示额外流保留早期 token 表征供后期复用。</p>
+<p><strong>为什么值得看</strong>：扩散 LM 骨干架构的关键洞察，多流设计在更大规模上依然成立。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.18407">Multi-Stream Residual Computation in Diffusion Language Models</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.18407">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Merit: Making every modality earn its contribution in multimodal attention decoding</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>More than 1.5 billion people have hearing loss.</p>
-<blockquote><p>More than 1.5 billion people have hearing loss. When several people talk at once, hearing aids amplify every voice alike. Auditory attention decoding (AAD) aims to solve this by reading a listener's brain signals to find the attended talker, letting the device amplify only them. A real device will not see the brain alone; smart glasses and earbuds also track eyes, head, and scene. These behavioral signals help, as people often look at who they listen to. However, they show where a listener looks, not whom they hear. A decoder relying heavily on them fails when a listener cannot move their head or listens without looking - exactly when a brain-based device is needed. A multimodal decoder must use these signals without letting them replace the electroencephalogram (EEG). Accuracy alone cannot show whether it does. We present MERIT, a decoder and evaluation method asking: how much accuracy does each input earn? MERIT shuffles each input stream across test examples, measures the accuracy drop, and splits the result across streams using Shapley values. It also blocks two shortcuts: candidate audio is checked before training so it cannot reveal the answer, and the scoring function cannot…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：助听器的听觉注意力解码（AAD）用脑信号定位说话人，但设备还接入眼动/头动/场景信号；行为信号只看「看向谁」而非「听谁」，过度依赖会在用户无法转头时失效——如何度量每个输入流的真实贡献？</p>
+<p><strong>方法</strong>：提出 MERIT 解码器与评估法：跨测试样本洗牌每个输入流、测准确率下降，用 Shapley 值拆分各流贡献；同时阻断两条捷径（候选音频训练前检查防泄露、忽略脑信号的评分函数不能超过随机水平）。</p>
+<p><strong>关键数字</strong>：公开数据集上四路准确率听者内 0.82、未见听者 0.74（随机水平 0.25）；加入行为流提升整体准确率，但脑信号所占份额几乎减半。</p>
+<p><strong>为什么值得看</strong>：多模态评估方法论示范——准确率会掩盖模态依赖，贡献度量才能揭示真实机制。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.17507">Merit: Making every modality earn its contribution in multimodal attention decoding</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17507">阅读原文 ↗</a></p>
 </body>
 </html>

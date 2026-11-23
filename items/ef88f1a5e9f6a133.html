@@ -22,9 +22,11 @@
 <h1>Native Dual Pools or Shared Paging? Memory Organization for Concurrent Hybrid LLM Serving</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Hybrid attention-SSM serving combines growing attention KV with fixed-size recurrent and convolution state whose allocation units, reuse boundaries, and lifetimes differ.</p>
-<blockquote><p>Hybrid attention-SSM serving combines growing attention KV with fixed-size recurrent and convolution state whose allocation units, reuse boundaries, and lifetimes differ. We implement four memory organizations in a modified vLLM runtime: a coarse shared-page baseline (S0), checkpoint-internal recurrent paging (S1), paging with convolution-slot packing (S2), and native dual pools (D0). Nine evaluation questions cover storage costs and serving behavior. The cumulative S0-S1-S2 refinement improves completed-output throughput and tail completion time at the main operating point. D0-S2 performance varies with memory budget, offered load, and admission headroom. Shared-prefix workloads yield larger stepwise gains; gains also persist in a no-sharing control with equal recorded input-work totals. State traces identify recurrent-checkpoint availability as the limit on joint reuse in the tested S2 runs. Extending producer-side checkpoint lifetime increases reusable depth at a fixed page budget. A fresh-seed SHARE/ISOLATE comparison estimates a positive retention interaction, with a primary confidence interval that includes zero. Retained-state continuation correctness remains unresolved. The…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：混合 attention-SSM 服务中，增长的 attention KV 与定长 recurrent/conv 状态分配单元、复用边界、生命周期都不同——内存该如何组织？</p>
+<p><strong>方法</strong>：在修改版 vLLM 运行时实现四种内存组织：粗共享页基线（S0）、checkpoint 内 recurrent 分页（S1）、conv 槽打包分页（S2）与原生双池（D0），围绕存储成本与服务行为提出九个评估问题。</p>
+<p><strong>关键数字</strong>：S0-S1-S2 累积细化在主工作点提升完成输出吞吐与尾部完成时间；共享前缀工作负载增益更大；状态追踪显示 S2 中 recurrent-checkpoint 可用性限制联合复用；fresh-seed SHARE/ISOLATE 对比估计出正的保留交互，但主置信区间含零。</p>
+<p><strong>为什么值得看</strong>：混合模型服务的物理状态表示 + 准入 + checkpoint 生命周期要联合设计，问题清单值得复用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.15755">Native Dual Pools or Shared Paging? Memory Organization for Concurrent Hybrid LLM Serving</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15755">阅读原文 ↗</a></p>
 </body>
 </html>

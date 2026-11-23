@@ -22,9 +22,11 @@
 <h1>Masked Diffusion for Travel Diaries Synthesis</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Because household travel surveys combine household characteristics, variable-length person rosters, vehicle rosters, and trip chains, existing synthesis pipelines split them across separate models or flatten them into cropped fixed-length vectors.</p>
-<blockquote><p>Because household travel surveys combine household characteristics, variable-length person rosters, vehicle rosters, and trip chains, existing synthesis pipelines split them across separate models or flatten them into cropped fixed-length vectors. Representation, rather than modeling, becomes the bottleneck: splitting severs cross-segment dependence, and cropping truncates the household-structure distribution. We instead tokenize the diary and keep the object whole: each household-day becomes one token sequence with count tokens for vehicles, persons, and trips, and distinct symbols for padded, hidden, unobserved, and inapplicable positions. We introduce DiaryBridge, a masked diffusion model that bridges the fully hidden sequence to the distribution of complete diaries by unmasking positions in any order. One trained model, conditioned on any observed subset, performs synthesis and partial-diary completion alike. Experiments on real data extracted from the 2017/2018 Regional Travel Survey of the Baltimore region show that DiaryBridge generates travel reflecting vehicle availability and employment status, recovers shared trips using other household members' observed diaries, and bet…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：家庭出行调查把家庭属性、人员/车辆名册与出行链拆成多个模型或压平成定长向量，切断跨段依赖、截断家庭结构分布——如何整体建模？</p>
+<p><strong>方法</strong>：把 household-day 完整 token 化（车辆/人员/出行用计数 token，填充/隐藏/未观测/不适用用独立符号），提出 DiaryBridge 掩码扩散模型，以任意顺序去掩码，从全隐藏序列桥接到完整日记分布；一个模型同时支持合成与部分日记补全。</p>
+<p><strong>关键数字</strong>：在 Baltimore 地区 2017/2018 区域出行调查真实数据上，生成的出行反映车辆可用性与就业状态，能用其他成员日记恢复共享出行，跨模式/目的/出发时段的总需求复现优于学习基线。</p>
+<p><strong>为什么值得看</strong>：避免切分/裁剪的合成范式，出行调查数据增强可直接用。</p>
+<p>原文：<a href="https://arxiv.org/abs/2610.17109">Masked Diffusion for Travel Diaries Synthesis</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17109">阅读原文 ↗</a></p>
 </body>
 </html>
