@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exploring the Potential of Ultra-Low-Bit Inference on LLM Accelerators</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Exploring the Potential of Ultra-Low-Bit Inference on LLM Accelerators</h1>
+<p class="meta-line">arXiv · 2026-11-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：向量量化（VQ）把数值组编码为紧凑码本索引实现超低比特压缩，但重建需频繁码本查找，与传统加速器数据流冲突——能否在现有脉动阵列加速器上高效做 VQ 推理？</p>
+<p><strong>方法</strong>：论证现有 systolic-array LLM 加速器已具备 VQ 推理所需硬件资源、只是缺乏利用机制；VQACC 联合重设计 operand buffer 的访问逻辑与数据映射，复用其存储与端口资源做码本查找，把反量化无缝集成进正常 operand 寻址数据流。</p>
+<p><strong>关键数字</strong>：比 EVA 基线快 2.63×，额外硬件仅占计算阵列面积 0.17%。</p>
+<p><strong>为什么值得看</strong>：极低硬件开销解锁 VQ 超低比特推理，无需 VQ 专用加速器。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.27561">Exploring the Potential of Ultra-Low-Bit Inference on LLM Accelerators</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.27561">阅读原文 ↗</a></p>
+</body>
+</html>

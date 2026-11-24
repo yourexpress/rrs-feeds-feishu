@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Topology Hub Optimal Transport: Eliminating Long Context Dilution at Flash Speed</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Topology Hub Optimal Transport: Eliminating Long Context Dilution at Flash Speed</h1>
+<p class="meta-line">arXiv · 2026-11-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：长上下文模型用稀疏/结构化注意力避免平方开销，但嵌入数十万干扰项中的少量相关事实会随归一化质量随长度分散而退化（dilution）。</p>
+<p><strong>方法</strong>：THOT：hub-and-spoke 最优传输用线性规模图（局部窗口 + K 共享 hub + Sinkhorn 缩放）替代稠密 L×L 矩阵；bounded-support capacity gating（simplex sparsemax O(L log L) 或免排序 thresholded ReLU O(L)）把多余干扰质量压到零；三趟退火 Sinkhorn 调度；精确 rank-(D+2R+1) One-Reference-Tile adjoint（Triton kernel，BF16 Tensor Core/FP32 potentials）；分块 exclusive-prefix 因果变体验证零未来泄漏。</p>
+<p><strong>关键数字</strong>：L=128 训练、L=262,144 零样本 recall 97.40%（α=0）、98.83%（α=0.05），而 softmax-gated hub OT 仅 3.52%；WikiText-103 多针检索 128/128 全中（L=65K）vs RoPE FlashAttention 0.78%。</p>
+<p><strong>为什么值得看</strong>：长上下文事实稀释的系统解法，极长序列检索性能惊艳。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.27951">Topology Hub Optimal Transport: Eliminating Long Context Dilution at Flash Speed</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.27951">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THRIFTY: Cost-Constrained Reasoning-Data Synthesis for Small Language Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>THRIFTY: Cost-Constrained Reasoning-Data Synthesis for Small Language Models</h1>
+<p class="meta-line">arXiv · 2026-11-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：SLM 通常训练在从大 teacher LLM 蒸馏的推理轨迹上，合成数据生成是管线主要成本（前沿模型尤甚）；现有收集方法成本无意识，或把固定采样预算均匀摊到所有查询，忽略问题难度差异。</p>
+<p><strong>方法</strong>：THRIFTY Thompson 采样 bandit 控制器：把固定生成 token 预算花在期望得到最多新且不同正确解处（bandits-with-knapsacks + 多样性感知目标）；用在线 Beta 后验跟踪每题成功概率，自适应停止饱和问题、集中预算于覆盖不足者、按机会成本淘汰不可解者。</p>
+<p><strong>关键数字</strong>：数学（AIME、MATH-500）与代码（LiveCodeBench）上每 token 收集的多样正确轨迹比均匀采样与最强自适应基线最多多 22%，稀缺预算与难题场景增益最大。</p>
+<p><strong>为什么值得看</strong>：成本约束下推理数据合成的预算分配，SLM 训练管线直接省钱。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.27436">THRIFTY: Cost-Constrained Reasoning-Data Synthesis for Small Language Models</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.27436">阅读原文 ↗</a></p>
+</body>
+</html>

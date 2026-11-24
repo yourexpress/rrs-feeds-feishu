@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Isonomy: Isolating Every Request from Timing Side Channels at Nearly Full-Sharing Throughput in Multi-Instance LLM Prefill</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Isonomy: Isolating Every Request from Timing Side Channels at Nearly Full-Sharing Throughput in Multi-Instance LLM Prefill</h1>
+<p class="meta-line">arXiv · 2026-11-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：长 prompt 共享前缀、复用缓存可省 prefill 计算，但 cache hit 让首 token 更早到达、可泄露另一请求用了同一前缀；最小权限下即便有权发送付费请求也不应暴露同账号其他请求的 prompt。</p>
+<p><strong>方法</strong>：Isonomy 默认隔离每个请求、允许显式共享组；跨账号保留一个共享缓存但只隐藏请求组外前缀的 hit；gateway 只对负载与可见缓存条目应用路由规则；预测模式估计首 token 就绪时间并门控释放，执行模式预留隐藏 hit 跳过的计算并用其他请求填充。</p>
+<p><strong>关键数字</strong>：饱和时预测模式保留无保护共享吞吐的 0.98（账号隔离为 0.95、跨账号复用多时 0.80）；2/4/8 实例直接探测测试两种模式都把探测优势上界保持在测量噪声内。</p>
+<p><strong>为什么值得看</strong>：安全与吞吐兼顾的多实例 prefill 隔离，agent 与 reseller 场景直接相关。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.27596">Isonomy: Isolating Every Request from Timing Side Channels at Nearly Full-Sharing Throughput in Multi-Instance LLM Prefill</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.27596">阅读原文 ↗</a></p>
+</body>
+</html>

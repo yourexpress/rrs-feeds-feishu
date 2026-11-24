@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IsoMoE: Placement-Invariant Hybrid CPU-GPU MoE Inference with Lossless 12-bit Experts</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>IsoMoE: Placement-Invariant Hybrid CPU-GPU MoE Inference with Lossless 12-bit Experts</h1>
+<p class="meta-line">arXiv · 2026-11-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：混合 CPU-GPU MoE 推理把部分专家卸载到 CPU 以单 GPU 跑更大模型；专家放置随 GPU 空闲内存变化、应只影响速度，但现有混合引擎的贪心解码输出随放置改变（两设备算术不同）；且解码受 CPU 内存带宽限制。</p>
+<p><strong>方法</strong>：IsoMoE 保证输出与专家放置无关：GPU expert kernel 逐位重放 CPU kernel 的算术；内存布局让 CPU 用 AVX-512 点积指令高效计算无损 12-bit 专家；双 micro-batch 流水重叠 CPU/GPU 计算且不改输出。</p>
+<p><strong>关键数字</strong>：三种 MoE 模型上不同放置下输出逐位一致；每个设置都快于最强基线，平均解码加速 1.26×、最高 1.54×。</p>
+<p><strong>为什么值得看</strong>：可复现性（bitwise 一致）与速度兼得的混合推理系统，代码开源。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.27604">IsoMoE: Placement-Invariant Hybrid CPU-GPU MoE Inference with Lossless 12-bit Experts</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.27604">阅读原文 ↗</a></p>
+</body>
+</html>

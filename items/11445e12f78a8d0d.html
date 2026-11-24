@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stratum: A Hardware-Software Co-Design Framework for SNN Inference on RISC-V</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Stratum: A Hardware-Software Co-Design Framework for SNN Inference on RISC-V</h1>
+<p class="meta-line">arXiv · 2026-11-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：RISC-V 上高效 SNN 推理需把实现成本追溯到编译器与硬件决策，但训练环境、编译器、周期级模拟器各自独立、难以归因。</p>
+<p><strong>方法</strong>：Stratum 统一工作流：集成 snnTorch 训练的 SNN、MLIR 编译器栈与 gem5 周期级 RISC-V 模型；暴露两个优化杠杆（生成代码的软件决策、模拟核心的硬件配置），用阶段级周期测量定位性能瓶颈。</p>
+<p><strong>关键数字</strong>：两层 N-MNIST 网络上 spike-gated lowering 把模拟推理时间降 64×（453.2ms→7.04ms）；spike-major 布局在 4MiB L2 下再降 37.2%（到 4.42ms）；L2 缩到 1MiB 时布局加速从 1.59× 增至 1.88×。</p>
+<p><strong>为什么值得看</strong>：软硬件协同的 SNN 快速早期评估框架，成本归因清晰。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.27277">Stratum: A Hardware-Software Co-Design Framework for SNN Inference on RISC-V</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.27277">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DPMA: Learning to Compress Mixture-of-Experts Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DPMA: Learning to Compress Mixture-of-Experts Models</h1>
+<p class="meta-line">arXiv · 2026-11-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：MoE 架构计算效率高，但存储全部专家需大量内存、限制资源受限硬件部署；现有免重训压缩方法大多只剪枝或只合并，且常用逐层统一压缩比。</p>
+<p><strong>方法</strong>：DPMA（可微剪枝-合并-吸收）：在全局专家预算下经梯度下降联合学习压缩操作与逐层专家分配；独立可学习系数支持剪枝专家、合并其参数、把路由贡献转发给保留专家；权重冻结、在校准数据上匹配原模型输出。</p>
+<p><strong>关键数字</strong>：4 个 MoE 模型、8 个多选题基准、5 个压缩比下平均准确率最高；75% 专家缩减时全面超过最强基线，最高 +6.7 个百分点。</p>
+<p><strong>为什么值得看</strong>：MoE 压缩从「剪或合」升级为联合学习，效果数据充分。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.27759">DPMA: Learning to Compress Mixture-of-Experts Models</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.27759">阅读原文 ↗</a></p>
+</body>
+</html>

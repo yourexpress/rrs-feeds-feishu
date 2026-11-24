@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rethinking ANNS on Commodity PIM: PIM-Native Vector Search with Cooperative Filtering</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Rethinking ANNS on Commodity PIM: PIM-Native Vector Search with Cooperative Filtering</h1>
+<p class="meta-line">arXiv · 2026-11-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：ANNS 的内存受限向量扫描阶段让 PIM 成为理想加速平台，但现有 PIM-ANNS 基本把 CPU 的距离评估与 top-k 选择移植到 PIM，引入与轻量 PIM 核心不匹配的算术/状态重操作。</p>
+<p><strong>方法</strong>：PIVOT：二元量化重铸 PIM 侧距离评估（利用 PIM 原生位运算、免 LUT、低算术成本）；阈值引导协作过滤（survivor-mass 模型推导保守阈值，做 CPU 簇过滤 + PIM 下界过滤，减输出流量、去 per-core top-k 状态）；配置专用 PIM kernel 并跨查询批流水 CPU 准备/重排与 PIM 过滤。</p>
+<p><strong>关键数字</strong>：真实 UPMEM 硬件上过滤 99.3~99.7% 探测向量；QPS 达 CPU 基线 18.8×、先前 PIM 基线 10.2×；recall 也高于现有 PIM 系统。</p>
+<p><strong>为什么值得看</strong>：PIM 上 ANNS 的原生重设计，效果在真实硬件验证。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.27010">Rethinking ANNS on Commodity PIM: PIM-Native Vector Search with Cooperative Filtering</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.27010">阅读原文 ↗</a></p>
+</body>
+</html>

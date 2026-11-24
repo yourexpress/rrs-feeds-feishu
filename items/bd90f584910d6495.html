@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Large Reported CHB-MIT Adaptation Gains Disappear with Pretrained Encoders and Matched Probes</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Large Reported CHB-MIT Adaptation Gains Disappear with Pretrained Encoders and Matched Probes</h1>
+<p class="meta-line">arXiv · 2026-11-20 · 论文PDF</p>
+
+<p>CHB-MIT 癫痫检测适配增益在预训练编码器下消失的复现研究</p>
+<blockquote><p>Dani and Liebe (2026) (DL) report that adapting the final encoder block of BIOT and CBraMod with self-supervised learning (SSL) improves CHB-MIT seizure-detection ROC-AUC by 36.2 and 29.5 points over linear probing. We investigate these results with their released code and an independent pipeline. The release loads pretrained weights for adaptation only when an otherwise unset configuration key is supplied, and its CBraMod probe reads the reconstruction head with dropout active. With pretrained initialisation and a probe on the encoder output in evaluation mode, the fixed-recipe adaptation gain on DL's split is -0.6 points for BIOT (95% interval [-3.8, +2.6]) and +0.01 for CBraMod ([-0.02, +0.04]) across five seeds. Across DL's split and five subject rotations on CHB-MIT and Siena Scalp EEG, with equally tuned linear probes (30 configurations, up to 500 epochs, validation-based early stopping), mean adaptation effects range from -1.1 to +5.7 ROC-AUC points over 18 comparisons (related settings and feature variants). Twelve of 18 support equivalence within +/-3 points under dependence-adjusted inference (8 of 12 rotation and 4 of 6 fixed-split comparisons); six are unresolved. After…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.26929">阅读原文 ↗</a></p>
+</body>
+</html>

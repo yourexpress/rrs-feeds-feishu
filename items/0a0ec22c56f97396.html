@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dugong: Composing Uncertified DAG Consensus</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Dugong: Composing Uncertified DAG Consensus</h1>
+<p class="meta-line">arXiv · 2026-11-20 · 论文PDF</p>
+
+<p>Dugong：统一参数化的非认证 DAG 共识协议</p>
+<blockquote><p>There is a significant number of uncertified DAG consensus protocols spanning partial synchrony and asynchrony as well as crash, Byzantine, and hybrid fault models, yet each protocol is designed, proved, and implemented from scratch. We introduce Dugong, a single parameterized protocol that unifies uncertified DAG consensus protocols. Its core algorithm, the Decider can implement eight existing protocols and yields four new ones by just tuning its parameters. Given the property that DAGs decouple throughput from latency Dugong presents a simple trade-off between latency and resilience to network and node faults. An operator can adapt the parameters of their protocol epoch-by-epoch to adjust the resilience without needing to develop a new protocol or worry about throughput. Around the Decider, Dugong layers production feature mechanisms (adaptive leader scheduling, checkpoints, responsive liveness, and crash recovery) that provably compose with each other and with the Decider's configurations. We formalize Dugong in Lean 4, proving safety and liveness under the established definitions of Byzantine atomic broadcast, and identify and repair gaps in published proofs. Finally, we implem…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.27473">阅读原文 ↗</a></p>
+</body>
+</html>

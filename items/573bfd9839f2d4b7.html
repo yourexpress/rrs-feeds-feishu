@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Do AI coding agents struggle with non-REST APIs?</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Do AI coding agents struggle with non-REST APIs?</h1>
+<p class="meta-line">Microsoft · 2026-11-23 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://devblogs.microsoft.com/wp-content/uploads/2026/11/AI-Coding-Agents-and-APIs.webp" alt="" referrerpolicy="no-referrer">
+<p>微软 1,356 次运行/6 模型实证：有文档时 REST/POST-only/RPC 三种 API 风格表现无差异，无文档时 RPC 成功率 0%、REST 93–97%。</p>
+<blockquote><p>Plenty of APIs skip REST conventions. Some send every write over POST, and some name every endpoint after an action, like /updateBin</p><p>or /deleteBin</p><p>. On paper, agents should have a harder time with those. REST maps the intent onto the HTTP method, so changing a record is a PATCH</p><p>and removing it is a DELETE</p><p>. In comparison, an RPC-style API makes the agent work out what each endpoint is called and what it does. We expected that to cost agents something, either in failed tasks or in extra calls and tokens.</p><p>It didn’t, at least when the agent had the docs. Across 1,356 runs with six models from two vendors, agents succeeded just as often with REST, POST-only and RPC-style APIs, at the same cost in failed calls and tokens. Without docs, REST won by a wide margin, because agents can guess REST URLs from convention and have no way to guess what a non-REST API calls its endpoints.</p><p>Where non-REST APIs could trip up an agent</p><p>“Non-REST” usually changes two things at once. It limits the API to GET and POST, and it replaces resource paths with endpoints named after verbs, and either change could cost an agent. A model that has seen a lot of REST might reach for DELETE</p><p>out of habit and get a 404. A model faced with a dozen verb-named endpoints might pick the wrong one, for example a full replace where a partial update was needed, and wipe data it was supposed to keep. If that happened, agents would complete fewer tasks or need more failed calls and tokens to get there, so we measured both.</p><p>One API, three styles</p><p>We built a fictional inventory API called Binstock, with bins and the items stored in them, so no model could have memorized it. We served it in three styles with identical data and behavior. Here’s the same partial update in each:</p><p># rest</p><p>PATCH /bins/B-103</p><p># postonly</p><p>POST /bins/B-103/update</p><p># rpc</p><p>POST /updateBin?code=B-103</p><p>The middle style is there to separate the two changes. POST-only keeps the resource paths from REST but drops PUT</p><p>, PATCH</p><p>and DELETE</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://developer.microsoft.com/blog/do-ai-coding-agents-struggle-with-non-rest-apis/">阅读原文 ↗</a></p>
+</body>
+</html>

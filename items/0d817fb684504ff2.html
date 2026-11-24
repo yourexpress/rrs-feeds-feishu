@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Model Carving: Training Transformers That Optimize Their Own Topology</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Model Carving: Training Transformers That Optimize Their Own Topology</h1>
+<p class="meta-line">arXiv · 2026-11-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：经典 Transformer 每层固定训练相同顺序的注意力与 MLP 子层——架构选择与训练长期分离，这种均匀性是惯例而非原则性设计；最优架构可能更小、更高效且远非均匀。</p>
+<p><strong>方法</strong>：Model Carving 单次运行同时学习 Transformer 的权重与架构：对每个子层加可学习标量门，让训练损失在训练中移除模型自身组件，释放内部更小的异构网络。</p>
+<p><strong>关键数字</strong>：140M~2.7B 标准与 140M~1.3B looped Transformer 上，同训练算力下雕刻模型的验证损失低于用多至 1.7× 算力训练的稠密模型；FLOPs 每 token 最多省 34%、解码最多快 1.6×。</p>
+<p><strong>为什么值得看</strong>：把「训练中雕刻架构」落地的系统工作，边缘小模型的新路线。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.27962">Model Carving: Training Transformers That Optimize Their Own Topology</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.27962">阅读原文 ↗</a></p>
+</body>
+</html>

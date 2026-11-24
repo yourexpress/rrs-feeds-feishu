@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BitPrefill: W1.58A4 Tensor-Core Acceleration for Compute-Bound LLM Prefill</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>BitPrefill: W1.58A4 Tensor-Core Acceleration for Compute-Bound LLM Prefill</h1>
+<p class="meta-line">arXiv · 2026-11-18 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：低比特量化降低 LLM 推理成本，但为内存受限 decode 优化的实现把计算受限的 prefill 留在 BF16 tensor core 上；长上下文、多模态等输入密集场景 prefill 占推理延迟比重很大。</p>
+<p><strong>方法</strong>：提出 W1.58A4 算子：权重量化到三元值、激活 4-bit，线性投影在原生 INT4 GEMM tensor core 上执行，把 prefill 从全精度矩阵乘变成低比特矩阵乘；部署在单张 RTX 4090 与 Jetson Orin Nano 边缘设备，对比 bf16 与 BitNet/BitBLAS 基线。</p>
+<p><strong>关键数字</strong>：相对原始 BF16 prefill 阶段约 1.42× 加速，模型精度损失可忽略。</p>
+<p><strong>为什么值得看</strong>：补齐低比特推理的 prefill 侧缺口，输入密集场景直接受益。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.26657">BitPrefill: W1.58A4 Tensor-Core Acceleration for Compute-Bound LLM Prefill</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.26657">阅读原文 ↗</a></p>
+</body>
+</html>

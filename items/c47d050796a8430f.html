@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PLoQ: A Prompt-Specific Low-Rank Basis for 4-bit Quantization of LLM Activations</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>PLoQ: A Prompt-Specific Low-Rank Basis for 4-bit Quantization of LLM Activations</h1>
+<p class="meta-line">arXiv · 2026-11-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：低比特激活量化难在少数主导方向决定量化范围；SOTA 方法离线校准后把变换折进权重、对所有 prompt 固定同一子空间，每个 prompt 的独特方向不受保护。</p>
+<p><strong>方法</strong>：PLoQ prompt 自适应低秩分解：量化前提取主导激活分量、单独量化、在层内 GEMM 中恢复且不改权重；低秩基在 prefill 时从每个 prompt 估计、解码全程复用。</p>
+<p><strong>关键数字</strong>：同 bit 宽（激活平均约 4.2 bit）下在 1B~70B 六个 Llama/Qwen 模型上全部胜过 SOTA 混合精度量化，最高恢复 SOTA 仍损失的困惑度的 46%；Llama-3.1-8B 8k token 仅增 4% prefill、8% 解码开销。</p>
+<p><strong>为什么值得看</strong>：激活量化的 prompt 自适应路线，模型规模覆盖全。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.27092">PLoQ: A Prompt-Specific Low-Rank Basis for 4-bit Quantization of LLM Activations</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.27092">阅读原文 ↗</a></p>
+</body>
+</html>

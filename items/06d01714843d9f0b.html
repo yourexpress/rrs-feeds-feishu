@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weave: Routing-Adaptive Runtime Warp Scheduling for MoE Megakernels</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Weave: Routing-Adaptive Runtime Warp Scheduling for MoE Megakernels</h1>
+<p class="meta-line">arXiv · 2026-11-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：专家并行（EP）下 SOTA 系统把每个 MoE 层融合成持久 megakernel；每 GPU 的通信与计算量随路由结果变化，但先前工作要么编译期固定资源划分（MegaMoE）、要么仅粗粒度 SM 级适应（mKernel 整 SM 做通信、Tensor Core 空闲）。</p>
+<p><strong>方法</strong>：Weave 三设计：空间调度在 SM 与 warp 两级分配通信/计算资源匹配负载；时间调度随执行切换 warp 角色（层始末全员参与、把输出 scatter 选择性交给空闲通信 warp）；融合成本模型启动时从运行时路由统计联合选择两种调度。</p>
+<p><strong>关键数字</strong>：EP8 下 MoE 层相对 DeepGEMM-MegaMoE 提速 1.30× geomean（SM103 最高 1.97×、SM90 最高 1.72×）；EP16 CDNA3 上比最快官方 RCCL+AITER 基线快 1.44× geomean（最高 2.87×，vLLM 为 1.67×）。</p>
+<p><strong>为什么值得看</strong>：MoE megakernel 的 warp 级运行时自适应，跨平台一致提速。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.27765">Weave: Routing-Adaptive Runtime Warp Scheduling for MoE Megakernels</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.27765">阅读原文 ↗</a></p>
+</body>
+</html>

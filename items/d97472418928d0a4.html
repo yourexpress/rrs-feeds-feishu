@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cannot Wait to Verify: Parallel Drafting to Eliminate Verifier Idle Time in Speculative Decoding</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Cannot Wait to Verify: Parallel Drafting to Eliminate Verifier Idle Time in Speculative Decoding</h1>
+<p class="meta-line">arXiv · 2026-11-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：自回归推理受 token 级串行执行限制，投机解码（SD）用草稿-验证模型缓解，但草稿阶段仍串行，验证器空闲、算力未充分利用。</p>
+<p><strong>方法</strong>：即插即用的自适应草稿方法：从共享隐藏状态出发并行评估多个 transformer 层，用隐藏状态空间发散度验证一致性；层间草稿状态偏差小时接受、否则执行修正步。</p>
+<p><strong>关键数字</strong>：NLP 任务上草稿阶段最高加速 1.65×，精度退化极小，整体保持与 SD 相同性能。</p>
+<p><strong>为什么值得看</strong>：无需改架构或重训即可加速草稿生成、提升硬件利用率。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.27477">Cannot Wait to Verify: Parallel Drafting to Eliminate Verifier Idle Time in Speculative Decoding</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.27477">阅读原文 ↗</a></p>
+</body>
+</html>

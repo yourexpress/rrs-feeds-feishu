@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Vulnerability Window: Decision Instability in Quantized Reward Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>The Vulnerability Window: Decision Instability in Quantized Reward Models</h1>
+<p class="meta-line">arXiv · 2026-11-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：奖励模型与 LLM judge 常量化到 4bit 以摊薄打分成本，常规检查只看基准准确率「几乎不动」——该检查几乎失明：量化到底如何影响决策？</p>
+<p><strong>方法</strong>：跨 8 个奖励模型（两家族 0.6B~8B）、3 个生成式 judge、4 个 4-bit 量化器系统分析：量化重写逐对偏好决策、且修正与引入的错误相互抵消；高斯近似 Phi(-|m|/sigma) 描述聚合翻转率；把诊断定位到 margin 而非高斯分布。</p>
+<p><strong>关键数字</strong>：1.1~12.3% 逐对偏好决策被重写而聚合准确率仅动 0.03 点（p=1.00）；下游 14.6~65.7% 问题 best-of-64 选择改变（final answer 仅 2.6~9.6%）；margin 预测器 AUC 0.927。</p>
+<p><strong>为什么值得看</strong>：揭示「准确率不动」假象，为量化奖励模型提供真正的诊断指标。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.27155">The Vulnerability Window: Decision Instability in Quantized Reward Models</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.27155">阅读原文 ↗</a></p>
+</body>
+</html>

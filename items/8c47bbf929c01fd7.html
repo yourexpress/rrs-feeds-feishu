@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auditing and Adapting kNNGuard for Long-Context Prompts</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Auditing and Adapting kNNGuard for Long-Context Prompts</h1>
+<p class="meta-line">arXiv · 2026-11-20 · 论文PDF</p>
+
+<p>kNNGuard 长上下文提示的审计与适配</p>
+<blockquote><p>Training-free activation guardrails such as kNNGuard score prompts by comparing last-token LLM hidden states (the Layer Ensemble branch, kNNGuard LE) and sentence embeddings (all-MiniLM-L6-v2, Embedding-kNN) against a small reference bank (50 examples per class), combining the two branches into a Fused Ensemble (kNNGuard FE). While effective on short inputs (up to 256 tokens), standard kNNGuard degrades substantially on long inputs (over 1000 tokens): averaged across Qwen3.5-4B and Gemma-4-E4B-it, kNNGuard LE AUROC drops from 0.742 (0.777 and 0.706) to 0.554 (0.587 and 0.521) on Content Harm Moderation (Aegis-2.0), and from 0.994 (0.995 and 0.992) to 0.556 (0.598 and 0.513) on RAG Hallucination Detection (HaluBench). We trace this degradation to three causes: (1) hidden-state drift as sequence length increases, (2) hard 256-token truncation in MiniLM, and (3) signal dilution when a long document is compressed into a single final-token vector. We then evaluate three training-free adaptations: a Length-Routed Dual Bank, a long-context embedding model (Qwen3-Embedding-0.6B), and Strided Window Pooling across intermediate token positions. On Content Harm Moderation, dual-bank routing a…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.27084">阅读原文 ↗</a></p>
+</body>
+</html>

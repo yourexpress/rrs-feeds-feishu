@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LEAN: Library-Based Adaptation for Asynchronous, Federated Fine-Tuning</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LEAN: Library-Based Adaptation for Asynchronous, Federated Fine-Tuning</h1>
+<p class="meta-line">arXiv · 2026-11-19 · 论文PDF</p>
+
+<p>LEAN：异步联邦微调的库式适配</p>
+<blockquote><p>Federated fine-tuning of foundation models with low-rank adapters (LoRA) is typically reconciled by averaging locally trained adapters. In cross-device settings, where participants hold heterogeneous data and join or leave asynchronously, averaging is poorly suited: locally trained adapters are not identifiable up to permutation, and averages of adapters trained on dissimilar data can be uninformative or unstable. We propose a simple idea called federated library-based adaptation (LEAN), which replaces averaging altogether. The server maintains a library of rank-1 basis pairs; participants check out random subsets, fine-tune them locally as a LoRA adapter, and check them back in, so that each pair is shuffled across sites and trained on many participants' data. Because no aggregation step is required, LEAN operates fully asynchronously and communicates only low-rank parameters. We prove that, in a synchronous setting, LEAN converges to a neighborhood of a stationary point, with the shuffle canceling data heterogeneity at first order. Across image and text fine-tuning benchmarks, LEAN outperforms averaging-based baselines in most settings with substantially less communication, and r…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.26805">阅读原文 ↗</a></p>
+</body>
+</html>

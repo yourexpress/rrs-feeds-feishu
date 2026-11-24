@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CarrierKV: An Edge LLM Accelerator with Positional Carrier Decomposition for Low-Bit KV Cache</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CarrierKV: An Edge LLM Accelerator with Positional Carrier Decomposition for Low-Bit KV Cache</h1>
+<p class="meta-line">arXiv · 2026-11-19 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：边缘端长上下文解码受 DRAM 限制，因为每生成一个 token 都要读整个不断增长的 KV cache；4-bit 块缩放格式（如 NVFP4）降低流量但掉精度。</p>
+<p><strong>方法</strong>：发现 key 的大部分能量是「位置载体」（RoPE 随位置旋转的单向量），NVFP4 中它设定多数 key block 的共享 scale、把内容信噪比压低约 5dB；据此提出位置载体分解：RoPE 前移除载体、只存内容残差，直接对 4-bit 码算注意力分数，另设计位置相位引擎逐周期再生成载体的分数项。</p>
+<p><strong>关键数字</strong>：同 cache 大小下 Qwen3-4B 32K RULER 从 79.4 提到 91.1（FP8 key 为 89.3），32K PG19 困惑度增幅降 1.8~5.9 倍；硬件面积仅增 2.9%、每 token 能量省 13.7%。</p>
+<p><strong>为什么值得看</strong>：低比特 KV cache 精度-体积权衡的系统性解法，硬件开销极小。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.26857">CarrierKV: An Edge LLM Accelerator with Positional Carrier Decomposition for Low-Bit KV Cache</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.26857">阅读原文 ↗</a></p>
+</body>
+</html>

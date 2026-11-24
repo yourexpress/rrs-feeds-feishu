@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FOREST: Coordinating Tree-based HBF, RRAM, and HBM for Efficient Speculative LLM Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>FOREST: Coordinating Tree-based HBF, RRAM, and HBM for Efficient Speculative LLM Inference</h1>
+<p class="meta-line">arXiv · 2026-11-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：投机解码各阶段资源需求不同：目标验证要高通量访问大权重集、串行草稿在紧延迟下跑紧凑模型、长上下文注意力处理增长的 KV cache；GPU 中心 SD 用共享 HBM 中心内存与通用计算造成容量/带宽/计算错配。</p>
+<p><strong>方法</strong>：FOREST 异构内存中心架构协调 HBF、3D 堆叠 RRAM 与 HBM 三种存储计算树：计算对齐 3D RRAM 做低延迟草稿；跨树数值协同把块缩放 Q/K/V 预处理移到 HBF/RRAM 根板、在 HBM 树做 BFP 注意力；HBF 感知的设计空间探索揭示带宽-计算配给与模型规模的权衡。</p>
+<p><strong>关键数字</strong>：6 个 SD 配置（32B~405B 目标模型）上最高端到端 5.5× 加速、11.46× decode 吞吐、16.5× decode 能效（对比 A800 基线）；TCO 模型下 token 生成成本效率最高 6.73×。</p>
+<p><strong>为什么值得看</strong>：SD 从 GPU 中心转向内存中心的系统级重构，数字亮眼。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.27701">FOREST: Coordinating Tree-based HBF, RRAM, and HBM for Efficient Speculative LLM Inference</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.27701">阅读原文 ↗</a></p>
+</body>
+</html>

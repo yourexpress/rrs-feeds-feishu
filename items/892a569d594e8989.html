@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contexture: Runtime Context Eviction for High-Throughput Agent Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Contexture: Runtime Context Eviction for High-Throughput Agent Serving</h1>
+<p class="meta-line">arXiv · 2026-11-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：LLM agent（Hermes、OpenClaw、Codex 等）反复重发不断增长的执行历史，推高共享 GPU KV cache 需求并限制服务吞吐；现有上下文缩减方法缺全局 cache 状态可见性，运行时 KV 管理器又缺工具执行信息。</p>
+<p><strong>方法</strong>：把 token 追溯到产生它的工具操作，发现后发操作取代先发输出与相关轮次，64% 的最终历史 token 被识别为可移除候选；Contexture 把 harness 完整对话历史与模型执行上下文分离，结合工具执行信息与共享 KV 压力/前缀驻留的全局可见性做运行时驱逐。</p>
+<p><strong>关键数字</strong>：SLO 下吞吐比无驱逐/压缩/AgentDiet/Continuum 最优者高 20~73%；live-agent 平均准确率 +1.4 个百分点、最差 -3.7（observation masking 为 -3~28）。</p>
+<p><strong>为什么值得看</strong>：模型无关的 agent 服务 KV 瓶颈解法，吞吐与精度双收。</p>
+<p>原文：<a href="https://arxiv.org/abs/2611.26980">Contexture: Runtime Context Eviction for High-Throughput Agent Serving</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.26980">阅读原文 ↗</a></p>
+</body>
+</html>

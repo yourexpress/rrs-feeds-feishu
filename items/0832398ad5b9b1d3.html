@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accelerating Muon with Spectral Residual Correction</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Accelerating Muon with Spectral Residual Correction</h1>
+<p class="meta-line">arXiv · 2026-11-20 · 论文PDF</p>
+
+<p>AIMuon：谱残差修正加速 Muon 优化器</p>
+<blockquote><p>Muon constructs matrix updates by applying a matrix-sign transformation to momentum. A common route to accelerating Muon is to modify the gradient or momentum before this transformation. We explore a complementary direction: refining the parameter step while retaining Muon's momentum recursion. Derived from the parameter subproblem of the ADMM-Inspired Momentum framework, AIMuon uses the gradient--momentum residual to correct the tentative spectral step. The residual undergoes a separate matrix-sign transformation, while spectral--nuclear duality determines the relative weighting of the momentum and residual directions. In practice, both directions are approximated with Newton--Schulz iterations and their combination is rescaled to match Muon's update magnitude. We establish a stochastic stationarity bound for the corresponding exact iteration. On GPT-2-small, GPT-2-medium, and Qwen3-0.6B, AIMuon reaches Muon's final validation loss with 8.98\%, 10.05\%, and 6.49\% fewer optimization steps, respectively, while achieving lower final validation loss than Muon, Muon-Nesterov, and MONA.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.27077">阅读原文 ↗</a></p>
+</body>
+</html>
