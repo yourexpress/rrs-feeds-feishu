@@ -22,9 +22,11 @@
 <h1>Optimal Hydra: Model Heterogeneous Federated Learning for LLMs using Data-Informed Hydra-Nets</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Large language models (LLMs) trained on vast amounts of data have demonstrated impressive performance over a range of tasks, but future performance gains will require increasing amounts of data and compute.</p>
-<blockquote><p>Large language models (LLMs) trained on vast amounts of data have demonstrated impressive performance over a range of tasks, but future performance gains will require increasing amounts of data and compute. Federated Learning (FL) facilitates training on decentralized private data, but client resource limitations can make training impractical, particularly as model sizes continue to expand. These resource constraints make the assumption of a shared server-client architecture impractical. Model heterogeneous FL offers a promising alternative by adapting model size to client capabilities; however, previous work is limited to the pre-training setting, and conclusions on sub-network selection do not necessarily hold for fine-tuning. Furthermore, prior approaches create client sub-networks without considering their unique data distributions, thereby overlooking the opportunity to tailor sub-network architecture to local data. Motivated by evidence that attention heads exhibit task dependency within layer defined feature spaces, we propose Optimal Hydra, a transformer based heterogeneous FL framework for fine-tuning that combines global layer selection with client specific attention head…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 联邦微调受客户端资源限制，模型异构 FL 此前只用于预训练，且子网络选择未利用客户端本地数据分布。</p>
+<p><strong>方法</strong> Optimal Hydra：面向 LLM 微调的 transformer 异构联邦学习框架，将全局层选择与客户端特定注意力头选择结合、对齐本地数据分布，显式利用客户端数据生成 Hydra-nets 子网络。依据是注意力头在层定义特征空间内具有任务依赖性。</p>
+<p><strong>关键数字</strong> 三个数据集上显著优于基线方法，同时降低本地资源需求；据称是首个面向 LLM 微调的模型异构 FL 方法。</p>
+<p><strong>为什么值得看</strong> 数据驱动的子网络定制是异构联邦训练的关键缺口，对端侧/算力不均场景的 LLM 微调有直接价值。</p>
+<p><a href="https://arxiv.org/abs/2610.20753">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.20753">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Protocol Choices Matter More Than the Aggregation Algorithm: Federated Learning for In-Hospital Mortality Prediction in Care-Unit and Multi-Hospital Federations</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Federated learning allows hospitals to train a shared mortality model without pooling their records, but published comparisons of aggregation strategies rarely control the evaluation protocol.</p>
-<blockquote><p>Federated learning allows hospitals to train a shared mortality model without pooling their records, but published comparisons of aggregation strategies rarely control the evaluation protocol. This study compared seven strategies (FedAvg, FedProx, SCAFFOLD, FedAdagrad, FedAdam, FedYogi and FedCluster) on two federations built with one pipeline: 12 care units of a hospital in MIMIC-IV and 49 hospitals in eICU-CRD. Each strategy was tuned and selected on validation data by the same rule, and every comparison was repeated across 10 seeds with Friedman and Holm-corrected tests. SCAFFOLD ranked first in both federations (AUC-ROC 0.886 and 0.819) and in 17 of 18 variants, but its margin over the runner-up never exceeded 0.008, and a control sharing its local optimizer attributed most of its margin over FedAvg to drift correction. On the multi-hospital federation, federated training matched centralized training. In the care-unit federation, three protocol choices changed discrimination by more than the choice of strategy did: discharge-coded predictors (+0.038 in AUC-ROC), client-level SMOTE (up to -0.074), and evaluating the last instead of the best validation round (up to -0.084). Platt…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 联邦学习让医院不汇集记录即可联合训练共享死亡预测模型，但既有聚合策略对比研究很少控制评估协议，结论可能失真。</p>
+<p><strong>方法</strong> 用同一管线构建两个联邦：MIMIC-IV 院内 12 个监护单元、eICU-CRD 49 家医院；对比 7 种策略（FedAvg、FedProx、SCAFFOLD、FedAdagrad、FedAdam、FedYogi、FedCluster），统一调参与选模规则，10 个种子重复并经 Friedman 与 Holm 校正。</p>
+<p><strong>关键数字</strong> SCAFFOLD 两联邦均第一（AUC-ROC 0.886 / 0.819，17/18 变体），但领先亚军从未超过 0.008，且对照实验把其多数优势归因于漂移校正；监护单元联邦中三个协议选择（出院编码预测器 +0.038、客户端级 SMOTE 至多 -0.074、用最后而非最佳验证轮至多 -0.084）对判别力的影响大于策略选择。</p>
+<p><strong>为什么值得看</strong> 用严格对照证明「先固定协议、再排名算法」，对医疗联邦学习评估有方法论警示。</p>
+<p><a href="https://arxiv.org/abs/2610.17265">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17265">阅读原文 ↗</a></p>
 </body>
 </html>

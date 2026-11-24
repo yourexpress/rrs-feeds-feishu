@@ -22,9 +22,11 @@
 <h1>RELAY: Selective Self-Distillation with Adaptive Hand-off for Rubric-Based Reinforcement Learning</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Rubric-based reinforcement learning grades a response against many written criteria but collapses them into one reward, which discards the detail the rubric carries and gives no GRPO reward gradient when a group's responses tie.</p>
-<blockquote><p>Rubric-based reinforcement learning grades a response against many written criteria but collapses them into one reward, which discards the detail the rubric carries and gives no GRPO reward gradient when a group's responses tie. A frozen teacher that reads the rubric as privileged context provides token-level supervision, but we observe an early plateau in the gains over GRPO. RELAY uses advantages and rewards to select positive-advantage and low-scoring zero-advantage rollouts, and monitors the distillation loss to decide when to retire the teacher. Stage 1 combines selective distillation from a frozen teacher with GRPO; a plateau detector then removes the teacher, and Stage 2 continues with GRPO alone. Calibrated on one model-domain pair and reused unchanged in three others, the plateau detector fires between steps 122 and 171. RELAY scores highest in-domain among the compared methods in all four settings, ahead of GRPO on RaR-Medicine by 4.62 points with Qwen3-1.7B and 6.02 with Qwen3-4B. On Qwen3-1.7B/Medicine, removing the teacher from a shared checkpoint outperforms keeping, weakening or refreshing it. Distilling selected rollouts covering about half the response tokens also …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 基于 rubric 的强化学习把多条书面标准压成一个奖励，丢失细节，且小组响应打平时 GRPO 没有奖励梯度。</p>
+<p><strong>方法</strong> RELAY：用优势与奖励选择正优势与低分零优势 rollout；冻结教师以 rubric 为特权上下文提供 token 级监督；监控蒸馏损失、由平台检测器决定何时退役教师——阶段 1 选择性蒸馏 + GRPO，阶段 2 纯 GRPO。</p>
+<p><strong>关键数字</strong> 平台检测器在步 122~171 触发（一组校准、三组直接复用）；4 个设置中域内成绩均最高，RaR-Medicine 上超 GRPO 4.62 点（Qwen3-1.7B）/ 6.02 点（Qwen3-4B）；蒸馏覆盖约一半响应 token 的选中 rollout 优于蒸馏全部。</p>
+<p><strong>为什么值得看</strong> 蒸馏教师「何时退、蒸馏谁」的自适应设计，rubric 监督 + RLVR 训练提效实用。</p>
+<p><a href="https://arxiv.org/abs/2610.17623">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17623">阅读原文 ↗</a></p>
 </body>
 </html>

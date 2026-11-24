@@ -22,9 +22,11 @@
 <h1>OpenMQPI: An MLIR-based Pipeline to Offload Quantum Circuits via OpenMP</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Quantum computing introduces specialized software stacks and programming interfaces that are often tightly coupled to specific ecosystems and hardware backends, limiting interoperability and software reuse.</p>
-<blockquote><p>Quantum computing introduces specialized software stacks and programming interfaces that are often tightly coupled to specific ecosystems and hardware backends, limiting interoperability and software reuse. For HPCQC application developers, this complicates the integration of quantum accelerators into existing applications. Existing quantum frameworks also use ecosystem-specific circuit representations and compilation pipelines, hindering integration with established heterogeneous compiler infrastructures. We propose OpenMQPI, an MLIR-based OpenMP extension for quantum programming that leverages OpenMP's standardized target offloading infrastructure to integrate quantum resources into HPC applications. OpenMQPI introduces QPIR, a lightweight MLIR dialect for representing quantum circuits within OpenMP target regions, and a compiler pipeline that performs quantum-specific optimizations and lowers circuits to executables compatible with OpenMP offloading. At runtime, an MQSS plugin enables the generated executable to offload quantum circuits to quantum hardware through the OpenMP target offloading model. We evaluate OpenMQPI using the VQE, QFT, and Deutsch-Jozsa algorithms with 5, 10…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 量子计算软件栈与特定生态/硬件强耦合，HPC 应用难以把量子加速器集成进现有异构编译基础设施。</p>
+<p><strong>方法</strong> OpenMQPI：基于 MLIR 的 OpenMP 量子编程扩展。引入轻量 MLIR dialect QPIR 表示 OpenMP target 区域内的量子电路，编译管线做量子专用优化并降低为兼容 OpenMP offloading 的可执行文件；运行时 MQSS 插件经 OpenMP target offloading 模型把电路卸载到量子硬件。</p>
+<p><strong>关键数字</strong> 用 VQE、QFT、Deutsch-Jozsa 在 5/10/15/20 量子比特上对比 Qiskit 与 CUDA Quantum：20 比特 VQE 平均执行 5.18s（Qiskit 5.83s、CUDA Quantum 7.39s），为全部配置中最低；QFT 与 Deutsch-Jozsa 与 Qiskit 相当、低于 CUDA Quantum。</p>
+<p><strong>为什么值得看</strong> 把量子编程纳入标准化 OpenMP offloading 体系，是降低 HPCQC 集成门槛的务实路径。</p>
+<p><a href="https://arxiv.org/abs/2610.18056">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.18056">阅读原文 ↗</a></p>
 </body>
 </html>

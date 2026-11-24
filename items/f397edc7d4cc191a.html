@@ -22,9 +22,11 @@
 <h1>Quantile-Guided Diffusion for Probabilistic Time-Series Forecasting</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Quantile forecasts summarize uncertainty at each future time step, while diffusion forecasters represent it through sampled future trajectories.</p>
-<blockquote><p>Quantile forecasts summarize uncertainty at each future time step, while diffusion forecasters represent it through sampled future trajectories. We study how predicted quantiles can serve as distributional controls for diffusion forecasting. Specifically, we investigate how the mechanism of quantile integration affects its effectiveness in guiding a pretrained diffusion forecaster. We find that residual control throughout the denoising network yields the most consistent improvements. We instantiate this approach as Control-TS, which learns a quantile-control pathway while keeping the pretrained backbone frozen. Across eight benchmarks, Control-TS consistently improves the backbone's CRPS, achieves competitive performance against state-of-the-art forecasting models, and retains its gains in capacity-matched comparisons. Further analyses examine how these gains depend on quantile granularity, predictor choice, and forecast quality. Finally, we introduce the Conditional Linear Predictive Score (CLPS), which complements distributional metrics by evaluating the downstream forecasting utility of generated futures. Together, these findings support predicted quantiles as an effective inter…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 分位数预测以显式不确定性概括每个未来时步，扩散预测器则以采样轨迹表示不确定性，两者如何有效结合？</p>
+<p><strong>方法</strong> 系统研究预测分位数作为扩散预测分布控制的作用机制，发现遍及去噪网络的残差控制最一致有效；据此提出 Control-TS——冻结预训练主干、学习分位数控制通路；另提出 Conditional Linear Predictive Score（CLPS）评估生成未来轨迹的下游预测效用。</p>
+<p><strong>关键数字</strong> 8 个基准上一致改善主干的 CRPS，与 SOTA 预测模型竞争性相当，并在容量匹配比较中保持增益。</p>
+<p><strong>为什么值得看</strong> 为「显式分位数 ↔ 扩散轨迹生成」提供接口设计，概率时序预测的方法学进展。</p>
+<p><a href="https://arxiv.org/abs/2610.20739">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.20739">阅读原文 ↗</a></p>
 </body>
 </html>

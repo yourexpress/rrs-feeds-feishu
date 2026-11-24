@@ -22,9 +22,11 @@
 <h1>Pick the Mixture, Not the Samples: Combinatorial Data Selection for LLMs</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Data selection for LLM fine-tuning faces two facts about real training: data pools draw from many distinct domains, and evaluation spans diverse tasks.</p>
-<blockquote><p>Data selection for LLM fine-tuning faces two facts about real training: data pools draw from many distinct domains, and evaluation spans diverse tasks. As a result, the same sample helps different tasks differently, and samples interact during training so that a subset's value is not the sum of its parts. Current data-selection methods leave these realities largely unaddressed. We formalize them as Combinatorial Data Selection (CDS), a framework that separates attribution (how samples are scored) from selection (which subset to pick) and models the non-additive interactions among samples. On a real instruction-tuning data pool, we find substantial cross-domain complementarity (joint utility exceeds the sum of singletons), alongside redundancy within domains. Inspired by this, we propose Mixture-then-Select, a two-stage algorithm that first decides how many samples to take from each domain, then ranks samples within each domain by attribution score. Theoretically, the gap to the optimal subset is linear in the selection size and independent of data pool size. Empirically, Mixture-then-Select outperforms strong baselines by 20 to 54%, is robust across attribution methods, and works a…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 数据选择忽视两个现实：数据池跨多个领域、评估跨多种任务，且样本在训练中交互——子集价值不等于各部分之和。</p>
+<p><strong>方法</strong> Combinatorial Data Selection（CDS）框架：把归因（样本如何打分）与选择（选哪个子集）分离，显式建模样本间非加性交互；据此提出 Mixture-then-Select 两阶段算法：先决定每领域取多少样本，再在域内按归因分数排序。</p>
+<p><strong>关键数字</strong> 真实指令微调池上发现显著跨领域互补性（联合效用超过单体之和）与域内冗余；相比强基线提升 20~54%，对归因方法稳健、跨模型与池规模适用；理论缺口线性于选择规模、与池大小无关；框架可扩展到预算约束下的数据购买。</p>
+<p><strong>为什么值得看</strong> 从「挑样本」转向「挑配比」，为大规模 LLM 数据选择提供新视角与理论保障。</p>
+<p><a href="https://arxiv.org/abs/2610.14028">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14028">阅读原文 ↗</a></p>
 </body>
 </html>

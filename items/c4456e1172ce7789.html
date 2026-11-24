@@ -22,9 +22,11 @@
 <h1>ProTok: Unified Protein Tokenization via Modular Multi-Codebook Quantization</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Protein sequence, structure, and functional annotations each capture complementary aspects of protein biology, yet existing tokenizers encode each modality independently, limiting the expressiveness of discrete protein representations.</p>
-<blockquote><p>Protein sequence, structure, and functional annotations each capture complementary aspects of protein biology, yet existing tokenizers encode each modality independently, limiting the expressiveness of discrete protein representations. We present ProTok, a unified protein tokenizer that maps all three modalities into a modular discrete vocabulary via product quantization with per-modality codebook groups and modality dropout. A single ProTok checkpoint supports flexible inference from any modality subset without retraining. On seven StructTokenBench benchmarks spanning 14 tasks and 28 test splits, ProTok achieves an average rank of 1.4 across all structure-only tokenizers, placing first on 21 splits and among the top two on 27 of the 28. These gains come without sacrificing reconstruction: ProTok's tokens reach 0.939 lDDT on CATH 4.2, showing that multi-codebook quantization and multi-modal training yield tokens that are both reconstructable and informative. ProTok's structure tokens further lead all baseline structure tokenizers on zero-shot functional retrieval across CATH, Enzyme Commission, and Gene Ontology label hierarchies. The vocabulary also supports generation: a compact …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 蛋白质序列、结构、功能注释分别捕获互补信息，但现有 tokenizer 各模态独立编码，离散蛋白质表示表达力受限。</p>
+<p><strong>方法</strong> ProTok 统一 tokenizer：乘积量化 + 每模态码本组 + modality dropout，把三模态映射进模块化离散词表；单个 checkpoint 无需重训即可支持任意模态子集推理。</p>
+<p><strong>关键数字</strong> StructTokenBench 7 基准/14 任务/28 拆分上，结构 tokenizer 平均排名 1.4，21 个拆分第一、27/28 进前二；CATH 4.2 重建 lDDT 0.939；从头训练的紧凑语言模型生成骨架中 52% 可设计（参数匹配 GeoBPE 基线仅 21%）。</p>
+<p><strong>为什么值得看</strong> 序列-结构-功能共享统一离散词表，为「单 token 流推理」的蛋白质语言模型铺路。</p>
+<p><a href="https://arxiv.org/abs/2610.18481">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.18481">阅读原文 ↗</a></p>
 </body>
 </html>

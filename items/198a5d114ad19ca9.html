@@ -22,9 +22,11 @@
 <h1>Preserving Updates in Low-Bit Recurrent State Quantization</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Linear attention and recurrent models compress past tokens into a fixed-size state that is updated at every step.</p>
-<blockquote><p>Linear attention and recurrent models compress past tokens into a fixed-size state that is updated at every step. However, storing these states in high precision incurs substantial memory and bandwidth costs at large batch sizes, motivating low-bit state quantization. Unlike weights and key--value caches, a recurrent state is requantized after every update, so its quantization errors accumulate across steps. Our analysis shows that these errors are highly coherent across steps, so reducing per-step errors alone is insufficient. This coherence arises mainly from small updates that are lost in rounding. To preserve these updates, we intervene both before and at rounding. Before rounding, we propose Low-Rank Bypass (LRB), which accumulates small updates in a compact low-rank buffer and periodically merges its sufficiently large elements into the state. At rounding, we observe that a state element can even move opposite to its update, and such reversals prove particularly harmful. Therefore, we propose Bounded Directional Rounding (BDR), which rounds reversed elements toward their updates without additional storage. Although BDR enlarges the rounding error, it improves the model, sugge…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 线性注意力/循环模型把过去 token 压缩进固定状态并逐步更新，高精度存储在大 batch 下成本高；但低比特量化下状态每步重量化，误差跨步累积。</p>
+<p><strong>方法</strong> 分析发现误差跨步高度相干、主要源于小更新在舍入中丢失。提出两个干预：舍入前 Low-Rank Bypass（LRB）——把小更新累积进紧凑低秩缓冲、周期性把足够大的元素并入状态；舍入时 Bounded Directional Rounding（BDR）——把反向移动元素朝其更新方向舍入，无需额外存储。</p>
+<p><strong>关键数字</strong> Gated DeltaNet、GLA、Mamba2、RetNet 上免训练方法大幅优于 INT4；状态内存最高降 5.3×、解码最高提速 1.9×（相对 FP32 状态）。</p>
+<p><strong>为什么值得看</strong> 点明「更新方向比单步舍入误差更重要」，低比特状态量化直接利好长上下文推理。</p>
+<p><a href="https://arxiv.org/abs/2610.15709">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15709">阅读原文 ↗</a></p>
 </body>
 </html>

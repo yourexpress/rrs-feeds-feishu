@@ -22,9 +22,11 @@
 <h1>PrismStencil: Transforming Stencil Computations into Matrix Multiplications</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Stencil computations are a fundamental class of workloads in scientific and engineering applications.</p>
-<blockquote><p>Stencil computations are a fundamental class of workloads in scientific and engineering applications. Although Tensor Cores offer new opportunities for stencil acceleration, existing tensorization methods suffer from substantial redundant computation and insufficient data reuse. We propose PrismStencil, a stencil tensorization algorithm that introduces a novel mapping scheme between matrices and stencil grid points. PrismStencil employs multidimensional vector mapping to accommodate the multidimensional data dependencies of stencil computations and a unified gather--scatter tensorization scheme to exploit the relative sizes of the matrix dimensions in Tensor Core operations, thereby reducing the redundant computation introduced by tensorization. Moreover, it introduces a cross-product data-reuse mechanism that exploits the overlap among neighboring stencil updates to further enhance data reuse. Across representative stencil kernels on an NVIDIA A100 GPU, PrismStencil achieves average speedups of 2.13x and 2.17x over state-of-the-art Tensor Core stencil methods with FP64 and TF32 precision, respectively.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Stencil 计算是科学工程核心负载，Tensor Core 加速虽有新机会，但现有张量化方法冗余计算多、数据复用不足。</p>
+<p><strong>方法</strong> PrismStencil 张量化算法：提出矩阵与 stencil 网格点的新型映射；多维向量映射适配 stencil 的多维数据依赖；统一 gather-scatter 张量化方案利用 Tensor Core 矩阵维度相对尺寸减少冗余；cross-product 数据复用机制利用相邻 stencil 更新的重叠增强复用。</p>
+<p><strong>关键数字</strong> NVIDIA A100 上代表性 stencil 核平均加速 2.13×（FP64）、2.17×（TF32），对比 SOTA Tensor Core stencil 方法。</p>
+<p><strong>为什么值得看</strong> 把 stencil 高效搬到 Tensor Core 的系统化方案，对 HPC 数值内核加速有直接价值。</p>
+<p><a href="https://arxiv.org/abs/2610.18382">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.18382">阅读原文 ↗</a></p>
 </body>
 </html>

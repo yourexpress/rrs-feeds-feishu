@@ -22,9 +22,11 @@
 <h1>Programmable Data Layouts via On-The-Fly Data Transformation</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>The performance of modern computing systems is heavily bottlenecked by the widening gap between processing throughput and main memory latency, a problem exacerbated when an application's logical data access patterns misalign with the physical layout of data in memory.</p>
-<blockquote><p>The performance of modern computing systems is heavily bottlenecked by the widening gap between processing throughput and main memory latency, a problem exacerbated when an application's logical data access patterns misalign with the physical layout of data in memory. To address this, we propose a hardware-software co-design framework comprising the Data Transformation Language (DTL) and the Data Transformation Unit (DTU). DTL allows programmers to concisely express complex data layout reorganizations, which the compiler translates into efficient hardware routing configurations. The DTU, a hardware engine logically situated between the Last-Level Cache (LLC) and main memory, transparently evaluates these configurations on-the-fly to gather scattered data elements into dense, logically contiguous cache lines. By converting explicit layout transformations into virtual views, this approach eliminates the need for explicit data materialization in software. We evaluate the DTU within a quad-core RISC-V SoC using FireSim, demonstrating substantial improvements in execution speed and memory efficiency.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 处理吞吐与内存延迟差距持续拉大，应用逻辑访问模式与内存物理布局错位会进一步恶化性能。</p>
+<p><strong>方法</strong> 软硬件协同框架：Data Transformation Language（DTL）让程序员简洁表达复杂数据布局重排，编译器翻译为高效硬件路由配置；Data Transformation Unit（DTU）位于末级缓存与主存之间，即时透明求值配置，把分散数据聚成密集、逻辑连续的 cache line；显式布局变换转为虚拟视图，免除软件侧显式物化。</p>
+<p><strong>关键数字</strong> 四核 RISC-V SoC（FireSim）评估，执行速度与内存效率均有显著提升。</p>
+<p><strong>为什么值得看</strong> 在内存层级即时做数据变换、省去软件搬运，是应对内存墙的新颖架构思路。</p>
+<p><a href="https://arxiv.org/abs/2610.15193">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15193">阅读原文 ↗</a></p>
 </body>
 </html>

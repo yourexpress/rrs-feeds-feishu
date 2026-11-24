@@ -22,9 +22,11 @@
 <h1>Query-Adaptive Neuron Steering for LLMs</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Effectively eliciting the capabilities of large language models (LLMs) at inference time remains an important challenge.</p>
-<blockquote><p>Effectively eliciting the capabilities of large language models (LLMs) at inference time remains an important challenge. Existing studies address this challenge through context engineering, which shapes user queries, or fixed steering, which directly intervenes in model computation. However, predefined contexts and fixed intervention strategies may not adequately accommodate the diverse knowledge and reasoning requirements of individual queries. This raises a natural question: Can internal steering in LLMs be made query-adaptive? In this work, we investigate whether query-induced internal activations can guide adaptive steering in LLMs. Our pilot studies reveal subject- and layer-dependent neuron activation patterns and show that amplifying subject-relevant neurons can improve model performance. Based on these findings, we propose Q-NeuS, a query-adaptive neuron steering framework that dynamically determines which neurons to modulate and by how much for each input. Specifically, Q-NeuS constructs a compact subject-guided candidate neuron space and employs a lightweight Query-Adaptive Gate to generate neuron-wise modulation coefficients. To learn effective intervention strategies, w…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> LLM 推理时的能力激发：预设上下文与固定 steering 难以适配单个查询的多样知识与推理需求——内部 steering 能否做到查询自适应？</p>
+<p><strong>方法</strong> Q-NeuS 查询自适应神经元 steering 框架：pilot 实验发现神经元激活呈主题与层依赖、放大主题相关神经元可提性能；据此构建紧凑的主题引导候选神经元空间，用轻量 Query-Adaptive Gate 逐输入生成神经元调制系数；Neu-GRPO 以组相对优化训练 Gate。基座 LLM 全程冻结，推理时无需任务/主题标签。</p>
+<p><strong>关键数字</strong> 多个 LLM 与基准上一致提升性能，跨模型规模适用、跨基准迁移性强。</p>
+<p><strong>为什么值得看</strong> 从「固定干预」走向「按查询动态调制」，推理时能力激发的新方向。</p>
+<p><a href="https://arxiv.org/abs/2610.14519">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14519">阅读原文 ↗</a></p>
 </body>
 </html>

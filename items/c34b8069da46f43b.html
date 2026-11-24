@@ -22,9 +22,11 @@
 <h1>PreSO: Privileged Representation Isolation for On-Policy Self-Distillation</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>On-policy self-distillation (OPSD) uses a self-teacher conditioned on privileged information to turn the sparse outcome signal of reinforcement learning with verifiable rewards (RLVR) into dense token-level supervision.</p>
-<blockquote><p>On-policy self-distillation (OPSD) uses a self-teacher conditioned on privileged information to turn the sparse outcome signal of reinforcement learning with verifiable rewards (RLVR) into dense token-level supervision. Yet the teacher's advantage may depend on information unavailable to the student at inference, raising a central question: which privileged changes are worth distilling? We use cross-problem recurrence as an empirical cue for potentially reusable guidance. Comparing the representation shifts induced by full solutions and compact hints, we find that hint-induced shifts are more concentrated and directionally consistent across problems, and yield more sustained downstream gains despite revealing less information. Motivated by this association, we propose Privileged Representation Isolation for On-Policy Self-Distillation (PreSO). At the source, PreSO uses compact hints to limit the solution-specific detail entering the privileged shift. At the target, it estimates a leading low-rank subspace from shifts pooled across related problems, projects the privilege-induced correction onto this subspace, and adds it to the student's unprivileged representation to form the repr…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> On-policy 自蒸馏（OPSD）用依赖特权信息的自教师把 RLVR 稀疏结果转成稠密 token 级监督，但教师优势可能来自学生推理时不可见的信息——哪些特权变化值得蒸馏？</p>
+<p><strong>方法</strong> 以跨问题重复出现作为可复用指导的经验线索。PreSO：源端用紧凑提示限制特权位移中的解特定细节；目标端从相关问题池估计前导低秩子空间，把特权校正投影到该子空间并与学生非特权表示相加，形成表示级蒸馏目标。</p>
+<p><strong>关键数字</strong> 5 个竞赛级数学基准上，Qwen3-1.7B/4B/8B 平均准确率较基线分别提升 6.8/9.0/10.0 点；各规模最终 checkpoint 平均均为最高，增益持续到训练结束。</p>
+<p><strong>为什么值得看</strong> 用低秩子空间代理可迁移结构，为「哪些特权信息值得蒸馏」提供了可操作答案。</p>
+<p><a href="https://arxiv.org/abs/2610.14001">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14001">阅读原文 ↗</a></p>
 </body>
 </html>

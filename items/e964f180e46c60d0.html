@@ -22,9 +22,11 @@
 <h1>Orrery: Modeling and Simulation of GPU-direct MPI Communication with SimGrid</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Simulation of HPC applications is an essential tool for analyzing system design trade-offs and enabling effective hardware--software co-design.</p>
-<blockquote><p>Simulation of HPC applications is an essential tool for analyzing system design trade-offs and enabling effective hardware--software co-design. As modern supercomputers increasingly rely on GPU acceleration, MPI implementations have evolved to support GPU-aware communication, enabling direct GPU data transfers. Modeling these mechanisms is therefore critical for simulating HPC applications on current systems. In this paper, we introduce Orrery, an interposition layer built on SimGrid's SMPI to model GPU-aware MPI communication using existing collective implementations and flow-based simulation. Orrery intercepts GPU memory allocations, kernel launches, data transfers, and MPI operations, and models their execution in SimGrid according to target system specifications, enabling simulation without requiring physical GPUs. We validate Orrery using CUDA-aware MPI microbenchmarks and a Jacobi solver on up to 32 nodes of the MUSICA supercomputer and demonstrate that it reproduces key GPU-aware MPI mechanisms.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 现代超算日益依赖 GPU，MPI 已支持 GPU-aware 直连通信，但现有 HPC 仿真器缺乏对此类机制的建模能力。</p>
+<p><strong>方法</strong> Orrery：构建于 SimGrid SMPI 之上的 interposition 层，拦截 GPU 内存分配、kernel 启动、数据传输与 MPI 操作，并按目标系统规格在 SimGrid 中流式建模其执行，无需物理 GPU 即可仿真 GPU-aware MPI 通信。</p>
+<p><strong>关键数字</strong> 用 CUDA-aware MPI 微基准与 Jacobi solver 在 MUSICA 超算最多 32 节点上验证，成功复现关键 GPU-aware MPI 机制。</p>
+<p><strong>为什么值得看</strong> 填补 GPU 直连通信仿真空白，为 HPC 系统软硬件协同设计提供可仿真手段。</p>
+<p><a href="https://arxiv.org/abs/2610.18565">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.18565">阅读原文 ↗</a></p>
 </body>
 </html>
