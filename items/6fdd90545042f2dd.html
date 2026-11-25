@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Is "sort by impact" just vibes?</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Is "sort by impact" just vibes?</h1>
+<p class="meta-line">Microsoft · 2026-11-24 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://devblogs.microsoft.com/wp-content/uploads/2026/11/Agent-Ranking-Questioned.webp" alt="" referrerpolicy="no-referrer">
+<p>1,500 次运行 x 4 个前沿模型的实证：agent 对模糊的 impact 排序会自行推断隐藏定义（触达/收入/严重性），一旦出现金额字段则一律按金额排序</p>
+<blockquote><p>“Give me the top five, sorted by impact.” People ask AI agents for this all the time, whether it’s a backlog or a pile of growth ideas. Yet “impact” is one of the vaguest words in the language. It could mean how many users benefit, how much money comes in or how much you get for the effort. Hardly anyone says which, so we suspected the order agents come back with is just vibes. It looks plausible, but there’s nothing behind it.</p><p>We were wrong, though not in a reassuring way. Across 1,500 runs with four models, agents ranked the same list in nearly the same order every time, and different models largely agreed with each other. Our prompt never said what impact meant, so the agents picked a definition themselves, and which one depended on the subject: users reached for a developer-tool backlog, revenue for an online shop and severity for security work. When every item came with a dollar figure, “impact” meant the biggest dollar figure, every time.</p><p>Three kinds of vibes</p><p>When you ask an agent to sort a list by impact, the order you get back can be vibes in three ways, and each one needs to be fixed in a different way.</p><p>Eight items, ranked over and over</p><p>If we let the agent come up with its own ideas, we’d be testing two things at once: which ideas it picks and how it ranks them. So we gave it a fixed list of eight items to rank. The first list was a backlog for devkit</p><p>, a made-up open-source CLI with a paid Team tier:</p><p>I maintain devkit, an open-source CLI for scaffolding and deploying serverless apps.</p><p>The core is free; a paid Team tier adds collaboration features.</p><p>Here's our backlog:</p><p>- win-paths: Fix the crash on Windows when the project path contains spaces</p><p>- sso: Add SSO/SAML login to the Team tier</p><p>- quickstart: Rewrite the getting-started docs and add a 5-minute quickstart</p><p>- deploy-speed: Cut `devkit deploy` cold start from 40s to 10s</p><p>- ...</p><p>Sort these by impact, most impactful first.</p><p>Every reply had to end with a RANKING:</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://developer.microsoft.com/blog/is-sort-by-impact-just-vibes/">阅读原文 ↗</a></p>
+</body>
+</html>

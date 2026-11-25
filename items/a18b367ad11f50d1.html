@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANOR: Scaling Sparse Attention with a GPU-PNM Computing Hierarchy</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ANOR: Scaling Sparse Attention with a GPU-PNM Computing Hierarchy</h1>
+<p class="meta-line">arXiv · 2026-11-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 长上下文 LLM 服务须保留每请求完整 KV 缓存，可能超 GPU 显存；CXL-PNM 设备可持全缓存就地算注意力，但现有 GPU-PNM 系统 PNM 为中心，CXL-PNM 带宽远低于 GPU HBM，使 PNM 成瓶颈、GPU 空等。</p>
+<p><strong>方法</strong> ANOR 是 GPU-PNM 联合加速系统：利用稀疏注意力的选择局部性，GPU 从近期选择条目缓存算大部分注意力，PNM 只处理 miss；有界缓存更新策略在命中率饱和点停止更新以减链路流量；片上 Early Streaming Buffer 捕获 KV 数据流给 GPU；自适应缓存因子随负载调 GPU 缓存大小。</p>
+<p><strong>关键数字</strong> 两模型三长上下文 agentic 负载下，解码吞吐较 HiSparse 平均 2.3x、较 PNM 基线平均 2.0x。</p>
+<p><strong>为什么值得看</strong> 把 PNM 定位为 GPU 内存层级的计算层而非主引擎，纠正 PNM-centric 设计偏差。</p>
+<p><a href="https://arxiv.org/abs/2611.30417">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.30417">阅读原文 ↗</a></p>
+</body>
+</html>

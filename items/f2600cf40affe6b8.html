@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One Structure Is Enough: Record-Native Tiles for Evolving Sparse Matrices on GPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>One Structure Is Enough: Record-Native Tiles for Evolving Sparse Matrices on GPUs</h1>
+<p class="meta-line">arXiv · 2026-11-23 · 论文PDF / 每日精选</p>
+
+<p>RecTile：GPU 上演进稀疏矩阵的记录原生分片存储，12 字节边记录单数组结构</p>
+<blockquote><p>Sparse matrices that change over time, such as streaming graphs, are usually handled on GPUs with two parts: a packed format such as CSR, ELL, or SELL for computation, and a separate buffer for updates. Periodic maintenance then merges updates, rebuilds data, or changes formats. Our measurements show that this split is often unnecessary. We present RecTile, a tiled storage layer where each tile is kept in one sorted array of 12-byte edge records. For fragmented matrices, with 1 to 21 nonzeros per tile in our workloads, RecTile matches the best format-pinned slab tile at 0.56 to 1.21 times its time. Its tiled layout is also up to 21 times faster than whole-matrix cuSPARSE CSR. Specialized slabs are faster on the patterns they target at medium density, but both approaches converge by 25% density. RecTile stays within 1.1 to 1.6 times of whole-matrix cuSPARSE COO, our strongest static baseline, while COO cannot be updated in place. RecTile also uses no fixed per-tile device metadata for the stored matrix payload, so its tiles are smaller at realistic occupancies. A fully GPU-based ingest pipeline applies insert/delete/modify batches at up to 29 million edges per second, 4.5 times fast…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.30159">阅读原文 ↗</a></p>
+</body>
+</html>

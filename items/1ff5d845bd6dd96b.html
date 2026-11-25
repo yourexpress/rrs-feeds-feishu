@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Measuring GPU Memory Traffic on the NVIDIA GB10 Without C2C Telemetry</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Measuring GPU Memory Traffic on the NVIDIA GB10 Without C2C Telemetry</h1>
+<p class="meta-line">arXiv · 2026-11-23 · 论文PDF / 每日精选</p>
+
+<p>无 C2C 遥测下测量 NVIDIA GB10 GPU 内存流量（5 个 L2 sector 计数器 + CUPTI 采样）</p>
+<blockquote><p>The NVIDIA GB10, used in the DGX Spark and in desktop AI systems from several vendors, joins an Arm CPU die and a Blackwell GPU die with NVLink C2C. The GPU has no local memory, so every GPU access that misses in its L2 cache crosses C2C to the LPDDR5X attached to the CPU die. Yet the software on the systems we tested exposes no counter for this traffic. We show that five L2 sector counters of the GPU, sampled every 10 ms through NVIDIA's CUPTI sampling interface by a process that does not attach to the workload, measure GPU memory traffic live and separate copy engine traffic from the read misses and writes of GPU kernels. For large streaming transfers of known size, the counters agree within 0.28% on an Acer GN100 and within 0.005% on a DGX Spark, track the volume moved regardless of how it is split into copies, and exclude data reused in L2. The GPU's SMMU counter, a natural alternative, counts address translations rather than bytes. Applied to an unmodified server, the method shows Mistral 7B decode reading 13.47 GiB per token, the weights it uses plus its key value (KV) cache, at 83% of the memory bandwidth NVIDIA specifies. We release the method as an open source tool.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.29915">阅读原文 ↗</a></p>
+</body>
+</html>

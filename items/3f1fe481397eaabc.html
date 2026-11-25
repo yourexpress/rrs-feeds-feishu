@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loop-Count Schedules in Looped Transformers: An Empirical Study</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Loop-Count Schedules in Looped Transformers: An Empirical Study</h1>
+<p class="meta-line">arXiv · 2026-11-22 · 论文PDF</p>
+
+<blockquote><p>Looped transformers apply one block of layers several times with shared weights, trading parameters for repeated computation. We study how the schedule of the loop iteration count R during training determines whether each extra pass acts as a full layer or as a small correction, using a controlled ladder of 46M-110M-parameter models trained on 2B tokens with learned residual gates on every loop pass and three schedules: R fixed to 2, R sampled uniformly from {1,...,6}, and R sampled from {2,3,4}. We find that the lower bound of the sampling range is the decisive choice. If the sampled range includes R=1, so that some training steps run the block only once and compute the loss on that single pass, the gates collapse to 0.1-0.5 and each additional pass becomes a small correction to the first; if the range starts at R=2, so that every training step runs the block at least twice, the gates stay at 0.6-0.9 and each pass keeps the strength of a full layer, while the model can still be run at any R from 2 up to twice the largest trained value with validation loss within a few hundredths of a nat of its best. The {2, 3, 4} schedule gives the best looped model, 2.909 nats against 2.951 for …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.29704">阅读原文 ↗</a></p>
+</body>
+</html>

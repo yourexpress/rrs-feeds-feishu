@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One Checkpoint, Four Converters: Per Input Disagreement After On Device Conversion and a Probe Set That Catches It</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>One Checkpoint, Four Converters: Per Input Disagreement After On Device Conversion and a Probe Set That Catches It</h1>
+<p class="meta-line">arXiv · 2026-11-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 设备端/加速推理的模型转换以 top-1 准确率匹配源模型即上线，但准确率匹配时单个决策可能改变；转换器、INT8 配方与校准各有影响。</p>
+<p><strong>方法</strong> 用 ExecuTorch、LiteRT、ONNX Runtime、TensorRT 的 FP32 与 INT8 文档配方转换 5 个公开 checkpoint（4 个 ImageNet 分类器 + 1 个情感模型），在 7,854 张图与 1,938 个句子上逐 top-1 决策与 PyTorch 源对比。</p>
+<p><strong>关键数字</strong> 34 个严格 FP32 转换逐决策复现；4 个保准确率的视觉 INT8 配方均翻转 &gt;1% 决策：ONNX Runtime 静态 INT8 翻转 ResNet-50 4.07% 决策（准确率仅 −0.15 点），同配方不同校准构建间分歧 3.44%；200 个最小源 margin 训练输入组成的探针集召回全部 40 个视觉栈（95% CI 0.91–1.00）。</p>
+<p><strong>为什么值得看</strong> 证明准确率等价 ≠ 决策等价，给出转换前即可选定的探针集做验收。</p>
+<p><a href="https://arxiv.org/abs/2611.29661">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.29661">阅读原文 ↗</a></p>
+</body>
+</html>

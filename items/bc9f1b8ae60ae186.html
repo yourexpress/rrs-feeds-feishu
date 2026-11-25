@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MemVanta: Memory-Efficient CPU Inference for Quantized GGUF Language Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MemVanta: Memory-Efficient CPU Inference for Quantized GGUF Language Models</h1>
+<p class="meta-line">arXiv · 2026-08-25 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 商品 CPU 上部署量化 LLM 不仅受计算吞吐限制，更受固定系统预算内常驻内存的约束。</p>
+<p><strong>方法</strong> MemVanta 是 C++20 量化 GGUF 推理运行时，把内存驻留作为一等系统目标：内存映射模型访问、有界张量缓存、量化执行路径、分页 KV 状态与显式内存压力验证；与 llama.cpp 同用 OpenLLaMA 7B v2 Q4_0 GGUF 基线对比。</p>
+<p><strong>关键数字</strong> 峰值常驻内存 3,983,412 KiB，较 llama.cpp 的 7,586,960 KiB 降 47.50%；吞吐明显折让——prompt 处理 3.15 vs 45.82 tok/s、生成 1.52 vs 7.76 tok/s；cgroup-v2 无 swap 下 3584 MiB 上限可完成，llama.cpp 同上限被 OOM、3840 MiB 才成功。</p>
+<p><strong>为什么值得看</strong> 面向内存受限 CPU/边缘推理的内存效率研究原型，明确量化了内存-吞吐权衡机制。</p>
+<p><a href="https://arxiv.org/abs/2611.27997">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.27997">阅读原文 ↗</a></p>
+</body>
+</html>

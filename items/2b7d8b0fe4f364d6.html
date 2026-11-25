@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Introducing SWE-2.1</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Introducing SWE-2.1</h1>
+<p class="meta-line">Cognition · 2026-11-24 · 技术博客 / 每日精选</p>
+<img class="hero" src="https://cognition.com/images/swe-2-1/cover.jpg" alt="" referrerpolicy="no-referrer">
+<p>SWE-2.1 以纯强化学习在 Kimi K3 上训练，FrontierCode 2.0、Terminal-Bench 等编码与安全基准大幅提升</p>
+<blockquote><p>Introducing SWE-2.1</p><p>We’re releasing SWE-2.1, a major upgrade over SWE-2. Like its predecessor, it is trained with pure reinforcement learning on Kimi K3. It delivers large gains across a wide range of benchmarks including FrontierCode 2.0 and Terminal-Bench 4.1. We achieve much of our gains in coding performance by targeting general intelligence and long-horizon workflows. This also leads to improvements across a variety of other domains, especially cybersecurity.</p><p>See the Benchmark Methodology Notes at the end of this post for how these benchmarks are run.</p><p>One notable improvement through our training is significantly increased capability on cybersecurity, vulnerability finding and exploitation tasks. SWE-2.1 achieves 80% on ExploitBench and 27.3% flags captured via intended exploits on ExploitGym. The model thus shows strong performance not only in finding vulnerabilities, but also carrying them out through the full exploitation chain, often over several hours of autonomous work.</p><p>See the Benchmark Methodology Notes at the end of this post for how ExploitBench and ExploitGym are scored.</p><p>* These scores are for Muse Wonder Full.</p><p>Training a model with advanced capabilities in cybersecurity requires additional safeguards. Therefore, we built several security measures into training:</p><p>- We red-teamed our training setup, particularly around sandboxes.</p><p>- We implemented continuous safety monitoring. We created a canary eval where the model tries to escape the sandbox. Upon success, our infrastructure alerts the researchers.</p><p>The canary eval has been a successful intervention. Even after extensive red-teaming, the model discovered new vulnerabilities in our sandbox four times during training. Researchers were alerted and responded immediately each time.</p><p>…</p></blockquote>
+<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><a class="origin" href="https://cognition.com/blog/swe-2-1">阅读原文 ↗</a></p>
+</body>
+</html>

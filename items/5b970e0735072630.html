@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Pipeline-Parallel System for Depth-Recurrent Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>A Pipeline-Parallel System for Depth-Recurrent Models</h1>
+<p class="meta-line">arXiv · 2026-11-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 深度循环（Looped）模型靠共享块栈多次应用提升有效深度，扩展通常需流水线并行；但常用交错 1F1B 为无环 stage 图设计——栈跨 stage 拆分后同一 stage 被多次访问、后级反喂前级，1F1B 无对应槽位、无法排序、无回边，导致停滞或乱序。</p>
+<p><strong>方法</strong> Loop-PP 为这种循环布局重建时间表与通信：同一 stage 的不同迭代分别调度，把 1F1B 骨架特化为全局一致的访问序，每 rank 发射静态指令流、分离 posting 与 waiting 使通信与本地计算重叠。</p>
+<p><strong>关键数字</strong> 与单 stage 参考逐位一致（bit-identical）；8B–60B MoE 模型上峰值内存最多降 32.8%；固定算力预算下最佳观测吞吐提升 12.7%。</p>
+<p><strong>为什么值得看</strong> 为循环架构定制流水线并行，bit-identical 验证 + 显存与吞吐双收益。</p>
+<p><a href="https://arxiv.org/abs/2611.30581">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.30581">阅读原文 ↗</a></p>
+</body>
+</html>

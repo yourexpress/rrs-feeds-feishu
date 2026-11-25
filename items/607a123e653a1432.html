@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CCAMoE: Cache-Conditioned Adaptive Inference for Offloaded MoE</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CCAMoE: Cache-Conditioned Adaptive Inference for Offloaded MoE</h1>
+<p class="meta-line">arXiv · 2026-11-21 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 显存受限 GPU 上 MoE 推理靠 expert 卸载，但 expert 传输与 CPU 执行拖慢解码；投机解码可缓解，独立草稿权重却占用稀缺显存、长草稿增加验证需求。</p>
+<p><strong>方法</strong> CCAMoE 统一运行时，协调自适应投机解码与并发 expert 缓存更新：仅缓存草稿（复用驻留目标 expert 生成提案与路由提示，无独立草稿权重）、草稿引导缓存更新（预测 expert 需求、传输与计算重叠）、成本感知草稿长度控制。</p>
+<p><strong>关键数字</strong> 多种 MoE 模型、GPU 平台与负载下解码延迟一致最低，较 SOTA 基线最高 2.33x 加速。</p>
+<p><strong>为什么值得看</strong> 用驻留 expert 白嫖草稿生成，消除独立草稿权重开销，工程落地价值直接。</p>
+<p><a href="https://arxiv.org/abs/2611.28550">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.28550">阅读原文 ↗</a></p>
+</body>
+</html>

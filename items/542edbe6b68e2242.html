@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BitShare: Sensitivity-Aware Binning and Bit Sharing for Compacting LLM Weight Storage</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>BitShare: Sensitivity-Aware Binning and Bit Sharing for Compacting LLM Weight Storage</h1>
+<p class="meta-line">arXiv · 2026-11-21 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 小批量 LLM 解码受内存带宽限制，每权重存储位数基本决定成本；组内量化把同组所有权重存为同一精度，但组内输入通道敏感度不同。</p>
+<p><strong>方法</strong> BitShare 是无码本权重格式，保留整数网格与反量化器、组内变精度：敏感度感知分箱把每组通道放入三个固定位置箱；静态位共享让低敏感权重共享低位（每组或每对权重存一次）；共享感知版 GPTQ 免微调无码本选值。</p>
+<p><strong>关键数字</strong> 同存储下 3/2 bit 在 WikiText-2 与 C4 困惑度均低于 GPTQ；Llama-2/3 上 2-bit BITSHARE-N 较 SliM-LLM 困惑度最多降 70%、较 GPTAQ 降 35%；SliM-LLM 同等困惑度下每权重少存 13.6–19.4% 位；SkyWater 130nm 硬件解码器验证通过。</p>
+<p><strong>为什么值得看</strong> 免微调、无码本的组内变精度压缩，压缩率与硬件可实现性兼顾。</p>
+<p><a href="https://arxiv.org/abs/2611.28607">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.28607">阅读原文 ↗</a></p>
+</body>
+</html>

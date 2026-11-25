@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>X-BQSR: Holistic Acceleration of Base Quality Recalibration for Scalable Genomic Analysis</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>X-BQSR: Holistic Acceleration of Base Quality Recalibration for Scalable Genomic Analysis</h1>
+<p class="meta-line">arXiv · 2026-11-23 · 论文PDF / 每日精选</p>
+
+<p>X-BQSR：GPU 加速基因组碱基质量重校准（BQSR），识别计算与 I/O 瓶颈</p>
+<blockquote><p>With the continued decline in sequencing costs, genomics-based precision medicine is gaining increasing importance. The Genome Analysis Toolkit (GATK) is the standard framework for converting raw genomic data into actionable variants, but one of its most expensive steps is base quality score recalibration (BQSR), which corrects systematic sequencing errors. Despite significant work on accelerating other parts of the variant calling pipeline, BQSR has not been systematically explored on GPUs. In this work, we analyze BQSR to identify computational and I/O bottlenecks and show that simply offloading key stages to an accelerator is insufficient to achieve overall gains. We then present X-BQSR, a holistic redesign of the entire BQSR pipeline, including I/O, compression, and kernel execution, to better leverage GPU parallelism. We implement X-BQSR using portable SYCL kernels for NVIDIA, AMD, and Intel GPUs, along with native CUDA and HIP backends for comparison, and we evaluate its performance against previous FPGA work. Our evaluation shows up to 141.7x acceleration compared to standard GATK and 8.7x acceleration compared to a proprietary GPU-accelerated solution.</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.31062">阅读原文 ↗</a></p>
+</body>
+</html>

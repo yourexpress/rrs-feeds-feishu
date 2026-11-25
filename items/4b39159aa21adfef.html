@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doc-to-LoRA Analysis: Query Conditioning, Wrong Facts, and Distractor Interference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Doc-to-LoRA Analysis: Query Conditioning, Wrong Facts, and Distractor Interference</h1>
+<p class="meta-line">arXiv · 2026-11-23 · 论文PDF</p>
+
+<blockquote><p>Doc-to-LoRA (D2L) compiles documents into low-rank adapters, allowing language models to use their contents without repeatedly processing the original text. We investigate its suitability for internalizing user memories through factual question answering, controlled interventions, and a production MidBrain memory pipeline. Across Gemma-2-2B and Qwen3-4B, D2L loses accuracy relative to in-context learning, with additional documents introducing substantial interference. Single-document errors frequently match answers to other questions about the same passage, suggesting unreliable question-answer attribution. Layer-wise interventions show that interference accumulates across depth, with more concentrated early damage at larger bank sizes on Gemma. With eight documents, applying the full bank in the initial layers gives similar accuracy to withholding all document contributions there. Source membership is detectable in intermediate states, but trained readers do not reliably resolve the interference. On PersonaMem-v2, joint compilation and normalized adapter composition achieve accuracy close to consolidated text memory when retrieved episodes remain text, but the resulting token savi…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.30825">阅读原文 ↗</a></p>
+</body>
+</html>

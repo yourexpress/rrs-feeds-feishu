@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RadAG: Reward-Adversarial Attention Guidance for Efficient Inference-Time Alignment of Diffusion Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>RadAG: Reward-Adversarial Attention Guidance for Efficient Inference-Time Alignment of Diffusion Models</h1>
+<p class="meta-line">arXiv · 2026-11-21 · 论文PDF</p>
+
+<blockquote><p>Diffusion and flow-based models have achieved remarkable success in generation, yet their samples often remain suboptimal in fidelity and text alignment. Two lines of inference-time methods address this: extrapolation guidance, such as classifier-free guidance (CFG) and its variants, and reward guidance, which aligns samples with reward models of human preference. Extrapolation guidance needs only forward passes, but it builds its reference by heuristic rules unrelated to the reward and therefore cannot steer sampling toward a given reward. Gradient-based reward guidance steers sampling directly toward a higher reward, but backpropagates through the entire generator at every step. This trade-off raises the question of whether extrapolation guidance can steer sampling toward a higher reward without a full backward pass. To answer this, we introduce Reward-Adversarial Attention Guidance (RadAG), which constructs the reference by perturbing the attention logits of a single block against their reward gradient and extrapolates away from it. We prove that this update increases the reward of the clean estimate to first order, while its backward pass stops at the perturbed block instead of…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.28809">阅读原文 ↗</a></p>
+</body>
+</html>

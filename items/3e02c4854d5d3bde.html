@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IndexerStage: Staging Indexer-K across Memory Tiers for Sparse-Attention LLM Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>IndexerStage: Staging Indexer-K across Memory Tiers for Sparse-Attention LLM Serving</h1>
+<p class="meta-line">arXiv · 2026-11-21 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 长上下文稀疏注意力服务在注意力数据卸载后仍受 GPU 显存限制；DeepSeek Sparse Attention 的 Indexer-K 状态每层每解码步全量扫描，且逐步增长。</p>
+<p><strong>方法</strong> IndexerStage 把 Indexer-K 状态外置到内存层级，保留原生 GPU score/top-k/attention kernel：完成页经共享执行缓冲分期、新条目本地保留；联合内存-传输准入检查在接收增长批前核对存储与各层传输需求；SGLang 实现，16 服务 + 16 后备 H800 GPU。</p>
+<p><strong>关键数字</strong> 16K–64K 输入下本地流式存储每服务 GPU 仅 0.65–0.70 GiB；较主机内存版 HiSparse 批增 12.28–23.08%、解码 TPS 1.08–1.14x；64K 固定 latent-KV 路径下 1.10x；混合长度动态服务平均批增 12.07%、1.31x 解码 TPS。</p>
+<p><strong>为什么值得看</strong> 为 DeepSeek Sparse Attention 的 Indexer 状态提供分层卸载运行时，工程实现完整可复现。</p>
+<p><a href="https://arxiv.org/abs/2611.28625">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.28625">阅读原文 ↗</a></p>
+</body>
+</html>

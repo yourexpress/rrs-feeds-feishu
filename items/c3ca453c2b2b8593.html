@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DisSparse: Pipelined Top-$p$ Sparse Attention for Long-Context LLM Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>DisSparse: Pipelined Top-$p$ Sparse Attention for Long-Context LLM Serving</h1>
+<p class="meta-line">arXiv · 2026-11-21 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 长上下文 LLM 推理被 KV 缓存内存需求卡住；固定预算 top-k 稀疏注意力无论注意力质量分布如何都用同一预算，峰值注意力 head 浪费带宽、弥散 head 丢失上下文。</p>
+<p><strong>方法</strong> DisSparse 把 top-p（核）稀疏注意力端到端集成进 vLLM：块选择与调度关键路径解耦、双流流水线把选择延迟藏进层计算、单遍直方图 top-p kernel；另用 token 重定位 kernel 处理块内稀疏（固定大小块混入高/低重要 token 导致的预算膨胀）。</p>
+<p><strong>关键数字</strong> 稀疏分析（块选择）较 SOTA top-p 方法加速 1.17x–1.80x，精度损失可忽略；同内存预算下最大批比密集 vLLM 大最多 8x。</p>
+<p><strong>为什么值得看</strong> 解决 top-p 在生产服务系统落地的块分配确定性与 kernel 开销两大难题。</p>
+<p><a href="https://arxiv.org/abs/2611.28522">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.28522">阅读原文 ↗</a></p>
+</body>
+</html>

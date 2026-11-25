@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gossamer: A Utility-Driven Architecture for Constant-Budget KV Cache Compression in Reasoning LLMs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Gossamer: A Utility-Driven Architecture for Constant-Budget KV Cache Compression in Reasoning LLMs</h1>
+<p class="meta-line">arXiv · 2026-11-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 推理 LLM 上下文延伸至数十万 token，KV 缓存主导内存与带宽；量化与驱逐等现有压缩方法纯算法层面，常引入额外 pass 与计算开销。</p>
+<p><strong>方法</strong> Gossamer 提出效用驱动的 KV 压缩架构，在常量缓存预算下动态选择量化、合并或驱逐；把余弦相似度估计直接融合进 attention 计算（Free-Lunch Utilization），利用空闲计算周期做相似度评估，零延迟零带宽成本。</p>
+<p><strong>关键数字</strong> 紧内存约束下保持与未压缩推理相当的推理质量；端到端吞吐较未压缩基线最高 16.7x、较量化基 Oaken/Ecco 5.5x/4.9x、较驱逐基 R-KV 1.8x。</p>
+<p><strong>为什么值得看</strong> 算法-系统-硬件协同的常量预算 KV 压缩，注意力内免费算相似度。</p>
+<p><a href="https://arxiv.org/abs/2611.29497">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.29497">阅读原文 ↗</a></p>
+</body>
+</html>

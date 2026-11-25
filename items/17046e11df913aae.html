@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RefineKV: Query-Adaptive KV Cache Compression via Attention-Error Bounds</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>RefineKV: Query-Adaptive KV Cache Compression via Attention-Error Bounds</h1>
+<p class="meta-line">arXiv · 2026-11-20 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 长上下文解码反复访问完整 KV 缓存是主要瓶颈；小查询特定子集即可近似全注意力，但这些子集的并集几乎覆盖整个缓存。</p>
+<p><strong>方法</strong> RefineKV 把 KV 缓存分簇，误差可忽略的簇用紧凑代表、其余展开回原始 KV 条目；从注意力输出误差上界推导选择准则，揭示重要性（簇影响）与保真度（簇可被代表的程度）两个互补因子。</p>
+<p><strong>关键数字</strong> 两模型三基准上保持近全注意力质量；attention 阶段最高 7.6x 加速，整体解码 1.66x 加速，建立新的质量-延迟帕累托前沿。</p>
+<p><strong>为什么值得看</strong> 解码期查询自适应 KV 压缩，用理论误差界指导选择而非启发式。</p>
+<p><a href="https://arxiv.org/abs/2611.28171">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.28171">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CXL Coherence Writes Back What Surviving Hosts See, Leaving Flushes Only for Ordering</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CXL Coherence Writes Back What Surviving Hosts See, Leaving Flushes Only for Ordering</h1>
+<p class="meta-line">arXiv · 2026-11-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> CXL 共享内存的主机会缓存其行，崩溃主机丢失已修改未写回的行；现有设计要么停掉所有主机、假设存储能量、要么每次操作后冲刷。</p>
+<p><strong>方法</strong> 证明崩溃主机的客户端同死时，所需冲刷只是让一行不先于其依赖行到达存储设备的那些（保序冲刷），而非持久化冲刷——CXL 要求修改行在另一主机访问前写回，故幸存主机所见已上设备；对三个已发表设计的模型小实例测试。</p>
+<p><strong>关键数字</strong> 锁表无需冲刷即可保住幸存主机的锁；持久化哈希索引在两种负载下写入设备行数少于已发表代码的一半；分配器对每个新引用的冲刷对幸存者安全既非充分也非必要。</p>
+<p><strong>为什么值得看</strong> 把 CXL 崩溃一致性从持久化冲刷收紧为保序冲刷，有证明有实测。</p>
+<p><a href="https://arxiv.org/abs/2611.29335">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.29335">阅读原文 ↗</a></p>
+</body>
+</html>

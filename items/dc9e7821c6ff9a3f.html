@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HiPPO Functional Memory: Coordinate-Queryable Attention for Irregular Time Series</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>HiPPO Functional Memory: Coordinate-Queryable Attention for Irregular Time Series</h1>
+<p class="meta-line">arXiv · 2026-11-21 · 论文PDF</p>
+
+<blockquote><p>Irregular time series are recorded at nonuniform times and are often queried at other times: between observations, after the last one, or on a regular grid. Continuous-time models answer such queries by integrating latent dynamics, and time-aware attention models answer them by revisiting the observation tokens. We introduce HiPPO Functional Memory (HiPPO-FM), an attention operator that writes an irregular history into a rank-M function space with explicit time coordinates. Masked self-attention first exchanges content among the observations; the updated values are then contracted against kernel-smoothed HiPPO-Legendre features and solved through a regularized Gram matrix, so the retained coefficients define a function that is read at any time through the same features. The write and read have the form of an interdomain sparse Gaussian-process mean: every readout lies in an M-dimensional reproducing-kernel subspace, and a pointwise bound separates the approximation error of this subspace from the error of the learned memory. Removing the functional memory from the encoder raises Spiral reconstruction RMSE 18-fold. The full model has the lowest error in 11 of 12 Spiral settings, the…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.28465">阅读原文 ↗</a></p>
+</body>
+</html>

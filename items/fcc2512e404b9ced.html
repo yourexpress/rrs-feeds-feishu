@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hidden Sensitivity in LLM Pre-training: A Dynamic System View</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Hidden Sensitivity in LLM Pre-training: A Dynamic System View</h1>
+<p class="meta-line">arXiv · 2026-11-21 · 论文PDF</p>
+
+<blockquote><p>In Large Language Model (LLM) pre-training, loss curves can conceal substantial instability, i.e., even small perturbations may lead to dramatically different predictions while leaving loss nearly unchanged. To investigate this phenomenon and reveal the underlying mechanisms, we first formulate LLM pre-training as a non-autonomous dynamical system that jointly evolves model weights and Adam optimizer states. Based on this formulation, we introduce a normalized sensitivity score in optimizer-relative coordinates to identify sensitive training checkpoints. At one such checkpoint, a weight perturbation of only 10^(-5) leads to 35.7% disagreement in top-1 predictions and 16.2% disagreement in benchmark answers after 200 training steps, with only 0.8% of greedy generations remaining identical despite similar validation losses. Furthermore, we find that perturbations to Adam's first and second moments induce comparably large effects, with similar sensitivity patterns observed in OLMo-1B. Finally, guided by our diagnostic, targeted stabilization reduces top-1 disagreement to 0.83% and increases generation exact match to 88.3%, at the cost of a 0.11-nat increase in validation loss. Our fin…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.28830">阅读原文 ↗</a></p>
+</body>
+</html>

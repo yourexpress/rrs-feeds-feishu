@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Field Enumeration Costs to Compile in C++26: Native Reflection, Structured-Binding Packs, Reflection Libraries and Hand-Written Serializers on GCC 16</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>What Field Enumeration Costs to Compile in C++26: Native Reflection, Structured-Binding Packs, Reflection Libraries and Hand-Written Serializers on GCC 16</h1>
+<p class="meta-line">arXiv · 2026-11-23 · 论文PDF</p>
+
+<blockquote><p>C++26 adds standard ways to enumerate a struct's fields, among them static reflection (P2996, with P3394 annotations) and structured-binding packs (P1061), alongside hand-written code, X-macros and libraries (Boost.PFR, reflect-cpp, Glaze) that now ship pre-C++26 and C++26 paths. We time each in a struct serializer with byte-identical output on GCC 16.2.0, at the front end and at -O2, in randomized interleaved rounds with code-level checks of every single-factor contrast. At the front end, inline native enumeration in the form used in several of P2996's own examples, an expansion statement over the std::span of define_static_array, costs about as much per struct of 16 scalar fields as Boost.PFR and 7.96x a P1061 pack, itself about as cheap as hand-written code. The same loop over a constant array costs 0.47x as much: about half of the span form's cost comes with the span. The ratio to P1061 shrinks on a heterogeneous type graph and at -O2. In a whole translation unit at the front end the library outweighs the mechanism: 200 structs take 0.59 s with inline native enumeration, 0.56 s with Boost.PFR and 3.86-4.13 s with the C++26 paths of reflect-cpp and Glaze, whose visitors also com…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.30250">阅读原文 ↗</a></p>
+</body>
+</html>

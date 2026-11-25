@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exact on Paper: Which LLM Serving Shortcuts Flip Graded Answers, Measured Against the Noise of Reordering the Same Requests</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Exact on Paper: Which LLM Serving Shortcuts Flip Graded Answers, Measured Against the Noise of Reordering the Same Requests</h1>
+<p class="meta-line">arXiv · 2026-11-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 团队凭基准准确率不变就启用前缀缓存、分块 prefill、投机解码等"精确"服务特性，但准确率是聚合指标，特性可能翻转哪些请求被答对。</p>
+<p><strong>方法</strong> vLLM 中服务一个 4B 指令模型：9 种单特性配置 + 参考配置 5 副本，逐次评分 5 个基准共 3,380 个请求；每个候选与重启下限（新进程）和调度下限（同请求不同顺序）对比。</p>
+<p><strong>关键数字</strong> 默认 kernel 下各配置准确率差在一分内，7 个精确特性翻转 1.47%（95% CI 1.13–1.85）至 1.78%（1.39–2.20）请求的评分结果，均不高于调度下限 1.72%；FP8 KV 缓存翻转 3.36%（2.80–3.96）；batch-invariant kernel 下 7 个特性逐请求复现参考文本，FP8 KV 仍翻转 3.91%（3.28–4.53）。</p>
+<p><strong>为什么值得看</strong> 量化"精确"特性的逐请求翻转率，建议在 batch-invariant kernel 或 ≥3 副本调度下限下认证服务变更。</p>
+<p><a href="https://arxiv.org/abs/2611.29663">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.29663">阅读原文 ↗</a></p>
+</body>
+</html>

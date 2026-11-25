@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HiPerfCC-KVCache: Accelerating Confidential LLM Serving with Hierarchical KV Caching</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>HiPerfCC-KVCache: Accelerating Confidential LLM Serving with Hierarchical KV Caching</h1>
+<p class="meta-line">arXiv · 2026-11-21 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 分层 KV 缓存靠保留 GPU 外可复用状态减少重复 prefill，但 GPU 机密计算（CC）下受保护的传输可能抹掉收益。</p>
+<p><strong>方法</strong> 表征 Hopper/Blackwell 上批量 KV 拷贝在长时间 CPU 侧处理期间持有驱动锁、阻塞独立服务的机制；据此设计 HiPerfCC-KVCache：管理资源生命周期、有界备份提交间优先就绪 token 回读、辅助上下文共享 GPU staging 并行 KV 恢复；在 SGLang 中实现，不改硬件与驱动。</p>
+<p><strong>关键数字</strong> H200 最高负载下输出 token 吞吐几何平均 1.74x（最高 2.72x），首 token 延迟平均降 36%、最高 59%；RTX PRO 6000 Blackwell 上几何平均 1.28x（最高 2.20x）。</p>
+<p><strong>为什么值得看</strong> 机密 LLM 服务场景的分层 KV 缓存，定量揭示驱动锁与传输并行瓶颈。</p>
+<p><a href="https://arxiv.org/abs/2611.28702">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.28702">阅读原文 ↗</a></p>
+</body>
+</html>

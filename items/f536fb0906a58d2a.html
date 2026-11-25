@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OnCache: Learning Dynamic Caching Schedules for Efficient Diffusion Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>OnCache: Learning Dynamic Caching Schedules for Efficient Diffusion Inference</h1>
+<p class="meta-line">arXiv · 2026-11-22 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 扩散模型迭代去噪导致高推理延迟；缓存加速复用中间特征，但多依赖静态、与样本无关的调度，忽视跨 prompt 的去噪动态差异与各时间步对缓存误差的敏感度。</p>
+<p><strong>方法</strong> OnCache 动态缓存框架在线做提示自适应决策：离线在相同去噪状态的成对计算/缓存延续上训练策略，用终端保真度与函数评估数（NFE）差异衡量每个决策的下游后果；神经校正器补偿缓存误差并抑制其沿去噪轨迹累积；组件轻量。</p>
+<p><strong>关键数字</strong> FLUX.1-dev 1024² 分辨率近 3x 生成加速，LPIPS 0.156、SSIM 0.860；扩展到 Wan2.1-T2V-1.3B 视频生成，两模态均达 SOTA 效率-质量权衡。</p>
+<p><strong>为什么值得看</strong> 提示自适应的扩散缓存调度，训练信号直接来自下游保真度影响。</p>
+<p><a href="https://arxiv.org/abs/2611.29480">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.29480">阅读原文 ↗</a></p>
+</body>
+</html>

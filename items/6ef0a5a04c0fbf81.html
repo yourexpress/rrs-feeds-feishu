@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One Million Tokens in 20GB: Calibration-Free 2-Bit SRFT KV-Cache Compression for Looped MoE Inference on Apple Silicon</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>One Million Tokens in 20GB: Calibration-Free 2-Bit SRFT KV-Cache Compression for Looped MoE Inference on Apple Silicon</h1>
+<p class="meta-line">arXiv · 2026-11-21 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong> 统一内存边缘设备的长上下文推理由 KV 缓存容量与内存带宽主导；32GB Apple M6 Mac mini 上 26.4B 循环 MoE 模型 Inkling-2-Mini 在 oMLX 中 64K token 即耗尽内存。</p>
+<p><strong>方法</strong> 利用混合 NoPE 架构三个结构性质（有界滑动窗口、1,024 token 带状相对偏置尾部恒零、unit-RMS 值归一化）+ 正交子采样随机傅里叶变换（SRFT），对 8 个全局访问的远前缀做免校准 2.000-bit Value / 2.125-bit Key Lloyd-Max 压缩，与精确 bf16 局部窗口在线 log-sum-exp 合并；自定义 GQA 打包 Metal 解码 kernel。</p>
+<p><strong>关键数字</strong> 有效 2.0625 bit/坐标，比 bf16 小 7.76x；73.4 GB/s；256K 下 17.09 tok/s（bf16 的 3.36x）、512K 13.81 tok/s、1,048,576 token 9.52 tok/s、峰值 19.49 GiB（KV 仅 4.37 GiB）；WikiText-2 上 3.06-bit SRFT 无损（ΔPPL −0.007），2.06-bit +0.130 且 8K/16K/32K 精确 7 位 passkey 检索 100%（3/3）。</p>
+<p><strong>为什么值得看</strong> 苹果芯片百万 token 边缘推理的免校准压缩方案，数字链路完整可核。</p>
+<p><a href="https://arxiv.org/abs/2611.29092">阅读原文</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.29092">阅读原文 ↗</a></p>
+</body>
+</html>

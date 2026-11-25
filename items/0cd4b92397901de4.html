@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adaptive Warm-State Retention for Serverless Cold-Start Mitigation: Treating Keep-Alive Time as an Online Control Parameter</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Adaptive Warm-State Retention for Serverless Cold-Start Mitigation: Treating Keep-Alive Time as an Online Control Parameter</h1>
+<p class="meta-line">arXiv · 2026-11-20 · 论文PDF</p>
+
+<blockquote><p>Serverless platforms are easy to operate but pay a recurring price in cold starts: when a function is called after sitting idle, its execution environment must be rebuilt before the request can run, and latency suffers. The usual fix keeps idle environments alive for a fixed window, but a single value rarely fits a changing workload: too high wastes idle capacity, too low causes avoidable cold starts. We argue the keep-alive window should not be a fixed deployment constant; instead we treat it as a per-function runtime parameter, adjusted online from what the system observes, kept separate from how many replicas to run. We build an external retention controller for OpenFaaS/faasd that needs no platform changes, driven by two simple agents: a reactive AIMD (Additive-Increase Multiplicative-Decrease) rule and a UCB1 multi-armed bandit. Against fixed-timeout baselines and a predictive histogram keep-alive, on steady, bursty, and trace-derived workloads (Huawei Serverless 2023), the bandit cuts the aggregate cold-start rate from 63% under immediate scale-to-zero to 3%, holds P95 tail latency at the level of the longest-retention fixed baseline, and uses about 13% less accumulated warm …</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.28306">阅读原文 ↗</a></p>
+</body>
+</html>
