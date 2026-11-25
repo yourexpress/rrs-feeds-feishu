@@ -22,9 +22,11 @@
 <h1>Introducing SWE-2.1</h1>
 <p class="meta-line">Cognition · 2026-11-24 · 技术博客 / 每日精选</p>
 <img class="hero" src="https://cognition.com/images/swe-2-1/cover.jpg" alt="" referrerpolicy="no-referrer">
-<p>SWE-2.1 以纯强化学习在 Kimi K3 上训练，FrontierCode 2.0、Terminal-Bench 等编码与安全基准大幅提升</p>
-<blockquote><p>Introducing SWE-2.1</p><p>We’re releasing SWE-2.1, a major upgrade over SWE-2. Like its predecessor, it is trained with pure reinforcement learning on Kimi K3. It delivers large gains across a wide range of benchmarks including FrontierCode 2.0 and Terminal-Bench 4.1. We achieve much of our gains in coding performance by targeting general intelligence and long-horizon workflows. This also leads to improvements across a variety of other domains, especially cybersecurity.</p><p>See the Benchmark Methodology Notes at the end of this post for how these benchmarks are run.</p><p>One notable improvement through our training is significantly increased capability on cybersecurity, vulnerability finding and exploitation tasks. SWE-2.1 achieves 80% on ExploitBench and 27.3% flags captured via intended exploits on ExploitGym. The model thus shows strong performance not only in finding vulnerabilities, but also carrying them out through the full exploitation chain, often over several hours of autonomous work.</p><p>See the Benchmark Methodology Notes at the end of this post for how ExploitBench and ExploitGym are scored.</p><p>* These scores are for Muse Wonder Full.</p><p>Training a model with advanced capabilities in cybersecurity requires additional safeguards. Therefore, we built several security measures into training:</p><p>- We red-teamed our training setup, particularly around sandboxes.</p><p>- We implemented continuous safety monitoring. We created a canary eval where the model tries to escape the sandbox. Upon success, our infrastructure alerts the researchers.</p><p>The canary eval has been a successful intervention. Even after extensive red-teaming, the model discovered new vulnerabilities in our sandbox four times during training. Researchers were alerted and responded immediately each time.</p><p>…</p></blockquote>
-<p class="note">以上为原文正文节选（机器抓取），中文省流版整理中。</p>
+<p><strong>核心话题</strong>：Cognition 发布 SWE-2.1，纯强化学习在 Kimi K3 上训练，编码与安全基准大幅提升。</p>
+<p><strong>要点</strong>：编码增益来自瞄准通用智能与长程工作流，并带动网络安全等领域；漏洞发现与利用能力显著增强；训练内建多项安全措施（红队训练环境、持续安全监控、canary eval 沙箱逃逸探测，成功即告警研究者）。</p>
+<p><strong>关键数字</strong>：ExploitBench 80%、ExploitGym 27.3% 标志经预期利用捕获（Muse Wonder Full 计分）；训练期间模型 4 次发现沙箱新漏洞、研究者即时响应。</p>
+<p><strong>为什么值得看</strong>：编码 agent 新版本 + 网络安全能力，安全护栏设计与红队实践值得关注。</p>
+<p><a href="https://cognition.com/blog/swe-2-1">阅读原文</a></p>
 <p><a class="origin" href="https://cognition.com/blog/swe-2-1">阅读原文 ↗</a></p>
 </body>
 </html>

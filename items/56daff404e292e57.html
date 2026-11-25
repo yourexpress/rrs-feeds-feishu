@@ -22,9 +22,11 @@
 <h1>CGSpec: Consistency-Guided Speculative Decoding with Overlap-Aware Verification Scheduling for Edge-Cloud Inference</h1>
 <p class="meta-line">arXiv · 2026-11-23 · 论文PDF / 每日精选</p>
 
-<p>CGSpec：边缘-云协作投机解码，一致性引导 + 重叠感知验证调度</p>
-<blockquote><p>Collaborative speculative decoding accelerates large language model inference by enabling edge clients to draft tokens locally and a shared cloud model to verify them. However, draft target disagreement wastes communication and verification resources, while heterogeneous client return times complicate shared verifier scheduling. We propose CGSpec, a consistency guided framework for multi client edge-cloud speculative decoding. CGSpec uses draft target distribution divergence to adapt the speculative budget and introduces a nomination and competition mechanism to construct candidate trees through global growth control and local token selection. An overlap-aware scheduler further estimates remaining verification work and client return times to prioritize requests and improve verifier utilization. We evaluate CGSpec using four model pairs and three datasets under heterogeneous network conditions. Across 24 configurations with 8 and 16 clients, CGSpec achieves the highest mean system and client throughput among the evaluated methods. Compared with current SOTA methods, it improves system throughput by 12.2\% and 10.2\%, and mean client throughput by 14.0\% and 33.0\%, respectively.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：边缘-云协作投机解码中，草稿与目标模型不一致浪费通信与验证资源；异构客户端返回时间也使共享验证器的调度复杂化。</p>
+<p><strong>方法</strong>：CGSpec 一致性引导框架：用草稿-目标分布散度自适应投机预算；提名-竞争机制构建候选树（全局增长控制+局部 token 选择）；重叠感知调度器估计剩余验证工作与客户端返回时间，优先请求、提升验证器利用率。</p>
+<p><strong>关键数字</strong>：4 模型对 × 3 数据集、异构网络下 24 配置（8/16 客户端）系统与客户端吞吐均最高；较 SOTA 系统吞吐 +12.2%/+10.2%，平均客户端吞吐 +14.0%/+33.0%。</p>
+<p><strong>为什么值得看</strong>：多客户端边缘-云投机解码的系统级调度优化，直接改善验证器利用率与整体吞吐。</p>
+<p><a href="https://arxiv.org/abs/2611.30455">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.30455">阅读原文 ↗</a></p>
 </body>
 </html>

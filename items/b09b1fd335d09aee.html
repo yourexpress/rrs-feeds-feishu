@@ -22,9 +22,11 @@
 <h1>Radial Tail Repair: Post-Training Correction for Diffusion and Flow Models</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Diffusion and flow-matching models may struggle to accurately represent distributional tails, especially for heavy-tailed data.</p>
-<blockquote><p>Diffusion and flow-matching models may struggle to accurately represent distributional tails, especially for heavy-tailed data. Existing approaches often use heavy-tailed noise or modify the generative dynamics, requiring dedicated retraining and more difficult estimation. We take a simpler approach: rather than relearning the full distribution, we correct only the model's behavior in the extreme regime. Our method builds on the radial-angular decomposition of multivariate heavy tails, where radius and direction become asymptotically independent. This allows us to preserve the directional structure learned by the pretrained model and correct only its radial tail. We estimate the tail onset from reference and generated samples, then rescale generated extremes so that their radial survival matches the target distribution. The resulting method is a lightweight post-training correction applied to a frozen diffusion or flow-matching model, requiring neither retraining nor changes to its sampling dynamics. Experiments on challenging synthetic heavy-tailed distributions and real weather and wildfire datasets show that this simple correction substantially improves extreme-tail coverage usi…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：扩散与流匹配模型难以准确表示分布尾部（尤其重尾数据）；现有方法用重尾噪声或改生成动力学，需专门重训、估计更难。</p>
+<p><strong>方法</strong>：极简后训练修正：只纠正极端区域行为；基于重尾的径向-角分解（半径与方向渐近独立），保留预训练模型的方向结构、只修径向尾；从参考与生成样本估计尾起始，重缩放生成极端值使径向生存匹配目标分布；模型冻结、无需重训或改采样动力学。</p>
+<p><strong>关键数字</strong>：合成重尾分布与真实天气/野火数据集上显著改善极端尾覆盖，仅需少量拟合样本。</p>
+<p><strong>为什么值得看</strong>：轻量后训练修正改善重尾覆盖，即插即用于冻结的扩散/流模型。</p>
+<p><a href="https://arxiv.org/abs/2610.16851">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16851">阅读原文 ↗</a></p>
 </body>
 </html>

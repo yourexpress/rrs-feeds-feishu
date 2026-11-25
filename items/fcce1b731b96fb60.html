@@ -22,9 +22,11 @@
 <h1>PackLoop: Row-Packed Self-Speculative Decoding for Looped Language Models under Concurrency</h1>
 <p class="meta-line">arXiv · 2026-11-23 · 论文PDF / 每日精选</p>
 
-<p>PackLoop：循环语言模型并发下按行打包的自投机解码</p>
-<blockquote><p>Looped language models reuse one block of weights T times per token, trading parameters for test-time depth, but autoregressive decoding then pays T sequential passes per token. Self-speculative decoders recover 2-10x for a single request, yet their gains fade as requests share a GPU, and current practice is to speculate less as load grows. We show that what fails under load is the layout of speculative work, not speculation. In concurrent decoding the unit of cost is the row, one request advancing on one loop, which reads that loop's key-value (KV) cache once; additional positions inside a row are nearly free. Pipelined schedules such as the wavefront place every speculative position on a different loop, hence in a row of its own, so each token is still read T times. We present PackLoop, built on one principle: speculate only inside rows that are read anyway. Deep loops accumulate positions and advance them as a block in one row, context-copy proposals join the row that the first loop already reads, and a closed-form admission rule, the economic order quantity of inventory theory, sets how long to accumulate from a cost model calibrated once per engine. PackLoop is exact: in FP32 …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：循环语言模型每 token 复用一块权重 T 次，自回归解码每 token 付 T 次顺序 pass；自投机解码单请求恢复 2-10x，但并发共享 GPU 时增益消退，现行做法是负载升高时减少投机。</p>
+<p><strong>方法</strong>：PackLoop 基于一条原则——只在本来就会读的行内投机：深循环把位置积累成块在一行内推进；上下文拷贝提案加入首循环已读的行；闭合形式准入规则（库存理论的经济订货量）从每引擎标定一次的成本模型决定积累多久；FP32 下输出与自回归逐 token 相同。</p>
+<p><strong>关键数字</strong>：164 个负载点（3 GPU、4 个 Ouro 模型、6 基准、最长 32K 上下文）中 161 点快于逐点最优现有调度（中位 1.25x、最高 1.76x），从不显著更慢；并发与上下文越长增益越大。</p>
+<p><strong>为什么值得看</strong>：把并发下投机失效归因于布局而非投机本身，位一致 + 显著加速。</p>
+<p><a href="https://arxiv.org/abs/2611.30205">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.30205">阅读原文 ↗</a></p>
 </body>
 </html>

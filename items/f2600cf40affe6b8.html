@@ -22,9 +22,11 @@
 <h1>One Structure Is Enough: Record-Native Tiles for Evolving Sparse Matrices on GPUs</h1>
 <p class="meta-line">arXiv · 2026-11-23 · 论文PDF / 每日精选</p>
 
-<p>RecTile：GPU 上演进稀疏矩阵的记录原生分片存储，12 字节边记录单数组结构</p>
-<blockquote><p>Sparse matrices that change over time, such as streaming graphs, are usually handled on GPUs with two parts: a packed format such as CSR, ELL, or SELL for computation, and a separate buffer for updates. Periodic maintenance then merges updates, rebuilds data, or changes formats. Our measurements show that this split is often unnecessary. We present RecTile, a tiled storage layer where each tile is kept in one sorted array of 12-byte edge records. For fragmented matrices, with 1 to 21 nonzeros per tile in our workloads, RecTile matches the best format-pinned slab tile at 0.56 to 1.21 times its time. Its tiled layout is also up to 21 times faster than whole-matrix cuSPARSE CSR. Specialized slabs are faster on the patterns they target at medium density, but both approaches converge by 25% density. RecTile stays within 1.1 to 1.6 times of whole-matrix cuSPARSE COO, our strongest static baseline, while COO cannot be updated in place. RecTile also uses no fixed per-tile device metadata for the stored matrix payload, so its tiles are smaller at realistic occupancies. A fully GPU-based ingest pipeline applies insert/delete/modify batches at up to 29 million edges per second, 4.5 times fast…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：随时间演进的稀疏矩阵（如流式图）在 GPU 上通常用打包格式（CSR/ELL/SELL）计算 + 独立缓冲更新，定期维护合并/重建/换格式——这种分裂是否必要？</p>
+<p><strong>方法</strong>：RecTile 分片存储层：每片保持在一个 12 字节边记录的有序数组；全 GPU 摄取流水线处理插入/删除/修改批；精确动态规划 oracle 在动作空间与标定成本模型下决策折叠。</p>
+<p><strong>关键数字</strong>：碎片矩阵（每片 1-21 非零）下与最优 format-pinned slab 片时间比 0.56-1.21x；分片布局比整矩阵 cuSPARSE CSR 快最多 21x；摄取流水线最高 2900 万边/秒、比 host 路径快 4.5x；标准折叠启发式用 4-15x GPU 时间、最多 4x 持久存储；5 个演进图工作负载时间-存储权衡全部改善。</p>
+<p><strong>为什么值得看</strong>：挑战"计算格式+更新缓冲"二分范式，单一可变记录结构 + 全 GPU 摄取。</p>
+<p><a href="https://arxiv.org/abs/2611.30159">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.30159">阅读原文 ↗</a></p>
 </body>
 </html>

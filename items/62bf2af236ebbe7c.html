@@ -22,9 +22,11 @@
 <h1>Fast 4-bit KV-Cache Decoding on Hopper GPUs: Why Existing Kernels Are Slow and How to Fix Them</h1>
 <p class="meta-line">arXiv · 2026-11-23 · 论文PDF / 每日精选</p>
 
-<p>Hopper GPU 上快速 4-bit KV 缓存解码：分析现有 kernel 慢因（指令发射超预算、串行化）并给出 TMA 重叠修复</p>
-<blockquote><p>A 4-bit KV cache reads about half the bytes of FP8, but Hopper GPUs have no FP4 hardware and little instruction-issue capacity per byte of memory bandwidth, so 4-bit values must be decoded in software. On H200, vLLM's NVFP4 KV path (FlashInfer's decode) reaches 10-20% of memory bandwidth and is up to 1.7x slower than FP8. NVBit instruction counts show two causes: the kernels behind vLLM's 4-bit paths (FlashInfer NVFP4, Triton UltraQuant) execute 2-6x Hopper's issue budget per byte and serialize loading, decoding and matrix multiplies. Our Hopper-native decode kernel overlaps a TMA producer warp with two compute warpgroups, lays the cache out at write time so decoded values feed the tensor cores from registers, and swaps the matrix operands so small query groups need no padding. On H200 it reaches 67-75% of peak bandwidth at batch 32-128 and at all 11 shapes is 1.12-1.49x faster than the faster of XQA and FlashAttention-4's proposed native FP8. Inside vLLM, with an accuracy recipe (K mean removal and rotation, 4 BF16 sink tokens, BF16 layer 0), it decodes 1.12-1.64x faster per step on Llama-3.1-8B than vLLM's FlashInfer FP8 path at batch 8 and above (1.04-1.24x over FlashAttention-4…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：4-bit KV 缓存读字节约为 FP8 一半，但 Hopper 无 FP4 硬件、每字节带宽的指令发射能力有限，4-bit 值需软件解码；H200 上 vLLM NVFP4 路径仅达 10-20% 带宽、比 FP8 慢最多 1.7x。</p>
+<p><strong>方法</strong>：定位慢因（FlashInfer NVFP4、Triton UltraQuant 执行 2-6x Hopper 发射预算、加载/解码/矩阵乘串行化）后设计 Hopper 原生 kernel：TMA producer warp 与两个计算 warpgroup 重叠、写入时布局缓存使解码值直接从寄存器进张量核、交换矩阵操作数免小查询组填充。</p>
+<p><strong>关键数字</strong>：H200 batch 32-128 达峰值带宽 67-75%；11 种形状比 XQA/FlashAttention-4 FP8 快 1.12-1.49x；vLLM 内 Llama-3.1-8B batch≥8 每步比 FlashInfer FP8 快 1.12-1.64x；推理型负载下 99% 请求达标最高速率达 FP8 的 1.23-2.20x；5 个 7B-32B 模型精度与 BF16 KV 无显著差异。</p>
+<p><strong>为什么值得看</strong>：4-bit KV 解码 kernel 的深度剖析与修复，vLLM 推理直接受益。</p>
+<p><a href="https://arxiv.org/abs/2611.30027">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.30027">阅读原文 ↗</a></p>
 </body>
 </html>

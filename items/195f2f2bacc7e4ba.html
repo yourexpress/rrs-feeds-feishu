@@ -22,9 +22,11 @@
 <h1>X-BQSR: Holistic Acceleration of Base Quality Recalibration for Scalable Genomic Analysis</h1>
 <p class="meta-line">arXiv · 2026-11-23 · 论文PDF / 每日精选</p>
 
-<p>X-BQSR：GPU 加速基因组碱基质量重校准（BQSR），识别计算与 I/O 瓶颈</p>
-<blockquote><p>With the continued decline in sequencing costs, genomics-based precision medicine is gaining increasing importance. The Genome Analysis Toolkit (GATK) is the standard framework for converting raw genomic data into actionable variants, but one of its most expensive steps is base quality score recalibration (BQSR), which corrects systematic sequencing errors. Despite significant work on accelerating other parts of the variant calling pipeline, BQSR has not been systematically explored on GPUs. In this work, we analyze BQSR to identify computational and I/O bottlenecks and show that simply offloading key stages to an accelerator is insufficient to achieve overall gains. We then present X-BQSR, a holistic redesign of the entire BQSR pipeline, including I/O, compression, and kernel execution, to better leverage GPU parallelism. We implement X-BQSR using portable SYCL kernels for NVIDIA, AMD, and Intel GPUs, along with native CUDA and HIP backends for comparison, and we evaluate its performance against previous FPGA work. Our evaluation shows up to 141.7x acceleration compared to standard GATK and 8.7x acceleration compared to a proprietary GPU-accelerated solution.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：GATK 变异检测流水线中最贵步骤之一——碱基质量重校准（BQSR）在 GPU 上未被系统探索；简单卸载关键阶段不足以获得整体收益。</p>
+<p><strong>方法</strong>：X-BQSR 全流水线重构（I/O、压缩、kernel 执行）以更好利用 GPU 并行；SYCL 可移植 kernel 支持 NVIDIA/AMD/Intel GPU，另有原生 CUDA/HIP 后端对比；对照先前 FPGA 工作评估。</p>
+<p><strong>关键数字</strong>：较标准 GATK 最高 141.7x 加速、较专有 GPU 加速方案 8.7x。</p>
+<p><strong>为什么值得看</strong>：基因组学 BQSR 的 GPU 全栈加速，跨厂商可移植。</p>
+<p><a href="https://arxiv.org/abs/2611.31062">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.31062">阅读原文 ↗</a></p>
 </body>
 </html>

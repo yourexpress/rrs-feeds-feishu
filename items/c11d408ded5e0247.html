@@ -22,9 +22,11 @@
 <h1>Random Feature Pruning for Multi-Class Classification</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Weighted sums of random kitchen sinks (W-RKS) is a commonly used feature extraction technique for supervised learning tasks.</p>
-<blockquote><p>Weighted sums of random kitchen sinks (W-RKS) is a commonly used feature extraction technique for supervised learning tasks. A major drawback of this method is the redundancy and ineffectiveness of many extracted random features. This paper investigates efficient methods for reducing such redundancy in multi-class classification problems. We specifically formulate feature selection as a variant of the sequentially nested model selection problem and introduce the Successive Empirical Excess Risk Difference Maximization (SEED-MAX) algorithm. It recursively computes empirical risks to identify the most parsimonious yet informative set of features. We derive an analytical lower bound for the probability of correct feature selection by the SEED-MAX algorithm. This lower bound on the probability of correct feature selection can be made arbitrarily close to one by increasing the training dataset size. To further enhance the rate of pruning, we evaluate the features retained by SEED-MAX using the Fisher test (F-Test). Empirical evaluations on UCR time-series classification datasets show that the sequential application of SEED-MAX with the Fisher test achieves approximately 92 percent rate …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：随机厨房水槽加权和（W-RKS）特征提取中大量随机特征冗余无效，如何高效剪枝（多分类场景）？</p>
+<p><strong>方法</strong>：特征选择建模为顺序嵌套模型选择变体，提出 SEED-MAX（Successive Empirical Excess Risk Difference Maximization）：递归计算经验风险找最简约且有信息的特征集；导出正确选择概率的解析下界（随训练集增大可任意接近 1）；再用 Fisher 检验（F-Test）评估保留特征加速剪枝；实现开源。</p>
+<p><strong>关键数字</strong>：UCR 时间序列分类数据集上 SEED-MAX+F-Test 顺序应用实现约 92% 剪枝率、分类精度损失可忽略。</p>
+<p><strong>为什么值得看</strong>：带理论保证的随机特征剪枝，92% 剪枝率近乎无损。</p>
+<p><a href="https://arxiv.org/abs/2610.15101">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15101">阅读原文 ↗</a></p>
 </body>
 </html>

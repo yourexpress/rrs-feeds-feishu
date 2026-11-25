@@ -22,9 +22,11 @@
 <h1>Near-Far Attention: Region-Aware Sparse Retrieval for Long-Context LLM Decoding</h1>
 <p class="meta-line">arXiv · 2026-11-23 · 论文PDF / 每日精选</p>
 
-<p>Near-Far Attention：区域感知稀疏检索，轻量门估计器识别可跳过区域，校准无关子空间提取器</p>
-<blockquote><p>Sparse attention reduces the cost of long-context decoding, but token selection introduces additional scoring and ranking overhead. Moreover, uniform page scoring overlooks differences in relevance between near and far context. We propose Near-Far Attention (NFA), which adapts retrieval to regional attention patterns while keeping candidate scoring lightweight. During prefill, the Lightweight Gate Estimator identifies regions that can be skipped during decoding, adding less than 1% to dense-prefill time. For the remaining regions, the Calibration-Free Subspace Extractor supplies compact features shared by page-level and token-level scoring without offline calibration. The Distance-Aware Two-Level Selector then scores near and far pages differently and jointly ranks candidate tokens under a shared budget. Evaluations across model families, parameter scales, and GQA/MLA architectures show aggregate task quality comparable to full attention. On Qwen3-8B at 512K context length, NFA achieves up to $5.49\times$ operator speedup and $2.97\times$ whole-model decoding speedup over FlashInfer, including selection overhead.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：稀疏注意力降低长上下文解码成本，但 token 选择引入额外打分/排序开销；统一页打分忽略近/远上下文的相关性差异。</p>
+<p><strong>方法</strong>：Near-Far Attention（NFA）：prefill 期轻量门估计器识别解码时可跳过的区域；校准无关子空间提取器提供页级与 token 级打分共享的紧凑特征；距离感知两级选择器对近/远页差异化打分，共享预算下联合排序候选 token。</p>
+<p><strong>关键数字</strong>：门估计器对 dense-prefill 时间增加 &lt;1%；多模型族/参数量/GQA-MLA 架构下聚合任务质量与全注意力相当；Qwen3-8B 512K 上下文较 FlashInfer 算子加速最高 5.49x、整模型解码 2.97x（含选择开销）。</p>
+<p><strong>为什么值得看</strong>：区域感知的稀疏注意力检索，近远页差异化打分，解码加速显著。</p>
+<p><a href="https://arxiv.org/abs/2611.30554">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.30554">阅读原文 ↗</a></p>
 </body>
 </html>

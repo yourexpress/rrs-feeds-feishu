@@ -22,9 +22,11 @@
 <h1>Yggdrasil: Tree-Routed Recurrent Experts for State Tracking and Fast CPU Inference</h1>
 <p class="meta-line">arXiv · 2026-11-23 · 论文PDF / 每日精选</p>
 
-<p>Yggdrasil：树路由循环专家架构，解耦容量与每步计算，加速 CPU 流式推理</p>
-<blockquote><p>Parallel-trainable recurrences such as Mamba, linear attention, and DeltaNet offer constant-cost streaming inference, but they suffer from two limitations: 1) they struggle to track discrete state, and 2) they read every parameter at every step, tying model capacity directly to CPU latency. We introduce Yggdrasil, a recurrent architecture that decouples capacity from per-step compute by looking up each layer's transition in a large, tree-routed bank of recurrent experts. Each router addresses its bank using the current token and the state of the layer below. We prove that this cross-layer context is necessary---a single token-indexed layer of non-expanding transitions with finitely many reachable states cannot perform conditional resets---while avoiding feedback from the layer's own past preserves parallel-scan training. Because each step traverses one tree path and reads a single expert per layer, active weights stay within a few hundred kilobytes in CPU L2 cache while the full bank resides in RAM. Among the parallel-trainable models we evaluate, Yggdrasil is the only one to solve all five state-tracking tasks. At matched active parameter counts, it achieves the lowest test bits o…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：Mamba、线性注意力、DeltaNet 等可并行训练循环提供常数开销流式推理，但难跟踪离散状态，且每步读全部参数，模型容量直接绑定 CPU 延迟。</p>
+<p><strong>方法</strong>：Yggdrasil 树路由循环专家：每层在大规模树路由专家库中查转移，用当前 token 与下层状态寻址；证明跨层上下文必要（单 token 索引、有限可达状态的非扩张转移层无法做条件重置）；每步走一条树路径、每层读单个专家，活跃权重仅几百 KB 留在 CPU L2，全库驻留 RAM。</p>
+<p><strong>关键数字</strong>：评估的并行可训练模型中唯一解全部 5 个状态跟踪任务；匹配活跃参数下 enwik8 最低 1.540 bpb、人类基因组 hg38 1.567 bpb；单 CPU 核 6.7μs/5.8μs 步进，比最快流式基线快 3.0x/3.3x；batch 1024 GPU 吞吐最高；Genomic Benchmarks 匹配活跃参数下最强因果模型（平均准确率 86.0%）。</p>
+<p><strong>为什么值得看</strong>：容量与每步计算解耦 + 离散状态跟踪，CPU 流式推理新范式。</p>
+<p><a href="https://arxiv.org/abs/2611.29954">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.29954">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Time Series Foundation Models on the Edge</h1>
 <p class="meta-line">arXiv · 2026-11-23 · 论文PDF / 每日精选</p>
 
-<p>边缘时间序列基础模型：增量刷新保持延迟/峰值内存有界与精度保持</p>
-<blockquote><p>Time series foundation models (TSFMs) forecast zero-shot with accuracy exceeding that of task-specific models, and the smaller ones fit on edge devices. Operational deployments must refresh their forecast as new observations arrive, and privacy and latency requirements often force this refresh onto resource-constrained edge devices. To serve as a forecasting system there, a TSFM must refresh quickly, keep latency and peak memory bounded as the stream grows, and retain its accuracy as the observed history accumulates. Refreshing incrementally without altering the forecast requires temporal causality: non-causal models recompute at every update, causal attention admits a KV cache that grows linearly, and causal recurrent models update a fixed-size state in constant time and memory. We make these states persist across refreshes for every causal architecture and verify equivalence to full recomputation. We evaluate nine TSFM configurations on univariate forecasting against all three requirements, measuring accuracy as a function of context length, single-refresh latency, and latency and memory on streams of up to one million time steps on a server-grade GPU and three edge devices. No m…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：边缘部署时间序列基础模型（TSFM）需随新观测刷新预测，且要求延迟/峰值内存随流增长有界、历史积累时保持精度；增量刷新不改变预测要求时序因果。</p>
+<p><strong>方法</strong>：让每种因果架构的状态跨刷新持久化，并验证与全重算等价；评估 9 种 TSFM 配置（单变量预测）对三项要求逐项测量（精度随上下文变化、单次刷新延迟、百万步流上的延迟与内存）。</p>
+<p><strong>关键数字</strong>：无模型在训练上下文之外有平均精度增益，多数在达全历史前已损失；KV 缓存延迟与内存随保留历史线性增长；TiRex-2 是 9 配置中唯一全部满足：GPU 刷新 14ms、树莓派 5 上 120ms，百万步内延迟/能耗/峰值内存恒定，未截断历史上保持精度。</p>
+<p><strong>为什么值得看</strong>：边缘时序基础模型的落地筛选，唯一全满足者可即用。</p>
+<p><a href="https://arxiv.org/abs/2611.30404">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.30404">阅读原文 ↗</a></p>
 </body>
 </html>

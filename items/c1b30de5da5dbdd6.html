@@ -22,9 +22,11 @@
 <h1>Making Protocol Effects Explicit: LLM-to-Packet Simulation for Superpod Interconnect Exploration</h1>
 <p class="meta-line">arXiv · 2026-11-23 · 论文PDF / 每日精选</p>
 
-<p>LLM 到包仿真：超级 pod 互连探索（协议栈-链路-拓扑联合仿真）</p>
-<blockquote><p>Large language models (LLMs) have become the foundation of modern AI services. The rapid growth of LLM sizes and context lengths has exceeded the memory capacity of a single GPU or NPU, requiring model partitioning across devices. However, partitioning models across devices introduces costly communication overhead, driving the need for superpods with large-scale, high-bandwidth, low-latency scale-up fabrics. Exploring superpod designs requires accurate interconnect simulation, as communication latency is jointly determined by link technologies, topologies, and scale-up protocol-stack choices. Latency-bandwidth models estimate communication latency using a startup term and a transfer term derived from message size and effective bandwidth. But they fail to capture contention and protocol effects. Packet-level simulators like ns-3 model routing, queueing, and packet timing, but require protocol-specific LLM-to-packet implementations. This paper presents ProtoBridge, an ns-3-based LLM-to-packet simulator for superpod interconnect exploration. To make protocol effects explicit, ProtoBridge introduces two abstraction layers over ns-3: (1) an operation-to-packet (OTP) layer that captures …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 规模与上下文超单设备内存，跨设备分片带来通信开销，推动大规模高带宽低延迟 scale-up 互联（superpod）；探索设计需精确仿真，而延迟-带宽模型忽略争用与协议效应。</p>
+<p><strong>方法</strong>：ProtoBridge，基于 ns-3 的 LLM-to-packet 仿真器：操作到包（OTP）层捕获协议特定包交换与依赖；包执行（PEX）层把共享包级机制接入 ns-3 事件系统；另派生替代模型（surrogate）结合 OTP 参数与 PEX 解析模型加速评估。</p>
+<p><strong>关键数字</strong>：H200 NVLink4 平均延迟误差 17.8%、C500 MetaXLink 10.3%；评估时间从每操作 2.38-75.70s 降至 20.5μs；用于分析 scale-up 内存池与共封装光学（CPO）两种新兴设计。</p>
+<p><strong>为什么值得看</strong>：把协议效应显式化的 superpod 互联仿真工具，支撑未来 LLM 集群架构探索。</p>
+<p><a href="https://arxiv.org/abs/2611.30191">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.30191">阅读原文 ↗</a></p>
 </body>
 </html>

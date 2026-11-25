@@ -22,9 +22,11 @@
 <h1>Pudding: A Retargetable Compiler for Processing-Using-DRAM Systems</h1>
 <p class="meta-line">arXiv · 2026-11-23 · 论文PDF / 每日精选</p>
 
-<p>Pudding：可重定向 PUD（Processing-Using-DRAM）编译器框架</p>
-<blockquote><p>Processing-Using-DRAM (PUD) architectures exploit the physics of DRAM arrays to perform Boolean operations directly in memory, eliminating the data movement bottleneck in memory-intensive workloads. Several PUD architectures have been recently proposed which differ in their primitive operation sets, row allocation models, and execution metrics. These architectural differences are today hard-coded in emerging PUD-aware compilers, making crossarchitecture reuse impossible. We present a retargetable, end-to-end compilation framework for PUD architectures. The central idea is to make the architecture description a first-class object in the compilation pipeline: retargeting to a new PUD architecture only requires supplying its description. Built upon the MLIR framework, our compiler operates at two coupled levels. At the tensor level, it lowers high-level programs through bit-slicing, mixed-precision assignment, and integer-linear-programming (ILP) based placement to reduce the number of PUD commands and inter-bank data movement. At the logic level, it employs equality saturation to explore Boolean network implementations, with rewrite rules and cost functions derived directly from the …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：Processing-Using-DRAM（PUD）架构在 DRAM 阵列内做布尔运算、消除数据搬移瓶颈，但不同架构的原语集、行分配模型、执行指标各异，现有编译器硬编码这些差异、跨架构不可复用。</p>
+<p><strong>方法</strong>：Pudding 可重定向端到端编译框架：架构描述成为编译流水线一等对象，换架构只需提供描述；基于 MLIR 双层运行——张量层（位切片、混合精度分配、ILP 放置减少 PUD 命令与跨 bank 搬移）、逻辑层（等式饱和探索布尔网络实现，重写规则与成本函数从架构描述导出）。</p>
+<p><strong>关键数字</strong>：多个 PUD 目标、同一套编译 pass 下匹配（部分超越）架构特定手调编译器，同时获得可重定向性与可扩展性。</p>
+<p><strong>为什么值得看</strong>：把 PUD 架构差异从编译器代码中剥离，一次编写多架构复用。</p>
+<p><a href="https://arxiv.org/abs/2611.30446">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.30446">阅读原文 ↗</a></p>
 </body>
 </html>

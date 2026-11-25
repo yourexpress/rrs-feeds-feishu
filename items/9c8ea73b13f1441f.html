@@ -22,9 +22,11 @@
 <h1>EdgeALM: An Efficient and Unified Edge Accelerator for Large Audio Language Models via Full-Stack Hardware-Software Co-Design and Agent-Driven Recursive Optimization</h1>
 <p class="meta-line">arXiv · 2026-11-23 · 论文PDF / 每日精选</p>
 
-<p>EdgeALM：面向大音频语言模型的统一边缘 FPGA 加速器，全栈软硬件协同设计 + agent 驱动递归优化</p>
-<blockquote><p>Edge deployment of audio language models (ALMs) is constrained by large model footprints, heterogeneous workloads, and limited software support. This paper presents EdgeALM, an efficient and unified FPGA accelerator for ALMs that combines full-stack hardware-software co-design with agent-driven recursive optimization. An end-to-end ALM compression flow is developed, combining a unified AWQ-style quantizer with modality-conditioned vocabulary pruning. A Conv-Matmul Disaggregation architecture is proposed, with dedicated matrix and convolution engines that operate concurrently on their respective workloads. An Extra-Coarse-Grained ISA is designed to incorporate regular on-chip data movement and execution sequences into compute instructions, reducing software complexity with modest hardware control overhead. Hardware and software recursive loops are introduced for agent-driven full-stack optimization. The proposed EdgeALM is implemented on a single Alveo U50 in an ordinary desktop PC and demonstrates inference on more than 20 models, including ALMs with up to 13B parameters within the 8-GB HBM capacity. It achieves high-throughput audio-to-text inference at up to 169.5 tokens/s and su…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：音频语言模型（ALM）边缘部署受模型体量大、负载异构、软件支持少的制约。</p>
+<p><strong>方法</strong>：EdgeALM 统一 FPGA 加速器，全栈软硬件协同设计 + agent 驱动递归优化：AWQ 风格量化器 + 模态条件词表剪枝的端到端压缩流；Conv-Matmul 解耦架构（专用矩阵/卷积引擎并发）；超粗粒度 ISA 把常规片上数据搬移与执行序列并入计算指令。</p>
+<p><strong>关键数字</strong>：单块 Alveo U50 桌面 PC 上跑 20+ 模型（含 13B 参数，8GB HBM 内）；音频转文本最高 169.5 tok/s；流式音频推理 94% 带宽利用率、平均 26W；较 EdgeLLM 等支持更大模型与更广负载。</p>
+<p><strong>为什么值得看</strong>：音频大模型边缘 FPGA 落地的完整方案，压缩-架构-ISA 全栈覆盖且有实测指标。</p>
+<p><a href="https://arxiv.org/abs/2611.30216">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.30216">阅读原文 ↗</a></p>
 </body>
 </html>

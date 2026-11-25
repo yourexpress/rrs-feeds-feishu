@@ -22,9 +22,11 @@
 <h1>GC-MoE K3: A Green-Context Role Graph for Latent Mixture-of-Experts Decode</h1>
 <p class="meta-line">arXiv · 2026-11-23 · 论文PDF / 每日精选</p>
 
-<p>GC-MoE K3：数据中心 Blackwell 上 Kimi K3 潜在 MoE 解码的 CUDA Graph 绿色上下文实现</p>
-<blockquote><p>Kimi K3 combines a latent routed mixture of experts with full-width shared experts. A complete feed-forward evaluation must score and select experts, project tokens into the latent space, exchange tokens across expert-parallel ranks, compute the routed and shared branches, and normalize and project the routed sum before joining the branches. We present GC-MoE K3, a datacenter Blackwell implementation that schedules this entire evaluation as a CUDA Graph across two Green Contexts. Five base roles split input projection, routing, dispatch, expert computation, and finalization. Dispatch can fill the routed input ring while the compute partition evaluates shared experts. Finalize waits for the expert owners needed by each token and overlaps routed reduction and RMSNorm with loading the output projection weights. Conditional roles reuse the communication partition for routed computation and reduce split-$K$ projection partials. On GB200 at EP8, EP16, and EP32, the operator is faster at all 24 measured configurations than the paired SGLang-style reference (mean speedup $1.1324\times$). A comparison with historical vLLM-style measurements gives $1.3651\times$ across the same 24 shapes. Bo…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：Kimi K3 潜在路由 MoE + 全宽共享专家，完整前馈求值需评分选专家、投影到潜在空间、跨 expert-parallel rank 交换 token、计算路由与共享分支、归一化合并——如何在数据中心 Blackwell 上高效调度？</p>
+<p><strong>方法</strong>：GC-MoE K3 把整个求值调度为跨两个 Green Context 的 CUDA Graph：五个基础角色分工（输入投影、路由、派发、专家计算、收尾）；派发填充路由输入环与共享专家计算并行；收尾按 token 等待专家 owner，重叠路由归约与 RMSNorm 及输出投影权重加载；条件角色复用通信分区做路由计算与 split-K 归约。</p>
+<p><strong>关键数字</strong>：GB200 上 EP8/EP16/EP32 全部 24 个测量配置快于 SGLang 风格参考（平均 1.1324x）；对比历史 vLLM 风格测量 24 形状平均 1.3651x；数值套件 142 例全过、2,936 项 rank 检查。</p>
+<p><strong>为什么值得看</strong>：潜在 MoE 解码的 CUDA Graph 工程范式，Blackwell 数据中心推理直接参考。</p>
+<p><a href="https://arxiv.org/abs/2611.30542">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.30542">阅读原文 ↗</a></p>
 </body>
 </html>
