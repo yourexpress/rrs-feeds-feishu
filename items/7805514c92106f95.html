@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Draft Calibration for Speculative Decoding: Accelerating LLM Serving by Matching Draft and Target Distributions</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Draft Calibration for Speculative Decoding: Accelerating LLM Serving by Matching Draft and Target Distributions</h1>
+<p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：投机解码的加速取决于草稿分布 q 与目标分布 p 的差距——开源草稿模型普遍比目标模型更不自信，能否事后校准草稿分布来缩小差距？</p>
+<p><strong>方法</strong>：研究投机解码的草稿校准：采用标准温度缩放与逐 token 校准等事后方法，把校准施加到草稿分布上，再分析接受长度与吞吐。</p>
+<p><strong>关键数字</strong>：对草稿分布做标准温度缩放，在不同任务上接受长度最高提升约 10%，几乎零额外成本；吞吐分析验证了服务效率提升；更一般的校准方法分析显示还有进一步优化空间。</p>
+<p><strong>为什么值得看</strong>：一个几乎免费的「草稿校准」技巧即可实质提升投机解码效率，对 LLM 服务优化有直接落地价值。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.33111">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CPU-Eval: Evaluating Large Language Models for CPU Hardware Code Generation</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>CPU-Eval: Evaluating Large Language Models for CPU Hardware Code Generation</h1>
+<p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：VerilogEval 上 HDL 生成通过率已超 90%，缺乏区分度——如何为 LLM 生成硬件代码提供一个更有挑战、贴近实际开发任务的基准？</p>
+<p><strong>方法</strong>：构建 CPU-Eval，从六个 CPU 设计（含已流片家族，覆盖嵌入式小核到可跑 Linux 的无序核，SystemVerilog/Chisel/SpinalHDL 三种语言）提炼 339 个 HDL 生成问题，让 LLM 执行真实的 CPU 开发任务。</p>
+<p><strong>关键数字</strong>：七个 SOTA LLM 在 CPU-Eval 上平均 pass@1 比 VerilogEval v2 Spec-to-RTL 低 45.14 个百分点；子模块源码行数越多 pass@1 越低；较少使用的 HDL 上 pass@1 更低。</p>
+<p><strong>为什么值得看</strong>：暴露了 VerilogEval 高通过率掩盖的模型能力差距，并提示细粒度模块化设计与按目标 HDL 验证模型熟练度的工程策略。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.32405">阅读原文 ↗</a></p>
+</body>
+</html>

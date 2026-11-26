@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ModelLess: A Serverless System for Multi-Tier LLM Inference on Shared GPUs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ModelLess: A Serverless System for Multi-Tier LLM Inference on Shared GPUs</h1>
+<p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
+
+<p>ModelLess：共享 GPU 上多层 LLM 推理的无服务器系统</p>
+<blockquote><p>LLM inference platforms sell online, asynchronous, batch and rollout products on GPUs provisioned per product, so a service's cards sit idle between bursts while other work waits. We present ModelLess, a serverless system for LLM inference. Users declare model services and the platform owns the instances. An idle service scales to zero: its instances go to sleep with their weights in host memory (release about 1 s, wake about 4 s for GLM-5.2 at TP8, against a cold start of over four minutes). Billing follows the time a service holds GPUs. The GPUs that sleeping instances free are lent to lower tiers. Cluster managers preempt low-priority tasks and treat eviction as all-or-nothing, but an LLM instance's eviction cost depends on which of its weights, execution state, KV cache and in-flight requests survive. ModelLess therefore gives each tier (online, job, flex) eviction semantics that state what it may lose when preempted, and runs a preemption protocol that closes admission before it releases memory, re-enqueues a request durably before it aborts it, and fails closed. Four components (entry, dispatcher, node agent, SGLang plugin) enforce it with sleep/wake, pause/resume of in-fligh…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.32634">阅读原文 ↗</a></p>
+</body>
+</html>

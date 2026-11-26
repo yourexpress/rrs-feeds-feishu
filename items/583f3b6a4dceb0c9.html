@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generalized Tensor Parallelism: Powering Trillion-Parameter LLM Training at 10+ EFLOP/s</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Generalized Tensor Parallelism: Powering Trillion-Parameter LLM Training at 10+ EFLOP/s</h1>
+<p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：万亿参数 LLM 预训练受内存与算力双重约束，现有并行方案要么牺牲单卡内存要么牺牲吞吐——能否统一并超越？</p>
+<p><strong>方法</strong>：提出广义张量并行（GTP）：证明数据、张量、序列、上下文并行与 FSDP 五种常用并行都是 GTP 的特例——每层参数与激活可分区、用前 all-gather 重物化；GTP 按 GEMM 而非整个 Transformer 块调度 all-gather，够早隐藏通信、够晚控制内存。</p>
+<p><strong>关键数字</strong>：内部 2T 参数 MoE 模型在 12,288 张 GB300 上达 13.0 model EFLOP/s、弱扩展效率 98%，512 GPU 上跑 1M token 序列；256–1024 GPU 上三种 MoE 模型吞吐为 Megatron-FSDP 的 1.05–1.55×，DeepSeek-V4-Pro 代理模型上为调优 3D 并行配方的 1.27–1.31×。</p>
+<p><strong>为什么值得看</strong>：统一了主流并行框架并给出 10+ EFLOP/s 的实测，万亿参数训练的并行度调度有了新范式。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.32057">阅读原文 ↗</a></p>
+</body>
+</html>

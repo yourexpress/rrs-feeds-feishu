@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Is 4 Bits Enough for EEG Sleep Staging? A Subject-Level Benchmark of MXFP4, NVFP4 and FP8</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Is 4 Bits Enough for EEG Sleep Staging? A Subject-Level Benchmark of MXFP4, NVFP4 and FP8</h1>
+<p class="meta-line">arXiv · 2026-11-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：可穿戴设备上做 EEG 睡眠分期需要小型低功耗网络——4-bit 量化到底够不够用？</p>
+<p><strong>方法</strong>：对单通道 Fpz-Cz EEG 的五阶段睡眠分期，系统基准 13 种训练后量化配置（FP16 到 MXFP4、NVFP4），使用 Sleep-EDF-78（78 名受试者）、受试者交叉验证、3 个训练种子与逐值精确仿真，逐受试者配对统计。</p>
+<p><strong>关键数字</strong>：8/16-bit 格式距 FP32 Macro-F1 均在 0.45 个百分点内；4-bit 权激活下逐 epoch CNN 损失 1.98–3.04 pp、时序上下文网络至多 1.19 pp；首尾层保留 FP8 后两种 4-bit 格式距 FP32 缩至 0.48 pp 内，权重存储最多增加 2.1%、无需重训；NVFP4 损失集中在 N3 期召回。</p>
+<p><strong>为什么值得看</strong>：给出了「首尾层 FP8 + 中间 4-bit」的实用免重训配方，还发现 NVFP4 优于 MXFP4 及 4-bit 损失跨架构落在同一批受试者上。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.31436">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fix How It Acts, Not How It Thinks: Surgical Fine-Tuning of Frontier LLMs</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Fix How It Acts, Not How It Thinks: Surgical Fine-Tuning of Frontier LLMs</h1>
+<p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：开源权重 LLM 常「会做但做错」——不是推理失败，而是长轨迹上的小失误（重复已失败的步骤、需求未满足就宣告完成）。如何做外科手术式的权重更新而不干扰推理？</p>
+<p><strong>方法</strong>：提出 merge-aware fine-tuning：标准 LoRA 只在导出时舍入合并权重，损失从未见过舍入后权重；新方法每一步训练都先把基础权重与 adapter 更新之和舍入到发布格式（保留厂商量化尺度）再算损失，前向与推理引擎数值一致、梯度直穿舍入，只优化行为、让推理贴近基础模型。</p>
+<p><strong>关键数字</strong>：BF16 发布版中位权重变化仅单次舍入步的 1.5%，合并丢失约 2/3 更新范数；同一 adapter 合并进 FP8/NVFP4 混合发布版时 93% 更新消失；应用于 Nemotron-3.5 在 Terminal-Bench 2.1 上最高提升 8.4 分，BF16 与 NVFP4 双版本均改进。</p>
+<p><strong>为什么值得看</strong>：直击「训练的是舍入后真正发布的模型」这一数值痛点，让行为修正在量化发布版中真正存活。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.32064">阅读原文 ↗</a></p>
+</body>
+</html>

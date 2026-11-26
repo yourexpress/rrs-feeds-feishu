@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Integral DeltaNet: Improved Linear Attention with Adaptive Memory Integration</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Integral DeltaNet: Improved Linear Attention with Adaptive Memory Integration</h1>
+<p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：线性注意力把历史压进固定大小状态，内存碰撞损害长上下文理解；DeltaNet 的 delta 规则与门控虽缓解碰撞，却可能丢弃对未来预测有用的信息——如何兼顾？</p>
+<p><strong>方法</strong>：提出 Integral DeltaNet，维护两个互补循环状态：快速更新的 delta 状态捕捉当前键值关联，积分状态保留 delta 状态的加权历史；读出时自适应组合两者以访问不同时间尺度的信息；并推导分块并行公式实现硬件高效训练。</p>
+<p><strong>关键数字</strong>：340M 与 1.3B 参数模型分别在 15B 与 100B FineWeb-Edu token 上从零训练；相对强循环基线在语言建模、常识推理、真实与合成检索、长上下文理解与长度外推上整体更优；同时比较训练吞吐、激活内存与解码时延/内存。</p>
+<p><strong>为什么值得看</strong>：双状态设计直击线性注意力「压缩即丢失」的根本矛盾，长上下文场景有实测收益。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.32063">阅读原文 ↗</a></p>
+</body>
+</html>

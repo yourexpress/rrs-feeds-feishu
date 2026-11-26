@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joule is FLOP: Optimizing Tensor-Core Kernels Beyond Latency Hiding at the GPU Power Wall</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Joule is FLOP: Optimizing Tensor-Core Kernels Beyond Latency Hiding at the GPU Power Wall</h1>
+<p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：张量核 kernel 平均板级功耗贴近 GPU 功率上限时，运行时间≈每次调用能耗÷功率上限——被计算隐藏的数据搬运仍耗能，能否把能耗-频率耦合纳入 kernel 设计与调度？</p>
+<p><strong>方法</strong>：提出 Joule 框架：成本模型结合硬件事件计数、物理数据通路能耗与跨域非线性电压缩放，求解功率上限下的持续频率与运行时间；结合跨内存层级与 die 的数据搬运下界得功耗感知光速（PSoL）；指导 B200 上充分利用张量内存的宽 tile kernel 与功耗感知的空间/时间 tile 调度。</p>
+<p><strong>关键数字</strong>：B200 上平均能耗预测误差 0.69%；60 种稠密层形状上 GEMM 相对穷举 cuBLAS 在 B200、H100 NVL、RTX PRO 6000 分别几何平均提速 4.94%、6.64%、2.12%；八卡 B200 融合 Mega-MoE 相对上游 DeepGEMM 提升 2.60%–5.17%。</p>
+<p><strong>为什么值得看</strong>：把「被延迟隐藏的能耗」变成可建模、可优化的一等公民，为功耗墙下的 GPU kernel 优化提供新度量与新思路。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.32440">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlashQLA: Efficient Context Parallelism for Gated DeltaNet</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>FlashQLA: Efficient Context Parallelism for Gated DeltaNet</h1>
+<p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：Gated DeltaNet（GDN）通过循环状态更新获得线性复杂度，但块间顺序依赖限制了并行度，尤其长上下文小 batch 场景——如何提升其上下文并行效率？</p>
+<p><strong>方法</strong>：提出 FlashQLA：衰减感知准备降低边界状态预处理开销；Dual CP 跨并行层级共享 summary 计算把序列并行扩展到多 GPU；负载自适应 Auto CP 与 CP 感知 kernel 协同设计进一步提升执行效率。</p>
+<p><strong>关键数字</strong>：单 GPU 上相对 Flash Linear Attention（FLA）前向加速 1.7–3.1×、后向最高 4.4×；八 GPU、上下文最长 1M token 时 Dual CP 相对 FLA KCP 前向最高 4.8×、前向后向合计 4.4×。</p>
+<p><strong>为什么值得看</strong>：针对 GDN 类线性注意力长上下文训练/推理的并行瓶颈给出了系统化解法，数字直接可用于选型。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.32039">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Can a Frontier LLM Repair a Quantized Network by Tool-Free Weight-Space Programming?</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Can a Frontier LLM Repair a Quantized Network by Tool-Free Weight-Space Programming?</h1>
+<p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：不给工具、不给数据、也不让跑推理，前沿 LLM 仅凭权重文本能否修复被量化损坏的网络？</p>
+<p><strong>方法</strong>：把 20k 参数 CIFAR-10 CNN 的完整权重以文本形式给四个 Claude 系列 LLM，要求产出 4-bit 网络；设计四种输入与任务描述不同的评估协议（给浮点+量化网络 vs 只给浮点网络自选优化策略），分析其回答。</p>
+<p><strong>关键数字</strong>：标准 RTN 量化到 4-bit 把测试准确率从 81.4% 打到 60.4%；Opus 5.5 逐层回答把 4-bit 网络准确率恢复到 77.95%（距浮点 3.5 pp、距 AdaRound 2.8 pp）；只给浮点网络时模型能指出误差抵消修正但退回 RTN，仍把 Fable 5.2 的量化网络抬到 70.0%。</p>
+<p><strong>为什么值得看</strong>：展示了前沿 LLM 具备免工具、免数据的「权重空间编程」修复能力，为训练后量化的自动化提供了全新思路。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.33031">阅读原文 ↗</a></p>
+</body>
+</html>

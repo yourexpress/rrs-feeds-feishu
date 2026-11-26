@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tokenization and Architecture Jointly Allocate Component Roles in Time Series Transformers</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Tokenization and Architecture Jointly Allocate Component Roles in Time Series Transformers</h1>
+<p class="meta-line">arXiv · 2026-11-24 · 论文PDF</p>
+
+<blockquote><p>Time series transformers have achieved strong forecasting performance, yet it remains unclear which of their components, attention or the feed-forward network (FFN), constructs temporal features, and how tokenization such as patching changes this. We propose a temporal probing framework that uses 15 token-level diagnostic tasks to measure feature construction as the gain in linear decodability of temporal properties from one sub-layer to the next (a matched MLP probe already saturates at the embedding). It targets models whose probed representations are read by a linear forecasting head. Applied to 5 supervised models trained on 8 long-term forecasting benchmarks, it finds that the constructing component is not fixed but allocated by the interaction of tokenization and architecture. Under patch tokenization (PatchTST), the FFN's gain exceeds attention's in probing on all 8 datasets, and its 8-dataset mean is 3.2x attention's. Without attention, the FFN alone reaches nearly the same total gain, both when attention is removed from a trained model and when PatchTST is trained without it, and the retrained model forecasts within a few percent of the full model. In probing, attention do…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.31730">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RePrism: Joint Request and Representation Scheduling for LLM Agent Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>RePrism: Joint Request and Representation Scheduling for LLM Agent Serving</h1>
+<p class="meta-line">arXiv · 2026-11-24 · 论文PDF</p>
+
+<blockquote><p>Agentic workflows often invoke large language models multiple times. When the dependencies are visible to the serving system, it can use them to schedule requests and cache reusable content, improving workflow execution efficiency. Prior work has largely focused on ordering requests or managing shared resources under a fixed caching scheme. A reusable prompt that specifies model behavior, however, can have multiple representations. We present RePrism, a serving system that jointly selects which ready request to serve and which eligible representation of its prompt to use. Its goal is to improve throughput and shorten session completion time (SCT). The scheduler ranks pairs of requests and representations by combining each pair's immediate value with an estimate of its future value based on the visible workflow. The resource manager allocates GPU memory to both LoRA adapters and cached key-value states. It also coordinates their admission and eviction as memory pressure changes. We compare RePrism with S-LoRA on a dynamic workload with an arrival rate of 1.8 sessions per second, and it achieves 1.37 times the request throughput and reduces P95 SCT by a factor of 4.10. Under controll…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.32545">阅读原文 ↗</a></p>
+</body>
+</html>

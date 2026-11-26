@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HiCal: Offline Calibration for Hierarchical Scale Encoding in Accurate HiF4 Quantization</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>HiCal: Offline Calibration for Hierarchical Scale Encoding in Accurate HiF4 Quantization</h1>
+<p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：HiFloat4（HiF4）的层次化缩放编码（全局 E6M2 尺度 + 两级二进制尺度扩展）默认舍入规则与固定扩展阈值未充分贴合张量统计特征——能否离线校准改进量化精度？</p>
+<p><strong>方法</strong>：提出 HiCal，离线校准三个尺度的编码决策：为 Level-1 E6M2 尺度引入校准舍入偏置，按局部组幅值经验分布优化 Level-2/3 的尺度扩展阈值；校准参数离线确定、推理期固定，层次化编码仍按局部值自适应，无需逐块多候选尺度搜索。</p>
+<p><strong>关键数字</strong>：五种合成与真实激活分布上量化 MSE 相对原 HiF4 降 9.91%–23.50%，Qwen3-8B 真实激活降 13.00%；六个基准端到端平均分在 Qwen3-8B 与 Qwen3-30B-A3B 上分别提升 0.91 与 1.25 个百分点。</p>
+<p><strong>为什么值得看</strong>：不动推理期开销、只改离线校准就把 HiF4 精度明显抬高，是低比特 LLM 量化的低成本改进路径。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.32624">阅读原文 ↗</a></p>
+</body>
+</html>

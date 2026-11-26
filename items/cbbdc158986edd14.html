@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mayfly: Lifecycle-Aware High-Bandwidth Flash for Recursive Self-Improvement</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Mayfly: Lifecycle-Aware High-Bandwidth Flash for Recursive Self-Improvement</h1>
+<p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
+
+<p>Mayfly：生命周期感知高带宽闪存，面向递归自我改进</p>
+<blockquote><p>Recursive self-improvement (RSI) lets an LLM improve its agent system by proposing and evaluating candidate variants across tasks. A generation's sessions grow their KV caches together and release them as they finish, creating a burst followed by a decline. At high concurrency, even the KV of sessions ready to run exceeds the GPU's HBM. Offloading that KV to host DRAM or SSDs adds capacity but leaves ready sessions waiting for HBM space before execution. High-Bandwidth Flash (HBF) can serve the overflow in place, but excessive reads lengthen decode steps and repeated writes consume flash endurance. Our key insight is that where ready KV is read should follow the burst and its decline: from HBF in place while the burst overflows HBM, as much as each step's bandwidth allows, and from HBM again as the decline frees it. A switch between ready and parked decides only whether a block is read, so its flash copy stays valid, and a session's end, which the orchestrator announces, decides when its private KV dies. We present Mayfly, lifecycle-guided HBF management for RSI. Mayfly bounds per-step HBF reads during overflow and returns KV to HBM as sessions finish and free space. It retains a v…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.32264">阅读原文 ↗</a></p>
+</body>
+</html>

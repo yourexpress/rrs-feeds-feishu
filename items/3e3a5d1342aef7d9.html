@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Real-Time AI Acceleration on a 2D Spatial Dataflow Architecture</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Real-Time AI Acceleration on a 2D Spatial Dataflow Architecture</h1>
+<p class="meta-line">arXiv · 2026-11-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：GPU 行为不透明导致实时系统难以做时序分析——空间数据流加速器能否作为可分析的替代？</p>
+<p><strong>方法</strong>：以 Tenstorrent Blackhole（基于 RISC-V 的 2D 核心网格 + NoC，开放软件运行时）为对象，先剖析平台特性，再把最坏执行时间任务建模为齐次同步数据流图，并扩展分析多核负载的 NoC 延迟。</p>
+<p><strong>关键数字</strong>：在 12,567 个任务配置与负载上评估，模型估计在所有配置下均高于实测最坏情况；单核开销多数低于 100%、最高不到 200%，多核悲观 NoC 竞争分析下低于 500%。</p>
+<p><strong>为什么值得看</strong>：为「开放、可分析的 AI 加速器上做实时计算」打下基础，Blackhole 这类开放平台为实时 ML 系统提供了 GPU 之外的新选项。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.31556">阅读原文 ↗</a></p>
+</body>
+</html>

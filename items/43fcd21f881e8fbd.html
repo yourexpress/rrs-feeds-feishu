@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Translation Validation of SystemVerilog-to-SystemC RTL Conversion by Reading the Generated C++</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Translation Validation of SystemVerilog-to-SystemC RTL Conversion by Reading the Generated C++</h1>
+<p class="meta-line">arXiv · 2026-11-23 · 论文PDF</p>
+
+<blockquote><p>SystemC models of register-transfer level (RTL) designs are used for virtual platforms, firmware bring-up and simulation without a commercial license, and more of them now come from translators and language models. A wrong model usually compiles, and it usually agrees with the RTL. SystemVerilog evaluates an 8-bit sum in 8 bits while C++ evaluates it in 64, so a translation that forgets one truncation keeps a carry the RTL drops, and only inputs near the top of the range show it. I built svcc, an open-source SystemVerilog-to-SystemC converter, and my first check of its output read the generated C++ with SystemVerilog's rules. That check passed two wrong models. The check that replaced it gives the generated header the meaning C++17 and SystemC give it and turns undefined behavior into proof obligations. It prints what it read as SystemVerilog with every width change explicit, then proves that equivalent to a netlist of the source by induction over registers matched by name. On 50 author-written designs it proves 45 and reports 5 as outside its model. In a mutation experiment it accepted none of the 17 mutants that compiled SystemC showed to be wrong. Of 2,184 modules from 16 open-s…</p></blockquote>
+<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.31674">阅读原文 ↗</a></p>
+</body>
+</html>

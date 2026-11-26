@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Breaking Routing And Inter-device Dependencies in Mixture-of-Experts</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Breaking Routing And Inter-device Dependencies in Mixture-of-Experts</h1>
+<p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：MoE 模型规模增大后专家并行（EP）的 token 分发与合并成为推理瓶颈，而标准 MoE 架构的顺序依赖限制了通信与计算重叠——如何打破这些依赖？</p>
+<p><strong>方法</strong>：提出 BRAID-MoE：用阶梯式残差连接把每个专家的合并推迟到下一个块，用提前路由（early routing）在合并前残差上计算下一路由决策，从而在专用通信流上背靠背执行前一次合并与下一次分发，与注意力计算重叠。</p>
+<p><strong>关键数字</strong>：Qwen3 形态 0.4B-A0.1B 与 2.5B-A0.5B 上匹配顺序训练，验证损失仅增 1% 与 0.5%；转换的 Qwen3-30B-A3B 预填充加速最高 1.29×、解码 1.37×，跨多样负载与 EP 配置至少 1.12×；现有 checkpoint 可小幅续训适配。</p>
+<p><strong>为什么值得看</strong>：提前路由 + 阶梯残差的设计在几乎不损质量的前提下显著改善 MoE 推理的通信-计算重叠，且能迁移现有 checkpoint。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.32572">阅读原文 ↗</a></p>
+</body>
+</html>

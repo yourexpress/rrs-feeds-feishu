@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ExitLUT: Boolean Early Exits for Efficient FPGA-Based Neural Network Inference</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>ExitLUT: Boolean Early Exits for Efficient FPGA-Based Neural Network Inference</h1>
+<p class="meta-line">arXiv · 2026-11-23 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：FPGA 上的早退神经网络如何降低平均推理成本，而不为 LUT 架构引入难以匹配的软max 式控制路径开销？</p>
+<p><strong>方法</strong>：提出 ExitLUT，把软max 置信度早退替换为直接映射进 FPGA LUT 的布尔函数早退；在 fpgaConvNet 静态数据流基线上对比 ATHEENA 软max 早退扩展，并将节省的资源重新投入主数据通路。</p>
+<p><strong>关键数字</strong>：早退决策 LUT 占用较软max 路径降低 2.58×，DSP 占用清零；吞吐较 fpgaConvNet 提升最高 4.08×、较 ATHEENA 提升 1.82×；LUT 型网络嵌入早退较静态设计平均时延加速 1.41–1.89×，LUT 开销低于 1%。</p>
+<p><strong>为什么值得看</strong>：用布尔函数替代软max 做早退判断的思路对 FPGA 加速器设计有直接借鉴价值，量化了资源再投资的收益。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.31540">阅读原文 ↗</a></p>
+</body>
+</html>

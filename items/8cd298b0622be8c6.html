@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estimating GPU Roofline Arithmetic Intensity with Off-the-Shelf LLMs and Compiler Artifacts</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Estimating GPU Roofline Arithmetic Intensity with Off-the-Shelf LLMs and Compiler Artifacts</h1>
+<p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题</strong>：GPU 开发者做优化常需剖析目标硬件，但访问受限会拖慢优化——现成 LLM 能否不执行负载就估计 Roofline 算术强度（FLOPs/设备内存字节比）？</p>
+<p><strong>方法</strong>：评估三个模型（deepseek-v4-flash、gemini-3.7-flash、gpt-5.6-sol）在 179 个组合（五类 kernel、四款 NVIDIA/AMD GPU、四种并行运行时、改动代码变体）上的估计能力，比较仅源码、带编译器工件、沙盒 agentic 分析三种查询方式。</p>
+<p><strong>关键数字</strong>：带编译器工件把算术强度估计进入 1.20 倍容差的比例从 8–14% 提到 26–32%，带宽/计算受限分类正确率 78–92%；FLOP 估计 1.20× 容差内 59–88%，设备内存流量仅 36–40%；agentic 分析对 gpt-5.6-sol 再提升 6.5 个百分点，但中位成本 3.6×、时延 2.5×。</p>
+<p><strong>为什么值得看</strong>：表明 LLM 估计可在 GPU 访问受限时帮助排定优化优先级，并指出缓存相关设备内存流量是精确预测的主要障碍。</p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.32975">阅读原文 ↗</a></p>
+</body>
+</html>
