@@ -22,9 +22,11 @@
 <h1>Pando: Noise-Coupled Parallel Draft Trees for Efficient Edge Speculative Decoding</h1>
 <p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
 
-<p>Pando：噪声耦合并行草稿树用于边缘投机解码</p>
-<blockquote><p>Autoregressive (AR) decoding emits one token per forward pass, reloading the full model each time, so LLM inference on edge devices is memory-bound while the compute units sit idle. Speculative decoding puts that idle compute to work by verifying several drafted tokens in a single pass. State-of-the-art parallel drafters such as DFlash and DSpark propose an entire block of draft tokens in one forward pass, which makes drafting compute-efficient. However, they are deployed with draft chains whose length is capped by the block size they are trained for, leaving most of the computational budget for verification unused. To tackle this problem, we propose Pando, which builds dynamic draft trees on top of a parallel drafter and thereby removes this cap. Pando employs noise-coupled pruning, which draws the target model's sampling noise before drafting and ranks candidate branches under that noise, so the tree retains the branches the target will actually sample. Noise coupling is lossless and requires no retraining or additional model pass, yet increases acceptance length by up to $8.4\%$ on Qwen3-8B. To optimize and evaluate Pando configurations across hardware, we normalize an operator-…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：自回归解码每 token 一次前向、每次重载全模型，边缘 LLM 推理受内存带宽限制；并行草稿器（DFlash/DSpark）一次前向提议整块草稿 token，但草稿链长度被训练块大小封顶，大部分验证算力预算闲置。</p>
+<p><strong>方法</strong>：Pando 在并行草稿器之上构建动态草稿树、移除长度上限；噪声耦合剪枝在草稿前先抽取目标模型的采样噪声、在该噪声下对候选分支排序，从而保留目标实际会采样的分支；无损、无需重训或额外模型 pass。</p>
+<p><strong>关键数字</strong>：Qwen3-8B 上接受长度最高 +8.4%；代表性边缘设备上 16 节点 Pando 树较 AR 解码 5.3x 加速、4.2x 能耗降低；较 DSpark 发布链快 25%，较 EAGLE-3 树快 27%、能耗效率高 72%；建模的所有边缘设备上最佳配置仍保持内存受限。</p>
+<p><strong>为什么值得看</strong>：把并行草稿器的验证算力预算用满的草稿树方案，边缘投机解码新上限。</p>
+<p><a href="https://arxiv.org/abs/2611.32269">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.32269">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>OpenWoud: Vendor-Unlocked Scalable Adaptive Random Forest Accelerator</h1>
 <p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
 
-<p>OpenWoud：厂商无关可扩展自适应随机森林加速器</p>
-<blockquote><p>Online Machine Learning (ML) enables real-time decision-making on evolving data streams. These dynamic models learn continuously to adapt to new concepts, as previous ones become invalid, but their performance is often limited by throughput. The Adaptive Random Forest (ARF) is a state-of-the-art model for this setting, which naturally exposes parallelism and is therefore well-suited for hardware acceleration. However, prior Field Programmable Gate Array (FPGA)-based accelerators are vendor-locked and rely on resource-hungry Floating-Point (FP) arithmetics, limiting their scalability and portability. We present OpenWoud, a vendor-unlocked ARF framework for FPGAs. Our design replaces FP operators with a flexible FiXed-Point (FxP) arithmetic library and introduces fully transparent, manually scheduled dataflows for training and drift detection. This enables fine-grained time/area trade-offs and predictable behavior across platforms. A comprehensive evaluation on both synthetic and real datasets shows that OpenWoud maintains or increases accuracy (up to +12.89%), compared to a prior FPGA accelerator, while reducing the resource utilization by half. Competitive performance is observed c…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：在线机器学习在演化数据流上做实时决策，自适应随机森林（ARF）是 SOTA 模型且天然暴露并行性、适合硬件加速；但既有 FPGA 加速器厂商锁定、依赖资源饥渴的浮点（FP）算术，限制可扩展性与可移植性。</p>
+<p><strong>方法</strong>：OpenWoud 厂商无关 ARF 框架：用灵活定点（FxP）算术库替换 FP 算子；训练与漂移检测采用完全透明的手调度数据流；支持细粒度时间/面积权衡与跨平台可预测行为。</p>
+<p><strong>关键数字</strong>：合成与真实数据集上较先前 FPGA 加速器保持或提升精度（最高 +12.89%），资源利用率减半；较 GPU 为 0.5-1.5x 速度、较 FPGA 基线 0.2-0.5x（后者基于理想化仿真）；真正逐样本推理，而 GPU 需要批量插入。</p>
+<p><strong>为什么值得看</strong>：FPGA 上厂商无关的在线随机森林加速，定点替代浮点 + 逐样本流式。</p>
+<p><a href="https://arxiv.org/abs/2611.32662">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.32662">阅读原文 ↗</a></p>
 </body>
 </html>

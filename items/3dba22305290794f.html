@@ -22,9 +22,11 @@
 <h1>Network-Guided Automated Synthesis of MAC Units for Neural Network Inference</h1>
 <p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
 
-<p>网络引导的 MAC 单元自动综合用于神经网络推理</p>
-<blockquote><p>In neural inference accelerators, multiply-accumulate (MAC) datapaths account for the majority of circuit area and critical-path delay, where operator-level numerical formats simultaneously dictate hardware overhead and quantization error. Yet no straightforward mapping exists between hardware cost and end-to-end network accuracy: logic synthesis transforms datapaths in a highly nonlinear manner, while numerical errors propagate and couple across layers. To address this disconnect, we present NAMSI, an automated network-aware MAC synthesis framework tailored for neural inference. NAMSI characterizes heterogeneous data formats using a format-distribution representation (FD) and leverages topology-aware accuracy and hardware-cost modeling (TaH), calibrated with actual post-synthesis Area-Delay Product (ADP) measurements, to jointly estimate coupled full-network accuracy and circuit cost. Furthermore, reversible lattice search (RLS) is introduced to tractably navigate the exponentially scaling design space. Evaluations across five neural networks on ImageNet-1K demonstrate that under post-training quantization (PTQ), NAMSI achieves 54.2%-60.4% reductions in post-synthesis MAC ADP comp…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：神经推理加速器中乘累加（MAC）数据路径占大部分电路面积与关键路径延迟，算子级数值格式同时决定硬件开销与量化误差；但硬件成本与端到端网络精度之间不存在直接映射。</p>
+<p><strong>方法</strong>：NAMSI 自动化网络感知 MAC 综合框架：用格式分布表示（FD）刻画异构数据格式；拓扑感知的精度与硬件成本建模（TaH）以实际综合后面积-延迟积（ADP）校准，联合估计耦合的全网络精度与电路成本；可逆格搜索（RLS）可解地导航指数级设计空间。</p>
+<p><strong>关键数字</strong>：ImageNet-1K 五个网络、后训练量化（PTQ）下，较 FP32 的综合后 MAC ADP 降 54.2%-60.4%，同时保留至少 99% 全精度 Top-1 精度；硬件效率与精度保持均超基线方法。</p>
+<p><strong>为什么值得看</strong>：把数值格式-电路成本-网络精度三方联动建模，自动搜索 MAC 数据路径。</p>
+<p><a href="https://arxiv.org/abs/2611.31986">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.31986">阅读原文 ↗</a></p>
 </body>
 </html>

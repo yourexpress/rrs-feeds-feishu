@@ -22,9 +22,11 @@
 <h1>LEGOSpec: A Composable and Efficient Framework for Speculative Draft Design and Training</h1>
 <p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
 
-<p>LEGOSpec：投机草稿设计与训练的可组合高效框架</p>
-<blockquote><p>Speculative decoding accelerates large language model (LLM) generation using a lightweight draft. Existing methods evaluate complete recipes under different training configurations, leaving component effects, interactions, and composition benefits unclear. Therefore, we present LEGOSpec, a composable framework for speculative draft design and training. LEGOSpec decomposes draft models into Context, Backbone, Proposal, and Objective components that share a unified training infrastructure. Using LEGOSpec, we systematically vary components and evaluate selected combinations under matched training conditions to isolate their effects and interactions. These experiments reveal three findings: (1) Different workloads favor different backbones, depending on context length and memory budget, with within-block dependency modeling particularly important for long contexts. (2) Proposal design must balance acceptance and latency. (3) The training objective should match token distributions locally and optimize acceptance length across the block. These findings guide workload-aware configurations and DFlux, a balanced general-purpose draft combining a convolution-equipped SWA--GQA hybrid backbone…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：投机解码用轻量草稿加速 LLM 生成，但现有方法在不同训练配置下评估完整方案，组件效果、交互与组合收益不明。</p>
+<p><strong>方法</strong>：LEGOSpec 可组合框架，把草稿模型分解为 Context、Backbone、Proposal、Objective 四类组件并共享统一训练设施；在匹配训练条件下系统变化组件、评估选定组合以隔离效果与交互；三个发现（负载偏好不同骨干、提案需平衡接受率与延迟、训练目标需局部匹配 token 分布）指导负载感知配置与 DFlux（卷积 SWA-GQA 混合骨干 + Residual Corrector + 分层监督）。</p>
+<p><strong>关键数字</strong>：Qwen 与 Gemma 上 DFlux 接受长度较最强基线常规基准最高 +13.7%、长上下文 +34.7%；训练吞吐最高 +79%、离线监督准备较 SpecForge 加速最高 3.11x。</p>
+<p><strong>为什么值得看</strong>：首次系统解耦投机草稿设计空间，给出负载感知配置指导。</p>
+<p><a href="https://arxiv.org/abs/2611.33004">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.33004">阅读原文 ↗</a></p>
 </body>
 </html>

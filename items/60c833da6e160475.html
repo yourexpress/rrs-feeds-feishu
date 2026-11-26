@@ -22,9 +22,11 @@
 <h1>Scaling Architectural Simulation to Giga Instructions Per Second</h1>
 <p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
 
-<p>架构模拟扩展到每秒千兆指令</p>
-<blockquote><p>The cost of detailed architectural simulation constrains design-space exploration, while parallelization across simulated cores offers limited host concurrency for single-core and small multicore targets. We present GIPSim, an instruction-driven simulator that derives instruction timing from dependencies and resource constraints, reducing the overhead of updating pipeline state every simulated cycle. It applies synchronization-guided temporal decomposition to recorded execution, exposing host parallelism beyond the target core count. GIPSim replays the resulting segments in parallel and aggregates their durations through a dependency graph to estimate overall execution time, with replay contexts reconstructed using retained microarchitectural state, warmup, and synchronization-guided cache eviction. This accounts for synchronization waits without requiring host workers to follow target execution order. We evaluate GIPSim using QEMU traces of application and operating system execution on multi-core x86-64, AArch64, and RV64GC systems. GIPSim achieves an average single-node simulation throughput of 13.8 million instructions per second (MIPS) with one worker and 1{,}010 MIPS with 96 w…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：详细架构仿真的成本限制设计空间探索，而跨仿真核并行对单核与小型多核目标只能提供有限的宿主并发。</p>
+<p><strong>方法</strong>：GIPSim 指令驱动仿真器：从依赖与资源约束推导指令时序，降低逐周期更新流水线状态的开销；同步引导的时间分解对记录的执行进行切分，暴露超出目标核数的宿主并行；并行重放片段并用依赖图聚合时长估计总执行时间，重放上下文用保留的微架构状态、预热与同步引导缓存驱逐重建。</p>
+<p><strong>关键数字</strong>：x86-64、AArch64、RV64GC 多核 QEMU trace 上，单 worker 平均仿真吞吐 13.8 MIPS、96 worker 达 1,010 MIPS、峰值 1,421 MIPS；相对 gem5 的执行周期平均绝对百分比误差分别为 7.52% 与 7.43%。</p>
+<p><strong>为什么值得看</strong>：把架构仿真推到每秒千兆指令量级，大幅降低设计空间探索成本。</p>
+<p><a href="https://arxiv.org/abs/2611.32397">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.32397">阅读原文 ↗</a></p>
 </body>
 </html>

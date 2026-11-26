@@ -22,9 +22,11 @@
 <h1>Scalable Placement for Disaggregated LLM Serving on Heterogeneous Edge Fleets</h1>
 <p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
 
-<p>异构边缘集群分离式 LLM 服务的可扩展放置</p>
-<blockquote><p>Serving large language models (LLMs) at the edge is increasingly desirable for privacy-sensitive applications and scenarios that require data to remain on local devices. However, edge environments are constrained by limited computational resources and exhibit substantial device heterogeneity, making efficient LLM serving challenging. These limitations become particularly pronounced under bursty demand, where congestion and queue buildup can significantly increase response latency. Replicating the model into multiple pipeline instances can improve serving capacity and reduce congestion. Yet, deciding how devices should be grouped into replicas, assigning replicas to prefill or decode functions, and partitioning model layers across heterogeneous devices jointly creates a large combinatorial optimization problem. We present Spade, a scalable and runtime-efficient placement planner for disaggregated LLM serving with pipeline replication across heterogeneous edge clusters. Spade introduces a dominance-based pruning technique that discards inferior replica candidates and recursively eliminates larger candidates that contain them, dramatically shrinking the search space. It further combin…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：边缘 LLM 服务受有限计算资源与设备异构性制约，突发需求下拥塞与排队显著增加响应延迟；把模型复制到多个流水线实例可提升服务容量，但设备分组、副本分配与跨设备层划分联合构成大型组合优化问题。</p>
+<p><strong>方法</strong>：Spade 可扩展运行时高效放置规划器（异构边缘集群上带流水线复制的分离式 LLM 服务）：支配剪枝丢弃劣质副本候选、递归消除包含它们的更大候选，大幅收缩搜索空间；water-filling 层划分 + 有界多维背包公式在拥塞感知目标下优化放置。</p>
+<p><strong>关键数字</strong>：30 设备（5 种硬件类别）合成集群 441ms 找到最优放置；遗传搜索基线 + DP 划分约需 2 小时且拥塞目标仍差 19.7%；10 种设备类型集群上剪枝消除 99.6% 候选放置，同时与穷举产生相同幸存候选集。</p>
+<p><strong>为什么值得看</strong>：异构边缘集群 LLM 放置的实用可扩展规划器，剪枝效果显著。</p>
+<p><a href="https://arxiv.org/abs/2611.32881">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.32881">阅读原文 ↗</a></p>
 </body>
 </html>

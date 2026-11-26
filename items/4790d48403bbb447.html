@@ -22,9 +22,11 @@
 <h1>RankServe: Rank-Aware CPU-GPU Scheduling for Memory-Constrained MoE Serving</h1>
 <p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
 
-<p>内存受限 MoE 服务的 Rank 感知 CPU-GPU 调度 RankServe</p>
-<blockquote><p>Mixture-of-Experts (MoE) models scale model capacity through sparse expert activation, but their large expert pools impose substantial memory requirements during inference. Low-rank compression reduces the memory footprint of Mixture-of-Experts (MoE) models. However, the heterogeneous expert ranks create unequal storage, transfer, and execution costs. Under limited GPU memory, expert popularity and transfer cost alone cannot determine which experts are most valuable to retain. We present RankServe, a CPU-GPU serving system for compressed MoE checkpoints with fixed expert ranks. Its key insight is to value GPU residency against the cheaper nonresident path, CPU execution or weight transfer followed by GPU execution, under each expert's rank and token load. RankServe aggregates the resulting estimated savings over routing demand and prioritizes experts by savings per byte. It updates residency from recent routing history and selects miss paths using current token loads, allowing temporary GPU execution without cache admission. A variable-rank runtime executes heterogeneous factors through grouped matrix multiplications without common-rank padding. Implemented on vLLM, RankServe is ev…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：MoE 模型专家池大、推理内存要求高；低秩压缩减小内存占用，但异构专家秩造成不等的存储、传输与执行成本。GPU 内存受限下，仅凭专家流行度与传输成本无法决定哪些专家最值得驻留。</p>
+<p><strong>方法</strong>：RankServe CPU-GPU 服务系统（固定专家秩的压缩 MoE 检查点）：按每位专家的秩与 token 负载，对 GPU 驻留与更便宜的非常驻路径（CPU 执行或权重传输后 GPU 执行）估值节省；按路由需求聚合估计节省、以每字节节省排序优先专家；从近期路由历史更新驻留、按当前 token 负载选择 miss 路径（允许不入缓存的临时 GPU 执行）；变秩运行时用分组矩阵乘执行异构因子、无需公共秩填充。</p>
+<p><strong>关键数字</strong>：vLLM 实现，3 个 MoE 模型 × 6 个服务系统、单 CPU-GPU 平台、batch 1-32 五档下，每模型几何平均 TTFT 加速 1.69-2.29x、TPOT 加速 1.71-2.48x（相对各配置最快基线）。</p>
+<p><strong>为什么值得看</strong>：压缩 MoE 驻留决策按"每字节节省"排序，CPU-GPU 协同服务落地。</p>
+<p><a href="https://arxiv.org/abs/2611.31869">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.31869">阅读原文 ↗</a></p>
 </body>
 </html>

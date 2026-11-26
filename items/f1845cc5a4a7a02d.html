@@ -22,9 +22,11 @@
 <h1>MOSAIC: Memory-Organized Search with Anti-Imitation Crossover for Training-Free Microarchitecture Optimization</h1>
 <p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
 
-<p>免训练微架构优化：记忆组织搜索+反模仿交叉 MOSAIC</p>
-<blockquote><p>Large language models can generate cache-replacement policies. The central challenge is to retain performance on workloads excluded from the search. In our adaptations of published search methods, generated code resembles established policies, with cosine similarities of 0.78-0.84. The wider comparison also shows held-out harmonic-mean instructions-per-cycle (IPC) losses of 1.0-2.4%. We present MOSAIC, a search controller that improves policies without updating language-model weights. It stores concise lessons from previous evaluations rather than repeatedly copying high-scoring code. When improvement stops, it selects two high-scoring policies whose code embeddings differ and asks the model to combine their mechanisms. Novelty prompts and model rotation support this search; controlled memory edits test how the stored lessons affect later proposals. We evaluate cache replacement using intervention-level cross-validation and a wider comparison on ten memory-intensive SPEC2006 workloads. MOSAIC reaches a 51.1% peak hit rate on the primary search workload and a 47.9% held-out mean in the intervention study. Removing crossover reduces these values by 7.8 and 21.8 percentage points, res…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 可生成缓存替换策略，核心挑战是保留搜索外工作负载的性能；已发表搜索方法改编出的代码与既有策略高度相似（余弦相似度 0.78-0.84），留出工作负载 IPC 损失 1.0-2.4%。</p>
+<p><strong>方法</strong>：MOSAIC 搜索控制器，不更新模型权重：存储先前评估的简明经验而非反复复制高分代码；改进停滞时选出两个代码嵌入差异大的高分策略，请模型组合其机制；用新颖性提示与模型轮换支持搜索，受控记忆编辑测试经验对后续提案的影响。</p>
+<p><strong>关键数字</strong>：主搜索工作负载峰值命中率 51.1%、干预研究留出均值 47.9%，移除交叉分别降 7.8 与 21.8 个百分点；更宽 IPC 比较中留出差距最小（0.31%）、留出 IPC 最高；迁移到数据预取较 LRU 平均提速 4.8%；语料含 10,687 个生成策略。</p>
+<p><strong>为什么值得看</strong>：免训练微架构搜索的控制器设计，经验记忆 + 反模仿交叉显著提升留出性能。</p>
+<p><a href="https://arxiv.org/abs/2611.31733">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.31733">阅读原文 ↗</a></p>
 </body>
 </html>

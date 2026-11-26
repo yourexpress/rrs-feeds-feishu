@@ -22,9 +22,11 @@
 <h1>MXFP4 for LLM Inference: Complementary Post-Training Quantization Techniques and Their Interactions</h1>
 <p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
 
-<p>MXFP4 LLM 推理：互补 PTQ 技术及其交互</p>
-<blockquote><p>Recent advances in low-precision representation have introduced several microscaling numerical formats for LLM quantization. By sharing a scale factor across groups of 16 or 32 elements, these formats enable aggressive low-precision quantization with minimal accuracy degradation, particularly when combined with modern PTQ algorithms. Their accuracy depends on how the numerical format interacts with rotation, PTQ, and scale selection. We study the composability of PTQ configurations across six LLMs and three microscaling formats: MXFP6, MXFP4, and NVFP4, systematically varying Hadamard rotation granularity, PTQ algorithm, and scale-selection strategy. Our central finding is that effective quantization recipes are format dependent: both MXFP4 and NVFP4 support accurate 4-bit inference, but techniques that benefit one do not necessarily transfer to the other. MXFP4 benefits substantially from rotation and error-correcting PTQ, whereas NVFP4 gains less from rotation, consistent with its finer-grained scales capturing more within-block variation. Building on these findings, we introduce Midmax, a calibration-free scale-selection strategy that mitigates clipping error in power-of-two blo…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：microscaling 数值格式（16/32 元素共享缩放因子）支持激进低精度量化，但精度取决于格式与旋转、PTQ 算法、缩放选择的交互；MXFP4 与 NVFP4 的受益技术是否互通未知。</p>
+<p><strong>方法</strong>：对 6 个 LLM × 3 种 micros caling 格式（MXFP6/MXFP4/NVFP4），系统变化 Hadamard 旋转粒度、PTQ 算法与缩放选择策略；提出 Midmax 免校准缩放选择，缓解 2 的幂块缩放中的裁剪误差。</p>
+<p><strong>关键数字</strong>：有效量化配方与格式相关——MXFP4 显著受益于旋转与纠错 PTQ，NVFP4 获益较少（其细粒度缩放已捕获更多块内变化）；MXFP6 激活 + MXFP4 权重恢复 4-bit 损失精度，Llama-3.1-8B 匹配或超 BF16 基线；逐张量宏观缩放不改善 MXFP4 平均精度。</p>
+<p><strong>为什么值得看</strong>：格式-算法交互的系统研究，给出 MXFP4 精度落地的实操配方。</p>
+<p><a href="https://arxiv.org/abs/2611.32873">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.32873">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>ModelLess: A Serverless System for Multi-Tier LLM Inference on Shared GPUs</h1>
 <p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
 
-<p>ModelLess：共享 GPU 上多层 LLM 推理的无服务器系统</p>
-<blockquote><p>LLM inference platforms sell online, asynchronous, batch and rollout products on GPUs provisioned per product, so a service's cards sit idle between bursts while other work waits. We present ModelLess, a serverless system for LLM inference. Users declare model services and the platform owns the instances. An idle service scales to zero: its instances go to sleep with their weights in host memory (release about 1 s, wake about 4 s for GLM-5.2 at TP8, against a cold start of over four minutes). Billing follows the time a service holds GPUs. The GPUs that sleeping instances free are lent to lower tiers. Cluster managers preempt low-priority tasks and treat eviction as all-or-nothing, but an LLM instance's eviction cost depends on which of its weights, execution state, KV cache and in-flight requests survive. ModelLess therefore gives each tier (online, job, flex) eviction semantics that state what it may lose when preempted, and runs a preemption protocol that closes admission before it releases memory, re-enqueues a request durably before it aborts it, and fails closed. Four components (entry, dispatcher, node agent, SGLang plugin) enforce it with sleep/wake, pause/resume of in-fligh…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 推理平台按产品分 GPU 提供在线、异步、批处理与 rollout 服务，服务爆发间隙卡片闲置而其他工作等待。</p>
+<p><strong>方法</strong>：ModelLess 无服务器系统：用户声明模型服务、平台持有实例；空闲服务缩到零——实例休眠且权重留在 host 内存（释放约 1s、唤醒约 4s，GLM-5.2 TP8，对比冷启动超 4 分钟），按持有 GPU 时间计费；空闲实例释放的 GPU 借给低层；每层（在线/作业/flex）定义被抢占时可丢失的内容，抢占协议先关准入再释放内存、先持久重入队再中止请求、失败即关闭（fail closed）。</p>
+<p><strong>关键数字</strong>：回放 1,100 张 H20 卡一周 trace，约 38% GPU 时间（417 等效 GPU）可在粗延迟目标 + 单固定空闲阈值下借出（理想上界，仅在恢复秒级时成立；240s 冷启动时仅余 8%）；单节点单策略 4 小时运行显示，暂停比中止-重入队每持有 GPU 样本多借出 22% token，中位在线延迟相同。</p>
+<p><strong>为什么值得看</strong>：GPU 资源池化的无服务器 LLM 推理，借出收益量级与边界条件清晰。</p>
+<p><a href="https://arxiv.org/abs/2611.32634">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.32634">阅读原文 ↗</a></p>
 </body>
 </html>

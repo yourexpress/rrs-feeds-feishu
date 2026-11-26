@@ -22,9 +22,11 @@
 <h1>Mayfly: Lifecycle-Aware High-Bandwidth Flash for Recursive Self-Improvement</h1>
 <p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
 
-<p>Mayfly：生命周期感知高带宽闪存，面向递归自我改进</p>
-<blockquote><p>Recursive self-improvement (RSI) lets an LLM improve its agent system by proposing and evaluating candidate variants across tasks. A generation's sessions grow their KV caches together and release them as they finish, creating a burst followed by a decline. At high concurrency, even the KV of sessions ready to run exceeds the GPU's HBM. Offloading that KV to host DRAM or SSDs adds capacity but leaves ready sessions waiting for HBM space before execution. High-Bandwidth Flash (HBF) can serve the overflow in place, but excessive reads lengthen decode steps and repeated writes consume flash endurance. Our key insight is that where ready KV is read should follow the burst and its decline: from HBF in place while the burst overflows HBM, as much as each step's bandwidth allows, and from HBM again as the decline frees it. A switch between ready and parked decides only whether a block is read, so its flash copy stays valid, and a session's end, which the orchestrator announces, decides when its private KV dies. We present Mayfly, lifecycle-guided HBF management for RSI. Mayfly bounds per-step HBF reads during overflow and returns KV to HBM as sessions finish and free space. It retains a v…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：递归自我改进（RSI）让 LLM 通过提议与评估候选变体改进 agent 系统；高并发下即使就绪 session 的 KV 也超出 GPU HBM，offload 到 host 内存/SSD 增加容量却让 session 等待 HBM 空间；高带宽闪存（HBF）可原地服务溢出，但过多读取延长解码、重复写入消耗闪存寿命。</p>
+<p><strong>方法</strong>：关键洞察是就绪 KV 的读取位置应跟随突发与衰减：溢出 HBM 时按每步带宽上限从 HBF 原位读取，衰减释放空间后回到 HBM。Mayfly 生命周期引导管理：限制溢出期每步 HBF 读取、session 结束归还 KV、保留每个被驱逐块的闪存备份避免状态转换重写、转发 session 结束信号避免 GC 复制死 KV。</p>
+<p><strong>关键数字</strong>：128 session/代 × 4 个 HBF 站点时，比把 KV 停放在 HBF 快 34%、比 HBM 满时总从 HBF 读快 23%；并发增长收益扩大，256 session × 8 站点达 55%；每块保留一份闪存副本 + 按声明结束时间修剪避免写放大。</p>
+<p><strong>为什么值得看</strong>：RSI 场景 KV 生命周期管理的系统方案，延迟与闪存寿命兼得。</p>
+<p><a href="https://arxiv.org/abs/2611.32264">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.32264">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Trading BRAM for LUTs: Hybrid Bit-Level Weight Storage for FPGA-Based Spiking Neural Networks</h1>
 <p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
 
-<p>FPGA SNN 混合位级权重存储：BRAM 换 LUT 的权衡</p>
-<blockquote><p>Spiking Neural Networks (SNNs) offer an attractive paradigm for energy-efficient AI inference, while their deployment on reconfigurable hardware enables application-specific acceleration without sacrificing model reprogrammability. However, realizing this potential on FPGAs is often severely constrained by the immense on-chip memory needed to store synaptic weights. Existing compression techniques reduce this storage requirement at the cost of weight precision or accuracy. This work presents a hybrid bit-level weight-storage scheme that trades BRAM capacity for FPGA logic resources while preserving the original weights unmodified. Selected weight bits are implemented using Look-Up Tables (LUTs), while the remaining bits are stored in BRAM and jointly reconstructed during inference. We integrate this approach into a spatial dataflow SNN architecture and introduce a practical bit-mapping heuristic that efficiently partitions weight bits between BRAM and LUT-based logic without modifying the weights. Experimental evaluation demonstrates more than 26% reduction in BRAM utilization with a modest increase in LUT and register usage, resulting in significant overall power savings.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：SNN 在 FPGA 部署受片上内存严重制约（需存储突触权重）；现有压缩技术在降低存储需求的同时牺牲权重精度或精度。</p>
+<p><strong>方法</strong>：混合位级权重存储方案，用 FPGA 逻辑资源换取 BRAM 容量且保持原权重不变：选定权重位用查找表（LUT）实现、其余位存 BRAM、推理时联合重构；集成进空间数据流 SNN 架构，并提出实用位映射启发式在 BRAM 与 LUT 逻辑间划分权重位（不修改权重）。</p>
+<p><strong>关键数字</strong>：BRAM 利用率降低超过 26%，LUT 与寄存器使用适度增加，总功耗显著节省。</p>
+<p><strong>为什么值得看</strong>：不损精度的权重存储压缩路径，为 FPGA SNN 的 BRAM 瓶颈提供新解法。</p>
+<p><a href="https://arxiv.org/abs/2611.32288">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.32288">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Norn: Context-Length-Aware Optimization of Weight and KV Cache Placement for Offloaded LLM Inference</h1>
 <p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
 
-<p>Norn：上下文长度感知的权重与 KV 缓存 offload 放置优化</p>
-<blockquote><p>Offloading model weights and the key-value (KV) cache to host memory enables large language models (LLMs) to run on a single memory-constrained GPU. As the KV cache grows during decoding, GPU memory requirements and the costs of KV cache transfers and attention computation change. However, existing offloading methods generally use static computation assignments and placements of model weights and the KV cache, preventing them from adapting to these changes and degrading inference performance. We propose Norn, a context-length-aware offloaded LLM inference method. Based on offline profiling, Norn co-optimizes computation assignments and placements at the sublayer level, precomputing multiple execution plans and their switching points. During decoding, Norn switches plans as context length increases, overlapping computation and data transfers without knowing the output length in advance. For prefill, Norn employs operator-major chunked prefill to avoid repeated weight transfers and automatically selects the chunk size. Experiments with Qwen3-14B and Qwen3-32B on two single-GPU systems show up to a 16.8$\times$ speedup in end-to-end latency over Pipelined Sharding and a 4.2$\times$ sp…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：把权重与 KV 缓存 offload 到 host 内存使 LLM 可跑在单张内存受限 GPU；解码中 KV 不断增长，GPU 内存需求与传输/注意力成本随之变化，但现有方法用静态计算分配与放置，无法适应。</p>
+<p><strong>方法</strong>：Norn 上下文长度感知 offload 推理：基于离线 profiling 在子层级别协同优化计算分配与放置，预计算多个执行计划及其切换点；解码中随上下文长度增长切换计划，无需预知输出长度即可重叠计算与数据传输；prefill 用 operator-major chunked prefill 避免重复权重传输并自动选择 chunk 大小。</p>
+<p><strong>关键数字</strong>：Qwen3-14B 与 Qwen3-32B 在两个单 GPU 系统上，端到端延迟较 Pipelined Sharding 最高提速 16.8x，较已知输入输出长度的 oracle 变体提速 4.2x。</p>
+<p><strong>为什么值得看</strong>：offload 推理随上下文动态换执行计划，单 GPU 大模型推理显著加速。</p>
+<p><a href="https://arxiv.org/abs/2611.32295">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.32295">阅读原文 ↗</a></p>
 </body>
 </html>

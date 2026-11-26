@@ -22,9 +22,11 @@
 <h1>Shifter Quantization: Compact Representations for Native Integer Computation</h1>
 <p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
 
-<p>Shifter 量化：原生整数计算的紧凑表示</p>
-<blockquote><p>Groupwise quantization is used in LLM quantization to improve accuracy at low bit widths, but grouping weights keeps standard integer MMA from spanning the full dot product for efficient GPU inference. We develop a new quantization method, Shifter Quantization (SQ), that reconstructs native-width integer operands by appending and shifting shared bits. To further extend the efficiency, we develop a special variant of SQ, Shifter Integer (SHI), to use INT4 kernels. We show that SQ and SHI formats perform better than standard groupwise quantization in quality, as measured by projection error and KL divergence, and in inference speed, as measured during decoding and prefill. For low precision like 2-bit quantization, SQ2 and SHI2 achieve 2.71-3.77x the 4,096-token prefill throughput of llama.cpp on a Q2_K checkpoint and reduce WikiText-2 KL by 6.6-7.8%. For mid precision like 4-bit quantization, SQ4 achieves 1.43-2.47x the prefill throughput of NInfer's groupwise-integer baselines across the tested models and prompt lengths, with 24-40% lower KL than the NInfer baselines. For high precision like 8-bit quantization, SQ8 achieves 27.4% higher batch-one prefill throughput and 72.7% lower …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 量化中分组（groupwise）量化提升低位宽精度，但分组权重使标准整数 MMA 无法覆盖完整点积，阻碍高效 GPU 推理。</p>
+<p><strong>方法</strong>：Shifter Quantization（SQ）通过追加并移位共享位来重建原生宽度整数操作数；为延伸效率，开发 SQ 的特例 Shifter Integer（SHI）以使用 INT4 kernel。</p>
+<p><strong>关键数字</strong>：2-bit 精度下，SQ2/SHI2 在 Q2_K 检查点上 4,096-token prefill 吞吐为 llama.cpp 的 2.71-3.77x，WikiText-2 KL 降 6.6-7.8%；4-bit 下 SQ4 的 prefill 吞吐为 NInfer 分组整数基线的 1.43-2.47x、KL 低 24-40%；8-bit 下 SQ8 的 batch-one prefill 吞吐较 vLLM 在线 FP8 高 27.4%、KL 低 72.7%。</p>
+<p><strong>为什么值得看</strong>：让分组量化与原生整数 MMA 兼容的表示设计，低位宽推理精度与速度双赢。</p>
+<p><a href="https://arxiv.org/abs/2611.33080">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.33080">阅读原文 ↗</a></p>
 </body>
 </html>

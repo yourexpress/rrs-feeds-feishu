@@ -22,9 +22,11 @@
 <h1>LIBRA: Runtime Co-Tuning of Batch Size and Parallelism for Time-Efficient LLM Training</h1>
 <p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
 
-<p>LLM 训练批量大小与并行度运行时协同调整 LIBRA</p>
-<blockquote><p>Training large language models (LLMs) requires choosing both a batch size and a parallel configuration. Existing systems make these decisions in isolation, tuning parallelism for throughput and batch size for convergence, but neither objective alone determines training efficiency. We present LIBRA, a lightweight runtime framework that co-tunes batch size and parallel configuration to minimize end-to-end time. LIBRA treats throughput and convergence as two noisy objectives and searches their joint space using parallel noisy expected hypervolume improvement (qNEHVI). To make this runtime search efficient, we propose hierarchical pruning, which removes infeasible and low-throughput parallel configurations through system-level performance estimation and then narrows batch-size candidates through critical-batch-size-aware convergence monitoring. We further design acquisition-guided parallel evaluation (AGPE), which evaluates surviving candidates concurrently across GPU groups in order of their acquisition values. On clusters of up to 256 GPUs, LIBRA reduces time-to-convergence by 31.1% on average over state-of-the-art methods, while runtime tuning accounts for only 0.3-3.5% of overall t…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 训练需同时选批量大小与并行配置，现有系统分开决策——并行度只调吞吐、批量大小只调收敛，二者单独都不决定训练效率。</p>
+<p><strong>方法</strong>：LIBRA 轻量运行时框架，把吞吐与收敛视为两个噪声目标，用并行噪声期望超体积改进（qNEHVI）搜索联合空间；分层剪枝先用系统级性能估计剔除不可行/低吞吐并行配置，再用关键批量大小感知的收敛监控收窄 batch 候选；采集引导并行评估（AGPE）按采集值顺序跨 GPU 组并发评估幸存候选。</p>
+<p><strong>关键数字</strong>：最多 256 GPU 集群上较 SOTA 方法平均收敛时间（time-to-convergence）降 31.1%；运行时调优仅占总训练时间 0.3-3.5%。</p>
+<p><strong>为什么值得看</strong>：吞吐与收敛联合优化的运行时方案，调优开销可忽略。</p>
+<p><a href="https://arxiv.org/abs/2611.32008">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.32008">阅读原文 ↗</a></p>
 </body>
 </html>

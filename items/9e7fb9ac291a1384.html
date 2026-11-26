@@ -22,9 +22,11 @@
 <h1>Measuring Layer-wise Intrinsic Dimensionality of FFNs in LLMs via PCA</h1>
 <p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
 
-<p>LLM FFN 逐层本征维度 PCA 测量</p>
-<blockquote><p>Modern large language models (LLMs) keep the feed-forward network (FFN) intermediate width identical across every layer, a convention inherited from the original Transformer. Yet mechanistic work suggests layers at different depths do qualitatively different work, raising a natural question: are their capacity demands also non-uniform, and if so, can a fixed parameter budget be allocated more wisely than uniformly? To probe this, we apply principal component analysis (PCA) to the input of each FFN down-projection and measure, for every layer, its intrinsic dimensionality as the smallest number of principal components needed to reconstruct the activation up to a fixed cosine similarity. Scanning 58 open-weight LLMs spanning 14 families and 70M to 72B parameters, we find a recurring middle-heavy profile in which middle layers carry higher intrinsic dimensionality than edge layers; the profile is robust to the calibration corpus, even across English and Chinese, and is largely preserved through post-training fine-tuning. As a direct test that this signal is structurally meaningful, we use it to guide width pruning in a knowledge-distilled student under a matched parameter budget: the …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：现代 LLM 各层 FFN 中间宽度相同（Transformer 惯例），但机制研究显示不同深度做不同工作——容量需求是否非均匀？固定参数预算能否分配得比均匀更聪明？</p>
+<p><strong>方法</strong>：对每个 FFN 下投影输入做 PCA，把本征维度定义为重建激活到固定余弦相似度所需的最少主成分数；扫描 58 个开源 LLM（14 个家族、70M-72B 参数）；并用 PCA 引导宽度剪枝（知识蒸馏学生、匹配参数预算）直接检验该信号的结构意义。</p>
+<p><strong>关键数字</strong>：发现"中厚"剖面——中间层本征维度高于边缘层，对标定语料稳健（中英文皆然），后训练微调大体保留；PCA 引导分配较均匀宽度在 Qwen3-8B +2.3、Qwen2.5-3B +2.5 点，低离散教师差距更小（Gemma-3-4B +0.9、LLaMA-3-8B +0.5）；差距大小随教师层间维度不均匀度（σ99）变化；代码开源。</p>
+<p><strong>为什么值得看</strong>：大规模层间本征维度测量，直接用于非均匀宽度分配。</p>
+<p><a href="https://arxiv.org/abs/2611.32782">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.32782">阅读原文 ↗</a></p>
 </body>
 </html>

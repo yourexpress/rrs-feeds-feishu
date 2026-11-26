@@ -22,9 +22,11 @@
 <h1>Native Block-Quantized Matrix Multiplication and Explicit K/V Residency with Dual-View Access for LLM Inference on RISC-V Vector Processors</h1>
 <p class="meta-line">arXiv · 2026-11-24 · 论文PDF / 每日精选</p>
 
-<p>LLM 推理原生块量化矩阵乘与显式 K/V 驻留（双视图访问）</p>
-<blockquote><p>Some key execution states in large language model inference persist across multiple instructions and are difficult to express and exploit within RVV semantics centered on individual operations. We define specialization boundaries according to data-state lifetimes and propose Quantized Block Streams (QBS) and Attention/KV Context (AKV) while preserving RVV programmability. QBS organizes native-block format processing, block traversal, integer computation, and ordered FP32 accumulation into a unified execution process, whereas AKV maintains local K/V residency and supplies operand views aligned with the computation direction while leaving Attention arithmetic on RVV. Cycle-accurate RTL evaluation shows that QBS achieves geometric-mean speedups of 35.68x and 51.34x for projection Compute and Matmul, respectively, while AKV achieves a 1.45x geometric-mean speedup over Tiled RVV for Decode Attention. Compared with the baseline, the complete design increases total area by 12.65%; on the evaluated projection workloads, throughput per area and energy efficiency improve by 46.63x and 19.78x, respectively. Further evaluation demonstrates applicability across multiple block-quantization forma…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong>：LLM 推理中部分关键执行状态跨多条指令持续存在，难以在 RVV（RISC-V 向量扩展）以单条操作语义表达与利用。</p>
+<p><strong>方法</strong>：按数据状态生命周期定义特化边界，提出 Quantized Block Streams（QBS）与 Attention/KV Context（AKV），同时保持 RVV 可编程性：QBS 把原生块格式处理、块遍历、整数计算与有序 FP32 累加统一为单一执行流；AKV 维持本地 K/V 驻留、按计算方向提供对齐的操作数视图，注意力算术仍留在 RVV。</p>
+<p><strong>关键数字</strong>：cycle-accurate RTL 评估中，QBS 对投影计算与矩阵乘的几何平均加速为 35.68x 与 51.34x；AKV 解码注意力较 Tiled RVV 加速 1.45x；总面积 +12.65%；投影负载上每面积吞吐与能效分别提升 46.63x 与 19.78x；适用于多种块量化格式与不同注意力组织的模型。</p>
+<p><strong>为什么值得看</strong>：RISC-V 向量处理器上 LLM 推理的原生块量化 + 显式 K/V 驻留完整方案。</p>
+<p><a href="https://arxiv.org/abs/2611.31937">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.31937">阅读原文 ↗</a></p>
 </body>
 </html>
