@@ -22,9 +22,11 @@
 <h1>Rotate the Loop: Blockwise Conformality for Looped Transformers</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Looped transformers reuse one shared block across many recurrent steps, so depth becomes a quantity that can be spent at runtime rather than a stack of distinct layers.</p>
-<blockquote><p>Looped transformers reuse one shared block across many recurrent steps, so depth becomes a quantity that can be spent at runtime rather than a stack of distinct layers. Those extra steps help only if a write made on one recurrent step is still readable on later ones, and that depends on the linear map applied to the residual between recurrent steps. We show that whether the loop learns to track state is a geometric question about the form of this map, and we propose blockwise conformal injections: the residual splits into coordinate-aligned groups and rotates inside each one, so every group has its own timescale while the geometry stays exact within it. Our experiments show a performance increase on a demanding form of state tracking - last-token accuracy when the rest of the prefix is already correct - and on language modelling, where a signal written earlier has to be retrieved at the end of the sequence.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 循环 Transformer 跨步复用同一共享块，深度成为运行时可花费的量；额外步只有在某步写入的信号仍能被后续步读取时才有效，取决于循环步间残差上的线性映射。</p>
+<p><strong>方法</strong> 提出块式共形注入：残差拆为坐标对齐分组、组内旋转，使每个分组有自己的时间尺度、组内几何保持精确。</p>
+<p><strong>关键数字</strong> 在严苛状态跟踪（前缀已正确时的 last-token 准确率）与需早期信号末端检索的语言建模任务上均见性能提升。</p>
+<p><strong>为什么值得看</strong> 从几何视角解释循环 Transformer 能否学会跟踪状态，给出可落地的循环步间映射设计。</p>
+<p><a href="https://arxiv.org/abs/2610.14030">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14030">阅读原文 ↗</a></p>
 </body>
 </html>

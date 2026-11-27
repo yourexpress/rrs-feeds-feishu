@@ -22,9 +22,11 @@
 <h1>Reward-Aligned Distillation</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Reinforcement learning with verifiable rewards improves the reasoning capabilities of large language models, but remains computationally expensive and sample inefficient.</p>
-<blockquote><p>Reinforcement learning with verifiable rewards improves the reasoning capabilities of large language models, but remains computationally expensive and sample inefficient. On-policy distillation (OPD) provides dense token-level supervision from a stronger teacher, yet standard OPD distills every token regardless of whether the teacher's preference actually improves task reward. Existing token-selection methods rely on proxies such as uncertainty or teacher--student divergence, which need not identify reward-improving supervision. We introduce Reward-Aligned Distillation (RAD), a bilevel framework that weights distillation signals based on their predicted effect on the student's post-update reward. RAD differentiates through a temporary optimizer step to score each token's supervision, then updates the token weights by projected ascent from the initial token weights. The resulting weights can strengthen, suppress, or reverse individual distillation-gradient contributions. At a matched training-response budget, RAD improves mean accuracy on six competition-math benchmarks over the strongest baselines by 6.5 percentage points for Qwen3-1.7B (non-thinking) and 2.5 points for Qwen3-4B-In…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 带可验证奖励的强化学习提升 LLM 推理但昂贵、样本低效；on-policy 蒸馏（OPD）一视同仁地蒸馏每个 token，不管教师偏好是否真改进任务奖励。</p>
+<p><strong>方法</strong> 提出 RAD 双层框架：按 token 监督对学生更新后奖励的预测影响加权——通过临时优化器步打分，再投影上升更新权重，可增强、抑制甚至反转单个蒸馏梯度贡献。</p>
+<p><strong>关键数字</strong> 匹配训练-响应预算下，RAD 在六竞赛数学基准平均超最强基线：Qwen3-1.7B（非思考）6.5 点、Qwen3-4B-Instruct-2507 2.5 点；LiveCodeBench-v6 pass@1 54.69%/58.67%，超基线 8.7/6.4 点。</p>
+<p><strong>为什么值得看</strong> 用奖励信号直接引导教师监督加权，跨模型家族与任务普遍有效。</p>
+<p><a href="https://arxiv.org/abs/2610.14572">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14572">阅读原文 ↗</a></p>
 </body>
 </html>

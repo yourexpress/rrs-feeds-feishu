@@ -22,9 +22,11 @@
 <h1>Scaling Looped MoE Language Models under Matched Budgets: Information Flow and Parameter Allocation</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-11-25 · 论文PDF / 每日精选</p>
 
-<p>匹配预算下扩展循环 MoE 语言模型：信息流与参数分配原则</p>
-<blockquote><p>Looped Transformers decouple computational depth from parameter count, and prior studies have demonstrated promising performance gains with increased computation. However, systematic design principles for configuring these models under strict iso-parameter and iso-FLOP constraints remain scarce. We contribute to this direction by improving information flow in looped models and systematically studying loop parameter configurations. Specifically, we refine this information flow via gated inner-loop state updates and a cross-stage residual connection. Building on this design, controlled studies identify a configuration combining a single-pass Core depth of 25%-35% of the total unrolled depth with reallocating saved parameters into extra routed experts per layer, improving performance at zero extra compute while preserving compatibility with existing training infrastructure. Evaluated after 1T pre-training tokens, our 69B MLA and 51B KDA Mixture-of-Experts models outperform budget-matched non-recurrent baselines by an average of 1.16 and 2.29 percentage points across four benchmarks, respectively. Further reproduction experiments on a common backbone with a 200B-token training budget s…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 循环 Transformer 解耦计算深度与参数量，但等参数（iso-parameter）与等 FLOP 约束下的系统化配置原则仍然稀缺。</p>
+<p><strong>方法</strong> 用门控内循环状态更新与跨阶段残差改进信息流；受控研究识别出"单遍 Core 深度占展开总深度 25%–35% + 省下参数重分配给每层额外 routed experts"的配置，零额外计算提升性能。</p>
+<p><strong>关键数字</strong> 1T 预训练 tokens 后，69B MLA 与 51B KDA MoE 在四基准平均超越预算匹配的非循环基线 1.16 与 2.29 个百分点；200B token 复现实验困惑度低于其他循环方法。</p>
+<p><strong>为什么值得看</strong> 等预算约束下循环 MoE 的实用设计原则与参数分配依据，代码已开源。</p>
+<p><a href="https://arxiv.org/abs/2611.34276">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.34276">阅读原文 ↗</a></p>
 </body>
 </html>

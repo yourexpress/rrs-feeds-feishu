@@ -22,9 +22,11 @@
 <h1>Attributing Agentic Failure in Reasoning Vision-Language Models with Interactive 2D Environments</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-09-02 · 论文PDF</p>
 
-<p>Agentic benchmarks report a success rate that confounds distinct causes of failu…</p>
-<blockquote><p>Agentic benchmarks report a success rate that confounds distinct causes of failure: misreading the environment, never working out how components of the environment operates, operating the components in the wrong order, and failing to recover from a mistake, each of which calls for a different fix. We present an early preview of MultiNet v2.0-Gridworld - an interactive maze environment built for attribution rather than ranking. Four different types of mechanisms, namely key-door pairs, switch-gate pairs, distractors and decoys, and ordered combinations of these mechanisms, can be added, modified, or removed independently while the renderer, the action space, and the scoring function stay fixed. A breadth-first search over the joint state of position, facing direction, inventory, and mechanism state gives every instance an exact optimal action count, which sets its difficulty and grades unfinished episodes. We fix the evaluation protocol on 15 held-out mazes over 540 episodes, then evaluate three vision-language models on 50 mazes. They solve 6 of 150 episodes, 45 of the 50 mazes were not solved by any model, and no episode containing a switch-gate mechanism was solved.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Agentic 基准的成功率混淆多种截然不同的失败原因——误读环境、没搞懂组件运作、操作顺序错、无法从错误恢复——各需不同修复。</p>
+<p><strong>方法</strong> 提出 MultiNet v2.0-Gridworld，为归因而非排名设计：key-door、switch-gate、干扰物/诱饵及其顺序组合可独立增删改，渲染器/动作空间/评分不变；对位置、朝向、库存与机制状态的联合状态做 BFS，得每实例精确最优动作数。</p>
+<p><strong>关键数字</strong> 15 保留迷宫共 540 episode 固定协议后，三 VLM 在 50 迷宫只解出 150 episode 中的 6 个；50 迷宫 45 个无任何模型解出，含 switch-gate 的 episode 无一解出。</p>
+<p><strong>为什么值得看</strong> 把 agentic 失败拆解为可归因类别，定位 VLM 真正失灵环节而非笼统看成功率。</p>
+<p><a href="https://arxiv.org/abs/2611.33162">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.33162">阅读原文 ↗</a></p>
 </body>
 </html>

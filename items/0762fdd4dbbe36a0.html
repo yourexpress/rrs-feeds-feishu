@@ -22,9 +22,11 @@
 <h1>State Space Attention: Learning Context-Dependent Memory Retention</h1>
 <p class="meta-line">arXiv (cs.LG) · 2026-11-25 · 论文PDF / 每日精选</p>
 
-<p>State Space Attention：学习上下文相关的记忆保留以限制 KV 缓存</p>
-<blockquote><p>Standard attention's key-value cache grows linearly with context length. Bounding it raises the question of what a sequence model should retain for long-context reasoning. We argue this choice should be learned, and introduce State Space Attention (SSA), which learns to keep a bounded set of past representations and reads them with standard attention. A learned scorer rescores every chunk against newly arriving context and the rest of memory. A fixed-context Transformer is then the special case that always keeps the most recent tokens. We train the scorer and reader jointly, either moving gradually from a differentiable soft weighting of memories to hard retention, or with hard retention from the start. To produce signal for the scorer, we generate supervised samples during training, a technique we call recovery. We compare SSA with recurrent models, bounded-memory attention methods, and full-attention Transformers across retrieval, variable tracking, multi-hop reasoning, and language modeling. On our retrieval and reasoning benchmarks, SSA matches or comes within a few points of full attention on most tasks, far outperforms a Transformer with the same readable budget on every long…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 标准注意力 KV 缓存随上下文线性增长；限制缓存后，长上下文序列模型应保留什么？作者主张这一选择应被学习出来。</p>
+<p><strong>方法</strong> 提出 State Space Attention：学习保留一组有界历史表示，用标准注意力读取；学习评分器针对新上下文与其余记忆对每个 chunk 重新评分。固定上下文 Transformer 只是"总保留最近 token"的特例；训练中用 recovery 生成监督样本，可软硬过渡或直接硬保留。</p>
+<p><strong>关键数字</strong> 检索与推理基准上多数任务匹配或接近全注意力几个点内，大幅超越相同可读预算的 Transformer，匹敌约 4 倍预算者且推理内存恒定；最大差距在 RULER；400M 模型上测了训练/推理成本随上下文与尺寸的缩放。</p>
+<p><strong>为什么值得看</strong> 可学习记忆保留 + 标准注意力读取，可与 KV 驱逐方法堆叠，长上下文恒定内存方案。</p>
+<p><a href="https://arxiv.org/abs/2611.33625">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.33625">阅读原文 ↗</a></p>
 </body>
 </html>

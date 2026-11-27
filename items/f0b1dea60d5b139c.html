@@ -22,9 +22,11 @@
 <h1>Revisiting Fast Tendermint: An Agreement Violation and Two Repairs</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Fast Tendermint reduces Tendermint's good-case latency to two communication steps for n&gt;=5f+1.</p>
-<blockquote><p>Fast Tendermint reduces Tendermint's good-case latency to two communication steps for n&gt;=5f+1. We show that its published round-change rule violates Agreement: one Byzantine process suffices for every f&gt;=1, and for f&gt;=2 two Byzantine processes suffice without double signing. The failure occurs when a process advances past a round without recording the value that may have been decided there. The Quint specification that accompanies the protocol does not allow this kind of round skipping and is not affected; the violation lies in the published pseudocode. We present two repairs. Walk requires a process to leave each round on a quorum of that round's precommits and to precommit before leaving. It keeps the recorded valid state and removes the wait after a precommit quorum. Justify carries the evidence needed to accept a proposal in the proposal itself, removing both the recorded valid state and the proposer's synchronization wait. Both satisfy Agreement and Validity under asynchrony and Termination under the partially synchronous gossip model of Tendermint and Fast Tendermint. Both retain proposal timeouts. The main text presents the executions that violate Agreement and explains the …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> Fast Tendermint 把良好情况延迟降到两个通信步（n≥5f+1），但其公布的轮变更规则违反 Agreement——进程可能在未记录该轮已可能决定的值时越过一轮。</p>
+<p><strong>方法</strong> 展示违反构造：一个拜占庭进程对每个 f≥1 足够，f≥2 时两个足够且无需双重签名；随协议发布的 Quint 规范不受影响，问题在伪代码。给出两种修复：Walk（quorum 预提交上离开每轮、离开前预提交）与 Justify（提案自带接受证据）。</p>
+<p><strong>关键数字</strong> 两修复在异步下满足 Agreement 与 Validity、部分同步 gossip 模型下满足 Termination，且保留提案超时；附录含证明与链扩展。</p>
+<p><strong>为什么值得看</strong> 在公布伪代码层面发现并修复共识协议的 Agreement 违反，修复轻量、证据完备。</p>
+<p><a href="https://arxiv.org/abs/2610.16442">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16442">阅读原文 ↗</a></p>
 </body>
 </html>

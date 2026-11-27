@@ -22,9 +22,11 @@
 <h1>Revisiting Error Feedback for Model Quantization</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>We study causal error-feedback coefficients as design variables for model quantization.</p>
-<blockquote><p>We study causal error-feedback coefficients as design variables for model quantization. Modeling instantaneous quantization errors as independent, zero-mean variables with a common fixed variance, we formulated a metric-dependent trace problem for designing feedback coefficients. The formulation resembles fixed-order GPTQ/LDLQ feedback and supports Jacobian-aware designs that account for downstream error propagation. For a positive-definite metric $\boldsymbol{H}$, we prove that the joint rotation-feedback trace minimum is $n\det(\boldsymbol{H})^{1/n}$ and present an attaining pair using the geometric mean decomposition. Experiments on synthetic networks, trained MLPs, and language models show benefits from downstream-sensitive feedback, but also reveal that trace optimality need not improve finite-level performance. Small QAT experiments further illustrate direct loss-driven feedback tuning with fixed or trainable network weights.</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 把因果误差反馈系数作为模型量化的设计变量：反馈如何设计才能最好地抑制量化误差传播？</p>
+<p><strong>方法</strong> 把瞬时量化误差建模为独立零均值、公共固定方差变量，构造度量相关 trace 问题设计反馈；形式类似固定阶 GPTQ/LDLQ 反馈，支持 Jacobian-aware 设计。</p>
+<p><strong>关键数字</strong> 对正定度量 H 证明联合旋转-反馈 trace 最小值为 n·det(H)^{1/n}，用几何均值分解给出构造；实验显示下游敏感反馈有收益，但 trace 最优未必提升有限精度性能。</p>
+<p><strong>为什么值得看</strong> 为量化反馈给出理论刻画与可计算构造，厘清"trace 最优"与"实际精度"的边界。</p>
+<p><a href="https://arxiv.org/abs/2610.18139">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.18139">阅读原文 ↗</a></p>
 </body>
 </html>

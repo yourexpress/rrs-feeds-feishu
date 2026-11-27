@@ -22,9 +22,11 @@
 <h1>Revisiting the 16x Pretraining Compute Gap between Diffusion and Autoregressive Language Models</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Diffusion language models (DLMs) have attracted wide attention for their fast, parallel decoding, but they are believed to be far less efficient to train than autoregressive language models (ARMs): a widely cited study reports that a DLM needs roughly 16x the training compute of an ARM to match its</p>
-<blockquote><p>Diffusion language models (DLMs) have attracted wide attention for their fast, parallel decoding, but they are believed to be far less efficient to train than autoregressive language models (ARMs): a widely cited study reports that a DLM needs roughly 16x the training compute of an ARM to match its likelihood, a figure that has made pretraining DLMs from scratch look prohibitive at scale. We find that the methodology behind this figure has fallen out of step with current DLM practice: it scores the model with its evidence lower bound (ELBO) and trains a full-sequence, decoder-only model. We therefore revisit the scaling laws of DLMs, adopting the exact likelihood under the model's own decoding order, block diffusion training, an encoder-decoder architecture, and a sweep over the block sizes used in practice. Under this new protocol, we study across ten model variants, about 1,700 models in total, and find that pretraining DLMs is far cheaper than previously thought. Concretely, scoring with the exact likelihood reduces the compute multiple to 12.8x; block diffusion training and an encoder-decoder architecture further reduce it to 7.8x at block size 32, and smaller block sizes narro…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 广为引用的研究称扩散语言模型（DLM）需约 16x 自回归模型（ARM）训练算力才能匹配似然，使从头预训练 DLM 看似不可行。</p>
+<p><strong>方法</strong> 重新审视 DLM 缩放律：采用模型自身解码顺序下的精确似然、块扩散训练、encoder-decoder 架构，并扫描实际使用的块大小；跨 10 个变体约 1,700 个模型。</p>
+<p><strong>关键数字</strong> 精确似然把倍数降至 12.8x；块扩散 + encoder-decoder 再降至 7.8x（块 32），更小块的 4.6x（块 8）与 3.0x（块 4）；另给出最优解码器深度的经验规则。</p>
+<p><strong>为什么值得看</strong> 16x 大幅高估 DLM 预训练成本差距，从头预训练 DLM 远比假设可行。</p>
+<p><a href="https://arxiv.org/abs/2610.17590">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17590">阅读原文 ↗</a></p>
 </body>
 </html>

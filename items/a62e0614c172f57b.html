@@ -22,9 +22,11 @@
 <h1>Conditional Work Bounds and Timing Evidence for an Industrial NDT Scan Matcher: Cross-Language Work-Trace Conformance</h1>
 <p class="meta-line">arXiv (cs.DC) · 2026-08-06 · 论文PDF</p>
 
-<p>Normal Distributions Transform (NDT) scan matching has strongly input-dependent …</p>
-<blockquote><p>Normal Distributions Transform (NDT) scan matching has strongly input-dependent execution time on the localization critical path. We study the align kernel of Autoware's production matcher; map loading, preprocessing, and Robot Operating System scheduling are outside the timed scope. Our three-layer method enforces and property-tests a conditional structural work envelope, constructs stress witnesses with deterministic Rust counters, and measures frozen witnesses. It separates algorithmic work from platform time and does not claim a certified hard time bound. A domain-informed construction attains the configured ceiling for the language-common kernel-evaluation term; two archived candidates exercise higher Rust-specific kd-tree traversal at lower common work. Per-input traces define work-trace conformance over passes, processed points, neighbor counts, and leaf identities. Leaf payloads, implementation-specific traversal, total work, and latency remain outside that relation, so C++ results are observations over transferred fixtures rather than a C++ worst-case search. An auxiliary cropped-map, degraded-prior replay exposes the remaining conformance boundary, and a closed-loop repla…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> NDT 扫描匹配执行时间高度依赖输入且处于定位关键路径；需把算法工作与平台时间分离，验证跨语言实现的工作量一致性。</p>
+<p><strong>方法</strong> 三层方法：强制并属性测试条件结构工作包络、用确定性 Rust 计数器构造压力见证、测量冻结见证；针对 Autoware align 内核，用逐输入迹定义跨 pass、点数、邻居数与叶子身份的迹一致性。</p>
+<p><strong>关键数字</strong> 统一三启动战役最大观测值 C++ 988.2 ms vs Rust 610.5 ms，Rust 在全部 10 对 fixture 上最大值更小；C++ 每点每导数遍约 11 次堆分配，Rust align 路径包络内零分配。</p>
+<p><strong>为什么值得看</strong> 跨语言工作迹一致性研究；作者不声称硬性时间上界，边界刻画诚实。</p>
+<p><a href="https://arxiv.org/abs/2611.33159">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.33159">阅读原文 ↗</a></p>
 </body>
 </html>

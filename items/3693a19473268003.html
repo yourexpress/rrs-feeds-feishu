@@ -22,9 +22,11 @@
 <h1>SentryWard: Formal Verification of Warp-Specialized GPU Kernels</h1>
 <p class="meta-line">arXiv (cs.PL) · 2026-11-25 · 论文PDF / 每日精选</p>
 
-<p>SentryWard：Warp 特化 GPU kernel 的形式化验证</p>
-<blockquote><p>Modern GPU kernels overlap asynchronous data movement, computation on general-purpose cores (e.g., CUDA cores), and computation on specialized cores (e.g., tensor cores) using warp specialization. These asynchronous-overlap optimizations introduce complex synchronization requirements, where incorrect ordering of asynchronous operations can lead to data races, premature resource reuse, and incorrect results. Testing alone cannot guarantee correctness because such errors are nondeterministic and may only manifest in rare execution schedules, and existing GPU formal verification techniques have limited support for warp-specialized kernels. We present SentryWard, a framework for formally verifying warp-specialized GPU kernels. SentryWard integrates synchronization verification, data-race and resource-lifetime analysis, and functional equivalence checking. The key idea is to establish that synchronization induces the same ordering constraints across all possible execution schedules. SentryWard extends this well-synchronization analysis to modern GPU barriers with asynchronous transaction tracking and derives a schedule-independent happens-before graph. It then uses this graph to verify …</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> warp 特化 GPU kernel 重叠异步搬运与异构计算，引入复杂同步需求；顺序错误导致数据竞争与错误结果，且不确定、仅稀有调度出现，测试无法保证正确性。</p>
+<p><strong>方法</strong> 提出 SentryWard：整合同步验证、数据竞争与资源生命周期分析、功能等价检查。核心是证明同步在所有执行调度上诱导相同排序约束——把良好同步分析扩展到带异步事务跟踪的现代 GPU barrier，导出调度无关 happens-before 图，验证内存安全并构造符号输出表达式。</p>
+<p><strong>关键数字</strong> 摘要未给量化指标；用线程与张量计算的紧凑表示提升可扩展性，代码已在 GitHub 开源。</p>
+<p><strong>为什么值得看</strong> 首个面向 warp 特化 GPU kernel 的形式化验证框架，直击异步重叠优化的正确性盲区。</p>
+<p><a href="https://arxiv.org/abs/2611.33817">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2611.33817">阅读原文 ↗</a></p>
 </body>
 </html>
