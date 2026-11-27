@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KiRA: Kronecker Input-Gated Rank Adaptation for Parameter-Efficient Fine-Tuning of Pretrained Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>KiRA: Kronecker Input-Gated Rank Adaptation for Parameter-Efficient Fine-Tuning of Pretrained Models</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-24 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> PEFT 的低秩更新存在秩天花板（远低于全量微调且对所有输入相同），输入自适应变体仍受低秩瓶颈约束，且无法预知任务是否受益于输入条件化。</p>
+<p><strong>方法：</strong> KiRA 用 Kronecker 乘积 ΔW = A ⊗ M(x)（A 为冻结随机矩阵）突破秩上限——秩在乘积下相乘，A 将 M(x) 的秩放大 p 倍而不增加可训练参数；输入门 g(x) 按离散步长调整每输入的更新秩，部署时无需条件化则折叠入门中。</p>
+<p><strong>关键数字：</strong> 6 个医学影像与语言 benchmark 上均分最高；比低秩适配少 8.7–9.7 倍可训练参数；预训练准则在全部 6 个任务上与实测输入条件化收益一致。</p>
+<p><strong>为什么值得看：</strong> 只需数百个标注输入即可在训练前预测条件化的价值，避免盲目采用输入自适应。</p>
+<p><a href="https://arxiv.org/abs/2611.33236">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.33236">阅读原文 ↗</a></p>
+</body>
+</html>

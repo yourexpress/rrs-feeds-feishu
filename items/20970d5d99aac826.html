@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BReD: Block Replay Dithering for Stable Low-Bit EMA Optimizer States</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>BReD: Block Replay Dithering for Stable Low-Bit EMA Optimizer States</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-25 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 低比特优化器状态并非只量化一次——每训练步都要反量化、更新、再量化、写回，这种迭代量化会破坏训练稳定性；EMA 状态的量化误差被递归喂入后续更新，偏差误差随时间累积。</p>
+<p><strong>方法：</strong> BReD（块重放抖动）将经典减性抖动适配到优化器状态量化：确定性种子重放 + 块级共享抖动值，避免辅助随机张量存储与逐元素抖动生成，降低舍入偏差并控制舍入方差。</p>
+<p><strong>关键数字：</strong> 默认预训练设置（5 个优化器 @120M；AdamW 与 Muon @1.1B/3.4B）及 SFT（7B）下，4-bit 与全精度几乎一致：预训练 PPL 偏移 ≤0.5、微调 ≤0.2、下游性能平均变化在 0.7 点内；3-bit 仍保持稳定收敛。</p>
+<p><strong>为什么值得看：</strong> 大模型训练内存可显著下降而质量几乎无损，3-bit 提供更激进选项，代码已开源。</p>
+<p><a href="https://arxiv.org/abs/2611.33951">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.33951">阅读原文 ↗</a></p>
+</body>
+</html>

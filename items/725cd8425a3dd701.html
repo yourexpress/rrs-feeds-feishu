@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Differential Computing Accelerator for LLM Inference Leveraging Bit-Slice Transition Sparsity</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>A Differential Computing Accelerator for LLM Inference Leveraging Bit-Slice Transition Sparsity</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-11-25 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 位片架构分解量化操作数后主要利用高阶片的稀疏性，而稠密低阶片仍有大量未被开发的复用机会，能否进一步压缩 GEMM 计算？</p>
+<p><strong>方法：</strong> 观察到位片向量（BSV）在 Hamming 空间高度聚类——多数 BSV 距少量代表模式仅几次位翻转。据此提出 ISTS 算法-硬件协同加速器：用代表 BSV 作为共享 Steiner 点跨片复用部分和（目标 BSV 的部分和由 Steiner 点经少量加减重构）；算法侧 SATC 构建紧凑 Steiner 点集、FlipPrune 选择性剪枝翻转扩大可复用群体；硬件侧支持静态权重与运行时注意力 K/V。</p>
+<p><strong>关键数字：</strong> 相对 SOTA 加速器 ANT/BBS/LUT Tensor Core/Transitive Array/MCBP-BRCR 平均加速 3.09x/2.41x/2.18x/1.27x/1.41x。</p>
+<p><strong>为什么值得看：</strong> 抓住低阶片稀疏性这一被忽视的机会，覆盖 LLM 推理的静态与动态张量两类负载。</p>
+<p><a href="https://arxiv.org/abs/2611.34630">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.34630">阅读原文 ↗</a></p>
+</body>
+</html>

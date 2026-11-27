@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LoopTitan: What Does Parameter Revisit Buy a Mixture-of-Experts?</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LoopTitan: What Does Parameter Revisit Buy a Mixture-of-Experts?</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-25 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 循环 MoE 跨深度复访层参数、不加参数而增加有效深度，近期研究声称在匹配预算下收益显著——但这些增益混入了网络形状与残差尺度等设计选择，"参数复访本身"到底买到什么？</p>
+<p><strong>方法：</strong> 用匹配的非复访对照分解 SOTA 循环配方（复访放最后）：非复访对照保留全部增益——大部分来自网络形状、其余来自残差尺度；证明残差尺度等价于对复访层施加更低学习率（在 AdamW 不均匀层步长下有助益，Muon 下消失）；再在匹配预算外评估"固定参数加算力"。</p>
+<p><strong>关键数字：</strong> 无复访的更深标准 MoE 在 Muon 下获得复访增益的 90.2%；额外一次复访胜过专家数翻倍；发布 17 个预训练模型（含 LoopTitan-Base 与对照），预测预注册、探索历史公开。</p>
+<p><strong>为什么值得看：</strong> 严谨的消融把循环 MoE 的增益归因到网络形状/优化器/加算力，并给出更强基线，纠正叙事、防止复现陷阱。</p>
+<p><a href="https://arxiv.org/abs/2611.34821">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.34821">阅读原文 ↗</a></p>
+</body>
+</html>

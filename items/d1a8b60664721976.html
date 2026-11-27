@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PipeAxes: Decoupling Compute and Communication Granularities for Pipeline-Parallel LLM Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>PipeAxes: Decoupling Compute and Communication Granularities for Pipeline-Parallel LLM Serving</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-11-25 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 流水线并行服务长上下文模型时，prefill 切块大小陷入两难：小块频繁重载模型权重、大块让 GPU 与链路长时间忙碌而延迟交互请求，如何在异构/PCIe 集群上兼顾？</p>
+<p><strong>方法：</strong> PipeAxes 运行宽 prefill 批但每次只算几层，decode 在切片间穿插执行；融合 Triton Hadamard-INT4 编解码压缩激活（按独立行组经并行 TCP 套接字传输）；调度器用延迟余量选择批宽、切片深度与行组大小。</p>
+<p><strong>关键数字：</strong> A800/RTX 4090/3090 上 97 次重放覆盖 5016 请求，10 倍带宽波动下 74 个请求全部达标；四阶段 MoE 流水线中以 23.3x（相对 Revisit-PP）、4.44x（相对 Fixed-4096）速率达标服务；64K 上下文混合负载下短请求 p95 TTFT 从 129.8s 降至 512ms。</p>
+<p><strong>为什么值得看：</strong> 计算与通信粒度解耦的工程方案，长上下文交互延迟从分钟级压到毫秒级。</p>
+<p><a href="https://arxiv.org/abs/2611.34615">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.34615">阅读原文 ↗</a></p>
+</body>
+</html>

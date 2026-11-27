@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One Token, Many Lessons: Sliding-Window Attention within Gated Delta Networks</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>One Token, Many Lessons: Sliding-Window Attention within Gated Delta Networks</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-24 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 从测试时回归（TTR）视角看线性注意力，状态学习效果不仅取决于更新规则，还取决于用于状态更新的键值学习对如何构建——现有工作大多忽略后者。</p>
+<p><strong>方法：</strong> 提出 Sliding-Window Gated DeltaNet（SWGDN），用滑窗注意力替代 Delta-Rule 线性注意力中的短卷积，对投影后的 Q/K/V 做内容相关的局部聚合，使连续更新的键值对更相似、帮助循环状态强化已学关联；可嵌入任意 Delta-Rule 架构而不改状态更新方程与分块并行算法。</p>
+<p><strong>关键数字：</strong> 无量化收益数字；实验在多个 benchmark 上均优于原始 Delta-Rule 基线（GDN2 与 KDA 两个变体均验证）。</p>
+<p><strong>为什么值得看：</strong> 一个可插拔的局部混合策略，零架构改动即可提升线性注意力在长序列建模中的表现。</p>
+<p><a href="https://arxiv.org/abs/2611.33257">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.33257">阅读原文 ↗</a></p>
+</body>
+</html>

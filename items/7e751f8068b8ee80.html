@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cross-Layer Characterization and AI-Assisted Diagnosis of C-to-Rust Performance</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Cross-Layer Characterization and AI-Assisted Diagnosis of C-to-Rust Performance</h1>
+<p class="meta-line">arXiv (cs.PF) · 2026-11-24 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> C 迁移到 Rust 常被认为性能等价，但运行时安全检查、编译器优化与硬件微架构的相互作用使性能诊断变得复杂，迁移到底付出多少性能代价？</p>
+<p><strong>方法：</strong> 对 12 个 benchmark 的 C/Rust 实现做跨层系统刻画；提出 AI 辅助性能调试器 FerroScope（集成源码分析、编译优化报告、指令轨迹与硬件计数器）；据此开发 LLVM pass，通过带守卫的循环版本化提升冗余边界检查。</p>
+<p><strong>关键数字：</strong> 8/12 个 benchmark 中至少一个 Rust 实现达到 C 的 10% 以内或更优；Selection Sort 开销从 2.95x 降到 1.00x，Merge Sort 从 1.43x 降到 0.91x（相对 C）。</p>
+<p><strong>为什么值得看：</strong> 证明"安全检查不一定主导性能开销"，且可在保持 Rust panic 语义的前提下实现无损迁移优化。</p>
+<p><a href="https://arxiv.org/abs/2611.33490">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.33490">阅读原文 ↗</a></p>
+</body>
+</html>

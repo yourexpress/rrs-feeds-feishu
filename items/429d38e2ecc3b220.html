@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L2C2: Enhancing Large-scale Chiplets for Agent Long-Context LLM Inference with Sparse and Distributed Attention</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>L2C2: Enhancing Large-scale Chiplets for Agent Long-Context LLM Inference with Sparse and Distributed Attention</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-11-25 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 面向 agent 的长上下文推理需求上升，稀疏注意力（SpAt）+ chiplet 是减计算、扩规模的方向，但 SpAt 部署到分布式 chiplet 需要上下文并行做工作负载切分，分布式注意力实现复杂。</p>
+<p><strong>方法：</strong> L2C2 系统优化：部分预填充阶段提出 Split-Comm Attention（利用 chiplet 高带宽互联以通信换内存访问）并与传统 Ring Attention 组合成 Bi-Mode 适应不同序列长度；解码阶段分析内存访问失衡根因，用静态交错 token 分配 + 动态敏捷缓存均衡适配 SpAt 偏斜。</p>
+<p><strong>关键数字：</strong> 大规模 chiplet 上部分预填充加速 1.45x、解码加速 1.53x（相对 SpAt 基线）。</p>
+<p><strong>为什么值得看：</strong> 为 chiplet 上的分布式稀疏注意力提供系统级方案，直指 agent 长上下文推理的硬件瓶颈。</p>
+<p><a href="https://arxiv.org/abs/2611.33691">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.33691">阅读原文 ↗</a></p>
+</body>
+</html>

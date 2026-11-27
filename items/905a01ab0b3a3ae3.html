@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GPS: Guiding Phase-Level Prefetcher Selection with Data-Driven Method</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>GPS: Guiding Phase-Level Prefetcher Selection with Data-Driven Method</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-11-25 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 复合预取器需要策略选择算法把系统反馈映射到合适预取策略，现有方法只用少量特征（系统状态可见性不足）且片上资源限制只能用简单映射机制，难以导航大策略空间。</p>
+<p><strong>方法：</strong> GPS 数据驱动框架：综合 profiling 采集丰富的系统行为与硬件资源状态特征，离线学习特征到"IPC 最优策略"的映射；策略生成下沉到软件，运行时仅按预生成策略提示轻量执行，消除在线探索成本。</p>
+<p><strong>关键数字：</strong> 性能差距缩小到 2.6%（此前 SOTA 方法为 13.6%/14.2%）；SPEC CPU2006/2017/GAP 上几何平均 IPC 分别超 I-POP 12.14%/8.34%/14.17%；运行时仅需 778 bits 额外片上存储。</p>
+<p><strong>为什么值得看：</strong> 用离线学习+轻量运行时破解"策略空间大 vs 片上资源少"的矛盾，收益显著且硬件代价极小。</p>
+<p><a href="https://arxiv.org/abs/2611.33859">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.33859">阅读原文 ↗</a></p>
+</body>
+</html>

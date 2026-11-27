@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MixMoMo: Accelerating Extra--Large MoE Inference with Mixed--Precision GPU--NPU Execution on Mobile Devices</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>MixMoMo: Accelerating Extra--Large MoE Inference with Mixed--Precision GPU--NPU Execution on Mobile Devices</h1>
+<p class="meta-line">arXiv (cs.AR) · 2026-11-25 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 移动端运行超大 MoE 模型需混合精度量化，但现有离线指标与路由分数无法反映专家对量化的敏感度，且多样位宽使 GPU/NPU 间专家分配失衡、tile 级反量化未充分利用 NPU 向量并行。</p>
+<p><strong>方法：</strong> MixMoMo 运行时：离线量化影响画像 + 基于激活的运行时风险估计共同决定质量约束下的专家位宽；精度结构化执行实现 GPU-NPU 均衡分配；HVX 并行反量化提升 NPU 向量利用率。</p>
+<p><strong>关键数字：</strong> 3 个 MoE 模型 × 5 个 benchmark × 2 个移动平台，平均解码加速 3.72x（相对均匀 Q4_0）、1.53x（相对最强混合精度 MoE 基线）。</p>
+<p><strong>为什么值得看：</strong> 面向移动异构 SoC 的端侧超大 MoE 落地路线，质量约束下的位宽分配与异构执行均有实测收益。</p>
+<p><a href="https://arxiv.org/abs/2611.33981">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.33981">阅读原文 ↗</a></p>
+</body>
+</html>

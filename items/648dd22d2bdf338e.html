@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Improving Tail-Augmented Speculative Drafting with Hidden State Mixing and Gradient Detach</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Improving Tail-Augmented Speculative Drafting with Hidden State Mixing and Gradient Detach</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-25 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> MTP 模块与 EAGLE 式草稿器自回归使用时存在训练-推理不匹配：训练喂骨干或单步 MTP 的隐藏状态序列，推理却要关注目标模型前缀加递归生成的 MTP 状态尾部；EAGLE-3 的 TTT 显式模拟但代价是额外内存与专用注意力掩码。</p>
+<p><strong>方法：</strong> 两个仅训练期方法：隐藏状态混合（HSM）在骨干与 MTP 对齐同一预测目标的隐藏状态间采样，暴露混合状态而不显式模拟推理；隐藏状态梯度分离（HSGD）随机阻断隐藏状态/嵌入路径的梯度而保持前向不变。两者均不增加推理成本。</p>
+<p><strong>关键数字：</strong> 4 个 Nemotron 模型 + DeepSeek-V4-Pro 上，HSM 使平均接受长度最高 +52.2%（相对共同训练的 MTP）；EAGLE-3 四步 Qwen3-8B 对比中峰值保留训练内存低 48% 且接受率与 TTT 相当。</p>
+<p><strong>为什么值得看：</strong> 免费获得 TTT 级草稿质量且省近半训练内存，长/短草稿场景各有最优解。</p>
+<p><a href="https://arxiv.org/abs/2611.34092">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.34092">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mixture-of-Loops Transformer</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Mixture-of-Loops Transformer</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-25 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 循环 Transformer 复用共享层提升表达力但牺牲效率——推进其表达力-效率前沿的关键问题是：相邻循环之间应该传什么？</p>
+<p><strong>方法：</strong> MoLT 的 Mixture-of-Loops Attention（MoLA）以 KV 作为跨深度与循环选择性复用的记忆；循环残差变体 MoLT-R 保留残差流读取局部 KV，循环 KV 变体 MoLT-KV 从 embedding 重启并组合前/本循环 KV，消除同位置跨循环依赖、支持单遍历解码；U-MoLT 分离记忆构建与预测读出，跳过未用解码器遍历而不改变预测。</p>
+<p><strong>关键数字：</strong> 400B token 预训练中 U-MoLT 超 OLMo3（700M/1.5B dense、3B MoE）：700M 验证 CE token 效率 1.7x，3B MoE 十域困惑度 -0.75、十任务准确率 +2.1 点；推理延迟 996.6 vs 1000.6 ms（S 规模 ~113M）。</p>
+<p><strong>为什么值得看：</strong> 重新定义循环间传递内容，解锁超出训练循环视野的单遍历解码，效率与质量双收。</p>
+<p><a href="https://arxiv.org/abs/2611.34923">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.34923">阅读原文 ↗</a></p>
+</body>
+</html>

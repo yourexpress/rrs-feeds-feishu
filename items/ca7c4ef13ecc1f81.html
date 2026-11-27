@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RankCast: Phase-Aware Rank Balancing in MoE Serving</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>RankCast: Phase-Aware Rank Balancing in MoE Serving</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-11-24 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 分离式 P/D 架构 + 专家并行（EP）的 MoE 服务中，每层都等待最忙 EP 秩，负载不均衡拖慢推理；且 prefill（计算密集，由最大 token 数决定）与 decode（内存密集，由最大活跃专家数决定）的瓶颈来源不同。</p>
+<p><strong>方法：</strong> RankCast 统一两阶段：每个 token 保留预测的 Top-p 专家，其余从 Top-L 候选中选取；prefill 用"每秩价格"引导灵活分配，decode 在最忙秩上关闭专家；在 SGLang 与 DeepEP 中实现，核与模型执行重叠、复用 DeepEP 通信通道。</p>
+<p><strong>关键数字：</strong> Qwen3-235B-A22B（EP=8）与 Qwen3.5-397B-A17B（EP=16）上移除最忙秩 75% 以上多余 prefill 负载；prefill 输入吞吐最高 +19%，decode 每输出 token 时间最高 -10%；质量损失低于 1 个百分点。</p>
+<p><strong>为什么值得看：</strong> 统一框架同时解决两阶段负载不均衡，生产框架内实测收益明确。</p>
+<p><a href="https://arxiv.org/abs/2611.33542">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.33542">阅读原文 ↗</a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asymmetric Speculative Decoding: Unlocking In-Context Learning in Draft Models</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Asymmetric Speculative Decoding: Unlocking In-Context Learning in Draft Models</h1>
+<p class="meta-line">arXiv (cs.DC) · 2026-11-25 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 投机解码实际加速远低于理论界（推理任务尤甚）——根因是任务同构性：两个模型拿到相同提示，草稿模型被迫解决超出其能力的问题，高拒绝率抵消并行收益。</p>
+<p><strong>方法：</strong> 发现生成过程中接受率单调上升，揭示潜在的上下文学习（ICL）效应：草稿模型从已验证 token 中学习并逐步对齐目标分布。据此提出 AsymSpec：解耦草稿/目标模型提示，给草稿模型任务相关示例解答，把目标从"推理"改为"模拟"，从头放大 ICL 效应；证明其产生精确样本且指数级收敛到目标分布。</p>
+<p><strong>关键数字：</strong> 推理、代码生成与摘要任务上相对自回归解码 2.29x–4.95x 加速，超过标准投机解码，无需模型重训练。</p>
+<p><strong>为什么值得看：</strong> 训练无关的即插即用方案，精准定位并修复投机解码的提示设计缺陷。</p>
+<p><a href="https://arxiv.org/abs/2611.34010">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.34010">阅读原文 ↗</a></p>
+</body>
+</html>

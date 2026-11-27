@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Geometry Is the Memory: Task-Density Routing for Continual LoRA</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>The Geometry Is the Memory: Task-Density Routing for Continual LoRA</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-24 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> 冻结旧 adapter 并不能保证持续学习者在推理时正确选择使用它们——存在多个 adapter 时，如何路由到表示空间与查询答案匹配的那个？</p>
+<p><strong>方法：</strong> CONTLORA 用紧凑类统计替代存储示例：冻结表示上的高斯类模型选择 LoRA adapter，累积特征矩精确恢复类平衡 ridge 分类器；无需保留图像或特征向量即可完成选择与分类。</p>
+<p><strong>关键数字：</strong> 20-task CIFAR-100 达 88.55% 准确率、CUB-200 达 86.99%；匹配组件研究中，与独立训练的存储特征对应物的平均最终准确率相差不超过 0.07 个百分点。</p>
+<p><strong>为什么值得看：</strong> 为"统计记忆 vs 示例保留"提供实证：内存占用大幅降低而精度几乎无损，是持续 LoRA 落地的实用方案。</p>
+<p><a href="https://arxiv.org/abs/2611.33487">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.33487">阅读原文 ↗</a></p>
+</body>
+</html>

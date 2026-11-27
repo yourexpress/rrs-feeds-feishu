@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learning to Be Truncated: Preparing LLM Checkpoints for SVD Compression</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 18px 64px;
+         font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.75; color: #1f2328; background: #fff; }
+  h1 { font-size: 1.45em; line-height: 1.4; margin-bottom: 6px; }
+  .meta-line { color: #6b7280; font-size: 0.85em; margin: 4px 0 18px; }
+  img.hero { max-width: 100%; border-radius: 10px; margin: 4px 0 18px; }
+  a { color: #0969da; text-decoration: none; }
+  blockquote { margin: 0; padding: 0 1em; color: #57606a; border-left: 3px solid #d0d7de; }
+  .note { color: #6b7280; font-size: 0.9em; }
+  a.origin { display: inline-block; margin-top: 28px; padding: 10px 22px;
+              background: #0969da; color: #fff !important; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Learning to Be Truncated: Preparing LLM Checkpoints for SVD Compression</h1>
+<p class="meta-line">arXiv (cs.LG) · 2026-11-25 · 论文PDF / 每日精选</p>
+
+<p><strong>研究问题：</strong> SVD 压缩通常需要后续微调或权重修正来缓解性能退化，且不同压缩率需要重复做预算特定的优化——能否一次准备、多比率复用？</p>
+<p><strong>方法：</strong> LLift 用原模型作教师，在单一比率下微调低秩近似，把学习到的更新合并回原始权重，同时保留训练前向中被排除的互补成分；随后对准备后模型的目标矩阵做 SVD，在不同截断秩上复用分解。</p>
+<p><strong>关键数字：</strong> LLaMA-7B 上用单个准备模型在三种压缩率下均获得准确率提升；收益跨模型家族、模型规模与 SVD 压缩算子泛化。</p>
+<p><strong>为什么值得看：</strong> 免去每个压缩预算单独微调，一次准备即可覆盖多种部署预算，压缩流程成本显著降低。</p>
+<p><a href="https://arxiv.org/abs/2611.34667">原文链接</a></p>
+<p><a class="origin" href="https://arxiv.org/abs/2611.34667">阅读原文 ↗</a></p>
+</body>
+</html>
