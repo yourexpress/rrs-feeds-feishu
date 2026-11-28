@@ -22,9 +22,11 @@
 <h1>Stable-Plastic Subspace Construction for Differentially Private Continual LoRA</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Continual learning (CL) adapts pretrained models to a sequence of tasks while retaining knowledge acquired from earlier tasks.</p>
-<blockquote><p>Continual learning (CL) adapts pretrained models to a sequence of tasks while retaining knowledge acquired from earlier tasks. When task data are sensitive, differential privacy (DP) provides record-level protection, but maintaining both adaptation and retention under privacy constraints remains challenging. We study this problem in continual low-rank adaptation (LoRA) and observe that: 1) private training increases forgetting primarily during subsequent adaptation rather than initial task acquisition; 2) jointly perturbing both LoRA factors introduces a non-negligible bilinear noise interaction; and 3) DP aggravates the stability-plasticity dilemma, hindering both knowledge retention and adaptation to new tasks. Based on these observations, we propose DP-SPA, which constructs a stable subspace from previously privatized updates and a plastic subspace from pretrained weights within its orthogonal complement. The method fixes these bases and privately optimizes only the LoRA factor, eliminating the bilinear noise interaction within each step. Before merging each task update, it rescales stable-direction coefficients using historical and current update energies. We establish a privac…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 持续学习（CL）让预训练模型适应任务序列并保留旧知识，任务数据敏感时需差分隐私（DP）提供记录级保护，但在隐私约束下同时保持适应与保留很困难；聚焦持续低秩适配（LoRA）。</p>
+<p><strong>方法</strong> 三个观察：私有训练主要在后续适配而非初始任务获取阶段加剧遗忘；联合扰动两个 LoRA 因子引入不可忽略的双线性噪声交互；DP 加剧稳定性-可塑性困境。据此提出 DP-SPA：从先前私有化更新构造稳定子空间、从预训练权重构造其正交补中的可塑子空间，固定基后只私有优化单一 LoRA 因子，消除步内双线性噪声交互；合并任务更新前用历史与当前更新能量重缩放稳定方向系数。</p>
+<p><strong>关键数字</strong> 建立隐私保证，重校准不增加历史重叠并收紧旧任务损失增长的条件下界；在 5 个数据集、8 种设置、多个隐私预算下平均准确率提升、遗忘降低。</p>
+<p><strong>为什么值得看</strong> 针对 DP + 持续 LoRA 的组合难点给出子空间解耦方案，隐私与遗忘权衡处理细致。</p>
+<p><a href="https://arxiv.org/abs/2610.17904">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17904">阅读原文 ↗</a></p>
 </body>
 </html>

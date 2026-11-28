@@ -22,9 +22,11 @@
 <h1>SLEM: Spectrum-Aware Latent Expert Merging</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Mixture-of-Experts (MoE) models scale model capacity efficiently by activating only a small subset of experts for each input, while still requiring all parameters to be stored in memory, resulting in substantial memory overhead.</p>
-<blockquote><p>Mixture-of-Experts (MoE) models scale model capacity efficiently by activating only a small subset of experts for each input, while still requiring all parameters to be stored in memory, resulting in substantial memory overhead. Expert merging techniques have recently emerged as a promising compression paradigm that reduces this overhead by consolidating multiple experts into a smaller set. However, existing approaches have two key limitations: (i) direct convex interpolation in parameter space is not generally guaranteed to yield meaningful interpolation of expert functions; and (ii) estimating expert similarity or merging coefficients often relies on calibration data, introducing dependence on the calibration distribution. To address these limitations, we propose Spectrum-Aware Latent Expert Merging (SLEM), a calibration-free expert merging framework that occurs in a structured latent representation of expert weights using a VAE. SLEM groups experts within and across layers based on latent similarities and derives merging coefficients from expert weight spectra. It then performs geometry-aware latent interpolation and decodes the resulting representations into merged expert weigh…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> MoE 模型虽只激活少量专家，但全部参数都需驻留内存，内存开销大；专家合并可压缩，但现有方法在参数空间的直接凸插值不保证函数意义，且依赖校准数据估计相似度/合并系数。</p>
+<p><strong>方法</strong> SLEM 是无校准的专家合并框架：用 VAE 在专家权重的结构化潜表示中操作，按潜相似度在层内与跨层分组专家，从权重谱导出合并系数，做几何感知的潜插值后解码回合并权重。</p>
+<p><strong>关键数字</strong> 在通用知识基准上与现有方法相当或更优，在数学推理与代码生成的生成类基准上平均表现更高。</p>
+<p><strong>为什么值得看</strong> 摆脱校准数据依赖的 MoE 压缩新思路，谱信息驱动的合并系数具有启发价值。</p>
+<p><a href="https://arxiv.org/abs/2610.16484">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16484">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Same Function, Different Trajectory: No Standard Optimizer Is Equivariant to Transformer Reparameterization</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>We show that two Transformers representing the same function can follow different training trajectories.</p>
-<blockquote><p>We show that two Transformers representing the same function can follow different training trajectories. For example, doubling a query matrix and halving its key matrix preserves the model's function but changes the gradient scales seen by the optimizer. Our theoretical analysis establishes that standard block-local first-order optimizers fail to scale updates with parameters under a shared learning rate. For AdamW, transforming the first- and second-moment estimates alone does not correct the mismatch between parameter and update scales. To make runs restarted from equivalent checkpoints follow the same trajectory, we balance matrix pairs and transform their moment estimates together, bringing distinct but equivalent training states to the same starting point. To correct scale imbalance between paired Transformer matrices without changing predictions, we propose Symmetry-Aware Gradient Geometry Stabilization (SAGGS), which periodically equalizes the Frobenius norms of exact symmetry pairs, and its damped variant, Soft SAGGS. SAGGS reduces perplexity (PPL) by $0.374\pm0.026$ at 101M parameters on WikiText-103, and Soft SAGGS reduces PPL by $0.780\pm0.040$ in a 31M modern-architectu…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 两个表示同一函数的 Transformer 可能沿不同训练轨迹演化（如加倍 query 矩阵并减半 key 矩阵保持函数不变，但改变优化器看到的梯度尺度）；标准优化器对此不具等变性。</p>
+<p><strong>方法</strong> 理论分析证明标准块局部一阶优化器在共享学习率下不能按参数尺度缩放更新；AdamW 仅变换一阶/二阶矩估计无法修正参数与更新尺度失配。提出 Symmetry-Aware Gradient 方案：平衡矩阵对并一起变换矩估计，使等价检查点重启的运行沿相同轨迹。</p>
+<p><strong>关键数字</strong> 摘要未给出量化指标；核心为理论结果：任何标准优化器均不满足 Transformer 重参数化等变性。</p>
+<p><strong>为什么值得看</strong> 揭示优化器设计与 Transformer 参数对称性的深层冲突，对复现实验与超参迁移有方法论意义。</p>
+<p><a href="https://arxiv.org/abs/2610.18085">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.18085">阅读原文 ↗</a></p>
 </body>
 </html>

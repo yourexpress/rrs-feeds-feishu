@@ -22,9 +22,11 @@
 <h1>Sparsity Saves Compute, Not Samples: Oracle Inequalities for Dense and Sparse Mixture of Experts</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Mixture-of-Experts (MoE) models combine specialized experts through an input-dependent routing mechanism, and their sparse variants underpin many modern large-scale systems.</p>
-<blockquote><p>Mixture-of-Experts (MoE) models combine specialized experts through an input-dependent routing mechanism, and their sparse variants underpin many modern large-scale systems. Yet the statistical cost of adaptive routing remains only partially understood. We study the estimation error of least-squares MoE estimators when both the experts and the gating network are Lipschitz in their parameters. We represent each MoE as a gate--expert pair in a Gated Hilbert Space, whose norm $\|\cdot\|_Δ$ separates the contributions of routing and expert discrepancies. Using its empirical representation, we derive an oracle inequality with a fast rate of order $\tilde{\mathcal O}\big((Kd_{\mathrm{pr},e}+d_{\mathrm{pr},g})/n\big)$ for dense MoEs with $K$ experts. For sparse Top-$k$ and Top-$p$ routing, the selection map is discontinuous in the gating parameters. We handle this by partitioning the gating class according to the selection patterns it induces on the sample. The resulting bounds match the dense rate up to an additive routing cost governed by the Natarajan dimension of the selector. We show that such a routing-complexity condition cannot be dropped: Lipschitz continuity in the parameters al…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> MoE 通过输入依赖路由组合专家，稀疏变体支撑许多大规模系统，但自适应路由的统计代价尚未完全理解。</p>
+<p><strong>方法</strong> 研究专家与门控网络在参数上 Lipschitz 时最小二乘 MoE 估计器的估计误差；在 Gated Hilbert Space 中把每个 MoE 表示为门-专家对，用其经验表示推导稠密 MoE 的快速率 oracle 不等式；对稀疏 Top-k/Top-p 路由，按样本诱导的选择模式划分门控类处理不连续选择映射；并建立线性专家的匹配极小极大下界。</p>
+<p><strong>关键数字</strong> 稠密 MoE 快速率阶为 Õ((K·d_pr,e+d_pr,g)/n)；稀疏路由界与稠密率匹配，另加由选择器 Natarajan 维支配的路由成本；线性 softmax 门控下路由成本与门控项同阶；极小极大下界 K·d_pr,e/n 证明率最优（对数因子内）。</p>
+<p><strong>为什么值得看</strong> 给出"稀疏省算力不省样本"的严格统计刻画，为稀疏 MoE 设计提供理论边界。</p>
+<p><a href="https://arxiv.org/abs/2610.15039">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.15039">阅读原文 ↗</a></p>
 </body>
 </html>

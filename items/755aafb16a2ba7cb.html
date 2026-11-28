@@ -22,9 +22,11 @@
 <h1>SelectTTRL: Representation-Guided Data Selection for Efficient Test-Time Reinforcement Learning</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Test-Time Reinforcement Learning (TTRL) enables large language models to adapt directly on unlabeled test problems by constructing pseudo-labels from multiple sampled responses.</p>
-<blockquote><p>Test-Time Reinforcement Learning (TTRL) enables large language models to adapt directly on unlabeled test problems by constructing pseudo-labels from multiple sampled responses. However, existing TTRL methods typically apply the same expensive sampling and optimization procedure to all test problems, despite substantial differences in their training utility. In this paper, we study whether such problems can be identified before costly test-time training, without access to ground-truth answers. We uncover a stable relationship between internal response representations and problem-level empirical accuracy. Specifically, we define COS as the cosine similarity between a model's response representation and a correctness-related direction constructed from an independent question-answering dataset. COS consistently correlates with problem solvability across different models, datasets, and experimental settings, and we further provide a theoretical analysis explaining this relationship. Building on this finding, we propose SelectTTRL, a representation-guided data selection method that ranks test problems using COS and applies TTRL only to a selected percentile interval. SelectTTRL leaves t…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 测试时强化学习（TTRL）让大模型在无标签测试问题上直接适配，但现有方法对所有测试问题施加同样昂贵的采样与优化，尽管其训练效用差异巨大；能否在无真值答案的情况下提前识别值得训练的问题？</p>
+<p><strong>方法</strong> 发现模型内部响应表示与问题级经验准确率之间存在稳定关系：定义 COS 为响应表示与从独立问答数据集构造的正确性相关方向之间的余弦相似度，COS 跨模型、数据集与实验设置稳定关联问题可解性；据此做表示引导的数据选择。</p>
+<p><strong>关键数字</strong> 摘要未给出最终收益数值；核心为 COS 度量与可解性的稳定相关性及选择方法。</p>
+<p><strong>为什么值得看</strong> 用内部表示预筛高价值测试问题，显著降低 TTRL 的计算成本，推理时自适应方向值得关注。</p>
+<p><a href="https://arxiv.org/abs/2610.16104">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16104">阅读原文 ↗</a></p>
 </body>
 </html>

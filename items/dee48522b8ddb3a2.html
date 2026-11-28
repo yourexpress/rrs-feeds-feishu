@@ -22,9 +22,11 @@
 <h1>Sequence Composition in EHR Foundation Model Pretraining</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Autoregressive electronic health record (EHR) foundation models predict the next event token in patient trajectories: sequences of structured medical events.</p>
-<blockquote><p>Autoregressive electronic health record (EHR) foundation models predict the next event token in patient trajectories: sequences of structured medical events. A typical pretraining strategy is to concatenate all trajectories into a global stream and sample token windows from it. This gives patients with longer sequences more training exposure and allows tokens to attend across patient boundaries. We argue that these choices create a misalignment between pretraining and downstream clinical tasks. To explore this, we investigate how the composition of pretraining sequences affects clinical prediction performance. Using the global-stream approach as a baseline, we propose alternative sequence composition methods that control how patient trajectories contribute to pretraining sequences. Across four MIMIC-IV v2.2 tasks, our best method improves macro AUROC, AUPRC, F1, and balanced accuracy, with relative gains of 9.3% in F1 and 2.7% in AUPRC under a fixed training recipe. We find that these gains generalize across four additional evaluation settings, including the INSPIRE and eICU-CRD datasets, with improvements in macro AUROC, AUPRC, and F1 score. Our results show that simply changing h…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 自回归电子健康记录（EHR）基础模型预测患者轨迹中的下一个事件 token，但典型预训练把全部轨迹拼接成全局流采样 token 窗口，使长序列患者暴露更多、token 可跨患者边界关注，与下游临床任务错位。</p>
+<p><strong>方法</strong> 以全局流方法为基线，提出替代的序列组合方法，控制患者轨迹对预训练序列的贡献方式。</p>
+<p><strong>关键数字</strong> 在 MIMIC-IV v2.2 的四个任务上，最佳方法提升 macro AUROC、AUPRC、F1 与平衡准确率。</p>
+<p><strong>为什么值得看</strong> 指出 EHR 基础模型预训练数据组装的隐性偏差，用轻量序列组合改进临床预测，医疗 AI 方向值得一读。</p>
+<p><a href="https://arxiv.org/abs/2610.16878">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.16878">阅读原文 ↗</a></p>
 </body>
 </html>

@@ -22,9 +22,11 @@
 <h1>Sparse-TD-JEPA: Improving Zero-Shot Reinforcement Learning With Sparse Latent Task Representations</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Successor-feature-based zero-shot reinforcement learning methods pre-train a task encoder and successor-feature predictor on offline, reward-free data, then recover a policy at test time by solving a closed-form linear regression over a small labeled dataset.</p>
-<blockquote><p>Successor-feature-based zero-shot reinforcement learning methods pre-train a task encoder and successor-feature predictor on offline, reward-free data, then recover a policy at test time by solving a closed-form linear regression over a small labeled dataset. We identify an underexplored limitation of this approach: when the task encoder produces dense representations, the inferred reward signal becomes diffuse across the state space, reducing the contrast between goal-relevant states and the background and providing a weaker signal for the policy to follow. We address this limitation by introducing an l1 sparsity penalty that concentrates reward-predictive structure into a smaller effective subspace of the task encoder's latent space. The penalty is applied only during training and requires no architectural change or modification to the closed-form inference procedure. We instantiate this approach as Sparse-TD-JEPA, a single-line of code addition based on Temporal-Difference Joint-Embedding Predictive Architecture (TD-JEPA) that significantly improved its performance in zero-shot reinforcement learning. We evaluate Sparse-TD-JEPA on 65 tasks across the DeepMind Control (DMC) Suite…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 基于后继特征（successor-feature）的零样本强化学习在离线无奖励数据上预训练任务编码器与后继特征预测器，测试时用少量标注数据解闭式线性回归恢复策略；但任务编码器产生稠密表示时，推断的奖励信号在状态空间弥散，目标相关状态与背景对比度降低。</p>
+<p><strong>方法</strong> 引入 l1 稀疏惩罚，把奖励预测结构集中到任务编码器潜空间的更小子空间；惩罚仅在训练时施加，无需改架构或闭式推断流程；基于 TD-JEPA 实例化为 Sparse-TD-JEPA，仅一行代码改动。</p>
+<p><strong>关键数字</strong> 在 DeepMind Control 与 OGBench 共 65 个任务上评估，13 个领域级比较全部优于 TD-JEPA；DMC 平均回报 661±6→714±3，OGBench 平均成功率 38.0±0.8%→48.4±2.3%；antmaze 导航与拼接领域提升 13.4–18.0 个百分点。</p>
+<p><strong>为什么值得看</strong> 一行代码级改动显著提升零样本 RL，稀疏化奖励景观的洞察简洁有力。</p>
+<p><a href="https://arxiv.org/abs/2610.14400">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.14400">阅读原文 ↗</a></p>
 </body>
 </html>

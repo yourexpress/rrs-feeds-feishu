@@ -22,9 +22,11 @@
 <h1>SPLICE: Sparse Physics Library Identification and Compositional Expansion</h1>
 <p class="meta-line">arXiv · 2026-10-14 · 论文PDF</p>
 
-<p>Neural operator splitting composes a library of neural operators, one per physical mechanism, into zero-shot simulators of new equations.</p>
-<blockquote><p>Neural operator splitting composes a library of neural operators, one per physical mechanism, into zero-shot simulators of new equations. Existing approaches, however, require these mechanisms and their labels to be specified in advance. We ask whether a pretrained library can instead be adapted and grown from unlabeled trajectories in which multiple mechanisms act simultaneously. We introduce SPLICE, a framework that discovers operators without mechanism labels on mixture data. The contributions of the candidate operators to each trajectory are inferred by solving a convex optimization problem. A calibrated test then assigns each discovered operator the mechanism it implements. Failure cases are also detectable, when the library lacks the required physics or when mechanisms are insufficiently separable. Across one and two dimensional systems, the discovered operators recover mechanisms from unlabeled mixtures and compose into zero-shot simulators of unseen equations; a frozen library can also grow an operator for physics absent from pretraining, without labels and without forgetting. On Navier-Stokes, the discovered operators compose about as accurately as their supervised counter…</p></blockquote>
-<p class="note">以上为 arXiv 摘要节选，中文省流版整理中。</p>
+<p><strong>研究问题</strong> 神经算子分解把每个物理机制对应的算子库组合成新方程的零样本模拟器，但现有方法需预先指定机制及其标签；能否从多机制同时作用的无标签轨迹中适配并扩展预训练库？</p>
+<p><strong>方法</strong> SPLICE 在混合数据上无机制标签发现算子：通过求解凸优化推断各候选算子对轨迹的贡献，用校准检验为每个发现算子指派其实现的机制，缺失物理或机制不可分时也能检测失败。</p>
+<p><strong>关键数字</strong> 在一维与二维系统中从无标签混合数据恢复机制并组合成未见方程的零样本模拟器；冻结库可为预训练缺失的物理增长新算子且不遗忘；Navier-Stokes 上发现算子的组合精度与监督版本相当。</p>
+<p><strong>为什么值得看</strong> 把机制标注从流程中剔除的算子库自增长框架，扩展零样本科学模拟的适用范围。</p>
+<p><a href="https://arxiv.org/abs/2610.17029">阅读原文</a></p>
 <p><a class="origin" href="https://arxiv.org/abs/2610.17029">阅读原文 ↗</a></p>
 </body>
 </html>
